@@ -1,0 +1,261 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Resolvendo alguns problemas causados pelo novo Xorg no Arch - Hacking the damn life</title>
+  <meta name="author" content="Marcelo Cavalcante Rocha - Kalib">
+
+  
+  <meta name="description" content="Não é de hoje que vejo o nível de alguns pacotes essenciais como o Kernel e o Xorg caírem cada vez mais. É triste porém uma realidade. A maneira como &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://kalib.github.io/blog/2008/12/02/resolvendo-alguns-problemas-causados-pelo-novo-xorg-no-arch">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Hacking the damn life" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Hacking the damn life</a></h1>
+  
+    <h2>What if...</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:kalib.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Resolvendo Alguns Problemas Causados Pelo Novo Xorg No Arch</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-12-02T11:03:00-03:00" pubdate data-updated="true">Dec 2<span>nd</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/archlinux_logo_glass.png"><img src="http://kalib.pre.hw40.webservidor.net/wordpress/wp-content/uploads/2009/02/archlinux_logo_glass-300x256.png" alt="" /></a>Não é de hoje que vejo o nível de alguns pacotes essenciais como o Kernel e o Xorg caírem cada vez mais. É triste porém uma realidade. A maneira como tais pacotes vem sendo lançados sem maiores preocupações está prejudicando a vida de muita gente. Eu fui um deles recentemente ao atualizar o meu Xorg. Para aqueles que também fizeram upgrade recentemente, podem ter aparecido vários problemas.</p>
+
+<p>Aqui apresentarei as soluções que utilizei no ArchLinux para sanar os problemas que me apareceram, sendo eles:</p>
+
+<p>1- O X não subia mais. Simplesmente morria e ficava tudo preto.</p>
+
+<p>2- As teclas especiais do teclado não respondiam mais, como por exemplo as setas direcionais.</p>
+
+<p>Vamos às soluções encontradas&hellip;</p>
+
+<p>1- O X não sobe mais</p>
+
+<p>1.1- Para este problema, precisei fazer uma pequena busca pelo erro que acontecia, para isso busquei em primeira mão os logs do Xorg. Você pode fazer isso com o seguinte comando:</p>
+
+<h1>tail -f /var/log/Xorg.0.log</h1>
+
+<p>1.2- Em meu caso, apontou o erro na sintax RgbPath, a qual informava ser incompatível. Muita gente está passando por este problema.</p>
+
+<p>A solução neste caso é simples, basta editar o arquivo /etc/X11/xorg.conf e comentar a linha:</p>
+
+<p>RgbPath = &ldquo;/usr/share/X11/rgb&rdquo;</p>
+
+<p>1.3- Ao comentar esta linha, tudo o que fiz foi reinstalar o driver de minha placa de vídeo, para que meu xorg voltasse a funcionar. Como eu utilizo um driver da ATI Radeon que costumo baixar diretamente no site da ATI, segui o procedimento padrão para os drivers baixados do mesmo:</p>
+
+<p>1.3.1- Dar permissão de execução:</p>
+
+<h1>chmod +x ati-driver-installer-8-11-x86.x86_64.run</h1>
+
+<p>1.3.2- Executar o instalador:</p>
+
+<h1>./ati-driver-installer-8-11-x86.x86_64.run</h1>
+
+<p>Pronto. Feitos estes passos, eu já conseguia subir meu servidor X numa boa.</p>
+
+<p>Com relação ao segundo problema. As teclas&hellip;</p>
+
+<p>2- As teclas especiais do teclado não respondem.</p>
+
+<p>2.1- A solução foi simples, bastou uma pequena busca na wiki do ArchLinux com uma dica de como corrigir isto no meu KDE4. Indo para as configurações do sistema e partindo para a configuração de &ldquo;Regional &amp; Idioma&rdquo;. Lá busque a aba &ldquo;Layout de Teclado&rdquo;.</p>
+
+<p>2.2- Nesta você precisará habilitar a opção &ldquo;Habilitar Layouts de Teclado&rdquo; e selecionar como Modelo de Teclado a opção &ldquo;Evdev-managed keyboard&rdquo;.</p>
+
+<p>Feito isto, as teclas voltaram a funcionar no meu caso bem como outras pessoas que também testaram.<img src="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif" alt="" /></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">kalib</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-12-02T11:03:00-03:00" pubdate data-updated="true">Dec 2<span>nd</span>, 2008</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/arch-linux/'>Arch Linux</a>, <a class='category' href='/blog/categories/linux/'>Linux</a>, <a class='category' href='/blog/categories/software-livre/'>software livre</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://kalib.github.io/blog/2008/12/02/resolvendo-alguns-problemas-causados-pelo-novo-xorg-no-arch/" data-via="" data-counturl="http://kalib.github.io/blog/2008/12/02/resolvendo-alguns-problemas-causados-pelo-novo-xorg-no-arch/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2008/11/28/santa-catarina-precisa-de-voce/" title="Previous Post: Santa Catarina precisa de você">&laquo; Santa Catarina precisa de você</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2008/12/08/recomendacao-bibliografica-do-mes-atlantis/" title="Next Post: Recomendação Bibliográfica do mês - ATLANTIS">Recomendação Bibliográfica do mês - ATLANTIS &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/07/30/hello-world/">Hello World</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/02/06/recomendacao-bibliografica-mago-e-vidro-a-torre-negra-iv/">Recomendação Bibliográfica: Mago E Vidro (a Torre Negra - IV)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/12/13/netstat-saiba-o-que-esta-rolando-em-seu-ambiente/">Netstat - Saiba O Que Está Rolando Em Seu Ambiente...</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/10/24/que-tal-ajudar-o-projeto-kde-com-apenas-1-minuto-do-seu-tempo/">Que Tal Ajudar O Projeto KDE Com Apenas 1 Minuto Do Seu Tempo?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/10/17/3c2ba-dia-livre-programacao-definida/">3º Dia Livre - Programação Definida!</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Marcelo Cavalcante Rocha - Kalib -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

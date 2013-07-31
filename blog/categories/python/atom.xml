@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Python | Hacking the damn life]]></title>
+  <link href="http://kalib.github.io/blog/categories/python/atom.xml" rel="self"/>
+  <link href="http://kalib.github.io/"/>
+  <updated>2013-07-30T21:36:09-03:00</updated>
+  <id>http://kalib.github.io/</id>
+  <author>
+    <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Feliz dia do Programador!]]></title>
+    <link href="http://kalib.github.io/blog/2011/09/13/feliz-dia-do-programador/"/>
+    <updated>2011-09-13T10:11:39-03:00</updated>
+    <id>http://kalib.github.io/blog/2011/09/13/feliz-dia-do-programador</id>
+    <content type="html"><![CDATA[<p><img src="http://www.media-freaks.com/wp-content/uploads/2008/09/programmer-260x300.jpg" alt="" /></p>
+
+<p><strong>S</strong>audações pessoal,</p>
+
+<p><strong>U</strong>m feliz dia do programador para todos aqueles que, profissionalmente, curiosamente ou mesmo por mera falta do que fazer escrevem ou já escreveram linhas de código!</p>
+
+<p><strong>E</strong>sta profissão que na maior parte das vezes não trá$ o retorno e$perado, o que apenas demonstra o quão apaixonados por linha de código são essas pessoas&hellip; e por problemas.</p>
+
+<p><strong>D</strong>esafiador&hellip;estressante&hellip;cansativo&hellip;divertido&hellip;prazeroso&hellip; Como em qualquer &ldquo;casamento&rdquo;&hellip; na alegria e na tristeza!</p>
+
+<p><img src="http://www.danielimamura.com.br/wp-content/uploads/2010/09/cartoonvidaprogramador.gif" alt="" /></p>
+
+<p><strong>O</strong>bviamente que eu não vou colocar em todas as centenas de linguagens de programação que existem.. portanto, se a sua linguagem favorita não foi homenageada abaixo, não fique triste. São muitas..difícil lembrar de todas.. O que vale é a intenção.</p>
+
+<p><img src="http://www.whitefang.com/wp-content/uploads/2010/03/Programming-Languages.jpg" alt="" /></p>
+
+<p><strong>Assembly</strong></p>
+
+<h6>#</h6>
+
+<p><em>variable:</em></p>
+
+<p><em>      .message db &ldquo;Feliz dia do Programador!$&rdquo;</em></p>
+
+<p><em>code:</em></p>
+
+<p><em>      mov ah, 9</em></p>
+
+<p><em>      mov dx, offset .message</em></p>
+
+<p><em>      int 0x21</em></p>
+
+<p><em>      ret</em></p>
+
+<p><strong>BASIC</strong></p>
+
+<h6>#</h6>
+
+<p><em>PRINT &ldquo;Feliz dia do Programador!</em></p>
+
+<p><strong>C</strong></p>
+
+<h6>#</h6>
+
+<p><em># include &lt;stdio.h></em></p>
+
+<p><em>int main(void)</em></p>
+
+<p><em>{</em></p>
+
+<p><em>       printf (&ldquo;Feliz dia do Programador!&rdquo;);</em></p>
+
+<p><em>       return 0;</em></p>
+
+<p><em>}</em></p>
+
+<p><strong>C++</strong>
+<em>##############</em></p>
+
+<p><em># include <iostream></em></p>
+
+<p><em>int main()</em></p>
+
+<p><em>{</em></p>
+
+<p><em>         std::cout &lt;&lt; &ldquo;Feliz dia do Programador!&rdquo; &lt;&lt; std::endl;</em></p>
+
+<p><em>         return 0;</em></p>
+
+<p><em>}</em></p>
+
+<p><strong>Cliper</strong></p>
+
+<h6>#</h6>
+
+<p><em>? &ldquo;Feliz dia do Programador!&rdquo;</em></p>
+
+<p><strong>Delphi</strong></p>
+
+<h6>#</h6>
+
+<p><em>Program FelizDia;</em></p>
+
+<p><em>{APPTYPE CONSOLE}</em></p>
+
+<p><em>begin</em></p>
+
+<p><em>      WriteLn(&lsquo;Feliz dia do Programador!&rsquo;);</em></p>
+
+<p><em>end.</em></p>
+
+<p><strong>Go</strong></p>
+
+<h6>#</h6>
+
+<p><em>package main</em></p>
+
+<p><em>import &ldquo;fmt&rdquo;</em></p>
+
+<p><em>func main() {</em></p>
+
+<p><em>       fmt.Printf(&ldquo;Feliz dia do Programador! \n&rdquo;)</em></p>
+
+<p><em>}</em></p>
+
+<p><strong>Java</strong></p>
+
+<h6>#</h6>
+
+<p><em>public class FelizDia {</em></p>
+
+<p><em>       public static void main(String[] args) {</em></p>
+
+<p><em>                 System.out.println(&ldquo;Feliz dia do Programador!&rdquo;);</em></p>
+
+<p><em>       }</em></p>
+
+<p><em>}</em></p>
+
+<p><strong>Pascal</strong></p>
+
+<h6>#</h6>
+
+<p><em>program FelizDia(output);</em></p>
+
+<p><em>begin</em></p>
+
+<p><em>       WriteLn(&lsquo;Feliz dia do Programador!&rsquo;);</em></p>
+
+<p><em>end</em></p>
+
+<p><strong>Perl</strong></p>
+
+<h6>#</h6>
+
+<p><em>print &ldquo;Feliz dia do Programador!&rdquo;;</em></p>
+
+<p><strong>PHP</strong></p>
+
+<h6>#</h6>
+
+<p><em>&lt;?php</em></p>
+
+<p><em>     echo &ldquo;Feliz dia do Programador!&rdquo;;</em></p>
+
+<p><em>?></em></p>
+
+<p><strong>Python</strong></p>
+
+<h6>#</h6>
+
+<p><em>print(&ldquo;Feliz dia do Programador!&rdquo;)</em></p>
+
+<p><strong>Ruby</strong></p>
+
+<h6>#</h6>
+
+<p><em>puts &ldquo;Feliz dia do Programador!&rdquo;</em></p>
+
+<p><strong>Shell Script</strong></p>
+
+<h6>#</h6>
+
+<p><em>echo &lsquo;Feliz dia do Programador!&rsquo;</em></p>
+
+<p><em>SQL</em></p>
+
+<h6>#</h6>
+
+<p><em>select &lsquo;Feliz dia do Programador!&rsquo;;</em></p>
+
+<p><strong>A</strong>braço!</p>
+
+<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[III Pylestras - Neste Sábado]]></title>
+    <link href="http://kalib.github.io/blog/2011/03/24/iii-pylestras-neste-sabado/"/>
+    <updated>2011-03-24T14:19:40-03:00</updated>
+    <id>http://kalib.github.io/blog/2011/03/24/iii-pylestras-neste-sabado</id>
+    <content type="html"><![CDATA[<p><img src="http://pylestras.appspot.com/static/img/python-logo.gif" alt="" /></p>
+
+<p><strong>G</strong>ostaria de lembrar a todos os interessados que amanhã teremos o <a href="http://pylestras.appspot.com/">III Pylestras</a> aqui em Fortaleza.</p>
+
+<p><strong>S</strong>e você não faz ideia sobre o que seja Python ou sabe que é uma linguagem de programação mas não conhece maiores detalhes sobre a mesma, recomendo a leitura destes links bem como sua participação no evento, que com certeza será bem interessante.</p>
+
+<p><a href="http://marcelocavalcante.net/portal/2008/11/24/the-zen-of-python/">The Zen Of Phyton</a></p>
+
+<p><a href="http://marcelocavalcante.net/portal/2008/11/20/porque-python/">Porque Python?</a></p>
+
+<p><a href="http://marcelocavalcante.net/portal/2009/11/21/porque-escolhi-python-python-para-sysadmins/">Porque escolhi Python &ndash; Python para SysAdmins</a></p>
+
+<p><strong>O</strong> evento consiste em 4 palestras conforme apresentadas abaixo:</p>
+
+<ul>
+<li><p>Pyoquê?</p></li>
+<li><p>That n00b is behaving like a bloody git</p></li>
+<li><p>Não desperdice seu tempo, use Django extensions</p></li>
+<li><p>SQLAlchemy &ndash; Desenvolvendo uma aplicação com Python</p></li>
+</ul>
+
+
+<p><strong>O</strong> evento acontecerá na Faculdade Farias Brito no horário entre 8:00 e 12:00.</p>
+
+<p><a href="http://www.pythonedjango.com.br/"><img src="http://pylestras.appspot.com/static/img/pythonedjango.gif" alt="" /></a></p>
+
+<p><img src="http://pylestras.appspot.com/static/img/logo_pugce.png" alt="" /></p>
+
+<p><strong>A</strong>lém das palestras o evento contará com um sorteio do livro Python e Django &ndash; Desenvolvimento Ágil de Aplicações Web.</p>
+
+<p><strong>O</strong> evento está sendo organizado pelo pessoal do <a href="http://pug-ce.python.org.br/sobre/">PUG-CE</a> (Python User Group Ceará).</p>
+
+<p><strong>P</strong>ara maiores detalhes sobre o evento, visite a página: <a href="http://pylestras.appspot.com/">Aqui!</a></p>
+
+<p><strong>A</strong>braços!</p>
+
+<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Amanhã - II Pylestras - Python User Group Ceará]]></title>
+    <link href="http://kalib.github.io/blog/2011/02/25/amanha-ii-pylestras-python-user-group-ceara/"/>
+    <updated>2011-02-25T08:38:02-03:00</updated>
+    <id>http://kalib.github.io/blog/2011/02/25/amanha-ii-pylestras-python-user-group-ceara</id>
+    <content type="html"><![CDATA[<p><img src="http://pylestras.appspot.com/static/img/python-logo.gif" alt="" /></p>
+
+<p><strong>G</strong>ostaria de lembrar a todos os interessados que amanhã teremos o <a href="http://pylestras.appspot.com/">II Pylestras</a> aqui em Fortaleza.</p>
+
+<p>Se você não faz ideia sobre o que seja Python ou sabe que é uma linguagem de programação mas não conhece maiores detalhes sobre a mesma, recomendo a leitura destes links bem como sua participação no evento, que com certeza será bem interessante.</p>
+
+<p><a href="http://marcelocavalcante.net/portal/2008/11/24/the-zen-of-python/">The Zen Of Phyton</a></p>
+
+<p><a href="http://marcelocavalcante.net/portal/2008/11/20/porque-python/">Porque Python?</a></p>
+
+<p><a href="http://marcelocavalcante.net/portal/2009/11/21/porque-escolhi-python-python-para-sysadmins/">Porque escolhi Python &ndash; Python para SysAdmins</a></p>
+
+<p><strong>O</strong> evento consiste em 3 palestras conforme apresentadas abaixo:</p>
+
+<p><em>* Testes com framework Django/Python com data factory</em>
+_ * Arduino: Soluções para um mundo moderno<em>
+_ * Técnicas para preparação e desenvolvimento de sites com Django</em></p>
+
+<p><strong>O</strong> evento acontecerá na <a href="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=pt-BR&amp;geocode=&amp;q=Faculdade+7+de+Setembro,+Fortaleza+-+Cear%C3%A1,+Brasil&amp;aq=2&amp;sll=37.926868,-95.712891&amp;sspn=30.000938,79.013672&amp;ie=UTF8&amp;hq=Faculdade+Sete+de+Setembro&amp;hnear=Faculdade+Sete+de+Setembro+-+Rua+Almirante+Maximiano+da+Fonseca,+1395+-+Eng.+Luciano+Cavalcante,+Fortaleza+-+Cear%C3%A1,+60811-020,+Brasil&amp;z=14">Fa7</a> (Faculdade 7 de Setembro) no horário entre 8:30 e 12:00.</p>
+
+<p><a href="http://www.pythonedjango.com.br/"><img src="http://pylestras.appspot.com/static/img/pythonedjango.gif" alt="" /></a></p>
+
+<p><img src="http://pylestras.appspot.com/static/img/logo_pugce.png" alt="" /></p>
+
+<p><strong>A</strong>lém das palestras o evento contará com um sorteio do livro Python e Django &ndash; Desenvolvimento Ágil de Aplicações Web.</p>
+
+<p><strong>O</strong> evento está sendo organizado pelo pessoal do <a href="http://pug-ce.python.org.br/sobre/">PUG-CE</a> (Python User Group Ceará).</p>
+
+<p><strong>P</strong>ara maiores detalhes sobre o evento, visite a página e faça sua <strong>inscrição</strong>: <a href="http://pylestras.appspot.com/">Aqui!</a></p>
+
+<p><strong>A</strong>braços!</p>
+
+<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Porque escolhi Python? Python para SysAdmins!]]></title>
+    <link href="http://kalib.github.io/blog/2009/11/21/porque-escolhi-python-python-para-sysadmins/"/>
+    <updated>2009-11-21T10:12:42-03:00</updated>
+    <id>http://kalib.github.io/blog/2009/11/21/porque-escolhi-python-python-para-sysadmins</id>
+    <content type="html"><![CDATA[<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2009/11/python-logo-master-v3-trans.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/11/python-logo-master-v3-trans-300x101.png" alt="python-logo-master-v3-trans" /></a></p>
+
+<p><strong>S</strong>audações pessoal&hellip;</p>
+
+<p><strong>N</strong>ovamente vou dedicar um post para responder uma pergunta que me fizeram. Não é a primeira vez que alguém me pergunta algo e eu resolvo responder em forma de post. Algumas pessoas já me perguntaram o que me leva a preferir Python à outras linguagens de programação. Mas como, coinscidentemente, de ontem para hoje 3 pessoas me fizeram a mesma pergunta, resolvi responder em forma de post e poupar um pouco de saliva (¿dedo no teclado?) e não responder de forma mais completa para um ou outro.</p>
+
+<p><strong>A</strong>ntes de mais nada gostaria de informar que não sou programador. Trabalho na área de administração de sistemas, redes, segurança, etc, etc, etc, vulgo SysAdmin. Prazer. ;]</p>
+
+<p><strong>S</strong>e você é SysAdmin com certeza já esbarrou com algumas linguagens de script como Bash, Perl, dentre outras. Provavelmente até já trabalhou com algumas delas. Estas linguagens podem nos ajudar a resolver pequenos problemas bem como automatizar e agilizar tarefas cotidianas de forma a ganhar produtividade e perder menos tempo com aquilo, bem como evitar stress, tédio e fadiga fazendo tarefas mecânicas e repetitivas.</p>
+
+<p><strong>E</strong>stas linguagens são apenas ferramentas que podem ser utilizadas no dia-a-dia. Mas o que faz uma linguagem ser eficiente? Ela só pode ser considerada eficiente se puder lhe ajudar a ter o seu trabalho feito de uma forma mais produtiva e simples, certo?! Que tal Python dentro deste cenário?</p>
+
+<p><strong>A</strong> inevitável pergunta acaba aparecendo: O Python é melhor que Perl, Bash, Ruby ou qualquer outra linguagem?</p>
+
+<p><strong>E</strong>ste é o tipo de pergunta que eu não conseguiria responder. A complexidade empregada nesta pergunta impede uma resposta em poucas palavras, visto que a definição de &ldquo;melhor&rdquo; varia de acordo com o cenário, bem como os protagonistas envolvidos. Por conta disto, não direi que o Python é melhor ou pior do que outras linguagens, mas vou abordar alguns exemplos que demonstram que a mesma pode ser uma excelente escolha. (¿Escapei bem?)</p>
+
+<p><strong>C</strong>reio que o <strong>primeiro motivo</strong> que me leva a adotar Python é a simplicidade de seu código. Se uma linguagem não lhe permite aprender rapidamente e começar a escrever códigos para resolver seus problemas, a mesma acaba perdendo um pouco de credibilidade, certo? Lembrem-se que, como SysAdmin, não tenho tempo para ficar estudando livros e mais livros sobre uma ou outra linguagem. Apenas desejo resolver meu problema atual. Porque perder semanas ou meses estudando uma linguagem para somente então conseguir escrever algum código que realmente produza algo? Bem, o Python nos permite escrever scripts em horas, literalmente falando, ao invés de dias ou semanas. Se, como um SysAdmin, uma linguagem não lhe permite começar os estudos e escrever scripts imediatamente, você deveria realmente se questionar porque você deveria estudar ela.</p>
+
+<p><strong>M</strong>as de que me vale uma linguagem que me permite um rápido aprendizado, se a mesma não possui &ldquo;poder&rdquo;? Se a mesma não me permite realizar tarefas complexas e robustas? Bem, na verdade este é o <strong>segundo motivo</strong> pelo qual eu escolhi Python. Esta linguagem nos permite resolver problemas simples como analisar várias linhas de log e nos retirar apenas informações que nos sejam interessantes ou pertinentes gerando um relatório mais limpo e &ldquo;legível&rdquo; ao olho humano. Além de tarefas simples assim, o Python também vem sendo bastante utilizado para tarefas com maior grau de complexidade como análises de sequências genômicas, cálculos complexos de física, mecânica, mecatrônica, etc, sistemas web multithread ou mesmo pesadas análises estatísticas. Bom, se você é um SysAdmin, muito provavelmente você nunca precisará de nada disso, mas eu me sinto confortável em saber que estou estudando uma linguagem que me permitirá realizar tarefas mais complexas quando eu precisar. ;]</p>
+
+<p>[caption id=&ldquo;attachment_609&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;518&rdquo; caption=&ldquo;Respota: Criador do Python&rdquo;]<a href="http://marcelocavalcante.net/portal/wp-content/uploads/2009/11/PythonCartoon.jpg"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/11/PythonCartoon.jpg" alt="PythonCartoon" /></a>[/caption]</p>
+
+<p><strong>O</strong>k, Python me permite realizar até as tarefas complexas. Mas e a manutenção deste código. Como SysAdmin, não fico editando e revendo meus códigos todo dia. As vezes não entendemos nossos próprios códigos depois de alguns meses sem olhar para eles. O que eu queria dizer com aquela linha de código mesmo? O.o O Python foi criado com o intuito de possuir uma sintaxe simples e intuitiva, de forma que a manutenção de código se torna extremamente eficaz, mesmo por aqueles que não são os autores originais do código.  Mesmo depois de meses eu vou conseguir interpretar meu código e trabalhar nele. E esta foi a terceira razão pela qual eu escolhi Python, e que por sua vez está muito ligada à quarta razão.</p>
+
+<p><strong>O</strong><strong> quarto motivo</strong> pelo qual escolhi Python é a legibilidade do código e a forma como apenas batendo o olho podemos nos encontrar facilmente no código. O Python utiliza-se de espaços em branco para determinar onde começa ou termina um bloco de código. Esta forma de identação facilita muito a identificação de partes do código bem como o entendimento do mesmo.</p>
+
+<p><strong>É</strong> o bastante? Não para mim.</p>
+
+<p><strong>O quinto ponto</strong> na maestria do Python é o seu excelente suporte à Programação Orientada a Objetos (POO). Quando digo suporte à orientação a objetos, não me refiro à obrigação de utilizá-la. Você não precisa utilizar caso não deseje ou caso não se aplique em algum caso específico, mas é sempre bom ter em mãos este &ldquo;poder&rdquo; caso seja necessário, e é nestes casos que o Python mostra novamente uma enorme eficiência por conta da simplicidade com a qual a POO é tratada pelo Python.</p>
+
+<p><strong>A</strong>cho que não preciso citar que outro grande motivo pelo qual adotei o Python é o fato de ser uma linguagem 100% livre que conta com uma comunidade altamente atuante e participativa, certo?!</p>
+
+<p><strong>M</strong>as, creio que já falei demais por um post. Que tal um simples exemplo prático de simplicidade no código escrito em Python?</p>
+
+<p><strong>Q</strong>ue tal um simples script para servir de comparação entre, por exemplo, Bash, Perl e Python?</p>
+
+<p><strong>O</strong> seguinte script tem a função de apresentar todas as combinações possíveis de 1,2 e a,b.</p>
+
+<p><strong>E</strong>m <strong>Bash</strong> seria mais ou menos o seguinte:</p>
+
+<h1>!/bin/bash</h1>
+
+<p>for a in 1; do</p>
+
+<p>for b in a b; do</p>
+
+<p>echo &ldquo;$a&rdquo; &ldquo;$b&rdquo;</p>
+
+<p>done</p>
+
+<p>done</p>
+
+<p><strong>E</strong> como ficaria o mesmo em <strong>Perl</strong>?</p>
+
+<h1>!/usr/bin/perl</h1>
+
+<p>foreach $a (&lsquo;1&rsquo;, &lsquo;2&rsquo;) {</p>
+
+<p>foreach $b (&lsquo;a&rsquo;, &lsquo;b&rsquo;) {</p>
+
+<p>print &ldquo;$a $bn&rdquo;;</p>
+
+<p>}</p>
+
+<p>}</p>
+
+<p><strong>C</strong>omo podem ver, é apenas um loop comum. Vejamos agora o mesmo exemplo de loop utilizando-se um for escrito em <strong>Python</strong>:</p>
+
+<h1>!/usr/bin/env python</h1>
+
+<p>for a in [1, 2]:</p>
+
+<p>for b in [&lsquo;a&rsquo;, &lsquo;b&rsquo;]:</p>
+
+<p>print a,b</p>
+
+<p><strong>S</strong>imples, certo? Qual pareceu mais simples? (Se você não programa e não entende nada do que estou falando até aqui, segue uma dica: Vote no que utilizou uma quantidade menor de linhas de código! :p A propósito, porque você leu até aqui mesmo? o.O)</p>
+
+<p><strong>V</strong>ocê já deve estar cansad@ de ler, e eu de digitar, portanto vamos finalizar por aqui ok?!</p>
+
+<p><strong>E</strong>spero que experimente Python, caso ainda não o tenha feito, e descubra uma nova excelente ferramenta para o seu dia-a-dia.</p>
+
+<p><strong>C</strong>aso deseje mais informações sobre Python bem como suas vantagens, confira outros posts que fiz listados abaixo:</p>
+
+<p><a href="http://marcelocavalcante.net/portal/2008/11/20/porque-python/">1- Porque Python?</a></p>
+
+<p><a href="http://marcelocavalcante.net/portal/2009/03/23/pydev-preparando-o-eclipse-para-o-python/">2- Pydev: Preparando o Eclipse para o Python</a></p>
+
+<p><a href="http://marcelocavalcante.net/portal/2008/11/24/the-zen-of-python/">3- The Zen of Python</a></p>
+
+<p><strong>A</strong>braços</p>
+
+<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Python no Ceará? PythOnCeará!]]></title>
+    <link href="http://kalib.github.io/blog/2009/11/14/python-no-ceara-pythonceara/"/>
+    <updated>2009-11-14T08:42:44-03:00</updated>
+    <id>http://kalib.github.io/blog/2009/11/14/python-no-ceara-pythonceara</id>
+    <content type="html"><![CDATA[<p><a href="http://bit.ly/JpZFP"><img src="http://www.marcelocavalcante.net/banner728x90_3.png" alt="" /></a></p>
+
+<p><strong>B</strong>om Dia galera&hellip;</p>
+
+<p><strong>G</strong>ostaria de lhes lembrar que hoje, Sábado &ndash; 14 de Novembro, estará acontecendo o primeiro evento de Python do Ceará, PythOnCeará, organizado pela comunidade local de Python &ndash; Pug-CE.</p>
+
+<p><a href="http://www.marcelocavalcante.net/banner125x125_2.png"><img src="http://www.marcelocavalcante.net/banner125x125_2.png" alt="" /></a><strong>O</strong> evento promete ser um marco de startup para os pythonianos locais visto que será o degrau inicial para muitos outros eventos posteriores também organizados pela Pug-CE.</p>
+
+<p><strong>O</strong> evento será realizado na faculdade 7 Setembro &ndash; FA7 &ndash; e contará com 4 palestras de temas que envolvem tanto o usuário iniciante que não conhece python como ao usuário avançado.</p>
+
+<ul>
+<li>&ldquo;Por que python?!&rdquo; – Tiago Freire (@tiagofreire)</li>
+<li>&ldquo;Python para Web e Desktop&rdquo; – Alec Nascimento (@alecnascimento)</li>
+<li>&ldquo;Django tem ritmo!&rdquo; – Italo Maia (@italomaia)</li>
+<li>&ldquo;Sokoban com PyS60&rdquo; – Fábio Cerqueira (@fabiocerqueira)</li>
+</ul>
+
+
+<p><strong>C</strong>ada palestra terá duração de 50 minutos havendo uma pequena pausa para o coffee break. =]</p>
+
+<p><strong>R</strong>ecomendo que todos os interessados em conhecer um pouco mais sobre esta linguagem magnífica que é o Python compareça.</p>
+
+<p>Mais informações sobre o encontro:
+local: FA7, em frente a Unifor, sala 35
+horário: das 13:00 às 17:30
+dia: 14/11/09</p>
+
+<p><strong>A</strong>braços</p>
+
+<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
+]]></content>
+  </entry>
+  
+</feed>

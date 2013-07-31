@@ -1,0 +1,301 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Configurando a JRE para funcionar no *buntu 8.04 com firefox 3 / Configuring JRE on *buntu 8.04 to work with Firefox 3.0 - Hacking the damn life</title>
+  <meta name="author" content="Marcelo Cavalcante Rocha - Kalib">
+
+  
+  <meta name="description" content="Versão em Português BR / Portuguese Version Saudações galera.. Aqui segue uma rápida dica que poderá ajudar aqueles que, assim como eu, instalaram o &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://kalib.github.io/blog/2008/05/07/configurando-a-jre-para-funcionar-no-buntu-804-com-firefox-3-configuring-jre-on-buntu-804-to-work-with-firefox-30">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Hacking the damn life" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Hacking the damn life</a></h1>
+  
+    <h2>What if...</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:kalib.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Configurando a JRE Para Funcionar No *buntu 8.04 Com Firefox 3 / Configuring JRE on *buntu 8.04 to Work With Firefox 3.0</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-05-07T13:14:00-03:00" pubdate data-updated="true">May 7<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><h3></h3>
+
+<p><a href="http://2.bp.blogspot.com/_5kfJplBiYy0/SCHhSx0v4cI/AAAAAAAAACc/WAlMjjeTrlc/s1600-h/brazil.gif"><img src="http://2.bp.blogspot.com/_5kfJplBiYy0/SCHhSx0v4cI/AAAAAAAAACc/WAlMjjeTrlc/s320/brazil.gif" alt="" /></a>Versão em Português BR / Portuguese Version</p>
+
+<p>Saudações galera..</p>
+
+<p>Aqui segue uma rápida dica que poderá ajudar aqueles que, assim como eu, instalaram o *buntu 8.04 e perceberam que o mesmo possui o Firefox 3.0 em seus repositórios como o navegador padrão.</p>
+
+<p>Bom, ao tentar instalar, desde ontem, o plugin do java para poder acessar minha página do banco, encontrei uma solução bem simples depois de várias tentativas frustradas.</p>
+
+<p>Após tentar tudo que sempre utilizei como por exemplo baixar o pacote jre diretamente do site da sun, descompactar no diretório /usr/java (como sempre fiz por questão de organização), instalar e criar um link simbólico para o mesmo no diretório de plugins do Firefox, e mesmo assim não ter nenhum resultado concreto, pesquisei um pouco e achei uma solução bem mais simples e rápida.</p>
+
+<p>Basta descomentar as linhas referentes aos mirrors multiverse nos seus repositórios (/etc/apt/sources.list), dar um update (# aptitude update) e em seguida instalar os pacotes com o seguinte comando:</p>
+
+<h1>aptitude install sun-java6-jre sun-java6-plugin sun-java6-fonts</h1>
+
+<p>Feito isto reinicie o firefox e digite em sua barra de endereços:</p>
+
+<p>about:plugins</p>
+
+<p>Deverá agora constar em sua lista de plugins os referentes ao java. ;]</p>
+
+<p>Outro teste é digitar no seu console: $ java -version</p>
+
+<p>Você deverá ter um retorno similar a este:</p>
+
+<p>java version &ldquo;1.6.0_06&rdquo;</p>
+
+<p>Java&trade; SE Runtime Environment (build 1.6.0_06-b02)</p>
+
+<p>Java HotSpot&trade; Client VM (build 10.0-b22, mixed mode, sharing)</p>
+
+<p>Ou mesmo acessando alguma página que se utilize de java como o teclado virtual do Banco do Brasil por exemplo.</p>
+
+<p>;]</p>
+
+<p>Bom, espero ter ajudado com esta simples, porém eficiente dica.</p>
+
+<p>Abraços</p>
+
+<hr />
+
+<p><a href="http://3.bp.blogspot.com/_5kfJplBiYy0/SCHhxB0v4dI/AAAAAAAAACk/GLnUKyTOJcA/s1600-h/800px-Flag_of_Canada_svg.png"><img src="http://3.bp.blogspot.com/_5kfJplBiYy0/SCHhxB0v4dI/AAAAAAAAACk/GLnUKyTOJcA/s320/800px-Flag_of_Canada_svg.png" alt="" /></a>Versão em Inglês / English Version</p>
+
+<p>Hey Guys..</p>
+
+<p>Here I&rsquo;ll describe a simple and quickly way that can help those people who, like me, are trying to use *buntu 8.04 and have realized that it comes with Firefox 3.0 beta 5 on its repositories as the default web browser.</p>
+
+<p>Well, trying to install the java plugin since yesterday to access my bank account, I could find a simple way after some frustrated tries.</p>
+
+<p>After trying every ways i had always use, like for example downloading the jre package directly from the sun&rsquo;s website, install it and create a symbolic link at Firefox plugin&rsquo;s directory and have no positive answer, I decided to search on the web until realize that a simple aptitude&rsquo;s use could solve my problem and make it work correctly.</p>
+
+<p>All you have to do is uncomment (remove the # from the beggining of the line) the multiverse mirror&rsquo;s lines at your sources file (/etc/apt/sources.list). The next step is to make an upload on your mirrors and repositories (# aptitude update) and then install the necessary packages with the following line command:</p>
+
+<h1>aptitude install sun-java6-jre sun-java6-plugin sun-java6-fonts</h1>
+
+<p>It&rsquo;s done!</p>
+
+<p>Can&rsquo;t believe? Restart your Firefox and put the following command on your address bar:</p>
+
+<p>about:plugins</p>
+
+<p>You should find some lines describing your java plugin on the plugins page, like all your other plugins on Firefox.</p>
+
+<p>Another way to test and check it is typing the following command on a terminal or console:</p>
+
+<p>$ java -version</p>
+
+<p>You should receive some return like this:</p>
+
+<p>java version &ldquo;1.6.0_06&rdquo;</p>
+
+<p>Java&trade; SE Runtime Environment (build 1.6.0_06-b02)</p>
+
+<p>Java HotSpot&trade; Client VM (build 10.0-b22, mixed mode, sharing)</p>
+
+<p>Or, if you still not believing, you can try to access some website that uses java like some bank sites for example. ;]</p>
+
+<p>Well, i hope this text could help some of you guys.</p>
+
+<p>Take Care</p>
+
+<p><a href="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif"><img src="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif" alt="" /></a></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">kalib</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-05-07T13:14:00-03:00" pubdate data-updated="true">May 7<span>th</span>, 2008</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/java/'>Java</a>, <a class='category' href='/blog/categories/kubuntu/'>Kubuntu</a>, <a class='category' href='/blog/categories/linux/'>Linux</a>, <a class='category' href='/blog/categories/firefox/'>firefox</a>, <a class='category' href='/blog/categories/software-livre/'>software livre</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://kalib.github.io/blog/2008/05/07/configurando-a-jre-para-funcionar-no-buntu-804-com-firefox-3-configuring-jre-on-buntu-804-to-work-with-firefox-30/" data-via="" data-counturl="http://kalib.github.io/blog/2008/05/07/configurando-a-jre-para-funcionar-no-buntu-804-com-firefox-3-configuring-jre-on-buntu-804-to-work-with-firefox-30/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2008/05/03/vantagem-do-aptitude-sobre-o-apt-get/" title="Previous Post: Vantagem do Aptitude sobre o Apt-Get">&laquo; Vantagem do Aptitude sobre o Apt-Get</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2008/05/23/de-onde-vem-o-conceito-de-software-livre/" title="Next Post: De onde vem o conceito de Software Livre ?">De onde vem o conceito de Software Livre ? &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/07/30/hello-world/">Hello World</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/02/06/recomendacao-bibliografica-mago-e-vidro-a-torre-negra-iv/">Recomendação Bibliográfica: Mago E Vidro (a Torre Negra - IV)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/12/13/netstat-saiba-o-que-esta-rolando-em-seu-ambiente/">Netstat - Saiba O Que Está Rolando Em Seu Ambiente...</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/10/24/que-tal-ajudar-o-projeto-kde-com-apenas-1-minuto-do-seu-tempo/">Que Tal Ajudar O Projeto KDE Com Apenas 1 Minuto Do Seu Tempo?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/10/17/3c2ba-dia-livre-programacao-definida/">3º Dia Livre - Programação Definida!</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Marcelo Cavalcante Rocha - Kalib -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

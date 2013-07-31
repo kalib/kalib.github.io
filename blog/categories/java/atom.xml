@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Java | Hacking the damn life]]></title>
+  <link href="http://kalib.github.io/blog/categories/java/atom.xml" rel="self"/>
+  <link href="http://kalib.github.io/"/>
+  <updated>2013-07-30T21:36:09-03:00</updated>
+  <id>http://kalib.github.io/</id>
+  <author>
+    <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[3º Dia Livre - Programação Definida!]]></title>
+    <link href="http://kalib.github.io/blog/2011/10/17/3c2ba-dia-livre-programacao-definida/"/>
+    <updated>2011-10-17T09:26:54-03:00</updated>
+    <id>http://kalib.github.io/blog/2011/10/17/3c2ba-dia-livre-programacao-definida</id>
+    <content type="html"><![CDATA[<p><strong>N</strong>este fim de semana foi publicada a programação oficial do <strong><a href="http://www.dialivre.net/portal">3º Dia Livre</a></strong>, encontro para usuários, profissionais ou entusiastas do movimento de Software Livre no Ceará.</p>
+
+<p><strong>E</strong>sta 3ª edição contará com 4 palestras de temas bem diversificados como podem ver na grade abaixo:</p>
+
+<p>Horário</p>
+
+<p>Palestra</p>
+
+<p>Palestrante</p>
+
+<p>08:00
+&ndash; 08:10</p>
+
+<p>Abertura</p>
+
+<p>&ndash;</p>
+
+<p>08:10
+&ndash; 09:00</p>
+
+<p>CRUD Flex com Java</p>
+
+<p>Alessandro Moreira</p>
+
+<p>09:10
+&ndash; 10:00</p>
+
+<p>Gerenciando Nuvens Privadas com o Xen Cloud Platform</p>
+
+<p>Lorscheider Santiago</p>
+
+<p>10:10 &ndash; 11:00</p>
+
+<p>Gerenciando Projetos com Ferramentas Livres</p>
+
+<p>Paulo Cesar C. Branco</p>
+
+<p>11:10 &ndash; 12:00</p>
+
+<p>Arduino &ndash; Desenvolvendo com Hardware Livre</p>
+
+<p>Marcelo Melo</p>
+
+<p>&mdash;</p>
+
+<hr />
+
+<p>&ndash;</p>
+
+<p><strong>A</strong>inda não sabe o que é o Dia Livre? <strong><a href="http://www.dialivre.net/portal/?page_id=7">Clique aqui para conhecer!</a></strong></p>
+
+<p><strong>A</strong>s <strong>inscrições</strong> continuam abertas para esta 3ª edição que acontecerá no dia <strong>12 de Novembro</strong>, Sábado, na Faculdade Estácio FIC.</p>
+
+<p><strong>C</strong>lique <strong><a href="http://www.dialivre.net/portal/?page_id=8">aqui</a></strong> e faça sua inscrição gratuita.</p>
+
+<p><strong>A</strong>braços,</p>
+
+<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Feliz dia do Programador!]]></title>
+    <link href="http://kalib.github.io/blog/2011/09/13/feliz-dia-do-programador/"/>
+    <updated>2011-09-13T10:11:39-03:00</updated>
+    <id>http://kalib.github.io/blog/2011/09/13/feliz-dia-do-programador</id>
+    <content type="html"><![CDATA[<p><img src="http://www.media-freaks.com/wp-content/uploads/2008/09/programmer-260x300.jpg" alt="" /></p>
+
+<p><strong>S</strong>audações pessoal,</p>
+
+<p><strong>U</strong>m feliz dia do programador para todos aqueles que, profissionalmente, curiosamente ou mesmo por mera falta do que fazer escrevem ou já escreveram linhas de código!</p>
+
+<p><strong>E</strong>sta profissão que na maior parte das vezes não trá$ o retorno e$perado, o que apenas demonstra o quão apaixonados por linha de código são essas pessoas&hellip; e por problemas.</p>
+
+<p><strong>D</strong>esafiador&hellip;estressante&hellip;cansativo&hellip;divertido&hellip;prazeroso&hellip; Como em qualquer &ldquo;casamento&rdquo;&hellip; na alegria e na tristeza!</p>
+
+<p><img src="http://www.danielimamura.com.br/wp-content/uploads/2010/09/cartoonvidaprogramador.gif" alt="" /></p>
+
+<p><strong>O</strong>bviamente que eu não vou colocar em todas as centenas de linguagens de programação que existem.. portanto, se a sua linguagem favorita não foi homenageada abaixo, não fique triste. São muitas..difícil lembrar de todas.. O que vale é a intenção.</p>
+
+<p><img src="http://www.whitefang.com/wp-content/uploads/2010/03/Programming-Languages.jpg" alt="" /></p>
+
+<p><strong>Assembly</strong></p>
+
+<h6>#</h6>
+
+<p><em>variable:</em></p>
+
+<p><em>      .message db &ldquo;Feliz dia do Programador!$&rdquo;</em></p>
+
+<p><em>code:</em></p>
+
+<p><em>      mov ah, 9</em></p>
+
+<p><em>      mov dx, offset .message</em></p>
+
+<p><em>      int 0x21</em></p>
+
+<p><em>      ret</em></p>
+
+<p><strong>BASIC</strong></p>
+
+<h6>#</h6>
+
+<p><em>PRINT &ldquo;Feliz dia do Programador!</em></p>
+
+<p><strong>C</strong></p>
+
+<h6>#</h6>
+
+<p><em># include &lt;stdio.h></em></p>
+
+<p><em>int main(void)</em></p>
+
+<p><em>{</em></p>
+
+<p><em>       printf (&ldquo;Feliz dia do Programador!&rdquo;);</em></p>
+
+<p><em>       return 0;</em></p>
+
+<p><em>}</em></p>
+
+<p><strong>C++</strong>
+<em>##############</em></p>
+
+<p><em># include <iostream></em></p>
+
+<p><em>int main()</em></p>
+
+<p><em>{</em></p>
+
+<p><em>         std::cout &lt;&lt; &ldquo;Feliz dia do Programador!&rdquo; &lt;&lt; std::endl;</em></p>
+
+<p><em>         return 0;</em></p>
+
+<p><em>}</em></p>
+
+<p><strong>Cliper</strong></p>
+
+<h6>#</h6>
+
+<p><em>? &ldquo;Feliz dia do Programador!&rdquo;</em></p>
+
+<p><strong>Delphi</strong></p>
+
+<h6>#</h6>
+
+<p><em>Program FelizDia;</em></p>
+
+<p><em>{APPTYPE CONSOLE}</em></p>
+
+<p><em>begin</em></p>
+
+<p><em>      WriteLn(&lsquo;Feliz dia do Programador!&rsquo;);</em></p>
+
+<p><em>end.</em></p>
+
+<p><strong>Go</strong></p>
+
+<h6>#</h6>
+
+<p><em>package main</em></p>
+
+<p><em>import &ldquo;fmt&rdquo;</em></p>
+
+<p><em>func main() {</em></p>
+
+<p><em>       fmt.Printf(&ldquo;Feliz dia do Programador! \n&rdquo;)</em></p>
+
+<p><em>}</em></p>
+
+<p><strong>Java</strong></p>
+
+<h6>#</h6>
+
+<p><em>public class FelizDia {</em></p>
+
+<p><em>       public static void main(String[] args) {</em></p>
+
+<p><em>                 System.out.println(&ldquo;Feliz dia do Programador!&rdquo;);</em></p>
+
+<p><em>       }</em></p>
+
+<p><em>}</em></p>
+
+<p><strong>Pascal</strong></p>
+
+<h6>#</h6>
+
+<p><em>program FelizDia(output);</em></p>
+
+<p><em>begin</em></p>
+
+<p><em>       WriteLn(&lsquo;Feliz dia do Programador!&rsquo;);</em></p>
+
+<p><em>end</em></p>
+
+<p><strong>Perl</strong></p>
+
+<h6>#</h6>
+
+<p><em>print &ldquo;Feliz dia do Programador!&rdquo;;</em></p>
+
+<p><strong>PHP</strong></p>
+
+<h6>#</h6>
+
+<p><em>&lt;?php</em></p>
+
+<p><em>     echo &ldquo;Feliz dia do Programador!&rdquo;;</em></p>
+
+<p><em>?></em></p>
+
+<p><strong>Python</strong></p>
+
+<h6>#</h6>
+
+<p><em>print(&ldquo;Feliz dia do Programador!&rdquo;)</em></p>
+
+<p><strong>Ruby</strong></p>
+
+<h6>#</h6>
+
+<p><em>puts &ldquo;Feliz dia do Programador!&rdquo;</em></p>
+
+<p><strong>Shell Script</strong></p>
+
+<h6>#</h6>
+
+<p><em>echo &lsquo;Feliz dia do Programador!&rsquo;</em></p>
+
+<p><em>SQL</em></p>
+
+<h6>#</h6>
+
+<p><em>select &lsquo;Feliz dia do Programador!&rsquo;;</em></p>
+
+<p><strong>A</strong>braço!</p>
+
+<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Brute-force? O Dirb... DirBuster lhe ajuda a identificar vulnerabilidades em seu site]]></title>
+    <link href="http://kalib.github.io/blog/2011/02/15/brute-force-o-dirb-dirbuster-lhe-ajuda-a-identificar-vulnerabilidades-em-seu-site/"/>
+    <updated>2011-02-15T10:23:19-03:00</updated>
+    <id>http://kalib.github.io/blog/2011/02/15/brute-force-o-dirb-dirbuster-lhe-ajuda-a-identificar-vulnerabilidades-em-seu-site</id>
+    <content type="html"><![CDATA[<p><strong>B</strong>om, para quem não conhece nada sobre Brute-Force ou apenas ouviu falar vagamente mas não tem certeza sobre o que realmente é um ataque deste tipo, sugiro dar uma lida em meu último post, onde apresentei algumas informações sobre brute-force bem como uma ferramenta que podemos utilizar para testar nossos sites e verificar o quão vulneráveis eles estão a este tipo de ataque. Segue link para o mesmo:</p>
+
+<p><a href="http://marcelocavalcante.net/portal/2011/01/31/brute-force-o-dirb-lhe-ajuda-a-identificar-vulnerabilidades-em-seu-site/">Brute-Force? O Dirb lhe ajuda a identificar vulnerabilidade em seu site!</a></p>
+
+<p><strong>A</strong>gora que já conhecemos um pouco sobre as técnicas de brute-force e a ferramenta Dirb, que tal conhecer outra mais apresentável?</p>
+
+<p><strong>M</strong>e refiro ao <a href="http://www.owasp.org/index.php/DirBuster">DirBuster</a>. Uma aplicação multithread desenvolvida pelo <a href="http://www.owasp.org/">OWASP</a> (The Open Web Application Security Project) que tem como objetivo realizar brute-force em diretórios e nomes de arquivos na web. Assim como o Dirb, o DirBuster trabalha em cima de dicionários ou listas. Ao todo ele trás 9 listas que podem ser utilizadas para nossas varreduras e testes. Como todas as suas listas foram criadas na unha, após exaustívas pesquisas e buscas na web por nomes mais utilizados para arquivos e diretórios em servidores web, o DirBuster mostra-se extremamente efetivo para este tipo de atividade conseguindo encontrar até mesmo os arquivos mais ocultos e escondidos.</p>
+
+<p><strong>M</strong>as se você não ficar satisfeito, <del>nós garantimos a devolução do seu dinheiro</del>, com apenas utilizar o modelo de dicionários, o DirBuster ainda lhe possibilita o ataque de brute-force mais purista. Tentativa e erro com combinações possíveis de caracteres. Claro, se você tem muito poder de processamento e tempo sobrando, boa sorte. ;]</p>
+
+<p><strong>L</strong>egal Kalib, quer dizer que agora posso sair invadindo sites?</p>
+
+<p><del>o.O Como diria o Chaves: Ai que burrrrroooo.. dá zero pra ele&hellip;</del></p>
+
+<p><strong>N</strong>ão amigo. O meu intuito não é incentivar ou apresentar qualquer mecanismo ou técnica para este tipo de atividade. O DirBuster não foi feito para este propósito e nem conseguirá efetuar isto. Ele não fará nenhum tipo de exploit em arquivos ou diretórios que ele encontre. O DirBuster serve exatamente para identificar possíveis alvos para estes tipos de ataque, o que nos permite agir de forma corretiva ou preventiva em nossos servidores web. ;]</p>
+
+<p><strong>C</strong>hega de lenga lenga.. vamos ao que interessa!</p>
+
+<p><strong>C</strong>omo instalar?</p>
+
+<p><img src="http://blog.leandroinacio.eti.br/wp-content/uploads/2009/10/arch-linux-logo1.png" alt="Arch Linux" />
+Bom, se você utiliza <a href="http://archlinux.org">Arch Linux</a>, pode pegar o pacote no AUR através do seguinte link(Lembrem-se de votar nele):</p>
+
+<p><a href="http://aur.archlinux.org/packages.php?ID=20809">http://aur.archlinux.org/packages.php?ID=20809</a></p>
+
+<p><strong>F</strong>eito isto, basta seguir o procedimento padrão para pacotes do AUR.</p>
+
+<blockquote><p>1- Descompactar: [kalib@tuxcaverna downloads]$ tar -xvzf dirbuster.tar.gz</p></blockquote>
+
+<p>2- Entrar no diretório dirbuster e gerar o pacote: [kalib@tuxcaverna dirbuster]$ makepkg</p>
+
+<p>3- Instalar o pacote: [kalib@tuxcaverna dirbuster]$ sudo pacman -U dirbuster-0.12-1-x86_64.pkg.tar.xz</p>
+
+<p><strong>F</strong>eito. ;]</p>
+
+<p><strong>O</strong>utras distribuições? Não tenho certeza se o pessoal de outras distribuições empacotou o DirBuster, portanto provavelmente você vai precisar baixar o arquivo compactado do site oficial do projeto. Busquei tanto no Debian quanto no (K)Ubuntu 10.10 e em nenhum destes encontrei o DirBuster nos repositórios através do aptitude.</p>
+
+<p><strong>P</strong>ortanto se você não utiliza o Arch, segue link para download da ferramenta:</p>
+
+<p><a href="http://www.owasp.org/index.php/DirBuster#tab=Download">http://www.owasp.org/index.php/DirBuster#tab=Download</a></p>
+
+<p><strong>M</strong>as qual a cara do bicho?</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster8.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster8.png" alt="" /></a></p>
+
+<p><strong>C</strong>omo explicado antes, ele funciona parecido com o Dirb, porém em uma interface GUI (gráfica).</p>
+
+<p><strong>C</strong>omo podem ver, é uma interface simples e de fácil manuseio.</p>
+
+<p><strong>V</strong>amos aos pontos:</p>
+
+<p>1- No campo Target, você deverá inserir a URL que será alvo do seu brute-force de diretórios e arquivos web.</p>
+
+<p>2- Logo abaixo, vocẽ escolhe se deseja utilizar apenas GET ou HEAD &amp; GET.</p>
+
+<p>3- Agora é a vez de escolher quantas threads deseja utilizar. Quanto maior o número de threads, mais requisições simultâneas você estará utilizando. ;]</p>
+
+<p>4- Abaixo você deverá escolher o tipo de brute-force.</p>
+
+<ul>
+<li><p>Baseado em dicionários, neste caso você deverá escolher um dos dicionários que a ferramenta já lhe disponibiliza através do seguinte caminho: /opt/DirBuster/</p></li>
+<li><p>Baseado em brute-force puro. Neste caso você deverá escolher qual conjunto de caracteres deseja que sejam utilizados, quantidade mínima e máxima de caracteres por tentativa.</p></li>
+</ul>
+
+
+<p>5- Em seguida é a hora de escolher os filtros: Deseja fazer brute-force apenas em diretórios? Arquivos também? Modo recursivo? Extensões em branco? Diretório inicial para o scan? Que tipo de extensão?&hellip;</p>
+
+<p><strong>E</strong> como é o retorno que ele me dá?</p>
+
+<p><strong>B</strong>om, vou escolher meu alvo e vou utilizar 20 threads em simultâneo. Não vou deixar a ferramenta rodando por muito tempo pois estou apenas fazendo uma demonstração.</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster21.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster21.png" alt="" /></a></p>
+
+<p><strong>C</strong>omo podem ver, filtrei para que o brute-force comece no diretório raiz (/) e optei pela maior lista que o DirBuster possui como dicionário. Deixei rodando por cerca de 30 segundos e já tive o seguinte resultado.</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster3.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster3.png" alt="" /></a></p>
+
+<p><strong>A</strong> parte borrada no início da imagem não é um defeito. Vocês não pensaram que eu iria deixar exposto o alvo no qual fiz o teste, certo? No caso, optei pelo site de uma de nossas instituições de ensino. Bom, a imagem acima é um exemplo do retorno que consigo com a ferramenta. É a visão em Lista. Além dela você pode optar pela visão em árvore, que, como o nome informa, lhe trará a árvore de diretórios, sub-diretórios e arquivos que foram encontrados. Abaixo um exemplo da visão em árvore:</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster4.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster4.png" alt="" /></a></p>
+
+<p><strong>O</strong> resultado, mesmo deixando a ferramenta rodando por apenas 30 segundos, foi o esperado. Um espantoso caso de descuido com a segurança do site.</p>
+
+<p><strong>A</strong>lguns leves exemplos que me chamaram a atenção na lista que consegui:</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster5.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster5.png" alt="" /></a></p>
+
+<p><strong>U</strong>m diretório de administração exposto desta forma indicando que existe uma sessão do site com acesso permitido apenas para administradores. O que isso me leva a crer? Que quem conseguir acesso a esta sessão consegue manipular o sistema do site? O que nos leva a uma posterior análise da página index contida nele que possibilita uma tentativa de brute-force de login e senha? psssiiiuuuu&hellip; o.O</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster6.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster6.png" alt="" /></a>
+<strong> U</strong>m diretório para uploads de Arquivos? Que tal testar ele? Apenas usuários administradores possuem permissão de upload? Ou alunos conseguem fazer upload de fotos, trabalhos, por exemplo? De qualquer forma, isso me indica que existe a possibilidade de eu subir arquivos para o servidor deles. Que tal um script em php que me permitiria ter um console shell no servidor deles para inclusão, exclusão, edição, etc.. ? pssiiiiuuuu&hellip; o.O</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster7.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster7.png" alt="" /></a></p>
+
+<p><strong>P</strong>ode não ser nada.. mas também pode ser muita coisa.. O que um diretório chamado &ldquo;gerencia&rdquo; faz ali tão exposto e com um nome tão&hellip; tão&hellip; discreto? o.O psssiiiuuuuu</p>
+
+<p><strong>A</strong>cho que já conseguiram entender um pouco do que o DirBuster faz.</p>
+
+<p><strong>A</strong>braços!</p>
+
+<p><strong>H</strong>appy Hacking&hellip;</p>
+
+<p><strong>PS: Wrong developers! Never play security by obscurity!</strong></p>
+
+<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Que tal testar o Android em seu Linux?]]></title>
+    <link href="http://kalib.github.io/blog/2010/07/20/que-tal-testar-o-android-em-seu-linux/"/>
+    <updated>2010-07-20T14:29:41-03:00</updated>
+    <id>http://kalib.github.io/blog/2010/07/20/que-tal-testar-o-android-em-seu-linux</id>
+    <content type="html"><![CDATA[<p><strong>S</strong>e você é da área de tecnologia, com certeza já ouviu falar deste tal <a href="http://www.android.com/">Android</a> que vem ganhando cada vez mais notoriedade e mercado no mundo dos smartphones. Não ouviu falar? Sugiro que repense suas escolhas acadêmicas e/ou profissionais. Talvez não tenha feito a escolha certa. Atualize-se.</p>
+
+<p><strong>O</strong> fato é que o Android, como todos já sabemos, é um dos mais &ldquo;populares&rdquo; sistemas operacionais atuais para smartphones. Usei a palavra populares entre aspas pelo fato de ele ainda não ser muito utilizado, porém com certeza é muito citado. Desenvolvido inicialmente pela gigante <a href="http://www.google.com">Google</a>, passando a ser mantido posteriormente pela <a href="http://www.openhandsetalliance.com/">Open Handset Alliance</a>, o Android é um sistema operacional baseado no kernel Linux, permite que qualquer programador desenvolva uma aplicação em java, por exemplo, e controle o dispositivo através de bibliotecas desenvolvidas pela Google.</p>
+
+<p><strong>A</strong>penas recentemente o Android vem ganhando realmente mercado em smartphones e aparelhos genéricos, os famosos xing-lings ou MPx da vida.</p>
+
+<p><strong>E</strong> você? Pensava em testar este tal Android mas não pretendia comprar um smartphone para tal? O Google pensou em você e desenvolveu um emulador SDK para que você possa rodar o Android em sua máquina.</p>
+
+<p><strong>A</strong>qui estarei descrevendo o procedimento para instalação no Linux, porém não possui muita diferença e o processo pode ser facilmente adaptado no caso de usuários do OS X ou Windows.</p>
+
+<p><strong>A</strong>ntes de mais nada preciso informar que ele possui como requisito básico o <a href="http://www.java.com/pt_BR/">Java</a>. Se você não possui java instalado em sua máquina, esta é a hora de o instalar.</p>
+
+<p><strong>P</strong>ara começar, precisamos baixar o emulador SDK disponibilizado pelo google no link: <a href="http://developer.android.com/sdk/index.html">http://developer.android.com/sdk/index.html</a></p>
+
+<p><strong>N</strong>o meu caso, estarei trabalhando em cima da versão para Linux.</p>
+
+<p><strong>O</strong> arquivo baixado está compactado com a extensão .tgz e pode ser descompactado com o comando a seguir:</p>
+
+<p><em>[kalib@tuxcaverna android]$ tar -xvzf android-sdk_r06-linux_86.tgz</em></p>
+
+<p><strong>E</strong>le irá descompactar a pasta android-sdk-linux_86. Entre no diretório e repare que existe um sub-diretório chamado tools dentro dele. Você precisará rodar o executável  android que se encontra lá.</p>
+
+<p><em>[kalib@tuxcaverna tools]$ ./android</em></p>
+
+<p><strong>A</strong> tela a seguir lhe será apresentada.</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and01.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and01.png" alt="" /></a></p>
+
+<p><strong>A</strong>gora precisamos instalar o Android em si, portanto vamos começar vendo a lista de aplicativos disponíveis para instalação.</p>
+
+<p><strong>R</strong>epare que na lateral esquerda existem 5 abas. Vamos trabalhar por enquanto na aba <em>Available Packages</em>. Ao clicar nela, a seguinte tela lhe será apresentada:</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and02.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and02.png" alt="" /></a></p>
+
+<p><strong>C</strong>lique na seta que se encontra ao lado da opção _<a href="https://dl-ssl.google.com/android/repository/repository.xml_">https://dl-ssl.google.com/android/repository/repository.xml_</a></p>
+
+<p><strong>L</strong>he será exibida uma lista de aplicativos disponíveis para instalação, conforme imagem:</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and03.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and03.png" alt="" /></a></p>
+
+<p><strong>N</strong>o meu caso, vou selecionar apenas a versão 2.2 do Android. Mas, sinta-se livre para selecionar e instalar outras que estejam disponibilizadas.</p>
+
+<p><strong>U</strong>ma vez que eu tenha selecionado a box do SDK Platform Android 2.2, API 8, revision 2, basta clicar em <em>Install Selected</em>.</p>
+
+<p><strong>E</strong>le me apresenta uma janela de confirmação. Basta clicar em <em>Accept</em> e em seguida em <em>Install</em>.</p>
+
+<p><strong>S</strong>erá iniciado o download da(s) aplicação(ões) selecionada(s), conforme imagem abaixo.</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and04.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and04.png" alt="" /></a></p>
+
+<p><strong>A</strong>o concluir o download, a tela ficará aguardando que você clique em <strong>Close</strong>, como na imagem a seguir:</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and05.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and05.png" alt="" /></a></p>
+
+<p><strong>A</strong>pós isto, podemos ir para a aba <em>Installed Packages</em>. Lá veremos a lista do que instalamos. No meu caso, apenas o SDK Platform Android 2.2, API 8, revision 2, como na imagem a seguir:</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and06.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and06.png" alt="" /></a></p>
+
+<p><strong>A</strong>gora vamos criar o dispositivo virtual. Clique na primeira aba, <em>Virtual Devices</em>, e em seguida clique no botão <em>New&hellip;</em></p>
+
+<p><strong>L</strong>he será apresentada uma tela pedindo as seguintes informações:</p>
+
+<p>Name: (Nome que deseja dar para este dispositivo virtual)</p>
+
+<p>Target: (Você deve apontar para a API desejada. No meu caso, apontei para o Android 2.2 que instalei)</p>
+
+<p>SD Card: (Aqui você define o tamanho que deseja para o arquivo que será o dispositivo virtual)</p>
+
+<p>Skin: (Nesta opção você poderá definir a resolução que deseja utilizar ou tamaho de tela)</p>
+
+<p>Hardware: (Opções para abstração ou comunicação com o seu hardware)</p>
+
+<p><strong>P</strong>ode preencher de forma parecida com o que eu fiz na imagem a seguir:</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and07.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and07.png" alt="" /></a></p>
+
+<p><strong>F</strong>eito isto, clicamos em <em>Create AVD</em>.</p>
+
+<p><strong>B</strong>ingo, seu dispositivo foi criado e está pronto para uso.</p>
+
+<p><strong>B</strong>asta clicar em cima dele e em seguida pressionar o botão <em>Start&hellip;</em></p>
+
+<p><strong>E</strong> o resultado? Nosso Android dando o seu primeiro boot.</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and081.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and081.png" alt="" /></a></p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and09.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and09.png" alt="" /></a></p>
+
+<p><strong>V</strong>ejamos o menu de principal&hellip;</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and13.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and13.png" alt="" /></a></p>
+
+<p><strong>Q</strong>ue tal testar o browser? Sim, pode testar. Ele já está conectado na internet, caso, obviamente, a sua máquina (hospedeira) esteja conectada. Eles já se comunicam por bridge.</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and10.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and10.png" alt="" /></a></p>
+
+<p><strong>N</strong>ão é que funciona mesmo?!</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and11.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and11.png" alt="" /></a>
+<a href="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and12.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and12.png" alt="" /></a></p>
+
+<p><strong>A</strong>braços!</p>
+
+<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Chromium suportando Java agora! ]]></title>
+    <link href="http://kalib.github.io/blog/2009/09/03/chromium-suportando-java-agora/"/>
+    <updated>2009-09-03T16:15:34-03:00</updated>
+    <id>http://kalib.github.io/blog/2009/09/03/chromium-suportando-java-agora</id>
+    <content type="html"><![CDATA[<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2009/09/javachromium.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/09/javachromium-252x300.png" alt="javachromium" /></a></p>
+
+<p><strong>É</strong> isso aí galera..</p>
+
+<p><strong>D</strong>epois de dominar 100% o plugin flash, chegou a vez do nosso amigo Java.</p>
+
+<p><strong>O</strong> chromium já está suportando o plugin java.</p>
+
+<p><strong>H</strong>oje posso, finalmente, dizer que o Chromium é meu navegador padrão. Nos últimos dias, a única coisa que eu não fazia no chromium era acessar aplicações que necessitem do java, como por exemplo o site do banco do brasil.</p>
+
+<p><strong>M</strong>as estas são sombras passadas&hellip;</p>
+
+<p><strong>F</strong>aça os testes você mesmo.</p>
+
+<p><strong>I</strong>nicialize seu chromium com a seguinte chamada&hellip;</p>
+
+<blockquote><p>$ chromium-browser &mdash;enable-plugins &mdash;enable-greasemonkey &mdash;enable-user-scripts</p></blockquote>
+
+<p>&hellip;e seja feliz com tudo que o chromium tem a lhe oferecer. ;]</p>
+
+<p>Para aqueles que ainda não conhecem ou não tem o chromium instalado, sugiro a leitura dos seguintes posts anteriores:</p>
+
+<p><strong><a href="http://marcelocavalcante.net/portal/2009/05/28/chromium-pronto-para-o-arch/">Aqui</a>
+<a href="http://marcelocavalcante.net/portal/2009/07/09/chromium-ganha-suporte-ao-flash-por-completo/">Aqui</a>
+<a href="http://marcelocavalcante.net/portal/2009/08/12/habilitando-plugins-no-chromium/">e Aqui </a></strong></p>
+
+<p><strong>A</strong>braços</p>
+
+<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
+]]></content>
+  </entry>
+  
+</feed>

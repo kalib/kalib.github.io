@@ -1,0 +1,351 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Rootkit! Esse bicho morde? Proteja-se! - Hacking the damn life</title>
+  <meta name="author" content="Marcelo Cavalcante Rocha - Kalib">
+
+  
+  <meta name="description" content="Você sabe o que é rootkit? Nunca vi, nem comi, eu só ouço falar! É um vírus? É um trojan? É um spyware? Não, é um rootkit mesmo. A verdade é que &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://kalib.github.io/blog/2011/03/16/rootkit-esse-bicho-morde-proteja-se">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Hacking the damn life" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Hacking the damn life</a></h1>
+  
+    <h2>What if...</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:kalib.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Rootkit! Esse Bicho Morde? Proteja-se!</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-03-16T16:25:27-03:00" pubdate data-updated="true">Mar 16<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/03/malware.jpg"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/03/malware.jpg" alt="" /></a></p>
+
+<p><strong>V</strong>ocê sabe o que é rootkit?</p>
+
+<p><strong>N</strong>unca vi, nem comi, eu só ouço falar!</p>
+
+<p><strong>É</strong> um vírus? É um trojan? É um spyware? Não, é um rootkit mesmo.</p>
+
+<p><strong>A</strong> verdade é que ainda não existe um consenso em relação ao que o rootkit é de fato. Muitos dizem que é um tipo de vírus, alguns dizem que é um trojan, como você chamaria? Eu prefiro chamar de malware, que, ao pé da letra, seria um termo utilizado para algum aplicativo contendo código malicioso. o.O Acho que seria um meio termo aceitável para que possamos utilizar como base.</p>
+
+<p><strong>M</strong>as esse bicho morde? É de comer?</p>
+
+<p><strong>B</strong>om, em tese um Rootkit é um tipo de malware, como expliquei acima, cuja principal intenção é se camuflar, impedindo que seu código seja encontrado por qualquer antivírus.</p>
+
+<p><strong>T</strong>eoricamente, é exatamente isto que ele tenta fazer. Passar despercebido. De fato a grande maioria dos antivírus não são capazes de rastrear Rootkits justamente por conta do seu comportamento. É aí que surgiram ferramentas especializadas neste tipo de busca. Alguns antivírus, os mais caros, já agregam excelentes ferramentas para buscar rootkits. Mas, como eles conseguem se camuflar tão bem?</p>
+
+<p><strong>E</strong>stas aplicações, rootkits, têm a capacidade de interceptar as solicitações feitas ao sistema operacional, podendo alterar o seu resultado.</p>
+
+<p><strong>I</strong>magine que você está utilizando sua máquina e seu sistema operacional solicita a leitura ou abertura de um determinado arquivo, podendo ser a seu mando ou mesmo do antivírus, por exemplo, o rootkit intercepta os dados que são requisitados e faz uma filtragem dessa informação, deixando passar apenas o que ele deseja, ou seja, código não infectado. E o que acontece? O antivírus ou qualquer outra ferramenta ficam impossibilitadas de encontrar o arquivo malicioso ou o código, dependendo do caso.</p>
+
+<p><strong>N</strong>ão é incomum encontrar o Rootkit como não apenas uma aplicação, mas um conjunto de aplicações ou, como também chamamos, toolkit.</p>
+
+<p><strong>R</strong>esumidamente poderíamos dizer que é um programa com código malicioso que busca se esconder de softwares de segurança e do usuário utilizando diversas técnicas avançadas de programação para tal.</p>
+
+<p><strong>G</strong>eralmente escondem suas chaves nos registros do sistema operacional e escondem seus processos no gerenciador de tarefas, o que torna uma missão quase impossível para um usuário identificar por conta própria. Outra prática comum de quem escreve rootkits é fazer com que eles se escondam em drivers de hardware, que são arquivos de sistema fundamentais para que o sistema operacional funcione corretamente com seus dispositivos.</p>
+
+<p><strong>O</strong> nome RootKit é por conta da função para a qual o mesmo é desenvolvido. Primeiramente ele é um kit de funcionalidades e códigos maliciosos cujo objetivo é se infiltrar nos sistemas de forma silenciosa e despercebida, geralmente liberando um  *backdoor para que o invasor possa posteriormente acessar o sistema infectado com privilégios de super usuário ou usuário administrador (root).</p>
+
+<p><strong>P</strong>ara quem nunca ouviu falar em backdoors, a explicação pode ter parecido um tanto quanto confusa, portanto aqui vai a nota de rodapé: Backdoor é, assim como na tradução ao pé da letra, uma porta dos fundos. Uma falha de segurança intencional que possibilita a invasão do seu sistema de forma que o invasor possa ter este acesso e controle com um mínimo de trabalho.</p>
+
+<p><strong>S</strong>em mais papo furado, vamos conhecer algumas ferramentas que buscam rootkits em seu Linux.</p>
+
+<p><img src="http://aboutonlinetips.com/wp-content/uploads/2008/11/picture-rootkit.png" alt="" /></p>
+
+<p><strong>RKHUNTER</strong></p>
+
+<p><strong>A</strong> primeira ferramenta que vou apresentar se chama rkhunter, que é a minha favorita.</p>
+
+<p><strong>S</strong>e, assim como eu, você for usuário do <a href="http://archlinux.org">Arch Linux</a>, poderá encontrar o rkhunter no <a href="http://aur.archlinux.org">AUR</a> através <a href="http://aur.archlinux.org/packages.php?ID=25940">deste link</a>.</p>
+
+<p><strong>A</strong> instalação é simples e segue o padrão de qualquer instalação a partir do AUR, conforme passos abaixo:</p>
+
+<p><strong>1-</strong> Descompacte o arquivo:</p>
+
+<p>[kalib@tuxcaverna downloads]$ tar -xvzf rkhunter.tar.gz</p>
+
+<p><strong>2-</strong> Acesse o diretório criado:</p>
+
+<p>[kalib@tuxcaverna downloads]$ cd rkhunter/</p>
+
+<p><strong>3-</strong> Execute o PKGBUILD para criação do pacote em si:</p>
+
+<p>[kalib@tuxcaverna rkhunter]$ makepkg</p>
+
+<p><strong>4-</strong> Com o pacote criado, basta instalar:</p>
+
+<p>[kalib@tuxcaverna rkhunter]$ sudo pacman -U rkhunter-1.3.8-1-any.pkg.tar.xz</p>
+
+<p><strong>F</strong>eito.</p>
+
+<p><strong>S</strong>eu rkhunter está pronto para ser utilizado, mas como toda e qualquer aplicação de varredura, como antivírus, por exemplo, é sempre recomendado atualizar sua base de dados antes de iniciar a busca, portanto digite o seguinte para atualizar a base com as propriedades dos arquivos existentes:</p>
+
+<h1>rkhunter &mdash;propupd</h1>
+
+<p><strong>E</strong>m seguida é a hora de atualizar a base de dados do rkhunter em si:</p>
+
+<h1>rkhunter &mdash;update</h1>
+
+<p><strong>A</strong>gora, vamos vasculhar o sistema:</p>
+
+<h1>rkhunter -c</h1>
+
+<p><strong>V</strong>ocê terá uma listagem das checagens parecida com esta:</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/03/rkhunter11.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/03/rkhunter11.png" alt="" /></a></p>
+
+<p><strong>P</strong>erceba que é tudo apresentado de forma simples e objetiva.</p>
+
+<p><strong>N</strong>o final da checagem ele gera um arquivo onde ele armazena todas as informações que ele registrou bem como lhe aponta uma descrição dos resultados da busca.</p>
+
+<p><strong>TIGER</strong></p>
+
+<p><strong>E</strong>sta será a nossa segunda ferramenta.</p>
+
+<p><strong>O</strong> Tiger é uma ferramenta de segurança que não pensa tanto na aparência, portanto não espere uma tela tão amigável e colorida quanto a do rkhunter. ;]</p>
+
+<p><strong>A</strong> instalação da mesma no Arch Linux também se dá através do pacote do AUR que pode ser encontra <a href="http://aur.archlinux.org/packages.php?ID=1573">neste link</a>.</p>
+
+<p><strong>A</strong> instalação segue o mesmo procedimento que utilizamos no rkhunter, conforme abaixo:</p>
+
+<p>[kalib@tuxcaverna downloads]$ tar -xvzf tiger.tar.gz</p>
+
+<p>[kalib@tuxcaverna downloads]$ cd tiger/</p>
+
+<p>[kalib@tuxcaverna tiger]$ makepkg</p>
+
+<p>[kalib@tuxcaverna tiger]$ sudo pacman -U tiger-3.2.3-2-x86_64.pkg.tar.xz</p>
+
+<p><strong>F</strong>inalizado. Para executar, basta rodar:</p>
+
+<h1>tiger</h1>
+
+<p><strong>E</strong>le iniciará a busca e lhe trará uma interface como esta:</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/03/rkhunter2.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/03/rkhunter2.png" alt="" /></a></p>
+
+<p><strong>A</strong>ssim como o rkhunter, no ato de finalização ele irá gerar um arquivo com o relatório da checagem. Ele lhe informará o caminho do arquivo, mas provavelmente será em /var/log/tiger/.</p>
+
+<p><strong>CHKROOTKIT</strong></p>
+
+<p><strong>A</strong>gora vamos para a terceira e última ferramenta deste post.</p>
+
+<p><strong>P</strong>ara usuário Arch, desta vez a instalação é ainda mais simples do que as duas anteriores, visto que o pacote já se encontra nos repositórios do pacman.</p>
+
+<p>[kalib@tuxcaverna ~]$ sudo pacman -S chkrootkit</p>
+
+<p><strong>I</strong>nstalado!</p>
+
+<p><strong>A</strong>ssim como o Tiger, o chkroot também possui uma interface simples sem cores ou enfeites, conforme pode ser visto abaixo:</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/03/rkhunter3.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/03/rkhunter3.png" alt="" /></a></p>
+
+<p><strong>A</strong>pesar de não ser colorida e enfeitada, é uma interface bem simples e de fácil entendimento, concordam?</p>
+
+<p><strong>C</strong>laro, não existem apenas estas ferramentas para busca de rootkits e códigos maliciosos, mas levaria muito tempo para escrever sobre todos ou ao menos a maioria.</p>
+
+<p><strong>N</strong>o mais, acho que já é um bom começo para um entendimento básico sobre o que é esse tal Rootkit e o que esse bicho faz.</p>
+
+<p><strong>C</strong>om estas ferramentas as chances de algum rootkit passar despercebido em seu ambiente Linux já são bem limitadas.</p>
+
+<p><strong>A</strong>braços!</p>
+
+<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">kalib</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-03-16T16:25:27-03:00" pubdate data-updated="true">Mar 16<span>th</span>, 2011</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/arch-linux/'>Arch Linux</a>, <a class='category' href='/blog/categories/impressoes/'>Impressões</a>, <a class='category' href='/blog/categories/linux/'>Linux</a>, <a class='category' href='/blog/categories/cultura-hacker/'>cultura hacker</a>, <a class='category' href='/blog/categories/redes/'>redes</a>, <a class='category' href='/blog/categories/seguranca/'>segurança</a>, <a class='category' href='/blog/categories/software-livre/'>software livre</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://kalib.github.io/blog/2011/03/16/rootkit-esse-bicho-morde-proteja-se/" data-via="" data-counturl="http://kalib.github.io/blog/2011/03/16/rootkit-esse-bicho-morde-proteja-se/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/03/10/flisol-fortaleza-2011-inscricoes-e-chamada-de-trabalhos/" title="Previous Post: Flisol Fortaleza 2011 - Inscrições e Chamada de Trabalhos">&laquo; Flisol Fortaleza 2011 - Inscrições e Chamada de Trabalhos</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2011/03/24/iii-pylestras-neste-sabado/" title="Next Post: III Pylestras - Neste Sábado">III Pylestras - Neste Sábado &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/07/30/hello-world/">Hello World</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/02/06/recomendacao-bibliografica-mago-e-vidro-a-torre-negra-iv/">Recomendação Bibliográfica: Mago E Vidro (a Torre Negra - IV)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/12/13/netstat-saiba-o-que-esta-rolando-em-seu-ambiente/">Netstat - Saiba O Que Está Rolando Em Seu Ambiente...</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/10/24/que-tal-ajudar-o-projeto-kde-com-apenas-1-minuto-do-seu-tempo/">Que Tal Ajudar O Projeto KDE Com Apenas 1 Minuto Do Seu Tempo?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/10/17/3c2ba-dia-livre-programacao-definida/">3º Dia Livre - Programação Definida!</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Marcelo Cavalcante Rocha - Kalib -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

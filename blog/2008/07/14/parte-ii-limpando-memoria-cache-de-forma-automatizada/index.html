@@ -1,0 +1,293 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Parte II - Limpando memória cache de forma automatizada - Hacking the damn life</title>
+  <meta name="author" content="Marcelo Cavalcante Rocha - Kalib">
+
+  
+  <meta name="description" content="Muitos me pediram por aqui ou mesmo por email para explicar como seria a implementação desta técnica de forma automatizada. Bom, utilizo isto para o &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://kalib.github.io/blog/2008/07/14/parte-ii-limpando-memoria-cache-de-forma-automatizada">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Hacking the damn life" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Hacking the damn life</a></h1>
+  
+    <h2>What if...</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:kalib.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Parte II - Limpando Memória Cache De Forma Automatizada</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-07-14T15:09:00-03:00" pubdate data-updated="true">Jul 14<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Muitos me pediram por aqui ou mesmo por email para explicar como seria a implementação desta técnica de forma automatizada.</p>
+
+<p>Bom, utilizo isto para o servidor que citei no artigo anterior, utilizado pelos nossos amigos desenvolvedores Java. ;] Nada pessoal eim?!</p>
+
+<p>Aqui precisaremos apenas de um mínimo de intimidade com shell script e um pouco de conhecimento sobre o agendamento de tarefas no linux através do cron.</p>
+
+<p>Mãos a obra&hellip;</p>
+
+<p>A missão: Uma vez que nossos amigos não conseguem trabalhar de forma harmônica com a alocação e desalocação de memória em nossos servidores, iremos agendar a limpeza de cache para todos os dias no começo do expediente (8:00) e após o almoço. Lembrando que este é apenas um exemplo, mas você pode adaptar os horários de acordo com sua real necessidade.</p>
+
+<p>Soldados Disponíveis: Shell Script e Cron</p>
+
+<p>Plano: Um pequeno e simples script em shell será executado nos dias e horários informados anteriormente de forma a fazer uma limpeza no cache.</p>
+
+<p>Execução:</p>
+
+<p>Primeiro criaremos o script que fará a ação de limpeza do cache. Para isso abra o editor de textos de sua preferência. Particularmente prefiro o vim, mas este pode ser substituido por qualquer outro.</p>
+
+<p>No seu corpo insira o seguinte conteúdo:</p>
+
+<blockquote><h1>!/bin/bash</h1></blockquote>
+
+<h1>limpando cache</h1>
+
+<blockquote><h1>o seguinte comando é o responsável pela limpeza</h1></blockquote>
+
+<p>echo 3 > /proc/sys/vm/drop_caches</p>
+
+<blockquote></blockquote>
+
+<p>Feito isto, salve o arquivo com o nome de limpacache.sh</p>
+
+<p>Sim, isto é tudo o que o seu script precisa. Com o script criado, você deverá agora lhe dar condições de execução. Utilize o seguinte comando:</p>
+
+<blockquote><h1>chmod a+x limpacache.sh</h1></blockquote>
+
+<p>Agora que ele está pronto e com permissão de execução, iremos agendar a execução do mesmo. No terminal digite:</p>
+
+<blockquote><h1>crontab -e</h1></blockquote>
+
+<p>Isto irá abrir um arquivo no qual você deverá fazer o agendamento de sua tarefa. No mesmo insira o seguinte conteúdo:</p>
+
+<blockquote><h1>mm HH DD MM DS tarefa</h1></blockquote>
+
+<p>00 08 * * * /usr/bin/scripts/limpacache.sh</p>
+
+<p>00 14 * * * /usr/bin/scripts/limpacache.sh</p>
+
+<blockquote></blockquote>
+
+<p>Ps: O caminho /etc/scripts/ precisa ser configurado de acordo com o caminho utilizado por você. ;]</p>
+
+<p>Pronto. Pode salvar e encerrar este aquivo.</p>
+
+<p>Traduzindo o comando as linhas do cron que utilizamos:</p>
+
+<p>mm: minutos</p>
+
+<p>HH: horas</p>
+
+<p>DD: dia</p>
+
+<p>MM: mês</p>
+
+<p>DS: dia da semana</p>
+
+<p>/usr/bin/scripts/limpacache.sh: tarefa a ser realizada</p>
+
+<p>Feito isto, o plano está concretizado. Seu script será executado todos os dias nestes dois horários.</p>
+
+<p>Sinta-se livre agora para customizar os dias e horários da maneira que for mais conveniente para você.</p>
+
+<p>Abraços</p>
+
+<p><a href="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif"><img src="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif" alt="" /></a></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">kalib</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-07-14T15:09:00-03:00" pubdate data-updated="true">Jul 14<span>th</span>, 2008</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/linux/'>Linux</a>, <a class='category' href='/blog/categories/redes/'>redes</a>, <a class='category' href='/blog/categories/software-livre/'>software livre</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://kalib.github.io/blog/2008/07/14/parte-ii-limpando-memoria-cache-de-forma-automatizada/" data-via="" data-counturl="http://kalib.github.io/blog/2008/07/14/parte-ii-limpando-memoria-cache-de-forma-automatizada/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2008/07/09/limpando-o-cache-de-forma-rapida/" title="Previous Post: Limpando o cache de forma rápida">&laquo; Limpando o cache de forma rápida</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2008/07/24/1-mes-de-arch-linux-meu-resultado-obtido/" title="Next Post: 1 Mês de Arch Linux - Meu resultado obtido">1 Mês de Arch Linux - Meu resultado obtido &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/07/30/hello-world/">Hello World</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/02/06/recomendacao-bibliografica-mago-e-vidro-a-torre-negra-iv/">Recomendação Bibliográfica: Mago E Vidro (a Torre Negra - IV)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/12/13/netstat-saiba-o-que-esta-rolando-em-seu-ambiente/">Netstat - Saiba O Que Está Rolando Em Seu Ambiente...</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/10/24/que-tal-ajudar-o-projeto-kde-com-apenas-1-minuto-do-seu-tempo/">Que Tal Ajudar O Projeto KDE Com Apenas 1 Minuto Do Seu Tempo?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/10/17/3c2ba-dia-livre-programacao-definida/">3º Dia Livre - Programação Definida!</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Marcelo Cavalcante Rocha - Kalib -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

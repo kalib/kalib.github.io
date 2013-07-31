@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Chromium | Hacking the damn life]]></title>
+  <link href="http://kalib.github.io/blog/categories/chromium/atom.xml" rel="self"/>
+  <link href="http://kalib.github.io/"/>
+  <updated>2013-07-30T21:36:09-03:00</updated>
+  <id>http://kalib.github.io/</id>
+  <author>
+    <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Chromium no [testing] do Arch Linux]]></title>
+    <link href="http://kalib.github.io/blog/2009/12/14/chromium-no-testing-do-arch-linux/"/>
+    <updated>2009-12-14T08:50:42-03:00</updated>
+    <id>http://kalib.github.io/blog/2009/12/14/chromium-no-testing-do-arch-linux</id>
+    <content type="html"><![CDATA[<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2009/08/chromium-browser.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/08/chromium-browser.png" alt="chromium-browser" /></a></p>
+
+<p><strong>S</strong>audações pessoal&hellip;</p>
+
+<p><strong>J</strong>á estava na hora eim?! Chromium passando para o repositório [testing] no Arch.</p>
+
+<p><strong>P</strong>ara quem já vem acompanhando este projeto desde seu início, tenho o prazer de anunciar esta novidade nos repositórios do Arch.</p>
+
+<p><strong>P</strong>or questões de segurança e estabilidade para os usuários como um todo, resolvemos manter também o pacote em nosso repositório nacional [archlinux-br] para evitar que os usuários do chromium tenham que habilitar o [testing] em seus sistemas correndo alguns riscos por pacotes pouco testados.</p>
+
+<p><strong>A</strong>ssim que o mesmo passar para repositórios mais confiáveis como o [extra], estaremos removendo do repositório nacional.</p>
+
+<p><strong>C</strong>om algumas mudanças nesta versão do pacote, não estamos mais utilizando o snapshot, mas sim a versão já considerada beta do próprio projeto chromium.</p>
+
+<p><strong>P</strong>ara os que já utilizam o repositório [archlinux-br] e já possuem o chromium instalado, basta mandar atualizar seu sistema normalmente com:</p>
+
+<p><em># pacman -Syu</em></p>
+
+<p><strong>P</strong>erceberá que o pacman informará que o chromium-snapshot precisará ser removido para a instalação do chromium. Podem confirmar sem medo algum. Ontem mesmo eu e <a href="http://matias.archlinux-br.org/">thotypous</a> realizamos os últimos testes neste sentido e tudo correrá bem.</p>
+
+<p><strong>P</strong>ara aqueles que ainda não utilizam o repositório [archlinux-br] e ainda não possuem o chromium instalado, a dica é a seguinte:</p>
+
+<p><strong>1-</strong> Habilite o repositório inserindo as seguintes linhas no arquivo /etc/pacman.conf:</p>
+
+<p>_[archlinux-br]
+Server = <a href="http://repo.archlinux-br.org/i686_">http://repo.archlinux-br.org/i686_</a></p>
+
+<p><strong>2-</strong> Atualize seus mirros e instale o chromium:</p>
+
+<p><em># pacman -Sy chromium</em></p>
+
+<p><strong>U</strong>ma terceira opção, indicada para os mais aventureiros, seria habilitar o repositório [testing]. Esta opção eu apenas recomendo para os que estão dispostos a ajudar mais diretamente no desenvolvimento do Arch e que desejem assumir alguns riscos de estabilidade, visto que muitos pacotes ali ainda se encontram em estado de teste. Neste caso, basta descomentar as linhas referente a ele no arquivo /etc/pacman.conf:</p>
+
+<p><em>[testing]
+Include = /etc/pacman.d/mirrorlist</em></p>
+
+<p><strong>F</strong>açam bom proveito pessoal. ;]</p>
+
+<p><strong>U</strong>sem com moderação.. :p
+<strong>A</strong>braços</p>
+
+<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Chromium suportando Java agora! ]]></title>
+    <link href="http://kalib.github.io/blog/2009/09/03/chromium-suportando-java-agora/"/>
+    <updated>2009-09-03T16:15:34-03:00</updated>
+    <id>http://kalib.github.io/blog/2009/09/03/chromium-suportando-java-agora</id>
+    <content type="html"><![CDATA[<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2009/09/javachromium.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/09/javachromium-252x300.png" alt="javachromium" /></a></p>
+
+<p><strong>É</strong> isso aí galera..</p>
+
+<p><strong>D</strong>epois de dominar 100% o plugin flash, chegou a vez do nosso amigo Java.</p>
+
+<p><strong>O</strong> chromium já está suportando o plugin java.</p>
+
+<p><strong>H</strong>oje posso, finalmente, dizer que o Chromium é meu navegador padrão. Nos últimos dias, a única coisa que eu não fazia no chromium era acessar aplicações que necessitem do java, como por exemplo o site do banco do brasil.</p>
+
+<p><strong>M</strong>as estas são sombras passadas&hellip;</p>
+
+<p><strong>F</strong>aça os testes você mesmo.</p>
+
+<p><strong>I</strong>nicialize seu chromium com a seguinte chamada&hellip;</p>
+
+<blockquote><p>$ chromium-browser &mdash;enable-plugins &mdash;enable-greasemonkey &mdash;enable-user-scripts</p></blockquote>
+
+<p>&hellip;e seja feliz com tudo que o chromium tem a lhe oferecer. ;]</p>
+
+<p>Para aqueles que ainda não conhecem ou não tem o chromium instalado, sugiro a leitura dos seguintes posts anteriores:</p>
+
+<p><strong><a href="http://marcelocavalcante.net/portal/2009/05/28/chromium-pronto-para-o-arch/">Aqui</a>
+<a href="http://marcelocavalcante.net/portal/2009/07/09/chromium-ganha-suporte-ao-flash-por-completo/">Aqui</a>
+<a href="http://marcelocavalcante.net/portal/2009/08/12/habilitando-plugins-no-chromium/">e Aqui </a></strong></p>
+
+<p><strong>A</strong>braços</p>
+
+<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Habilitando plugins no chromium]]></title>
+    <link href="http://kalib.github.io/blog/2009/08/12/habilitando-plugins-no-chromium/"/>
+    <updated>2009-08-12T09:55:34-03:00</updated>
+    <id>http://kalib.github.io/blog/2009/08/12/habilitando-plugins-no-chromium</id>
+    <content type="html"><![CDATA[<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2009/08/chromium-browser.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/08/chromium-browser-300x300.png" alt="chromium-browser" /></a><strong>T</strong>odos que visitam meu blog já devem estar cansados de saber que estou bastante atento ao projeto chromium e ajudando com o possível para o desenvolvimento e divulgação do mesmo.</p>
+
+<p><strong>B</strong>om, eu já havia notificado aqui o fato de que o chromium passou a ter suporte à plugins como o flash por exemplo. De fato ele já suporta os plugins, mas muitos estão me procurando para perguntar porque o chromium cortou o suporte aos plugins, visto que nas builds mais recentes do chromium o suporte parece ter sido cortado, visto que os plugins não estão funcionando a princípio.</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2009/08/shot_chromium.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/08/shot_chromium-300x187.png" alt="shot_chromium" /></a></p>
+
+<p><strong>M</strong>as, porque o meu funciona e o seu não?</p>
+
+<p><strong>N</strong>ão é mágica..nem feitiçaria.. Vamos à realidade.</p>
+
+<p><strong>O</strong> suporte do chromium aos plugins ainda não está 100% homologado, o que resulta em alguns bugs e falhas, podendo acarretar em uso excessivo de processamento ou outros recursos de sua máquina em alguns casos. Sabendo disso, o projeto chromium adotou a posição de não tornar o suporte à plugins uma opção &ldquo;default&rdquo;.</p>
+
+<p><strong>P</strong>ara utilizar os plugins em seu chromium você precisa iniciar o seu chromium com o seguinte parâmetro:</p>
+
+<p>$ chromium-browser &mdash;enable-plugins</p>
+
+<p><strong>L</strong>embrando que nestas novas builds do chromium não existe mais a necessidade de criar os links simbólicos para os plugins. Ele já detecta automaticamente os plugins que você tem instalados.</p>
+
+<p><strong>P</strong>ara testar, pode abrir o seguinte endereço ou mesmo acessar algo como o youtube:</p>
+
+<p>about:plugins</p>
+
+<p><strong>C</strong>aso você ainda não tenha o chromium instalado em sua máquina pode buscar informações na internet sobre como o fazer em sua distro. Caso use Archlinux, pode seguir os passos abaixo:</p>
+
+<p><strong>1-</strong> Adicione o repositório brasileiro em sua lista de mirrors. Adicione as seguintes linhas em seu arquivo /etc/pacman.conf :</p>
+
+<p>[archlinuxbr]
+Server = <a href="http://repo.archlinux-br.org/i686">http://repo.archlinux-br.org/i686</a></p>
+
+<p>ou</p>
+
+<p>[archlinuxbr]
+Server = <a href="http://repo.archlinux-br.org/x86_64">http://repo.archlinux-br.org/x86_64</a></p>
+
+<p><strong>2- </strong>Atualize seus mirrors e instale o chromium:</p>
+
+<h1>pacman -Sy</h1>
+
+<h1>pacman -S chromium-snapshot</h1>
+
+<p><strong>F</strong>eito!</p>
+
+<p><strong>B</strong>om proveito&hellip;</p>
+
+<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Chromium ganha suporte ao Flash por completo]]></title>
+    <link href="http://kalib.github.io/blog/2009/07/09/chromium-ganha-suporte-ao-flash-por-completo/"/>
+    <updated>2009-07-09T09:51:06-03:00</updated>
+    <id>http://kalib.github.io/blog/2009/07/09/chromium-ganha-suporte-ao-flash-por-completo</id>
+    <content type="html"><![CDATA[<p><strong>S</strong>audações pessoal..</p>
+
+<p><strong>E</strong>u já havia postado aqui a notícia sobre o lançamento do navegador Chromium para o Linux, bem como o fato de o mesmo se encontrar disponível em nosso repositório nacional do Arch Linux. Na ocasião o projeto chromium ainda era bem imaturo e não possuía nenhum suporte à plugins. Bom, as coisas estão mudando.</p>
+
+<p><strong>P</strong>ara quem ainda não sabe, Chromium é o projeto open source que serve de base para o já conhecido Chrome do Google.</p>
+
+<p><strong>O</strong>ntem saiu uma nova build do chromium que trás suporte total ao flash, precisando-se apenas criar um link simbólico para o seu já existente plugin flash que se encontra no diretório de seu firefox.</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2009/07/chromium-flash.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/07/chromium-flash-300x178.png" alt="chromium-flash" /></a></p>
+
+<p><strong>E</strong>sta nova build, já se encontra atualizada em nosso repositório nacional, graças ao nosso amigo <a href="http://matias.archlinux-br.org/">Paulo (aka thotypous)</a>, e você pode instalar, caso ainda não tenha, ou apenas atualizar o seu com os seguintes comandos:</p>
+
+<blockquote><h1>pacman -Sy</h1></blockquote>
+
+<h1>pacman -S chromium-snapshot</h1>
+
+<p><strong>E</strong>stes comandos irão atualizar sua lista de repositórios e em seguida atualizar/instalar seu chromium.</p>
+
+<p><strong>F</strong>eito isto, basta criar o link simbólico para o plugin do flash, seguindo a seguinte sequência de comandos:</p>
+
+<blockquote><p>cd /opt/chromium-browser
+mkdir plugins
+cd plugins
+ln -s /usr/lib/mozilla/plugins/libflashplayer.so .</p></blockquote>
+
+<p><strong>F</strong>eito isto, execute seu chromium e digite no campo de url:</p>
+
+<p>about:</p>
+
+<p><strong>V</strong>ocê verá claramente que o plugin flash está instalado. Agora é só correr pro abraço e testar em sites como o youtube por exemplo.</p>
+
+<p><strong>A</strong>braços</p>
+
+<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Chromium pronto para o Arch!]]></title>
+    <link href="http://kalib.github.io/blog/2009/05/28/chromium-pronto-para-o-arch/"/>
+    <updated>2009-05-28T09:27:40-03:00</updated>
+    <id>http://kalib.github.io/blog/2009/05/28/chromium-pronto-para-o-arch</id>
+    <content type="html"><![CDATA[<p><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/05/exportgooglechormebookmarks-300x260.png" alt="exportgooglechormebookmarks" /></p>
+
+<p><strong>S</strong>audações pessoal, tudo tranquilo?</p>
+
+<p><strong>G</strong>ostaria de lhes comunicar que o Google Chromium alpha já está pronto e rodando no Arch.</p>
+
+<p><strong>F</strong>iquei animado ao ver o post do <a href="http://matias.archlinux-br.org/archives/736">Paulo Matias</a> no qual ele nos passava essa ótima notícia. Sim, uma das vantagens em ser usuário Arch. Novidades aparecem constantemente.</p>
+
+<p><strong>É</strong> isso mesmo. Você que é usuário Arch Linux já pode fazer inveja à seus coleguinhas..</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2009/05/chromium.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/05/chromium-300x187.png" alt="chromium" /></a></p>
+
+<p><strong>C</strong>omo o próprio Paulo já explicou em seu post, vocês podem instalar de duas formas:</p>
+
+<p>1- Baixando o pacote chromium-browser no <a href="http://aur.archlinux.org/packages.php?ID=24266">AUR</a>.</p>
+
+<p>2- Pelo <a href="http://www.vivaolinux.com.br/dica/Adicionando-o-repositorio-brasileiro-no-ArchLinux">repositório brasileiro</a> do archlinux.</p>
+
+<p><strong>M</strong>aiores informações no próprio blog do <a href="http://matias.archlinux-br.org/archives/736">Paulo</a>.</p>
+
+<p><strong>P</strong>essoal, essa é nossa chance de ajudar a testar o máximo possível e reportar todos os bugs. Isso vai ajudar o Google a melhorar cada vez mais o Google Chromium para o Linux como um todo.</p>
+
+<p><strong>A</strong>braços</p>
+
+<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,265 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Limpando o cache de forma rápida - Hacking the damn life</title>
+  <meta name="author" content="Marcelo Cavalcante Rocha - Kalib">
+
+  
+  <meta name="description" content="Aqueles que são administradores de redes e servidores já devem ter passado por problemas parecidos com este. Nesta dica irei apresentar um comando &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://kalib.github.io/blog/2008/07/09/limpando-o-cache-de-forma-rapida">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Hacking the damn life" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Hacking the damn life</a></h1>
+  
+    <h2>What if...</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:kalib.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Limpando O Cache De Forma Rápida</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-07-09T11:14:00-03:00" pubdate data-updated="true">Jul 9<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Aqueles que são administradores de redes e servidores já devem ter passado por problemas parecidos com este.</p>
+
+<p>Nesta dica irei apresentar um comando simples para limpar sua memória em cache.</p>
+
+<p>Resolvi escrever sobre isto por ter visto duas vezes na mesma semana problemas relacionados a isso. Um foi aqui mesmo onde trabalho, onde estávamos percebendo que o consumo de memória em um dos servidores estava muito alto, porém com pouca atividade no mesmo, no qual percebi que nada mais era do que muita memória alocada em cache sem necessidade no momento. Desenvolvedores java&hellip;vai entender.. hauhauha (brincadeira.. :p).</p>
+
+<p>Outro caso foi uma dúvida que surgiu, bem parecida, em um fórum do qual faço parte, onde um rapaz estava passando pelo mesmo problema no servidor dele&hellip; Com consumo exagerado de memória. Ele até colou o resultado do top no qual podíamos ver claramente que não haviam processos consumindo tudo aquilo de memória, e mais uma vez pudemos ver que o grande vilão era o cache, o que lhe passava essa impressão de memória totalmente consumida.</p>
+
+<p>O comando para se limpar este chache é o seguinte:</p>
+
+<blockquote><h1>echo 3 > /proc/sys/vm/drop_caches</h1></blockquote>
+
+<p>Exemplo:</p>
+
+<p>Aqui vai uma saída do meu top antes de rodar o comando. ( Reparem no consumo de memória armazenada em Cache na última linha!)</p>
+
+<blockquote><p>top &ndash; 09:40:03 up 1:42, 1 user, load average: 0.06, 0.20, 0.20</p></blockquote>
+
+<p>Tasks: 83 total, 2 running, 80 sleeping, 0 stopped, 1 zombie</p>
+
+<p>Cpu(s): 4.3%us, 0.5%sy, 0.2%ni, 95.0%id, 0.0%wa, 0.0%hi, 0.0%si, 0.0%st</p>
+
+<p>Mem: 1944240k total, 898916k used, 245324k free, 51176k buffers</p>
+
+<p>Swap: 996020k total, 0k used, 996020k free, 969000k cached</p>
+
+<blockquote></blockquote>
+
+<p>Repare agora o resultado obtido pelo top depois de executar o comando para limpar o cache:</p>
+
+<blockquote><p>top &ndash; 09:45:03 up 1:47, 1 user, load average: 0.32, 0.16, 0.17</p></blockquote>
+
+<p>Tasks: 85 total, 3 running, 81 sleeping, 0 stopped, 1 zombie</p>
+
+<p>Cpu(s): 11.2%us, 1.5%sy, 0.0%ni, 63.4%id, 23.9%wa, 0.0%hi, 0.0%si, 0.0%st</p>
+
+<p>Mem: 1944240k total, 329412k used, 1614828k free, 768k buffers</p>
+
+<p>Swap: 996020k total, 0k used, 996020k free, 69088k cached</p>
+
+<blockquote></blockquote>
+
+<p>A memória armazenada em cache caiu de ~969mb para ~69mb. ;]</p>
+
+<p>Bingo!</p>
+
+<p><a href="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif"><img src="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif" alt="" /></a></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">kalib</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-07-09T11:14:00-03:00" pubdate data-updated="true">Jul 9<span>th</span>, 2008</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/linux/'>Linux</a>, <a class='category' href='/blog/categories/redes/'>redes</a>, <a class='category' href='/blog/categories/software-livre/'>software livre</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://kalib.github.io/blog/2008/07/09/limpando-o-cache-de-forma-rapida/" data-via="" data-counturl="http://kalib.github.io/blog/2008/07/09/limpando-o-cache-de-forma-rapida/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2008/06/28/porque-lembrar-nao-custa-nada/" title="Previous Post: Porque lembrar não custa nada...">&laquo; Porque lembrar não custa nada...</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2008/07/14/parte-ii-limpando-memoria-cache-de-forma-automatizada/" title="Next Post: Parte II - Limpando memória cache de forma automatizada">Parte II - Limpando memória cache de forma automatizada &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/07/30/hello-world/">Hello World</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/02/06/recomendacao-bibliografica-mago-e-vidro-a-torre-negra-iv/">Recomendação Bibliográfica: Mago E Vidro (a Torre Negra - IV)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/12/13/netstat-saiba-o-que-esta-rolando-em-seu-ambiente/">Netstat - Saiba O Que Está Rolando Em Seu Ambiente...</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/10/24/que-tal-ajudar-o-projeto-kde-com-apenas-1-minuto-do-seu-tempo/">Que Tal Ajudar O Projeto KDE Com Apenas 1 Minuto Do Seu Tempo?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/10/17/3c2ba-dia-livre-programacao-definida/">3º Dia Livre - Programação Definida!</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Marcelo Cavalcante Rocha - Kalib -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

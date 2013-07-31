@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Linux | Hacking the damn life]]></title>
+  <link href="http://kalib.github.io/blog/categories/linux/atom.xml" rel="self"/>
+  <link href="http://kalib.github.io/"/>
+  <updated>2013-07-30T21:36:09-03:00</updated>
+  <id>http://kalib.github.io/</id>
+  <author>
+    <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Netstat - Saiba o que está rolando em seu ambiente...]]></title>
+    <link href="http://kalib.github.io/blog/2011/12/13/netstat-saiba-o-que-esta-rolando-em-seu-ambiente/"/>
+    <updated>2011-12-13T08:38:50-03:00</updated>
+    <id>http://kalib.github.io/blog/2011/12/13/netstat-saiba-o-que-esta-rolando-em-seu-ambiente</id>
+    <content type="html"><![CDATA[<p><a href="http://pixelmaverick.com/wp-content/uploads/2009/11/brunocb-sherlock-holmes-tux-5975.png"><img src="http://pixelmaverick.com/wp-content/uploads/2009/11/brunocb-sherlock-holmes-tux-5975.png" alt="" /></a></p>
+
+<hr />
+
+<p><strong>S</strong>audações pessoal,</p>
+
+<p><strong>Q</strong>ue tal saber um pouco mais sobre o que lhe cerca virtualmente? Conexões de rede às quais sua máquina está ligada, tabelas de roteamento, estatísticas de interfaces, conexões mascaradas, multicasting, etc.. ?</p>
+
+<p><strong>A</strong>pesar de muitos conhecerem o netstat, poucos sabem que ele é capaz de tudo isso e mais um pouco. O netstat é sem sombra de dúvidas uma rica ferramenta que possui inúmeros comandos e combinações que sequer cabem em um artigo simples como este post.</p>
+
+<p><strong>A</strong> ideia vai ser apenas apresentar algumas opções que podem ser bem interessantes no dia a dia de um administrador de redes/sysadmin.</p>
+
+<p><strong>V</strong>amos lá&hellip;</p>
+
+<p><strong>1.</strong> <strong>Listar todas as portas, incluindo portas que estão sendo escutadas e portas que não estão:</strong></p>
+
+<p><strong>1.1</strong> Para listar TODAS as portas, podemos utilizar o parâmetro -a:
+[root@tuxcaverna ~]# netstat -a
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State
+tcp        0      0 localhost.localdo:55481 <em>:</em>                     LISTEN
+tcp        0      0 <em>:60634                 </em>:<em>                     LISTEN
+tcp        0      0 </em>:6881                  <em>:</em>                     LISTEN
+tcp        0      0 172.16.1.6:46714        gru03s08-in-f20.1:https TIME_WAIT
+tcp        0      0 172.16.1.6:40899        gx-in-f138.1e1:www-http ESTABLISHED
+tcp        0      0 localhost.localdo:48742 localhost.localdo:55481 ESTABLISHED
+tcp        0      0 172.16.1.6:48643        125-233-152-234.d:21990 TIME_WAIT
+tcp        0      0 172.16.1.6:46717        gru03s08-in-f20.1:https TIME_WAIT
+tcp        0      0 172.16.1.6:57293        apache2-fungi.:www-http TIME_WAIT
+tcp        0      0 172.16.1.6:36444        gru03s05-in-f22.1:https ESTABLISHED
+tcp        0      0 172.16.1.6:57659        gru03s06-in-f1:www-http ESTABLISHED
+tcp        0      0 localhost.localdo:55481 localhost.localdo:48742 ESTABLISHED
+tcp        0      0 172.16.1.6:50581        gru03s06-in-f23.1:https ESTABLISHED
+tcp        0      0 172.16.1.6:39979        sn1msg1010828.phx.:msnp ESTABLISHED
+&hellip;</p>
+
+<p><strong>N</strong>ão coloquei a saída inteira, pois era bem extensa e ainda temos muitos parâmetros para ver. Onde existe XXX.XX.X.XX, obviamente, era o endereço IP que ocultei por puro protesto pela alta no preço do <strong>amendoim</strong>.</p>
+
+<p><strong>1.2</strong> Para listar todas as portas UDP, utilizamos os parâmetros -au:</p>
+
+<p>[root@tuxcaverna ~]# netstat -au</p>
+
+<p>Active Internet connections (servers and established) Proto Recv-Q Send-Q Local Address Foreign Address State udp 0 0 <em>:bootpc </em>:<em> udp 0 0 </em>:49119 <em>:</em> udp 0 0 <em>:mdns </em>:*</p>
+
+<p><strong>1.3</strong> Para listar todas as portas TCP, utilizamos os parâmetros -at:</p>
+
+<p>[root@tuxcaverna ~]# netstat -at
+Active Internet connections (servers and established) Proto Recv-Q Send-Q Local Address Foreign Address State tcp 0 0 localhost.localdo:39307 <em>:</em> LISTEN tcp 0 0 <em>:64758 </em>:* LISTEN tcp 0 0 XXX.XX.X.XX:54293 gru03s06-in-f21.1:https ESTABLISHED tcp 1 0 XXX.XX.X.XX:58732 sn1msg3020104.sn1.:msnp CLOSE_WAIT</p>
+
+<p><strong>2.</strong> <strong>Listar os Sockets que estão no estado Listening ou escuta:</strong></p>
+
+<p><strong>2.1</strong> Para listar todas no estado Listening, utilizamos o parâmetro -l:</p>
+
+<p>[root@tuxcaverna ~]# netstat -l</p>
+
+<p>Active Internet connections (only servers) Proto Recv-Q Send-Q Local Address Foreign Address State tcp 0 0 localhost.localdo:39307 <em>:</em> LISTEN tcp 0 0 <em>:64758 </em>:* LISTEN Active UNIX domain sockets (only servers) Proto RefCnt Flags Type State I-Node Path unix 2 [ ACC ] STREAM LISTENING 10443 @/tmp/.ICE-unix/1396 unix 2 [ ACC ] STREAM LISTENING 8262 /var/run/xdmctl/dmctl/socket unix 2 [ ACC ] STREAM LISTENING 8277 /var/run/xdmctl/dmctl-:0/socket</p>
+
+<p><strong>2.2</strong> Para listar apenas as portas TCP no estado Listening, utilizamos os parâmetros -lt:</p>
+
+<p>[root@tuxcaverna ~]# netstat -lt</p>
+
+<p>Active Internet connections (only servers) Proto Recv-Q Send-Q Local Address Foreign Address State tcp 0 0 localhost.localdo:39307 <em>:</em> LISTEN tcp 0 0 <em>:64758 </em>:* LISTEN</p>
+
+<p><strong>2.3</strong> Para listar apenas as portas UNIX em estado Listening, utilizamos os parâmetrox -lx:</p>
+
+<p>[root@tuxcaverna ~]# netstat -lx</p>
+
+<p>Active UNIX domain sockets (only servers) Proto RefCnt Flags Type State I-Node Path unix 2 [ ACC ] STREAM LISTENING 10443 @/tmp/.ICE-unix/1396 unix 2 [ ACC ] STREAM LISTENING 8262 /var/run/xdmctl/dmctl/socket unix 2 [ ACC ] STREAM LISTENING 8277 /var/run/xdmctl/dmctl-:0/socket</p>
+
+<p><strong>3.</strong> <strong>Apresentar as estatísticas para cada protocolo:</strong></p>
+
+<p><strong>3.1</strong> Para apresentar as estatísticas de todos os protocolos, utilizamos o parâmetro -s:</p>
+
+<p>[root@tuxcaverna ~]# netstat -s</p>
+
+<p>Ip: 98790 total packets received 54 with invalid headers 2 with invalid addresses 0 forwarded 0 incoming packets discarded 94778 incoming packets delivered 79070 requests sent out Icmp: 0 ICMP messages received 0 input ICMP message failed. ICMP input histogram: 0 ICMP messages sent 0 ICMP messages failed ICMP output histogram: Tcp: 2019 active connections openings 2 passive connection openings 10 failed connection attempts 161 connection resets received 14 connections established 88977 segments received 75703 segments send out 297 segments retransmited 0 bad segments received. 216 resets sent Udp: 2986 packets received 0 packets to unknown port received. 0 packet receive errors 3080 packets sent 0 receive buffer errors 0 send buffer errors</p>
+
+<p>&hellip;</p>
+
+<p>&hellip;</p>
+
+<p><strong>3.2</strong> Para apresentar as estatísticas do protocolo TCP (ou) UDP, utilizamos os parâmetros -st (ou) -su:</p>
+
+<p>[root@tuxcaverna ~]# netstat -st</p>
+
+<p>Tcp: 2031 active connections openings 2 passive connection openings 10 failed connection attempts 164 connection resets received 10 connections established 89257 segments received 76010 segments send out 297 segments retransmited 0 bad segments received. 219 resets sent</p>
+
+<p>ou</p>
+
+<p>[root@tuxcaverna ~]# netstat -su</p>
+
+<p>Udp: 3012 packets received 0 packets to unknown port received. 0 packet receive errors 3107 packets sent 0 receive buffer errors 0 send buffer errors</p>
+
+<p><strong>4.</strong> <strong>Apresentar o PID (ID do prcesso) e os nomes de programas:</strong></p>
+
+<p><strong>4.1</strong> Neste caso utilizamos o netstat com o parâmetro -p para receber a informação de &ldquo;PID/Nome do Programa&rdquo; na saída do netstat. Esta opção é muito útil para debugar e identificar qual programa está rodando em uma porta específica. O parâmetro -p pode ser combinado com demais parâmetros:</p>
+
+<p>[root@tuxcaverna ~]# netstat -pt
+Active Internet connections (w/o servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+tcp        0      0 XXX.XX.X.X:6881         83-228-34-45.btc-:11729 SYN_RECV    &ndash;
+tcp        0      0 XXX.XX.X.X:39508        200.123.194.16:www-http ESTABLISHED 30741/chromium
+tcp        0      0 XXX.XX.X.X:36321        208.46.17.59:www-http   ESTABLISHED 30741/chromium
+tcp        0      0 XXX.XX.X.X:57411        65.55.142.101:https     ESTABLISHED 3292/python2
+tcp        0      0 XXX.XX.X.X:6881         bd3e1c77.virtua.c:59298 ESTABLISHED 20447/qbittorrent</p>
+
+<p><strong>5.</strong> <strong>Não resolver host, porta ou nome de usuário:</strong></p>
+
+<p><strong>5.1</strong> Utiliza-se o parâmetro -an quando não se deseja receber na saída do netstat informações de host, porta ou usuarios com seus respectivos nomes resolvidos. Ao invés destas informações virão números:</p>
+
+<p>[root@tuxcaverna ~]# netstat -an
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State
+tcp        0      0 0.0.0.0:61108           0.0.0.0:<em>               LISTEN
+tcp        0      0 0.0.0.0:6881            0.0.0.0:</em>               LISTEN
+tcp        0      0 127.0.0.1:49155         0.0.0.0:*               LISTEN</p>
+
+<p><strong>5.2</strong> Se você não quizer descartar as 3 informações de uma vez, pode optar por ocultar apenas uma em específico, conforme abaixo:</p>
+
+<blockquote><p><em>[root@tuxcaverna ~]# netstat -a &mdash;numericports</em></p></blockquote>
+
+<p>ou</p>
+
+<blockquote><p><em>[root@tuxcaverna ~]# netstat -a -numeric-hosts</em></p></blockquote>
+
+<p>ou</p>
+
+<blockquote><p><em>[root@tuxcaverna ~]# netstat -a numeric-users</em></p></blockquote>
+
+<p><strong>6.</strong> <strong>Que</strong> <strong>tal ter uma saída contínua de informações em tempo real? Para isso usa-se o parâmetro -c, que vai atualizar as informações do netstat a cada segundo:</strong></p>
+
+<p>[root@tuxcaverna ~]# netstat -c
+Active Internet connections (w/o servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State
+tcp        0      0 XXX.XX.X.X:57411        65.55.142.101:https     ESTABLISHED
+tcp        0      0 XXX.XX.X.X:6881         bd3e1c77.virtua.c:59298 ESTABLISHED
+tcp        1      0 XXX.XX.X.X:49920        sn1msg2010605.phx.:msnp CLOSE_WAIT
+tcp        0      0 XXX.XX.X.X:45554        111-240-177-108.dy:8921 TIME_WAIT</p>
+
+<p><strong>7.</strong> <strong>Encontrar famílias de endereços não suportadas em seu sistema:</strong></p>
+
+<p><strong>U</strong>tilizamos o parâmetro &mdash;verbose. Repare que nas últimas linhas do retorno teremos algo como:</p>
+
+<p>[root@tuxcaverna ~]# netstat -c
+netstat: no support for <code>AF IPX' on this system.
+netstat: no support for</code>AF AX25' on this system.
+netstat: no support for <code>AF X25' on this system.
+netstat: no support for</code>AF NETROM' on this system.</p>
+
+<p><strong>8.</strong> <strong>Para apresentar informações de rotas do kernel utilizamos o parâmetro -r:</strong></p>
+
+<p>[root@tuxcaverna ~]# netstat -r
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags   MSS Window  irtt Iface
+default         172.16.1.1      0.0.0.0         UG        0 0          0 wlan0
+172.16.1.0      *               255.255.255.0   U         0 0          0 wlan0</p>
+
+<p>&hellip;ou, pode-se utilizar -rn para apresentar em formato numérico ao invés de nomes de hosts.</p>
+
+<hr />
+
+<p><strong>9.</strong> <strong>Para descobrir em qual porta um determinado programa está rodando utilizamos os parâmetros -ap:</strong></p>
+
+<p>[root@tuxcaverna ~]# netstat -ap
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+tcp        0      0 <em>:61108                 </em>:<em>                     LISTEN      3452/wish
+tcp        0      0 </em>:6881                  <em>:</em>                     LISTEN      20447/qbittorrent
+tcp        0      0 localhost.localdo:49155 <em>:</em>                     LISTEN      4010/GoogleTalkPlug
+tcp        0    269 172.16.1.3:58742        52.60.in-addr.arp:12814 FIN_WAIT1   &ndash;
+tcp        0      0 172.16.1.3:6881         bd3e1c77.virtua.c:59298 ESTABLISHED 20447/qbittorrent</p>
+
+<p><strong>9.1</strong> Se quizer especificar o programa, ao invés de o procurar em uma extensa lista, utilize um filtro com o grep da seguinte forma:</p>
+
+<p>[root@tuxcaverna ~]# netstat -ap | grep chromium
+unix  2      [ ACC ]     STREAM     LISTENING     252100   30741/chromium       /tmp/.org.chromium.Chromium.bSJLzX/SingletonSocket
+unix  3      [ ]         STREAM     CONNECTED     309051   30741/chromium
+unix  3      [ ]         STREAM     CONNECTED     308785   30741/chromium</p>
+
+<p><strong>9.2</strong> Se ao invés de especificar o programa, você quizer especificar uma porta e saber o que está rodando nela, pode-se utilizar o filtro do grep da seguinte forma:</p>
+
+<blockquote><p><em>[root@tuxcaverna ~]# netstat -an | grep &lsquo;:80&rsquo;</em></p></blockquote>
+
+<p><strong>10.</strong> <strong>Para terminar, podemos utilizar o parâmetro -i para listar nossas interfaces de rede:</strong></p>
+
+<p>[root@tuxcaverna ~]# netstat -i
+Kernel Interface table
+Iface   MTU Met   RX-OK RX-ERR RX-DRP RX-OVR    TX-OK TX-ERR TX-DRP TX-OVR Flg
+eth0   1500 0         0      0      0 0             0      0      0      0 BMU
+lo    16436 0       662      0      0 0           662      0      0      0 LRU
+wlan0  1500 0    157377      0      4 0        133487      0      0      0 BMRU</p>
+
+<p><strong>S</strong>e desejar informações mas detalhadas sobre cada interface, pode-se utilizara combinação de parâmetros -ie:</p>
+
+<p>[root@tuxcaverna ~]# netstat -ie
+Kernel Interface table
+eth0: flags=4099&lt;UP,BROADCAST,MULTICAST>  mtu 1500  metric 1
+ether a4:ba:db:d7:41:c0  txqueuelen 1000  (Ethernet)
+RX packets 0  bytes 0 (0.0 B)
+RX errors 0  dropped 0  overruns 0  frame 0
+TX packets 0  bytes 0 (0.0 B)
+TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+device interrupt 47  base 0xc000</p>
+
+<p><strong>H</strong>appy Hacking&hellip;</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Que tal ajudar o projeto KDE com apenas 1 minuto do seu tempo?]]></title>
+    <link href="http://kalib.github.io/blog/2011/10/24/que-tal-ajudar-o-projeto-kde-com-apenas-1-minuto-do-seu-tempo/"/>
+    <updated>2011-10-24T14:56:48-03:00</updated>
+    <id>http://kalib.github.io/blog/2011/10/24/que-tal-ajudar-o-projeto-kde-com-apenas-1-minuto-do-seu-tempo</id>
+    <content type="html"><![CDATA[<p><img src="http://images4.wikia.nocookie.net/__cb20061120200014/uncyclopedia/images/9/98/Konqi-official-logo-aboutkde-150x250.png" alt="" /></p>
+
+<p><strong>N</strong>ão acredita?</p>
+
+<p><strong>B</strong>om, aparentemente um <strong>banco alemão</strong> acredita que alguns projetos/instituições merecem ser ajudados financeiramente pelo seu impacto/importância.</p>
+
+<p><strong>S</strong>im, o projeto <strong><a href="http://kde.org">KDE</a></strong> está fazendo parte desta lista, mas para conseguir a doação de 1000 euros por parte deste banco, o projeto KDE precisa do seu voto. Sim, apenas seu voto que não leva mais que 1 minuto.</p>
+
+<p><strong>S</strong>e você utiliza o KDE no seu dia a dia, acredito que este seu <strong>1 minuto</strong> já é um ótimo &ldquo;pagamento&rdquo; ao projeto que lhe ajuda diariamente a resolver suas tarefas.</p>
+
+<p><strong>O</strong> banco alemão <strong>ING DiBa</strong> está doando <strong>1000 euros</strong> para <strong>1000 associações</strong>. A seleção será feita via votação online, portanto, se você der um voto para o KDE eV, temos boa chance de ser um dos vencedores.</p>
+
+<p><strong>O</strong> dinheiro será utilizado pelo KDE para financiar sprints, viagens, servidores, etc.</p>
+
+<p><strong>Como fazer para ajudar?</strong></p>
+
+<p><em>1- Acesse <strong><a href="https://verein.ing-diba.de/sonstiges/10115/kde-ev">https://verein.ing-diba.de/sonstiges/10115/kde-ev</a></strong> e clique em <strong>&ldquo;Stimme abgeben&rdquo;</strong>.</em></p>
+
+<p><em>2- Preencha seu email e o código captcha, clicando em seguida em <strong>&ldquo;absenden&rdquo;</strong>.</em></p>
+
+<p><em>3- Você receberá um email para confirmar o voto &ndash; clique no primeiro link deste email.</em></p>
+
+<p><em>4- No website &ndash; clique em <strong>&ldquo;Stimme abgeben&rdquo;</strong>.</em></p>
+
+<p>Você tem direito a 3 votos por conta de email.</p>
+
+<p>Vamos que vamos.</p>
+
+<p>Abraços,</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[3º Dia Livre - Programação Definida!]]></title>
+    <link href="http://kalib.github.io/blog/2011/10/17/3c2ba-dia-livre-programacao-definida/"/>
+    <updated>2011-10-17T09:26:54-03:00</updated>
+    <id>http://kalib.github.io/blog/2011/10/17/3c2ba-dia-livre-programacao-definida</id>
+    <content type="html"><![CDATA[<p><strong>N</strong>este fim de semana foi publicada a programação oficial do <strong><a href="http://www.dialivre.net/portal">3º Dia Livre</a></strong>, encontro para usuários, profissionais ou entusiastas do movimento de Software Livre no Ceará.</p>
+
+<p><strong>E</strong>sta 3ª edição contará com 4 palestras de temas bem diversificados como podem ver na grade abaixo:</p>
+
+<p>Horário</p>
+
+<p>Palestra</p>
+
+<p>Palestrante</p>
+
+<p>08:00
+&ndash; 08:10</p>
+
+<p>Abertura</p>
+
+<p>&ndash;</p>
+
+<p>08:10
+&ndash; 09:00</p>
+
+<p>CRUD Flex com Java</p>
+
+<p>Alessandro Moreira</p>
+
+<p>09:10
+&ndash; 10:00</p>
+
+<p>Gerenciando Nuvens Privadas com o Xen Cloud Platform</p>
+
+<p>Lorscheider Santiago</p>
+
+<p>10:10 &ndash; 11:00</p>
+
+<p>Gerenciando Projetos com Ferramentas Livres</p>
+
+<p>Paulo Cesar C. Branco</p>
+
+<p>11:10 &ndash; 12:00</p>
+
+<p>Arduino &ndash; Desenvolvendo com Hardware Livre</p>
+
+<p>Marcelo Melo</p>
+
+<p>&mdash;</p>
+
+<hr />
+
+<p>&ndash;</p>
+
+<p><strong>A</strong>inda não sabe o que é o Dia Livre? <strong><a href="http://www.dialivre.net/portal/?page_id=7">Clique aqui para conhecer!</a></strong></p>
+
+<p><strong>A</strong>s <strong>inscrições</strong> continuam abertas para esta 3ª edição que acontecerá no dia <strong>12 de Novembro</strong>, Sábado, na Faculdade Estácio FIC.</p>
+
+<p><strong>C</strong>lique <strong><a href="http://www.dialivre.net/portal/?page_id=8">aqui</a></strong> e faça sua inscrição gratuita.</p>
+
+<p><strong>A</strong>braços,</p>
+
+<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[3º Dia Livre - Inscrições abertas]]></title>
+    <link href="http://kalib.github.io/blog/2011/10/11/3c2ba-dia-livre-inscricoes-abertas/"/>
+    <updated>2011-10-11T08:32:58-03:00</updated>
+    <id>http://kalib.github.io/blog/2011/10/11/3c2ba-dia-livre-inscricoes-abertas</id>
+    <content type="html"><![CDATA[<p><a href="http://www.marcelocavalcante.net/portal/wp-content/uploads/2011/10/Logo+dia-livre-01.png"><img src="http://www.marcelocavalcante.net/portal/wp-content/uploads/2011/10/Logo+dia-livre-01-300x87.png" alt="" /></a></p>
+
+<p><strong>J</strong>á estão abertas as inscrições para o <strong><a href="http://www.dialivre.net/portal">3º Dia Livre</a></strong> em Fortaleza.</p>
+
+<p><strong>P</strong>ara quem ainda não teve a oportunidade de participar de nenhuma edição, o <strong><a href="http://www.dialivre.net/portal/?page_id=7">Dia Livre</a></strong> é um encontro bimestral organizado pela <strong><a href="http://www.tux-ce.org">Tux-CE</a></strong> que busca aproximar os profissionais e entusiastas do <strong>Software Livre</strong>.</p>
+
+<p><strong>A</strong>lém de proporcionar um momento de entretenimento e conhecimento, através de palestras e apresentações sobre os mais diversos assuntos ligados à tecnologias e Software Livre como um todo, o <strong>Dia Livre</strong> é uma excelente oportunidade para aumentar o seu networking ou círculo profissional.</p>
+
+<p><strong>A</strong>pós a 1ª edição ocorrida na Faculdade Farias Brito e a 2ª na SecrelNet Business, anunciamos agora a 3ª edição que acontecerá na <strong>Faculdade FIC Estácio</strong> no dia 12 de Novembro, Sábado.</p>
+
+<p><strong>A</strong>s inscrições são gratuitas!</p>
+
+<p><a href="http://www.dialivre.net/portal/?page_id=8"><strong>Não perca tempo e garanta a sua vaga através do site do Dia Livre: www.dialivre.net</strong></a></p>
+
+<p><strong>A</strong>braços,</p>
+
+<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Política de senhas no Linux: Senhas com data para expirar!]]></title>
+    <link href="http://kalib.github.io/blog/2011/09/27/politica-de-senhas-no-linux-senhas-com-data-para-expirar/"/>
+    <updated>2011-09-27T11:14:12-03:00</updated>
+    <id>http://kalib.github.io/blog/2011/09/27/politica-de-senhas-no-linux-senhas-com-data-para-expirar</id>
+    <content type="html"><![CDATA[<p><a href="http://www.marcelocavalcante.net/portal/wp-content/uploads/2011/09/1197557350_90927cc5492.jpg"><img src="http://www.marcelocavalcante.net/portal/wp-content/uploads/2011/09/1197557350_90927cc5492.jpg" alt="" /></a></p>
+
+<p><strong>J</strong>á é sabido que a maior vulnerabilidade dentro das empresas ou mesmo computadores pessoais são justamente os próprios funcionários ou usuários.</p>
+
+<p><strong><img src="http://public-commoncraft.s3.amazonaws.com/SecurePasswords500.jpg" alt="" />M</strong>anter uma boa <strong>política de senhas</strong> é fundamental para garantir a segurança <strong>básica</strong> de suas informações e tentar minimizar as chances de alguém ter acesso indevido a elas.</p>
+
+<p><strong>V</strong>ou apresentar dicas simples para uma boa política de senhas que vão além das dicas comuns como &ldquo;mantenha uma senha que contenha mais de 8 caracteres, sendo eles números, letras minúsculas, maiúsculas e caracteres especiais&hellip;&rdquo;.</p>
+
+<p><strong>E</strong>m escritórios é importante haver também uma política de troca de senha regular. Mas, como forçar os usuários a seguirem essa política de troca de senha regular? Evitando que o mesmo se logue caso não troque a senha de forma periódica, claro.</p>
+
+<p><strong>V</strong>amos começar pelo básico.</p>
+
+<p><strong>1- Definindo a complexidade das senhas de usuários:</strong></p>
+
+<p><strong>P</strong>ara definir a complexidade, precisaremos alterar a configuração de definição de senhas de usuários. O processo pode ser diferente, de acordo com a sua distribuição.</p>
+
+<p><a href="http://www.archlinux.org/"><em><strong>A</strong>rch Linux:</em></a></p>
+
+<p><strong>E</strong>dite o arquivo <em>passwd</em> que se encontra em <em>/etc/pam.d/passwd</em>, da seguinte forma:</p>
+
+<p><em># vim /etc/pam.d/passwd</em></p>
+
+<p><em><a href="http://www.debian.org"><strong>D</strong>ebian</a>, <a href="http://www.ubuntu.com">Ubuntu</a>, <a href="http://www.redhat.com">RedHat</a>, <a href="http://www.centos.org">CentOS</a></em> e outras:</p>
+
+<p><em># vim /etc/pam.d/system-auth</em></p>
+
+<p><strong>C</strong>onfigure sua linha de senha de forma que fique algo parecido com o seguinte:</p>
+
+<p><em>password       required        pam_cracklib.so difok=3 minlen=10 ucredit=3 ocredit=2 retry=3</em></p>
+
+<p><strong>O</strong>nde:</p>
+
+<p><em>difok=3</em> &ndash;> Informa a quantidade de caracteres que podem se repetir em relação à última senha. Por exemplo: Se minha antiga senha era &ldquo;kalib&rdquo; e eu tento usar &ldquo;kalamba&rdquo; como nova senha, receberei uma informação de erro, pois eu repeti 3 letras que já existem na senha anterior &ldquo;kal&rdquo;.</p>
+
+<p><em>minlen=10</em> &ndash;> Informa qual a quantidade mínima de caracteres aceitos para a senha do usuário. No<img src="http://securepasswordgeneratortips.com/wp-content/uploads/2011/05/securepasswordgeneratortips08.jpg" alt="" /> exemplo, o mínimo de caracteres aceitos serão 10, caso contrário será apresentada uma mensagem de erro solicitando que o usuário tente uma nova senha.</p>
+
+<p><em>ucredit=3</em> &ndash;>Informa a quantidade de letras maiúsculas que deverão compor minha senha. No exemplo, eu precisarei utilizar no mínimo 3 letras em maiúsculo, ou &ldquo;Uper Characters&rdquo; em minha nova senha.</p>
+
+<p><em>ocredit=2</em> &ndash;> Informa a quantidade de &ldquo;outros caracteres&rdquo; ou caracteres especiais, como por exemplo *, &amp;, %, $, _, etc.</p>
+
+<p><em>retry=3</em> &ndash;> Informa quantas vezes o usuário vai poder tentar, em caso de senha indevida, antes de receber a mensagem de erro.</p>
+
+<p><strong>O</strong>utros parâmetros que podem ser utilizados são os seguintes:</p>
+
+<p><em>dcredit=x</em> &ndash;> Informa a quantidade de dígitos que deverão ser utilizados como números na senha, onde x é o número mínimo desejado.</p>
+
+<p><em>lcredit=x</em> &ndash;> Informa a quantidade de caracteres minúsculos, ou &ldquo;Lower Characters&rdquo;, mínimos em sua senha.</p>
+
+<p><strong>2- Definindo que a nova senha não poderá ser igual às anteriores:</strong></p>
+
+<p><strong>N</strong>o <strong>mesmo arquivo</strong> do ponto anterior, iremos inserir o parâmetro remember na linha conforme exemplo:</p>
+
+<p><em>password sufficient pam_unix.so use_authtok md5 shadow remember=10</em></p>
+
+<p><em>remember=10</em> &ndash;> Informa que a nova senha não poderá ser igual às últimas 10 senhas utilizadas por este usuário.</p>
+
+<p><strong>A</strong>gora que já sabemos como definir uma política para criação de senhas seguras, vamos conhecer o &ldquo;<strong>chage</strong>&rdquo;, que nos ajudará a definir a política de datas ou validade das senhas.</p>
+
+<p><strong>3- Checando as políticas de validade de senhas de um determinado usuário:</strong></p>
+
+<p><em># chage -l usuário</em></p>
+
+<p><strong>O</strong> comando acima verifica os atributos de validade daquela senha, e lhe retornará algo similar ao seguinte:</p>
+
+<pre><code>&lt;em&gt;Last password change : May 11, 2011&lt;/em&gt;
+
+
+
+
+&lt;em&gt;Password expires : never&lt;/em&gt;
+
+
+
+
+&lt;em&gt;Password inactive : never&lt;/em&gt;
+
+
+
+
+&lt;em&gt;Account expires : never&lt;/em&gt;
+
+
+
+
+&lt;em&gt;Minimum number of days between password change : 0&lt;/em&gt;
+
+
+
+
+&lt;em&gt;Maximum number of days between password change : 99999&lt;/em&gt;
+
+
+
+
+&lt;em&gt;Number of days of warning before password expires : 7&lt;/em&gt;
+</code></pre>
+
+<p><strong>A</strong>s informações acima apresentam dados como data de última mudança de senha, data de expiração, tempo de inatividade, quantidade mínima de dias para se trocar a senha antes de a mesma expirar, etc.</p>
+
+<p><strong>4- Criando uma &ldquo;validade&rdquo; ou período de expiração para a senha de um determinado usuário:</strong></p>
+
+<pre><code>&lt;em&gt;# chage -M 99999 linustorvalds&lt;/em&gt;
+</code></pre>
+
+<p><strong>E</strong>ste comando vai <strong>desabilitar</strong> o período de validade da senha, informando que a mesma não expira nunca.</p>
+
+<pre><code>&lt;em&gt;# chage -M 50 -m 7 -W 7 linustorvalds&lt;/em&gt;
+</code></pre>
+
+<p><strong>E</strong>ste comando <strong>aplica</strong> a política de senha para o usuário &ldquo;linustorvalds&rdquo; onde:
+<em>-M 50</em> &ndash;> Define que a senha será válida por um máximo de 50 dias, quando a mesma deverá ser trocada.
+<em>-m 7</em> &ndash;> Define o número mínimo de dias em que o usuário poderá trocar sua senha antes do período especificado para expiração. Caso o usuário possa trocar a qualquer momento ou dia, o valor deverá ser 0.
+<em>-W 7</em> &ndash;> Número de dias antes de expirar nos quais o usuário vai receber alertas informando que sua senha irá expirar.</p>
+
+<p><strong>C</strong>aso você deseje especificar um <strong>dia exato</strong> no qual a senha de determinado usuário vai expirar, você pode utilizar o parâmetro <em>-E</em> seguido da data desejada no formato <em>AAAA-MM-DD</em>.</p>
+
+<p><strong>A</strong>lém disto, você pode desejar que a senha do usuário &ldquo;linustorvalds&rdquo; seja trocada no <strong>próximo login</strong> do mesmo. Neste caso você poderá utilizar o parâmetro <em>-d</em>, conforme exemplo abaixo:</p>
+
+<pre><code>&lt;em&gt;# chage -d 0 linuxtorvalds&lt;/em&gt;
+</code></pre>
+
+<p><strong>O</strong> <em>-d</em> significa quantidade de dias também.</p>
+
+<pre><code>&lt;strong&gt;É&lt;/strong&gt; isso pessoal.
+
+
+
+
+&lt;strong&gt;H&lt;/strong&gt;ave fun!
+</code></pre>
+
+<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,251 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Minhas primeiras impressões com o Arch Linux - Hacking the damn life</title>
+  <meta name="author" content="Marcelo Cavalcante Rocha - Kalib">
+
+  
+  <meta name="description" content="Quem me conhece sabe que sou um aventureiro quando se trata de distribuições Linux. Sempre utilizei várias distros dos mais variados tipos passando &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://kalib.github.io/blog/2008/06/03/minhas-primeiras-impressoes-com-o-arch-linux">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Hacking the damn life" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Hacking the damn life</a></h1>
+  
+    <h2>What if...</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:kalib.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Minhas Primeiras Impressões Com O Arch Linux</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-06-03T14:54:00-03:00" pubdate data-updated="true">Jun 3<span>rd</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><h3></h3>
+
+<p><a href="http://4.bp.blogspot.com/_5kfJplBiYy0/SEWWyV8TkxI/AAAAAAAAAD0/_RJabFlJvxw/s1600-h/archlogo.jpg"><img src="http://4.bp.blogspot.com/_5kfJplBiYy0/SEWWyV8TkxI/AAAAAAAAAD0/_RJabFlJvxw/s200/archlogo.jpg" alt="" /></a>Quem me conhece sabe que sou um aventureiro quando se trata de distribuições Linux. Sempre utilizei várias distros dos mais variados tipos passando pelo Conectiva, Slackware, Suse, Kurumin, Ubuntu, Kalango, Kubuntu, Debian, Fluxbuntu, Goblinx, Fedora, Big, dentre outros. Agora é a vez do Arch.</p>
+
+<p>A simplicidade do Slackware sempre me fascinou, porém seu gerenciamento de pacotes me desanimou bastante há alguns anos atrás quando vi outras distribuições evoluindo tanto neste ponto como o Debian por exemplo. Foi quando fui fascinado pelo poder do apt-get/aptitude. Por outro lado, sempre gostei de ter os aplicativos mais atualizados e funcionando em minha máquina, e como esse não é o forte do Debian resolvi partir para distros baseadas nele, onde o Kubuntu se destacou ficando por mais tempo. Independente de minha máquina, também utilizo diariamente o Fedora, distribuição que utilizo no trabalho em minha estação. Diante de tantas mudanças, porque não tentar o Arch Linux agora?</p>
+
+<p>Há algum tempo ouço amigos falando sobre suas vantagens mas queria confirmar se era tudo verdade, ou apenas mais uma visão de usuário fanático por sua distro. E foi aí que tudo começou&hellip;</p>
+
+<p>Primeiramente parti para a filosofia e história do mesmo. Para quem não sabe, o Arch Linux foi criado em 2001 por <strong>Judd Vinet</strong> e, desde, então vem crescendo bastante. É uma distribuição rápida, leve, elegante e bastante flexível. No Brasil ainda é uma distro pouco conhecida e usada. Por ser otimizado para processadores i686, o Arch roda mais rápido que a maioria das distribuições que, por sua vez, utilizam pacotes para i386, porém por outro lado só roda em máquinas com processadores superiores ao pentium II. O Arch possui uma filosofia que se assemelha a do Slackware no estilo KISS, Keep It Simple Stupid, mantendo o sistema simples e bastante customizável de modo que pode-se configurar tudo possuindo um pouco de intimidade com o shell do Linux. Porém encontrei nele uma grande evolução com relação ao Slackware que resolveu se manter mais tradicional, enquanto que o Arch trouxe um gerenciador de pacotes chamado pacman. O pacman, de certa forma, lembra o apt-get/aptitude, com o qual é possível facilmente atualizar seu sistema, buscar, instalar ou remover pacotes de forma rápida e segura sem precisar se preocupar com problemas de dependências que o mesmo resolve por você corretamente.</p>
+
+<p>Sempre adorei ler, mas não ia ser uma simples leitura que me convenceria sobre o fato de o Arch ser uma boa distribuição Linux, mesmo porque em cinco minutos eu sou capaz de &ldquo;criar&rdquo; uma distribuição Kalib e escrever uma bela história sobre como ela funciona e torná-la assim a melhor distribuição Unix Like ou mesmo BSD, concorda? Sendo assim, parti para os primeiros testes reais.</p>
+
+<p><a href="http://3.bp.blogspot.com/_5kfJplBiYy0/SEWNdzRsaSI/AAAAAAAAADk/mc4TzoaAOfY/s1600-h/arch3.png"><img src="http://3.bp.blogspot.com/_5kfJplBiYy0/SEWNdzRsaSI/AAAAAAAAADk/mc4TzoaAOfY/s200/arch3.png" alt="" /></a>Como não queria particionar meu disco, pelo mesmo já ter muitas fatias, resolvi criar uma máquina virtual com o Arch Linux, utilizando para isto um aplicativo chamado Virtual Box.</p>
+
+<p>A instalação foi bem simples, sem maiores dificuldades, apesar de ser toda em modo texto sem as facilidades da interface gráfica, o que acaba por assustar um pouco os usuários iniciantes no mundo Linux. Sem maiores traumas passei pelo poucos passos de particionamento do disco, escolha dos pacotes e instalação dos mesmos.</p>
+
+<p>Após a instalação pude, ou melhor, TIVE que testar as habilidades do pacman no gerenciamento de pacotes. Porque TIVE? Bom, digamos que o Arch não traga muitos pacotes instalados por default. Tive de instalar as fontes, o xorg, interface gráfica (kdemod), driver de minha placa de áudio, driver de vídeo, etc&hellip; Mas nada que o pacman não tenha resolvido com bastante eficiência. ;] Fiquei surpreso com sua eficiência nesse momento.</p>
+
+<p>Após instalado, resolvi checar a eficiência de seus repositórios. Mandei o pacman instalar o amsn, apenas a nível de curiosidade para saber qual versão ele traria, e para minha surpresa ele me instalou a versão 0.97 que é a mais recente de todas, e que no kubuntu havia conseguido instalar apenas via svn. Realmente me surpreendeu muito o pacman.</p>
+
+<p>Outra coisa que me chamou bastante atenção foi a leveza com que o sistema se mostrou funcionar. Isto pode ser conferido nesta segunda screenshot onde eu estava rodando o top para monitorar os consumos do sistema.</p>
+
+<p><a href="http://3.bp.blogspot.com/_5kfJplBiYy0/SEWPY8j8tuI/AAAAAAAAADs/gEolntsO-9Q/s1600-h/archlinux2.png"><img src="http://3.bp.blogspot.com/_5kfJplBiYy0/SEWPY8j8tuI/AAAAAAAAADs/gEolntsO-9Q/s200/archlinux2.png" alt="" /></a>Em resumo, esta foi a primeira impressão que tive do Arch Linux. Uma distribuição bastante leve, eficiente, estável e extremamente maleável. Não é o tipo de distribuição que eu recomendaria para usuários que apenas desejam ter um sistema operacional com tudo funcionando, mas com certeza eu o indicaria para alguém que quer ter um excelente sistema e não tem medo de aprender ou ter que resolver problemas de configuração na unha. Esperemos para ver no que essa relação Kalib/Arch irá resultar. ;]</p>
+
+<p>Links:</p>
+
+<p><a href="http://www.archlinux-br.org/about/">1- Maiores detalhes sobre o Arch Linux e sua história</a></p>
+
+<p><a href="http://www.archlinux-br.org/download/">2- Download do Arch</a></p>
+
+<p><a href="http://www.vivaolinux.com.br/artigos/verArtigo.php?codigo=8256">3- Tutorial de Instalação</a></p>
+
+<p><a href="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif"><img src="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif" alt="" /></a></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">kalib</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-06-03T14:54:00-03:00" pubdate data-updated="true">Jun 3<span>rd</span>, 2008</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/arch-linux/'>Arch Linux</a>, <a class='category' href='/blog/categories/impressoes/'>Impressões</a>, <a class='category' href='/blog/categories/linux/'>Linux</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://kalib.github.io/blog/2008/06/03/minhas-primeiras-impressoes-com-o-arch-linux/" data-via="" data-counturl="http://kalib.github.io/blog/2008/06/03/minhas-primeiras-impressoes-com-o-arch-linux/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2008/05/31/ajude-o-firefox-a-estabelecer-um-recorde-mundial/" title="Previous Post: Ajude o Firefox a estabelecer um recorde mundial">&laquo; Ajude o Firefox a estabelecer um recorde mundial</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2008/06/24/ajude-a-sustentar-a-wikipedia-e-concorra-a-um-eee-pc/" title="Next Post: Ajude a sustentar a Wikipedia e concorra a um Eee PC!">Ajude a sustentar a Wikipedia e concorra a um Eee PC! &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/07/30/hello-world/">Hello World</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/02/06/recomendacao-bibliografica-mago-e-vidro-a-torre-negra-iv/">Recomendação Bibliográfica: Mago E Vidro (a Torre Negra - IV)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/12/13/netstat-saiba-o-que-esta-rolando-em-seu-ambiente/">Netstat - Saiba O Que Está Rolando Em Seu Ambiente...</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/10/24/que-tal-ajudar-o-projeto-kde-com-apenas-1-minuto-do-seu-tempo/">Que Tal Ajudar O Projeto KDE Com Apenas 1 Minuto Do Seu Tempo?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/10/17/3c2ba-dia-livre-programacao-definida/">3º Dia Livre - Programação Definida!</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Marcelo Cavalcante Rocha - Kalib -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

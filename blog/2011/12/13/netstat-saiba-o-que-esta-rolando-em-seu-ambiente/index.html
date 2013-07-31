@@ -1,0 +1,423 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Netstat - Saiba o que está rolando em seu ambiente... - Hacking the damn life</title>
+  <meta name="author" content="Marcelo Cavalcante Rocha - Kalib">
+
+  
+  <meta name="description" content="Saudações pessoal, Que tal saber um pouco mais sobre o que lhe cerca virtualmente? Conexões de rede às quais sua máquina está ligada, tabelas de &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://kalib.github.io/blog/2011/12/13/netstat-saiba-o-que-esta-rolando-em-seu-ambiente">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Hacking the damn life" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Hacking the damn life</a></h1>
+  
+    <h2>What if...</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:kalib.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Netstat - Saiba O Que Está Rolando Em Seu Ambiente...</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-12-13T08:38:50-03:00" pubdate data-updated="true">Dec 13<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><a href="http://pixelmaverick.com/wp-content/uploads/2009/11/brunocb-sherlock-holmes-tux-5975.png"><img src="http://pixelmaverick.com/wp-content/uploads/2009/11/brunocb-sherlock-holmes-tux-5975.png" alt="" /></a></p>
+
+<hr />
+
+<p><strong>S</strong>audações pessoal,</p>
+
+<p><strong>Q</strong>ue tal saber um pouco mais sobre o que lhe cerca virtualmente? Conexões de rede às quais sua máquina está ligada, tabelas de roteamento, estatísticas de interfaces, conexões mascaradas, multicasting, etc.. ?</p>
+
+<p><strong>A</strong>pesar de muitos conhecerem o netstat, poucos sabem que ele é capaz de tudo isso e mais um pouco. O netstat é sem sombra de dúvidas uma rica ferramenta que possui inúmeros comandos e combinações que sequer cabem em um artigo simples como este post.</p>
+
+<p><strong>A</strong> ideia vai ser apenas apresentar algumas opções que podem ser bem interessantes no dia a dia de um administrador de redes/sysadmin.</p>
+
+<p><strong>V</strong>amos lá&hellip;</p>
+
+<p><strong>1.</strong> <strong>Listar todas as portas, incluindo portas que estão sendo escutadas e portas que não estão:</strong></p>
+
+<p><strong>1.1</strong> Para listar TODAS as portas, podemos utilizar o parâmetro -a:
+[root@tuxcaverna ~]# netstat -a
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State
+tcp        0      0 localhost.localdo:55481 <em>:</em>                     LISTEN
+tcp        0      0 <em>:60634                 </em>:<em>                     LISTEN
+tcp        0      0 </em>:6881                  <em>:</em>                     LISTEN
+tcp        0      0 172.16.1.6:46714        gru03s08-in-f20.1:https TIME_WAIT
+tcp        0      0 172.16.1.6:40899        gx-in-f138.1e1:www-http ESTABLISHED
+tcp        0      0 localhost.localdo:48742 localhost.localdo:55481 ESTABLISHED
+tcp        0      0 172.16.1.6:48643        125-233-152-234.d:21990 TIME_WAIT
+tcp        0      0 172.16.1.6:46717        gru03s08-in-f20.1:https TIME_WAIT
+tcp        0      0 172.16.1.6:57293        apache2-fungi.:www-http TIME_WAIT
+tcp        0      0 172.16.1.6:36444        gru03s05-in-f22.1:https ESTABLISHED
+tcp        0      0 172.16.1.6:57659        gru03s06-in-f1:www-http ESTABLISHED
+tcp        0      0 localhost.localdo:55481 localhost.localdo:48742 ESTABLISHED
+tcp        0      0 172.16.1.6:50581        gru03s06-in-f23.1:https ESTABLISHED
+tcp        0      0 172.16.1.6:39979        sn1msg1010828.phx.:msnp ESTABLISHED
+&hellip;</p>
+
+<p><strong>N</strong>ão coloquei a saída inteira, pois era bem extensa e ainda temos muitos parâmetros para ver. Onde existe XXX.XX.X.XX, obviamente, era o endereço IP que ocultei por puro protesto pela alta no preço do <strong>amendoim</strong>.</p>
+
+<p><strong>1.2</strong> Para listar todas as portas UDP, utilizamos os parâmetros -au:</p>
+
+<p>[root@tuxcaverna ~]# netstat -au</p>
+
+<p>Active Internet connections (servers and established) Proto Recv-Q Send-Q Local Address Foreign Address State udp 0 0 <em>:bootpc </em>:<em> udp 0 0 </em>:49119 <em>:</em> udp 0 0 <em>:mdns </em>:*</p>
+
+<p><strong>1.3</strong> Para listar todas as portas TCP, utilizamos os parâmetros -at:</p>
+
+<p>[root@tuxcaverna ~]# netstat -at
+Active Internet connections (servers and established) Proto Recv-Q Send-Q Local Address Foreign Address State tcp 0 0 localhost.localdo:39307 <em>:</em> LISTEN tcp 0 0 <em>:64758 </em>:* LISTEN tcp 0 0 XXX.XX.X.XX:54293 gru03s06-in-f21.1:https ESTABLISHED tcp 1 0 XXX.XX.X.XX:58732 sn1msg3020104.sn1.:msnp CLOSE_WAIT</p>
+
+<p><strong>2.</strong> <strong>Listar os Sockets que estão no estado Listening ou escuta:</strong></p>
+
+<p><strong>2.1</strong> Para listar todas no estado Listening, utilizamos o parâmetro -l:</p>
+
+<p>[root@tuxcaverna ~]# netstat -l</p>
+
+<p>Active Internet connections (only servers) Proto Recv-Q Send-Q Local Address Foreign Address State tcp 0 0 localhost.localdo:39307 <em>:</em> LISTEN tcp 0 0 <em>:64758 </em>:* LISTEN Active UNIX domain sockets (only servers) Proto RefCnt Flags Type State I-Node Path unix 2 [ ACC ] STREAM LISTENING 10443 @/tmp/.ICE-unix/1396 unix 2 [ ACC ] STREAM LISTENING 8262 /var/run/xdmctl/dmctl/socket unix 2 [ ACC ] STREAM LISTENING 8277 /var/run/xdmctl/dmctl-:0/socket</p>
+
+<p><strong>2.2</strong> Para listar apenas as portas TCP no estado Listening, utilizamos os parâmetros -lt:</p>
+
+<p>[root@tuxcaverna ~]# netstat -lt</p>
+
+<p>Active Internet connections (only servers) Proto Recv-Q Send-Q Local Address Foreign Address State tcp 0 0 localhost.localdo:39307 <em>:</em> LISTEN tcp 0 0 <em>:64758 </em>:* LISTEN</p>
+
+<p><strong>2.3</strong> Para listar apenas as portas UNIX em estado Listening, utilizamos os parâmetrox -lx:</p>
+
+<p>[root@tuxcaverna ~]# netstat -lx</p>
+
+<p>Active UNIX domain sockets (only servers) Proto RefCnt Flags Type State I-Node Path unix 2 [ ACC ] STREAM LISTENING 10443 @/tmp/.ICE-unix/1396 unix 2 [ ACC ] STREAM LISTENING 8262 /var/run/xdmctl/dmctl/socket unix 2 [ ACC ] STREAM LISTENING 8277 /var/run/xdmctl/dmctl-:0/socket</p>
+
+<p><strong>3.</strong> <strong>Apresentar as estatísticas para cada protocolo:</strong></p>
+
+<p><strong>3.1</strong> Para apresentar as estatísticas de todos os protocolos, utilizamos o parâmetro -s:</p>
+
+<p>[root@tuxcaverna ~]# netstat -s</p>
+
+<p>Ip: 98790 total packets received 54 with invalid headers 2 with invalid addresses 0 forwarded 0 incoming packets discarded 94778 incoming packets delivered 79070 requests sent out Icmp: 0 ICMP messages received 0 input ICMP message failed. ICMP input histogram: 0 ICMP messages sent 0 ICMP messages failed ICMP output histogram: Tcp: 2019 active connections openings 2 passive connection openings 10 failed connection attempts 161 connection resets received 14 connections established 88977 segments received 75703 segments send out 297 segments retransmited 0 bad segments received. 216 resets sent Udp: 2986 packets received 0 packets to unknown port received. 0 packet receive errors 3080 packets sent 0 receive buffer errors 0 send buffer errors</p>
+
+<p>&hellip;</p>
+
+<p>&hellip;</p>
+
+<p><strong>3.2</strong> Para apresentar as estatísticas do protocolo TCP (ou) UDP, utilizamos os parâmetros -st (ou) -su:</p>
+
+<p>[root@tuxcaverna ~]# netstat -st</p>
+
+<p>Tcp: 2031 active connections openings 2 passive connection openings 10 failed connection attempts 164 connection resets received 10 connections established 89257 segments received 76010 segments send out 297 segments retransmited 0 bad segments received. 219 resets sent</p>
+
+<p>ou</p>
+
+<p>[root@tuxcaverna ~]# netstat -su</p>
+
+<p>Udp: 3012 packets received 0 packets to unknown port received. 0 packet receive errors 3107 packets sent 0 receive buffer errors 0 send buffer errors</p>
+
+<p><strong>4.</strong> <strong>Apresentar o PID (ID do prcesso) e os nomes de programas:</strong></p>
+
+<p><strong>4.1</strong> Neste caso utilizamos o netstat com o parâmetro -p para receber a informação de &ldquo;PID/Nome do Programa&rdquo; na saída do netstat. Esta opção é muito útil para debugar e identificar qual programa está rodando em uma porta específica. O parâmetro -p pode ser combinado com demais parâmetros:</p>
+
+<p>[root@tuxcaverna ~]# netstat -pt
+Active Internet connections (w/o servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+tcp        0      0 XXX.XX.X.X:6881         83-228-34-45.btc-:11729 SYN_RECV    &ndash;
+tcp        0      0 XXX.XX.X.X:39508        200.123.194.16:www-http ESTABLISHED 30741/chromium
+tcp        0      0 XXX.XX.X.X:36321        208.46.17.59:www-http   ESTABLISHED 30741/chromium
+tcp        0      0 XXX.XX.X.X:57411        65.55.142.101:https     ESTABLISHED 3292/python2
+tcp        0      0 XXX.XX.X.X:6881         bd3e1c77.virtua.c:59298 ESTABLISHED 20447/qbittorrent</p>
+
+<p><strong>5.</strong> <strong>Não resolver host, porta ou nome de usuário:</strong></p>
+
+<p><strong>5.1</strong> Utiliza-se o parâmetro -an quando não se deseja receber na saída do netstat informações de host, porta ou usuarios com seus respectivos nomes resolvidos. Ao invés destas informações virão números:</p>
+
+<p>[root@tuxcaverna ~]# netstat -an
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State
+tcp        0      0 0.0.0.0:61108           0.0.0.0:<em>               LISTEN
+tcp        0      0 0.0.0.0:6881            0.0.0.0:</em>               LISTEN
+tcp        0      0 127.0.0.1:49155         0.0.0.0:*               LISTEN</p>
+
+<p><strong>5.2</strong> Se você não quizer descartar as 3 informações de uma vez, pode optar por ocultar apenas uma em específico, conforme abaixo:</p>
+
+<blockquote><p><em>[root@tuxcaverna ~]# netstat -a &mdash;numericports</em></p></blockquote>
+
+<p>ou</p>
+
+<blockquote><p><em>[root@tuxcaverna ~]# netstat -a -numeric-hosts</em></p></blockquote>
+
+<p>ou</p>
+
+<blockquote><p><em>[root@tuxcaverna ~]# netstat -a numeric-users</em></p></blockquote>
+
+<p><strong>6.</strong> <strong>Que</strong> <strong>tal ter uma saída contínua de informações em tempo real? Para isso usa-se o parâmetro -c, que vai atualizar as informações do netstat a cada segundo:</strong></p>
+
+<p>[root@tuxcaverna ~]# netstat -c
+Active Internet connections (w/o servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State
+tcp        0      0 XXX.XX.X.X:57411        65.55.142.101:https     ESTABLISHED
+tcp        0      0 XXX.XX.X.X:6881         bd3e1c77.virtua.c:59298 ESTABLISHED
+tcp        1      0 XXX.XX.X.X:49920        sn1msg2010605.phx.:msnp CLOSE_WAIT
+tcp        0      0 XXX.XX.X.X:45554        111-240-177-108.dy:8921 TIME_WAIT</p>
+
+<p><strong>7.</strong> <strong>Encontrar famílias de endereços não suportadas em seu sistema:</strong></p>
+
+<p><strong>U</strong>tilizamos o parâmetro &mdash;verbose. Repare que nas últimas linhas do retorno teremos algo como:</p>
+
+<p>[root@tuxcaverna ~]# netstat -c
+netstat: no support for <code>AF IPX' on this system.
+netstat: no support for</code>AF AX25&#8217; on this system.
+netstat: no support for <code>AF X25' on this system.
+netstat: no support for</code>AF NETROM&#8217; on this system.</p>
+
+<p><strong>8.</strong> <strong>Para apresentar informações de rotas do kernel utilizamos o parâmetro -r:</strong></p>
+
+<p>[root@tuxcaverna ~]# netstat -r
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags   MSS Window  irtt Iface
+default         172.16.1.1      0.0.0.0         UG        0 0          0 wlan0
+172.16.1.0      *               255.255.255.0   U         0 0          0 wlan0</p>
+
+<p>&hellip;ou, pode-se utilizar -rn para apresentar em formato numérico ao invés de nomes de hosts.</p>
+
+<hr />
+
+<p><strong>9.</strong> <strong>Para descobrir em qual porta um determinado programa está rodando utilizamos os parâmetros -ap:</strong></p>
+
+<p>[root@tuxcaverna ~]# netstat -ap
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+tcp        0      0 <em>:61108                 </em>:<em>                     LISTEN      3452/wish
+tcp        0      0 </em>:6881                  <em>:</em>                     LISTEN      20447/qbittorrent
+tcp        0      0 localhost.localdo:49155 <em>:</em>                     LISTEN      4010/GoogleTalkPlug
+tcp        0    269 172.16.1.3:58742        52.60.in-addr.arp:12814 FIN_WAIT1   &ndash;
+tcp        0      0 172.16.1.3:6881         bd3e1c77.virtua.c:59298 ESTABLISHED 20447/qbittorrent</p>
+
+<p><strong>9.1</strong> Se quizer especificar o programa, ao invés de o procurar em uma extensa lista, utilize um filtro com o grep da seguinte forma:</p>
+
+<p>[root@tuxcaverna ~]# netstat -ap | grep chromium
+unix  2      [ ACC ]     STREAM     LISTENING     252100   30741/chromium       /tmp/.org.chromium.Chromium.bSJLzX/SingletonSocket
+unix  3      [ ]         STREAM     CONNECTED     309051   30741/chromium
+unix  3      [ ]         STREAM     CONNECTED     308785   30741/chromium</p>
+
+<p><strong>9.2</strong> Se ao invés de especificar o programa, você quizer especificar uma porta e saber o que está rodando nela, pode-se utilizar o filtro do grep da seguinte forma:</p>
+
+<blockquote><p><em>[root@tuxcaverna ~]# netstat -an | grep &lsquo;:80&rsquo;</em></p></blockquote>
+
+<p><strong>10.</strong> <strong>Para terminar, podemos utilizar o parâmetro -i para listar nossas interfaces de rede:</strong></p>
+
+<p>[root@tuxcaverna ~]# netstat -i
+Kernel Interface table
+Iface   MTU Met   RX-OK RX-ERR RX-DRP RX-OVR    TX-OK TX-ERR TX-DRP TX-OVR Flg
+eth0   1500 0         0      0      0 0             0      0      0      0 BMU
+lo    16436 0       662      0      0 0           662      0      0      0 LRU
+wlan0  1500 0    157377      0      4 0        133487      0      0      0 BMRU</p>
+
+<p><strong>S</strong>e desejar informações mas detalhadas sobre cada interface, pode-se utilizara combinação de parâmetros -ie:</p>
+
+<p>[root@tuxcaverna ~]# netstat -ie
+Kernel Interface table
+eth0: flags=4099&lt;UP,BROADCAST,MULTICAST>  mtu 1500  metric 1
+ether a4:ba:db:d7:41:c0  txqueuelen 1000  (Ethernet)
+RX packets 0  bytes 0 (0.0 B)
+RX errors 0  dropped 0  overruns 0  frame 0
+TX packets 0  bytes 0 (0.0 B)
+TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+device interrupt 47  base 0xc000</p>
+
+<p><strong>H</strong>appy Hacking&hellip;</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">kalib</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-12-13T08:38:50-03:00" pubdate data-updated="true">Dec 13<span>th</span>, 2011</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/impressoes/'>Impressões</a>, <a class='category' href='/blog/categories/linux/'>Linux</a>, <a class='category' href='/blog/categories/redes/'>redes</a>, <a class='category' href='/blog/categories/seguranca/'>segurança</a>, <a class='category' href='/blog/categories/software-livre/'>software livre</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://kalib.github.io/blog/2011/12/13/netstat-saiba-o-que-esta-rolando-em-seu-ambiente/" data-via="" data-counturl="http://kalib.github.io/blog/2011/12/13/netstat-saiba-o-que-esta-rolando-em-seu-ambiente/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/10/24/que-tal-ajudar-o-projeto-kde-com-apenas-1-minuto-do-seu-tempo/" title="Previous Post: Que tal ajudar o projeto KDE com apenas 1 minuto do seu tempo?">&laquo; Que tal ajudar o projeto KDE com apenas 1 minuto do seu tempo?</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/02/06/recomendacao-bibliografica-mago-e-vidro-a-torre-negra-iv/" title="Next Post: Recomendação Bibliográfica: Mago e Vidro (A Torre Negra - IV)">Recomendação Bibliográfica: Mago e Vidro (A Torre Negra - IV) &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/07/30/hello-world/">Hello World</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/02/06/recomendacao-bibliografica-mago-e-vidro-a-torre-negra-iv/">Recomendação Bibliográfica: Mago E Vidro (a Torre Negra - IV)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/12/13/netstat-saiba-o-que-esta-rolando-em-seu-ambiente/">Netstat - Saiba O Que Está Rolando Em Seu Ambiente...</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/10/24/que-tal-ajudar-o-projeto-kde-com-apenas-1-minuto-do-seu-tempo/">Que Tal Ajudar O Projeto KDE Com Apenas 1 Minuto Do Seu Tempo?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/10/17/3c2ba-dia-livre-programacao-definida/">3º Dia Livre - Programação Definida!</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Marcelo Cavalcante Rocha - Kalib -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

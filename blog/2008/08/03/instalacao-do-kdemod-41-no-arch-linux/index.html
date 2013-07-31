@@ -1,0 +1,323 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Instalação do KDEmod 4.1 no Arch Linux - Hacking the damn life</title>
+  <meta name="author" content="Marcelo Cavalcante Rocha - Kalib">
+
+  
+  <meta name="description" content="Creio que todos os usuários de Arch Linux conhecem ou já ouviram falar do Hugo Doria. O Hugo é um dos maiores representantes do Arch Linux no Brasil &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://kalib.github.io/blog/2008/08/03/instalacao-do-kdemod-41-no-arch-linux">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Hacking the damn life" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Hacking the damn life</a></h1>
+  
+    <h2>What if...</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:kalib.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Instalação Do KDEmod 4.1 No Arch Linux</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-08-03T10:07:00-03:00" pubdate data-updated="true">Aug 3<span>rd</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Creio que todos os usuários de Arch Linux conhecem ou já ouviram falar do <a href="http://hugodoria.org/">Hugo Doria</a>. O Hugo é um dos maiores representantes do Arch Linux no Brasil e um dos atuais desenvolvedores do mesmo.</p>
+
+<p>Este artigo sobre instalação do KDEmod 4.1 foi escrito por ele e resolvi postar aqui para que possamos atingir mais público ainda. Quanto mais a informação correr, melhor. ;]</p>
+
+<p>Introdução</p>
+
+<p>No <em>Arch Linux</em> o KDE é empacotado de um jeito que eu não curto. Nele, diversas aplicações são &ldquo;englobadas&rdquo; em um só pacote (isso é o padrão na maioria das distribuições).</p>
+
+<p>Ao instalar o pacote <em>kdegraphics</em>, por exemplo, você acaba instalando diversas aplicações para manipulação gráfica. Mesmo que você queira apenas a &ldquo;aplicação x&rdquo; daquele pacote será obrigado a instalar o kdegraphics todo. Isso torna o KDE enorme e com diversas aplicações que você nunca usa.<a href="http://bp3.blogger.com/_5kfJplBiYy0/SJWvv3vtmLI/AAAAAAAAAFM/snVgZsrb6Us/s1600-h/thumb_kdemod41.png"><img src="http://bp3.blogger.com/_5kfJplBiYy0/SJWvv3vtmLI/AAAAAAAAAFM/snVgZsrb6Us/s200/thumb_kdemod41.png" alt="" /></a></p>
+
+<p>A solução para isto é usar o <a href="http://www.kdemod.ath.cx/">KDEMod</a>, um projeto que visa fornecer uma instalação modular do KDE e otimizada para o Arch Linux.</p>
+
+<p>NOTA: Não há planos para portar o KDEMod para outras distribuições.</p>
+
+<p>Instalação</p>
+
+<p>O primeiro passo a ser feito é remover toda e qualquer instalação do <em>KDEMod</em> anterior. Faça isso com:</p>
+
+<blockquote><h1>pacman -Rscn kdemod-complete</h1></blockquote>
+
+<p>Se você já está usando as versões betas do kdemod4, também faça:</p>
+
+<blockquote><h1>pacman -Rscn kdemod4-complete</h1></blockquote>
+
+<p>Verifique se tudo relacionado ao kde foi removido com:</p>
+
+<blockquote><h1>pacman -Q | grep kde</h1></blockquote>
+
+<p>Se aparecer algo, pode remover. Uma maneira mais direta de fazer isto é executando:</p>
+
+<blockquote><h1>pacman -Q | grep -i &ldquo;kde|qt&rdquo; | cut -d &ldquo; &rdquo; -f1 | xargs pacman -Rd</h1></blockquote>
+
+<p>É preciso, também, remover os arquivos de configuração do kdemod 3 e 4 anteriores, já que eles são incompatíveis com a nova versão:</p>
+
+<blockquote><p>$ rm -rf ~/.kde<em> ~/.kdemod</em></p></blockquote>
+
+<p>NOTA: Ao invés de removê-los eu sugiro que você faça um backup.</p>
+
+<p>Pronto, seu sistema está limpo e agora podemos instalar a nova versão sem problemas. Abra o arquivo <em>/etc/pacman.conf</em> com seu editor preferido e adicione:</p>
+
+<blockquote><p>[kdemod-core]</p></blockquote>
+
+<p>Server = <a href="http://kdemod.ath.cx/repo/core/i686">http://kdemod.ath.cx/repo/core/i686</a></p>
+
+<blockquote></blockquote>
+
+<p>NOTA:</p>
+
+<ul>
+<li>Remove qualquer entrada referente ao [kdemod] ou ao [kdemod-unstable]</li>
+</ul>
+
+
+<p>Para instalar o KDEMod faça:</p>
+
+<blockquote><h1>pacman -Sy kdemod</h1></blockquote>
+
+<p>Se quiser o kdemod completo faça:</p>
+
+<blockquote><h1>pacman -Sy kdemod-complete</h1></blockquote>
+
+<p>Seu KDEMod está pronto para uso. :) Para usá-lo basta editar seu ~/.xinitrc ou iniciar o kdm (gerenciador de login do KDE) com:</p>
+
+<blockquote><h1>/etc/rc.d/kdm restart</h1></blockquote>
+
+<p>O primeiro boot do KDE 4 demora um pouco, mas depois melhora. Portanto, não se preocupe.</p>
+
+<p>Caso você queira seu ambiente em português instale o pacote abaixo:</p>
+
+<blockquote><h1>pacman -Sy kdemod-kde-l10n-pt_br</h1></blockquote>
+
+<p>E selecione seu idioma nas configurações do KDE.</p>
+
+<p>Pacotes Adicionais</p>
+
+<p>Agora existe um repositório com alguns pacotes adicionais para o KDE (aplicativos, plasmoids etc). Para usá-lo adicione as seguintes linhas ao <em>/etc/pacman.conf</em>:</p>
+
+<blockquote><p>[kdemod-extragear]</p></blockquote>
+
+<p>Server = <a href="http://kdemod.ath.cx/repo/extragear/i686">http://kdemod.ath.cx/repo/extragear/i686</a></p>
+
+<blockquote></blockquote>
+
+<p>E sincronize a base de dados dos pacotes:</p>
+
+<blockquote><h1>pacman -Sy</h1></blockquote>
+
+<p>Para visualizar o que existe neste repositório faça:</p>
+
+<blockquote><h1>pacman -Sl kdemod-extragear</h1></blockquote>
+
+<p>Por enquanto ainda existem poucos pacotes neste repositório, mas vários outros estão sendo adicionados.</p>
+
+<p>Bem, é isso. Agora é só você aproveitar seu KDEMod 4. No momento que estou escrevendo este artigo ele se encontra na versão 4.1 e já está ficando fantástico.</p>
+
+<p>Maiores informações:</p>
+
+<ul>
+<li><a href="http://www.kdemod.ath.cx/">http://www.kdemod.ath.cx/</a></li>
+</ul>
+
+
+<p>Deixo aqui os agradecimentos ao Hugo em nome de todos pela contribuição.</p>
+
+<p><img src="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif" alt="" /></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">kalib</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-08-03T10:07:00-03:00" pubdate data-updated="true">Aug 3<span>rd</span>, 2008</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/arch-linux/'>Arch Linux</a>, <a class='category' href='/blog/categories/kde/'>KDE</a>, <a class='category' href='/blog/categories/linux/'>Linux</a>, <a class='category' href='/blog/categories/software-livre/'>software livre</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://kalib.github.io/blog/2008/08/03/instalacao-do-kdemod-41-no-arch-linux/" data-via="" data-counturl="http://kalib.github.io/blog/2008/08/03/instalacao-do-kdemod-41-no-arch-linux/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2008/07/30/corrigindo-incompatibilidade-do-kdemod-apos-o-nascimento-do-kde41-no-arch/" title="Previous Post: Corrigindo incompatibilidade do kdemod após o nascimento do KDE4.1 no Arch">&laquo; Corrigindo incompatibilidade do kdemod após o nascimento do KDE4.1 no Arch</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2008/08/11/o-software-livre-precisa-de-voce/" title="Next Post: O Software Livre precisa de você">O Software Livre precisa de você &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/07/30/hello-world/">Hello World</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/02/06/recomendacao-bibliografica-mago-e-vidro-a-torre-negra-iv/">Recomendação Bibliográfica: Mago E Vidro (a Torre Negra - IV)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/12/13/netstat-saiba-o-que-esta-rolando-em-seu-ambiente/">Netstat - Saiba O Que Está Rolando Em Seu Ambiente...</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/10/24/que-tal-ajudar-o-projeto-kde-com-apenas-1-minuto-do-seu-tempo/">Que Tal Ajudar O Projeto KDE Com Apenas 1 Minuto Do Seu Tempo?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/10/17/3c2ba-dia-livre-programacao-definida/">3º Dia Livre - Programação Definida!</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Marcelo Cavalcante Rocha - Kalib -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

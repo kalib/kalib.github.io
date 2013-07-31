@@ -1,0 +1,297 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Chaveamento de Interfaces de rede - placas Broadcom - Hacking the damn life</title>
+  <meta name="author" content="Marcelo Cavalcante Rocha - Kalib">
+
+  
+  <meta name="description" content="Como diria a Feiticeira (não lembro o nome real dela), não é feitiçaria, é tecnologia! Como já expliquei no outro post, tive problemas com meu &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://kalib.github.io/blog/2010/12/29/chaveamento-de-interfaces-de-rede-placas-broadcom">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Hacking the damn life" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Hacking the damn life</a></h1>
+  
+    <h2>What if...</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:kalib.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Chaveamento De Interfaces De Rede - Placas Broadcom</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-29T09:25:13-03:00" pubdate data-updated="true">Dec 29<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><img src="http://cdn.venturebeat.com/wp-content/uploads/2010/10/broadcom-chip.jpg" alt="broadcom" /></p>
+
+<p><strong>C</strong>omo diria a Feiticeira (não lembro o nome real dela), não é feitiçaria, é tecnologia!</p>
+
+<p><strong>C</strong>omo já expliquei no outro post, tive problemas com meu notebook e por isso passei muito tempo afastado do blog. Bom, recentemente comprei outro e cá estou novamente em casa.</p>
+
+<p><strong>M</strong>as, como nem tudo é um mar de rosas&hellip; toda mudança trás impactos positivos e negativos.</p>
+
+<p><img src="http://blog.grupojbr.com.br/up/g/gr/blog.grupojbr.com.br/img/20101114090300_634036567553112000vostro3300.jpg" alt="" /></p>
+
+<p><strong>A</strong> máquina escolhida foi um Dell Vostro 3300. Com certeza uma excelente máquina e que eu não deixaria de recomendar para ninguém.</p>
+
+<p><strong>P</strong>ara quem comprou algum Dell recentemente, ou pensou em comprar, não deve ser uma novidade que estas máquinas, em sua grande maioria, estão trazendo chipsets wireless da Broadcom, ao invés dos Intel.</p>
+
+<p><strong>Q</strong>uando pensei em comprar, refleti bastante sobre isto, visto que os drivers para broadcom no linux já tiveram um passado um tanto quanto nebuloso em se tratando de Wireless.</p>
+
+<p><strong>R</strong>esolvi encarar e não me arrependo. A performance está excelente. O driver realmente funcionou como deveria funcionar porém tive um pequeno problema.</p>
+
+<p><strong>U</strong>tilizo <a href="http://www.kde.org">KDE</a> como gerenciador de janelas em meu <a href="http://www.archlinux.org">ArchLinux</a> e <a href="http://wicd.sourceforge.net/">Wicd</a> como gerenciador de redes. Estava tudo funcionando bem mas ao reiniciar a máquina um certo dia percebo que o Wicd não havia encontrado nenhuma rede wireless. o.O</p>
+
+<p><strong>R</strong>einicio novamente e ele volta a encontrar. Feitiçaria? Fiquei curioso e resolvi reiniciar novamente e&hellip; funcionou. Pensei: &ldquo;Foi apenas um susto..ela devia querer descansar..&rdquo;</p>
+
+<p><strong>M</strong>as no dia seguinte ao ligar em casa percebi que, novamente, a interface wireless não foi encontrada pelo Wicd. Lembrei do fato anterior e reiniciei novamente. A interface continuava sem funcionar no Wicd.</p>
+
+<p><strong>L</strong>hes poupando dos testes que resolvi fazer para isolar o problema, descobri que as vezes a minha interface wireless estava subindo como eth0, as vezes subindo como eth1. Isso, obviamente, deixava o Wicd confuso, pois na configuração dele é necessário especificar qual será a interface wireless e qual será a wired (cabeada). Portanto, quando o notebook subia com a wireless na eth1, o Wicd funcionava numa boa, mas quando subia na eth0 o Wicd continuava tentando escanear redes wireless com a eth1, portanto não funcionava.</p>
+
+<p><strong>A</strong>pós algumas pesquisas descobri que este é um acontecimento comum em relação ao driver da broadcom. Este chaveamento ou swap de interfaces de rede acontece realmente de forma aleatória.</p>
+
+<p><strong>C</strong>omo resolver? Amarrando a interface ao nome, literalmente.</p>
+
+<p><strong>A</strong> placa começou a funcionar da forma esperada após vincular via regra o MAC da interface ao nome que eu desejava para ela. Desta forma, na hora de subir, ambas passam a subir de acordo com a regra que eu especifiquei, o que resolveu o problema pois a interface wireless passou a sempre subir com o mesmo nome, evitando que o Wicd tentasse escanear com uma interface que não existe.</p>
+
+<p><strong>S</strong>em mais papo furado.. mãos à obra!</p>
+
+<p><strong>A</strong>ntes de mais nada é necessário criar, caso você já não possua, o arquivo <em>/etc/udev/rules.d/10-network.rules</em> acrescentando o seguinte conteúdo:</p>
+
+<p><em>SUBSYSTEM==&ldquo;net&rdquo;, ATTR{address}==&ldquo;aa:bb:cc:dd:ee:ff&rdquo;, NAME=&ldquo;eth0&rdquo;</em>
+_ SUBSYSTEM==&ldquo;net&rdquo;, ATTR{address}==&ldquo;aa:bb:cc:dd:ee:ff&rdquo;, NAME=&ldquo;eth1&rdquo;_</p>
+
+<p>o.O wtf?</p>
+
+<p><strong>B</strong>om, com isto você estará deixando claro para o sistema qual o nome que deverá ser atribuído para cada interface.</p>
+
+<p><strong>V</strong>ocê deverá apenas substituir o &ldquo;aa:bb:cc:dd:ee:ff&rdquo; e &ldquo;ff:ee:dd:cc:bb:aa&rdquo; pelos respectivos endereços MAC das interfaces.</p>
+
+<p><strong>O</strong> valor dos campos NAME podem ser alterados de acordo com sua vontade, por exemplo: eth0 para a cabeada e wlan0 para a wireless.</p>
+
+<p><strong>C</strong>aso não saiba como conseguir o endereço MAC de suas interfaces, utilize o seguinte comando:</p>
+
+<p><em># ifconfig | grep HW</em></p>
+
+<p><strong>I</strong>sso lhe dará um retorno parecido com o seguinte:</p>
+
+<p><em>eth0  Link encap:Ethernet  HWaddr <strong>A4:BA:DB:D7:41:C0</strong>
+eth1  Link encap:Ethernet  HWaddr <strong>1C:65:9D:6E:65:1B</strong></em></p>
+
+<p><strong>O</strong>s endereços MAC são os valores que destaquei acima.</p>
+
+<p><strong>ATENÇÃO:</strong> Apesar de o MAC constantemente ser escrito com letras em maiúsculo como apresentado acima, no caso do arquivo 10-network.rules você deverá utilizar letras em minúsculo. Exato, o arquivo é case sensitive, portanto só funcionará desta forma.</p>
+
+<p><strong>C</strong>aso você receba uma saída parecida com a minha e queira se certificar de qual dos dois endereços MAC é o que realmente representa a interface wireless pode testar com os seguintes comando:</p>
+
+<p><em># iwlist eth0 scanning</em></p>
+
+<p>e&hellip;﻿</p>
+
+<p><em># iwlist eth1 scanning</em></p>
+
+<p><strong>V</strong>ocê perceberá que terá resultados diferentes. O que retornar um scan completo de redes wireless disponíveis, obviamente, é a interface Wireless. ;]</p>
+
+<p><strong>A</strong>pós ter escolhido o nome que deseja para cada uma de suas interfaces pode salvar o arquivo de regra.</p>
+
+<p><strong>ATENÇÃO²:</strong> Certifique-se de atualizar o seu arquivo <em>/etc/rc.conf</em> para evitar que os nomes das interfaces estejam diferentes das que você criou no arquivo de regras.</p>
+
+<p><strong>É</strong> isto.. agora sua interface funcinoará da forma esperada.</p>
+
+<p><strong>A</strong>braços!</p>
+
+<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">kalib</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-29T09:25:13-03:00" pubdate data-updated="true">Dec 29<span>th</span>, 2010</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/arch-linux/'>Arch Linux</a>, <a class='category' href='/blog/categories/impressoes/'>Impressões</a>, <a class='category' href='/blog/categories/linux/'>Linux</a>, <a class='category' href='/blog/categories/redes/'>redes</a>, <a class='category' href='/blog/categories/software-livre/'>software livre</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://kalib.github.io/blog/2010/12/29/chaveamento-de-interfaces-de-rede-placas-broadcom/" data-via="" data-counturl="http://kalib.github.io/blog/2010/12/29/chaveamento-de-interfaces-de-rede-placas-broadcom/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2010/12/20/recomendacao-bibliografica-as-brumas-de-avalon-vol-i-a-senhora-da-magia/" title="Previous Post: Recomendação Bibliográfica: As Brumas de Avalon vol I - A Senhora da Magia">&laquo; Recomendação Bibliográfica: As Brumas de Avalon vol I - A Senhora da Magia</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2011/01/27/lancado-kde-4-6-sim-claro-se-voce-usa-arch-voce-nao-precisa-esperar/" title="Next Post: Lançado KDE 4.6 - Sim, claro...se você usa Arch você não precisa esperar!">Lançado KDE 4.6 - Sim, claro...se você usa Arch você não precisa esperar! &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/07/30/hello-world/">Hello World</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/02/06/recomendacao-bibliografica-mago-e-vidro-a-torre-negra-iv/">Recomendação Bibliográfica: Mago E Vidro (a Torre Negra - IV)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/12/13/netstat-saiba-o-que-esta-rolando-em-seu-ambiente/">Netstat - Saiba O Que Está Rolando Em Seu Ambiente...</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/10/24/que-tal-ajudar-o-projeto-kde-com-apenas-1-minuto-do-seu-tempo/">Que Tal Ajudar O Projeto KDE Com Apenas 1 Minuto Do Seu Tempo?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/10/17/3c2ba-dia-livre-programacao-definida/">3º Dia Livre - Programação Definida!</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Marcelo Cavalcante Rocha - Kalib -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

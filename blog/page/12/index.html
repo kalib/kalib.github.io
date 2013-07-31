@@ -1,0 +1,1065 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Hacking the damn life</title>
+  <meta name="author" content="Marcelo Cavalcante Rocha - Kalib">
+
+  
+  <meta name="description" content="É isso mesmo&hellip; Além de excelente linguagem de programação o Python ainda é Zen. Não acredita? Que tal conferir por si só as diretrizes Zen do &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://kalib.github.io/blog/page/12">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Hacking the damn life" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Hacking the damn life</a></h1>
+  
+    <h2>What if...</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:kalib.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/11/24/the-zen-of-python/">The Zen of Python</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-11-24T16:22:00-03:00" pubdate data-updated="true">Nov 24<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/meditacao.jpg"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/meditacao.jpg" alt="" /></a>É isso mesmo&hellip;</p>
+
+<p>Além de excelente linguagem de programação o Python ainda é Zen. Não acredita? Que tal conferir por si só as diretrizes Zen do Python?</p>
+
+<p>Aproximadamente todas as distribuições Linux trazem um interpretador python instalado, portanto basta executá-lo com o seguinte comando:</p>
+
+<blockquote><p>$ python</p></blockquote>
+
+<p>Você receberá como resposta algo como o exemplo a seguir:</p>
+
+<blockquote><p>[kalib@tuxcaverna ~]$ python Python 2.6 (r26:66714, Oct 27 2008, 10:50:31) [GCC 4.3.2] on linux2 Type &ldquo;help&rdquo;, &ldquo;copyright&rdquo;, &ldquo;credits&rdquo; or &ldquo;license&rdquo; for more information. >>></p></blockquote>
+
+<p>Agora execute o seguinte:</p>
+
+<blockquote><blockquote><blockquote><blockquote><p>import this</p></blockquote></blockquote></blockquote></blockquote>
+
+<p>Como resultado você terá o Zen do Python, como pode ser visto abaixo:</p>
+
+<blockquote><blockquote><blockquote><blockquote><p>import this</p></blockquote></blockquote></blockquote></blockquote>
+
+<p>The Zen of Python, by Tim Peters</p>
+
+<p>Beautiful is better than ugly.</p>
+
+<p>Explicit is better than implicit.</p>
+
+<p>Simple is better than complex.</p>
+
+<p>Complex is better than complicated.</p>
+
+<p>Flat is better than nested.</p>
+
+<p>Sparse is better than dense.</p>
+
+<p>Readability counts.</p>
+
+<p>Special cases aren&rsquo;t special enough to break the rules.</p>
+
+<p>Although practicality beats purity.</p>
+
+<p>Errors should never pass silently.</p>
+
+<p>Unless explicitly silenced.</p>
+
+<p>In the face of ambiguity, refuse the temptation to guess.</p>
+
+<p>There should be one&mdash; and preferably only one &mdash;obvious way to do it.</p>
+
+<p>Although that way may not be obvious at first unless you&rsquo;re Dutch.</p>
+
+<p>Now is better than never.</p>
+
+<p>Although never is often better than <em>right</em> now.</p>
+
+<p>If the implementation is hard to explain, it&rsquo;s a bad idea.</p>
+
+<p>If the implementation is easy to explain, it may be a good idea.</p>
+
+<p>Namespaces are one honking great idea &mdash; let&rsquo;s do more of those!</p>
+
+<blockquote></blockquote>
+
+<p>Para sair do interpretador Python, pressionde as teclas Ctrl + D.</p>
+
+<p>Abraços</p>
+
+<p><img src="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif" alt="" /></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/11/20/porque-python/">Porque Python?</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-11-20T09:31:04-03:00" pubdate data-updated="true">Nov 20<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://2.bp.blogspot.com/_5kfJplBiYy0/SSWM4xGT-oI/AAAAAAAAAKk/r3OVmXQUcgk/s1600-h/python.png"><img src="http://2.bp.blogspot.com/_5kfJplBiYy0/SSWM4xGT-oI/AAAAAAAAAKk/r3OVmXQUcgk/s200/python.png" alt="" /></a><strong>M</strong>uitos me perguntam sobre as vantagens do Python e o porque de, dentre tantas linguagens de programação, eu optei por ter o python como minha paixão oficial. Para evitar dar várias respostas à diferentes pessoas, resolvi compilar aqui alguns dos motivos que encontrei e que em minhas pesquisas iniciais me motivaram a escolher o Python como minha linguagem favorita.</p>
+
+<p><strong>C</strong>omecemos então pelas origens do Python. A linguagem foi criada em 1989 pelo holandês Guido van Rossum em Amsterdã. Influenciada pela linguagem ABC, desenvolvida no CWI por Guido e outros nas décadas de 70 e 80. ABC tinha um foco bem definido: ser uma linguagem de programação para usuários inteligentes de computadores que não eram programadores: Físicos, Cientistas Sociais, dentre outros. O projeto de sistema operacional distribuído da época, o Amoeba, precisava de uma linguagem de script. Eis que surge então o Python, trazendo como sua base os seguintes aspectos:</p>
+
+<ul>
+<li></li>
+</ul>
+
+
+<p>Elementos   que eram bem sucedidos no ABC.</p>
+
+<ul>
+<li></li>
+</ul>
+
+
+<p>Estruturas  de dados poderosas inclusas: Listas, Dicionários, Strings, etc..</p>
+
+<ul>
+<li></li>
+</ul>
+
+
+<p>Usar    indentação para delimitar blocos, eliminando chaves. (Eu adoro    isso! :p)</p>
+
+<ul>
+<li></li>
+</ul>
+
+
+<p>Fácil  extensão (lição aprendida com os erros do ABC)</p>
+
+<ul>
+<li></li>
+</ul>
+
+
+<p>Fácil de   portar: além do Amoeba, também era desejado que ele rodasse em    Unix, Macintosh e Windows.</p>
+
+<ul>
+<li>Influências de Modula-2 e Modula-3:    módulos e namespaces</li>
+</ul>
+
+
+<p><strong>A</strong>lém destes aspectos o python teve alguns &ldquo;favorecimentos&rdquo; durante sua criação. Alguns detalhes que contribuíram para sua concepção de sucesso foram:</p>
+
+<ul>
+<li></li>
+</ul>
+
+
+<p><strong>Universidade:</strong> pessoas altamente especializadas para desenvolver e opinar os     elementos do projeto</p>
+
+<ul>
+<li></li>
+</ul>
+
+
+<p><strong>Descontraído:</strong> o nome Python vem da séria de humor Monty Python&rsquo;s Flying Circus</p>
+
+<ul>
+<li></li>
+</ul>
+
+
+<p><strong>Sem   prazos, Sem pressão:</strong> o desenvolvimento não foi pressionado por  estratégias de marketing, prazos, clientes ou qualquer outro fator     que pudesse influenciar nas decisões de projeto, <strong>resultando em   maior qualidade</strong>.</p>
+
+<ul>
+<li><strong>Software Livre:</strong> garante a vida  da tecnologia</li>
+</ul>
+
+
+<p><strong>D</strong>entre as características do Python que mais me chamaram à atenção, estão as seguintes:</p>
+
+<ul>
+<li></li>
+</ul>
+
+
+<p><strong>Simplicidade:</strong> Python é uma linguagem muito simples.</p>
+
+<ul>
+<li></li>
+</ul>
+
+
+<p><strong>Interpretada:</strong> usa máquina virtual, facilita portabilidade.</p>
+
+<ul>
+<li></li>
+</ul>
+
+
+<p><strong>Interativa:</strong> pode-se programar interativamente, os comandos são executados  enquanto digitados. Facilita testes, desenvolvimento ágil e outros.</p>
+
+<ul>
+<li></li>
+</ul>
+
+
+<p><strong>Orientada     a Objetos:</strong> Tudo é objeto. Incluindo herança múltipla,  conceito apenas parcialmente presente em Java até então.</p>
+
+<ul>
+<li></li>
+</ul>
+
+
+<p><strong>Exceções:</strong> Um moderno mecanismo para o tratamento de erros.</p>
+
+<ul>
+<li></li>
+</ul>
+
+
+<p><strong>Coleta de     lixo automática:</strong> Sistema que elimina os erros causados pelo  acúmulo de dados inúteis na memória do computador.</p>
+
+<ul>
+<li></li>
+</ul>
+
+
+<p><strong>Fortemente    Tipada:</strong> Não existe casts e nem conversão automática. Não se   mistura tipos &ldquo;automagicamente&rdquo;. :p</p>
+
+<ul>
+<li></li>
+</ul>
+
+
+<p><strong>Tipagem   Dinâmica:</strong> A tipagem de um objeto é feita em tempo de execução.    Um objeto tem tipo, uma variável não.</p>
+
+<ul>
+<li></li>
+</ul>
+
+
+<p><strong>Portabilidade:</strong> Portável para diversas arquiteturas como: Unix, Linux, BSD,     Macintosh, Solaris, Windows, OS/2, Amiga, AROS, AS/400, BeOS, QNX,  Palm OS, VMS, Psion, Acom Risc OS, PlayStation, Sharp Zaurus,   Windows CE, PocketPC, etc. Quer mais o que???</p>
+
+<ul>
+<li></li>
+</ul>
+
+
+<p><strong>Extensível:</strong> Facilmente extensível caso deseje parte do seu código em C++ por     exemplo por algum motivo.</p>
+
+<ul>
+<li><strong>Quer mais?</strong> o.O</li>
+</ul>
+
+
+<p><strong>E</strong> para os que se perguntam: Python é realmente utilizado por aí? Quem usa?</p>
+
+<p><strong>V</strong>ejamos&hellip;.</p>
+
+<p><strong>No Brasil:</strong></p>
+
+<ul>
+<li></li>
+</ul>
+
+
+<p><strong>Embratel:</strong> monitoramento das interfaces de backbone e clientes de internet,  também existem scripts de uso interno.</p>
+
+<ul>
+<li></li>
+</ul>
+
+
+<p><strong>CPqD:</strong> monitoramento de centrais telefônicas.</p>
+
+<ul>
+<li></li>
+</ul>
+
+
+<p><strong>Conectiva     (Mandriva):</strong> Gerenciamento de pacotes da distribuição Linux e    ferramentas de uso interno.</p>
+
+<ul>
+<li></li>
+</ul>
+
+
+<p><strong>Async:</strong> desenvolvimento de software de automação comercial.</p>
+
+<ul>
+<li></li>
+</ul>
+
+
+<p><strong>GPr   Sistemas:</strong> Desenvolvimento de aplicações sob encomenda,  sistemas como monitoramento de transporte terrestre via satélite   são as soluções já feitas.</p>
+
+<ul>
+<li>Outras que também utilizam Python para     sistemas web, como: <strong>Varig</strong>, <strong>Serpro</strong>, <strong>Câmara</strong>,     <strong>Interligis</strong>, etc.</li>
+</ul>
+
+
+<p><strong>E</strong> <strong>no mundo a fora:</strong></p>
+
+<ul>
+<li></li>
+</ul>
+
+
+<p><strong>Industrial    Light &amp; Magic:</strong> automação interna: &ldquo;Sem o Python um  projeto do tamanho do <strong>Star Wars: Epsódio II</strong>, seria muito   difícil de sair pronto.&rdquo;</p>
+
+<ul>
+<li></li>
+</ul>
+
+
+<p><strong>NASA:</strong> Repositório de CAD/CAE/PDM, gerência de modelos, integração e     sistema colaborativo. &ldquo;Nós escolhemos python porque nos    proporciona uma máxima produtividade com código que é limpo e    fácil de manter, sendo forte e extensível em bibliotecas, bem como    excelente capacidades de integração com outras aplicações de    qualquer plataforma.&rdquo;</p>
+
+<ul>
+<li></li>
+</ul>
+
+
+<p><strong>Apple:</strong> Ferramenta padrão desde o MacOS X.</p>
+
+<ul>
+<li></li>
+</ul>
+
+
+<p><strong>Microsoft:</strong> Investimento no Iron Python para a plataforma .NET.</p>
+
+<ul>
+<li></li>
+</ul>
+
+
+<p><strong>Disney:</strong> Jogos e Sistemas internos de automação e criação do patrocínio     PyQT.</p>
+
+<ul>
+<li></li>
+</ul>
+
+
+<p><strong>Bank  Boston:</strong> Sistema web usando Python e Zope.</p>
+
+<ul>
+<li></li>
+</ul>
+
+
+<p><strong>Nokia:</strong> Sistema de programação para celulares da série 60, permite mais   recursos que o Java.</p>
+
+<ul>
+<li></li>
+</ul>
+
+
+<p><strong>Atari:</strong> Jogos, como &ldquo;Temple of Elemental Evil&rdquo;.</p>
+
+<ul>
+<li></li>
+</ul>
+
+
+<p><strong>Yahoo:</strong> Yahoo! Groups foi escrito inicialmente em puro python: 180.000   linhas de código cuidavam de tudo, tratando mais de 200    mensagens/segundo em um simples Pentium 400Mhz.</p>
+
+<ul>
+<li></li>
+</ul>
+
+
+<p><strong>Nortel:</strong> Sistemas web &ldquo;ChartWare&rdquo;, &ldquo;WebBook&rdquo; e &ldquo;WebTrack&rdquo;    são exemplos.</p>
+
+<ul>
+<li></li>
+</ul>
+
+
+<p><strong>Philips:</strong> Automação da linha de semicondutores na fábrica de Fishkill.</p>
+
+<ul>
+<li></li>
+</ul>
+
+
+<p><strong>Lawrence  Livermore Natinal Laboratories:</strong> Ambiente de engenharia numérica.</p>
+
+<ul>
+<li></li>
+</ul>
+
+
+<p><strong>Red Hat:</strong> diversas ferramentas para linux, o instalador das distribuições  Red Hat e Fedora (Anaconda).</p>
+
+<ul>
+<li></li>
+</ul>
+
+
+<p><strong>Gentoo    Linux:</strong> Sistema de gerência de pacotes &ldquo;Portage&rdquo;.</p>
+
+<ul>
+<li></li>
+</ul>
+
+
+<p><strong>Blender   3D:</strong> software pode ser estendido usando plugins python.</p>
+
+<ul>
+<li></li>
+</ul>
+
+
+<p><strong>ArchLinux:</strong> O famoso Pacupdate que checa as atualizações de pacotes    disponíveis.</p>
+
+<ul>
+<li><strong>GOOGLE:</strong> Este é o maior case quando o assunto é Python. O Google é grande     adepto do Python e utiliza em várias de suas ferramentas como:     Sistema de Ajuda do GMail, Google Groups, Sistema de Compilação de    aplicativos, Sistema de empacotamento e entrega de dados, Sistema de    monitoramento e manutenção do cluster, Sistema de testes, Análise    de registros, Prototipação, etc. &ldquo;Requisito para contratar    profissionais Java: Saber Python! :&ndash;)&rdquo; (É mole?!)<a href="http://2.bp.blogspot.com/_5kfJplBiYy0/SSWNHE12WuI/AAAAAAAAAK0/vJKsSfuZzaU/s1600-h/pythonGdataLib_aboutTokens.jpg"><img src="http://2.bp.blogspot.com/_5kfJplBiYy0/SSWNHE12WuI/AAAAAAAAAK0/vJKsSfuZzaU/s320/pythonGdataLib_aboutTokens.jpg" alt="" /></a></li>
+</ul>
+
+
+<p><strong>E</strong>m resumo, Python é uma linguagem para quem quer produzir com código limpo e de forma bem feita com boa produtividade.</p>
+
+<p><strong>M</strong>enos porcaria, maior produtividade, sem marketing envolvido nas decisões, digitando menos! Bem vindo ao Python!</p>
+
+<p><strong>F</strong>ontes: Wikipedia, Google e Gustavo Sverzut Barbieri (www.gustavobarbieri.com.br)</p>
+
+<p><strong>A</strong>braços</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/11/12/ceara-on-rails-ai-vou-eu/">Ceará on Rails, aí Vou Eu&#8230;</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-11-12T10:22:00-03:00" pubdate data-updated="true">Nov 12<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/logomarca_cearaonrails.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/logomarca_cearaonrails.png" alt="" /></a>O que é CearáOnRails?</p>
+
+<p>O CearáOnRails é um evento solidário que tem como tema o desenvolvimento de sistemas web e pretende divulgar e popularizar a linguagem de desenvolvimento Ruby e o Framework Rails no estado do Ceará. Esta iniciativa contribuirá de modo relevante para promover o uso e a difusão das tecnologias entre pessoas, especialmente profissionais na área e afins, servindo como um veículo de integração, interação e colaboração. Tanto o ruby como o Rails vem mudando a forma de desenvolvimento padrão adotada pelas demais tecnologias.</p>
+
+<p>A linguagem Ruby foi criada em 1993 no Japão pelo Yukihiro Matsumoto. Esta só se tornou popular após a primeira apresentação do Framework Rails em 2003 criado por David Heinemeir Hansson, a sua apresentação foi bastante polêmica e mudou a visão sobre a metodologia de desenvolvimento de software.</p>
+
+<p>O nosso intuito é apresentar esta nova forma de desenvolver software e quanto ela é poderosa, rápida e produtiva. Com isso tentar mudar a visão atual de desenvolvimento de software na região, ou a implantação dessa nova tecnologia.</p>
+
+<p>O ingresso será de 2kgs de alimentos não perecíveis por pessoa (exceto sal) em troca do acesso às palestras. Iremos doar os alimentos arrecadados para a ONG 2A(Acreditando e Aprendendo). O evento além de sua função social e integradora, também permite uma grande difusão da tecnologia e ainda oportuniza o network entre profissionais, estudantes, professores entre outros, que irão comparecer ao evento.</p>
+
+<p>Realização do CearaOnRails</p>
+
+<p>O evento será realizado no dia 14 de Novembro de 2008 das 19:00 às 22:30 horas. Na Faculdade Christus, Avenida Dom Luís, 911, Fortaleza-Ce, no 15º Andar, em Fortaleza-Ceará. A programação prévia estabelecida pela organização será a seguinte:</p>
+
+<p>19:00-19:10 Abertura</p>
+
+<p>19:10-19:40 Palestra 1</p>
+
+<p>Palestrante: Tiago Bastos</p>
+
+<p>Tema: Onde está o método?</p>
+
+<p>Descrição: Uma introdução a recursos avançados da linguagem. Explicando como interceptar chamadas à métodos, monkey patching e avaliação de código. Mercado de trabalho.</p>
+
+<p>19:40-20:40 Palestra 2</p>
+
+<p>Palestrante: Nabucodonosor Coutinho</p>
+
+<p>Tema: ORM On Rails</p>
+
+<p>Descrição: A camada de persistência do ROR está realmente nos trilhos? A visão de um DBA sobre a camada de persistência do Rails. Analise dos padrões DAO e ActiveRecord. Análise das implementações ActiveRecord e iBatis para Ruby. Análise das implementações Rails ActiveRecord e Hibernate (java).</p>
+
+<p>20:40-21:00 Coffee Break</p>
+
+<p>21:00-22:00 Palestra 3</p>
+
+<p>Palestrante: Fábio Akita</p>
+
+<p>Tema: Desenvolvimento fora da Média com Ruby e Rails</p>
+
+<p>Descrição: Porque é importante entender as novas tecnologias como Ruby e Rails e como elas agilizam seus projetos web.</p>
+
+<p><img src="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif" alt="" /></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/11/10/arch-linux-schwag-uma-loja-para-o-arch-linux/">Arch Linux Schwag - Uma Loja Para O Arch Linux</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-11-10T11:31:00-03:00" pubdate data-updated="true">Nov 10<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/camisa_arch.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/camisa_arch.png" alt="" /></a>Saudações galera..</p>
+
+<p>Neste post eu deixo a dica de uma <a href="http://www.zazzle.com/archlinux">loja online</a> na qual você pode encontrar diversos produtos bacanas do <a href="http://www.archlinux-br.org/">Arch Linux</a>. Produtos estes que vão desde camisetas até mesmo shapes de skates ou aventais (é mole?).</p>
+
+<p>O comércio eletrônico vem crescendo a cada dia e ganhando cada vez mais adeptos por sua confiabilidade, agilidade e eficiência, isto tudo sem mencionar o conforto de navegar em shoppings e lojas sem sair de sua cadeira ou poltrona favorita. A comodidade em não perder horas de caminhada ou esperando em filas para atendimento tem atraído cada vez mais clientes para este tipo de comércio.</p>
+
+<p>Eu sou um grande adepto de comércio eletrônico e pelo menos uma vez por mês faço algum tipo de compra online sendo<a href="http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/caneca_arch.gif"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/caneca_arch.gif" alt="" /></a> os livros os responsáveis pela minha maior parcela destas compras via web.</p>
+
+<p>Aproveito para deixar aqui o link para esta incrível loja com produtos do Arch Linux e de outras várias coisas que desejar. Apesar de ser uma loja gringa, vale a pena conferir.</p>
+
+<p>Segue Link: <a href="http://www.zazzle.com/archlinux">http://www.zazzle.com/archlinux</a></p>
+
+<p>Abraços</p>
+
+<p><img src="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif" alt="" /></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/11/04/java-no-arch-comeca-a-ser-mais-livre/">Java No Arch Começa a Ser Mais LIVRE</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-11-04T11:33:00-03:00" pubdate data-updated="true">Nov 4<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/java_arch_free.jpg"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/java_arch_free.jpg" alt="" /></a>Saudações pessoal,</p>
+
+<p>Os usuários de Arch Linux, pelo menos alguns deles, talvez já saibam que o Sun Java Runtime Environment (JRE) e o Java Development Kit (JDK) tem passado muito tempo no repositório Extra esperando por algum amor extra. Entretanto, nenhum desenvolvedor se sentiu motivado à manter este pacote.</p>
+
+<p>Por outro lado, não é novidade que já existe o pacote OPENJDK6, uma implementação open source da JRE e da JDK que funciona perfeitamente bem.</p>
+
+<p>Foi decidido mover os pacotes JRE e JDK para o repositório Community, onde Geoffroy Carrier estará tomando conta deles. Ele já até atualizou os pacotes e corrigiu alguns bugs pendentes. Obrigado Geoffroy por sua boa ação.</p>
+
+<p>Nenhum pacote dos repositórios oficiais do Arch Linux depende destes pacotes no momento, já que os mesmos já foram recompilados para o OPENJDK6. Entretanto, é bom agradecer à comunidade por entender, e os desenvolvedores que se desculpam por qualquer inconveniente que possa vir a surgir.</p>
+
+<p>O mais interessante em meu ver, é o fato de o Arch estar baixando o nível de prioridade destes pacotes, elevando assim a prioridade dos pacotes livres do java em seu lugar. Isto sim é show de bola. Parabéns Arch Linux! ;]</p>
+
+<blockquote><p>&ldquo;Porque movê-los, além da razão já abordada aqui?</p></blockquote>
+
+<p>Bem, nós pretendemos favorecer implementações de código aberto ao invés de implementações de código fechado.</p>
+
+<blockquote><p>Não, sériom porque vocês mudaram eles?</p></blockquote>
+
+<p>Porque o Aaron Griffin disse que o fizesse. :-D (apenas brincando)&#8221;</p>
+
+<blockquote></blockquote>
+
+<p>Abraços</p>
+
+<p><img src="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif" alt="" /></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/10/27/asterisk-counter-seja-contado/">Asterisk Counter - Seja Contado</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-10-27T14:29:00-03:00" pubdate data-updated="true">Oct 27<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://asteriskcounter.sinologic.net/image.php?id=1148"><img src="http://asteriskcounter.sinologic.net/image.php?id=1148" alt="" /></a>Saudações pessoal&hellip;</p>
+
+<p>Muitos aqui já conheciam o sistema <a href="http://counter.li.org/">Linux Counter</a> que servia para contabilizar e registrar usuários Linux como forma de documentar e ter controles estatísticos do crescimento da comunidade Linux mundial. Agora chegou a vez do Asterisk.</p>
+
+<p>Recentemente foi disponibilizado o <a href="http://asteriskcounter.sinologic.net/">Asterisk Counter</a>. O mesmo consiste não apenas em contabilizar os usuários/profissionais de Asterisk como também estabelecer perfis que podem ser inclusive votados com comentários, como uma mini rede social (profissional) no assunto com referências vindas de outros usuários e assim por diante.</p>
+
+<p>Segue a dica para você que utiliza ou trabalha com esta excelente tecnologia Livre de Voip. Eu sou o usuário de número <a href="http://asteriskcounter.sinologic.net/details.php?id=1148">1148</a>, e você? ;]</p>
+
+<p>Abraços</p>
+
+<p><img src="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif" alt="" /></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/10/24/escondendo-informacoes-em-arquivos-binarios/">Escondendo Informações Em Arquivos Binários</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-10-24T08:09:00-03:00" pubdate data-updated="true">Oct 24<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Saudações galera&hellip;</p>
+
+<p>Recentemente um amigo, Michel, me perguntou algo sobre a possibilidade de ocultar informações em arquivos binários, como uma música ou mesmo uma foto. Eu lhe respondi que era possível, e bem simples em termos de conceito, bem como lhe prometi postar esta dica.</p>
+
+<p>No Linux sabemos que tudo é um arquivo. Nada depende exclusivamente de extensão ou tipo. Até mesmo os famosos &ldquo;diretórios&rdquo; na verdade não passam de arquivos. O que mostrarei aqui é uma dica rápida e simples de como se aproveitar disto para ocultar de forma simples e rápida alguma informação de texto em um arquivo binário qualquer que o seja. Por mais incrível que possa parecer, não precisaremos de nenhuma mágica ou ferramenta especial para isto. Quem utiliza Linux sabe que o cat ou mesmo o echo são ferramentas padrão em qualquer distribuição. SIM. Precisaremos apenas delas para fazer o &ldquo;truque&rdquo;. Não acredita? o.O</p>
+
+<p>Vamos lá&hellip;</p>
+
+<p>Antes de mais nada selecione o arquivo que será utilizado para &ldquo;camuflar&rdquo; nossa informação. Escolha uma imagem qualquer por exemplo ou outro tipo como áudio, vídeo, compactado, etc&hellip; Supondo que você escolheu o arquivo foto.jpg, passaremos ao segundo passo.</p>
+
+<p>Supondo que eu queira ocultar a frase &ldquo;Bem vindo ao Linux&rdquo; na foto.jpg, o comando seria o seguinte:</p>
+
+<p>$ echo &ldquo;Bem vindo ao Linux&rdquo; >> foto.jpg</p>
+
+<p>Simples não é?! Nada de truques ou mágicas. Pode tentar abrir a foto com algum editor de imagens como o Gimp, ou mesmo com um vizualizador de sua preferência. A foto parecerá intacta e normal. Agora tente executá-la com um editor de textes como o cat por exemplo.</p>
+
+<p>$ cat foto.jpg</p>
+
+<p>Você verá um conjunto de caracteres estranhos, dados sobre a foto em si, porém role até o final do arquivo. Depois de todos os caracteres estranhos, você encontrará a informação que ocultou anteriormente, no nosso caso é a frase &ldquo;Bem Vindo ao Linux&rdquo;.</p>
+
+<p>Simples não é? Lembrando que o mesmo conceito se aplica caso você deseje utilizar ao invés de uma única frase, todo um texto. Crie o texto com um editor de textos qualquer como o vim por exemplo e salve com o nome texto.</p>
+
+<p>Em seguida aplique o comando utilizando desta vez o cat, ao invés do echo:</p>
+
+<p>$ cat texto >> foto.jpg</p>
+
+<p>Volte a repetir os testes já citados anteriormente para ter certeza do sucesso no processo.</p>
+
+<p>Como eu disse..tudo muito simples e sem mistérios.</p>
+
+<p>Respondido Michel? ;]</p>
+
+<p>Abraço pessoal</p>
+
+<p><img src="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif" alt="" /></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/10/20/assalto-no-cinema-do-iguatemifortaleza/">Assalto No Cinema Do Iguatemi/Fortaleza!</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-10-20T16:55:00-03:00" pubdate data-updated="true">Oct 20<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Fato ou ficção?!</p>
+
+<p>Não sei até que ponto nossa cidade vai chegar. Não poder mais nem assistir um filme no shopping é um absurdo!</p>
+
+<p>Não gostaria de vincular este tipo de notícia em meu blog, porém é a terceira vez nas últimas duas semanas que recebo emails com relatos das vítimas deste tipo de ataque. E como acho que já está indo longe demais, acho que é válido divulgar isto para que as pessoas fiquem espertas sobre o que anda acontecendo.</p>
+
+<p>Este é o relato da última vítima:</p>
+
+<p>INDIGNAÇÃO!!!</p>
+
+<p>Na tarde de sábado passado, estava passeando, no        Shopping Iguatemi, com a minha namorada, quando decidimos pegar um        cineminha. Quando entramos na sala, percebemos que havia muitas crianças com seus pais e um grupo de 7 ou 8 rapazes, aparentando uns        18anos, de bonés e óculos escuros, encostados em uma parede do corredor        lateral. Fomos sentar em uma fileira de poltronas, no meio da sala;        pouco depois, começaram a exibir os trailers. Minutos após começar o        filme, um dos rapazes que estava em pé, sentou-se ao lado da minha        namorada, sacou um revólver e disse que era para ela ficar quieta,        senão ele iria atirar. Muito assustada, ela começou a chorar. Quando eu        percebi o que estava acontecendo, já estava se sentando, na poltrona ao        meu lado, um outro</p>
+
+<p>rapaz do grupo, anunciando que era um assalto e que        ele estava armado.</p>
+
+<p>Eles me levaram para fora do cinema, enquanto outros        dois elementos da gangue ficaram com a minha namorada, dentro da sala        de projeção. Fui obrigado a sacar todo o dinheiro que foi possível,        nos caixas 24hs do shopping, e tive que comprar 6 pares de tênis de        quase $500,00, cada um, numa loja de artigos esportivos, usando meu        cartão de crédito, até acabar meu limite. Uns 40 minutos depois,        voltamos para o cinema e foi a vez de fazerem a mesma coisa com a        minha namorada. Pouco antes de acabar o filme, os que estavam comigo        me mandaram sair do cinema. Quando saí, me levaram até o        estacionamento, onde já estava a minha namorada com os outros da        gangue. Fizeram com que eu os levasse até o meu carro, nos colocaram        dentro dele e terminaram de roubar as coisas que faltavam, como        celulares, relógios, etc. Mandaram que eu dirigisse para fora do        shopping, com três bandidos dentro do carro, e seguisse um outro carro,        onde estava o restante da gangue. Ficamos dando voltas de carro, até        escurecer; depois nos libertaram, em um matagal. Tivemos que andar descalços, em uma estrada de terra, durante muito tempo; acho que        por mais de 2 horas, até acharmos um sítio, de onde pude ligar para meu        pai e pedir para que ele nos apanhasse. No dia seguinte, acharam meu        carro todo batido, sem os equipamentos de som, CD e outros acessórios.</p>
+
+<p>Quando estava na delegacia, prestando queixa, o delegado falou que já        ocorreram mais de cinco assaltos como este, no mês passado. O pior é        que as câmeras do circuito interno de TV do shopping não estavam        funcionando, para tentarmos obter algumas imagens dos assaltantes. De        qualquer forma, quando for ao cinema, atenção com as pessoas que sentam        ao seu lado, especialmente se o cinema não estiver lotado ou se        existirem muitas poltronas vazias por perto; se virem grupos parados,pelos cantos, tomem muito cuidado. Vale a pena levantar e        avisar aos funcionários do cinema</p>
+
+<p>que há um grupo  suspeito, em        pé, esperando as luzes se apagarem, para, talvez, assaltarem os espectadores. Os funcionários têm recursos para avisar a vigilância do        Shopping e a Polícia.</p>
+
+<p>Abraços</p>
+
+<p><img src="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif" alt="" /></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/10/19/nossos-problemas-com-flash-acabaram-flash-10-no-extra/">Nossos Problemas Com Flash Acabaram! Flash 10 No Extra</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-10-19T10:52:00-03:00" pubdate data-updated="true">Oct 19<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://4.bp.blogspot.com/_5kfJplBiYy0/SPs-N8MDU6I/AAAAAAAAAKE/XLJIm9BGfjI/s1600-h/adobe_flash.gif"><img src="http://4.bp.blogspot.com/_5kfJplBiYy0/SPs-N8MDU6I/AAAAAAAAAKE/XLJIm9BGfjI/s200/adobe_flash.gif" alt="" /></a>Hoje, 19/10, <a href="http://archlinux-br.org/">foi lançado no repositório Extra do Archlinux o flashplugin 10</a>. Este flash veio com a promessa de resolver o problema de transparência que nós, usuários Linux, tínhamos com muitos sites que utilizavam-se de flash. Quem aqui nunca teve dor de cabeça ao tentar navegar em sites como o da OI por exemplo? o.O Era impossível.</p>
+
+<p>Hoje pela manhã, ao mandar um pacman -Syu para atualizar meu sistema, tive a felicidade de ver que havia a atualização do flash. Já fui logo atualizando. Em seguida corri para o site da OI. Para minha surpresa, FUNCIONOU PERFEITAMENTE!</p>
+
+<p>Uma benção! Parece que os nossos problemas com flash acabaram! Fica o aviso para todos os usuários de Archlinux: Esta atualização já se encontra no nosso repositório Extra. Atualizem o quanto antes.</p>
+
+<p>Grande abraço</p>
+
+<p><img src="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif" alt="" /></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/10/16/vivo-chega-em-fortaleza-finalmente/">Vivo Chega Em Fortaleza - Finalmente</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-10-16T10:19:00-03:00" pubdate data-updated="true">Oct 16<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://3.bp.blogspot.com/_5kfJplBiYy0/SPdBXivzDYI/AAAAAAAAAJ0/wjRTlq6Yv5Y/s1600-h/vivo.gif"><img src="http://3.bp.blogspot.com/_5kfJplBiYy0/SPdBXivzDYI/AAAAAAAAAJ0/wjRTlq6Yv5Y/s200/vivo.gif" alt="" /></a>Finalmente tenho o prazer de anunciar que a Operadora Vivo chegou a Fortaleza. Finalmente uma operadora decente em nossa cidade.</p>
+
+<p>Ontem, 16 de Outubro, começaram as vendas resultando em mais de 25.000 chips vendidos em um dia. Não perdi a oportunidade e comprei o meu ontem mesmo. O que foi engraçado ver a confiança que os vendedores tinham em afirmar: &ldquo;Aqui não é negócio apenas de &lsquo;Olá&rsquo;! A vivo chegou para derrubar tudo!&rdquo; Apesar de ter achado um pouco audacioso demais, não duvido que ela conquiste rapidamente boa parte do mercado local, já que a vivo é portadora de uma estrutura bem melhor que a das concorrentes.</p>
+
+<p>Além das vantagens estruturais, a vivo trouxe um outro grande atrativo em seu lançamento no Ceará com a promoção dos 1000. Com recargas mensais a partir de 6 reais, o cliente ganha:</p>
+
+<ul>
+<li><p>1000 reais para falar com outros vivos. (ligações locais)</p></li>
+<li><p>100 minutos para falar com outros vivos. (DDD)</p></li>
+<li><p>25 sms/15 dias</p></li>
+</ul>
+
+
+<p>&hellip;</p>
+
+<p>Dentre outras vantagens.</p>
+
+<p>Outra coisa que me surpreendeu foi o site deles bem como os recursos ofertados ao se fazer login com os dados de seu número. Vale a pena conferir.</p>
+
+<p><img src="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif" alt="" /></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/blog/page/13/">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/blog/page/11/">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/07/30/hello-world/">Hello World</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/02/06/recomendacao-bibliografica-mago-e-vidro-a-torre-negra-iv/">Recomendação Bibliográfica: Mago E Vidro (a Torre Negra - IV)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/12/13/netstat-saiba-o-que-esta-rolando-em-seu-ambiente/">Netstat - Saiba O Que Está Rolando Em Seu Ambiente&#8230;</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/10/24/que-tal-ajudar-o-projeto-kde-com-apenas-1-minuto-do-seu-tempo/">Que Tal Ajudar O Projeto KDE Com Apenas 1 Minuto Do Seu Tempo?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/10/17/3c2ba-dia-livre-programacao-definida/">3º Dia Livre - Programação Definida!</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Marcelo Cavalcante Rocha - Kalib -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

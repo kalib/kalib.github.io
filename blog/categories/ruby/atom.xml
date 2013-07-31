@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: ruby | Hacking the damn life]]></title>
+  <link href="http://kalib.github.io/blog/categories/ruby/atom.xml" rel="self"/>
+  <link href="http://kalib.github.io/"/>
+  <updated>2013-07-30T21:36:09-03:00</updated>
+  <id>http://kalib.github.io/</id>
+  <author>
+    <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Feliz dia do Programador!]]></title>
+    <link href="http://kalib.github.io/blog/2011/09/13/feliz-dia-do-programador/"/>
+    <updated>2011-09-13T10:11:39-03:00</updated>
+    <id>http://kalib.github.io/blog/2011/09/13/feliz-dia-do-programador</id>
+    <content type="html"><![CDATA[<p><img src="http://www.media-freaks.com/wp-content/uploads/2008/09/programmer-260x300.jpg" alt="" /></p>
+
+<p><strong>S</strong>audações pessoal,</p>
+
+<p><strong>U</strong>m feliz dia do programador para todos aqueles que, profissionalmente, curiosamente ou mesmo por mera falta do que fazer escrevem ou já escreveram linhas de código!</p>
+
+<p><strong>E</strong>sta profissão que na maior parte das vezes não trá$ o retorno e$perado, o que apenas demonstra o quão apaixonados por linha de código são essas pessoas&hellip; e por problemas.</p>
+
+<p><strong>D</strong>esafiador&hellip;estressante&hellip;cansativo&hellip;divertido&hellip;prazeroso&hellip; Como em qualquer &ldquo;casamento&rdquo;&hellip; na alegria e na tristeza!</p>
+
+<p><img src="http://www.danielimamura.com.br/wp-content/uploads/2010/09/cartoonvidaprogramador.gif" alt="" /></p>
+
+<p><strong>O</strong>bviamente que eu não vou colocar em todas as centenas de linguagens de programação que existem.. portanto, se a sua linguagem favorita não foi homenageada abaixo, não fique triste. São muitas..difícil lembrar de todas.. O que vale é a intenção.</p>
+
+<p><img src="http://www.whitefang.com/wp-content/uploads/2010/03/Programming-Languages.jpg" alt="" /></p>
+
+<p><strong>Assembly</strong></p>
+
+<h6>#</h6>
+
+<p><em>variable:</em></p>
+
+<p><em>      .message db &ldquo;Feliz dia do Programador!$&rdquo;</em></p>
+
+<p><em>code:</em></p>
+
+<p><em>      mov ah, 9</em></p>
+
+<p><em>      mov dx, offset .message</em></p>
+
+<p><em>      int 0x21</em></p>
+
+<p><em>      ret</em></p>
+
+<p><strong>BASIC</strong></p>
+
+<h6>#</h6>
+
+<p><em>PRINT &ldquo;Feliz dia do Programador!</em></p>
+
+<p><strong>C</strong></p>
+
+<h6>#</h6>
+
+<p><em># include &lt;stdio.h></em></p>
+
+<p><em>int main(void)</em></p>
+
+<p><em>{</em></p>
+
+<p><em>       printf (&ldquo;Feliz dia do Programador!&rdquo;);</em></p>
+
+<p><em>       return 0;</em></p>
+
+<p><em>}</em></p>
+
+<p><strong>C++</strong>
+<em>##############</em></p>
+
+<p><em># include <iostream></em></p>
+
+<p><em>int main()</em></p>
+
+<p><em>{</em></p>
+
+<p><em>         std::cout &lt;&lt; &ldquo;Feliz dia do Programador!&rdquo; &lt;&lt; std::endl;</em></p>
+
+<p><em>         return 0;</em></p>
+
+<p><em>}</em></p>
+
+<p><strong>Cliper</strong></p>
+
+<h6>#</h6>
+
+<p><em>? &ldquo;Feliz dia do Programador!&rdquo;</em></p>
+
+<p><strong>Delphi</strong></p>
+
+<h6>#</h6>
+
+<p><em>Program FelizDia;</em></p>
+
+<p><em>{APPTYPE CONSOLE}</em></p>
+
+<p><em>begin</em></p>
+
+<p><em>      WriteLn(&lsquo;Feliz dia do Programador!&rsquo;);</em></p>
+
+<p><em>end.</em></p>
+
+<p><strong>Go</strong></p>
+
+<h6>#</h6>
+
+<p><em>package main</em></p>
+
+<p><em>import &ldquo;fmt&rdquo;</em></p>
+
+<p><em>func main() {</em></p>
+
+<p><em>       fmt.Printf(&ldquo;Feliz dia do Programador! \n&rdquo;)</em></p>
+
+<p><em>}</em></p>
+
+<p><strong>Java</strong></p>
+
+<h6>#</h6>
+
+<p><em>public class FelizDia {</em></p>
+
+<p><em>       public static void main(String[] args) {</em></p>
+
+<p><em>                 System.out.println(&ldquo;Feliz dia do Programador!&rdquo;);</em></p>
+
+<p><em>       }</em></p>
+
+<p><em>}</em></p>
+
+<p><strong>Pascal</strong></p>
+
+<h6>#</h6>
+
+<p><em>program FelizDia(output);</em></p>
+
+<p><em>begin</em></p>
+
+<p><em>       WriteLn(&lsquo;Feliz dia do Programador!&rsquo;);</em></p>
+
+<p><em>end</em></p>
+
+<p><strong>Perl</strong></p>
+
+<h6>#</h6>
+
+<p><em>print &ldquo;Feliz dia do Programador!&rdquo;;</em></p>
+
+<p><strong>PHP</strong></p>
+
+<h6>#</h6>
+
+<p><em>&lt;?php</em></p>
+
+<p><em>     echo &ldquo;Feliz dia do Programador!&rdquo;;</em></p>
+
+<p><em>?></em></p>
+
+<p><strong>Python</strong></p>
+
+<h6>#</h6>
+
+<p><em>print(&ldquo;Feliz dia do Programador!&rdquo;)</em></p>
+
+<p><strong>Ruby</strong></p>
+
+<h6>#</h6>
+
+<p><em>puts &ldquo;Feliz dia do Programador!&rdquo;</em></p>
+
+<p><strong>Shell Script</strong></p>
+
+<h6>#</h6>
+
+<p><em>echo &lsquo;Feliz dia do Programador!&rsquo;</em></p>
+
+<p><em>SQL</em></p>
+
+<h6>#</h6>
+
+<p><em>select &lsquo;Feliz dia do Programador!&rsquo;;</em></p>
+
+<p><strong>A</strong>braço!</p>
+
+<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Ceará On Rails 2010]]></title>
+    <link href="http://kalib.github.io/blog/2009/11/05/ceara-on-rails-2010/"/>
+    <updated>2009-11-05T15:13:23-03:00</updated>
+    <id>http://kalib.github.io/blog/2009/11/05/ceara-on-rails-2010</id>
+    <content type="html"><![CDATA[<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2009/11/logomarca_cearaonrails.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/11/logomarca_cearaonrails.png" alt="logomarca_cearaonrails" /></a></p>
+
+<p><strong>S</strong>audações pessoal, este ano o <a href="http://www.cearaonrails.com.br">Ceará On Rails</a> terá sua segunda edição trazendo uma programação mais extensa em relação à anterior, em 2009.</p>
+
+<p><strong>O</strong> Ruby tem ganho bastante destaque nos últimos anos pela sua praticidade e performance enquanto linguagem para desenvolvimento ágil e simples.</p>
+
+<p><strong>O</strong> Ceará On Rails é um evento que vai trazer boas palestras aos rubistas do Ceará.</p>
+
+<p><strong>O</strong> evento será realizado no dia 7 de Novembro em Fortaleza na Unifor a partir das 14 horas.</p>
+
+<p><strong><img src="http://www.cearaonrails.com.br/images/banners/banner_210x60_participante.gif?1254746565" alt="" />V</strong>alor da entrada? Apenas uma gentil doação de 2 quilos de alimentos não perecíveis (arroz, feijão, açúcar, etc) que serão doados para a instituição <a href="http://www.cearaonrails.com.br/lardeclara">Lar Beneficiente Clara de Assis</a>.</p>
+
+<p><strong>O</strong> que? Você não acredita na comunidade local e acha que os alimentos serão desviados assim como quase tudo no Brasil? ¬¬</p>
+
+<p><strong>B</strong>om, pode relaxar. Pessoas da própria instituição estarão no evento recebendo pessoalmente os alimentos doados.</p>
+
+<p><strong>C</strong>omo grade de programação temos:</p>
+
+<p>Horário</p>
+
+<p>14:00 &ndash; 14:10 .:: Abertura
+14:10 &ndash; 15:00 .:: Clemente Gauer &ndash; Conhecendo seu MAC por dentro
+15:00 &ndash; 15:40 .:: Tiago Bastos &ndash; Ruby FTW
+15:40 &ndash; 16:30 .:: Marcos Tapajós &ndash; Introdução a banco de dados não relacionais e como utilizar CouchDB no Rails
+16:30 &ndash; 17:10 .:: Coffee Break
+17:10 &ndash; 17:30 .:: Alisson Sales &ndash; Vivendo no mundo Rails
+17:30 &ndash; 18:20 .:: Anderson Leite &ndash; Tema a definir
+18:20 &ndash; 19:10 .:: Nando Vieira &ndash; Testando Rails apps com RSpec
+19:10 &ndash; 20:00 .:: Fabio Akita &ndash; Tema a definir
+20:00 &ndash; 20:10 .:: Encerramento</p>
+
+<p><strong>E</strong> então, nos vemos lá?</p>
+
+<p><strong>A</strong>braços</p>
+
+<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Primeiro encontro CearáOnRails’09]]></title>
+    <link href="http://kalib.github.io/blog/2009/04/08/primeiro-encontro-cearaonrailse2809909/"/>
+    <updated>2009-04-08T10:17:54-03:00</updated>
+    <id>http://kalib.github.io/blog/2009/04/08/primeiro-encontro-cearaonrailse2809909</id>
+    <content type="html"><![CDATA[<p><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/04/logomarca_cearaonrails.png" alt="logomarca_cearaonrails" /></p>
+
+<p><strong>O</strong>lá pessoal.</p>
+
+<p><strong>P</strong>ara quem não conhece, Ceará On Rails é um evento voltado ao desenvolvimento web ágil com Ruby On Rails. Sua primeira edição foi em Novembro do ano passado. Estive presente e não me arrependi. Hoje teremos a segunda edição do evento. Fica o convite à todos que desejem aparecer por lá para conhecer um pouco mais sobre esta dinâmica e ágil forma de desenvolver para a Web.</p>
+
+<p><strong>CearáOnRails</strong> – Grupo de Usuários Ruby e Rails do Ceará</p>
+
+<p><strong>Website</strong> – <a href="http://www.cearaonrails.org/">http://www.cearaonrails.org</a></p>
+
+<p><strong>Lista de Discussão</strong> &ndash; <a href="http://groups.google.com.br/group/cearaonrails">http://groups.google.com.br/group/cearaonrails</a></p>
+
+<p><strong>Local</strong>: <a href="http://www.fchristus.com.br/">Faculdade Christus.</a></p>
+
+<p><strong>Endereço</strong>: Campus Dom Luís, está situado na Avenida Dom Luís, 911, Bairro Aldeota, próximo ao Shopping Aldeota. Localização com o <a href="http://maps.google.com.br/maps?f=q&amp;source=s_q&amp;hl=pt-BR&amp;q=-3.734378,+-38.493294&amp;vps=3&amp;jsv=151e&amp;sll=-3.734336,-38.492918&amp;sspn=0.005717,0.011373&amp;ie=UTF8&amp;geocode=FZYEx_8dkqO0_Q&amp;split=0">Google Maps</a>.</p>
+
+<p><strong>Contato:</strong> (85) 8884.8466</p>
+
+<p><strong>Data</strong>: Dia 08/04/2009 [quarta-feira] das 19:00h as 22:00h no Auditório do primeiro andar.</p>
+
+<p><strong>Palestras</strong></p>
+
+<p>19:00 às 19:10 <em>Abertura do Evento.</em></p>
+
+<p>19:10 às 19:50 <em>Palestra</em>: <strong>Roteamento Rails de fora para dentro.</strong>
+<em>Resumo</em>: Entender como é o funcionamento das rotas, como o rails trata as requisições http enviadas a ele por interação de request/response E se há rotas mapeadas no sistema e finalmente como melhor utilizá-las, se tornando url’s intuitivas.
+<em>Palestrante</em>: <strong>Hermínio Torres &ndash; </strong>Ccoordenador/Membro do grupo CearáOnRails e Programador Ruby.</p>
+
+<p>19:50 às 20:40 <em>Palestra</em>: <strong>Gerência de Projetos com Scrum</strong>.<strong><strong>
+<em>Resumo</em>: O Scrum é uma das metodologias de gerência de projetos.  O que é Scrum? Os papéis no Scrum. O conceito de Sprint. Product Backlog. Sprint Planning Meeting. Scrum Daily Meeting. Sprint Review. Sprint Retrospective.
+<em>Palestrante</em>: </strong>Liliana Pedrosa Pinheiro Carrhá</strong> &ndash; Analista de sistemas, especialista em Engenharia de Software. Atuação na coordenação de projetos de desenvolvimento e suporte a soluções com foco em melhoria de processo em desenvolvimento, implantação e treinamento de projetos. Conhecimentos adquiridos: UML, RUP, Scrum, Gerência de Projetos, MPS.Br, CMMI, Java, SQL Server, MySQL, ITIL e Redes.</p>
+
+<p>20:40 às 21:00 <em>Pausa do Evento(Coffe-Break).</em></p>
+
+<p>21:00 às 21:50 <em>Palestra</em>: <strong>Cloud On Rails.</strong>
+<em>Resumo</em>: Entender como é o funcionamento das rotas, saber quais as principais rotas no rails e finalmente como melhor utilizá-las.
+<em>Palestrante</em>: <strong>Hannes Tydén – </strong>Programador Ruby e Membro do Ruby User Group Berlin, Developer Startup SoundCloud.</p>
+
+<p>21:50 às 22:00 <em>Fechamento do Evento.</em></p>
+
+<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Ceará On Rails, aí vou eu...]]></title>
+    <link href="http://kalib.github.io/blog/2008/11/12/ceara-on-rails-ai-vou-eu/"/>
+    <updated>2008-11-12T10:22:00-03:00</updated>
+    <id>http://kalib.github.io/blog/2008/11/12/ceara-on-rails-ai-vou-eu</id>
+    <content type="html"><![CDATA[<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/logomarca_cearaonrails.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/logomarca_cearaonrails.png" alt="" /></a>O que é CearáOnRails?</p>
+
+<p>O CearáOnRails é um evento solidário que tem como tema o desenvolvimento de sistemas web e pretende divulgar e popularizar a linguagem de desenvolvimento Ruby e o Framework Rails no estado do Ceará. Esta iniciativa contribuirá de modo relevante para promover o uso e a difusão das tecnologias entre pessoas, especialmente profissionais na área e afins, servindo como um veículo de integração, interação e colaboração. Tanto o ruby como o Rails vem mudando a forma de desenvolvimento padrão adotada pelas demais tecnologias.</p>
+
+<p>A linguagem Ruby foi criada em 1993 no Japão pelo Yukihiro Matsumoto. Esta só se tornou popular após a primeira apresentação do Framework Rails em 2003 criado por David Heinemeir Hansson, a sua apresentação foi bastante polêmica e mudou a visão sobre a metodologia de desenvolvimento de software.</p>
+
+<p>O nosso intuito é apresentar esta nova forma de desenvolver software e quanto ela é poderosa, rápida e produtiva. Com isso tentar mudar a visão atual de desenvolvimento de software na região, ou a implantação dessa nova tecnologia.</p>
+
+<p>O ingresso será de 2kgs de alimentos não perecíveis por pessoa (exceto sal) em troca do acesso às palestras. Iremos doar os alimentos arrecadados para a ONG 2A(Acreditando e Aprendendo). O evento além de sua função social e integradora, também permite uma grande difusão da tecnologia e ainda oportuniza o network entre profissionais, estudantes, professores entre outros, que irão comparecer ao evento.</p>
+
+<p>Realização do CearaOnRails</p>
+
+<p>O evento será realizado no dia 14 de Novembro de 2008 das 19:00 às 22:30 horas. Na Faculdade Christus, Avenida Dom Luís, 911, Fortaleza-Ce, no 15º Andar, em Fortaleza-Ceará. A programação prévia estabelecida pela organização será a seguinte:</p>
+
+<p>19:00-19:10 Abertura</p>
+
+<p>19:10-19:40 Palestra 1</p>
+
+<p>Palestrante: Tiago Bastos</p>
+
+<p>Tema: Onde está o método?</p>
+
+<p>Descrição: Uma introdução a recursos avançados da linguagem. Explicando como interceptar chamadas à métodos, monkey patching e avaliação de código. Mercado de trabalho.</p>
+
+<p>19:40-20:40 Palestra 2</p>
+
+<p>Palestrante: Nabucodonosor Coutinho</p>
+
+<p>Tema: ORM On Rails</p>
+
+<p>Descrição: A camada de persistência do ROR está realmente nos trilhos? A visão de um DBA sobre a camada de persistência do Rails. Analise dos padrões DAO e ActiveRecord. Análise das implementações ActiveRecord e iBatis para Ruby. Análise das implementações Rails ActiveRecord e Hibernate (java).</p>
+
+<p>20:40-21:00 Coffee Break</p>
+
+<p>21:00-22:00 Palestra 3</p>
+
+<p>Palestrante: Fábio Akita</p>
+
+<p>Tema: Desenvolvimento fora da Média com Ruby e Rails</p>
+
+<p>Descrição: Porque é importante entender as novas tecnologias como Ruby e Rails e como elas agilizam seus projetos web.</p>
+
+<p><img src="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif" alt="" /></p>
+]]></content>
+  </entry>
+  
+</feed>

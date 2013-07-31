@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: redes | Hacking the damn life]]></title>
+  <link href="http://kalib.github.io/blog/categories/redes/atom.xml" rel="self"/>
+  <link href="http://kalib.github.io/"/>
+  <updated>2013-07-30T21:36:09-03:00</updated>
+  <id>http://kalib.github.io/</id>
+  <author>
+    <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Netstat - Saiba o que está rolando em seu ambiente...]]></title>
+    <link href="http://kalib.github.io/blog/2011/12/13/netstat-saiba-o-que-esta-rolando-em-seu-ambiente/"/>
+    <updated>2011-12-13T08:38:50-03:00</updated>
+    <id>http://kalib.github.io/blog/2011/12/13/netstat-saiba-o-que-esta-rolando-em-seu-ambiente</id>
+    <content type="html"><![CDATA[<p><a href="http://pixelmaverick.com/wp-content/uploads/2009/11/brunocb-sherlock-holmes-tux-5975.png"><img src="http://pixelmaverick.com/wp-content/uploads/2009/11/brunocb-sherlock-holmes-tux-5975.png" alt="" /></a></p>
+
+<hr />
+
+<p><strong>S</strong>audações pessoal,</p>
+
+<p><strong>Q</strong>ue tal saber um pouco mais sobre o que lhe cerca virtualmente? Conexões de rede às quais sua máquina está ligada, tabelas de roteamento, estatísticas de interfaces, conexões mascaradas, multicasting, etc.. ?</p>
+
+<p><strong>A</strong>pesar de muitos conhecerem o netstat, poucos sabem que ele é capaz de tudo isso e mais um pouco. O netstat é sem sombra de dúvidas uma rica ferramenta que possui inúmeros comandos e combinações que sequer cabem em um artigo simples como este post.</p>
+
+<p><strong>A</strong> ideia vai ser apenas apresentar algumas opções que podem ser bem interessantes no dia a dia de um administrador de redes/sysadmin.</p>
+
+<p><strong>V</strong>amos lá&hellip;</p>
+
+<p><strong>1.</strong> <strong>Listar todas as portas, incluindo portas que estão sendo escutadas e portas que não estão:</strong></p>
+
+<p><strong>1.1</strong> Para listar TODAS as portas, podemos utilizar o parâmetro -a:
+[root@tuxcaverna ~]# netstat -a
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State
+tcp        0      0 localhost.localdo:55481 <em>:</em>                     LISTEN
+tcp        0      0 <em>:60634                 </em>:<em>                     LISTEN
+tcp        0      0 </em>:6881                  <em>:</em>                     LISTEN
+tcp        0      0 172.16.1.6:46714        gru03s08-in-f20.1:https TIME_WAIT
+tcp        0      0 172.16.1.6:40899        gx-in-f138.1e1:www-http ESTABLISHED
+tcp        0      0 localhost.localdo:48742 localhost.localdo:55481 ESTABLISHED
+tcp        0      0 172.16.1.6:48643        125-233-152-234.d:21990 TIME_WAIT
+tcp        0      0 172.16.1.6:46717        gru03s08-in-f20.1:https TIME_WAIT
+tcp        0      0 172.16.1.6:57293        apache2-fungi.:www-http TIME_WAIT
+tcp        0      0 172.16.1.6:36444        gru03s05-in-f22.1:https ESTABLISHED
+tcp        0      0 172.16.1.6:57659        gru03s06-in-f1:www-http ESTABLISHED
+tcp        0      0 localhost.localdo:55481 localhost.localdo:48742 ESTABLISHED
+tcp        0      0 172.16.1.6:50581        gru03s06-in-f23.1:https ESTABLISHED
+tcp        0      0 172.16.1.6:39979        sn1msg1010828.phx.:msnp ESTABLISHED
+&hellip;</p>
+
+<p><strong>N</strong>ão coloquei a saída inteira, pois era bem extensa e ainda temos muitos parâmetros para ver. Onde existe XXX.XX.X.XX, obviamente, era o endereço IP que ocultei por puro protesto pela alta no preço do <strong>amendoim</strong>.</p>
+
+<p><strong>1.2</strong> Para listar todas as portas UDP, utilizamos os parâmetros -au:</p>
+
+<p>[root@tuxcaverna ~]# netstat -au</p>
+
+<p>Active Internet connections (servers and established) Proto Recv-Q Send-Q Local Address Foreign Address State udp 0 0 <em>:bootpc </em>:<em> udp 0 0 </em>:49119 <em>:</em> udp 0 0 <em>:mdns </em>:*</p>
+
+<p><strong>1.3</strong> Para listar todas as portas TCP, utilizamos os parâmetros -at:</p>
+
+<p>[root@tuxcaverna ~]# netstat -at
+Active Internet connections (servers and established) Proto Recv-Q Send-Q Local Address Foreign Address State tcp 0 0 localhost.localdo:39307 <em>:</em> LISTEN tcp 0 0 <em>:64758 </em>:* LISTEN tcp 0 0 XXX.XX.X.XX:54293 gru03s06-in-f21.1:https ESTABLISHED tcp 1 0 XXX.XX.X.XX:58732 sn1msg3020104.sn1.:msnp CLOSE_WAIT</p>
+
+<p><strong>2.</strong> <strong>Listar os Sockets que estão no estado Listening ou escuta:</strong></p>
+
+<p><strong>2.1</strong> Para listar todas no estado Listening, utilizamos o parâmetro -l:</p>
+
+<p>[root@tuxcaverna ~]# netstat -l</p>
+
+<p>Active Internet connections (only servers) Proto Recv-Q Send-Q Local Address Foreign Address State tcp 0 0 localhost.localdo:39307 <em>:</em> LISTEN tcp 0 0 <em>:64758 </em>:* LISTEN Active UNIX domain sockets (only servers) Proto RefCnt Flags Type State I-Node Path unix 2 [ ACC ] STREAM LISTENING 10443 @/tmp/.ICE-unix/1396 unix 2 [ ACC ] STREAM LISTENING 8262 /var/run/xdmctl/dmctl/socket unix 2 [ ACC ] STREAM LISTENING 8277 /var/run/xdmctl/dmctl-:0/socket</p>
+
+<p><strong>2.2</strong> Para listar apenas as portas TCP no estado Listening, utilizamos os parâmetros -lt:</p>
+
+<p>[root@tuxcaverna ~]# netstat -lt</p>
+
+<p>Active Internet connections (only servers) Proto Recv-Q Send-Q Local Address Foreign Address State tcp 0 0 localhost.localdo:39307 <em>:</em> LISTEN tcp 0 0 <em>:64758 </em>:* LISTEN</p>
+
+<p><strong>2.3</strong> Para listar apenas as portas UNIX em estado Listening, utilizamos os parâmetrox -lx:</p>
+
+<p>[root@tuxcaverna ~]# netstat -lx</p>
+
+<p>Active UNIX domain sockets (only servers) Proto RefCnt Flags Type State I-Node Path unix 2 [ ACC ] STREAM LISTENING 10443 @/tmp/.ICE-unix/1396 unix 2 [ ACC ] STREAM LISTENING 8262 /var/run/xdmctl/dmctl/socket unix 2 [ ACC ] STREAM LISTENING 8277 /var/run/xdmctl/dmctl-:0/socket</p>
+
+<p><strong>3.</strong> <strong>Apresentar as estatísticas para cada protocolo:</strong></p>
+
+<p><strong>3.1</strong> Para apresentar as estatísticas de todos os protocolos, utilizamos o parâmetro -s:</p>
+
+<p>[root@tuxcaverna ~]# netstat -s</p>
+
+<p>Ip: 98790 total packets received 54 with invalid headers 2 with invalid addresses 0 forwarded 0 incoming packets discarded 94778 incoming packets delivered 79070 requests sent out Icmp: 0 ICMP messages received 0 input ICMP message failed. ICMP input histogram: 0 ICMP messages sent 0 ICMP messages failed ICMP output histogram: Tcp: 2019 active connections openings 2 passive connection openings 10 failed connection attempts 161 connection resets received 14 connections established 88977 segments received 75703 segments send out 297 segments retransmited 0 bad segments received. 216 resets sent Udp: 2986 packets received 0 packets to unknown port received. 0 packet receive errors 3080 packets sent 0 receive buffer errors 0 send buffer errors</p>
+
+<p>&hellip;</p>
+
+<p>&hellip;</p>
+
+<p><strong>3.2</strong> Para apresentar as estatísticas do protocolo TCP (ou) UDP, utilizamos os parâmetros -st (ou) -su:</p>
+
+<p>[root@tuxcaverna ~]# netstat -st</p>
+
+<p>Tcp: 2031 active connections openings 2 passive connection openings 10 failed connection attempts 164 connection resets received 10 connections established 89257 segments received 76010 segments send out 297 segments retransmited 0 bad segments received. 219 resets sent</p>
+
+<p>ou</p>
+
+<p>[root@tuxcaverna ~]# netstat -su</p>
+
+<p>Udp: 3012 packets received 0 packets to unknown port received. 0 packet receive errors 3107 packets sent 0 receive buffer errors 0 send buffer errors</p>
+
+<p><strong>4.</strong> <strong>Apresentar o PID (ID do prcesso) e os nomes de programas:</strong></p>
+
+<p><strong>4.1</strong> Neste caso utilizamos o netstat com o parâmetro -p para receber a informação de &ldquo;PID/Nome do Programa&rdquo; na saída do netstat. Esta opção é muito útil para debugar e identificar qual programa está rodando em uma porta específica. O parâmetro -p pode ser combinado com demais parâmetros:</p>
+
+<p>[root@tuxcaverna ~]# netstat -pt
+Active Internet connections (w/o servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+tcp        0      0 XXX.XX.X.X:6881         83-228-34-45.btc-:11729 SYN_RECV    &ndash;
+tcp        0      0 XXX.XX.X.X:39508        200.123.194.16:www-http ESTABLISHED 30741/chromium
+tcp        0      0 XXX.XX.X.X:36321        208.46.17.59:www-http   ESTABLISHED 30741/chromium
+tcp        0      0 XXX.XX.X.X:57411        65.55.142.101:https     ESTABLISHED 3292/python2
+tcp        0      0 XXX.XX.X.X:6881         bd3e1c77.virtua.c:59298 ESTABLISHED 20447/qbittorrent</p>
+
+<p><strong>5.</strong> <strong>Não resolver host, porta ou nome de usuário:</strong></p>
+
+<p><strong>5.1</strong> Utiliza-se o parâmetro -an quando não se deseja receber na saída do netstat informações de host, porta ou usuarios com seus respectivos nomes resolvidos. Ao invés destas informações virão números:</p>
+
+<p>[root@tuxcaverna ~]# netstat -an
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State
+tcp        0      0 0.0.0.0:61108           0.0.0.0:<em>               LISTEN
+tcp        0      0 0.0.0.0:6881            0.0.0.0:</em>               LISTEN
+tcp        0      0 127.0.0.1:49155         0.0.0.0:*               LISTEN</p>
+
+<p><strong>5.2</strong> Se você não quizer descartar as 3 informações de uma vez, pode optar por ocultar apenas uma em específico, conforme abaixo:</p>
+
+<blockquote><p><em>[root@tuxcaverna ~]# netstat -a &mdash;numericports</em></p></blockquote>
+
+<p>ou</p>
+
+<blockquote><p><em>[root@tuxcaverna ~]# netstat -a -numeric-hosts</em></p></blockquote>
+
+<p>ou</p>
+
+<blockquote><p><em>[root@tuxcaverna ~]# netstat -a numeric-users</em></p></blockquote>
+
+<p><strong>6.</strong> <strong>Que</strong> <strong>tal ter uma saída contínua de informações em tempo real? Para isso usa-se o parâmetro -c, que vai atualizar as informações do netstat a cada segundo:</strong></p>
+
+<p>[root@tuxcaverna ~]# netstat -c
+Active Internet connections (w/o servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State
+tcp        0      0 XXX.XX.X.X:57411        65.55.142.101:https     ESTABLISHED
+tcp        0      0 XXX.XX.X.X:6881         bd3e1c77.virtua.c:59298 ESTABLISHED
+tcp        1      0 XXX.XX.X.X:49920        sn1msg2010605.phx.:msnp CLOSE_WAIT
+tcp        0      0 XXX.XX.X.X:45554        111-240-177-108.dy:8921 TIME_WAIT</p>
+
+<p><strong>7.</strong> <strong>Encontrar famílias de endereços não suportadas em seu sistema:</strong></p>
+
+<p><strong>U</strong>tilizamos o parâmetro &mdash;verbose. Repare que nas últimas linhas do retorno teremos algo como:</p>
+
+<p>[root@tuxcaverna ~]# netstat -c
+netstat: no support for <code>AF IPX' on this system.
+netstat: no support for</code>AF AX25' on this system.
+netstat: no support for <code>AF X25' on this system.
+netstat: no support for</code>AF NETROM' on this system.</p>
+
+<p><strong>8.</strong> <strong>Para apresentar informações de rotas do kernel utilizamos o parâmetro -r:</strong></p>
+
+<p>[root@tuxcaverna ~]# netstat -r
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags   MSS Window  irtt Iface
+default         172.16.1.1      0.0.0.0         UG        0 0          0 wlan0
+172.16.1.0      *               255.255.255.0   U         0 0          0 wlan0</p>
+
+<p>&hellip;ou, pode-se utilizar -rn para apresentar em formato numérico ao invés de nomes de hosts.</p>
+
+<hr />
+
+<p><strong>9.</strong> <strong>Para descobrir em qual porta um determinado programa está rodando utilizamos os parâmetros -ap:</strong></p>
+
+<p>[root@tuxcaverna ~]# netstat -ap
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+tcp        0      0 <em>:61108                 </em>:<em>                     LISTEN      3452/wish
+tcp        0      0 </em>:6881                  <em>:</em>                     LISTEN      20447/qbittorrent
+tcp        0      0 localhost.localdo:49155 <em>:</em>                     LISTEN      4010/GoogleTalkPlug
+tcp        0    269 172.16.1.3:58742        52.60.in-addr.arp:12814 FIN_WAIT1   &ndash;
+tcp        0      0 172.16.1.3:6881         bd3e1c77.virtua.c:59298 ESTABLISHED 20447/qbittorrent</p>
+
+<p><strong>9.1</strong> Se quizer especificar o programa, ao invés de o procurar em uma extensa lista, utilize um filtro com o grep da seguinte forma:</p>
+
+<p>[root@tuxcaverna ~]# netstat -ap | grep chromium
+unix  2      [ ACC ]     STREAM     LISTENING     252100   30741/chromium       /tmp/.org.chromium.Chromium.bSJLzX/SingletonSocket
+unix  3      [ ]         STREAM     CONNECTED     309051   30741/chromium
+unix  3      [ ]         STREAM     CONNECTED     308785   30741/chromium</p>
+
+<p><strong>9.2</strong> Se ao invés de especificar o programa, você quizer especificar uma porta e saber o que está rodando nela, pode-se utilizar o filtro do grep da seguinte forma:</p>
+
+<blockquote><p><em>[root@tuxcaverna ~]# netstat -an | grep &lsquo;:80&rsquo;</em></p></blockquote>
+
+<p><strong>10.</strong> <strong>Para terminar, podemos utilizar o parâmetro -i para listar nossas interfaces de rede:</strong></p>
+
+<p>[root@tuxcaverna ~]# netstat -i
+Kernel Interface table
+Iface   MTU Met   RX-OK RX-ERR RX-DRP RX-OVR    TX-OK TX-ERR TX-DRP TX-OVR Flg
+eth0   1500 0         0      0      0 0             0      0      0      0 BMU
+lo    16436 0       662      0      0 0           662      0      0      0 LRU
+wlan0  1500 0    157377      0      4 0        133487      0      0      0 BMRU</p>
+
+<p><strong>S</strong>e desejar informações mas detalhadas sobre cada interface, pode-se utilizara combinação de parâmetros -ie:</p>
+
+<p>[root@tuxcaverna ~]# netstat -ie
+Kernel Interface table
+eth0: flags=4099&lt;UP,BROADCAST,MULTICAST>  mtu 1500  metric 1
+ether a4:ba:db:d7:41:c0  txqueuelen 1000  (Ethernet)
+RX packets 0  bytes 0 (0.0 B)
+RX errors 0  dropped 0  overruns 0  frame 0
+TX packets 0  bytes 0 (0.0 B)
+TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+device interrupt 47  base 0xc000</p>
+
+<p><strong>H</strong>appy Hacking&hellip;</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Dia Livre - Inscrições e grade do evento]]></title>
+    <link href="http://kalib.github.io/blog/2011/07/19/dia-livre-inscricoes-e-grade-do-evento/"/>
+    <updated>2011-07-19T08:38:33-03:00</updated>
+    <id>http://kalib.github.io/blog/2011/07/19/dia-livre-inscricoes-e-grade-do-evento</id>
+    <content type="html"><![CDATA[<p><img src="http://tux-ce.org/dialivre/wp-content/uploads/2011/05/Logo+dia-livre-01.png" alt="" /></p>
+
+<p><strong>É</strong> hora de se <a href="http://tux-ce.org/dialivre/inscricoes/">inscrever</a> no <a href="http://www.tux-ce.org/dialivre">Dia Livre</a>!</p>
+
+<p><strong>G</strong>ostaria de comunicar que a grade para o 1º Dia Livre já foi fechada e liberada.</p>
+
+<p><strong>N</strong>este sábado estarei ministrando a palestra &ldquo;Software Livre e Cultura Hacker: Tenha ética e ganharás respeito&rdquo; na <a href="http://www.ffb.edu.br/">Faculdade Farias Brito</a> durante o 1º Dia Livre.</p>
+
+<p><strong>S</strong>egue grade do encontro:</p>
+
+<p>Horário</p>
+
+<p>Palestra</p>
+
+<p>Palestrante</p>
+
+<p>08:00
+&ndash; 08:10</p>
+
+<p>Abertura</p>
+
+<p>&ndash;</p>
+
+<p>08:10
+&ndash; 09:00</p>
+
+<p>Bacula
+&ndash; Solução livre de Backup</p>
+
+<p>Diego
+Monte</p>
+
+<p>09:10
+&ndash; 10:00</p>
+
+<p>Criando
+soluções automatizadas com ShellScript</p>
+
+<p>Rafael
+de Carvalho Farias</p>
+
+<p>10:00
+&ndash; 10:20</p>
+
+<p>CoffeeBreak</p>
+
+<p>&ndash;</p>
+
+<p>10:30
+&ndash; 11:20</p>
+
+<p>Software Livre e a Cultura Hacker: Tenha Ética e Ganharás Respeito</p>
+
+<p>Marcelo Cavalcante</p>
+
+<p>11;30
+&ndash; 11:50</p>
+
+<p>Sorteio
+de brindes e encerramento</p>
+
+<p>&ndash;</p>
+
+<p><strong>Q</strong><strong>uando?</strong></p>
+
+<p>23 de Julho, Sábado – A partir das 08:00</p>
+
+<p><strong>Onde?</strong></p>
+
+<p>Faculdade Farias Brito
+Rua Castro Monte, 1364 Varjota – Fortaleza, CE
+<a href="http://www.tux-ce.org/dialivre/imgs/mapaffb.png"><img src="http://www.tux-ce.org/dialivre/imgs/mapaffb.png" alt="" /></a></p>
+
+<p><strong>S</strong>erão realizados dois sorteios ao final do encontro:</p>
+
+<p>1 camisa da Tux-CE;</p>
+
+<p>1 livro: The Art of Community &ndash; O'Reilly</p>
+
+<p><strong>N</strong>os vemos lá!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Lançada a primeira edição da Revista Segurança Digital]]></title>
+    <link href="http://kalib.github.io/blog/2011/07/01/lancada-a-primeira-edicao-da-revista-seguranca-digital/"/>
+    <updated>2011-07-01T08:14:54-03:00</updated>
+    <id>http://kalib.github.io/blog/2011/07/01/lancada-a-primeira-edicao-da-revista-seguranca-digital</id>
+    <content type="html"><![CDATA[<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/07/1_edicao_julho_2011.jpg"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/07/1_edicao_julho_2011.jpg" alt="" /></a></p>
+
+<p><strong>S</strong>audações pessoal.</p>
+
+<p><strong>P</strong>ara quem não sabe, hoje é o lançamento da primeira edição da <a href="http://www.segurancadigital.info/revista/185-revistas">Revista Segurança Digital</a>.</p>
+
+<p><a href="http://www.segurancadigital.info"><strong>S</strong>egurança Digital</a> é o mais novo projeto no qual estou engajado e espero poder ajudar no que for possível para a constante melhoria do projeto.</p>
+
+<p><strong>É</strong> com grande satisfação que estamos fazendo o lançamento oficial de nosso projeto com a primeira edição da Revista Segurança Digital. Neste mês de Julho a revista aborda aspectos mais genéricos em relação à Segurança da Informação como um todo. Desde as técnicas de FootPrinting e Varredura para identificação de vulnerabilidades e possíveis brechas até estratégias e mecanismos de Enumeração para reconhecimento de ambientes.</p>
+
+<p><strong>C</strong>om a matéria sobre Enumeração explicamos a importância de se fazer um mapeamento completo do alvo, que consiste em descobrir o máximo de informações possíveis sobre o mesmo, desde sistema operacional até mesmo versões de anti-vírus, firewall, aplicativos instalados, etc.</p>
+
+<p><strong>R</strong>ecentemente todos perceberam que vários ataques de DoS e DDoS foram realizados à sites do Governo, Petrobras, dentre outros. Um artigo com uma breve explicação sobre como funcionam estes ataques é apresentado como forma de ilustrar de forma básica o funcionamento de um DoS/DDoS.</p>
+
+<p><strong>R</strong>esolvemos fazer uma breve apresentação sobre o BackTrack, uma distribuição Linux voltada para testes de segurança. Nesta matéria apresentamos alguns de seus recursos e ferramentas que podem ser utilizadas no dia-a-dia de qualquer profissional de Segurança da Informação para facilitar suas tarefas e análises, bem como auxiliar em projetos de PenTesting.</p>
+
+<p><strong>A</strong>proveitamos para informar sobre a mais nova parceria realizada entre o Projeto Segurança Digital e a empresa de consultoria e soluções livres 4Linux que é líder no mercado no que diz respeito à soluções de tecnologia com ferramentas livres bem como treinamentos especializados nos mais diversos segmentos da computação como redes, bancos de dados, segurança, programação, dentre outros.</p>
+
+<p><strong>N</strong>ão deixe de fazer o <a href="http://www.segurancadigital.info/revista/185-revistas">download</a> desta edição e conferir o resultado desta força tarefa inicial.</p>
+
+<p><strong>E</strong>speramos que gostem.</p>
+
+<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Rootkit! Esse bicho morde? Proteja-se!]]></title>
+    <link href="http://kalib.github.io/blog/2011/03/16/rootkit-esse-bicho-morde-proteja-se/"/>
+    <updated>2011-03-16T16:25:27-03:00</updated>
+    <id>http://kalib.github.io/blog/2011/03/16/rootkit-esse-bicho-morde-proteja-se</id>
+    <content type="html"><![CDATA[<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/03/malware.jpg"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/03/malware.jpg" alt="" /></a></p>
+
+<p><strong>V</strong>ocê sabe o que é rootkit?</p>
+
+<p><strong>N</strong>unca vi, nem comi, eu só ouço falar!</p>
+
+<p><strong>É</strong> um vírus? É um trojan? É um spyware? Não, é um rootkit mesmo.</p>
+
+<p><strong>A</strong> verdade é que ainda não existe um consenso em relação ao que o rootkit é de fato. Muitos dizem que é um tipo de vírus, alguns dizem que é um trojan, como você chamaria? Eu prefiro chamar de malware, que, ao pé da letra, seria um termo utilizado para algum aplicativo contendo código malicioso. o.O Acho que seria um meio termo aceitável para que possamos utilizar como base.</p>
+
+<p><strong>M</strong>as esse bicho morde? É de comer?</p>
+
+<p><strong>B</strong>om, em tese um Rootkit é um tipo de malware, como expliquei acima, cuja principal intenção é se camuflar, impedindo que seu código seja encontrado por qualquer antivírus.</p>
+
+<p><strong>T</strong>eoricamente, é exatamente isto que ele tenta fazer. Passar despercebido. De fato a grande maioria dos antivírus não são capazes de rastrear Rootkits justamente por conta do seu comportamento. É aí que surgiram ferramentas especializadas neste tipo de busca. Alguns antivírus, os mais caros, já agregam excelentes ferramentas para buscar rootkits. Mas, como eles conseguem se camuflar tão bem?</p>
+
+<p><strong>E</strong>stas aplicações, rootkits, têm a capacidade de interceptar as solicitações feitas ao sistema operacional, podendo alterar o seu resultado.</p>
+
+<p><strong>I</strong>magine que você está utilizando sua máquina e seu sistema operacional solicita a leitura ou abertura de um determinado arquivo, podendo ser a seu mando ou mesmo do antivírus, por exemplo, o rootkit intercepta os dados que são requisitados e faz uma filtragem dessa informação, deixando passar apenas o que ele deseja, ou seja, código não infectado. E o que acontece? O antivírus ou qualquer outra ferramenta ficam impossibilitadas de encontrar o arquivo malicioso ou o código, dependendo do caso.</p>
+
+<p><strong>N</strong>ão é incomum encontrar o Rootkit como não apenas uma aplicação, mas um conjunto de aplicações ou, como também chamamos, toolkit.</p>
+
+<p><strong>R</strong>esumidamente poderíamos dizer que é um programa com código malicioso que busca se esconder de softwares de segurança e do usuário utilizando diversas técnicas avançadas de programação para tal.</p>
+
+<p><strong>G</strong>eralmente escondem suas chaves nos registros do sistema operacional e escondem seus processos no gerenciador de tarefas, o que torna uma missão quase impossível para um usuário identificar por conta própria. Outra prática comum de quem escreve rootkits é fazer com que eles se escondam em drivers de hardware, que são arquivos de sistema fundamentais para que o sistema operacional funcione corretamente com seus dispositivos.</p>
+
+<p><strong>O</strong> nome RootKit é por conta da função para a qual o mesmo é desenvolvido. Primeiramente ele é um kit de funcionalidades e códigos maliciosos cujo objetivo é se infiltrar nos sistemas de forma silenciosa e despercebida, geralmente liberando um  *backdoor para que o invasor possa posteriormente acessar o sistema infectado com privilégios de super usuário ou usuário administrador (root).</p>
+
+<p><strong>P</strong>ara quem nunca ouviu falar em backdoors, a explicação pode ter parecido um tanto quanto confusa, portanto aqui vai a nota de rodapé: Backdoor é, assim como na tradução ao pé da letra, uma porta dos fundos. Uma falha de segurança intencional que possibilita a invasão do seu sistema de forma que o invasor possa ter este acesso e controle com um mínimo de trabalho.</p>
+
+<p><strong>S</strong>em mais papo furado, vamos conhecer algumas ferramentas que buscam rootkits em seu Linux.</p>
+
+<p><img src="http://aboutonlinetips.com/wp-content/uploads/2008/11/picture-rootkit.png" alt="" /></p>
+
+<p><strong>RKHUNTER</strong></p>
+
+<p><strong>A</strong> primeira ferramenta que vou apresentar se chama rkhunter, que é a minha favorita.</p>
+
+<p><strong>S</strong>e, assim como eu, você for usuário do <a href="http://archlinux.org">Arch Linux</a>, poderá encontrar o rkhunter no <a href="http://aur.archlinux.org">AUR</a> através <a href="http://aur.archlinux.org/packages.php?ID=25940">deste link</a>.</p>
+
+<p><strong>A</strong> instalação é simples e segue o padrão de qualquer instalação a partir do AUR, conforme passos abaixo:</p>
+
+<p><strong>1-</strong> Descompacte o arquivo:</p>
+
+<p>[kalib@tuxcaverna downloads]$ tar -xvzf rkhunter.tar.gz</p>
+
+<p><strong>2-</strong> Acesse o diretório criado:</p>
+
+<p>[kalib@tuxcaverna downloads]$ cd rkhunter/</p>
+
+<p><strong>3-</strong> Execute o PKGBUILD para criação do pacote em si:</p>
+
+<p>[kalib@tuxcaverna rkhunter]$ makepkg</p>
+
+<p><strong>4-</strong> Com o pacote criado, basta instalar:</p>
+
+<p>[kalib@tuxcaverna rkhunter]$ sudo pacman -U rkhunter-1.3.8-1-any.pkg.tar.xz</p>
+
+<p><strong>F</strong>eito.</p>
+
+<p><strong>S</strong>eu rkhunter está pronto para ser utilizado, mas como toda e qualquer aplicação de varredura, como antivírus, por exemplo, é sempre recomendado atualizar sua base de dados antes de iniciar a busca, portanto digite o seguinte para atualizar a base com as propriedades dos arquivos existentes:</p>
+
+<h1>rkhunter &mdash;propupd</h1>
+
+<p><strong>E</strong>m seguida é a hora de atualizar a base de dados do rkhunter em si:</p>
+
+<h1>rkhunter &mdash;update</h1>
+
+<p><strong>A</strong>gora, vamos vasculhar o sistema:</p>
+
+<h1>rkhunter -c</h1>
+
+<p><strong>V</strong>ocê terá uma listagem das checagens parecida com esta:</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/03/rkhunter11.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/03/rkhunter11.png" alt="" /></a></p>
+
+<p><strong>P</strong>erceba que é tudo apresentado de forma simples e objetiva.</p>
+
+<p><strong>N</strong>o final da checagem ele gera um arquivo onde ele armazena todas as informações que ele registrou bem como lhe aponta uma descrição dos resultados da busca.</p>
+
+<p><strong>TIGER</strong></p>
+
+<p><strong>E</strong>sta será a nossa segunda ferramenta.</p>
+
+<p><strong>O</strong> Tiger é uma ferramenta de segurança que não pensa tanto na aparência, portanto não espere uma tela tão amigável e colorida quanto a do rkhunter. ;]</p>
+
+<p><strong>A</strong> instalação da mesma no Arch Linux também se dá através do pacote do AUR que pode ser encontra <a href="http://aur.archlinux.org/packages.php?ID=1573">neste link</a>.</p>
+
+<p><strong>A</strong> instalação segue o mesmo procedimento que utilizamos no rkhunter, conforme abaixo:</p>
+
+<p>[kalib@tuxcaverna downloads]$ tar -xvzf tiger.tar.gz</p>
+
+<p>[kalib@tuxcaverna downloads]$ cd tiger/</p>
+
+<p>[kalib@tuxcaverna tiger]$ makepkg</p>
+
+<p>[kalib@tuxcaverna tiger]$ sudo pacman -U tiger-3.2.3-2-x86_64.pkg.tar.xz</p>
+
+<p><strong>F</strong>inalizado. Para executar, basta rodar:</p>
+
+<h1>tiger</h1>
+
+<p><strong>E</strong>le iniciará a busca e lhe trará uma interface como esta:</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/03/rkhunter2.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/03/rkhunter2.png" alt="" /></a></p>
+
+<p><strong>A</strong>ssim como o rkhunter, no ato de finalização ele irá gerar um arquivo com o relatório da checagem. Ele lhe informará o caminho do arquivo, mas provavelmente será em /var/log/tiger/.</p>
+
+<p><strong>CHKROOTKIT</strong></p>
+
+<p><strong>A</strong>gora vamos para a terceira e última ferramenta deste post.</p>
+
+<p><strong>P</strong>ara usuário Arch, desta vez a instalação é ainda mais simples do que as duas anteriores, visto que o pacote já se encontra nos repositórios do pacman.</p>
+
+<p>[kalib@tuxcaverna ~]$ sudo pacman -S chkrootkit</p>
+
+<p><strong>I</strong>nstalado!</p>
+
+<p><strong>A</strong>ssim como o Tiger, o chkroot também possui uma interface simples sem cores ou enfeites, conforme pode ser visto abaixo:</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/03/rkhunter3.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/03/rkhunter3.png" alt="" /></a></p>
+
+<p><strong>A</strong>pesar de não ser colorida e enfeitada, é uma interface bem simples e de fácil entendimento, concordam?</p>
+
+<p><strong>C</strong>laro, não existem apenas estas ferramentas para busca de rootkits e códigos maliciosos, mas levaria muito tempo para escrever sobre todos ou ao menos a maioria.</p>
+
+<p><strong>N</strong>o mais, acho que já é um bom começo para um entendimento básico sobre o que é esse tal Rootkit e o que esse bicho faz.</p>
+
+<p><strong>C</strong>om estas ferramentas as chances de algum rootkit passar despercebido em seu ambiente Linux já são bem limitadas.</p>
+
+<p><strong>A</strong>braços!</p>
+
+<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Brute-force? O Dirb... DirBuster lhe ajuda a identificar vulnerabilidades em seu site]]></title>
+    <link href="http://kalib.github.io/blog/2011/02/15/brute-force-o-dirb-dirbuster-lhe-ajuda-a-identificar-vulnerabilidades-em-seu-site/"/>
+    <updated>2011-02-15T10:23:19-03:00</updated>
+    <id>http://kalib.github.io/blog/2011/02/15/brute-force-o-dirb-dirbuster-lhe-ajuda-a-identificar-vulnerabilidades-em-seu-site</id>
+    <content type="html"><![CDATA[<p><strong>B</strong>om, para quem não conhece nada sobre Brute-Force ou apenas ouviu falar vagamente mas não tem certeza sobre o que realmente é um ataque deste tipo, sugiro dar uma lida em meu último post, onde apresentei algumas informações sobre brute-force bem como uma ferramenta que podemos utilizar para testar nossos sites e verificar o quão vulneráveis eles estão a este tipo de ataque. Segue link para o mesmo:</p>
+
+<p><a href="http://marcelocavalcante.net/portal/2011/01/31/brute-force-o-dirb-lhe-ajuda-a-identificar-vulnerabilidades-em-seu-site/">Brute-Force? O Dirb lhe ajuda a identificar vulnerabilidade em seu site!</a></p>
+
+<p><strong>A</strong>gora que já conhecemos um pouco sobre as técnicas de brute-force e a ferramenta Dirb, que tal conhecer outra mais apresentável?</p>
+
+<p><strong>M</strong>e refiro ao <a href="http://www.owasp.org/index.php/DirBuster">DirBuster</a>. Uma aplicação multithread desenvolvida pelo <a href="http://www.owasp.org/">OWASP</a> (The Open Web Application Security Project) que tem como objetivo realizar brute-force em diretórios e nomes de arquivos na web. Assim como o Dirb, o DirBuster trabalha em cima de dicionários ou listas. Ao todo ele trás 9 listas que podem ser utilizadas para nossas varreduras e testes. Como todas as suas listas foram criadas na unha, após exaustívas pesquisas e buscas na web por nomes mais utilizados para arquivos e diretórios em servidores web, o DirBuster mostra-se extremamente efetivo para este tipo de atividade conseguindo encontrar até mesmo os arquivos mais ocultos e escondidos.</p>
+
+<p><strong>M</strong>as se você não ficar satisfeito, <del>nós garantimos a devolução do seu dinheiro</del>, com apenas utilizar o modelo de dicionários, o DirBuster ainda lhe possibilita o ataque de brute-force mais purista. Tentativa e erro com combinações possíveis de caracteres. Claro, se você tem muito poder de processamento e tempo sobrando, boa sorte. ;]</p>
+
+<p><strong>L</strong>egal Kalib, quer dizer que agora posso sair invadindo sites?</p>
+
+<p><del>o.O Como diria o Chaves: Ai que burrrrroooo.. dá zero pra ele&hellip;</del></p>
+
+<p><strong>N</strong>ão amigo. O meu intuito não é incentivar ou apresentar qualquer mecanismo ou técnica para este tipo de atividade. O DirBuster não foi feito para este propósito e nem conseguirá efetuar isto. Ele não fará nenhum tipo de exploit em arquivos ou diretórios que ele encontre. O DirBuster serve exatamente para identificar possíveis alvos para estes tipos de ataque, o que nos permite agir de forma corretiva ou preventiva em nossos servidores web. ;]</p>
+
+<p><strong>C</strong>hega de lenga lenga.. vamos ao que interessa!</p>
+
+<p><strong>C</strong>omo instalar?</p>
+
+<p><img src="http://blog.leandroinacio.eti.br/wp-content/uploads/2009/10/arch-linux-logo1.png" alt="Arch Linux" />
+Bom, se você utiliza <a href="http://archlinux.org">Arch Linux</a>, pode pegar o pacote no AUR através do seguinte link(Lembrem-se de votar nele):</p>
+
+<p><a href="http://aur.archlinux.org/packages.php?ID=20809">http://aur.archlinux.org/packages.php?ID=20809</a></p>
+
+<p><strong>F</strong>eito isto, basta seguir o procedimento padrão para pacotes do AUR.</p>
+
+<blockquote><p>1- Descompactar: [kalib@tuxcaverna downloads]$ tar -xvzf dirbuster.tar.gz</p></blockquote>
+
+<p>2- Entrar no diretório dirbuster e gerar o pacote: [kalib@tuxcaverna dirbuster]$ makepkg</p>
+
+<p>3- Instalar o pacote: [kalib@tuxcaverna dirbuster]$ sudo pacman -U dirbuster-0.12-1-x86_64.pkg.tar.xz</p>
+
+<p><strong>F</strong>eito. ;]</p>
+
+<p><strong>O</strong>utras distribuições? Não tenho certeza se o pessoal de outras distribuições empacotou o DirBuster, portanto provavelmente você vai precisar baixar o arquivo compactado do site oficial do projeto. Busquei tanto no Debian quanto no (K)Ubuntu 10.10 e em nenhum destes encontrei o DirBuster nos repositórios através do aptitude.</p>
+
+<p><strong>P</strong>ortanto se você não utiliza o Arch, segue link para download da ferramenta:</p>
+
+<p><a href="http://www.owasp.org/index.php/DirBuster#tab=Download">http://www.owasp.org/index.php/DirBuster#tab=Download</a></p>
+
+<p><strong>M</strong>as qual a cara do bicho?</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster8.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster8.png" alt="" /></a></p>
+
+<p><strong>C</strong>omo explicado antes, ele funciona parecido com o Dirb, porém em uma interface GUI (gráfica).</p>
+
+<p><strong>C</strong>omo podem ver, é uma interface simples e de fácil manuseio.</p>
+
+<p><strong>V</strong>amos aos pontos:</p>
+
+<p>1- No campo Target, você deverá inserir a URL que será alvo do seu brute-force de diretórios e arquivos web.</p>
+
+<p>2- Logo abaixo, vocẽ escolhe se deseja utilizar apenas GET ou HEAD &amp; GET.</p>
+
+<p>3- Agora é a vez de escolher quantas threads deseja utilizar. Quanto maior o número de threads, mais requisições simultâneas você estará utilizando. ;]</p>
+
+<p>4- Abaixo você deverá escolher o tipo de brute-force.</p>
+
+<ul>
+<li><p>Baseado em dicionários, neste caso você deverá escolher um dos dicionários que a ferramenta já lhe disponibiliza através do seguinte caminho: /opt/DirBuster/</p></li>
+<li><p>Baseado em brute-force puro. Neste caso você deverá escolher qual conjunto de caracteres deseja que sejam utilizados, quantidade mínima e máxima de caracteres por tentativa.</p></li>
+</ul>
+
+
+<p>5- Em seguida é a hora de escolher os filtros: Deseja fazer brute-force apenas em diretórios? Arquivos também? Modo recursivo? Extensões em branco? Diretório inicial para o scan? Que tipo de extensão?&hellip;</p>
+
+<p><strong>E</strong> como é o retorno que ele me dá?</p>
+
+<p><strong>B</strong>om, vou escolher meu alvo e vou utilizar 20 threads em simultâneo. Não vou deixar a ferramenta rodando por muito tempo pois estou apenas fazendo uma demonstração.</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster21.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster21.png" alt="" /></a></p>
+
+<p><strong>C</strong>omo podem ver, filtrei para que o brute-force comece no diretório raiz (/) e optei pela maior lista que o DirBuster possui como dicionário. Deixei rodando por cerca de 30 segundos e já tive o seguinte resultado.</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster3.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster3.png" alt="" /></a></p>
+
+<p><strong>A</strong> parte borrada no início da imagem não é um defeito. Vocês não pensaram que eu iria deixar exposto o alvo no qual fiz o teste, certo? No caso, optei pelo site de uma de nossas instituições de ensino. Bom, a imagem acima é um exemplo do retorno que consigo com a ferramenta. É a visão em Lista. Além dela você pode optar pela visão em árvore, que, como o nome informa, lhe trará a árvore de diretórios, sub-diretórios e arquivos que foram encontrados. Abaixo um exemplo da visão em árvore:</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster4.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster4.png" alt="" /></a></p>
+
+<p><strong>O</strong> resultado, mesmo deixando a ferramenta rodando por apenas 30 segundos, foi o esperado. Um espantoso caso de descuido com a segurança do site.</p>
+
+<p><strong>A</strong>lguns leves exemplos que me chamaram a atenção na lista que consegui:</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster5.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster5.png" alt="" /></a></p>
+
+<p><strong>U</strong>m diretório de administração exposto desta forma indicando que existe uma sessão do site com acesso permitido apenas para administradores. O que isso me leva a crer? Que quem conseguir acesso a esta sessão consegue manipular o sistema do site? O que nos leva a uma posterior análise da página index contida nele que possibilita uma tentativa de brute-force de login e senha? psssiiiuuuu&hellip; o.O</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster6.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster6.png" alt="" /></a>
+<strong> U</strong>m diretório para uploads de Arquivos? Que tal testar ele? Apenas usuários administradores possuem permissão de upload? Ou alunos conseguem fazer upload de fotos, trabalhos, por exemplo? De qualquer forma, isso me indica que existe a possibilidade de eu subir arquivos para o servidor deles. Que tal um script em php que me permitiria ter um console shell no servidor deles para inclusão, exclusão, edição, etc.. ? pssiiiiuuuu&hellip; o.O</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster7.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster7.png" alt="" /></a></p>
+
+<p><strong>P</strong>ode não ser nada.. mas também pode ser muita coisa.. O que um diretório chamado &ldquo;gerencia&rdquo; faz ali tão exposto e com um nome tão&hellip; tão&hellip; discreto? o.O psssiiiuuuuu</p>
+
+<p><strong>A</strong>cho que já conseguiram entender um pouco do que o DirBuster faz.</p>
+
+<p><strong>A</strong>braços!</p>
+
+<p><strong>H</strong>appy Hacking&hellip;</p>
+
+<p><strong>PS: Wrong developers! Never play security by obscurity!</strong></p>
+
+<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
+]]></content>
+  </entry>
+  
+</feed>

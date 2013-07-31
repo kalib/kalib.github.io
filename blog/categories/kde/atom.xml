@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: KDE | Hacking the damn life]]></title>
+  <link href="http://kalib.github.io/blog/categories/kde/atom.xml" rel="self"/>
+  <link href="http://kalib.github.io/"/>
+  <updated>2013-07-30T21:36:09-03:00</updated>
+  <id>http://kalib.github.io/</id>
+  <author>
+    <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Que tal ajudar o projeto KDE com apenas 1 minuto do seu tempo?]]></title>
+    <link href="http://kalib.github.io/blog/2011/10/24/que-tal-ajudar-o-projeto-kde-com-apenas-1-minuto-do-seu-tempo/"/>
+    <updated>2011-10-24T14:56:48-03:00</updated>
+    <id>http://kalib.github.io/blog/2011/10/24/que-tal-ajudar-o-projeto-kde-com-apenas-1-minuto-do-seu-tempo</id>
+    <content type="html"><![CDATA[<p><img src="http://images4.wikia.nocookie.net/__cb20061120200014/uncyclopedia/images/9/98/Konqi-official-logo-aboutkde-150x250.png" alt="" /></p>
+
+<p><strong>N</strong>ão acredita?</p>
+
+<p><strong>B</strong>om, aparentemente um <strong>banco alemão</strong> acredita que alguns projetos/instituições merecem ser ajudados financeiramente pelo seu impacto/importância.</p>
+
+<p><strong>S</strong>im, o projeto <strong><a href="http://kde.org">KDE</a></strong> está fazendo parte desta lista, mas para conseguir a doação de 1000 euros por parte deste banco, o projeto KDE precisa do seu voto. Sim, apenas seu voto que não leva mais que 1 minuto.</p>
+
+<p><strong>S</strong>e você utiliza o KDE no seu dia a dia, acredito que este seu <strong>1 minuto</strong> já é um ótimo &ldquo;pagamento&rdquo; ao projeto que lhe ajuda diariamente a resolver suas tarefas.</p>
+
+<p><strong>O</strong> banco alemão <strong>ING DiBa</strong> está doando <strong>1000 euros</strong> para <strong>1000 associações</strong>. A seleção será feita via votação online, portanto, se você der um voto para o KDE eV, temos boa chance de ser um dos vencedores.</p>
+
+<p><strong>O</strong> dinheiro será utilizado pelo KDE para financiar sprints, viagens, servidores, etc.</p>
+
+<p><strong>Como fazer para ajudar?</strong></p>
+
+<p><em>1- Acesse <strong><a href="https://verein.ing-diba.de/sonstiges/10115/kde-ev">https://verein.ing-diba.de/sonstiges/10115/kde-ev</a></strong> e clique em <strong>&ldquo;Stimme abgeben&rdquo;</strong>.</em></p>
+
+<p><em>2- Preencha seu email e o código captcha, clicando em seguida em <strong>&ldquo;absenden&rdquo;</strong>.</em></p>
+
+<p><em>3- Você receberá um email para confirmar o voto &ndash; clique no primeiro link deste email.</em></p>
+
+<p><em>4- No website &ndash; clique em <strong>&ldquo;Stimme abgeben&rdquo;</strong>.</em></p>
+
+<p>Você tem direito a 3 votos por conta de email.</p>
+
+<p>Vamos que vamos.</p>
+
+<p>Abraços,</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Wicd-KDE - Tornando seu Wicd no KDE mais amigável]]></title>
+    <link href="http://kalib.github.io/blog/2011/04/28/wicd-kde-tornando-seu-wicd-no-kde-mais-amigavel/"/>
+    <updated>2011-04-28T09:29:35-03:00</updated>
+    <id>http://kalib.github.io/blog/2011/04/28/wicd-kde-tornando-seu-wicd-no-kde-mais-amigavel</id>
+    <content type="html"><![CDATA[<p><strong>S</strong>audações pessoal,</p>
+
+<p><strong>P</strong>ara aqueles que também não curtem de forma alguma a aparência padrão GTK do Wicd e não conhecem ainda a interface que foi lançada posteriormente em QT, fica a dica: Troquem com urgência!</p>
+
+<p><strong>E</strong> o network-manager?</p>
+
+<p><strong>B</strong>om, o network-manager é um excelente(sendo modesto) gerenciador de redes para o Linux, porém infelizmente ele peca muito em sua interface para o KDE. Compare o network-manager em suas interfaces gtk (Gnome) e qt (KDE) e entenderá o que eu digo. A versão para KDE é extremamente confusa e bagunçada em comparação com a interface para o Gnome.</p>
+
+<p><strong>E</strong>is que muitas distribuições começaram a sugerir a utilização do Wicd como gerenciador de redes para quem utiliza o KDE.</p>
+
+<p><strong>N</strong>o Arch, por exemplo, encorajamos fortemente o uso do Wicd com o KDE ao invés do network-manager. Sim, sempre utilizei ele, porém&hellip;</p>
+
+<p><img src="http://3.bp.blogspot.com/_lqr72cLxjWU/TKEXqNjH-3I/AAAAAAAAACM/WKa5EWZ75V0/s1600/screenshot-20100928@001439.png" alt="" /></p>
+
+<p><strong>E</strong> então? Meio bizarro, certo?! Alguém havia pensado em dizer &ldquo;Mas ele não é tão feio..&rdquo;?</p>
+
+<p><strong>B</strong>om, que tal apresentar uma alternativa a isto? O wicd-kde!</p>
+
+<p><strong>C</strong>omo uma imagem vale mais que mil palavras:</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/04/wicdkde1.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/04/wicdkde1.png" alt="" /></a></p>
+
+<p><strong>M</strong>ais amigável certo? Uma interface mais limpa, organizada e bonita. Bem ao estilo &ldquo;clean&rdquo;, como alguns preferem dizer.</p>
+
+<p><strong>M</strong>as, deixando um pouco a frescura de lado. Não recomendo a utilização da interface em qt apenas por questões de estética.</p>
+
+<p><strong>A</strong> verdade é que o seu ambiente fica mais limpo com esta interface. Limpo? Sim.</p>
+
+<p><strong>S</strong>e você utiliza o KDE mas possui aplicações em gtk, por consequência você possuirá uma série de bibliotecas instaladas em seu ambiente para fazer com que esta aplicação em gtk funcione da maneira correta. Porém, se você instala uma aplicação em qt, pouca coisa adicional será necessária, visto que seu sistema já está preparado para rodar este tipo de aplicação.</p>
+
+<p><strong>D</strong>igamos que é uma união: Útil ao Agradável!</p>
+
+<p>E a parte que interessa? Instalar, instalar, instalar!</p>
+
+<p><strong>I</strong>nfelizmente, nem todas as distribuições empacotaram o wicd-kde até então, mas se você é usuário <strong><a href="http://archlinux.org">Arch Linux</a></strong>, a sua vida será mais fácil.</p>
+
+<p><strong>O</strong> pacote wicd-kde encontra-se pronto no <a href="http://aur.archlinux.org/packages.php?ID=40735">AUR</a>.</p>
+
+<p><strong>O</strong> processo é o já manjado:</p>
+
+<p><strong>1-</strong> Baixar o arquivo compactado:</p>
+
+<p>$ wget <a href="http://aur.archlinux.org/packages/wicd-client-kde-git/wicd-client-kde-git.tar.gz">http://aur.archlinux.org/packages/wicd-client-kde-git/wicd-client-kde-git.tar.gz</a></p>
+
+<p><strong>2-</strong> descompactar:</p>
+
+<p>$ tar -xvzf wicd-client-kde-git.tar.gz</p>
+
+<p><strong>3-</strong> entrar no diretório e em seguida executar o PKGBUILD para geração do pacote em si:</p>
+
+<p>$ cd wicd-client-kde-git</p>
+
+<p>$ makepkg</p>
+
+<p><strong>4-</strong> Instalar o pacote gerado:</p>
+
+<h1>pacman -U wicd-client-kde-git-20110426-1-x86_64.pkg.tar.xz</h1>
+
+<p><strong>F</strong>eito. ;]</p>
+
+<p><strong>H</strong>ave Fun!</p>
+
+<p><strong>A</strong>braços!</p>
+
+<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[KDE 4.6.2 lançado: Parabéns ao GNOME!]]></title>
+    <link href="http://kalib.github.io/blog/2011/04/07/kde-4-6-2-lancado-parabens-ao-gnome/"/>
+    <updated>2011-04-07T14:09:09-03:00</updated>
+    <id>http://kalib.github.io/blog/2011/04/07/kde-4-6-2-lancado-parabens-ao-gnome</id>
+    <content type="html"><![CDATA[<p><a href="http://www.insidelinux.com.br/wp-content/uploads/2010/10/gnome-kde.png"><img src="http://www.insidelinux.com.br/wp-content/uploads/2010/10/gnome-kde.png" alt="" /></a></p>
+
+<p><strong>E</strong>stranho o título?</p>
+
+<p><strong>B</strong>om, de fato foi o que aconteceu. O KDE 4.6.2 foi lançado e para demonstrar que a briga entre usuários <a href="http://www.kde.org">KDE</a> x <a href="http://www.gnome.org">GNOME</a> simplesmente não faz sentido, esta release foi batizada de &ldquo;Congrats&rdquo;, parabéns em português, em homenagem ao lançamento do GNOME 3 que teve mesma data.</p>
+
+<p><strong>R</strong>ealmente é deplorável quando as listas, fórums e canais estão infectados com insultos contra ambiente gráfico X ou distribuição Y. É claro que sempre vão existir diferenças e brincadeiras sobre qual é o melhor, quem tem vantagem, etc. Afinal, somos humanos e temos gostos diferentes, certo?! Assim como existem piadas e brincadeiras entre torcedores de times opostos, no mundo da computação isso sempre vai existir também. O problema é quando se torna algo de mal gosto ou agressivo.</p>
+
+<p><strong>E</strong>nfim&hellip;</p>
+
+<p><strong>P</strong>ara demonstrar que o projeto KDE realmente não liga para estas briguinhas infantis, e que não encara o projeto GNOME como um oponente que deve ser batido, a nova release do KDE 4.6.2 recebeu o nome de &ldquo;Congrats&rdquo; para homenagear o tão esperado lançamento do GNOME 3. Segue um pequeno trecho traduzido da notícia oficial no site do KDE:</p>
+
+<p><a href="http://kde.org/announcements/announce-4.6.2.php"></a><em><a href="http://kde.org/announcements/announce-4.6.2.php">“Com o codinome “Congrats" (parabéns) dedicamos este lançamento para os nossos amigos no lado GNOME, que lançam uma nova versão principal hoje.”</a></em></p>
+
+<p>[caption id=&ldquo;&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;492&rdquo; caption=&ldquo;The KDE Plasma Netbook Workspace&rdquo;]<a href="http://kde.org/announcements/4.6/screenshots/46netbook2.png"><img src="http://kde.org/announcements/4.6/screenshots/46netbook2.png" alt="The KDE Plasma Netbook Workspace" /></a>[/caption]</p>
+
+<p><strong>M</strong>uitas melhorias chegaram com esta release, no geral correções de bugs ou melhorias de performance. Para detalhes do changelog, acesse <a href="http://www.kde.org/announcements/changelogs/changelog4_6_1to4_6_2.php">este link</a>.</p>
+
+<p><strong>C</strong>laro, se você é usuário Arch Linux, já pode ter o seu KDE 4.6.2, que encontra-se disponível nos repositórios do pacman. Basta atualizar seu sistema, caso já tenha o KDE instalado em outra versão: pacman -Syu</p>
+
+<p><strong>Q</strong>ue isto sirva de exemplo para nós, usuários. ;]</p>
+
+<p><strong>A</strong>braços!</p>
+
+<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Lançado KDE 4.6 - Sim, claro...se você usa Arch você não precisa esperar!]]></title>
+    <link href="http://kalib.github.io/blog/2011/01/27/lancado-kde-4-6-sim-claro-se-voce-usa-arch-voce-nao-precisa-esperar/"/>
+    <updated>2011-01-27T09:54:19-03:00</updated>
+    <id>http://kalib.github.io/blog/2011/01/27/lancado-kde-4-6-sim-claro-se-voce-usa-arch-voce-nao-precisa-esperar</id>
+    <content type="html"><![CDATA[<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/01/kde46.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/01/kde46.png" alt="" /></a></p>
+
+<p><strong>&ndash; DEV do Arch, qual é sua missão?</strong></p>
+
+<p><strong>&ndash; Empacotar antes de qualquer distribuição!</strong></p>
+
+<p><strong>&ndash; DEV do Arch o que é que você faz?</strong></p>
+
+<p><strong>&ndash; Eu empacoto coisas que assustam o Satanás!</strong></p>
+
+<p><strong>É</strong> isso aí pessoal, ontem o projeto <a href="http://kde.org">KDE</a> liberou o KDE 4.6 com muitas melhorias e o pessoal do <a href="http://archlinux.org">Arch</a> já saiu na frente, claro. Sim, se você usa Arch, não precisa esperar, pode atualizar seu KDE com o seu rotineiro <em># __pacman -Syu.</em></p>
+
+<p><em><a href="http://kde.org/announcements/4.6/screenshots/46-w09.png"><img src="http://kde.org/announcements/4.6/screenshots/46-w09.png" alt="" /></a></em></p>
+
+<p><strong>D</strong>entre as grandes mudanças, gostaria de destacar o suporte nativo ao UPower, UDev e UDisks que podem ser utilizados ao invés do depreciado HAL. Para isso, o pacote hal deixa de ser uma dependência do kdebase-workspace e pode ser removido do seu sistema.</p>
+
+<p><strong>O</strong>utra novidade é que com a última atualização do Phonon, os DEVs declararam que o backend Xine não será mais mantido e precisará do PulseAudio para funcionar; você realmente deveria pensar em trocar para o GStreamer ou VLC backend.</p>
+
+<p><strong>V</strong>árias melhorias foram implementadas também em contexto geral no Plasma Workspaces que ganhou, dentre outras coisas, um novo sistema de Activities, lhe permitindo uma associação mais fácil de aplicações com atividades específicas e particulares como trabalho ou atividades de casa. Várias mudanças no Kwin, o gerenciador de janelas do Plasma, também foram implementadas para melhorar a performance do mesmo e ao mesmo tempo tornar mais leve para o sistema como um todo.</p>
+
+<p><strong>E</strong> se eu tiver um netbook?</p>
+
+<p><strong>O</strong> KDE 4.6 também trouxe uma série de novos recursos que facilitam e tornam o sistema ainda mais leve para este tipo de usuário. O Plasma Netbook, otimizado para computadores mais portáteis, se tornou ainda mais leve e fácil de se utilizar através de uma tela touchscreen.</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/01/kde46_1.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/01/kde46_1.png" alt="" /></a></p>
+
+<p><strong>V</strong>árias modificações no dolphin, correções de bugs e aparência também foram implementadas, mas&hellip; se eu for realmente listar todas as modificações, posso acabar perdendo meu emprego, portanto vou apenas lhes deixar o link do site oficial onde podem ser encontradas todas as mudanças desta release: <a href="http://kde.org/announcements/4.6/">http://kde.org/announcements/4.6/</a></p>
+
+<p><strong>A</strong>braços!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[KDE 4.4.4 Liberado! Atualize seu Arch Linux! ...Cheers]]></title>
+    <link href="http://kalib.github.io/blog/2010/06/02/kde-4-4-4-liberado-atualize-seu-arch-linux-cheers/"/>
+    <updated>2010-06-02T09:42:27-03:00</updated>
+    <id>http://kalib.github.io/blog/2010/06/02/kde-4-4-4-liberado-atualize-seu-arch-linux-cheers</id>
+    <content type="html"><![CDATA[<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2010/06/kde444.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2010/06/kde444.png" alt="kde444" /></a></p>
+
+<p><strong>S</strong>audações pessoal!</p>
+
+<p><strong>D</strong>epois de um longo tempo sem postar venho lhes informar que já podemos ter o <a href="http://www.kde.org">KDe 4.4.4</a> em nosso <a href="http://www.archlinux.org">Arch Linux</a>.</p>
+
+<p><strong>O</strong> mesmo já seencontra devidamente empacotado e disponível em nossos repositórios. Por se tratar de uma quantidade grande de pacotes (mais de 300 MB), execute o comando para atualizar seu sistema antes de prosseguir com a leitura do post.</p>
+
+<p><em># pacman -Syu</em></p>
+
+<p><strong>C</strong>heers!</p>
+
+<p><strong>O</strong>u deveria dizer.. Saúde!?</p>
+
+<p><strong>P</strong>ara quem não sabe, &ldquo;Cheers&rdquo; é a expressão utilizada no idioma Inglês ao se fazer um brinde. Sim, seria o nosso bom e velho &ldquo;Saúde&rdquo;. Além desta utilização, também pode ser utilizado em geral como um &ldquo;viva&rdquo; ou simplesmente um desejo de saúde em uma carta, email ou algo que o valha.</p>
+
+<p><strong>E</strong>ste é o codinome da versão 4.4.4 do KDE que foi liberada ontem, 1 de Junho, pela equipe do projeto. Lançamento este que, façamos justiça, merece mesmo um brinde.</p>
+
+<p><strong>C</strong>heers, ou KDE 4.4.4 para os menos íntimos, será o último lançamento da série 4.4 que dará espaço para a próxima release, <a href="http://www.kde.org/announcements/announce-4.5-beta1.php">KDE 4.5</a>, que tem previsão de lançamento para Agosto.</p>
+
+<p><strong>P</strong>or se tratar apenas de correções de bugs e traduções, todos podem efetuar a atualização sem medo algum de perder configurações ou seja o que for.</p>
+
+<p><strong>D</strong>entre as correções, destacam-se:</p>
+
+<p><em>* Vários bugs na listagem de nomes do gerenciador de arquivos Dolphin foram corrigidos;
+* Bugs relacionados a encodes e arquivos zipados foram corrigidos;
+* Vários bugs nos games do KDE foram corrigidos&hellip;</em>
+Dentre outros&hellip;</p>
+
+<p><a href="http://www.kde.org/announcements/4.4/images/general-desktop.jpg"><img src="http://www.kde.org/announcements/4.4/images/general-desktop.jpg" alt="" /></a></p>
+
+<p><strong>P</strong>ara os curiosos de plantão que desejem já ir conhecendo o que ainda está por vir, a equipe de desenvolvimento do KDE já disponibilizou o primeiro beta da próxima release, KDE 4.5, que deverá estar disponível em Agosto.  Maiores informações podem ser obtidas <a href="http://www.kde.org/announcements/announce-4.5-beta1.php">neste link</a>.</p>
+
+<p><strong>A</strong>braços!</p>
+
+<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
+]]></content>
+  </entry>
+  
+</feed>
