@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: World | Hacking the damn life]]></title>
+  <link href="http://kalib.github.io/blog/categories/world/atom.xml" rel="self"/>
+  <link href="http://kalib.github.io/"/>
+  <updated>2013-07-31T13:59:54-03:00</updated>
+  <id>http://kalib.github.io/</id>
+  <author>
+    <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Teste]]></title>
+    <link href="http://kalib.github.io/blog/2013/07/31/teste/"/>
+    <updated>2013-07-31T13:58:00-03:00</updated>
+    <id>http://kalib.github.io/blog/2013/07/31/teste</id>
+    <content type="html"><![CDATA[<p>Olá mundo.. usahdisaofdasdf</p>
+]]></content>
+  </entry>
+  
+</feed>

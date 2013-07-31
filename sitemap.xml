@@ -733,8 +733,12 @@
         <lastmod>2013-07-31T13:56:16-03:00</lastmod>
     </url>
     <url>
+        <loc>http://kalib.github.io/blog/2013/07/31/teste/</loc>
+        <lastmod>2013-07-31T13:59:10-03:00</lastmod>
+    </url>
+    <url>
         <loc>http://kalib.github.io/</loc>
-        <lastmod>2013-07-31T13:56:16-03:00</lastmod>
+        <lastmod>2013-07-31T13:59:10-03:00</lastmod>
     </url>
     <url>
         <loc>http://kalib.github.io/robots.txt</loc>
@@ -742,6 +746,6 @@
     </url>
     <url>
         <loc>http://kalib.github.io/blog/archives/</loc>
-        <lastmod>2013-07-31T13:56:16-03:00</lastmod>
+        <lastmod>2013-07-31T13:59:10-03:00</lastmod>
     </url>
 </urlset>
