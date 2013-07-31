@@ -1,0 +1,55 @@
+---
+author: kalib
+comments: true
+date: 2009-02-17 11:58:00+00:00
+layout: post
+slug: arch-iso-200902-liberada-celebrem
+title: Arch ISO 2009.02 liberada - Celebrem
+wordpress_id: 68
+categories:
+- Arch Linux
+- Impressões
+- Linux
+- software livre
+tags:
+- Arch Linux
+- Impressões
+- Linux
+- software livre
+---
+
+[![](http://kalib.pre.hw40.webservidor.net/wordpress/wp-content/uploads/2009/02/arch_fireworks-300x224.png)](http://kalib.pre.hw40.webservidor.net/wordpress/wp-content/uploads/2009/02/arch_fireworks.png)Saudações pessoal. É com imensa satisfação que lhes informo que a release 2009.02 do nosso Archlinux foi lançada. Dentre as principais mudanças destacam-se as seguintes:
+
+
+
+
+* Kernel 2.6.28  
+
+* Suporte à Ext4 (disponível, inclusive, para a instalação em partição raiz)  
+
+* Capacidade de recuperação e manutenção em partições com ext4  
+
+* Documentação totalmente atualizada  
+
+* Inclusão do AIF , que está sendo desenvolvido para se tornar o instalador da próxima geração do Arch  
+
+* Diversos bugs corrigidos no instalador  
+
+* ISOs Fallback usando o ISOLINUX de bootloader para aqueles que tiverem problemas com o GRUB
+
+
+
+
+Como todos sabem o Arch é uma rolling release e como tal uma nova ISO não necessariamente é uma versão totalmente nova do sistema, uma vez que o próprio pacman pode atualizar completamente seu Arch com um simples -Syu. O novo time de engenheiros de release do Arch estarão cuidando da ISO e versionando-a de acordo com os lançamentos do kernel, ficando a próxima ISO para o kernel 2.6.29.  
+
+  
+
+É isso aí... bem vindos ao mundo Arch!
+
+
+
+
+[![](http://img376.imageshack.us/img376/8000/userbar635980sd7.gif)](http://img376.imageshack.us/img376/8000/userbar635980sd7.gif)
+
+
+

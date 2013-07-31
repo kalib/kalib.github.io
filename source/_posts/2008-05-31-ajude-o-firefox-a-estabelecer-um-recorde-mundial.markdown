@@ -1,0 +1,66 @@
+---
+author: kalib
+comments: true
+date: 2008-05-31 11:41:00+00:00
+layout: post
+slug: ajude-o-firefox-a-estabelecer-um-recorde-mundial
+title: Ajude o Firefox a estabelecer um recorde mundial
+wordpress_id: 17
+categories:
+- firefox
+- Impressões
+- software livre
+---
+
+### 
+
+
+
+
+
+
+
+[![](http://1.bp.blogspot.com/_5kfJplBiYy0/SEE5sXYArPI/AAAAAAAAADc/FQUeQoIz7t8/s320/dday_badge_fox.png)](http://1.bp.blogspot.com/_5kfJplBiYy0/SEE5sXYArPI/AAAAAAAAADc/FQUeQoIz7t8/s1600-h/dday_badge_fox.png)"Queremos estabelecer um Recorde Mundial no Guinness para o software mais baixado em 24 horas e com a sua ajuda temos certeza de que conseguiremos!"
+
+
+
+
+A Fundação Mozilla pretende bater este recorde e entrar para o Guinness Book e para isso está contando com o apoio dos usuários e fans da raposa de fogo no Download Day 2008. Mas o que isso tudo significa?
+
+
+
+
+A fundação Mozilla lançou um site para este projeto no qual podemos nos cadastrar e participar desta corrente. No dia do download a Mozilla encaminhará uma chamada para todos os cadastrados para que possam fazer seus respectivos downloads.
+
+
+
+
+O site ainda nos mostra em tempo real a quantidade de pessoas já cadastradas bem como um mapa do mundo com detalhes sobre quantas pessoas já se cadastraram em cada país de nosso globo.
+
+
+
+
+A iniciativa é excelente para divulgar um excelente Software Livre que já ganhou muitos adeptos, mesmo aqueles que nem conheciam o significado da palavra Software Livre. Lembrando também que todo e qualquer incentivo ao uso de Software Livre é bastante bem vindo em um país em desenvolvimento como o nosso, portanto vamos ajudar nessa campanha pessoal. ;]
+
+
+
+
+Para participar é muito simples, bastando apenas clicar no link a seguir, na raposa do início do post ou mesmo no baner que disponibilizei no topo do site.
+
+
+
+
+Link do projeto: [http://www.spreadfirefo](http://www.spreadfirefox.com/pt-BR/worldrecord)[x.com/pt-BR/worldrecord](http://www.spreadfirefox.com/pt-BR/worldrecord)
+
+
+
+
+[]'s
+
+
+
+
+[![](http://img376.imageshack.us/img376/8000/userbar635980sd7.gif)](http://img376.imageshack.us/img376/8000/userbar635980sd7.gif)
+
+
+

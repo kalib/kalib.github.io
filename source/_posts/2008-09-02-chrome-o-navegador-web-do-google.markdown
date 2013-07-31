@@ -1,0 +1,62 @@
+---
+author: kalib
+comments: true
+date: 2008-09-02 02:07:00+00:00
+layout: post
+slug: chrome-o-navegador-web-do-google
+title: Chrome! O navegador web do Google
+wordpress_id: 31
+categories:
+- Impressões
+---
+
+
+
+
+[![](http://1.bp.blogspot.com/_5kfJplBiYy0/SL0eUc7sXWI/AAAAAAAAAHM/rBDpGxoKNB4/s200/chrome.png)](http://1.bp.blogspot.com/_5kfJplBiYy0/SL0eUc7sXWI/AAAAAAAAAHM/rBDpGxoKNB4/s1600-h/chrome.png)  
+
+Pois é pessoal. Quem ainda tem coragem de dizer que o Google não vai dominar o mundo?
+
+
+
+
+Brincadeiras a parte, o que parecia apenas boato de internet, se confirmou nesta segunda-feira como sendo um fato real. O Google acaba de lançar seu mais novo produto.
+
+
+
+
+Chrome é o nome da mais nova cria da gigante Google. Este que é um navegador web open source utilizando-se da toolkit do navegador Konqueror, já conhecido pelos usuários Linux que também foi utilizado pelo navegador Safari.
+
+
+
+
+Dentre as novidades que parecem se destacar estão a melhoria de performance do interpretador JavaScript e a separação de abas como processos distintos, aproveitando melhor a CPU de sua máquina, principalmente se você possui máquinas *core. ;]
+
+
+
+
+Até hoje pela manhã não havia nenhuma confirmação com relação a este lançamento, apenas boatos que acabaram por se confirmar nesta noite quando achei o aviso oficial no [blog](http://googleblog.blogspot.com/2008/09/fresh-take-on-browser.html) do próprio Google.
+
+
+
+
+[![](http://2.bp.blogspot.com/_5kfJplBiYy0/SL0eh6M3QfI/AAAAAAAAAHU/ZdRlXZDlaLI/s200/chrome-privacy.jpg)](http://2.bp.blogspot.com/_5kfJplBiYy0/SL0eh6M3QfI/AAAAAAAAAHU/ZdRlXZDlaLI/s1600-h/chrome-privacy.jpg)  
+
+A gigante também preparou uma [história em quadrinhos](http://books.google.com/books?id=8UsqHohwwVYC&printsec=frontcover#PPA16,M1) bem bacana para ilustrar a chegada de sua nova ferramenta.
+
+
+
+
+Segue link oficial da fonte: [http://googleblog.blogspot.com/2008/09/fresh-take-on-browser.html](http://googleblog.blogspot.com/2008/09/fresh-take-on-browser.html)  
+
+  
+
+Link para a história em quadrinhos: [h](http://books.google.com/books?id=8UsqHohwwVYC&printsec=frontcover#PPA16,M1)[ttp://books.google.com/books?id=8UsqHohwwVYC&printsec=frontcover#PPA16,M1](http://books.google.com/books?id=8UsqHohwwVYC&printsec=frontcover#PPA16,M1)
+
+
+
+
+[![](http://img376.imageshack.us/img376/8000/userbar635980sd7.gif)](http://googleblog.blogspot.com/2008/09/fresh-take-on-browser.html)
+
+
+
