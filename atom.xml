@@ -4,7 +4,7 @@
   <title><![CDATA[Hacking the damn life]]></title>
   <link href="http://kalib.github.io/atom.xml" rel="self"/>
   <link href="http://kalib.github.io/"/>
-  <updated>2013-07-31T08:39:44-03:00</updated>
+  <updated>2013-07-31T08:47:13-03:00</updated>
   <id>http://kalib.github.io/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -14,13 +14,22 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Hello World]]></title>
+    <title type="html"><![CDATA[Olá Paulo]]></title>
     <link href="http://kalib.github.io/blog/2013/07/30/hello-world/"/>
     <updated>2013-07-30T21:09:00-03:00</updated>
     <id>http://kalib.github.io/blog/2013/07/30/hello-world</id>
-    <content type="html"><![CDATA[<p><em>Dumbadumba</em></p>
+    <content type="html"><![CDATA[<p>OLá Paulo.. bem vindo ao meu blog&hellip;</p>
 
-<p>blablablabalbalbalbalbalbalbalbalbalbala</p>
+<p>blablablabalbalbalbalbalbalbalbalbal</p>
+
+<p>dsdfasdf
+fgs
+arga
+erh
+swet
+hsrtj
+her
+bala</p>
 ]]></content>
   </entry>
   
