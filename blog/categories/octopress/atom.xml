@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Hacking the damn life]]></title>
-  <link href="http://kalib.github.io/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Octopress | Hacking the damn life]]></title>
+  <link href="http://kalib.github.io/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://kalib.github.io/"/>
   <updated>2013-07-30T21:17:52-03:00</updated>
   <id>http://kalib.github.io/</id>
