@@ -9,7 +9,7 @@
   <meta name="author" content="Marcelo Cavalcante Rocha - Kalib">
 
   
-  <meta name="description" content="Conforme apresentei no post passado, o BR-Linux estava fazendo uma pesquisa para saber quais distribuições deveria indicar. Antes mesmo de ver as &hellip;">
+  <meta name="description" content="Para aqueles que não conhecem, a Tux-CE é uma Comunidade Cearense de Software Livre que fundei com alguns amigos no ano de 2006. Desde então, a Tux- &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,90 +65,6 @@
     <div id="content">
       <div class="blog-index">
   
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2008/10/10/resultado-quais-distribuicoes-o-br-linux-deve-indicar/">Resultado: Quais Distribuições O BR-Linux Deve Indicar</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2008-10-10T14:50:00-03:00" pubdate data-updated="true">Oct 10<span>th</span>, 2008</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Conforme apresentei no post passado, o <a href="http://br-linux.org/2008/ajude-a-escolher-que-distribuicoes-o-br-linux-deve-recomendar/">BR-Linux</a> estava fazendo uma pesquisa para saber quais distribuições deveria indicar. Antes mesmo de ver as respostas, tinha plena certeza de que o Ubuntu estaria com uma grande quantidade de votos, afinal de contas foi e é uma das distribuições que mais divulgou o nome do Linux nos últimos anos por ser mais &ldquo;amigável&rdquo; para desktops de usuários que terão o primeiro contato com linux.</p>
-
-<p>Bom, isto de fato se mostrou verdade na pesquisa, porém o que mais me chamou a atenção foi o fato de que o Arch Linux, superando minhas expectativas, se saiu muito bem na pesquisa, deixando grandes distribuições para trás.</p>
-
-<p>Este resultado apenas demonstra o que muitos de nós já estávamos percebendo: O Arch vem ganhando maior força em nosso país. Este resultado não é apenas fruto de publicidade, mas também da qualidade da distribuição em si bem como o trabalho que a comunidade <a href="http://archlinux-br.org/">Archlinux-br</a> vem desenvolvendo no quesito de suporte, documentações, traduções dentre outras formas de auxiliar os novos usuários.</p>
-
-<p>Abaixo segue um resultado aproximado da pesquisa feita no BR-Linux, até o dia de hoje:</p>
-
-<p>Ubuntu &ndash; 36 votos</p>
-
-<p>Mandriva &ndash; 31 votos</p>
-
-<p>Arch Linux &ndash; 15 votos</p>
-
-<p>Big Linux &ndash; 10 votos</p>
-
-<p>Fedora &ndash; 8 votos</p>
-
-<p>Debian &ndash; 6 votos</p>
-
-<p>Kurumin NG &ndash; 6 votos</p>
-
-<p>Opensuse &ndash; 3 votos</p>
-
-<p>Kubuntu &ndash; 3 votos</p>
-
-<p>Slackware &ndash; 2 votos</p>
-
-<p>Goblinx &ndash; 2 votos</p>
-
-<p>Linux From Scratch &ndash; 2 votos</p>
-
-<p>Resulinux &ndash; 1 votos</p>
-
-<p>Zenwalk &ndash; 1 votos</p>
-
-<p>Gnomux &ndash; 1 votos</p>
-
-<p>PCLinuxOS &ndash; 1 votos</p>
-
-<p>Sabayon &ndash; 1 votos</p>
-
-<p>Ultimate Edition &ndash; 1 votos</p>
-
-<p>Linux Mint &ndash; 1 votos</p>
-
-<p>Abraços</p>
-
-<p><img src="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif" alt="" /></p>
-</div>
-  
-  
-
-
-    </article>
   
   
     <article>
@@ -700,6 +616,146 @@
 
     </article>
   
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/08/03/instalacao-do-kdemod-41-no-arch-linux/">Instalação Do KDEmod 4.1 No Arch Linux</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-08-03T10:07:00-03:00" pubdate data-updated="true">Aug 3<span>rd</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Creio que todos os usuários de Arch Linux conhecem ou já ouviram falar do <a href="http://hugodoria.org/">Hugo Doria</a>. O Hugo é um dos maiores representantes do Arch Linux no Brasil e um dos atuais desenvolvedores do mesmo.</p>
+
+<p>Este artigo sobre instalação do KDEmod 4.1 foi escrito por ele e resolvi postar aqui para que possamos atingir mais público ainda. Quanto mais a informação correr, melhor. ;]</p>
+
+<p>Introdução</p>
+
+<p>No <em>Arch Linux</em> o KDE é empacotado de um jeito que eu não curto. Nele, diversas aplicações são &ldquo;englobadas&rdquo; em um só pacote (isso é o padrão na maioria das distribuições).</p>
+
+<p>Ao instalar o pacote <em>kdegraphics</em>, por exemplo, você acaba instalando diversas aplicações para manipulação gráfica. Mesmo que você queira apenas a &ldquo;aplicação x&rdquo; daquele pacote será obrigado a instalar o kdegraphics todo. Isso torna o KDE enorme e com diversas aplicações que você nunca usa.<a href="http://bp3.blogger.com/_5kfJplBiYy0/SJWvv3vtmLI/AAAAAAAAAFM/snVgZsrb6Us/s1600-h/thumb_kdemod41.png"><img src="http://bp3.blogger.com/_5kfJplBiYy0/SJWvv3vtmLI/AAAAAAAAAFM/snVgZsrb6Us/s200/thumb_kdemod41.png" alt="" /></a></p>
+
+<p>A solução para isto é usar o <a href="http://www.kdemod.ath.cx/">KDEMod</a>, um projeto que visa fornecer uma instalação modular do KDE e otimizada para o Arch Linux.</p>
+
+<p>NOTA: Não há planos para portar o KDEMod para outras distribuições.</p>
+
+<p>Instalação</p>
+
+<p>O primeiro passo a ser feito é remover toda e qualquer instalação do <em>KDEMod</em> anterior. Faça isso com:</p>
+
+<blockquote><h1>pacman -Rscn kdemod-complete</h1></blockquote>
+
+<p>Se você já está usando as versões betas do kdemod4, também faça:</p>
+
+<blockquote><h1>pacman -Rscn kdemod4-complete</h1></blockquote>
+
+<p>Verifique se tudo relacionado ao kde foi removido com:</p>
+
+<blockquote><h1>pacman -Q | grep kde</h1></blockquote>
+
+<p>Se aparecer algo, pode remover. Uma maneira mais direta de fazer isto é executando:</p>
+
+<blockquote><h1>pacman -Q | grep -i &ldquo;kde|qt&rdquo; | cut -d &ldquo; &rdquo; -f1 | xargs pacman -Rd</h1></blockquote>
+
+<p>É preciso, também, remover os arquivos de configuração do kdemod 3 e 4 anteriores, já que eles são incompatíveis com a nova versão:</p>
+
+<blockquote><p>$ rm -rf ~/.kde<em> ~/.kdemod</em></p></blockquote>
+
+<p>NOTA: Ao invés de removê-los eu sugiro que você faça um backup.</p>
+
+<p>Pronto, seu sistema está limpo e agora podemos instalar a nova versão sem problemas. Abra o arquivo <em>/etc/pacman.conf</em> com seu editor preferido e adicione:</p>
+
+<blockquote><p>[kdemod-core]</p></blockquote>
+
+<p>Server = <a href="http://kdemod.ath.cx/repo/core/i686">http://kdemod.ath.cx/repo/core/i686</a></p>
+
+<blockquote></blockquote>
+
+<p>NOTA:</p>
+
+<ul>
+<li>Remove qualquer entrada referente ao [kdemod] ou ao [kdemod-unstable]</li>
+</ul>
+
+
+<p>Para instalar o KDEMod faça:</p>
+
+<blockquote><h1>pacman -Sy kdemod</h1></blockquote>
+
+<p>Se quiser o kdemod completo faça:</p>
+
+<blockquote><h1>pacman -Sy kdemod-complete</h1></blockquote>
+
+<p>Seu KDEMod está pronto para uso. :) Para usá-lo basta editar seu ~/.xinitrc ou iniciar o kdm (gerenciador de login do KDE) com:</p>
+
+<blockquote><h1>/etc/rc.d/kdm restart</h1></blockquote>
+
+<p>O primeiro boot do KDE 4 demora um pouco, mas depois melhora. Portanto, não se preocupe.</p>
+
+<p>Caso você queira seu ambiente em português instale o pacote abaixo:</p>
+
+<blockquote><h1>pacman -Sy kdemod-kde-l10n-pt_br</h1></blockquote>
+
+<p>E selecione seu idioma nas configurações do KDE.</p>
+
+<p>Pacotes Adicionais</p>
+
+<p>Agora existe um repositório com alguns pacotes adicionais para o KDE (aplicativos, plasmoids etc). Para usá-lo adicione as seguintes linhas ao <em>/etc/pacman.conf</em>:</p>
+
+<blockquote><p>[kdemod-extragear]</p></blockquote>
+
+<p>Server = <a href="http://kdemod.ath.cx/repo/extragear/i686">http://kdemod.ath.cx/repo/extragear/i686</a></p>
+
+<blockquote></blockquote>
+
+<p>E sincronize a base de dados dos pacotes:</p>
+
+<blockquote><h1>pacman -Sy</h1></blockquote>
+
+<p>Para visualizar o que existe neste repositório faça:</p>
+
+<blockquote><h1>pacman -Sl kdemod-extragear</h1></blockquote>
+
+<p>Por enquanto ainda existem poucos pacotes neste repositório, mas vários outros estão sendo adicionados.</p>
+
+<p>Bem, é isso. Agora é só você aproveitar seu KDEMod 4. No momento que estou escrevendo este artigo ele se encontra na versão 4.1 e já está ficando fantástico.</p>
+
+<p>Maiores informações:</p>
+
+<ul>
+<li><a href="http://www.kdemod.ath.cx/">http://www.kdemod.ath.cx/</a></li>
+</ul>
+
+
+<p>Deixo aqui os agradecimentos ao Hugo em nome de todos pela contribuição.</p>
+
+<p><img src="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif" alt="" /></p>
+</div>
+  
+  
+
+
+    </article>
+  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/14/">&larr; Older</a>
@@ -717,10 +773,6 @@
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2013/07/30/hello-world/">Hello World</a>
-      </li>
-    
-      <li class="post">
         <a href="/blog/2012/02/06/recomendacao-bibliografica-mago-e-vidro-a-torre-negra-iv/">Recomendação Bibliográfica: Mago E Vidro (a Torre Negra - IV)</a>
       </li>
     
@@ -734,6 +786,10 @@
     
       <li class="post">
         <a href="/blog/2011/10/17/3c2ba-dia-livre-programacao-definida/">3º Dia Livre - Programação Definida!</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/10/11/3c2ba-dia-livre-inscricoes-abertas/">3º Dia Livre - Inscrições Abertas</a>
       </li>
     
   </ul>
