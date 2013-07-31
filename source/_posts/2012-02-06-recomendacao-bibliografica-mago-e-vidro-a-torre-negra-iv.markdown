@@ -13,7 +13,7 @@ categories:
 
 [![](http://marcelocavalcante.net/portal/imgs/livros/mago_e_vidro.jpg.pagespeed.ce.z_h39Fy6cb.jpg)](http://marcelocavalcante.net/portal/imgs/livros/mago_e_vidro.jpg.pagespeed.ce.z_h39Fy6cb.jpg)****
 
-**D**epois do Falcon... de minhas longas férias, estou de volta e começando os posts do ano com uma recomendação bibliográfica: **Mago e Vidro**, o quarto volume da saga **A Torre Negra**.
+**D**epois de minhas longas férias, estou de volta e começando os posts do ano com uma recomendação bibliográfica: **Mago e Vidro**, o quarto volume da saga **A Torre Negra**.
 
 **P**ara quem não conhece a saga, sugiro a leitura dos 3 links a seguir:
 
