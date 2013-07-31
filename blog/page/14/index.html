@@ -9,7 +9,7 @@
   <meta name="author" content="Marcelo Cavalcante Rocha - Kalib">
 
   
-  <meta name="description" content="Creio que todos os usuários de Arch Linux conhecem ou já ouviram falar do Hugo Doria. O Hugo é um dos maiores representantes do Arch Linux no Brasil &hellip;">
+  <meta name="description" content="Os usuários de Arch Linux que utilizam o kdemod como ambiente gráfico e que tentaram fazer uma atualização do sistema (pacman -Syu) nos últimos dias &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,146 +65,6 @@
     <div id="content">
       <div class="blog-index">
   
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2008/08/03/instalacao-do-kdemod-41-no-arch-linux/">Instalação Do KDEmod 4.1 No Arch Linux</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2008-08-03T10:07:00-03:00" pubdate data-updated="true">Aug 3<span>rd</span>, 2008</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Creio que todos os usuários de Arch Linux conhecem ou já ouviram falar do <a href="http://hugodoria.org/">Hugo Doria</a>. O Hugo é um dos maiores representantes do Arch Linux no Brasil e um dos atuais desenvolvedores do mesmo.</p>
-
-<p>Este artigo sobre instalação do KDEmod 4.1 foi escrito por ele e resolvi postar aqui para que possamos atingir mais público ainda. Quanto mais a informação correr, melhor. ;]</p>
-
-<p>Introdução</p>
-
-<p>No <em>Arch Linux</em> o KDE é empacotado de um jeito que eu não curto. Nele, diversas aplicações são &ldquo;englobadas&rdquo; em um só pacote (isso é o padrão na maioria das distribuições).</p>
-
-<p>Ao instalar o pacote <em>kdegraphics</em>, por exemplo, você acaba instalando diversas aplicações para manipulação gráfica. Mesmo que você queira apenas a &ldquo;aplicação x&rdquo; daquele pacote será obrigado a instalar o kdegraphics todo. Isso torna o KDE enorme e com diversas aplicações que você nunca usa.<a href="http://bp3.blogger.com/_5kfJplBiYy0/SJWvv3vtmLI/AAAAAAAAAFM/snVgZsrb6Us/s1600-h/thumb_kdemod41.png"><img src="http://bp3.blogger.com/_5kfJplBiYy0/SJWvv3vtmLI/AAAAAAAAAFM/snVgZsrb6Us/s200/thumb_kdemod41.png" alt="" /></a></p>
-
-<p>A solução para isto é usar o <a href="http://www.kdemod.ath.cx/">KDEMod</a>, um projeto que visa fornecer uma instalação modular do KDE e otimizada para o Arch Linux.</p>
-
-<p>NOTA: Não há planos para portar o KDEMod para outras distribuições.</p>
-
-<p>Instalação</p>
-
-<p>O primeiro passo a ser feito é remover toda e qualquer instalação do <em>KDEMod</em> anterior. Faça isso com:</p>
-
-<blockquote><h1>pacman -Rscn kdemod-complete</h1></blockquote>
-
-<p>Se você já está usando as versões betas do kdemod4, também faça:</p>
-
-<blockquote><h1>pacman -Rscn kdemod4-complete</h1></blockquote>
-
-<p>Verifique se tudo relacionado ao kde foi removido com:</p>
-
-<blockquote><h1>pacman -Q | grep kde</h1></blockquote>
-
-<p>Se aparecer algo, pode remover. Uma maneira mais direta de fazer isto é executando:</p>
-
-<blockquote><h1>pacman -Q | grep -i &ldquo;kde|qt&rdquo; | cut -d &ldquo; &rdquo; -f1 | xargs pacman -Rd</h1></blockquote>
-
-<p>É preciso, também, remover os arquivos de configuração do kdemod 3 e 4 anteriores, já que eles são incompatíveis com a nova versão:</p>
-
-<blockquote><p>$ rm -rf ~/.kde<em> ~/.kdemod</em></p></blockquote>
-
-<p>NOTA: Ao invés de removê-los eu sugiro que você faça um backup.</p>
-
-<p>Pronto, seu sistema está limpo e agora podemos instalar a nova versão sem problemas. Abra o arquivo <em>/etc/pacman.conf</em> com seu editor preferido e adicione:</p>
-
-<blockquote><p>[kdemod-core]</p></blockquote>
-
-<p>Server = <a href="http://kdemod.ath.cx/repo/core/i686">http://kdemod.ath.cx/repo/core/i686</a></p>
-
-<blockquote></blockquote>
-
-<p>NOTA:</p>
-
-<ul>
-<li>Remove qualquer entrada referente ao [kdemod] ou ao [kdemod-unstable]</li>
-</ul>
-
-
-<p>Para instalar o KDEMod faça:</p>
-
-<blockquote><h1>pacman -Sy kdemod</h1></blockquote>
-
-<p>Se quiser o kdemod completo faça:</p>
-
-<blockquote><h1>pacman -Sy kdemod-complete</h1></blockquote>
-
-<p>Seu KDEMod está pronto para uso. :) Para usá-lo basta editar seu ~/.xinitrc ou iniciar o kdm (gerenciador de login do KDE) com:</p>
-
-<blockquote><h1>/etc/rc.d/kdm restart</h1></blockquote>
-
-<p>O primeiro boot do KDE 4 demora um pouco, mas depois melhora. Portanto, não se preocupe.</p>
-
-<p>Caso você queira seu ambiente em português instale o pacote abaixo:</p>
-
-<blockquote><h1>pacman -Sy kdemod-kde-l10n-pt_br</h1></blockquote>
-
-<p>E selecione seu idioma nas configurações do KDE.</p>
-
-<p>Pacotes Adicionais</p>
-
-<p>Agora existe um repositório com alguns pacotes adicionais para o KDE (aplicativos, plasmoids etc). Para usá-lo adicione as seguintes linhas ao <em>/etc/pacman.conf</em>:</p>
-
-<blockquote><p>[kdemod-extragear]</p></blockquote>
-
-<p>Server = <a href="http://kdemod.ath.cx/repo/extragear/i686">http://kdemod.ath.cx/repo/extragear/i686</a></p>
-
-<blockquote></blockquote>
-
-<p>E sincronize a base de dados dos pacotes:</p>
-
-<blockquote><h1>pacman -Sy</h1></blockquote>
-
-<p>Para visualizar o que existe neste repositório faça:</p>
-
-<blockquote><h1>pacman -Sl kdemod-extragear</h1></blockquote>
-
-<p>Por enquanto ainda existem poucos pacotes neste repositório, mas vários outros estão sendo adicionados.</p>
-
-<p>Bem, é isso. Agora é só você aproveitar seu KDEMod 4. No momento que estou escrevendo este artigo ele se encontra na versão 4.1 e já está ficando fantástico.</p>
-
-<p>Maiores informações:</p>
-
-<ul>
-<li><a href="http://www.kdemod.ath.cx/">http://www.kdemod.ath.cx/</a></li>
-</ul>
-
-
-<p>Deixo aqui os agradecimentos ao Hugo em nome de todos pela contribuição.</p>
-
-<p><img src="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif" alt="" /></p>
-</div>
-  
-  
-
-
-    </article>
   
   
     <article>
@@ -883,6 +743,63 @@ Server = http://kdemod.ath.cx/repo/legacy/x86_64
 
     </article>
   
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/05/23/de-onde-vem-o-conceito-de-software-livre/">De Onde Vem O Conceito De Software Livre ?</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-05-23T10:07:00-03:00" pubdate data-updated="true">May 23<span>rd</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h3></h3>
+
+<p><a href="http://2.bp.blogspot.com/_5kfJplBiYy0/SDbByXYArLI/AAAAAAAAAC8/85vq870Fl7c/s1600-h/gnu.jpg"><img src="http://2.bp.blogspot.com/_5kfJplBiYy0/SDbByXYArLI/AAAAAAAAAC8/85vq870Fl7c/s320/gnu.jpg" alt="" /></a></p>
+
+<p>Diante de nossa atual situação tecnológica seria impossível falarmos de GNU Linux sem antes entendermos o que é Software Livre ou de onde surgiu essa filosofia.</p>
+
+<p>Durante muito tempo a tecnologia vem se desenvolvendo e tornando-se cada vez mais necessária para os dias atuais. Para tal evolução, pessoas do mundo inteiro, chamadas programadores, contribuíram de forma significativa criando programas ou softwares para customizar o funcionamento dos computadores. Em boa parte desta evolução, ao precisar de algo que outro já criou, o programador receberia prontamente deste outro para assim poder fazer suas devidas mudanças ou mesmo aperfeiçoamentos poupando-lhe esforço e tempo. O autor original como agradecimento recebia seu programa melhorado. Porque refazer o que já foi feito antes?</p>
+
+<p>Desta forma se dava a troca de informações e conhecimento entre a comunidade como um todo até que uma outra idéia surgiu: Fechar o código fonte e ganhar dinheiro em cima disso.</p>
+
+<p>Foi nesta época que o conhecimento passou a deixar de ser livre passando a ter um dono e uma patente em cima do mesmo. Sendo vendido em caixas com a permissão para instalação em apenas uma máquina limitando-se ao uso técnico sem poder estudar aquela tecnologia a fundo ou repassar para outros interessados. Aí mostrava-se o limite da tecnologia como uma linha que não se podia ultrapassar, já que você não mais poderia aperfeiçoar um software adaptando-o às suas necessidades por não mais ter acesso ao código fonte do mesmo. O conhecimento passou a ser então manipulado e controlado criando uma enorme dependência tecnológica.</p>
+
+<p>Em meados de 1983-1984 o programador americano Richard Stallman percebeu que o senso de união e integração estava perdendo espaço para um senso de egoísmo e monopólio passando assim a iniciar um movimento ativista criando assim o Projeto GNU em 1985 defendendo a idéia do Software Livre. Por que refazer todo um programa quando você tinha programas parecidos com o que você queria desenvolver? Por que não ajudar em um programa que você achava que estava rodando lento e que possivelmente saberia como deixa-lo mais rápido contribuindo assim para o seu código fonte? Essas perguntas não faziam sentido para o Richard, e por essas e outras ele começou este projeto, que de tão óbvio que era, rapidamente caiu na simpatia de toda a comunidade. A partir daí milhares de pessoas espalhadas pelo mundo inteiro uniram-se a ele nessa luta de forma a mostrar ao mundo que o compartilhamento da informação é fundamental para o desenvolvimento assim como a união e a solidariedade. Para tal filosofia foram criadas algumas regras que na verdade são liberdades. Não poderia ser diferente tratando-se de Software LIVRE. São as 4 liberdades do Software Livre listadas abaixo:</p>
+
+<ul>
+<li>Liberdade de executar o programa, da forma como quiser. * Liberdade de estudar o funcionamento do programa podendo inclusive modificá-lo de acordo com sua necessidade. * Liberdade de redistribuir cópias do programa livremente. * Liberdade de melhorar o programa e tornar estas melhorias públicas de forma a beneficiar o próximo.</li>
+</ul>
+
+
+<p>O projeto GNU não é somente desenvolvimento e distribuição de alguns softwares livres úteis. O coração do projeto GNU é uma idéia: que software deve ser livre__, e que a liberdade do usuário vale a pena ser defendida. Se as pessoas têm liberdade mas não a apreciam conscientemente, não irão mantê-la por muito tempo. Se queremos que a liberdade dure, precisamos chamar a atenção das pessoas para a liberdade que elas têm em programas livres.</p>
+
+<p>Com o passar dos anos, e baseado nessa filosofia do Software Livre, surgiu então o sistema operacional que hoje chamamos de GNU / Linux.<a href="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif"><img src="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif" alt="" /></a></p>
+</div>
+  
+  
+
+
+    </article>
+  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/15/">&larr; Older</a>
@@ -900,10 +817,6 @@ Server = http://kdemod.ath.cx/repo/legacy/x86_64
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2013/07/31/teste/">Teste</a>
-      </li>
-    
-      <li class="post">
         <a href="/blog/2012/02/06/recomendacao-bibliografica-mago-e-vidro-a-torre-negra-iv/">Recomendação Bibliográfica: Mago E Vidro (a Torre Negra - IV)</a>
       </li>
     
@@ -917,6 +830,10 @@ Server = http://kdemod.ath.cx/repo/legacy/x86_64
     
       <li class="post">
         <a href="/blog/2011/10/17/3c2ba-dia-livre-programacao-definida/">3º Dia Livre - Programação Definida!</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/10/11/3c2ba-dia-livre-inscricoes-abertas/">3º Dia Livre - Inscrições Abertas</a>
       </li>
     
   </ul>
