@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: ruby | Marcelo Cavalcante Rocha ~]]></title>
-  <link href="http://kalib.github.io/blog/categories/ruby/atom.xml" rel="self"/>
-  <link href="http://kalib.github.io/"/>
-  <updated>2013-08-01T14:26:22-03:00</updated>
-  <id>http://kalib.github.io/</id>
+  <link href="http://blog.marcelocavalcante.net/blog/categories/ruby/atom.xml" rel="self"/>
+  <link href="http://blog.marcelocavalcante.net/"/>
+  <updated>2013-08-01T15:27:43-03:00</updated>
+  <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Feliz dia do Programador!]]></title>
-    <link href="http://kalib.github.io/blog/2011/09/13/feliz-dia-do-programador/"/>
+    <link href="http://blog.marcelocavalcante.net/blog/2011/09/13/feliz-dia-do-programador/"/>
     <updated>2011-09-13T10:11:39-03:00</updated>
-    <id>http://kalib.github.io/blog/2011/09/13/feliz-dia-do-programador</id>
+    <id>http://blog.marcelocavalcante.net/blog/2011/09/13/feliz-dia-do-programador</id>
     <content type="html"><![CDATA[<p><img src="http://www.media-freaks.com/wp-content/uploads/2008/09/programmer-260x300.jpg" alt="" /></p>
 
 <p><strong>S</strong>audações pessoal,</p>
@@ -197,9 +197,9 @@
   
   <entry>
     <title type="html"><![CDATA[Ceará On Rails 2010]]></title>
-    <link href="http://kalib.github.io/blog/2009/11/05/ceara-on-rails-2010/"/>
+    <link href="http://blog.marcelocavalcante.net/blog/2009/11/05/ceara-on-rails-2010/"/>
     <updated>2009-11-05T15:13:23-03:00</updated>
-    <id>http://kalib.github.io/blog/2009/11/05/ceara-on-rails-2010</id>
+    <id>http://blog.marcelocavalcante.net/blog/2009/11/05/ceara-on-rails-2010</id>
     <content type="html"><![CDATA[<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2009/11/logomarca_cearaonrails.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/11/logomarca_cearaonrails.png" alt="logomarca_cearaonrails" /></a></p>
 
 <p><strong>S</strong>audações pessoal, este ano o <a href="http://www.cearaonrails.com.br">Ceará On Rails</a> terá sua segunda edição trazendo uma programação mais extensa em relação à anterior, em 2009.</p>
@@ -241,9 +241,9 @@
   
   <entry>
     <title type="html"><![CDATA[Primeiro encontro CearáOnRails’09]]></title>
-    <link href="http://kalib.github.io/blog/2009/04/08/primeiro-encontro-cearaonrailse2809909/"/>
+    <link href="http://blog.marcelocavalcante.net/blog/2009/04/08/primeiro-encontro-cearaonrailse2809909/"/>
     <updated>2009-04-08T10:17:54-03:00</updated>
-    <id>http://kalib.github.io/blog/2009/04/08/primeiro-encontro-cearaonrailse2809909</id>
+    <id>http://blog.marcelocavalcante.net/blog/2009/04/08/primeiro-encontro-cearaonrailse2809909</id>
     <content type="html"><![CDATA[<p><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/04/logomarca_cearaonrails.png" alt="logomarca_cearaonrails" /></p>
 
 <p><strong>O</strong>lá pessoal.</p>
@@ -290,9 +290,9 @@
   
   <entry>
     <title type="html"><![CDATA[Ceará On Rails, aí vou eu...]]></title>
-    <link href="http://kalib.github.io/blog/2008/11/12/ceara-on-rails-ai-vou-eu/"/>
+    <link href="http://blog.marcelocavalcante.net/blog/2008/11/12/ceara-on-rails-ai-vou-eu/"/>
     <updated>2008-11-12T10:22:00-03:00</updated>
-    <id>http://kalib.github.io/blog/2008/11/12/ceara-on-rails-ai-vou-eu</id>
+    <id>http://blog.marcelocavalcante.net/blog/2008/11/12/ceara-on-rails-ai-vou-eu</id>
     <content type="html"><![CDATA[<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/logomarca_cearaonrails.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/logomarca_cearaonrails.png" alt="" /></a>O que é CearáOnRails?</p>
 
 <p>O CearáOnRails é um evento solidário que tem como tema o desenvolvimento de sistemas web e pretende divulgar e popularizar a linguagem de desenvolvimento Ruby e o Framework Rails no estado do Ceará. Esta iniciativa contribuirá de modo relevante para promover o uso e a difusão das tecnologias entre pessoas, especialmente profissionais na área e afins, servindo como um veículo de integração, interação e colaboração. Tanto o ruby como o Rails vem mudando a forma de desenvolvimento padrão adotada pelas demais tecnologias.</p>

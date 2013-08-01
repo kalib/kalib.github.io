@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Impressões | Marcelo Cavalcante Rocha ~]]></title>
-  <link href="http://kalib.github.io/blog/categories/impressoes/atom.xml" rel="self"/>
-  <link href="http://kalib.github.io/"/>
-  <updated>2013-08-01T14:26:22-03:00</updated>
-  <id>http://kalib.github.io/</id>
+  <link href="http://blog.marcelocavalcante.net/blog/categories/impressoes/atom.xml" rel="self"/>
+  <link href="http://blog.marcelocavalcante.net/"/>
+  <updated>2013-08-01T15:27:43-03:00</updated>
+  <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Recomendação Bibliográfica: Mago e Vidro (A Torre Negra - IV)]]></title>
-    <link href="http://kalib.github.io/blog/2012/02/06/recomendacao-bibliografica-mago-e-vidro-a-torre-negra-iv/"/>
+    <link href="http://blog.marcelocavalcante.net/blog/2012/02/06/recomendacao-bibliografica-mago-e-vidro-a-torre-negra-iv/"/>
     <updated>2012-02-06T09:26:17-03:00</updated>
-    <id>http://kalib.github.io/blog/2012/02/06/recomendacao-bibliografica-mago-e-vidro-a-torre-negra-iv</id>
+    <id>http://blog.marcelocavalcante.net/blog/2012/02/06/recomendacao-bibliografica-mago-e-vidro-a-torre-negra-iv</id>
     <content type="html"><![CDATA[<p><a href="http://marcelocavalcante.net/portal/imgs/livros/mago_e_vidro.jpg.pagespeed.ce.z_h39Fy6cb.jpg"><img src="http://marcelocavalcante.net/portal/imgs/livros/mago_e_vidro.jpg.pagespeed.ce.z_h39Fy6cb.jpg" alt="" /></a>****</p>
 
 <p><strong>D</strong>epois de minhas longas férias, estou de volta e começando os posts do ano com uma recomendação bibliográfica: <strong>Mago e Vidro</strong>, o quarto volume da saga <strong>A Torre Negra</strong>.</p>
@@ -54,9 +54,9 @@
   
   <entry>
     <title type="html"><![CDATA[Netstat - Saiba o que está rolando em seu ambiente...]]></title>
-    <link href="http://kalib.github.io/blog/2011/12/13/netstat-saiba-o-que-esta-rolando-em-seu-ambiente/"/>
+    <link href="http://blog.marcelocavalcante.net/blog/2011/12/13/netstat-saiba-o-que-esta-rolando-em-seu-ambiente/"/>
     <updated>2011-12-13T08:38:50-03:00</updated>
-    <id>http://kalib.github.io/blog/2011/12/13/netstat-saiba-o-que-esta-rolando-em-seu-ambiente</id>
+    <id>http://blog.marcelocavalcante.net/blog/2011/12/13/netstat-saiba-o-que-esta-rolando-em-seu-ambiente</id>
     <content type="html"><![CDATA[<p><a href="http://pixelmaverick.com/wp-content/uploads/2009/11/brunocb-sherlock-holmes-tux-5975.png"><img src="http://pixelmaverick.com/wp-content/uploads/2009/11/brunocb-sherlock-holmes-tux-5975.png" alt="" /></a></p>
 
 <hr />
@@ -267,9 +267,9 @@ device interrupt 47  base 0xc000</p>
   
   <entry>
     <title type="html"><![CDATA[Que tal ajudar o projeto KDE com apenas 1 minuto do seu tempo?]]></title>
-    <link href="http://kalib.github.io/blog/2011/10/24/que-tal-ajudar-o-projeto-kde-com-apenas-1-minuto-do-seu-tempo/"/>
+    <link href="http://blog.marcelocavalcante.net/blog/2011/10/24/que-tal-ajudar-o-projeto-kde-com-apenas-1-minuto-do-seu-tempo/"/>
     <updated>2011-10-24T14:56:48-03:00</updated>
-    <id>http://kalib.github.io/blog/2011/10/24/que-tal-ajudar-o-projeto-kde-com-apenas-1-minuto-do-seu-tempo</id>
+    <id>http://blog.marcelocavalcante.net/blog/2011/10/24/que-tal-ajudar-o-projeto-kde-com-apenas-1-minuto-do-seu-tempo</id>
     <content type="html"><![CDATA[<p><img src="http://images4.wikia.nocookie.net/__cb20061120200014/uncyclopedia/images/9/98/Konqi-official-logo-aboutkde-150x250.png" alt="" /></p>
 
 <p><strong>N</strong>ão acredita?</p>
@@ -304,9 +304,9 @@ device interrupt 47  base 0xc000</p>
   
   <entry>
     <title type="html"><![CDATA[3º Dia Livre - Programação Definida!]]></title>
-    <link href="http://kalib.github.io/blog/2011/10/17/3c2ba-dia-livre-programacao-definida/"/>
+    <link href="http://blog.marcelocavalcante.net/blog/2011/10/17/3c2ba-dia-livre-programacao-definida/"/>
     <updated>2011-10-17T09:26:54-03:00</updated>
-    <id>http://kalib.github.io/blog/2011/10/17/3c2ba-dia-livre-programacao-definida</id>
+    <id>http://blog.marcelocavalcante.net/blog/2011/10/17/3c2ba-dia-livre-programacao-definida</id>
     <content type="html"><![CDATA[<p><strong>N</strong>este fim de semana foi publicada a programação oficial do <strong><a href="http://www.dialivre.net/portal">3º Dia Livre</a></strong>, encontro para usuários, profissionais ou entusiastas do movimento de Software Livre no Ceará.</p>
 
 <p><strong>E</strong>sta 3ª edição contará com 4 palestras de temas bem diversificados como podem ver na grade abaixo:</p>
@@ -370,9 +370,9 @@ device interrupt 47  base 0xc000</p>
   
   <entry>
     <title type="html"><![CDATA[3º Dia Livre - Inscrições abertas]]></title>
-    <link href="http://kalib.github.io/blog/2011/10/11/3c2ba-dia-livre-inscricoes-abertas/"/>
+    <link href="http://blog.marcelocavalcante.net/blog/2011/10/11/3c2ba-dia-livre-inscricoes-abertas/"/>
     <updated>2011-10-11T08:32:58-03:00</updated>
-    <id>http://kalib.github.io/blog/2011/10/11/3c2ba-dia-livre-inscricoes-abertas</id>
+    <id>http://blog.marcelocavalcante.net/blog/2011/10/11/3c2ba-dia-livre-inscricoes-abertas</id>
     <content type="html"><![CDATA[<p><a href="http://www.marcelocavalcante.net/portal/wp-content/uploads/2011/10/Logo+dia-livre-01.png"><img src="http://www.marcelocavalcante.net/portal/wp-content/uploads/2011/10/Logo+dia-livre-01-300x87.png" alt="" /></a></p>
 
 <p><strong>J</strong>á estão abertas as inscrições para o <strong><a href="http://www.dialivre.net/portal">3º Dia Livre</a></strong> em Fortaleza.</p>

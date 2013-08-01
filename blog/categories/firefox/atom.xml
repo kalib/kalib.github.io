@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: firefox | Marcelo Cavalcante Rocha ~]]></title>
-  <link href="http://kalib.github.io/blog/categories/firefox/atom.xml" rel="self"/>
-  <link href="http://kalib.github.io/"/>
-  <updated>2013-08-01T14:26:22-03:00</updated>
-  <id>http://kalib.github.io/</id>
+  <link href="http://blog.marcelocavalcante.net/blog/categories/firefox/atom.xml" rel="self"/>
+  <link href="http://blog.marcelocavalcante.net/"/>
+  <updated>2013-08-01T15:27:43-03:00</updated>
+  <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Ajude o Firefox a estabelecer um recorde mundial]]></title>
-    <link href="http://kalib.github.io/blog/2008/05/31/ajude-o-firefox-a-estabelecer-um-recorde-mundial/"/>
+    <link href="http://blog.marcelocavalcante.net/blog/2008/05/31/ajude-o-firefox-a-estabelecer-um-recorde-mundial/"/>
     <updated>2008-05-31T08:41:00-03:00</updated>
-    <id>http://kalib.github.io/blog/2008/05/31/ajude-o-firefox-a-estabelecer-um-recorde-mundial</id>
+    <id>http://blog.marcelocavalcante.net/blog/2008/05/31/ajude-o-firefox-a-estabelecer-um-recorde-mundial</id>
     <content type="html"><![CDATA[<h3></h3>
 
 <p><a href="http://1.bp.blogspot.com/_5kfJplBiYy0/SEE5sXYArPI/AAAAAAAAADc/FQUeQoIz7t8/s1600-h/dday_badge_fox.png"><img src="http://1.bp.blogspot.com/_5kfJplBiYy0/SEE5sXYArPI/AAAAAAAAADc/FQUeQoIz7t8/s320/dday_badge_fox.png" alt="" /></a>&ldquo;Queremos estabelecer um Recorde Mundial no Guinness para o software mais baixado em 24 horas e com a sua ajuda temos certeza de que conseguiremos!&rdquo;</p>
@@ -42,9 +42,9 @@
   
   <entry>
     <title type="html"><![CDATA[Configurando a JRE para funcionar no *buntu 8.04 com firefox 3 / Configuring JRE on *buntu 8.04 to work with Firefox 3.0]]></title>
-    <link href="http://kalib.github.io/blog/2008/05/07/configurando-a-jre-para-funcionar-no-buntu-804-com-firefox-3-configuring-jre-on-buntu-804-to-work-with-firefox-30/"/>
+    <link href="http://blog.marcelocavalcante.net/blog/2008/05/07/configurando-a-jre-para-funcionar-no-buntu-804-com-firefox-3-configuring-jre-on-buntu-804-to-work-with-firefox-30/"/>
     <updated>2008-05-07T13:14:00-03:00</updated>
-    <id>http://kalib.github.io/blog/2008/05/07/configurando-a-jre-para-funcionar-no-buntu-804-com-firefox-3-configuring-jre-on-buntu-804-to-work-with-firefox-30</id>
+    <id>http://blog.marcelocavalcante.net/blog/2008/05/07/configurando-a-jre-para-funcionar-no-buntu-804-com-firefox-3-configuring-jre-on-buntu-804-to-work-with-firefox-30</id>
     <content type="html"><![CDATA[<h3></h3>
 
 <p><a href="http://2.bp.blogspot.com/_5kfJplBiYy0/SCHhSx0v4cI/AAAAAAAAACc/WAlMjjeTrlc/s1600-h/brazil.gif"><img src="http://2.bp.blogspot.com/_5kfJplBiYy0/SCHhSx0v4cI/AAAAAAAAACc/WAlMjjeTrlc/s320/brazil.gif" alt="" /></a>Versão em Português BR / Portuguese Version</p>

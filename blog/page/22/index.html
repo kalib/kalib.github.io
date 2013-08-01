@@ -1,0 +1,590 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Marcelo Cavalcante Rocha ~</title>
+  <meta name="author" content="Marcelo Cavalcante Rocha - Kalib">
+
+  
+  <meta name="description" content="Nesta curta dica irei apresentar uma dica simples e rápida de como alterar o endereço MAC de uma interface de rede no Linux. MAC = Media Access &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.marcelocavalcante.net/blog/page/22/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Marcelo Cavalcante Rocha ~" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:blog.marcelocavalcante.net" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+    <li><a href="/">
+        <span class="blue_light">
+            Marcelo Cavalcante Rocha ~
+        </span>
+       
+           <span class="blue_dark">
+             Hacking the damn life...
+           </span>
+       
+    </a></li>
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Arquivos</a></li>
+  <li><a href="/about">Sobre mim</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/12/15/alterando-o-endereco-mac-de-uma-interface-no-linux/">Alterando O Endereço MAC De Uma Interface No Linux</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-12-15T20:23:00-03:00" pubdate data-updated="true">Dec 15<span>th</span>, 2008</time>
+        
+         | <a href="/blog/2008/12/15/alterando-o-endereco-mac-de-uma-interface-no-linux/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/placa11.gif"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/placa11.gif" alt="" /></a>Nesta curta dica irei apresentar uma dica simples e rápida de como alterar o endereço MAC de uma interface de rede no Linux.</p>
+
+<p>MAC = Media Access Control</p>
+
+<p>Assim como nós, seres humanos, possuímos um número de registro físico como o RG, as interfaces de dispositivos de rede também possuem um registro físico que lhes é dedicado já na hora de sua fabricação. Este endereço físico se chama MAC e é formado por 48 bits em forma de hexadecimal.</p>
+
+<p>Este protocolo é responsável pelo controle de acesso à rede Ethernet. Um exemplo de endereço MAC seria:</p>
+
+<blockquote><p>00:A0:D1:58:DF:BC</p></blockquote>
+
+<p>No caso, não existem duas interfaces de rede no mundo com o mesmo endereço MAC. Este valor é único AO SAIR DE FÁBRICA. Mas, como nem tudo na vida são rosas&hellip;</p>
+
+<p>Existem alguns casos nos quais precisamos identificar, ou mesmo alterar, endereços MAC. Um exemplo de caso em que se é preciso alterar o endereço MAC seria o seguinte:</p>
+
+<p>Supondo que eu seja um técnico e estou querendo dar suporte à máquina de um amigo. Este trás sua máquina até minha casa. Minha internet recebe um ip por dhcp de forma amarrada ao meu endereço MAC. Neste caso, para ter acesso à internet pela máquina deste colega para atualizações, eu precisaria momentaneamente alterar o endereço MAC de sua interface de rede.</p>
+
+<p>No Linux podemos descobrir qual o endereço MAC de uma interface com o comando ifconfig [interface], como no exemplo a seguir:</p>
+
+<h1>ifconfig eth0</h1>
+
+<p>Me será retornado um conjunto de informações sobre a interface, incluindo o endereço MAC da mesma, como a seguir:</p>
+
+<blockquote><p>eth0      Link encap:Ethernet  HWaddr 00:A0:D1:58:DF:BC inet addr:192.168.1.105  Bcast:192.168.1.255  Mask:255.255.255.0 inet6 addr: fe80::2a0:d1ff:fe58:dfbc/64 Scope:Link UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1 RX packets:54461 errors:0 dropped:0 overruns:0 frame:0 TX packets:46066 errors:0 dropped:0 overruns:0 carrier:0 collisions:0 txqueuelen:1000 RX bytes:68669660 (65.4 Mb)  TX bytes:5002980 (4.7 Mb) Interrupt:20 Base address:0x4800</p></blockquote>
+
+<p>O procedimento para se mudar este endereço MAC é:</p>
+
+<p>1- Desabilitar a interface:</p>
+
+<h1>ifconfig eth0 down</h1>
+
+<p>2- Alterar o MAC:</p>
+
+<h1>ifconfig eth0 hw ether XX:XX:XX:XX:XX:XX</h1>
+
+<p>3- Subir novamente a interface:</p>
+
+<h1>ifconfig eth0 up</h1>
+
+<p>Simples não?!</p>
+
+<p>Feito isto, pode conferir a alteração com o comando ifconfig eth0 novamente. ;]</p>
+
+<p>Abraços pessoal&hellip;</p>
+
+<p><img src="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif" alt="" /></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/12/08/recomendacao-bibliografica-do-mes-atlantis/">Recomendação Bibliográfica Do Mês - ATLANTIS</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-12-08T09:09:00-03:00" pubdate data-updated="true">Dec 8<span>th</span>, 2008</time>
+        
+         | <a href="/blog/2008/12/08/recomendacao-bibliografica-do-mes-atlantis/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Em nosso mundo tecnológico o dia parece não ter as mesmas 24 horas das quais as demais pessoas desfrutam. Para os &ldquo;meros mortais&rdquo;, pode parecer muitas vezes que nosso dia tem 26 ou até mesmo 28 horas pela quantidade de coisas que fazemos. O que estes &ldquo;meros mortais&rdquo; não percebem, é que isto é apenas uma ilusão &ldquo;idiótica&rdquo;, restando apenas a verdade de que temos as mesmas &ldquo;míseras&rdquo; 24 horas por dia. Tendo tão pouco tempo para fazer tantas coisas, vide trabalho, faculdade, cursos de expansão/especialização, cursos de língua, projetos pessoais, projetos profissionais, família/amigos, lazer, esporte, cultura, etc&hellip;, fica complicado administrar e fazer tudo da forma como gostaríamos de fazer.</p>
+
+<p>Neste post, gostaria de me focar na falta de tempo para literatura escrita. Sim, nos falta tempo para uma boa leitura de vez em quando. Mesmo com esta falta de tempo, procuro, sempre que possível, estar lendo algum bom livro que não seja sobre tecnologia. O complicado é conseguir 1 hora para me dedicar a leitura, tendo muitas vezes apenas 20/30 minutos por dia para ler, na melhor das hipóteses, já que nem todo dia eu consigo esse tempo. Por isso, muitas vezes levo aproximadamente 1 mês inteiro para ler um único livro. Triste, porém realidade. Sendo assim, resolvi passar a divulgar aqui todo mês a minha escolha atual bem como resumir um pouco a mesma.</p>
+
+<p>Este mês optei pelo livro ATLANTIS.</p>
+
+<p><a href="http://www.livrariasaraiva.com.br/imagem/imagem.dll?L=120&amp;A=-1&amp;pro_id=204913&amp;PIM_Id="><img src="http://www.livrariasaraiva.com.br/imagem/imagem.dll?L=120&amp;A=-1&amp;pro_id=204913&amp;PIM_Id=" alt="" /></a>&ldquo;Neste romance carregado de dados reais e atualizados sobre um dos maiores mistérios da humanidade, o experiente arqueólogo Jack Howard depara-se com pistas que podem levar à cidade perdida, mencionada ainda na Antiguidade pelo filósofo grego Platão, e que representa a utopia do ideal de sociedade, de harmonia e de fartura. Durante milhares de anos, pesquisadores vêm tentando encontrar Atlântida. Um dia o arqueólogo marinho Jack Howard e sua equipe tiveram sorte. Enquanto mergulhavam em busca de um naufrágio do tempo de Homero, encontraram ruínas submersas que pareciam ser de Atlântida. Mas a informação vazou e um grupo de terroristas e mercenários fica sabendo que os segredos da Atlântida estavam prestes a ser revelados. Repentinamente, Jack e sua equipe se vêem envolvidos em um jogo de vida e morte. A revelação teria um alto preço.&rdquo;</p>
+
+<p>Esta é a descrição retirada do site www.saraiva.com.br, porém gostaria de lembrar um fato sobre o livro, para não deixar ninguém aqui desprevinido ou me culpando pela recomendação:</p>
+
+<p>NÃO COMPRE O LIVRO se você&hellip;</p>
+
+<p>1- Não gosta de receber informações em excesso.</p>
+
+<p>2- Não gosta de história, geologia, arqueologia e outras ias&hellip;</p>
+
+<p>3- Não tem paciência e quer ver é o enredo em si, ao invés de uma chuva de informações técnicas.</p>
+
+<p>Bom, este livro é muito bom, para quem é o oposto do citado acima. Muitos fans de Dan Brown criticaram o livro por esperar que ele seguisse a mesma linha de raciocínio, porém este livro não foi escrito por um escritor literário, mas sim por um arqueológo, portanto é óbvio que o maior destaque do livro não seria o romance em si, mas sim fatos históricos e científicos.</p>
+
+<p>Se você acha que preenche o perfil de leitor para esta orba, realmente recomendo.</p>
+
+<p>Abraços</p>
+
+<p><img src="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif" alt="" /></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/12/02/resolvendo-alguns-problemas-causados-pelo-novo-xorg-no-arch/">Resolvendo Alguns Problemas Causados Pelo Novo Xorg No Arch</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-12-02T11:03:00-03:00" pubdate data-updated="true">Dec 2<span>nd</span>, 2008</time>
+        
+         | <a href="/blog/2008/12/02/resolvendo-alguns-problemas-causados-pelo-novo-xorg-no-arch/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/archlinux_logo_glass.png"><img src="http://kalib.pre.hw40.webservidor.net/wordpress/wp-content/uploads/2009/02/archlinux_logo_glass-300x256.png" alt="" /></a>Não é de hoje que vejo o nível de alguns pacotes essenciais como o Kernel e o Xorg caírem cada vez mais. É triste porém uma realidade. A maneira como tais pacotes vem sendo lançados sem maiores preocupações está prejudicando a vida de muita gente. Eu fui um deles recentemente ao atualizar o meu Xorg. Para aqueles que também fizeram upgrade recentemente, podem ter aparecido vários problemas.</p>
+
+<p>Aqui apresentarei as soluções que utilizei no ArchLinux para sanar os problemas que me apareceram, sendo eles:</p>
+
+<p>1- O X não subia mais. Simplesmente morria e ficava tudo preto.</p>
+
+<p>2- As teclas especiais do teclado não respondiam mais, como por exemplo as setas direcionais.</p>
+
+<p>Vamos às soluções encontradas&hellip;</p>
+
+<p>1- O X não sobe mais</p>
+
+<p>1.1- Para este problema, precisei fazer uma pequena busca pelo erro que acontecia, para isso busquei em primeira mão os logs do Xorg. Você pode fazer isso com o seguinte comando:</p>
+
+<h1>tail -f /var/log/Xorg.0.log</h1>
+
+<p>1.2- Em meu caso, apontou o erro na sintax RgbPath, a qual informava ser incompatível. Muita gente está passando por este problema.</p>
+
+<p>A solução neste caso é simples, basta editar o arquivo /etc/X11/xorg.conf e comentar a linha:</p>
+
+<p>RgbPath = &ldquo;/usr/share/X11/rgb&rdquo;</p>
+
+<p>1.3- Ao comentar esta linha, tudo o que fiz foi reinstalar o driver de minha placa de vídeo, para que meu xorg voltasse a funcionar. Como eu utilizo um driver da ATI Radeon que costumo baixar diretamente no site da ATI, segui o procedimento padrão para os drivers baixados do mesmo:</p>
+
+<p>1.3.1- Dar permissão de execução:</p>
+
+<h1>chmod +x ati-driver-installer-8-11-x86.x86_64.run</h1>
+
+<p>1.3.2- Executar o instalador:</p>
+
+<h1>./ati-driver-installer-8-11-x86.x86_64.run</h1>
+
+<p>Pronto. Feitos estes passos, eu já conseguia subir meu servidor X numa boa.</p>
+
+<p>Com relação ao segundo problema. As teclas&hellip;</p>
+
+<p>2- As teclas especiais do teclado não respondem.</p>
+
+<p>2.1- A solução foi simples, bastou uma pequena busca na wiki do ArchLinux com uma dica de como corrigir isto no meu KDE4. Indo para as configurações do sistema e partindo para a configuração de &ldquo;Regional &amp; Idioma&rdquo;. Lá busque a aba &ldquo;Layout de Teclado&rdquo;.</p>
+
+<p>2.2- Nesta você precisará habilitar a opção &ldquo;Habilitar Layouts de Teclado&rdquo; e selecionar como Modelo de Teclado a opção &ldquo;Evdev-managed keyboard&rdquo;.</p>
+
+<p>Feito isto, as teclas voltaram a funcionar no meu caso bem como outras pessoas que também testaram.<img src="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif" alt="" /></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/11/28/santa-catarina-precisa-de-voce/">Santa Catarina Precisa De Você</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-11-28T13:06:00-03:00" pubdate data-updated="true">Nov 28<span>th</span>, 2008</time>
+        
+         | <a href="/blog/2008/11/28/santa-catarina-precisa-de-voce/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/re334236555.jpg"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/re334236555.jpg" alt="" /></a>Olá pessoal..</p>
+
+<p>Não é hora de postar sobre Software Livre ou Tecnologia como um todo. Gostaria de dedicar este post ao cenário que estamos presenciando em Santa Catarina, ou melhor, NO BRASIL.</p>
+
+<p>Em momentos como este pode parecer fácil dar às costas por não estar acontecendo em seu Estado, porém é em seu PAÍS. O seu país pede sua ajuda e você pode colaborar.</p>
+
+<p>Segue um trexo de um post que achei de uma catarinese, sobre a visão dela em relação ao que anda acontecendo e sobre como a mídia está abordando o assunto.</p>
+
+<blockquote><blockquote><p>Para quem não sabe, eu sou catarinense, mais precisamente de Blumenau. Para quem andou em Marte nos últimos dias e não viu a tragédia que se abalou sobre o nosso estado, não se preocupe, a mídia não está repassando todas as informações então você não está tão alienado quanto pensa.</p>
+
+<p>O fato é seguinte: a situação não é apenas calamitosa, é desesperadora.</p>
+
+<p>Eu vejo na televisão eles falarem “enchente”, “enchente”, “enchente”, o que aconteceu aqui não foi apenas uma enchente. As enchentes do Vale do Itajaí acontecem quando as chuvas enchem o Vale à partir dos munícipios de Taió e Rio do Sul. Então o sistema de contenção de cheias é ativado e as barragens localizadas nesses municipíos são fechadas, impedindo que a água venha toda de uma vez e inunde as cidades abaixo.</p>
+
+<p>Desta vez não houve chuva em Taió e Rio do Sul. Foi apenas uma enorme chuva na região de Blumenau, Gaspar, Luis Alves e Rodeio. Tanta chuva (900 milímetros) que o rio não conseguiu dar vazão para as águas que desciam dos morros e encheu 11,9 metros.</p>
+
+<p>Teria sido apenas uma enxurrada com enchente que afetaria algumas pessoas se não fosse um detalhe: chovia em SC desde agosto praticamente todos os dias. Quem me conhece sabe como eu reclamava disso e inclusive colocava nos posts aqui do LJ “Chuvamenau”.</p>
+
+<p>Tanta chuva já tinha deixado o solo enxarcado. Aqui entra a questão geográfica que as televisões e grandes sites da internet não são capazes de compreender. Como o nome diz: Vale do Itajaí é um vale (ohhhh), ou seja, como um vale é cercado de morros por todos os lados (ohhhh) vide uma vista de Blumenau <a href="http://lahy.livejournal.com/www.belasantacatarina.com.br/blumenau/blumenau1.jpg"><strong>AQUI</strong></a>. Como se pode ver pela foto: há morros. Muitos morros. A cidade inteira é repleta de morros. Você necessariamente tem que passar de um morro a outro, e a outro, e a outro para chegar em algum lugar.</p>
+
+<p>Acontece que com tanta chuva (desde agosto) estes morros estão caindo. Todos eles estão desabando, derretendo feito sorvete em dia de verão de 40ºC. Não há um morro sequer sem deslizamento de terras. A maioria destes morros NÃO sofreram ocupação irregular como a mídia diz. Claro que um e outro sofria desse mal, mas na maioria deles as casas estavam legalizadas, eram terrenos seguros.</p>
+
+<p>Tenho conhecidos que perderam tudo. Simplesmente tudo. A casa virou gravetos no chão junto com toda a mobília e o terreno. Nem o terreno ficou.</p>
+
+<p>Tem morros sendo completamente interditados porque possuem rachaduras do topo até a base, estão cortados ao meio. A cidade está de fato desabando sobre nossas cabeças. Tem pessoas isoladas devido as quedas de barreiras. Uma das quatro estações de tratamento de água da cidade está sobterrada e o número de mortos divulgados não é o verdadeiro, eles estão omitindo mortes para não aumentar o pânico que se instaurou na cidade.</p>
+
+<p>A situação de fato é de pânico.</p>
+
+<p>Principalmente porque não há previsão de que pare de chover.</p>
+
+<p>Santa Catarina pede ajuda, mas nem sabe por onde começar, o que fazer se tudo começa a desabar ao seu redor? O que fazer quando você sai da sua rua e vê dezenas de famílias descendo um dos morros, carregando tudo o que podem para um abrigo porque a Defesa Civil simplesmente diz que “O local está totalmente condenado”. O que fazer quando as pessoas neste abrigo tem que sair de lá porque até o abrigo passou a estar condenado?</p>
+
+<p>As lágrimas caem de pesar pela dor das pessoas que perderam tudo, pela dor das pessoas que perderam entes queridos e principalmente, pela dor das pessoas que não conseguem encontrar seus famíliares. Vinte mortos? Saber que uma mulher necessita enterrar seu próprio marido pois está isolada e o corpo apodrecendo ao seu lado.E eles dizem vinte mortos.</p>
+
+<p>Dezenove desaparecidos? É o que dizem os números oficiais, mas uma hora ouvindo a rádio local com pessoas pedindo pelo amor de Deus por notícias de seus famíliares para você entender que não há apenas dezenove desaparecidos.</p>
+
+<p>Os geólogos que chegaram do Rio de Janeiro dizem que simplesmente o solo do estado está se desmanchando e que nunca viram nada igual.</p>
+
+<p>Por favor, alguém diga-nos onde encontrar esperança numa situação como esta.</p>
+
+<p>O que fazer quando você vê que tudo está, de fato, caindo. As casas ao redor caindo, as casas de amigos caindo, a bela Beira-rio caindo, o shopping caindo.</p>
+
+<p>Se alguém souber de onde tirar forças para reconstruir uma cidade neste estado, por favor, Santa Catarina agradece porque ninguém sabe o que fazer.</p></blockquote></blockquote>
+
+<p>Você pode sim colaborar!</p>
+
+<blockquote><p>A Defesa Civil de Santa Catarina está recebendo doações em dinheiro para ajudar as pessoas atingidas pelas chuvas dos últimos dias no Estado. Nesta segunda-feira, foram abertas duas contas bancárias. Os interessados em contribuir com qualquer quantia podem depositar o valor no Banco do Brasil (BB), agência 3582-3, conta corrente 80.000-7; ou na conta corrente 80.000-0, agência 068-0, do Banco do Estado de Santa Catarina (Besc).  O depósito deve ser creditado ao Fundo Estadual de Defesa Civil-Doações. O CNPJ da Defesa Civil é 04.426.883/0001-57. De acordo com a Defesa Civil, todo o dinheiro arrecadado será utilizado na compra de mantimentos para os atingidos pela enchente.</p>
+
+<p>Segue link: <a href="http://www.clicrbs.com.br/diariocatarinense/jsp/default.jsp?uf=2&amp;local=18&amp;section=Geral&amp;newsID=a2306293.xml">http://www.clicrbs.com.br/diariocatarinense/jsp/default.jsp?uf=2&amp;local=18&amp;section=Geral&amp;newsID=a2306293.xml</a></p></blockquote>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/11/24/the-zen-of-python/">The Zen of Python</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-11-24T16:22:00-03:00" pubdate data-updated="true">Nov 24<span>th</span>, 2008</time>
+        
+         | <a href="/blog/2008/11/24/the-zen-of-python/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/meditacao.jpg"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/meditacao.jpg" alt="" /></a>É isso mesmo&hellip;</p>
+
+<p>Além de excelente linguagem de programação o Python ainda é Zen. Não acredita? Que tal conferir por si só as diretrizes Zen do Python?</p>
+
+<p>Aproximadamente todas as distribuições Linux trazem um interpretador python instalado, portanto basta executá-lo com o seguinte comando:</p>
+
+<blockquote><p>$ python</p></blockquote>
+
+<p>Você receberá como resposta algo como o exemplo a seguir:</p>
+
+<blockquote><p>[kalib@tuxcaverna ~]$ python Python 2.6 (r26:66714, Oct 27 2008, 10:50:31) [GCC 4.3.2] on linux2 Type &ldquo;help&rdquo;, &ldquo;copyright&rdquo;, &ldquo;credits&rdquo; or &ldquo;license&rdquo; for more information. >>></p></blockquote>
+
+<p>Agora execute o seguinte:</p>
+
+<blockquote><blockquote><blockquote><blockquote><p>import this</p></blockquote></blockquote></blockquote></blockquote>
+
+<p>Como resultado você terá o Zen do Python, como pode ser visto abaixo:</p>
+
+<blockquote><blockquote><blockquote><blockquote><p>import this</p></blockquote></blockquote></blockquote></blockquote>
+
+<p>The Zen of Python, by Tim Peters</p>
+
+<p>Beautiful is better than ugly.</p>
+
+<p>Explicit is better than implicit.</p>
+
+<p>Simple is better than complex.</p>
+
+<p>Complex is better than complicated.</p>
+
+<p>Flat is better than nested.</p>
+
+<p>Sparse is better than dense.</p>
+
+<p>Readability counts.</p>
+
+<p>Special cases aren&rsquo;t special enough to break the rules.</p>
+
+<p>Although practicality beats purity.</p>
+
+<p>Errors should never pass silently.</p>
+
+<p>Unless explicitly silenced.</p>
+
+<p>In the face of ambiguity, refuse the temptation to guess.</p>
+
+<p>There should be one&mdash; and preferably only one &mdash;obvious way to do it.</p>
+
+<p>Although that way may not be obvious at first unless you&rsquo;re Dutch.</p>
+
+<p>Now is better than never.</p>
+
+<p>Although never is often better than <em>right</em> now.</p>
+
+<p>If the implementation is hard to explain, it&rsquo;s a bad idea.</p>
+
+<p>If the implementation is easy to explain, it may be a good idea.</p>
+
+<p>Namespaces are one honking great idea &mdash; let&rsquo;s do more of those!</p>
+
+<blockquote></blockquote>
+
+<p>Para sair do interpretador Python, pressionde as teclas Ctrl + D.</p>
+
+<p>Abraços</p>
+
+<p><img src="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif" alt="" /></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/blog/page/23/">&larr; Anteriores</a>
+    
+    <a href="/blog/archives">Arquivos do Blog</a>
+    
+    <a class="next" href="/blog/page/21/">Novas &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Sobre mim</h1>
+  <p><img src="http://www.marcelocavalcante.net/imgs/kalib_picture_pq.png" style="float: left; margin-right: 2px; margin-bottom: 2px;"><p align=left><b>M</b>e chamo Marcelo Cavalcante Rocha, também conhecido como Kalib, e sou militante do Software Livre desde 2005. 
+Trabalho com administração de redes, sistemas e segurança da informação em ambientes mistos. 
+Gosto de ler, surfar, ouvir música e assistir um bom filme. 
+Me conheça melhor <a href="http://blog.marcelocavalcante.net/about">clicando aqui</a>.</p></p>
+</section>
+<section>
+  <h1>Posts Recentes</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/02/06/recomendacao-bibliografica-mago-e-vidro-a-torre-negra-iv/">Recomendação Bibliográfica: Mago e Vidro (A Torre Negra - IV)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/12/13/netstat-saiba-o-que-esta-rolando-em-seu-ambiente/">Netstat - Saiba o que está rolando em seu ambiente&#8230;</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/10/24/que-tal-ajudar-o-projeto-kde-com-apenas-1-minuto-do-seu-tempo/">Que tal ajudar o projeto KDE com apenas 1 minuto do seu tempo?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/10/17/3c2ba-dia-livre-programacao-definida/">3º Dia Livre - Programação Definida!</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/10/11/3c2ba-dia-livre-inscricoes-abertas/">3º Dia Livre - Inscrições abertas</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/09/27/politica-de-senhas-no-linux-senhas-com-data-para-expirar/">Política de senhas no Linux: Senhas com data para expirar!</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/09/13/feliz-dia-do-programador/">Feliz dia do Programador!</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Marcelo Cavalcante Rocha - Kalib -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'marcelocavalcante';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

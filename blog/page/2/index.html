@@ -9,7 +9,7 @@
   <meta name="author" content="Marcelo Cavalcante Rocha - Kalib">
 
   
-  <meta name="description" content="É hora de se inscrever no Dia Livre! Gostaria de comunicar que a grade para o 1º Dia Livre já foi fechada e liberada. Neste sábado estarei &hellip;">
+  <meta name="description" content="Já é sabido que a maior vulnerabilidade dentro das empresas ou mesmo computadores pessoais são justamente os próprios funcionários ou usuários. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://kalib.github.io/blog/page/2/">
+  <link rel="canonical" href="http://blog.marcelocavalcante.net/blog/page/2/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -41,7 +41,7 @@
   
 <form action="http://google.com/search" method="get">
   <fieldset role="search">
-    <input type="hidden" name="q" value="site:kalib.github.io" />
+    <input type="hidden" name="q" value="site:blog.marcelocavalcante.net" />
     <input class="search" type="text" name="q" results="0" placeholder="Search"/>
   </fieldset>
 </form>
@@ -73,7 +73,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2011/07/19/dia-livre-inscricoes-e-grade-do-evento/">Dia Livre - Inscrições E Grade Do Evento</a></h1>
+      <h1 class="entry-title"><a href="/blog/2011/09/27/politica-de-senhas-no-linux-senhas-com-data-para-expirar/">Política De Senhas No Linux: Senhas Com Data Para Expirar!</a></h1>
     
     
       <p class="meta">
@@ -89,24 +89,411 @@
   
 
 
-<time datetime="2011-07-19T08:38:33-03:00" pubdate data-updated="true">Jul 19<span>th</span>, 2011</time>
+<time datetime="2011-09-27T11:14:12-03:00" pubdate data-updated="true">Sep 27<span>th</span>, 2011</time>
         
-         | <a href="/blog/2011/07/19/dia-livre-inscricoes-e-grade-do-evento/#disqus_thread">Comments</a>
+         | <a href="/blog/2011/09/27/politica-de-senhas-no-linux-senhas-com-data-para-expirar/#disqus_thread">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><img src="http://tux-ce.org/dialivre/wp-content/uploads/2011/05/Logo+dia-livre-01.png" alt="" /></p>
+  <div class="entry-content"><p><a href="http://www.marcelocavalcante.net/portal/wp-content/uploads/2011/09/1197557350_90927cc5492.jpg"><img src="http://www.marcelocavalcante.net/portal/wp-content/uploads/2011/09/1197557350_90927cc5492.jpg" alt="" /></a></p>
 
-<p><strong>É</strong> hora de se <a href="http://tux-ce.org/dialivre/inscricoes/">inscrever</a> no <a href="http://www.tux-ce.org/dialivre">Dia Livre</a>!</p>
+<p><strong>J</strong>á é sabido que a maior vulnerabilidade dentro das empresas ou mesmo computadores pessoais são justamente os próprios funcionários ou usuários.</p>
 
-<p><strong>G</strong>ostaria de comunicar que a grade para o 1º Dia Livre já foi fechada e liberada.</p>
+<p><strong><img src="http://public-commoncraft.s3.amazonaws.com/SecurePasswords500.jpg" alt="" />M</strong>anter uma boa <strong>política de senhas</strong> é fundamental para garantir a segurança <strong>básica</strong> de suas informações e tentar minimizar as chances de alguém ter acesso indevido a elas.</p>
 
-<p><strong>N</strong>este sábado estarei ministrando a palestra &ldquo;Software Livre e Cultura Hacker: Tenha ética e ganharás respeito&rdquo; na <a href="http://www.ffb.edu.br/">Faculdade Farias Brito</a> durante o 1º Dia Livre.</p>
+<p><strong>V</strong>ou apresentar dicas simples para uma boa política de senhas que vão além das dicas comuns como &ldquo;mantenha uma senha que contenha mais de 8 caracteres, sendo eles números, letras minúsculas, maiúsculas e caracteres especiais&hellip;&rdquo;.</p>
 
-<p><strong>S</strong>egue grade do encontro:</p>
+<p><strong>E</strong>m escritórios é importante haver também uma política de troca de senha regular. Mas, como forçar os usuários a seguirem essa política de troca de senha regular? Evitando que o mesmo se logue caso não troque a senha de forma periódica, claro.</p>
+
+<p><strong>V</strong>amos começar pelo básico.</p>
+
+<p><strong>1- Definindo a complexidade das senhas de usuários:</strong></p>
+
+<p><strong>P</strong>ara definir a complexidade, precisaremos alterar a configuração de definição de senhas de usuários. O processo pode ser diferente, de acordo com a sua distribuição.</p>
+
+<p><a href="http://www.archlinux.org/"><em><strong>A</strong>rch Linux:</em></a></p>
+
+<p><strong>E</strong>dite o arquivo <em>passwd</em> que se encontra em <em>/etc/pam.d/passwd</em>, da seguinte forma:</p>
+
+<p><em># vim /etc/pam.d/passwd</em></p>
+
+<p><em><a href="http://www.debian.org"><strong>D</strong>ebian</a>, <a href="http://www.ubuntu.com">Ubuntu</a>, <a href="http://www.redhat.com">RedHat</a>, <a href="http://www.centos.org">CentOS</a></em> e outras:</p>
+
+<p><em># vim /etc/pam.d/system-auth</em></p>
+
+<p><strong>C</strong>onfigure sua linha de senha de forma que fique algo parecido com o seguinte:</p>
+
+<p><em>password       required        pam_cracklib.so difok=3 minlen=10 ucredit=3 ocredit=2 retry=3</em></p>
+
+<p><strong>O</strong>nde:</p>
+
+<p><em>difok=3</em> &ndash;> Informa a quantidade de caracteres que podem se repetir em relação à última senha. Por exemplo: Se minha antiga senha era &ldquo;kalib&rdquo; e eu tento usar &ldquo;kalamba&rdquo; como nova senha, receberei uma informação de erro, pois eu repeti 3 letras que já existem na senha anterior &ldquo;kal&rdquo;.</p>
+
+<p><em>minlen=10</em> &ndash;> Informa qual a quantidade mínima de caracteres aceitos para a senha do usuário. No<img src="http://securepasswordgeneratortips.com/wp-content/uploads/2011/05/securepasswordgeneratortips08.jpg" alt="" /> exemplo, o mínimo de caracteres aceitos serão 10, caso contrário será apresentada uma mensagem de erro solicitando que o usuário tente uma nova senha.</p>
+
+<p><em>ucredit=3</em> &ndash;>Informa a quantidade de letras maiúsculas que deverão compor minha senha. No exemplo, eu precisarei utilizar no mínimo 3 letras em maiúsculo, ou &ldquo;Uper Characters&rdquo; em minha nova senha.</p>
+
+<p><em>ocredit=2</em> &ndash;> Informa a quantidade de &ldquo;outros caracteres&rdquo; ou caracteres especiais, como por exemplo *, &amp;, %, $, _, etc.</p>
+
+<p><em>retry=3</em> &ndash;> Informa quantas vezes o usuário vai poder tentar, em caso de senha indevida, antes de receber a mensagem de erro.</p>
+
+<p><strong>O</strong>utros parâmetros que podem ser utilizados são os seguintes:</p>
+
+<p><em>dcredit=x</em> &ndash;> Informa a quantidade de dígitos que deverão ser utilizados como números na senha, onde x é o número mínimo desejado.</p>
+
+<p><em>lcredit=x</em> &ndash;> Informa a quantidade de caracteres minúsculos, ou &ldquo;Lower Characters&rdquo;, mínimos em sua senha.</p>
+
+<p><strong>2- Definindo que a nova senha não poderá ser igual às anteriores:</strong></p>
+
+<p><strong>N</strong>o <strong>mesmo arquivo</strong> do ponto anterior, iremos inserir o parâmetro remember na linha conforme exemplo:</p>
+
+<p><em>password sufficient pam_unix.so use_authtok md5 shadow remember=10</em></p>
+
+<p><em>remember=10</em> &ndash;> Informa que a nova senha não poderá ser igual às últimas 10 senhas utilizadas por este usuário.</p>
+
+<p><strong>A</strong>gora que já sabemos como definir uma política para criação de senhas seguras, vamos conhecer o &ldquo;<strong>chage</strong>&rdquo;, que nos ajudará a definir a política de datas ou validade das senhas.</p>
+
+<p><strong>3- Checando as políticas de validade de senhas de um determinado usuário:</strong></p>
+
+<p><em># chage -l usuário</em></p>
+
+<p><strong>O</strong> comando acima verifica os atributos de validade daquela senha, e lhe retornará algo similar ao seguinte:</p>
+
+<pre><code>&lt;em&gt;Last password change : May 11, 2011&lt;/em&gt;
+
+
+
+
+&lt;em&gt;Password expires : never&lt;/em&gt;
+
+
+
+
+&lt;em&gt;Password inactive : never&lt;/em&gt;
+
+
+
+
+&lt;em&gt;Account expires : never&lt;/em&gt;
+
+
+
+
+&lt;em&gt;Minimum number of days between password change : 0&lt;/em&gt;
+
+
+
+
+&lt;em&gt;Maximum number of days between password change : 99999&lt;/em&gt;
+
+
+
+
+&lt;em&gt;Number of days of warning before password expires : 7&lt;/em&gt;
+</code></pre>
+
+<p><strong>A</strong>s informações acima apresentam dados como data de última mudança de senha, data de expiração, tempo de inatividade, quantidade mínima de dias para se trocar a senha antes de a mesma expirar, etc.</p>
+
+<p><strong>4- Criando uma &ldquo;validade&rdquo; ou período de expiração para a senha de um determinado usuário:</strong></p>
+
+<pre><code>&lt;em&gt;# chage -M 99999 linustorvalds&lt;/em&gt;
+</code></pre>
+
+<p><strong>E</strong>ste comando vai <strong>desabilitar</strong> o período de validade da senha, informando que a mesma não expira nunca.</p>
+
+<pre><code>&lt;em&gt;# chage -M 50 -m 7 -W 7 linustorvalds&lt;/em&gt;
+</code></pre>
+
+<p><strong>E</strong>ste comando <strong>aplica</strong> a política de senha para o usuário &ldquo;linustorvalds&rdquo; onde:
+<em>-M 50</em> &ndash;> Define que a senha será válida por um máximo de 50 dias, quando a mesma deverá ser trocada.
+<em>-m 7</em> &ndash;> Define o número mínimo de dias em que o usuário poderá trocar sua senha antes do período especificado para expiração. Caso o usuário possa trocar a qualquer momento ou dia, o valor deverá ser 0.
+<em>-W 7</em> &ndash;> Número de dias antes de expirar nos quais o usuário vai receber alertas informando que sua senha irá expirar.</p>
+
+<p><strong>C</strong>aso você deseje especificar um <strong>dia exato</strong> no qual a senha de determinado usuário vai expirar, você pode utilizar o parâmetro <em>-E</em> seguido da data desejada no formato <em>AAAA-MM-DD</em>.</p>
+
+<p><strong>A</strong>lém disto, você pode desejar que a senha do usuário &ldquo;linustorvalds&rdquo; seja trocada no <strong>próximo login</strong> do mesmo. Neste caso você poderá utilizar o parâmetro <em>-d</em>, conforme exemplo abaixo:</p>
+
+<pre><code>&lt;em&gt;# chage -d 0 linuxtorvalds&lt;/em&gt;
+</code></pre>
+
+<p><strong>O</strong> <em>-d</em> significa quantidade de dias também.</p>
+
+<pre><code>&lt;strong&gt;É&lt;/strong&gt; isso pessoal.
+
+
+
+
+&lt;strong&gt;H&lt;/strong&gt;ave fun!
+</code></pre>
+
+<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/09/13/feliz-dia-do-programador/">Feliz Dia Do Programador!</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-09-13T10:11:39-03:00" pubdate data-updated="true">Sep 13<span>th</span>, 2011</time>
+        
+         | <a href="/blog/2011/09/13/feliz-dia-do-programador/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img src="http://www.media-freaks.com/wp-content/uploads/2008/09/programmer-260x300.jpg" alt="" /></p>
+
+<p><strong>S</strong>audações pessoal,</p>
+
+<p><strong>U</strong>m feliz dia do programador para todos aqueles que, profissionalmente, curiosamente ou mesmo por mera falta do que fazer escrevem ou já escreveram linhas de código!</p>
+
+<p><strong>E</strong>sta profissão que na maior parte das vezes não trá$ o retorno e$perado, o que apenas demonstra o quão apaixonados por linha de código são essas pessoas&hellip; e por problemas.</p>
+
+<p><strong>D</strong>esafiador&hellip;estressante&hellip;cansativo&hellip;divertido&hellip;prazeroso&hellip; Como em qualquer &ldquo;casamento&rdquo;&hellip; na alegria e na tristeza!</p>
+
+<p><img src="http://www.danielimamura.com.br/wp-content/uploads/2010/09/cartoonvidaprogramador.gif" alt="" /></p>
+
+<p><strong>O</strong>bviamente que eu não vou colocar em todas as centenas de linguagens de programação que existem.. portanto, se a sua linguagem favorita não foi homenageada abaixo, não fique triste. São muitas..difícil lembrar de todas.. O que vale é a intenção.</p>
+
+<p><img src="http://www.whitefang.com/wp-content/uploads/2010/03/Programming-Languages.jpg" alt="" /></p>
+
+<p><strong>Assembly</strong></p>
+
+<h6>#</h6>
+
+<p><em>variable:</em></p>
+
+<p><em>      .message db &ldquo;Feliz dia do Programador!$&rdquo;</em></p>
+
+<p><em>code:</em></p>
+
+<p><em>      mov ah, 9</em></p>
+
+<p><em>      mov dx, offset .message</em></p>
+
+<p><em>      int 0x21</em></p>
+
+<p><em>      ret</em></p>
+
+<p><strong>BASIC</strong></p>
+
+<h6>#</h6>
+
+<p><em>PRINT &ldquo;Feliz dia do Programador!</em></p>
+
+<p><strong>C</strong></p>
+
+<h6>#</h6>
+
+<p><em># include &lt;stdio.h></em></p>
+
+<p><em>int main(void)</em></p>
+
+<p><em>{</em></p>
+
+<p><em>       printf (&ldquo;Feliz dia do Programador!&rdquo;);</em></p>
+
+<p><em>       return 0;</em></p>
+
+<p><em>}</em></p>
+
+<p><strong>C++</strong>
+<em>##############</em></p>
+
+<p><em># include <iostream></em></p>
+
+<p><em>int main()</em></p>
+
+<p><em>{</em></p>
+
+<p><em>         std::cout &lt;&lt; &ldquo;Feliz dia do Programador!&rdquo; &lt;&lt; std::endl;</em></p>
+
+<p><em>         return 0;</em></p>
+
+<p><em>}</em></p>
+
+<p><strong>Cliper</strong></p>
+
+<h6>#</h6>
+
+<p><em>? &ldquo;Feliz dia do Programador!&rdquo;</em></p>
+
+<p><strong>Delphi</strong></p>
+
+<h6>#</h6>
+
+<p><em>Program FelizDia;</em></p>
+
+<p><em>{APPTYPE CONSOLE}</em></p>
+
+<p><em>begin</em></p>
+
+<p><em>      WriteLn(&lsquo;Feliz dia do Programador!&rsquo;);</em></p>
+
+<p><em>end.</em></p>
+
+<p><strong>Go</strong></p>
+
+<h6>#</h6>
+
+<p><em>package main</em></p>
+
+<p><em>import &ldquo;fmt&rdquo;</em></p>
+
+<p><em>func main() {</em></p>
+
+<p><em>       fmt.Printf(&ldquo;Feliz dia do Programador! \n&rdquo;)</em></p>
+
+<p><em>}</em></p>
+
+<p><strong>Java</strong></p>
+
+<h6>#</h6>
+
+<p><em>public class FelizDia {</em></p>
+
+<p><em>       public static void main(String[] args) {</em></p>
+
+<p><em>                 System.out.println(&ldquo;Feliz dia do Programador!&rdquo;);</em></p>
+
+<p><em>       }</em></p>
+
+<p><em>}</em></p>
+
+<p><strong>Pascal</strong></p>
+
+<h6>#</h6>
+
+<p><em>program FelizDia(output);</em></p>
+
+<p><em>begin</em></p>
+
+<p><em>       WriteLn(&lsquo;Feliz dia do Programador!&rsquo;);</em></p>
+
+<p><em>end</em></p>
+
+<p><strong>Perl</strong></p>
+
+<h6>#</h6>
+
+<p><em>print &ldquo;Feliz dia do Programador!&rdquo;;</em></p>
+
+<p><strong>PHP</strong></p>
+
+<h6>#</h6>
+
+<p><em>&lt;?php</em></p>
+
+<p><em>     echo &ldquo;Feliz dia do Programador!&rdquo;;</em></p>
+
+<p><em>?></em></p>
+
+<p><strong>Python</strong></p>
+
+<h6>#</h6>
+
+<p><em>print(&ldquo;Feliz dia do Programador!&rdquo;)</em></p>
+
+<p><strong>Ruby</strong></p>
+
+<h6>#</h6>
+
+<p><em>puts &ldquo;Feliz dia do Programador!&rdquo;</em></p>
+
+<p><strong>Shell Script</strong></p>
+
+<h6>#</h6>
+
+<p><em>echo &lsquo;Feliz dia do Programador!&rsquo;</em></p>
+
+<p><em>SQL</em></p>
+
+<h6>#</h6>
+
+<p><em>select &lsquo;Feliz dia do Programador!&rsquo;;</em></p>
+
+<p><strong>A</strong>braço!</p>
+
+<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/09/08/2c2ba-dia-livre-ultimos-dias-para-inscricoes-site-da-tux-ce-em-obras/">2º Dia Livre - Últimos Dias Para Inscrições! & Site Da Tux-CE Em Obras!</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-09-08T14:02:04-03:00" pubdate data-updated="true">Sep 8<span>th</span>, 2011</time>
+        
+         | <a href="/blog/2011/09/08/2c2ba-dia-livre-ultimos-dias-para-inscricoes-site-da-tux-ce-em-obras/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://www.marcelocavalcante.net/portal/wp-content/uploads/2011/09/Logo+dia-livre-01.png"><img src="http://www.marcelocavalcante.net/portal/wp-content/uploads/2011/09/Logo+dia-livre-01.png" alt="" /></a></p>
+
+<p><strong>S</strong>audações amigos!</p>
+
+<p><strong>P</strong>ara quem não sabe ainda, a <strong><a href="http://www.tux-ce.org">Tux-CE</a></strong> está organizando um encontro regular para os usuários e profissinais de Software Livre, bem como interessados e curiosos sobre o tema. O nome dado ao projeto é <strong><a href="http://dialivre.tux-ce.org">Dia Livre</a></strong>.</p>
+
+<p><strong>U</strong>m encontro simples e rápido que costuma acontecer a cada 2 meses em diferentes locais para facilitar a presença de todos.</p>
+
+<p><strong>A</strong> próxima edição será no dia 11 de Setembro, Domingo. Estes são os últimos dias para <strong><a href="http://tux-ce.org/dialivre/inscricoes/">inscrições através de nossa página</a></strong>.</p>
+
+<p>11 de Setembro, Domingo – A partir das 08:00</p>
+
+<p><strong>L</strong>ocal: SecrelNet Business
+<strong>A</strong>v. Dom Luís, 500 – 20º Andar (Shopping Aldeota, em frente a praça Portugal) – Fortaleza, CE</p>
+
+<p><strong>A</strong> grade desta edição será a seguinte:</p>
 
 <p>Horário</p>
 
@@ -124,174 +511,32 @@
 <p>08:10
 &ndash; 09:00</p>
 
-<p>Bacula
-&ndash; Solução livre de Backup</p>
+<p>Software Livre – Que bicho é esse?</p>
 
-<p>Diego
-Monte</p>
+<p>Diego Monte</p>
 
 <p>09:10
 &ndash; 10:00</p>
 
-<p>Criando
-soluções automatizadas com ShellScript</p>
+<p>Turbine sua produtividade com o Firefox</p>
 
-<p>Rafael
-de Carvalho Farias</p>
+<p>Victor Carvalho</p>
 
-<p>10:00
-&ndash; 10:20</p>
+<p>10:10 – 10:30</p>
 
-<p>CoffeeBreak</p>
+<p>CoffeeBreak e bate papo</p>
 
 <p>&ndash;</p>
 
-<p>10:30
-&ndash; 11:20</p>
+<p>10:40 – 11:30</p>
 
-<p>Software Livre e a Cultura Hacker: Tenha Ética e Ganharás Respeito</p>
+<p>LibreOffice na prática</p>
 
-<p>Marcelo Cavalcante</p>
+<p>Lucas Filho</p>
 
-<p>11;30
-&ndash; 11:50</p>
+<p>Gostaria de aproveitar o post e comunicar que a página da Tux-CE está passando por uma grande migração, portanto estará indisponível, como alguns já devem ter percebido, pelos próximos 7 dias.</p>
 
-<p>Sorteio
-de brindes e encerramento</p>
-
-<p>&ndash;</p>
-
-<p><strong>Q</strong><strong>uando?</strong></p>
-
-<p>23 de Julho, Sábado – A partir das 08:00</p>
-
-<p><strong>Onde?</strong></p>
-
-<p>Faculdade Farias Brito
-Rua Castro Monte, 1364 Varjota – Fortaleza, CE
-<a href="http://www.tux-ce.org/dialivre/imgs/mapaffb.png"><img src="http://www.tux-ce.org/dialivre/imgs/mapaffb.png" alt="" /></a></p>
-
-<p><strong>S</strong>erão realizados dois sorteios ao final do encontro:</p>
-
-<p>1 camisa da Tux-CE;</p>
-
-<p>1 livro: The Art of Community &ndash; O&#8217;Reilly</p>
-
-<p><strong>N</strong>os vemos lá!</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/07/01/lancada-a-primeira-edicao-da-revista-seguranca-digital/">Lançada a Primeira Edição Da Revista Segurança Digital</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-07-01T08:14:54-03:00" pubdate data-updated="true">Jul 1<span>st</span>, 2011</time>
-        
-         | <a href="/blog/2011/07/01/lancada-a-primeira-edicao-da-revista-seguranca-digital/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/07/1_edicao_julho_2011.jpg"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/07/1_edicao_julho_2011.jpg" alt="" /></a></p>
-
-<p><strong>S</strong>audações pessoal.</p>
-
-<p><strong>P</strong>ara quem não sabe, hoje é o lançamento da primeira edição da <a href="http://www.segurancadigital.info/revista/185-revistas">Revista Segurança Digital</a>.</p>
-
-<p><a href="http://www.segurancadigital.info"><strong>S</strong>egurança Digital</a> é o mais novo projeto no qual estou engajado e espero poder ajudar no que for possível para a constante melhoria do projeto.</p>
-
-<p><strong>É</strong> com grande satisfação que estamos fazendo o lançamento oficial de nosso projeto com a primeira edição da Revista Segurança Digital. Neste mês de Julho a revista aborda aspectos mais genéricos em relação à Segurança da Informação como um todo. Desde as técnicas de FootPrinting e Varredura para identificação de vulnerabilidades e possíveis brechas até estratégias e mecanismos de Enumeração para reconhecimento de ambientes.</p>
-
-<p><strong>C</strong>om a matéria sobre Enumeração explicamos a importância de se fazer um mapeamento completo do alvo, que consiste em descobrir o máximo de informações possíveis sobre o mesmo, desde sistema operacional até mesmo versões de anti-vírus, firewall, aplicativos instalados, etc.</p>
-
-<p><strong>R</strong>ecentemente todos perceberam que vários ataques de DoS e DDoS foram realizados à sites do Governo, Petrobras, dentre outros. Um artigo com uma breve explicação sobre como funcionam estes ataques é apresentado como forma de ilustrar de forma básica o funcionamento de um DoS/DDoS.</p>
-
-<p><strong>R</strong>esolvemos fazer uma breve apresentação sobre o BackTrack, uma distribuição Linux voltada para testes de segurança. Nesta matéria apresentamos alguns de seus recursos e ferramentas que podem ser utilizadas no dia-a-dia de qualquer profissional de Segurança da Informação para facilitar suas tarefas e análises, bem como auxiliar em projetos de PenTesting.</p>
-
-<p><strong>A</strong>proveitamos para informar sobre a mais nova parceria realizada entre o Projeto Segurança Digital e a empresa de consultoria e soluções livres 4Linux que é líder no mercado no que diz respeito à soluções de tecnologia com ferramentas livres bem como treinamentos especializados nos mais diversos segmentos da computação como redes, bancos de dados, segurança, programação, dentre outros.</p>
-
-<p><strong>N</strong>ão deixe de fazer o <a href="http://www.segurancadigital.info/revista/185-revistas">download</a> desta edição e conferir o resultado desta força tarefa inicial.</p>
-
-<p><strong>E</strong>speramos que gostem.</p>
-
-<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/06/15/recomendacao-bibliografica-as-brumas-de-avalon-vol-ii-a-grande-rainha/">Recomendação Bibliográfica - as Brumas De Avalon Vol II - a Grande Rainha</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-06-15T08:54:49-03:00" pubdate data-updated="true">Jun 15<span>th</span>, 2011</time>
-        
-         | <a href="/blog/2011/06/15/recomendacao-bibliografica-as-brumas-de-avalon-vol-ii-a-grande-rainha/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><img src="http://marcelocavalcante.net/portal/imgs/livros/avalon2.jpg" alt="" /></p>
-
-<p><strong>A</strong>pós mais um período conturbado na faculdade estou de volta ao blog com uma recomendação bibliográfica.</p>
-
-<p><strong>D</strong>esta vez estou concluindo a leitura do segundo volume da série As Brumas de Avalon, que aborda a história do Rei Artur através de uma visão das mulheres da época.</p>
-
-<p><strong>P</strong>ara quem não conhece e/ou não acompanhou o post sobre o primeiro volume, <a href="http://marcelocavalcante.net/portal/2010/12/20/recomendacao-bibliografica-as-brumas-de-avalon-vol-i-a-senhora-da-magia/">As Brumas de Avalon &ndash; A Senhora da Magia, fica o link.</a></p>
-
-<p><strong>N</strong>este segundo volume, As Brumas de Avalon &ndash; A Grande Rainha, o embate religioso entre o catolicismo e o paganismo se torna ainda mais intenso quando é chegado o momento da grande batalha prometida onde o Rei Artur quebra o juramento feito aos pagãos e seguidores da Antiga Religião.</p>
-
-<p><strong>A</strong>través do juramento, Artur conseguiu ser seguido e apoiado por praticamente todos os povos que o seguiríam no combate contra os saxões com a promessa de o mesmo utilizar a bandeira do Dragão, anteriormente utilizada por seu pai, como forma de demonstrar que Artur não seguiria apenas a bandeira cristã, mas que respeitaria todas as formas de culto religioso. Esta era a promessa para que todos os povos pudessem se unir e lutar ao seu lado para unificar a Bretanha.</p>
-
-<p><strong>U</strong>ma vez que Artur, se deixando levar pela mente extremamente cristã de sua esposa, resolve quebrar a promessa e levar ao campo de batalha apenas a bandeira cristã, muitos povos retiram o seu apoio oferecido ao combate.</p>
-
-<p><strong>S</strong>ua irmã, e mãe de seu filho, Morgana, passa a ganhar maior destaque neste segundo volume pela mudança de seu comportamento onde, praticamente, abre mão de seu papel como sacerdotisa para viver experiências pessoais de isolamento que a fazem perder boa parte dos acontecimentos do mundo real.</p>
-
-<p><strong>P</strong>ara quem curte ficção, misticismo, paganismo e embates religiosos, com certeza será uma boa leitura.</p>
+<p><a href="http://www.marcelocavalcante.net/portal/wp-content/uploads/2011/09/tuxindisp.png"><img src="http://www.marcelocavalcante.net/portal/wp-content/uploads/2011/09/tuxindisp.png" alt="" /></a></p>
 
 <p><strong>A</strong>braços,</p>
 
@@ -308,7 +553,7 @@ Rua Castro Monte, 1364 Varjota – Fortaleza, CE
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2011/05/16/dia-livre-lancamento-oficial-do-site/">Dia Livre - Lançamento Oficial Do Site</a></h1>
+      <h1 class="entry-title"><a href="/blog/2011/09/07/recomendacao-bibliografica-a-guerra-dos-tronos-as-cronicas-de-gelo-e-fogo-vol-i/">Recomendação Bibliográfica: A Guerra Dos Tronos - as Crônicas De Gelo E Fogo - Vol. I</a></h1>
     
     
       <p class="meta">
@@ -324,34 +569,36 @@ Rua Castro Monte, 1364 Varjota – Fortaleza, CE
   
 
 
-<time datetime="2011-05-16T10:37:50-03:00" pubdate data-updated="true">May 16<span>th</span>, 2011</time>
+<time datetime="2011-09-07T10:43:38-03:00" pubdate data-updated="true">Sep 7<span>th</span>, 2011</time>
         
-         | <a href="/blog/2011/05/16/dia-livre-lancamento-oficial-do-site/#disqus_thread">Comments</a>
+         | <a href="/blog/2011/09/07/recomendacao-bibliografica-a-guerra-dos-tronos-as-cronicas-de-gelo-e-fogo-vol-i/#disqus_thread">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/05/Logo+dia-livre-01.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/05/Logo+dia-livre-01.png" alt="" /></a></p>
+  <div class="entry-content"><p><img src="http://marcelocavalcante.net/portal/imgs/livros/guerra_tronos.jpg" alt="" /></p>
 
-<p><strong>G</strong>ostaria de comunicar sobre o lançamento oficial do <a href="http://dialivre.tux-ce.org">site do Dia Livre</a> que se deu ontem, Domingo.</p>
+<p><strong>A</strong>fastado do blog como explicado no <strong><a href="http://www.marcelocavalcante.net/portal/?p=910">post anterior</a></strong>, mas não afastado de minha leitura diária.</p>
 
-<p><strong>R</strong>ecentemente escrevi <a href="http://marcelocavalcante.net/portal/2011/04/19/encontros-sobre-software-livre-escolha-um-nome/">aqui</a> sobre um encontro regular que pretendemos organizar para usuários e profissionais de Software Livre em nossa região.</p>
+<p><strong>O</strong> livro da vez, para variar, foi um presente de minha namorada, Mari.</p>
 
-<p><strong>O</strong>ntem o site do Dia Livre foi lançado oficialmente e servirá de ponto de acesso e informações sobre tudo o que envolve o mesmo, como fotos, vídeos, inscrições, agenda, notícias, etc.</p>
+<p><strong>A</strong> <strong>Guerra dos tronos</strong> é o primeiro livro da trilogia <strong>Crônicas de Gelo e Fogo</strong>.</p>
 
-<p><strong>E</strong>m suas várias edições pretendemos abordar os mais diversos temas que rondam o mundo da tecnologia e do Software Livre como desenvolvimento, design, redes, segurança, bancos de dados, segurança, etc. Além de tecnologia, o evento também tende a abordar temas ligados à cultura, inclusão digital e social, dentre outros aspectos de importância e relevância similar.</p>
+<p><strong>P</strong>ouco provável que alguém não tenha ouvido falar dessa trilogia que fez e continua fazendo um grande sucesso, seja em forma de livros ou em forma de uma série de televisão de mesmo nome.</p>
 
-<p><strong>A</strong>inda não sabe o que é o Dia Livre?</p>
+<p><strong>C</strong>omo bom amante de livros(e filmes) <strong>épicos</strong>, fiquei curioso em relação a esta história desde que bati os olhos pela primeira vez na capa de seus livros.</p>
 
-<p><strong>Q</strong>ue tal visitar <a href="http://tux-ce.org/dialivre/dia-livre/">a página de apresentação do evento</a>?</p>
+<p><strong>O</strong> livro é de autoria do escritor e roteirista estadunidense <strong><a href="http://pt.wikipedia.org/wiki/George_R._R._Martin">George Raymond Richard Martin</a></strong>, declarado em 2011 pela revista TIMES como uma das <strong>100 pessoas mais influentes do mundo</strong>.</p>
 
-<p><strong>D</strong>eseja se manter informado? Você também pode seguir o <a href="http://twitter.com/#!/@dia_livre">@dia_livre</a> no twitter e ficar por dentro do que rola.</p>
+<p><strong>A</strong>pesar de suas 592 páginas, a leitura é leve e desperta a curiosidade.</p>
 
-<p><strong>E</strong>m breve teremos maiores notícias sobre a primeira edição.</p>
+<p><strong>E</strong>m uma terra onde o verão pode durar décadas e o inverno uma vida, os problemas estão apenas começando. O frio está de volta e, nas florestas ao norte de Winterfell, forças sobrenaturais se espalham por trás da Muralha que protege a região. No centro do conflito estão os Stark do reino de Winterfell, uma família tão áspera quanto as terras que lhe pertencem.</p>
 
-<p><strong>A</strong>braços!</p>
+<p><strong>D</strong>os lugares onde o frio é brutal, até os distantes reinos de plenitude e sol, George R. R. Martin narra uma história de lordes e damas, soldados e mercenários, assassinos e bastardos, que se juntam em um tempo de presságios malignos. Entre disputas por reinos, tragédias e traições, vitória e terror, o destino dos Stark, seus aliados e seus inimigos é incerto. Mas cada um está se esforçando para ganhar este conflito mortal: a guerra dos tronos.</p>
+
+<p><strong>B</strong>oa leitura!</p>
 
 <p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
 </div>
@@ -366,7 +613,7 @@ Rua Castro Monte, 1364 Varjota – Fortaleza, CE
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2011/04/28/wicd-kde-tornando-seu-wicd-no-kde-mais-amigavel/">Wicd-KDE - Tornando Seu Wicd No KDE Mais Amigável</a></h1>
+      <h1 class="entry-title"><a href="/blog/2011/09/06/casa-nova-em-todos-os-sentidos/">Casa Nova.. Em Todos Os Sentidos&#8230;</a></h1>
     
     
       <p class="meta">
@@ -382,510 +629,30 @@ Rua Castro Monte, 1364 Varjota – Fortaleza, CE
   
 
 
-<time datetime="2011-04-28T09:29:35-03:00" pubdate data-updated="true">Apr 28<span>th</span>, 2011</time>
+<time datetime="2011-09-06T14:33:11-03:00" pubdate data-updated="true">Sep 6<span>th</span>, 2011</time>
         
-         | <a href="/blog/2011/04/28/wicd-kde-tornando-seu-wicd-no-kde-mais-amigavel/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><strong>S</strong>audações pessoal,</p>
-
-<p><strong>P</strong>ara aqueles que também não curtem de forma alguma a aparência padrão GTK do Wicd e não conhecem ainda a interface que foi lançada posteriormente em QT, fica a dica: Troquem com urgência!</p>
-
-<p><strong>E</strong> o network-manager?</p>
-
-<p><strong>B</strong>om, o network-manager é um excelente(sendo modesto) gerenciador de redes para o Linux, porém infelizmente ele peca muito em sua interface para o KDE. Compare o network-manager em suas interfaces gtk (Gnome) e qt (KDE) e entenderá o que eu digo. A versão para KDE é extremamente confusa e bagunçada em comparação com a interface para o Gnome.</p>
-
-<p><strong>E</strong>is que muitas distribuições começaram a sugerir a utilização do Wicd como gerenciador de redes para quem utiliza o KDE.</p>
-
-<p><strong>N</strong>o Arch, por exemplo, encorajamos fortemente o uso do Wicd com o KDE ao invés do network-manager. Sim, sempre utilizei ele, porém&hellip;</p>
-
-<p><img src="http://3.bp.blogspot.com/_lqr72cLxjWU/TKEXqNjH-3I/AAAAAAAAACM/WKa5EWZ75V0/s1600/screenshot-20100928@001439.png" alt="" /></p>
-
-<p><strong>E</strong> então? Meio bizarro, certo?! Alguém havia pensado em dizer &ldquo;Mas ele não é tão feio..&rdquo;?</p>
-
-<p><strong>B</strong>om, que tal apresentar uma alternativa a isto? O wicd-kde!</p>
-
-<p><strong>C</strong>omo uma imagem vale mais que mil palavras:</p>
-
-<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/04/wicdkde1.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/04/wicdkde1.png" alt="" /></a></p>
-
-<p><strong>M</strong>ais amigável certo? Uma interface mais limpa, organizada e bonita. Bem ao estilo &ldquo;clean&rdquo;, como alguns preferem dizer.</p>
-
-<p><strong>M</strong>as, deixando um pouco a frescura de lado. Não recomendo a utilização da interface em qt apenas por questões de estética.</p>
-
-<p><strong>A</strong> verdade é que o seu ambiente fica mais limpo com esta interface. Limpo? Sim.</p>
-
-<p><strong>S</strong>e você utiliza o KDE mas possui aplicações em gtk, por consequência você possuirá uma série de bibliotecas instaladas em seu ambiente para fazer com que esta aplicação em gtk funcione da maneira correta. Porém, se você instala uma aplicação em qt, pouca coisa adicional será necessária, visto que seu sistema já está preparado para rodar este tipo de aplicação.</p>
-
-<p><strong>D</strong>igamos que é uma união: Útil ao Agradável!</p>
-
-<p>E a parte que interessa? Instalar, instalar, instalar!</p>
-
-<p><strong>I</strong>nfelizmente, nem todas as distribuições empacotaram o wicd-kde até então, mas se você é usuário <strong><a href="http://archlinux.org">Arch Linux</a></strong>, a sua vida será mais fácil.</p>
-
-<p><strong>O</strong> pacote wicd-kde encontra-se pronto no <a href="http://aur.archlinux.org/packages.php?ID=40735">AUR</a>.</p>
-
-<p><strong>O</strong> processo é o já manjado:</p>
-
-<p><strong>1-</strong> Baixar o arquivo compactado:</p>
-
-<p>$ wget <a href="http://aur.archlinux.org/packages/wicd-client-kde-git/wicd-client-kde-git.tar.gz">http://aur.archlinux.org/packages/wicd-client-kde-git/wicd-client-kde-git.tar.gz</a></p>
-
-<p><strong>2-</strong> descompactar:</p>
-
-<p>$ tar -xvzf wicd-client-kde-git.tar.gz</p>
-
-<p><strong>3-</strong> entrar no diretório e em seguida executar o PKGBUILD para geração do pacote em si:</p>
-
-<p>$ cd wicd-client-kde-git</p>
-
-<p>$ makepkg</p>
-
-<p><strong>4-</strong> Instalar o pacote gerado:</p>
-
-<h1>pacman -U wicd-client-kde-git-20110426-1-x86_64.pkg.tar.xz</h1>
-
-<p><strong>F</strong>eito. ;]</p>
-
-<p><strong>H</strong>ave Fun!</p>
-
-<p><strong>A</strong>braços!</p>
-
-<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/04/27/novas-camisas-da-tux-ce-solicite-a-sua/">Novas Camisas Da Tux-CE - Solicite a Sua!</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-04-27T12:04:19-03:00" pubdate data-updated="true">Apr 27<span>th</span>, 2011</time>
-        
-         | <a href="/blog/2011/04/27/novas-camisas-da-tux-ce-solicite-a-sua/#disqus_thread">Comments</a>
+         | <a href="/blog/2011/09/06/casa-nova-em-todos-os-sentidos/#disqus_thread">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/04/logo.gif"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/04/logo-300x67.gif" alt="" /></a></p>
+  <div class="entry-content"><p><img src="http://www.it-networks.org/wp-content/uploads/2011/04/imagesCAIK1UEI.jpg" alt="" /></p>
 
-<p><strong>P</strong>ara quem ainda não sabe, a <a href="http://www.tux-ce.org">Tux-CE</a> está lançando os novos modelos de suas camisas e está coletando a listagem de pessoas interessadas em comprar a(s) sua(s).</p>
+<p><strong>S</strong>audações pessoal!</p>
 
-<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/04/Tshirt-TUX-CE-PRETO-GLIDER-H-M-01.jpg"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/04/Tshirt-TUX-CE-PRETO-GLIDER-H-M-01-300x212.jpg" alt="" /></a></p>
+<p><strong>L</strong>ongo tempo sem publicar algo no blog, mas cá estou novamente.</p>
 
-<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/04/Tshirt-TUX-CE-H-M.jpg"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/04/Tshirt-TUX-CE-H-M-300x212.jpg" alt="" /></a></p>
+<p><strong>A</strong> verdade é que passei por um período um tanto quanto conturbado. Estive em busca de um novo apartamento com a família, mudanças em meus horários da faculdade, trabalhos profissionais, projetos pessoais, projetos de software livre, estudo de novo idioma, etc.</p>
 
-<p><strong>O</strong> valor ainda não está 100% definido, pois o valor vai depender da quantidade de camisas. Caso tenha interesse, preencha este formulário e em breve entraremos em contato com você para informar valores e saber se você realmente irá querer seguir com seu pedido.</p>
+<p><strong>M</strong>uita coisa mudou. Mudanças, quando acontecem todas ao mesmo tempo, podem nos deixar um tanto quanto esgotados. Foi basicamente isto o que aconteceu. Mas, agora que consegui me organizar novamente, acredito que seja hora de voltar tudo ao seu ritmo natural.</p>
 
-<p><strong>I</strong>nteressado?</p>
+<p><strong>A</strong>cabei decidindo que depois de tanto tempo afastado e com tantas mudanças recentes, como por exemplo minha moradia, que mudou após longos 25 anos morando no mesmo local, talvez fosse a hora de mudar a casa também de meus posts. Porque não um novo espaço para o blog? Novo host, nova &ldquo;decoração&rdquo;, etc.</p>
 
-<p><strong>C</strong>onfira todos os modelos disponíveis em <strong><a href="http://camisas.tux-ce.org">Aqui</a></strong>.</p>
+<p><strong>C</strong>á estamos, eu e o blog, de volta. Acredito que agora voltemos às atividades normais e rotineiras.</p>
 
-<p><strong>P</strong>reencha o formulário para solicitar a(s) sua(s) <strong><a href="http://formcamisas.tux-ce.org">Aqui</a></strong>.</p>
-
-<p><strong>A</strong>braços!</p>
-
-<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/04/26/procura-se-usuarios-de-arch-linux-no-ceara/">PROCURA-SE: Usuários De Arch Linux No Ceará</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-04-26T10:20:12-03:00" pubdate data-updated="true">Apr 26<span>th</span>, 2011</time>
-        
-         | <a href="/blog/2011/04/26/procura-se-usuarios-de-arch-linux-no-ceara/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/04/procurase.jpg"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/04/procurase.jpg" alt="" /></a></p>
-
-<p><strong>S</strong>e você é ou conhece algum usuário de <a href="http://archlinux.org/">Arch Linux</a> aqui no Ceará, favor entrar em contato.</p>
-
-<p><strong>I</strong>nfelizmente não estamos em condições de oferecer recompensas financeiras pelas <del>denúncias</del> ou comparecimentos voluntários. Quem sabe, uma cervejinha ou duas, até que rola.</p>
-
-<p><strong>B</strong>rincadeiras a parte, de fato estamos buscando usuários do Arch Linux em nosso estado.</p>
-
-<p><strong>O</strong> fato é que o <a href="http://archlinux-br.org">Arch Linux Brasil</a> como um todo vem começando uma campanha de &ldquo;localização&rdquo; de usuários em diversos estados como uma forma de estreitar as relações entre estes. A ideia é procurar uma forma de fazer com que os usuários de Arch Linux possam ter uma maior interação entre si, o que facilita na organização de encontros, eventos, install fests, etc.</p>
-
-<p><strong>N</strong>o momento estamos mapeando e buscando interessados na ideia, portanto fica o convite:</p>
-
-<p><strong>S</strong>e você é usuário do Arch Linux e mora no Ceará ou conhece algum usuário do Arch Linux por aqui, passe a informação.</p>
-
-<p><strong>P</strong>or favor se identifique através do seguinte link: <a href="http://forum.archlinux-br.org/viewforum.php?id=20">http://forum.archlinux-br.org/viewforum.php?id=20</a></p>
-
-<p><strong>A</strong>braços!</p>
-
-<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/04/20/como-download-de-webcasts-mms-e-rtmp/">Como? Download De Webcasts Mms E Rtmp?</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-04-20T08:51:46-03:00" pubdate data-updated="true">Apr 20<span>th</span>, 2011</time>
-        
-         | <a href="/blog/2011/04/20/como-download-de-webcasts-mms-e-rtmp/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://www.ogilvy.co.uk/neo/files/2008/03/webcast-pic.png"><img src="http://www.ogilvy.co.uk/neo/files/2008/03/webcast-pic.png" alt="" /></a></p>
-
-<p><strong>C</strong>ansado de apenas poder assistir aquele webcast ou vídeo-aula online? E se estiver em um local sem conec﻿tividade? Porque dor de cabeça? Sou usuário Linux! Obrigado por ter a ideia de criar o Linux e facilitar nossas vidas Linus. ;]</p>
-
-<p><strong>R</strong>ecentemente me deparei com esta problemática. Como realizar o download deste tipo de conteúdo?</p>
-
-<p><strong>A</strong>o checar o código fonte da página que exibia o vídeo, vi que eram streamings dos protocolos mms ou rtmp, o que, aparentemente, dificultava o download.</p>
-
-<p><strong>P</strong>ara quem mais estiver passando por este problema, segue a solução. Aliás, as soluções.</p>
-
-<p><strong>U</strong>ma vez que, através do código fonte você consiga identificar a URL completa do arquivo mmc ou rmtp, fica fácil utilizar alguma das metodologias a seguir.</p>
-
-<p><strong>A</strong> primeira opção é a aplicação <strong>Mimms</strong>.</p>
-
-<p><strong>E</strong>sta é a forma mais simples e prática com arquivos do tipo mms.</p>
-
-<p><strong>P</strong>ara usuários do <a href="http://archlinux.org">Arch Linux</a>, já existe um pacote pronto no <a href="http://aur.archlinux.org/packages.php?ID=16412">AUR</a>.</p>
-
-<p><strong>A</strong> instalação, segue o padrão de arquivos baixados do AUR:</p>
-
-<p><strong>1-</strong> Download do <a href="http://aur.archlinux.org/packages/mimms/mimms.tar.gz">Tarball</a>;</p>
-
-<p><strong>2-</strong> Descompatar: <em>$ tar -xvzf mimms.tar.gz</em></p>
-
-<p><strong>3-</strong> Acessar o diretório e efetuar a compilação do pacote: <em>$ cd mimms &amp;&amp; makepkg</em></p>
-
-<p><strong>4-</strong> Instalar o pacote que lhe foi gerado: <em># pacman -U mimms-3.2.1-2-any.pkg.tar.xz</em></p>
-
-<p><strong>F</strong>eito. Agora é só executar da seguinte forma:</p>
-
-<p><em>$ mimms mms://url_de_origem_do_streaming/arquivo_streaming.wmv</em></p>
-
-<p><strong>S</strong>erá que isso funciona mesmo? Experimente:</p>
-
-<p><em>$ mimms <a href="mms://wms.andrew.cmu.edu/001/pausch.wmv">mms://wms.andrew.cmu.edu/001/pausch.wmv</a></em></p>
-
-<p><strong>O</strong>i, simples assim.</p>
-
-<p><strong>O</strong>utra alternativa?</p>
-
-<p><strong>U</strong>tilizando o <strong>Mencoder</strong>:</p>
-
-<p><strong>N</strong>ão é tão simples quanto o mimms, mas também é rápido e prático.</p>
-
-<p><strong>O</strong> comando que deve ser utilizado?</p>
-
-<p><em>mencoder mms://url_de_origem_do_streaming/arquivo_streaming.wmv -o arquivo_streaming.wmv -oac copy -ovc copy</em></p>
-
-<p><strong>U</strong>m pouco mais complexo, certo? Mas funciona.</p>
-
-<p><strong>E</strong> quanto aos arquivos de streaming que utilizam o protocolo rtmp?</p>
-
-<p><strong>N</strong>este caso a opção é utilizarmos o <strong>rtmpdump</strong>.</p>
-
-<p><strong>S</strong>im, claro.. Se você utiliza o Arch Linux, sua vida continua simplificada:</p>
-
-<p><em># pacman -S rtmpdump</em></p>
-
-<p><strong>P</strong>ronto, está instalado. ;]</p>
-
-<p><strong>A</strong> execução do mesmo também é bastante simples, precisando apenas especificar a origem e o destino do streaming em questão. Segue sintaxe:</p>
-
-<p><em>rtmpdump -r &ldquo;rtmpe://url_de_origem_do_streaming/arquivo_streaming.wmv&rdquo; -o arquivo.streaming.flv &mdash;resume</em></p>
-
-<p><strong>H</strong>ave fun! ;]</p>
-
-<p><strong>A</strong>braços!</p>
-
-<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/04/19/encontros-sobre-software-livre-escolha-um-nome/">Encontros Sobre Software Livre? Escolha Um Nome&#8230;</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-04-19T14:50:41-03:00" pubdate data-updated="true">Apr 19<span>th</span>, 2011</time>
-        
-         | <a href="/blog/2011/04/19/encontros-sobre-software-livre-escolha-um-nome/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/04/logo.gif"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/04/logo.gif" alt="" /></a></p>
-
-<p><a href="http://2.bp.blogspot.com/_fCxEYIfdYWY/TIY8qxYiLlI/AAAAAAAAAf4/WAVct3_ZvLA/s320/tux_teacher.png"><img src="http://2.bp.blogspot.com/_fCxEYIfdYWY/TIY8qxYiLlI/AAAAAAAAAf4/WAVct3_ZvLA/s320/tux_teacher.png" alt="" /></a></p>
-
-<p><strong>S</strong>audações pessoal,</p>
-
-<p><strong>A</strong>credito que boa parte, se não praticamente todos, os usuários de Software Livre em nossa região já ouviram falar, ou participaram, do <a href="http://marcelocavalcante.net/portal/2011/04/13/flisol-quixada-relato-e-parabens/">Flisol &ndash; Festival Latino Americano de Instalação de Software Livre</a>.</p>
-
-<p><strong>É</strong> um encontro legal, rolam palestras interessantes e podemos bater um papo com pessoas do ramo, fazendo novos amigos e/ou contatos profissionais. Lado ruim? Acontece apenas uma vez por ano. :/</p>
-
-<p><strong>E</strong> se tivéssemos um encontro com a comunidade local de Software Livre com uma maior regularidade? Que tal 4, 5 ou até mesmo 6 encontros destes por ano?</p>
-
-<p><strong>P</strong>alestras, bate-papo, mesa-redonda, etc.</p>
-
-<p><strong>G</strong>ostou da ideia?</p>
-
-<p><strong>A</strong> <a href="http://www.tux-ce.org">Tux-CE</a> está com uma proposta neste sentido.</p>
-
-<p><strong>A</strong> ideia é termos um mini-evento com maior frequência em nossa região como forma de fortalecer a ideia do Software Livre e ao mesmo tempo aumentar a integração entre nós, usuários e profissionais do ramo. Uma forma de beneficiar a todos. Se você não pode ir hoje, em breve você terá outra chance. Não fica perto da sua casa? Na próxima edição poderá ser mais próximo de você.</p>
-
-<p><strong>A</strong> ideia não é substituir ou concorrer com o Flisol, mesmo porque será um evento infinitamente menor, mas sim somar. Ser uma opção a mais para a nossa comunidade de Software Livre.</p>
-
-<p><strong>U</strong>m evento simples e rápido onde podemos ter palestras e bate papos sobre software livre, linux, cultura hacker, redes, segurança, programação, etc.</p>
-
-<p><strong>P</strong>or se tratar de um evento comunitário, nada mais justo que deixar a comunidade ajudar a moldar o evento como um todo. Acreditamos que o início de tudo, está na escolha do nome.</p>
-
-<p><strong>N</strong>a semana passada coletamos várias sugestões de nomes em nossa lista. Todos os nomes sugeridos, sem excessão, foram inseridos em nossa pesquisa com o mesmo peso.</p>
-
-<p><strong>A</strong>gora chegou a hora de definir o nome.</p>
-
-<p><strong>G</strong>ostaria de ajudar? Sinta-se convidado a votar em nossa enquete que encontra-se na página da <a href="http://www.tux-ce.org/portal/node/717">Tux-CE através deste link</a>.</p>
-
-<p><strong>C</strong>ontamos com o seu voto para nos ajudar a iniciar este movimento.</p>
-
-<p><strong>A</strong>braços!</p>
-
-<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/04/13/flisol-quixada-relato-e-parabens/">Flisol Quixadá - Relato E Parabéns</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-04-13T15:06:54-03:00" pubdate data-updated="true">Apr 13<span>th</span>, 2011</time>
-        
-         | <a href="/blog/2011/04/13/flisol-quixada-relato-e-parabens/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>[caption id=&ldquo;&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;347&rdquo; caption=&ldquo;Banner do Flisol quixadá&rdquo;]<a href="http://www.sertaoemrede.org.br/fotos/38_86281302470956.jpg"><img src="http://www.sertaoemrede.org.br/fotos/38_86281302470956.jpg" alt="" /></a>[/caption]</p>
-
-<p><strong>S</strong>audações galera!</p>
-
-<p><strong>A</strong>lgumas pessoas já me perguntaram nos últimos 3 dias porque eu não estava no Flisol Fortaleza este ano. &ldquo;Cara, nem lhe vi lá pelo Flisol correndo pra cima e pra baixo esse ano.&rdquo;</p>
-
-<p><strong>B</strong>om, como eu havia informado anteriormente, mas nem todos devem ter notado <del>(certo Rodrigo, hehehe)</del>, este ano estive no Flisol de Quixadá. A oportunidade de palestrar por lá surgiu e resolvi mudar o ambiente do meu Flisol este ano.</p>
-
-<p><strong>L</strong>ogo na sexta-feira, dia em que cheguei em Quixadá, tive duas boas primeiras impressões:</p>
-
-<p><strong>1-</strong> O clima estava melhor do que o de Fortaleza. Sim, já não aguentava mais o nosso calor infernal. Por mais que eu já estivesse esperando um calor ainda maior, fiquei surpreso ao perceber que o tempo estava mais fresco. Talvez por conta da umidade&hellip;</p>
-
-<p><strong>2-</strong> Poucos minutos depois de minha chegada esbarro com o Ronaldo, também membro da Tux-CE, que optou por também palestrar no Flisol de Quixadá. Nos esbarramos no Hotel mesmo, já que acabamos ficando no mesmo.</p>
-
-<p><strong>J</strong>á que citei o Hotel, gostaria de fazer dois agradecimentos. Primeiro ao Samy e demais membros da organização que possam ter feito os contatos com hotéis e agilizado nossa reserva por lá. Obrigado Samy e demais envolvidos. Segundo, a todos do <a href="http://www.alzenir.de/hotelmonolitos/">Hotel Monólitos</a> que nos receberam super bem e prestaram um excelente serviço. Sim, NOS receberam bem. Porque plural? Pelo fato de minha namorada, Mari, ter ido também para Quixadá. Acho que também devo agradecer a ela pelo apoio que me deu e boa vontade <del>(saco e paciência)</del> de assistir minha palestra bem como outras durante todo o dia do evento. ;]</p>
-
-<p><strong>L</strong>ogo na sexta aproveitamos para descansar depois de uma semana corrida de trabalho em Fortaleza. Eu, Mari e Ronaldo fomos para um restaurante que ficava próximo ao Hotel, onde tomamos umas cervejinhas e comemos uma excelente carne. No domingo fui descobrir que neste mesmo restaurante fazem a melhor bisteca que já comi na minha vida. Portanto, se alguém tiver a chance de visitar Quixadá, não deixe de comer uma bisteca caprichada no Ponto da Bisteca. O Araújo, que estava no time de organização do evento, acabou nos encontrando por lá rapidamente nesta noite.</p>
-
-<p><strong>N</strong>o sábado, optei por ir bem cedo ao evento. Sim, gosto de ver as coisas por trás dos bastidores. Não gosto de apenas chegar, palestrar e ir embora. Minha <strong>primeira surpresa</strong> do dia? Uma equipe de aproximadamente 30 pessoas na equipe de organização do Flisol! o.O Bom, sei que no dia já parabenizei a todos eles, várias vezes por sinal, mas deixo novamente os parabéns. Estive envolvido direta ou indiretamente em todas as edições do Flisol Fortaleza desde o ano de 2006 e nunca vi uma equipe de organização com tanta gente disposta a ajudar. Vocês estão de parabéns.</p>
-
-<p>[caption id=&ldquo;&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;330&rdquo; caption=&ldquo;Membros da organização &ndash; Mesa de credenciamento&rdquo;]<a href="http://www.sertaoemrede.org.br/fotos/38_38911302471692.jpg"><img src="http://www.sertaoemrede.org.br/fotos/38_38911302471692.jpg" alt="" /></a>[/caption]</p>
-
-<p><strong>D</strong>epois de &ldquo;participar&rdquo; como ouvinte da primeira reunião do dia com a equipe de organização do evento, os preparativos de última hora começaram e aproveitei para conhecer o local do evento, dar uma volta, etc. O evento aconteceu na <a href="http://www.fcrs.edu.br/">Faculdade Católica Rainha do Sertão</a>, que por sinal é linda e bem arborizada.</p>
-
-<p><strong>O</strong> evento contou com duas apresentações de abertura: Um show de humor e um grupo de dança. Infelizmente não lembro o nome do Humorista ou do grupo de dança para deixar os devidos créditos. Mas, ambos estão de parabéns também.</p>
-
-<p><strong>A</strong>inda durante a apresentação de humor tive minha <strong>segunda surpresa</strong> do dia. Um dos integrantes do time de organização me chamou para um canto mais afastado do ginásio e me fez um convite para uma breve filmagem que eles estavam preparando. Como não estava esperando por isso, acabei tendo de improvisar algo. Mas deu tudo certo, espero. o.O</p>
-
-<p><strong>E</strong>m seguida tive minha <strong>terceira surpresa</strong> do dia. O evento contou com uma rápida mesa de cerimônia para abertura oficial do evento, para a qual fui convidado de surpresa, <del>Samy vocẽ me paga</del> onde foi dada uma breve explicação sobre o intuito e importância do evento bem como do Software Livre como um todo para a comunidade em geral.</p>
-
-<p>[caption id=&ldquo;&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;495&rdquo; caption=&ldquo;Mesa de cerimônia na abertura do evento&rdquo;]<a href="http://www.sertaoemrede.org.br/fotos/38_63351302473604.jpg"><img src="http://www.sertaoemrede.org.br/fotos/38_63351302473604.jpg" alt="" /></a>[/caption]</p>
-
-<p>[caption id=&ldquo;&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;495&rdquo; caption=&ldquo;Mesa de cerimônia na abertura do evento&rdquo;]<a href="http://www.sertaoemrede.org.br/fotos/38_62201302474588.jpg"><img src="http://www.sertaoemrede.org.br/fotos/38_62201302474588.jpg" alt="" /></a>[/caption]</p>
-
-<p>[caption id=&ldquo;&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;309&rdquo; caption=&ldquo;Mesa de cerimônia &ndash; &#8220;Milagre, Marcelo não citou ou mostrou nada do Arch?&rdquo; Sim, a camisa.&ldquo;]<a href="http://www.sertaoemrede.org.br/fotos/38_14881302474215.jpg"><img src="http://www.sertaoemrede.org.br/fotos/38_14881302474215.jpg" alt="" /></a>[/caption]</p>
-
-<p><strong>A</strong>pós esta breve apresentação foram iniciadas as palestras. E como fui o primeiro palestrante do dia, tive a minha <strong>quarta surpresa</strong> no evento. Sim, muitas surpresas logo no período da manhã. hehe</p>
-
-<p>[caption id=&ldquo;&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;495&rdquo; caption=&ldquo;Início de minha palestra sobre cultura hacker&rdquo;]<a href="http://www.sertaoemrede.org.br/fotos/38_90021302475558.jpg"><img src="http://www.sertaoemrede.org.br/fotos/38_90021302475558.jpg" alt="" /></a>[/caption]</p>
-
-<p><strong>A</strong> surpresa? A enorme quantidade de pessoas que estavam ali sentadas assistindo minha palestra. Por achar que não teria a menor condição de palestrar sem microfone acabei optando por utilizar o microfone e subir no palco que, até então, só havia sido utilizado para a apresentação de dança. De lá eu poderia ter uma visão melhor do público, bem como eles de mim. Apenas lá de cima pude ver a real quantidade de pessoas. Não tenho números, mas eram muitas. Talvez o Samy possa dar alguma média aqui nos comentários do blog!? Por outro lado, acho que as fotos falam por si só.</p>
-
-<p>[caption id=&ldquo;&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;440&rdquo; caption=&ldquo;Platéia durante minha palestra&rdquo;]<a href="http://www.sertaoemrede.org.br/fotos/38_7181302473505.jpg"><img src="http://www.sertaoemrede.org.br/fotos/38_7181302473505.jpg" alt="" /></a>[/caption]</p>
-
-<p>[caption id=&ldquo;&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;440&rdquo; caption=&ldquo;Platéia durante minha palestra &ndash; Ronaldo e Mari no canto direito&rdquo;]<a href="http://www.sertaoemrede.org.br/fotos/38_41371302474018.jpg"><img src="http://www.sertaoemrede.org.br/fotos/38_41371302474018.jpg" alt="" /></a>[/caption]</p>
-
-<p>[caption id=&ldquo;&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;440&rdquo; caption=&ldquo;Platéia durante minha palestra&rdquo;]<a href="http://www.sertaoemrede.org.br/fotos/38_33641302473931.jpg"><img src="http://www.sertaoemrede.org.br/fotos/38_33641302473931.jpg" alt="" /></a>[/caption]</p>
-
-<p><strong>A</strong>bordei dois temas:</p>
-
-<p><em>1- Cultura Hacker &ndash; Tenha ética e ganharás respeito</em></p>
-
-<p><em>2- Software Livre &ndash; Nunca vi nem comi, eu só ouço falar</em></p>
-
-<p><strong>C</strong>asa cheia, certo?</p>
-
-<p><strong>E</strong>u realmente não esperava tanta gente. Bom saber que em Quixadá temos tantas pessoas interessadas em conhecer algo novo. As possibilidades são enormes e as chances de saírem dali futuros militantes do software livre são óbvias.</p>
-
-<p><strong>A</strong>pós a minha palestra o evento teve uma pausa para o almoço. Eu e a Mari aproveitamos para passear mais um pouco e ver como andava o movimento do lado de fora do ginásio onde se encontrava o <a href="http://www.sertaoemrede.org.br/?pagina=oinstituto">Sertão em Rede</a>. Do que se trata este Sertão em Rede? É um projeto que visa a inclusão socio-digital. Imagine um tele-centro para capacitação, oficinas, etc. Agora imagine um ônibus para levar o equipamente do tele-centro as mais diversas cidades.  Legal, certo? E se ambos fossem um só? O tele-centro e o ônibus? Sim, é isso mesmo. O ônibus que leva o tele-centro é o próprio tele-centro. Equipado com máquinas com Linux, ar-condicionado, lousa, cadeiras, mesas e toda a estrutura necessária para se realizar um curso ou capacitação qualquer. Sim, ele também possuí conectividade com a Internet, do contrário não poderia se chamar Sertão em Rede, certo?! Particularmente, achei brilhante. Parabéns aos responsáveis pelo projeto bem como ao Flisol por ter levado o Sertão em Rede para ser apresentado no evento.</p>
-
-<p>[caption id=&ldquo;&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;440&rdquo; caption=&ldquo;Ônibus Sertão em Rede&rdquo;]<a href="http://www.sertaoemrede.org.br/fotos/38_99281302474781.jpg"><img src="http://www.sertaoemrede.org.br/fotos/38_99281302474781.jpg" alt="" /></a>[/caption]</p>
-
-<p>[caption id=&ldquo;&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;440&rdquo; caption=&ldquo;Ambiente interno do Ônibus Sertão em Rede&rdquo;]<a href="http://www.sertaoemrede.org.br/fotos/38_40211302475967.jpg"><img src="http://www.sertaoemrede.org.br/fotos/38_40211302475967.jpg" alt="" /></a>[/caption]</p>
-
-<p>[caption id=&ldquo;&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;440&rdquo; caption=&ldquo;Ambiente interno do Ônibus Sertão em Rede&rdquo;]<a href="http://www.sertaoemrede.org.br/fotos/38_82021302476063.jpg"><img src="http://www.sertaoemrede.org.br/fotos/38_82021302476063.jpg" alt="" /></a>[/caption]</p>
-
-<p><strong>A</strong>inda nesta pausa para o almoço pude reparar nos ônibus que estavam estacionados no local. Sim, vieram muitas pessoas de outras cidades próximas para o evento como podem ver na foto abaixo. ;]</p>
-
-<p>[caption id=&ldquo;&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;440&rdquo; caption=&ldquo;Ônibus que vieram de outras cidades próximas&rdquo;]<a href="http://www.sertaoemrede.org.br/fotos/38_2871302470556.jpg"><img src="http://www.sertaoemrede.org.br/fotos/38_2871302470556.jpg" alt="" /></a>[/caption]</p>
-
-<p><strong>C</strong>laro, não posso deixar de citar o almoço. Acredito que a Mari e os demais tenham gostado tanto quanto eu. Excelentes peixes, frito e cozido com molho de camarão, carne de sol, etc. Obrigado Samy Soares e Italo Bethoven por terem nos convidado para apreciar a excelente culinária do restaurante Abelardo.</p>
-
-<p><strong>N</strong>o período da tarde aconteceram demais palestras e atividades previstas do evento como sala de games, sala de vídeos, install-fest, etc. Aproveitei para assistir algumas palestras, infelizmente não tinha como assistir todas, e visitar as demais atividades do evento.</p>
-
-<p>[caption id=&ldquo;&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;440&rdquo; caption=&ldquo;Sala de Games&rdquo;]<a href="http://www.sertaoemrede.org.br/fotos/38_74671302476167.jpg"><img src="http://www.sertaoemrede.org.br/fotos/38_74671302476167.jpg" alt="" /></a>[/caption]</p>
-
-<p>[caption id=&ldquo;&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;440&rdquo; caption=&ldquo;Sala de palestras &ndash; Palestra sobre HTML5 com George Gomes, SEDUC&rdquo;]<a href="http://www.sertaoemrede.org.br/fotos/38_41461302477120.jpg"><img src="http://www.sertaoemrede.org.br/fotos/38_41461302477120.jpg" alt="" /></a>[/caption]</p>
-
-<p>[caption id=&ldquo;&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;440&rdquo; caption=&ldquo;Ginásio &ndash; Palestra Mercado e SL &ndash; Ronaldo Davi, ProtctIT e Tux-CE&rdquo;]<a href="http://www.sertaoemrede.org.br/fotos/38_51441302476970.jpg"><img src="http://www.sertaoemrede.org.br/fotos/38_51441302476970.jpg" alt="" /></a>Palestra O que o Software Livre Pode Fazer Por Você &ndash; Marcelo &ldquo;Bill&rdquo;, F13</p>
-
-<p><a href="http://www.sertaoemrede.org.br/fotos/38_98691302477518.jpg"><img src="http://www.sertaoemrede.org.br/fotos/38_98691302477518.jpg" alt="" /></a>[/caption]</p>
-
-<p><strong>C</strong>onheci novas pessoas e pude rever alguns velhos amigos e companheiros como o Marcelo &ldquo;Bill&rdquo; da <a href="http://www.f13.com.br/">F13 Informática</a> e o Pedro Henrique, também membro da <a href="http://www.tux-ce.org">Tux-CE</a>. Ambos palestraram no período da tarde.</p>
-
-<p><strong>C</strong>laro, no final da tarde todos estavam esgotados e optamos por nos recolher em nossos respectivos hotéis/casas para um banho e rápido descanso antes de nos encontrarmos novamente para o jantar.</p>
-
-<p><strong>B</strong>om, cá entre nós. É fácil para o Samy combinar de tomarmos banho e descansarmos por cerca de 2 horas até ele voltar e nos encontrarmos para o jantar. Ele mora lá. Mas, nós estavamos como visita. Descansar? Ficar deitado? Isso nós podemos fazer em casa, certo?</p>
-
-<p><strong>D</strong>epois que eu e Mari terminamos o banho e descemos para o térreo do Hotel, já estavam por lá prontos também o Ronaldo, Pedro, Bill, sua namorada Poliana e outro camarada cujo nome, infelizmente, não lembro. Então já começamos uma pequena roda ali mesmo na fachada do hotel onde tomamos umas cervejinhas e tivemos um papo descontraído enquanto aguardávamos o Samy, que chegou com uma pontualidade que impressionaria qualquer britânico.</p>
-
-<p><strong>D</strong>e lá pegamos a estrada e fomos jantar no restaurante Pé de Serra. Não fica exatamente em Quixadá. Digamos que fica entre Quixadá e Quixeramobim. O restaurante é lindo e a comida é divina. Foi excelente pois, já com a mente menos acelerada, pudemos bater um papo legal. <del>Tirando algumas indecências insanas saídas da mente do Bill, tudo o mais foi tranquilo.</del></p>
-
-<p><strong>A</strong>pós a janta resolvemos ir para um pub chamado Bom Motivo, onde estava acontecendo um tributo ao eterno Raul Seixas. O local era bem aconchegante e animado. Talvez por isso a casa estivesse com tanta gente. Com isto fechamos a confraternização de pós-flisol.</p>
-
-<p><strong>N</strong>o Domingo apenas descansamos no Hotel e rodamos um pouco pelas ruas da cidade. No período da tarde conheci a tal bisteca do Ponto da Bisteca. Sem comentários. Será que eles fazem entrega em domicílio se eu disser que meu endereço fica em Fortaleza? o.O</p>
-
-<p><strong>N</strong>ovamente, obrigado a todos pela recepção e hospitalidade e parabéns pelo excelente evento.</p>
-
-<p><strong>E</strong>spero que boa parte do público tenha absorvido as ideias e sementes que ali foram plantadas pelo pessoal da organização e palestrantes como um todo. Que ideias sejam trocadas e fortalecidas.</p>
-
-<p><strong>M</strong>ais fotos do evento? <a href="http://www.sertaoemrede.org.br/?pagina=fotos&amp;album=38">Clique aqui!</a></p>
+<p><strong>N</strong>os vemos no próximo post.</p>
 
 <p><strong>A</strong>braços!</p>
 
@@ -938,6 +705,14 @@ Me conheça melhor <a href="http://blog.marcelocavalcante.net/about">clicando aq
     
       <li class="post">
         <a href="/blog/2011/10/11/3c2ba-dia-livre-inscricoes-abertas/">3º Dia Livre - Inscrições abertas</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/09/27/politica-de-senhas-no-linux-senhas-com-data-para-expirar/">Política de senhas no Linux: Senhas com data para expirar!</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/09/13/feliz-dia-do-programador/">Feliz dia do Programador!</a>
       </li>
     
   </ul>

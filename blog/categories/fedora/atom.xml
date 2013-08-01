@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: fedora | Marcelo Cavalcante Rocha ~]]></title>
-  <link href="http://kalib.github.io/blog/categories/fedora/atom.xml" rel="self"/>
-  <link href="http://kalib.github.io/"/>
-  <updated>2013-08-01T14:26:22-03:00</updated>
-  <id>http://kalib.github.io/</id>
+  <link href="http://blog.marcelocavalcante.net/blog/categories/fedora/atom.xml" rel="self"/>
+  <link href="http://blog.marcelocavalcante.net/"/>
+  <updated>2013-08-01T15:27:43-03:00</updated>
+  <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Problemas de Infra do Fedora - Servidores Hackeados]]></title>
-    <link href="http://kalib.github.io/blog/2008/08/22/problemas-de-infra-do-fedora-servidores-hackeados/"/>
+    <link href="http://blog.marcelocavalcante.net/blog/2008/08/22/problemas-de-infra-do-fedora-servidores-hackeados/"/>
     <updated>2008-08-22T10:05:00-03:00</updated>
-    <id>http://kalib.github.io/blog/2008/08/22/problemas-de-infra-do-fedora-servidores-hackeados</id>
+    <id>http://blog.marcelocavalcante.net/blog/2008/08/22/problemas-de-infra-do-fedora-servidores-hackeados</id>
     <content type="html"><![CDATA[<p><a href="http://2.bp.blogspot.com/_5kfJplBiYy0/SK67DllLZfI/AAAAAAAAAFs/Ng_aNe5Oy-A/s1600-h/images.jpeg"><img src="http://2.bp.blogspot.com/_5kfJplBiYy0/SK67DllLZfI/AAAAAAAAAFs/Ng_aNe5Oy-A/s200/images.jpeg" alt="" /></a>Não sei se algum de vocês ficou sabendo..Mas na última semana foi notificado um problema na infra-estrutura do Fedora, e havia sido &ldquo;recomendado&rdquo; que nenhuma instalação ou atualizaçãp fosse feita, caso você use Fedora.</p>
 
 <p>Até ontem eu não tinha visto nenhuma explicação para o caso, mas discutindo com colegas de trabalho já suspeitávamos de uma invasão nos servidores do fedora que pudessem ocasionar este tipo de problema&hellip;Bom, hoje achei esta nota no site da red hat, que confirma nossas suspeitas. Os servidores foram sim invadidos. O caso é gravíssimo, pois pode, ou não, ter interferido na árvore de pacotes&hellip;pois existe o risco de eles terem pego as chaves dos pacotes fedora.. :/</p>

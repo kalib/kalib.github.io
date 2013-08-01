@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Kubuntu | Marcelo Cavalcante Rocha ~]]></title>
-  <link href="http://kalib.github.io/blog/categories/kubuntu/atom.xml" rel="self"/>
-  <link href="http://kalib.github.io/"/>
-  <updated>2013-08-01T14:26:22-03:00</updated>
-  <id>http://kalib.github.io/</id>
+  <link href="http://blog.marcelocavalcante.net/blog/categories/kubuntu/atom.xml" rel="self"/>
+  <link href="http://blog.marcelocavalcante.net/"/>
+  <updated>2013-08-01T15:27:43-03:00</updated>
+  <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Brute-force? O Dirb... DirBuster lhe ajuda a identificar vulnerabilidades em seu site]]></title>
-    <link href="http://kalib.github.io/blog/2011/02/15/brute-force-o-dirb-dirbuster-lhe-ajuda-a-identificar-vulnerabilidades-em-seu-site/"/>
+    <link href="http://blog.marcelocavalcante.net/blog/2011/02/15/brute-force-o-dirb-dirbuster-lhe-ajuda-a-identificar-vulnerabilidades-em-seu-site/"/>
     <updated>2011-02-15T10:23:19-03:00</updated>
-    <id>http://kalib.github.io/blog/2011/02/15/brute-force-o-dirb-dirbuster-lhe-ajuda-a-identificar-vulnerabilidades-em-seu-site</id>
+    <id>http://blog.marcelocavalcante.net/blog/2011/02/15/brute-force-o-dirb-dirbuster-lhe-ajuda-a-identificar-vulnerabilidades-em-seu-site</id>
     <content type="html"><![CDATA[<p><strong>B</strong>om, para quem não conhece nada sobre Brute-Force ou apenas ouviu falar vagamente mas não tem certeza sobre o que realmente é um ataque deste tipo, sugiro dar uma lida em meu último post, onde apresentei algumas informações sobre brute-force bem como uma ferramenta que podemos utilizar para testar nossos sites e verificar o quão vulneráveis eles estão a este tipo de ataque. Segue link para o mesmo:</p>
 
 <p><a href="http://marcelocavalcante.net/portal/2011/01/31/brute-force-o-dirb-lhe-ajuda-a-identificar-vulnerabilidades-em-seu-site/">Brute-Force? O Dirb lhe ajuda a identificar vulnerabilidade em seu site!</a></p>
@@ -128,9 +128,9 @@ Bom, se você utiliza <a href="http://archlinux.org">Arch Linux</a>, pode pegar 
   
   <entry>
     <title type="html"><![CDATA[Configurando a JRE para funcionar no *buntu 8.04 com firefox 3 / Configuring JRE on *buntu 8.04 to work with Firefox 3.0]]></title>
-    <link href="http://kalib.github.io/blog/2008/05/07/configurando-a-jre-para-funcionar-no-buntu-804-com-firefox-3-configuring-jre-on-buntu-804-to-work-with-firefox-30/"/>
+    <link href="http://blog.marcelocavalcante.net/blog/2008/05/07/configurando-a-jre-para-funcionar-no-buntu-804-com-firefox-3-configuring-jre-on-buntu-804-to-work-with-firefox-30/"/>
     <updated>2008-05-07T13:14:00-03:00</updated>
-    <id>http://kalib.github.io/blog/2008/05/07/configurando-a-jre-para-funcionar-no-buntu-804-com-firefox-3-configuring-jre-on-buntu-804-to-work-with-firefox-30</id>
+    <id>http://blog.marcelocavalcante.net/blog/2008/05/07/configurando-a-jre-para-funcionar-no-buntu-804-com-firefox-3-configuring-jre-on-buntu-804-to-work-with-firefox-30</id>
     <content type="html"><![CDATA[<h3></h3>
 
 <p><a href="http://2.bp.blogspot.com/_5kfJplBiYy0/SCHhSx0v4cI/AAAAAAAAACc/WAlMjjeTrlc/s1600-h/brazil.gif"><img src="http://2.bp.blogspot.com/_5kfJplBiYy0/SCHhSx0v4cI/AAAAAAAAACc/WAlMjjeTrlc/s320/brazil.gif" alt="" /></a>Versão em Português BR / Portuguese Version</p>
@@ -219,9 +219,9 @@ Bom, se você utiliza <a href="http://archlinux.org">Arch Linux</a>, pode pegar 
   
   <entry>
     <title type="html"><![CDATA[Kubuntu 8.04 - Minhas primeiras impressões]]></title>
-    <link href="http://kalib.github.io/blog/2008/04/29/kubuntu-804-minhas-primeiras-impressoes/"/>
+    <link href="http://blog.marcelocavalcante.net/blog/2008/04/29/kubuntu-804-minhas-primeiras-impressoes/"/>
     <updated>2008-04-29T10:13:00-03:00</updated>
-    <id>http://kalib.github.io/blog/2008/04/29/kubuntu-804-minhas-primeiras-impressoes</id>
+    <id>http://blog.marcelocavalcante.net/blog/2008/04/29/kubuntu-804-minhas-primeiras-impressoes</id>
     <content type="html"><![CDATA[<p><img src="http://3.bp.blogspot.com/_5kfJplBiYy0/SBcnwFJ9LTI/AAAAAAAAACM/7rF76rr-ZL8/s320/kubuntu_splash.jpg" alt="" /></p>
 
 <p>Assim que saiu o Kubuntu 8.04 oficialmente, corri para baixar a iso antes mesmo de ser divulgado no site oficial como forma de evitar pegar uma banda completamente congestionada por centenas de pessoas baixando o mesmo arquivo na mesma fonte. Sim, existem algumas vantagens em se fazer parte das listas de discussão, desenvolvimento e debugs. :p</p>

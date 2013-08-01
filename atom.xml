@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Marcelo Cavalcante Rocha ~]]></title>
-  <link href="http://kalib.github.io/atom.xml" rel="self"/>
-  <link href="http://kalib.github.io/"/>
-  <updated>2013-08-01T14:26:22-03:00</updated>
-  <id>http://kalib.github.io/</id>
+  <link href="http://blog.marcelocavalcante.net/atom.xml" rel="self"/>
+  <link href="http://blog.marcelocavalcante.net/"/>
+  <updated>2013-08-01T15:27:43-03:00</updated>
+  <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Recomendação Bibliográfica: Mago e Vidro (A Torre Negra - IV)]]></title>
-    <link href="http://kalib.github.io/blog/2012/02/06/recomendacao-bibliografica-mago-e-vidro-a-torre-negra-iv/"/>
+    <link href="http://blog.marcelocavalcante.net/blog/2012/02/06/recomendacao-bibliografica-mago-e-vidro-a-torre-negra-iv/"/>
     <updated>2012-02-06T09:26:17-03:00</updated>
-    <id>http://kalib.github.io/blog/2012/02/06/recomendacao-bibliografica-mago-e-vidro-a-torre-negra-iv</id>
+    <id>http://blog.marcelocavalcante.net/blog/2012/02/06/recomendacao-bibliografica-mago-e-vidro-a-torre-negra-iv</id>
     <content type="html"><![CDATA[<p><a href="http://marcelocavalcante.net/portal/imgs/livros/mago_e_vidro.jpg.pagespeed.ce.z_h39Fy6cb.jpg"><img src="http://marcelocavalcante.net/portal/imgs/livros/mago_e_vidro.jpg.pagespeed.ce.z_h39Fy6cb.jpg" alt="" /></a>****</p>
 
 <p><strong>D</strong>epois de minhas longas férias, estou de volta e começando os posts do ano com uma recomendação bibliográfica: <strong>Mago e Vidro</strong>, o quarto volume da saga <strong>A Torre Negra</strong>.</p>
@@ -54,9 +54,9 @@
   
   <entry>
     <title type="html"><![CDATA[Netstat - Saiba o que está rolando em seu ambiente...]]></title>
-    <link href="http://kalib.github.io/blog/2011/12/13/netstat-saiba-o-que-esta-rolando-em-seu-ambiente/"/>
+    <link href="http://blog.marcelocavalcante.net/blog/2011/12/13/netstat-saiba-o-que-esta-rolando-em-seu-ambiente/"/>
     <updated>2011-12-13T08:38:50-03:00</updated>
-    <id>http://kalib.github.io/blog/2011/12/13/netstat-saiba-o-que-esta-rolando-em-seu-ambiente</id>
+    <id>http://blog.marcelocavalcante.net/blog/2011/12/13/netstat-saiba-o-que-esta-rolando-em-seu-ambiente</id>
     <content type="html"><![CDATA[<p><a href="http://pixelmaverick.com/wp-content/uploads/2009/11/brunocb-sherlock-holmes-tux-5975.png"><img src="http://pixelmaverick.com/wp-content/uploads/2009/11/brunocb-sherlock-holmes-tux-5975.png" alt="" /></a></p>
 
 <hr />
@@ -267,9 +267,9 @@ device interrupt 47  base 0xc000</p>
   
   <entry>
     <title type="html"><![CDATA[Que tal ajudar o projeto KDE com apenas 1 minuto do seu tempo?]]></title>
-    <link href="http://kalib.github.io/blog/2011/10/24/que-tal-ajudar-o-projeto-kde-com-apenas-1-minuto-do-seu-tempo/"/>
+    <link href="http://blog.marcelocavalcante.net/blog/2011/10/24/que-tal-ajudar-o-projeto-kde-com-apenas-1-minuto-do-seu-tempo/"/>
     <updated>2011-10-24T14:56:48-03:00</updated>
-    <id>http://kalib.github.io/blog/2011/10/24/que-tal-ajudar-o-projeto-kde-com-apenas-1-minuto-do-seu-tempo</id>
+    <id>http://blog.marcelocavalcante.net/blog/2011/10/24/que-tal-ajudar-o-projeto-kde-com-apenas-1-minuto-do-seu-tempo</id>
     <content type="html"><![CDATA[<p><img src="http://images4.wikia.nocookie.net/__cb20061120200014/uncyclopedia/images/9/98/Konqi-official-logo-aboutkde-150x250.png" alt="" /></p>
 
 <p><strong>N</strong>ão acredita?</p>
@@ -304,9 +304,9 @@ device interrupt 47  base 0xc000</p>
   
   <entry>
     <title type="html"><![CDATA[3º Dia Livre - Programação Definida!]]></title>
-    <link href="http://kalib.github.io/blog/2011/10/17/3c2ba-dia-livre-programacao-definida/"/>
+    <link href="http://blog.marcelocavalcante.net/blog/2011/10/17/3c2ba-dia-livre-programacao-definida/"/>
     <updated>2011-10-17T09:26:54-03:00</updated>
-    <id>http://kalib.github.io/blog/2011/10/17/3c2ba-dia-livre-programacao-definida</id>
+    <id>http://blog.marcelocavalcante.net/blog/2011/10/17/3c2ba-dia-livre-programacao-definida</id>
     <content type="html"><![CDATA[<p><strong>N</strong>este fim de semana foi publicada a programação oficial do <strong><a href="http://www.dialivre.net/portal">3º Dia Livre</a></strong>, encontro para usuários, profissionais ou entusiastas do movimento de Software Livre no Ceará.</p>
 
 <p><strong>E</strong>sta 3ª edição contará com 4 palestras de temas bem diversificados como podem ver na grade abaixo:</p>
@@ -370,9 +370,9 @@ device interrupt 47  base 0xc000</p>
   
   <entry>
     <title type="html"><![CDATA[3º Dia Livre - Inscrições abertas]]></title>
-    <link href="http://kalib.github.io/blog/2011/10/11/3c2ba-dia-livre-inscricoes-abertas/"/>
+    <link href="http://blog.marcelocavalcante.net/blog/2011/10/11/3c2ba-dia-livre-inscricoes-abertas/"/>
     <updated>2011-10-11T08:32:58-03:00</updated>
-    <id>http://kalib.github.io/blog/2011/10/11/3c2ba-dia-livre-inscricoes-abertas</id>
+    <id>http://blog.marcelocavalcante.net/blog/2011/10/11/3c2ba-dia-livre-inscricoes-abertas</id>
     <content type="html"><![CDATA[<p><a href="http://www.marcelocavalcante.net/portal/wp-content/uploads/2011/10/Logo+dia-livre-01.png"><img src="http://www.marcelocavalcante.net/portal/wp-content/uploads/2011/10/Logo+dia-livre-01-300x87.png" alt="" /></a></p>
 
 <p><strong>J</strong>á estão abertas as inscrições para o <strong><a href="http://www.dialivre.net/portal">3º Dia Livre</a></strong> em Fortaleza.</p>
@@ -395,9 +395,9 @@ device interrupt 47  base 0xc000</p>
   
   <entry>
     <title type="html"><![CDATA[Política de senhas no Linux: Senhas com data para expirar!]]></title>
-    <link href="http://kalib.github.io/blog/2011/09/27/politica-de-senhas-no-linux-senhas-com-data-para-expirar/"/>
+    <link href="http://blog.marcelocavalcante.net/blog/2011/09/27/politica-de-senhas-no-linux-senhas-com-data-para-expirar/"/>
     <updated>2011-09-27T11:14:12-03:00</updated>
-    <id>http://kalib.github.io/blog/2011/09/27/politica-de-senhas-no-linux-senhas-com-data-para-expirar</id>
+    <id>http://blog.marcelocavalcante.net/blog/2011/09/27/politica-de-senhas-no-linux-senhas-com-data-para-expirar</id>
     <content type="html"><![CDATA[<p><a href="http://www.marcelocavalcante.net/portal/wp-content/uploads/2011/09/1197557350_90927cc5492.jpg"><img src="http://www.marcelocavalcante.net/portal/wp-content/uploads/2011/09/1197557350_90927cc5492.jpg" alt="" /></a></p>
 
 <p><strong>J</strong>á é sabido que a maior vulnerabilidade dentro das empresas ou mesmo computadores pessoais são justamente os próprios funcionários ou usuários.</p>
@@ -535,9 +535,9 @@ device interrupt 47  base 0xc000</p>
   
   <entry>
     <title type="html"><![CDATA[Feliz dia do Programador!]]></title>
-    <link href="http://kalib.github.io/blog/2011/09/13/feliz-dia-do-programador/"/>
+    <link href="http://blog.marcelocavalcante.net/blog/2011/09/13/feliz-dia-do-programador/"/>
     <updated>2011-09-13T10:11:39-03:00</updated>
-    <id>http://kalib.github.io/blog/2011/09/13/feliz-dia-do-programador</id>
+    <id>http://blog.marcelocavalcante.net/blog/2011/09/13/feliz-dia-do-programador</id>
     <content type="html"><![CDATA[<p><img src="http://www.media-freaks.com/wp-content/uploads/2008/09/programmer-260x300.jpg" alt="" /></p>
 
 <p><strong>S</strong>audações pessoal,</p>
@@ -717,9 +717,9 @@ device interrupt 47  base 0xc000</p>
   
   <entry>
     <title type="html"><![CDATA[2º Dia Livre - Últimos dias para inscrições! & Site da Tux-CE em obras!]]></title>
-    <link href="http://kalib.github.io/blog/2011/09/08/2c2ba-dia-livre-ultimos-dias-para-inscricoes-site-da-tux-ce-em-obras/"/>
+    <link href="http://blog.marcelocavalcante.net/blog/2011/09/08/2c2ba-dia-livre-ultimos-dias-para-inscricoes-site-da-tux-ce-em-obras/"/>
     <updated>2011-09-08T14:02:04-03:00</updated>
-    <id>http://kalib.github.io/blog/2011/09/08/2c2ba-dia-livre-ultimos-dias-para-inscricoes-site-da-tux-ce-em-obras</id>
+    <id>http://blog.marcelocavalcante.net/blog/2011/09/08/2c2ba-dia-livre-ultimos-dias-para-inscricoes-site-da-tux-ce-em-obras</id>
     <content type="html"><![CDATA[<p><a href="http://www.marcelocavalcante.net/portal/wp-content/uploads/2011/09/Logo+dia-livre-01.png"><img src="http://www.marcelocavalcante.net/portal/wp-content/uploads/2011/09/Logo+dia-livre-01.png" alt="" /></a></p>
 
 <p><strong>S</strong>audações amigos!</p>
@@ -788,9 +788,9 @@ device interrupt 47  base 0xc000</p>
   
   <entry>
     <title type="html"><![CDATA[Recomendação bibliográfica: A Guerra dos Tronos - As crônicas de Gelo e Fogo - Vol. I]]></title>
-    <link href="http://kalib.github.io/blog/2011/09/07/recomendacao-bibliografica-a-guerra-dos-tronos-as-cronicas-de-gelo-e-fogo-vol-i/"/>
+    <link href="http://blog.marcelocavalcante.net/blog/2011/09/07/recomendacao-bibliografica-a-guerra-dos-tronos-as-cronicas-de-gelo-e-fogo-vol-i/"/>
     <updated>2011-09-07T10:43:38-03:00</updated>
-    <id>http://kalib.github.io/blog/2011/09/07/recomendacao-bibliografica-a-guerra-dos-tronos-as-cronicas-de-gelo-e-fogo-vol-i</id>
+    <id>http://blog.marcelocavalcante.net/blog/2011/09/07/recomendacao-bibliografica-a-guerra-dos-tronos-as-cronicas-de-gelo-e-fogo-vol-i</id>
     <content type="html"><![CDATA[<p><img src="http://marcelocavalcante.net/portal/imgs/livros/guerra_tronos.jpg" alt="" /></p>
 
 <p><strong>A</strong>fastado do blog como explicado no <strong><a href="http://www.marcelocavalcante.net/portal/?p=910">post anterior</a></strong>, mas não afastado de minha leitura diária.</p>
@@ -819,9 +819,9 @@ device interrupt 47  base 0xc000</p>
   
   <entry>
     <title type="html"><![CDATA[Casa nova.. em todos os sentidos...]]></title>
-    <link href="http://kalib.github.io/blog/2011/09/06/casa-nova-em-todos-os-sentidos/"/>
+    <link href="http://blog.marcelocavalcante.net/blog/2011/09/06/casa-nova-em-todos-os-sentidos/"/>
     <updated>2011-09-06T14:33:11-03:00</updated>
-    <id>http://kalib.github.io/blog/2011/09/06/casa-nova-em-todos-os-sentidos</id>
+    <id>http://blog.marcelocavalcante.net/blog/2011/09/06/casa-nova-em-todos-os-sentidos</id>
     <content type="html"><![CDATA[<p><img src="http://www.it-networks.org/wp-content/uploads/2011/04/imagesCAIK1UEI.jpg" alt="" /></p>
 
 <p><strong>S</strong>audações pessoal!</p>
@@ -846,9 +846,9 @@ device interrupt 47  base 0xc000</p>
   
   <entry>
     <title type="html"><![CDATA[Dia Livre - Inscrições e grade do evento]]></title>
-    <link href="http://kalib.github.io/blog/2011/07/19/dia-livre-inscricoes-e-grade-do-evento/"/>
+    <link href="http://blog.marcelocavalcante.net/blog/2011/07/19/dia-livre-inscricoes-e-grade-do-evento/"/>
     <updated>2011-07-19T08:38:33-03:00</updated>
-    <id>http://kalib.github.io/blog/2011/07/19/dia-livre-inscricoes-e-grade-do-evento</id>
+    <id>http://blog.marcelocavalcante.net/blog/2011/07/19/dia-livre-inscricoes-e-grade-do-evento</id>
     <content type="html"><![CDATA[<p><img src="http://tux-ce.org/dialivre/wp-content/uploads/2011/05/Logo+dia-livre-01.png" alt="" /></p>
 
 <p><strong>É</strong> hora de se <a href="http://tux-ce.org/dialivre/inscricoes/">inscrever</a> no <a href="http://www.tux-ce.org/dialivre">Dia Livre</a>!</p>
@@ -934,9 +934,9 @@ Rua Castro Monte, 1364 Varjota – Fortaleza, CE
   
   <entry>
     <title type="html"><![CDATA[Lançada a primeira edição da Revista Segurança Digital]]></title>
-    <link href="http://kalib.github.io/blog/2011/07/01/lancada-a-primeira-edicao-da-revista-seguranca-digital/"/>
+    <link href="http://blog.marcelocavalcante.net/blog/2011/07/01/lancada-a-primeira-edicao-da-revista-seguranca-digital/"/>
     <updated>2011-07-01T08:14:54-03:00</updated>
-    <id>http://kalib.github.io/blog/2011/07/01/lancada-a-primeira-edicao-da-revista-seguranca-digital</id>
+    <id>http://blog.marcelocavalcante.net/blog/2011/07/01/lancada-a-primeira-edicao-da-revista-seguranca-digital</id>
     <content type="html"><![CDATA[<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/07/1_edicao_julho_2011.jpg"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/07/1_edicao_julho_2011.jpg" alt="" /></a></p>
 
 <p><strong>S</strong>audações pessoal.</p>
@@ -965,9 +965,9 @@ Rua Castro Monte, 1364 Varjota – Fortaleza, CE
   
   <entry>
     <title type="html"><![CDATA[Recomendação Bibliográfica - As Brumas de Avalon vol II - A Grande Rainha]]></title>
-    <link href="http://kalib.github.io/blog/2011/06/15/recomendacao-bibliografica-as-brumas-de-avalon-vol-ii-a-grande-rainha/"/>
+    <link href="http://blog.marcelocavalcante.net/blog/2011/06/15/recomendacao-bibliografica-as-brumas-de-avalon-vol-ii-a-grande-rainha/"/>
     <updated>2011-06-15T08:54:49-03:00</updated>
-    <id>http://kalib.github.io/blog/2011/06/15/recomendacao-bibliografica-as-brumas-de-avalon-vol-ii-a-grande-rainha</id>
+    <id>http://blog.marcelocavalcante.net/blog/2011/06/15/recomendacao-bibliografica-as-brumas-de-avalon-vol-ii-a-grande-rainha</id>
     <content type="html"><![CDATA[<p><img src="http://marcelocavalcante.net/portal/imgs/livros/avalon2.jpg" alt="" /></p>
 
 <p><strong>A</strong>pós mais um período conturbado na faculdade estou de volta ao blog com uma recomendação bibliográfica.</p>
@@ -994,9 +994,9 @@ Rua Castro Monte, 1364 Varjota – Fortaleza, CE
   
   <entry>
     <title type="html"><![CDATA[Dia Livre - Lançamento oficial do site]]></title>
-    <link href="http://kalib.github.io/blog/2011/05/16/dia-livre-lancamento-oficial-do-site/"/>
+    <link href="http://blog.marcelocavalcante.net/blog/2011/05/16/dia-livre-lancamento-oficial-do-site/"/>
     <updated>2011-05-16T10:37:50-03:00</updated>
-    <id>http://kalib.github.io/blog/2011/05/16/dia-livre-lancamento-oficial-do-site</id>
+    <id>http://blog.marcelocavalcante.net/blog/2011/05/16/dia-livre-lancamento-oficial-do-site</id>
     <content type="html"><![CDATA[<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/05/Logo+dia-livre-01.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/05/Logo+dia-livre-01.png" alt="" /></a></p>
 
 <p><strong>G</strong>ostaria de comunicar sobre o lançamento oficial do <a href="http://dialivre.tux-ce.org">site do Dia Livre</a> que se deu ontem, Domingo.</p>
@@ -1023,9 +1023,9 @@ Rua Castro Monte, 1364 Varjota – Fortaleza, CE
   
   <entry>
     <title type="html"><![CDATA[Wicd-KDE - Tornando seu Wicd no KDE mais amigável]]></title>
-    <link href="http://kalib.github.io/blog/2011/04/28/wicd-kde-tornando-seu-wicd-no-kde-mais-amigavel/"/>
+    <link href="http://blog.marcelocavalcante.net/blog/2011/04/28/wicd-kde-tornando-seu-wicd-no-kde-mais-amigavel/"/>
     <updated>2011-04-28T09:29:35-03:00</updated>
-    <id>http://kalib.github.io/blog/2011/04/28/wicd-kde-tornando-seu-wicd-no-kde-mais-amigavel</id>
+    <id>http://blog.marcelocavalcante.net/blog/2011/04/28/wicd-kde-tornando-seu-wicd-no-kde-mais-amigavel</id>
     <content type="html"><![CDATA[<p><strong>S</strong>audações pessoal,</p>
 
 <p><strong>P</strong>ara aqueles que também não curtem de forma alguma a aparência padrão GTK do Wicd e não conhecem ainda a interface que foi lançada posteriormente em QT, fica a dica: Troquem com urgência!</p>
@@ -1096,9 +1096,9 @@ Rua Castro Monte, 1364 Varjota – Fortaleza, CE
   
   <entry>
     <title type="html"><![CDATA[Novas camisas da Tux-CE - Solicite a sua!]]></title>
-    <link href="http://kalib.github.io/blog/2011/04/27/novas-camisas-da-tux-ce-solicite-a-sua/"/>
+    <link href="http://blog.marcelocavalcante.net/blog/2011/04/27/novas-camisas-da-tux-ce-solicite-a-sua/"/>
     <updated>2011-04-27T12:04:19-03:00</updated>
-    <id>http://kalib.github.io/blog/2011/04/27/novas-camisas-da-tux-ce-solicite-a-sua</id>
+    <id>http://blog.marcelocavalcante.net/blog/2011/04/27/novas-camisas-da-tux-ce-solicite-a-sua</id>
     <content type="html"><![CDATA[<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/04/logo.gif"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/04/logo-300x67.gif" alt="" /></a></p>
 
 <p><strong>P</strong>ara quem ainda não sabe, a <a href="http://www.tux-ce.org">Tux-CE</a> está lançando os novos modelos de suas camisas e está coletando a listagem de pessoas interessadas em comprar a(s) sua(s).</p>
@@ -1123,9 +1123,9 @@ Rua Castro Monte, 1364 Varjota – Fortaleza, CE
   
   <entry>
     <title type="html"><![CDATA[PROCURA-SE: Usuários de Arch Linux no Ceará]]></title>
-    <link href="http://kalib.github.io/blog/2011/04/26/procura-se-usuarios-de-arch-linux-no-ceara/"/>
+    <link href="http://blog.marcelocavalcante.net/blog/2011/04/26/procura-se-usuarios-de-arch-linux-no-ceara/"/>
     <updated>2011-04-26T10:20:12-03:00</updated>
-    <id>http://kalib.github.io/blog/2011/04/26/procura-se-usuarios-de-arch-linux-no-ceara</id>
+    <id>http://blog.marcelocavalcante.net/blog/2011/04/26/procura-se-usuarios-de-arch-linux-no-ceara</id>
     <content type="html"><![CDATA[<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/04/procurase.jpg"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/04/procurase.jpg" alt="" /></a></p>
 
 <p><strong>S</strong>e você é ou conhece algum usuário de <a href="http://archlinux.org/">Arch Linux</a> aqui no Ceará, favor entrar em contato.</p>
@@ -1150,9 +1150,9 @@ Rua Castro Monte, 1364 Varjota – Fortaleza, CE
   
   <entry>
     <title type="html"><![CDATA[Como? Download de webcasts mms e rtmp?]]></title>
-    <link href="http://kalib.github.io/blog/2011/04/20/como-download-de-webcasts-mms-e-rtmp/"/>
+    <link href="http://blog.marcelocavalcante.net/blog/2011/04/20/como-download-de-webcasts-mms-e-rtmp/"/>
     <updated>2011-04-20T08:51:46-03:00</updated>
-    <id>http://kalib.github.io/blog/2011/04/20/como-download-de-webcasts-mms-e-rtmp</id>
+    <id>http://blog.marcelocavalcante.net/blog/2011/04/20/como-download-de-webcasts-mms-e-rtmp</id>
     <content type="html"><![CDATA[<p><a href="http://www.ogilvy.co.uk/neo/files/2008/03/webcast-pic.png"><img src="http://www.ogilvy.co.uk/neo/files/2008/03/webcast-pic.png" alt="" /></a></p>
 
 <p><strong>C</strong>ansado de apenas poder assistir aquele webcast ou vídeo-aula online? E se estiver em um local sem conec﻿tividade? Porque dor de cabeça? Sou usuário Linux! Obrigado por ter a ideia de criar o Linux e facilitar nossas vidas Linus. ;]</p>
@@ -1227,9 +1227,9 @@ Rua Castro Monte, 1364 Varjota – Fortaleza, CE
   
   <entry>
     <title type="html"><![CDATA[Encontros sobre Software Livre? Escolha um nome...]]></title>
-    <link href="http://kalib.github.io/blog/2011/04/19/encontros-sobre-software-livre-escolha-um-nome/"/>
+    <link href="http://blog.marcelocavalcante.net/blog/2011/04/19/encontros-sobre-software-livre-escolha-um-nome/"/>
     <updated>2011-04-19T14:50:41-03:00</updated>
-    <id>http://kalib.github.io/blog/2011/04/19/encontros-sobre-software-livre-escolha-um-nome</id>
+    <id>http://blog.marcelocavalcante.net/blog/2011/04/19/encontros-sobre-software-livre-escolha-um-nome</id>
     <content type="html"><![CDATA[<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/04/logo.gif"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/04/logo.gif" alt="" /></a></p>
 
 <p><a href="http://2.bp.blogspot.com/_fCxEYIfdYWY/TIY8qxYiLlI/AAAAAAAAAf4/WAVct3_ZvLA/s320/tux_teacher.png"><img src="http://2.bp.blogspot.com/_fCxEYIfdYWY/TIY8qxYiLlI/AAAAAAAAAf4/WAVct3_ZvLA/s320/tux_teacher.png" alt="" /></a></p>
@@ -1272,9 +1272,9 @@ Rua Castro Monte, 1364 Varjota – Fortaleza, CE
   
   <entry>
     <title type="html"><![CDATA[Flisol Quixadá - Relato e Parabéns]]></title>
-    <link href="http://kalib.github.io/blog/2011/04/13/flisol-quixada-relato-e-parabens/"/>
+    <link href="http://blog.marcelocavalcante.net/blog/2011/04/13/flisol-quixada-relato-e-parabens/"/>
     <updated>2011-04-13T15:06:54-03:00</updated>
-    <id>http://kalib.github.io/blog/2011/04/13/flisol-quixada-relato-e-parabens</id>
+    <id>http://blog.marcelocavalcante.net/blog/2011/04/13/flisol-quixada-relato-e-parabens</id>
     <content type="html"><![CDATA[<p>[caption id=&ldquo;&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;347&rdquo; caption=&ldquo;Banner do Flisol quixadá&rdquo;]<a href="http://www.sertaoemrede.org.br/fotos/38_86281302470956.jpg"><img src="http://www.sertaoemrede.org.br/fotos/38_86281302470956.jpg" alt="" /></a>[/caption]</p>
 
 <p><strong>S</strong>audações galera!</p>

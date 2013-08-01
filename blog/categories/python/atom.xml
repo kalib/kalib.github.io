@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Python | Marcelo Cavalcante Rocha ~]]></title>
-  <link href="http://kalib.github.io/blog/categories/python/atom.xml" rel="self"/>
-  <link href="http://kalib.github.io/"/>
-  <updated>2013-08-01T14:26:22-03:00</updated>
-  <id>http://kalib.github.io/</id>
+  <link href="http://blog.marcelocavalcante.net/blog/categories/python/atom.xml" rel="self"/>
+  <link href="http://blog.marcelocavalcante.net/"/>
+  <updated>2013-08-01T15:27:43-03:00</updated>
+  <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Feliz dia do Programador!]]></title>
-    <link href="http://kalib.github.io/blog/2011/09/13/feliz-dia-do-programador/"/>
+    <link href="http://blog.marcelocavalcante.net/blog/2011/09/13/feliz-dia-do-programador/"/>
     <updated>2011-09-13T10:11:39-03:00</updated>
-    <id>http://kalib.github.io/blog/2011/09/13/feliz-dia-do-programador</id>
+    <id>http://blog.marcelocavalcante.net/blog/2011/09/13/feliz-dia-do-programador</id>
     <content type="html"><![CDATA[<p><img src="http://www.media-freaks.com/wp-content/uploads/2008/09/programmer-260x300.jpg" alt="" /></p>
 
 <p><strong>S</strong>audações pessoal,</p>
@@ -197,9 +197,9 @@
   
   <entry>
     <title type="html"><![CDATA[III Pylestras - Neste Sábado]]></title>
-    <link href="http://kalib.github.io/blog/2011/03/24/iii-pylestras-neste-sabado/"/>
+    <link href="http://blog.marcelocavalcante.net/blog/2011/03/24/iii-pylestras-neste-sabado/"/>
     <updated>2011-03-24T14:19:40-03:00</updated>
-    <id>http://kalib.github.io/blog/2011/03/24/iii-pylestras-neste-sabado</id>
+    <id>http://blog.marcelocavalcante.net/blog/2011/03/24/iii-pylestras-neste-sabado</id>
     <content type="html"><![CDATA[<p><img src="http://pylestras.appspot.com/static/img/python-logo.gif" alt="" /></p>
 
 <p><strong>G</strong>ostaria de lembrar a todos os interessados que amanhã teremos o <a href="http://pylestras.appspot.com/">III Pylestras</a> aqui em Fortaleza.</p>
@@ -242,9 +242,9 @@
   
   <entry>
     <title type="html"><![CDATA[Amanhã - II Pylestras - Python User Group Ceará]]></title>
-    <link href="http://kalib.github.io/blog/2011/02/25/amanha-ii-pylestras-python-user-group-ceara/"/>
+    <link href="http://blog.marcelocavalcante.net/blog/2011/02/25/amanha-ii-pylestras-python-user-group-ceara/"/>
     <updated>2011-02-25T08:38:02-03:00</updated>
-    <id>http://kalib.github.io/blog/2011/02/25/amanha-ii-pylestras-python-user-group-ceara</id>
+    <id>http://blog.marcelocavalcante.net/blog/2011/02/25/amanha-ii-pylestras-python-user-group-ceara</id>
     <content type="html"><![CDATA[<p><img src="http://pylestras.appspot.com/static/img/python-logo.gif" alt="" /></p>
 
 <p><strong>G</strong>ostaria de lembrar a todos os interessados que amanhã teremos o <a href="http://pylestras.appspot.com/">II Pylestras</a> aqui em Fortaleza.</p>
@@ -283,9 +283,9 @@ _ * Técnicas para preparação e desenvolvimento de sites com Django</em></p>
   
   <entry>
     <title type="html"><![CDATA[Porque escolhi Python? Python para SysAdmins!]]></title>
-    <link href="http://kalib.github.io/blog/2009/11/21/porque-escolhi-python-python-para-sysadmins/"/>
+    <link href="http://blog.marcelocavalcante.net/blog/2009/11/21/porque-escolhi-python-python-para-sysadmins/"/>
     <updated>2009-11-21T10:12:42-03:00</updated>
-    <id>http://kalib.github.io/blog/2009/11/21/porque-escolhi-python-python-para-sysadmins</id>
+    <id>http://blog.marcelocavalcante.net/blog/2009/11/21/porque-escolhi-python-python-para-sysadmins</id>
     <content type="html"><![CDATA[<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2009/11/python-logo-master-v3-trans.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/11/python-logo-master-v3-trans-300x101.png" alt="python-logo-master-v3-trans" /></a></p>
 
 <p><strong>S</strong>audações pessoal&hellip;</p>
@@ -384,9 +384,9 @@ _ * Técnicas para preparação e desenvolvimento de sites com Django</em></p>
   
   <entry>
     <title type="html"><![CDATA[Python no Ceará? PythOnCeará!]]></title>
-    <link href="http://kalib.github.io/blog/2009/11/14/python-no-ceara-pythonceara/"/>
+    <link href="http://blog.marcelocavalcante.net/blog/2009/11/14/python-no-ceara-pythonceara/"/>
     <updated>2009-11-14T08:42:44-03:00</updated>
-    <id>http://kalib.github.io/blog/2009/11/14/python-no-ceara-pythonceara</id>
+    <id>http://blog.marcelocavalcante.net/blog/2009/11/14/python-no-ceara-pythonceara</id>
     <content type="html"><![CDATA[<p><a href="http://bit.ly/JpZFP"><img src="http://www.marcelocavalcante.net/banner728x90_3.png" alt="" /></a></p>
 
 <p><strong>B</strong>om Dia galera&hellip;</p>

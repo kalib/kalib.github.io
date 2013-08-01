@@ -9,7 +9,7 @@
   <meta name="author" content="Marcelo Cavalcante Rocha - Kalib">
 
   
-  <meta name="description" content="Galera, ontem foi lançada a nova versão do kde. Nesta versão 4.3.2 muitos bugs foram corrigidos. Abaixo uma pequena lista das principais mudanças: &hellip;">
+  <meta name="description" content="Como diria a Feiticeira (não lembro o nome real dela), não é feitiçaria, é tecnologia! Como já expliquei no outro post, tive problemas com meu &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://kalib.github.io/blog/page/7/">
+  <link rel="canonical" href="http://blog.marcelocavalcante.net/blog/page/7/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -41,7 +41,7 @@
   
 <form action="http://google.com/search" method="get">
   <fieldset role="search">
-    <input type="hidden" name="q" value="site:kalib.github.io" />
+    <input type="hidden" name="q" value="site:blog.marcelocavalcante.net" />
     <input class="search" type="text" name="q" results="0" placeholder="Search"/>
   </fieldset>
 </form>
@@ -73,7 +73,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2009/10/07/kde-4-3-2-lancado-sim-o-arch-ja-tem/">Kde 4.3.2 Lançado.. Sim O Arch Já Tem!</a></h1>
+      <h1 class="entry-title"><a href="/blog/2010/12/29/chaveamento-de-interfaces-de-rede-placas-broadcom/">Chaveamento De Interfaces De Rede - Placas Broadcom</a></h1>
     
     
       <p class="meta">
@@ -89,37 +89,92 @@
   
 
 
-<time datetime="2009-10-07T10:32:54-03:00" pubdate data-updated="true">Oct 7<span>th</span>, 2009</time>
+<time datetime="2010-12-29T09:25:13-03:00" pubdate data-updated="true">Dec 29<span>th</span>, 2010</time>
         
-         | <a href="/blog/2009/10/07/kde-4-3-2-lancado-sim-o-arch-ja-tem/#disqus_thread">Comments</a>
+         | <a href="/blog/2010/12/29/chaveamento-de-interfaces-de-rede-placas-broadcom/#disqus_thread">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><strong>G</strong>alera, ontem foi lançada a nova versão do kde.</p>
+  <div class="entry-content"><p><img src="http://cdn.venturebeat.com/wp-content/uploads/2010/10/broadcom-chip.jpg" alt="broadcom" /></p>
 
-<p><a href="http://kde.org/announcements/4.3/images/kde430-desktop.png"><img src="http://kde.org/announcements/4.3/images/kde430-desktop.png" alt="" /></a></p>
+<p><strong>C</strong>omo diria a Feiticeira (não lembro o nome real dela), não é feitiçaria, é tecnologia!</p>
 
-<p><strong>N</strong>esta versão 4.3.2 muitos bugs foram corrigidos. Abaixo uma pequena lista das principais mudanças:</p>
+<p><strong>C</strong>omo já expliquei no outro post, tive problemas com meu notebook e por isso passei muito tempo afastado do blog. Bom, recentemente comprei outro e cá estou novamente em casa.</p>
 
-<ul>
-<li>Muitos bugs e quebras foram corrigidos trazendo ainda mais estabilidade para o KDE.</li>
-<li>Os efeitos do Kwin&rsquo;s Window foram melhorados com algumas correções e acréscimos em renderização.</li>
-<li>A maioria dos bugs do Kmail foram resolvidos tornando-o mais robusto e eficiente.</li>
-<li>Opções de salvar os arquivos do Okular também foi melhorada.</li>
-<li>Muitas outras novidades que podem ser conferidas no <a href="http://www.kde.org/announcements/changelogs/changelog4_3_1to4_3_2.php">changelog</a> completo.</li>
-</ul>
+<p><strong>M</strong>as, como nem tudo é um mar de rosas&hellip; toda mudança trás impactos positivos e negativos.</p>
 
+<p><img src="http://blog.grupojbr.com.br/up/g/gr/blog.grupojbr.com.br/img/20101114090300_634036567553112000vostro3300.jpg" alt="" /></p>
 
-<p><strong>S</strong>im.. claro.. o novo KDE já se encontra disponível nos repositórios do Arch Linux.</p>
+<p><strong>A</strong> máquina escolhida foi um Dell Vostro 3300. Com certeza uma excelente máquina e que eu não deixaria de recomendar para ninguém.</p>
 
-<p><strong>E</strong>stá esperando o que?</p>
+<p><strong>P</strong>ara quem comprou algum Dell recentemente, ou pensou em comprar, não deve ser uma novidade que estas máquinas, em sua grande maioria, estão trazendo chipsets wireless da Broadcom, ao invés dos Intel.</p>
 
-<blockquote><h1>pacman -Syu</h1></blockquote>
+<p><strong>Q</strong>uando pensei em comprar, refleti bastante sobre isto, visto que os drivers para broadcom no linux já tiveram um passado um tanto quanto nebuloso em se tratando de Wireless.</p>
 
-<p><strong>A</strong>braços</p>
+<p><strong>R</strong>esolvi encarar e não me arrependo. A performance está excelente. O driver realmente funcionou como deveria funcionar porém tive um pequeno problema.</p>
+
+<p><strong>U</strong>tilizo <a href="http://www.kde.org">KDE</a> como gerenciador de janelas em meu <a href="http://www.archlinux.org">ArchLinux</a> e <a href="http://wicd.sourceforge.net/">Wicd</a> como gerenciador de redes. Estava tudo funcionando bem mas ao reiniciar a máquina um certo dia percebo que o Wicd não havia encontrado nenhuma rede wireless. o.O</p>
+
+<p><strong>R</strong>einicio novamente e ele volta a encontrar. Feitiçaria? Fiquei curioso e resolvi reiniciar novamente e&hellip; funcionou. Pensei: &ldquo;Foi apenas um susto..ela devia querer descansar..&rdquo;</p>
+
+<p><strong>M</strong>as no dia seguinte ao ligar em casa percebi que, novamente, a interface wireless não foi encontrada pelo Wicd. Lembrei do fato anterior e reiniciei novamente. A interface continuava sem funcionar no Wicd.</p>
+
+<p><strong>L</strong>hes poupando dos testes que resolvi fazer para isolar o problema, descobri que as vezes a minha interface wireless estava subindo como eth0, as vezes subindo como eth1. Isso, obviamente, deixava o Wicd confuso, pois na configuração dele é necessário especificar qual será a interface wireless e qual será a wired (cabeada). Portanto, quando o notebook subia com a wireless na eth1, o Wicd funcionava numa boa, mas quando subia na eth0 o Wicd continuava tentando escanear redes wireless com a eth1, portanto não funcionava.</p>
+
+<p><strong>A</strong>pós algumas pesquisas descobri que este é um acontecimento comum em relação ao driver da broadcom. Este chaveamento ou swap de interfaces de rede acontece realmente de forma aleatória.</p>
+
+<p><strong>C</strong>omo resolver? Amarrando a interface ao nome, literalmente.</p>
+
+<p><strong>A</strong> placa começou a funcionar da forma esperada após vincular via regra o MAC da interface ao nome que eu desejava para ela. Desta forma, na hora de subir, ambas passam a subir de acordo com a regra que eu especifiquei, o que resolveu o problema pois a interface wireless passou a sempre subir com o mesmo nome, evitando que o Wicd tentasse escanear com uma interface que não existe.</p>
+
+<p><strong>S</strong>em mais papo furado.. mãos à obra!</p>
+
+<p><strong>A</strong>ntes de mais nada é necessário criar, caso você já não possua, o arquivo <em>/etc/udev/rules.d/10-network.rules</em> acrescentando o seguinte conteúdo:</p>
+
+<p><em>SUBSYSTEM==&ldquo;net&rdquo;, ATTR{address}==&ldquo;aa:bb:cc:dd:ee:ff&rdquo;, NAME=&ldquo;eth0&rdquo;</em>
+_ SUBSYSTEM==&ldquo;net&rdquo;, ATTR{address}==&ldquo;aa:bb:cc:dd:ee:ff&rdquo;, NAME=&ldquo;eth1&rdquo;_</p>
+
+<p>o.O wtf?</p>
+
+<p><strong>B</strong>om, com isto você estará deixando claro para o sistema qual o nome que deverá ser atribuído para cada interface.</p>
+
+<p><strong>V</strong>ocê deverá apenas substituir o &ldquo;aa:bb:cc:dd:ee:ff&rdquo; e &ldquo;ff:ee:dd:cc:bb:aa&rdquo; pelos respectivos endereços MAC das interfaces.</p>
+
+<p><strong>O</strong> valor dos campos NAME podem ser alterados de acordo com sua vontade, por exemplo: eth0 para a cabeada e wlan0 para a wireless.</p>
+
+<p><strong>C</strong>aso não saiba como conseguir o endereço MAC de suas interfaces, utilize o seguinte comando:</p>
+
+<p><em># ifconfig | grep HW</em></p>
+
+<p><strong>I</strong>sso lhe dará um retorno parecido com o seguinte:</p>
+
+<p><em>eth0  Link encap:Ethernet  HWaddr <strong>A4:BA:DB:D7:41:C0</strong>
+eth1  Link encap:Ethernet  HWaddr <strong>1C:65:9D:6E:65:1B</strong></em></p>
+
+<p><strong>O</strong>s endereços MAC são os valores que destaquei acima.</p>
+
+<p><strong>ATENÇÃO:</strong> Apesar de o MAC constantemente ser escrito com letras em maiúsculo como apresentado acima, no caso do arquivo 10-network.rules você deverá utilizar letras em minúsculo. Exato, o arquivo é case sensitive, portanto só funcionará desta forma.</p>
+
+<p><strong>C</strong>aso você receba uma saída parecida com a minha e queira se certificar de qual dos dois endereços MAC é o que realmente representa a interface wireless pode testar com os seguintes comando:</p>
+
+<p><em># iwlist eth0 scanning</em></p>
+
+<p>e&hellip;﻿</p>
+
+<p><em># iwlist eth1 scanning</em></p>
+
+<p><strong>V</strong>ocê perceberá que terá resultados diferentes. O que retornar um scan completo de redes wireless disponíveis, obviamente, é a interface Wireless. ;]</p>
+
+<p><strong>A</strong>pós ter escolhido o nome que deseja para cada uma de suas interfaces pode salvar o arquivo de regra.</p>
+
+<p><strong>ATENÇÃO²:</strong> Certifique-se de atualizar o seu arquivo <em>/etc/rc.conf</em> para evitar que os nomes das interfaces estejam diferentes das que você criou no arquivo de regras.</p>
+
+<p><strong>É</strong> isto.. agora sua interface funcinoará da forma esperada.</p>
+
+<p><strong>A</strong>braços!</p>
 
 <p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
 </div>
@@ -134,7 +189,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2009/09/17/criatura-estranha-morta-por-adolescentes/">Criatura Estranha Morta Por Adolescentes?!</a></h1>
+      <h1 class="entry-title"><a href="/blog/2010/12/20/recomendacao-bibliografica-as-brumas-de-avalon-vol-i-a-senhora-da-magia/">Recomendação Bibliográfica: As Brumas De Avalon Vol I - a Senhora Da Magia</a></h1>
     
     
       <p class="meta">
@@ -150,34 +205,48 @@
   
 
 
-<time datetime="2009-09-17T10:05:47-03:00" pubdate data-updated="true">Sep 17<span>th</span>, 2009</time>
+<time datetime="2010-12-20T09:54:58-03:00" pubdate data-updated="true">Dec 20<span>th</span>, 2010</time>
         
-         | <a href="/blog/2009/09/17/criatura-estranha-morta-por-adolescentes/#disqus_thread">Comments</a>
+         | <a href="/blog/2010/12/20/recomendacao-bibliografica-as-brumas-de-avalon-vol-i-a-senhora-da-magia/#disqus_thread">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><a href="http://gazetaonline.globo.com/_midias/jpg/180144-4ab24930596d5.jpg"><img src="http://gazetaonline.globo.com/_midias/jpg/180144-4ab24930596d5.jpg" alt="" /></a></p>
+  <div class="entry-content"><p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2010/12/avalon1.jpg"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2010/12/avalon1.jpg" alt="" /></a></p>
 
-<p><strong>E</strong>T ou espécie animal não catalogada?¿</p>
+<p><strong>S</strong>audações amigos&hellip;</p>
 
-<p><strong>E</strong>sta é a dúvida que está se passando na cabeça de muitas pessoas sobre o ser que foi encontrado e morto no Panamá.</p>
+<p><strong>S</strong>entiram saudades?</p>
 
-<p><strong>A</strong> reportagem original apresentou a imagem acima bem como a história do ocorrido na qual 4 adolescentes acharam a criatura e mataram jogando-lhe várias pedras que, segundo eles, foi uma forma de defesa por terem ficado assustados e com medo de serem atacados.</p>
+<p><strong>N</strong>ovamente passei por um jejum em relação ao blog. Sim, motivos de força maior. Tive alguns problemas em relação ao meu laptop portanto fiquei sem condições de dar atenção ao blog por algumas semanas. Agora, de laptop novo, posso voltar à rotina.</p>
 
-<p><strong>C</strong>oncordo que é um crime matar um ser desta forma, sem ao menos dar tempo de saber de que espécie se trata, mas ao mesmo tempo, não me vejo em posição de criticar por não saber as reais circunstâncias nas quais os garotos encontraram a critura (ou foram encontrados).</p>
+<p><strong>N</strong>ada melhor para começar do que assuntos que desopilam, correto? Bom, vésperas de feriado do Natal então, por favor Kalib, nada de baboseiras técnicas.</p>
 
-<p><strong>M</strong>uitas pessoas na cidade de Cerro Azul, local onde foi encontrado o ser estranho, bem como parte da imprensa local, estão afirmando que se trata de um ser extra terrestre, enquanto que o especialista em vida silvestre do órgão nacional de meio ambiente Melquiades Ramos disse que o caso está sendo investigado e que as características da criatura são &ldquo;muito peculiares&rdquo;. ?¿</p>
+<p><strong>A</strong> recomendação bibliográfica deste mês é um livro um tanto quanto antigo, porém que ainda hoje me surpreende.</p>
 
-<p><strong>A</strong>lguns simples exames de DNA poderiam responder se ele se trata de uma misutra de espécies ou de uma nova espécie. Ou seria de um outro planeta? o.O</p>
+<p><strong>S</strong>e chama As Brumas de Avalon vol I &ndash; A Senhora da Magia.</p>
 
-<p><strong>A</strong>guardemos novidades sobre este ser.</p>
+<p><strong>L</strong>embro que li este livro pela primeira vez cerca de 6 ou 7 anos atrás e como coinscidentemente estou acompanhando uma série sobre o rei Artur, Merlin e companhia, bateu a saudade do livro e resolvi ler novamente. Relembrar a história.</p>
 
-<p><strong>S</strong>egue link com a fonte de onde tirei a imagem bem como o assunto: <a href="http://g1.globo.com/Noticias/PlanetaBizarro/0,,MUL1307808-6091,00.html">aqui</a></p>
+<p><strong>B</strong>om, o livro é sem sombra de dúvidas uma excelente narrativa para quem gosta de contos de época, reinos, magia, etc.</p>
 
-<p><strong>A</strong>braços</p>
+<p><strong>D</strong>iferentemente de todas as histórias conhecidas sobre o rei Artur, seu reinado e conquistas, As Brumas de Avalon contam como tudo aconteceu a partir da perspectiva de mulheres da época que tiveram contato e laços com Artur. Sim, a Sacerdotisa Morgana, que passa a ser a protagonista principal da história, conta sua vida desde sua infância e como ela teve forte, para não dizer fundamental, influência em toda a história de sucesso do Rei Artur.</p>
+
+<p><strong>A</strong>lém de Morgana, o livro aborda a vida e influência de outras mulheres que também tiveram papéis essenciais para o desenvolvimento de Artur bem como de acontecimentos gerais. Vários outros aspectos místicos de antigas religiões como os Druídas e crenças pagãs baseadas no culto de uma Grande Deusa são abordados. Entre conflitos com a Igreja e rituais pagãos, Artur se prepara para assumir seu fardo.</p>
+
+<p><strong>E</strong>m meio a uma série de conflitos religiosos, Artur passa a ser o responsável por unificar e assegurar a harmonia da Bretanha comandando vários Reis que lhe devem jurar fidelidade.</p>
+
+<p><strong>S</strong>egue breve sinopse deste que é o primeiro livro de uma série que conta com 4 volumes retirada do site da <a href="http://www.livrariasaraiva.com.br/produto/2615172/as-brumas-de-avalon-1-a-senhora-da-magia/?ID=BB726B7B7DA0C140A12050458">Livraria Saraiva</a>:</p>
+
+<p><em>Neste enorme e emocionante romance, a lenda do rei Artur é contada pela primeira vez através das vidas, das visões e da percepção das mulheres que nela tiveram um papel central.
+Igraine, Viviane, Guinevere, Morgana. Elas revelam, com as suas vidas e sentimentos, a lenda de Artur, como se fosse nova de, ao mesmo tempo, levam o leitor a integrar-se na história, de maneira natural e profunda.
+Assim, esta obra proporciona uma narrativa soberba de uma lenda, e a recriação dessa lenda, bem como a brilhante contribuição para a literatura do ciclo arturiano.</em></p>
+
+<p><strong>A</strong>braços e um Feliz Natal a todos!</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2010/12/grinch.jpg"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2010/12/grinch.jpg" alt="" /></a></p>
 
 <p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
 </div>
@@ -192,7 +261,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2009/09/08/recomendacao-bibliografica-a-escolha-dos-tres-a-torre-negra-vol-ii/">Recomendação Bibliográfica: A Escolha Dos Três - a Torre Negra Vol II</a></h1>
+      <h1 class="entry-title"><a href="/blog/2010/10/15/somos-menos-de-1-o-o-usuarios-linux-cadastrem-se/">Somos Menos De 1%? o.O Usuários Linux, Cadastrem-se!</a></h1>
     
     
       <p class="meta">
@@ -208,30 +277,34 @@
   
 
 
-<time datetime="2009-09-08T15:58:46-03:00" pubdate data-updated="true">Sep 8<span>th</span>, 2009</time>
+<time datetime="2010-10-15T08:38:29-03:00" pubdate data-updated="true">Oct 15<span>th</span>, 2010</time>
         
-         | <a href="/blog/2009/09/08/recomendacao-bibliografica-a-escolha-dos-tres-a-torre-negra-vol-ii/#disqus_thread">Comments</a>
+         | <a href="/blog/2010/10/15/somos-menos-de-1-o-o-usuarios-linux-cadastrem-se/#disqus_thread">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2009/09/aescolhatre.jpg"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/09/aescolhatre.jpg" alt="aescolhatre" /></a></p>
+  <div class="entry-content"><p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2010/10/tux_muscle.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2010/10/tux_muscle.png" alt="" /></a></p>
 
-<p><strong>O</strong>lá pessoal, que tal mais um pouco de leitura para desopilar?</p>
+<p><strong>P</strong>essoal, recentemente surgiram algumas notícias de fontes suspeitas informando que o Linux está em menos de 1% dos computadores desktop existentes no mundo hoje.</p>
 
-<p><strong>O</strong> livro que estou lendo agora se chama A Escolha dos Três. É a continuação da série A Torre Negra, que eu já havia citado em um post anteriormente. Pode conferir <a href="http://marcelocavalcante.net/portal/2009/06/21/recomendacao-bibliografica-do-voo%C2%BF-o-pistoleiro/">aqui</a>.</p>
+<p><strong>S</strong>erá verdade?</p>
 
-<p><strong>N</strong>este segundo volume, a história do pistoleiro continua, precisando desta vez conhecer e resolver alguns enigmas com a participação e interação de 3 personagens distintos que poderão, ou não, dar um novo rumo à aventura.</p>
+<p><strong>T</strong>odos podemos ver claramente o quanto o Linux vem crescendo e ganhando espaço hoje em dia. Lembro que em 2005, quando entrei na faculdade, ao perguntar para meus colegas de faculdade, poucos conheciam ou já haviam chegado perto de uma máquina com Linux. Hoje a realidade é outra, cerca de 50% dos colegas já, ao menos uma vez, utilizaram uma máquina com Linux, seja em seu trabalho, seja no Banco, lan house, etc.</p>
 
-<p><strong>M</strong>ais uma vez Stephen King demonstra suas habilidades na arte da literatura com a descrição de cenários e fatos com perfeição em detalhes que conseguem prender a atenção do leitor.</p>
+<p><strong>O</strong> Linux está ficando mais forte a cada dia entre os usuários domésticos.</p>
 
-<p><strong>S</strong>egue uma breve descrição retirada do site da livraria saraiva:</p>
+<p><strong>C</strong>omeçaram um projeto web para tentar quebrar este mito: <a href="http://www.dudalibre.com/gnulinuxcounter?lang=en">http://www.dudalibre.com/gnulinuxcounter?lang=en</a></p>
 
-<blockquote><p>Com incansável imaginação, Stephen King dá continuidade à magistral saga épica A Torre Negra. &ldquo;A Escolha dos Três&rdquo;, segundo volume da série, lança o protagonista Roland de Gilead em pleno século XX, à medida que ele se aproxima cada vez mais de sua preciosa Torre Negra, sede de todo o tempo e de todo o espaço. Um derradeiro confronto com o homem de preto revela a Roland, nas cartas de um baralho de tarô, aqueles que deverão ajudá-lo em sua busca pela Torre Negra: o Prisioneiro, a Dama das Sombras e a Morte. Para encontrá-los, o último pistoleiro precisará atravessar três intrigantes portas que se erguem na deserta e interminável praia do mar Ocidental. São portas que o levam a um mundo diferente do seu, em outro tempo, de onde ele deverá trazer seus escolhidos: Eddie Dean, um viciado em heroína; Odetta Holmes, uma bela jovem negra que perdeu as pernas em um medonho acidente e sofre de misteriosos lapsos de memória; e o terceiro escolhido, a Morte, que vai embaralhar mais uma vez o destino de todos. A primeira porta o leva à Nova York dos anos 1980 e a Eddie Dean. A segunda transporta o pistoleiro à mesma cidade, mas dessa vez na década de 1960. A Dama das Sombras que Roland encontra atrás dessa segunda porta é Odetta Holmes. Roland e Eddie não demoram a descobrir que a mente de Odetta abriga também a malévola Detta Walker, num evidente distúrbio de dupla personalidade. Com o terceiro escolhido, A Morte, as cartas tornam a se embaralhar e a busca de Roland pela Torre Negra sofre uma nova e imprevisível reviravolta.</p></blockquote>
+<p><strong>S</strong>e você possui um desktop, ou mais, com linux, talvez você queira contabilizar o seu voto.</p>
 
-<p><strong>A</strong>braços</p>
+<p><strong>A</strong>lém de contabilizar quantas máquinas desktop utilizam Linux, ele ainda separa por ranking de países e distribuições.</p>
+
+<p><strong>S</strong>e serve de incentivo, ainda estamos abaixo dos hermanos argentinos. ¬¬ Vamos dar um gás né galera?</p>
+
+<p><strong>A</strong>braços!</p>
 
 <p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
 </div>
@@ -246,7 +319,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2009/09/03/chromium-suportando-java-agora/">Chromium Suportando Java Agora!</a></h1>
+      <h1 class="entry-title"><a href="/blog/2010/10/12/hackingn-roll-fortaleza/">HACKING&#8217;N ROLL Fortaleza!</a></h1>
     
     
       <p class="meta">
@@ -262,42 +335,32 @@
   
 
 
-<time datetime="2009-09-03T16:15:34-03:00" pubdate data-updated="true">Sep 3<span>rd</span>, 2009</time>
+<time datetime="2010-10-12T10:02:13-03:00" pubdate data-updated="true">Oct 12<span>th</span>, 2010</time>
         
-         | <a href="/blog/2009/09/03/chromium-suportando-java-agora/#disqus_thread">Comments</a>
+         | <a href="/blog/2010/10/12/hackingn-roll-fortaleza/#disqus_thread">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2009/09/javachromium.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/09/javachromium-252x300.png" alt="javachromium" /></a></p>
+  <div class="entry-content"><p><a href="http://www.insert.uece.br/hackingnroll/img/logo.jpg"><img src="http://www.insert.uece.br/hackingnroll/img/logo.jpg" alt="" /></a></p>
 
-<p><strong>É</strong> isso aí galera..</p>
+<p><strong>É</strong> hora de separar suas melhores garrafas de cerveja café e seus melhores números de telefones para pedidos de pizza. O <a href="http://www.insert.uece.br/hackingnroll/">Hacking&#8217;n Roll Fortaleza</a> vai começar!</p>
 
-<p><strong>D</strong>epois de dominar 100% o plugin flash, chegou a vez do nosso amigo Java.</p>
+<p><strong>O</strong> evento soa mais como um desafio ao velho estilo Capture The Flag. Para quem conhece e acompanha a <a href="http://www.defcon.org/">Defcon</a>, o Capture The Flag não será nenhuma surpresa. Aos que não conhecem, se trata de um desafio, ou melhor uma série de desafios/questões que devem ser resolvidos em um determinado tempo.</p>
 
-<p><strong>O</strong> chromium já está suportando o plugin java.</p>
+<p><strong>N</strong>este Hacking&#8217;n Roll serão um total de 25 questões/desafios que deverão ser resolvidos em 24 horas.</p>
 
-<p><strong>H</strong>oje posso, finalmente, dizer que o Chromium é meu navegador padrão. Nos últimos dias, a única coisa que eu não fazia no chromium era acessar aplicações que necessitem do java, como por exemplo o site do banco do brasil.</p>
+<p><strong>C</strong>omeçará num sábado às 8:00 e dura até domingo às 8:00.</p>
 
-<p><strong>M</strong>as estas são sombras passadas&hellip;</p>
+<p><strong>E</strong>stas 24 horas serão o tempo que os participantes terão para tentar resolver o máximo de desafios/questões possíveis.</p>
 
-<p><strong>F</strong>aça os testes você mesmo.</p>
+<p><strong>A</strong>o final do evento será disponibilizado um ranking com os resultados dos participantes e os melhores estarão qualificados para o curso <a href="http://www.insert.uece.br/hacking101">Hacking 101</a>, treinamento na área de segurança da informação ministrado pelo <a href="http://www.insert.uece.br/">INSERT</a>, Information Security Research Team.</p>
 
-<p><strong>I</strong>nicialize seu chromium com a seguinte chamada&hellip;</p>
+<p><strong>P</strong>ara maiores informações e inscrições, basta acessar a página do <a href="http://www.insert.uece.br/hackingnroll/">Hacking&#8217;n Roll</a>.</p>
 
-<blockquote><p>$ chromium-browser &mdash;enable-plugins &mdash;enable-greasemonkey &mdash;enable-user-scripts</p></blockquote>
-
-<p>&hellip;e seja feliz com tudo que o chromium tem a lhe oferecer. ;]</p>
-
-<p>Para aqueles que ainda não conhecem ou não tem o chromium instalado, sugiro a leitura dos seguintes posts anteriores:</p>
-
-<p><strong><a href="http://marcelocavalcante.net/portal/2009/05/28/chromium-pronto-para-o-arch/">Aqui</a>
-<a href="http://marcelocavalcante.net/portal/2009/07/09/chromium-ganha-suporte-ao-flash-por-completo/">Aqui</a>
-<a href="http://marcelocavalcante.net/portal/2009/08/12/habilitando-plugins-no-chromium/">e Aqui </a></strong></p>
-
-<p><strong>A</strong>braços</p>
+<p><strong>G</strong>ood Hacking!</p>
 
 <p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
 </div>
@@ -312,7 +375,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2009/08/19/erro-com-a-libjpeg-resolvendo-no-archlinux/">Erro Com a Libjpeg.. Resolvendo No Archlinux</a></h1>
+      <h1 class="entry-title"><a href="/blog/2010/09/30/recomendacao-bibliografica-a-batalha-do-apocalipse/">Recomendação Bibliográfica: A Batalha Do Apocalipse</a></h1>
     
     
       <p class="meta">
@@ -328,392 +391,40 @@
   
 
 
-<time datetime="2009-08-19T10:12:02-03:00" pubdate data-updated="true">Aug 19<span>th</span>, 2009</time>
+<time datetime="2010-09-30T10:20:37-03:00" pubdate data-updated="true">Sep 30<span>th</span>, 2010</time>
         
-         | <a href="/blog/2009/08/19/erro-com-a-libjpeg-resolvendo-no-archlinux/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><img src="http://www.adslgr.com/forum/picture.php?albumid=214&amp;pictureid=1984" alt="" /></p>
-
-<p><strong>Q</strong>uem está utilizando o <a href="http://archlinux.org">Archlinux</a> devidamente atualizado, pode ter percebido alguns erros relacionados à libjpeg.so ao tentar executar alguma aplicação, como foi o meu caso com o <a href="http://www.floola.com">floola</a>, um gerenciador para meu ipod com o qual transfiro e manipulo minhas músicas pelo linux.</p>
-
-<p><strong>O</strong> problema se deu pelo fato de o Archlinux já ter adotado a nova libjpeg. Esta versão 7 possui algumas vantagens em relação a versão anterior, porém muitos aplicativos ainda não foram atualizados para esta nova versão. Este foi o caso do floola por exemplo, que só funciona com a libjpeg6.</p>
-
-<p><strong>S</strong>egue uma dica simples e rápida para resolver este pequeno problema.</p>
-
-<p><strong>1-</strong> Baixe o pacote da libjpeg6 diretamente do <a href="http://aur.archlinux.org">AUR</a> através do seguinte link:</p>
-
-<blockquote><p><a href="http://aur.archlinux.org/packages/libjpeg6/libjpeg6.tar.gz">http://aur.archlinux.org/packages/libjpeg6/libjpeg6.tar.gz</a></p></blockquote>
-
-<p><strong>2-</strong> Descompacte o arquivo:</p>
-
-<blockquote><p>[kalib@tuxcaverna downloads]$ tar -xvzf libjpeg6.tar.gz</p></blockquote>
-
-<p><strong>3-</strong> Entre no diretório libjpeg6, crie e instale o pacote a partir do PKGBUILD extraído:</p>
-
-<blockquote><p>[kalib@tuxcaverna downloads]$ cd libjpeg6/</p></blockquote>
-
-<p>[kalib@tuxcaverna libjpeg6]$ makepkg</p>
-
-<p>[kalib@tuxcaverna libjpeg6]$ pacman -U libjpeg6-6b-6-i686.pkg.tar.gz</p>
-
-<p><strong>F</strong>eito isto, pode executar novamente o software que estava apontando o erro. No meu caso foi o floola. Isto resolverá o seu problema. ;]</p>
-
-<p><strong>A</strong>braços</p>
-
-<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/08/14/recomendacao-bibliografica-do-mes-o-jardim-de-ossos/">Recomendação Bibliográfica Do Mês: O Jardim De Ossos</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-08-14T10:50:13-03:00" pubdate data-updated="true">Aug 14<span>th</span>, 2009</time>
-        
-         | <a href="/blog/2009/08/14/recomendacao-bibliografica-do-mes-o-jardim-de-ossos/#disqus_thread">Comments</a>
+         | <a href="/blog/2010/09/30/recomendacao-bibliografica-a-batalha-do-apocalipse/#disqus_thread">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><img src="http://www.livrariasaraiva.com.br/imagem/imagem.dll?tam=2&amp;pro_id=2637651&amp;PIM_Id=123515389" alt="" /></p>
+  <div class="entry-content"><p><strong>C</strong>omo já diz o ditado, quem é vivo sempre aparece.</p>
 
-<p><strong>S</strong>im, adoro livros com histórias macabras. Suspense e ficção sempre me chamaram bastante atenção.</p>
+<p><strong>P</strong>assado um período um tanto quanto turbulento resolvi passar o aspirador no blog e voltar a postar.</p>
 
-<p><strong>A</strong> escolha deste mês se chama O Jardim de Ossos. Um presente que ganhei de aniversário da Mari, minha namorada, e com certeza me despertou curiosidade desde o dia em que recebi.</p>
+<p><strong>P</strong>orque não começar com uma recomendação bibliográfica? Afinal, ganhei um excelente livro de minha namorada e o estou adorando. Acho que seria a melhor forma de &ldquo;voltar ao ar&rdquo;.</p>
 
-<p><strong>O</strong> livro além de suspense, possui alguns aspectos de romance, ficção, medicina e histórias de época.</p>
+<p><a href="http://marcelocavalcante.net/portal/imgs/livro_apocalipse.jpg"><img src="http://marcelocavalcante.net/portal/imgs/livro_apocalipse.jpg" alt="" /></a></p>
 
-<p><strong>O</strong> livro é da autora <a href="http://en.wikipedia.org/wiki/Tess_Gerritsen">Tess Gerritsen</a>.</p>
+<p><strong>A</strong> recomendação deste mês é uma história fascinante de um autor brasileiro que conseguiu destaque imenso com esta obra. O carioca Eduardo Sophr, algumas vezes comparado à J. R. R. Tolkien, criador de O Senhor dos Anéis, é um enorme exemplo para toda a comunidade literária brasileira, visto que começou sua jornada na literatura praticamente sozinho, sem ajuda de grandes editoras. Optou por iniciar as vendas de seu livro por conta própria, da forma mais tradicional possível com impressões, envio pelos correios, divulgação na internet, etc. Posteriormente abriu sua própria editora.</p>
 
-<p><strong>A</strong> mistura de culturas chinesa e americana da autora chamou a atenção em suas obras que costumam misturar suspense e medicina.</p>
+<p><strong>E</strong>m sua ficção &ldquo;A Batalha do Apocalipse&rdquo;, o autor descreve uma envolvente história na qual o mundo está envolvido em uma enorme guerra entre os seres celestiais.</p>
 
-<p><strong>A</strong>lgo que muito me chamou a atenção neste livro foi justamente um comentário do grande <a href="http://en.wikipedia.org/wiki/Stephen_King">Stephen King</a> que se encontra na capa do livro:  &#8221;Tess Gerritsen é leitura obrigatória em minha casa.&#8221;</p>
+<p><strong>A</strong> história se inicia contando a já conhecida história da criação do mundo, onde Deus leva 6 dias para toda a criação e resolve descansar no sétimo dia. O detalhe é que 1 dia no mundo celestial equivale a centenas de milhares de anos no mundo terreno. Desde de o momento da criação divina, um ambiente de inveja e cobiça começa a reinar no mundo celestial pelo fato de Deus ter dado aos homens alguns atributos importantes que foi negado aos seres celestiais, Anjos, Arcanjos e outros, como por exemplo a alma e o lívre-arbítrio.</p>
 
-<p><strong>P</strong>recisa de algo mais?</p>
+<p><strong>A</strong>o resolver descansar durante todo o sétimo dia, Deus deixa o encargo e todas as responsabilidades nas mãos de um único Arcanjo que supostamente deveria manter a ordem das coisas enquanto descansava. O Arcanjo Miguel, após receber esta grande responsabilidade, começa  a agir de acordo com seus próprios pensamentos e começa a arquitetar uma grande mudança como forma de assumir os poderes e a personificação divina ele mesmo, passando a reinar por completo sob a humanidade.</p>
 
-<p><strong>S</strong>egue uma pequena descrição retirada do site da livraria Saraiva.</p>
+<p><strong>C</strong>omo forma de atingir esta meta, começa ele mesmo a causar grandes catástrofes na humanidade  como o grande dilúvio bíblico, tentativa frustrada de acabar com todos os seres humanos que, segundo ele, acabaríam por destruir o planeta com seu comportamento egoísta e ambicioso. Logo, alguns Anjos e Arcanjos começam a questionar estas atitudes e passam a discordar sobre as intenções de Miguel em apenas servir a vontade divina. Começa então uma guerra entre os seres celestiais onde alguns são expulsos dos céus, sendo confinados a viver na terra por milhares de anos acompanhando todas as tragetórias da humanidade como por exemplo mudanças de civilizações, guerras mundiais, etc.</p>
 
-<blockquote><p>A recém-divorciada Julia Hamill acaba de se mudar para a casa de seus sonhos. Tudo parece perfeito, até que, durante a reforma do jardim, ela desenterra um crânio humano que data do século XIX. Em 1830 o estudante de medicina Norris Marshall parte em busca do homem mais perigoso de Boston, a fim de provar sua inocência. Separadas por quase duzentos anos, as duas histórias se desenvolvem de forma precisa e instigante, chegando a um final tão chocante quanto engenhosamente concebido.</p></blockquote>
+<p><strong>R</strong>ealmente é uma leitura bastante envolvente e interessante. Ainda não terminei a leitura mas estou ancioso para ver no que vai dar.</p>
 
-<p><strong>E</strong>spero que gostem&hellip;</p>
+<p><strong>S</strong>egue breve sinopse disponibilizada no site da <a href="http://www.livrariasaraiva.com.br/produto/3047055/a-batalha-do-apocalipse-da-queda-dos-anjos-ao-crepusculo-do-mundo/?ID=C94920877DA091E09270F0917">Livraria Saraiva</a>:</p>
 
-<p><strong>A</strong>braços</p>
+<blockquote><p><em>Há muitos e muitos anos, tantos quanto o número de estrelas no céu, o  paraíso celeste foi palco de um terrível levante. Um grupo de anjos  guerreiros,  amantes da justiça e da liberdade, desafiou a tirania dos poderosos  arcanjos, levantando armas contra seus opressores. Expulsos, os  renegados foram  forçados ao exílio e condenados a vagar pelo mundo dos homens até o Dia  do Juízo Final. Mas eis que chega o momento do Apocalipse, o tempo do  ajuste  de contas. Único sobrevivente do expurgo, Ablon, o líder dos renegados, é  convidado por Lúcifer, o Arcanjo Negro, a se juntar às suas legiões na  Batalha do Armagedon, o embate final entre o céu e o inferno, a guerra  que decidirá não só o destino do mundo, mas o futuro da humanidade. Das  ruínas  da Babilônia ao esplendor do Império Romano, das vastas planícies da  China aos gelados castelos da Inglaterra medieval, A Batalha do  Apocalipse não é  apenas uma viagem pela história humana &ndash; é também uma jornada de  conhecimento, um épico empolgante, repleto de lutas heroicas, magia,  romance e  suspense.</em></p></blockquote>
 
-<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/08/12/habilitando-plugins-no-chromium/">Habilitando Plugins No Chromium</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-08-12T09:55:34-03:00" pubdate data-updated="true">Aug 12<span>th</span>, 2009</time>
-        
-         | <a href="/blog/2009/08/12/habilitando-plugins-no-chromium/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2009/08/chromium-browser.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/08/chromium-browser-300x300.png" alt="chromium-browser" /></a><strong>T</strong>odos que visitam meu blog já devem estar cansados de saber que estou bastante atento ao projeto chromium e ajudando com o possível para o desenvolvimento e divulgação do mesmo.</p>
-
-<p><strong>B</strong>om, eu já havia notificado aqui o fato de que o chromium passou a ter suporte à plugins como o flash por exemplo. De fato ele já suporta os plugins, mas muitos estão me procurando para perguntar porque o chromium cortou o suporte aos plugins, visto que nas builds mais recentes do chromium o suporte parece ter sido cortado, visto que os plugins não estão funcionando a princípio.</p>
-
-<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2009/08/shot_chromium.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/08/shot_chromium-300x187.png" alt="shot_chromium" /></a></p>
-
-<p><strong>M</strong>as, porque o meu funciona e o seu não?</p>
-
-<p><strong>N</strong>ão é mágica..nem feitiçaria.. Vamos à realidade.</p>
-
-<p><strong>O</strong> suporte do chromium aos plugins ainda não está 100% homologado, o que resulta em alguns bugs e falhas, podendo acarretar em uso excessivo de processamento ou outros recursos de sua máquina em alguns casos. Sabendo disso, o projeto chromium adotou a posição de não tornar o suporte à plugins uma opção &ldquo;default&rdquo;.</p>
-
-<p><strong>P</strong>ara utilizar os plugins em seu chromium você precisa iniciar o seu chromium com o seguinte parâmetro:</p>
-
-<p>$ chromium-browser &mdash;enable-plugins</p>
-
-<p><strong>L</strong>embrando que nestas novas builds do chromium não existe mais a necessidade de criar os links simbólicos para os plugins. Ele já detecta automaticamente os plugins que você tem instalados.</p>
-
-<p><strong>P</strong>ara testar, pode abrir o seguinte endereço ou mesmo acessar algo como o youtube:</p>
-
-<p>about:plugins</p>
-
-<p><strong>C</strong>aso você ainda não tenha o chromium instalado em sua máquina pode buscar informações na internet sobre como o fazer em sua distro. Caso use Archlinux, pode seguir os passos abaixo:</p>
-
-<p><strong>1-</strong> Adicione o repositório brasileiro em sua lista de mirrors. Adicione as seguintes linhas em seu arquivo /etc/pacman.conf :</p>
-
-<p>[archlinuxbr]
-Server = <a href="http://repo.archlinux-br.org/i686">http://repo.archlinux-br.org/i686</a></p>
-
-<p>ou</p>
-
-<p>[archlinuxbr]
-Server = <a href="http://repo.archlinux-br.org/x86_64">http://repo.archlinux-br.org/x86_64</a></p>
-
-<p><strong>2- </strong>Atualize seus mirrors e instale o chromium:</p>
-
-<h1>pacman -Sy</h1>
-
-<h1>pacman -S chromium-snapshot</h1>
-
-<p><strong>F</strong>eito!</p>
-
-<p><strong>B</strong>om proveito&hellip;</p>
-
-<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/08/05/de-volta-e-com-kde-43/">De Volta.. E Com KDE 4.3 ;]</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-08-05T14:53:05-03:00" pubdate data-updated="true">Aug 5<span>th</span>, 2009</time>
-        
-         | <a href="/blog/2009/08/05/de-volta-e-com-kde-43/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/162_kde.jpg"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/162_kde.jpg" alt="162_kde" /></a></p>
-
-<p><strong>S</strong>audações pessoal&hellip;</p>
-
-<p><strong>E</strong>stive meio ausente nos últimos dias por problemas com minha máquina. Recentemente meu hd queimou e acabei ficando meio &ldquo;inativo&rdquo;. Ontem consegui reinstalar todo o meu sistema operacional (Archlinux) e restaurar todos os meus backups.</p>
-
-<p><strong>A</strong>gora sim.. Atividade novamente. ;]</p>
-
-<p><strong>D</strong>e quebra, volto com uma boa notícia.</p>
-
-<p><strong>F</strong>ans de KDE e usuários do Archlinux podem, desde ontem, comemorar o lançamento do KDE 4.3 que se deu ontem e já se encontra inclusive nos repositórios oficiais do Archlinux.</p>
-
-<p><strong>E</strong>sta nova versão do KDE conta com várias mudanças no que diz respeito a correção de bugs, mas também em aparência e funcionalidades.</p>
-
-<p><strong>O</strong> design e os efeitos estão bem mais atraentes como por exemplo a vizualização de pastas de imagens com previews como na imagem a seguir.</p>
-
-<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2009/08/kde43-1.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/08/kde43-1-300x177.png" alt="kde43-1" /></a></p>
-
-<p><strong>O</strong>utro efeito que muito me chamou a atenção, é a possibilidade de vizualizar e navegar entre arquivos e diretórios que se encontrem em minha área de trabalho apenas por passar o mouse em cima e segurar por um segundo, me possibilitando ver o conteúdo daquela determinada pasta bem como interagir com ela. Ao tirar o mouse de cima, ela some novamente. ;] Confira a imagem a seguir:</p>
-
-<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2009/08/kde43-2.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/08/kde43-2-300x214.png" alt="kde43-2" /></a></p>
-
-<p><strong>P</strong>ara quem, assim como eu, gosta de notas rápidas em seu desktop, o knotes continua surpreendendo, trazendo agora as funções de negrito, sublinhado, centralizado, etc..</p>
-
-<p><img src="file:///tmp/moz-screenshot.png" alt="" /><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2009/08/kde43-3.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/08/kde43-3-300x244.png" alt="kde43-3" /></a></p>
-
-<p><strong>M</strong>uitas outras coisas novas surgiram, bem como efeitos de área, etc, etc, etc..</p>
-
-<p><strong>S</strong>em mais comentários, experimente e confira as novidades.</p>
-
-<p><strong>S</strong>e você já possui o kde 4.2 em seu archlinux, pode simplesmente atualizar com o seguinte comando:</p>
-
-<h1>pacman -Syu</h1>
-
-<p><strong>C</strong>aso ainda não tenha, instale com:</p>
-
-<h1>pacman -S kde</h1>
-
-<p><strong>A</strong>braços<img src="file:///tmp/moz-screenshot-1.png" alt="" /></p>
-
-<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/07/16/recomendacao-bibliografica-do-mes-o-vampiro-rei-vol-i/">Recomendação Bibliográfica Do Mês: O Vampiro Rei - Vol I</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-07-16T15:23:28-03:00" pubdate data-updated="true">Jul 16<span>th</span>, 2009</time>
-        
-         | <a href="/blog/2009/07/16/recomendacao-bibliografica-do-mes-o-vampiro-rei-vol-i/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2009/07/livro.jpeg"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/07/livro.jpeg" alt="livro" /></a></p>
-
-<p><strong>M</strong>ais uma vez venho trazendo como recomendação bibliográfica um livro do autor André Vianco. Acho que todos aqui já perceberam que sou fan do trabalho do cara. ;]</p>
-
-<p><strong>O</strong> livro do mês se chama O Vampiro Rei &ndash; Vol I.</p>
-
-<p><strong>C</strong>omo o nome já diz, é uma história sobre vampiros. Para quem gosta de histórias e contos sobre estes seres da noite, os livros de André Vianco são ótimas opções para algumas horas de entretenimento. Livros bem escritos com histórias diferenciadas e contextos abrangentes.</p>
-
-<p><strong>E</strong>ste livro é o começo desta história que se passa no Brasil onde 31 guerreiros &ldquo;escolhidos&rdquo;, chamados Bentos, juntam-se, conforme dizia a antiga profecia, para atacar e destruir os covís de vampiros que se encontram espalhados pela Terra. Em tais covís, os vampiros fazem reféns seres humanos como forma de manter um &ldquo;banco de sangue&rdquo; para sua alimentação.</p>
-
-<p><strong>E</strong>ntre várias investidas, os Bentos acabam atacando um covil atrás do outro, muitas vezes sendo surpreendidos pela organização e formas de defesa apresentadas por estas criaturas noturnas que também se preparam e previnem contra tais ataques, buscando continuar no poder sob as comunidades.</p>
-
-<p><strong>S</strong>egue uma pequena descrição retirada da livraria saraiva:</p>
-
-<blockquote><p>Lúcio, o escravo de Cantarzo, carrega seu mestre vampiro encerrado numa caixa de madeira. Sua missão é levá-lo até Tereza, uma bruxa que vive ao norte do Brasil, que fará com que Cantarzo desperte e se torne o rei dos vampiros. Com poucas pistas sobre o real paradeiro da tal bruxa, o lacaio do vampiro começa uma jornada que trará resultados nefastos, caso alcance seu objetivo.
-Do lado dos humanos, bento Lucas faz crescer em seus semelhantes a chama da esperança, empurrando-os pelos trilhos da reconquista do país até então assolado pelos inimigos noturnos. Os destinos de Lucas e de Cantarzo estão a ponto de se cruzar e nas páginas de &ldquo;O Vampiro-Rei&rdquo;, o leitor se encontrará com um mundo fantástico e assistirá de camarote todo o desenrolar dessa saga inigualável, imaginada e conduzida por André Vianco, o talentoso contador de histórias que vem se destacando no campo da literatura fantástica brasileira.</p></blockquote>
-
-<p><strong>B</strong>oa leitura.</p>
-
-<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/07/09/chromium-ganha-suporte-ao-flash-por-completo/">Chromium Ganha Suporte Ao Flash Por Completo</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-07-09T09:51:06-03:00" pubdate data-updated="true">Jul 9<span>th</span>, 2009</time>
-        
-         | <a href="/blog/2009/07/09/chromium-ganha-suporte-ao-flash-por-completo/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><strong>S</strong>audações pessoal..</p>
-
-<p><strong>E</strong>u já havia postado aqui a notícia sobre o lançamento do navegador Chromium para o Linux, bem como o fato de o mesmo se encontrar disponível em nosso repositório nacional do Arch Linux. Na ocasião o projeto chromium ainda era bem imaturo e não possuía nenhum suporte à plugins. Bom, as coisas estão mudando.</p>
-
-<p><strong>P</strong>ara quem ainda não sabe, Chromium é o projeto open source que serve de base para o já conhecido Chrome do Google.</p>
-
-<p><strong>O</strong>ntem saiu uma nova build do chromium que trás suporte total ao flash, precisando-se apenas criar um link simbólico para o seu já existente plugin flash que se encontra no diretório de seu firefox.</p>
-
-<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2009/07/chromium-flash.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/07/chromium-flash-300x178.png" alt="chromium-flash" /></a></p>
-
-<p><strong>E</strong>sta nova build, já se encontra atualizada em nosso repositório nacional, graças ao nosso amigo <a href="http://matias.archlinux-br.org/">Paulo (aka thotypous)</a>, e você pode instalar, caso ainda não tenha, ou apenas atualizar o seu com os seguintes comandos:</p>
-
-<blockquote><h1>pacman -Sy</h1></blockquote>
-
-<h1>pacman -S chromium-snapshot</h1>
-
-<p><strong>E</strong>stes comandos irão atualizar sua lista de repositórios e em seguida atualizar/instalar seu chromium.</p>
-
-<p><strong>F</strong>eito isto, basta criar o link simbólico para o plugin do flash, seguindo a seguinte sequência de comandos:</p>
-
-<blockquote><p>cd /opt/chromium-browser
-mkdir plugins
-cd plugins
-ln -s /usr/lib/mozilla/plugins/libflashplayer.so .</p></blockquote>
-
-<p><strong>F</strong>eito isto, execute seu chromium e digite no campo de url:</p>
-
-<p>about:</p>
-
-<p><strong>V</strong>ocê verá claramente que o plugin flash está instalado. Agora é só correr pro abraço e testar em sites como o youtube por exemplo.</p>
-
-<p><strong>A</strong>braços</p>
+<p><strong>A</strong>braços!</p>
 
 <p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
 </div>
@@ -764,6 +475,14 @@ Me conheça melhor <a href="http://blog.marcelocavalcante.net/about">clicando aq
     
       <li class="post">
         <a href="/blog/2011/10/11/3c2ba-dia-livre-inscricoes-abertas/">3º Dia Livre - Inscrições abertas</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/09/27/politica-de-senhas-no-linux-senhas-com-data-para-expirar/">Política de senhas no Linux: Senhas com data para expirar!</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/09/13/feliz-dia-do-programador/">Feliz dia do Programador!</a>
       </li>
     
   </ul>

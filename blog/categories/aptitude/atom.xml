@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: aptitude | Marcelo Cavalcante Rocha ~]]></title>
-  <link href="http://kalib.github.io/blog/categories/aptitude/atom.xml" rel="self"/>
-  <link href="http://kalib.github.io/"/>
-  <updated>2013-08-01T14:26:22-03:00</updated>
-  <id>http://kalib.github.io/</id>
+  <link href="http://blog.marcelocavalcante.net/blog/categories/aptitude/atom.xml" rel="self"/>
+  <link href="http://blog.marcelocavalcante.net/"/>
+  <updated>2013-08-01T15:27:43-03:00</updated>
+  <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Vantagem do Aptitude sobre o Apt-Get]]></title>
-    <link href="http://kalib.github.io/blog/2008/05/03/vantagem-do-aptitude-sobre-o-apt-get/"/>
+    <link href="http://blog.marcelocavalcante.net/blog/2008/05/03/vantagem-do-aptitude-sobre-o-apt-get/"/>
     <updated>2008-05-03T11:45:00-03:00</updated>
-    <id>http://kalib.github.io/blog/2008/05/03/vantagem-do-aptitude-sobre-o-apt-get</id>
+    <id>http://blog.marcelocavalcante.net/blog/2008/05/03/vantagem-do-aptitude-sobre-o-apt-get</id>
     <content type="html"><![CDATA[<p><a href="http://1.bp.blogspot.com/_5kfJplBiYy0/SBx_jVJ9LUI/AAAAAAAAACU/1E4XfQHm1SY/s1600-h/Swirl.jpg"><img src="http://1.bp.blogspot.com/_5kfJplBiYy0/SBx_jVJ9LUI/AAAAAAAAACU/1E4XfQHm1SY/s320/Swirl.jpg" alt="" /></a></p>
 
 <p>Novamente estou aqui para lhes passar uma pequena dica que para muitos pode nem ser novidade, porém para alguns a dúvida pode existir.</p>

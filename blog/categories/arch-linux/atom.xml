@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Arch Linux | Marcelo Cavalcante Rocha ~]]></title>
-  <link href="http://kalib.github.io/blog/categories/arch-linux/atom.xml" rel="self"/>
-  <link href="http://kalib.github.io/"/>
-  <updated>2013-08-01T14:26:22-03:00</updated>
-  <id>http://kalib.github.io/</id>
+  <link href="http://blog.marcelocavalcante.net/blog/categories/arch-linux/atom.xml" rel="self"/>
+  <link href="http://blog.marcelocavalcante.net/"/>
+  <updated>2013-08-01T15:27:43-03:00</updated>
+  <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Política de senhas no Linux: Senhas com data para expirar!]]></title>
-    <link href="http://kalib.github.io/blog/2011/09/27/politica-de-senhas-no-linux-senhas-com-data-para-expirar/"/>
+    <link href="http://blog.marcelocavalcante.net/blog/2011/09/27/politica-de-senhas-no-linux-senhas-com-data-para-expirar/"/>
     <updated>2011-09-27T11:14:12-03:00</updated>
-    <id>http://kalib.github.io/blog/2011/09/27/politica-de-senhas-no-linux-senhas-com-data-para-expirar</id>
+    <id>http://blog.marcelocavalcante.net/blog/2011/09/27/politica-de-senhas-no-linux-senhas-com-data-para-expirar</id>
     <content type="html"><![CDATA[<p><a href="http://www.marcelocavalcante.net/portal/wp-content/uploads/2011/09/1197557350_90927cc5492.jpg"><img src="http://www.marcelocavalcante.net/portal/wp-content/uploads/2011/09/1197557350_90927cc5492.jpg" alt="" /></a></p>
 
 <p><strong>J</strong>á é sabido que a maior vulnerabilidade dentro das empresas ou mesmo computadores pessoais são justamente os próprios funcionários ou usuários.</p>
@@ -155,9 +155,9 @@
   
   <entry>
     <title type="html"><![CDATA[Wicd-KDE - Tornando seu Wicd no KDE mais amigável]]></title>
-    <link href="http://kalib.github.io/blog/2011/04/28/wicd-kde-tornando-seu-wicd-no-kde-mais-amigavel/"/>
+    <link href="http://blog.marcelocavalcante.net/blog/2011/04/28/wicd-kde-tornando-seu-wicd-no-kde-mais-amigavel/"/>
     <updated>2011-04-28T09:29:35-03:00</updated>
-    <id>http://kalib.github.io/blog/2011/04/28/wicd-kde-tornando-seu-wicd-no-kde-mais-amigavel</id>
+    <id>http://blog.marcelocavalcante.net/blog/2011/04/28/wicd-kde-tornando-seu-wicd-no-kde-mais-amigavel</id>
     <content type="html"><![CDATA[<p><strong>S</strong>audações pessoal,</p>
 
 <p><strong>P</strong>ara aqueles que também não curtem de forma alguma a aparência padrão GTK do Wicd e não conhecem ainda a interface que foi lançada posteriormente em QT, fica a dica: Troquem com urgência!</p>
@@ -228,9 +228,9 @@
   
   <entry>
     <title type="html"><![CDATA[PROCURA-SE: Usuários de Arch Linux no Ceará]]></title>
-    <link href="http://kalib.github.io/blog/2011/04/26/procura-se-usuarios-de-arch-linux-no-ceara/"/>
+    <link href="http://blog.marcelocavalcante.net/blog/2011/04/26/procura-se-usuarios-de-arch-linux-no-ceara/"/>
     <updated>2011-04-26T10:20:12-03:00</updated>
-    <id>http://kalib.github.io/blog/2011/04/26/procura-se-usuarios-de-arch-linux-no-ceara</id>
+    <id>http://blog.marcelocavalcante.net/blog/2011/04/26/procura-se-usuarios-de-arch-linux-no-ceara</id>
     <content type="html"><![CDATA[<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/04/procurase.jpg"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/04/procurase.jpg" alt="" /></a></p>
 
 <p><strong>S</strong>e você é ou conhece algum usuário de <a href="http://archlinux.org/">Arch Linux</a> aqui no Ceará, favor entrar em contato.</p>
@@ -255,9 +255,9 @@
   
   <entry>
     <title type="html"><![CDATA[Como? Download de webcasts mms e rtmp?]]></title>
-    <link href="http://kalib.github.io/blog/2011/04/20/como-download-de-webcasts-mms-e-rtmp/"/>
+    <link href="http://blog.marcelocavalcante.net/blog/2011/04/20/como-download-de-webcasts-mms-e-rtmp/"/>
     <updated>2011-04-20T08:51:46-03:00</updated>
-    <id>http://kalib.github.io/blog/2011/04/20/como-download-de-webcasts-mms-e-rtmp</id>
+    <id>http://blog.marcelocavalcante.net/blog/2011/04/20/como-download-de-webcasts-mms-e-rtmp</id>
     <content type="html"><![CDATA[<p><a href="http://www.ogilvy.co.uk/neo/files/2008/03/webcast-pic.png"><img src="http://www.ogilvy.co.uk/neo/files/2008/03/webcast-pic.png" alt="" /></a></p>
 
 <p><strong>C</strong>ansado de apenas poder assistir aquele webcast ou vídeo-aula online? E se estiver em um local sem conec﻿tividade? Porque dor de cabeça? Sou usuário Linux! Obrigado por ter a ideia de criar o Linux e facilitar nossas vidas Linus. ;]</p>
@@ -332,9 +332,9 @@
   
   <entry>
     <title type="html"><![CDATA[Flisol Quixadá - Relato e Parabéns]]></title>
-    <link href="http://kalib.github.io/blog/2011/04/13/flisol-quixada-relato-e-parabens/"/>
+    <link href="http://blog.marcelocavalcante.net/blog/2011/04/13/flisol-quixada-relato-e-parabens/"/>
     <updated>2011-04-13T15:06:54-03:00</updated>
-    <id>http://kalib.github.io/blog/2011/04/13/flisol-quixada-relato-e-parabens</id>
+    <id>http://blog.marcelocavalcante.net/blog/2011/04/13/flisol-quixada-relato-e-parabens</id>
     <content type="html"><![CDATA[<p>[caption id=&ldquo;&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;347&rdquo; caption=&ldquo;Banner do Flisol quixadá&rdquo;]<a href="http://www.sertaoemrede.org.br/fotos/38_86281302470956.jpg"><img src="http://www.sertaoemrede.org.br/fotos/38_86281302470956.jpg" alt="" /></a>[/caption]</p>
 
 <p><strong>S</strong>audações galera!</p>

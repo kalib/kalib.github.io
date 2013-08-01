@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Segurança Digital | Marcelo Cavalcante Rocha ~]]></title>
-  <link href="http://kalib.github.io/blog/categories/seguranca-digital/atom.xml" rel="self"/>
-  <link href="http://kalib.github.io/"/>
-  <updated>2013-08-01T14:26:22-03:00</updated>
-  <id>http://kalib.github.io/</id>
+  <link href="http://blog.marcelocavalcante.net/blog/categories/seguranca-digital/atom.xml" rel="self"/>
+  <link href="http://blog.marcelocavalcante.net/"/>
+  <updated>2013-08-01T15:27:43-03:00</updated>
+  <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Lançada a primeira edição da Revista Segurança Digital]]></title>
-    <link href="http://kalib.github.io/blog/2011/07/01/lancada-a-primeira-edicao-da-revista-seguranca-digital/"/>
+    <link href="http://blog.marcelocavalcante.net/blog/2011/07/01/lancada-a-primeira-edicao-da-revista-seguranca-digital/"/>
     <updated>2011-07-01T08:14:54-03:00</updated>
-    <id>http://kalib.github.io/blog/2011/07/01/lancada-a-primeira-edicao-da-revista-seguranca-digital</id>
+    <id>http://blog.marcelocavalcante.net/blog/2011/07/01/lancada-a-primeira-edicao-da-revista-seguranca-digital</id>
     <content type="html"><![CDATA[<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/07/1_edicao_julho_2011.jpg"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/07/1_edicao_julho_2011.jpg" alt="" /></a></p>
 
 <p><strong>S</strong>audações pessoal.</p>
