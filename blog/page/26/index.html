@@ -9,7 +9,7 @@
   <meta name="author" content="Marcelo Cavalcante Rocha - Kalib">
 
   
-  <meta name="description" content="Pois é pessoal. Quem ainda tem coragem de dizer que o Google não vai dominar o mundo? Brincadeiras a parte, o que parecia apenas boato de internet, &hellip;">
+  <meta name="description" content="Para quem é membro antigo da casa(Tux-CE), teve a chance de presenciar a última competição que contou com a presença de lendas vivas na Tux-CE como o &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -67,6 +67,60 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/09/12/v-competicao-de-boliche-da-tux-ce/">V Competição De Boliche Da Tux-CE</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-09-12T09:49:00-03:00" pubdate data-updated="true">Sep 12<span>th</span>, 2008</time>
+        
+         | <a href="/blog/2008/09/12/v-competicao-de-boliche-da-tux-ce/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://3.bp.blogspot.com/_5kfJplBiYy0/SMpmfjTU1DI/AAAAAAAAAIo/kvwfK8TYpnc/s1600-h/caue_boliche_650px_black.jpg"><img src="http://3.bp.blogspot.com/_5kfJplBiYy0/SMpmfjTU1DI/AAAAAAAAAIo/kvwfK8TYpnc/s320/caue_boliche_650px_black.jpg" alt="" /></a>Para quem é membro antigo da casa(<a href="http://www.tux-ce.org/">Tux-CE</a>), teve a chance de presenciar a última competição que contou com a presença de lendas vivas na Tux-CE como o moonnight e o Mestre NGD. Figuras estas que ainda são desconhecidas para muitos dos novos membros da Tux-CE.</p>
+
+<p>Estamos agora marcando nossa V Competição de Boliche que servirá como momento de descontração entre os membros da Tux-CE.</p>
+
+<p>Data: Domingo 14/09</p>
+
+<p>Horário: 16:00</p>
+
+<p>Local: Boliche do North Shopping</p>
+
+<p>Espero sua presença lá. Não tenha medo&hellip;apesar das nossas caras, ninguém aqui morde&hellip; :p</p>
+
+<p>Se você desejar, pode conferir as fotos da última competição de boliche da Tux-CE no seguinte link: <a href="http://www.tux-ce.org/portal/image/tid/9">http://www.tux-ce.org/portal/image/tid/9</a></p>
+
+<p>Abraços</p>
+
+<p><img src="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif" alt="" /></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -366,148 +420,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2008/08/03/instalacao-do-kdemod-41-no-arch-linux/">Instalação Do KDEmod 4.1 No Arch Linux</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2008-08-03T10:07:00-03:00" pubdate data-updated="true">Aug 3<span>rd</span>, 2008</time>
-        
-         | <a href="/blog/2008/08/03/instalacao-do-kdemod-41-no-arch-linux/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Creio que todos os usuários de Arch Linux conhecem ou já ouviram falar do <a href="http://hugodoria.org/">Hugo Doria</a>. O Hugo é um dos maiores representantes do Arch Linux no Brasil e um dos atuais desenvolvedores do mesmo.</p>
-
-<p>Este artigo sobre instalação do KDEmod 4.1 foi escrito por ele e resolvi postar aqui para que possamos atingir mais público ainda. Quanto mais a informação correr, melhor. ;]</p>
-
-<p>Introdução</p>
-
-<p>No <em>Arch Linux</em> o KDE é empacotado de um jeito que eu não curto. Nele, diversas aplicações são &ldquo;englobadas&rdquo; em um só pacote (isso é o padrão na maioria das distribuições).</p>
-
-<p>Ao instalar o pacote <em>kdegraphics</em>, por exemplo, você acaba instalando diversas aplicações para manipulação gráfica. Mesmo que você queira apenas a &ldquo;aplicação x&rdquo; daquele pacote será obrigado a instalar o kdegraphics todo. Isso torna o KDE enorme e com diversas aplicações que você nunca usa.<a href="http://bp3.blogger.com/_5kfJplBiYy0/SJWvv3vtmLI/AAAAAAAAAFM/snVgZsrb6Us/s1600-h/thumb_kdemod41.png"><img src="http://bp3.blogger.com/_5kfJplBiYy0/SJWvv3vtmLI/AAAAAAAAAFM/snVgZsrb6Us/s200/thumb_kdemod41.png" alt="" /></a></p>
-
-<p>A solução para isto é usar o <a href="http://www.kdemod.ath.cx/">KDEMod</a>, um projeto que visa fornecer uma instalação modular do KDE e otimizada para o Arch Linux.</p>
-
-<p>NOTA: Não há planos para portar o KDEMod para outras distribuições.</p>
-
-<p>Instalação</p>
-
-<p>O primeiro passo a ser feito é remover toda e qualquer instalação do <em>KDEMod</em> anterior. Faça isso com:</p>
-
-<blockquote><h1>pacman -Rscn kdemod-complete</h1></blockquote>
-
-<p>Se você já está usando as versões betas do kdemod4, também faça:</p>
-
-<blockquote><h1>pacman -Rscn kdemod4-complete</h1></blockquote>
-
-<p>Verifique se tudo relacionado ao kde foi removido com:</p>
-
-<blockquote><h1>pacman -Q | grep kde</h1></blockquote>
-
-<p>Se aparecer algo, pode remover. Uma maneira mais direta de fazer isto é executando:</p>
-
-<blockquote><h1>pacman -Q | grep -i &ldquo;kde|qt&rdquo; | cut -d &ldquo; &rdquo; -f1 | xargs pacman -Rd</h1></blockquote>
-
-<p>É preciso, também, remover os arquivos de configuração do kdemod 3 e 4 anteriores, já que eles são incompatíveis com a nova versão:</p>
-
-<blockquote><p>$ rm -rf ~/.kde<em> ~/.kdemod</em></p></blockquote>
-
-<p>NOTA: Ao invés de removê-los eu sugiro que você faça um backup.</p>
-
-<p>Pronto, seu sistema está limpo e agora podemos instalar a nova versão sem problemas. Abra o arquivo <em>/etc/pacman.conf</em> com seu editor preferido e adicione:</p>
-
-<blockquote><p>[kdemod-core]</p></blockquote>
-
-<p>Server = <a href="http://kdemod.ath.cx/repo/core/i686">http://kdemod.ath.cx/repo/core/i686</a></p>
-
-<blockquote></blockquote>
-
-<p>NOTA:</p>
-
-<ul>
-<li>Remove qualquer entrada referente ao [kdemod] ou ao [kdemod-unstable]</li>
-</ul>
-
-
-<p>Para instalar o KDEMod faça:</p>
-
-<blockquote><h1>pacman -Sy kdemod</h1></blockquote>
-
-<p>Se quiser o kdemod completo faça:</p>
-
-<blockquote><h1>pacman -Sy kdemod-complete</h1></blockquote>
-
-<p>Seu KDEMod está pronto para uso. :) Para usá-lo basta editar seu ~/.xinitrc ou iniciar o kdm (gerenciador de login do KDE) com:</p>
-
-<blockquote><h1>/etc/rc.d/kdm restart</h1></blockquote>
-
-<p>O primeiro boot do KDE 4 demora um pouco, mas depois melhora. Portanto, não se preocupe.</p>
-
-<p>Caso você queira seu ambiente em português instale o pacote abaixo:</p>
-
-<blockquote><h1>pacman -Sy kdemod-kde-l10n-pt_br</h1></blockquote>
-
-<p>E selecione seu idioma nas configurações do KDE.</p>
-
-<p>Pacotes Adicionais</p>
-
-<p>Agora existe um repositório com alguns pacotes adicionais para o KDE (aplicativos, plasmoids etc). Para usá-lo adicione as seguintes linhas ao <em>/etc/pacman.conf</em>:</p>
-
-<blockquote><p>[kdemod-extragear]</p></blockquote>
-
-<p>Server = <a href="http://kdemod.ath.cx/repo/extragear/i686">http://kdemod.ath.cx/repo/extragear/i686</a></p>
-
-<blockquote></blockquote>
-
-<p>E sincronize a base de dados dos pacotes:</p>
-
-<blockquote><h1>pacman -Sy</h1></blockquote>
-
-<p>Para visualizar o que existe neste repositório faça:</p>
-
-<blockquote><h1>pacman -Sl kdemod-extragear</h1></blockquote>
-
-<p>Por enquanto ainda existem poucos pacotes neste repositório, mas vários outros estão sendo adicionados.</p>
-
-<p>Bem, é isso. Agora é só você aproveitar seu KDEMod 4. No momento que estou escrevendo este artigo ele se encontra na versão 4.1 e já está ficando fantástico.</p>
-
-<p>Maiores informações:</p>
-
-<ul>
-<li><a href="http://www.kdemod.ath.cx/">http://www.kdemod.ath.cx/</a></li>
-</ul>
-
-
-<p>Deixo aqui os agradecimentos ao Hugo em nome de todos pela contribuição.</p>
-
-<p><img src="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif" alt="" /></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/27/">&larr; Anteriores</a>
@@ -532,6 +444,10 @@ Me conheça melhor <a href="http://blog.marcelocavalcante.net/about">clicando aq
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/08/01/renascimento-dot-dot-dot-de-cara-nova/">Renascimento&#8230;de cara nova</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/02/06/recomendacao-bibliografica-mago-e-vidro-a-torre-negra-iv/">Recomendação Bibliográfica: Mago e Vidro (A Torre Negra - IV)</a>
       </li>
     
@@ -553,10 +469,6 @@ Me conheça melhor <a href="http://blog.marcelocavalcante.net/about">clicando aq
     
       <li class="post">
         <a href="/blog/2011/09/27/politica-de-senhas-no-linux-senhas-com-data-para-expirar/">Política de senhas no Linux: Senhas com data para expirar!</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2011/09/13/feliz-dia-do-programador/">Feliz dia do Programador!</a>
       </li>
     
   </ul>

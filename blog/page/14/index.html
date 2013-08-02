@@ -9,7 +9,7 @@
   <meta name="author" content="Marcelo Cavalcante Rocha - Kalib">
 
   
-  <meta name="description" content="Sim, adoro livros com histórias macabras. Suspense e ficção sempre me chamaram bastante atenção. A escolha deste mês se chama O Jardim de Ossos. Um &hellip;">
+  <meta name="description" content="Quem está utilizando o Archlinux devidamente atualizado, pode ter percebido alguns erros relacionados à libjpeg.so ao tentar executar alguma &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -67,6 +67,72 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/08/19/erro-com-a-libjpeg-resolvendo-no-archlinux/">Erro Com a Libjpeg.. Resolvendo No Archlinux</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-08-19T10:12:02-03:00" pubdate data-updated="true">Aug 19<span>th</span>, 2009</time>
+        
+         | <a href="/blog/2009/08/19/erro-com-a-libjpeg-resolvendo-no-archlinux/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img src="http://www.adslgr.com/forum/picture.php?albumid=214&amp;pictureid=1984" alt="" /></p>
+
+<p><strong>Q</strong>uem está utilizando o <a href="http://archlinux.org">Archlinux</a> devidamente atualizado, pode ter percebido alguns erros relacionados à libjpeg.so ao tentar executar alguma aplicação, como foi o meu caso com o <a href="http://www.floola.com">floola</a>, um gerenciador para meu ipod com o qual transfiro e manipulo minhas músicas pelo linux.</p>
+
+<p><strong>O</strong> problema se deu pelo fato de o Archlinux já ter adotado a nova libjpeg. Esta versão 7 possui algumas vantagens em relação a versão anterior, porém muitos aplicativos ainda não foram atualizados para esta nova versão. Este foi o caso do floola por exemplo, que só funciona com a libjpeg6.</p>
+
+<p><strong>S</strong>egue uma dica simples e rápida para resolver este pequeno problema.</p>
+
+<p><strong>1-</strong> Baixe o pacote da libjpeg6 diretamente do <a href="http://aur.archlinux.org">AUR</a> através do seguinte link:</p>
+
+<blockquote><p><a href="http://aur.archlinux.org/packages/libjpeg6/libjpeg6.tar.gz">http://aur.archlinux.org/packages/libjpeg6/libjpeg6.tar.gz</a></p></blockquote>
+
+<p><strong>2-</strong> Descompacte o arquivo:</p>
+
+<blockquote><p>[kalib@tuxcaverna downloads]$ tar -xvzf libjpeg6.tar.gz</p></blockquote>
+
+<p><strong>3-</strong> Entre no diretório libjpeg6, crie e instale o pacote a partir do PKGBUILD extraído:</p>
+
+<blockquote><p>[kalib@tuxcaverna downloads]$ cd libjpeg6/</p></blockquote>
+
+<p>[kalib@tuxcaverna libjpeg6]$ makepkg</p>
+
+<p>[kalib@tuxcaverna libjpeg6]$ pacman -U libjpeg6-6b-6-i686.pkg.tar.gz</p>
+
+<p><strong>F</strong>eito isto, pode executar novamente o software que estava apontando o erro. No meu caso foi o floola. Isto resolverá o seu problema. ;]</p>
+
+<p><strong>A</strong>braços</p>
+
+<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -347,77 +413,6 @@ Do lado dos humanos, bento Lucas faz crescer em seus semelhantes a chama da espe
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/07/09/chromium-ganha-suporte-ao-flash-por-completo/">Chromium Ganha Suporte Ao Flash Por Completo</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-07-09T09:51:06-03:00" pubdate data-updated="true">Jul 9<span>th</span>, 2009</time>
-        
-         | <a href="/blog/2009/07/09/chromium-ganha-suporte-ao-flash-por-completo/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><strong>S</strong>audações pessoal..</p>
-
-<p><strong>E</strong>u já havia postado aqui a notícia sobre o lançamento do navegador Chromium para o Linux, bem como o fato de o mesmo se encontrar disponível em nosso repositório nacional do Arch Linux. Na ocasião o projeto chromium ainda era bem imaturo e não possuía nenhum suporte à plugins. Bom, as coisas estão mudando.</p>
-
-<p><strong>P</strong>ara quem ainda não sabe, Chromium é o projeto open source que serve de base para o já conhecido Chrome do Google.</p>
-
-<p><strong>O</strong>ntem saiu uma nova build do chromium que trás suporte total ao flash, precisando-se apenas criar um link simbólico para o seu já existente plugin flash que se encontra no diretório de seu firefox.</p>
-
-<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2009/07/chromium-flash.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/07/chromium-flash-300x178.png" alt="chromium-flash" /></a></p>
-
-<p><strong>E</strong>sta nova build, já se encontra atualizada em nosso repositório nacional, graças ao nosso amigo <a href="http://matias.archlinux-br.org/">Paulo (aka thotypous)</a>, e você pode instalar, caso ainda não tenha, ou apenas atualizar o seu com os seguintes comandos:</p>
-
-<blockquote><h1>pacman -Sy</h1></blockquote>
-
-<h1>pacman -S chromium-snapshot</h1>
-
-<p><strong>E</strong>stes comandos irão atualizar sua lista de repositórios e em seguida atualizar/instalar seu chromium.</p>
-
-<p><strong>F</strong>eito isto, basta criar o link simbólico para o plugin do flash, seguindo a seguinte sequência de comandos:</p>
-
-<blockquote><p>cd /opt/chromium-browser
-mkdir plugins
-cd plugins
-ln -s /usr/lib/mozilla/plugins/libflashplayer.so .</p></blockquote>
-
-<p><strong>F</strong>eito isto, execute seu chromium e digite no campo de url:</p>
-
-<p>about:</p>
-
-<p><strong>V</strong>ocê verá claramente que o plugin flash está instalado. Agora é só correr pro abraço e testar em sites como o youtube por exemplo.</p>
-
-<p><strong>A</strong>braços</p>
-
-<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/15/">&larr; Anteriores</a>
@@ -442,6 +437,10 @@ Me conheça melhor <a href="http://blog.marcelocavalcante.net/about">clicando aq
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/08/01/renascimento-dot-dot-dot-de-cara-nova/">Renascimento&#8230;de cara nova</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/02/06/recomendacao-bibliografica-mago-e-vidro-a-torre-negra-iv/">Recomendação Bibliográfica: Mago e Vidro (A Torre Negra - IV)</a>
       </li>
     
@@ -463,10 +462,6 @@ Me conheça melhor <a href="http://blog.marcelocavalcante.net/about">clicando aq
     
       <li class="post">
         <a href="/blog/2011/09/27/politica-de-senhas-no-linux-senhas-com-data-para-expirar/">Política de senhas no Linux: Senhas com data para expirar!</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2011/09/13/feliz-dia-do-programador/">Feliz dia do Programador!</a>
       </li>
     
   </ul>

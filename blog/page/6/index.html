@@ -9,7 +9,7 @@
   <meta name="author" content="Marcelo Cavalcante Rocha - Kalib">
 
   
-  <meta name="description" content="Saudações pessoal! Como muitos de vocês já devem saber, estamos nos aproximando do mês de Abril, significando que o Flisol vem aí. Para quem ainda &hellip;">
+  <meta name="description" content="Você sabe o que é rootkit? Nunca vi, nem comi, eu só ouço falar! É um vírus? É um trojan? É um spyware? Não, é um rootkit mesmo. A verdade é que &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -67,6 +67,176 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/03/16/rootkit-esse-bicho-morde-proteja-se/">Rootkit! Esse Bicho Morde? Proteja-se!</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-03-16T16:25:27-03:00" pubdate data-updated="true">Mar 16<span>th</span>, 2011</time>
+        
+         | <a href="/blog/2011/03/16/rootkit-esse-bicho-morde-proteja-se/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/03/malware.jpg"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/03/malware.jpg" alt="" /></a></p>
+
+<p><strong>V</strong>ocê sabe o que é rootkit?</p>
+
+<p><strong>N</strong>unca vi, nem comi, eu só ouço falar!</p>
+
+<p><strong>É</strong> um vírus? É um trojan? É um spyware? Não, é um rootkit mesmo.</p>
+
+<p><strong>A</strong> verdade é que ainda não existe um consenso em relação ao que o rootkit é de fato. Muitos dizem que é um tipo de vírus, alguns dizem que é um trojan, como você chamaria? Eu prefiro chamar de malware, que, ao pé da letra, seria um termo utilizado para algum aplicativo contendo código malicioso. o.O Acho que seria um meio termo aceitável para que possamos utilizar como base.</p>
+
+<p><strong>M</strong>as esse bicho morde? É de comer?</p>
+
+<p><strong>B</strong>om, em tese um Rootkit é um tipo de malware, como expliquei acima, cuja principal intenção é se camuflar, impedindo que seu código seja encontrado por qualquer antivírus.</p>
+
+<p><strong>T</strong>eoricamente, é exatamente isto que ele tenta fazer. Passar despercebido. De fato a grande maioria dos antivírus não são capazes de rastrear Rootkits justamente por conta do seu comportamento. É aí que surgiram ferramentas especializadas neste tipo de busca. Alguns antivírus, os mais caros, já agregam excelentes ferramentas para buscar rootkits. Mas, como eles conseguem se camuflar tão bem?</p>
+
+<p><strong>E</strong>stas aplicações, rootkits, têm a capacidade de interceptar as solicitações feitas ao sistema operacional, podendo alterar o seu resultado.</p>
+
+<p><strong>I</strong>magine que você está utilizando sua máquina e seu sistema operacional solicita a leitura ou abertura de um determinado arquivo, podendo ser a seu mando ou mesmo do antivírus, por exemplo, o rootkit intercepta os dados que são requisitados e faz uma filtragem dessa informação, deixando passar apenas o que ele deseja, ou seja, código não infectado. E o que acontece? O antivírus ou qualquer outra ferramenta ficam impossibilitadas de encontrar o arquivo malicioso ou o código, dependendo do caso.</p>
+
+<p><strong>N</strong>ão é incomum encontrar o Rootkit como não apenas uma aplicação, mas um conjunto de aplicações ou, como também chamamos, toolkit.</p>
+
+<p><strong>R</strong>esumidamente poderíamos dizer que é um programa com código malicioso que busca se esconder de softwares de segurança e do usuário utilizando diversas técnicas avançadas de programação para tal.</p>
+
+<p><strong>G</strong>eralmente escondem suas chaves nos registros do sistema operacional e escondem seus processos no gerenciador de tarefas, o que torna uma missão quase impossível para um usuário identificar por conta própria. Outra prática comum de quem escreve rootkits é fazer com que eles se escondam em drivers de hardware, que são arquivos de sistema fundamentais para que o sistema operacional funcione corretamente com seus dispositivos.</p>
+
+<p><strong>O</strong> nome RootKit é por conta da função para a qual o mesmo é desenvolvido. Primeiramente ele é um kit de funcionalidades e códigos maliciosos cujo objetivo é se infiltrar nos sistemas de forma silenciosa e despercebida, geralmente liberando um  *backdoor para que o invasor possa posteriormente acessar o sistema infectado com privilégios de super usuário ou usuário administrador (root).</p>
+
+<p><strong>P</strong>ara quem nunca ouviu falar em backdoors, a explicação pode ter parecido um tanto quanto confusa, portanto aqui vai a nota de rodapé: Backdoor é, assim como na tradução ao pé da letra, uma porta dos fundos. Uma falha de segurança intencional que possibilita a invasão do seu sistema de forma que o invasor possa ter este acesso e controle com um mínimo de trabalho.</p>
+
+<p><strong>S</strong>em mais papo furado, vamos conhecer algumas ferramentas que buscam rootkits em seu Linux.</p>
+
+<p><img src="http://aboutonlinetips.com/wp-content/uploads/2008/11/picture-rootkit.png" alt="" /></p>
+
+<p><strong>RKHUNTER</strong></p>
+
+<p><strong>A</strong> primeira ferramenta que vou apresentar se chama rkhunter, que é a minha favorita.</p>
+
+<p><strong>S</strong>e, assim como eu, você for usuário do <a href="http://archlinux.org">Arch Linux</a>, poderá encontrar o rkhunter no <a href="http://aur.archlinux.org">AUR</a> através <a href="http://aur.archlinux.org/packages.php?ID=25940">deste link</a>.</p>
+
+<p><strong>A</strong> instalação é simples e segue o padrão de qualquer instalação a partir do AUR, conforme passos abaixo:</p>
+
+<p><strong>1-</strong> Descompacte o arquivo:</p>
+
+<p>[kalib@tuxcaverna downloads]$ tar -xvzf rkhunter.tar.gz</p>
+
+<p><strong>2-</strong> Acesse o diretório criado:</p>
+
+<p>[kalib@tuxcaverna downloads]$ cd rkhunter/</p>
+
+<p><strong>3-</strong> Execute o PKGBUILD para criação do pacote em si:</p>
+
+<p>[kalib@tuxcaverna rkhunter]$ makepkg</p>
+
+<p><strong>4-</strong> Com o pacote criado, basta instalar:</p>
+
+<p>[kalib@tuxcaverna rkhunter]$ sudo pacman -U rkhunter-1.3.8-1-any.pkg.tar.xz</p>
+
+<p><strong>F</strong>eito.</p>
+
+<p><strong>S</strong>eu rkhunter está pronto para ser utilizado, mas como toda e qualquer aplicação de varredura, como antivírus, por exemplo, é sempre recomendado atualizar sua base de dados antes de iniciar a busca, portanto digite o seguinte para atualizar a base com as propriedades dos arquivos existentes:</p>
+
+<h1>rkhunter &mdash;propupd</h1>
+
+<p><strong>E</strong>m seguida é a hora de atualizar a base de dados do rkhunter em si:</p>
+
+<h1>rkhunter &mdash;update</h1>
+
+<p><strong>A</strong>gora, vamos vasculhar o sistema:</p>
+
+<h1>rkhunter -c</h1>
+
+<p><strong>V</strong>ocê terá uma listagem das checagens parecida com esta:</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/03/rkhunter11.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/03/rkhunter11.png" alt="" /></a></p>
+
+<p><strong>P</strong>erceba que é tudo apresentado de forma simples e objetiva.</p>
+
+<p><strong>N</strong>o final da checagem ele gera um arquivo onde ele armazena todas as informações que ele registrou bem como lhe aponta uma descrição dos resultados da busca.</p>
+
+<p><strong>TIGER</strong></p>
+
+<p><strong>E</strong>sta será a nossa segunda ferramenta.</p>
+
+<p><strong>O</strong> Tiger é uma ferramenta de segurança que não pensa tanto na aparência, portanto não espere uma tela tão amigável e colorida quanto a do rkhunter. ;]</p>
+
+<p><strong>A</strong> instalação da mesma no Arch Linux também se dá através do pacote do AUR que pode ser encontra <a href="http://aur.archlinux.org/packages.php?ID=1573">neste link</a>.</p>
+
+<p><strong>A</strong> instalação segue o mesmo procedimento que utilizamos no rkhunter, conforme abaixo:</p>
+
+<p>[kalib@tuxcaverna downloads]$ tar -xvzf tiger.tar.gz</p>
+
+<p>[kalib@tuxcaverna downloads]$ cd tiger/</p>
+
+<p>[kalib@tuxcaverna tiger]$ makepkg</p>
+
+<p>[kalib@tuxcaverna tiger]$ sudo pacman -U tiger-3.2.3-2-x86_64.pkg.tar.xz</p>
+
+<p><strong>F</strong>inalizado. Para executar, basta rodar:</p>
+
+<h1>tiger</h1>
+
+<p><strong>E</strong>le iniciará a busca e lhe trará uma interface como esta:</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/03/rkhunter2.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/03/rkhunter2.png" alt="" /></a></p>
+
+<p><strong>A</strong>ssim como o rkhunter, no ato de finalização ele irá gerar um arquivo com o relatório da checagem. Ele lhe informará o caminho do arquivo, mas provavelmente será em /var/log/tiger/.</p>
+
+<p><strong>CHKROOTKIT</strong></p>
+
+<p><strong>A</strong>gora vamos para a terceira e última ferramenta deste post.</p>
+
+<p><strong>P</strong>ara usuário Arch, desta vez a instalação é ainda mais simples do que as duas anteriores, visto que o pacote já se encontra nos repositórios do pacman.</p>
+
+<p>[kalib@tuxcaverna ~]$ sudo pacman -S chkrootkit</p>
+
+<p><strong>I</strong>nstalado!</p>
+
+<p><strong>A</strong>ssim como o Tiger, o chkroot também possui uma interface simples sem cores ou enfeites, conforme pode ser visto abaixo:</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/03/rkhunter3.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/03/rkhunter3.png" alt="" /></a></p>
+
+<p><strong>A</strong>pesar de não ser colorida e enfeitada, é uma interface bem simples e de fácil entendimento, concordam?</p>
+
+<p><strong>C</strong>laro, não existem apenas estas ferramentas para busca de rootkits e códigos maliciosos, mas levaria muito tempo para escrever sobre todos ou ao menos a maioria.</p>
+
+<p><strong>N</strong>o mais, acho que já é um bom começo para um entendimento básico sobre o que é esse tal Rootkit e o que esse bicho faz.</p>
+
+<p><strong>C</strong>om estas ferramentas as chances de algum rootkit passar despercebido em seu ambiente Linux já são bem limitadas.</p>
+
+<p><strong>A</strong>braços!</p>
+
+<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -604,72 +774,6 @@ naodigo
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/01/27/lancado-kde-4-6-sim-claro-se-voce-usa-arch-voce-nao-precisa-esperar/">Lançado KDE 4.6 - Sim, claro&#8230;se Você Usa Arch Você Não Precisa Esperar!</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-01-27T09:54:19-03:00" pubdate data-updated="true">Jan 27<span>th</span>, 2011</time>
-        
-         | <a href="/blog/2011/01/27/lancado-kde-4-6-sim-claro-se-voce-usa-arch-voce-nao-precisa-esperar/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/01/kde46.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/01/kde46.png" alt="" /></a></p>
-
-<p><strong>&ndash; DEV do Arch, qual é sua missão?</strong></p>
-
-<p><strong>&ndash; Empacotar antes de qualquer distribuição!</strong></p>
-
-<p><strong>&ndash; DEV do Arch o que é que você faz?</strong></p>
-
-<p><strong>&ndash; Eu empacoto coisas que assustam o Satanás!</strong></p>
-
-<p><strong>É</strong> isso aí pessoal, ontem o projeto <a href="http://kde.org">KDE</a> liberou o KDE 4.6 com muitas melhorias e o pessoal do <a href="http://archlinux.org">Arch</a> já saiu na frente, claro. Sim, se você usa Arch, não precisa esperar, pode atualizar seu KDE com o seu rotineiro <em># __pacman -Syu.</em></p>
-
-<p><em><a href="http://kde.org/announcements/4.6/screenshots/46-w09.png"><img src="http://kde.org/announcements/4.6/screenshots/46-w09.png" alt="" /></a></em></p>
-
-<p><strong>D</strong>entre as grandes mudanças, gostaria de destacar o suporte nativo ao UPower, UDev e UDisks que podem ser utilizados ao invés do depreciado HAL. Para isso, o pacote hal deixa de ser uma dependência do kdebase-workspace e pode ser removido do seu sistema.</p>
-
-<p><strong>O</strong>utra novidade é que com a última atualização do Phonon, os DEVs declararam que o backend Xine não será mais mantido e precisará do PulseAudio para funcionar; você realmente deveria pensar em trocar para o GStreamer ou VLC backend.</p>
-
-<p><strong>V</strong>árias melhorias foram implementadas também em contexto geral no Plasma Workspaces que ganhou, dentre outras coisas, um novo sistema de Activities, lhe permitindo uma associação mais fácil de aplicações com atividades específicas e particulares como trabalho ou atividades de casa. Várias mudanças no Kwin, o gerenciador de janelas do Plasma, também foram implementadas para melhorar a performance do mesmo e ao mesmo tempo tornar mais leve para o sistema como um todo.</p>
-
-<p><strong>E</strong> se eu tiver um netbook?</p>
-
-<p><strong>O</strong> KDE 4.6 também trouxe uma série de novos recursos que facilitam e tornam o sistema ainda mais leve para este tipo de usuário. O Plasma Netbook, otimizado para computadores mais portáteis, se tornou ainda mais leve e fácil de se utilizar através de uma tela touchscreen.</p>
-
-<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/01/kde46_1.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/01/kde46_1.png" alt="" /></a></p>
-
-<p><strong>V</strong>árias modificações no dolphin, correções de bugs e aparência também foram implementadas, mas&hellip; se eu for realmente listar todas as modificações, posso acabar perdendo meu emprego, portanto vou apenas lhes deixar o link do site oficial onde podem ser encontradas todas as mudanças desta release: <a href="http://kde.org/announcements/4.6/">http://kde.org/announcements/4.6/</a></p>
-
-<p><strong>A</strong>braços!</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/7/">&larr; Anteriores</a>
@@ -694,6 +798,10 @@ Me conheça melhor <a href="http://blog.marcelocavalcante.net/about">clicando aq
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/08/01/renascimento-dot-dot-dot-de-cara-nova/">Renascimento&#8230;de cara nova</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/02/06/recomendacao-bibliografica-mago-e-vidro-a-torre-negra-iv/">Recomendação Bibliográfica: Mago e Vidro (A Torre Negra - IV)</a>
       </li>
     
@@ -715,10 +823,6 @@ Me conheça melhor <a href="http://blog.marcelocavalcante.net/about">clicando aq
     
       <li class="post">
         <a href="/blog/2011/09/27/politica-de-senhas-no-linux-senhas-com-data-para-expirar/">Política de senhas no Linux: Senhas com data para expirar!</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2011/09/13/feliz-dia-do-programador/">Feliz dia do Programador!</a>
       </li>
     
   </ul>
