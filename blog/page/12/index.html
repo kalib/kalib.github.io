@@ -9,7 +9,7 @@
   <meta name="author" content="Marcelo Cavalcante Rocha - Kalib">
 
   
-  <meta name="description" content="É chegada a hora de mais uma recomendação bibliográfica pessoal. Desta vez trago mais uma com o tema &ldquo;Vampiros&rdquo;. Na verdade a &hellip;">
+  <meta name="description" content="Saudações pessoal&hellip; Já estava na hora eim?! Chromium passando para o repositório [testing] no Arch. Para quem já vem acompanhando este projeto &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -80,6 +80,85 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/12/14/chromium-no-testing-do-arch-linux/">Chromium No [Testing] Do Arch Linux</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-12-14T08:50:42-03:00" pubdate data-updated="true">Dec 14<span>th</span>, 2009</time>
+        
+         | <a href="/blog/2009/12/14/chromium-no-testing-do-arch-linux/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2009/08/chromium-browser.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/08/chromium-browser.png" alt="chromium-browser" /></a></p>
+
+<p><strong>S</strong>audações pessoal&hellip;</p>
+
+<p><strong>J</strong>á estava na hora eim?! Chromium passando para o repositório [testing] no Arch.</p>
+
+<p><strong>P</strong>ara quem já vem acompanhando este projeto desde seu início, tenho o prazer de anunciar esta novidade nos repositórios do Arch.</p>
+
+<p><strong>P</strong>or questões de segurança e estabilidade para os usuários como um todo, resolvemos manter também o pacote em nosso repositório nacional [archlinux-br] para evitar que os usuários do chromium tenham que habilitar o [testing] em seus sistemas correndo alguns riscos por pacotes pouco testados.</p>
+
+<p><strong>A</strong>ssim que o mesmo passar para repositórios mais confiáveis como o [extra], estaremos removendo do repositório nacional.</p>
+
+<p><strong>C</strong>om algumas mudanças nesta versão do pacote, não estamos mais utilizando o snapshot, mas sim a versão já considerada beta do próprio projeto chromium.</p>
+
+<p><strong>P</strong>ara os que já utilizam o repositório [archlinux-br] e já possuem o chromium instalado, basta mandar atualizar seu sistema normalmente com:</p>
+
+<p><em># pacman -Syu</em></p>
+
+<p><strong>P</strong>erceberá que o pacman informará que o chromium-snapshot precisará ser removido para a instalação do chromium. Podem confirmar sem medo algum. Ontem mesmo eu e <a href="http://matias.archlinux-br.org/">thotypous</a> realizamos os últimos testes neste sentido e tudo correrá bem.</p>
+
+<p><strong>P</strong>ara aqueles que ainda não utilizam o repositório [archlinux-br] e ainda não possuem o chromium instalado, a dica é a seguinte:</p>
+
+<p><strong>1-</strong> Habilite o repositório inserindo as seguintes linhas no arquivo /etc/pacman.conf:</p>
+
+<p>_[archlinux-br]
+Server = <a href="http://repo.archlinux-br.org/i686_">http://repo.archlinux-br.org/i686_</a></p>
+
+<p><strong>2-</strong> Atualize seus mirros e instale o chromium:</p>
+
+<p><em># pacman -Sy chromium</em></p>
+
+<p><strong>U</strong>ma terceira opção, indicada para os mais aventureiros, seria habilitar o repositório [testing]. Esta opção eu apenas recomendo para os que estão dispostos a ajudar mais diretamente no desenvolvimento do Arch e que desejem assumir alguns riscos de estabilidade, visto que muitos pacotes ali ainda se encontram em estado de teste. Neste caso, basta descomentar as linhas referente a ele no arquivo /etc/pacman.conf:</p>
+
+<p><em>[testing]
+Include = /etc/pacman.d/mirrorlist</em></p>
+
+<p><strong>F</strong>açam bom proveito pessoal. ;]</p>
+
+<p><strong>U</strong>sem com moderação.. :p
+<strong>A</strong>braços</p>
+
+<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -412,79 +491,6 @@ dia: 14/11/09</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/11/05/ceara-on-rails-2010/">Ceará on Rails 2010</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-11-05T15:13:23-03:00" pubdate data-updated="true">Nov 5<span>th</span>, 2009</time>
-        
-         | <a href="/blog/2009/11/05/ceara-on-rails-2010/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2009/11/logomarca_cearaonrails.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/11/logomarca_cearaonrails.png" alt="logomarca_cearaonrails" /></a></p>
-
-<p><strong>S</strong>audações pessoal, este ano o <a href="http://www.cearaonrails.com.br">Ceará On Rails</a> terá sua segunda edição trazendo uma programação mais extensa em relação à anterior, em 2009.</p>
-
-<p><strong>O</strong> Ruby tem ganho bastante destaque nos últimos anos pela sua praticidade e performance enquanto linguagem para desenvolvimento ágil e simples.</p>
-
-<p><strong>O</strong> Ceará On Rails é um evento que vai trazer boas palestras aos rubistas do Ceará.</p>
-
-<p><strong>O</strong> evento será realizado no dia 7 de Novembro em Fortaleza na Unifor a partir das 14 horas.</p>
-
-<p><strong><img src="http://www.cearaonrails.com.br/images/banners/banner_210x60_participante.gif?1254746565" alt="" />V</strong>alor da entrada? Apenas uma gentil doação de 2 quilos de alimentos não perecíveis (arroz, feijão, açúcar, etc) que serão doados para a instituição <a href="http://www.cearaonrails.com.br/lardeclara">Lar Beneficiente Clara de Assis</a>.</p>
-
-<p><strong>O</strong> que? Você não acredita na comunidade local e acha que os alimentos serão desviados assim como quase tudo no Brasil? ¬¬</p>
-
-<p><strong>B</strong>om, pode relaxar. Pessoas da própria instituição estarão no evento recebendo pessoalmente os alimentos doados.</p>
-
-<p><strong>C</strong>omo grade de programação temos:</p>
-
-<p>Horário</p>
-
-<p>14:00 &ndash; 14:10 .:: Abertura
-14:10 &ndash; 15:00 .:: Clemente Gauer &ndash; Conhecendo seu MAC por dentro
-15:00 &ndash; 15:40 .:: Tiago Bastos &ndash; Ruby FTW
-15:40 &ndash; 16:30 .:: Marcos Tapajós &ndash; Introdução a banco de dados não relacionais e como utilizar CouchDB no Rails
-16:30 &ndash; 17:10 .:: Coffee Break
-17:10 &ndash; 17:30 .:: Alisson Sales &ndash; Vivendo no mundo Rails
-17:30 &ndash; 18:20 .:: Anderson Leite &ndash; Tema a definir
-18:20 &ndash; 19:10 .:: Nando Vieira &ndash; Testando Rails apps com RSpec
-19:10 &ndash; 20:00 .:: Fabio Akita &ndash; Tema a definir
-20:00 &ndash; 20:10 .:: Encerramento</p>
-
-<p><strong>E</strong> então, nos vemos lá?</p>
-
-<p><strong>A</strong>braços</p>
-
-<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/13/">&larr; Anteriores</a>
@@ -509,6 +515,10 @@ Me conheça melhor <a href="http://blog.marcelocavalcante.net/about">clicando aq
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/08/04/rails-girls-em-fortaleza-um-palco-para-a-criatividade-feminina/">Rails Girls em Fortaleza - Um palco para a criatividade feminina</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/08/01/renascimento-dot-dot-dot-de-cara-nova/">Renascimento&#8230;de cara nova</a>
       </li>
     
@@ -530,10 +540,6 @@ Me conheça melhor <a href="http://blog.marcelocavalcante.net/about">clicando aq
     
       <li class="post">
         <a href="/blog/2011/10/11/3c2ba-dia-livre-inscricoes-abertas/">3º Dia Livre - Inscrições abertas</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2011/09/27/politica-de-senhas-no-linux-senhas-com-data-para-expirar/">Política de senhas no Linux: Senhas com data para expirar!</a>
       </li>
     
   </ul>

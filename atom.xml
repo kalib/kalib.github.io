@@ -4,7 +4,7 @@
   <title><![CDATA[Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2013-08-02T16:56:44-03:00</updated>
+  <updated>2013-08-04T12:58:33-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -12,6 +12,52 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Rails Girls em Fortaleza - Um palco para a criatividade feminina]]></title>
+    <link href="http://blog.marcelocavalcante.net/blog/2013/08/04/rails-girls-em-fortaleza-um-palco-para-a-criatividade-feminina/"/>
+    <updated>2013-08-04T12:17:00-03:00</updated>
+    <id>http://blog.marcelocavalcante.net/blog/2013/08/04/rails-girls-em-fortaleza-um-palco-para-a-criatividade-feminina</id>
+    <content type="html"><![CDATA[<p><img class="center" src="http://blog.marcelocavalcante.net/imgs/evolucao_mulher.jpg" title="'evolução feminina'" ></p>
+
+<p><strong>E</strong> se sua namorada/esposa/irmã/mãe/vizinha/filha da vizinha/&hellip; pudesse finalmente entender que tanto código é esse que você digita no computador?</p>
+
+<p><strong>T</strong>alvez esta seja a sua oportunidade.. ou melhor, a dela!</p>
+
+<p><img class="center" src="http://blog.marcelocavalcante.net/imgs/rails_girls.png" title="'rails girls'" ></p>
+
+<h3>Rails Girls</h3>
+
+<iframe src="http://player.vimeo.com/video/17752439" width="400" height="300" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+
+
+<p><strong>O</strong> vídeo acima é da primeira edição, ocorrida na Finlândia, em 2010.</p>
+
+<p><strong>O</strong> Rails Girls é um evento mundial, o qual acontece em datas diferentes em diversas cidades pelo mundo, inclusive <strong>Fortaleza</strong>.</p>
+
+<p><strong>S</strong>eguindo a descrição oficial do evento&hellip;</p>
+
+<blockquote><p><em>Nosso objetivo é dar ferramentas e uma comunidade para que as mulheres entendam tecnologia e desenvolvam suas próprias ideias. Fazemos isto fornecendo uma grande experiência em construção de coisas e tornando a tecnologia mais acessível.</em></p>
+
+<p><em>Aprenda a desenho, prototipação, programação básica e seja apresentada ao mundo da tecnologia. O Rails Girls nasceu na Finlândia, mas hoje em dia é uma comunidade global de voluntários, sem fins lucrativos.</em></p></blockquote>
+
+<p><strong>M</strong>ais uma vez Fortaleza será a sede de um Rails Girls no Brasil.</p>
+
+<p><strong>V</strong>enha participar desse curso, totalmente gratuito, com dois dias intensivos onde poderá aprender muito sobre o mundo do desenvolvimento de software utilizando Ruby on Rails e ver que computador não é &ldquo;coisa de menino&rdquo;.</p>
+
+<p><strong>E</strong> o melhor, você não precisa saber nada sobre programação! Basta ter vontade de aprender coisas novas.</p>
+
+<p><strong>Q</strong>uando? <strong>16-17 de Agosto, 2013</strong></p>
+
+<p><strong>V</strong>enha aprender como desenvolver aplicativos web com a ajuda de excelentes coaches.</p>
+
+<p><strong>V</strong>ocê precisa de um laptop, curiosidade e imaginação.</p>
+
+<p><strong>M</strong>aiores informações, programação e inscrições podem ser feitas <a href="http://railsgirls.com/fortaleza">através deste link</a>.</p>
+
+<p><strong>A</strong>braços!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Renascimento...de cara nova]]></title>
@@ -1259,51 +1305,6 @@ Rua Castro Monte, 1364 Varjota – Fortaleza, CE
 <p><em>rtmpdump -r &ldquo;rtmpe://url_de_origem_do_streaming/arquivo_streaming.wmv&rdquo; -o arquivo.streaming.flv &mdash;resume</em></p>
 
 <p><strong>H</strong>ave fun! ;]</p>
-
-<p><strong>A</strong>braços!</p>
-
-<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Encontros sobre Software Livre? Escolha um nome...]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2011/04/19/encontros-sobre-software-livre-escolha-um-nome/"/>
-    <updated>2011-04-19T14:50:41-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2011/04/19/encontros-sobre-software-livre-escolha-um-nome</id>
-    <content type="html"><![CDATA[<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/04/logo.gif"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/04/logo.gif" alt="" /></a></p>
-
-<p><a href="http://2.bp.blogspot.com/_fCxEYIfdYWY/TIY8qxYiLlI/AAAAAAAAAf4/WAVct3_ZvLA/s320/tux_teacher.png"><img src="http://2.bp.blogspot.com/_fCxEYIfdYWY/TIY8qxYiLlI/AAAAAAAAAf4/WAVct3_ZvLA/s320/tux_teacher.png" alt="" /></a></p>
-
-<p><strong>S</strong>audações pessoal,</p>
-
-<p><strong>A</strong>credito que boa parte, se não praticamente todos, os usuários de Software Livre em nossa região já ouviram falar, ou participaram, do <a href="http://marcelocavalcante.net/portal/2011/04/13/flisol-quixada-relato-e-parabens/">Flisol &ndash; Festival Latino Americano de Instalação de Software Livre</a>.</p>
-
-<p><strong>É</strong> um encontro legal, rolam palestras interessantes e podemos bater um papo com pessoas do ramo, fazendo novos amigos e/ou contatos profissionais. Lado ruim? Acontece apenas uma vez por ano. :/</p>
-
-<p><strong>E</strong> se tivéssemos um encontro com a comunidade local de Software Livre com uma maior regularidade? Que tal 4, 5 ou até mesmo 6 encontros destes por ano?</p>
-
-<p><strong>P</strong>alestras, bate-papo, mesa-redonda, etc.</p>
-
-<p><strong>G</strong>ostou da ideia?</p>
-
-<p><strong>A</strong> <a href="http://www.tux-ce.org">Tux-CE</a> está com uma proposta neste sentido.</p>
-
-<p><strong>A</strong> ideia é termos um mini-evento com maior frequência em nossa região como forma de fortalecer a ideia do Software Livre e ao mesmo tempo aumentar a integração entre nós, usuários e profissionais do ramo. Uma forma de beneficiar a todos. Se você não pode ir hoje, em breve você terá outra chance. Não fica perto da sua casa? Na próxima edição poderá ser mais próximo de você.</p>
-
-<p><strong>A</strong> ideia não é substituir ou concorrer com o Flisol, mesmo porque será um evento infinitamente menor, mas sim somar. Ser uma opção a mais para a nossa comunidade de Software Livre.</p>
-
-<p><strong>U</strong>m evento simples e rápido onde podemos ter palestras e bate papos sobre software livre, linux, cultura hacker, redes, segurança, programação, etc.</p>
-
-<p><strong>P</strong>or se tratar de um evento comunitário, nada mais justo que deixar a comunidade ajudar a moldar o evento como um todo. Acreditamos que o início de tudo, está na escolha do nome.</p>
-
-<p><strong>N</strong>a semana passada coletamos várias sugestões de nomes em nossa lista. Todos os nomes sugeridos, sem excessão, foram inseridos em nossa pesquisa com o mesmo peso.</p>
-
-<p><strong>A</strong>gora chegou a hora de definir o nome.</p>
-
-<p><strong>G</strong>ostaria de ajudar? Sinta-se convidado a votar em nossa enquete que encontra-se na página da <a href="http://www.tux-ce.org/portal/node/717">Tux-CE através deste link</a>.</p>
-
-<p><strong>C</strong>ontamos com o seu voto para nos ajudar a iniciar este movimento.</p>
 
 <p><strong>A</strong>braços!</p>
 
