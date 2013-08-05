@@ -3,6 +3,8 @@ layout: post
 title: "Rails Girls em Fortaleza - Um palco para a criatividade feminina"
 date: 2013-08-04 12:17
 comments: true
+keywords: ruby,rails,fortaleza,evento,girls,programação,mulheres,meninas,rails girls
+description: Evento sobre Ruby on Rails para mulheres em Fortaleza
 categories: 
 - Eventos
 - Ruby

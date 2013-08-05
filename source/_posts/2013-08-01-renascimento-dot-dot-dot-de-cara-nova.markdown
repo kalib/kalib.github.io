@@ -3,7 +3,9 @@ layout: post
 title: "Renascimento...de cara nova"
 date: 2013-08-01 19:45
 comments: true
-categories: Impressões
+keywords: ruby,octopress,blog,marcelocavalcante,marcelo cavalcante,kalib,github pages,html5
+categories:
+- Impressões
 ---
 **E**instein dizia:
 
