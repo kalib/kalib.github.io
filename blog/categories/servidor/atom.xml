@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Servidor | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/blog/categories/servidor/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2013-08-06T13:41:59-03:00</updated>
+  <updated>2013-08-06T13:45:52-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -48,7 +48,7 @@
 
 <p><strong>O</strong> parâmetro -d determina quando a senha do mesmo expira, ou deverá ser trocada. Você pode determinar uma data específica, a qual deve ser indicada no formato AAAA-MM-DD, porém, ao invés da data, o 0 indica que a senha deverá ser trocada após o primeiro login daquele usuário.</p>
 
-<p><strong>S</strong>imples certo?!</p>
+<p><strong>S</strong>imples, certo?!</p>
 ]]></content>
   </entry>
   
