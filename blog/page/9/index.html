@@ -9,7 +9,7 @@
   <meta name="author" content="Marcelo Cavalcante Rocha - Kalib">
 
   
-  <meta name="description" content="Quantas vezes você já foi surpreendido por alguma falha grave em seu sistema de arquivos, disco rígido ou mesmo por vírus (no caso de quem utiliza &hellip;">
+  <meta name="description" content="Se você é da área de tecnologia, com certeza já ouviu falar deste tal Android que vem ganhando cada vez mais notoriedade e mercado no mundo dos &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -80,6 +80,147 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/07/20/que-tal-testar-o-android-em-seu-linux/">Que Tal Testar O Android Em Seu Linux?</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-07-20T14:29:41-03:00" pubdate data-updated="true">Jul 20<span>th</span>, 2010</time>
+        
+         | <a href="/blog/2010/07/20/que-tal-testar-o-android-em-seu-linux/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><strong>S</strong>e você é da área de tecnologia, com certeza já ouviu falar deste tal <a href="http://www.android.com/">Android</a> que vem ganhando cada vez mais notoriedade e mercado no mundo dos smartphones. Não ouviu falar? Sugiro que repense suas escolhas acadêmicas e/ou profissionais. Talvez não tenha feito a escolha certa. Atualize-se.</p>
+
+<p><strong>O</strong> fato é que o Android, como todos já sabemos, é um dos mais &ldquo;populares&rdquo; sistemas operacionais atuais para smartphones. Usei a palavra populares entre aspas pelo fato de ele ainda não ser muito utilizado, porém com certeza é muito citado. Desenvolvido inicialmente pela gigante <a href="http://www.google.com">Google</a>, passando a ser mantido posteriormente pela <a href="http://www.openhandsetalliance.com/">Open Handset Alliance</a>, o Android é um sistema operacional baseado no kernel Linux, permite que qualquer programador desenvolva uma aplicação em java, por exemplo, e controle o dispositivo através de bibliotecas desenvolvidas pela Google.</p>
+
+<p><strong>A</strong>penas recentemente o Android vem ganhando realmente mercado em smartphones e aparelhos genéricos, os famosos xing-lings ou MPx da vida.</p>
+
+<p><strong>E</strong> você? Pensava em testar este tal Android mas não pretendia comprar um smartphone para tal? O Google pensou em você e desenvolveu um emulador SDK para que você possa rodar o Android em sua máquina.</p>
+
+<p><strong>A</strong>qui estarei descrevendo o procedimento para instalação no Linux, porém não possui muita diferença e o processo pode ser facilmente adaptado no caso de usuários do OS X ou Windows.</p>
+
+<p><strong>A</strong>ntes de mais nada preciso informar que ele possui como requisito básico o <a href="http://www.java.com/pt_BR/">Java</a>. Se você não possui java instalado em sua máquina, esta é a hora de o instalar.</p>
+
+<p><strong>P</strong>ara começar, precisamos baixar o emulador SDK disponibilizado pelo google no link: <a href="http://developer.android.com/sdk/index.html">http://developer.android.com/sdk/index.html</a></p>
+
+<p><strong>N</strong>o meu caso, estarei trabalhando em cima da versão para Linux.</p>
+
+<p><strong>O</strong> arquivo baixado está compactado com a extensão .tgz e pode ser descompactado com o comando a seguir:</p>
+
+<p><em>[kalib@tuxcaverna android]$ tar -xvzf android-sdk_r06-linux_86.tgz</em></p>
+
+<p><strong>E</strong>le irá descompactar a pasta android-sdk-linux_86. Entre no diretório e repare que existe um sub-diretório chamado tools dentro dele. Você precisará rodar o executável  android que se encontra lá.</p>
+
+<p><em>[kalib@tuxcaverna tools]$ ./android</em></p>
+
+<p><strong>A</strong> tela a seguir lhe será apresentada.</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and01.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and01.png" alt="" /></a></p>
+
+<p><strong>A</strong>gora precisamos instalar o Android em si, portanto vamos começar vendo a lista de aplicativos disponíveis para instalação.</p>
+
+<p><strong>R</strong>epare que na lateral esquerda existem 5 abas. Vamos trabalhar por enquanto na aba <em>Available Packages</em>. Ao clicar nela, a seguinte tela lhe será apresentada:</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and02.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and02.png" alt="" /></a></p>
+
+<p><strong>C</strong>lique na seta que se encontra ao lado da opção _<a href="https://dl-ssl.google.com/android/repository/repository.xml_">https://dl-ssl.google.com/android/repository/repository.xml_</a></p>
+
+<p><strong>L</strong>he será exibida uma lista de aplicativos disponíveis para instalação, conforme imagem:</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and03.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and03.png" alt="" /></a></p>
+
+<p><strong>N</strong>o meu caso, vou selecionar apenas a versão 2.2 do Android. Mas, sinta-se livre para selecionar e instalar outras que estejam disponibilizadas.</p>
+
+<p><strong>U</strong>ma vez que eu tenha selecionado a box do SDK Platform Android 2.2, API 8, revision 2, basta clicar em <em>Install Selected</em>.</p>
+
+<p><strong>E</strong>le me apresenta uma janela de confirmação. Basta clicar em <em>Accept</em> e em seguida em <em>Install</em>.</p>
+
+<p><strong>S</strong>erá iniciado o download da(s) aplicação(ões) selecionada(s), conforme imagem abaixo.</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and04.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and04.png" alt="" /></a></p>
+
+<p><strong>A</strong>o concluir o download, a tela ficará aguardando que você clique em <strong>Close</strong>, como na imagem a seguir:</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and05.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and05.png" alt="" /></a></p>
+
+<p><strong>A</strong>pós isto, podemos ir para a aba <em>Installed Packages</em>. Lá veremos a lista do que instalamos. No meu caso, apenas o SDK Platform Android 2.2, API 8, revision 2, como na imagem a seguir:</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and06.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and06.png" alt="" /></a></p>
+
+<p><strong>A</strong>gora vamos criar o dispositivo virtual. Clique na primeira aba, <em>Virtual Devices</em>, e em seguida clique no botão <em>New&hellip;</em></p>
+
+<p><strong>L</strong>he será apresentada uma tela pedindo as seguintes informações:</p>
+
+<p>Name: (Nome que deseja dar para este dispositivo virtual)</p>
+
+<p>Target: (Você deve apontar para a API desejada. No meu caso, apontei para o Android 2.2 que instalei)</p>
+
+<p>SD Card: (Aqui você define o tamanho que deseja para o arquivo que será o dispositivo virtual)</p>
+
+<p>Skin: (Nesta opção você poderá definir a resolução que deseja utilizar ou tamaho de tela)</p>
+
+<p>Hardware: (Opções para abstração ou comunicação com o seu hardware)</p>
+
+<p><strong>P</strong>ode preencher de forma parecida com o que eu fiz na imagem a seguir:</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and07.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and07.png" alt="" /></a></p>
+
+<p><strong>F</strong>eito isto, clicamos em <em>Create AVD</em>.</p>
+
+<p><strong>B</strong>ingo, seu dispositivo foi criado e está pronto para uso.</p>
+
+<p><strong>B</strong>asta clicar em cima dele e em seguida pressionar o botão <em>Start&hellip;</em></p>
+
+<p><strong>E</strong> o resultado? Nosso Android dando o seu primeiro boot.</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and081.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and081.png" alt="" /></a></p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and09.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and09.png" alt="" /></a></p>
+
+<p><strong>V</strong>ejamos o menu de principal&hellip;</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and13.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and13.png" alt="" /></a></p>
+
+<p><strong>Q</strong>ue tal testar o browser? Sim, pode testar. Ele já está conectado na internet, caso, obviamente, a sua máquina (hospedeira) esteja conectada. Eles já se comunicam por bridge.</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and10.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and10.png" alt="" /></a></p>
+
+<p><strong>N</strong>ão é que funciona mesmo?!</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and11.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and11.png" alt="" /></a>
+<a href="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and12.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and12.png" alt="" /></a></p>
+
+<p><strong>A</strong>braços!</p>
+
+<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -486,83 +627,6 @@ Dentre outros&hellip;</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/05/03/parabens-kde-brasil-100-traduzido/">Parabéns KDE Brasil! 100% Traduzido</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-05-03T14:58:59-03:00" pubdate data-updated="true">May 3<span>rd</span>, 2010</time>
-        
-         | <a href="/blog/2010/05/03/parabens-kde-brasil-100-traduzido/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2010/05/162_kde.jpg"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2010/05/162_kde.jpg" alt="162_kde" /></a></p>
-
-<p><strong>W</strong>ow&hellip;</p>
-
-<p><strong>M</strong>ais uma importante marca atingida por um projeto nacional!</p>
-
-<p><strong>G</strong>ostaria de parabenizar todos os que ajudam o movimento de Software Livre, seja qual for o projeto e seja qual for a forma de colaboração, porém gostaria de dedicar o post ao trabalho de tradução feito pelo pessoal do <a href="http://br.kde.org">KDE Brasil</a>.</p>
-
-<p><strong>A</strong>tingimos a marca de 100% do KDE Brasil traduzido! Para quem não tem noção do que isso significa, saibam que são mais de 104.000 linhas traduzidas. Não foram apenas os pacotes principais, mas tudo o que está englobado no <a href="http://kde.org">KDE</a>.</p>
-
-<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2010/05/kde_i18n_11.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2010/05/kde_i18n_11.png" alt="kde_i18n_1" /></a></p>
-
-<p><strong>A</strong> equipe do KDE Brasil tem trabalho arduamente neste sentido tentando garantir sempre o máximo de suporte aos usuários brasileiros deste que é um dos mais populares gerenciadores de janelas do mundo Linux.</p>
-
-<p><strong>V</strong>ale lembrar que estes resultados são referentes à versão atual, KDE 4.4 (Stable), o que não desmerece muito o trabalho com a versão que será lançada em breve, KDE 4.5 visto que a mesma também se encontra quase que 100% traduzida, conforme imagem abaixo:</p>
-
-<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2010/05/kde_i18n_2.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2010/05/kde_i18n_2.png" alt="kde_i18n_2" /></a></p>
-
-<p><strong>A</strong> imagem abaixo demonstra claramente a vantagem do time brasileiro em termos de traduções para o KDE em relação aos demais países.</p>
-
-<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2010/05/kde_i18n_3.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2010/05/kde_i18n_3.png" alt="kde_i18n_3" /></a></p>
-
-<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2010/05/kde_i18n_4.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2010/05/kde_i18n_4.png" alt="kde_i18n_4" /></a></p>
-
-<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2010/05/kde_i18n_5.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2010/05/kde_i18n_5.png" alt="kde_i18n_5" />
-</a><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2010/05/kde_i18n_6.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2010/05/kde_i18n_6.png" alt="kde_i18n_6" /></a></p>
-
-<p><strong>L</strong>evando em conta que quanto mais &ldquo;verde&rdquo;, melhor&hellip; podemos ver uma clara vantagem em nosso país em relação à maioria dos demais.</p>
-
-<p><strong>Q</strong>ue continue sempre assim.</p>
-
-<p>Para aqueles interessados em ajudar nas traduções futuras do KDE, deixo os dois links a seguir:</p>
-
-<p><a href="http://br.kde.org/index.php?title=I18n">1- Como Ajudar</a></p>
-
-<p><a href="http://l10n.kde.org/stats/gui/trunk-kde4/team/pt_BR/">2- Onde Ajudar</a></p>
-
-<p><strong>A</strong>braços!</p>
-
-<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/10/">&larr; Anteriores</a>
@@ -587,6 +651,10 @@ Me conheça melhor <a href="http://blog.marcelocavalcante.net/about">clicando aq
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/08/06/dica-rapida-linux-forcar-usuario-a-trocar-senha-apos-primeiro-login/">Dica Rápida - Linux - Forçar Usuário A Trocar Senha Após Primeiro Login</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/08/04/rails-girls-em-fortaleza-um-palco-para-a-criatividade-feminina/">Rails Girls em Fortaleza - Um palco para a criatividade feminina</a>
       </li>
     
@@ -608,10 +676,6 @@ Me conheça melhor <a href="http://blog.marcelocavalcante.net/about">clicando aq
     
       <li class="post">
         <a href="/blog/2011/10/17/3c2ba-dia-livre-programacao-definida/">3º Dia Livre - Programação Definida!</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2011/10/11/3c2ba-dia-livre-inscricoes-abertas/">3º Dia Livre - Inscrições abertas</a>
       </li>
     
   </ul>

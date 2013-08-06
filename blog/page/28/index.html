@@ -9,7 +9,7 @@
   <meta name="author" content="Marcelo Cavalcante Rocha - Kalib">
 
   
-  <meta name="description" content="Aqueles que são administradores de redes e servidores já devem ter passado por problemas parecidos com este. Nesta dica irei apresentar um comando &hellip;">
+  <meta name="description" content="Muitos me pediram por aqui ou mesmo por email para explicar como seria a implementação desta técnica de forma automatizada. Bom, utilizo isto para o &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -80,6 +80,118 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/07/14/parte-ii-limpando-memoria-cache-de-forma-automatizada/">Parte II - Limpando Memória Cache De Forma Automatizada</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-07-14T15:09:00-03:00" pubdate data-updated="true">Jul 14<span>th</span>, 2008</time>
+        
+         | <a href="/blog/2008/07/14/parte-ii-limpando-memoria-cache-de-forma-automatizada/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Muitos me pediram por aqui ou mesmo por email para explicar como seria a implementação desta técnica de forma automatizada.</p>
+
+<p>Bom, utilizo isto para o servidor que citei no artigo anterior, utilizado pelos nossos amigos desenvolvedores Java. ;] Nada pessoal eim?!</p>
+
+<p>Aqui precisaremos apenas de um mínimo de intimidade com shell script e um pouco de conhecimento sobre o agendamento de tarefas no linux através do cron.</p>
+
+<p>Mãos a obra&hellip;</p>
+
+<p>A missão: Uma vez que nossos amigos não conseguem trabalhar de forma harmônica com a alocação e desalocação de memória em nossos servidores, iremos agendar a limpeza de cache para todos os dias no começo do expediente (8:00) e após o almoço. Lembrando que este é apenas um exemplo, mas você pode adaptar os horários de acordo com sua real necessidade.</p>
+
+<p>Soldados Disponíveis: Shell Script e Cron</p>
+
+<p>Plano: Um pequeno e simples script em shell será executado nos dias e horários informados anteriormente de forma a fazer uma limpeza no cache.</p>
+
+<p>Execução:</p>
+
+<p>Primeiro criaremos o script que fará a ação de limpeza do cache. Para isso abra o editor de textos de sua preferência. Particularmente prefiro o vim, mas este pode ser substituido por qualquer outro.</p>
+
+<p>No seu corpo insira o seguinte conteúdo:</p>
+
+<blockquote><h1>!/bin/bash</h1></blockquote>
+
+<h1>limpando cache</h1>
+
+<blockquote><h1>o seguinte comando é o responsável pela limpeza</h1></blockquote>
+
+<p>echo 3 > /proc/sys/vm/drop_caches</p>
+
+<blockquote></blockquote>
+
+<p>Feito isto, salve o arquivo com o nome de limpacache.sh</p>
+
+<p>Sim, isto é tudo o que o seu script precisa. Com o script criado, você deverá agora lhe dar condições de execução. Utilize o seguinte comando:</p>
+
+<blockquote><h1>chmod a+x limpacache.sh</h1></blockquote>
+
+<p>Agora que ele está pronto e com permissão de execução, iremos agendar a execução do mesmo. No terminal digite:</p>
+
+<blockquote><h1>crontab -e</h1></blockquote>
+
+<p>Isto irá abrir um arquivo no qual você deverá fazer o agendamento de sua tarefa. No mesmo insira o seguinte conteúdo:</p>
+
+<blockquote><h1>mm HH DD MM DS tarefa</h1></blockquote>
+
+<p>00 08 * * * /usr/bin/scripts/limpacache.sh</p>
+
+<p>00 14 * * * /usr/bin/scripts/limpacache.sh</p>
+
+<blockquote></blockquote>
+
+<p>Ps: O caminho /etc/scripts/ precisa ser configurado de acordo com o caminho utilizado por você. ;]</p>
+
+<p>Pronto. Pode salvar e encerrar este aquivo.</p>
+
+<p>Traduzindo o comando as linhas do cron que utilizamos:</p>
+
+<p>mm: minutos</p>
+
+<p>HH: horas</p>
+
+<p>DD: dia</p>
+
+<p>MM: mês</p>
+
+<p>DS: dia da semana</p>
+
+<p>/usr/bin/scripts/limpacache.sh: tarefa a ser realizada</p>
+
+<p>Feito isto, o plano está concretizado. Seu script será executado todos os dias nestes dois horários.</p>
+
+<p>Sinta-se livre agora para customizar os dias e horários da maneira que for mais conveniente para você.</p>
+
+<p>Abraços</p>
+
+<p><a href="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif"><img src="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif" alt="" /></a></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -373,62 +485,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2008/05/31/ajude-o-firefox-a-estabelecer-um-recorde-mundial/">Ajude O Firefox a Estabelecer Um Recorde Mundial</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2008-05-31T08:41:00-03:00" pubdate data-updated="true">May 31<span>st</span>, 2008</time>
-        
-         | <a href="/blog/2008/05/31/ajude-o-firefox-a-estabelecer-um-recorde-mundial/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h3></h3>
-
-<p><a href="http://1.bp.blogspot.com/_5kfJplBiYy0/SEE5sXYArPI/AAAAAAAAADc/FQUeQoIz7t8/s1600-h/dday_badge_fox.png"><img src="http://1.bp.blogspot.com/_5kfJplBiYy0/SEE5sXYArPI/AAAAAAAAADc/FQUeQoIz7t8/s320/dday_badge_fox.png" alt="" /></a>&ldquo;Queremos estabelecer um Recorde Mundial no Guinness para o software mais baixado em 24 horas e com a sua ajuda temos certeza de que conseguiremos!&rdquo;</p>
-
-<p>A Fundação Mozilla pretende bater este recorde e entrar para o Guinness Book e para isso está contando com o apoio dos usuários e fans da raposa de fogo no Download Day 2008. Mas o que isso tudo significa?</p>
-
-<p>A fundação Mozilla lançou um site para este projeto no qual podemos nos cadastrar e participar desta corrente. No dia do download a Mozilla encaminhará uma chamada para todos os cadastrados para que possam fazer seus respectivos downloads.</p>
-
-<p>O site ainda nos mostra em tempo real a quantidade de pessoas já cadastradas bem como um mapa do mundo com detalhes sobre quantas pessoas já se cadastraram em cada país de nosso globo.</p>
-
-<p>A iniciativa é excelente para divulgar um excelente Software Livre que já ganhou muitos adeptos, mesmo aqueles que nem conheciam o significado da palavra Software Livre. Lembrando também que todo e qualquer incentivo ao uso de Software Livre é bastante bem vindo em um país em desenvolvimento como o nosso, portanto vamos ajudar nessa campanha pessoal. ;]</p>
-
-<p>Para participar é muito simples, bastando apenas clicar no link a seguir, na raposa do início do post ou mesmo no baner que disponibilizei no topo do site.</p>
-
-<p>Link do projeto: <a href="http://www.spreadfirefox.com/pt-BR/worldrecord">http://www.spreadfirefo</a><a href="http://www.spreadfirefox.com/pt-BR/worldrecord">x.com/pt-BR/worldrecord</a></p>
-
-<p>[]&rsquo;s</p>
-
-<p><a href="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif"><img src="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif" alt="" /></a></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/29/">&larr; Anteriores</a>
@@ -453,6 +509,10 @@ Me conheça melhor <a href="http://blog.marcelocavalcante.net/about">clicando aq
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/08/06/dica-rapida-linux-forcar-usuario-a-trocar-senha-apos-primeiro-login/">Dica Rápida - Linux - Forçar Usuário A Trocar Senha Após Primeiro Login</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/08/04/rails-girls-em-fortaleza-um-palco-para-a-criatividade-feminina/">Rails Girls em Fortaleza - Um palco para a criatividade feminina</a>
       </li>
     
@@ -474,10 +534,6 @@ Me conheça melhor <a href="http://blog.marcelocavalcante.net/about">clicando aq
     
       <li class="post">
         <a href="/blog/2011/10/17/3c2ba-dia-livre-programacao-definida/">3º Dia Livre - Programação Definida!</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2011/10/11/3c2ba-dia-livre-inscricoes-abertas/">3º Dia Livre - Inscrições abertas</a>
       </li>
     
   </ul>

@@ -9,7 +9,7 @@
   <meta name="author" content="Marcelo Cavalcante Rocha - Kalib">
 
   
-  <meta name="description" content="Para quem não conhece, brute-force é um ataque bastante utilizado em serviços web tais como smtp, pop, ssh, ftp, iax dentre outros. O ataque &hellip;">
+  <meta name="description" content="Bom, para quem não conhece nada sobre Brute-Force ou apenas ouviu falar vagamente mas não tem certeza sobre o que realmente é um ataque deste tipo, &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -80,6 +80,148 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/02/15/brute-force-o-dirb-dirbuster-lhe-ajuda-a-identificar-vulnerabilidades-em-seu-site/">Brute-force? O Dirb&#8230; DirBuster Lhe Ajuda a Identificar Vulnerabilidades Em Seu Site</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-02-15T10:23:19-03:00" pubdate data-updated="true">Feb 15<span>th</span>, 2011</time>
+        
+         | <a href="/blog/2011/02/15/brute-force-o-dirb-dirbuster-lhe-ajuda-a-identificar-vulnerabilidades-em-seu-site/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><strong>B</strong>om, para quem não conhece nada sobre Brute-Force ou apenas ouviu falar vagamente mas não tem certeza sobre o que realmente é um ataque deste tipo, sugiro dar uma lida em meu último post, onde apresentei algumas informações sobre brute-force bem como uma ferramenta que podemos utilizar para testar nossos sites e verificar o quão vulneráveis eles estão a este tipo de ataque. Segue link para o mesmo:</p>
+
+<p><a href="http://marcelocavalcante.net/portal/2011/01/31/brute-force-o-dirb-lhe-ajuda-a-identificar-vulnerabilidades-em-seu-site/">Brute-Force? O Dirb lhe ajuda a identificar vulnerabilidade em seu site!</a></p>
+
+<p><strong>A</strong>gora que já conhecemos um pouco sobre as técnicas de brute-force e a ferramenta Dirb, que tal conhecer outra mais apresentável?</p>
+
+<p><strong>M</strong>e refiro ao <a href="http://www.owasp.org/index.php/DirBuster">DirBuster</a>. Uma aplicação multithread desenvolvida pelo <a href="http://www.owasp.org/">OWASP</a> (The Open Web Application Security Project) que tem como objetivo realizar brute-force em diretórios e nomes de arquivos na web. Assim como o Dirb, o DirBuster trabalha em cima de dicionários ou listas. Ao todo ele trás 9 listas que podem ser utilizadas para nossas varreduras e testes. Como todas as suas listas foram criadas na unha, após exaustívas pesquisas e buscas na web por nomes mais utilizados para arquivos e diretórios em servidores web, o DirBuster mostra-se extremamente efetivo para este tipo de atividade conseguindo encontrar até mesmo os arquivos mais ocultos e escondidos.</p>
+
+<p><strong>M</strong>as se você não ficar satisfeito, <del>nós garantimos a devolução do seu dinheiro</del>, com apenas utilizar o modelo de dicionários, o DirBuster ainda lhe possibilita o ataque de brute-force mais purista. Tentativa e erro com combinações possíveis de caracteres. Claro, se você tem muito poder de processamento e tempo sobrando, boa sorte. ;]</p>
+
+<p><strong>L</strong>egal Kalib, quer dizer que agora posso sair invadindo sites?</p>
+
+<p><del>o.O Como diria o Chaves: Ai que burrrrroooo.. dá zero pra ele&hellip;</del></p>
+
+<p><strong>N</strong>ão amigo. O meu intuito não é incentivar ou apresentar qualquer mecanismo ou técnica para este tipo de atividade. O DirBuster não foi feito para este propósito e nem conseguirá efetuar isto. Ele não fará nenhum tipo de exploit em arquivos ou diretórios que ele encontre. O DirBuster serve exatamente para identificar possíveis alvos para estes tipos de ataque, o que nos permite agir de forma corretiva ou preventiva em nossos servidores web. ;]</p>
+
+<p><strong>C</strong>hega de lenga lenga.. vamos ao que interessa!</p>
+
+<p><strong>C</strong>omo instalar?</p>
+
+<p><img src="http://blog.leandroinacio.eti.br/wp-content/uploads/2009/10/arch-linux-logo1.png" alt="Arch Linux" />
+Bom, se você utiliza <a href="http://archlinux.org">Arch Linux</a>, pode pegar o pacote no AUR através do seguinte link(Lembrem-se de votar nele):</p>
+
+<p><a href="http://aur.archlinux.org/packages.php?ID=20809">http://aur.archlinux.org/packages.php?ID=20809</a></p>
+
+<p><strong>F</strong>eito isto, basta seguir o procedimento padrão para pacotes do AUR.</p>
+
+<blockquote><p>1- Descompactar: [kalib@tuxcaverna downloads]$ tar -xvzf dirbuster.tar.gz</p></blockquote>
+
+<p>2- Entrar no diretório dirbuster e gerar o pacote: [kalib@tuxcaverna dirbuster]$ makepkg</p>
+
+<p>3- Instalar o pacote: [kalib@tuxcaverna dirbuster]$ sudo pacman -U dirbuster-0.12-1-x86_64.pkg.tar.xz</p>
+
+<p><strong>F</strong>eito. ;]</p>
+
+<p><strong>O</strong>utras distribuições? Não tenho certeza se o pessoal de outras distribuições empacotou o DirBuster, portanto provavelmente você vai precisar baixar o arquivo compactado do site oficial do projeto. Busquei tanto no Debian quanto no (K)Ubuntu 10.10 e em nenhum destes encontrei o DirBuster nos repositórios através do aptitude.</p>
+
+<p><strong>P</strong>ortanto se você não utiliza o Arch, segue link para download da ferramenta:</p>
+
+<p><a href="http://www.owasp.org/index.php/DirBuster#tab=Download">http://www.owasp.org/index.php/DirBuster#tab=Download</a></p>
+
+<p><strong>M</strong>as qual a cara do bicho?</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster8.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster8.png" alt="" /></a></p>
+
+<p><strong>C</strong>omo explicado antes, ele funciona parecido com o Dirb, porém em uma interface GUI (gráfica).</p>
+
+<p><strong>C</strong>omo podem ver, é uma interface simples e de fácil manuseio.</p>
+
+<p><strong>V</strong>amos aos pontos:</p>
+
+<p>1- No campo Target, você deverá inserir a URL que será alvo do seu brute-force de diretórios e arquivos web.</p>
+
+<p>2- Logo abaixo, vocẽ escolhe se deseja utilizar apenas GET ou HEAD &amp; GET.</p>
+
+<p>3- Agora é a vez de escolher quantas threads deseja utilizar. Quanto maior o número de threads, mais requisições simultâneas você estará utilizando. ;]</p>
+
+<p>4- Abaixo você deverá escolher o tipo de brute-force.</p>
+
+<ul>
+<li><p>Baseado em dicionários, neste caso você deverá escolher um dos dicionários que a ferramenta já lhe disponibiliza através do seguinte caminho: /opt/DirBuster/</p></li>
+<li><p>Baseado em brute-force puro. Neste caso você deverá escolher qual conjunto de caracteres deseja que sejam utilizados, quantidade mínima e máxima de caracteres por tentativa.</p></li>
+</ul>
+
+
+<p>5- Em seguida é a hora de escolher os filtros: Deseja fazer brute-force apenas em diretórios? Arquivos também? Modo recursivo? Extensões em branco? Diretório inicial para o scan? Que tipo de extensão?&hellip;</p>
+
+<p><strong>E</strong> como é o retorno que ele me dá?</p>
+
+<p><strong>B</strong>om, vou escolher meu alvo e vou utilizar 20 threads em simultâneo. Não vou deixar a ferramenta rodando por muito tempo pois estou apenas fazendo uma demonstração.</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster21.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster21.png" alt="" /></a></p>
+
+<p><strong>C</strong>omo podem ver, filtrei para que o brute-force comece no diretório raiz (/) e optei pela maior lista que o DirBuster possui como dicionário. Deixei rodando por cerca de 30 segundos e já tive o seguinte resultado.</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster3.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster3.png" alt="" /></a></p>
+
+<p><strong>A</strong> parte borrada no início da imagem não é um defeito. Vocês não pensaram que eu iria deixar exposto o alvo no qual fiz o teste, certo? No caso, optei pelo site de uma de nossas instituições de ensino. Bom, a imagem acima é um exemplo do retorno que consigo com a ferramenta. É a visão em Lista. Além dela você pode optar pela visão em árvore, que, como o nome informa, lhe trará a árvore de diretórios, sub-diretórios e arquivos que foram encontrados. Abaixo um exemplo da visão em árvore:</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster4.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster4.png" alt="" /></a></p>
+
+<p><strong>O</strong> resultado, mesmo deixando a ferramenta rodando por apenas 30 segundos, foi o esperado. Um espantoso caso de descuido com a segurança do site.</p>
+
+<p><strong>A</strong>lguns leves exemplos que me chamaram a atenção na lista que consegui:</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster5.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster5.png" alt="" /></a></p>
+
+<p><strong>U</strong>m diretório de administração exposto desta forma indicando que existe uma sessão do site com acesso permitido apenas para administradores. O que isso me leva a crer? Que quem conseguir acesso a esta sessão consegue manipular o sistema do site? O que nos leva a uma posterior análise da página index contida nele que possibilita uma tentativa de brute-force de login e senha? psssiiiuuuu&hellip; o.O</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster6.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster6.png" alt="" /></a>
+<strong> U</strong>m diretório para uploads de Arquivos? Que tal testar ele? Apenas usuários administradores possuem permissão de upload? Ou alunos conseguem fazer upload de fotos, trabalhos, por exemplo? De qualquer forma, isso me indica que existe a possibilidade de eu subir arquivos para o servidor deles. Que tal um script em php que me permitiria ter um console shell no servidor deles para inclusão, exclusão, edição, etc.. ? pssiiiiuuuu&hellip; o.O</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster7.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster7.png" alt="" /></a></p>
+
+<p><strong>P</strong>ode não ser nada.. mas também pode ser muita coisa.. O que um diretório chamado &ldquo;gerencia&rdquo; faz ali tão exposto e com um nome tão&hellip; tão&hellip; discreto? o.O psssiiiuuuuu</p>
+
+<p><strong>A</strong>cho que já conseguiram entender um pouco do que o DirBuster faz.</p>
+
+<p><strong>A</strong>braços!</p>
+
+<p><strong>H</strong>appy Hacking&hellip;</p>
+
+<p><strong>PS: Wrong developers! Never play security by obscurity!</strong></p>
+
+<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -599,64 +741,6 @@ Assim, esta obra proporciona uma narrativa soberba de uma lenda, e a recriação
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/10/15/somos-menos-de-1-o-o-usuarios-linux-cadastrem-se/">Somos Menos De 1%? o.O Usuários Linux, Cadastrem-se!</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-10-15T08:38:29-03:00" pubdate data-updated="true">Oct 15<span>th</span>, 2010</time>
-        
-         | <a href="/blog/2010/10/15/somos-menos-de-1-o-o-usuarios-linux-cadastrem-se/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2010/10/tux_muscle.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2010/10/tux_muscle.png" alt="" /></a></p>
-
-<p><strong>P</strong>essoal, recentemente surgiram algumas notícias de fontes suspeitas informando que o Linux está em menos de 1% dos computadores desktop existentes no mundo hoje.</p>
-
-<p><strong>S</strong>erá verdade?</p>
-
-<p><strong>T</strong>odos podemos ver claramente o quanto o Linux vem crescendo e ganhando espaço hoje em dia. Lembro que em 2005, quando entrei na faculdade, ao perguntar para meus colegas de faculdade, poucos conheciam ou já haviam chegado perto de uma máquina com Linux. Hoje a realidade é outra, cerca de 50% dos colegas já, ao menos uma vez, utilizaram uma máquina com Linux, seja em seu trabalho, seja no Banco, lan house, etc.</p>
-
-<p><strong>O</strong> Linux está ficando mais forte a cada dia entre os usuários domésticos.</p>
-
-<p><strong>C</strong>omeçaram um projeto web para tentar quebrar este mito: <a href="http://www.dudalibre.com/gnulinuxcounter?lang=en">http://www.dudalibre.com/gnulinuxcounter?lang=en</a></p>
-
-<p><strong>S</strong>e você possui um desktop, ou mais, com linux, talvez você queira contabilizar o seu voto.</p>
-
-<p><strong>A</strong>lém de contabilizar quantas máquinas desktop utilizam Linux, ele ainda separa por ranking de países e distribuições.</p>
-
-<p><strong>S</strong>e serve de incentivo, ainda estamos abaixo dos hermanos argentinos. ¬¬ Vamos dar um gás né galera?</p>
-
-<p><strong>A</strong>braços!</p>
-
-<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/8/">&larr; Anteriores</a>
@@ -681,6 +765,10 @@ Me conheça melhor <a href="http://blog.marcelocavalcante.net/about">clicando aq
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/08/06/dica-rapida-linux-forcar-usuario-a-trocar-senha-apos-primeiro-login/">Dica Rápida - Linux - Forçar Usuário A Trocar Senha Após Primeiro Login</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/08/04/rails-girls-em-fortaleza-um-palco-para-a-criatividade-feminina/">Rails Girls em Fortaleza - Um palco para a criatividade feminina</a>
       </li>
     
@@ -702,10 +790,6 @@ Me conheça melhor <a href="http://blog.marcelocavalcante.net/about">clicando aq
     
       <li class="post">
         <a href="/blog/2011/10/17/3c2ba-dia-livre-programacao-definida/">3º Dia Livre - Programação Definida!</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2011/10/11/3c2ba-dia-livre-inscricoes-abertas/">3º Dia Livre - Inscrições abertas</a>
       </li>
     
   </ul>

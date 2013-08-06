@@ -9,7 +9,7 @@
   <meta name="author" content="Marcelo Cavalcante Rocha - Kalib">
 
   
-  <meta name="description" content="Olá pessoal.. Não é hora de postar sobre Software Livre ou Tecnologia como um todo. Gostaria de dedicar este post ao cenário que estamos presenciando &hellip;">
+  <meta name="description" content="Não é de hoje que vejo o nível de alguns pacotes essenciais como o Kernel e o Xorg caírem cada vez mais. É triste porém uma realidade. A maneira como &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -80,6 +80,86 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/12/02/resolvendo-alguns-problemas-causados-pelo-novo-xorg-no-arch/">Resolvendo Alguns Problemas Causados Pelo Novo Xorg No Arch</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-12-02T11:03:00-03:00" pubdate data-updated="true">Dec 2<span>nd</span>, 2008</time>
+        
+         | <a href="/blog/2008/12/02/resolvendo-alguns-problemas-causados-pelo-novo-xorg-no-arch/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/archlinux_logo_glass.png"><img src="http://kalib.pre.hw40.webservidor.net/wordpress/wp-content/uploads/2009/02/archlinux_logo_glass-300x256.png" alt="" /></a>Não é de hoje que vejo o nível de alguns pacotes essenciais como o Kernel e o Xorg caírem cada vez mais. É triste porém uma realidade. A maneira como tais pacotes vem sendo lançados sem maiores preocupações está prejudicando a vida de muita gente. Eu fui um deles recentemente ao atualizar o meu Xorg. Para aqueles que também fizeram upgrade recentemente, podem ter aparecido vários problemas.</p>
+
+<p>Aqui apresentarei as soluções que utilizei no ArchLinux para sanar os problemas que me apareceram, sendo eles:</p>
+
+<p>1- O X não subia mais. Simplesmente morria e ficava tudo preto.</p>
+
+<p>2- As teclas especiais do teclado não respondiam mais, como por exemplo as setas direcionais.</p>
+
+<p>Vamos às soluções encontradas&hellip;</p>
+
+<p>1- O X não sobe mais</p>
+
+<p>1.1- Para este problema, precisei fazer uma pequena busca pelo erro que acontecia, para isso busquei em primeira mão os logs do Xorg. Você pode fazer isso com o seguinte comando:</p>
+
+<h1>tail -f /var/log/Xorg.0.log</h1>
+
+<p>1.2- Em meu caso, apontou o erro na sintax RgbPath, a qual informava ser incompatível. Muita gente está passando por este problema.</p>
+
+<p>A solução neste caso é simples, basta editar o arquivo /etc/X11/xorg.conf e comentar a linha:</p>
+
+<p>RgbPath = &ldquo;/usr/share/X11/rgb&rdquo;</p>
+
+<p>1.3- Ao comentar esta linha, tudo o que fiz foi reinstalar o driver de minha placa de vídeo, para que meu xorg voltasse a funcionar. Como eu utilizo um driver da ATI Radeon que costumo baixar diretamente no site da ATI, segui o procedimento padrão para os drivers baixados do mesmo:</p>
+
+<p>1.3.1- Dar permissão de execução:</p>
+
+<h1>chmod +x ati-driver-installer-8-11-x86.x86_64.run</h1>
+
+<p>1.3.2- Executar o instalador:</p>
+
+<h1>./ati-driver-installer-8-11-x86.x86_64.run</h1>
+
+<p>Pronto. Feitos estes passos, eu já conseguia subir meu servidor X numa boa.</p>
+
+<p>Com relação ao segundo problema. As teclas&hellip;</p>
+
+<p>2- As teclas especiais do teclado não respondem.</p>
+
+<p>2.1- A solução foi simples, bastou uma pequena busca na wiki do ArchLinux com uma dica de como corrigir isto no meu KDE4. Indo para as configurações do sistema e partindo para a configuração de &ldquo;Regional &amp; Idioma&rdquo;. Lá busque a aba &ldquo;Layout de Teclado&rdquo;.</p>
+
+<p>2.2- Nesta você precisará habilitar a opção &ldquo;Habilitar Layouts de Teclado&rdquo; e selecionar como Modelo de Teclado a opção &ldquo;Evdev-managed keyboard&rdquo;.</p>
+
+<p>Feito isto, as teclas voltaram a funcionar no meu caso bem como outras pessoas que também testaram.<img src="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif" alt="" /></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -709,58 +789,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2008/11/10/arch-linux-schwag-uma-loja-para-o-arch-linux/">Arch Linux Schwag - Uma Loja Para O Arch Linux</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2008-11-10T11:31:00-03:00" pubdate data-updated="true">Nov 10<span>th</span>, 2008</time>
-        
-         | <a href="/blog/2008/11/10/arch-linux-schwag-uma-loja-para-o-arch-linux/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/camisa_arch.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/camisa_arch.png" alt="" /></a>Saudações galera..</p>
-
-<p>Neste post eu deixo a dica de uma <a href="http://www.zazzle.com/archlinux">loja online</a> na qual você pode encontrar diversos produtos bacanas do <a href="http://www.archlinux-br.org/">Arch Linux</a>. Produtos estes que vão desde camisetas até mesmo shapes de skates ou aventais (é mole?).</p>
-
-<p>O comércio eletrônico vem crescendo a cada dia e ganhando cada vez mais adeptos por sua confiabilidade, agilidade e eficiência, isto tudo sem mencionar o conforto de navegar em shoppings e lojas sem sair de sua cadeira ou poltrona favorita. A comodidade em não perder horas de caminhada ou esperando em filas para atendimento tem atraído cada vez mais clientes para este tipo de comércio.</p>
-
-<p>Eu sou um grande adepto de comércio eletrônico e pelo menos uma vez por mês faço algum tipo de compra online sendo<a href="http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/caneca_arch.gif"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/caneca_arch.gif" alt="" /></a> os livros os responsáveis pela minha maior parcela destas compras via web.</p>
-
-<p>Aproveito para deixar aqui o link para esta incrível loja com produtos do Arch Linux e de outras várias coisas que desejar. Apesar de ser uma loja gringa, vale a pena conferir.</p>
-
-<p>Segue Link: <a href="http://www.zazzle.com/archlinux">http://www.zazzle.com/archlinux</a></p>
-
-<p>Abraços</p>
-
-<p><img src="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif" alt="" /></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/24/">&larr; Anteriores</a>
@@ -785,6 +813,10 @@ Me conheça melhor <a href="http://blog.marcelocavalcante.net/about">clicando aq
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/08/06/dica-rapida-linux-forcar-usuario-a-trocar-senha-apos-primeiro-login/">Dica Rápida - Linux - Forçar Usuário A Trocar Senha Após Primeiro Login</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/08/04/rails-girls-em-fortaleza-um-palco-para-a-criatividade-feminina/">Rails Girls em Fortaleza - Um palco para a criatividade feminina</a>
       </li>
     
@@ -806,10 +838,6 @@ Me conheça melhor <a href="http://blog.marcelocavalcante.net/about">clicando aq
     
       <li class="post">
         <a href="/blog/2011/10/17/3c2ba-dia-livre-programacao-definida/">3º Dia Livre - Programação Definida!</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2011/10/11/3c2ba-dia-livre-inscricoes-abertas/">3º Dia Livre - Inscrições abertas</a>
       </li>
     
   </ul>

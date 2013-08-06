@@ -9,7 +9,7 @@
   <meta name="author" content="Marcelo Cavalcante Rocha - Kalib">
 
   
-  <meta name="description" content="Saudações pessoal, Acredito que boa parte, se não praticamente todos, os usuários de Software Livre em nossa região já ouviram falar, ou &hellip;">
+  <meta name="description" content="Cansado de apenas poder assistir aquele webcast ou vídeo-aula online? E se estiver em um local sem conec﻿tividade? Porque dor de cabeça? Sou usuário &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -80,6 +80,112 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/04/20/como-download-de-webcasts-mms-e-rtmp/">Como? Download De Webcasts Mms E Rtmp?</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-04-20T08:51:46-03:00" pubdate data-updated="true">Apr 20<span>th</span>, 2011</time>
+        
+         | <a href="/blog/2011/04/20/como-download-de-webcasts-mms-e-rtmp/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://www.ogilvy.co.uk/neo/files/2008/03/webcast-pic.png"><img src="http://www.ogilvy.co.uk/neo/files/2008/03/webcast-pic.png" alt="" /></a></p>
+
+<p><strong>C</strong>ansado de apenas poder assistir aquele webcast ou vídeo-aula online? E se estiver em um local sem conec﻿tividade? Porque dor de cabeça? Sou usuário Linux! Obrigado por ter a ideia de criar o Linux e facilitar nossas vidas Linus. ;]</p>
+
+<p><strong>R</strong>ecentemente me deparei com esta problemática. Como realizar o download deste tipo de conteúdo?</p>
+
+<p><strong>A</strong>o checar o código fonte da página que exibia o vídeo, vi que eram streamings dos protocolos mms ou rtmp, o que, aparentemente, dificultava o download.</p>
+
+<p><strong>P</strong>ara quem mais estiver passando por este problema, segue a solução. Aliás, as soluções.</p>
+
+<p><strong>U</strong>ma vez que, através do código fonte você consiga identificar a URL completa do arquivo mmc ou rmtp, fica fácil utilizar alguma das metodologias a seguir.</p>
+
+<p><strong>A</strong> primeira opção é a aplicação <strong>Mimms</strong>.</p>
+
+<p><strong>E</strong>sta é a forma mais simples e prática com arquivos do tipo mms.</p>
+
+<p><strong>P</strong>ara usuários do <a href="http://archlinux.org">Arch Linux</a>, já existe um pacote pronto no <a href="http://aur.archlinux.org/packages.php?ID=16412">AUR</a>.</p>
+
+<p><strong>A</strong> instalação, segue o padrão de arquivos baixados do AUR:</p>
+
+<p><strong>1-</strong> Download do <a href="http://aur.archlinux.org/packages/mimms/mimms.tar.gz">Tarball</a>;</p>
+
+<p><strong>2-</strong> Descompatar: <em>$ tar -xvzf mimms.tar.gz</em></p>
+
+<p><strong>3-</strong> Acessar o diretório e efetuar a compilação do pacote: <em>$ cd mimms &amp;&amp; makepkg</em></p>
+
+<p><strong>4-</strong> Instalar o pacote que lhe foi gerado: <em># pacman -U mimms-3.2.1-2-any.pkg.tar.xz</em></p>
+
+<p><strong>F</strong>eito. Agora é só executar da seguinte forma:</p>
+
+<p><em>$ mimms mms://url_de_origem_do_streaming/arquivo_streaming.wmv</em></p>
+
+<p><strong>S</strong>erá que isso funciona mesmo? Experimente:</p>
+
+<p><em>$ mimms <a href="mms://wms.andrew.cmu.edu/001/pausch.wmv">mms://wms.andrew.cmu.edu/001/pausch.wmv</a></em></p>
+
+<p><strong>O</strong>i, simples assim.</p>
+
+<p><strong>O</strong>utra alternativa?</p>
+
+<p><strong>U</strong>tilizando o <strong>Mencoder</strong>:</p>
+
+<p><strong>N</strong>ão é tão simples quanto o mimms, mas também é rápido e prático.</p>
+
+<p><strong>O</strong> comando que deve ser utilizado?</p>
+
+<p><em>mencoder mms://url_de_origem_do_streaming/arquivo_streaming.wmv -o arquivo_streaming.wmv -oac copy -ovc copy</em></p>
+
+<p><strong>U</strong>m pouco mais complexo, certo? Mas funciona.</p>
+
+<p><strong>E</strong> quanto aos arquivos de streaming que utilizam o protocolo rtmp?</p>
+
+<p><strong>N</strong>este caso a opção é utilizarmos o <strong>rtmpdump</strong>.</p>
+
+<p><strong>S</strong>im, claro.. Se você utiliza o Arch Linux, sua vida continua simplificada:</p>
+
+<p><em># pacman -S rtmpdump</em></p>
+
+<p><strong>P</strong>ronto, está instalado. ;]</p>
+
+<p><strong>A</strong> execução do mesmo também é bastante simples, precisando apenas especificar a origem e o destino do streaming em questão. Segue sintaxe:</p>
+
+<p><em>rtmpdump -r &ldquo;rtmpe://url_de_origem_do_streaming/arquivo_streaming.wmv&rdquo; -o arquivo.streaming.flv &mdash;resume</em></p>
+
+<p><strong>H</strong>ave fun! ;]</p>
+
+<p><strong>A</strong>braços!</p>
+
+<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -425,87 +531,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/04/07/flisol-ceara-fortaleza-quixada-e-russas/">Flisol Ceará - Fortaleza, Quixadá E Russas</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-04-07T08:30:24-03:00" pubdate data-updated="true">Apr 7<span>th</span>, 2011</time>
-        
-         | <a href="/blog/2011/04/07/flisol-ceara-fortaleza-quixada-e-russas/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/03/logo_flisol.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/03/logo_flisol.png" alt="" /></a></p>
-
-<p><strong>P</strong>ara quem ainda não conhece, o Flisol - Fórum Latino Americano de Instalação de Software Livre - é um dos maiores eventos do mundo no que diz respeito ao movimento de Software Livre. O evento é realizado anualmente e ocorre de forma simultânea em diversas cidades da América Latina, totalizando mais de 120 cidades em aproximadamente 20 países. O Flisol é um evento descentralizado, onde diversas comunidades organizam e realizam seu festival, de forma voluntária, tendo como principal objetivo promover o uso de Software Livre, apresentando sua filosofia, alcance, avanços e desenvolvimento ao público em geral.</p>
-
-<p><strong>O</strong> evento é gratuito e aberto a todo o público: curiosos, interessados e amantes do Software Livre. Nesse dia os voluntários propõe a instalação de Software Livre, como distribuições de Gnu/Linux, sistemas BSD, e aplicativos livres para Windows em geral. Alguns eventos também contam com palestras, oficinas, salas de degustação e gravações de mídias (live-CD/DVD e/ou pendrives).</p>
-
-<p><strong>O</strong> objetivo do Flisol, além de promover o uso de Software Livre em geral, é também o de criar interações entre usuários e desenvolvedores, promovendo um momento para troca de experiências, conhecimentos ou mesmo um bate papo agradável que pode resultar em futuros projetos ou apenas amizades.</p>
-
-<p><strong>D</strong>iferente dos anos anteriores, este ano não estarei presente em Fortaleza durante o Flisol, mas a <a href="http://www.tux-ce.org/">Tux-CE</a> marcará presença como de costume no Install Fest para atender e ajudar aos interessados.</p>
-
-<p><strong>E</strong>starei no Flisol de Quixadá ministrando as palestras:</p>
-
-<ul>
-<li><p>Cultura Hacker &ndash; Tenha Ética e Ganharás Respeito</p></li>
-<li><p>Software Livre &ndash; Nunca vi nem comi, eu só ouço falar!</p></li>
-</ul>
-
-
-<p><strong>E</strong>ste ano teremos 3 edições do Flisol em nosso estado, portanto escolha a mais próxima de você e marque presença.</p>
-
-<p><strong>Em Fortaleza:</strong>
-Local: Vila das Artes
-Endereço: Rua 24 de Maio, 1221, Centro
-Telefone: 85 3252-1444</p>
-
-<p><strong>Em Quixadá:</strong>
-Local: Faculdade Católica do Sertão
-Endereço: Rua Juvêncio Alves, 660, Centro
-Telefone: 88 3412-6700</p>
-
-<p><strong>Em Russas:</strong>
-Local: Escola Estadual Manuel Matoso Filho
-Endereço: Rua Cel. Perdigão Sobrinho, 433, Centro
-Telefone: 88 3411-8550</p>
-
-<p><strong>L</strong><strong>embrando</strong> que, apesar de ser um evento gratuito, sempre estamos recebendo doações de alimentos não perecíveis no evento que irão beneficiar entidades e órgãos diversos, portanto não esqueça o seu 1kg de alimento não perecível.</p>
-
-<p><strong>Maiores informações</strong> sobre o Flisol Ceará, através <a href="http://www.flisolce.com.br">deste link</a>.</p>
-
-<p><strong>N</strong>os vemos no Flisol.</p>
-
-<p><strong>A</strong>braços!</p>
-
-<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/6/">&larr; Anteriores</a>
@@ -530,6 +555,10 @@ Me conheça melhor <a href="http://blog.marcelocavalcante.net/about">clicando aq
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/08/06/dica-rapida-linux-forcar-usuario-a-trocar-senha-apos-primeiro-login/">Dica Rápida - Linux - Forçar Usuário A Trocar Senha Após Primeiro Login</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/08/04/rails-girls-em-fortaleza-um-palco-para-a-criatividade-feminina/">Rails Girls em Fortaleza - Um palco para a criatividade feminina</a>
       </li>
     
@@ -551,10 +580,6 @@ Me conheça melhor <a href="http://blog.marcelocavalcante.net/about">clicando aq
     
       <li class="post">
         <a href="/blog/2011/10/17/3c2ba-dia-livre-programacao-definida/">3º Dia Livre - Programação Definida!</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2011/10/11/3c2ba-dia-livre-inscricoes-abertas/">3º Dia Livre - Inscrições abertas</a>
       </li>
     
   </ul>

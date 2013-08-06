@@ -9,7 +9,7 @@
   <meta name="author" content="Marcelo Cavalcante Rocha - Kalib">
 
   
-  <meta name="description" content="Isso não é mentira. O Software Livre realmente precisa de você. Como todos sabemos, o Software Livre vem ganhando a cada dia mais nome no mercado e &hellip;">
+  <meta name="description" content="Não sei se algum de vocês ficou sabendo..Mas na última semana foi notificado um problema na infra-estrutura do Fedora, e havia sido &ldquo; &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -80,6 +80,56 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/08/22/problemas-de-infra-do-fedora-servidores-hackeados/">Problemas De Infra Do Fedora - Servidores Hackeados</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-08-22T10:05:00-03:00" pubdate data-updated="true">Aug 22<span>nd</span>, 2008</time>
+        
+         | <a href="/blog/2008/08/22/problemas-de-infra-do-fedora-servidores-hackeados/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://2.bp.blogspot.com/_5kfJplBiYy0/SK67DllLZfI/AAAAAAAAAFs/Ng_aNe5Oy-A/s1600-h/images.jpeg"><img src="http://2.bp.blogspot.com/_5kfJplBiYy0/SK67DllLZfI/AAAAAAAAAFs/Ng_aNe5Oy-A/s200/images.jpeg" alt="" /></a>Não sei se algum de vocês ficou sabendo..Mas na última semana foi notificado um problema na infra-estrutura do Fedora, e havia sido &ldquo;recomendado&rdquo; que nenhuma instalação ou atualizaçãp fosse feita, caso você use Fedora.</p>
+
+<p>Até ontem eu não tinha visto nenhuma explicação para o caso, mas discutindo com colegas de trabalho já suspeitávamos de uma invasão nos servidores do fedora que pudessem ocasionar este tipo de problema&hellip;Bom, hoje achei esta nota no site da red hat, que confirma nossas suspeitas. Os servidores foram sim invadidos. O caso é gravíssimo, pois pode, ou não, ter interferido na árvore de pacotes&hellip;pois existe o risco de eles terem pego as chaves dos pacotes fedora.. :/</p>
+
+<p>Eu não sou usuário Fedora, mas para quem  é&hellip;fica o Alarme piscando!!</p>
+
+<p>É bom se manter informado e até lá não sair usando o yum para instalar ou atualizar pacotes. Apesar de na nota eles informarem que os problemas podem não ser graves, eu não arriscaria isso em um ambiente de produção na empresa em que trabalho. Só Deus sabe o que de fato aconteceu.</p>
+
+<p>Segue link com informações mais detalhadas: <a href="http://www.redhat.com/archives/fedora-announce-list/2008-August/msg00012.html">http://www.redhat.com/archives/fedora-announce-list/2008-August/msg00012.html</a></p>
+
+<p>Abraços</p>
+
+<p><img src="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif" alt="" /></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -477,118 +527,6 @@ Server = http://kdemod.ath.cx/repo/legacy/x86_64
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2008/07/14/parte-ii-limpando-memoria-cache-de-forma-automatizada/">Parte II - Limpando Memória Cache De Forma Automatizada</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2008-07-14T15:09:00-03:00" pubdate data-updated="true">Jul 14<span>th</span>, 2008</time>
-        
-         | <a href="/blog/2008/07/14/parte-ii-limpando-memoria-cache-de-forma-automatizada/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Muitos me pediram por aqui ou mesmo por email para explicar como seria a implementação desta técnica de forma automatizada.</p>
-
-<p>Bom, utilizo isto para o servidor que citei no artigo anterior, utilizado pelos nossos amigos desenvolvedores Java. ;] Nada pessoal eim?!</p>
-
-<p>Aqui precisaremos apenas de um mínimo de intimidade com shell script e um pouco de conhecimento sobre o agendamento de tarefas no linux através do cron.</p>
-
-<p>Mãos a obra&hellip;</p>
-
-<p>A missão: Uma vez que nossos amigos não conseguem trabalhar de forma harmônica com a alocação e desalocação de memória em nossos servidores, iremos agendar a limpeza de cache para todos os dias no começo do expediente (8:00) e após o almoço. Lembrando que este é apenas um exemplo, mas você pode adaptar os horários de acordo com sua real necessidade.</p>
-
-<p>Soldados Disponíveis: Shell Script e Cron</p>
-
-<p>Plano: Um pequeno e simples script em shell será executado nos dias e horários informados anteriormente de forma a fazer uma limpeza no cache.</p>
-
-<p>Execução:</p>
-
-<p>Primeiro criaremos o script que fará a ação de limpeza do cache. Para isso abra o editor de textos de sua preferência. Particularmente prefiro o vim, mas este pode ser substituido por qualquer outro.</p>
-
-<p>No seu corpo insira o seguinte conteúdo:</p>
-
-<blockquote><h1>!/bin/bash</h1></blockquote>
-
-<h1>limpando cache</h1>
-
-<blockquote><h1>o seguinte comando é o responsável pela limpeza</h1></blockquote>
-
-<p>echo 3 > /proc/sys/vm/drop_caches</p>
-
-<blockquote></blockquote>
-
-<p>Feito isto, salve o arquivo com o nome de limpacache.sh</p>
-
-<p>Sim, isto é tudo o que o seu script precisa. Com o script criado, você deverá agora lhe dar condições de execução. Utilize o seguinte comando:</p>
-
-<blockquote><h1>chmod a+x limpacache.sh</h1></blockquote>
-
-<p>Agora que ele está pronto e com permissão de execução, iremos agendar a execução do mesmo. No terminal digite:</p>
-
-<blockquote><h1>crontab -e</h1></blockquote>
-
-<p>Isto irá abrir um arquivo no qual você deverá fazer o agendamento de sua tarefa. No mesmo insira o seguinte conteúdo:</p>
-
-<blockquote><h1>mm HH DD MM DS tarefa</h1></blockquote>
-
-<p>00 08 * * * /usr/bin/scripts/limpacache.sh</p>
-
-<p>00 14 * * * /usr/bin/scripts/limpacache.sh</p>
-
-<blockquote></blockquote>
-
-<p>Ps: O caminho /etc/scripts/ precisa ser configurado de acordo com o caminho utilizado por você. ;]</p>
-
-<p>Pronto. Pode salvar e encerrar este aquivo.</p>
-
-<p>Traduzindo o comando as linhas do cron que utilizamos:</p>
-
-<p>mm: minutos</p>
-
-<p>HH: horas</p>
-
-<p>DD: dia</p>
-
-<p>MM: mês</p>
-
-<p>DS: dia da semana</p>
-
-<p>/usr/bin/scripts/limpacache.sh: tarefa a ser realizada</p>
-
-<p>Feito isto, o plano está concretizado. Seu script será executado todos os dias nestes dois horários.</p>
-
-<p>Sinta-se livre agora para customizar os dias e horários da maneira que for mais conveniente para você.</p>
-
-<p>Abraços</p>
-
-<p><a href="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif"><img src="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif" alt="" /></a></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/28/">&larr; Anteriores</a>
@@ -613,6 +551,10 @@ Me conheça melhor <a href="http://blog.marcelocavalcante.net/about">clicando aq
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/08/06/dica-rapida-linux-forcar-usuario-a-trocar-senha-apos-primeiro-login/">Dica Rápida - Linux - Forçar Usuário A Trocar Senha Após Primeiro Login</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/08/04/rails-girls-em-fortaleza-um-palco-para-a-criatividade-feminina/">Rails Girls em Fortaleza - Um palco para a criatividade feminina</a>
       </li>
     
@@ -634,10 +576,6 @@ Me conheça melhor <a href="http://blog.marcelocavalcante.net/about">clicando aq
     
       <li class="post">
         <a href="/blog/2011/10/17/3c2ba-dia-livre-programacao-definida/">3º Dia Livre - Programação Definida!</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2011/10/11/3c2ba-dia-livre-inscricoes-abertas/">3º Dia Livre - Inscrições abertas</a>
       </li>
     
   </ul>

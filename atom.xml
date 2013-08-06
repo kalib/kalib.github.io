@@ -4,7 +4,7 @@
   <title><![CDATA[Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2013-08-05T19:46:59-03:00</updated>
+  <updated>2013-08-06T08:53:17-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -12,6 +12,45 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Dica Rápida - Linux - Forçar Usuário A Trocar Senha Após Primeiro Login]]></title>
+    <link href="http://blog.marcelocavalcante.net/blog/2013/08/06/dica-rapida-linux-forcar-usuario-a-trocar-senha-apos-primeiro-login/"/>
+    <updated>2013-08-06T08:20:00-03:00</updated>
+    <id>http://blog.marcelocavalcante.net/blog/2013/08/06/dica-rapida-linux-forcar-usuario-a-trocar-senha-apos-primeiro-login</id>
+    <content type="html"><![CDATA[<p><img class="center" src="http://blog.marcelocavalcante.net/imgs/password.jpg" title="'password'" ></p>
+
+<p><strong>É</strong> natural encontrar pessoas que utilizam linux a pouco tempo (ou que nunca utilizaram) questionando aspectos simples que seguem o jargão: <em>&ldquo;Mas no Windows eu consigo fazer isso, enquanto que no Linux&hellip;.&rdquo;</em></p>
+
+<p><strong>I</strong>sso não é novidade alguma e, de fato, é um comportamento esperado, embora demonstre apenas uma mera falta de boa vontade para pesquisar um pouco. O fato é que por vezes encontro pessoas me questionando sobre alguns destes <em>recursos em falta</em> no mundo Linux, quando na verdade eles, na grande maioria das vezes, não estão em falta.</p>
+
+<p><strong>U</strong>m exemplo recente disto se deu quando um colega (não se preocupe, seu nome está a salvo) me perguntou:</p>
+
+<blockquote><p><em>Porque o Linux não tem um recurso para forçar um usuário a alterar sua senha após o primeiro login? Isso me ajuda muito como SysAdmin em servidores Windows.</em></p></blockquote>
+
+<p><strong>D</strong>evo concordar com ele no sentido de que este recurso ajuda muito a vida de um SysAdmin. Sejamos justos, as pessoas vivem esquecendo suas senhas. Segunda-feira? Dia mundial do <em>&ldquo;esqueci minha senha, você pode gerar outra por favor?&rdquo;</em></p>
+
+<p><strong>P</strong>orém, devo acrescentar que o Linux possui sim este recurso (e não é uma novidade). O chage é apenas uma das formas de o fazer.</p>
+
+<p><strong>S</strong>upondo que seu usuário esqueceu sua senha e você deseja possibilitar que ele crie uma nova. Você pode mudar a senha dele para qualquer coisa que venha em sua mente, por exemplo: <em>123mudar456</em></p>
+
+<p><strong>E</strong>m seguida, digite o seguinte comando:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> # chage -d 0 {nome-do-usuário}</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>S</strong>upondo que eu tenha alterado a senha do usuário <em>linus.torvalds</em> para <em>123mudar456</em>, o comando seria:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> # chage -d 0 linus.torvalds</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>O</strong> parâmetro -d determina quando a senha do mesmo expira, ou deverá ser trocada. Você pode determinar uma data específica, a qual deve ser indicada no formato AAAA-MM-DD, porém, ao invés da data, o 0 indica que a senha deverá ser trocada após o primeiro login daquele usuário.</p>
+
+<p><strong>S</strong>imples certo?!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Rails Girls em Fortaleza - Um palco para a criatividade feminina]]></title>
@@ -1228,83 +1267,6 @@ Rua Castro Monte, 1364 Varjota – Fortaleza, CE
 <p><strong>S</strong>e você é usuário do Arch Linux e mora no Ceará ou conhece algum usuário do Arch Linux por aqui, passe a informação.</p>
 
 <p><strong>P</strong>or favor se identifique através do seguinte link: <a href="http://forum.archlinux-br.org/viewforum.php?id=20">http://forum.archlinux-br.org/viewforum.php?id=20</a></p>
-
-<p><strong>A</strong>braços!</p>
-
-<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Como? Download de webcasts mms e rtmp?]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2011/04/20/como-download-de-webcasts-mms-e-rtmp/"/>
-    <updated>2011-04-20T08:51:46-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2011/04/20/como-download-de-webcasts-mms-e-rtmp</id>
-    <content type="html"><![CDATA[<p><a href="http://www.ogilvy.co.uk/neo/files/2008/03/webcast-pic.png"><img src="http://www.ogilvy.co.uk/neo/files/2008/03/webcast-pic.png" alt="" /></a></p>
-
-<p><strong>C</strong>ansado de apenas poder assistir aquele webcast ou vídeo-aula online? E se estiver em um local sem conec﻿tividade? Porque dor de cabeça? Sou usuário Linux! Obrigado por ter a ideia de criar o Linux e facilitar nossas vidas Linus. ;]</p>
-
-<p><strong>R</strong>ecentemente me deparei com esta problemática. Como realizar o download deste tipo de conteúdo?</p>
-
-<p><strong>A</strong>o checar o código fonte da página que exibia o vídeo, vi que eram streamings dos protocolos mms ou rtmp, o que, aparentemente, dificultava o download.</p>
-
-<p><strong>P</strong>ara quem mais estiver passando por este problema, segue a solução. Aliás, as soluções.</p>
-
-<p><strong>U</strong>ma vez que, através do código fonte você consiga identificar a URL completa do arquivo mmc ou rmtp, fica fácil utilizar alguma das metodologias a seguir.</p>
-
-<p><strong>A</strong> primeira opção é a aplicação <strong>Mimms</strong>.</p>
-
-<p><strong>E</strong>sta é a forma mais simples e prática com arquivos do tipo mms.</p>
-
-<p><strong>P</strong>ara usuários do <a href="http://archlinux.org">Arch Linux</a>, já existe um pacote pronto no <a href="http://aur.archlinux.org/packages.php?ID=16412">AUR</a>.</p>
-
-<p><strong>A</strong> instalação, segue o padrão de arquivos baixados do AUR:</p>
-
-<p><strong>1-</strong> Download do <a href="http://aur.archlinux.org/packages/mimms/mimms.tar.gz">Tarball</a>;</p>
-
-<p><strong>2-</strong> Descompatar: <em>$ tar -xvzf mimms.tar.gz</em></p>
-
-<p><strong>3-</strong> Acessar o diretório e efetuar a compilação do pacote: <em>$ cd mimms &amp;&amp; makepkg</em></p>
-
-<p><strong>4-</strong> Instalar o pacote que lhe foi gerado: <em># pacman -U mimms-3.2.1-2-any.pkg.tar.xz</em></p>
-
-<p><strong>F</strong>eito. Agora é só executar da seguinte forma:</p>
-
-<p><em>$ mimms mms://url_de_origem_do_streaming/arquivo_streaming.wmv</em></p>
-
-<p><strong>S</strong>erá que isso funciona mesmo? Experimente:</p>
-
-<p><em>$ mimms <a href="mms://wms.andrew.cmu.edu/001/pausch.wmv">mms://wms.andrew.cmu.edu/001/pausch.wmv</a></em></p>
-
-<p><strong>O</strong>i, simples assim.</p>
-
-<p><strong>O</strong>utra alternativa?</p>
-
-<p><strong>U</strong>tilizando o <strong>Mencoder</strong>:</p>
-
-<p><strong>N</strong>ão é tão simples quanto o mimms, mas também é rápido e prático.</p>
-
-<p><strong>O</strong> comando que deve ser utilizado?</p>
-
-<p><em>mencoder mms://url_de_origem_do_streaming/arquivo_streaming.wmv -o arquivo_streaming.wmv -oac copy -ovc copy</em></p>
-
-<p><strong>U</strong>m pouco mais complexo, certo? Mas funciona.</p>
-
-<p><strong>E</strong> quanto aos arquivos de streaming que utilizam o protocolo rtmp?</p>
-
-<p><strong>N</strong>este caso a opção é utilizarmos o <strong>rtmpdump</strong>.</p>
-
-<p><strong>S</strong>im, claro.. Se você utiliza o Arch Linux, sua vida continua simplificada:</p>
-
-<p><em># pacman -S rtmpdump</em></p>
-
-<p><strong>P</strong>ronto, está instalado. ;]</p>
-
-<p><strong>A</strong> execução do mesmo também é bastante simples, precisando apenas especificar a origem e o destino do streaming em questão. Segue sintaxe:</p>
-
-<p><em>rtmpdump -r &ldquo;rtmpe://url_de_origem_do_streaming/arquivo_streaming.wmv&rdquo; -o arquivo.streaming.flv &mdash;resume</em></p>
-
-<p><strong>H</strong>ave fun! ;]</p>
 
 <p><strong>A</strong>braços!</p>
 
