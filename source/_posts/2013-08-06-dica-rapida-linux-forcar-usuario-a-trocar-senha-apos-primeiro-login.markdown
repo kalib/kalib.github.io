@@ -43,4 +43,4 @@ categories:
 
 **O** parâmetro -d determina quando a senha do mesmo expira, ou deverá ser trocada. Você pode determinar uma data específica, a qual deve ser indicada no formato AAAA-MM-DD, porém, ao invés da data, o 0 indica que a senha deverá ser trocada após o primeiro login daquele usuário.
 
-**S**imples certo?!
+**S**imples, certo?!
