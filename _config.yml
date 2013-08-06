@@ -7,7 +7,7 @@ title: Marcelo Cavalcante Rocha ~
 subtitle: Hacking the damn life...
 author: Marcelo Cavalcante Rocha - Kalib
 simple_search: http://google.com/search
-description:
+description: Blog sobre tecnologia e novidades em geral
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
@@ -73,7 +73,7 @@ twitter_user:
 twitter_tweet_button: true
 
 # Google +1
-google_plus_one: false
+google_plus_one: true
 google_plus_one_size: medium
 
 # Google Plus Profile
@@ -97,4 +97,4 @@ disqus_show_comment_count: true
 google_analytics_tracking_id: UA-42903485-1
 
 # Facebook Like
-facebook_like: false
+facebook_like: true
