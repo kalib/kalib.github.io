@@ -1,0 +1,515 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Marcelo Cavalcante Rocha ~</title>
+  <meta name="author" content="Marcelo Cavalcante Rocha - Kalib">
+
+  
+  <meta name="description" content="Creio que todos os usuários de Arch Linux conhecem ou já ouviram falar do Hugo Doria. O Hugo é um dos maiores representantes do Arch Linux no Brasil &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.marcelocavalcante.net/blog/page/45/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Marcelo Cavalcante Rocha ~" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-42903485-1']);
+    _gaq.push(['_setDomainName','marcelocavalcante.net']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:blog.marcelocavalcante.net" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+    <li><a href="/">
+        <span class="blue_light">
+            Marcelo Cavalcante Rocha ~
+        </span>
+       
+           <span class="blue_dark">
+             Hacking the damn life...
+           </span>
+       
+    </a></li>
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Arquivos</a></li>
+  <li><a href="/about">Sobre mim</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/08/03/instalacao-do-kdemod-41-no-arch-linux/">Instalação Do KDEmod 4.1 No Arch Linux</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-08-03T10:07:00-03:00" pubdate data-updated="true">Aug 3<span>rd</span>, 2008</time>
+        
+         | <a href="/blog/2008/08/03/instalacao-do-kdemod-41-no-arch-linux/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Creio que todos os usuários de Arch Linux conhecem ou já ouviram falar do <a href="http://hugodoria.org/">Hugo Doria</a>. O Hugo é um dos maiores representantes do Arch Linux no Brasil e um dos atuais desenvolvedores do mesmo.</p>
+
+<p>Este artigo sobre instalação do KDEmod 4.1 foi escrito por ele e resolvi postar aqui para que possamos atingir mais público ainda. Quanto mais a informação correr, melhor. ;]</p>
+
+<p>Introdução</p>
+
+<p>No <em>Arch Linux</em> o KDE é empacotado de um jeito que eu não curto. Nele, diversas aplicações são &ldquo;englobadas&rdquo; em um só pacote (isso é o padrão na maioria das distribuições).</p>
+
+<p>Ao instalar o pacote <em>kdegraphics</em>, por exemplo, você acaba instalando diversas aplicações para manipulação gráfica. Mesmo que você queira apenas a &ldquo;aplicação x&rdquo; daquele pacote será obrigado a instalar o kdegraphics todo. Isso torna o KDE enorme e com diversas aplicações que você nunca usa.<a href="http://bp3.blogger.com/_5kfJplBiYy0/SJWvv3vtmLI/AAAAAAAAAFM/snVgZsrb6Us/s1600-h/thumb_kdemod41.png"><img src="http://bp3.blogger.com/_5kfJplBiYy0/SJWvv3vtmLI/AAAAAAAAAFM/snVgZsrb6Us/s200/thumb_kdemod41.png" alt="" /></a></p>
+
+<p>A solução para isto é usar o <a href="http://www.kdemod.ath.cx/">KDEMod</a>, um projeto que visa fornecer uma instalação modular do KDE e otimizada para o Arch Linux.</p>
+
+<p>NOTA: Não há planos para portar o KDEMod para outras distribuições.</p>
+
+<p>Instalação</p>
+
+<p>O primeiro passo a ser feito é remover toda e qualquer instalação do <em>KDEMod</em> anterior. Faça isso com:</p>
+
+<blockquote><h1>pacman -Rscn kdemod-complete</h1></blockquote>
+
+<p>Se você já está usando as versões betas do kdemod4, também faça:</p>
+
+<blockquote><h1>pacman -Rscn kdemod4-complete</h1></blockquote>
+
+<p>Verifique se tudo relacionado ao kde foi removido com:</p>
+
+<blockquote><h1>pacman -Q | grep kde</h1></blockquote>
+
+<p>Se aparecer algo, pode remover. Uma maneira mais direta de fazer isto é executando:</p>
+
+<blockquote><h1>pacman -Q | grep -i &ldquo;kde|qt&rdquo; | cut -d &ldquo; &rdquo; -f1 | xargs pacman -Rd</h1></blockquote>
+
+<p>É preciso, também, remover os arquivos de configuração do kdemod 3 e 4 anteriores, já que eles são incompatíveis com a nova versão:</p>
+
+<blockquote><p>$ rm -rf ~/.kde<em> ~/.kdemod</em></p></blockquote>
+
+<p>NOTA: Ao invés de removê-los eu sugiro que você faça um backup.</p>
+
+<p>Pronto, seu sistema está limpo e agora podemos instalar a nova versão sem problemas. Abra o arquivo <em>/etc/pacman.conf</em> com seu editor preferido e adicione:</p>
+
+<blockquote><p>[kdemod-core]</p></blockquote>
+
+<p>Server = <a href="http://kdemod.ath.cx/repo/core/i686">http://kdemod.ath.cx/repo/core/i686</a></p>
+
+<blockquote></blockquote>
+
+<p>NOTA:</p>
+
+<ul>
+<li>Remove qualquer entrada referente ao [kdemod] ou ao [kdemod-unstable]</li>
+</ul>
+
+
+<p>Para instalar o KDEMod faça:</p>
+
+<blockquote><h1>pacman -Sy kdemod</h1></blockquote>
+
+<p>Se quiser o kdemod completo faça:</p>
+
+<blockquote><h1>pacman -Sy kdemod-complete</h1></blockquote>
+
+<p>Seu KDEMod está pronto para uso. :) Para usá-lo basta editar seu ~/.xinitrc ou iniciar o kdm (gerenciador de login do KDE) com:</p>
+
+<blockquote><h1>/etc/rc.d/kdm restart</h1></blockquote>
+
+<p>O primeiro boot do KDE 4 demora um pouco, mas depois melhora. Portanto, não se preocupe.</p>
+
+<p>Caso você queira seu ambiente em português instale o pacote abaixo:</p>
+
+<blockquote><h1>pacman -Sy kdemod-kde-l10n-pt_br</h1></blockquote>
+
+<p>E selecione seu idioma nas configurações do KDE.</p>
+
+<p>Pacotes Adicionais</p>
+
+<p>Agora existe um repositório com alguns pacotes adicionais para o KDE (aplicativos, plasmoids etc). Para usá-lo adicione as seguintes linhas ao <em>/etc/pacman.conf</em>:</p>
+
+<blockquote><p>[kdemod-extragear]</p></blockquote>
+
+<p>Server = <a href="http://kdemod.ath.cx/repo/extragear/i686">http://kdemod.ath.cx/repo/extragear/i686</a></p>
+
+<blockquote></blockquote>
+
+<p>E sincronize a base de dados dos pacotes:</p>
+
+<blockquote><h1>pacman -Sy</h1></blockquote>
+
+<p>Para visualizar o que existe neste repositório faça:</p>
+
+<blockquote><h1>pacman -Sl kdemod-extragear</h1></blockquote>
+
+<p>Por enquanto ainda existem poucos pacotes neste repositório, mas vários outros estão sendo adicionados.</p>
+
+<p>Bem, é isso. Agora é só você aproveitar seu KDEMod 4. No momento que estou escrevendo este artigo ele se encontra na versão 4.1 e já está ficando fantástico.</p>
+
+<p>Maiores informações:</p>
+
+<ul>
+<li><a href="http://www.kdemod.ath.cx/">http://www.kdemod.ath.cx/</a></li>
+</ul>
+
+
+<p>Deixo aqui os agradecimentos ao Hugo em nome de todos pela contribuição.</p>
+
+<p><img src="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif" alt="" /></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/07/30/corrigindo-incompatibilidade-do-kdemod-apos-o-nascimento-do-kde41-no-arch/">Corrigindo Incompatibilidade Do Kdemod Após O Nascimento Do KDE4.1 No Arch</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-07-30T11:28:00-03:00" pubdate data-updated="true">Jul 30<span>th</span>, 2008</time>
+        
+         | <a href="/blog/2008/07/30/corrigindo-incompatibilidade-do-kdemod-apos-o-nascimento-do-kde41-no-arch/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Os usuários de Arch Linux que utilizam o kdemod como ambiente gráfico e que tentaram fazer uma atualização do sistema (pacman -Syu) nos últimos dias devem ter notado que havia um problema. Como o KDE 4.1 entrou para os repositórios do Arch, passou a haver uma incompatibilidade entre alguns pacotes. E a atualização do sistema pedia que você substituisse alguns pacotes do kdemod pelos do kde.</p>
+
+<p>Logo que percebi este problema busquei ajuda em fórums mas ninguém tinha a solução, portanto decidi reportar este bug para os desenvolvedores do kdemod. A minha surpresa foi chegar no site de bugreport do kdemod e ver que este bug já havia sido identificado. Achei ótimo ver que o bug já havia sido notificado e que já estavam trabalhando em cima do mesmo, como o próprio desenvolvedor &ldquo;funkyou&rdquo; me informou.</p>
+
+<p>Hoje, 30/07, o problema já se encontra solucionado e o bug foi fechado no bugreport deles. É preciso seguir um procedimento para normalizar a situação, já que os pacotes do antigo kdemod foram re-construídos e re-empacotados como kdemod3 para fazê-los funcionar no novo upgrade do Arch.</p>
+
+<p>Mudanças que foram feitas:</p>
+
+<ul>
+<li><p>Todos os pacotes foram renomeados para kdemod3-$PACKAGE</p></li>
+<li><p>KDEmod 3.5.9 agora conflita com KDE 4.1, então não é possível ter ambos instalados simultaneamente</p></li>
+<li><p>Não é uma atualização muito comum, você precisará remover todos os pacotes do kdemod primeiramente para depois reinstalar</p></li>
+<li><p>Note que muitas coisas do [community] por exemplo precisam ser adaptados ao novo KDE3 renomeando no Arch</p></li>
+<li><p>Não force nada, o melhor é reportar os problemas no link a seguir: <a href="http://www.kdemod.ath.cx/bbs/viewtopic.php?pid=5303#p5303">http://www.kdemod.ath.cx/bbs/viewtopic.php?pid=5303#p5303</a></p></li>
+<li><p>Este repositório deixará de ser suportado até que alguém passe a lhe dar mais amor como nós acasionalmente fazemos</p></li>
+</ul>
+
+
+<p>INSTALAÇÃO<strong>:</strong></p>
+
+<p><strong>1. </strong>Remover todos os pacotes do KDE4: pacman -Rcs kde</p>
+
+<p><strong>2. </strong>Remover todos os pacotes do KDEmod4: pacman -Rcs kdemod4-complete</p>
+
+<p><strong>3. </strong>Remover todos os pacotes do KDEmod3: pacman -Rcs kdemod-complete</p>
+
+<p><strong>4. </strong>Remover <em>qualquer</em> pacote do KDE que ainda exista em seu sistema</p>
+
+<p><strong>5. </strong>Checar novamente se tudo foi removido: pacman -Q | grep kde</p>
+
+<p><strong>6. </strong>Remover o antigo repositório [kdemod] do seu pacman.conf</p>
+
+<p><strong>7. </strong>Adicionar o novo repositório [kdemod-legacy] ao seu pacman.conf</p>
+
+<p>Para i686</p>
+
+<blockquote><pre><code>[kdemod-legacy]
+Server = http://kdemod.ath.cx/repo/legacy/i686
+</code></pre></blockquote>
+
+<p>Para x86_64</p>
+
+<blockquote><pre><code>[kdemod-legacy]
+Server = http://kdemod.ath.cx/repo/legacy/x86_64
+</code></pre></blockquote>
+
+<p>****Em seguida atualize com: pacman -Suy</p>
+
+<p>****Instale com:</p>
+
+<p><strong>pacman -S kdemod3</strong> (sistema funcional básico)</p>
+
+<p>ou</p>
+
+<p><strong>pacman -S kdemod3-complete</strong> (instalação completa do KDEmod)</p>
+
+<p>ou</p>
+
+<p><strong>pacman -S kdemod3-vanilla</strong> (instalação completa do KDEmod, sabor vanilla (baunilha))</p>
+
+<p>ou</p>
+
+<p><strong>pacman -S kdemod3-base</strong> (instalação básica do KDE (base))</p>
+
+<p><strong><strong>Instale sua língua(cheque os disponíveis com </strong>pacman -Ss kdemod3-kde-i18n</strong>)</p>
+
+<p>Feito. ;]</p>
+
+<p><a href="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif"><img src="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif" alt="" /></a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/07/24/1-mes-de-arch-linux-meu-resultado-obtido/">1 Mês De Arch Linux - Meu Resultado Obtido</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-07-24T09:01:00-03:00" pubdate data-updated="true">Jul 24<span>th</span>, 2008</time>
+        
+         | <a href="/blog/2008/07/24/1-mes-de-arch-linux-meu-resultado-obtido/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h3></h3>
+
+<p><img src="http://3.bp.blogspot.com/_5kfJplBiYy0/SIXsNZ7e4GI/AAAAAAAAAFE/YQFdlhUvqZ4/s1600/logo125.jpg" alt="[logo125.jpg]" />Semana passada completei um mês de utilização do Arch Linux, mas como não tive tempo para publicar nada, segue agora um resumo do que tenho obtido com o Arch Linux nesse 1 mês de uso intensivo do mesmo como distribuição oficial.</p>
+
+<p>Performance: No quesito performance o Arch me surpreendou. Ganhou em meus olhos o lugar, com mérito, da distribuição mais rápida que já testei até hoje. Para os que acompanham meus posts, sabem que essa lista não é pequena. O Arch, por vir à luz de forma simples e &ldquo;pelado&rdquo;, bem como nós viemos a Terra, nos proporciona um maior controle do que queremos ter instalado e rodando. E como fazemos isto manualmente, podemos adquirir uma performance maior. O boot do mesmo é também o mais rápido que já tive em minha máquina. A utilização de recursos é muito bem clara quando se deixa um top rodando. Pude ver que o consumo de memória e processador baixaram muito se comparado a outras distribuições que utilizei durante muito tempo.</p>
+
+<p>Pacotes i686: A maioria dos computadores hoje em dia possuem processadores i686, porém nenhuma distribuição até hoje possuia versões para i686. No máximo possuiam uma versão de sua iso de instalação para i686, mas os pacotes continuavam sendo para i386, desperdiçando o potencial de seu hardware. No Arch Linux, por padrão todos os pacotes já são feitos para arquiteturas i686, possuindo também a versão x64 para aqueles que possuem este tipo de processador. ;]</p>
+
+<p>Gerenciamento de pacotes: Este também foi um pequeno choque no começo para mim. Depois de testar várias distros me apeguei bastante ao Debian e ao Kubuntu pelo fato de eles trazerem consigo a maravilhosa ferramenta Aptitude. Não tiro aqui os méritos da mesma. Ela me manteve entre as espirais Debian por cerca de 2 anos. ;] Utilizar algo diferente, depois de tanto tempo foi mesmo um choque, mas a verdade é que logo na primeira semana o pacman, gerenciador de pacotes do Arch Linux, roubou em meu coração o lugar no qual se encontrava o Aptitude. Ainda gosto do aptitude, e continuo optando por ele como segunda escolha, mas devo ser justo em meus comentários. Acreditem, se depois de 2 anos como um fanático pelo aptitude, e meus posts anteriores não me deixam mentir, eu passei agora a adotar uma nova ferramenta, o pacman, é porque alguma coisa realmente me convenceu de que valeria a pena. Além de muito estável, a forma como o pacman funciona é simples e eficaz. Trazendo respostas rápidas à simples comandos com poucos parâmetros, posso resolver tudo o que preciso relacionado a meus pacotes sem a preocupação de tratar dependências ou quebrar pacotes, já que além de instalar as dependências juntamente com um pacote, ele também as removerá desde que as mesmas estejam orfãns, ou não necessárias para outros pacotes.</p>
+
+<p><a href="http://bp1.blogger.com/_5kfJplBiYy0/SIXdAFxCsXI/AAAAAAAAAEs/Gyisjq0rjak/s1600-h/archdia.png"><img src="http://bp1.blogger.com/_5kfJplBiYy0/SIXdAFxCsXI/AAAAAAAAAEs/Gyisjq0rjak/s200/archdia.png" alt="" /></a></p>
+
+<p>Pacotes Atualizados: Uma das coisas que mais me surpreendeu no Arch, é a velocidade com que as coisas acontecem. Desde que adotei o Arch como minha distribuição, adotei a prática de fazer um upgrade completo em meu sistema diariamente através do pacman. Fico muito contente em ver que diariamente, uso os pacotes em suas versões mais recentes. Dois que me chamaram a atenção foram por exemplo o amsn e firefox, já que são de uso diário. Bastou sair publicado no site oficial do amsn uma nova versão com correções de bugs, e no upgrade do dia seguinte, lá estava ele nos meus repositórios e logo em seguida rodando em minha máquina. O mesmo com o Firefox, após o nascimento do tão esperado Firefox 3.0, surgiram também descobertas sobre vulnerabilidades do mesmo. Assim que foi lançada a versão 3.0.1 do mesmo, no meu upgrade do dia seguinte, lá estava em minha máquina a raposa de fogo em sua versão 3.0.1 funcionando perfeitamente. O mesmo acontece com os outros vários pacotes que utilizo.</p>
+
+<p>AUR: Como se já não bastasse o magnífico pacman pra gerenciar meus pacotes, também contamos com o <a href="http://aur.archlinux.org/">AUR</a>, onde podemos achar aquele pacote em específico que por alguma razão ainda não se encontra nos repositórios oficiais. A organização do AUR é excelente onde podemos criar pacotes e submetê-los para que depois de uma votação adequada, possam finalmente assumir postos mais reconhecidos, até quem sabe um dia entrar para os repositórios. A quantidade de pacotes disponíveis no AUR é surpreendente, o que apenas demonstra a força da comunidade atuante no Arch.</p>
+
+<p>Rolling Release: Eis um outro fator primordial no Arch Linux. É uma distribuição Rolling Release. O que isso significa? Você não tem que se dar ao trabalho de baixar uma iso e reinstalar cada vez que surge uma versão nova do Arch Linux. O próprio pacman se responsabiliza de fazer este upgrade sem quebrar seu sistema. Você não precisa mais se manter com versões antigas de sua distribuição por não querer perder tanto tempo fazendo seus backups ou reinstalando tudo do zero. Tive a sorte de poder testar este recurso durante este 1 mês de testes com o Arch, já que no mês de Junho tivemos o lançamento da nova versão do Arch Linux, 2008.6 Overlord, e pude pessoalmente atestar a validade desta qualidade do Arch. Resultado? A minha distro foi totalmente atualizada para a nova versão do Arch, sem nenhum trauma. Tudo funcinou perfeitamente. Mais um ponto pro Arch em meu coração.</p>
+
+<p><img src="http://3.bp.blogspot.com/_5kfJplBiYy0/SIXgq0VwgnI/AAAAAAAAAE0/fNjEHzNHgc8/s1600/archoharch.png" alt="[archoharch.png]" /></p>
+
+<p>Segurança: O Linux trás uma característica em comum, independente de distribuição, que é a segurança. Porém quanto menos serviços desnecessários rodando, menores serão as brechas e vulnerabilidades, portanto o Arch tem vantagem nisso. E por trazer algumas características do BSD, procura também uma estabilidade neste sentido. O próprio ports do BSD é utilizado no Arch Linux. ;]</p>
+
+<p>Comunidade: A comunidade do Arch Linux, em especial a comunidade <a href="http://archlinux-br.org/">archlinux-br</a>, tem me recebido de braços abertos desde que passei a frequentar e tentar ajudar a mesma, seja na divulgação, resposta de dúvidas ou mesmo na tradução de documentações do Arch. Essa oportunidade de ajudar e ser bem recebido ajudou muito em minha decisão por adotar esta distribuição. Outro ponto a favor, é o fato de termos dois brasileiros atualmente engajados no time de desenvolvedores do Arch Linux, o que significa que nossa voz é mais facilmente ouvida. Deixo aqui os parabéns a ambos que tem feito um ótimo trabalho: <a href="http://hdoria.archlinux-br.org/blog">Hugo Doria</a> e Douglas Soares. (Perdão, não achei o link para o mesmo)</p>
+
+<p>É isso pessoal, espero que assim como eu, possam experimentar e conhecer esta magnífica distribuição.</p>
+
+<p><a href="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif"><img src="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif" alt="" /></a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/blog/page/46/">&larr; Anteriores</a>
+    
+    <a href="/blog/archives">Arquivos do Blog</a>
+    
+    <a class="next" href="/blog/page/44/">Novas &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Sobre mim</h1>
+  <p><img src="http://www.marcelocavalcante.net/imgs/kalib_picture_pq.png" style="float: left; margin-right: 2px; margin-bottom: 2px;"><p align=left><b>M</b>e chamo Marcelo Cavalcante Rocha, também conhecido como Kalib, e sou militante do Software Livre desde 2005. 
+Trabalho com administração de redes, sistemas e segurança da informação em ambientes mistos. 
+Gosto de ler, surfar, ouvir música e assistir um bom filme. 
+Me conheça melhor <a href="http://blog.marcelocavalcante.net/about">clicando aqui</a>.</p></p>
+</section>
+<section>
+  <h1>Posts Recentes</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/08/06/dica-rapida-linux-forcar-usuario-a-trocar-senha-apos-primeiro-login/">Dica Rápida - Linux - Forçar Usuário A Trocar Senha Após Primeiro Login</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/08/04/rails-girls-em-fortaleza-um-palco-para-a-criatividade-feminina/">Rails Girls em Fortaleza - Um palco para a criatividade feminina</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/08/01/renascimento-dot-dot-dot-de-cara-nova/">Renascimento&#8230;de cara nova</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/02/06/recomendacao-bibliografica-mago-e-vidro-a-torre-negra-iv/">Recomendação Bibliográfica: Mago e Vidro (A Torre Negra - IV)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/12/13/netstat-saiba-o-que-esta-rolando-em-seu-ambiente/">Netstat - Saiba o que está rolando em seu ambiente&#8230;</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+  <h1>Estou lendo</h1>
+  <img align="center" src="/imgs/livros/gravidade.jpg">
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Marcelo Cavalcante Rocha - Kalib -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'marcelocavalcante';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

@@ -9,7 +9,7 @@
   <meta name="author" content="Marcelo Cavalcante Rocha - Kalib">
 
   
-  <meta name="description" content="Muitos me pediram por aqui ou mesmo por email para explicar como seria a implementação desta técnica de forma automatizada. Bom, utilizo isto para o &hellip;">
+  <meta name="description" content="Só nos faltava essa eim!? Depois de várias atitudes &ldquo;questionáveis&rdquo; em toda a sua história, me deparo com o seguinte texto publicado &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -86,7 +86,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2008/07/14/parte-ii-limpando-memoria-cache-de-forma-automatizada/">Parte II - Limpando Memória Cache De Forma Automatizada</a></h1>
+      <h1 class="entry-title"><a href="/blog/2009/05/12/so-faltava-essa-microsoft-agora-tenta-fragmentar-o-odf/">Só Faltava Essa: Microsoft Agora Tenta Fragmentar O ODF</a></h1>
     
     
       <p class="meta">
@@ -102,264 +102,220 @@
   
 
 
-<time datetime="2008-07-14T15:09:00-03:00" pubdate data-updated="true">Jul 14<span>th</span>, 2008</time>
+<time datetime="2009-05-12T19:41:57-03:00" pubdate data-updated="true">May 12<span>th</span>, 2009</time>
         
-         | <a href="/blog/2008/07/14/parte-ii-limpando-memoria-cache-de-forma-automatizada/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Muitos me pediram por aqui ou mesmo por email para explicar como seria a implementação desta técnica de forma automatizada.</p>
-
-<p>Bom, utilizo isto para o servidor que citei no artigo anterior, utilizado pelos nossos amigos desenvolvedores Java. ;] Nada pessoal eim?!</p>
-
-<p>Aqui precisaremos apenas de um mínimo de intimidade com shell script e um pouco de conhecimento sobre o agendamento de tarefas no linux através do cron.</p>
-
-<p>Mãos a obra&hellip;</p>
-
-<p>A missão: Uma vez que nossos amigos não conseguem trabalhar de forma harmônica com a alocação e desalocação de memória em nossos servidores, iremos agendar a limpeza de cache para todos os dias no começo do expediente (8:00) e após o almoço. Lembrando que este é apenas um exemplo, mas você pode adaptar os horários de acordo com sua real necessidade.</p>
-
-<p>Soldados Disponíveis: Shell Script e Cron</p>
-
-<p>Plano: Um pequeno e simples script em shell será executado nos dias e horários informados anteriormente de forma a fazer uma limpeza no cache.</p>
-
-<p>Execução:</p>
-
-<p>Primeiro criaremos o script que fará a ação de limpeza do cache. Para isso abra o editor de textos de sua preferência. Particularmente prefiro o vim, mas este pode ser substituido por qualquer outro.</p>
-
-<p>No seu corpo insira o seguinte conteúdo:</p>
-
-<blockquote><h1>!/bin/bash</h1></blockquote>
-
-<h1>limpando cache</h1>
-
-<blockquote><h1>o seguinte comando é o responsável pela limpeza</h1></blockquote>
-
-<p>echo 3 > /proc/sys/vm/drop_caches</p>
-
-<blockquote></blockquote>
-
-<p>Feito isto, salve o arquivo com o nome de limpacache.sh</p>
-
-<p>Sim, isto é tudo o que o seu script precisa. Com o script criado, você deverá agora lhe dar condições de execução. Utilize o seguinte comando:</p>
-
-<blockquote><h1>chmod a+x limpacache.sh</h1></blockquote>
-
-<p>Agora que ele está pronto e com permissão de execução, iremos agendar a execução do mesmo. No terminal digite:</p>
-
-<blockquote><h1>crontab -e</h1></blockquote>
-
-<p>Isto irá abrir um arquivo no qual você deverá fazer o agendamento de sua tarefa. No mesmo insira o seguinte conteúdo:</p>
-
-<blockquote><h1>mm HH DD MM DS tarefa</h1></blockquote>
-
-<p>00 08 * * * /usr/bin/scripts/limpacache.sh</p>
-
-<p>00 14 * * * /usr/bin/scripts/limpacache.sh</p>
-
-<blockquote></blockquote>
-
-<p>Ps: O caminho /etc/scripts/ precisa ser configurado de acordo com o caminho utilizado por você. ;]</p>
-
-<p>Pronto. Pode salvar e encerrar este aquivo.</p>
-
-<p>Traduzindo o comando as linhas do cron que utilizamos:</p>
-
-<p>mm: minutos</p>
-
-<p>HH: horas</p>
-
-<p>DD: dia</p>
-
-<p>MM: mês</p>
-
-<p>DS: dia da semana</p>
-
-<p>/usr/bin/scripts/limpacache.sh: tarefa a ser realizada</p>
-
-<p>Feito isto, o plano está concretizado. Seu script será executado todos os dias nestes dois horários.</p>
-
-<p>Sinta-se livre agora para customizar os dias e horários da maneira que for mais conveniente para você.</p>
-
-<p>Abraços</p>
-
-<p><a href="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif"><img src="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif" alt="" /></a></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2008/07/09/limpando-o-cache-de-forma-rapida/">Limpando O Cache De Forma Rápida</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2008-07-09T11:14:00-03:00" pubdate data-updated="true">Jul 9<span>th</span>, 2008</time>
-        
-         | <a href="/blog/2008/07/09/limpando-o-cache-de-forma-rapida/#disqus_thread">Comments</a>
+         | <a href="/blog/2009/05/12/so-faltava-essa-microsoft-agora-tenta-fragmentar-o-odf/#disqus_thread">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>Aqueles que são administradores de redes e servidores já devem ter passado por problemas parecidos com este.</p>
+  <div class="entry-content"><p><strong><img src="http://www.tudolink.com/wp-content/2007/02/linux_vs_windows.jpg" alt="" /></strong></p>
 
-<p>Nesta dica irei apresentar um comando simples para limpar sua memória em cache.</p>
+<p><strong>S</strong>ó nos faltava essa eim!?</p>
 
-<p>Resolvi escrever sobre isto por ter visto duas vezes na mesma semana problemas relacionados a isso. Um foi aqui mesmo onde trabalho, onde estávamos percebendo que o consumo de memória em um dos servidores estava muito alto, porém com pouca atividade no mesmo, no qual percebi que nada mais era do que muita memória alocada em cache sem necessidade no momento. Desenvolvedores java&hellip;vai entender.. hauhauha (brincadeira.. :p).</p>
+<p><strong>D</strong>epois de várias atitudes &ldquo;questionáveis&rdquo; em toda a sua história, me deparo com o seguinte texto publicado pelo <a href="http://www.softwarelivre.org/news/13422">Vitorio Furusho</a>.</p>
 
-<p>Outro caso foi uma dúvida que surgiu, bem parecida, em um fórum do qual faço parte, onde um rapaz estava passando pelo mesmo problema no servidor dele&hellip; Com consumo exagerado de memória. Ele até colou o resultado do top no qual podíamos ver claramente que não haviam processos consumindo tudo aquilo de memória, e mais uma vez pudemos ver que o grande vilão era o cache, o que lhe passava essa impressão de memória totalmente consumida.</p>
+<blockquote><p><em>Tal como já havia feito com Java e HTML (só para citar dois casos), a Microsoft agora investiu ao menos 12 meses de trabalho para tentar fragmentar o ODF no mercado de TI: Uma vergonha.</em></p></blockquote>
 
-<p>O comando para se limpar este chache é o seguinte:</p>
+<p>Juro que tinha me preparado para publicar nesta semana um post elogiando a Microsoft por ter finalmente lançado o SP2 do Office 2007 com suporte nativo ao ODF, mas infelizmente após os testes iniciais de diversos usuários, o que vemos é uma tentativa absurda de enganar os consumidores (que pagaram pelo software) e fragmentar o ODF na indústria de TI.</p>
 
-<blockquote><h1>echo 3 > /proc/sys/vm/drop_caches</h1></blockquote>
+<p>Quando uso o termo fragmentar, me refiro á tática já conhecida de usar a ‘criatividade’ no momento de implementação de um padrão para tornar a sua implementação compatível apenas com a sua ferramenta (que já viu sites que só funcionam no Internet Explorer sabe bem do que estou falando). Por fora os documentos parecem idênticos e compatíveis mais por dentro são completamente diferentes, fragmentando assim a uniformidade esperada com a utilização de um padrão.</p>
 
-<p>Exemplo:</p>
+<p>Um dos primeiros artigo publicado sobre o tema e para o qual chamo a atenção de todos é do Rob Weir, coordenador do OASIS ODF TC (grupo que desenvolve o ODF, do qual faço parte). Chega a ser assustador o que o Office 2007 faz com as planilhas existentes de ODF.</p>
 
-<p>Aqui vai uma saída do meu top antes de rodar o comando. ( Reparem no consumo de memória armazenada em Cache na última linha!)</p>
+<p>Os detalhes técnicos estão todos no blog do Rob, mas em resumo, quando se abre uma planilha ODF (extensão .ods) existente no Office 2007, ele simplesmente elimina todas as fórmulas existentes sem avisar nada ao usuário, deixando nas células apenas os valores do resultado do cálculo das fórmulas (valores estes já previamente armazenados no documento). Se um usuário quiser testar o suporte ao ODF no Office, e sem prestar a devida atenção salvar uma planilha aberta, vai sobrescrever o documento eliminando todas as fórmulas, como se estivesse gravando um documento que foi totalmente digitado. Já vi absurdos na vida, mas nada se compara a isso.</p>
 
-<blockquote><p>top &ndash; 09:40:03 up 1:42, 1 user, load average: 0.06, 0.20, 0.20</p></blockquote>
+<p>Quando se utiliza o Office 2007 para gerar uma nova planilha, as fórmulas serão armazenadas de tal forma que só o Office 2007 (ou o CleverAge, um plug-in de suporte ao ODF para o Office desenvolvido em Open Source com patrocínio da Microsoft) será capaz de ler o documento, acabando com a possibilidade de que qualquer outra aplicação existente seja capaz de ler o documento.</p>
 
-<p>Tasks: 83 total, 2 running, 80 sleeping, 0 stopped, 1 zombie</p>
+<p>Enquanto o primeiro problema simplesmente joga fora toda a inteligência de negócios dentro das planilhas (as fórmulas), o segundo prende o usuário ao Office 2007 para sempre (já vimos este filme antes, não é mesmo ?).</p>
 
-<p>Cpu(s): 4.3%us, 0.5%sy, 0.2%ni, 95.0%id, 0.0%wa, 0.0%hi, 0.0%si, 0.0%st</p>
+<p>A justificativa que a Microsoft poderia usar para isso é a falta de definição de fórmulas em planilhas no ODF 1.0/1.1. Interessante notar que no ODF 1.2 (que é desenvolvido com a participação da Microsoft) este problema já foi resolvido com a criação do OpenFormula.</p>
 
-<p>Mem: 1944240k total, 898916k used, 245324k free, 51176k buffers</p>
+<p>Na primeira tabela comparativa do post do Rob, que resume um teste sobre o mesmo assunto que ele fez há algumas semanas, fica fácil perceber que mesmo sem existir a especificação de fórmulas para planilhas dentro do ODF 1.1, a interoperabilidade entre as aplicações existentes testadas (KOffice, OpenOffice, Google Docs, Symphony e o plug-in da Sun para o Office) existe de fato (com exceção do CleverAge que apresentou alguns problemas). Isso significa que todos os outros desenvolvedores não se preocuparam apenas em ‘cumprir com um requisito de norma’ (ou seja, conformidade), mas também em desenvolver uma aplicação realmente útil e interoperável para seus usuários. O Rob comenta ainda que o conjunto de fórmulas utilizado por todas estas aplicações (com base no OpenOffice) foi desenvolvido com base nas fórmulas existentes no Excel (no mínimo irônico, heim ?).</p>
 
-<p>Swap: 996020k total, 0k used, 996020k free, 969000k cached</p>
+<p>Destaco ainda que os problemas apresentados pelo OpenOffice quando o Rob repetiu seus testes com a versão nova da suíte, foram causados por que os desenvolvedores do OpenOffice 3.0 decidiram incorporar como padrão na ferramenta o suporte ao ODF 1.2 que ainda está em desenvolvimento do OASIS. Não questiono o que os levou a tal decisão, mas tenho orientado a todos os usuários do OpenOffice 3.0 que conheço, que alterem a configuração da suíte para utilizar como padrão o ODF 1.0/1.1 (no menu de Opções do OpenOffice existe um grupo chamado “carregar/salvar” onde esta configuração pode ser feita). Admiro o esforço dos desenvolvedores do OpenOffice em incorporar o ODF 1.2 à sua ferramenta, mas acho que isso deveria ter sido colocado como uma funcionalidade adicional, e não como o seu formato padrão (tenho usado o meu OpenOffice 3.0.1 configurado para trabalhar com o ODF 1.0/1.1 e não tenho tido nenhum problema de interoperabilidade).</p>
 
-<blockquote></blockquote>
+<p>Gostei também de ver a avaliação que PJ (Groklaw) fez sobre o SP2 do MSOffice. PJ não desenvolve software e por isso criou um documento texto relativamente simples e obteve resultados absurdos também.</p>
 
-<p>Repare agora o resultado obtido pelo top depois de executar o comando para limpar o cache:</p>
+<p>PJ escreve ainda algo bem interessante, e concordo 100% com o que escreveu:</p>
 
-<blockquote><p>top &ndash; 09:45:03 up 1:47, 1 user, load average: 0.32, 0.16, 0.17</p></blockquote>
+<p>“…Querida Microsoft, você poderia por favor fazer alguma coisa sobre isso ? É somente código, o que significa que pode ser corrigido. Como seu código é proprietário, nós não podemos corrigi-lo. Só você pode. Como as canções antigas falam, você poderia por favor acelerar isso ? Outros como o Google Docs parecem ser capazes de trabalhar com planilhas em ODF. Por que vocês não são ? Não tenho dúvidas de que haverão melhorias, mas quando ?…”</p>
 
-<p>Tasks: 85 total, 3 running, 81 sleeping, 0 stopped, 1 zombie</p>
+<p>Como não tenho nenhuma máquina com Windows e não tenho o Office 2007 para testar, acabei testando algumas coisas no SP2 através de troca de documentos com amigos que possuem o Office 2007 e aqui vão os meus 2 centavos para os testes que todos estão fazendo (e publicando os resultados a cada segundo na rede):</p>
 
-<p>Cpu(s): 11.2%us, 1.5%sy, 0.0%ni, 63.4%id, 23.9%wa, 0.0%hi, 0.0%si, 0.0%st</p>
+<p>O Microsoft Office 2007 não suporta a criptografia (proteção por senha) nos documentos ODF !!!</p>
 
-<p>Mem: 1944240k total, 329412k used, 1614828k free, 768k buffers</p>
+<p>Gerei um documento texto (.odt) simples em ODF utilizando o OpenOffice e o gravei com proteção de senha. Enviei o documento (e a senha) a diversos amigos e o resultado foi o mesmo: O MS Office não pode abrir o documento pois ele está protegido por senha (alguns deles tinham em suas máquinas outras ferramentas com suporte a ODF e em 100% dos casos funcionou).</p>
 
-<p>Swap: 996020k total, 0k used, 996020k free, 69088k cached</p>
+<p>Pedi a eles que gerassem no Office 2007 um documento com senha e me enviassem, e disseram que quando tentam fazer isso, o Office apresenta uma mensagem de aviso dizendo que não é possível utilizar senha para proteger o documento utilizando o formato ODF.</p>
 
-<blockquote></blockquote>
+<p>Gostaria de verdade de encontrar uma explicação técnica para isso, uma vez que a criptografia e a proteção por senha estão completamente especificadas dentro do ODF 1.0/1.1 (item 17.3 da especificação), e utilizam algorítimos já existentes e mais do que conhecidos por qualquer desenvolvedor.</p>
 
-<p>A memória armazenada em cache caiu de ~969mb para ~69mb. ;]</p>
+<p>Um comentário do Rob no seu post (que não tratou da criptografia) é capaz de comentar com maestria o problema que encontrei (e concordo plenamente com ele):</p>
 
-<p>Bingo!</p>
+<p>“…Me ensinaram a nunca presumir malícia onde a incompetência pode ser a explicação mais simples. Mas o grau de incompetência necessária para explicar o suporte pobre ao ODF no Service Pack 2 atormenta a mente e me leva a ter pensamentos cruéis…”</p>
 
-<p><a href="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif"><img src="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif" alt="" /></a></p>
-</div>
-  
-  
+<p>É impressionante ver como a Microsoft demonstra constantemente o desrespeito aos seus clientes (o que eu ouvi de clientes deles ansiosos pelo suporte ao ODF no Office…), desrespeito aos parceiros de mercado e uma completa incapacidade de mudar.</p>
 
+<p>Antes de encerrar o post, quero alertar aos incondicionáveis apoiadores da Microsoft que insistem em postar comentários sem conteúdo técnico algum neste blog que não tenho mais mais paciência (nem tempo) para ser educado ao responder as imbecilidades que vocês costumeiramente escrevem por aqui. Se escreverem bobagem aqui, vão receber resposta a altura. Se querem mesmo defender a Microsoft, enviem um curriculum para a empresa e tentem trabalhar lá dentro para mudar as coisas (falar é muito fácil, já fazer é outro assunto).</p>
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2008/06/28/porque-lembrar-nao-custa-nada/">Porque Lembrar Não Custa Nada&#8230;</a></h1>
-    
-    
-      <p class="meta">
-        
+<p>Aos demais, todos os comentários serão bem vindos (como sempre) e se encontrarem mais textos por aí comentando os problemas referentes ao ODF no Service Pack 2, por favor coloque os links nos comentários (vamos fazer deste post uma fonte para pesquisas sobre o assunto).</p>
+
+<p>A todos, segue minha recomendação: Não utilizem o Office 2007 com o Service Pack 2 para manipular documentos em ODF. Se a sua decisão for continuar utilizando o MS Office (em qualquer versão), instale o plug-in da Sun, mas recomendo mesmo que vocês procurem uma outra solução que trate nativamente documentos ODF. Não percam mais tempo com quem não lhes respeita.</p>
+
+<p>Quem quiser acompanhar as notícias sobre ODF no mundo, recomendo uma visita diária ao Planet ODF (ele indexa tudo).</p>
+
+<p>Share/Save/Bookmark Filed under: Interoperability, ODF, Português Article tags: ODF suporte MSOffice 2007 SP2 18 Responses to “Microsoft agora tenta fragmentar o ODF”</p>
+
+<ol>
+<li>ASF May 5th, 2009 &ndash; 11:56 pm</li>
+</ol>
 
 
+<p>Jomar, parabéns pelo excelente post, pela coerência, coragem e responsabilidade. 2. DalTux May 6th, 2009 &ndash; 8:50 am</p>
 
+<p>Infelizmente, Redmond nos decepcionou novamente, o que já suspeitávamos desde o princípio. Agora o perigo é os usuários acharem bonito utilizar o “padrão Redmond ODF” e com a disseminação de documentos este virar o padrão ODF de fato. O que faremos a respeito? Será possível por exemplo à ISO divulgar que o Redmond Office não foi homologado como aderente ao padrão, ou o quê?</p>
 
+<p>Aliás, mais uma vez, ótimo e sólido artigo. 3. DalTux May 6th, 2009 &ndash; 10:22 am</p>
 
+<p>Eu realmente estava encafifado com o fato dos documentos que faço com o OOo 3 Writer não ficarem formatados corretamente no Abiword, por exemplo. Achei interessante a dica contida no artigo e fui atrás de mudar o padrão para salvar como ODF 1.0/1.1 ao invés de 1.2.</p>
 
+<p>Para quem desejar proceder, aí vai a captura de tela de onde está a opção no menu Ferramentas/Opções do OpenOffice.org 3.0.1 (Ubuntu 9.04): <a href="http://yfrog.com/ejcapturadetelaopescarregp">http://yfrog.com/ejcapturadetelaopescarregp</a></p>
 
+<p>Só que ainda não consegui fazer um extenso documento que tinha sido criado pelo OOo 3, contendo índices, tabelas, estilos, numeração de páginas, notas de rodapé, etc. ser formatado decentemente pelo Abiword 2.6.6. O problema é o Abiword, creio. Segundo a ODF Fellowship, a implementação do ODF no Abiword ainda é pobre. Os mais recomendados com quatro estrelas parecem ser apenas o OOo e o KOffice e outros derivados do primeiro. Fiquei com vontade de experimentar o KWord no Ubuntu/Gnome, só que depende de uns 48 pacotes, o que desanima. Há algum outro que você recomenda? 4. Luís Guilherme May 6th, 2009 &ndash; 8:42 pm</p>
 
-  
+<p>Em geral, eu desprezo os MS-haters e os conspiratórios que acham que a Microsoft faz tudo por vileza e Bill Gates é a reencarnação de Satã. (detalhe, eu uso quase-exclusivamente GNU/Linux, nem por isso preciso comprar discursinho anti-empresarial). Mas essa história do ODF pegou muito mal mesmo… Vamos ver qual a explicação.</p>
 
+<p>O IE está perdendo share, cada dia mais, por causa dessas práticas. O IE 8 tenta ser o mais standards-compliant possível, porque a MS viu a meleca que fez. Espero que façam o mesmo com o Office. E logo. 5. Pablo Iglesias May 8th, 2009 &ndash; 12:34 am</p>
 
-<time datetime="2008-06-28T13:09:00-03:00" pubdate data-updated="true">Jun 28<span>th</span>, 2008</time>
-        
-         | <a href="/blog/2008/06/28/porque-lembrar-nao-custa-nada/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
+<p>Prezado Jomar,</p>
 
+<p>Muito interessante o seu post. É de grande valia este tipo de informação, pois nos faz “abrir o olho” para este tipo de atitute, como a da Microsoft.</p>
 
-  <div class="entry-content"><p>Saudações pessoas&hellip;</p>
+<p>Reconheço a qualidade dos produtos da Microsoft. O Windows é prova disso! Mas é por isso e por outros motivos que cada vez mais incentivo as pessoas ao meu redor a utilizarem uma suite office aberta como o OpenOffice.</p>
 
-<p>Estava eu hoje começando a escrever um artigo para a segunda edição do <a href="http://www.archlinux-br.org/almanarch/">Almanarch</a>, quando bateu uma sede e levantei para beber água. Ao voltar para minha cadeira, lembrei de algo assim que bati os olhos em minha tela com o OpenOffice.org aberto. Porquê não lembrar deles?</p>
+<p>Enfim, concluo meu comentário com uma tremenda decepção às práticas protecionistas da Microsoft. 6. Fernando Cima [Microsoft] May 8th, 2009 &ndash; 1:31 pm</p>
 
-<p>Para quem não conhece, o OpenOffice.org é um software livre que possui uma suíte completa de aplicativos de escritório como editor de textos, planilhas, fórmulas matemáticas, apresentação de slides, etc&hellip; Mas o objetivo não é apenas lembrar o OpenOffice.org, mas sim todos os softwares que utilizo diariamente e que possuem uma característica em comum: Software Livre. Então não custa nada lembrar deles, os programadores, que dedicaram tanto tempo na construção de uma ferramenta e hoje nos disponibilizam.</p>
+<blockquote><p>Interessante notar que no ODF 1.2 (que é desenvolvido com a participação da Microsoft) > este problema já foi resolvido com a criação do OpenFormula.</p></blockquote>
 
-<p>Abaixo segue a descrição de Software Livre pela GNU Foundation.</p>
+<p>Jomar, poderia nos apontar onde está a especificação do OpenFormula? No link que você colocou somente existem rascunhos preliminares (”preliminary drafts”), você sabe onde está a versão final? 7. Jomar Silva May 8th, 2009 &ndash; 2:12 pm</p>
 
-<h3>O que é o Software Livre?</h3>
+<p>Caro Fernando,</p>
 
-<p>Nós mantemos esta definição do Software Livre para mostrar claramente o que deve ser verdadeiro à respeito de um dado programa de software para que ele seja considerado software livre.</p>
+<p>Já que eu coloquei o aviso no post, preciso cumprir com o que prometi.</p>
 
-<p>&ldquo;Software Livre&rdquo; é uma questão de liberdade, não de preço. Para entender  o conceito, você deve pensar em &ldquo;liberdade de expressão&rdquo;, não em  &ldquo;cerveja grátis&rdquo;.</p>
+<p>Sugiro que você contacte o Doug aí na Microsoft para que ele te explique o processo de aprovação e desenvolvimento de documentos dentro do OASIS ODF TC. Após a explicação do Doug você vai entender o que é um “preliminary draft”, e qual é o status do OpenFormula atualmente.</p>
 
-<p>&ldquo;Software livre&rdquo; se refere à liberdade dos usuários executarem, copiarem,  distribuírem, estudarem, modificarem e aperfeiçoarem o software. Mais  precisamente, ele se refere a quatro tipos de liberdade, para os usuários  do software:</p>
+<p>Para não ser tão grosseiro assim, o OpenFormula (tal como o ODF 1.2) ainda é um draft e deve ser colocado em discussão no ODF TC tão logo tenhamos finalizado as discussões do documento central do ODF 1.2 (pergunte ao Doug o estado disso tudo, e aproveite para perguntar também como a Microsoft tem colaborado).</p>
+
+<p>Se quiser ver o OpenFormula implementado e funcionando, instale o OpenOffice 3 e fique a vontade para testar.</p>
+
+<p>Abraço,</p>
+
+<p>Jomar</p>
+
+<p>PS.: A comunicação aí na Microsoft deve ser ruím mesmo, heim ? Com 3 pessoas no comitê do ODF você precisa fazer uma pergunta dessas para alguém de fora… 8. Fernando Cima [Microsoft] May 8th, 2009 &ndash; 6:25 pm</p>
+
+<p>Exatamente Jomar. Pelo que nós sabemos aqui o OpenFormula ainda é um rascunho preliminar, estado aliás em que se encontra há quatro anos, e ainda muito longe de ser aprovado. Muita trabalho ainda precisa ser feito no comitê e muita coisa ainda vai mudar na especificação. Se ele fosse software seria ainda um pré-alpha, vaporware.</p>
+
+<p>Eu já vi a Microsoft ser cobrada por não implementar um determinado padrão OASIS/ISO/W3C/whatever, mas ser cobrada por não implementar algo que nem existe ainda é a primeira vez.</p>
+
+<p>O grande problema é que até hoje o ODF não possui um padrão definido para fórmulas, o que abre espaço para várias implementações conformes com o padrão e ainda assim incompatíveis entre si. Além dos problemas do OpenOffice 3.0 que você citou, ainda existem problemas com o Symphony 1.2 (vide blog do Doug), e provalmente outros mais. Depois alguns ainda dizem que o OpenXML é que não estava pronto…</p>
+
+<p>Sobre a criptografia de documentos, o ODF 1.1 infelizmente especifica somente um único algoritmo possível para uso na encriptação, o Blowfish. O Windows não implementa este algoritmo, e o Office portanto não tem como usá-lo (nenhuma aplicação da Microsoft implementa a sua própria criptografia). É uma pena que a especificação só dê esta opção, porque o Blowfish ao que eu saiba não é adotado por nenhum governo em nenhum lugar do mundo. Mesmo aqui no Brasil ele está fora dos padrões da ICP-Brasil e do e-Ping. Ao que parece o ODF 1.2 &ndash; quando ele existir &ndash; irá adotar algoritmos padrão NIST (AES), senão fica aí a sugestão. 9. Jomar Silva May 8th, 2009 &ndash; 6:57 pm</p>
+
+<p>Fernando,</p>
+
+<p>Em algum lugar do texto você me viu “cobrar” o OpenFormula (eu apenas citei que ele existe no ODF 1.2) ?</p>
+
+<p>Acho leviano da sua parte dizer que o OpenFormula está parado há quatro anos. Dê uma olhada nos arquivos do ODF TC e você vai ver que está falando asneira. Quando você falha no “trabalho que ainda precisa ser feito”, não se esqueça que a Microsoft é parte deste trabalho, ou será que vocês estão lá no comitê com alguma agenda oculta ? (quem sabe eu não posso escrever um outro post abordando “como as pessoas da Microsoft no Brasil falam do ODF como se não fossem parte dele”, para vermos se vocês se comportam assim também em outros países, e com isso conseguimos talvez descobrir se vocês tem uma agenda oculta ou se é falta de organização mesmo.)</p>
+
+<p>Sobre o “…espaço para várias implementações conformes com o padrão e ainda assim incompatíveis entre si…”, não precisa ter um QI do Eistein para perceber que todas as outras empresas/projetos que implementaram com o ODF, decidiram usar uma única coisa, pois afinal o foco deles é RESOLVER problemas e não AUMENTA-LOS. Aliás, recebi muitos e-mails (para não dizer centenas deles) nos últimos dias me perguntando o que é que eu esperava de vocês, e acho que as pessoas estão certas mesmo… eu já devia ter perdido a ponta de esperança que um dia vocês vão se enquadrar faz tempo.</p>
+
+<p>Ainda sobre as fórmulas, será que você entendeu mesmo o que está no blog do Doug, ou será que você entendeu que o post do Doug não é um, mas parte de uma discussão com diversos outros posts publicados ? Vai pesquisar direitinho, pq a coisa pode acabar ficando mais complicada ainda para vocês, OK ? (Ex. nem a nomenclatura correta para referenciar células, esta sim muito bem definida no ODF 1.0/1.1 vocês seguiram… só para citar mais um “detalhe” no meio desse salseiro).</p>
+
+<p>Se você quiser falar sobre OpenXML, vamos fazer o seguinte: Entra numa máquina do tempo, volte no passado e participe do grupo lá da ABNT que ralou durante mais de um ano para analisar com profundidade o OpenXML e constatar que ele não estava (e AINDA NÃO ESTÁ) pronto. Vale a pena ainda você acompanhar os relatórios dos comitês da ISO que tratam do OpenXML, pois os indícios e as demonstrações mais contundentes de que ele não estava e não está pronto estão todos nestes documentos, relatando inclusive os REMENDOS que estão tentando fazer agora, sendo que alguns destes IGNORAM as decisões tomadas no BRM, atropelando tudo o que foi discutido no ano passado. Fique tranquilo que vou compilar uma boa coletânea sobre estes problemas e REMENDOS e devo publicar em breve, afinal você deve ler mais meu blog do que os documentos da ISO, não é mesmo ?</p>
+
+<p>Gostei do seu argumento sobre criptografia, pois ele mostra que a mentalidade de LOCK-IN de vocês é mesmo absurda… prefiro nem comenta-la, mas sugiro que você solicite que na normalização internacional exista uma nova regra: Só pode usar o que está implementado do Windows… tenha dó…</p>
+
+<p>PS.: Minha cota de boa educação com você acabou de acabar, portanto lhe recomendo que não abuse. 10. Fernando Cima [Microsoft] May 8th, 2009 &ndash; 7:32 pm</p>
+
+<p>Relaxa, Jomar. Todo mundo sabe que você fica “esquentadinho” toda vez que alguém tenta conversar em termos técnicos contigo. Se lembra quando você deu um “piti” e abandonou o comitê da ABNT, só para voltar logo depois que esfriou a cabeça? Isto somente mostra a sua insegurança.</p>
+
+<blockquote><p>Acho leviano da sua parte dizer que o OpenFormula está parado há quatro anos.</p></blockquote>
+
+<p>Eu não disse que estava parado. Eu disse que continua no mesmo estado &ndash; preliminary draft &ndash; a quatro anos, o que é um fato. Leviano, por sinal, é colocar palavras na boca de outra pessoa.</p>
+
+<blockquote><p>Sobre o “…espaço para várias implementações conformes com o padrão e ainda assim > incompatíveis entre si…”, não precisa ter um QI do Eistein para perceber que todas as > outras empresas/projetos que implementaram com o ODF, decidiram usar uma > única coisa, > pois afinal o foco deles é RESOLVER problemas e não AUMENTA-LOS</p></blockquote>
+
+<p>A forma de resolver o problema seria o ODF ter um padrão para fórmulas, o que até hoje infelizmente não aconteceu. O resultado é que Symphony faz de um jeito, OpenOffice 2.x de outro, OpenOffice 3.x de outro. E o pior é que todos estão em conformidade com o padrão. Quer melhor atestado de imaturidade de um standard do que este?</p>
+
+<p>Sobre criptografia, a encriptação não é requisito para conformidade com o ODF, como você deve saber muito bem. No seu estado atual a encriptação do ODF é inutilizável e proibido por praticamente qualquer padrão governamental, incluindo o e-Ping. Fica aí a dica para que isto mude no ODF 1.2 quando ele vier a existir. 11. Jomar Silva May 8th, 2009 &ndash; 8:00 pm</p>
+
+<p>Fernando (e demais colegas da Microsoft que estão ajudando o Fernando nessa),</p>
+
+<p>Sabe o que me fez perder a cabeça na ABNT aquela vez ? Eu te refresco a memória… foi a Microsoft tentando a todo custo IMPEDIR O COMITÊ BRASILEIRO DE TOMAR UMA DECISÃO com o argumento de que seu representante naquela reunião (o mesmo que tinha ido a todas as outras, e que aliás anda meio sumido), não tinha “condições de decidir” pois “desconhecia aprofundadamente o assunto”… vocês são ou não são uma piada ? Aliás, um dos motivos de eu ter voltado atrás foi uma conversa que tive com o mesmo executivo da vossa empresa, que se desculpou pela postura infantil e imatura…</p>
+
+<p>O documento do OpenFormula está sendo trabalhado e basta uma visita sua ao repositório de documentos que você vai descobrir que a última versão dele foi ali depositada na última sexta feira. Não me venha falar de leviandade, pois lembro muito bem de uma certa discussão que tivemos no seu blog há alguns anos, onde você insistia em me apresentar como sendo um “simples lobista”… aquilo foi leviano, mas acho que meu trabalho nos últimos anos já deve ter feito você ver como estava errado.</p>
+
+<p>Dá uma olhada no blog do Rob Weir pois lá ele coloca um texto bem legal sobre conformidade e interoperabilidade… acho bom você ter bastante certeza de que conhece estes dois temas, pois pelo que escreve, tá difícil.</p>
+
+<p>Ao invés de ficar me dando dica de segurança para o ODF 1.2, e se você entende tanto do assunto, por que não vai lá para o OASIS trabalhar na segurança do ODF ? Nós não mordemos lá não e a colaboração sempre é bem vinda, mesmo que seja de pessoas como você.</p>
+
+<p>Agora, se quiser continuar só falando (e escrevendo em blogs que têm alguma visibilidade) eu entendo, afinal de contas é essa a postura mais cômoda, não é ? 12. Machado May 8th, 2009 &ndash; 8:49 pm</p>
+
+<p>Fernando Cima [Microsoft] escreveu: > Quer melhor atestado de imaturidade de um standard do que este?</p>
+
+<p>Olha eu conheço um atestado maior que esse. Há algum tempo trabalhei num GT da ABNT que tratou de um pseudo-padrão que não é coerente nem com ele mesmo. Tem coisas iguais que são feitas de um jeito na planilha, de outro na apresentação e de outro no texto. Sem contar inúmeros defeitos que persistem ainda hoje no texto atual, apesar dos esforços mundiais em apontar esses defeitos, a criadora da especificação não teve capacidade de implementar.</p>
+
+<p>Essa especificação é a MSOOXML que, infelizmente também é conhecida como ISO/IEC 29500. Aliás, esse docuimento ficou quase dois anos com o status de DIS e FDIS(onde o D = DRAFT) 13. Ricardo May 8th, 2009 &ndash; 11:05 pm</p>
+
+<p>Brother….concordo e muito com você e seus posts que venho acompanhando ao longo do tempo, sobre o opemxml e odf. Mas se a coisa não se espalhar na mídia, nada vai mudar e o plano (não sejamos ingênuos de achar que não tenha um plano), vai dar certo. Afinal, a suite M$$$$$ corresponde a maior fatia de faturamento deles. A qualquer manifestação eu vou, basta chamar (contanto que seja em sampa). Abs. 14. Não use o Microsoft Office | Cyaneus May 9th, 2009 &ndash; 8:59 am</p>
+
+<p>[…] Perda de fórmulas em planilha eletrônica e diversas outras coisas… […] 15. Fernando Cima [Microsoft] May 9th, 2009 &ndash; 9:01 am</p>
+
+<blockquote><p>Aliás, um dos motivos de eu ter voltado atrás foi uma conversa que tive com o mesmo > executivo da vossa empresa, que se desculpou pela postura infantil e imatura…</p></blockquote>
+
+<p>Ele pediu desculpas pela tua postura infantil e imatura?? O Raimundo realmente é um dos sujeitos mais educados que eu conheço.</p>
+
+<blockquote><p>O documento do OpenFormula está sendo trabalhado e basta uma visita sua ao > repositório de documentos que você vai descobrir que a última versão dele foi ali > depositada na última sexta feira.</p></blockquote>
+
+<p>Este é exatamente o meu ponto. O OpenFormula é um trabalho em andamento, ainda em estágio inicial e longe de ficar pronto. Por isso é inusitado você querer cobrar que a Microsoft implemente algo que nem existe ainda.</p>
+
+<p>Vamos só por suposição imaginar que a Microsoft tivesse implementado o rascunho preliminar do OpenFormula no Service Pack 2, que foi lançado no dia 28 de Abril. Logo depois como você disse a OASIS divulgou um novo rascunho preliminar, com diversas alterações na proposta de formato. E aí, como ficam os arquivos que os usuários gravaram no formato rascunho anterior? Como é que eles vão ser convertidos para o próximo formato rascunho? Quantos formatos rascunhos a Microsoft vai ter que implementar até a aprovação final?</p>
+
+<p>Ninguém é irresponsável em oferecer para um usuário a opção de gravar os seus arquivos em um formato que não está pronto e pode mudar a qualquer momento. Por isto a Microsoft implementou no Office 2007 SP2 o formato ODF 1.1, que é a versão terminada e aprovada pela OASIS. Se existem problemas com a implementação (e certamente existem, ninguém acerta de primeira) o feedback e as críticas são válidas e bem-vindas. Agora você criticar a Microsoft por não ter implementado algo que nem está na especificação e chamar isso de tentativa de “enganar os usuários” mostra bem o nível do debate que nós tivemos que aguentar na ABNT. Deve ser por isso que o Raimundo pediu desculpas…</p>
+
+<blockquote><p>Ao invés de ficar me dando dica de segurança para o ODF 1.2, e se você entende tanto > do assunto, por que não vai lá para o OASIS trabalhar na segurança do ODF ?</p></blockquote>
+
+<p>Quando o ODF 1.2 chegar na ISO e na ABNT eu terei o maior prazer em apresentar estas sugestões. Na ISO o Brasil finalmente poderá ter voz e voto no formato ODF, algo que nunca teve oportunidade até hoje, e eu certamente participarei.</p>
+
+<p>Além da encriptação, poderemos colaborar com o suporte a XADES e adequá-lo ao perfis utilizados na ICP-Brasil. Hoje a falta de suporte a assinaturas digitais no ODF 1.1 é um passo atrás em todo o processo de certificação no Brasil. 16. Jomar Silva May 9th, 2009 &ndash; 9:29 am</p>
+
+<p>Fernando,</p>
+
+<p>Você realmente tem algum problema sério. Em lugar algum do texto eu cobro que a Microsoft implemente o OpenFormula (quer que eu desenhe) ?</p>
+
+<p>“Ninguém é irresponsável em oferecer para um usuário a opção de gravar os seus arquivos em um formato que não está pronto e pode mudar a qualquer momento…” é realmente mediocre ouvir isso de quem desenvolveu o OpenXML, não acha ?</p>
+
+<p>Quando você teve chance de participar da ABNT para trabalhar com o OpenXML, se ausentou. Vou entender seu texto sobre o ODF na ISO como uma ameaça, e agora me parece que a agenda oculta está começando a se revelar. Fique tranquilo que vou blogar sobre isso e te dar os devidos créditos.</p>
+
+<p>Ja dei a voce espaço suficiente neste blog e está claro para qualquer um o seu intuito aqui. Para cumprir o que prometi, qualquer comentário adicional seu aqui será removido.</p>
+
+<p>Cresça, trabalhe e apareça :D</p>
 
 <ul>
-<li><p>A liberdade de executar o programa, para qualquer propósito    (liberdade no. 0)</p></li>
-<li><p>A liberdade de estudar como o programa funciona, e adaptá-lo para as suas necessidades (liberdade no. 1). Acesso ao código-fonte é um pré-requisito para esta liberdade.</p></li>
-<li><p>A liberdade de redistribuir cópias de modo que você possa ajudar ao    seu próximo (liberdade no. 2).</p></li>
-<li><p>A liberdade de aperfeiçoar o programa, e liberar os seus aperfeiçoamentos, de modo que toda a comunidade se beneficie (liberdade no. 3). Acesso ao código-fonte é um pré-requisito para esta liberdade.</p></li>
+<li>Acompanhe as discussões no blog de Jomar Silva &ndash; ODF Alliance: <a href="http://homembit.com">http://homembit.com</a></li>
 </ul>
 
 
-<p>Um programa é software livre se os usuários tem todas essas liberdades. Portanto, você deve ser livre para redistribuir cópias, seja com ou sem modificações, seja de graça ou cobrando uma taxa pela distribuição, para <a href="http://www.gnu.org/philosophy/free-sw.pt-br.html#exportcontrol">qualquer um em qualquer lugar</a>.  Ser livre  para fazer essas coisas significa (entre outras coisas) que você não tem  que pedir ou pagar pela permissão.</p>
+<p><strong>Q</strong>uanta barbaridade eim!? Faço questão de publicar aqui o texto para que possamos atingir o máximo de leitores!</p>
 
-<p>Você deve também ter a liberdade de fazer modifcações e usá-las privativamente no seu trabalho ou lazer, sem nem mesmo mencionar que elas existem. Se você publicar as modificações, você não deve ser obrigado a avisar a ninguém em particular, ou de nenhum modo em especial.</p>
+<p><strong>A</strong>braços</p>
 
-<p>A liberdade de utilizar um programa significa a liberdade para qualquer tipo de pessoa física ou jurídica utilizar o software em qualquer tipo de sistema computacional, para qualquer tipo de trabalho ou atividade, sem que seja necessário comunicar ao desenvolvedor ou a qualquer outra entidade em especial.</p>
-
-<p>A liberdade de redistribuir cópias deve incluir formas binárias ou executáveis do programa, assim como o código-fonte, tanto para as versões originais quanto para as modificadas. Está ok se não for possível produzir uma forma binária ou executável (pois algumas linguagens de programação não suportam este recurso), mas deve ser concedida a liberdade de redistribuir essas formas caso seja desenvolvido um meio de cria-las.</p>
-
-<p>De modo que a liberdade de fazer modificações, e de publicar versões aperfeiçoadas, tenha algum significado, deve-se ter acesso ao código-fonte do programa. Portanto, acesso ao código-fonte é uma condição necessária ao software livre.</p>
-
-<p>Para que essas liberdades sejam reais, elas tem que ser irrevogáveis desde que você não faça nada errado; caso o desenvolvedor do software tenha o poder de revogar a licença, mesmo que você não tenha dado motivo, o software não é livre.</p>
-
-<p>Entretanto, certos tipos de regras sobre a maneira de distribuir software livre são aceitáveis, quando elas não entram em conflito com as liberdades principais. Por exemplo, copyleft (apresentado de forma bem simples) é a regra de que, quando redistribuindo um programa, você não pode adicionar restrições para negar para outras pessoas as liberdades principais. Esta regra não entra em conflito com as liberdades; na verdade, ela as protege.</p>
-
-<p>Portanto, você pode ter pago para receber cópias do software GNU, ou você pode ter obtido cópias sem nenhum custo. Mas independente de como você obteve a sua cópia, você sempre tem a liberdade de copiar e modificar o software, ou mesmo de <a href="http://www.gnu.org/philosophy/selling.html">vender cópias</a>.</p>
-
-<p>&ldquo;Software Livre&rdquo; Não significa &ldquo;não-comercial&rdquo;. Um programa livre deve estar disponível para uso comercial, desenvolvimento comercial, e distribuição comercial. O desenvolvimento comercial de software livre não é incomum; tais softwares livres comerciais são muito importantes.</p>
-
-<p>Regras sobre como empacotar uma versão modificada são aceitáveis, se elas não acabam bloqueando a sua liberdade de liberar versões modificadas. Regras como &ldquo;se você tornou o programa disponível deste modo, você também tem que torná-lo disponível deste outro modo&rdquo; também podem ser aceitas, da mesma forma. (Note que tal regra ainda deixa para você a escolha de tornar o programa disponível ou não.) Também é aceitável uma licença que exija que, caso você tenha distribuído uma versão modificada e um desenvolvedor anterior peça por uma cópia dele, você deva enviar uma.</p>
-
-<p>No projeto GNU, nós usamos <a href="http://www.gnu.org/copyleft/copyleft.pt-br.html"> &ldquo;copyleft&rdquo;</a> para proteger estas liberdades legalmente para todos.  Mas também existe  <a href="http://www.gnu.org/philosophy/categories.html#Non-CopyleftedFreeSoftware"> software livre que não é copyleft</a>.  Nós acreditamos que hajam razões  importantes pelas quais <a href="http://www.gnu.org/philosophy/pragmatic.html">é melhor  usar o copyleft</a>, mas se o seu programa é free-software mas não é  copyleft, nós ainda podemos utilizá-lo.</p>
-
-<p>Veja <a href="http://www.gnu.org/philosophy/categories.html">Categorias de Software Livre   (18k characters)</a> para uma descrição de como &ldquo;software livre&rdquo;, &ldquo;software copyleft&rdquo;  e outras categoria se relacionam umas com as outras.</p>
-
-<p>Às vezes regras de controle de exportação e sansões de comércio podem limitar a sua liberdade de distribuir cópias de programas internacionalmente. Desenvolvedores de software não tem o poder para eliminar ou sobrepor estas restrições, mas o que eles podem e devem fazer é se recusar a impô-las como condições para o uso dos seus programas. Deste modo, as restrições não afetam as atividades e as pessoas fora da jurisdição destes governos.</p>
-
-<p>O texto foi retirado do link: <a href="http://www.gnu.org/philosophy/free-sw.pt-br.html">http://www.gnu.org/philosophy/free-sw.pt-br.html</a></p>
-
-<p><a href="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif"><img src="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif" alt="" /></a></p>
+<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
 </div>
   
   
@@ -372,7 +328,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2008/06/24/ajude-a-sustentar-a-wikipedia-e-concorra-a-um-eee-pc/">Ajude a Sustentar a Wikipedia E Concorra a Um Eee PC!</a></h1>
+      <h1 class="entry-title"><a href="/blog/2009/05/11/que-tal-um-pequeno-filme-para-descontrair/">Que Tal Um Pequeno Filme Para Descontrair?</a></h1>
     
     
       <p class="meta">
@@ -388,26 +344,32 @@
   
 
 
-<time datetime="2008-06-24T17:27:00-03:00" pubdate data-updated="true">Jun 24<span>th</span>, 2008</time>
+<time datetime="2009-05-11T10:35:32-03:00" pubdate data-updated="true">May 11<span>th</span>, 2009</time>
         
-         | <a href="/blog/2008/06/24/ajude-a-sustentar-a-wikipedia-e-concorra-a-um-eee-pc/#disqus_thread">Comments</a>
+         | <a href="/blog/2009/05/11/que-tal-um-pequeno-filme-para-descontrair/#disqus_thread">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><h3></h3>
+  <div class="entry-content"><p><strong><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/05/poster_inproprietario-216x300.jpg" alt="poster_inproprietario" /></strong></p>
 
-<p><a href="http://2.bp.blogspot.com/_5kfJplBiYy0/SGFahZgpJfI/AAAAAAAAAEM/ccu4oMvOXKc/s1600-h/brindes0708.png"><img src="http://2.bp.blogspot.com/_5kfJplBiYy0/SGFahZgpJfI/AAAAAAAAAEM/ccu4oMvOXKc/s200/brindes0708.png" alt="" /></a>A<strong>jude a sustentar a Wikipédia e outros projetos, sem colocar a mão no bolso, e concorra a um Eee PC!</strong></p>
+<p><strong>O</strong>lá pessoal, depois de um tempo afastado volto trazendo a dica de um pequeno filme que assisti neste fim de semana e recomendo que todos façam <a href="http://www.mininova.org/tor/2571016">download</a>.</p>
 
-<p>…e também a pen drives, card drives, camisetas geeks, livros e mais! O <a href="http://br-linux.org/">BR-Linux</a> e o <a href="http://efetividade.net/">Efetividade</a> lançaram uma <a href="http://br-linux.org/2008/campanha-wikipedia/">campanha</a> para ajudar a Wikimedia Foundation e outros mantenedores de projetos que usamos no dia-a-dia on-line. Se você puder doar diretamente, ou contribuir de outra forma, são sempre melhores opções. Mas se não puder, veja as regras da promoção e <a href="http://br-linux.org/2008/campanha-wikipedia/">participe</a> &ndash; quanto mais divulgação, maior será a doação do BR-Linux e do Efetividade, e você ainda concorre a diversos brindes!</p>
+<p><strong>T</strong>rata-se do resultado do trabalho de conclusão do Curso de Comunicação Social do Centro Universitário FIEO, produzido pelo Daniel Bianchi e Johnata Rodrigo.</p>
 
-<p><a href="http://1.bp.blogspot.com/_5kfJplBiYy0/SGFbLlTDE2I/AAAAAAAAAEc/y3czctOyaKw/s1600-h/camisetas-redbug.jpg"><img src="http://1.bp.blogspot.com/_5kfJplBiYy0/SGFbLlTDE2I/AAAAAAAAAEc/y3czctOyaKw/s320/camisetas-redbug.jpg" alt="" /></a>Toda ajuda é bem vinda quando se trata de projetos livres que na maioria das vezes não possui uma renda fixa para investimento e gastos necessários para manter o mesmo, ficando na maioria das vezes este peso no bolso dos próprios mantenedores do mesmo.</p>
+<p><strong>O</strong> filme aborda o Software Livre de forma excepcional traçando paralelos que mostram as mais sutís, porém triviais, diferenças entre software livre, software proprietário, software gratuito, etc&hellip;</p>
 
-<p>Esta Promoção do BR-Linux vem justamente incentivando esta ajuda e apoio, portanto não fique aí parado e divulgue você também. ;]</p>
+<p><strong>A</strong>lém disso, o filme ainda nos passa uma pequena ideia do que vem acontecendo hoje em dia em termos de utilização e divulgação do software livre como meio viável e rentável.</p>
 
-<p><a href="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif"><img src="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif" alt="" /></a></p>
+<p><strong>C</strong>omo os próprios autores pedem: &ldquo;Assistam, copiem, divulguem e distribuam este pequeno filme.&rdquo;</p>
+
+<p><strong>S</strong>egue link para o arquivo torrent: <a href="http://www.mininova.org/tor/2571016">http://www.mininova.org/tor/2571016</a></p>
+
+<p><strong>A</strong>braços</p>
+
+<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
 </div>
   
   
@@ -420,7 +382,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2008/06/03/minhas-primeiras-impressoes-com-o-arch-linux/">Minhas Primeiras Impressões Com O Arch Linux</a></h1>
+      <h1 class="entry-title"><a href="/blog/2009/04/29/flisol-2009-fortaleza-obrigado-tux-ce/">Flisol 2009, Fortaleza - Obrigado Tux-CE</a></h1>
     
     
       <p class="meta">
@@ -436,48 +398,37 @@
   
 
 
-<time datetime="2008-06-03T14:54:00-03:00" pubdate data-updated="true">Jun 3<span>rd</span>, 2008</time>
+<time datetime="2009-04-29T11:51:44-03:00" pubdate data-updated="true">Apr 29<span>th</span>, 2009</time>
         
-         | <a href="/blog/2008/06/03/minhas-primeiras-impressoes-com-o-arch-linux/#disqus_thread">Comments</a>
+         | <a href="/blog/2009/04/29/flisol-2009-fortaleza-obrigado-tux-ce/#disqus_thread">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><h3></h3>
+  <div class="entry-content"><p><strong><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/04/tux-ce-300x225.jpg" alt="tux-ce" />
+C</strong>omo todos sabem, no último sábado tivemos o Flisol 2009. Em Fortaleza, como de costume a <a href="http://www.tux-ce.org">Comunidade Tux-CE</a> esteve presente e organizou o Install Fest.</p>
 
-<p><a href="http://4.bp.blogspot.com/_5kfJplBiYy0/SEWWyV8TkxI/AAAAAAAAAD0/_RJabFlJvxw/s1600-h/archlogo.jpg"><img src="http://4.bp.blogspot.com/_5kfJplBiYy0/SEWWyV8TkxI/AAAAAAAAAD0/_RJabFlJvxw/s200/archlogo.jpg" alt="" /></a>Quem me conhece sabe que sou um aventureiro quando se trata de distribuições Linux. Sempre utilizei várias distros dos mais variados tipos passando pelo Conectiva, Slackware, Suse, Kurumin, Ubuntu, Kalango, Kubuntu, Debian, Fluxbuntu, Goblinx, Fedora, Big, dentre outros. Agora é a vez do Arch.</p>
+<p><strong>G</strong>ostaria de aproveitar o post para agradecer à TODOS os integrantes da Tux-CE por fazerem com que a nossa comunidade seja vista como o é. Sempre tive orgulho de ser membro da Tux-CE, mas nos últimos dias o orgulho só cresceu diante da chuva de elogios que recebemos dos mais diversos meios/orgãos/grupos, etc. Elogios de comunidades de Software Livre, locais e nacionais, Serpro, Professores de escolas que estiveram no evento, Casa Brasil, etc..etc..etc&hellip;bem como visitantes que conheceram nosso trabalho durante o evento.</p>
 
-<p>A simplicidade do Slackware sempre me fascinou, porém seu gerenciamento de pacotes me desanimou bastante há alguns anos atrás quando vi outras distribuições evoluindo tanto neste ponto como o Debian por exemplo. Foi quando fui fascinado pelo poder do apt-get/aptitude. Por outro lado, sempre gostei de ter os aplicativos mais atualizados e funcionando em minha máquina, e como esse não é o forte do Debian resolvi partir para distros baseadas nele, onde o Kubuntu se destacou ficando por mais tempo. Independente de minha máquina, também utilizo diariamente o Fedora, distribuição que utilizo no trabalho em minha estação. Diante de tantas mudanças, porque não tentar o Arch Linux agora?</p>
+<p><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/04/banner-tux-225x300.jpg" alt="banner-tux" /></p>
 
-<p>Há algum tempo ouço amigos falando sobre suas vantagens mas queria confirmar se era tudo verdade, ou apenas mais uma visão de usuário fanático por sua distro. E foi aí que tudo começou&hellip;</p>
+<p><strong>S</strong>em dúvida alguma vocês merecem os parabéns. Elogios como &ldquo;vocês são mais do que uma família, são um grupo de amigos muito bem entrosado que se respeitam e nutrem um trabalho comum que ajuda bastante no engradecimento do Software Livre&rdquo; não faltaram nos últimos dias e é este tipo de coisa que nos motiva a continuar com nosso trabalho. Obrigado a todos.</p>
 
-<p>Primeiramente parti para a filosofia e história do mesmo. Para quem não sabe, o Arch Linux foi criado em 2001 por <strong>Judd Vinet</strong> e, desde, então vem crescendo bastante. É uma distribuição rápida, leve, elegante e bastante flexível. No Brasil ainda é uma distro pouco conhecida e usada. Por ser otimizado para processadores i686, o Arch roda mais rápido que a maioria das distribuições que, por sua vez, utilizam pacotes para i386, porém por outro lado só roda em máquinas com processadores superiores ao pentium II. O Arch possui uma filosofia que se assemelha a do Slackware no estilo KISS, Keep It Simple Stupid, mantendo o sistema simples e bastante customizável de modo que pode-se configurar tudo possuindo um pouco de intimidade com o shell do Linux. Porém encontrei nele uma grande evolução com relação ao Slackware que resolveu se manter mais tradicional, enquanto que o Arch trouxe um gerenciador de pacotes chamado pacman. O pacman, de certa forma, lembra o apt-get/aptitude, com o qual é possível facilmente atualizar seu sistema, buscar, instalar ou remover pacotes de forma rápida e segura sem precisar se preocupar com problemas de dependências que o mesmo resolve por você corretamente.</p>
+<p><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/04/tux-cekd-300x225.jpg" alt="tux-cekd" /></p>
 
-<p>Sempre adorei ler, mas não ia ser uma simples leitura que me convenceria sobre o fato de o Arch ser uma boa distribuição Linux, mesmo porque em cinco minutos eu sou capaz de &ldquo;criar&rdquo; uma distribuição Kalib e escrever uma bela história sobre como ela funciona e torná-la assim a melhor distribuição Unix Like ou mesmo BSD, concorda? Sendo assim, parti para os primeiros testes reais.</p>
+<p><strong>O</strong> evento ocorreu da melhor forma possível com a colaboração de todos. Gostaria de agradecer também o apoio que nos foi dado pelo pessoal do <a href="http://www.casabrasil.gov.br">Casa Brasil</a> que nos conseguiu todo o material e atenção de que precisávamos. ;]</p>
 
-<p><a href="http://3.bp.blogspot.com/_5kfJplBiYy0/SEWNdzRsaSI/AAAAAAAAADk/mc4TzoaAOfY/s1600-h/arch3.png"><img src="http://3.bp.blogspot.com/_5kfJplBiYy0/SEWNdzRsaSI/AAAAAAAAADk/mc4TzoaAOfY/s200/arch3.png" alt="" /></a>Como não queria particionar meu disco, pelo mesmo já ter muitas fatias, resolvi criar uma máquina virtual com o Arch Linux, utilizando para isto um aplicativo chamado Virtual Box.</p>
+<p><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/04/img_0068-300x225.jpg" alt="img_0068" /></p>
 
-<p>A instalação foi bem simples, sem maiores dificuldades, apesar de ser toda em modo texto sem as facilidades da interface gráfica, o que acaba por assustar um pouco os usuários iniciantes no mundo Linux. Sem maiores traumas passei pelo poucos passos de particionamento do disco, escolha dos pacotes e instalação dos mesmos.</p>
+<p><strong>T</strong>irem suas próprias conclusões acessando a página da Tux-CE e observando as fotos que tiramos por lá, bem como as fotos de nosso &ldquo;pós-flisol&rdquo;. Sim, o &ldquo;pós-flisol&rdquo; já é uma espécie de &ldquo;evento&rdquo; comum para a Tux-CE. hauhuha</p>
 
-<p>Após a instalação pude, ou melhor, TIVE que testar as habilidades do pacman no gerenciamento de pacotes. Porque TIVE? Bom, digamos que o Arch não traga muitos pacotes instalados por default. Tive de instalar as fontes, o xorg, interface gráfica (kdemod), driver de minha placa de áudio, driver de vídeo, etc&hellip; Mas nada que o pacman não tenha resolvido com bastante eficiência. ;] Fiquei surpreso com sua eficiência nesse momento.</p>
+<p>Fotos do Flisol &ndash; <a href="http://www.tux-ce.org/portal/image/tid/13">http://www.tux-ce.org/portal/image/tid/13</a>
+Fotos do Pós Flisol &ndash; <a href="http://www.tux-ce.org/portal/image/tid/14">http://www.tux-ce.org/portal/image/tid/14</a>
+Fotos e Geral &ndash; <a href="http://www.tux-ce.org/portal/image">http://www.tux-ce.org/portal/image</a></p>
 
-<p>Após instalado, resolvi checar a eficiência de seus repositórios. Mandei o pacman instalar o amsn, apenas a nível de curiosidade para saber qual versão ele traria, e para minha surpresa ele me instalou a versão 0.97 que é a mais recente de todas, e que no kubuntu havia conseguido instalar apenas via svn. Realmente me surpreendeu muito o pacman.</p>
-
-<p>Outra coisa que me chamou bastante atenção foi a leveza com que o sistema se mostrou funcionar. Isto pode ser conferido nesta segunda screenshot onde eu estava rodando o top para monitorar os consumos do sistema.</p>
-
-<p><a href="http://3.bp.blogspot.com/_5kfJplBiYy0/SEWPY8j8tuI/AAAAAAAAADs/gEolntsO-9Q/s1600-h/archlinux2.png"><img src="http://3.bp.blogspot.com/_5kfJplBiYy0/SEWPY8j8tuI/AAAAAAAAADs/gEolntsO-9Q/s200/archlinux2.png" alt="" /></a>Em resumo, esta foi a primeira impressão que tive do Arch Linux. Uma distribuição bastante leve, eficiente, estável e extremamente maleável. Não é o tipo de distribuição que eu recomendaria para usuários que apenas desejam ter um sistema operacional com tudo funcionando, mas com certeza eu o indicaria para alguém que quer ter um excelente sistema e não tem medo de aprender ou ter que resolver problemas de configuração na unha. Esperemos para ver no que essa relação Kalib/Arch irá resultar. ;]</p>
-
-<p>Links:</p>
-
-<p><a href="http://www.archlinux-br.org/about/">1- Maiores detalhes sobre o Arch Linux e sua história</a></p>
-
-<p><a href="http://www.archlinux-br.org/download/">2- Download do Arch</a></p>
-
-<p><a href="http://www.vivaolinux.com.br/artigos/verArtigo.php?codigo=8256">3- Tutorial de Instalação</a></p>
-
-<p><a href="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif"><img src="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif" alt="" /></a></p>
+<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
 </div>
   
   
@@ -528,16 +479,13 @@ Me conheça melhor <a href="http://blog.marcelocavalcante.net/about">clicando aq
         <a href="/blog/2011/12/13/netstat-saiba-o-que-esta-rolando-em-seu-ambiente/">Netstat - Saiba o que está rolando em seu ambiente&#8230;</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2011/10/24/que-tal-ajudar-o-projeto-kde-com-apenas-1-minuto-do-seu-tempo/">Que tal ajudar o projeto KDE com apenas 1 minuto do seu tempo?</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2011/10/17/3c2ba-dia-livre-programacao-definida/">3º Dia Livre - Programação Definida!</a>
-      </li>
-    
   </ul>
 </section>
+<section>
+  <h1>Estou lendo</h1>
+  <img align="center" src="/imgs/livros/gravidade.jpg">
+</section>
+
 
 
 

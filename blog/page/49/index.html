@@ -1,0 +1,452 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Marcelo Cavalcante Rocha ~</title>
+  <meta name="author" content="Marcelo Cavalcante Rocha - Kalib">
+
+  
+  <meta name="description" content="Novamente estou aqui para lhes passar uma pequena dica que para muitos pode nem ser novidade, porém para alguns a dúvida pode existir. Bom, para &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.marcelocavalcante.net/blog/page/49/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Marcelo Cavalcante Rocha ~" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-42903485-1']);
+    _gaq.push(['_setDomainName','marcelocavalcante.net']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:blog.marcelocavalcante.net" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+    <li><a href="/">
+        <span class="blue_light">
+            Marcelo Cavalcante Rocha ~
+        </span>
+       
+           <span class="blue_dark">
+             Hacking the damn life...
+           </span>
+       
+    </a></li>
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Arquivos</a></li>
+  <li><a href="/about">Sobre mim</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/05/03/vantagem-do-aptitude-sobre-o-apt-get/">Vantagem Do Aptitude Sobre O Apt-Get</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-05-03T11:45:00-03:00" pubdate data-updated="true">May 3<span>rd</span>, 2008</time>
+        
+         | <a href="/blog/2008/05/03/vantagem-do-aptitude-sobre-o-apt-get/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://1.bp.blogspot.com/_5kfJplBiYy0/SBx_jVJ9LUI/AAAAAAAAACU/1E4XfQHm1SY/s1600-h/Swirl.jpg"><img src="http://1.bp.blogspot.com/_5kfJplBiYy0/SBx_jVJ9LUI/AAAAAAAAACU/1E4XfQHm1SY/s320/Swirl.jpg" alt="" /></a></p>
+
+<p>Novamente estou aqui para lhes passar uma pequena dica que para muitos pode nem ser novidade, porém para alguns a dúvida pode existir.</p>
+
+<p>Bom, para aqueles que ainda não sabem, o apt é uma ferramenta da Debian para gerenciamento de pacotes de forma simples, amigável e rápida contando inclusive com a instalação automática de dependências necessárias para a finalização do processo. O que muitas pessoas ainda não sabem é que utilizando-se do comando &ldquo;apt-get install NOME_PACOTE&rdquo; serão instalados pacotes que o mesmo não removerá automaticamente posteriormente, fazendo assim um acúmulo de &ldquo;lixo&rdquo; em nosso sistema. Como assim? Suponhamos que eu queira instalar um aplicativo de instant messenger como por exemplo o amsn. Esta ferramenta possui dependências necessárias para seu funcionamento, sendo elas o TCL e o TK.</p>
+
+<p>O seguinte comando fará a instalação do amsn juntamente com suas dependências, sem que eu precise me preocupar em buscar por elas desesperadamente na internet:</p>
+
+<h1>apt-get install amsn</h1>
+
+<p>Ótimo! Agora tenho o meu messenger devidamente instalado, sem nenhuma dificuldade e funcionando perfeitamente. Porém, um certo dia resolvi remover essa ferramenta que com o tempo parei de usar, então para isso utilizo o seguinte comando:</p>
+
+<h1>apt-get remove amsn</h1>
+
+<p>Perfeito! Meu amsn está desinstalado sem dificuldade alguma. ;]</p>
+
+<p>Agora, e o que acontece com os dois pacotes que foram instalados juntamente com ele anteriormente? TCL e TK? Bom, eles continuam instalados, fazendo um certo acúmulo de  &ldquo;lixo&rdquo; em seu sistema. O mesmo ocorre com todos os pacotes que forem instalados em seu sistema e futuramente removidos com o apt-get.</p>
+
+<p>Onde entra o Aptitude nessa história?</p>
+
+<p>Bom, o aptitude tem um funcionamento bem semelhante para a instalação de pacotes. Passaremos a adotar o mesmo cenário aqui, instalando portanto o amsn:</p>
+
+<h1>aptitude install amsn</h1>
+
+<p>Assim como o apt-get, o aptitude irá instalar automaticamente as dependências do amsn, TCL e TK. Passado algum tempo, resolvo remover o amsn usando o seguinte comando:</p>
+
+<h1>aptitude remove amsn</h1>
+
+<p>Aparentemente ele terá o mesmo efeito do apt-get, com o grande diferencial de  excluir juntamente com o amsn, as suas dependências que outrora foram instaladas, TCL e TK.</p>
+
+<p>Imagine a quantidade de pacotes desnecessários que deve existir em sua máquina&hellip;provavelmente vários. O aptitude é uma solução para que isto não ocorra mais.</p>
+
+<p>Para os fans de distribuições como o Fedora que utilizam-se da ferramenta Yum para instalar seus pacotes, caso tenha surgido a curiosidade, fica a informação de que, infelizmente, o yum ainda não possui este mecanismo. A mesma curiosidade surgiu em mim e resolvi testar, porém o yum, assim como o apt-get, apenas me removeu o amsn, deixando para trás as dependências que foram instaladas.</p>
+
+<p>Essa foi uma simples dica para aqueles que desconheciam este fato diferencial dentre os dois. Espero ter ajudado com esta pequena contribuição para com a comunidade. abraços e até a próxima.
+<a href="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif"></a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/04/29/kubuntu-804-minhas-primeiras-impressoes/">Kubuntu 8.04 - Minhas Primeiras Impressões</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-04-29T10:13:00-03:00" pubdate data-updated="true">Apr 29<span>th</span>, 2008</time>
+        
+         | <a href="/blog/2008/04/29/kubuntu-804-minhas-primeiras-impressoes/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img src="http://3.bp.blogspot.com/_5kfJplBiYy0/SBcnwFJ9LTI/AAAAAAAAACM/7rF76rr-ZL8/s320/kubuntu_splash.jpg" alt="" /></p>
+
+<p>Assim que saiu o Kubuntu 8.04 oficialmente, corri para baixar a iso antes mesmo de ser divulgado no site oficial como forma de evitar pegar uma banda completamente congestionada por centenas de pessoas baixando o mesmo arquivo na mesma fonte. Sim, existem algumas vantagens em se fazer parte das listas de discussão, desenvolvimento e debugs. :p</p>
+
+<p>Bom, apenas consegui tempo para instalar de fato, na madrugada de domingo/segunda pois o fim de semana foi muito corrido e tornou-se impossível realizar esta tarefa que há tanto tempo eu esperava. Porque tamanha espera? Digamos que as versões anteriores do Kubuntu não me deixaram satisfeito por questões de incompatibilidades com minha placa de áudio e como consequência tive de me manter na versão 6.06 até antes de ontem.</p>
+
+<p>Deixando de blablabla vamos ao que interessa.</p>
+
+<p>Logo ao dar boot no live cd do kubuntu 8.04, desde sua primeira beta test, pude constatar que haviam melhorias com relação ao reconhecimento de meu hardware. Tudo havia sido reconhecido automaticamente, desde minha placa de áudio ATI até meu dispositivo wireless da Atheros.</p>
+
+<p>Desde então estive numa espera pela release final, porém sempre baixando as versões beta bem como alpha para testes e ajudar com alguns bugs que por ventura eu viesse a encontrar.</p>
+
+<p>Logo que instalei a versão final nesta madrugada, parti para a instalação de alguns pacotes básicos de sobrevivência como o firefox por exemplo. Minha surpresa aqui foi em ver que nos repositórios havia a raposa em sua versão beta 3.0 como padrão. o.O Apesar do susto que levei em ver o kubuntu trazendo por default uma versão beta, fiquei animado em poder testá-la já que ainda não havia encontrado tempo para isso. Instalei e pude ver claras melhorias em relação às demais versões de nossa raposa de fogo. Sem grandes dificuldades consegui instalar os plugins de java e flash, já que esta versão do firefox ainda não consegue instalar automaticamente.</p>
+
+<p>Fui aidiconando alguns outros aplicativos que uso no meu dia-a-dia como o amsn, em sua versão 0.98, thunderbird, xchat, yakuake, kooldock, eclipse, dia, gimp, jsms, etc&hellip;</p>
+
+<p><img src="http://4.bp.blogspot.com/_5kfJplBiYy0/SBckYVJ9LSI/AAAAAAAAACE/CZMLJ4x8LZU/s320/first.png" alt="" /></p>
+
+<p>Tudo funcionando redondinho e com uma performance bastante estável. A única coisa que pesou um pouco a nível de memória foi ao instalar o compiz e adicionar alguns efeitos, porém admito que nunca curti essas &ldquo;frescuras&rdquo; e instalei apenas a nível de teste, já que até a versão 7.10, o kubuntu não conseguia reconhecer minha placa de vídeo por default. Fiquei surpreso como até nisso ele se saiu bem. Reconheceu minha placa, instalou automaticamente o driver e o compiz juntamente. Em poucos segundos eu estava com os efeitos do compiz habilitados. Porém minha máquina é modesta e isso pesou um pouco para mim no quesito memória. Mas como disse antes, nunca fui fã dessas &ldquo;frescuras&rdquo; e logo desabilitei o compiz deixando novamente meu notebook respirar.</p>
+
+<p>Vou seguindo com meu segundo dia de testes no kubuntu 8.04 e veremos no que essa parceria kalib/kubuntu vai dar. ;]</p>
+
+<p><img src="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif" alt="" /></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/04/22/flisol-fortaleza-2008/">Flisol Fortaleza 2008</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-04-22T17:11:00-03:00" pubdate data-updated="true">Apr 22<span>nd</span>, 2008</time>
+        
+         | <a href="/blog/2008/04/22/flisol-fortaleza-2008/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Mais um ano chega e novamente estamos envolvidos com as vibrações que o Flisol sempre nos proporciona.</p>
+
+<p>Para aqueles que não conhecem ainda, o Flisol, Festival Latino Americano de Instalação de Software Livre, acontece anualmente em mais de 15 países da América-Latina simultaneamente. Logo em sua primeira edição, em 2005, Fortaleza saiu consagrada como tendo sido a cidade com o maior Flisol dentre as mais de 100 cidades latinoamericanas envolvidas no evento.</p>
+
+<p>O evento se resume em fazer instalações de software livre em máquinas de visitantes ou curiosos em conhecer um pouco da filosofia bem como funcionalidade desta vasta gama de possibilidades que é o Mundo do Software Livre. Apesar disto, desde sua primeira edição, aqui em Fortaleza procuramos sempre fazer uma grade recheada de palestras, workshops, atividades ou mini-cursos de forma a trazer uma maior vivência e compreensão aos visitantes que buscam ali muitas vezes mais do que um simples conhecimento introdutório.</p>
+
+<p>Focando o público iniciante, o evento deste ano está repleto de boas palestras para este tipo de público como forma de garantir que todos saiam de lá conhecendo a filosofia do software livre bem como a sua importância.</p>
+
+<p>O evento deste ano será no dia 26 de Abril (Sábado) das 9:00 às 17:00 na Faculdade Evolução: Rua Pedro I, 1276 &ndash; Centro. (Clique na foto para ampliar)</p>
+
+<p>A entrada é gratuita, porém incentivamos fortemente que sejam trazidos 2 kilos de alimentos não perecíveis, já que todo ano o Flisol Fortaleza ajuda alguma instituição com esta arrecadação.</p>
+
+<p>Além das palestras, teremos o tradicional install fest onde os visitantes poderão trazer suas máquinas para ter instalados nela softwares livres dos mais diversos tipos gratuitamente com o acompanhamento de pessoas da comunidade com bastante experiência no assunto, bem como tirar suas dúvidas sobre o assunto.</p>
+
+<p>Nos stands das comunidades também estarão sendo distribuídos cds com distribuições Linux bem como Softwares Livres diversos dentre outros brindes.</p>
+
+<p>Quem quizer ver fotos de versões passadas do Flisol em Fortaleza, abaixo disponibilizo links:</p>
+
+<p>Flisol 2006</p>
+
+<p>Flisol 2007</p>
+
+<p>Abaixo segue a grade de palestras do evento deste ano.</p>
+
+<p>09:00 – ABERTURA DO EVENTO</p>
+
+<p>10:00</p>
+
+<p>Sala 1 &ndash; Esperanto, Língua Livre &ndash; Humberto Xis</p>
+
+<p>Sala 2 – Slackware 12 e suas novidades – Luiz Antonio Oliveira</p>
+
+<p>Sala 3 – Apresentação da ferramenta eGroupWare – Fernando Chucre</p>
+
+<p>Sala 4 &ndash; OpenSocial: Construa a sua rede social &ndash; Christiano Milfont</p>
+
+<p>11:00</p>
+
+<p>Sala 1- Inclusão Sócio-digital para a cidadania: O uso do Software Livre na Educação pública nos LIES municipais – Sinara Duarte</p>
+
+<p>Sala 2 &ndash; Firefox: Domine a raposa de fogo – Rafael Siqueira Telles Vieira</p>
+
+<p>Sala 3 &ndash; Programação Orientada a Objetos com Java – Alessandro Moreira</p>
+
+<p>Sala 4 – Mais que um Linux, um Big Linux – Lucas Filho</p>
+
+<p>12:00 – INTERVALO</p>
+
+<p>14:00</p>
+
+<p>Sala 1 &ndash; Movimentos de software e cultura livre no estado – Uirá Porã</p>
+
+<p>Sala 2 &ndash; Gimp &ndash; Tratamento de imagens – Lucas Filho</p>
+
+<p>Sala 3 &ndash; P&amp;D e Software Livre – Alex Torquato Souza Carneiro</p>
+
+<p>Sala 4 – I Encontro de Desenvolvedores de Jogos do Ceará – David Ferreira</p>
+
+<p>15:00</p>
+
+<p>Sala 1 – Economia Solidária – Kelma Nunes</p>
+
+<p>Sala 2 &ndash; K3B: Gravação e Ripagem no Linux &ndash; Rafael Siqueira Telles Vieira</p>
+
+<p>Sala 3 – Mini-Curso Shell Script – Osvaldo Filho</p>
+
+<p>16:00</p>
+
+<p>Sala 1 &ndash; Sistema de HelpDek/ServiceDesk OpenSource Ocomon – Rafael Barreira Maia</p>
+
+<p>Sala 2 &ndash; BrOffice.org do básico ao avançado – Lucas Filho</p>
+
+<p>Sala 3 &ndash; Introdução a Desenvolvimento e Linguagens de Programação – Rafael de Carvalho Farias</p>
+
+<p>Local: Rua Pedro I, 1276 &ndash; Centro</p>
+
+<p>Horário: 09:00 &ndash; 17:00</p>
+
+<p>Inscrições: <a href="http://flisol-ce.890m.com">http://flisol-ce.890m.com</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/blog/page/50/">&larr; Anteriores</a>
+    
+    <a href="/blog/archives">Arquivos do Blog</a>
+    
+    <a class="next" href="/blog/page/48/">Novas &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Sobre mim</h1>
+  <p><img src="http://www.marcelocavalcante.net/imgs/kalib_picture_pq.png" style="float: left; margin-right: 2px; margin-bottom: 2px;"><p align=left><b>M</b>e chamo Marcelo Cavalcante Rocha, também conhecido como Kalib, e sou militante do Software Livre desde 2005. 
+Trabalho com administração de redes, sistemas e segurança da informação em ambientes mistos. 
+Gosto de ler, surfar, ouvir música e assistir um bom filme. 
+Me conheça melhor <a href="http://blog.marcelocavalcante.net/about">clicando aqui</a>.</p></p>
+</section>
+<section>
+  <h1>Posts Recentes</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/08/06/dica-rapida-linux-forcar-usuario-a-trocar-senha-apos-primeiro-login/">Dica Rápida - Linux - Forçar Usuário A Trocar Senha Após Primeiro Login</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/08/04/rails-girls-em-fortaleza-um-palco-para-a-criatividade-feminina/">Rails Girls em Fortaleza - Um palco para a criatividade feminina</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/08/01/renascimento-dot-dot-dot-de-cara-nova/">Renascimento&#8230;de cara nova</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/02/06/recomendacao-bibliografica-mago-e-vidro-a-torre-negra-iv/">Recomendação Bibliográfica: Mago e Vidro (A Torre Negra - IV)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/12/13/netstat-saiba-o-que-esta-rolando-em-seu-ambiente/">Netstat - Saiba o que está rolando em seu ambiente&#8230;</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+  <h1>Estou lendo</h1>
+  <img align="center" src="/imgs/livros/gravidade.jpg">
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Marcelo Cavalcante Rocha - Kalib -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'marcelocavalcante';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

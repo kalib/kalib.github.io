@@ -9,7 +9,7 @@
   <meta name="author" content="Marcelo Cavalcante Rocha - Kalib">
 
   
-  <meta name="description" content="Bom, para quem não conhece nada sobre Brute-Force ou apenas ouviu falar vagamente mas não tem certeza sobre o que realmente é um ataque deste tipo, &hellip;">
+  <meta name="description" content="Para quem ainda não sabe, a Tux-CE está lançando os novos modelos de suas camisas e está coletando a listagem de pessoas interessadas em comprar a(s &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -86,7 +86,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2011/02/15/brute-force-o-dirb-dirbuster-lhe-ajuda-a-identificar-vulnerabilidades-em-seu-site/">Brute-force? O Dirb&#8230; DirBuster Lhe Ajuda a Identificar Vulnerabilidades Em Seu Site</a></h1>
+      <h1 class="entry-title"><a href="/blog/2011/04/27/novas-camisas-da-tux-ce-solicite-a-sua/">Novas Camisas Da Tux-CE - Solicite a Sua!</a></h1>
     
     
       <p class="meta">
@@ -102,380 +102,30 @@
   
 
 
-<time datetime="2011-02-15T10:23:19-03:00" pubdate data-updated="true">Feb 15<span>th</span>, 2011</time>
+<time datetime="2011-04-27T12:04:19-03:00" pubdate data-updated="true">Apr 27<span>th</span>, 2011</time>
         
-         | <a href="/blog/2011/02/15/brute-force-o-dirb-dirbuster-lhe-ajuda-a-identificar-vulnerabilidades-em-seu-site/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><strong>B</strong>om, para quem não conhece nada sobre Brute-Force ou apenas ouviu falar vagamente mas não tem certeza sobre o que realmente é um ataque deste tipo, sugiro dar uma lida em meu último post, onde apresentei algumas informações sobre brute-force bem como uma ferramenta que podemos utilizar para testar nossos sites e verificar o quão vulneráveis eles estão a este tipo de ataque. Segue link para o mesmo:</p>
-
-<p><a href="http://marcelocavalcante.net/portal/2011/01/31/brute-force-o-dirb-lhe-ajuda-a-identificar-vulnerabilidades-em-seu-site/">Brute-Force? O Dirb lhe ajuda a identificar vulnerabilidade em seu site!</a></p>
-
-<p><strong>A</strong>gora que já conhecemos um pouco sobre as técnicas de brute-force e a ferramenta Dirb, que tal conhecer outra mais apresentável?</p>
-
-<p><strong>M</strong>e refiro ao <a href="http://www.owasp.org/index.php/DirBuster">DirBuster</a>. Uma aplicação multithread desenvolvida pelo <a href="http://www.owasp.org/">OWASP</a> (The Open Web Application Security Project) que tem como objetivo realizar brute-force em diretórios e nomes de arquivos na web. Assim como o Dirb, o DirBuster trabalha em cima de dicionários ou listas. Ao todo ele trás 9 listas que podem ser utilizadas para nossas varreduras e testes. Como todas as suas listas foram criadas na unha, após exaustívas pesquisas e buscas na web por nomes mais utilizados para arquivos e diretórios em servidores web, o DirBuster mostra-se extremamente efetivo para este tipo de atividade conseguindo encontrar até mesmo os arquivos mais ocultos e escondidos.</p>
-
-<p><strong>M</strong>as se você não ficar satisfeito, <del>nós garantimos a devolução do seu dinheiro</del>, com apenas utilizar o modelo de dicionários, o DirBuster ainda lhe possibilita o ataque de brute-force mais purista. Tentativa e erro com combinações possíveis de caracteres. Claro, se você tem muito poder de processamento e tempo sobrando, boa sorte. ;]</p>
-
-<p><strong>L</strong>egal Kalib, quer dizer que agora posso sair invadindo sites?</p>
-
-<p><del>o.O Como diria o Chaves: Ai que burrrrroooo.. dá zero pra ele&hellip;</del></p>
-
-<p><strong>N</strong>ão amigo. O meu intuito não é incentivar ou apresentar qualquer mecanismo ou técnica para este tipo de atividade. O DirBuster não foi feito para este propósito e nem conseguirá efetuar isto. Ele não fará nenhum tipo de exploit em arquivos ou diretórios que ele encontre. O DirBuster serve exatamente para identificar possíveis alvos para estes tipos de ataque, o que nos permite agir de forma corretiva ou preventiva em nossos servidores web. ;]</p>
-
-<p><strong>C</strong>hega de lenga lenga.. vamos ao que interessa!</p>
-
-<p><strong>C</strong>omo instalar?</p>
-
-<p><img src="http://blog.leandroinacio.eti.br/wp-content/uploads/2009/10/arch-linux-logo1.png" alt="Arch Linux" />
-Bom, se você utiliza <a href="http://archlinux.org">Arch Linux</a>, pode pegar o pacote no AUR através do seguinte link(Lembrem-se de votar nele):</p>
-
-<p><a href="http://aur.archlinux.org/packages.php?ID=20809">http://aur.archlinux.org/packages.php?ID=20809</a></p>
-
-<p><strong>F</strong>eito isto, basta seguir o procedimento padrão para pacotes do AUR.</p>
-
-<blockquote><p>1- Descompactar: [kalib@tuxcaverna downloads]$ tar -xvzf dirbuster.tar.gz</p></blockquote>
-
-<p>2- Entrar no diretório dirbuster e gerar o pacote: [kalib@tuxcaverna dirbuster]$ makepkg</p>
-
-<p>3- Instalar o pacote: [kalib@tuxcaverna dirbuster]$ sudo pacman -U dirbuster-0.12-1-x86_64.pkg.tar.xz</p>
-
-<p><strong>F</strong>eito. ;]</p>
-
-<p><strong>O</strong>utras distribuições? Não tenho certeza se o pessoal de outras distribuições empacotou o DirBuster, portanto provavelmente você vai precisar baixar o arquivo compactado do site oficial do projeto. Busquei tanto no Debian quanto no (K)Ubuntu 10.10 e em nenhum destes encontrei o DirBuster nos repositórios através do aptitude.</p>
-
-<p><strong>P</strong>ortanto se você não utiliza o Arch, segue link para download da ferramenta:</p>
-
-<p><a href="http://www.owasp.org/index.php/DirBuster#tab=Download">http://www.owasp.org/index.php/DirBuster#tab=Download</a></p>
-
-<p><strong>M</strong>as qual a cara do bicho?</p>
-
-<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster8.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster8.png" alt="" /></a></p>
-
-<p><strong>C</strong>omo explicado antes, ele funciona parecido com o Dirb, porém em uma interface GUI (gráfica).</p>
-
-<p><strong>C</strong>omo podem ver, é uma interface simples e de fácil manuseio.</p>
-
-<p><strong>V</strong>amos aos pontos:</p>
-
-<p>1- No campo Target, você deverá inserir a URL que será alvo do seu brute-force de diretórios e arquivos web.</p>
-
-<p>2- Logo abaixo, vocẽ escolhe se deseja utilizar apenas GET ou HEAD &amp; GET.</p>
-
-<p>3- Agora é a vez de escolher quantas threads deseja utilizar. Quanto maior o número de threads, mais requisições simultâneas você estará utilizando. ;]</p>
-
-<p>4- Abaixo você deverá escolher o tipo de brute-force.</p>
-
-<ul>
-<li><p>Baseado em dicionários, neste caso você deverá escolher um dos dicionários que a ferramenta já lhe disponibiliza através do seguinte caminho: /opt/DirBuster/</p></li>
-<li><p>Baseado em brute-force puro. Neste caso você deverá escolher qual conjunto de caracteres deseja que sejam utilizados, quantidade mínima e máxima de caracteres por tentativa.</p></li>
-</ul>
-
-
-<p>5- Em seguida é a hora de escolher os filtros: Deseja fazer brute-force apenas em diretórios? Arquivos também? Modo recursivo? Extensões em branco? Diretório inicial para o scan? Que tipo de extensão?&hellip;</p>
-
-<p><strong>E</strong> como é o retorno que ele me dá?</p>
-
-<p><strong>B</strong>om, vou escolher meu alvo e vou utilizar 20 threads em simultâneo. Não vou deixar a ferramenta rodando por muito tempo pois estou apenas fazendo uma demonstração.</p>
-
-<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster21.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster21.png" alt="" /></a></p>
-
-<p><strong>C</strong>omo podem ver, filtrei para que o brute-force comece no diretório raiz (/) e optei pela maior lista que o DirBuster possui como dicionário. Deixei rodando por cerca de 30 segundos e já tive o seguinte resultado.</p>
-
-<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster3.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster3.png" alt="" /></a></p>
-
-<p><strong>A</strong> parte borrada no início da imagem não é um defeito. Vocês não pensaram que eu iria deixar exposto o alvo no qual fiz o teste, certo? No caso, optei pelo site de uma de nossas instituições de ensino. Bom, a imagem acima é um exemplo do retorno que consigo com a ferramenta. É a visão em Lista. Além dela você pode optar pela visão em árvore, que, como o nome informa, lhe trará a árvore de diretórios, sub-diretórios e arquivos que foram encontrados. Abaixo um exemplo da visão em árvore:</p>
-
-<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster4.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster4.png" alt="" /></a></p>
-
-<p><strong>O</strong> resultado, mesmo deixando a ferramenta rodando por apenas 30 segundos, foi o esperado. Um espantoso caso de descuido com a segurança do site.</p>
-
-<p><strong>A</strong>lguns leves exemplos que me chamaram a atenção na lista que consegui:</p>
-
-<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster5.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster5.png" alt="" /></a></p>
-
-<p><strong>U</strong>m diretório de administração exposto desta forma indicando que existe uma sessão do site com acesso permitido apenas para administradores. O que isso me leva a crer? Que quem conseguir acesso a esta sessão consegue manipular o sistema do site? O que nos leva a uma posterior análise da página index contida nele que possibilita uma tentativa de brute-force de login e senha? psssiiiuuuu&hellip; o.O</p>
-
-<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster6.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster6.png" alt="" /></a>
-<strong> U</strong>m diretório para uploads de Arquivos? Que tal testar ele? Apenas usuários administradores possuem permissão de upload? Ou alunos conseguem fazer upload de fotos, trabalhos, por exemplo? De qualquer forma, isso me indica que existe a possibilidade de eu subir arquivos para o servidor deles. Que tal um script em php que me permitiria ter um console shell no servidor deles para inclusão, exclusão, edição, etc.. ? pssiiiiuuuu&hellip; o.O</p>
-
-<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster7.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster7.png" alt="" /></a></p>
-
-<p><strong>P</strong>ode não ser nada.. mas também pode ser muita coisa.. O que um diretório chamado &ldquo;gerencia&rdquo; faz ali tão exposto e com um nome tão&hellip; tão&hellip; discreto? o.O psssiiiuuuuu</p>
-
-<p><strong>A</strong>cho que já conseguiram entender um pouco do que o DirBuster faz.</p>
-
-<p><strong>A</strong>braços!</p>
-
-<p><strong>H</strong>appy Hacking&hellip;</p>
-
-<p><strong>PS: Wrong developers! Never play security by obscurity!</strong></p>
-
-<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/01/31/brute-force-o-dirb-lhe-ajuda-a-identificar-vulnerabilidades-em-seu-site/">Brute-force? O Dirb Lhe Ajuda a Identificar Vulnerabilidades Em Seu Site</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-01-31T11:18:37-03:00" pubdate data-updated="true">Jan 31<span>st</span>, 2011</time>
-        
-         | <a href="/blog/2011/01/31/brute-force-o-dirb-lhe-ajuda-a-identificar-vulnerabilidades-em-seu-site/#disqus_thread">Comments</a>
+         | <a href="/blog/2011/04/27/novas-camisas-da-tux-ce-solicite-a-sua/#disqus_thread">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><img src="http://tdistler.com/wp-content/uploads/2010/06/sherlock_tux.jpg" alt="" /></p>
+  <div class="entry-content"><p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/04/logo.gif"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/04/logo-300x67.gif" alt="" /></a></p>
 
-<p><strong>P</strong>ara quem não conhece, brute-force é um ataque bastante utilizado em serviços web tais como smtp, pop, ssh, ftp, iax dentre outros. O ataque consiste em basicamente forçar o login em um determinado serviço que esteja disponível online sem que seja necessário um ataque mais sofisticado ou mesmo grandes conhecimentos sobre a tecnologia em questão. Por ser demasiado simples de se utilizar, visto que existem milhares de ferramentas disponíveis na web para este fim, ele acaba se tornando um dos pesadelos mais constantes dos administradores de redes, SysAdmins, etc.. Pois é um fato! Se você possui um serviço web ele já sofreu tentativa de ataques brute-force. Não sofreu? <del>Não se preocupe, sofrerá.</del> ;]</p>
+<p><strong>P</strong>ara quem ainda não sabe, a <a href="http://www.tux-ce.org">Tux-CE</a> está lançando os novos modelos de suas camisas e está coletando a listagem de pessoas interessadas em comprar a(s) sua(s).</p>
 
-<p><strong>B</strong>asicamente existem duas formas de brute-force, porém eu prefiro acrescentar uma terceira forma&hellip;rude e grosseira, mas infelizmente já vi casos de pessoas que se utilizam dela, então vamos lá.</p>
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/04/Tshirt-TUX-CE-PRETO-GLIDER-H-M-01.jpg"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/04/Tshirt-TUX-CE-PRETO-GLIDER-H-M-01-300x212.jpg" alt="" /></a></p>
 
-<p><strong>1- Brute-force puro ou força bruta</strong>, como prefiram chamar. É a metodologia mais lenta por testar uma quantidade absurdamente grande de combinações de caracteres de forma aleatória a ponto de tentar descobrir uma senha. Utilizam-se classes como &ldquo;alfanuméricos&rdquo;, &ldquo;numéricos&rdquo;, &ldquo;caracteres especiais&rdquo;, etc. Por exemplo. Supondo que nosso alfabeto fosse composto apenas das letras A, B e C. E alguém possui uma senha para um determinado serviço web. Com uma tentativa de brute-force, eu utilizaria uma ferramenta que geraria todas as combinações possíveis a partir destas 3 letras, o que, ocasionalmente, me daria acesso ao serviço uma vez que, com certeza, eu descobriria a senha, uma hora ou outra. A ferramenta começaria a tentar logar com senhas da seguite forma:</p>
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/04/Tshirt-TUX-CE-H-M.jpg"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/04/Tshirt-TUX-CE-H-M-300x212.jpg" alt="" /></a></p>
 
-<p><em>A
-AA
-AB
-AC
-B
-C
-BA
-BB
-BC
-C
-CA
-CB
-CC
-AAB
-AAC
-&hellip;
-ACABCAACB
-&hellip;</em></p>
+<p><strong>O</strong> valor ainda não está 100% definido, pois o valor vai depender da quantidade de camisas. Caso tenha interesse, preencha este formulário e em breve entraremos em contato com você para informar valores e saber se você realmente irá querer seguir com seu pedido.</p>
 
-<p><strong>E</strong>nfim.. Faria todas as combinações possíveis com estas 3 letras e cedo ou tarde teria sucesso no login, mas&hellip; Nosso alfabeto não é tão pequeno assim. E os números? E os caracteres especiais como %, $, #, @, !, &ldquo;, &amp;, *, (, ), _, &ndash;, +, =, etc&hellip;</p>
+<p><strong>I</strong>nteressado?</p>
 
-<p><strong>J</strong>á imaginaram quantas tentativas seriam necessárias para se descobrir uma senha, por exemplo, de 8 caracteres contendo letras, números e caracteres especiais? o.O</p>
+<p><strong>C</strong>onfira todos os modelos disponíveis em <strong><a href="http://camisas.tux-ce.org">Aqui</a></strong>.</p>
 
-<p><strong>Q</strong>uanto mais demorado for o ataque, mais fácil será de detectar o mesmo.</p>
-
-<p><strong>P</strong>or estas questões ele acaba não sendo a primeira opção para estes ataques. O que nos leva para a outra forma que é a mais utilizada hoje em dia e que tem se provado a mais eficaz, graças a triste realidade global de que as pessoas não possuem uma política eficiente para escolha de suas senhas, acabando por utilizar senhas com palavras reais como: deus, amor, sexo, felicidade, vida, segredo, secreto, etc.</p>
-
-<p><strong>2- Dicionários.</strong> Lembra daquela sua senha que faz sentido e você gosta porque é fácil de lembrar? Aquela &ldquo;deus&rdquo;, &ldquo;amor&rdquo;, &ldquo;sexo&rdquo;, &ldquo;cerveja&rdquo;, etc. Bom, ela corre grandes riscos se passar por um ataque que se utiliza de dicionários. Ataques com dicionários se resumem ao mesmo ataque de tentativa e erro com o intuito de logar em algum serviço web porém de forma mais coerente e orientada. O dicionário consiste em classes ou arquivos texto com uma sequência de palavras pré-formatadas pelo atacante que serão utilizadas como banco de possíveis senhas, ao invés de simplesmente sair tentando todas as combinações possíveis.</p>
-
-<p><strong>S</strong>upondo que sua senha seja &ldquo;cachorro&rdquo;. Eu lanço o ataque de brute-force utilizando-me de um dicionário de strings, ou palavras, que possui as seguintes:</p>
-
-<p><em>amor
-deus
-ceu
-inferno
-gato
-sexo
-divino
-futebol
-cachorro
-galinha
-absurdo
-segredo
-naodigo
-&hellip;
-&hellip;</em></p>
-
-<p><strong>C</strong>omo percebem, é uma simples lista de palavras. Porém, notaram que cachorro está na lista? Bom, o meu ataque faria de forma automática tentativas de login com todas estas possíveis senhas até chegar na vez do &ldquo;cachorro&rdquo;, que me resultaria em acesso à sua conta, serviço, site, aplicação ou o que quer que estivesse <del>&ldquo;protegido&rdquo;</del> com a senha &ldquo;cachorro&rdquo;.</p>
-
-<p><strong>I</strong>magine a mesma senha cachorro. Já imaginou quantas tentativas seriam necessárias com a outra técnica? A de combinações? Imaginem quantas milhares de combinações seriam necessárias utilizando o nosso alfabeto completo até chegarmos à palavra cachorro. o.O</p>
-
-<p><strong>C</strong>laro, quem utiliza-se de dicionários não possui um arquivo de strings tão curto como este exemplo que dei. Sequer apenas em português. Geralmente pegam arquivos prontos na internet que são feitos para este fim que possuem uma infinidade de palavras incluindo nomes próprios, cidades, países, objetos, frutas, etc, etc&hellip;</p>
-
-<p><strong>O</strong>u seja, se você possui uma senha bobinha e que é uma palavra de fato e faz sentido, pense seriamente em trocar por algo um pouco mais elaborado. ;]</p>
-
-<p><strong>S</strong>obre a terceira metodologia, se é que pode-se chamar assim, não possui um nome definido, sequer é reconhecida, porém vou citar pois ela é utilizada em casos mais amadores e específicos. O que seriam esses casos amadores e específicos? Algo como:</p>
-
-<p><em>* mulher/namorada tentando descobrir senha do orkut/email/etc do marido/namorado ou o oposto;
-* jovens tentando descobrir senha de orkut/email/msn/etc de outros jovens por qualquer motivo que o seja (briguinha na escola? o.O)&hellip;</em></p>
-
-<p><strong>3- Lammer ou seja o que deus quizer</strong>. Independente da causa e das pessoas envolvidas, por mais incrível que possa parecer, esta modalidade ainda é bastante utilizada por aí. E o que é pior? Muitas vezes funciona. Não tirando os &ldquo;méritos&rdquo; o.O da pessoa que consegue a senha de alguém através dessa &ldquo;metodologia&rdquo;, mas em 100% 200% dos casos a culpa é apenas da vítima que insiste em colocar uma senha mais do que absurda como por exemplo: telefone de casa, seu número de celular, sua data de nascimento, seu sobre-nome, nome da namorada, nome da sogra <del>(que o Diabo carregue)</del>, etc.</p>
-
-<p><strong>A</strong>cho que já ficou claro como essa metodologia funciona, certo? Caso não, é o seguinte. É um &ldquo;ataque&rdquo; (será que possa chamar assim?) completamente direcionado, como informei anteriormente, onde se conhece o alvo e sabe algumas informações sobre essa pessoa. Neste caso a pessoa, supondo a esposa, não vai se utilizar de tecnologia alguma ou ferramenta específica. Vai apenas abusar do bom senso, torcer pela inocência do marido e tentar a sorte.</p>
-
-<p><strong>E</strong>la abre algum navegador de internet, acessa a página do orkut do cidadão e começa a tentar senhas como: telefone de casa, data de nascimento dele(a), etc.. Sim, ainda hoje vejo senhas simples como estas citadas e que acabam por ser descobertas. E o que é pior? As pessoas dizem: &ldquo;Hackearam minhas senha!&rdquo; hehehe&hellip; Parece exagero? o.O</p>
-
-<p><strong>A</strong>credito que já falei demais sobre isso. Resumi as <del>3</del> 2 técnicas utlizadas para ataques de brute-force. Mas este não é o objetivo principal do post, mas sim como inspecionar seu site ou sistema web para saber se o mesmo está livre de tentativas deste tipo de ataque.</p>
-
-<p><strong>P</strong>ara isso utilizaremos a ferramenta <a href="http://sourceforge.net/projects/dirb/">Dirb</a>.</p>
-
-<p><strong>D</strong>irb é um URL Bruteforcer. Um WCS (Web Content Scanner) que tem a função de buscar por objetos Web Ocultos. Basicamente funciona com o lançamento um ataque baseado em dicionários contra o servidor Web analizando as respostas do mesmo. O principal propósito do Dirb é auditoria em aplicações web.</p>
-
-<p><strong>D</strong>entre as funcionalidades avançadas do Dirb destacam-se:</p>
-
-<p><em>* setar diferentes cookies;
-* adicionar qualquer tipo de HTTP header desejado;
-* utilizar proxys para mascarar a conexão;
-* utilizar catalogos ou arquivos utilizando dicionários definidos ou templates fazendo uma varredura direcionada.</em></p>
-
-<p><strong>M</strong>as, chega de falatório.. vamos ao teclado&hellip;</p>
-
-<p><strong>A</strong> ferramenta pode ser baixada através do site do projeto: <a href="http://sourceforge.net/projects/dirb/">http://sourceforge.net/projects/dirb/</a></p>
-
-<p><a href="http://sourceforge.net/projects/dirb/"></a><strong>A</strong> compilação é simples e sem grandes mistérios.</p>
-
-<p><strong>D</strong>escompacte o arquivo e compile seguindo os seguintes comandos:</p>
-
-<p><em>[kalib@tuxcaverna downloads]$ tar -xvzf dirb203.tar.gz</em></p>
-
-<p><em>[kalib@tuxcaverna downloads]$ cd dirb/</em></p>
-
-<p><em>[kalib@tuxcaverna dirb]$ ./configure</em></p>
-
-<p><em>[kalib@tuxcaverna dirb]$ make</em></p>
-
-<p><strong>P</strong>ronto. O Dirb está pronto para funcionar.</p>
-
-<p><strong>S</strong>e você apenas executar o dirb sem nenhum parâmetros lhe serão apresentados os parâmetros deisponíveis para utilização bem como uma descrição dos mesmos:</p>
-
-<p><em>[kalib@tuxcaverna dirb]$ ./dirb</em></p>
-
-<p><em>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;</em></p>
-
-<p><em>DIRB v2.03</em></p>
-
-<p><em>By The Dark Raver</em></p>
-
-<p><em>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;</em></p>
-
-<p><em>./dirb &lt;url_base> [&lt;wordlist_file(s)>] [options]</em></p>
-
-<p><em>[kalib@tuxcaverna dirb]$ ./dirb
-&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-DIRB v2.03    By The Dark Raver&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-./dirb &lt;url_base> [&lt;wordlist_file(s)>] [options]
-&hellip;.
-&hellip;.
-&hellip;.</em></p>
-
-<p><strong>M</strong>as vamos ao uso mais básico.</p>
-
-<p><strong>A</strong> forma mais simples é utilizando apenas a URL que deseja testar, por exemplo _<a href="http://www.meulaboratorio.com.br_">http://www.meulaboratorio.com.br_</a></p>
-
-<p>_[kalib@tuxcaverna dirb]$ ./dirb <a href="http://www.meulaboratorio.com.br_">http://www.meulaboratorio.com.br_</a></p>
-
-<p><em>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;</em></p>
-
-<p><em>DIRB v2.03</em></p>
-
-<p><em>By The Dark Raver</em></p>
-
-<p><em>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;</em></p>
-
-<p><em>START_TIME: Mon Jan 31 10:05:16 2011</em></p>
-
-<p>_URL_BASE: <a href="http://www.meulaboratorio.com.br_">http://www.meulaboratorio.com.br_</a></p>
-
-<p><em>WORDLIST_FILES: wordlists/common.txt</em></p>
-
-<p><em>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;</em></p>
-
-<p><em>GENERATED WORDS: 1942</em></p>
-
-<p><em>&mdash;&mdash; Scanning URL: <a href="http://www.meulaboratorio.com.br/">http://www.meulaboratorio.com.br/</a> &mdash;&mdash;</em></p>
-
-<p>_+ <a href="http://www.meulaboratorio.com.br/A_">http://www.meulaboratorio.com.br/A_</a></p>
-
-<p><em>(FOUND: 301 [Moved Permanently] &ndash; Size: 241)</em></p>
-
-<p>_+ <a href="http://www.meulaboratorio.com.br/a_">http://www.meulaboratorio.com.br/a_</a></p>
-
-<p><em>(FOUND: 200 [Ok] &ndash; Size: 419)</em></p>
-
-<p>_+ <a href="http://www.meulaboratorio.com.br/about_">http://www.meulaboratorio.com.br/about_</a></p>
-
-<p><em>(FOUND: 301 [Moved Permanently] &ndash; Size: 237)</em></p>
-
-<p>_+ <a href="http://www.meulaboratorio.com.br/accessibility/_">http://www.meulaboratorio.com.br/accessibility/_</a></p>
-
-<p><em>==> DIRECTORY</em></p>
-
-<p>_+ <a href="http://www.meulaboratorio.com.br/account_">http://www.meulaboratorio.com.br/account_</a></p>
-
-<p><em>(FOUND: 302 [Moved Temporarily] &ndash; Size: 227)</em></p>
-
-<p>_+ <a href="http://www.meulaboratorio.com.br/accounts_">http://www.meulaboratorio.com.br/accounts_</a></p>
-
-<p><em>(FOUND: 302 [Moved Temporarily] &ndash; Size: 192)</em></p>
-
-<p>_+ <a href="http://www.meulaboratorio.com.br/ad_">http://www.meulaboratorio.com.br/ad_</a></p>
-
-<p><em>(FOUND: 301 [Moved Permanently] &ndash; Size: 223)</em></p>
-
-<p>_+ <a href="http://www.meulaboratorio.com.br/ads/_">http://www.meulaboratorio.com.br/ads/_</a></p>
-
-<p><em>==> DIRECTORY</em></p>
-
-<p><em>&hellip;
-&hellip;
-&hellip;</em></p>
-
-<p><strong>C</strong>ortei pois o resultado seria muito grande. Mas, como podem ver, ele escaneia a URL por diretórios, arquivos, etc., que podem ser alvos de tentativas de brute-force.</p>
-
-<p><strong>N</strong>o nosso simples caso, vi que foi identificado um diretório chamado accounts. Este diretório já é um alvo que merece ser inspecionado com mais atenção pois as chances de ele conter algo que interesse ao invasor são grandes.</p>
-
-<p><strong>C</strong>omo eu havia dito, o Dirb funciona com dicionários. Como devem ter reparado, eu não setei nenhum dicionário, portanto ele utilizou o dicionário padrão &ldquo;common&rdquo;. Mas você pode especificar manualmente qual dicionário deseja utilizar.</p>
-
-<p><strong>N</strong>o diretório dirb, você encontrará um diretório chamado wordlists que conterá os dicionários disponíveis.</p>
-
-<p><em>[kalib@tuxcaverna dirb]$ cd wordlists/</em></p>
-
-<p><em>[kalib@tuxcaverna wordlists]$ ls</em></p>
-
-<p><em>big.txt  catala.txt  common.txt  euskera.txt  extensions_common.txt  indexes.txt  mutations_common.txt  others  small.txt  spanish.txt  stress  vulns</em></p>
-
-<p><strong>B</strong>om, e sobre parâmetros?</p>
-
-<p><strong>V</strong>ou apresentar apenas algumas possibilidades.</p>
-
-<p><strong>P</strong>ara utilização de um dicionário em específico, basta adicionar o nome do dicionário desejado ao final do comando:</p>
-
-<p><em>[kalib@tuxcaverna wordlists]$ ./dirb <a href="http://www.meulaboratorio.com.br">http://www.meulaboratorio.com.br</a> euskera.txt</em></p>
-
-<p><strong>P</strong>ara utilização de SSL, apenas inclua o HTTPS na url desejada:</p>
-
-<p><em>[kalib@tuxcaverna wordlists]$ ./dirb <a href="https://www.meulaboratorio.com.br%C2%A0euskera.tx">https://www.meulaboratorio.com.br%C2%A0euskera.tx</a> -i</em></p>
-
-<p><strong>V</strong>ocê também pode utilizar múltiplos dicionários separando-os com vírgulas:</p>
-
-<p><em>[kalib@tuxcaverna wordlists]$ ./dirb <a href="http://www.meulaboratorio.com.br">http://www.meulaboratorio.com.br</a> euskera.txt,common.txt,spanish.txt,big.txt</em></p>
-
-<p><strong>A</strong>lém disto você pode filtrar sua busca por uma extensão em específico através do parâmetro -X:</p>
-
-<p><em>[kalib@tuxcaverna wordlists]$ ./dirb <a href="http://www.meulaboratorio.com.br">http://www.meulaboratorio.com.br</a> euskera.txt -X .asp,.php,.jsp</em></p>
-
-<p><strong>A</strong>gora é sair experimentando combinações e testando os resultados. Seja criativo em seus testes. ;]</p>
+<p><strong>P</strong>reencha o formulário para solicitar a(s) sua(s) <strong><a href="http://formcamisas.tux-ce.org">Aqui</a></strong>.</p>
 
 <p><strong>A</strong>braços!</p>
 
@@ -492,7 +142,7 @@ naodigo
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2011/01/27/lancado-kde-4-6-sim-claro-se-voce-usa-arch-voce-nao-precisa-esperar/">Lançado KDE 4.6 - Sim, claro&#8230;se Você Usa Arch Você Não Precisa Esperar!</a></h1>
+      <h1 class="entry-title"><a href="/blog/2011/04/26/procura-se-usuarios-de-arch-linux-no-ceara/">PROCURA-SE: Usuários De Arch Linux No Ceará</a></h1>
     
     
       <p class="meta">
@@ -508,156 +158,30 @@ naodigo
   
 
 
-<time datetime="2011-01-27T09:54:19-03:00" pubdate data-updated="true">Jan 27<span>th</span>, 2011</time>
+<time datetime="2011-04-26T10:20:12-03:00" pubdate data-updated="true">Apr 26<span>th</span>, 2011</time>
         
-         | <a href="/blog/2011/01/27/lancado-kde-4-6-sim-claro-se-voce-usa-arch-voce-nao-precisa-esperar/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/01/kde46.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/01/kde46.png" alt="" /></a></p>
-
-<p><strong>&ndash; DEV do Arch, qual é sua missão?</strong></p>
-
-<p><strong>&ndash; Empacotar antes de qualquer distribuição!</strong></p>
-
-<p><strong>&ndash; DEV do Arch o que é que você faz?</strong></p>
-
-<p><strong>&ndash; Eu empacoto coisas que assustam o Satanás!</strong></p>
-
-<p><strong>É</strong> isso aí pessoal, ontem o projeto <a href="http://kde.org">KDE</a> liberou o KDE 4.6 com muitas melhorias e o pessoal do <a href="http://archlinux.org">Arch</a> já saiu na frente, claro. Sim, se você usa Arch, não precisa esperar, pode atualizar seu KDE com o seu rotineiro <em># __pacman -Syu.</em></p>
-
-<p><em><a href="http://kde.org/announcements/4.6/screenshots/46-w09.png"><img src="http://kde.org/announcements/4.6/screenshots/46-w09.png" alt="" /></a></em></p>
-
-<p><strong>D</strong>entre as grandes mudanças, gostaria de destacar o suporte nativo ao UPower, UDev e UDisks que podem ser utilizados ao invés do depreciado HAL. Para isso, o pacote hal deixa de ser uma dependência do kdebase-workspace e pode ser removido do seu sistema.</p>
-
-<p><strong>O</strong>utra novidade é que com a última atualização do Phonon, os DEVs declararam que o backend Xine não será mais mantido e precisará do PulseAudio para funcionar; você realmente deveria pensar em trocar para o GStreamer ou VLC backend.</p>
-
-<p><strong>V</strong>árias melhorias foram implementadas também em contexto geral no Plasma Workspaces que ganhou, dentre outras coisas, um novo sistema de Activities, lhe permitindo uma associação mais fácil de aplicações com atividades específicas e particulares como trabalho ou atividades de casa. Várias mudanças no Kwin, o gerenciador de janelas do Plasma, também foram implementadas para melhorar a performance do mesmo e ao mesmo tempo tornar mais leve para o sistema como um todo.</p>
-
-<p><strong>E</strong> se eu tiver um netbook?</p>
-
-<p><strong>O</strong> KDE 4.6 também trouxe uma série de novos recursos que facilitam e tornam o sistema ainda mais leve para este tipo de usuário. O Plasma Netbook, otimizado para computadores mais portáteis, se tornou ainda mais leve e fácil de se utilizar através de uma tela touchscreen.</p>
-
-<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/01/kde46_1.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/01/kde46_1.png" alt="" /></a></p>
-
-<p><strong>V</strong>árias modificações no dolphin, correções de bugs e aparência também foram implementadas, mas&hellip; se eu for realmente listar todas as modificações, posso acabar perdendo meu emprego, portanto vou apenas lhes deixar o link do site oficial onde podem ser encontradas todas as mudanças desta release: <a href="http://kde.org/announcements/4.6/">http://kde.org/announcements/4.6/</a></p>
-
-<p><strong>A</strong>braços!</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/12/29/chaveamento-de-interfaces-de-rede-placas-broadcom/">Chaveamento De Interfaces De Rede - Placas Broadcom</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-12-29T09:25:13-03:00" pubdate data-updated="true">Dec 29<span>th</span>, 2010</time>
-        
-         | <a href="/blog/2010/12/29/chaveamento-de-interfaces-de-rede-placas-broadcom/#disqus_thread">Comments</a>
+         | <a href="/blog/2011/04/26/procura-se-usuarios-de-arch-linux-no-ceara/#disqus_thread">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><img src="http://cdn.venturebeat.com/wp-content/uploads/2010/10/broadcom-chip.jpg" alt="broadcom" /></p>
+  <div class="entry-content"><p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/04/procurase.jpg"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/04/procurase.jpg" alt="" /></a></p>
 
-<p><strong>C</strong>omo diria a Feiticeira (não lembro o nome real dela), não é feitiçaria, é tecnologia!</p>
+<p><strong>S</strong>e você é ou conhece algum usuário de <a href="http://archlinux.org/">Arch Linux</a> aqui no Ceará, favor entrar em contato.</p>
 
-<p><strong>C</strong>omo já expliquei no outro post, tive problemas com meu notebook e por isso passei muito tempo afastado do blog. Bom, recentemente comprei outro e cá estou novamente em casa.</p>
+<p><strong>I</strong>nfelizmente não estamos em condições de oferecer recompensas financeiras pelas <del>denúncias</del> ou comparecimentos voluntários. Quem sabe, uma cervejinha ou duas, até que rola.</p>
 
-<p><strong>M</strong>as, como nem tudo é um mar de rosas&hellip; toda mudança trás impactos positivos e negativos.</p>
+<p><strong>B</strong>rincadeiras a parte, de fato estamos buscando usuários do Arch Linux em nosso estado.</p>
 
-<p><img src="http://blog.grupojbr.com.br/up/g/gr/blog.grupojbr.com.br/img/20101114090300_634036567553112000vostro3300.jpg" alt="" /></p>
+<p><strong>O</strong> fato é que o <a href="http://archlinux-br.org">Arch Linux Brasil</a> como um todo vem começando uma campanha de &ldquo;localização&rdquo; de usuários em diversos estados como uma forma de estreitar as relações entre estes. A ideia é procurar uma forma de fazer com que os usuários de Arch Linux possam ter uma maior interação entre si, o que facilita na organização de encontros, eventos, install fests, etc.</p>
 
-<p><strong>A</strong> máquina escolhida foi um Dell Vostro 3300. Com certeza uma excelente máquina e que eu não deixaria de recomendar para ninguém.</p>
+<p><strong>N</strong>o momento estamos mapeando e buscando interessados na ideia, portanto fica o convite:</p>
 
-<p><strong>P</strong>ara quem comprou algum Dell recentemente, ou pensou em comprar, não deve ser uma novidade que estas máquinas, em sua grande maioria, estão trazendo chipsets wireless da Broadcom, ao invés dos Intel.</p>
+<p><strong>S</strong>e você é usuário do Arch Linux e mora no Ceará ou conhece algum usuário do Arch Linux por aqui, passe a informação.</p>
 
-<p><strong>Q</strong>uando pensei em comprar, refleti bastante sobre isto, visto que os drivers para broadcom no linux já tiveram um passado um tanto quanto nebuloso em se tratando de Wireless.</p>
-
-<p><strong>R</strong>esolvi encarar e não me arrependo. A performance está excelente. O driver realmente funcionou como deveria funcionar porém tive um pequeno problema.</p>
-
-<p><strong>U</strong>tilizo <a href="http://www.kde.org">KDE</a> como gerenciador de janelas em meu <a href="http://www.archlinux.org">ArchLinux</a> e <a href="http://wicd.sourceforge.net/">Wicd</a> como gerenciador de redes. Estava tudo funcionando bem mas ao reiniciar a máquina um certo dia percebo que o Wicd não havia encontrado nenhuma rede wireless. o.O</p>
-
-<p><strong>R</strong>einicio novamente e ele volta a encontrar. Feitiçaria? Fiquei curioso e resolvi reiniciar novamente e&hellip; funcionou. Pensei: &ldquo;Foi apenas um susto..ela devia querer descansar..&rdquo;</p>
-
-<p><strong>M</strong>as no dia seguinte ao ligar em casa percebi que, novamente, a interface wireless não foi encontrada pelo Wicd. Lembrei do fato anterior e reiniciei novamente. A interface continuava sem funcionar no Wicd.</p>
-
-<p><strong>L</strong>hes poupando dos testes que resolvi fazer para isolar o problema, descobri que as vezes a minha interface wireless estava subindo como eth0, as vezes subindo como eth1. Isso, obviamente, deixava o Wicd confuso, pois na configuração dele é necessário especificar qual será a interface wireless e qual será a wired (cabeada). Portanto, quando o notebook subia com a wireless na eth1, o Wicd funcionava numa boa, mas quando subia na eth0 o Wicd continuava tentando escanear redes wireless com a eth1, portanto não funcionava.</p>
-
-<p><strong>A</strong>pós algumas pesquisas descobri que este é um acontecimento comum em relação ao driver da broadcom. Este chaveamento ou swap de interfaces de rede acontece realmente de forma aleatória.</p>
-
-<p><strong>C</strong>omo resolver? Amarrando a interface ao nome, literalmente.</p>
-
-<p><strong>A</strong> placa começou a funcionar da forma esperada após vincular via regra o MAC da interface ao nome que eu desejava para ela. Desta forma, na hora de subir, ambas passam a subir de acordo com a regra que eu especifiquei, o que resolveu o problema pois a interface wireless passou a sempre subir com o mesmo nome, evitando que o Wicd tentasse escanear com uma interface que não existe.</p>
-
-<p><strong>S</strong>em mais papo furado.. mãos à obra!</p>
-
-<p><strong>A</strong>ntes de mais nada é necessário criar, caso você já não possua, o arquivo <em>/etc/udev/rules.d/10-network.rules</em> acrescentando o seguinte conteúdo:</p>
-
-<p><em>SUBSYSTEM==&ldquo;net&rdquo;, ATTR{address}==&ldquo;aa:bb:cc:dd:ee:ff&rdquo;, NAME=&ldquo;eth0&rdquo;</em>
-_ SUBSYSTEM==&ldquo;net&rdquo;, ATTR{address}==&ldquo;aa:bb:cc:dd:ee:ff&rdquo;, NAME=&ldquo;eth1&rdquo;_</p>
-
-<p>o.O wtf?</p>
-
-<p><strong>B</strong>om, com isto você estará deixando claro para o sistema qual o nome que deverá ser atribuído para cada interface.</p>
-
-<p><strong>V</strong>ocê deverá apenas substituir o &ldquo;aa:bb:cc:dd:ee:ff&rdquo; e &ldquo;ff:ee:dd:cc:bb:aa&rdquo; pelos respectivos endereços MAC das interfaces.</p>
-
-<p><strong>O</strong> valor dos campos NAME podem ser alterados de acordo com sua vontade, por exemplo: eth0 para a cabeada e wlan0 para a wireless.</p>
-
-<p><strong>C</strong>aso não saiba como conseguir o endereço MAC de suas interfaces, utilize o seguinte comando:</p>
-
-<p><em># ifconfig | grep HW</em></p>
-
-<p><strong>I</strong>sso lhe dará um retorno parecido com o seguinte:</p>
-
-<p><em>eth0  Link encap:Ethernet  HWaddr <strong>A4:BA:DB:D7:41:C0</strong>
-eth1  Link encap:Ethernet  HWaddr <strong>1C:65:9D:6E:65:1B</strong></em></p>
-
-<p><strong>O</strong>s endereços MAC são os valores que destaquei acima.</p>
-
-<p><strong>ATENÇÃO:</strong> Apesar de o MAC constantemente ser escrito com letras em maiúsculo como apresentado acima, no caso do arquivo 10-network.rules você deverá utilizar letras em minúsculo. Exato, o arquivo é case sensitive, portanto só funcionará desta forma.</p>
-
-<p><strong>C</strong>aso você receba uma saída parecida com a minha e queira se certificar de qual dos dois endereços MAC é o que realmente representa a interface wireless pode testar com os seguintes comando:</p>
-
-<p><em># iwlist eth0 scanning</em></p>
-
-<p>e&hellip;﻿</p>
-
-<p><em># iwlist eth1 scanning</em></p>
-
-<p><strong>V</strong>ocê perceberá que terá resultados diferentes. O que retornar um scan completo de redes wireless disponíveis, obviamente, é a interface Wireless. ;]</p>
-
-<p><strong>A</strong>pós ter escolhido o nome que deseja para cada uma de suas interfaces pode salvar o arquivo de regra.</p>
-
-<p><strong>ATENÇÃO²:</strong> Certifique-se de atualizar o seu arquivo <em>/etc/rc.conf</em> para evitar que os nomes das interfaces estejam diferentes das que você criou no arquivo de regras.</p>
-
-<p><strong>É</strong> isto.. agora sua interface funcinoará da forma esperada.</p>
+<p><strong>P</strong>or favor se identifique através do seguinte link: <a href="http://forum.archlinux-br.org/viewforum.php?id=20">http://forum.archlinux-br.org/viewforum.php?id=20</a></p>
 
 <p><strong>A</strong>braços!</p>
 
@@ -674,7 +198,7 @@ eth1  Link encap:Ethernet  HWaddr <strong>1C:65:9D:6E:65:1B</strong></em></p>
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2010/12/20/recomendacao-bibliografica-as-brumas-de-avalon-vol-i-a-senhora-da-magia/">Recomendação Bibliográfica: As Brumas De Avalon Vol I - a Senhora Da Magia</a></h1>
+      <h1 class="entry-title"><a href="/blog/2011/04/20/como-download-de-webcasts-mms-e-rtmp/">Como? Download De Webcasts Mms E Rtmp?</a></h1>
     
     
       <p class="meta">
@@ -690,48 +214,82 @@ eth1  Link encap:Ethernet  HWaddr <strong>1C:65:9D:6E:65:1B</strong></em></p>
   
 
 
-<time datetime="2010-12-20T09:54:58-03:00" pubdate data-updated="true">Dec 20<span>th</span>, 2010</time>
+<time datetime="2011-04-20T08:51:46-03:00" pubdate data-updated="true">Apr 20<span>th</span>, 2011</time>
         
-         | <a href="/blog/2010/12/20/recomendacao-bibliografica-as-brumas-de-avalon-vol-i-a-senhora-da-magia/#disqus_thread">Comments</a>
+         | <a href="/blog/2011/04/20/como-download-de-webcasts-mms-e-rtmp/#disqus_thread">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2010/12/avalon1.jpg"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2010/12/avalon1.jpg" alt="" /></a></p>
+  <div class="entry-content"><p><a href="http://www.ogilvy.co.uk/neo/files/2008/03/webcast-pic.png"><img src="http://www.ogilvy.co.uk/neo/files/2008/03/webcast-pic.png" alt="" /></a></p>
 
-<p><strong>S</strong>audações amigos&hellip;</p>
+<p><strong>C</strong>ansado de apenas poder assistir aquele webcast ou vídeo-aula online? E se estiver em um local sem conec﻿tividade? Porque dor de cabeça? Sou usuário Linux! Obrigado por ter a ideia de criar o Linux e facilitar nossas vidas Linus. ;]</p>
 
-<p><strong>S</strong>entiram saudades?</p>
+<p><strong>R</strong>ecentemente me deparei com esta problemática. Como realizar o download deste tipo de conteúdo?</p>
 
-<p><strong>N</strong>ovamente passei por um jejum em relação ao blog. Sim, motivos de força maior. Tive alguns problemas em relação ao meu laptop portanto fiquei sem condições de dar atenção ao blog por algumas semanas. Agora, de laptop novo, posso voltar à rotina.</p>
+<p><strong>A</strong>o checar o código fonte da página que exibia o vídeo, vi que eram streamings dos protocolos mms ou rtmp, o que, aparentemente, dificultava o download.</p>
 
-<p><strong>N</strong>ada melhor para começar do que assuntos que desopilam, correto? Bom, vésperas de feriado do Natal então, por favor Kalib, nada de baboseiras técnicas.</p>
+<p><strong>P</strong>ara quem mais estiver passando por este problema, segue a solução. Aliás, as soluções.</p>
 
-<p><strong>A</strong> recomendação bibliográfica deste mês é um livro um tanto quanto antigo, porém que ainda hoje me surpreende.</p>
+<p><strong>U</strong>ma vez que, através do código fonte você consiga identificar a URL completa do arquivo mmc ou rmtp, fica fácil utilizar alguma das metodologias a seguir.</p>
 
-<p><strong>S</strong>e chama As Brumas de Avalon vol I &ndash; A Senhora da Magia.</p>
+<p><strong>A</strong> primeira opção é a aplicação <strong>Mimms</strong>.</p>
 
-<p><strong>L</strong>embro que li este livro pela primeira vez cerca de 6 ou 7 anos atrás e como coinscidentemente estou acompanhando uma série sobre o rei Artur, Merlin e companhia, bateu a saudade do livro e resolvi ler novamente. Relembrar a história.</p>
+<p><strong>E</strong>sta é a forma mais simples e prática com arquivos do tipo mms.</p>
 
-<p><strong>B</strong>om, o livro é sem sombra de dúvidas uma excelente narrativa para quem gosta de contos de época, reinos, magia, etc.</p>
+<p><strong>P</strong>ara usuários do <a href="http://archlinux.org">Arch Linux</a>, já existe um pacote pronto no <a href="http://aur.archlinux.org/packages.php?ID=16412">AUR</a>.</p>
 
-<p><strong>D</strong>iferentemente de todas as histórias conhecidas sobre o rei Artur, seu reinado e conquistas, As Brumas de Avalon contam como tudo aconteceu a partir da perspectiva de mulheres da época que tiveram contato e laços com Artur. Sim, a Sacerdotisa Morgana, que passa a ser a protagonista principal da história, conta sua vida desde sua infância e como ela teve forte, para não dizer fundamental, influência em toda a história de sucesso do Rei Artur.</p>
+<p><strong>A</strong> instalação, segue o padrão de arquivos baixados do AUR:</p>
 
-<p><strong>A</strong>lém de Morgana, o livro aborda a vida e influência de outras mulheres que também tiveram papéis essenciais para o desenvolvimento de Artur bem como de acontecimentos gerais. Vários outros aspectos místicos de antigas religiões como os Druídas e crenças pagãs baseadas no culto de uma Grande Deusa são abordados. Entre conflitos com a Igreja e rituais pagãos, Artur se prepara para assumir seu fardo.</p>
+<p><strong>1-</strong> Download do <a href="http://aur.archlinux.org/packages/mimms/mimms.tar.gz">Tarball</a>;</p>
 
-<p><strong>E</strong>m meio a uma série de conflitos religiosos, Artur passa a ser o responsável por unificar e assegurar a harmonia da Bretanha comandando vários Reis que lhe devem jurar fidelidade.</p>
+<p><strong>2-</strong> Descompatar: <em>$ tar -xvzf mimms.tar.gz</em></p>
 
-<p><strong>S</strong>egue breve sinopse deste que é o primeiro livro de uma série que conta com 4 volumes retirada do site da <a href="http://www.livrariasaraiva.com.br/produto/2615172/as-brumas-de-avalon-1-a-senhora-da-magia/?ID=BB726B7B7DA0C140A12050458">Livraria Saraiva</a>:</p>
+<p><strong>3-</strong> Acessar o diretório e efetuar a compilação do pacote: <em>$ cd mimms &amp;&amp; makepkg</em></p>
 
-<p><em>Neste enorme e emocionante romance, a lenda do rei Artur é contada pela primeira vez através das vidas, das visões e da percepção das mulheres que nela tiveram um papel central.
-Igraine, Viviane, Guinevere, Morgana. Elas revelam, com as suas vidas e sentimentos, a lenda de Artur, como se fosse nova de, ao mesmo tempo, levam o leitor a integrar-se na história, de maneira natural e profunda.
-Assim, esta obra proporciona uma narrativa soberba de uma lenda, e a recriação dessa lenda, bem como a brilhante contribuição para a literatura do ciclo arturiano.</em></p>
+<p><strong>4-</strong> Instalar o pacote que lhe foi gerado: <em># pacman -U mimms-3.2.1-2-any.pkg.tar.xz</em></p>
 
-<p><strong>A</strong>braços e um Feliz Natal a todos!</p>
+<p><strong>F</strong>eito. Agora é só executar da seguinte forma:</p>
 
-<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2010/12/grinch.jpg"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2010/12/grinch.jpg" alt="" /></a></p>
+<p><em>$ mimms mms://url_de_origem_do_streaming/arquivo_streaming.wmv</em></p>
+
+<p><strong>S</strong>erá que isso funciona mesmo? Experimente:</p>
+
+<p><em>$ mimms <a href="mms://wms.andrew.cmu.edu/001/pausch.wmv">mms://wms.andrew.cmu.edu/001/pausch.wmv</a></em></p>
+
+<p><strong>O</strong>i, simples assim.</p>
+
+<p><strong>O</strong>utra alternativa?</p>
+
+<p><strong>U</strong>tilizando o <strong>Mencoder</strong>:</p>
+
+<p><strong>N</strong>ão é tão simples quanto o mimms, mas também é rápido e prático.</p>
+
+<p><strong>O</strong> comando que deve ser utilizado?</p>
+
+<p><em>mencoder mms://url_de_origem_do_streaming/arquivo_streaming.wmv -o arquivo_streaming.wmv -oac copy -ovc copy</em></p>
+
+<p><strong>U</strong>m pouco mais complexo, certo? Mas funciona.</p>
+
+<p><strong>E</strong> quanto aos arquivos de streaming que utilizam o protocolo rtmp?</p>
+
+<p><strong>N</strong>este caso a opção é utilizarmos o <strong>rtmpdump</strong>.</p>
+
+<p><strong>S</strong>im, claro.. Se você utiliza o Arch Linux, sua vida continua simplificada:</p>
+
+<p><em># pacman -S rtmpdump</em></p>
+
+<p><strong>P</strong>ronto, está instalado. ;]</p>
+
+<p><strong>A</strong> execução do mesmo também é bastante simples, precisando apenas especificar a origem e o destino do streaming em questão. Segue sintaxe:</p>
+
+<p><em>rtmpdump -r &ldquo;rtmpe://url_de_origem_do_streaming/arquivo_streaming.wmv&rdquo; -o arquivo.streaming.flv &mdash;resume</em></p>
+
+<p><strong>H</strong>ave fun! ;]</p>
+
+<p><strong>A</strong>braços!</p>
 
 <p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
 </div>
@@ -784,16 +342,13 @@ Me conheça melhor <a href="http://blog.marcelocavalcante.net/about">clicando aq
         <a href="/blog/2011/12/13/netstat-saiba-o-que-esta-rolando-em-seu-ambiente/">Netstat - Saiba o que está rolando em seu ambiente&#8230;</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2011/10/24/que-tal-ajudar-o-projeto-kde-com-apenas-1-minuto-do-seu-tempo/">Que tal ajudar o projeto KDE com apenas 1 minuto do seu tempo?</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2011/10/17/3c2ba-dia-livre-programacao-definida/">3º Dia Livre - Programação Definida!</a>
-      </li>
-    
   </ul>
 </section>
+<section>
+  <h1>Estou lendo</h1>
+  <img align="center" src="/imgs/livros/gravidade.jpg">
+</section>
+
 
 
 

@@ -9,7 +9,7 @@
   <meta name="author" content="Marcelo Cavalcante Rocha - Kalib">
 
   
-  <meta name="description" content="Saudações galera.. Neste post eu deixo a dica de uma loja online na qual você pode encontrar diversos produtos bacanas do Arch Linux. Produtos estes &hellip;">
+  <meta name="description" content="Todos que visitam meu blog já devem estar cansados de saber que estou bastante atento ao projeto chromium e ajudando com o possível para o &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -86,7 +86,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2008/11/10/arch-linux-schwag-uma-loja-para-o-arch-linux/">Arch Linux Schwag - Uma Loja Para O Arch Linux</a></h1>
+      <h1 class="entry-title"><a href="/blog/2009/08/12/habilitando-plugins-no-chromium/">Habilitando Plugins No Chromium</a></h1>
     
     
       <p class="meta">
@@ -102,30 +102,60 @@
   
 
 
-<time datetime="2008-11-10T11:31:00-03:00" pubdate data-updated="true">Nov 10<span>th</span>, 2008</time>
+<time datetime="2009-08-12T09:55:34-03:00" pubdate data-updated="true">Aug 12<span>th</span>, 2009</time>
         
-         | <a href="/blog/2008/11/10/arch-linux-schwag-uma-loja-para-o-arch-linux/#disqus_thread">Comments</a>
+         | <a href="/blog/2009/08/12/habilitando-plugins-no-chromium/#disqus_thread">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/camisa_arch.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/camisa_arch.png" alt="" /></a>Saudações galera..</p>
+  <div class="entry-content"><p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2009/08/chromium-browser.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/08/chromium-browser-300x300.png" alt="chromium-browser" /></a><strong>T</strong>odos que visitam meu blog já devem estar cansados de saber que estou bastante atento ao projeto chromium e ajudando com o possível para o desenvolvimento e divulgação do mesmo.</p>
 
-<p>Neste post eu deixo a dica de uma <a href="http://www.zazzle.com/archlinux">loja online</a> na qual você pode encontrar diversos produtos bacanas do <a href="http://www.archlinux-br.org/">Arch Linux</a>. Produtos estes que vão desde camisetas até mesmo shapes de skates ou aventais (é mole?).</p>
+<p><strong>B</strong>om, eu já havia notificado aqui o fato de que o chromium passou a ter suporte à plugins como o flash por exemplo. De fato ele já suporta os plugins, mas muitos estão me procurando para perguntar porque o chromium cortou o suporte aos plugins, visto que nas builds mais recentes do chromium o suporte parece ter sido cortado, visto que os plugins não estão funcionando a princípio.</p>
 
-<p>O comércio eletrônico vem crescendo a cada dia e ganhando cada vez mais adeptos por sua confiabilidade, agilidade e eficiência, isto tudo sem mencionar o conforto de navegar em shoppings e lojas sem sair de sua cadeira ou poltrona favorita. A comodidade em não perder horas de caminhada ou esperando em filas para atendimento tem atraído cada vez mais clientes para este tipo de comércio.</p>
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2009/08/shot_chromium.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/08/shot_chromium-300x187.png" alt="shot_chromium" /></a></p>
 
-<p>Eu sou um grande adepto de comércio eletrônico e pelo menos uma vez por mês faço algum tipo de compra online sendo<a href="http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/caneca_arch.gif"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/caneca_arch.gif" alt="" /></a> os livros os responsáveis pela minha maior parcela destas compras via web.</p>
+<p><strong>M</strong>as, porque o meu funciona e o seu não?</p>
 
-<p>Aproveito para deixar aqui o link para esta incrível loja com produtos do Arch Linux e de outras várias coisas que desejar. Apesar de ser uma loja gringa, vale a pena conferir.</p>
+<p><strong>N</strong>ão é mágica..nem feitiçaria.. Vamos à realidade.</p>
 
-<p>Segue Link: <a href="http://www.zazzle.com/archlinux">http://www.zazzle.com/archlinux</a></p>
+<p><strong>O</strong> suporte do chromium aos plugins ainda não está 100% homologado, o que resulta em alguns bugs e falhas, podendo acarretar em uso excessivo de processamento ou outros recursos de sua máquina em alguns casos. Sabendo disso, o projeto chromium adotou a posição de não tornar o suporte à plugins uma opção &ldquo;default&rdquo;.</p>
 
-<p>Abraços</p>
+<p><strong>P</strong>ara utilizar os plugins em seu chromium você precisa iniciar o seu chromium com o seguinte parâmetro:</p>
 
-<p><img src="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif" alt="" /></p>
+<p>$ chromium-browser &mdash;enable-plugins</p>
+
+<p><strong>L</strong>embrando que nestas novas builds do chromium não existe mais a necessidade de criar os links simbólicos para os plugins. Ele já detecta automaticamente os plugins que você tem instalados.</p>
+
+<p><strong>P</strong>ara testar, pode abrir o seguinte endereço ou mesmo acessar algo como o youtube:</p>
+
+<p>about:plugins</p>
+
+<p><strong>C</strong>aso você ainda não tenha o chromium instalado em sua máquina pode buscar informações na internet sobre como o fazer em sua distro. Caso use Archlinux, pode seguir os passos abaixo:</p>
+
+<p><strong>1-</strong> Adicione o repositório brasileiro em sua lista de mirrors. Adicione as seguintes linhas em seu arquivo /etc/pacman.conf :</p>
+
+<p>[archlinuxbr]
+Server = <a href="http://repo.archlinux-br.org/i686">http://repo.archlinux-br.org/i686</a></p>
+
+<p>ou</p>
+
+<p>[archlinuxbr]
+Server = <a href="http://repo.archlinux-br.org/x86_64">http://repo.archlinux-br.org/x86_64</a></p>
+
+<p><strong>2- </strong>Atualize seus mirrors e instale o chromium:</p>
+
+<h1>pacman -Sy</h1>
+
+<h1>pacman -S chromium-snapshot</h1>
+
+<p><strong>F</strong>eito!</p>
+
+<p><strong>B</strong>om proveito&hellip;</p>
+
+<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
 </div>
   
   
@@ -138,7 +168,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2008/11/04/java-no-arch-comeca-a-ser-mais-livre/">Java No Arch Começa a Ser Mais LIVRE</a></h1>
+      <h1 class="entry-title"><a href="/blog/2009/08/05/de-volta-e-com-kde-43/">De Volta.. E Com KDE 4.3 ;]</a></h1>
     
     
       <p class="meta">
@@ -154,40 +184,56 @@
   
 
 
-<time datetime="2008-11-04T11:33:00-03:00" pubdate data-updated="true">Nov 4<span>th</span>, 2008</time>
+<time datetime="2009-08-05T14:53:05-03:00" pubdate data-updated="true">Aug 5<span>th</span>, 2009</time>
         
-         | <a href="/blog/2008/11/04/java-no-arch-comeca-a-ser-mais-livre/#disqus_thread">Comments</a>
+         | <a href="/blog/2009/08/05/de-volta-e-com-kde-43/#disqus_thread">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/java_arch_free.jpg"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/java_arch_free.jpg" alt="" /></a>Saudações pessoal,</p>
+  <div class="entry-content"><p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/162_kde.jpg"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/162_kde.jpg" alt="162_kde" /></a></p>
 
-<p>Os usuários de Arch Linux, pelo menos alguns deles, talvez já saibam que o Sun Java Runtime Environment (JRE) e o Java Development Kit (JDK) tem passado muito tempo no repositório Extra esperando por algum amor extra. Entretanto, nenhum desenvolvedor se sentiu motivado à manter este pacote.</p>
+<p><strong>S</strong>audações pessoal&hellip;</p>
 
-<p>Por outro lado, não é novidade que já existe o pacote OPENJDK6, uma implementação open source da JRE e da JDK que funciona perfeitamente bem.</p>
+<p><strong>E</strong>stive meio ausente nos últimos dias por problemas com minha máquina. Recentemente meu hd queimou e acabei ficando meio &ldquo;inativo&rdquo;. Ontem consegui reinstalar todo o meu sistema operacional (Archlinux) e restaurar todos os meus backups.</p>
 
-<p>Foi decidido mover os pacotes JRE e JDK para o repositório Community, onde Geoffroy Carrier estará tomando conta deles. Ele já até atualizou os pacotes e corrigiu alguns bugs pendentes. Obrigado Geoffroy por sua boa ação.</p>
+<p><strong>A</strong>gora sim.. Atividade novamente. ;]</p>
 
-<p>Nenhum pacote dos repositórios oficiais do Arch Linux depende destes pacotes no momento, já que os mesmos já foram recompilados para o OPENJDK6. Entretanto, é bom agradecer à comunidade por entender, e os desenvolvedores que se desculpam por qualquer inconveniente que possa vir a surgir.</p>
+<p><strong>D</strong>e quebra, volto com uma boa notícia.</p>
 
-<p>O mais interessante em meu ver, é o fato de o Arch estar baixando o nível de prioridade destes pacotes, elevando assim a prioridade dos pacotes livres do java em seu lugar. Isto sim é show de bola. Parabéns Arch Linux! ;]</p>
+<p><strong>F</strong>ans de KDE e usuários do Archlinux podem, desde ontem, comemorar o lançamento do KDE 4.3 que se deu ontem e já se encontra inclusive nos repositórios oficiais do Archlinux.</p>
 
-<blockquote><p>&ldquo;Porque movê-los, além da razão já abordada aqui?</p></blockquote>
+<p><strong>E</strong>sta nova versão do KDE conta com várias mudanças no que diz respeito a correção de bugs, mas também em aparência e funcionalidades.</p>
 
-<p>Bem, nós pretendemos favorecer implementações de código aberto ao invés de implementações de código fechado.</p>
+<p><strong>O</strong> design e os efeitos estão bem mais atraentes como por exemplo a vizualização de pastas de imagens com previews como na imagem a seguir.</p>
 
-<blockquote><p>Não, sériom porque vocês mudaram eles?</p></blockquote>
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2009/08/kde43-1.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/08/kde43-1-300x177.png" alt="kde43-1" /></a></p>
 
-<p>Porque o Aaron Griffin disse que o fizesse. :-D (apenas brincando)&#8221;</p>
+<p><strong>O</strong>utro efeito que muito me chamou a atenção, é a possibilidade de vizualizar e navegar entre arquivos e diretórios que se encontrem em minha área de trabalho apenas por passar o mouse em cima e segurar por um segundo, me possibilitando ver o conteúdo daquela determinada pasta bem como interagir com ela. Ao tirar o mouse de cima, ela some novamente. ;] Confira a imagem a seguir:</p>
 
-<blockquote></blockquote>
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2009/08/kde43-2.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/08/kde43-2-300x214.png" alt="kde43-2" /></a></p>
 
-<p>Abraços</p>
+<p><strong>P</strong>ara quem, assim como eu, gosta de notas rápidas em seu desktop, o knotes continua surpreendendo, trazendo agora as funções de negrito, sublinhado, centralizado, etc..</p>
 
-<p><img src="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif" alt="" /></p>
+<p><img src="file:///tmp/moz-screenshot.png" alt="" /><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2009/08/kde43-3.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/08/kde43-3-300x244.png" alt="kde43-3" /></a></p>
+
+<p><strong>M</strong>uitas outras coisas novas surgiram, bem como efeitos de área, etc, etc, etc..</p>
+
+<p><strong>S</strong>em mais comentários, experimente e confira as novidades.</p>
+
+<p><strong>S</strong>e você já possui o kde 4.2 em seu archlinux, pode simplesmente atualizar com o seguinte comando:</p>
+
+<h1>pacman -Syu</h1>
+
+<p><strong>C</strong>aso ainda não tenha, instale com:</p>
+
+<h1>pacman -S kde</h1>
+
+<p><strong>A</strong>braços<img src="file:///tmp/moz-screenshot-1.png" alt="" /></p>
+
+<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
 </div>
   
   
@@ -200,7 +246,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2008/10/27/asterisk-counter-seja-contado/">Asterisk Counter - Seja Contado</a></h1>
+      <h1 class="entry-title"><a href="/blog/2009/07/16/recomendacao-bibliografica-do-mes-o-vampiro-rei-vol-i/">Recomendação Bibliográfica Do Mês: O Vampiro Rei - Vol I</a></h1>
     
     
       <p class="meta">
@@ -216,158 +262,35 @@
   
 
 
-<time datetime="2008-10-27T14:29:00-03:00" pubdate data-updated="true">Oct 27<span>th</span>, 2008</time>
+<time datetime="2009-07-16T15:23:28-03:00" pubdate data-updated="true">Jul 16<span>th</span>, 2009</time>
         
-         | <a href="/blog/2008/10/27/asterisk-counter-seja-contado/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://asteriskcounter.sinologic.net/image.php?id=1148"><img src="http://asteriskcounter.sinologic.net/image.php?id=1148" alt="" /></a>Saudações pessoal&hellip;</p>
-
-<p>Muitos aqui já conheciam o sistema <a href="http://counter.li.org/">Linux Counter</a> que servia para contabilizar e registrar usuários Linux como forma de documentar e ter controles estatísticos do crescimento da comunidade Linux mundial. Agora chegou a vez do Asterisk.</p>
-
-<p>Recentemente foi disponibilizado o <a href="http://asteriskcounter.sinologic.net/">Asterisk Counter</a>. O mesmo consiste não apenas em contabilizar os usuários/profissionais de Asterisk como também estabelecer perfis que podem ser inclusive votados com comentários, como uma mini rede social (profissional) no assunto com referências vindas de outros usuários e assim por diante.</p>
-
-<p>Segue a dica para você que utiliza ou trabalha com esta excelente tecnologia Livre de Voip. Eu sou o usuário de número <a href="http://asteriskcounter.sinologic.net/details.php?id=1148">1148</a>, e você? ;]</p>
-
-<p>Abraços</p>
-
-<p><img src="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif" alt="" /></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2008/10/24/escondendo-informacoes-em-arquivos-binarios/">Escondendo Informações Em Arquivos Binários</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2008-10-24T08:09:00-03:00" pubdate data-updated="true">Oct 24<span>th</span>, 2008</time>
-        
-         | <a href="/blog/2008/10/24/escondendo-informacoes-em-arquivos-binarios/#disqus_thread">Comments</a>
+         | <a href="/blog/2009/07/16/recomendacao-bibliografica-do-mes-o-vampiro-rei-vol-i/#disqus_thread">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>Saudações galera&hellip;</p>
+  <div class="entry-content"><p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2009/07/livro.jpeg"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/07/livro.jpeg" alt="livro" /></a></p>
 
-<p>Recentemente um amigo, Michel, me perguntou algo sobre a possibilidade de ocultar informações em arquivos binários, como uma música ou mesmo uma foto. Eu lhe respondi que era possível, e bem simples em termos de conceito, bem como lhe prometi postar esta dica.</p>
+<p><strong>M</strong>ais uma vez venho trazendo como recomendação bibliográfica um livro do autor André Vianco. Acho que todos aqui já perceberam que sou fan do trabalho do cara. ;]</p>
 
-<p>No Linux sabemos que tudo é um arquivo. Nada depende exclusivamente de extensão ou tipo. Até mesmo os famosos &ldquo;diretórios&rdquo; na verdade não passam de arquivos. O que mostrarei aqui é uma dica rápida e simples de como se aproveitar disto para ocultar de forma simples e rápida alguma informação de texto em um arquivo binário qualquer que o seja. Por mais incrível que possa parecer, não precisaremos de nenhuma mágica ou ferramenta especial para isto. Quem utiliza Linux sabe que o cat ou mesmo o echo são ferramentas padrão em qualquer distribuição. SIM. Precisaremos apenas delas para fazer o &ldquo;truque&rdquo;. Não acredita? o.O</p>
+<p><strong>O</strong> livro do mês se chama O Vampiro Rei &ndash; Vol I.</p>
 
-<p>Vamos lá&hellip;</p>
+<p><strong>C</strong>omo o nome já diz, é uma história sobre vampiros. Para quem gosta de histórias e contos sobre estes seres da noite, os livros de André Vianco são ótimas opções para algumas horas de entretenimento. Livros bem escritos com histórias diferenciadas e contextos abrangentes.</p>
 
-<p>Antes de mais nada selecione o arquivo que será utilizado para &ldquo;camuflar&rdquo; nossa informação. Escolha uma imagem qualquer por exemplo ou outro tipo como áudio, vídeo, compactado, etc&hellip; Supondo que você escolheu o arquivo foto.jpg, passaremos ao segundo passo.</p>
+<p><strong>E</strong>ste livro é o começo desta história que se passa no Brasil onde 31 guerreiros &ldquo;escolhidos&rdquo;, chamados Bentos, juntam-se, conforme dizia a antiga profecia, para atacar e destruir os covís de vampiros que se encontram espalhados pela Terra. Em tais covís, os vampiros fazem reféns seres humanos como forma de manter um &ldquo;banco de sangue&rdquo; para sua alimentação.</p>
 
-<p>Supondo que eu queira ocultar a frase &ldquo;Bem vindo ao Linux&rdquo; na foto.jpg, o comando seria o seguinte:</p>
+<p><strong>E</strong>ntre várias investidas, os Bentos acabam atacando um covil atrás do outro, muitas vezes sendo surpreendidos pela organização e formas de defesa apresentadas por estas criaturas noturnas que também se preparam e previnem contra tais ataques, buscando continuar no poder sob as comunidades.</p>
 
-<p>$ echo &ldquo;Bem vindo ao Linux&rdquo; >> foto.jpg</p>
+<p><strong>S</strong>egue uma pequena descrição retirada da livraria saraiva:</p>
 
-<p>Simples não é?! Nada de truques ou mágicas. Pode tentar abrir a foto com algum editor de imagens como o Gimp, ou mesmo com um vizualizador de sua preferência. A foto parecerá intacta e normal. Agora tente executá-la com um editor de textes como o cat por exemplo.</p>
+<blockquote><p>Lúcio, o escravo de Cantarzo, carrega seu mestre vampiro encerrado numa caixa de madeira. Sua missão é levá-lo até Tereza, uma bruxa que vive ao norte do Brasil, que fará com que Cantarzo desperte e se torne o rei dos vampiros. Com poucas pistas sobre o real paradeiro da tal bruxa, o lacaio do vampiro começa uma jornada que trará resultados nefastos, caso alcance seu objetivo.
+Do lado dos humanos, bento Lucas faz crescer em seus semelhantes a chama da esperança, empurrando-os pelos trilhos da reconquista do país até então assolado pelos inimigos noturnos. Os destinos de Lucas e de Cantarzo estão a ponto de se cruzar e nas páginas de &ldquo;O Vampiro-Rei&rdquo;, o leitor se encontrará com um mundo fantástico e assistirá de camarote todo o desenrolar dessa saga inigualável, imaginada e conduzida por André Vianco, o talentoso contador de histórias que vem se destacando no campo da literatura fantástica brasileira.</p></blockquote>
 
-<p>$ cat foto.jpg</p>
+<p><strong>B</strong>oa leitura.</p>
 
-<p>Você verá um conjunto de caracteres estranhos, dados sobre a foto em si, porém role até o final do arquivo. Depois de todos os caracteres estranhos, você encontrará a informação que ocultou anteriormente, no nosso caso é a frase &ldquo;Bem Vindo ao Linux&rdquo;.</p>
-
-<p>Simples não é? Lembrando que o mesmo conceito se aplica caso você deseje utilizar ao invés de uma única frase, todo um texto. Crie o texto com um editor de textos qualquer como o vim por exemplo e salve com o nome texto.</p>
-
-<p>Em seguida aplique o comando utilizando desta vez o cat, ao invés do echo:</p>
-
-<p>$ cat texto >> foto.jpg</p>
-
-<p>Volte a repetir os testes já citados anteriormente para ter certeza do sucesso no processo.</p>
-
-<p>Como eu disse..tudo muito simples e sem mistérios.</p>
-
-<p>Respondido Michel? ;]</p>
-
-<p>Abraço pessoal</p>
-
-<p><img src="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif" alt="" /></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2008/10/20/assalto-no-cinema-do-iguatemifortaleza/">Assalto No Cinema Do Iguatemi/Fortaleza!</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2008-10-20T16:55:00-03:00" pubdate data-updated="true">Oct 20<span>th</span>, 2008</time>
-        
-         | <a href="/blog/2008/10/20/assalto-no-cinema-do-iguatemifortaleza/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Fato ou ficção?!</p>
-
-<p>Não sei até que ponto nossa cidade vai chegar. Não poder mais nem assistir um filme no shopping é um absurdo!</p>
-
-<p>Não gostaria de vincular este tipo de notícia em meu blog, porém é a terceira vez nas últimas duas semanas que recebo emails com relatos das vítimas deste tipo de ataque. E como acho que já está indo longe demais, acho que é válido divulgar isto para que as pessoas fiquem espertas sobre o que anda acontecendo.</p>
-
-<p>Este é o relato da última vítima:</p>
-
-<p>INDIGNAÇÃO!!!</p>
-
-<p>Na tarde de sábado passado, estava passeando, no        Shopping Iguatemi, com a minha namorada, quando decidimos pegar um        cineminha. Quando entramos na sala, percebemos que havia muitas crianças com seus pais e um grupo de 7 ou 8 rapazes, aparentando uns        18anos, de bonés e óculos escuros, encostados em uma parede do corredor        lateral. Fomos sentar em uma fileira de poltronas, no meio da sala;        pouco depois, começaram a exibir os trailers. Minutos após começar o        filme, um dos rapazes que estava em pé, sentou-se ao lado da minha        namorada, sacou um revólver e disse que era para ela ficar quieta,        senão ele iria atirar. Muito assustada, ela começou a chorar. Quando eu        percebi o que estava acontecendo, já estava se sentando, na poltrona ao        meu lado, um outro</p>
-
-<p>rapaz do grupo, anunciando que era um assalto e que        ele estava armado.</p>
-
-<p>Eles me levaram para fora do cinema, enquanto outros        dois elementos da gangue ficaram com a minha namorada, dentro da sala        de projeção. Fui obrigado a sacar todo o dinheiro que foi possível,        nos caixas 24hs do shopping, e tive que comprar 6 pares de tênis de        quase $500,00, cada um, numa loja de artigos esportivos, usando meu        cartão de crédito, até acabar meu limite. Uns 40 minutos depois,        voltamos para o cinema e foi a vez de fazerem a mesma coisa com a        minha namorada. Pouco antes de acabar o filme, os que estavam comigo        me mandaram sair do cinema. Quando saí, me levaram até o        estacionamento, onde já estava a minha namorada com os outros da        gangue. Fizeram com que eu os levasse até o meu carro, nos colocaram        dentro dele e terminaram de roubar as coisas que faltavam, como        celulares, relógios, etc. Mandaram que eu dirigisse para fora do        shopping, com três bandidos dentro do carro, e seguisse um outro carro,        onde estava o restante da gangue. Ficamos dando voltas de carro, até        escurecer; depois nos libertaram, em um matagal. Tivemos que andar descalços, em uma estrada de terra, durante muito tempo; acho que        por mais de 2 horas, até acharmos um sítio, de onde pude ligar para meu        pai e pedir para que ele nos apanhasse. No dia seguinte, acharam meu        carro todo batido, sem os equipamentos de som, CD e outros acessórios.</p>
-
-<p>Quando estava na delegacia, prestando queixa, o delegado falou que já        ocorreram mais de cinco assaltos como este, no mês passado. O pior é        que as câmeras do circuito interno de TV do shopping não estavam        funcionando, para tentarmos obter algumas imagens dos assaltantes. De        qualquer forma, quando for ao cinema, atenção com as pessoas que sentam        ao seu lado, especialmente se o cinema não estiver lotado ou se        existirem muitas poltronas vazias por perto; se virem grupos parados,pelos cantos, tomem muito cuidado. Vale a pena levantar e        avisar aos funcionários do cinema</p>
-
-<p>que há um grupo  suspeito, em        pé, esperando as luzes se apagarem, para, talvez, assaltarem os espectadores. Os funcionários têm recursos para avisar a vigilância do        Shopping e a Polícia.</p>
-
-<p>Abraços</p>
-
-<p><img src="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif" alt="" /></p>
+<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
 </div>
   
   
@@ -418,16 +341,13 @@ Me conheça melhor <a href="http://blog.marcelocavalcante.net/about">clicando aq
         <a href="/blog/2011/12/13/netstat-saiba-o-que-esta-rolando-em-seu-ambiente/">Netstat - Saiba o que está rolando em seu ambiente&#8230;</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2011/10/24/que-tal-ajudar-o-projeto-kde-com-apenas-1-minuto-do-seu-tempo/">Que tal ajudar o projeto KDE com apenas 1 minuto do seu tempo?</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2011/10/17/3c2ba-dia-livre-programacao-definida/">3º Dia Livre - Programação Definida!</a>
-      </li>
-    
   </ul>
 </section>
+<section>
+  <h1>Estou lendo</h1>
+  <img align="center" src="/imgs/livros/gravidade.jpg">
+</section>
+
 
 
 

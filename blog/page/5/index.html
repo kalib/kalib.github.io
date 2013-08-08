@@ -9,7 +9,7 @@
   <meta name="author" content="Marcelo Cavalcante Rocha - Kalib">
 
   
-  <meta name="description" content="Cansado de apenas poder assistir aquele webcast ou vídeo-aula online? E se estiver em um local sem conec﻿tividade? Porque dor de cabeça? Sou usuário &hellip;">
+  <meta name="description" content="Saudações pessoal! Longo tempo sem publicar algo no blog, mas cá estou novamente. A verdade é que passei por um período um tanto quanto conturbado. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -86,7 +86,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2011/04/20/como-download-de-webcasts-mms-e-rtmp/">Como? Download De Webcasts Mms E Rtmp?</a></h1>
+      <h1 class="entry-title"><a href="/blog/2011/09/06/casa-nova-em-todos-os-sentidos/">Casa Nova.. Em Todos Os Sentidos&#8230;</a></h1>
     
     
       <p class="meta">
@@ -102,80 +102,30 @@
   
 
 
-<time datetime="2011-04-20T08:51:46-03:00" pubdate data-updated="true">Apr 20<span>th</span>, 2011</time>
+<time datetime="2011-09-06T14:33:11-03:00" pubdate data-updated="true">Sep 6<span>th</span>, 2011</time>
         
-         | <a href="/blog/2011/04/20/como-download-de-webcasts-mms-e-rtmp/#disqus_thread">Comments</a>
+         | <a href="/blog/2011/09/06/casa-nova-em-todos-os-sentidos/#disqus_thread">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><a href="http://www.ogilvy.co.uk/neo/files/2008/03/webcast-pic.png"><img src="http://www.ogilvy.co.uk/neo/files/2008/03/webcast-pic.png" alt="" /></a></p>
+  <div class="entry-content"><p><img src="http://www.it-networks.org/wp-content/uploads/2011/04/imagesCAIK1UEI.jpg" alt="" /></p>
 
-<p><strong>C</strong>ansado de apenas poder assistir aquele webcast ou vídeo-aula online? E se estiver em um local sem conec﻿tividade? Porque dor de cabeça? Sou usuário Linux! Obrigado por ter a ideia de criar o Linux e facilitar nossas vidas Linus. ;]</p>
+<p><strong>S</strong>audações pessoal!</p>
 
-<p><strong>R</strong>ecentemente me deparei com esta problemática. Como realizar o download deste tipo de conteúdo?</p>
+<p><strong>L</strong>ongo tempo sem publicar algo no blog, mas cá estou novamente.</p>
 
-<p><strong>A</strong>o checar o código fonte da página que exibia o vídeo, vi que eram streamings dos protocolos mms ou rtmp, o que, aparentemente, dificultava o download.</p>
+<p><strong>A</strong> verdade é que passei por um período um tanto quanto conturbado. Estive em busca de um novo apartamento com a família, mudanças em meus horários da faculdade, trabalhos profissionais, projetos pessoais, projetos de software livre, estudo de novo idioma, etc.</p>
 
-<p><strong>P</strong>ara quem mais estiver passando por este problema, segue a solução. Aliás, as soluções.</p>
+<p><strong>M</strong>uita coisa mudou. Mudanças, quando acontecem todas ao mesmo tempo, podem nos deixar um tanto quanto esgotados. Foi basicamente isto o que aconteceu. Mas, agora que consegui me organizar novamente, acredito que seja hora de voltar tudo ao seu ritmo natural.</p>
 
-<p><strong>U</strong>ma vez que, através do código fonte você consiga identificar a URL completa do arquivo mmc ou rmtp, fica fácil utilizar alguma das metodologias a seguir.</p>
+<p><strong>A</strong>cabei decidindo que depois de tanto tempo afastado e com tantas mudanças recentes, como por exemplo minha moradia, que mudou após longos 25 anos morando no mesmo local, talvez fosse a hora de mudar a casa também de meus posts. Porque não um novo espaço para o blog? Novo host, nova &ldquo;decoração&rdquo;, etc.</p>
 
-<p><strong>A</strong> primeira opção é a aplicação <strong>Mimms</strong>.</p>
+<p><strong>C</strong>á estamos, eu e o blog, de volta. Acredito que agora voltemos às atividades normais e rotineiras.</p>
 
-<p><strong>E</strong>sta é a forma mais simples e prática com arquivos do tipo mms.</p>
-
-<p><strong>P</strong>ara usuários do <a href="http://archlinux.org">Arch Linux</a>, já existe um pacote pronto no <a href="http://aur.archlinux.org/packages.php?ID=16412">AUR</a>.</p>
-
-<p><strong>A</strong> instalação, segue o padrão de arquivos baixados do AUR:</p>
-
-<p><strong>1-</strong> Download do <a href="http://aur.archlinux.org/packages/mimms/mimms.tar.gz">Tarball</a>;</p>
-
-<p><strong>2-</strong> Descompatar: <em>$ tar -xvzf mimms.tar.gz</em></p>
-
-<p><strong>3-</strong> Acessar o diretório e efetuar a compilação do pacote: <em>$ cd mimms &amp;&amp; makepkg</em></p>
-
-<p><strong>4-</strong> Instalar o pacote que lhe foi gerado: <em># pacman -U mimms-3.2.1-2-any.pkg.tar.xz</em></p>
-
-<p><strong>F</strong>eito. Agora é só executar da seguinte forma:</p>
-
-<p><em>$ mimms mms://url_de_origem_do_streaming/arquivo_streaming.wmv</em></p>
-
-<p><strong>S</strong>erá que isso funciona mesmo? Experimente:</p>
-
-<p><em>$ mimms <a href="mms://wms.andrew.cmu.edu/001/pausch.wmv">mms://wms.andrew.cmu.edu/001/pausch.wmv</a></em></p>
-
-<p><strong>O</strong>i, simples assim.</p>
-
-<p><strong>O</strong>utra alternativa?</p>
-
-<p><strong>U</strong>tilizando o <strong>Mencoder</strong>:</p>
-
-<p><strong>N</strong>ão é tão simples quanto o mimms, mas também é rápido e prático.</p>
-
-<p><strong>O</strong> comando que deve ser utilizado?</p>
-
-<p><em>mencoder mms://url_de_origem_do_streaming/arquivo_streaming.wmv -o arquivo_streaming.wmv -oac copy -ovc copy</em></p>
-
-<p><strong>U</strong>m pouco mais complexo, certo? Mas funciona.</p>
-
-<p><strong>E</strong> quanto aos arquivos de streaming que utilizam o protocolo rtmp?</p>
-
-<p><strong>N</strong>este caso a opção é utilizarmos o <strong>rtmpdump</strong>.</p>
-
-<p><strong>S</strong>im, claro.. Se você utiliza o Arch Linux, sua vida continua simplificada:</p>
-
-<p><em># pacman -S rtmpdump</em></p>
-
-<p><strong>P</strong>ronto, está instalado. ;]</p>
-
-<p><strong>A</strong> execução do mesmo também é bastante simples, precisando apenas especificar a origem e o destino do streaming em questão. Segue sintaxe:</p>
-
-<p><em>rtmpdump -r &ldquo;rtmpe://url_de_origem_do_streaming/arquivo_streaming.wmv&rdquo; -o arquivo.streaming.flv &mdash;resume</em></p>
-
-<p><strong>H</strong>ave fun! ;]</p>
+<p><strong>N</strong>os vemos no próximo post.</p>
 
 <p><strong>A</strong>braços!</p>
 
@@ -192,7 +142,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2011/04/19/encontros-sobre-software-livre-escolha-um-nome/">Encontros Sobre Software Livre? Escolha Um Nome&#8230;</a></h1>
+      <h1 class="entry-title"><a href="/blog/2011/07/19/dia-livre-inscricoes-e-grade-do-evento/">Dia Livre - Inscrições E Grade Do Evento</a></h1>
     
     
       <p class="meta">
@@ -208,52 +158,95 @@
   
 
 
-<time datetime="2011-04-19T14:50:41-03:00" pubdate data-updated="true">Apr 19<span>th</span>, 2011</time>
+<time datetime="2011-07-19T08:38:33-03:00" pubdate data-updated="true">Jul 19<span>th</span>, 2011</time>
         
-         | <a href="/blog/2011/04/19/encontros-sobre-software-livre-escolha-um-nome/#disqus_thread">Comments</a>
+         | <a href="/blog/2011/07/19/dia-livre-inscricoes-e-grade-do-evento/#disqus_thread">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/04/logo.gif"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/04/logo.gif" alt="" /></a></p>
+  <div class="entry-content"><p><img src="http://tux-ce.org/dialivre/wp-content/uploads/2011/05/Logo+dia-livre-01.png" alt="" /></p>
 
-<p><a href="http://2.bp.blogspot.com/_fCxEYIfdYWY/TIY8qxYiLlI/AAAAAAAAAf4/WAVct3_ZvLA/s320/tux_teacher.png"><img src="http://2.bp.blogspot.com/_fCxEYIfdYWY/TIY8qxYiLlI/AAAAAAAAAf4/WAVct3_ZvLA/s320/tux_teacher.png" alt="" /></a></p>
+<p><strong>É</strong> hora de se <a href="http://tux-ce.org/dialivre/inscricoes/">inscrever</a> no <a href="http://www.tux-ce.org/dialivre">Dia Livre</a>!</p>
 
-<p><strong>S</strong>audações pessoal,</p>
+<p><strong>G</strong>ostaria de comunicar que a grade para o 1º Dia Livre já foi fechada e liberada.</p>
 
-<p><strong>A</strong>credito que boa parte, se não praticamente todos, os usuários de Software Livre em nossa região já ouviram falar, ou participaram, do <a href="http://marcelocavalcante.net/portal/2011/04/13/flisol-quixada-relato-e-parabens/">Flisol &ndash; Festival Latino Americano de Instalação de Software Livre</a>.</p>
+<p><strong>N</strong>este sábado estarei ministrando a palestra &ldquo;Software Livre e Cultura Hacker: Tenha ética e ganharás respeito&rdquo; na <a href="http://www.ffb.edu.br/">Faculdade Farias Brito</a> durante o 1º Dia Livre.</p>
 
-<p><strong>É</strong> um encontro legal, rolam palestras interessantes e podemos bater um papo com pessoas do ramo, fazendo novos amigos e/ou contatos profissionais. Lado ruim? Acontece apenas uma vez por ano. :/</p>
+<p><strong>S</strong>egue grade do encontro:</p>
 
-<p><strong>E</strong> se tivéssemos um encontro com a comunidade local de Software Livre com uma maior regularidade? Que tal 4, 5 ou até mesmo 6 encontros destes por ano?</p>
+<p>Horário</p>
 
-<p><strong>P</strong>alestras, bate-papo, mesa-redonda, etc.</p>
+<p>Palestra</p>
 
-<p><strong>G</strong>ostou da ideia?</p>
+<p>Palestrante</p>
 
-<p><strong>A</strong> <a href="http://www.tux-ce.org">Tux-CE</a> está com uma proposta neste sentido.</p>
+<p>08:00
+&ndash; 08:10</p>
 
-<p><strong>A</strong> ideia é termos um mini-evento com maior frequência em nossa região como forma de fortalecer a ideia do Software Livre e ao mesmo tempo aumentar a integração entre nós, usuários e profissionais do ramo. Uma forma de beneficiar a todos. Se você não pode ir hoje, em breve você terá outra chance. Não fica perto da sua casa? Na próxima edição poderá ser mais próximo de você.</p>
+<p>Abertura</p>
 
-<p><strong>A</strong> ideia não é substituir ou concorrer com o Flisol, mesmo porque será um evento infinitamente menor, mas sim somar. Ser uma opção a mais para a nossa comunidade de Software Livre.</p>
+<p>&ndash;</p>
 
-<p><strong>U</strong>m evento simples e rápido onde podemos ter palestras e bate papos sobre software livre, linux, cultura hacker, redes, segurança, programação, etc.</p>
+<p>08:10
+&ndash; 09:00</p>
 
-<p><strong>P</strong>or se tratar de um evento comunitário, nada mais justo que deixar a comunidade ajudar a moldar o evento como um todo. Acreditamos que o início de tudo, está na escolha do nome.</p>
+<p>Bacula
+&ndash; Solução livre de Backup</p>
 
-<p><strong>N</strong>a semana passada coletamos várias sugestões de nomes em nossa lista. Todos os nomes sugeridos, sem excessão, foram inseridos em nossa pesquisa com o mesmo peso.</p>
+<p>Diego
+Monte</p>
 
-<p><strong>A</strong>gora chegou a hora de definir o nome.</p>
+<p>09:10
+&ndash; 10:00</p>
 
-<p><strong>G</strong>ostaria de ajudar? Sinta-se convidado a votar em nossa enquete que encontra-se na página da <a href="http://www.tux-ce.org/portal/node/717">Tux-CE através deste link</a>.</p>
+<p>Criando
+soluções automatizadas com ShellScript</p>
 
-<p><strong>C</strong>ontamos com o seu voto para nos ajudar a iniciar este movimento.</p>
+<p>Rafael
+de Carvalho Farias</p>
 
-<p><strong>A</strong>braços!</p>
+<p>10:00
+&ndash; 10:20</p>
 
-<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
+<p>CoffeeBreak</p>
+
+<p>&ndash;</p>
+
+<p>10:30
+&ndash; 11:20</p>
+
+<p>Software Livre e a Cultura Hacker: Tenha Ética e Ganharás Respeito</p>
+
+<p>Marcelo Cavalcante</p>
+
+<p>11;30
+&ndash; 11:50</p>
+
+<p>Sorteio
+de brindes e encerramento</p>
+
+<p>&ndash;</p>
+
+<p><strong>Q</strong><strong>uando?</strong></p>
+
+<p>23 de Julho, Sábado – A partir das 08:00</p>
+
+<p><strong>Onde?</strong></p>
+
+<p>Faculdade Farias Brito
+Rua Castro Monte, 1364 Varjota – Fortaleza, CE
+<a href="http://www.tux-ce.org/dialivre/imgs/mapaffb.png"><img src="http://www.tux-ce.org/dialivre/imgs/mapaffb.png" alt="" /></a></p>
+
+<p><strong>S</strong>erão realizados dois sorteios ao final do encontro:</p>
+
+<p>1 camisa da Tux-CE;</p>
+
+<p>1 livro: The Art of Community &ndash; O&#8217;Reilly</p>
+
+<p><strong>N</strong>os vemos lá!</p>
 </div>
   
   
@@ -266,7 +259,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2011/04/13/flisol-quixada-relato-e-parabens/">Flisol Quixadá - Relato E Parabéns</a></h1>
+      <h1 class="entry-title"><a href="/blog/2011/07/01/lancada-a-primeira-edicao-da-revista-seguranca-digital/">Lançada a Primeira Edição Da Revista Segurança Digital</a></h1>
     
     
       <p class="meta">
@@ -282,246 +275,36 @@
   
 
 
-<time datetime="2011-04-13T15:06:54-03:00" pubdate data-updated="true">Apr 13<span>th</span>, 2011</time>
+<time datetime="2011-07-01T08:14:54-03:00" pubdate data-updated="true">Jul 1<span>st</span>, 2011</time>
         
-         | <a href="/blog/2011/04/13/flisol-quixada-relato-e-parabens/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>[caption id=&ldquo;&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;347&rdquo; caption=&ldquo;Banner do Flisol quixadá&rdquo;]<a href="http://www.sertaoemrede.org.br/fotos/38_86281302470956.jpg"><img src="http://www.sertaoemrede.org.br/fotos/38_86281302470956.jpg" alt="" /></a>[/caption]</p>
-
-<p><strong>S</strong>audações galera!</p>
-
-<p><strong>A</strong>lgumas pessoas já me perguntaram nos últimos 3 dias porque eu não estava no Flisol Fortaleza este ano. &ldquo;Cara, nem lhe vi lá pelo Flisol correndo pra cima e pra baixo esse ano.&rdquo;</p>
-
-<p><strong>B</strong>om, como eu havia informado anteriormente, mas nem todos devem ter notado <del>(certo Rodrigo, hehehe)</del>, este ano estive no Flisol de Quixadá. A oportunidade de palestrar por lá surgiu e resolvi mudar o ambiente do meu Flisol este ano.</p>
-
-<p><strong>L</strong>ogo na sexta-feira, dia em que cheguei em Quixadá, tive duas boas primeiras impressões:</p>
-
-<p><strong>1-</strong> O clima estava melhor do que o de Fortaleza. Sim, já não aguentava mais o nosso calor infernal. Por mais que eu já estivesse esperando um calor ainda maior, fiquei surpreso ao perceber que o tempo estava mais fresco. Talvez por conta da umidade&hellip;</p>
-
-<p><strong>2-</strong> Poucos minutos depois de minha chegada esbarro com o Ronaldo, também membro da Tux-CE, que optou por também palestrar no Flisol de Quixadá. Nos esbarramos no Hotel mesmo, já que acabamos ficando no mesmo.</p>
-
-<p><strong>J</strong>á que citei o Hotel, gostaria de fazer dois agradecimentos. Primeiro ao Samy e demais membros da organização que possam ter feito os contatos com hotéis e agilizado nossa reserva por lá. Obrigado Samy e demais envolvidos. Segundo, a todos do <a href="http://www.alzenir.de/hotelmonolitos/">Hotel Monólitos</a> que nos receberam super bem e prestaram um excelente serviço. Sim, NOS receberam bem. Porque plural? Pelo fato de minha namorada, Mari, ter ido também para Quixadá. Acho que também devo agradecer a ela pelo apoio que me deu e boa vontade <del>(saco e paciência)</del> de assistir minha palestra bem como outras durante todo o dia do evento. ;]</p>
-
-<p><strong>L</strong>ogo na sexta aproveitamos para descansar depois de uma semana corrida de trabalho em Fortaleza. Eu, Mari e Ronaldo fomos para um restaurante que ficava próximo ao Hotel, onde tomamos umas cervejinhas e comemos uma excelente carne. No domingo fui descobrir que neste mesmo restaurante fazem a melhor bisteca que já comi na minha vida. Portanto, se alguém tiver a chance de visitar Quixadá, não deixe de comer uma bisteca caprichada no Ponto da Bisteca. O Araújo, que estava no time de organização do evento, acabou nos encontrando por lá rapidamente nesta noite.</p>
-
-<p><strong>N</strong>o sábado, optei por ir bem cedo ao evento. Sim, gosto de ver as coisas por trás dos bastidores. Não gosto de apenas chegar, palestrar e ir embora. Minha <strong>primeira surpresa</strong> do dia? Uma equipe de aproximadamente 30 pessoas na equipe de organização do Flisol! o.O Bom, sei que no dia já parabenizei a todos eles, várias vezes por sinal, mas deixo novamente os parabéns. Estive envolvido direta ou indiretamente em todas as edições do Flisol Fortaleza desde o ano de 2006 e nunca vi uma equipe de organização com tanta gente disposta a ajudar. Vocês estão de parabéns.</p>
-
-<p>[caption id=&ldquo;&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;330&rdquo; caption=&ldquo;Membros da organização &ndash; Mesa de credenciamento&rdquo;]<a href="http://www.sertaoemrede.org.br/fotos/38_38911302471692.jpg"><img src="http://www.sertaoemrede.org.br/fotos/38_38911302471692.jpg" alt="" /></a>[/caption]</p>
-
-<p><strong>D</strong>epois de &ldquo;participar&rdquo; como ouvinte da primeira reunião do dia com a equipe de organização do evento, os preparativos de última hora começaram e aproveitei para conhecer o local do evento, dar uma volta, etc. O evento aconteceu na <a href="http://www.fcrs.edu.br/">Faculdade Católica Rainha do Sertão</a>, que por sinal é linda e bem arborizada.</p>
-
-<p><strong>O</strong> evento contou com duas apresentações de abertura: Um show de humor e um grupo de dança. Infelizmente não lembro o nome do Humorista ou do grupo de dança para deixar os devidos créditos. Mas, ambos estão de parabéns também.</p>
-
-<p><strong>A</strong>inda durante a apresentação de humor tive minha <strong>segunda surpresa</strong> do dia. Um dos integrantes do time de organização me chamou para um canto mais afastado do ginásio e me fez um convite para uma breve filmagem que eles estavam preparando. Como não estava esperando por isso, acabei tendo de improvisar algo. Mas deu tudo certo, espero. o.O</p>
-
-<p><strong>E</strong>m seguida tive minha <strong>terceira surpresa</strong> do dia. O evento contou com uma rápida mesa de cerimônia para abertura oficial do evento, para a qual fui convidado de surpresa, <del>Samy vocẽ me paga</del> onde foi dada uma breve explicação sobre o intuito e importância do evento bem como do Software Livre como um todo para a comunidade em geral.</p>
-
-<p>[caption id=&ldquo;&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;495&rdquo; caption=&ldquo;Mesa de cerimônia na abertura do evento&rdquo;]<a href="http://www.sertaoemrede.org.br/fotos/38_63351302473604.jpg"><img src="http://www.sertaoemrede.org.br/fotos/38_63351302473604.jpg" alt="" /></a>[/caption]</p>
-
-<p>[caption id=&ldquo;&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;495&rdquo; caption=&ldquo;Mesa de cerimônia na abertura do evento&rdquo;]<a href="http://www.sertaoemrede.org.br/fotos/38_62201302474588.jpg"><img src="http://www.sertaoemrede.org.br/fotos/38_62201302474588.jpg" alt="" /></a>[/caption]</p>
-
-<p>[caption id=&ldquo;&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;309&rdquo; caption=&ldquo;Mesa de cerimônia &ndash; &#8220;Milagre, Marcelo não citou ou mostrou nada do Arch?&rdquo; Sim, a camisa.&ldquo;]<a href="http://www.sertaoemrede.org.br/fotos/38_14881302474215.jpg"><img src="http://www.sertaoemrede.org.br/fotos/38_14881302474215.jpg" alt="" /></a>[/caption]</p>
-
-<p><strong>A</strong>pós esta breve apresentação foram iniciadas as palestras. E como fui o primeiro palestrante do dia, tive a minha <strong>quarta surpresa</strong> no evento. Sim, muitas surpresas logo no período da manhã. hehe</p>
-
-<p>[caption id=&ldquo;&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;495&rdquo; caption=&ldquo;Início de minha palestra sobre cultura hacker&rdquo;]<a href="http://www.sertaoemrede.org.br/fotos/38_90021302475558.jpg"><img src="http://www.sertaoemrede.org.br/fotos/38_90021302475558.jpg" alt="" /></a>[/caption]</p>
-
-<p><strong>A</strong> surpresa? A enorme quantidade de pessoas que estavam ali sentadas assistindo minha palestra. Por achar que não teria a menor condição de palestrar sem microfone acabei optando por utilizar o microfone e subir no palco que, até então, só havia sido utilizado para a apresentação de dança. De lá eu poderia ter uma visão melhor do público, bem como eles de mim. Apenas lá de cima pude ver a real quantidade de pessoas. Não tenho números, mas eram muitas. Talvez o Samy possa dar alguma média aqui nos comentários do blog!? Por outro lado, acho que as fotos falam por si só.</p>
-
-<p>[caption id=&ldquo;&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;440&rdquo; caption=&ldquo;Platéia durante minha palestra&rdquo;]<a href="http://www.sertaoemrede.org.br/fotos/38_7181302473505.jpg"><img src="http://www.sertaoemrede.org.br/fotos/38_7181302473505.jpg" alt="" /></a>[/caption]</p>
-
-<p>[caption id=&ldquo;&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;440&rdquo; caption=&ldquo;Platéia durante minha palestra &ndash; Ronaldo e Mari no canto direito&rdquo;]<a href="http://www.sertaoemrede.org.br/fotos/38_41371302474018.jpg"><img src="http://www.sertaoemrede.org.br/fotos/38_41371302474018.jpg" alt="" /></a>[/caption]</p>
-
-<p>[caption id=&ldquo;&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;440&rdquo; caption=&ldquo;Platéia durante minha palestra&rdquo;]<a href="http://www.sertaoemrede.org.br/fotos/38_33641302473931.jpg"><img src="http://www.sertaoemrede.org.br/fotos/38_33641302473931.jpg" alt="" /></a>[/caption]</p>
-
-<p><strong>A</strong>bordei dois temas:</p>
-
-<p><em>1- Cultura Hacker &ndash; Tenha ética e ganharás respeito</em></p>
-
-<p><em>2- Software Livre &ndash; Nunca vi nem comi, eu só ouço falar</em></p>
-
-<p><strong>C</strong>asa cheia, certo?</p>
-
-<p><strong>E</strong>u realmente não esperava tanta gente. Bom saber que em Quixadá temos tantas pessoas interessadas em conhecer algo novo. As possibilidades são enormes e as chances de saírem dali futuros militantes do software livre são óbvias.</p>
-
-<p><strong>A</strong>pós a minha palestra o evento teve uma pausa para o almoço. Eu e a Mari aproveitamos para passear mais um pouco e ver como andava o movimento do lado de fora do ginásio onde se encontrava o <a href="http://www.sertaoemrede.org.br/?pagina=oinstituto">Sertão em Rede</a>. Do que se trata este Sertão em Rede? É um projeto que visa a inclusão socio-digital. Imagine um tele-centro para capacitação, oficinas, etc. Agora imagine um ônibus para levar o equipamente do tele-centro as mais diversas cidades.  Legal, certo? E se ambos fossem um só? O tele-centro e o ônibus? Sim, é isso mesmo. O ônibus que leva o tele-centro é o próprio tele-centro. Equipado com máquinas com Linux, ar-condicionado, lousa, cadeiras, mesas e toda a estrutura necessária para se realizar um curso ou capacitação qualquer. Sim, ele também possuí conectividade com a Internet, do contrário não poderia se chamar Sertão em Rede, certo?! Particularmente, achei brilhante. Parabéns aos responsáveis pelo projeto bem como ao Flisol por ter levado o Sertão em Rede para ser apresentado no evento.</p>
-
-<p>[caption id=&ldquo;&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;440&rdquo; caption=&ldquo;Ônibus Sertão em Rede&rdquo;]<a href="http://www.sertaoemrede.org.br/fotos/38_99281302474781.jpg"><img src="http://www.sertaoemrede.org.br/fotos/38_99281302474781.jpg" alt="" /></a>[/caption]</p>
-
-<p>[caption id=&ldquo;&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;440&rdquo; caption=&ldquo;Ambiente interno do Ônibus Sertão em Rede&rdquo;]<a href="http://www.sertaoemrede.org.br/fotos/38_40211302475967.jpg"><img src="http://www.sertaoemrede.org.br/fotos/38_40211302475967.jpg" alt="" /></a>[/caption]</p>
-
-<p>[caption id=&ldquo;&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;440&rdquo; caption=&ldquo;Ambiente interno do Ônibus Sertão em Rede&rdquo;]<a href="http://www.sertaoemrede.org.br/fotos/38_82021302476063.jpg"><img src="http://www.sertaoemrede.org.br/fotos/38_82021302476063.jpg" alt="" /></a>[/caption]</p>
-
-<p><strong>A</strong>inda nesta pausa para o almoço pude reparar nos ônibus que estavam estacionados no local. Sim, vieram muitas pessoas de outras cidades próximas para o evento como podem ver na foto abaixo. ;]</p>
-
-<p>[caption id=&ldquo;&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;440&rdquo; caption=&ldquo;Ônibus que vieram de outras cidades próximas&rdquo;]<a href="http://www.sertaoemrede.org.br/fotos/38_2871302470556.jpg"><img src="http://www.sertaoemrede.org.br/fotos/38_2871302470556.jpg" alt="" /></a>[/caption]</p>
-
-<p><strong>C</strong>laro, não posso deixar de citar o almoço. Acredito que a Mari e os demais tenham gostado tanto quanto eu. Excelentes peixes, frito e cozido com molho de camarão, carne de sol, etc. Obrigado Samy Soares e Italo Bethoven por terem nos convidado para apreciar a excelente culinária do restaurante Abelardo.</p>
-
-<p><strong>N</strong>o período da tarde aconteceram demais palestras e atividades previstas do evento como sala de games, sala de vídeos, install-fest, etc. Aproveitei para assistir algumas palestras, infelizmente não tinha como assistir todas, e visitar as demais atividades do evento.</p>
-
-<p>[caption id=&ldquo;&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;440&rdquo; caption=&ldquo;Sala de Games&rdquo;]<a href="http://www.sertaoemrede.org.br/fotos/38_74671302476167.jpg"><img src="http://www.sertaoemrede.org.br/fotos/38_74671302476167.jpg" alt="" /></a>[/caption]</p>
-
-<p>[caption id=&ldquo;&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;440&rdquo; caption=&ldquo;Sala de palestras &ndash; Palestra sobre HTML5 com George Gomes, SEDUC&rdquo;]<a href="http://www.sertaoemrede.org.br/fotos/38_41461302477120.jpg"><img src="http://www.sertaoemrede.org.br/fotos/38_41461302477120.jpg" alt="" /></a>[/caption]</p>
-
-<p>[caption id=&ldquo;&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;440&rdquo; caption=&ldquo;Ginásio &ndash; Palestra Mercado e SL &ndash; Ronaldo Davi, ProtctIT e Tux-CE&rdquo;]<a href="http://www.sertaoemrede.org.br/fotos/38_51441302476970.jpg"><img src="http://www.sertaoemrede.org.br/fotos/38_51441302476970.jpg" alt="" /></a>Palestra O que o Software Livre Pode Fazer Por Você &ndash; Marcelo &ldquo;Bill&rdquo;, F13</p>
-
-<p><a href="http://www.sertaoemrede.org.br/fotos/38_98691302477518.jpg"><img src="http://www.sertaoemrede.org.br/fotos/38_98691302477518.jpg" alt="" /></a>[/caption]</p>
-
-<p><strong>C</strong>onheci novas pessoas e pude rever alguns velhos amigos e companheiros como o Marcelo &ldquo;Bill&rdquo; da <a href="http://www.f13.com.br/">F13 Informática</a> e o Pedro Henrique, também membro da <a href="http://www.tux-ce.org">Tux-CE</a>. Ambos palestraram no período da tarde.</p>
-
-<p><strong>C</strong>laro, no final da tarde todos estavam esgotados e optamos por nos recolher em nossos respectivos hotéis/casas para um banho e rápido descanso antes de nos encontrarmos novamente para o jantar.</p>
-
-<p><strong>B</strong>om, cá entre nós. É fácil para o Samy combinar de tomarmos banho e descansarmos por cerca de 2 horas até ele voltar e nos encontrarmos para o jantar. Ele mora lá. Mas, nós estavamos como visita. Descansar? Ficar deitado? Isso nós podemos fazer em casa, certo?</p>
-
-<p><strong>D</strong>epois que eu e Mari terminamos o banho e descemos para o térreo do Hotel, já estavam por lá prontos também o Ronaldo, Pedro, Bill, sua namorada Poliana e outro camarada cujo nome, infelizmente, não lembro. Então já começamos uma pequena roda ali mesmo na fachada do hotel onde tomamos umas cervejinhas e tivemos um papo descontraído enquanto aguardávamos o Samy, que chegou com uma pontualidade que impressionaria qualquer britânico.</p>
-
-<p><strong>D</strong>e lá pegamos a estrada e fomos jantar no restaurante Pé de Serra. Não fica exatamente em Quixadá. Digamos que fica entre Quixadá e Quixeramobim. O restaurante é lindo e a comida é divina. Foi excelente pois, já com a mente menos acelerada, pudemos bater um papo legal. <del>Tirando algumas indecências insanas saídas da mente do Bill, tudo o mais foi tranquilo.</del></p>
-
-<p><strong>A</strong>pós a janta resolvemos ir para um pub chamado Bom Motivo, onde estava acontecendo um tributo ao eterno Raul Seixas. O local era bem aconchegante e animado. Talvez por isso a casa estivesse com tanta gente. Com isto fechamos a confraternização de pós-flisol.</p>
-
-<p><strong>N</strong>o Domingo apenas descansamos no Hotel e rodamos um pouco pelas ruas da cidade. No período da tarde conheci a tal bisteca do Ponto da Bisteca. Sem comentários. Será que eles fazem entrega em domicílio se eu disser que meu endereço fica em Fortaleza? o.O</p>
-
-<p><strong>N</strong>ovamente, obrigado a todos pela recepção e hospitalidade e parabéns pelo excelente evento.</p>
-
-<p><strong>E</strong>spero que boa parte do público tenha absorvido as ideias e sementes que ali foram plantadas pelo pessoal da organização e palestrantes como um todo. Que ideias sejam trocadas e fortalecidas.</p>
-
-<p><strong>M</strong>ais fotos do evento? <a href="http://www.sertaoemrede.org.br/?pagina=fotos&amp;album=38">Clique aqui!</a></p>
-
-<p><strong>A</strong>braços!</p>
-
-<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/04/12/recomendacao-bibliografica-a-passagem/">Recomendação Bibliográfica - a Passagem</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-04-12T10:33:27-03:00" pubdate data-updated="true">Apr 12<span>th</span>, 2011</time>
-        
-         | <a href="/blog/2011/04/12/recomendacao-bibliografica-a-passagem/#disqus_thread">Comments</a>
+         | <a href="/blog/2011/07/01/lancada-a-primeira-edicao-da-revista-seguranca-digital/#disqus_thread">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><a href="http://marcelocavalcante.net/portal/imgs/livros/passagem.jpg"><img src="http://marcelocavalcante.net/portal/imgs/livros/passagem.jpg" alt="" /></a></p>
+  <div class="entry-content"><p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/07/1_edicao_julho_2011.jpg"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/07/1_edicao_julho_2011.jpg" alt="" /></a></p>
 
-<p><strong>C</strong>omo citou o grande <a href="http://pt.wikipedia.org/wiki/Stephen_King">Stephen King</a>, &ldquo;Esta é a história de vampiros que você não pode perder: 15 páginas são suficientes para cativá-lo; depois de 30, você se descobrirá prisioneiro, lendo noite adentro. Um livro com a força dos épicos.&rdquo;</p>
+<p><strong>S</strong>audações pessoal.</p>
 
-<p><strong>P</strong>ara quem, assim como eu, adora ficção, vampiros e contos que exploram o sobrenatural, mas que ao mesmo tempo está cansado de tanta babaquice e melação como Crepúsculo, Vampire Diaries, etc&hellip; Esta orba de <a href="http://en.wikipedia.org/wiki/Justin_Cronin">Justin Cronin</a> promete ser uma excelente pedida.</p>
+<p><strong>P</strong>ara quem não sabe, hoje é o lançamento da primeira edição da <a href="http://www.segurancadigital.info/revista/185-revistas">Revista Segurança Digital</a>.</p>
 
-<p><strong>E</strong> se os vampiros não são algo tão sobrenatural assim? E se eles pudessem ser criados em laboratórios?</p>
+<p><a href="http://www.segurancadigital.info"><strong>S</strong>egurança Digital</a> é o mais novo projeto no qual estou engajado e espero poder ajudar no que for possível para a constante melhoria do projeto.</p>
 
-<p><strong>E</strong>m <strong>A Passagem</strong> a história se inicia com agentes do FBI que escolhem a dedo prisioneiros condenados à morte para participarem como &ldquo;voluntários&rdquo; de um programa secreto do governo.</p>
+<p><strong>É</strong> com grande satisfação que estamos fazendo o lançamento oficial de nosso projeto com a primeira edição da Revista Segurança Digital. Neste mês de Julho a revista aborda aspectos mais genéricos em relação à Segurança da Informação como um todo. Desde as técnicas de FootPrinting e Varredura para identificação de vulnerabilidades e possíveis brechas até estratégias e mecanismos de Enumeração para reconhecimento de ambientes.</p>
 
-<p><strong>U</strong>ma falha na segurança das instalações secretas do governo onde os experimentos com estes condenados eram feitos permite a fuga destes que já não mais são homens. O experimento militar ao qual eles eram submetidos lhes dá força e velocidade infinitamente superiores a dos seres humanos comuns. Além destas características, a sensibilidade ao sol e a capacidade de regeneração de seus corpos de forma extremamente rápida juntam-se ao comportamento animal e sedento de sangue tiram os últimos sinais de humanidade destas criaturas.</p>
+<p><strong>C</strong>om a matéria sobre Enumeração explicamos a importância de se fazer um mapeamento completo do alvo, que consiste em descobrir o máximo de informações possíveis sobre o mesmo, desde sistema operacional até mesmo versões de anti-vírus, firewall, aplicativos instalados, etc.</p>
 
-<p><strong>E</strong>m estado de alerta a humanidade começa a viver uma enorme crise. Cidades e países inteiros começam a efetuar um evacuamento massivo e a quantidade de pessoas infectadas pelo vírus começa a crescer rapidamente. Em poucos anos a humanidade parece perdida, até que se descobre que alguns poucos sobreviventes começam a formar grupos e fortificações para viverem isolados buscando se proteger destes infectados da forma como podem.</p>
+<p><strong>R</strong>ecentemente todos perceberam que vários ataques de DoS e DDoS foram realizados à sites do Governo, Petrobras, dentre outros. Um artigo com uma breve explicação sobre como funcionam estes ataques é apresentado como forma de ilustrar de forma básica o funcionamento de um DoS/DDoS.</p>
 
-<p><strong>A</strong>o meio de tudo isso a humanidade encontra-se vivendo com medo da noite, sobrevivendo de forma precária, vivenciando a morte a cada dia. Alguns acontecimentos começam a rondar Amy, a única criança que passou pelos mesmos experimentos mas conseguiu escapar na noite da fuga dos virais. O problema é que Amy parece não ter se tornado uma criatura, como as demais cobaias. Tudo leva a crer que ela continua um ser humano comum, porém a sensibilidade à luz solar e o fato de ela não ter envelhecido fisicamente com o passar das décadas acaba gerando dúvidas em todos os que estão ao seu redor.</p>
+<p><strong>R</strong>esolvemos fazer uma breve apresentação sobre o BackTrack, uma distribuição Linux voltada para testes de segurança. Nesta matéria apresentamos alguns de seus recursos e ferramentas que podem ser utilizadas no dia-a-dia de qualquer profissional de Segurança da Informação para facilitar suas tarefas e análises, bem como auxiliar em projetos de PenTesting.</p>
 
-<p><strong>O</strong> mais esquisito parece ser a reação dela frente aos virais, bem como a reação deles ao se aproximarem dela.</p>
+<p><strong>A</strong>proveitamos para informar sobre a mais nova parceria realizada entre o Projeto Segurança Digital e a empresa de consultoria e soluções livres 4Linux que é líder no mercado no que diz respeito à soluções de tecnologia com ferramentas livres bem como treinamentos especializados nos mais diversos segmentos da computação como redes, bancos de dados, segurança, programação, dentre outros.</p>
 
-<p><strong>S</strong>em dúvida alguma, uma leitura que recomendo. Agradeço, novamente, à minha namorada, <a href="http://marcelocavalcante.net/portal/wp-content/gallery/guara/02052009025.jpg">Mari</a>, que, como sempre, me presenteia com excelentes livros. ;]</p>
+<p><strong>N</strong>ão deixe de fazer o <a href="http://www.segurancadigital.info/revista/185-revistas">download</a> desta edição e conferir o resultado desta força tarefa inicial.</p>
 
-<p><strong>S</strong>egue sinopse do mesmo retirada da livraria Saraiva:</p>
-
-<blockquote><p><em>Esta é a história de vampiros que você não pode perder: 15 páginas são suficientes para cativá-lo; depois de 30, você se descobrirá prisioneiro, lendo noite adentro. Um livro com a força dos épicos.” – Stephen King</em>
-<em>Primeiro, o imprevisível: a quebra de segurança em uma instalação secreta do governo norte-americano põe à solta um grupo de condenados à morte usados em um experimento militar. Infectados com um vírus modificado em laboratório que lhes dá incrível força, extraordinária capacidade de regeneração e hipersensibilidade à luz, tiveram os últimos traços de humanidade substituídos por um comportamento animalesco e uma insaciável sede de sangue. Depois, o inimaginável: ao escurecer, o caos e a carnificina se instalam, e o nascer do dia seguinte revela um país – talvez um planeta – que nunca mais será o mesmo. A cada noite, a população humana se reduz e cresce o número de pessoas contaminadas pelo vírus assustador. Tudo o que resta aos poucos sobreviventes é uma longa luta em uma paisagem marcada pelo medo da escuridão, da morte e de algo ainda pior. Enquanto a humanidade se torna presa do predador criado por ela mesma, o agente Brad Wolgast, do FBI, tenta proteger Amy, uma órfã de 6 anos e a única criança usada no malfadado experimento que deu início ao apocalipse. Mas, para Amy, esse é apenas o começo de uma longa jornada – através de décadas e milhares de quilômetros – até o lugar e o tempo em que deverá pôr fim ao que jamais deveria ter começado.</em>
-<em>&ldquo;A Passagem&rdquo; é um suspense implacável, uma alegoria da luta humana diante de uma catástrofe sem precedentes. Da destruição da sociedade que conhecemos aos esforços de reconstruí-la na nova ordem que se instaura, do confronto entre o bem e o mal ao questionamento interno de cada personagem, pessoas comuns são levadas a feitos extraordinários, enfrentando seus maiores medos em um mundo que recende a morte.</em></p></blockquote>
-
-<p><strong>A</strong>braço e boa leitura!</p>
-
-<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/04/07/kde-4-6-2-lancado-parabens-ao-gnome/">KDE 4.6.2 Lançado: Parabéns Ao GNOME!</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-04-07T14:09:09-03:00" pubdate data-updated="true">Apr 7<span>th</span>, 2011</time>
-        
-         | <a href="/blog/2011/04/07/kde-4-6-2-lancado-parabens-ao-gnome/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://www.insidelinux.com.br/wp-content/uploads/2010/10/gnome-kde.png"><img src="http://www.insidelinux.com.br/wp-content/uploads/2010/10/gnome-kde.png" alt="" /></a></p>
-
-<p><strong>E</strong>stranho o título?</p>
-
-<p><strong>B</strong>om, de fato foi o que aconteceu. O KDE 4.6.2 foi lançado e para demonstrar que a briga entre usuários <a href="http://www.kde.org">KDE</a> x <a href="http://www.gnome.org">GNOME</a> simplesmente não faz sentido, esta release foi batizada de &ldquo;Congrats&rdquo;, parabéns em português, em homenagem ao lançamento do GNOME 3 que teve mesma data.</p>
-
-<p><strong>R</strong>ealmente é deplorável quando as listas, fórums e canais estão infectados com insultos contra ambiente gráfico X ou distribuição Y. É claro que sempre vão existir diferenças e brincadeiras sobre qual é o melhor, quem tem vantagem, etc. Afinal, somos humanos e temos gostos diferentes, certo?! Assim como existem piadas e brincadeiras entre torcedores de times opostos, no mundo da computação isso sempre vai existir também. O problema é quando se torna algo de mal gosto ou agressivo.</p>
-
-<p><strong>E</strong>nfim&hellip;</p>
-
-<p><strong>P</strong>ara demonstrar que o projeto KDE realmente não liga para estas briguinhas infantis, e que não encara o projeto GNOME como um oponente que deve ser batido, a nova release do KDE 4.6.2 recebeu o nome de &ldquo;Congrats&rdquo; para homenagear o tão esperado lançamento do GNOME 3. Segue um pequeno trecho traduzido da notícia oficial no site do KDE:</p>
-
-<p><a href="http://kde.org/announcements/announce-4.6.2.php"></a><em><a href="http://kde.org/announcements/announce-4.6.2.php">“Com o codinome “Congrats&#8221; (parabéns) dedicamos este lançamento para os nossos amigos no lado GNOME, que lançam uma nova versão principal hoje.”</a></em></p>
-
-<p>[caption id=&ldquo;&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;492&rdquo; caption=&ldquo;The KDE Plasma Netbook Workspace&rdquo;]<a href="http://kde.org/announcements/4.6/screenshots/46netbook2.png"><img src="http://kde.org/announcements/4.6/screenshots/46netbook2.png" alt="The KDE Plasma Netbook Workspace" /></a>[/caption]</p>
-
-<p><strong>M</strong>uitas melhorias chegaram com esta release, no geral correções de bugs ou melhorias de performance. Para detalhes do changelog, acesse <a href="http://www.kde.org/announcements/changelogs/changelog4_6_1to4_6_2.php">este link</a>.</p>
-
-<p><strong>C</strong>laro, se você é usuário Arch Linux, já pode ter o seu KDE 4.6.2, que encontra-se disponível nos repositórios do pacman. Basta atualizar seu sistema, caso já tenha o KDE instalado em outra versão: pacman -Syu</p>
-
-<p><strong>Q</strong>ue isto sirva de exemplo para nós, usuários. ;]</p>
-
-<p><strong>A</strong>braços!</p>
+<p><strong>E</strong>speramos que gostem.</p>
 
 <p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
 </div>
@@ -574,16 +357,13 @@ Me conheça melhor <a href="http://blog.marcelocavalcante.net/about">clicando aq
         <a href="/blog/2011/12/13/netstat-saiba-o-que-esta-rolando-em-seu-ambiente/">Netstat - Saiba o que está rolando em seu ambiente&#8230;</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2011/10/24/que-tal-ajudar-o-projeto-kde-com-apenas-1-minuto-do-seu-tempo/">Que tal ajudar o projeto KDE com apenas 1 minuto do seu tempo?</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2011/10/17/3c2ba-dia-livre-programacao-definida/">3º Dia Livre - Programação Definida!</a>
-      </li>
-    
   </ul>
 </section>
+<section>
+  <h1>Estou lendo</h1>
+  <img align="center" src="/imgs/livros/gravidade.jpg">
+</section>
+
 
 
 
