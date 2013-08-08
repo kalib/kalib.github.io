@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Impressões | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/blog/categories/impressoes/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2013-08-07T21:17:50-03:00</updated>
+  <updated>2013-08-08T17:48:21-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -12,6 +12,33 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Recomendação Bibliográfica: Gravidade]]></title>
+    <link href="http://blog.marcelocavalcante.net/blog/2013/08/08/recomendacao-bibliografica-gravidade/"/>
+    <updated>2013-08-08T17:23:00-03:00</updated>
+    <id>http://blog.marcelocavalcante.net/blog/2013/08/08/recomendacao-bibliografica-gravidade</id>
+    <content type="html"><![CDATA[<p><img class="center" src="/imgs/livros/gravidade.jpg" title="&lsquo;Gravidade&rsquo;" ></p>
+
+<p><strong>O</strong> livro da vez se chama <em>Gravidade</em>, de <em>Tess Gerritsen</em>.</p>
+
+<p><strong>T</strong>ess Gerritsen é, sem sombra de dúvidas, uma autora que conquistou um lugar (ou vários) bastante especial em minha estante. A cada livro que leio fico mais fascinado com a facilidade e maestria com a qual ela consegue cativar o leitor e ao mesmo tempo fazer com que o mesmo se sinta imerso no cenário e história como um todo.</p>
+
+<p><strong>F</strong>aço das palavras de <em>Stephen King</em> as minhas ao afirmar:</p>
+
+<blockquote><p><em>Tess Gerritsen é leitura obrigatória em minha casa. &ndash; Stephen King</em></p></blockquote>
+
+<p><strong>O</strong> livro aborda uma missão rotineira da NASA para uma estação espacial onde existe uma tripulação que precisa substituir um de seus astronatuas por motivos pessoais que o fazem precisar voltar ao planeta Terra. Diversas experiências ocorrem em paralelo na estação, enviadas por cientistas do mundo inteiro, com o intuito de ver os resultados de suas pesquisas em um ambiente com micro gravidade. Mas, como nem tudo é um mar de rosas, uma série de incidentes acaba por gerar situações complicadas, comprometendo a vida de diversos tripulantes e até mesmo a do planeta Terra.</p>
+
+<p><strong>O</strong> fato de Tess Gerritsen ter visitado pessoalmente as instalações reais da NASA, oportunidade na qual conversou com pessoas da instituição sobre diversos assuntos, tornou suas referências e relatos extremamente realistas e atraentes.</p>
+
+<p><strong>S</strong>egue sinopse retirada do site da <em>Livraria Saraiva</em>:</p>
+
+<blockquote><p><em>A pesquisadora Emma Watson está prestes a realizar a missão mais importante de sua vida: estudar o comportamento da vida terrestre no espaço. Escolhida pela Nasa para conduzir uma série de experimentos sobre o comportamento de organismos unicelulares, a Dra. Watson logo descobre a natureza aterrorizante desses organismos e precisa correr contra o tempo para conter uma doença mortal que pode ameaçar a Terra. Tess Gerritsen se aventura no campo do desconhecido, e o resultado é este suspense que mistura, de forma brilhante, ficção científica e medicina.</em></p></blockquote>
+
+<p><strong>S</strong>em sombra de dúvidas recomendo a leitura deste livro a todos os interessados em ficção científica e suspense.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Renascimento...de cara nova]]></title>
@@ -340,72 +367,6 @@ device interrupt 47  base 0xc000</p>
 <p>Vamos que vamos.</p>
 
 <p>Abraços,</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[3º Dia Livre - Programação Definida!]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2011/10/17/3c2ba-dia-livre-programacao-definida/"/>
-    <updated>2011-10-17T09:26:54-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2011/10/17/3c2ba-dia-livre-programacao-definida</id>
-    <content type="html"><![CDATA[<p><strong>N</strong>este fim de semana foi publicada a programação oficial do <strong><a href="http://www.dialivre.net/portal">3º Dia Livre</a></strong>, encontro para usuários, profissionais ou entusiastas do movimento de Software Livre no Ceará.</p>
-
-<p><strong>E</strong>sta 3ª edição contará com 4 palestras de temas bem diversificados como podem ver na grade abaixo:</p>
-
-<p>Horário</p>
-
-<p>Palestra</p>
-
-<p>Palestrante</p>
-
-<p>08:00
-&ndash; 08:10</p>
-
-<p>Abertura</p>
-
-<p>&ndash;</p>
-
-<p>08:10
-&ndash; 09:00</p>
-
-<p>CRUD Flex com Java</p>
-
-<p>Alessandro Moreira</p>
-
-<p>09:10
-&ndash; 10:00</p>
-
-<p>Gerenciando Nuvens Privadas com o Xen Cloud Platform</p>
-
-<p>Lorscheider Santiago</p>
-
-<p>10:10 &ndash; 11:00</p>
-
-<p>Gerenciando Projetos com Ferramentas Livres</p>
-
-<p>Paulo Cesar C. Branco</p>
-
-<p>11:10 &ndash; 12:00</p>
-
-<p>Arduino &ndash; Desenvolvendo com Hardware Livre</p>
-
-<p>Marcelo Melo</p>
-
-<p>&mdash;</p>
-
-<hr />
-
-<p>&ndash;</p>
-
-<p><strong>A</strong>inda não sabe o que é o Dia Livre? <strong><a href="http://www.dialivre.net/portal/?page_id=7">Clique aqui para conhecer!</a></strong></p>
-
-<p><strong>A</strong>s <strong>inscrições</strong> continuam abertas para esta 3ª edição que acontecerá no dia <strong>12 de Novembro</strong>, Sábado, na Faculdade Estácio FIC.</p>
-
-<p><strong>C</strong>lique <strong><a href="http://www.dialivre.net/portal/?page_id=8">aqui</a></strong> e faça sua inscrição gratuita.</p>
-
-<p><strong>A</strong>braços,</p>
-
-<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
 ]]></content>
   </entry>
   

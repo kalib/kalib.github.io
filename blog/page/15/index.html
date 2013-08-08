@@ -9,7 +9,7 @@
   <meta name="author" content="Marcelo Cavalcante Rocha - Kalib">
 
   
-  <meta name="description" content="Mais uma recomendação para preencher os horários de ócio&hellip; Como diria um amigo meu, tenhamos um ócio produtivo. A recomendação deste mês tem o &hellip;">
+  <meta name="description" content="Quantas vezes você já foi surpreendido por alguma falha grave em seu sistema de arquivos, disco rígido ou mesmo por vírus (no caso de quem utiliza &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -80,6 +80,190 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/07/15/simples-solucao-de-backup-sbackup/">Simples Solução De Backup? SBackup</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-07-15T10:30:46-03:00" pubdate data-updated="true">Jul 15<span>th</span>, 2010</time>
+        
+         | <a href="/blog/2010/07/15/simples-solucao-de-backup-sbackup/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img src="http://rlv.zcache.com/dont_backup_tomorrow_dog_shirt-p1558048941353860512vf3g_400.jpg" alt="" /></p>
+
+<p><strong>Q</strong>uantas vezes você já foi surpreendido por alguma falha grave em seu sistema de arquivos, disco rígido ou mesmo por vírus (no caso de quem utiliza Sistemas Operacionais Genéricos) e depois de perder centenas de arquivos e informações se perguntou: Porque eu não fiz backup disso antes?</p>
+
+<p><strong>É</strong> natural do ser humano ignorar o ditado &ldquo;Não deixe para amanhã o que pode ser feito hoje&rdquo; dando espaço ao mais utilizado e adotado (quase que enraizado na cultura brasileira) &ldquo;Não faça agora o que pode esperar para amanhã&rdquo;, e, por consequência desta atitude, milhares de dados são perdidos diariamente no mundo inteiro pela falta de um simples backup.</p>
+
+<p><strong>E</strong>xistem milhares de ferramentas de backup super eficientes para meios corporativos, portanto não abordarei este tópico. Empresas já possuem (ou ao menos deveriam possuir) seus especialistas em TI que conhecem boas soluções e estratégias de backup para garantir a continuidade dos serviços da empresa em casos de necessidade ou perda.</p>
+
+<p><strong>H</strong>oje vou apresentar uma ferramenta bem simples e interessante aos usuários domésticos. Sim, backup não é apenas para empresas. Sempre é bom que se tenha backup mesmo em sua máquina doméstica. Não perca sua monografia que levou tanto tempo para ser trabalhada, ou aquele projeto importante, quem sabe até aquelas fotos de 10 anos atrás que você tanto preza.</p>
+
+<p><strong>É</strong> comum ver amigos fazendo tais backups em dvds, pendrives, email, etc. Porém, isso me parece um tanto quanto amador.</p>
+
+<p><strong>S</strong>e você realmente preza pelos seus dados, é hora de planejar um backup sério.</p>
+
+<p><strong>L</strong>hes apresento o <a href="http://sourceforge.net/projects/sbackup/develop">SimpleBackup</a>, ou simplesmente <a href="http://sourceforge.net/projects/sbackup/develop">SBackup</a>.</p>
+
+<p><strong>U</strong>ma apresentação informal rápida&hellip;</p>
+
+<p><strong>O</strong> Simple Backup é uma solução de backup simples para atender as necessidades de usuários desktop. O projeto foi patrocinado pelo Google durante o Google Summer of Code 2005.</p>
+
+<p><strong>I</strong>nstalação? Se você utiliza <a href="http://www.archlinux.org">Arch Linux</a>, basta pedir ao nosso amigo pacman:</p>
+
+<p><em># pacman -S sbackup</em></p>
+
+<p><strong>OBS:</strong> Ele lhe dará duas ferramentas depois de instalado:</p>
+
+<p><em>* Configuração do Backup</em></p>
+
+<p><em>* Restauração de Bakcup</em></p>
+
+<p><strong>V</strong>amos começar pela Configuração do Backup.</p>
+
+<p><strong>E</strong> agora, a tão esperada Cara do Bixo.</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/sb1.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/sb1.png" alt="" /></a></p>
+
+<p><strong>E</strong>ssa é a tela inicial. Simples e modesta. Sem propagandas ou logomarcas coloridas.</p>
+
+<p><strong>O</strong> Simple Backup lhe permite fazer backups simples, completos ou incrementais.</p>
+
+<p><strong>N</strong>esta primeira tela, você decide a forma desejada. Sugiro que para o primeiro teste, selecione a opção <em>Somente backup manual</em>. Desta forma iremos configurar um backup simples e rápido para testar a ferramenta.</p>
+
+<p><strong>S</strong>elecionada a opção de <em>&ldquo;Somente backup manual&rdquo;</em>, vamos à próxima aba chamada <em>&ldquo;Inclusões&rdquo;</em>. Nos será apresentada a tela a seguir:</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/sb2.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/sb2.png" alt="" /></a></p>
+
+<p><strong>P</strong>or padrão ele vai trazer vários diretórios, pode Remover os diretórios que ele lhe trás e adicionar alguns poucos diretórios (de preferência com poucos arquivos, apenas para agilizar nosso teste. ;] Um total de 20 ou 30 MBs já resolve para nosso teste.</p>
+
+<p><strong>N</strong>o meu exemplo, eu desejo backup apenas dos diretórios &ldquo;/home/kalib/imgs/&rdquo; e &ldquo;/home/kalib/amsn_received/&rdquo;, conforme pode ser visto na imagem anterior.</p>
+
+<p><strong>U</strong>ma vez que você tenha finalizado a configuração dos diretórios desejados, vamos para a próxima aba: <em>&ldquo;Exceções&rdquo;</em></p>
+
+<p><strong>E</strong>sta aba servirá para informarmos o que NÃO deverá entrar no backup. Esta sessão se divide em 4 categorias, como pode ser visto na imagem abaixo:</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/sb3.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/sb3.png" alt="" /></a></p>
+
+<p><strong>1- Pastas &ndash;</strong> <strong>A</strong>qui você lista quais pastas ou arquivos não deseja incluir no backup. Repare que ele já trás vários diretórios por padrão. Pode remover todos. Por exemplo:</p>
+
+<p><strong>S</strong>upondo que eu tenha marcado o diretório /home/kalib/imgs/ para backup, porém dentro deste diretório existem os diretórios /imgs1 /imgs2 e /imgs3. Eu não quero o /imgs3 em meu backup, então posso incluir nestas Exceções de Pastas o caminho &ldquo;/home/kalib/imgs/imgs3/&rdquo;. Deverá ficar algo como ilustrado a seguir:</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/sb4.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/sb4.png" alt="" /></a></p>
+
+<p><strong>2- Tipos de arquivos &ndash; A</strong>qui devemos descriminar quais tipos de arquivos iremos deixar fora fora do backup. Novamente, ele já trás vários diretórios por padrão. Pode remover todos. Esta função é útil por exemplo para quem não deseja levar no backup algum tipo de arquivos em específico.</p>
+
+<p><strong>P</strong>or exemplo, supomos que nos diretórios que eu marquei para fazer backup, eu não deseje que sejam levados também os arquivos do tipo .mp3.</p>
+
+<p><strong>P</strong>ara isto, eu clico na opção Adicionar e na janela que será apresentada escolho a opção de formato mp3.</p>
+
+<p><strong>D</strong>everá ficar da seguinte forma:</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/sb5.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/sb5.png" alt="" /></a></p>
+
+<p><strong>3- Expressões Regulares &ndash; E</strong>sta é para quem possui conhecimentos em regex. Caso você não entenda o que são expressões regulares, sugiro que remova os que ele trás por padrão e deixe este campo em branco.</p>
+
+<p><strong>4- Tamanho Máximo &ndash; P</strong>or último, definiremos o tamanho máximo de cada arquivo que estará no backup. Vamos supor que eu não queira que ele leve arquivos maiores que 10 MB. Basta indicar neste campo e seguir em diante.</p>
+
+<p><strong>A</strong>gora vamos conhecer a próxima aba, <em>&ldquo;Destino&rdquo;</em>.</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/sb6.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/sb6.png" alt="" /></a></p>
+
+<p><strong>N</strong>esta aba, como o próprio nome já diz, deveremos escolher o local para onde será enviado o nosso backup. Aqui temos três opções:</p>
+
+<p><strong>1- U</strong>sar a pasta padrão backups que se localiza em /var/backup</p>
+
+<p><strong>2- U</strong>sar uma pasta personalizada: Neste caso você vai escolher em qual diretório você deseja que o backup seja feito. Lembrando que este destino pode ser também um disco externo que possa estar plugado via usb, por exemplo.</p>
+
+<p><strong>3- U</strong>tilizar uma pasta remota: Neste caso você envia o backup para uma outra máquina pela rede através de ssh ou ftp.</p>
+
+<p><strong>N</strong>o meu caso, optei por enviar via ssh para uma outra máquina, como pode ser visto na imagem anterior. Mas, qualquer que seja a opção escolhida por você, servirá para o nosso teste. Apenas a nível de curiosidade, segue comando que digitei como meu destino:</p>
+
+<p><em>ssh://MEU_USUARIO:MINHA_SENHA@192.168.0.83/home/marcelo.cavalcante/backups/</em></p>
+
+<p><strong>O</strong>nde:</p>
+
+<p>MEU_USUARIO = nome do usuário na máquina que receberá este meu backup</p>
+
+<p>MINHA_SENHA = senha deste usuário</p>
+
+<p>192.168.0.83 = ip da máquina para onde o backup será enviado</p>
+
+<p>/home/marcelo.cavalcante/backups/ = diretório onde eu desejo que o backup seja guardado na outra máquina</p>
+
+<p><strong>A</strong> próxima aba é a de <em>&ldquo;Agendamento&rdquo;</em>. Nela você irá definir a frequência com que seu backup será realizado. Diário, semanal, mensal, a cada 2 dias, a cada 10 dias, etc&hellip; Qual dia? Qual hora? Qual minuto?</p>
+
+<p><strong>E</strong>stas configurações, caso habilitadas, serão para um backup incremental, ou seja, apenas o que foi adicionado desde o último backup.  Repare na opção &ldquo;Faça um backup completo uma vez a cada XX dias&rdquo;. Caso você faça os agendamentos anteriores e determine neste campo o valor de 10 dias, estará significando que o seu agendamento anterior será para backups incrementais e apenas depois de 10 dias ele será completo.</p>
+
+<p><strong>E</strong>sta é a cara da criança:</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/sb7.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/sb7.png" alt="" /></a></p>
+
+<p><strong>C</strong>omo nada disso importa para este nosso teste, deixe como na imagem acima mesmo&hellip; sem agendamentos e datas.</p>
+
+<p><strong>V</strong>amos à última aba: <em>&ldquo;Limpeza&rdquo;</em></p>
+
+<p><strong>É</strong> aqui que você configura sua política de limpeza de backups. por exemplo. Se eu faço backups diários incrmentais e um completo a cada semana, rapidamente eu terei uma quantidade de arquivos de backups enormes e desnecessários, então posso especificar nesta aba que desejo que arquivos de backup de 30 dias atrás, por exemplo, sejam removidos automaticamente.</p>
+
+<p><strong>N</strong>ovamente, deixemos isto para lá por enquanto. Não utilizaremos em nosso teste. Segue imagem:</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/sb8.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/sb8.png" alt="" /></a></p>
+
+<p><strong>F</strong>eitas estas configurações, clique em <em>&ldquo;Salvar&rdquo;</em>. Isto irá gravar as configurações feitas por você. Após isto, basta clicar em <em>&ldquo;Backup Agora!&rdquo;</em></p>
+
+<p><strong>O</strong> backup será iniciado em background, portanto não espere por uma barra de progresso. Caso deseje acompanhar se o processo realmente iniciou, utilize ferramentas como o top ou o ps em seu linux. ;]</p>
+
+<p><strong>C</strong>omo colocamos poucos diretórios e arquivos, esta tarefa deve levar poucos minutos.</p>
+
+<p><strong>P</strong>assados alguns minutos, pode reparar no local que você especificou como destino. Lá estarão seus arquivos de backup, com data e hora deste momento em que foi executado.</p>
+
+<p><strong>E</strong> caso, eu tenha escondido um vírus neste blog e os arquivos de seu hd sejam removidos em 2 minutos? >]</p>
+
+<p><strong>N</strong>ão se desespere. Uma vez que você já realizou backup de seus dados, tudo o que você precisa fazer é restaurar o mesmo.</p>
+
+<p><strong>I</strong>nicie agora a outra ferramenta: <strong>Restauração de backup</strong></p>
+
+<p><strong>E</strong>sta é a aparência, também simples, da mesma:</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/sb9.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/sb9.png" alt="" /></a></p>
+
+<p><strong>T</strong>udo o que tem a fazer é escolher o arquivo de backup que deseja restaurar e clicar em restaurar. ;]</p>
+
+<p><strong>E</strong>la lhe permite inclusive escolher o que exatamente você deseja restaurar e onde deseja restaurar. Tudo isso com uma interface bastante simples e intuitiva.</p>
+
+<p><strong>Q</strong>ue bom ter uma cópia de seus dados em casos de catástrofes, certo?!</p>
+
+<p><strong>A</strong>braços!</p>
+
+<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -229,79 +413,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/06/02/kde-4-4-4-liberado-atualize-seu-arch-linux-cheers/">KDE 4.4.4 Liberado! Atualize Seu Arch Linux! &#8230;Cheers</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-06-02T09:42:27-03:00" pubdate data-updated="true">Jun 2<span>nd</span>, 2010</time>
-        
-         | <a href="/blog/2010/06/02/kde-4-4-4-liberado-atualize-seu-arch-linux-cheers/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2010/06/kde444.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2010/06/kde444.png" alt="kde444" /></a></p>
-
-<p><strong>S</strong>audações pessoal!</p>
-
-<p><strong>D</strong>epois de um longo tempo sem postar venho lhes informar que já podemos ter o <a href="http://www.kde.org">KDe 4.4.4</a> em nosso <a href="http://www.archlinux.org">Arch Linux</a>.</p>
-
-<p><strong>O</strong> mesmo já seencontra devidamente empacotado e disponível em nossos repositórios. Por se tratar de uma quantidade grande de pacotes (mais de 300 MB), execute o comando para atualizar seu sistema antes de prosseguir com a leitura do post.</p>
-
-<p><em># pacman -Syu</em></p>
-
-<p><strong>C</strong>heers!</p>
-
-<p><strong>O</strong>u deveria dizer.. Saúde!?</p>
-
-<p><strong>P</strong>ara quem não sabe, &ldquo;Cheers&rdquo; é a expressão utilizada no idioma Inglês ao se fazer um brinde. Sim, seria o nosso bom e velho &ldquo;Saúde&rdquo;. Além desta utilização, também pode ser utilizado em geral como um &ldquo;viva&rdquo; ou simplesmente um desejo de saúde em uma carta, email ou algo que o valha.</p>
-
-<p><strong>E</strong>ste é o codinome da versão 4.4.4 do KDE que foi liberada ontem, 1 de Junho, pela equipe do projeto. Lançamento este que, façamos justiça, merece mesmo um brinde.</p>
-
-<p><strong>C</strong>heers, ou KDE 4.4.4 para os menos íntimos, será o último lançamento da série 4.4 que dará espaço para a próxima release, <a href="http://www.kde.org/announcements/announce-4.5-beta1.php">KDE 4.5</a>, que tem previsão de lançamento para Agosto.</p>
-
-<p><strong>P</strong>or se tratar apenas de correções de bugs e traduções, todos podem efetuar a atualização sem medo algum de perder configurações ou seja o que for.</p>
-
-<p><strong>D</strong>entre as correções, destacam-se:</p>
-
-<p><em>* Vários bugs na listagem de nomes do gerenciador de arquivos Dolphin foram corrigidos;
-* Bugs relacionados a encodes e arquivos zipados foram corrigidos;
-* Vários bugs nos games do KDE foram corrigidos&hellip;</em>
-Dentre outros&hellip;</p>
-
-<p><a href="http://www.kde.org/announcements/4.4/images/general-desktop.jpg"><img src="http://www.kde.org/announcements/4.4/images/general-desktop.jpg" alt="" /></a></p>
-
-<p><strong>P</strong>ara os curiosos de plantão que desejem já ir conhecendo o que ainda está por vir, a equipe de desenvolvimento do KDE já disponibilizou o primeiro beta da próxima release, KDE 4.5, que deverá estar disponível em Agosto.  Maiores informações podem ser obtidas <a href="http://www.kde.org/announcements/announce-4.5-beta1.php">neste link</a>.</p>
-
-<p><strong>A</strong>braços!</p>
-
-<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/16/">&larr; Anteriores</a>
@@ -326,6 +437,10 @@ Me conheça melhor <a href="http://blog.marcelocavalcante.net/about">clicando aq
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/08/08/recomendacao-bibliografica-gravidade/">Recomendação Bibliográfica: Gravidade</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/08/06/dica-rapida-linux-forcar-usuario-a-trocar-senha-apos-primeiro-login/">Dica Rápida - Linux - Forçar Usuário A Trocar Senha Após Primeiro Login</a>
       </li>
     
@@ -347,10 +462,6 @@ Me conheça melhor <a href="http://blog.marcelocavalcante.net/about">clicando aq
     
       <li class="post">
         <a href="/blog/2011/10/24/que-tal-ajudar-o-projeto-kde-com-apenas-1-minuto-do-seu-tempo/">Que tal ajudar o projeto KDE com apenas 1 minuto do seu tempo?</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2011/10/17/3c2ba-dia-livre-programacao-definida/">3º Dia Livre - Programação Definida!</a>
       </li>
     
   </ul>

@@ -4,7 +4,7 @@
   <title><![CDATA[Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2013-08-07T21:17:50-03:00</updated>
+  <updated>2013-08-08T17:48:21-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -12,6 +12,33 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Recomendação Bibliográfica: Gravidade]]></title>
+    <link href="http://blog.marcelocavalcante.net/blog/2013/08/08/recomendacao-bibliografica-gravidade/"/>
+    <updated>2013-08-08T17:23:00-03:00</updated>
+    <id>http://blog.marcelocavalcante.net/blog/2013/08/08/recomendacao-bibliografica-gravidade</id>
+    <content type="html"><![CDATA[<p><img class="center" src="http://blog.marcelocavalcante.net/imgs/livros/gravidade.jpg" title="'Gravidade'" ></p>
+
+<p><strong>O</strong> livro da vez se chama <em>Gravidade</em>, de <em>Tess Gerritsen</em>.</p>
+
+<p><strong>T</strong>ess Gerritsen é, sem sombra de dúvidas, uma autora que conquistou um lugar (ou vários) bastante especial em minha estante. A cada livro que leio fico mais fascinado com a facilidade e maestria com a qual ela consegue cativar o leitor e ao mesmo tempo fazer com que o mesmo se sinta imerso no cenário e história como um todo.</p>
+
+<p><strong>F</strong>aço das palavras de <em>Stephen King</em> as minhas ao afirmar:</p>
+
+<blockquote><p><em>Tess Gerritsen é leitura obrigatória em minha casa. &ndash; Stephen King</em></p></blockquote>
+
+<p><strong>O</strong> livro aborda uma missão rotineira da NASA para uma estação espacial onde existe uma tripulação que precisa substituir um de seus astronatuas por motivos pessoais que o fazem precisar voltar ao planeta Terra. Diversas experiências ocorrem em paralelo na estação, enviadas por cientistas do mundo inteiro, com o intuito de ver os resultados de suas pesquisas em um ambiente com micro gravidade. Mas, como nem tudo é um mar de rosas, uma série de incidentes acaba por gerar situações complicadas, comprometendo a vida de diversos tripulantes e até mesmo a do planeta Terra.</p>
+
+<p><strong>O</strong> fato de Tess Gerritsen ter visitado pessoalmente as instalações reais da NASA, oportunidade na qual conversou com pessoas da instituição sobre diversos assuntos, tornou suas referências e relatos extremamente realistas e atraentes.</p>
+
+<p><strong>S</strong>egue sinopse retirada do site da <em>Livraria Saraiva</em>:</p>
+
+<blockquote><p><em>A pesquisadora Emma Watson está prestes a realizar a missão mais importante de sua vida: estudar o comportamento da vida terrestre no espaço. Escolhida pela Nasa para conduzir uma série de experimentos sobre o comportamento de organismos unicelulares, a Dra. Watson logo descobre a natureza aterrorizante desses organismos e precisa correr contra o tempo para conter uma doença mortal que pode ameaçar a Terra. Tess Gerritsen se aventura no campo do desconhecido, e o resultado é este suspense que mistura, de forma brilhante, ficção científica e medicina.</em></p></blockquote>
+
+<p><strong>S</strong>em sombra de dúvidas recomendo a leitura deste livro a todos os interessados em ficção científica e suspense.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Dica Rápida - Linux - Forçar Usuário A Trocar Senha Após Primeiro Login]]></title>
@@ -1240,33 +1267,6 @@ Rua Castro Monte, 1364 Varjota – Fortaleza, CE
 <p><strong>C</strong>onfira todos os modelos disponíveis em <strong><a href="http://camisas.tux-ce.org">Aqui</a></strong>.</p>
 
 <p><strong>P</strong>reencha o formulário para solicitar a(s) sua(s) <strong><a href="http://formcamisas.tux-ce.org">Aqui</a></strong>.</p>
-
-<p><strong>A</strong>braços!</p>
-
-<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[PROCURA-SE: Usuários de Arch Linux no Ceará]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2011/04/26/procura-se-usuarios-de-arch-linux-no-ceara/"/>
-    <updated>2011-04-26T10:20:12-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2011/04/26/procura-se-usuarios-de-arch-linux-no-ceara</id>
-    <content type="html"><![CDATA[<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/04/procurase.jpg"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/04/procurase.jpg" alt="" /></a></p>
-
-<p><strong>S</strong>e você é ou conhece algum usuário de <a href="http://archlinux.org/">Arch Linux</a> aqui no Ceará, favor entrar em contato.</p>
-
-<p><strong>I</strong>nfelizmente não estamos em condições de oferecer recompensas financeiras pelas <del>denúncias</del> ou comparecimentos voluntários. Quem sabe, uma cervejinha ou duas, até que rola.</p>
-
-<p><strong>B</strong>rincadeiras a parte, de fato estamos buscando usuários do Arch Linux em nosso estado.</p>
-
-<p><strong>O</strong> fato é que o <a href="http://archlinux-br.org">Arch Linux Brasil</a> como um todo vem começando uma campanha de &ldquo;localização&rdquo; de usuários em diversos estados como uma forma de estreitar as relações entre estes. A ideia é procurar uma forma de fazer com que os usuários de Arch Linux possam ter uma maior interação entre si, o que facilita na organização de encontros, eventos, install fests, etc.</p>
-
-<p><strong>N</strong>o momento estamos mapeando e buscando interessados na ideia, portanto fica o convite:</p>
-
-<p><strong>S</strong>e você é usuário do Arch Linux e mora no Ceará ou conhece algum usuário do Arch Linux por aqui, passe a informação.</p>
-
-<p><strong>P</strong>or favor se identifique através do seguinte link: <a href="http://forum.archlinux-br.org/viewforum.php?id=20">http://forum.archlinux-br.org/viewforum.php?id=20</a></p>
 
 <p><strong>A</strong>braços!</p>
 
