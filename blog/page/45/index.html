@@ -9,7 +9,7 @@
   <meta name="author" content="Marcelo Cavalcante Rocha - Kalib">
 
   
-  <meta name="description" content="Isso não é mentira. O Software Livre realmente precisa de você. Como todos sabemos, o Software Livre vem ganhando a cada dia mais nome no mercado e &hellip;">
+  <meta name="description" content="Não sei se algum de vocês ficou sabendo..Mas na última semana foi notificado um problema na infra-estrutura do Fedora, e havia sido &ldquo; &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -80,6 +80,56 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/08/22/problemas-de-infra-do-fedora-servidores-hackeados/">Problemas De Infra Do Fedora - Servidores Hackeados</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-08-22T10:05:00-03:00" pubdate data-updated="true">Aug 22<span>nd</span>, 2008</time>
+        
+         | <a href="/blog/2008/08/22/problemas-de-infra-do-fedora-servidores-hackeados/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://2.bp.blogspot.com/_5kfJplBiYy0/SK67DllLZfI/AAAAAAAAAFs/Ng_aNe5Oy-A/s1600-h/images.jpeg"><img src="http://2.bp.blogspot.com/_5kfJplBiYy0/SK67DllLZfI/AAAAAAAAAFs/Ng_aNe5Oy-A/s200/images.jpeg" alt="" /></a>Não sei se algum de vocês ficou sabendo..Mas na última semana foi notificado um problema na infra-estrutura do Fedora, e havia sido &ldquo;recomendado&rdquo; que nenhuma instalação ou atualizaçãp fosse feita, caso você use Fedora.</p>
+
+<p>Até ontem eu não tinha visto nenhuma explicação para o caso, mas discutindo com colegas de trabalho já suspeitávamos de uma invasão nos servidores do fedora que pudessem ocasionar este tipo de problema&hellip;Bom, hoje achei esta nota no site da red hat, que confirma nossas suspeitas. Os servidores foram sim invadidos. O caso é gravíssimo, pois pode, ou não, ter interferido na árvore de pacotes&hellip;pois existe o risco de eles terem pego as chaves dos pacotes fedora.. :/</p>
+
+<p>Eu não sou usuário Fedora, mas para quem  é&hellip;fica o Alarme piscando!!</p>
+
+<p>É bom se manter informado e até lá não sair usando o yum para instalar ou atualizar pacotes. Apesar de na nota eles informarem que os problemas podem não ser graves, eu não arriscaria isso em um ambiente de produção na empresa em que trabalho. Só Deus sabe o que de fato aconteceu.</p>
+
+<p>Segue link com informações mais detalhadas: <a href="http://www.redhat.com/archives/fedora-announce-list/2008-August/msg00012.html">http://www.redhat.com/archives/fedora-announce-list/2008-August/msg00012.html</a></p>
+
+<p>Abraços</p>
+
+<p><img src="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif" alt="" /></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -307,112 +357,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2008/07/30/corrigindo-incompatibilidade-do-kdemod-apos-o-nascimento-do-kde41-no-arch/">Corrigindo Incompatibilidade Do Kdemod Após O Nascimento Do KDE4.1 No Arch</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2008-07-30T11:28:00-03:00" pubdate data-updated="true">Jul 30<span>th</span>, 2008</time>
-        
-         | <a href="/blog/2008/07/30/corrigindo-incompatibilidade-do-kdemod-apos-o-nascimento-do-kde41-no-arch/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Os usuários de Arch Linux que utilizam o kdemod como ambiente gráfico e que tentaram fazer uma atualização do sistema (pacman -Syu) nos últimos dias devem ter notado que havia um problema. Como o KDE 4.1 entrou para os repositórios do Arch, passou a haver uma incompatibilidade entre alguns pacotes. E a atualização do sistema pedia que você substituisse alguns pacotes do kdemod pelos do kde.</p>
-
-<p>Logo que percebi este problema busquei ajuda em fórums mas ninguém tinha a solução, portanto decidi reportar este bug para os desenvolvedores do kdemod. A minha surpresa foi chegar no site de bugreport do kdemod e ver que este bug já havia sido identificado. Achei ótimo ver que o bug já havia sido notificado e que já estavam trabalhando em cima do mesmo, como o próprio desenvolvedor &ldquo;funkyou&rdquo; me informou.</p>
-
-<p>Hoje, 30/07, o problema já se encontra solucionado e o bug foi fechado no bugreport deles. É preciso seguir um procedimento para normalizar a situação, já que os pacotes do antigo kdemod foram re-construídos e re-empacotados como kdemod3 para fazê-los funcionar no novo upgrade do Arch.</p>
-
-<p>Mudanças que foram feitas:</p>
-
-<ul>
-<li><p>Todos os pacotes foram renomeados para kdemod3-$PACKAGE</p></li>
-<li><p>KDEmod 3.5.9 agora conflita com KDE 4.1, então não é possível ter ambos instalados simultaneamente</p></li>
-<li><p>Não é uma atualização muito comum, você precisará remover todos os pacotes do kdemod primeiramente para depois reinstalar</p></li>
-<li><p>Note que muitas coisas do [community] por exemplo precisam ser adaptados ao novo KDE3 renomeando no Arch</p></li>
-<li><p>Não force nada, o melhor é reportar os problemas no link a seguir: <a href="http://www.kdemod.ath.cx/bbs/viewtopic.php?pid=5303#p5303">http://www.kdemod.ath.cx/bbs/viewtopic.php?pid=5303#p5303</a></p></li>
-<li><p>Este repositório deixará de ser suportado até que alguém passe a lhe dar mais amor como nós acasionalmente fazemos</p></li>
-</ul>
-
-
-<p>INSTALAÇÃO<strong>:</strong></p>
-
-<p><strong>1. </strong>Remover todos os pacotes do KDE4: pacman -Rcs kde</p>
-
-<p><strong>2. </strong>Remover todos os pacotes do KDEmod4: pacman -Rcs kdemod4-complete</p>
-
-<p><strong>3. </strong>Remover todos os pacotes do KDEmod3: pacman -Rcs kdemod-complete</p>
-
-<p><strong>4. </strong>Remover <em>qualquer</em> pacote do KDE que ainda exista em seu sistema</p>
-
-<p><strong>5. </strong>Checar novamente se tudo foi removido: pacman -Q | grep kde</p>
-
-<p><strong>6. </strong>Remover o antigo repositório [kdemod] do seu pacman.conf</p>
-
-<p><strong>7. </strong>Adicionar o novo repositório [kdemod-legacy] ao seu pacman.conf</p>
-
-<p>Para i686</p>
-
-<blockquote><pre><code>[kdemod-legacy]
-Server = http://kdemod.ath.cx/repo/legacy/i686
-</code></pre></blockquote>
-
-<p>Para x86_64</p>
-
-<blockquote><pre><code>[kdemod-legacy]
-Server = http://kdemod.ath.cx/repo/legacy/x86_64
-</code></pre></blockquote>
-
-<p>****Em seguida atualize com: pacman -Suy</p>
-
-<p>****Instale com:</p>
-
-<p><strong>pacman -S kdemod3</strong> (sistema funcional básico)</p>
-
-<p>ou</p>
-
-<p><strong>pacman -S kdemod3-complete</strong> (instalação completa do KDEmod)</p>
-
-<p>ou</p>
-
-<p><strong>pacman -S kdemod3-vanilla</strong> (instalação completa do KDEmod, sabor vanilla (baunilha))</p>
-
-<p>ou</p>
-
-<p><strong>pacman -S kdemod3-base</strong> (instalação básica do KDE (base))</p>
-
-<p><strong><strong>Instale sua língua(cheque os disponíveis com </strong>pacman -Ss kdemod3-kde-i18n</strong>)</p>
-
-<p>Feito. ;]</p>
-
-<p><a href="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif"><img src="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif" alt="" /></a></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/46/">&larr; Anteriores</a>
@@ -437,6 +381,10 @@ Me conheça melhor <a href="http://blog.marcelocavalcante.net/about">clicando aq
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/08/12/dica-rapida-linux-melhorando-a-politica-de-senhas/">Dica Rápida - Linux - Melhorando a Política de Senhas</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/08/08/recomendacao-bibliografica-gravidade/">Recomendação Bibliográfica: Gravidade</a>
       </li>
     
@@ -458,10 +406,6 @@ Me conheça melhor <a href="http://blog.marcelocavalcante.net/about">clicando aq
     
       <li class="post">
         <a href="/blog/2011/12/13/netstat-saiba-o-que-esta-rolando-em-seu-ambiente/">Netstat - Saiba o que está rolando em seu ambiente&#8230;</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2011/10/24/que-tal-ajudar-o-projeto-kde-com-apenas-1-minuto-do-seu-tempo/">Que tal ajudar o projeto KDE com apenas 1 minuto do seu tempo?</a>
       </li>
     
   </ul>

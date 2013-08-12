@@ -1,0 +1,339 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Dica Rápida - Linux - Melhorando a Política de Senhas - Marcelo Cavalcante Rocha ~</title>
+  <meta name="author" content="Marcelo Cavalcante Rocha - Kalib">
+
+  
+  <meta name="description" content="Dica rápida sobre como melhorar a política e a segurança de senhas de usuários no Linux">
+  <meta name="keywords" content="linux,software livre,segurança,senhas,dicas">
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.marcelocavalcante.net/blog/2013/08/12/dica-rapida-linux-melhorando-a-politica-de-senhas/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Marcelo Cavalcante Rocha ~" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-42903485-1']);
+    _gaq.push(['_setDomainName','marcelocavalcante.net']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:blog.marcelocavalcante.net" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+    <li><a href="/">
+        <span class="blue_light">
+            Marcelo Cavalcante Rocha ~
+        </span>
+       
+           <span class="blue_dark">
+             Hacking the damn life...
+           </span>
+       
+    </a></li>
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Arquivos</a></li>
+  <li><a href="/about">Sobre mim</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Dica Rápida - Linux - Melhorando a Política De Senhas</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-08-12T08:41:00-03:00" pubdate data-updated="true">Aug 12<span>th</span>, 2013</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><img class="center" src="/imgs/url.jpg" title="'password'" ></p>
+
+<p><strong>N</strong>a dica anterior mencionei o uso do comando <em>chage</em> para <strong>forçar</strong> a alteração de senha por parte do usuário em sistemas Linux, mas e se além disso fosse possível melhorar esta prática, tornando a política de senhas de usuários um pouco mais segura?</p>
+
+<p><strong>O</strong> chage também nos permite determinar quando exatamente desejamos que a senha daquele usuário expire, de forma que ele será forçado a criar uma nova senha após aquele determinado tempo. Isto é útil para evitar que uma mesma senha seja utilizada por um longo período de tempo. Particularmente, gosto de forçar a alteração de senhas a cada mês, mas isto dependerá dos sistemas que são acessados e de o quão críticas são as informações e sistemas em jogo.</p>
+
+<p><strong>O</strong> comando chage altera o número de dias entre a alteração de uma senha e sua alteração anterior. Esta informação fica registrada no sistema e será utilizada para determinar quando um usuário precisará alterar sua senha. Esta e outras configurações ficam armazenadas no arquivo de configuração <em>/etc/login.defs</em>, o qual determina configurações que englobem todos os usuários do sistema, inclusive um período máxima antes de uma senha ser expirada.</p>
+
+<p><strong>P</strong>ara verificar as informações sobre quando uma senha expira, digite:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> # chage -l NomeDoUsuário</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>O</strong> comando acima lhe retornará informações gerais sobre aquela conta, tais como: data de última mudança de senha, data em que a senha irá expirar, status atual da senha, número mínimo entre troca de senhas, número máximo entre troca de senhas, número de dias de alerta sobre a mudança de senha, etc.</p>
+
+<p><strong>P</strong>ara efetivar a política de mudança de senha após um determinado tempo, você pode editar diretamente o arquivo <em>/etc/shadow</em> ou utilizar o comando <em>chage</em>, o qual recomendo ao invés do /etc/shadow.</p>
+
+<p><strong>N</strong>o arquivo <em>/etc/shadow</em>, a ordem dos campos é a seguinte:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> {NomeDeUsuário}:{Senha}:{ÚltimaAlteraçãoDeSenha}:{Minimum_days}:{Maximum_days}:{Warn}:{Inactive}:{Expire}:</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Onde,</p>
+
+<p><strong>Minimum_days:</strong> <em>Quantididade mínima de dias entre alterações de senhas. Ex: Uma quantia mínima de dias antes que o usuário possa alterar sua senha.</em></p>
+
+<p><strong>Maximum_days:</strong> <em>Quantidade máxima de dias pelos quais uma senha será válida (após os quais os o usuário é forçado a alterar sua senha).</em></p>
+
+<p><strong>Warn:</strong> <em>O número de dias antes de a senha expirar nos quais o usuário será alertado sobre a sua senha expirar em breve.</em></p>
+
+<p><strong>Expire:</strong> <em>Quantidade de dias desde 1 de Janeiro de 1970 em que a conta expirará. Ex: uma data específica pode ser informada para que, a partir de tal data a senha não possa mais ser utilizada.</em></p>
+
+<p><strong>C</strong>onforme informei anteriormente, costumo recomendar a utilização do comando <em>chage</em> ao invás da edição do arquivo <em>/etc/shadow</em>, o que minimiza as chances de erros.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> # chage -M 60 -m 7 -W 7 NomeDeUsuário</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>O</strong>nde, da mesma forma, <strong>M</strong> = Maximum_days, <strong>m</strong> = Minimum_days e <strong>W</strong> = warn.</p>
+
+<p><strong>B</strong>om proveito&hellip;</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Marcelo Cavalcante Rocha - Kalib</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-08-12T08:41:00-03:00" pubdate data-updated="true">Aug 12<span>th</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/impressoes/'>Impressões</a>, <a class='category' href='/blog/categories/linux/'>Linux</a>, <a class='category' href='/blog/categories/seguranca/'>Segurança</a>, <a class='category' href='/blog/categories/software-livre/'>Software Livre</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://blog.marcelocavalcante.net/blog/2013/08/12/dica-rapida-linux-melhorando-a-politica-de-senhas/" data-via="" data-counturl="http://blog.marcelocavalcante.net/blog/2013/08/12/dica-rapida-linux-melhorando-a-politica-de-senhas/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/08/08/recomendacao-bibliografica-gravidade/" title="Previous Post: Recomendação Bibliográfica: Gravidade">&laquo; Recomendação Bibliográfica: Gravidade</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Sobre mim</h1>
+  <p><img src="http://www.marcelocavalcante.net/imgs/kalib_picture_pq.png" style="float: left; margin-right: 2px; margin-bottom: 2px;"><p align=left><b>M</b>e chamo Marcelo Cavalcante Rocha, também conhecido como Kalib, e sou militante do Software Livre desde 2005. 
+Trabalho com administração de redes, sistemas e segurança da informação em ambientes mistos. 
+Gosto de ler, surfar, ouvir música e assistir um bom filme. 
+Me conheça melhor <a href="http://blog.marcelocavalcante.net/about">clicando aqui</a>.</p></p>
+</section>
+<section>
+  <h1>Posts Recentes</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/08/12/dica-rapida-linux-melhorando-a-politica-de-senhas/">Dica Rápida - Linux - Melhorando a Política de Senhas</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/08/08/recomendacao-bibliografica-gravidade/">Recomendação Bibliográfica: Gravidade</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/08/06/dica-rapida-linux-forcar-usuario-a-trocar-senha-apos-primeiro-login/">Dica Rápida - Linux - Forçar Usuário A Trocar Senha Após Primeiro Login</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/08/04/rails-girls-em-fortaleza-um-palco-para-a-criatividade-feminina/">Rails Girls em Fortaleza - Um palco para a criatividade feminina</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/08/01/renascimento-dot-dot-dot-de-cara-nova/">Renascimento...de cara nova</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/02/06/recomendacao-bibliografica-mago-e-vidro-a-torre-negra-iv/">Recomendação Bibliográfica: Mago e Vidro (A Torre Negra - IV)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/12/13/netstat-saiba-o-que-esta-rolando-em-seu-ambiente/">Netstat - Saiba o que está rolando em seu ambiente...</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+  <h1>Estou lendo</h1>
+  <img align="center" src="/imgs/livros/gravidade.jpg">
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Marcelo Cavalcante Rocha - Kalib -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'marcelocavalcante';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://blog.marcelocavalcante.net/blog/2013/08/12/dica-rapida-linux-melhorando-a-politica-de-senhas/';
+        var disqus_url = 'http://blog.marcelocavalcante.net/blog/2013/08/12/dica-rapida-linux-melhorando-a-politica-de-senhas/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
