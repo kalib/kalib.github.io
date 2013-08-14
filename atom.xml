@@ -4,7 +4,7 @@
   <title><![CDATA[Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2013-08-12T09:44:35-03:00</updated>
+  <updated>2013-08-14T16:32:02-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -12,6 +12,47 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Incompatibilidade: Kernel Linux 3.10.6 e Placa Wireless Broadcom Resultam em Kernel Panic]]></title>
+    <link href="http://blog.marcelocavalcante.net/blog/2013/08/14/incompatibilidade-kernel-linux-3-dot-10-dot-6-e-placa-wireless-broadcom/"/>
+    <updated>2013-08-14T15:04:00-03:00</updated>
+    <id>http://blog.marcelocavalcante.net/blog/2013/08/14/incompatibilidade-kernel-linux-3-dot-10-dot-6-e-placa-wireless-broadcom</id>
+    <content type="html"><![CDATA[<p><img class="center" src="http://blog.marcelocavalcante.net/imgs/kernel_panic.gif" title="'kernel_panic'" ></p>
+
+<p><strong>K</strong>ernel Panic!</p>
+
+<p><strong>F</strong>oi com isto que me deparei logo pela manhã ao chegar no trabalho ao ligar meu notebook.</p>
+
+<p><strong>O</strong>ntem rodei o habitual <em># pacman -Syu</em> para atualizar meu Arch Linux. Dentre as atualizações estava a nova versão estável do kernel linux: 3.10.6</p>
+
+<p><strong>H</strong>oje descobri que esta versão estava resultando em kernel panic para os usuários de placas wireless <em>Broadcom</em>. Sim, sou um deles.</p>
+
+<p><strong>A</strong>pós algumas buscas em logs, percebi que o problema estava se dando com minha placa wireless. Logo ao iniciar o notebook, após alguns segundos, tudo travava e eu recebia o aviso de <strong>kernel panic</strong>.</p>
+
+<p><strong>D</strong>esabilitando minha placa wireless consegui manter o notebook funcionando normalmente. Ao pesquisar, percebi que tratava-se de bug nesta versão do kernel.</p>
+
+<p><strong>S</strong>olução? Downgrade no kernel linux.</p>
+
+<p><strong>P</strong>ara quem ainda possui a versão anterior, <em>3.10.5</em> no diretório de cache, basta executar a instalação local com o pacman.</p>
+
+<p><strong>C</strong>om o seguinte comando você pode descobrir se o pacote ainda se encontra em seu cache:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> $ ls /var/cache/pacman/pkg/ | grep linux-3.10.5</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>C</strong>aso você ainda possua o pacote, basta digitar:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> # pacman -U /var/cache/pacman/pkg/linux-3.10.5-1-x86_64.pkg.tar.xz</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>O</strong> nome do pacote poderá ser diferente para você. Estou utilizando a versão x64 do Arch.</p>
+
+<p><strong>P</strong>or enquanto é melhor manter a versão anterior do kernel, ao menos até o lançamento da versão 3.11, na qual o problema já foi resolvido.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Dica Rápida - Linux - Melhorando a Política de Senhas]]></title>
@@ -1218,79 +1259,6 @@ Rua Castro Monte, 1364 Varjota – Fortaleza, CE
 <p><strong>D</strong>eseja se manter informado? Você também pode seguir o <a href="http://twitter.com/#!/@dia_livre">@dia_livre</a> no twitter e ficar por dentro do que rola.</p>
 
 <p><strong>E</strong>m breve teremos maiores notícias sobre a primeira edição.</p>
-
-<p><strong>A</strong>braços!</p>
-
-<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Wicd-KDE - Tornando seu Wicd no KDE mais amigável]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2011/04/28/wicd-kde-tornando-seu-wicd-no-kde-mais-amigavel/"/>
-    <updated>2011-04-28T09:29:35-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2011/04/28/wicd-kde-tornando-seu-wicd-no-kde-mais-amigavel</id>
-    <content type="html"><![CDATA[<p><strong>S</strong>audações pessoal,</p>
-
-<p><strong>P</strong>ara aqueles que também não curtem de forma alguma a aparência padrão GTK do Wicd e não conhecem ainda a interface que foi lançada posteriormente em QT, fica a dica: Troquem com urgência!</p>
-
-<p><strong>E</strong> o network-manager?</p>
-
-<p><strong>B</strong>om, o network-manager é um excelente(sendo modesto) gerenciador de redes para o Linux, porém infelizmente ele peca muito em sua interface para o KDE. Compare o network-manager em suas interfaces gtk (Gnome) e qt (KDE) e entenderá o que eu digo. A versão para KDE é extremamente confusa e bagunçada em comparação com a interface para o Gnome.</p>
-
-<p><strong>E</strong>is que muitas distribuições começaram a sugerir a utilização do Wicd como gerenciador de redes para quem utiliza o KDE.</p>
-
-<p><strong>N</strong>o Arch, por exemplo, encorajamos fortemente o uso do Wicd com o KDE ao invés do network-manager. Sim, sempre utilizei ele, porém&hellip;</p>
-
-<p><img src="http://3.bp.blogspot.com/_lqr72cLxjWU/TKEXqNjH-3I/AAAAAAAAACM/WKa5EWZ75V0/s1600/screenshot-20100928@001439.png" alt="" /></p>
-
-<p><strong>E</strong> então? Meio bizarro, certo?! Alguém havia pensado em dizer &ldquo;Mas ele não é tão feio..&rdquo;?</p>
-
-<p><strong>B</strong>om, que tal apresentar uma alternativa a isto? O wicd-kde!</p>
-
-<p><strong>C</strong>omo uma imagem vale mais que mil palavras:</p>
-
-<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/04/wicdkde1.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/04/wicdkde1.png" alt="" /></a></p>
-
-<p><strong>M</strong>ais amigável certo? Uma interface mais limpa, organizada e bonita. Bem ao estilo &ldquo;clean&rdquo;, como alguns preferem dizer.</p>
-
-<p><strong>M</strong>as, deixando um pouco a frescura de lado. Não recomendo a utilização da interface em qt apenas por questões de estética.</p>
-
-<p><strong>A</strong> verdade é que o seu ambiente fica mais limpo com esta interface. Limpo? Sim.</p>
-
-<p><strong>S</strong>e você utiliza o KDE mas possui aplicações em gtk, por consequência você possuirá uma série de bibliotecas instaladas em seu ambiente para fazer com que esta aplicação em gtk funcione da maneira correta. Porém, se você instala uma aplicação em qt, pouca coisa adicional será necessária, visto que seu sistema já está preparado para rodar este tipo de aplicação.</p>
-
-<p><strong>D</strong>igamos que é uma união: Útil ao Agradável!</p>
-
-<p>E a parte que interessa? Instalar, instalar, instalar!</p>
-
-<p><strong>I</strong>nfelizmente, nem todas as distribuições empacotaram o wicd-kde até então, mas se você é usuário <strong><a href="http://archlinux.org">Arch Linux</a></strong>, a sua vida será mais fácil.</p>
-
-<p><strong>O</strong> pacote wicd-kde encontra-se pronto no <a href="http://aur.archlinux.org/packages.php?ID=40735">AUR</a>.</p>
-
-<p><strong>O</strong> processo é o já manjado:</p>
-
-<p><strong>1-</strong> Baixar o arquivo compactado:</p>
-
-<p>$ wget <a href="http://aur.archlinux.org/packages/wicd-client-kde-git/wicd-client-kde-git.tar.gz">http://aur.archlinux.org/packages/wicd-client-kde-git/wicd-client-kde-git.tar.gz</a></p>
-
-<p><strong>2-</strong> descompactar:</p>
-
-<p>$ tar -xvzf wicd-client-kde-git.tar.gz</p>
-
-<p><strong>3-</strong> entrar no diretório e em seguida executar o PKGBUILD para geração do pacote em si:</p>
-
-<p>$ cd wicd-client-kde-git</p>
-
-<p>$ makepkg</p>
-
-<p><strong>4-</strong> Instalar o pacote gerado:</p>
-
-<h1>pacman -U wicd-client-kde-git-20110426-1-x86_64.pkg.tar.xz</h1>
-
-<p><strong>F</strong>eito. ;]</p>
-
-<p><strong>H</strong>ave Fun!</p>
 
 <p><strong>A</strong>braços!</p>
 

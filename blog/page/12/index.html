@@ -9,7 +9,7 @@
   <meta name="author" content="Marcelo Cavalcante Rocha - Kalib">
 
   
-  <meta name="description" content="Para quem não conhece, brute-force é um ataque bastante utilizado em serviços web tais como smtp, pop, ssh, ftp, iax dentre outros. O ataque &hellip;">
+  <meta name="description" content="Bom, para quem não conhece nada sobre Brute-Force ou apenas ouviu falar vagamente mas não tem certeza sobre o que realmente é um ataque deste tipo, &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -80,6 +80,148 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/02/15/brute-force-o-dirb-dirbuster-lhe-ajuda-a-identificar-vulnerabilidades-em-seu-site/">Brute-force? O Dirb&#8230; DirBuster Lhe Ajuda a Identificar Vulnerabilidades Em Seu Site</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-02-15T10:23:19-03:00" pubdate data-updated="true">Feb 15<span>th</span>, 2011</time>
+        
+         | <a href="/blog/2011/02/15/brute-force-o-dirb-dirbuster-lhe-ajuda-a-identificar-vulnerabilidades-em-seu-site/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><strong>B</strong>om, para quem não conhece nada sobre Brute-Force ou apenas ouviu falar vagamente mas não tem certeza sobre o que realmente é um ataque deste tipo, sugiro dar uma lida em meu último post, onde apresentei algumas informações sobre brute-force bem como uma ferramenta que podemos utilizar para testar nossos sites e verificar o quão vulneráveis eles estão a este tipo de ataque. Segue link para o mesmo:</p>
+
+<p><a href="http://marcelocavalcante.net/portal/2011/01/31/brute-force-o-dirb-lhe-ajuda-a-identificar-vulnerabilidades-em-seu-site/">Brute-Force? O Dirb lhe ajuda a identificar vulnerabilidade em seu site!</a></p>
+
+<p><strong>A</strong>gora que já conhecemos um pouco sobre as técnicas de brute-force e a ferramenta Dirb, que tal conhecer outra mais apresentável?</p>
+
+<p><strong>M</strong>e refiro ao <a href="http://www.owasp.org/index.php/DirBuster">DirBuster</a>. Uma aplicação multithread desenvolvida pelo <a href="http://www.owasp.org/">OWASP</a> (The Open Web Application Security Project) que tem como objetivo realizar brute-force em diretórios e nomes de arquivos na web. Assim como o Dirb, o DirBuster trabalha em cima de dicionários ou listas. Ao todo ele trás 9 listas que podem ser utilizadas para nossas varreduras e testes. Como todas as suas listas foram criadas na unha, após exaustívas pesquisas e buscas na web por nomes mais utilizados para arquivos e diretórios em servidores web, o DirBuster mostra-se extremamente efetivo para este tipo de atividade conseguindo encontrar até mesmo os arquivos mais ocultos e escondidos.</p>
+
+<p><strong>M</strong>as se você não ficar satisfeito, <del>nós garantimos a devolução do seu dinheiro</del>, com apenas utilizar o modelo de dicionários, o DirBuster ainda lhe possibilita o ataque de brute-force mais purista. Tentativa e erro com combinações possíveis de caracteres. Claro, se você tem muito poder de processamento e tempo sobrando, boa sorte. ;]</p>
+
+<p><strong>L</strong>egal Kalib, quer dizer que agora posso sair invadindo sites?</p>
+
+<p><del>o.O Como diria o Chaves: Ai que burrrrroooo.. dá zero pra ele&hellip;</del></p>
+
+<p><strong>N</strong>ão amigo. O meu intuito não é incentivar ou apresentar qualquer mecanismo ou técnica para este tipo de atividade. O DirBuster não foi feito para este propósito e nem conseguirá efetuar isto. Ele não fará nenhum tipo de exploit em arquivos ou diretórios que ele encontre. O DirBuster serve exatamente para identificar possíveis alvos para estes tipos de ataque, o que nos permite agir de forma corretiva ou preventiva em nossos servidores web. ;]</p>
+
+<p><strong>C</strong>hega de lenga lenga.. vamos ao que interessa!</p>
+
+<p><strong>C</strong>omo instalar?</p>
+
+<p><img src="http://blog.leandroinacio.eti.br/wp-content/uploads/2009/10/arch-linux-logo1.png" alt="Arch Linux" />
+Bom, se você utiliza <a href="http://archlinux.org">Arch Linux</a>, pode pegar o pacote no AUR através do seguinte link(Lembrem-se de votar nele):</p>
+
+<p><a href="http://aur.archlinux.org/packages.php?ID=20809">http://aur.archlinux.org/packages.php?ID=20809</a></p>
+
+<p><strong>F</strong>eito isto, basta seguir o procedimento padrão para pacotes do AUR.</p>
+
+<blockquote><p>1- Descompactar: [kalib@tuxcaverna downloads]$ tar -xvzf dirbuster.tar.gz</p></blockquote>
+
+<p>2- Entrar no diretório dirbuster e gerar o pacote: [kalib@tuxcaverna dirbuster]$ makepkg</p>
+
+<p>3- Instalar o pacote: [kalib@tuxcaverna dirbuster]$ sudo pacman -U dirbuster-0.12-1-x86_64.pkg.tar.xz</p>
+
+<p><strong>F</strong>eito. ;]</p>
+
+<p><strong>O</strong>utras distribuições? Não tenho certeza se o pessoal de outras distribuições empacotou o DirBuster, portanto provavelmente você vai precisar baixar o arquivo compactado do site oficial do projeto. Busquei tanto no Debian quanto no (K)Ubuntu 10.10 e em nenhum destes encontrei o DirBuster nos repositórios através do aptitude.</p>
+
+<p><strong>P</strong>ortanto se você não utiliza o Arch, segue link para download da ferramenta:</p>
+
+<p><a href="http://www.owasp.org/index.php/DirBuster#tab=Download">http://www.owasp.org/index.php/DirBuster#tab=Download</a></p>
+
+<p><strong>M</strong>as qual a cara do bicho?</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster8.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster8.png" alt="" /></a></p>
+
+<p><strong>C</strong>omo explicado antes, ele funciona parecido com o Dirb, porém em uma interface GUI (gráfica).</p>
+
+<p><strong>C</strong>omo podem ver, é uma interface simples e de fácil manuseio.</p>
+
+<p><strong>V</strong>amos aos pontos:</p>
+
+<p>1- No campo Target, você deverá inserir a URL que será alvo do seu brute-force de diretórios e arquivos web.</p>
+
+<p>2- Logo abaixo, vocẽ escolhe se deseja utilizar apenas GET ou HEAD &amp; GET.</p>
+
+<p>3- Agora é a vez de escolher quantas threads deseja utilizar. Quanto maior o número de threads, mais requisições simultâneas você estará utilizando. ;]</p>
+
+<p>4- Abaixo você deverá escolher o tipo de brute-force.</p>
+
+<ul>
+<li><p>Baseado em dicionários, neste caso você deverá escolher um dos dicionários que a ferramenta já lhe disponibiliza através do seguinte caminho: /opt/DirBuster/</p></li>
+<li><p>Baseado em brute-force puro. Neste caso você deverá escolher qual conjunto de caracteres deseja que sejam utilizados, quantidade mínima e máxima de caracteres por tentativa.</p></li>
+</ul>
+
+
+<p>5- Em seguida é a hora de escolher os filtros: Deseja fazer brute-force apenas em diretórios? Arquivos também? Modo recursivo? Extensões em branco? Diretório inicial para o scan? Que tipo de extensão?&hellip;</p>
+
+<p><strong>E</strong> como é o retorno que ele me dá?</p>
+
+<p><strong>B</strong>om, vou escolher meu alvo e vou utilizar 20 threads em simultâneo. Não vou deixar a ferramenta rodando por muito tempo pois estou apenas fazendo uma demonstração.</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster21.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster21.png" alt="" /></a></p>
+
+<p><strong>C</strong>omo podem ver, filtrei para que o brute-force comece no diretório raiz (/) e optei pela maior lista que o DirBuster possui como dicionário. Deixei rodando por cerca de 30 segundos e já tive o seguinte resultado.</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster3.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster3.png" alt="" /></a></p>
+
+<p><strong>A</strong> parte borrada no início da imagem não é um defeito. Vocês não pensaram que eu iria deixar exposto o alvo no qual fiz o teste, certo? No caso, optei pelo site de uma de nossas instituições de ensino. Bom, a imagem acima é um exemplo do retorno que consigo com a ferramenta. É a visão em Lista. Além dela você pode optar pela visão em árvore, que, como o nome informa, lhe trará a árvore de diretórios, sub-diretórios e arquivos que foram encontrados. Abaixo um exemplo da visão em árvore:</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster4.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster4.png" alt="" /></a></p>
+
+<p><strong>O</strong> resultado, mesmo deixando a ferramenta rodando por apenas 30 segundos, foi o esperado. Um espantoso caso de descuido com a segurança do site.</p>
+
+<p><strong>A</strong>lguns leves exemplos que me chamaram a atenção na lista que consegui:</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster5.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster5.png" alt="" /></a></p>
+
+<p><strong>U</strong>m diretório de administração exposto desta forma indicando que existe uma sessão do site com acesso permitido apenas para administradores. O que isso me leva a crer? Que quem conseguir acesso a esta sessão consegue manipular o sistema do site? O que nos leva a uma posterior análise da página index contida nele que possibilita uma tentativa de brute-force de login e senha? psssiiiuuuu&hellip; o.O</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster6.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster6.png" alt="" /></a>
+<strong> U</strong>m diretório para uploads de Arquivos? Que tal testar ele? Apenas usuários administradores possuem permissão de upload? Ou alunos conseguem fazer upload de fotos, trabalhos, por exemplo? De qualquer forma, isso me indica que existe a possibilidade de eu subir arquivos para o servidor deles. Que tal um script em php que me permitiria ter um console shell no servidor deles para inclusão, exclusão, edição, etc.. ? pssiiiiuuuu&hellip; o.O</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster7.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster7.png" alt="" /></a></p>
+
+<p><strong>P</strong>ode não ser nada.. mas também pode ser muita coisa.. O que um diretório chamado &ldquo;gerencia&rdquo; faz ali tão exposto e com um nome tão&hellip; tão&hellip; discreto? o.O psssiiiuuuuu</p>
+
+<p><strong>A</strong>cho que já conseguiram entender um pouco do que o DirBuster faz.</p>
+
+<p><strong>A</strong>braços!</p>
+
+<p><strong>H</strong>appy Hacking&hellip;</p>
+
+<p><strong>PS: Wrong developers! Never play security by obscurity!</strong></p>
+
+<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -411,122 +553,6 @@ naodigo
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/12/29/chaveamento-de-interfaces-de-rede-placas-broadcom/">Chaveamento De Interfaces De Rede - Placas Broadcom</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-12-29T09:25:13-03:00" pubdate data-updated="true">Dec 29<span>th</span>, 2010</time>
-        
-         | <a href="/blog/2010/12/29/chaveamento-de-interfaces-de-rede-placas-broadcom/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><img src="http://cdn.venturebeat.com/wp-content/uploads/2010/10/broadcom-chip.jpg" alt="broadcom" /></p>
-
-<p><strong>C</strong>omo diria a Feiticeira (não lembro o nome real dela), não é feitiçaria, é tecnologia!</p>
-
-<p><strong>C</strong>omo já expliquei no outro post, tive problemas com meu notebook e por isso passei muito tempo afastado do blog. Bom, recentemente comprei outro e cá estou novamente em casa.</p>
-
-<p><strong>M</strong>as, como nem tudo é um mar de rosas&hellip; toda mudança trás impactos positivos e negativos.</p>
-
-<p><img src="http://blog.grupojbr.com.br/up/g/gr/blog.grupojbr.com.br/img/20101114090300_634036567553112000vostro3300.jpg" alt="" /></p>
-
-<p><strong>A</strong> máquina escolhida foi um Dell Vostro 3300. Com certeza uma excelente máquina e que eu não deixaria de recomendar para ninguém.</p>
-
-<p><strong>P</strong>ara quem comprou algum Dell recentemente, ou pensou em comprar, não deve ser uma novidade que estas máquinas, em sua grande maioria, estão trazendo chipsets wireless da Broadcom, ao invés dos Intel.</p>
-
-<p><strong>Q</strong>uando pensei em comprar, refleti bastante sobre isto, visto que os drivers para broadcom no linux já tiveram um passado um tanto quanto nebuloso em se tratando de Wireless.</p>
-
-<p><strong>R</strong>esolvi encarar e não me arrependo. A performance está excelente. O driver realmente funcionou como deveria funcionar porém tive um pequeno problema.</p>
-
-<p><strong>U</strong>tilizo <a href="http://www.kde.org">KDE</a> como gerenciador de janelas em meu <a href="http://www.archlinux.org">ArchLinux</a> e <a href="http://wicd.sourceforge.net/">Wicd</a> como gerenciador de redes. Estava tudo funcionando bem mas ao reiniciar a máquina um certo dia percebo que o Wicd não havia encontrado nenhuma rede wireless. o.O</p>
-
-<p><strong>R</strong>einicio novamente e ele volta a encontrar. Feitiçaria? Fiquei curioso e resolvi reiniciar novamente e&hellip; funcionou. Pensei: &ldquo;Foi apenas um susto..ela devia querer descansar..&rdquo;</p>
-
-<p><strong>M</strong>as no dia seguinte ao ligar em casa percebi que, novamente, a interface wireless não foi encontrada pelo Wicd. Lembrei do fato anterior e reiniciei novamente. A interface continuava sem funcionar no Wicd.</p>
-
-<p><strong>L</strong>hes poupando dos testes que resolvi fazer para isolar o problema, descobri que as vezes a minha interface wireless estava subindo como eth0, as vezes subindo como eth1. Isso, obviamente, deixava o Wicd confuso, pois na configuração dele é necessário especificar qual será a interface wireless e qual será a wired (cabeada). Portanto, quando o notebook subia com a wireless na eth1, o Wicd funcionava numa boa, mas quando subia na eth0 o Wicd continuava tentando escanear redes wireless com a eth1, portanto não funcionava.</p>
-
-<p><strong>A</strong>pós algumas pesquisas descobri que este é um acontecimento comum em relação ao driver da broadcom. Este chaveamento ou swap de interfaces de rede acontece realmente de forma aleatória.</p>
-
-<p><strong>C</strong>omo resolver? Amarrando a interface ao nome, literalmente.</p>
-
-<p><strong>A</strong> placa começou a funcionar da forma esperada após vincular via regra o MAC da interface ao nome que eu desejava para ela. Desta forma, na hora de subir, ambas passam a subir de acordo com a regra que eu especifiquei, o que resolveu o problema pois a interface wireless passou a sempre subir com o mesmo nome, evitando que o Wicd tentasse escanear com uma interface que não existe.</p>
-
-<p><strong>S</strong>em mais papo furado.. mãos à obra!</p>
-
-<p><strong>A</strong>ntes de mais nada é necessário criar, caso você já não possua, o arquivo <em>/etc/udev/rules.d/10-network.rules</em> acrescentando o seguinte conteúdo:</p>
-
-<p><em>SUBSYSTEM==&ldquo;net&rdquo;, ATTR{address}==&ldquo;aa:bb:cc:dd:ee:ff&rdquo;, NAME=&ldquo;eth0&rdquo;</em>
-_ SUBSYSTEM==&ldquo;net&rdquo;, ATTR{address}==&ldquo;aa:bb:cc:dd:ee:ff&rdquo;, NAME=&ldquo;eth1&rdquo;_</p>
-
-<p>o.O wtf?</p>
-
-<p><strong>B</strong>om, com isto você estará deixando claro para o sistema qual o nome que deverá ser atribuído para cada interface.</p>
-
-<p><strong>V</strong>ocê deverá apenas substituir o &ldquo;aa:bb:cc:dd:ee:ff&rdquo; e &ldquo;ff:ee:dd:cc:bb:aa&rdquo; pelos respectivos endereços MAC das interfaces.</p>
-
-<p><strong>O</strong> valor dos campos NAME podem ser alterados de acordo com sua vontade, por exemplo: eth0 para a cabeada e wlan0 para a wireless.</p>
-
-<p><strong>C</strong>aso não saiba como conseguir o endereço MAC de suas interfaces, utilize o seguinte comando:</p>
-
-<p><em># ifconfig | grep HW</em></p>
-
-<p><strong>I</strong>sso lhe dará um retorno parecido com o seguinte:</p>
-
-<p><em>eth0  Link encap:Ethernet  HWaddr <strong>A4:BA:DB:D7:41:C0</strong>
-eth1  Link encap:Ethernet  HWaddr <strong>1C:65:9D:6E:65:1B</strong></em></p>
-
-<p><strong>O</strong>s endereços MAC são os valores que destaquei acima.</p>
-
-<p><strong>ATENÇÃO:</strong> Apesar de o MAC constantemente ser escrito com letras em maiúsculo como apresentado acima, no caso do arquivo 10-network.rules você deverá utilizar letras em minúsculo. Exato, o arquivo é case sensitive, portanto só funcionará desta forma.</p>
-
-<p><strong>C</strong>aso você receba uma saída parecida com a minha e queira se certificar de qual dos dois endereços MAC é o que realmente representa a interface wireless pode testar com os seguintes comando:</p>
-
-<p><em># iwlist eth0 scanning</em></p>
-
-<p>e&hellip;﻿</p>
-
-<p><em># iwlist eth1 scanning</em></p>
-
-<p><strong>V</strong>ocê perceberá que terá resultados diferentes. O que retornar um scan completo de redes wireless disponíveis, obviamente, é a interface Wireless. ;]</p>
-
-<p><strong>A</strong>pós ter escolhido o nome que deseja para cada uma de suas interfaces pode salvar o arquivo de regra.</p>
-
-<p><strong>ATENÇÃO²:</strong> Certifique-se de atualizar o seu arquivo <em>/etc/rc.conf</em> para evitar que os nomes das interfaces estejam diferentes das que você criou no arquivo de regras.</p>
-
-<p><strong>É</strong> isto.. agora sua interface funcinoará da forma esperada.</p>
-
-<p><strong>A</strong>braços!</p>
-
-<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/13/">&larr; Anteriores</a>
@@ -551,6 +577,10 @@ Me conheça melhor <a href="http://blog.marcelocavalcante.net/about">clicando aq
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/08/14/incompatibilidade-kernel-linux-3-dot-10-dot-6-e-placa-wireless-broadcom/">Incompatibilidade: Kernel Linux 3.10.6 e Placa Wireless Broadcom Resultam em Kernel Panic</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/08/12/dica-rapida-linux-melhorando-a-politica-de-senhas/">Dica Rápida - Linux - Melhorando a Política de Senhas</a>
       </li>
     
@@ -572,10 +602,6 @@ Me conheça melhor <a href="http://blog.marcelocavalcante.net/about">clicando aq
     
       <li class="post">
         <a href="/blog/2012/02/06/recomendacao-bibliografica-mago-e-vidro-a-torre-negra-iv/">Recomendação Bibliográfica: Mago e Vidro (A Torre Negra - IV)</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2011/12/13/netstat-saiba-o-que-esta-rolando-em-seu-ambiente/">Netstat - Saiba o que está rolando em seu ambiente&#8230;</a>
       </li>
     
   </ul>

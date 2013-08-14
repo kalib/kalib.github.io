@@ -861,12 +861,18 @@
         <lastmod>2013-08-12T09:43:58-03:00</lastmod>
     </url>
     <url>
+        <loc>
+            http://blog.marcelocavalcante.net/blog/2013/08/14/incompatibilidade-kernel-linux-3-dot-10-dot-6-e-placa-wireless-broadcom/
+        </loc>
+        <lastmod>2013-08-14T16:31:57-03:00</lastmod>
+    </url>
+    <url>
         <loc>http://blog.marcelocavalcante.net/about/</loc>
         <lastmod>2013-08-01T11:35:15-03:00</lastmod>
     </url>
     <url>
         <loc>http://blog.marcelocavalcante.net/</loc>
-        <lastmod>2013-08-12T09:43:58-03:00</lastmod>
+        <lastmod>2013-08-14T16:31:57-03:00</lastmod>
     </url>
     <url>
         <loc>http://blog.marcelocavalcante.net/robots.txt</loc>
@@ -874,6 +880,6 @@
     </url>
     <url>
         <loc>http://blog.marcelocavalcante.net/blog/archives/</loc>
-        <lastmod>2013-08-12T09:43:58-03:00</lastmod>
+        <lastmod>2013-08-14T16:31:57-03:00</lastmod>
     </url>
 </urlset>

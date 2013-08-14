@@ -9,7 +9,7 @@
   <meta name="author" content="Marcelo Cavalcante Rocha - Kalib">
 
   
-  <meta name="description" content="Na dica anterior mencionei o uso do comando chage para forçar a alteração de senha por parte do usuário em sistemas Linux, mas e se além disso fosse &hellip;">
+  <meta name="description" content="Kernel Panic! Foi com isto que me deparei logo pela manhã ao chegar no trabalho ao ligar meu notebook. Ontem rodei o habitual # pacman -Syu para &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -80,6 +80,76 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/08/14/incompatibilidade-kernel-linux-3-dot-10-dot-6-e-placa-wireless-broadcom/">Incompatibilidade: Kernel Linux 3.10.6 E Placa Wireless Broadcom Resultam Em Kernel Panic</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-08-14T15:04:00-03:00" pubdate data-updated="true">Aug 14<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/08/14/incompatibilidade-kernel-linux-3-dot-10-dot-6-e-placa-wireless-broadcom/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img class="center" src="/imgs/kernel_panic.gif" title="'kernel_panic'" ></p>
+
+<p><strong>K</strong>ernel Panic!</p>
+
+<p><strong>F</strong>oi com isto que me deparei logo pela manhã ao chegar no trabalho ao ligar meu notebook.</p>
+
+<p><strong>O</strong>ntem rodei o habitual <em># pacman -Syu</em> para atualizar meu Arch Linux. Dentre as atualizações estava a nova versão estável do kernel linux: 3.10.6</p>
+
+<p><strong>H</strong>oje descobri que esta versão estava resultando em kernel panic para os usuários de placas wireless <em>Broadcom</em>. Sim, sou um deles.</p>
+
+<p><strong>A</strong>pós algumas buscas em logs, percebi que o problema estava se dando com minha placa wireless. Logo ao iniciar o notebook, após alguns segundos, tudo travava e eu recebia o aviso de <strong>kernel panic</strong>.</p>
+
+<p><strong>D</strong>esabilitando minha placa wireless consegui manter o notebook funcionando normalmente. Ao pesquisar, percebi que tratava-se de bug nesta versão do kernel.</p>
+
+<p><strong>S</strong>olução? Downgrade no kernel linux.</p>
+
+<p><strong>P</strong>ara quem ainda possui a versão anterior, <em>3.10.5</em> no diretório de cache, basta executar a instalação local com o pacman.</p>
+
+<p><strong>C</strong>om o seguinte comando você pode descobrir se o pacote ainda se encontra em seu cache:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> $ ls /var/cache/pacman/pkg/ | grep linux-3.10.5</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>C</strong>aso você ainda possua o pacote, basta digitar:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> # pacman -U /var/cache/pacman/pkg/linux-3.10.5-1-x86_64.pkg.tar.xz</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>O</strong> nome do pacote poderá ser diferente para você. Estou utilizando a versão x64 do Arch.</p>
+
+<p><strong>P</strong>or enquanto é melhor manter a versão anterior do kernel, ao menos até o lançamento da versão 3.11, na qual o problema já foi resolvido.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -217,74 +287,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/08/06/dica-rapida-linux-forcar-usuario-a-trocar-senha-apos-primeiro-login/">Dica Rápida - Linux - Forçar Usuário a Trocar Senha Após Primeiro Login</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-08-06T08:20:00-03:00" pubdate data-updated="true">Aug 6<span>th</span>, 2013</time>
-        
-         | <a href="/blog/2013/08/06/dica-rapida-linux-forcar-usuario-a-trocar-senha-apos-primeiro-login/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><img class="center" src="/imgs/password.jpg" title="'password'" ></p>
-
-<p><strong>É</strong> natural encontrar pessoas que utilizam linux a pouco tempo (ou que nunca utilizaram) questionando aspectos simples que seguem o jargão: <em>&ldquo;Mas no Windows eu consigo fazer isso, enquanto que no Linux&hellip;.&rdquo;</em></p>
-
-<p><strong>I</strong>sso não é novidade alguma e, de fato, é um comportamento esperado, embora demonstre apenas uma mera falta de boa vontade para pesquisar um pouco. O fato é que por vezes encontro pessoas me questionando sobre alguns destes <em>recursos em falta</em> no mundo Linux, quando na verdade eles, na grande maioria das vezes, não estão em falta.</p>
-
-<p><strong>U</strong>m exemplo recente disto se deu quando um colega (não se preocupe, seu nome está a salvo) me perguntou:</p>
-
-<blockquote><p><em>Porque o Linux não tem um recurso para forçar um usuário a alterar sua senha após o primeiro login? Isso me ajuda muito como SysAdmin em servidores Windows.</em></p></blockquote>
-
-<p><strong>D</strong>evo concordar com ele no sentido de que este recurso ajuda muito a vida de um SysAdmin. Sejamos justos, as pessoas vivem esquecendo suas senhas. Segunda-feira? Dia mundial do <em>&ldquo;esqueci minha senha, você pode gerar outra por favor?&rdquo;</em></p>
-
-<p><strong>P</strong>orém, devo acrescentar que o Linux possui sim este recurso (e não é uma novidade). O chage é apenas uma das formas de o fazer.</p>
-
-<p><strong>S</strong>upondo que seu usuário esqueceu sua senha e você deseja possibilitar que ele crie uma nova. Você pode mudar a senha dele para qualquer coisa que venha em sua mente, por exemplo: <em>123mudar456</em></p>
-
-<p><strong>E</strong>m seguida, digite o seguinte comando:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'> # chage -d 0 {nome-do-usuário}</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>S</strong>upondo que eu tenha alterado a senha do usuário <em>linus.torvalds</em> para <em>123mudar456</em>, o comando seria:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'> # chage -d 0 linus.torvalds</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>O</strong> parâmetro -d determina quando a senha do mesmo expira, ou deverá ser trocada. Você pode determinar uma data específica, a qual deve ser indicada no formato AAAA-MM-DD, porém, ao invés da data, o 0 indica que a senha deverá ser trocada após o primeiro login daquele usuário.</p>
-
-<p><strong>S</strong>imples, certo?!</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Anteriores</a>
@@ -305,6 +307,10 @@ Me conheça melhor <a href="http://blog.marcelocavalcante.net/about">clicando aq
 <section>
   <h1>Posts Recentes</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/08/14/incompatibilidade-kernel-linux-3-dot-10-dot-6-e-placa-wireless-broadcom/">Incompatibilidade: Kernel Linux 3.10.6 e Placa Wireless Broadcom Resultam em Kernel Panic</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2013/08/12/dica-rapida-linux-melhorando-a-politica-de-senhas/">Dica Rápida - Linux - Melhorando a Política de Senhas</a>
@@ -328,10 +334,6 @@ Me conheça melhor <a href="http://blog.marcelocavalcante.net/about">clicando aq
     
       <li class="post">
         <a href="/blog/2012/02/06/recomendacao-bibliografica-mago-e-vidro-a-torre-negra-iv/">Recomendação Bibliográfica: Mago e Vidro (A Torre Negra - IV)</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2011/12/13/netstat-saiba-o-que-esta-rolando-em-seu-ambiente/">Netstat - Saiba o que está rolando em seu ambiente&#8230;</a>
       </li>
     
   </ul>

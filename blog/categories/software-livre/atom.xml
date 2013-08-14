@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Software Livre | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/blog/categories/software-livre/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2013-08-12T09:44:35-03:00</updated>
+  <updated>2013-08-14T16:32:25-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -14,11 +14,52 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Incompatibilidade: Kernel Linux 3.10.6 e Placa Wireless Broadcom Resultam em Kernel Panic]]></title>
+    <link href="http://blog.marcelocavalcante.net/blog/2013/08/14/incompatibilidade-kernel-linux-3-dot-10-dot-6-e-placa-wireless-broadcom/"/>
+    <updated>2013-08-14T15:04:00-03:00</updated>
+    <id>http://blog.marcelocavalcante.net/blog/2013/08/14/incompatibilidade-kernel-linux-3-dot-10-dot-6-e-placa-wireless-broadcom</id>
+    <content type="html"><![CDATA[<p>{% img center /imgs/kernel_panic.gif &lsquo;kernel_panic&rsquo; %}</p>
+
+<p><strong>K</strong>ernel Panic!</p>
+
+<p><strong>F</strong>oi com isto que me deparei logo pela manhã ao chegar no trabalho ao ligar meu notebook.</p>
+
+<p><strong>O</strong>ntem rodei o habitual <em># pacman -Syu</em> para atualizar meu Arch Linux. Dentre as atualizações estava a nova versão estável do kernel linux: 3.10.6</p>
+
+<p><strong>H</strong>oje descobri que esta versão estava resultando em kernel panic para os usuários de placas wireless <em>Broadcom</em>. Sim, sou um deles.</p>
+
+<p><strong>A</strong>pós algumas buscas em logs, percebi que o problema estava se dando com minha placa wireless. Logo ao iniciar o notebook, após alguns segundos, tudo travava e eu recebia o aviso de <strong>kernel panic</strong>.</p>
+
+<p><strong>D</strong>esabilitando minha placa wireless consegui manter o notebook funcionando normalmente. Ao pesquisar, percebi que tratava-se de bug nesta versão do kernel.</p>
+
+<p><strong>S</strong>olução? Downgrade no kernel linux.</p>
+
+<p><strong>P</strong>ara quem ainda possui a versão anterior, <em>3.10.5</em> no diretório de cache, basta executar a instalação local com o pacman.</p>
+
+<p><strong>C</strong>om o seguinte comando você pode descobrir se o pacote ainda se encontra em seu cache:</p>
+
+<p><code>
+ $ ls /var/cache/pacman/pkg/ | grep linux-3.10.5
+</code></p>
+
+<p><strong>C</strong>aso você ainda possua o pacote, basta digitar:</p>
+
+<p><code>
+ # pacman -U /var/cache/pacman/pkg/linux-3.10.5-1-x86_64.pkg.tar.xz
+</code></p>
+
+<p><strong>O</strong> nome do pacote poderá ser diferente para você. Estou utilizando a versão x64 do Arch.</p>
+
+<p><strong>P</strong>or enquanto é melhor manter a versão anterior do kernel, ao menos até o lançamento da versão 3.11, na qual o problema já foi resolvido.</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Dica Rápida - Linux - Melhorando a Política de Senhas]]></title>
     <link href="http://blog.marcelocavalcante.net/blog/2013/08/12/dica-rapida-linux-melhorando-a-politica-de-senhas/"/>
     <updated>2013-08-12T08:41:00-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2013/08/12/dica-rapida-linux-melhorando-a-politica-de-senhas</id>
-    <content type="html"><![CDATA[<p><img class="center" src="/imgs/url.jpg" title="&lsquo;password&rsquo;" ></p>
+    <content type="html"><![CDATA[<p>{% img center /imgs/url.jpg &lsquo;password&rsquo; %}</p>
 
 <p><strong>N</strong>a dica anterior mencionei o uso do comando <em>chage</em> para <strong>forçar</strong> a alteração de senha por parte do usuário em sistemas Linux, mas e se além disso fosse possível melhorar esta prática, tornando a política de senhas de usuários um pouco mais segura?</p>
 
@@ -69,7 +110,7 @@
     <link href="http://blog.marcelocavalcante.net/blog/2013/08/06/dica-rapida-linux-forcar-usuario-a-trocar-senha-apos-primeiro-login/"/>
     <updated>2013-08-06T08:20:00-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2013/08/06/dica-rapida-linux-forcar-usuario-a-trocar-senha-apos-primeiro-login</id>
-    <content type="html"><![CDATA[<p><img class="center" src="/imgs/password.jpg" title="&lsquo;password&rsquo;" ></p>
+    <content type="html"><![CDATA[<p>{% img center /imgs/password.jpg &lsquo;password&rsquo; %}</p>
 
 <p><strong>É</strong> natural encontrar pessoas que utilizam linux a pouco tempo (ou que nunca utilizaram) questionando aspectos simples que seguem o jargão: <em>&ldquo;Mas no Windows eu consigo fazer isso, enquanto que no Linux&hellip;.&rdquo;</em></p>
 
