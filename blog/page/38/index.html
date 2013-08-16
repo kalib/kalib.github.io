@@ -9,7 +9,7 @@
   <meta name="author" content="Marcelo Cavalcante Rocha - Kalib">
 
   
-  <meta name="description" content="Nesta curta dica irei apresentar uma dica simples e rápida de como alterar o endereço MAC de uma interface de rede no Linux. MAC = Media Access &hellip;">
+  <meta name="description" content="Para os que curtem jogos de rpg online e em especial os que curtem o famoso Ragnarok, um dos mais jogados nos dias atuais, esta notícia será muito &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -80,6 +80,60 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/12/18/ragnarok-agora-no-archlinux/">Ragnarok Agora No ArchLinux</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-12-18T14:06:00-03:00" pubdate data-updated="true">Dec 18<span>th</span>, 2008</time>
+        
+         | <a href="/blog/2008/12/18/ragnarok-agora-no-archlinux/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://kalib.pre.hw40.webservidor.net/wordpress/wp-content/uploads/2009/02/ragban.png"><img src="http://kalib.pre.hw40.webservidor.net/wordpress/wp-content/uploads/2009/02/ragban-300x114.png" alt="" /></a></p>
+
+<p>Para os que curtem jogos de rpg online e em especial os que curtem o famoso Ragnarok, um dos mais jogados nos dias atuais, esta notícia será muito boa.</p>
+
+<p>As perguntas sobre como rodar o ragnarok no Linux já estão bastante expostas na internet, recebendo várias respostas, sendo muitas delas bastante complexas ou insuficientes usando-se de gambiarras e mais gambiarras.</p>
+
+<p>Graças ao server <a href="http://www.offtopicro.com/">Off Topic Ragnarok Online</a> e ao nosso amigo wine podemos agora desfrutar sem problemas deste game multiplayer.</p>
+
+<p>Inspirado no pessoal do <a href="http://ubuntugames.org/">ubuntugames</a>, estou preparando o pacote para o Arch Linux e nos próximos dias devo estar disponibilizando o mesmo para utilização geral.</p>
+
+<p>Como podem ver nos dois screenshots abaixo, o jogo já está rodando numa boa.</p>
+
+<p><a href="http://img84.imageshack.us/img84/7307/rag1ju1.png"><img src="http://img390.imageshack.us/img390/5708/rag1rk0.th.png" alt="" /></a><a href="http://img125.imageshack.us/img125/92/rag2bf6.png"><img src="http://img125.imageshack.us/img125/92/rag2bf6.th.png" alt="" /></a></p>
+
+<p><strong>A</strong>braços</p>
+
+<p><img src="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif" alt="" /></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -225,86 +279,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2008/12/02/resolvendo-alguns-problemas-causados-pelo-novo-xorg-no-arch/">Resolvendo Alguns Problemas Causados Pelo Novo Xorg No Arch</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2008-12-02T11:03:00-03:00" pubdate data-updated="true">Dec 2<span>nd</span>, 2008</time>
-        
-         | <a href="/blog/2008/12/02/resolvendo-alguns-problemas-causados-pelo-novo-xorg-no-arch/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/archlinux_logo_glass.png"><img src="http://kalib.pre.hw40.webservidor.net/wordpress/wp-content/uploads/2009/02/archlinux_logo_glass-300x256.png" alt="" /></a>Não é de hoje que vejo o nível de alguns pacotes essenciais como o Kernel e o Xorg caírem cada vez mais. É triste porém uma realidade. A maneira como tais pacotes vem sendo lançados sem maiores preocupações está prejudicando a vida de muita gente. Eu fui um deles recentemente ao atualizar o meu Xorg. Para aqueles que também fizeram upgrade recentemente, podem ter aparecido vários problemas.</p>
-
-<p>Aqui apresentarei as soluções que utilizei no ArchLinux para sanar os problemas que me apareceram, sendo eles:</p>
-
-<p>1- O X não subia mais. Simplesmente morria e ficava tudo preto.</p>
-
-<p>2- As teclas especiais do teclado não respondiam mais, como por exemplo as setas direcionais.</p>
-
-<p>Vamos às soluções encontradas&hellip;</p>
-
-<p>1- O X não sobe mais</p>
-
-<p>1.1- Para este problema, precisei fazer uma pequena busca pelo erro que acontecia, para isso busquei em primeira mão os logs do Xorg. Você pode fazer isso com o seguinte comando:</p>
-
-<h1>tail -f /var/log/Xorg.0.log</h1>
-
-<p>1.2- Em meu caso, apontou o erro na sintax RgbPath, a qual informava ser incompatível. Muita gente está passando por este problema.</p>
-
-<p>A solução neste caso é simples, basta editar o arquivo /etc/X11/xorg.conf e comentar a linha:</p>
-
-<p>RgbPath = &ldquo;/usr/share/X11/rgb&rdquo;</p>
-
-<p>1.3- Ao comentar esta linha, tudo o que fiz foi reinstalar o driver de minha placa de vídeo, para que meu xorg voltasse a funcionar. Como eu utilizo um driver da ATI Radeon que costumo baixar diretamente no site da ATI, segui o procedimento padrão para os drivers baixados do mesmo:</p>
-
-<p>1.3.1- Dar permissão de execução:</p>
-
-<h1>chmod +x ati-driver-installer-8-11-x86.x86_64.run</h1>
-
-<p>1.3.2- Executar o instalador:</p>
-
-<h1>./ati-driver-installer-8-11-x86.x86_64.run</h1>
-
-<p>Pronto. Feitos estes passos, eu já conseguia subir meu servidor X numa boa.</p>
-
-<p>Com relação ao segundo problema. As teclas&hellip;</p>
-
-<p>2- As teclas especiais do teclado não respondem.</p>
-
-<p>2.1- A solução foi simples, bastou uma pequena busca na wiki do ArchLinux com uma dica de como corrigir isto no meu KDE4. Indo para as configurações do sistema e partindo para a configuração de &ldquo;Regional &amp; Idioma&rdquo;. Lá busque a aba &ldquo;Layout de Teclado&rdquo;.</p>
-
-<p>2.2- Nesta você precisará habilitar a opção &ldquo;Habilitar Layouts de Teclado&rdquo; e selecionar como Modelo de Teclado a opção &ldquo;Evdev-managed keyboard&rdquo;.</p>
-
-<p>Feito isto, as teclas voltaram a funcionar no meu caso bem como outras pessoas que também testaram.<img src="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif" alt="" /></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/39/">&larr; Anteriores</a>
@@ -329,6 +303,10 @@ Me conheça melhor <a href="http://blog.marcelocavalcante.net/about">clicando aq
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/08/16/navegador-anti-censura-do-pirate-bay-supera-100-dot-000-downloads/">Navegador Anti-Censura do Pirate Bay Supera 100.000 Downloads</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/08/14/incompatibilidade-kernel-linux-3-dot-10-dot-6-e-placa-wireless-broadcom/">Incompatibilidade: Kernel Linux 3.10.6 e Placa Wireless Broadcom Resultam em Kernel Panic</a>
       </li>
     
@@ -350,10 +328,6 @@ Me conheça melhor <a href="http://blog.marcelocavalcante.net/about">clicando aq
     
       <li class="post">
         <a href="/blog/2013/08/01/renascimento-dot-dot-dot-de-cara-nova/">Renascimento&#8230;de cara nova</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/02/06/recomendacao-bibliografica-mago-e-vidro-a-torre-negra-iv/">Recomendação Bibliográfica: Mago e Vidro (A Torre Negra - IV)</a>
       </li>
     
   </ul>
