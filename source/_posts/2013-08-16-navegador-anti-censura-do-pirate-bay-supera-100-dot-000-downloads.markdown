@@ -32,6 +32,6 @@ categories:
 
 {% img center /imgs/tpb_afk.jpg 'TPB AFK' %}
 
-**T**rata-se de um documentário sobre a vida dos três fundadores do site de compartilhamento de arquivos The Pirate Bay, dirigido por *Simon Klose*. As gravações do documentário começaram no verão de 2008, e foram concluída em 25 de Agosto de 2012.
+**T**rata-se de um documentário sobre a vida dos três fundadores do site de compartilhamento de arquivos The Pirate Bay, dirigido por *Simon Klose*. As gravações do documentário começaram no verão de 2008, e foram concluídas em 25 de Agosto de 2012.
 
 **E** a vida segue...
