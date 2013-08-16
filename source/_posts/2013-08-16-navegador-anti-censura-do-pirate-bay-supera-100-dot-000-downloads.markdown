@@ -24,7 +24,7 @@ categories:
 
 **C**om menos de 5 dias após seu lançamento, o navegador já recebeu mais de *100.000* downloads através do link direto e arquivo torrent oficial, o qual estava sendo compartilhado por mais de *5.000* pessoas no momento de seu lançamento.
 
-**A**pesar de os próprios responsáveis pelo projeto afirmarem estar supresos pela quantidade de downloads, visto que eles realmente não esperavam por isto, confirmar que esta é apenas a primeira ferramenta que o projeto The Pirate Bay lançará.
+**A**pesar de os próprios responsáveis pelo projeto afirmarem estar supresos pela quantidade de downloads, visto que eles realmente não esperavam por isto, afirmam que esta é apenas a primeira ferramenta que o projeto The Pirate Bay lançará.
 
 > *Não imaginei que se disseminaria assim tão rapidamente. Acredito que as pessoas realmente querem acessar os sites que seus governos e cortes estão tentando esconder deles.* - Winston.
 
