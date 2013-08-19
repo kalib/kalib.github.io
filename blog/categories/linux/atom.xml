@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2013-08-17T12:48:53-03:00</updated>
+  <updated>2013-08-19T09:03:48-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -14,11 +14,45 @@
 
   
   <entry>
+    <title type="html"><![CDATA[KDE 4.11 Lançado e Disponível no Arch Linux]]></title>
+    <link href="http://blog.marcelocavalcante.net/blog/2013/08/19/kde-4-dot-11-lancado-e-disponivel-no-arch-linux/"/>
+    <updated>2013-08-19T08:07:00-03:00</updated>
+    <id>http://blog.marcelocavalcante.net/blog/2013/08/19/kde-4-dot-11-lancado-e-disponivel-no-arch-linux</id>
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/kde411.png" title="&lsquo;KDE 4.11&rsquo;" >
+<strong>E</strong>m 14 de Agosto de 2013 a comunidade KDE anunciou oficialmente a última release do Ambiente de Trabalho KDE, a versão 4.11. Nesta última versão o projeto incorporou grandes atualizações na Área de Trabalho, Aplicações e plataforma de Desenvolvimento, oferecendo, além de correções, novas funcionalidades, das quais muitas serão importantes para a próxima evolução da plataforma KDE.</p>
+
+<p><strong>E</strong>ste último lançamento é dedicado a memória de <em>Atul &ldquo;toolz&rdquo; Chitnis</em>, um dos maiores representantes do movimento de Software Livre e Open Source na Índia e, também, um dos maiores responsáveis pela existência do projeto KDE na Índia. Atul deixou-nos no dia 3 de Junho, após uma longa batalha contra o Câncer. Que sua alma descanse em paz, é o desejo de todos os membros do projeto KDE e, certamente, de muitas outras pessoas que o conheceram.</p>
+
+<p><strong>A</strong> versão 4.11 do KDE irá receber um suporte de longo prazo, enquanto é preparada a transição para a versão 5.</p>
+
+<p><strong>A</strong>lém de melhorias  para as funcionalidades básicas, como uma barra de tarefas mais suave, um item de bateria mais inteligente e uma mesa de mistura de som melhorada, a introdução do KScreen também trouxe um tratamento mais inteligente de vários monitores ao ambiente de trabalho. Além disso, esta release trouxe ainda algumas melhorias de performance em grande escala, combinadas com alguns ajustes de usabilidade, para que o KDE possa ter uma experiência de utilização global mais agradável.</p>
+
+<p><strong>P</strong>rogramadores que utilizam as linguagens <em>Python</em> e <em>JavaScript</em> poderão perceber melhorias no Kate, o qual passou a trazer alguns plugins extras que melhoram a produtividade na escrita de código nesta ferramenta. O KDE PIM e o Dolphin também foram alvos de melhorias de performance, tornando-se mais rápidos e ganhando novas funcionalidades, sem mencionar, é claro, as aplicações educacionais do KDE, as quais receberam muitas novas funcionalidades.</p>
+
+<p><strong>N</strong>o Arch Linux, é claro, os pacotes já estão disponíveis nos repositórios oficiais. Se você já utiliza o KDE e deseja atualizar para esta nova versão, basta executar o já conhecido comando de atualizãção, através do gerenciador de pacotes pacman:</p>
+
+<p><code>
+ # pacman -Syu
+</code></p>
+
+<p><strong>S</strong>e você utiliza um gerenciador de pacotes alternativo, como o Yaourt, pode realizar a sua atualização como de costume também. Segue comando completo para usuários do yaourt:</p>
+
+<p><code>
+ # yaourt -Syu --aur
+</code></p>
+
+<p><strong>M</strong>aiores informações sobre esta release podem ser encontradas em <a href="http://community.kde.org/KDE_SC/4.11_Release_Notes">http://community.kde.org/KDE_SC/4.11_Release_Notes</a></p>
+
+<p><strong>D</strong>ivirtam-se com o novo KDE! ;]</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Incompatibilidade: Kernel Linux 3.10.6 e Placa Wireless Broadcom Resultam em Kernel Panic]]></title>
     <link href="http://blog.marcelocavalcante.net/blog/2013/08/14/incompatibilidade-kernel-linux-3-dot-10-dot-6-e-placa-wireless-broadcom/"/>
     <updated>2013-08-14T15:04:00-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2013/08/14/incompatibilidade-kernel-linux-3-dot-10-dot-6-e-placa-wireless-broadcom</id>
-    <content type="html"><![CDATA[<p>{% img center /imgs/kernel_panic.gif &lsquo;kernel_panic&rsquo; %}</p>
+    <content type="html"><![CDATA[<p><img class="center" src="/imgs/kernel_panic.gif" title="&lsquo;kernel_panic&rsquo;" ></p>
 
 <p><strong>K</strong>ernel Panic!</p>
 
@@ -59,7 +93,7 @@
     <link href="http://blog.marcelocavalcante.net/blog/2013/08/12/dica-rapida-linux-melhorando-a-politica-de-senhas/"/>
     <updated>2013-08-12T08:41:00-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2013/08/12/dica-rapida-linux-melhorando-a-politica-de-senhas</id>
-    <content type="html"><![CDATA[<p>{% img center /imgs/url.jpg &lsquo;password&rsquo; %}</p>
+    <content type="html"><![CDATA[<p><img class="center" src="/imgs/url.jpg" title="&lsquo;password&rsquo;" ></p>
 
 <p><strong>N</strong>a dica anterior mencionei o uso do comando <em>chage</em> para <strong>forçar</strong> a alteração de senha por parte do usuário em sistemas Linux, mas e se além disso fosse possível melhorar esta prática, tornando a política de senhas de usuários um pouco mais segura?</p>
 
@@ -110,7 +144,7 @@
     <link href="http://blog.marcelocavalcante.net/blog/2013/08/06/dica-rapida-linux-forcar-usuario-a-trocar-senha-apos-primeiro-login/"/>
     <updated>2013-08-06T08:20:00-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2013/08/06/dica-rapida-linux-forcar-usuario-a-trocar-senha-apos-primeiro-login</id>
-    <content type="html"><![CDATA[<p>{% img center /imgs/password.jpg &lsquo;password&rsquo; %}</p>
+    <content type="html"><![CDATA[<p><img class="center" src="/imgs/password.jpg" title="&lsquo;password&rsquo;" ></p>
 
 <p><strong>É</strong> natural encontrar pessoas que utilizam linux a pouco tempo (ou que nunca utilizaram) questionando aspectos simples que seguem o jargão: <em>&ldquo;Mas no Windows eu consigo fazer isso, enquanto que no Linux&hellip;.&rdquo;</em></p>
 
@@ -354,43 +388,6 @@ TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 device interrupt 47  base 0xc000</p>
 
 <p><strong>H</strong>appy Hacking&hellip;</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Que tal ajudar o projeto KDE com apenas 1 minuto do seu tempo?]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2011/10/24/que-tal-ajudar-o-projeto-kde-com-apenas-1-minuto-do-seu-tempo/"/>
-    <updated>2011-10-24T14:56:48-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2011/10/24/que-tal-ajudar-o-projeto-kde-com-apenas-1-minuto-do-seu-tempo</id>
-    <content type="html"><![CDATA[<p><img src="http://images4.wikia.nocookie.net/__cb20061120200014/uncyclopedia/images/9/98/Konqi-official-logo-aboutkde-150x250.png" alt="" /></p>
-
-<p><strong>N</strong>ão acredita?</p>
-
-<p><strong>B</strong>om, aparentemente um <strong>banco alemão</strong> acredita que alguns projetos/instituições merecem ser ajudados financeiramente pelo seu impacto/importância.</p>
-
-<p><strong>S</strong>im, o projeto <strong><a href="http://kde.org">KDE</a></strong> está fazendo parte desta lista, mas para conseguir a doação de 1000 euros por parte deste banco, o projeto KDE precisa do seu voto. Sim, apenas seu voto que não leva mais que 1 minuto.</p>
-
-<p><strong>S</strong>e você utiliza o KDE no seu dia a dia, acredito que este seu <strong>1 minuto</strong> já é um ótimo &ldquo;pagamento&rdquo; ao projeto que lhe ajuda diariamente a resolver suas tarefas.</p>
-
-<p><strong>O</strong> banco alemão <strong>ING DiBa</strong> está doando <strong>1000 euros</strong> para <strong>1000 associações</strong>. A seleção será feita via votação online, portanto, se você der um voto para o KDE eV, temos boa chance de ser um dos vencedores.</p>
-
-<p><strong>O</strong> dinheiro será utilizado pelo KDE para financiar sprints, viagens, servidores, etc.</p>
-
-<p><strong>Como fazer para ajudar?</strong></p>
-
-<p><em>1- Acesse <strong><a href="https://verein.ing-diba.de/sonstiges/10115/kde-ev">https://verein.ing-diba.de/sonstiges/10115/kde-ev</a></strong> e clique em <strong>&ldquo;Stimme abgeben&rdquo;</strong>.</em></p>
-
-<p><em>2- Preencha seu email e o código captcha, clicando em seguida em <strong>&ldquo;absenden&rdquo;</strong>.</em></p>
-
-<p><em>3- Você receberá um email para confirmar o voto &ndash; clique no primeiro link deste email.</em></p>
-
-<p><em>4- No website &ndash; clique em <strong>&ldquo;Stimme abgeben&rdquo;</strong>.</em></p>
-
-<p>Você tem direito a 3 votos por conta de email.</p>
-
-<p>Vamos que vamos.</p>
-
-<p>Abraços,</p>
 ]]></content>
   </entry>
   

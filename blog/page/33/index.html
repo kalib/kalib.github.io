@@ -9,7 +9,7 @@
   <meta name="author" content="Marcelo Cavalcante Rocha - Kalib">
 
   
-  <meta name="description" content="Saudações galera. É chegada uma grande chance de colaborar com o Archlinux. “Neste sábado, dia 21, vai rolar um bug day no projeto Arch Linux. &hellip;">
+  <meta name="description" content="Em um mundo onde nem tudo é tela preta, as vezes pode ser cansativo programar sem a ajuda de uma IDE. Para projetos grandes e que possuem uma &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -80,6 +80,114 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/03/23/pydev-preparando-o-eclipse-para-o-python/">Pydev - Preparando O Eclipse Para O Python</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-03-23T14:35:44-03:00" pubdate data-updated="true">Mar 23<span>rd</span>, 2009</time>
+        
+         | <a href="/blog/2009/03/23/pydev-preparando-o-eclipse-para-o-python/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><strong>E</strong>m um mundo onde nem tudo é tela preta, as vezes pode ser cansativo programar sem a ajuda de uma IDE. Para projetos grandes e que possuem uma disponibilidade menor de tempo, estas ferramentas de desesenvolvimento são fundamentais. Aqui gostaria de destacar o Eclipse, que como vocês devem saber não é apenas uma IDE para desenvolvimento Java, em conjunto com o plugin Pydev.</p>
+
+<p><strong>N</strong>este pequeno passo a passo abordo uma forma simples e direta para se instalar o Pydev transformando seu Eclipse em um ambiente para desenvolvimento em <strong>Python</strong>.</p>
+
+<p><strong>A</strong>ntes de mais nada, suponho que você já tenha o Eclipse devidamente instalado. Em meu caso, no Arch Linux, instalei através do pacman, portanto estou com a versão 3.4.1, portanto qualquer diferença nos passos seguidos aqui pode ser por diferença em sua versão do Eclipse.</p>
+
+<p><strong>S</strong>em mais baboseira, vamos ao processo.</p>
+
+<p><strong>1- </strong>Com seu eclipse rodando, clique na opção Software Updates do menu Help, conforme ilustração:</p>
+
+<p><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/03/img01-300x213.png" alt="img01" /></p>
+
+<p><strong>L</strong>he será exibida uma janela como a seguinte. Selecione a opção Available Software, no canto superior.</p>
+
+<p><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/03/img02.png" alt="img02" /></p>
+
+<p><strong>2-</strong> Nesta janela de Available Software, clique na opção Add Site. Lhe será apresentada uma janela na qual você deve inserir o endereço <del><a href="http://pydev.sourceforge.net/updates">http://pydev.sourceforge.net/updates</a></del> e clica em Ok, como na figura abaixo:</p>
+
+<p>ERRATA: Correção em 2011 &ndash;> Novo endereço para atualizações é: <a href="http://pydev.org/updates">http://pydev.org/updates</a></p>
+
+<p><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/03/img031.png" alt="img031" /></p>
+
+<p><strong>3-</strong> Após isto, você terá a opção de instalação do Pydev. Selecione a caixa e clique no botão Install que se encontra no canto superior direito da janela, conforme ilustração.</p>
+
+<p><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/03/img04.png" alt="img04" /></p>
+
+<p><strong>E</strong>le começará a carregar a instalação e lhe será apresentada uma tela com a licença do plugin. Basta aceitar a licença e seguir em frente.</p>
+
+<p><strong>A</strong>pós isto, o Eclipse começará a baixar os arquivos necessários e realizará a instalação em si. Após concluída, lhe será pedido para reiniciar o Eclipse para que as alterações tenham efeito. Pode confirmar com Yes.</p>
+
+<p><strong>C</strong>om isto a instalação já está concluída. Nos resta agora começar um projeto Python. Mãos à obra!</p>
+
+<p><strong>4-</strong> Com seu Eclipse reiniciado, clique na opção Preferences da aba Window.</p>
+
+<p><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/03/img05.png" alt="img05" /></p>
+
+<p><strong>5-</strong> Na janela que lhe será apresentada, selecione a aba Pydev e selecione a opção Interpreter &ndash; Python. Clicando no botão New, do canto superior Direito, aponte para o caminho onde se encontra seu interpretador Python. (No linux, normalmente será /usr/bin/python.)</p>
+
+<p><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/03/img06.png" alt="img06" /></p>
+
+<p><strong>L</strong>he será apresentada uma tela como a seguinte. Basta confirmar sem alterações.</p>
+
+<p><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/03/img07.png" alt="img07" /></p>
+
+<p><strong>R</strong>epare que agora você terá um interpretador Python instalado, bem como uma lista de Paths para o Python em seu sistema. Novamente confirme clicando em Ok, encerrando aqui nossa configuração do Eclipse para programação com Python.</p>
+
+<p><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/03/img08.png" alt="img08" /></p>
+
+<p><strong>U</strong>ma vez que o plugin Pydev está instalado e devidamente configurado, passamos para o passo final. Teste do Python no Eclipse.</p>
+
+<p><strong>6</strong><strong>&ndash;</strong> Vamos começar criando um novo projeto seguindo o caminho: File > New > Pydev Project.</p>
+
+<p><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/03/img09.png" alt="img09" /></p>
+
+<p><strong>E</strong>scolha um nome para seu projeto e confirme a criação do mesmo clicando em Finish, conforme imagem a seguir:</p>
+
+<p><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/03/img10.png" alt="img10" /></p>
+
+<p><strong>U</strong>ma vez que seu projeto foi criado. Ele será listado na barra de projetos localizada no canto esquerdo do Eclipse. Clicando com o botão direito do mouse na pasta src de seu projeto, escolha a opção New > File, conforme ilustração.</p>
+
+<p><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/03/img11.png" alt="img11" /></p>
+
+<p><strong>C</strong>om seu arquivo em branco, pode fazer seu teste do python com qualquer código simples, como por exemplo o bom e velho &ldquo;Hello World&rdquo;.</p>
+
+<p><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/03/img12.png" alt="img12" /></p>
+
+<p><strong>P</strong>ronto pessoal! Agora é só abusar do Python no seu Eclipse.</p>
+
+<p><strong>A</strong>braços</p>
+
+<p><img src="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif" alt="" /></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -183,58 +291,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/03/11/recomendacao-bibliografica-sementes-no-gelo/">Recomendação Bibliográfica - Sementes No Gelo</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-03-11T09:34:36-03:00" pubdate data-updated="true">Mar 11<span>th</span>, 2009</time>
-        
-         | <a href="/blog/2009/03/11/recomendacao-bibliografica-sementes-no-gelo/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><img src="http://www.livrariasaraiva.com.br/imagem/imagem.dll?tam=2&amp;pro_id=111116&amp;PIM_Id=108205" alt="" /></p>
-
-<p>Saudações pessoal&hellip;</p>
-
-<p>A bola da vez se chama Sementes do Gelo. Este é para quem gosta de histórias de suspense.</p>
-
-<p>Segue descrição retirada do site da Saraiva:</p>
-
-<blockquote><p>Neste novo romance, André Vianco volta a explorar o sobrenatural. Em ´Sementes no Gelo´, o leitor ingressa no mundo de espíritos atormentados, impedidos de reencarnar. Muitos se enraivecem e lançam sua fúria sobre todos que lhe chamam atenção e interpõe em seus caminhos. Um detetive, por acaso, desvenda os mistérios em torno destes espíritos, tornando-se o inimigo número um das perigosas entidades.</p></blockquote>
-
-<p>Andre Vianco afirma ter tido a inspiração e a idéia para compor a obra assistindo a um telejornal onde a matéria tratava sobre embriões congelados e a legislação vigente em vários países. Em todos os países na ocasião era terminantemente proibido descartar os &ldquo;ovos&rdquo; fertilizados, que viriam a se tornar embriões viáveis para um futuro implante nas mães com dificuldade de fertilização natural.</p>
-
-<p>Com a população mundial de embriões congelados crescendo, o autor imagina um mundo onde esses seres, mesmo que minúsculos e congelados, possuem alma, espírito. Esses espíritos se desenvolvem e em determinada altura ganham o poder de se materializar para seus pais e também para aqueles que praticam violência contra crianças.</p>
-
-<p><img src="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif" alt="" /></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/34/">&larr; Anteriores</a>
@@ -259,6 +315,10 @@ Me conheça melhor <a href="http://blog.marcelocavalcante.net/about">clicando aq
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/08/19/kde-4-dot-11-lancado-e-disponivel-no-arch-linux/">KDE 4.11 Lançado e Disponível no Arch Linux</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/08/16/navegador-anti-censura-do-pirate-bay-supera-100-dot-000-downloads/">Navegador Anti-Censura do Pirate Bay Supera 100.000 Downloads</a>
       </li>
     
@@ -280,10 +340,6 @@ Me conheça melhor <a href="http://blog.marcelocavalcante.net/about">clicando aq
     
       <li class="post">
         <a href="/blog/2013/08/04/rails-girls-em-fortaleza-um-palco-para-a-criatividade-feminina/">Rails Girls em Fortaleza - Um palco para a criatividade feminina</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/08/01/renascimento-dot-dot-dot-de-cara-nova/">Renascimento&#8230;de cara nova</a>
       </li>
     
   </ul>

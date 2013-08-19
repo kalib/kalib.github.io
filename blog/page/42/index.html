@@ -9,7 +9,7 @@
   <meta name="author" content="Marcelo Cavalcante Rocha - Kalib">
 
   
-  <meta name="description" content="Fato ou ficção?! Não sei até que ponto nossa cidade vai chegar. Não poder mais nem assistir um filme no shopping é um absurdo! Não gostaria de &hellip;">
+  <meta name="description" content="Saudações galera&hellip; Recentemente um amigo, Michel, me perguntou algo sobre a possibilidade de ocultar informações em arquivos binários, como uma &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -80,6 +80,78 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/10/24/escondendo-informacoes-em-arquivos-binarios/">Escondendo Informações Em Arquivos Binários</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-10-24T08:09:00-03:00" pubdate data-updated="true">Oct 24<span>th</span>, 2008</time>
+        
+         | <a href="/blog/2008/10/24/escondendo-informacoes-em-arquivos-binarios/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Saudações galera&hellip;</p>
+
+<p>Recentemente um amigo, Michel, me perguntou algo sobre a possibilidade de ocultar informações em arquivos binários, como uma música ou mesmo uma foto. Eu lhe respondi que era possível, e bem simples em termos de conceito, bem como lhe prometi postar esta dica.</p>
+
+<p>No Linux sabemos que tudo é um arquivo. Nada depende exclusivamente de extensão ou tipo. Até mesmo os famosos &ldquo;diretórios&rdquo; na verdade não passam de arquivos. O que mostrarei aqui é uma dica rápida e simples de como se aproveitar disto para ocultar de forma simples e rápida alguma informação de texto em um arquivo binário qualquer que o seja. Por mais incrível que possa parecer, não precisaremos de nenhuma mágica ou ferramenta especial para isto. Quem utiliza Linux sabe que o cat ou mesmo o echo são ferramentas padrão em qualquer distribuição. SIM. Precisaremos apenas delas para fazer o &ldquo;truque&rdquo;. Não acredita? o.O</p>
+
+<p>Vamos lá&hellip;</p>
+
+<p>Antes de mais nada selecione o arquivo que será utilizado para &ldquo;camuflar&rdquo; nossa informação. Escolha uma imagem qualquer por exemplo ou outro tipo como áudio, vídeo, compactado, etc&hellip; Supondo que você escolheu o arquivo foto.jpg, passaremos ao segundo passo.</p>
+
+<p>Supondo que eu queira ocultar a frase &ldquo;Bem vindo ao Linux&rdquo; na foto.jpg, o comando seria o seguinte:</p>
+
+<p>$ echo &ldquo;Bem vindo ao Linux&rdquo; >> foto.jpg</p>
+
+<p>Simples não é?! Nada de truques ou mágicas. Pode tentar abrir a foto com algum editor de imagens como o Gimp, ou mesmo com um vizualizador de sua preferência. A foto parecerá intacta e normal. Agora tente executá-la com um editor de textes como o cat por exemplo.</p>
+
+<p>$ cat foto.jpg</p>
+
+<p>Você verá um conjunto de caracteres estranhos, dados sobre a foto em si, porém role até o final do arquivo. Depois de todos os caracteres estranhos, você encontrará a informação que ocultou anteriormente, no nosso caso é a frase &ldquo;Bem Vindo ao Linux&rdquo;.</p>
+
+<p>Simples não é? Lembrando que o mesmo conceito se aplica caso você deseje utilizar ao invés de uma única frase, todo um texto. Crie o texto com um editor de textos qualquer como o vim por exemplo e salve com o nome texto.</p>
+
+<p>Em seguida aplique o comando utilizando desta vez o cat, ao invés do echo:</p>
+
+<p>$ cat texto >> foto.jpg</p>
+
+<p>Volte a repetir os testes já citados anteriormente para ter certeza do sucesso no processo.</p>
+
+<p>Como eu disse..tudo muito simples e sem mistérios.</p>
+
+<p>Respondido Michel? ;]</p>
+
+<p>Abraço pessoal</p>
+
+<p><img src="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif" alt="" /></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -187,63 +259,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2008/10/16/vivo-chega-em-fortaleza-finalmente/">Vivo Chega Em Fortaleza - Finalmente</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2008-10-16T10:19:00-03:00" pubdate data-updated="true">Oct 16<span>th</span>, 2008</time>
-        
-         | <a href="/blog/2008/10/16/vivo-chega-em-fortaleza-finalmente/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://3.bp.blogspot.com/_5kfJplBiYy0/SPdBXivzDYI/AAAAAAAAAJ0/wjRTlq6Yv5Y/s1600-h/vivo.gif"><img src="http://3.bp.blogspot.com/_5kfJplBiYy0/SPdBXivzDYI/AAAAAAAAAJ0/wjRTlq6Yv5Y/s200/vivo.gif" alt="" /></a>Finalmente tenho o prazer de anunciar que a Operadora Vivo chegou a Fortaleza. Finalmente uma operadora decente em nossa cidade.</p>
-
-<p>Ontem, 16 de Outubro, começaram as vendas resultando em mais de 25.000 chips vendidos em um dia. Não perdi a oportunidade e comprei o meu ontem mesmo. O que foi engraçado ver a confiança que os vendedores tinham em afirmar: &ldquo;Aqui não é negócio apenas de &lsquo;Olá&rsquo;! A vivo chegou para derrubar tudo!&rdquo; Apesar de ter achado um pouco audacioso demais, não duvido que ela conquiste rapidamente boa parte do mercado local, já que a vivo é portadora de uma estrutura bem melhor que a das concorrentes.</p>
-
-<p>Além das vantagens estruturais, a vivo trouxe um outro grande atrativo em seu lançamento no Ceará com a promoção dos 1000. Com recargas mensais a partir de 6 reais, o cliente ganha:</p>
-
-<ul>
-<li><p>1000 reais para falar com outros vivos. (ligações locais)</p></li>
-<li><p>100 minutos para falar com outros vivos. (DDD)</p></li>
-<li><p>25 sms/15 dias</p></li>
-</ul>
-
-
-<p>&hellip;</p>
-
-<p>Dentre outras vantagens.</p>
-
-<p>Outra coisa que me surpreendeu foi o site deles bem como os recursos ofertados ao se fazer login com os dados de seu número. Vale a pena conferir.</p>
-
-<p><img src="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif" alt="" /></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/43/">&larr; Anteriores</a>
@@ -268,6 +283,10 @@ Me conheça melhor <a href="http://blog.marcelocavalcante.net/about">clicando aq
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/08/19/kde-4-dot-11-lancado-e-disponivel-no-arch-linux/">KDE 4.11 Lançado e Disponível no Arch Linux</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/08/16/navegador-anti-censura-do-pirate-bay-supera-100-dot-000-downloads/">Navegador Anti-Censura do Pirate Bay Supera 100.000 Downloads</a>
       </li>
     
@@ -289,10 +308,6 @@ Me conheça melhor <a href="http://blog.marcelocavalcante.net/about">clicando aq
     
       <li class="post">
         <a href="/blog/2013/08/04/rails-girls-em-fortaleza-um-palco-para-a-criatividade-feminina/">Rails Girls em Fortaleza - Um palco para a criatividade feminina</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/08/01/renascimento-dot-dot-dot-de-cara-nova/">Renascimento&#8230;de cara nova</a>
       </li>
     
   </ul>
