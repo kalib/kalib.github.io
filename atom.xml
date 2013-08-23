@@ -4,7 +4,7 @@
   <title><![CDATA[Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2013-08-19T09:03:48-03:00</updated>
+  <updated>2013-08-23T17:35:39-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -12,6 +12,72 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Dica Rápida - Linux - Como Deletar Todos os Arquivos Exceto Alguns (Com Extensões Específicas)?]]></title>
+    <link href="http://blog.marcelocavalcante.net/blog/2013/08/23/dia-rapida-linux-como-deletar-todos-os-arquivos-exceto-alguns-com-extensoes-especificas/"/>
+    <updated>2013-08-23T16:55:00-03:00</updated>
+    <id>http://blog.marcelocavalcante.net/blog/2013/08/23/dia-rapida-linux-como-deletar-todos-os-arquivos-exceto-alguns-com-extensoes-especificas</id>
+    <content type="html"><![CDATA[<p><img class="left" src="http://blog.marcelocavalcante.net/imgs/delete.jpg" title="'Delete Files'" >
+<strong>É</strong> comum termos diretórios repletos de arquivos dos mais diferentes tipos e extensões, certo?! E quando desejamos remover vários arquivos ao mesmo tempo? Bom, o linux nos permite utilizar o comando rm para remover diversos arquivos ao mesmo tempo, certo? Da mesma forma, podemos facilmente excluir todos os arquivos de um determinado tipo ou extensão, conforme exemplo abaixo:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> $ rm *.py</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>O</strong> comando acima remove todos os arquivos com extensão .py (<em>geralmente arquivos de código fonte Python</em>) do diretório atual. Mas e se desejarmos remover não apenas os arquivos de código Python, mas também os de código Ruby? Da mesma forma, podemos apenas inserir esta nova informação:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> $ rm *.py *.rb</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>S</strong>imples&hellip; nenhuma novidade. Ok, mas e se desejarmos o caminho oposto? Se ao invés de especificar o que eu <em>desejo deletar</em>, eu preferir especificar o que eu <em>não desejo deletar</em>?</p>
+
+<p><strong>P</strong>orque eu desejaria isso? A ideia não é complicar, mas sim simplificar. Imaginemos que eu possuo um diretório com não apenas 2 ou 3 tipos de arquivos diferentes, mas sim 10, 20 ou mesmo 30. Eu apenas desejo manter os arquivos de 2 tipos ou extensões. Já imaginaram qual seria o tamanho do comando seguindo a linha de raciocínio acima? Algo como&hellip;</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> $ rm *.py *.rb *.txt *.doc *.odt *.png *.jpg *.sh *.bat *.c *.bkp *.ppt *.pl ... ... ... ...</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>C</strong>ansei antes mesmo de digitar todos. Agora deve ter ficado claro o porque de ser mais simples poder especificar apenas o que não desejo que seja deletado.</p>
+
+<p><strong>V</strong>amos supor que eu possuo um diretório no qual se encontram os meus arquivos de diversos tipos e extensões, conforme listados abaixo:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> $ ls
+</span><span class='line'>
+</span><span class='line'> arq2.avi  arq2.cdr  arq2.doc  arq2.html  arq2.mp3  arq2.php  arq2.ppt  arq2.vob  arq.c
+</span><span class='line'> arq.dbf  arq.gif   arq.mov  arq.odt  arq.png  arq.rb  arq2.bat  arq2.cdx  arq2.exe
+</span><span class='line'> arq2.jpg   arq2.mp4  arq2.pl   arq2.py   arq.avi   arq.cdr  arq.doc  arq.html  arq.mp3
+</span><span class='line'> arq.php  arq.ppt  arq.vob  arq2.c    arq2.dbf  arq2.gif  arq2.mov   arq2.odt  arq2.png
+</span><span class='line'> arq2.rb   arq.bat   arq.cdx  arq.exe  arq.jpg   arq.mp4  arq.pl   arq.py</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>C</strong>omo podemos ver, temos arquivos de diversas extensões. Agora, supondo que eu desejo remover todos, exceto os arquivos com as extensões .rb e .py:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> $ rm !(*.rb|*.py)</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>N</strong>osso resultado?</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> $ ls
+</span><span class='line'>
+</span><span class='line'> arq2.py  arq2.rb  arq.py  arq.rb</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>F</strong>eito. Oi, simples assim&hellip;</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[KDE 4.11 Lançado e Disponível no Arch Linux]]></title>
@@ -1241,37 +1307,6 @@ Rua Castro Monte, 1364 Varjota – Fortaleza, CE
 <p>1 livro: The Art of Community &ndash; O&#8217;Reilly</p>
 
 <p><strong>N</strong>os vemos lá!</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Lançada a primeira edição da Revista Segurança Digital]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2011/07/01/lancada-a-primeira-edicao-da-revista-seguranca-digital/"/>
-    <updated>2011-07-01T08:14:54-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2011/07/01/lancada-a-primeira-edicao-da-revista-seguranca-digital</id>
-    <content type="html"><![CDATA[<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/07/1_edicao_julho_2011.jpg"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/07/1_edicao_julho_2011.jpg" alt="" /></a></p>
-
-<p><strong>S</strong>audações pessoal.</p>
-
-<p><strong>P</strong>ara quem não sabe, hoje é o lançamento da primeira edição da <a href="http://www.segurancadigital.info/revista/185-revistas">Revista Segurança Digital</a>.</p>
-
-<p><a href="http://www.segurancadigital.info"><strong>S</strong>egurança Digital</a> é o mais novo projeto no qual estou engajado e espero poder ajudar no que for possível para a constante melhoria do projeto.</p>
-
-<p><strong>É</strong> com grande satisfação que estamos fazendo o lançamento oficial de nosso projeto com a primeira edição da Revista Segurança Digital. Neste mês de Julho a revista aborda aspectos mais genéricos em relação à Segurança da Informação como um todo. Desde as técnicas de FootPrinting e Varredura para identificação de vulnerabilidades e possíveis brechas até estratégias e mecanismos de Enumeração para reconhecimento de ambientes.</p>
-
-<p><strong>C</strong>om a matéria sobre Enumeração explicamos a importância de se fazer um mapeamento completo do alvo, que consiste em descobrir o máximo de informações possíveis sobre o mesmo, desde sistema operacional até mesmo versões de anti-vírus, firewall, aplicativos instalados, etc.</p>
-
-<p><strong>R</strong>ecentemente todos perceberam que vários ataques de DoS e DDoS foram realizados à sites do Governo, Petrobras, dentre outros. Um artigo com uma breve explicação sobre como funcionam estes ataques é apresentado como forma de ilustrar de forma básica o funcionamento de um DoS/DDoS.</p>
-
-<p><strong>R</strong>esolvemos fazer uma breve apresentação sobre o BackTrack, uma distribuição Linux voltada para testes de segurança. Nesta matéria apresentamos alguns de seus recursos e ferramentas que podem ser utilizadas no dia-a-dia de qualquer profissional de Segurança da Informação para facilitar suas tarefas e análises, bem como auxiliar em projetos de PenTesting.</p>
-
-<p><strong>A</strong>proveitamos para informar sobre a mais nova parceria realizada entre o Projeto Segurança Digital e a empresa de consultoria e soluções livres 4Linux que é líder no mercado no que diz respeito à soluções de tecnologia com ferramentas livres bem como treinamentos especializados nos mais diversos segmentos da computação como redes, bancos de dados, segurança, programação, dentre outros.</p>
-
-<p><strong>N</strong>ão deixe de fazer o <a href="http://www.segurancadigital.info/revista/185-revistas">download</a> desta edição e conferir o resultado desta força tarefa inicial.</p>
-
-<p><strong>E</strong>speramos que gostem.</p>
-
-<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
 ]]></content>
   </entry>
   

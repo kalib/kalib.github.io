@@ -9,7 +9,7 @@
   <meta name="author" content="Marcelo Cavalcante Rocha - Kalib">
 
   
-  <meta name="description" content="Saudações amigos&hellip; Sentiram saudades? Novamente passei por um jejum em relação ao blog. Sim, motivos de força maior. Tive alguns problemas em &hellip;">
+  <meta name="description" content="Como diria a Feiticeira (não lembro o nome real dela), não é feitiçaria, é tecnologia! Como já expliquei no outro post, tive problemas com meu &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -80,6 +80,122 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/12/29/chaveamento-de-interfaces-de-rede-placas-broadcom/">Chaveamento De Interfaces De Rede - Placas Broadcom</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-29T09:25:13-03:00" pubdate data-updated="true">Dec 29<span>th</span>, 2010</time>
+        
+         | <a href="/blog/2010/12/29/chaveamento-de-interfaces-de-rede-placas-broadcom/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img src="http://cdn.venturebeat.com/wp-content/uploads/2010/10/broadcom-chip.jpg" alt="broadcom" /></p>
+
+<p><strong>C</strong>omo diria a Feiticeira (não lembro o nome real dela), não é feitiçaria, é tecnologia!</p>
+
+<p><strong>C</strong>omo já expliquei no outro post, tive problemas com meu notebook e por isso passei muito tempo afastado do blog. Bom, recentemente comprei outro e cá estou novamente em casa.</p>
+
+<p><strong>M</strong>as, como nem tudo é um mar de rosas&hellip; toda mudança trás impactos positivos e negativos.</p>
+
+<p><img src="http://blog.grupojbr.com.br/up/g/gr/blog.grupojbr.com.br/img/20101114090300_634036567553112000vostro3300.jpg" alt="" /></p>
+
+<p><strong>A</strong> máquina escolhida foi um Dell Vostro 3300. Com certeza uma excelente máquina e que eu não deixaria de recomendar para ninguém.</p>
+
+<p><strong>P</strong>ara quem comprou algum Dell recentemente, ou pensou em comprar, não deve ser uma novidade que estas máquinas, em sua grande maioria, estão trazendo chipsets wireless da Broadcom, ao invés dos Intel.</p>
+
+<p><strong>Q</strong>uando pensei em comprar, refleti bastante sobre isto, visto que os drivers para broadcom no linux já tiveram um passado um tanto quanto nebuloso em se tratando de Wireless.</p>
+
+<p><strong>R</strong>esolvi encarar e não me arrependo. A performance está excelente. O driver realmente funcionou como deveria funcionar porém tive um pequeno problema.</p>
+
+<p><strong>U</strong>tilizo <a href="http://www.kde.org">KDE</a> como gerenciador de janelas em meu <a href="http://www.archlinux.org">ArchLinux</a> e <a href="http://wicd.sourceforge.net/">Wicd</a> como gerenciador de redes. Estava tudo funcionando bem mas ao reiniciar a máquina um certo dia percebo que o Wicd não havia encontrado nenhuma rede wireless. o.O</p>
+
+<p><strong>R</strong>einicio novamente e ele volta a encontrar. Feitiçaria? Fiquei curioso e resolvi reiniciar novamente e&hellip; funcionou. Pensei: &ldquo;Foi apenas um susto..ela devia querer descansar..&rdquo;</p>
+
+<p><strong>M</strong>as no dia seguinte ao ligar em casa percebi que, novamente, a interface wireless não foi encontrada pelo Wicd. Lembrei do fato anterior e reiniciei novamente. A interface continuava sem funcionar no Wicd.</p>
+
+<p><strong>L</strong>hes poupando dos testes que resolvi fazer para isolar o problema, descobri que as vezes a minha interface wireless estava subindo como eth0, as vezes subindo como eth1. Isso, obviamente, deixava o Wicd confuso, pois na configuração dele é necessário especificar qual será a interface wireless e qual será a wired (cabeada). Portanto, quando o notebook subia com a wireless na eth1, o Wicd funcionava numa boa, mas quando subia na eth0 o Wicd continuava tentando escanear redes wireless com a eth1, portanto não funcionava.</p>
+
+<p><strong>A</strong>pós algumas pesquisas descobri que este é um acontecimento comum em relação ao driver da broadcom. Este chaveamento ou swap de interfaces de rede acontece realmente de forma aleatória.</p>
+
+<p><strong>C</strong>omo resolver? Amarrando a interface ao nome, literalmente.</p>
+
+<p><strong>A</strong> placa começou a funcionar da forma esperada após vincular via regra o MAC da interface ao nome que eu desejava para ela. Desta forma, na hora de subir, ambas passam a subir de acordo com a regra que eu especifiquei, o que resolveu o problema pois a interface wireless passou a sempre subir com o mesmo nome, evitando que o Wicd tentasse escanear com uma interface que não existe.</p>
+
+<p><strong>S</strong>em mais papo furado.. mãos à obra!</p>
+
+<p><strong>A</strong>ntes de mais nada é necessário criar, caso você já não possua, o arquivo <em>/etc/udev/rules.d/10-network.rules</em> acrescentando o seguinte conteúdo:</p>
+
+<p><em>SUBSYSTEM==&ldquo;net&rdquo;, ATTR{address}==&ldquo;aa:bb:cc:dd:ee:ff&rdquo;, NAME=&ldquo;eth0&rdquo;</em>
+_ SUBSYSTEM==&ldquo;net&rdquo;, ATTR{address}==&ldquo;aa:bb:cc:dd:ee:ff&rdquo;, NAME=&ldquo;eth1&rdquo;_</p>
+
+<p>o.O wtf?</p>
+
+<p><strong>B</strong>om, com isto você estará deixando claro para o sistema qual o nome que deverá ser atribuído para cada interface.</p>
+
+<p><strong>V</strong>ocê deverá apenas substituir o &ldquo;aa:bb:cc:dd:ee:ff&rdquo; e &ldquo;ff:ee:dd:cc:bb:aa&rdquo; pelos respectivos endereços MAC das interfaces.</p>
+
+<p><strong>O</strong> valor dos campos NAME podem ser alterados de acordo com sua vontade, por exemplo: eth0 para a cabeada e wlan0 para a wireless.</p>
+
+<p><strong>C</strong>aso não saiba como conseguir o endereço MAC de suas interfaces, utilize o seguinte comando:</p>
+
+<p><em># ifconfig | grep HW</em></p>
+
+<p><strong>I</strong>sso lhe dará um retorno parecido com o seguinte:</p>
+
+<p><em>eth0  Link encap:Ethernet  HWaddr <strong>A4:BA:DB:D7:41:C0</strong>
+eth1  Link encap:Ethernet  HWaddr <strong>1C:65:9D:6E:65:1B</strong></em></p>
+
+<p><strong>O</strong>s endereços MAC são os valores que destaquei acima.</p>
+
+<p><strong>ATENÇÃO:</strong> Apesar de o MAC constantemente ser escrito com letras em maiúsculo como apresentado acima, no caso do arquivo 10-network.rules você deverá utilizar letras em minúsculo. Exato, o arquivo é case sensitive, portanto só funcionará desta forma.</p>
+
+<p><strong>C</strong>aso você receba uma saída parecida com a minha e queira se certificar de qual dos dois endereços MAC é o que realmente representa a interface wireless pode testar com os seguintes comando:</p>
+
+<p><em># iwlist eth0 scanning</em></p>
+
+<p>e&hellip;﻿</p>
+
+<p><em># iwlist eth1 scanning</em></p>
+
+<p><strong>V</strong>ocê perceberá que terá resultados diferentes. O que retornar um scan completo de redes wireless disponíveis, obviamente, é a interface Wireless. ;]</p>
+
+<p><strong>A</strong>pós ter escolhido o nome que deseja para cada uma de suas interfaces pode salvar o arquivo de regra.</p>
+
+<p><strong>ATENÇÃO²:</strong> Certifique-se de atualizar o seu arquivo <em>/etc/rc.conf</em> para evitar que os nomes das interfaces estejam diferentes das que você criou no arquivo de regras.</p>
+
+<p><strong>É</strong> isto.. agora sua interface funcinoará da forma esperada.</p>
+
+<p><strong>A</strong>braços!</p>
+
+<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -211,62 +327,6 @@ Assim, esta obra proporciona uma narrativa soberba de uma lenda, e a recriação
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/10/12/hackingn-roll-fortaleza/">HACKING&#8217;N ROLL Fortaleza!</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-10-12T10:02:13-03:00" pubdate data-updated="true">Oct 12<span>th</span>, 2010</time>
-        
-         | <a href="/blog/2010/10/12/hackingn-roll-fortaleza/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://www.insert.uece.br/hackingnroll/img/logo.jpg"><img src="http://www.insert.uece.br/hackingnroll/img/logo.jpg" alt="" /></a></p>
-
-<p><strong>É</strong> hora de separar suas melhores garrafas de cerveja café e seus melhores números de telefones para pedidos de pizza. O <a href="http://www.insert.uece.br/hackingnroll/">Hacking&#8217;n Roll Fortaleza</a> vai começar!</p>
-
-<p><strong>O</strong> evento soa mais como um desafio ao velho estilo Capture The Flag. Para quem conhece e acompanha a <a href="http://www.defcon.org/">Defcon</a>, o Capture The Flag não será nenhuma surpresa. Aos que não conhecem, se trata de um desafio, ou melhor uma série de desafios/questões que devem ser resolvidos em um determinado tempo.</p>
-
-<p><strong>N</strong>este Hacking&#8217;n Roll serão um total de 25 questões/desafios que deverão ser resolvidos em 24 horas.</p>
-
-<p><strong>C</strong>omeçará num sábado às 8:00 e dura até domingo às 8:00.</p>
-
-<p><strong>E</strong>stas 24 horas serão o tempo que os participantes terão para tentar resolver o máximo de desafios/questões possíveis.</p>
-
-<p><strong>A</strong>o final do evento será disponibilizado um ranking com os resultados dos participantes e os melhores estarão qualificados para o curso <a href="http://www.insert.uece.br/hacking101">Hacking 101</a>, treinamento na área de segurança da informação ministrado pelo <a href="http://www.insert.uece.br/">INSERT</a>, Information Security Research Team.</p>
-
-<p><strong>P</strong>ara maiores informações e inscrições, basta acessar a página do <a href="http://www.insert.uece.br/hackingnroll/">Hacking&#8217;n Roll</a>.</p>
-
-<p><strong>G</strong>ood Hacking!</p>
-
-<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/15/">&larr; Anteriores</a>
@@ -291,6 +351,10 @@ Me conheça melhor <a href="http://blog.marcelocavalcante.net/about">clicando aq
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/08/23/dia-rapida-linux-como-deletar-todos-os-arquivos-exceto-alguns-com-extensoes-especificas/">Dica Rápida - Linux - Como Deletar Todos os Arquivos Exceto Alguns (Com Extensões Específicas)?</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/08/19/kde-4-dot-11-lancado-e-disponivel-no-arch-linux/">KDE 4.11 Lançado e Disponível no Arch Linux</a>
       </li>
     
@@ -312,10 +376,6 @@ Me conheça melhor <a href="http://blog.marcelocavalcante.net/about">clicando aq
     
       <li class="post">
         <a href="/blog/2013/08/06/dica-rapida-linux-forcar-usuario-a-trocar-senha-apos-primeiro-login/">Dica Rápida - Linux - Forçar Usuário A Trocar Senha Após Primeiro Login</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/08/04/rails-girls-em-fortaleza-um-palco-para-a-criatividade-feminina/">Rails Girls em Fortaleza - Um palco para a criatividade feminina</a>
       </li>
     
   </ul>

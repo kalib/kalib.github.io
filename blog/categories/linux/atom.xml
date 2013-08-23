@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2013-08-19T09:03:48-03:00</updated>
+  <updated>2013-08-23T17:36:03-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -14,11 +14,69 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Dica Rápida - Linux - Como Deletar Todos os Arquivos Exceto Alguns (Com Extensões Específicas)?]]></title>
+    <link href="http://blog.marcelocavalcante.net/blog/2013/08/23/dia-rapida-linux-como-deletar-todos-os-arquivos-exceto-alguns-com-extensoes-especificas/"/>
+    <updated>2013-08-23T16:55:00-03:00</updated>
+    <id>http://blog.marcelocavalcante.net/blog/2013/08/23/dia-rapida-linux-como-deletar-todos-os-arquivos-exceto-alguns-com-extensoes-especificas</id>
+    <content type="html"><![CDATA[<p>{% img left /imgs/delete.jpg &lsquo;Delete Files&rsquo; %}
+<strong>É</strong> comum termos diretórios repletos de arquivos dos mais diferentes tipos e extensões, certo?! E quando desejamos remover vários arquivos ao mesmo tempo? Bom, o linux nos permite utilizar o comando rm para remover diversos arquivos ao mesmo tempo, certo? Da mesma forma, podemos facilmente excluir todos os arquivos de um determinado tipo ou extensão, conforme exemplo abaixo:</p>
+
+<p><code>
+ $ rm *.py
+</code></p>
+
+<p><strong>O</strong> comando acima remove todos os arquivos com extensão .py (<em>geralmente arquivos de código fonte Python</em>) do diretório atual. Mas e se desejarmos remover não apenas os arquivos de código Python, mas também os de código Ruby? Da mesma forma, podemos apenas inserir esta nova informação:</p>
+
+<p><code>
+ $ rm *.py *.rb
+</code></p>
+
+<p><strong>S</strong>imples&hellip; nenhuma novidade. Ok, mas e se desejarmos o caminho oposto? Se ao invés de especificar o que eu <em>desejo deletar</em>, eu preferir especificar o que eu <em>não desejo deletar</em>?</p>
+
+<p><strong>P</strong>orque eu desejaria isso? A ideia não é complicar, mas sim simplificar. Imaginemos que eu possuo um diretório com não apenas 2 ou 3 tipos de arquivos diferentes, mas sim 10, 20 ou mesmo 30. Eu apenas desejo manter os arquivos de 2 tipos ou extensões. Já imaginaram qual seria o tamanho do comando seguindo a linha de raciocínio acima? Algo como&hellip;</p>
+
+<p><code>
+ $ rm *.py *.rb *.txt *.doc *.odt *.png *.jpg *.sh *.bat *.c *.bkp *.ppt *.pl ... ... ... ...
+</code></p>
+
+<p><strong>C</strong>ansei antes mesmo de digitar todos. Agora deve ter ficado claro o porque de ser mais simples poder especificar apenas o que não desejo que seja deletado.</p>
+
+<p><strong>V</strong>amos supor que eu possuo um diretório no qual se encontram os meus arquivos de diversos tipos e extensões, conforme listados abaixo:</p>
+
+<p>```
+ $ ls</p>
+
+<p> arq2.avi  arq2.cdr  arq2.doc  arq2.html  arq2.mp3  arq2.php  arq2.ppt  arq2.vob  arq.c
+ arq.dbf  arq.gif   arq.mov  arq.odt  arq.png  arq.rb  arq2.bat  arq2.cdx  arq2.exe
+ arq2.jpg   arq2.mp4  arq2.pl   arq2.py   arq.avi   arq.cdr  arq.doc  arq.html  arq.mp3
+ arq.php  arq.ppt  arq.vob  arq2.c    arq2.dbf  arq2.gif  arq2.mov   arq2.odt  arq2.png
+ arq2.rb   arq.bat   arq.cdx  arq.exe  arq.jpg   arq.mp4  arq.pl   arq.py
+```</p>
+
+<p><strong>C</strong>omo podemos ver, temos arquivos de diversas extensões. Agora, supondo que eu desejo remover todos, exceto os arquivos com as extensões .rb e .py:</p>
+
+<p><code>
+ $ rm !(*.rb|*.py)
+</code></p>
+
+<p><strong>N</strong>osso resultado?</p>
+
+<p>```
+ $ ls</p>
+
+<p> arq2.py  arq2.rb  arq.py  arq.rb
+```</p>
+
+<p><strong>F</strong>eito. Oi, simples assim&hellip;</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[KDE 4.11 Lançado e Disponível no Arch Linux]]></title>
     <link href="http://blog.marcelocavalcante.net/blog/2013/08/19/kde-4-dot-11-lancado-e-disponivel-no-arch-linux/"/>
     <updated>2013-08-19T08:07:00-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2013/08/19/kde-4-dot-11-lancado-e-disponivel-no-arch-linux</id>
-    <content type="html"><![CDATA[<p><img class="left" src="/imgs/kde411.png" title="&lsquo;KDE 4.11&rsquo;" >
+    <content type="html"><![CDATA[<p>{% img left /imgs/kde411.png &lsquo;KDE 4.11&rsquo; %}
 <strong>E</strong>m 14 de Agosto de 2013 a comunidade KDE anunciou oficialmente a última release do Ambiente de Trabalho KDE, a versão 4.11. Nesta última versão o projeto incorporou grandes atualizações na Área de Trabalho, Aplicações e plataforma de Desenvolvimento, oferecendo, além de correções, novas funcionalidades, das quais muitas serão importantes para a próxima evolução da plataforma KDE.</p>
 
 <p><strong>E</strong>ste último lançamento é dedicado a memória de <em>Atul &ldquo;toolz&rdquo; Chitnis</em>, um dos maiores representantes do movimento de Software Livre e Open Source na Índia e, também, um dos maiores responsáveis pela existência do projeto KDE na Índia. Atul deixou-nos no dia 3 de Junho, após uma longa batalha contra o Câncer. Que sua alma descanse em paz, é o desejo de todos os membros do projeto KDE e, certamente, de muitas outras pessoas que o conheceram.</p>
@@ -52,7 +110,7 @@
     <link href="http://blog.marcelocavalcante.net/blog/2013/08/14/incompatibilidade-kernel-linux-3-dot-10-dot-6-e-placa-wireless-broadcom/"/>
     <updated>2013-08-14T15:04:00-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2013/08/14/incompatibilidade-kernel-linux-3-dot-10-dot-6-e-placa-wireless-broadcom</id>
-    <content type="html"><![CDATA[<p><img class="center" src="/imgs/kernel_panic.gif" title="&lsquo;kernel_panic&rsquo;" ></p>
+    <content type="html"><![CDATA[<p>{% img center /imgs/kernel_panic.gif &lsquo;kernel_panic&rsquo; %}</p>
 
 <p><strong>K</strong>ernel Panic!</p>
 
@@ -93,7 +151,7 @@
     <link href="http://blog.marcelocavalcante.net/blog/2013/08/12/dica-rapida-linux-melhorando-a-politica-de-senhas/"/>
     <updated>2013-08-12T08:41:00-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2013/08/12/dica-rapida-linux-melhorando-a-politica-de-senhas</id>
-    <content type="html"><![CDATA[<p><img class="center" src="/imgs/url.jpg" title="&lsquo;password&rsquo;" ></p>
+    <content type="html"><![CDATA[<p>{% img center /imgs/url.jpg &lsquo;password&rsquo; %}</p>
 
 <p><strong>N</strong>a dica anterior mencionei o uso do comando <em>chage</em> para <strong>forçar</strong> a alteração de senha por parte do usuário em sistemas Linux, mas e se além disso fosse possível melhorar esta prática, tornando a política de senhas de usuários um pouco mais segura?</p>
 
@@ -144,7 +202,7 @@
     <link href="http://blog.marcelocavalcante.net/blog/2013/08/06/dica-rapida-linux-forcar-usuario-a-trocar-senha-apos-primeiro-login/"/>
     <updated>2013-08-06T08:20:00-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2013/08/06/dica-rapida-linux-forcar-usuario-a-trocar-senha-apos-primeiro-login</id>
-    <content type="html"><![CDATA[<p><img class="center" src="/imgs/password.jpg" title="&lsquo;password&rsquo;" ></p>
+    <content type="html"><![CDATA[<p>{% img center /imgs/password.jpg &lsquo;password&rsquo; %}</p>
 
 <p><strong>É</strong> natural encontrar pessoas que utilizam linux a pouco tempo (ou que nunca utilizaram) questionando aspectos simples que seguem o jargão: <em>&ldquo;Mas no Windows eu consigo fazer isso, enquanto que no Linux&hellip;.&rdquo;</em></p>
 
@@ -175,219 +233,6 @@
 <p><strong>O</strong> parâmetro -d determina quando a senha do mesmo expira, ou deverá ser trocada. Você pode determinar uma data específica, a qual deve ser indicada no formato AAAA-MM-DD, porém, ao invés da data, o 0 indica que a senha deverá ser trocada após o primeiro login daquele usuário.</p>
 
 <p><strong>S</strong>imples, certo?!</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Netstat - Saiba o que está rolando em seu ambiente...]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2011/12/13/netstat-saiba-o-que-esta-rolando-em-seu-ambiente/"/>
-    <updated>2011-12-13T08:38:50-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2011/12/13/netstat-saiba-o-que-esta-rolando-em-seu-ambiente</id>
-    <content type="html"><![CDATA[<p><a href="http://pixelmaverick.com/wp-content/uploads/2009/11/brunocb-sherlock-holmes-tux-5975.png"><img src="http://pixelmaverick.com/wp-content/uploads/2009/11/brunocb-sherlock-holmes-tux-5975.png" alt="" /></a></p>
-
-<hr />
-
-<p><strong>S</strong>audações pessoal,</p>
-
-<p><strong>Q</strong>ue tal saber um pouco mais sobre o que lhe cerca virtualmente? Conexões de rede às quais sua máquina está ligada, tabelas de roteamento, estatísticas de interfaces, conexões mascaradas, multicasting, etc.. ?</p>
-
-<p><strong>A</strong>pesar de muitos conhecerem o netstat, poucos sabem que ele é capaz de tudo isso e mais um pouco. O netstat é sem sombra de dúvidas uma rica ferramenta que possui inúmeros comandos e combinações que sequer cabem em um artigo simples como este post.</p>
-
-<p><strong>A</strong> ideia vai ser apenas apresentar algumas opções que podem ser bem interessantes no dia a dia de um administrador de redes/sysadmin.</p>
-
-<p><strong>V</strong>amos lá&hellip;</p>
-
-<p><strong>1.</strong> <strong>Listar todas as portas, incluindo portas que estão sendo escutadas e portas que não estão:</strong></p>
-
-<p><strong>1.1</strong> Para listar TODAS as portas, podemos utilizar o parâmetro -a:
-[root@tuxcaverna ~]# netstat -a
-Active Internet connections (servers and established)
-Proto Recv-Q Send-Q Local Address           Foreign Address         State
-tcp        0      0 localhost.localdo:55481 <em>:</em>                     LISTEN
-tcp        0      0 <em>:60634                 </em>:<em>                     LISTEN
-tcp        0      0 </em>:6881                  <em>:</em>                     LISTEN
-tcp        0      0 172.16.1.6:46714        gru03s08-in-f20.1:https TIME_WAIT
-tcp        0      0 172.16.1.6:40899        gx-in-f138.1e1:www-http ESTABLISHED
-tcp        0      0 localhost.localdo:48742 localhost.localdo:55481 ESTABLISHED
-tcp        0      0 172.16.1.6:48643        125-233-152-234.d:21990 TIME_WAIT
-tcp        0      0 172.16.1.6:46717        gru03s08-in-f20.1:https TIME_WAIT
-tcp        0      0 172.16.1.6:57293        apache2-fungi.:www-http TIME_WAIT
-tcp        0      0 172.16.1.6:36444        gru03s05-in-f22.1:https ESTABLISHED
-tcp        0      0 172.16.1.6:57659        gru03s06-in-f1:www-http ESTABLISHED
-tcp        0      0 localhost.localdo:55481 localhost.localdo:48742 ESTABLISHED
-tcp        0      0 172.16.1.6:50581        gru03s06-in-f23.1:https ESTABLISHED
-tcp        0      0 172.16.1.6:39979        sn1msg1010828.phx.:msnp ESTABLISHED
-&hellip;</p>
-
-<p><strong>N</strong>ão coloquei a saída inteira, pois era bem extensa e ainda temos muitos parâmetros para ver. Onde existe XXX.XX.X.XX, obviamente, era o endereço IP que ocultei por puro protesto pela alta no preço do <strong>amendoim</strong>.</p>
-
-<p><strong>1.2</strong> Para listar todas as portas UDP, utilizamos os parâmetros -au:</p>
-
-<p>[root@tuxcaverna ~]# netstat -au</p>
-
-<p>Active Internet connections (servers and established) Proto Recv-Q Send-Q Local Address Foreign Address State udp 0 0 <em>:bootpc </em>:<em> udp 0 0 </em>:49119 <em>:</em> udp 0 0 <em>:mdns </em>:*</p>
-
-<p><strong>1.3</strong> Para listar todas as portas TCP, utilizamos os parâmetros -at:</p>
-
-<p>[root@tuxcaverna ~]# netstat -at
-Active Internet connections (servers and established) Proto Recv-Q Send-Q Local Address Foreign Address State tcp 0 0 localhost.localdo:39307 <em>:</em> LISTEN tcp 0 0 <em>:64758 </em>:* LISTEN tcp 0 0 XXX.XX.X.XX:54293 gru03s06-in-f21.1:https ESTABLISHED tcp 1 0 XXX.XX.X.XX:58732 sn1msg3020104.sn1.:msnp CLOSE_WAIT</p>
-
-<p><strong>2.</strong> <strong>Listar os Sockets que estão no estado Listening ou escuta:</strong></p>
-
-<p><strong>2.1</strong> Para listar todas no estado Listening, utilizamos o parâmetro -l:</p>
-
-<p>[root@tuxcaverna ~]# netstat -l</p>
-
-<p>Active Internet connections (only servers) Proto Recv-Q Send-Q Local Address Foreign Address State tcp 0 0 localhost.localdo:39307 <em>:</em> LISTEN tcp 0 0 <em>:64758 </em>:* LISTEN Active UNIX domain sockets (only servers) Proto RefCnt Flags Type State I-Node Path unix 2 [ ACC ] STREAM LISTENING 10443 @/tmp/.ICE-unix/1396 unix 2 [ ACC ] STREAM LISTENING 8262 /var/run/xdmctl/dmctl/socket unix 2 [ ACC ] STREAM LISTENING 8277 /var/run/xdmctl/dmctl-:0/socket</p>
-
-<p><strong>2.2</strong> Para listar apenas as portas TCP no estado Listening, utilizamos os parâmetros -lt:</p>
-
-<p>[root@tuxcaverna ~]# netstat -lt</p>
-
-<p>Active Internet connections (only servers) Proto Recv-Q Send-Q Local Address Foreign Address State tcp 0 0 localhost.localdo:39307 <em>:</em> LISTEN tcp 0 0 <em>:64758 </em>:* LISTEN</p>
-
-<p><strong>2.3</strong> Para listar apenas as portas UNIX em estado Listening, utilizamos os parâmetrox -lx:</p>
-
-<p>[root@tuxcaverna ~]# netstat -lx</p>
-
-<p>Active UNIX domain sockets (only servers) Proto RefCnt Flags Type State I-Node Path unix 2 [ ACC ] STREAM LISTENING 10443 @/tmp/.ICE-unix/1396 unix 2 [ ACC ] STREAM LISTENING 8262 /var/run/xdmctl/dmctl/socket unix 2 [ ACC ] STREAM LISTENING 8277 /var/run/xdmctl/dmctl-:0/socket</p>
-
-<p><strong>3.</strong> <strong>Apresentar as estatísticas para cada protocolo:</strong></p>
-
-<p><strong>3.1</strong> Para apresentar as estatísticas de todos os protocolos, utilizamos o parâmetro -s:</p>
-
-<p>[root@tuxcaverna ~]# netstat -s</p>
-
-<p>Ip: 98790 total packets received 54 with invalid headers 2 with invalid addresses 0 forwarded 0 incoming packets discarded 94778 incoming packets delivered 79070 requests sent out Icmp: 0 ICMP messages received 0 input ICMP message failed. ICMP input histogram: 0 ICMP messages sent 0 ICMP messages failed ICMP output histogram: Tcp: 2019 active connections openings 2 passive connection openings 10 failed connection attempts 161 connection resets received 14 connections established 88977 segments received 75703 segments send out 297 segments retransmited 0 bad segments received. 216 resets sent Udp: 2986 packets received 0 packets to unknown port received. 0 packet receive errors 3080 packets sent 0 receive buffer errors 0 send buffer errors</p>
-
-<p>&hellip;</p>
-
-<p>&hellip;</p>
-
-<p><strong>3.2</strong> Para apresentar as estatísticas do protocolo TCP (ou) UDP, utilizamos os parâmetros -st (ou) -su:</p>
-
-<p>[root@tuxcaverna ~]# netstat -st</p>
-
-<p>Tcp: 2031 active connections openings 2 passive connection openings 10 failed connection attempts 164 connection resets received 10 connections established 89257 segments received 76010 segments send out 297 segments retransmited 0 bad segments received. 219 resets sent</p>
-
-<p>ou</p>
-
-<p>[root@tuxcaverna ~]# netstat -su</p>
-
-<p>Udp: 3012 packets received 0 packets to unknown port received. 0 packet receive errors 3107 packets sent 0 receive buffer errors 0 send buffer errors</p>
-
-<p><strong>4.</strong> <strong>Apresentar o PID (ID do prcesso) e os nomes de programas:</strong></p>
-
-<p><strong>4.1</strong> Neste caso utilizamos o netstat com o parâmetro -p para receber a informação de &ldquo;PID/Nome do Programa&rdquo; na saída do netstat. Esta opção é muito útil para debugar e identificar qual programa está rodando em uma porta específica. O parâmetro -p pode ser combinado com demais parâmetros:</p>
-
-<p>[root@tuxcaverna ~]# netstat -pt
-Active Internet connections (w/o servers)
-Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
-tcp        0      0 XXX.XX.X.X:6881         83-228-34-45.btc-:11729 SYN_RECV    &ndash;
-tcp        0      0 XXX.XX.X.X:39508        200.123.194.16:www-http ESTABLISHED 30741/chromium
-tcp        0      0 XXX.XX.X.X:36321        208.46.17.59:www-http   ESTABLISHED 30741/chromium
-tcp        0      0 XXX.XX.X.X:57411        65.55.142.101:https     ESTABLISHED 3292/python2
-tcp        0      0 XXX.XX.X.X:6881         bd3e1c77.virtua.c:59298 ESTABLISHED 20447/qbittorrent</p>
-
-<p><strong>5.</strong> <strong>Não resolver host, porta ou nome de usuário:</strong></p>
-
-<p><strong>5.1</strong> Utiliza-se o parâmetro -an quando não se deseja receber na saída do netstat informações de host, porta ou usuarios com seus respectivos nomes resolvidos. Ao invés destas informações virão números:</p>
-
-<p>[root@tuxcaverna ~]# netstat -an
-Active Internet connections (servers and established)
-Proto Recv-Q Send-Q Local Address           Foreign Address         State
-tcp        0      0 0.0.0.0:61108           0.0.0.0:<em>               LISTEN
-tcp        0      0 0.0.0.0:6881            0.0.0.0:</em>               LISTEN
-tcp        0      0 127.0.0.1:49155         0.0.0.0:*               LISTEN</p>
-
-<p><strong>5.2</strong> Se você não quizer descartar as 3 informações de uma vez, pode optar por ocultar apenas uma em específico, conforme abaixo:</p>
-
-<blockquote><p><em>[root@tuxcaverna ~]# netstat -a &mdash;numericports</em></p></blockquote>
-
-<p>ou</p>
-
-<blockquote><p><em>[root@tuxcaverna ~]# netstat -a -numeric-hosts</em></p></blockquote>
-
-<p>ou</p>
-
-<blockquote><p><em>[root@tuxcaverna ~]# netstat -a numeric-users</em></p></blockquote>
-
-<p><strong>6.</strong> <strong>Que</strong> <strong>tal ter uma saída contínua de informações em tempo real? Para isso usa-se o parâmetro -c, que vai atualizar as informações do netstat a cada segundo:</strong></p>
-
-<p>[root@tuxcaverna ~]# netstat -c
-Active Internet connections (w/o servers)
-Proto Recv-Q Send-Q Local Address           Foreign Address         State
-tcp        0      0 XXX.XX.X.X:57411        65.55.142.101:https     ESTABLISHED
-tcp        0      0 XXX.XX.X.X:6881         bd3e1c77.virtua.c:59298 ESTABLISHED
-tcp        1      0 XXX.XX.X.X:49920        sn1msg2010605.phx.:msnp CLOSE_WAIT
-tcp        0      0 XXX.XX.X.X:45554        111-240-177-108.dy:8921 TIME_WAIT</p>
-
-<p><strong>7.</strong> <strong>Encontrar famílias de endereços não suportadas em seu sistema:</strong></p>
-
-<p><strong>U</strong>tilizamos o parâmetro &mdash;verbose. Repare que nas últimas linhas do retorno teremos algo como:</p>
-
-<p>[root@tuxcaverna ~]# netstat -c
-netstat: no support for <code>AF IPX' on this system.
-netstat: no support for</code>AF AX25' on this system.
-netstat: no support for <code>AF X25' on this system.
-netstat: no support for</code>AF NETROM' on this system.</p>
-
-<p><strong>8.</strong> <strong>Para apresentar informações de rotas do kernel utilizamos o parâmetro -r:</strong></p>
-
-<p>[root@tuxcaverna ~]# netstat -r
-Kernel IP routing table
-Destination     Gateway         Genmask         Flags   MSS Window  irtt Iface
-default         172.16.1.1      0.0.0.0         UG        0 0          0 wlan0
-172.16.1.0      *               255.255.255.0   U         0 0          0 wlan0</p>
-
-<p>&hellip;ou, pode-se utilizar -rn para apresentar em formato numérico ao invés de nomes de hosts.</p>
-
-<hr />
-
-<p><strong>9.</strong> <strong>Para descobrir em qual porta um determinado programa está rodando utilizamos os parâmetros -ap:</strong></p>
-
-<p>[root@tuxcaverna ~]# netstat -ap
-Active Internet connections (servers and established)
-Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
-tcp        0      0 <em>:61108                 </em>:<em>                     LISTEN      3452/wish
-tcp        0      0 </em>:6881                  <em>:</em>                     LISTEN      20447/qbittorrent
-tcp        0      0 localhost.localdo:49155 <em>:</em>                     LISTEN      4010/GoogleTalkPlug
-tcp        0    269 172.16.1.3:58742        52.60.in-addr.arp:12814 FIN_WAIT1   &ndash;
-tcp        0      0 172.16.1.3:6881         bd3e1c77.virtua.c:59298 ESTABLISHED 20447/qbittorrent</p>
-
-<p><strong>9.1</strong> Se quizer especificar o programa, ao invés de o procurar em uma extensa lista, utilize um filtro com o grep da seguinte forma:</p>
-
-<p>[root@tuxcaverna ~]# netstat -ap | grep chromium
-unix  2      [ ACC ]     STREAM     LISTENING     252100   30741/chromium       /tmp/.org.chromium.Chromium.bSJLzX/SingletonSocket
-unix  3      [ ]         STREAM     CONNECTED     309051   30741/chromium
-unix  3      [ ]         STREAM     CONNECTED     308785   30741/chromium</p>
-
-<p><strong>9.2</strong> Se ao invés de especificar o programa, você quizer especificar uma porta e saber o que está rodando nela, pode-se utilizar o filtro do grep da seguinte forma:</p>
-
-<blockquote><p><em>[root@tuxcaverna ~]# netstat -an | grep &lsquo;:80&rsquo;</em></p></blockquote>
-
-<p><strong>10.</strong> <strong>Para terminar, podemos utilizar o parâmetro -i para listar nossas interfaces de rede:</strong></p>
-
-<p>[root@tuxcaverna ~]# netstat -i
-Kernel Interface table
-Iface   MTU Met   RX-OK RX-ERR RX-DRP RX-OVR    TX-OK TX-ERR TX-DRP TX-OVR Flg
-eth0   1500 0         0      0      0 0             0      0      0      0 BMU
-lo    16436 0       662      0      0 0           662      0      0      0 LRU
-wlan0  1500 0    157377      0      4 0        133487      0      0      0 BMRU</p>
-
-<p><strong>S</strong>e desejar informações mas detalhadas sobre cada interface, pode-se utilizara combinação de parâmetros -ie:</p>
-
-<p>[root@tuxcaverna ~]# netstat -ie
-Kernel Interface table
-eth0: flags=4099&lt;UP,BROADCAST,MULTICAST>  mtu 1500  metric 1
-ether a4:ba:db:d7:41:c0  txqueuelen 1000  (Ethernet)
-RX packets 0  bytes 0 (0.0 B)
-RX errors 0  dropped 0  overruns 0  frame 0
-TX packets 0  bytes 0 (0.0 B)
-TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
-device interrupt 47  base 0xc000</p>
-
-<p><strong>H</strong>appy Hacking&hellip;</p>
 ]]></content>
   </entry>
   

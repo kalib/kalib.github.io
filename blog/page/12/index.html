@@ -9,7 +9,7 @@
   <meta name="author" content="Marcelo Cavalcante Rocha - Kalib">
 
   
-  <meta name="description" content="Saudações pessoal! Como muitos de vocês já devem saber, estamos nos aproximando do mês de Abril, significando que o Flisol vem aí. Para quem ainda &hellip;">
+  <meta name="description" content="Você sabe o que é rootkit? Nunca vi, nem comi, eu só ouço falar! É um vírus? É um trojan? É um spyware? Não, é um rootkit mesmo. A verdade é que &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -80,6 +80,176 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/03/16/rootkit-esse-bicho-morde-proteja-se/">Rootkit! Esse Bicho Morde? Proteja-se!</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-03-16T16:25:27-03:00" pubdate data-updated="true">Mar 16<span>th</span>, 2011</time>
+        
+         | <a href="/blog/2011/03/16/rootkit-esse-bicho-morde-proteja-se/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/03/malware.jpg"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/03/malware.jpg" alt="" /></a></p>
+
+<p><strong>V</strong>ocê sabe o que é rootkit?</p>
+
+<p><strong>N</strong>unca vi, nem comi, eu só ouço falar!</p>
+
+<p><strong>É</strong> um vírus? É um trojan? É um spyware? Não, é um rootkit mesmo.</p>
+
+<p><strong>A</strong> verdade é que ainda não existe um consenso em relação ao que o rootkit é de fato. Muitos dizem que é um tipo de vírus, alguns dizem que é um trojan, como você chamaria? Eu prefiro chamar de malware, que, ao pé da letra, seria um termo utilizado para algum aplicativo contendo código malicioso. o.O Acho que seria um meio termo aceitável para que possamos utilizar como base.</p>
+
+<p><strong>M</strong>as esse bicho morde? É de comer?</p>
+
+<p><strong>B</strong>om, em tese um Rootkit é um tipo de malware, como expliquei acima, cuja principal intenção é se camuflar, impedindo que seu código seja encontrado por qualquer antivírus.</p>
+
+<p><strong>T</strong>eoricamente, é exatamente isto que ele tenta fazer. Passar despercebido. De fato a grande maioria dos antivírus não são capazes de rastrear Rootkits justamente por conta do seu comportamento. É aí que surgiram ferramentas especializadas neste tipo de busca. Alguns antivírus, os mais caros, já agregam excelentes ferramentas para buscar rootkits. Mas, como eles conseguem se camuflar tão bem?</p>
+
+<p><strong>E</strong>stas aplicações, rootkits, têm a capacidade de interceptar as solicitações feitas ao sistema operacional, podendo alterar o seu resultado.</p>
+
+<p><strong>I</strong>magine que você está utilizando sua máquina e seu sistema operacional solicita a leitura ou abertura de um determinado arquivo, podendo ser a seu mando ou mesmo do antivírus, por exemplo, o rootkit intercepta os dados que são requisitados e faz uma filtragem dessa informação, deixando passar apenas o que ele deseja, ou seja, código não infectado. E o que acontece? O antivírus ou qualquer outra ferramenta ficam impossibilitadas de encontrar o arquivo malicioso ou o código, dependendo do caso.</p>
+
+<p><strong>N</strong>ão é incomum encontrar o Rootkit como não apenas uma aplicação, mas um conjunto de aplicações ou, como também chamamos, toolkit.</p>
+
+<p><strong>R</strong>esumidamente poderíamos dizer que é um programa com código malicioso que busca se esconder de softwares de segurança e do usuário utilizando diversas técnicas avançadas de programação para tal.</p>
+
+<p><strong>G</strong>eralmente escondem suas chaves nos registros do sistema operacional e escondem seus processos no gerenciador de tarefas, o que torna uma missão quase impossível para um usuário identificar por conta própria. Outra prática comum de quem escreve rootkits é fazer com que eles se escondam em drivers de hardware, que são arquivos de sistema fundamentais para que o sistema operacional funcione corretamente com seus dispositivos.</p>
+
+<p><strong>O</strong> nome RootKit é por conta da função para a qual o mesmo é desenvolvido. Primeiramente ele é um kit de funcionalidades e códigos maliciosos cujo objetivo é se infiltrar nos sistemas de forma silenciosa e despercebida, geralmente liberando um  *backdoor para que o invasor possa posteriormente acessar o sistema infectado com privilégios de super usuário ou usuário administrador (root).</p>
+
+<p><strong>P</strong>ara quem nunca ouviu falar em backdoors, a explicação pode ter parecido um tanto quanto confusa, portanto aqui vai a nota de rodapé: Backdoor é, assim como na tradução ao pé da letra, uma porta dos fundos. Uma falha de segurança intencional que possibilita a invasão do seu sistema de forma que o invasor possa ter este acesso e controle com um mínimo de trabalho.</p>
+
+<p><strong>S</strong>em mais papo furado, vamos conhecer algumas ferramentas que buscam rootkits em seu Linux.</p>
+
+<p><img src="http://aboutonlinetips.com/wp-content/uploads/2008/11/picture-rootkit.png" alt="" /></p>
+
+<p><strong>RKHUNTER</strong></p>
+
+<p><strong>A</strong> primeira ferramenta que vou apresentar se chama rkhunter, que é a minha favorita.</p>
+
+<p><strong>S</strong>e, assim como eu, você for usuário do <a href="http://archlinux.org">Arch Linux</a>, poderá encontrar o rkhunter no <a href="http://aur.archlinux.org">AUR</a> através <a href="http://aur.archlinux.org/packages.php?ID=25940">deste link</a>.</p>
+
+<p><strong>A</strong> instalação é simples e segue o padrão de qualquer instalação a partir do AUR, conforme passos abaixo:</p>
+
+<p><strong>1-</strong> Descompacte o arquivo:</p>
+
+<p>[kalib@tuxcaverna downloads]$ tar -xvzf rkhunter.tar.gz</p>
+
+<p><strong>2-</strong> Acesse o diretório criado:</p>
+
+<p>[kalib@tuxcaverna downloads]$ cd rkhunter/</p>
+
+<p><strong>3-</strong> Execute o PKGBUILD para criação do pacote em si:</p>
+
+<p>[kalib@tuxcaverna rkhunter]$ makepkg</p>
+
+<p><strong>4-</strong> Com o pacote criado, basta instalar:</p>
+
+<p>[kalib@tuxcaverna rkhunter]$ sudo pacman -U rkhunter-1.3.8-1-any.pkg.tar.xz</p>
+
+<p><strong>F</strong>eito.</p>
+
+<p><strong>S</strong>eu rkhunter está pronto para ser utilizado, mas como toda e qualquer aplicação de varredura, como antivírus, por exemplo, é sempre recomendado atualizar sua base de dados antes de iniciar a busca, portanto digite o seguinte para atualizar a base com as propriedades dos arquivos existentes:</p>
+
+<h1>rkhunter &mdash;propupd</h1>
+
+<p><strong>E</strong>m seguida é a hora de atualizar a base de dados do rkhunter em si:</p>
+
+<h1>rkhunter &mdash;update</h1>
+
+<p><strong>A</strong>gora, vamos vasculhar o sistema:</p>
+
+<h1>rkhunter -c</h1>
+
+<p><strong>V</strong>ocê terá uma listagem das checagens parecida com esta:</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/03/rkhunter11.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/03/rkhunter11.png" alt="" /></a></p>
+
+<p><strong>P</strong>erceba que é tudo apresentado de forma simples e objetiva.</p>
+
+<p><strong>N</strong>o final da checagem ele gera um arquivo onde ele armazena todas as informações que ele registrou bem como lhe aponta uma descrição dos resultados da busca.</p>
+
+<p><strong>TIGER</strong></p>
+
+<p><strong>E</strong>sta será a nossa segunda ferramenta.</p>
+
+<p><strong>O</strong> Tiger é uma ferramenta de segurança que não pensa tanto na aparência, portanto não espere uma tela tão amigável e colorida quanto a do rkhunter. ;]</p>
+
+<p><strong>A</strong> instalação da mesma no Arch Linux também se dá através do pacote do AUR que pode ser encontra <a href="http://aur.archlinux.org/packages.php?ID=1573">neste link</a>.</p>
+
+<p><strong>A</strong> instalação segue o mesmo procedimento que utilizamos no rkhunter, conforme abaixo:</p>
+
+<p>[kalib@tuxcaverna downloads]$ tar -xvzf tiger.tar.gz</p>
+
+<p>[kalib@tuxcaverna downloads]$ cd tiger/</p>
+
+<p>[kalib@tuxcaverna tiger]$ makepkg</p>
+
+<p>[kalib@tuxcaverna tiger]$ sudo pacman -U tiger-3.2.3-2-x86_64.pkg.tar.xz</p>
+
+<p><strong>F</strong>inalizado. Para executar, basta rodar:</p>
+
+<h1>tiger</h1>
+
+<p><strong>E</strong>le iniciará a busca e lhe trará uma interface como esta:</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/03/rkhunter2.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/03/rkhunter2.png" alt="" /></a></p>
+
+<p><strong>A</strong>ssim como o rkhunter, no ato de finalização ele irá gerar um arquivo com o relatório da checagem. Ele lhe informará o caminho do arquivo, mas provavelmente será em /var/log/tiger/.</p>
+
+<p><strong>CHKROOTKIT</strong></p>
+
+<p><strong>A</strong>gora vamos para a terceira e última ferramenta deste post.</p>
+
+<p><strong>P</strong>ara usuário Arch, desta vez a instalação é ainda mais simples do que as duas anteriores, visto que o pacote já se encontra nos repositórios do pacman.</p>
+
+<p>[kalib@tuxcaverna ~]$ sudo pacman -S chkrootkit</p>
+
+<p><strong>I</strong>nstalado!</p>
+
+<p><strong>A</strong>ssim como o Tiger, o chkroot também possui uma interface simples sem cores ou enfeites, conforme pode ser visto abaixo:</p>
+
+<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/03/rkhunter3.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/03/rkhunter3.png" alt="" /></a></p>
+
+<p><strong>A</strong>pesar de não ser colorida e enfeitada, é uma interface bem simples e de fácil entendimento, concordam?</p>
+
+<p><strong>C</strong>laro, não existem apenas estas ferramentas para busca de rootkits e códigos maliciosos, mas levaria muito tempo para escrever sobre todos ou ao menos a maioria.</p>
+
+<p><strong>N</strong>o mais, acho que já é um bom começo para um entendimento básico sobre o que é esse tal Rootkit e o que esse bicho faz.</p>
+
+<p><strong>C</strong>om estas ferramentas as chances de algum rootkit passar despercebido em seu ambiente Linux já são bem limitadas.</p>
+
+<p><strong>A</strong>braços!</p>
+
+<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -211,148 +381,6 @@ _ * Técnicas para preparação e desenvolvimento de sites com Django</em></p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/02/15/brute-force-o-dirb-dirbuster-lhe-ajuda-a-identificar-vulnerabilidades-em-seu-site/">Brute-force? O Dirb&#8230; DirBuster Lhe Ajuda a Identificar Vulnerabilidades Em Seu Site</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-02-15T10:23:19-03:00" pubdate data-updated="true">Feb 15<span>th</span>, 2011</time>
-        
-         | <a href="/blog/2011/02/15/brute-force-o-dirb-dirbuster-lhe-ajuda-a-identificar-vulnerabilidades-em-seu-site/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><strong>B</strong>om, para quem não conhece nada sobre Brute-Force ou apenas ouviu falar vagamente mas não tem certeza sobre o que realmente é um ataque deste tipo, sugiro dar uma lida em meu último post, onde apresentei algumas informações sobre brute-force bem como uma ferramenta que podemos utilizar para testar nossos sites e verificar o quão vulneráveis eles estão a este tipo de ataque. Segue link para o mesmo:</p>
-
-<p><a href="http://marcelocavalcante.net/portal/2011/01/31/brute-force-o-dirb-lhe-ajuda-a-identificar-vulnerabilidades-em-seu-site/">Brute-Force? O Dirb lhe ajuda a identificar vulnerabilidade em seu site!</a></p>
-
-<p><strong>A</strong>gora que já conhecemos um pouco sobre as técnicas de brute-force e a ferramenta Dirb, que tal conhecer outra mais apresentável?</p>
-
-<p><strong>M</strong>e refiro ao <a href="http://www.owasp.org/index.php/DirBuster">DirBuster</a>. Uma aplicação multithread desenvolvida pelo <a href="http://www.owasp.org/">OWASP</a> (The Open Web Application Security Project) que tem como objetivo realizar brute-force em diretórios e nomes de arquivos na web. Assim como o Dirb, o DirBuster trabalha em cima de dicionários ou listas. Ao todo ele trás 9 listas que podem ser utilizadas para nossas varreduras e testes. Como todas as suas listas foram criadas na unha, após exaustívas pesquisas e buscas na web por nomes mais utilizados para arquivos e diretórios em servidores web, o DirBuster mostra-se extremamente efetivo para este tipo de atividade conseguindo encontrar até mesmo os arquivos mais ocultos e escondidos.</p>
-
-<p><strong>M</strong>as se você não ficar satisfeito, <del>nós garantimos a devolução do seu dinheiro</del>, com apenas utilizar o modelo de dicionários, o DirBuster ainda lhe possibilita o ataque de brute-force mais purista. Tentativa e erro com combinações possíveis de caracteres. Claro, se você tem muito poder de processamento e tempo sobrando, boa sorte. ;]</p>
-
-<p><strong>L</strong>egal Kalib, quer dizer que agora posso sair invadindo sites?</p>
-
-<p><del>o.O Como diria o Chaves: Ai que burrrrroooo.. dá zero pra ele&hellip;</del></p>
-
-<p><strong>N</strong>ão amigo. O meu intuito não é incentivar ou apresentar qualquer mecanismo ou técnica para este tipo de atividade. O DirBuster não foi feito para este propósito e nem conseguirá efetuar isto. Ele não fará nenhum tipo de exploit em arquivos ou diretórios que ele encontre. O DirBuster serve exatamente para identificar possíveis alvos para estes tipos de ataque, o que nos permite agir de forma corretiva ou preventiva em nossos servidores web. ;]</p>
-
-<p><strong>C</strong>hega de lenga lenga.. vamos ao que interessa!</p>
-
-<p><strong>C</strong>omo instalar?</p>
-
-<p><img src="http://blog.leandroinacio.eti.br/wp-content/uploads/2009/10/arch-linux-logo1.png" alt="Arch Linux" />
-Bom, se você utiliza <a href="http://archlinux.org">Arch Linux</a>, pode pegar o pacote no AUR através do seguinte link(Lembrem-se de votar nele):</p>
-
-<p><a href="http://aur.archlinux.org/packages.php?ID=20809">http://aur.archlinux.org/packages.php?ID=20809</a></p>
-
-<p><strong>F</strong>eito isto, basta seguir o procedimento padrão para pacotes do AUR.</p>
-
-<blockquote><p>1- Descompactar: [kalib@tuxcaverna downloads]$ tar -xvzf dirbuster.tar.gz</p></blockquote>
-
-<p>2- Entrar no diretório dirbuster e gerar o pacote: [kalib@tuxcaverna dirbuster]$ makepkg</p>
-
-<p>3- Instalar o pacote: [kalib@tuxcaverna dirbuster]$ sudo pacman -U dirbuster-0.12-1-x86_64.pkg.tar.xz</p>
-
-<p><strong>F</strong>eito. ;]</p>
-
-<p><strong>O</strong>utras distribuições? Não tenho certeza se o pessoal de outras distribuições empacotou o DirBuster, portanto provavelmente você vai precisar baixar o arquivo compactado do site oficial do projeto. Busquei tanto no Debian quanto no (K)Ubuntu 10.10 e em nenhum destes encontrei o DirBuster nos repositórios através do aptitude.</p>
-
-<p><strong>P</strong>ortanto se você não utiliza o Arch, segue link para download da ferramenta:</p>
-
-<p><a href="http://www.owasp.org/index.php/DirBuster#tab=Download">http://www.owasp.org/index.php/DirBuster#tab=Download</a></p>
-
-<p><strong>M</strong>as qual a cara do bicho?</p>
-
-<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster8.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster8.png" alt="" /></a></p>
-
-<p><strong>C</strong>omo explicado antes, ele funciona parecido com o Dirb, porém em uma interface GUI (gráfica).</p>
-
-<p><strong>C</strong>omo podem ver, é uma interface simples e de fácil manuseio.</p>
-
-<p><strong>V</strong>amos aos pontos:</p>
-
-<p>1- No campo Target, você deverá inserir a URL que será alvo do seu brute-force de diretórios e arquivos web.</p>
-
-<p>2- Logo abaixo, vocẽ escolhe se deseja utilizar apenas GET ou HEAD &amp; GET.</p>
-
-<p>3- Agora é a vez de escolher quantas threads deseja utilizar. Quanto maior o número de threads, mais requisições simultâneas você estará utilizando. ;]</p>
-
-<p>4- Abaixo você deverá escolher o tipo de brute-force.</p>
-
-<ul>
-<li><p>Baseado em dicionários, neste caso você deverá escolher um dos dicionários que a ferramenta já lhe disponibiliza através do seguinte caminho: /opt/DirBuster/</p></li>
-<li><p>Baseado em brute-force puro. Neste caso você deverá escolher qual conjunto de caracteres deseja que sejam utilizados, quantidade mínima e máxima de caracteres por tentativa.</p></li>
-</ul>
-
-
-<p>5- Em seguida é a hora de escolher os filtros: Deseja fazer brute-force apenas em diretórios? Arquivos também? Modo recursivo? Extensões em branco? Diretório inicial para o scan? Que tipo de extensão?&hellip;</p>
-
-<p><strong>E</strong> como é o retorno que ele me dá?</p>
-
-<p><strong>B</strong>om, vou escolher meu alvo e vou utilizar 20 threads em simultâneo. Não vou deixar a ferramenta rodando por muito tempo pois estou apenas fazendo uma demonstração.</p>
-
-<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster21.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster21.png" alt="" /></a></p>
-
-<p><strong>C</strong>omo podem ver, filtrei para que o brute-force comece no diretório raiz (/) e optei pela maior lista que o DirBuster possui como dicionário. Deixei rodando por cerca de 30 segundos e já tive o seguinte resultado.</p>
-
-<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster3.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster3.png" alt="" /></a></p>
-
-<p><strong>A</strong> parte borrada no início da imagem não é um defeito. Vocês não pensaram que eu iria deixar exposto o alvo no qual fiz o teste, certo? No caso, optei pelo site de uma de nossas instituições de ensino. Bom, a imagem acima é um exemplo do retorno que consigo com a ferramenta. É a visão em Lista. Além dela você pode optar pela visão em árvore, que, como o nome informa, lhe trará a árvore de diretórios, sub-diretórios e arquivos que foram encontrados. Abaixo um exemplo da visão em árvore:</p>
-
-<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster4.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster4.png" alt="" /></a></p>
-
-<p><strong>O</strong> resultado, mesmo deixando a ferramenta rodando por apenas 30 segundos, foi o esperado. Um espantoso caso de descuido com a segurança do site.</p>
-
-<p><strong>A</strong>lguns leves exemplos que me chamaram a atenção na lista que consegui:</p>
-
-<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster5.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster5.png" alt="" /></a></p>
-
-<p><strong>U</strong>m diretório de administração exposto desta forma indicando que existe uma sessão do site com acesso permitido apenas para administradores. O que isso me leva a crer? Que quem conseguir acesso a esta sessão consegue manipular o sistema do site? O que nos leva a uma posterior análise da página index contida nele que possibilita uma tentativa de brute-force de login e senha? psssiiiuuuu&hellip; o.O</p>
-
-<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster6.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster6.png" alt="" /></a>
-<strong> U</strong>m diretório para uploads de Arquivos? Que tal testar ele? Apenas usuários administradores possuem permissão de upload? Ou alunos conseguem fazer upload de fotos, trabalhos, por exemplo? De qualquer forma, isso me indica que existe a possibilidade de eu subir arquivos para o servidor deles. Que tal um script em php que me permitiria ter um console shell no servidor deles para inclusão, exclusão, edição, etc.. ? pssiiiiuuuu&hellip; o.O</p>
-
-<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster7.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster7.png" alt="" /></a></p>
-
-<p><strong>P</strong>ode não ser nada.. mas também pode ser muita coisa.. O que um diretório chamado &ldquo;gerencia&rdquo; faz ali tão exposto e com um nome tão&hellip; tão&hellip; discreto? o.O psssiiiuuuuu</p>
-
-<p><strong>A</strong>cho que já conseguiram entender um pouco do que o DirBuster faz.</p>
-
-<p><strong>A</strong>braços!</p>
-
-<p><strong>H</strong>appy Hacking&hellip;</p>
-
-<p><strong>PS: Wrong developers! Never play security by obscurity!</strong></p>
-
-<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/13/">&larr; Anteriores</a>
@@ -377,6 +405,10 @@ Me conheça melhor <a href="http://blog.marcelocavalcante.net/about">clicando aq
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/08/23/dia-rapida-linux-como-deletar-todos-os-arquivos-exceto-alguns-com-extensoes-especificas/">Dica Rápida - Linux - Como Deletar Todos os Arquivos Exceto Alguns (Com Extensões Específicas)?</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/08/19/kde-4-dot-11-lancado-e-disponivel-no-arch-linux/">KDE 4.11 Lançado e Disponível no Arch Linux</a>
       </li>
     
@@ -398,10 +430,6 @@ Me conheça melhor <a href="http://blog.marcelocavalcante.net/about">clicando aq
     
       <li class="post">
         <a href="/blog/2013/08/06/dica-rapida-linux-forcar-usuario-a-trocar-senha-apos-primeiro-login/">Dica Rápida - Linux - Forçar Usuário A Trocar Senha Após Primeiro Login</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/08/04/rails-girls-em-fortaleza-um-palco-para-a-criatividade-feminina/">Rails Girls em Fortaleza - Um palco para a criatividade feminina</a>
       </li>
     
   </ul>
