@@ -7,12 +7,8 @@ slug: recomendacao-bibliografica-do-voo%c2%bf-o-pistoleiro
 title: Recomendação bibliográfica do... voo?¿ - O Pistoleiro
 wordpress_id: 505
 categories:
-- Arch Linux
-- cultura hacker
-- Impressões
-- Linux
+- Impressoes
 - Literatura
-- software livre
 ---
 
 [![](http://www.livrariasaraiva.com.br/imagem/imagem.dll?L=120&A=-1&pro_id=161998&PIM_Id=)](http://www.livrariasaraiva.com.br/imagem/imagem.dll?L=120&A=-1&pro_id=161998&PIM_Id=)

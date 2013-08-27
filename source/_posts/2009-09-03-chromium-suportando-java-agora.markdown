@@ -9,10 +9,10 @@ wordpress_id: 561
 categories:
 - Arch Linux
 - Chromium
-- cultura hacker
-- Impressões
+- Cultura Hacker
+- Impressoes
 - Java
-- software livre
+- Software Livre
 ---
 
 [![javachromium](http://marcelocavalcante.net/portal/wp-content/uploads/2009/09/javachromium-252x300.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2009/09/javachromium.png)

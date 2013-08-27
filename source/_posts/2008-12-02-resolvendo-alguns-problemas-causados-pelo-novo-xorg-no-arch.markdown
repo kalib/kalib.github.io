@@ -9,7 +9,7 @@ wordpress_id: 51
 categories:
 - Arch Linux
 - Linux
-- software livre
+- Software Livre
 ---
 
 [![](http://kalib.pre.hw40.webservidor.net/wordpress/wp-content/uploads/2009/02/archlinux_logo_glass-300x256.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/archlinux_logo_glass.png)Não é de hoje que vejo o nível de alguns pacotes essenciais como o Kernel e o Xorg caírem cada vez mais. É triste porém uma realidade. A maneira como tais pacotes vem sendo lançados sem maiores preocupações está prejudicando a vida de muita gente. Eu fui um deles recentemente ao atualizar o meu Xorg. Para aqueles que também fizeram upgrade recentemente, podem ter aparecido vários problemas.

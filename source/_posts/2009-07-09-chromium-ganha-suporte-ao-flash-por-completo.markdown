@@ -9,10 +9,10 @@ wordpress_id: 532
 categories:
 - Arch Linux
 - Chromium
-- google
-- Impressões
+- Google
+- Impressoes
 - Linux
-- software livre
+- Software Livre
 ---
 
 **S**audações pessoal..

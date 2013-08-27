@@ -8,10 +8,10 @@ title: Entrando para a comissão do Archlinux Brasil
 wordpress_id: 480
 categories:
 - Arch Linux
-- cultura hacker
-- Impressões
+- Cultura Hacker
+- Impressoes
 - Linux
-- software livre
+- Software Livre
 ---
 
 ![arch_fireworks](http://marcelocavalcante.net/portal/wp-content/uploads/2009/05/arch_fireworks-300x224.png)

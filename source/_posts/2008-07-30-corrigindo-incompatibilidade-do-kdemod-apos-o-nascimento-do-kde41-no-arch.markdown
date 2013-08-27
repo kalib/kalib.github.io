@@ -10,7 +10,7 @@ categories:
 - Arch Linux
 - KDE
 - Linux
-- software livre
+- Software Livre
 ---
 
 Os usuários de Arch Linux que utilizam o kdemod como ambiente gráfico e que tentaram fazer uma atualização do sistema (pacman -Syu) nos últimos dias devem ter notado que havia um problema. Como o KDE 4.1 entrou para os repositórios do Arch, passou a haver uma incompatibilidade entre alguns pacotes. E a atualização do sistema pedia que você substituisse alguns pacotes do kdemod pelos do kde.

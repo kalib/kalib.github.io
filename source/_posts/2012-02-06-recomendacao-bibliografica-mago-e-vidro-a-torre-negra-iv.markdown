@@ -7,7 +7,7 @@ slug: recomendacao-bibliografica-mago-e-vidro-a-torre-negra-iv
 title: 'Recomendação Bibliográfica: Mago e Vidro (A Torre Negra - IV)'
 wordpress_id: 975
 categories:
-- Impressões
+- Impressoes
 - Literatura
 ---
 

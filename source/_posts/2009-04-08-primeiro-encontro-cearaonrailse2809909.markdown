@@ -7,9 +7,9 @@ slug: primeiro-encontro-cearaonrails%e2%80%9909
 title: Primeiro encontro CearáOnRails’09
 wordpress_id: 359
 categories:
-- Impressões
-- ruby
-- software livre
+- Impressoes
+- Ruby
+- Software Livre
 ---
 
 ![logomarca_cearaonrails](http://marcelocavalcante.net/portal/wp-content/uploads/2009/04/logomarca_cearaonrails.png)

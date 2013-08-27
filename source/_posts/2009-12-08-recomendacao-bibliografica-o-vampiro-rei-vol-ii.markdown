@@ -7,7 +7,7 @@ slug: recomendacao-bibliografica-o-vampiro-rei-vol-ii
 title: Recomendação Bibliográfica - O Vampiro Rei - Vol II
 wordpress_id: 618
 categories:
-- Impressões
+- Impressoes
 - Literatura
 ---
 

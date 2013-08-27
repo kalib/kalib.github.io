@@ -8,10 +8,10 @@ title: Lula no FISL - Adeus Liberdade...
 wordpress_id: 509
 categories:
 - Arch Linux
-- cultura hacker
-- Impressões
+- Cultura Hacker
+- Impressoes
 - Linux
-- software livre
+- Software Livre
 ---
 
 [![](http://4.bp.blogspot.com/_OJ0qwkgKMzI/R_PsBaOtnZI/AAAAAAAAA9k/PFmyyDTrxFQ/s400/lula+com+pinguim.JPG)](http://4.bp.blogspot.com/_OJ0qwkgKMzI/R_PsBaOtnZI/AAAAAAAAA9k/PFmyyDTrxFQ/s400/lula+com+pinguim.JPG)

@@ -6,6 +6,12 @@ layout: post
 slug: flisol-2009-fortaleza-obrigado-tux-ce
 title: Flisol 2009, Fortaleza - Obrigado Tux-CE
 wordpress_id: 388
+categories:
+- Flisol
+- Impressoes
+- Linux
+- Software Livre
+- Tux-ce
 ---
 
 **![tux-ce](http://marcelocavalcante.net/portal/wp-content/uploads/2009/04/tux-ce-300x225.jpg)

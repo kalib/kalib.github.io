@@ -7,7 +7,7 @@ slug: recomendacao-bibliografica-sementes-no-gelo
 title: Recomendação Bibliográfica - Sementes no Gelo
 wordpress_id: 285
 categories:
-- Impressões
+- Impressoes
 - Literatura
 ---
 

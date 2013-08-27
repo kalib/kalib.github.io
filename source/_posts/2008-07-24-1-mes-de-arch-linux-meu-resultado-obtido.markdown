@@ -8,9 +8,9 @@ title: 1 Mês de Arch Linux - Meu resultado obtido
 wordpress_id: 24
 categories:
 - Arch Linux
-- Impressões
+- Impressoes
 - Linux
-- software livre
+- Software Livre
 ---
 
 ### 

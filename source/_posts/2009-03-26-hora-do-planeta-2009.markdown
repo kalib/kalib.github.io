@@ -7,7 +7,7 @@ slug: hora-do-planeta-2009
 title: Hora do Planeta 2009 - 28 de Março
 wordpress_id: 338
 categories:
-- Impressões
+- Impressoes
 - Meio Ambiente
 ---
 

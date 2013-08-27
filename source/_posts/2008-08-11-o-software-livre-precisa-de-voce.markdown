@@ -7,9 +7,9 @@ slug: o-software-livre-precisa-de-voce
 title: O Software Livre precisa de você
 wordpress_id: 28
 categories:
-- Impressões
+- Impressoes
 - Linux
-- software livre
+- Software Livre
 ---
 
 ### 

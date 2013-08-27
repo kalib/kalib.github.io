@@ -8,12 +8,12 @@ title: Executando comandos remotos em X servidores com o konsole
 wordpress_id: 272
 categories:
 - Arch Linux
-- cultura hacker
-- Impressões
+- Cultura Hacker
+- Impressoes
 - KDE
 - Linux
-- redes
-- software livre
+- Redes
+- Software Livre
 ---
 
 [![](http://marcelocavalcante.net/portal/wp-content/uploads/2009/03/kde_konsole1.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2009/03/kde_konsole1.png)

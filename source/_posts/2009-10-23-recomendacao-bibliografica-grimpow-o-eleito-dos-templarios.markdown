@@ -7,7 +7,7 @@ slug: recomendacao-bibliografica-grimpow-o-eleito-dos-templarios
 title: 'Recomendação Bibliográfica: Grimpow - O Eleito dos Templários'
 wordpress_id: 581
 categories:
-- Impressões
+- Impressoes
 - Literatura
 ---
 

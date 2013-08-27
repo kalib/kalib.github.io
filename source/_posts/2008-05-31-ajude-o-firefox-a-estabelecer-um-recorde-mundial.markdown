@@ -7,9 +7,9 @@ slug: ajude-o-firefox-a-estabelecer-um-recorde-mundial
 title: Ajude o Firefox a estabelecer um recorde mundial
 wordpress_id: 17
 categories:
-- firefox
-- Impressões
-- software livre
+- Firefox
+- Impressoes
+- Software Livre
 ---
 
 ### 

@@ -7,12 +7,12 @@ slug: brute-force-o-dirb-lhe-ajuda-a-identificar-vulnerabilidades-em-seu-site
 title: Brute-force? O Dirb lhe ajuda a identificar vulnerabilidades em seu site
 wordpress_id: 773
 categories:
-- cultura hacker
-- Impressões
+- Cultura Hacker
+- Impressoes
 - Linux
-- redes
-- segurança
-- software livre
+- Redes
+- Seguranca
+- Software Livre
 ---
 
 ![](http://tdistler.com/wp-content/uploads/2010/06/sherlock_tux.jpg)

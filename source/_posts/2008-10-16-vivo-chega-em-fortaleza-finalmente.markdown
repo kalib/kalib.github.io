@@ -7,7 +7,7 @@ slug: vivo-chega-em-fortaleza-finalmente
 title: Vivo chega em Fortaleza - Finalmente
 wordpress_id: 39
 categories:
-- Impressões
+- Impressoes
 ---
 
 [![](http://3.bp.blogspot.com/_5kfJplBiYy0/SPdBXivzDYI/AAAAAAAAAJ0/wjRTlq6Yv5Y/s200/vivo.gif)](http://3.bp.blogspot.com/_5kfJplBiYy0/SPdBXivzDYI/AAAAAAAAAJ0/wjRTlq6Yv5Y/s1600-h/vivo.gif)Finalmente tenho o prazer de anunciar que a Operadora Vivo chegou a Fortaleza. Finalmente uma operadora decente em nossa cidade.

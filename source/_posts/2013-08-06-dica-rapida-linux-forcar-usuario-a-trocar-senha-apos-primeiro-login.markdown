@@ -11,7 +11,7 @@ categories:
 - Servidor
 - SysAdmin
 - Senha
-- Segurança
+- Seguranca
 ---
 {% img center /imgs/password.jpg 'password' %}
 

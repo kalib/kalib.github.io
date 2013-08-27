@@ -8,10 +8,10 @@ title: The Zen of Python
 wordpress_id: 49
 categories:
 - Arch Linux
-- Impressões
+- Impressoes
 - Linux
 - Python
-- software livre
+- Software Livre
 ---
 
 [![](http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/meditacao.jpg)](http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/meditacao.jpg)É isso mesmo...

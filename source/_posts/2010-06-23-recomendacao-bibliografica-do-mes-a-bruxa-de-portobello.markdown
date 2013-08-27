@@ -7,7 +7,7 @@ slug: recomendacao-bibliografica-do-mes-a-bruxa-de-portobello
 title: 'Recomendação bibliográfica do mês: A Bruxa de Portobello'
 wordpress_id: 694
 categories:
-- Impressões
+- Impressoes
 - Literatura
 ---
 

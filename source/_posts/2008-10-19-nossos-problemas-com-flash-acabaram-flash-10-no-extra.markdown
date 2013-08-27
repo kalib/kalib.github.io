@@ -8,9 +8,9 @@ title: Nossos problemas com flash acabaram! Flash 10 no Extra
 wordpress_id: 40
 categories:
 - Arch Linux
-- Impressões
+- Impressoes
 - Linux
-- software livre
+- Software Livre
 ---
 
 [![](http://4.bp.blogspot.com/_5kfJplBiYy0/SPs-N8MDU6I/AAAAAAAAAKE/XLJIm9BGfjI/s200/adobe_flash.gif)](http://4.bp.blogspot.com/_5kfJplBiYy0/SPs-N8MDU6I/AAAAAAAAAKE/XLJIm9BGfjI/s1600-h/adobe_flash.gif)Hoje, 19/10, [foi lançado no repositório Extra do Archlinux o flashplugin 10](http://archlinux-br.org/). Este flash veio com a promessa de resolver o problema de transparência que nós, usuários Linux, tínhamos com muitos sites que utilizavam-se de flash. Quem aqui nunca teve dor de cabeça ao tentar navegar em sites como o da OI por exemplo? o.O Era impossível.

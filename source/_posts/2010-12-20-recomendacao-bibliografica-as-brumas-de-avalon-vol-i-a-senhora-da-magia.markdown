@@ -7,7 +7,7 @@ slug: recomendacao-bibliografica-as-brumas-de-avalon-vol-i-a-senhora-da-magia
 title: 'Recomendação Bibliográfica: As Brumas de Avalon vol I - A Senhora da Magia'
 wordpress_id: 752
 categories:
-- Impressões
+- Impressoes
 - Literatura
 ---
 

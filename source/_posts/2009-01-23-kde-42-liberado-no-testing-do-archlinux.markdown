@@ -8,10 +8,10 @@ title: KDE 4.2 liberado no testing do Archlinux
 wordpress_id: 60
 categories:
 - Arch Linux
-- Impressões
+- Impressoes
 - KDE
 - Linux
-- software livre
+- Software Livre
 ---
 
 [![](http://kalib.pre.hw40.webservidor.net/wordpress/wp-content/uploads/2009/02/162_kde.jpg)](http://kalib.pre.hw40.webservidor.net/wordpress/wp-content/uploads/2009/02/162_kde.jpg)

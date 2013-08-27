@@ -9,14 +9,14 @@ title: Brute-force? O Dirb... DirBuster lhe ajuda a identificar vulnerabilidades
 wordpress_id: 777
 categories:
 - Arch Linux
-- cultura hacker
-- Impressões
+- Cultura Hacker
+- Impressoes
 - Java
 - Kubuntu
 - Linux
-- redes
-- segurança
-- software livre
+- Redes
+- Seguranca
+- Software Livre
 ---
 
 **B**om, para quem não conhece nada sobre Brute-Force ou apenas ouviu falar vagamente mas não tem certeza sobre o que realmente é um ataque deste tipo, sugiro dar uma lida em meu último post, onde apresentei algumas informações sobre brute-force bem como uma ferramenta que podemos utilizar para testar nossos sites e verificar o quão vulneráveis eles estão a este tipo de ataque. Segue link para o mesmo:

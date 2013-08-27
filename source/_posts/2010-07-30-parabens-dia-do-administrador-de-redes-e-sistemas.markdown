@@ -7,8 +7,8 @@ slug: parabens-dia-do-administrador-de-redes-e-sistemas
 title: Parabéns! Dia do Administrador de Redes e Sistemas
 wordpress_id: 730
 categories:
-- cultura hacker
-- Impressões
+- Cultura Hacker
+- Impressoes
 ---
 
 ![](http://www.sysadminday.com/images/horror/Cyberain.server.jpg)

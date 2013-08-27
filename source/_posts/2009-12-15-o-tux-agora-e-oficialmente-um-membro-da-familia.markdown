@@ -7,7 +7,7 @@ slug: o-tux-agora-e-oficialmente-um-membro-da-familia
 title: O Tux agora é oficialmente um membro da família!
 wordpress_id: 629
 categories:
-- Impressões
+- Impressoes
 ---
 
 **S**audações pessoal,

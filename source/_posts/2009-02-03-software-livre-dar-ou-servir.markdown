@@ -7,10 +7,10 @@ slug: software-livre-dar-ou-servir
 title: Software Livre - Dar ou Servir?
 wordpress_id: 63
 categories:
-- cultura hacker
-- Impressões
+- Cultura Hacker
+- Impressoes
 - Linux
-- software livre
+- Software Livre
 ---
 
 À primeira vista, dar e servir parecem ser a mesma coisa. Em ambas as opções estamos abrindo mão de algo e entregando a alguém, porém existe uma sutil, porém importante, diferença entre estas duas palavras. Aqui irei abordar esta diferença explicando um pouco da filosofia do Software Livre.

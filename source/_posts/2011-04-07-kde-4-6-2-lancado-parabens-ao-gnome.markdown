@@ -8,10 +8,10 @@ title: 'KDE 4.6.2 lançado: Parabéns ao GNOME!'
 wordpress_id: 823
 categories:
 - Arch Linux
-- Impressões
+- Impressoes
 - KDE
 - Linux
-- software livre
+- Software Livre
 ---
 
 [![](http://www.insidelinux.com.br/wp-content/uploads/2010/10/gnome-kde.png)](http://www.insidelinux.com.br/wp-content/uploads/2010/10/gnome-kde.png)

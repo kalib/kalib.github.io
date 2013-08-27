@@ -7,7 +7,7 @@ slug: recomendacao-bibliografica-as-brumas-de-avalon-vol-ii-a-grande-rainha
 title: Recomendação Bibliográfica - As Brumas de Avalon vol II - A Grande Rainha
 wordpress_id: 873
 categories:
-- Impressões
+- Impressoes
 - Literatura
 ---
 

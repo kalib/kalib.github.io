@@ -7,11 +7,11 @@ slug: problemas-de-infra-do-fedora-servidores-hackeados
 title: Problemas de Infra do Fedora - Servidores Hackeados
 wordpress_id: 29
 categories:
-- cultura hacker
-- fedora
+- Cultura Hacker
+- Fedora
 - Linux
-- segurança
-- software livre
+- Seguranca
+- Software Livre
 ---
 
 [![](http://2.bp.blogspot.com/_5kfJplBiYy0/SK67DllLZfI/AAAAAAAAAFs/Ng_aNe5Oy-A/s200/images.jpeg)](http://2.bp.blogspot.com/_5kfJplBiYy0/SK67DllLZfI/AAAAAAAAAFs/Ng_aNe5Oy-A/s1600-h/images.jpeg)Não sei se algum de vocês ficou sabendo..Mas na última semana foi notificado um problema na infra-estrutura do Fedora, e havia sido "recomendado" que nenhuma instalação ou atualizaçãp fosse feita, caso você use Fedora.

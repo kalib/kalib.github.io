@@ -8,10 +8,10 @@ title: Jogos! Porque nem tudo é tela preta
 wordpress_id: 30
 categories:
 - Arch Linux
-- Impressões
+- Impressoes
 - Jogos
 - Linux
-- software livre
+- Software Livre
 ---
 
 Em minha primeira participação no [Almanarch](http://www.archlinux-br.org/almanarch/) publiquei este artigo no qual gostaria de abordar um tema que acaba por assustar muitas pessoas que cogitam a idéia de utilizar Linux em suas máquinas. Muitos conseguem facilmente entender as vantagens do software livre em termos de segurança, qualidade, estabilidade, preço dentre outras, porém acabam por temer uma ou outra coisa. Neste artigo focarei aqueles que temem usar o Linux como sistema operacional padrão por achar que não vai mais poder se divertir com jogos.

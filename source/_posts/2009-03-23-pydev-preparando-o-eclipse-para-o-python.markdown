@@ -8,10 +8,10 @@ title: Pydev - Preparando o Eclipse para o Python
 wordpress_id: 315
 categories:
 - Arch Linux
-- Impressões
+- Impressoes
 - Linux
 - Python
-- software livre
+- Software Livre
 ---
 
 **E**m um mundo onde nem tudo é tela preta, as vezes pode ser cansativo programar sem a ajuda de uma IDE. Para projetos grandes e que possuem uma disponibilidade menor de tempo, estas ferramentas de desesenvolvimento são fundamentais. Aqui gostaria de destacar o Eclipse, que como vocês devem saber não é apenas uma IDE para desenvolvimento Java, em conjunto com o plugin Pydev.

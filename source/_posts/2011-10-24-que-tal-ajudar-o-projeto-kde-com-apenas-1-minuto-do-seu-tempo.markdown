@@ -7,10 +7,10 @@ slug: que-tal-ajudar-o-projeto-kde-com-apenas-1-minuto-do-seu-tempo
 title: Que tal ajudar o projeto KDE com apenas 1 minuto do seu tempo?
 wordpress_id: 955
 categories:
-- Impressões
+- Impressoes
 - KDE
 - Linux
-- software livre
+- Software Livre
 ---
 
 ![](http://images4.wikia.nocookie.net/__cb20061120200014/uncyclopedia/images/9/98/Konqi-official-logo-aboutkde-150x250.png)

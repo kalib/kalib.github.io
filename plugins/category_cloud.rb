@@ -111,7 +111,7 @@ module Jekyll
 
       lists.each do | item, counter |
         url = cloud_dir + item.gsub(/_|\P{Word}/u, '-').gsub(/-{2,}/u, '-').downcase
-        style = "font-size: #{10 + (40 * Float(counter)/max)}%"
+        style = "font-size: #{7 + (25 * Float(counter)/max)}%"
 
         tagcloud << "<a href='#{url}' style='#{style}'>#{item}"
         tagcloud << "</a> "

@@ -8,9 +8,9 @@ title: 3º Dia Livre - Inscrições abertas
 wordpress_id: 947
 categories:
 - Dia Livre
-- Impressões
+- Impressoes
 - Linux
-- software livre
+- Software Livre
 - Tux-ce
 ---
 

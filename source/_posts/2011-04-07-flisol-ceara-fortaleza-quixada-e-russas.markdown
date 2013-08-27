@@ -7,11 +7,11 @@ slug: flisol-ceara-fortaleza-quixada-e-russas
 title: Flisol Ceará - Fortaleza, Quixadá e Russas
 wordpress_id: 819
 categories:
-- cultura hacker
+- Cultura Hacker
 - Flisol
-- Impressões
+- Impressoes
 - Linux
-- software livre
+- Software Livre
 - Tux-ce
 ---
 

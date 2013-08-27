@@ -8,9 +8,9 @@ title: kernel 2.6.28 já disponível para os Archers
 wordpress_id: 59
 categories:
 - Arch Linux
-- Impressões
+- Impressoes
 - Linux
-- software livre
+- Software Livre
 ---
 
 Saudações pessoal..

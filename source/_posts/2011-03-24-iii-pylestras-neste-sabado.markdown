@@ -7,9 +7,9 @@ slug: iii-pylestras-neste-sabado
 title: III Pylestras - Neste Sábado
 wordpress_id: 815
 categories:
-- Impressões
+- Impressoes
 - Python
-- software livre
+- Software Livre
 ---
 
 ![](http://pylestras.appspot.com/static/img/python-logo.gif)

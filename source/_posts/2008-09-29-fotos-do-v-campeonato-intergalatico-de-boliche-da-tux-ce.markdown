@@ -7,7 +7,7 @@ slug: fotos-do-v-campeonato-intergalatico-de-boliche-da-tux-ce
 title: Fotos do V Campeonato Intergalático de Boliche da Tux-CE
 wordpress_id: 36
 categories:
-- software livre
+- Software Livre
 - Tux-ce
 ---
 

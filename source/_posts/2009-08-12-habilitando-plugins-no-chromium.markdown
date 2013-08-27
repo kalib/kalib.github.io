@@ -9,9 +9,9 @@ wordpress_id: 549
 categories:
 - Arch Linux
 - Chromium
-- Impressões
+- Impressoes
 - Linux
-- software livre
+- Software Livre
 ---
 
 [![chromium-browser](http://marcelocavalcante.net/portal/wp-content/uploads/2009/08/chromium-browser-300x300.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2009/08/chromium-browser.png)**T**odos que visitam meu blog já devem estar cansados de saber que estou bastante atento ao projeto chromium e ajudando com o possível para o desenvolvimento e divulgação do mesmo.

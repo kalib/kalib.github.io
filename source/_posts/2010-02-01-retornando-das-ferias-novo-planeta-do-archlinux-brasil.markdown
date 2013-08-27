@@ -9,7 +9,7 @@ wordpress_id: 636
 categories:
 - Arch Linux
 - Linux
-- software livre
+- Software Livre
 ---
 
 [![arch](http://marcelocavalcante.net/portal/wp-content/uploads/2010/02/arch.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2010/02/arch.png)

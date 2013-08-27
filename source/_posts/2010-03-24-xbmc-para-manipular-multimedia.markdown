@@ -8,9 +8,9 @@ title: XBMC para manipular multimedia
 wordpress_id: 649
 categories:
 - Arch Linux
-- Impressões
+- Impressoes
 - Linux
-- software livre
+- Software Livre
 ---
 
 [![XBMC_Logo](http://marcelocavalcante.net/portal/wp-content/uploads/2010/03/XBMC_Logo.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2010/03/XBMC_Logo.png)

@@ -8,12 +8,12 @@ title: KDE 4.2.1 já no Arch!
 wordpress_id: 267
 categories:
 - Arch Linux
-- cultura hacker
-- Impressões
+- Cultura Hacker
+- Impressoes
 - KDE
-- redes
-- segurança
-- software livre
+- Redes
+- Seguranca
+- Software Livre
 ---
 
 [![](http://marcelocavalcante.net/portal/wp-content/uploads/2009/03/iceage_kde.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2009/03/iceage_kde.png)  

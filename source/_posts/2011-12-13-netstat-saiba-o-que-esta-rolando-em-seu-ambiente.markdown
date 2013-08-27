@@ -7,11 +7,11 @@ slug: netstat-saiba-o-que-esta-rolando-em-seu-ambiente
 title: Netstat - Saiba o que está rolando em seu ambiente...
 wordpress_id: 961
 categories:
-- Impressões
+- Impressoes
 - Linux
-- redes
-- segurança
-- software livre
+- Redes
+- Seguranca
+- Software Livre
 ---
 
 [![](http://pixelmaverick.com/wp-content/uploads/2009/11/brunocb-sherlock-holmes-tux-5975.png)](http://pixelmaverick.com/wp-content/uploads/2009/11/brunocb-sherlock-holmes-tux-5975.png)

@@ -7,13 +7,7 @@ slug: inaugurando-oficialmente-fotos-no-blog
 title: Inaugurando oficialmente! Fotos no blog.
 wordpress_id: 494
 categories:
-- Arch Linux
-- cultura hacker
-- Flisol
-- Impressões
-- Linux
-- software livre
-- Tux-ce
+- Impressoes
 ---
 
 **O**lá pessoal...

@@ -8,9 +8,9 @@ title: 'Resultado: Quais distribuições o BR-Linux deve indicar'
 wordpress_id: 38
 categories:
 - Arch Linux
-- Impressões
+- Impressoes
 - Linux
-- software livre
+- Software Livre
 ---
 
 Conforme apresentei no post passado, o [BR-Linux](http://br-linux.org/2008/ajude-a-escolher-que-distribuicoes-o-br-linux-deve-recomendar/) estava fazendo uma pesquisa para saber quais distribuições deveria indicar. Antes mesmo de ver as respostas, tinha plena certeza de que o Ubuntu estaria com uma grande quantidade de votos, afinal de contas foi e é uma das distribuições que mais divulgou o nome do Linux nos últimos anos por ser mais "amigável" para desktops de usuários que terão o primeiro contato com linux.

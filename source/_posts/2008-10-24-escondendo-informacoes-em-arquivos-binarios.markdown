@@ -8,10 +8,10 @@ title: Escondendo informações em arquivos binários
 wordpress_id: 42
 categories:
 - Arch Linux
-- cultura hacker
+- Cultura Hacker
 - Linux
-- segurança
-- software livre
+- Seguranca
+- Software Livre
 ---
 
 Saudações galera...

@@ -7,10 +7,10 @@ slug: vantagem-do-aptitude-sobre-o-apt-get
 title: Vantagem do Aptitude sobre o Apt-Get
 wordpress_id: 12
 categories:
-- aptitude
-- debian
+- Aptitude
+- Debian
 - Linux
-- software livre
+- Software Livre
 ---
 
 [![](http://1.bp.blogspot.com/_5kfJplBiYy0/SBx_jVJ9LUI/AAAAAAAAACU/1E4XfQHm1SY/s320/Swirl.jpg)](http://1.bp.blogspot.com/_5kfJplBiYy0/SBx_jVJ9LUI/AAAAAAAAACU/1E4XfQHm1SY/s1600-h/Swirl.jpg)

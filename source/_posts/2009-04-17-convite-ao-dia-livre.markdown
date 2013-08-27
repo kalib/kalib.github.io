@@ -7,13 +7,13 @@ slug: convite-ao-dia-livre
 title: 'Convite: Dia Livre'
 wordpress_id: 375
 categories:
-- cultura hacker
-- Impressões
+- Cultura Hacker
+- Impressoes
 - Jogos
 - KDE
 - Linux
-- segurança
-- software livre
+- Seguranca
+- Software Livre
 ---
 
 **S**audações pessoal!

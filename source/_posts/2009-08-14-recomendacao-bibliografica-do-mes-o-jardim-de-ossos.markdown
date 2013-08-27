@@ -7,7 +7,7 @@ slug: recomendacao-bibliografica-do-mes-o-jardim-de-ossos
 title: 'Recomendação bibliográfica do mês: O Jardim de Ossos'
 wordpress_id: 554
 categories:
-- Impressões
+- Impressoes
 - Literatura
 ---
 

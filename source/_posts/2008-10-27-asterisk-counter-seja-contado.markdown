@@ -9,7 +9,7 @@ wordpress_id: 43
 categories:
 - Asterisk
 - Linux
-- software livre
+- Software Livre
 ---
 
 [![](http://asteriskcounter.sinologic.net/image.php?id=1148)](http://asteriskcounter.sinologic.net/image.php?id=1148)Saudações pessoal...

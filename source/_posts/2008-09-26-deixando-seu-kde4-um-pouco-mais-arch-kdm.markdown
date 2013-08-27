@@ -8,10 +8,10 @@ title: Deixando seu KDE4 um pouco mais Arch - KDM
 wordpress_id: 35
 categories:
 - Arch Linux
-- Impressões
+- Impressoes
 - KDE
 - Linux
-- software livre
+- Software Livre
 ---
 
 Sabe aqueles horários em que você não tem o que fazer e acaba, literalmente, procurando [![](http://3.bp.blogspot.com/_5kfJplBiYy0/SNzoEm7yAiI/AAAAAAAAAJc/VjgYoUElLfU/s200/screenshot.png)](http://3.bp.blogspot.com/_5kfJplBiYy0/SNzoEm7yAiI/AAAAAAAAAJc/VjgYoUElLfU/s1600-h/screenshot.png)qualquer coisa pra mexer? Foi em um horário de almoço como este que fiz logoff em meu KDE4 e observei minha tela do KDM. Reparei em como os designers resposnsáveis fizeram um bom trabalho no KDE4. Foi aí que pensei: Porque não ter um pouquinho do gosto Arch Linux já na hora de me logar ao KDE4?

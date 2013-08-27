@@ -8,10 +8,10 @@ title: Chaveamento de Interfaces de rede - placas Broadcom
 wordpress_id: 757
 categories:
 - Arch Linux
-- Impressões
+- Impressoes
 - Linux
-- redes
-- software livre
+- Redes
+- Software Livre
 ---
 
 ![broadcom](http://cdn.venturebeat.com/wp-content/uploads/2010/10/broadcom-chip.jpg)

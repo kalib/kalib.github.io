@@ -8,7 +8,7 @@ title: 'Recomendação bibliográfica: A Guerra dos Tronos - As crônicas de Gel
   - Vol. I'
 wordpress_id: 915
 categories:
-- Impressões
+- Impressoes
 - Literatura
 ---
 

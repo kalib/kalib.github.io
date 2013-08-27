@@ -7,7 +7,7 @@ slug: novas-camisas-da-tux-ce-solicite-a-sua
 title: Novas camisas da Tux-CE - Solicite a sua!
 wordpress_id: 852
 categories:
-- Impressões
+- Impressoes
 - Tux-ce
 ---
 

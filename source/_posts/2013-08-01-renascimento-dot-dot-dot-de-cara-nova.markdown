@@ -5,7 +5,7 @@ date: 2013-08-01 19:45
 comments: true
 keywords: ruby,octopress,blog,marcelocavalcante,marcelo cavalcante,kalib,github pages,html5
 categories:
-- Impressões
+- Impressoes
 ---
 **E**instein dizia:
 

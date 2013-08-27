@@ -8,11 +8,11 @@ title: Configurando a JRE para funcionar no *buntu 8.04 com firefox 3 / Configur
   JRE on *buntu 8.04 to work with Firefox 3.0
 wordpress_id: 13
 categories:
-- firefox
+- Firefox
 - Java
 - Kubuntu
 - Linux
-- software livre
+- Software Livre
 ---
 
 ### 

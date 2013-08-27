@@ -8,7 +8,7 @@ title: Minhas primeiras impressões com o Arch Linux
 wordpress_id: 18
 categories:
 - Arch Linux
-- Impressões
+- Impressoes
 - Linux
 ---
 

@@ -8,10 +8,10 @@ title: Lançado KDE 4.6 - Sim, claro...se você usa Arch você não precisa espe
 wordpress_id: 766
 categories:
 - Arch Linux
-- Impressões
+- Impressoes
 - KDE
 - Linux
-- software livre
+- Software Livre
 ---
 
 [![](http://marcelocavalcante.net/portal/wp-content/uploads/2011/01/kde46.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2011/01/kde46.png)

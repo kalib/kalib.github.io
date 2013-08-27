@@ -7,12 +7,12 @@ slug: flisol-fortaleza-tux-ce-dara-3-livros
 title: Flisol Fortaleza - Tux-CE dará 3 Livros!
 wordpress_id: 378
 categories:
-- cultura hacker
+- Cultura Hacker
 - Flisol
-- Impressões
+- Impressoes
 - Linux
 - Literatura
-- software livre
+- Software Livre
 - Tux-ce
 ---
 

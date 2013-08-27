@@ -7,9 +7,9 @@ slug: ceara-on-rails-ai-vou-eu
 title: Ceará On Rails, aí vou eu...
 wordpress_id: 47
 categories:
-- Impressões
-- ruby
-- software livre
+- Impressoes
+- Ruby
+- Software Livre
 ---
 
 [![](http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/logomarca_cearaonrails.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/logomarca_cearaonrails.png)O que é CearáOnRails?

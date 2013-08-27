@@ -7,7 +7,7 @@ slug: assalto-no-cinema-do-iguatemifortaleza
 title: Assalto no cinema do Iguatemi/Fortaleza!
 wordpress_id: 41
 categories:
-- Impressões
+- Impressoes
 ---
 
 Fato ou ficção?!  

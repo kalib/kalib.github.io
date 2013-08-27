@@ -8,11 +8,11 @@ title: Que tal testar o Android em seu Linux?
 wordpress_id: 709
 categories:
 - Android
-- google
-- Impressões
+- Google
+- Impressoes
 - Java
 - Linux
-- software livre
+- Software Livre
 ---
 
 **S**e você é da área de tecnologia, com certeza já ouviu falar deste tal [Android](http://www.android.com/) que vem ganhando cada vez mais notoriedade e mercado no mundo dos smartphones. Não ouviu falar? Sugiro que repense suas escolhas acadêmicas e/ou profissionais. Talvez não tenha feito a escolha certa. Atualize-se.

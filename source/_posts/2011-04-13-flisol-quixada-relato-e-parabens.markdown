@@ -8,13 +8,13 @@ title: Flisol Quixadá - Relato e Parabéns
 wordpress_id: 830
 categories:
 - Arch Linux
-- cultura hacker
+- Cultura Hacker
 - Flisol
-- Impressões
+- Impressoes
 - Jogos
 - Linux
-- segurança
-- software livre
+- Seguranca
+- Software Livre
 - Tux-ce
 ---
 

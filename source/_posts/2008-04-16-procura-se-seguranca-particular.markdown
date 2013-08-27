@@ -7,8 +7,8 @@ slug: procura-se-seguranca-particular
 title: Procura-se segurança particular
 wordpress_id: 9
 categories:
-- Impressões
-- segurança
+- Impressoes
+- Seguranca
 ---
 
 Pode parecer estranho mas de fato este título já deve ter passado pela cabeça de muitos administradores de redes/infra-estruturas empresariais.

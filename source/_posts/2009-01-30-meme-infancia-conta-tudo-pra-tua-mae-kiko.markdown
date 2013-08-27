@@ -7,7 +7,7 @@ slug: meme-infancia-conta-tudo-pra-tua-mae-kiko
 title: Meme Infância - Conta tudo pra tua mãe kiko...
 wordpress_id: 62
 categories:
-- Impressões
+- Impressoes
 ---
 
 Depois de ter sido [intimado pelo Hugo Dória](http://hdoria.archlinux-br.org/blog/2009/01/29/meme-infancia/) resolvi participar da brincadeira. O jogo é interessante e nos trás boas lembranças. ;]

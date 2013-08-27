@@ -9,7 +9,7 @@ wordpress_id: 10
 categories:
 - Flisol
 - Linux
-- software livre
+- Software Livre
 ---
 
 Mais um ano chega e novamente estamos envolvidos com as vibrações que o Flisol sempre nos proporciona.

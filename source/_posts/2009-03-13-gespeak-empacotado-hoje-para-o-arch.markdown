@@ -9,10 +9,10 @@ wordpress_id: 296
 categories:
 - Arch Linux
 - Asterisk
-- Impressões
+- Impressoes
 - Linux
 - Python
-- software livre
+- Software Livre
 ---
 
 Ontem vi a notícia sobre o lançamento da versão 0.3 do aplicativo Gespeak. A mesma foi considerada a primeira versão estável do mesmo. Logo que vi resolvi empacotar para o Arch esta aplicação que poderia vir a ser útil para algumas pessoas, como é o meu caso.

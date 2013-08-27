@@ -8,10 +8,10 @@ title: Fisl 2009? I Encontro de Usuários Brasileiros do Arch Linux!
 wordpress_id: 501
 categories:
 - Arch Linux
-- cultura hacker
-- Impressões
+- Cultura Hacker
+- Impressoes
 - Linux
-- software livre
+- Software Livre
 ---
 
 ![](http://blog.hugodoria.org/wp-content/themes/ColdStone/timthumb.php?src=http://blog.hugodoria.org/wp-content/uploads/2009/06/archadesivotransparentepreto.png)

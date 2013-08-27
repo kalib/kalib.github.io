@@ -7,10 +7,10 @@ slug: go-ou-go-linguagem-do-google-cria-primeira-intriga
 title: Go ou Go! Linguagem do Google cria primeira intriga
 wordpress_id: 597
 categories:
-- cultura hacker
-- google
-- Impressões
-- software livre
+- Cultura Hacker
+- Google
+- Impressoes
+- Software Livre
 ---
 
 ![](http://code.google.com/p/go/logo?logo_id=1255411904)

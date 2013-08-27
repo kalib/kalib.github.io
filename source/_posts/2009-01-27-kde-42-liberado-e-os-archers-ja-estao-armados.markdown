@@ -8,10 +8,10 @@ title: KDE 4.2 liberado e os Archers já estão armados!
 wordpress_id: 61
 categories:
 - Arch Linux
-- Impressões
+- Impressoes
 - KDE
 - Linux
-- software livre
+- Software Livre
 ---
 
 Saudações pessoal...

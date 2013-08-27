@@ -7,11 +7,11 @@ slug: parabens-kde-brasil-100-traduzido
 title: Parabéns KDE Brasil! 100% Traduzido
 wordpress_id: 671
 categories:
-- cultura hacker
-- Impressões
+- Cultura Hacker
+- Impressoes
 - KDE
 - Linux
-- software livre
+- Software Livre
 ---
 
 [![162_kde](http://marcelocavalcante.net/portal/wp-content/uploads/2010/05/162_kde.jpg)](http://marcelocavalcante.net/portal/wp-content/uploads/2010/05/162_kde.jpg)

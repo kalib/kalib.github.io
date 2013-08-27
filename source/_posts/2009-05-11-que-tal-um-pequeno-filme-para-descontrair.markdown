@@ -7,11 +7,11 @@ slug: que-tal-um-pequeno-filme-para-descontrair
 title: Que tal um pequeno filme para descontrair?
 wordpress_id: 462
 categories:
-- cultura hacker
-- Impressões
+- Cultura Hacker
+- Impressoes
 - Linux
 - Literatura
-- software livre
+- Software Livre
 ---
 
 **![poster_inproprietario](http://marcelocavalcante.net/portal/wp-content/uploads/2009/05/poster_inproprietario-216x300.jpg)**

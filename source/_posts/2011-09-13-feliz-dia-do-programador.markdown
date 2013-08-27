@@ -7,11 +7,11 @@ slug: feliz-dia-do-programador
 title: Feliz dia do Programador!
 wordpress_id: 925
 categories:
-- Impressões
+- Impressoes
 - Java
 - Python
-- ruby
-- software livre
+- Ruby
+- Software Livre
 ---
 
 ![](http://www.media-freaks.com/wp-content/uploads/2008/09/programmer-260x300.jpg)

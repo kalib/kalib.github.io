@@ -7,7 +7,7 @@ slug: v-competicao-de-boliche-da-tux-ce
 title: V Competição de Boliche da Tux-CE
 wordpress_id: 32
 categories:
-- software livre
+- Software Livre
 - Tux-ce
 ---
 

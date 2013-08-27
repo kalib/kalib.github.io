@@ -7,7 +7,7 @@ slug: recomendacao-bibliografica-a-escolha-dos-tres-a-torre-negra-vol-ii
 title: 'Recomendação Bibliográfica: A Escolha dos Três - A Torre Negra vol II'
 wordpress_id: 568
 categories:
-- Impressões
+- Impressoes
 - Literatura
 ---
 

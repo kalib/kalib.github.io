@@ -8,9 +8,9 @@ title: Como? Download de webcasts mms e rtmp?
 wordpress_id: 844
 categories:
 - Arch Linux
-- Impressões
+- Impressoes
 - Linux
-- software livre
+- Software Livre
 ---
 
 [![](http://www.ogilvy.co.uk/neo/files/2008/03/webcast-pic.png)](http://www.ogilvy.co.uk/neo/files/2008/03/webcast-pic.png)

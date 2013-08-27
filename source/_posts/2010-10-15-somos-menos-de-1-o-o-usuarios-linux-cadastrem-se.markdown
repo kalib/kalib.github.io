@@ -8,10 +8,10 @@ title: Somos menos de 1%? o.O Usuários Linux, cadastrem-se!
 wordpress_id: 748
 categories:
 - Arch Linux
-- cultura hacker
-- Impressões
+- Cultura Hacker
+- Impressoes
 - Linux
-- software livre
+- Software Livre
 ---
 
 [![](http://marcelocavalcante.net/portal/wp-content/uploads/2010/10/tux_muscle.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2010/10/tux_muscle.png)

@@ -8,12 +8,12 @@ title: 'Política de senhas no Linux: Senhas com data para expirar!'
 wordpress_id: 929
 categories:
 - Arch Linux
-- cultura hacker
-- debian
-- Impressões
+- Cultura Hacker
+- Debian
+- Impressoes
 - Linux
-- segurança
-- software livre
+- Seguranca
+- Software Livre
 ---
 
 [![](http://www.marcelocavalcante.net/portal/wp-content/uploads/2011/09/1197557350_90927cc5492.jpg)](http://www.marcelocavalcante.net/portal/wp-content/uploads/2011/09/1197557350_90927cc5492.jpg)

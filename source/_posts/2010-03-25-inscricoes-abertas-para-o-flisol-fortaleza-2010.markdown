@@ -8,7 +8,8 @@ title: Inscrições abertas para o FLISOL Fortaleza 2010!
 wordpress_id: 658
 categories:
 - Linux
-- software livre
+- Flisol
+- Software Livre
 ---
 
 [![](http://flisolceara.net/FLISOL2010/banners/azul_horiz.png)](http://flisolceara.net)

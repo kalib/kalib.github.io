@@ -7,9 +7,9 @@ slug: amanha-ii-pylestras-python-user-group-ceara
 title: Amanhã - II Pylestras - Python User Group Ceará
 wordpress_id: 798
 categories:
-- Impressões
+- Impressoes
 - Python
-- software livre
+- Software Livre
 ---
 
 ![](http://pylestras.appspot.com/static/img/python-logo.gif)

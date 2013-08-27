@@ -8,9 +8,9 @@ title: 2º Dia Livre - Últimos dias para inscrições! & Site da Tux-CE em obra
 wordpress_id: 919
 categories:
 - Dia Livre
-- Impressões
+- Impressoes
 - Linux
-- software livre
+- Software Livre
 - Tux-ce
 ---
 

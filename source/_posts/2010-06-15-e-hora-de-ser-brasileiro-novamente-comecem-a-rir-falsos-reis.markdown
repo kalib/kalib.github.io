@@ -7,7 +7,7 @@ slug: e-hora-de-ser-brasileiro-novamente-comecem-a-rir-falsos-reis
 title: É hora de ser brasileiro novamente. Comecem a rir falsos Reis!
 wordpress_id: 686
 categories:
-- Impressões
+- Impressoes
 ---
 
 [![](http://www.paixaocanarinha.com.br/media/galeria/1187/1/5/5/0/o_brasil_os_jogos-1280551.jpg)](http://www.paixaocanarinha.com.br/media/galeria/1187/1/5/5/0/o_brasil_os_jogos-1280551.jpg)

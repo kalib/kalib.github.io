@@ -8,9 +8,9 @@ title: Alterando o endereço MAC de uma interface no Linux
 wordpress_id: 53
 categories:
 - Linux
-- redes
-- segurança
-- software livre
+- Redes
+- Seguranca
+- Software Livre
 ---
 
 [![](http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/placa11.gif)](http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/placa11.gif)Nesta curta dica irei apresentar uma dica simples e rápida de como alterar o endereço MAC de uma interface de rede no Linux.

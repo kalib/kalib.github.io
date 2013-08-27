@@ -8,9 +8,9 @@ title: Arch Linux Schwag - Uma loja para o Arch Linux
 wordpress_id: 46
 categories:
 - Arch Linux
-- Impressões
+- Impressoes
 - Linux
-- software livre
+- Software Livre
 ---
 
 [![](http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/camisa_arch.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/camisa_arch.png)Saudações galera..

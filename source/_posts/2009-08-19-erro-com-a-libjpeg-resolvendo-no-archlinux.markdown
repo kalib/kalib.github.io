@@ -9,7 +9,7 @@ wordpress_id: 556
 categories:
 - Arch Linux
 - Linux
-- software livre
+- Software Livre
 ---
 
 ![](http://www.adslgr.com/forum/picture.php?albumid=214&pictureid=1984)

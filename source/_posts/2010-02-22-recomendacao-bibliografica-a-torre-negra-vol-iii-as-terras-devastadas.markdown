@@ -7,7 +7,7 @@ slug: recomendacao-bibliografica-a-torre-negra-vol-iii-as-terras-devastadas
 title: 'Recomendação Bibliográfica: A Torre Negra Vol III - As Terras Devastadas'
 wordpress_id: 645
 categories:
-- Impressões
+- Impressoes
 - Literatura
 ---
 

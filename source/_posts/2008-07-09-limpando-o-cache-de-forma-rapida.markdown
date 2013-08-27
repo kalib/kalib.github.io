@@ -8,8 +8,8 @@ title: Limpando o cache de forma rápida
 wordpress_id: 22
 categories:
 - Linux
-- redes
-- software livre
+- Redes
+- Software Livre
 ---
 
 Aqueles que são administradores de redes e servidores já devem ter passado por problemas parecidos com este.

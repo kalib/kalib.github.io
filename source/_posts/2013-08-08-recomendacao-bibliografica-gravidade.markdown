@@ -7,7 +7,7 @@ keywords: livro,literatura,gravidade,nasa,ficção científica,nsa,tess gerritse
 description: Recomendação bibliográfica Livro Gravidade, de Tess Gerritsen
 categories:
 - Literatura
-- Impressões
+- Impressoes
 ---
 {% img center /imgs/livros/gravidade.jpg 'Gravidade' %}
 

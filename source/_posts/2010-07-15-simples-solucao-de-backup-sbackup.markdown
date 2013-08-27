@@ -8,10 +8,10 @@ title: Simples solução de backup? SBackup
 wordpress_id: 697
 categories:
 - Arch Linux
-- cultura hacker
-- Impressões
+- Cultura Hacker
+- Impressoes
 - Linux
-- segurança
+- Seguranca
 ---
 
 ![](http://rlv.zcache.com/dont_backup_tomorrow_dog_shirt-p1558048941353860512vf3g_400.jpg)

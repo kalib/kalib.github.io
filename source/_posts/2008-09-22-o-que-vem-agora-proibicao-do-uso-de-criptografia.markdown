@@ -7,8 +7,8 @@ slug: o-que-vem-agora-proibicao-do-uso-de-criptografia
 title: O que vem agora? Proibição do uso de Criptografia?
 wordpress_id: 34
 categories:
-- Impressões
-- segurança
+- Impressoes
+- Seguranca
 ---
 
 [![](http://3.bp.blogspot.com/_5kfJplBiYy0/SNf7Yjh3k9I/AAAAAAAAAJU/r5cyTX6pCKw/s200/cripto.gif)](http://3.bp.blogspot.com/_5kfJplBiYy0/SNf7Yjh3k9I/AAAAAAAAAJU/r5cyTX6pCKw/s1600-h/cripto.gif)Há algumas semanas atrás vimos a confusão causada por instalações de escutas telefônicas feitas pela ABIN. Houve uma grande onda de críticas em cima disto, até que resultou na proibição de comercialização de qualquer equipamento de espionagem em nosso "lindo" país como forma de penalizar qualquer um que efetue este tipo de atividade que agora é terminantemente proibida. Sim, nossa Agência de inteligência nacional não pode mais ficar sabendo das roubalheiras que nossos "representantes" andam fazendo. Sim, agora é crime descobrir que nossos políticos estão fazendo roubalheiras.  

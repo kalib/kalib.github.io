@@ -6,7 +6,7 @@ comments: true
 keywords: Pirate Bay,Torrent,Pirataria,Censura,Anti-Censura,Firefox
 description: Navegador anti-censura do Pirate Bay supera expectativas e atinge mais de 100.000 downloads em poucos dias.
 categories: 
-- Segurança
+- Seguranca
 - Liberdade
 - Censura
 ---

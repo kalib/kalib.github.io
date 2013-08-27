@@ -7,7 +7,7 @@ slug: um-feliz-natal-e-um-prospero-ano-novo
 title: Um feliz natal e um próspero ano novo
 wordpress_id: 55
 categories:
-- Impressões
+- Impressoes
 ---
 
 ![](http://tux.crystalxp.net/png/xanderrun-tux-christmas-7936.png)

@@ -7,10 +7,10 @@ slug: flisol-fortaleza-2010
 title: FLISOL Fortaleza 2010
 wordpress_id: 647
 categories:
-- cultura hacker
-- Impressões
+- Cultura Hacker
+- Impressoes
 - Linux
-- software livre
+- Software Livre
 - Tux-ce
 ---
 

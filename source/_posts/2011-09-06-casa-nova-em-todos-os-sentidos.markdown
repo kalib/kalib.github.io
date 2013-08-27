@@ -7,7 +7,7 @@ slug: casa-nova-em-todos-os-sentidos
 title: Casa nova.. em todos os sentidos...
 wordpress_id: 910
 categories:
-- Impressões
+- Impressoes
 ---
 
 ![](http://www.it-networks.org/wp-content/uploads/2011/04/imagesCAIK1UEI.jpg)

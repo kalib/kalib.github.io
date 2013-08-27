@@ -8,9 +8,9 @@ title: 'PROCURA-SE: Usuários de Arch Linux no Ceará'
 wordpress_id: 846
 categories:
 - Arch Linux
-- Impressões
+- Impressoes
 - Linux
-- software livre
+- Software Livre
 ---
 
 [![](http://marcelocavalcante.net/portal/wp-content/uploads/2011/04/procurase.jpg)](http://marcelocavalcante.net/portal/wp-content/uploads/2011/04/procurase.jpg)

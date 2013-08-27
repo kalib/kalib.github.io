@@ -7,7 +7,7 @@ slug: recomendacao-bibliografica-do-mes-a-saga-de-will
 title: 'Recomendação Bibliográfica do mês: A Saga de Will'
 wordpress_id: 668
 categories:
-- Impressões
+- Impressoes
 - Literatura
 ---
 

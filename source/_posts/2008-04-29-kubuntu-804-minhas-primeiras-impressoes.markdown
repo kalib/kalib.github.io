@@ -8,9 +8,9 @@ title: Kubuntu 8.04 - Minhas primeiras impressões
 wordpress_id: 11
 categories:
 - Arch Linux
-- Impressões
+- Impressoes
 - Kubuntu
-- software livre
+- Software Livre
 ---
 
 ![](http://3.bp.blogspot.com/_5kfJplBiYy0/SBcnwFJ9LTI/AAAAAAAAACM/7rF76rr-ZL8/s320/kubuntu_splash.jpg)  

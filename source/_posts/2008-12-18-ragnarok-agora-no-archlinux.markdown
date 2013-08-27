@@ -10,7 +10,7 @@ categories:
 - Arch Linux
 - Jogos
 - Linux
-- software livre
+- Software Livre
 ---
 
 [![](http://kalib.pre.hw40.webservidor.net/wordpress/wp-content/uploads/2009/02/ragban-300x114.png)](http://kalib.pre.hw40.webservidor.net/wordpress/wp-content/uploads/2009/02/ragban.png)

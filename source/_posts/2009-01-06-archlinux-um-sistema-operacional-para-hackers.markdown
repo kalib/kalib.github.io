@@ -8,9 +8,9 @@ title: Archlinux, um Sistema Operacional para Hackers?
 wordpress_id: 56
 categories:
 - Arch Linux
-- Impressões
+- Impressoes
 - Linux
-- software livre
+- Software Livre
 ---
 
 [![](http://kalib.pre.hw40.webservidor.net/wordpress/wp-content/uploads/2009/02/hacker-294x300.jpg)](http://kalib.pre.hw40.webservidor.net/wordpress/wp-content/uploads/2009/02/hacker.jpg)

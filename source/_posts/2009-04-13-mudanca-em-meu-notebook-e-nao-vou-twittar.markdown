@@ -7,7 +7,7 @@ slug: mudanca-em-meu-notebook-e-nao-vou-twittar
 title: Mudança em meu notebook e não vou twittar
 wordpress_id: 366
 categories:
-- Impressões
+- Impressoes
 ---
 
 [![Estação](http://marcelocavalcante.net/portal/wp-content/uploads/2009/04/note1-300x225.jpg)](http://marcelocavalcante.net/portal/imgs/posts/note1.jpeg)**É** isso mesmo. Uma pequena mudança estética em meu notebook e não vou twittar sobre isso. Porque a revolta? ¬¬

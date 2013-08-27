@@ -8,10 +8,10 @@ title: 3º Dia Livre - Programação Definida!
 wordpress_id: 952
 categories:
 - Dia Livre
-- Impressões
+- Impressoes
 - Java
 - Linux
-- software livre
+- Software Livre
 - Tux-ce
 ---
 

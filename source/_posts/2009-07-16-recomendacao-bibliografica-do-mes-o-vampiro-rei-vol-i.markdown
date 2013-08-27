@@ -7,7 +7,7 @@ slug: recomendacao-bibliografica-do-mes-o-vampiro-rei-vol-i
 title: 'Recomendação Bibliográfica do Mês: O Vampiro Rei - Vol I'
 wordpress_id: 535
 categories:
-- Impressões
+- Impressoes
 - Literatura
 ---
 

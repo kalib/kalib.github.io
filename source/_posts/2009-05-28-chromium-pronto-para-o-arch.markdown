@@ -9,9 +9,9 @@ wordpress_id: 485
 categories:
 - Arch Linux
 - Chromium
-- Impressões
+- Impressoes
 - Linux
-- software livre
+- Software Livre
 ---
 
 ![exportgooglechormebookmarks](http://marcelocavalcante.net/portal/wp-content/uploads/2009/05/exportgooglechormebookmarks-300x260.png)

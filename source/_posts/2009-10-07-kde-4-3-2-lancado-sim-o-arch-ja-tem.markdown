@@ -8,10 +8,10 @@ title: kde 4.3.2 lançado.. Sim o Arch já tem!
 wordpress_id: 579
 categories:
 - Arch Linux
-- Impressões
+- Impressoes
 - KDE
 - Linux
-- software livre
+- Software Livre
 ---
 
 **G**alera, ontem foi lançada a nova versão do kde.

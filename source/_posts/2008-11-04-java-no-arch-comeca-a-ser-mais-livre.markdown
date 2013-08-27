@@ -8,10 +8,10 @@ title: Java no Arch começa a ser mais LIVRE
 wordpress_id: 45
 categories:
 - Arch Linux
-- Impressões
+- Impressoes
 - Java
 - Linux
-- software livre
+- Software Livre
 ---
 
 [![](http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/java_arch_free.jpg)](http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/java_arch_free.jpg)Saudações pessoal,

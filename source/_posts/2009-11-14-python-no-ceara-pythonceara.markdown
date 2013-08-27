@@ -7,9 +7,9 @@ slug: python-no-ceara-pythonceara
 title: Python no Ceará? PythOnCeará!
 wordpress_id: 600
 categories:
-- Impressões
+- Impressoes
 - Python
-- software livre
+- Software Livre
 ---
 
 [![](http://www.marcelocavalcante.net/banner728x90_3.png)](http://bit.ly/JpZFP)

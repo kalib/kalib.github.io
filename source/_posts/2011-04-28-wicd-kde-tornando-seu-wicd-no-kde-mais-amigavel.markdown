@@ -8,10 +8,10 @@ title: Wicd-KDE - Tornando seu Wicd no KDE mais amigável
 wordpress_id: 860
 categories:
 - Arch Linux
-- Impressões
+- Impressoes
 - KDE
 - Linux
-- software livre
+- Software Livre
 ---
 
 **S**audações pessoal,

@@ -8,10 +8,10 @@ title: KDE 4.4.4 Liberado! Atualize seu Arch Linux! ...Cheers
 wordpress_id: 682
 categories:
 - Arch Linux
-- Impressões
+- Impressoes
 - KDE
 - Linux
-- software livre
+- Software Livre
 ---
 
 [![kde444](http://marcelocavalcante.net/portal/wp-content/uploads/2010/06/kde444.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2010/06/kde444.png)

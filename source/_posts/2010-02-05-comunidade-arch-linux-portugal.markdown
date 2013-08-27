@@ -8,11 +8,11 @@ title: Comunidade Arch Linux Portugal
 wordpress_id: 639
 categories:
 - Arch Linux
-- cultura hacker
-- google
-- Impressões
+- Cultura Hacker
+- Google
+- Impressoes
 - Linux
-- software livre
+- Software Livre
 ---
 
 [![levic-tux-portugal-1930](http://marcelocavalcante.net/portal/wp-content/uploads/2010/02/levic-tux-portugal-1930.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2010/02/levic-tux-portugal-1930.png)

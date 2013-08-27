@@ -7,7 +7,7 @@ slug: ii-mangue-beat
 title: II Mangue Beat
 wordpress_id: 347
 categories:
-- Impressões
+- Impressoes
 - Meio Ambiente
 ---
 

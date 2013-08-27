@@ -7,9 +7,9 @@ slug: so-faltava-essa-microsoft-agora-tenta-fragmentar-o-odf
 title: 'Só faltava essa: Microsoft agora tenta fragmentar o ODF'
 wordpress_id: 477
 categories:
-- cultura hacker
-- Impressões
-- software livre
+- Cultura Hacker
+- Impressoes
+- Software Livre
 ---
 
 **![](http://www.tudolink.com/wp-content/2007/02/linux_vs_windows.jpg)**

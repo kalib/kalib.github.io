@@ -7,7 +7,7 @@ slug: chrome-o-navegador-web-do-google
 title: Chrome! O navegador web do Google
 wordpress_id: 31
 categories:
-- Impressões
+- Impressoes
 ---
 
 

@@ -7,13 +7,13 @@ slug: dia-livre-inscricoes-e-grade-do-evento
 title: Dia Livre - Inscrições e grade do evento
 wordpress_id: 881
 categories:
-- cultura hacker
+- Cultura Hacker
 - Dia Livre
-- Impressões
+- Impressoes
 - Linux
-- redes
-- segurança
-- software livre
+- Redes
+- Seguranca
+- Software Livre
 - Tux-ce
 ---
 

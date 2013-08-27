@@ -8,12 +8,12 @@ title: Rootkit! Esse bicho morde? Proteja-se!
 wordpress_id: 807
 categories:
 - Arch Linux
-- cultura hacker
-- Impressões
+- Cultura Hacker
+- Impressoes
 - Linux
-- redes
-- segurança
-- software livre
+- Redes
+- Seguranca
+- Software Livre
 ---
 
 [![](http://marcelocavalcante.net/portal/wp-content/uploads/2011/03/malware.jpg)](http://marcelocavalcante.net/portal/wp-content/uploads/2011/03/malware.jpg)

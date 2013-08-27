@@ -7,7 +7,7 @@ slug: recomendacao-bibliografica-a-passagem
 title: Recomendação Bibliográfica - A Passagem
 wordpress_id: 827
 categories:
-- Impressões
+- Impressoes
 - Literatura
 ---
 

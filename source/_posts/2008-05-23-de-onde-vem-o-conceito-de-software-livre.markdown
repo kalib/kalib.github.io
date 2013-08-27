@@ -7,10 +7,10 @@ slug: de-onde-vem-o-conceito-de-software-livre
 title: De onde vem o conceito de Software Livre ?
 wordpress_id: 15
 categories:
-- cultura hacker
-- Impressões
+- Cultura Hacker
+- Impressoes
 - Linux
-- software livre
+- Software Livre
 ---
 
 ### 

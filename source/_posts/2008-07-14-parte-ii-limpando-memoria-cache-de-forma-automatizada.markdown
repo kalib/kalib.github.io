@@ -8,8 +8,8 @@ title: Parte II - Limpando memória cache de forma automatizada
 wordpress_id: 23
 categories:
 - Linux
-- redes
-- software livre
+- Redes
+- Software Livre
 ---
 
 Muitos me pediram por aqui ou mesmo por email para explicar como seria a implementação desta técnica de forma automatizada.  

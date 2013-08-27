@@ -8,10 +8,10 @@ title: Bug Day do Archlinux - 21/03
 wordpress_id: 310
 categories:
 - Arch Linux
-- cultura hacker
-- Impressões
+- Cultura Hacker
+- Impressoes
 - Linux
-- software livre
+- Software Livre
 ---
 
 **![1309313355_a8527910b3](http://marcelocavalcante.net/portal/wp-content/uploads/2009/03/1309313355_a8527910b3-300x231.jpg)S**audações galera. É chegada uma grande chance de colaborar com o Archlinux.

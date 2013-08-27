@@ -10,7 +10,7 @@ categories:
 - Arch Linux
 - KDE
 - Linux
-- software livre
+- Software Livre
 ---
 
 Creio que todos os usuários de Arch Linux conhecem ou já ouviram falar do [Hugo Doria](http://hugodoria.org/). O Hugo é um dos maiores representantes do Arch Linux no Brasil e um dos atuais desenvolvedores do mesmo.

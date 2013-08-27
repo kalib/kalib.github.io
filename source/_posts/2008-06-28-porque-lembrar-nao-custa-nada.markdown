@@ -7,10 +7,10 @@ slug: porque-lembrar-nao-custa-nada
 title: Porque lembrar não custa nada...
 wordpress_id: 21
 categories:
-- cultura hacker
-- Impressões
+- Cultura Hacker
+- Impressoes
 - Linux
-- software livre
+- Software Livre
 ---
 
 Saudações pessoas...

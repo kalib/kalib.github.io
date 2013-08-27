@@ -7,9 +7,9 @@ slug: porque-escolhi-python-python-para-sysadmins
 title: Porque escolhi Python? Python para SysAdmins!
 wordpress_id: 603
 categories:
-- Impressões
+- Impressoes
 - Python
-- software livre
+- Software Livre
 ---
 
 [![python-logo-master-v3-trans](http://marcelocavalcante.net/portal/wp-content/uploads/2009/11/python-logo-master-v3-trans-300x101.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2009/11/python-logo-master-v3-trans.png)

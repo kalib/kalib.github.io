@@ -7,10 +7,10 @@ slug: dia-livre-lancamento-oficial-do-site
 title: Dia Livre - Lançamento oficial do site
 wordpress_id: 865
 categories:
-- cultura hacker
-- Impressões
+- Cultura Hacker
+- Impressoes
 - Linux
-- software livre
+- Software Livre
 ---
 
 [![](http://marcelocavalcante.net/portal/wp-content/uploads/2011/05/Logo+dia-livre-01.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2011/05/Logo+dia-livre-01.png)

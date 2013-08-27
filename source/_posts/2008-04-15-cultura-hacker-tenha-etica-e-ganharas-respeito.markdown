@@ -7,9 +7,9 @@ slug: cultura-hacker-tenha-etica-e-ganharas-respeito
 title: Cultura Hacker - Tenha Ética e Ganharás Respeito
 wordpress_id: 8
 categories:
-- cultura hacker
-- segurança
-- software livre
+- Cultura Hacker
+- Seguranca
+- Software Livre
 ---
 
 Com a evolução da informática e a solidificação dos sistemas de informação na comunidade um personagem passa a ter maior visibilidade em nossa comunidade ocupando um espaço no palco principal. Os hackers, ou erroneamente conhecidos como Piratas da Rede, vem tendo sua imagem atrelada à cibercriminosos com conhecimentos avançados sobre as tecnologias de redes e computação, aproveitando-se justamente das redes de comunicação para a pratica de delitos das mais diversas formas causando danos à terceiros de todos os níveis com o objetivo de simplesmente destruir dados e informações ou mesmo enriquecer com práticas classificadas como estelionato.

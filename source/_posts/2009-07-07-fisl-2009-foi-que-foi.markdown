@@ -8,11 +8,11 @@ title: Fisl 2009 - Foi que foi...
 wordpress_id: 514
 categories:
 - Arch Linux
-- cultura hacker
-- Impressões
+- Cultura Hacker
+- Impressoes
 - KDE
 - Linux
-- software livre
+- Software Livre
 ---
 
 [caption id="attachment_515" align="aligncenter" width="270" caption="No voo para Porto Alegre"][![20062009076](http://marcelocavalcante.net/portal/wp-content/uploads/2009/07/20062009076-300x225.jpg)](http://marcelocavalcante.net/portal/wp-content/uploads/2009/07/20062009076.jpg)[/caption]

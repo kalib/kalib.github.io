@@ -7,11 +7,11 @@ slug: encontros-sobre-software-livre-escolha-um-nome
 title: Encontros sobre Software Livre? Escolha um nome...
 wordpress_id: 838
 categories:
-- cultura hacker
+- Cultura Hacker
 - Flisol
-- Impressões
+- Impressoes
 - Linux
-- software livre
+- Software Livre
 - Tux-ce
 ---
 

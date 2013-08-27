@@ -8,9 +8,9 @@ title: De volta.. e com KDE 4.3 ;]
 wordpress_id: 543
 categories:
 - Arch Linux
-- Impressões
+- Impressoes
 - Linux
-- software livre
+- Software Livre
 ---
 
 [![162_kde](http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/162_kde.jpg)](http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/162_kde.jpg)

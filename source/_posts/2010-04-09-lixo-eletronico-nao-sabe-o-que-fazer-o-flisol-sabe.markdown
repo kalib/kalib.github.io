@@ -7,9 +7,9 @@ slug: lixo-eletronico-nao-sabe-o-que-fazer-o-flisol-sabe
 title: Lixo eletrônico? Não sabe o que fazer? O FLISOL sabe!
 wordpress_id: 665
 categories:
-- cultura hacker
+- Cultura Hacker
 - Flisol
-- Impressões
+- Impressoes
 - Meio Ambiente
 ---
 

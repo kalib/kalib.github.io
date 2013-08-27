@@ -8,10 +8,10 @@ title: AsteriskNow - Solução eficiente para VOIP
 wordpress_id: 498
 categories:
 - Asterisk
-- Impressões
+- Impressoes
 - Linux
-- redes
-- software livre
+- Redes
+- Software Livre
 ---
 
 **[![](http://www.asterisknow.org/themes/asterisknow/images/logo.png)](http://www.asterisknow.org/themes/asterisknow/images/logo.png)Q**ue o mundo da telefonia está sofrendo grandes mudanças com a onda de conectividade web, todo mundo já sabe. A telefonia IP, VOIP, ou simplesmente voz sobre ip, vem expandindo cada vez mais as possibilidades para comunicação instantânea à longa distância à medida que os custos se tornam cada vez menores para o usuário final.

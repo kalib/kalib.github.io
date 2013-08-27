@@ -7,7 +7,7 @@ slug: recomendacao-bibliografica-do-mes-atlantis
 title: Recomendação Bibliográfica do mês - ATLANTIS
 wordpress_id: 52
 categories:
-- Impressões
+- Impressoes
 - Literatura
 ---
 

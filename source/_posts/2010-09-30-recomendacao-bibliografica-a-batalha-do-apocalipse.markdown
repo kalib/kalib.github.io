@@ -7,7 +7,7 @@ slug: recomendacao-bibliografica-a-batalha-do-apocalipse
 title: 'Recomendação Bibliográfica: A Batalha do Apocalipse'
 wordpress_id: 736
 categories:
-- Impressões
+- Impressoes
 - Literatura
 ---
 

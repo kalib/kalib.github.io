@@ -7,7 +7,7 @@ slug: criatura-estranha-morta-por-adolescentes
 title: Criatura estranha morta por adolescentes?!
 wordpress_id: 572
 categories:
-- Impressões
+- Impressoes
 - Meio Ambiente
 ---
 

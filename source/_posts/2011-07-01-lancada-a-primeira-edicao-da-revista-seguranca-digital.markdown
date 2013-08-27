@@ -7,14 +7,14 @@ slug: lancada-a-primeira-edicao-da-revista-seguranca-digital
 title: Lançada a primeira edição da Revista Segurança Digital
 wordpress_id: 876
 categories:
-- cultura hacker
-- Impressões
+- Cultura Hacker
+- Impressoes
 - Linux
 - Literatura
-- redes
-- segurança
-- Segurança Digital
-- software livre
+- Redes
+- Seguranca
+- Seguranca Digital
+- Software Livre
 ---
 
 

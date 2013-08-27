@@ -8,8 +8,8 @@ title: Produtos Arch Linux
 wordpress_id: 660
 categories:
 - Arch Linux
-- Impressões
-- software livre
+- Impressoes
+- Software Livre
 ---
 
 [![archL195x232-banner](http://marcelocavalcante.net/portal/wp-content/uploads/2010/03/archL195x232-banner.png)](http://www.lojageek.com/index.php/projetos-livres/distribuicoes-gnulinux/archlinux.html)

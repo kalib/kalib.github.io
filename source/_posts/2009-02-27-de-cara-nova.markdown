@@ -7,8 +7,8 @@ slug: de-cara-nova
 title: De cara nova...
 wordpress_id: 257
 categories:
-- cultura hacker
-- Impressões
+- Cultura Hacker
+- Impressoes
 ---
 
 Saudações pessoal...

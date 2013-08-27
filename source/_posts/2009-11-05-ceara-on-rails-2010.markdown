@@ -7,9 +7,9 @@ slug: ceara-on-rails-2010
 title: Ceará On Rails 2010
 wordpress_id: 589
 categories:
-- Impressões
-- ruby
-- software livre
+- Impressoes
+- Ruby
+- Software Livre
 ---
 
 [![logomarca_cearaonrails](http://marcelocavalcante.net/portal/wp-content/uploads/2009/11/logomarca_cearaonrails.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2009/11/logomarca_cearaonrails.png)

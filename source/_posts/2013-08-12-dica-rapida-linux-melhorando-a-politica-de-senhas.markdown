@@ -8,8 +8,8 @@ description: Dica rápida sobre como melhorar a política e a segurança de senh
 categories:
 - Linux
 - Software Livre
-- Segurança
-- Impressões
+- Seguranca
+- Impressoes
 ---
 {% img center /imgs/url.jpg 'password' %}
 

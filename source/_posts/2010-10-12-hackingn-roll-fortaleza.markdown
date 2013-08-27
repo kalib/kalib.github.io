@@ -7,8 +7,8 @@ slug: hackingn-roll-fortaleza
 title: HACKING'N ROLL Fortaleza!
 wordpress_id: 741
 categories:
-- cultura hacker
-- Impressões
+- Cultura Hacker
+- Impressoes
 ---
 
 [![](http://www.insert.uece.br/hackingnroll/img/logo.jpg)](http://www.insert.uece.br/hackingnroll/img/logo.jpg)

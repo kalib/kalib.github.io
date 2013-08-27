@@ -9,7 +9,7 @@ wordpress_id: 57
 categories:
 - Arch Linux
 - Linux
-- software livre
+- Software Livre
 ---
 
 [![](http://kalib.pre.hw40.webservidor.net/wordpress/wp-content/uploads/2009/02/repobr.png)](http://kalib.pre.hw40.webservidor.net/wordpress/wp-content/uploads/2009/02/repobr.png)

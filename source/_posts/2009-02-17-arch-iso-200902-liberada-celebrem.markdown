@@ -8,14 +8,14 @@ title: Arch ISO 2009.02 liberada - Celebrem
 wordpress_id: 68
 categories:
 - Arch Linux
-- Impressões
+- Impressoes
 - Linux
-- software livre
+- Software Livre
 tags:
 - Arch Linux
-- Impressões
+- Impressoes
 - Linux
-- software livre
+- Software Livre
 ---
 
 [![](http://kalib.pre.hw40.webservidor.net/wordpress/wp-content/uploads/2009/02/arch_fireworks-300x224.png)](http://kalib.pre.hw40.webservidor.net/wordpress/wp-content/uploads/2009/02/arch_fireworks.png)Saudações pessoal. É com imensa satisfação que lhes informo que a release 2009.02 do nosso Archlinux foi lançada. Dentre as principais mudanças destacam-se as seguintes:

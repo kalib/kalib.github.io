@@ -7,8 +7,8 @@ slug: ajude-a-sustentar-a-wikipedia-e-concorra-a-um-eee-pc
 title: Ajude a sustentar a Wikipedia e concorra a um Eee PC!
 wordpress_id: 20
 categories:
-- Impressões
-- software livre
+- Impressoes
+- Software Livre
 ---
 
 ### 

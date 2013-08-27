@@ -7,7 +7,7 @@ slug: recomendacao-bibliografica-o-simbolo-perdido
 title: Recomendação Bibliográfica - O Símbolo Perdido
 wordpress_id: 726
 categories:
-- Impressões
+- Impressoes
 - Literatura
 ---
 

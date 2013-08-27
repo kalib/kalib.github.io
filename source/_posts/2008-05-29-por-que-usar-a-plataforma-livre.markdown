@@ -7,10 +7,10 @@ slug: por-que-usar-a-plataforma-livre
 title: Por que usar a plataforma Livre ?
 wordpress_id: 16
 categories:
-- cultura hacker
-- Impressões
+- Cultura Hacker
+- Impressoes
 - Linux
-- software livre
+- Software Livre
 ---
 
 ### 

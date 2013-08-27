@@ -10,7 +10,7 @@ categories:
 - Linux
 - Software Livre
 - KDE
-- Impressões
+- Impressoes
 ---
 {% img left /imgs/kde411.png 'KDE 4.11' %}
 **E**m 14 de Agosto de 2013 a comunidade KDE anunciou oficialmente a última release do Ambiente de Trabalho KDE, a versão 4.11. Nesta última versão o projeto incorporou grandes atualizações na Área de Trabalho, Aplicações e plataforma de Desenvolvimento, oferecendo, além de correções, novas funcionalidades, das quais muitas serão importantes para a próxima evolução da plataforma KDE.

@@ -9,9 +9,9 @@ wordpress_id: 621
 categories:
 - Arch Linux
 - Chromium
-- cultura hacker
-- Impressões
-- software livre
+- Cultura Hacker
+- Impressoes
+- Software Livre
 ---
 
 [![chromium-browser](http://marcelocavalcante.net/portal/wp-content/uploads/2009/08/chromium-browser.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2009/08/chromium-browser.png)

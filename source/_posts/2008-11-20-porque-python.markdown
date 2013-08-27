@@ -7,9 +7,9 @@ slug: porque-python
 title: Porque Python?
 wordpress_id: 605
 categories:
-- Impressões
+- Impressoes
 - Python
-- software livre
+- Software Livre
 ---
 
 [![](http://2.bp.blogspot.com/_5kfJplBiYy0/SSWM4xGT-oI/AAAAAAAAAKk/r3OVmXQUcgk/s200/python.png)](http://2.bp.blogspot.com/_5kfJplBiYy0/SSWM4xGT-oI/AAAAAAAAAKk/r3OVmXQUcgk/s1600-h/python.png)**M**uitos me perguntam sobre as vantagens do Python e o porque de, dentre tantas linguagens de programação, eu optei por ter o python como minha paixão oficial. Para evitar dar várias respostas à diferentes pessoas, resolvi compilar aqui alguns dos motivos que encontrei e que em minhas pesquisas iniciais me motivaram a escolher o Python como minha linguagem favorita.

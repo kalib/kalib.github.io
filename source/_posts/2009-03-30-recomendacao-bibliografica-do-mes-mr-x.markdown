@@ -7,7 +7,7 @@ slug: recomendacao-bibliografica-do-mes-mr-x
 title: Recomendação Bibliográfica do mês - Mr. X
 wordpress_id: 344
 categories:
-- Impressões
+- Impressoes
 - Literatura
 ---
 
