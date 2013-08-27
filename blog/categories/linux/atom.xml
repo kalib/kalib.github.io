@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2013-08-23T17:36:03-03:00</updated>
+  <updated>2013-08-27T14:45:59-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -18,7 +18,7 @@
     <link href="http://blog.marcelocavalcante.net/blog/2013/08/23/dia-rapida-linux-como-deletar-todos-os-arquivos-exceto-alguns-com-extensoes-especificas/"/>
     <updated>2013-08-23T16:55:00-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2013/08/23/dia-rapida-linux-como-deletar-todos-os-arquivos-exceto-alguns-com-extensoes-especificas</id>
-    <content type="html"><![CDATA[<p>{% img left /imgs/delete.jpg &lsquo;Delete Files&rsquo; %}
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/delete.jpg" title="&lsquo;Delete Files&rsquo;" >
 <strong>É</strong> comum termos diretórios repletos de arquivos dos mais diferentes tipos e extensões, certo?! E quando desejamos remover vários arquivos ao mesmo tempo? Bom, o linux nos permite utilizar o comando rm para remover diversos arquivos ao mesmo tempo, certo? Da mesma forma, podemos facilmente excluir todos os arquivos de um determinado tipo ou extensão, conforme exemplo abaixo:</p>
 
 <p><code>
@@ -76,7 +76,7 @@
     <link href="http://blog.marcelocavalcante.net/blog/2013/08/19/kde-4-dot-11-lancado-e-disponivel-no-arch-linux/"/>
     <updated>2013-08-19T08:07:00-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2013/08/19/kde-4-dot-11-lancado-e-disponivel-no-arch-linux</id>
-    <content type="html"><![CDATA[<p>{% img left /imgs/kde411.png &lsquo;KDE 4.11&rsquo; %}
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/kde411.png" title="&lsquo;KDE 4.11&rsquo;" >
 <strong>E</strong>m 14 de Agosto de 2013 a comunidade KDE anunciou oficialmente a última release do Ambiente de Trabalho KDE, a versão 4.11. Nesta última versão o projeto incorporou grandes atualizações na Área de Trabalho, Aplicações e plataforma de Desenvolvimento, oferecendo, além de correções, novas funcionalidades, das quais muitas serão importantes para a próxima evolução da plataforma KDE.</p>
 
 <p><strong>E</strong>ste último lançamento é dedicado a memória de <em>Atul &ldquo;toolz&rdquo; Chitnis</em>, um dos maiores representantes do movimento de Software Livre e Open Source na Índia e, também, um dos maiores responsáveis pela existência do projeto KDE na Índia. Atul deixou-nos no dia 3 de Junho, após uma longa batalha contra o Câncer. Que sua alma descanse em paz, é o desejo de todos os membros do projeto KDE e, certamente, de muitas outras pessoas que o conheceram.</p>
@@ -110,7 +110,7 @@
     <link href="http://blog.marcelocavalcante.net/blog/2013/08/14/incompatibilidade-kernel-linux-3-dot-10-dot-6-e-placa-wireless-broadcom/"/>
     <updated>2013-08-14T15:04:00-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2013/08/14/incompatibilidade-kernel-linux-3-dot-10-dot-6-e-placa-wireless-broadcom</id>
-    <content type="html"><![CDATA[<p>{% img center /imgs/kernel_panic.gif &lsquo;kernel_panic&rsquo; %}</p>
+    <content type="html"><![CDATA[<p><img class="center" src="/imgs/kernel_panic.gif" title="&lsquo;kernel_panic&rsquo;" ></p>
 
 <p><strong>K</strong>ernel Panic!</p>
 
@@ -151,7 +151,7 @@
     <link href="http://blog.marcelocavalcante.net/blog/2013/08/12/dica-rapida-linux-melhorando-a-politica-de-senhas/"/>
     <updated>2013-08-12T08:41:00-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2013/08/12/dica-rapida-linux-melhorando-a-politica-de-senhas</id>
-    <content type="html"><![CDATA[<p>{% img center /imgs/url.jpg &lsquo;password&rsquo; %}</p>
+    <content type="html"><![CDATA[<p><img class="center" src="/imgs/url.jpg" title="&lsquo;password&rsquo;" ></p>
 
 <p><strong>N</strong>a dica anterior mencionei o uso do comando <em>chage</em> para <strong>forçar</strong> a alteração de senha por parte do usuário em sistemas Linux, mas e se além disso fosse possível melhorar esta prática, tornando a política de senhas de usuários um pouco mais segura?</p>
 
@@ -202,7 +202,7 @@
     <link href="http://blog.marcelocavalcante.net/blog/2013/08/06/dica-rapida-linux-forcar-usuario-a-trocar-senha-apos-primeiro-login/"/>
     <updated>2013-08-06T08:20:00-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2013/08/06/dica-rapida-linux-forcar-usuario-a-trocar-senha-apos-primeiro-login</id>
-    <content type="html"><![CDATA[<p>{% img center /imgs/password.jpg &lsquo;password&rsquo; %}</p>
+    <content type="html"><![CDATA[<p><img class="center" src="/imgs/password.jpg" title="&lsquo;password&rsquo;" ></p>
 
 <p><strong>É</strong> natural encontrar pessoas que utilizam linux a pouco tempo (ou que nunca utilizaram) questionando aspectos simples que seguem o jargão: <em>&ldquo;Mas no Windows eu consigo fazer isso, enquanto que no Linux&hellip;.&rdquo;</em></p>
 

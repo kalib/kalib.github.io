@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Censura | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/blog/categories/censura/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2013-08-23T17:36:03-03:00</updated>
+  <updated>2013-08-27T14:45:59-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -18,7 +18,7 @@
     <link href="http://blog.marcelocavalcante.net/blog/2013/08/16/navegador-anti-censura-do-pirate-bay-supera-100-dot-000-downloads/"/>
     <updated>2013-08-16T09:37:00-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2013/08/16/navegador-anti-censura-do-pirate-bay-supera-100-dot-000-downloads</id>
-    <content type="html"><![CDATA[<p>{% img left /imgs/piratebrowser.jpg &lsquo;Pirate Browser&rsquo; %}</p>
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/piratebrowser.jpg" title="&lsquo;Pirate Browser&rsquo;" ></p>
 
 <p><strong>P</strong>ara quem ainda não sabe, o The Pirate Bay (TPB) é auto-intitulado <em>&ldquo;O tracker BitTorrent mais resiliente da galáxia&rdquo;</em>. De fato, ninguém pode negar a referência do The Pirate Bay no mundo dos torrents, certo?! O projeto foi criado entre 2003 e 2004 pela organização anticopyright sueca Piratbyrån, tornando-se independente em meados de Outubro de 2004.</p>
 
@@ -38,7 +38,7 @@
 
 <p><strong>P</strong>ara que não conhece, ou pouco conhece, a história do projeto The Pirate Bay, recomendo fortemente o filme <strong>TPB AFK: The Pirate Bay Away from Keyboard</strong>.</p>
 
-<p>{% img center /imgs/tpb_afk.jpg &lsquo;TPB AFK&rsquo; %}</p>
+<p><img class="center" src="/imgs/tpb_afk.jpg" title="&lsquo;TPB AFK&rsquo;" ></p>
 
 <p><strong>T</strong>rata-se de um documentário sobre a vida dos três fundadores do site de compartilhamento de arquivos The Pirate Bay, dirigido por <em>Simon Klose</em>. As gravações do documentário começaram no verão de 2008, e foram concluídas em 25 de Agosto de 2012.</p>
 
