@@ -11,6 +11,7 @@ html {
   border-left: 1px solid $border-ep;
   border-right: 1px solid $border-ep;
   border-bottom: 1px solid $border-ep;
+  //font-size: 87.5%;
   }
 
 
@@ -25,7 +26,7 @@ html {
     padding-top:4px;
     padding-bottom:3px;
     background: transparent;
-
+    //font-size: 50%;
     ul {
         padding-top:0px;
     }
@@ -75,6 +76,7 @@ html {
   body {
      > div {
        border-bottom: 0px solid $page-border-bottom;
+    // font-size: 85.7%;
    }
 
 
