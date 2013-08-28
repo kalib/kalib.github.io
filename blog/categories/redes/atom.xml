@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Redes | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/blog/categories/redes/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2013-08-27T17:20:36-03:00</updated>
+  <updated>2013-08-28T18:05:02-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -12,6 +12,180 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Tornando Seu SSH Mais Seguro]]></title>
+    <link href="http://blog.marcelocavalcante.net/blog/2013/08/28/tornando-seu-ssh-mais-seguro/"/>
+    <updated>2013-08-28T11:20:00-03:00</updated>
+    <id>http://blog.marcelocavalcante.net/blog/2013/08/28/tornando-seu-ssh-mais-seguro</id>
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/openssh.png" title="&lsquo;OpenSSH&rsquo;" >
+<strong>O</strong> <em>SSH</em> (Secure Shell) é um dos protocolos mais utilizados atualmente para transferência de arquivos ou mesmo conexão remota, principalmente em ambientes Linux/Unix e, por si só, já tem se provado ser confiável e seguro. O mesmo passou a ser o principal substituto ao <em>TELNET</em> por possuir a vantagem da criptografia na conexão entre o cliente e o servidor, além da possibilidade de criação de túneis, o que chamamos de <em>tunneling</em>, oferecendo assim a capacidade de redirecionar pacotes de dados. Mas não é por isso que devemos nos descuidar&hellip;</p>
+
+<p><strong>S</strong>empre existe espaço para melhorias.</p>
+
+<p><strong>A</strong>s configurações do servidor SSH, geralmente, ficam localizadas em <em>/etc/ssh/sshd_config</em>. Vale lembrar que a cada alteração feita neste arquivo será necessário reiniciar o serviço SSH para que suas alterações possam ser efetivadas.</p>
+
+<p><strong>I</strong>ndo ao que interessa:</p>
+
+<p><strong>1- Altere a porta de escuta do SSH</strong></p>
+
+<p><strong>P</strong>or padrão o SSH aceita conexões na porta 22, portanto é importante alterar esta porta para dificultar as tentativas de ataques aleatórios de brute-force que buscam máquinas que disponibilizam o SSH através da porta padrão. Preferivelmente, é interessante optar por uma porta posterior a 1024, visto que a maioria dos softwares de escaneamento de portas e serviços não fazem uma varredura por portas muito altas. Esta é geralmente uma das primeiras configurações no arquivo <em>/etc/ssh/sshd_config</em>, conforme pode ser visto abaixo:</p>
+
+<p><code>
+ Port 22
+</code></p>
+
+<p><strong>2- Permita apenas o protocolo SSH 2</strong></p>
+
+<p><strong>D</strong>ependendo de sua distribuição Linux, o padrão poderá ser a utilização de ambos os protocolos, 1 e 2. A versão 1 do protocolo SSH possui vulnerabilidades bastante conhecidas, portanto é preferível que utilize apenas o protocolo de versão 2, diminuindo assim suas chances de um ataque de inserção, por exemplo, conforme possível com a versão 1 do protocolo. Procure pela seguinte linha de configuração e altere-a mantendo apenas a opção <em>2</em>:</p>
+
+<p><code>
+ Protocol 2,1
+</code></p>
+
+<p><strong>3- Decida quais usuários poderão logar-se via SSH</strong></p>
+
+<p><strong>P</strong>ermitir que qualquer usuário possa logar-se via SSH não é aconselhável, da mesma forma que permitir que o usuário root efetue login via SSH também é extremamante desencorajado devido às vulnerabilidades envolvidas. Por possuírem determinados (ou todos, no caso do root) privilégios no sistema, alguns usuários simplesmente não devem ter permissão de login via SSH, evitando assim que alguém utilize ferramentas de brute-force e consiga, por quebra de senha, logar-se em seu servidor com um usuário privilegiado. Para proibir o login do usuário root via SSH, altere a seguinte linha para <em>no</em>:</p>
+
+<p><code>
+ PermitRootLogin yes
+</code></p>
+
+<p><strong>P</strong>ara definir quais usuários poderão ter acesso via SSH, insira o nome dos mesmos na seguinte linha, conforme exemplo abaixo:</p>
+
+<p><code>
+ AllowUsers usuario1 usuario2 usuario3
+</code></p>
+
+<p><strong>4- Utilize uma chave pública DSA como mecanismo de autenticação</strong></p>
+
+<p><strong>A</strong>o invés de utilizar nomes de usuários e senhas para autenticar-se via SSH, você pode utilizar chaves públicas DSA. Outra opção é utilizar ambos os mecanismos, usuário e senha + chave. Uma das maiores vantagens de se utilizar chaves como mecanismo de autenticação é que você impossibilitará o acesso indevido através de ataques de força bruta ou brute force, pois você não precisará de um login e senha para logar-se ao servidor ou estação. Ao invés disso, você utilizará um par de chaves &ndash; uma pública e uma privada. No cenário de chaves DSA, a chave privada fica em sua máquina e uma cópia da chave pública fica no servidor que você deseja acessar via SSH.</p>
+
+<p><strong>A</strong>o tentar logar-se em um servidor configurado para autenticação via chave DSA, o mesmo verifica as chaves de ambos os lados e, se elas combinarem, autoriza seu login, caso contrário nega sua conexão.</p>
+
+<p><strong>N</strong>o arquivo de configuração do servidor SSH você irá procurar os seguintes parâmetros e deixá-los da seguinte forma:</p>
+
+<p><code>
+ RSAAuthentication yes
+ PubkeyAuthentication yes
+ AuthorizedKeysFile %h/.ssh/authorized_keys
+</code></p>
+
+<p><strong>C</strong>aso você deseje utilizar <em>apenas</em> a autenticação por chaves DSA, você precisará desabilitar a autenticação por senha, deixando como <em>no</em> o seguinte parâmetro:</p>
+
+<p><code>
+ PasswordAuthentication no
+</code></p>
+
+<p><strong>A</strong>gora que as regras de configuração para a autenticação via chaves foram criadas, vamos criar as chaves em si.</p>
+
+<p><strong>E</strong>m sua máquina, vamos digitar o seguinte comando para a criação de suas chaves pública e privada:</p>
+
+<p><code>
+ $ ssh-keygen -t dsa -C "$(whoami)@$(hostname)-$(date -I)"
+</code></p>
+
+<p><strong>O</strong> sistema lhe perguntará se você deseja escolher um diretório no qual salvar suas chaves. Caso você não especifique nenhum, ele salvará no diretório .ssh que se encontra no home de seu usuário <em>(~/.ssh/id_dsa)</em>. Em seguida lhe perguntará se você deseja criar uma senha para sua chave (não é obrigatório).</p>
+
+<p><strong>A</strong>o finalizar este procedimento você receberá a confirmação de que o procedimento foi realizado. Algo similar a isto:</p>
+
+<p><code>
+ Your identification has been saved in /home/username/.ssh/id_dsa.
+ Your public key has been saved in /home/username/.ssh/id_dsa.pub.
+ The key fingerprint is:
+ dd:15:ee:24:20:14:11:01:b8:72:a2:0f:99:4c:79:7f username@localhost-2013-08-28
+ The key's randomart image is:
+ +--[DSA  1024]---+
+ |     ..oB=.   .  |
+ |    .    . . . . |
+ |  .  .      . +  |
+ | oo.o    . . =   |
+ |o+.+.   S . . .  |
+ |=.   . E         |
+ | o    .          |
+ |  .              |
+ |                 |
+ +-----------------+
+</code></p>
+
+<p><strong>O</strong> próximo passo é copiar a sua chave pública para o servidor que você deseja acessar via SSH. Você pode copiar de algumas formas diferentes:</p>
+
+<p><strong>4.1 &ndash; Copiando manualmente</strong></p>
+
+<p><strong>C</strong>opie o conteúdo retornado através do seguinte comando:</p>
+
+<p><code>
+ $ cat ~/.ssh/id_dsa.pub
+</code></p>
+
+<p><strong>O</strong> retorno será algo similar a isto:</p>
+
+<p><code>
+ ssh-dss AAAAB3NzaC1kc3MAAACBAKWJtlUANTuqKy1NN4bb5qBJLZVMnR+nr84hk7EWnHmpJgipRZ8Y/tUDJTpCab
+ GwoMNYmPZaz62Nm5/F5Nl9yzgMmxfGja8OYt3bwir6A379NOWFM2NBq7Q107uH4L+MFszXKoCVn6rM9SddkAJL1V66
+ eGX+Y+r1o/8wG773h9P5AAAAFQDh09qovWFzKJk0E58c0oRz9S4UAQAAAIBuVxw+LZDrWVVCLr4WMubRPJuFzXqqHN
+ re9RUZ2kMrUENnAenYyJgjcBg7uJJA/wMfn7Oe32e4hvpU7SsXEUf7xT1sKb/UFyX9qTr5G0kkU6t8IYPjIQaqRIOQ
+ mnRiqm7JCDd1GTAFU9n/ocK4sNPZDL8KeEEquZmk+ihKcu9FLwAAAIBlz+K7fcZSlA5hKewHOF7fA9IdwdMsbc2Ri7
+ bSw4Fv70rQeMnYYUDeHQQJHeJJyScmuHswordGXYKe2tsf7fYn11CW46P9WxCRcargojxJNrRHlF5WiK15fhNMLtfx
+ 7/+CSmoXnEUCw8uCCBVduGLyevZ3WC+FEx7/aqJjuUCNJg== username@localhost-2013-08-28
+</code></p>
+
+<p><strong>É</strong> exatamente este conteúdo que precisa ser copiado.</p>
+
+<p><strong>E</strong>m seguida você precisará colar este conteúdo no servidor desejado, porém incrementando dentro do seguinte arquivo (no servidor): <em>~/.ssh/authorized_keys</em></p>
+
+<p><strong>P</strong>ara facilitar, você poderá já ter copiado o arquivo da chave completo para o servidor. Veja nos próximos métodos algumas formas de o fazer.</p>
+
+<p><strong>4.2 &ndash; Método Simples &ndash; Deve ser usado antes de configurar o servidor para permitir autenticação por chaves</strong></p>
+
+<p><strong>S</strong>e o seu arquivo de chave é <em>~/.ssh/id_dsa</em>, você poderá simplesmente digitar o seguinte comando para enviar a chave para o servidor:</p>
+
+<p><code>
+ $ ssh-copy-id servidor-remoto.com.br
+</code></p>
+
+<p><strong>C</strong>aso o nome de usuário em sua máquina seja diferente do nome de usuário no servidor, lembre-se de adicionar o nome do usuário do servidor antes do endereço do mesmo:</p>
+
+<p><code>
+ $ ssh-copy-id nome-de-usuario@servidor-remoto.com.br
+</code></p>
+
+<p><strong>C</strong>aso o servidor esteja recebendo as conexões SSH em uma porta diferente da padrão (22), utilize (supondo que estamos utilizando a 221):</p>
+
+<p><code>
+ $ ssh-copy-id -p 221 nome-de-usuario@servidor-remoto.com.br
+</code></p>
+
+<p><strong>4.3 &ndash; Método Tradicional &ndash; Deve ser usado antes de configurar o servidor para permitir autenticação por chaves</strong></p>
+
+<p><strong>P</strong>or padrão a chave pública precisa ser concatenada no arquivo <em>~/.ssh/authorized_keys</em>. Comece copiando a chave pública para o servidor remoto:</p>
+
+<p><code>
+ $ scp ~/.ssh/id_dsa.pub nome-do-usuario@servidor-remoto.com.br:
+</code></p>
+
+<p><strong>O</strong> comando acima copiará a chave pública para o diretório home do usuário citado para o servidor via scp. Não esqueça de inluir o <em>:</em> ao final do endereço do servidor.</p>
+
+<p><strong>C</strong>aso o diretório <em>~/.ssh</em> ainda não exista no servidor, você precisará criá-lo. O mesmo com o arquivo <em>authorized_keys</em>:</p>
+
+<p><code>
+ $ ssh nome-do-usuario@servidor-remoto.com.br
+ nome-do-usuario@servidor-remoto's password:
+ $ mkdir ~/.ssh
+ $ cat ~/id_dsa.pub &gt;&gt; ~/.ssh/authorized_keys
+ $ rm ~/id_dsa.pub
+ $ chmod 600 ~/.ssh/authorized_keys
+</code></p>
+
+<p><strong>O</strong>s últimos dois comandos removem a chave pública do diretório do servidor e definem as permissões para o arquivo <em>authorized_keys</em> de forma que ele apenas possa ser lido ou escrito por você, o dono.</p>
+
+<p><strong>P</strong>ronto, sua chave já está no servidor após seguir uma das dicas acima.</p>
+
+<p><strong>L</strong>embre-se sempre de reiniciar o serviço ssh após efetuar qualquer alteração de configuração.</p>
+
+<p><strong>D</strong>icas simples de serem implementadas mas que irão melhorar bastante a segurança de seu servidor SSH. ;]</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Incompatibilidade: Kernel Linux 3.10.6 e Placa Wireless Broadcom Resultam em Kernel Panic]]></title>
@@ -381,147 +555,6 @@ Rua Castro Monte, 1364 Varjota – Fortaleza, CE
 <p><strong>N</strong>ão deixe de fazer o <a href="http://www.segurancadigital.info/revista/185-revistas">download</a> desta edição e conferir o resultado desta força tarefa inicial.</p>
 
 <p><strong>E</strong>speramos que gostem.</p>
-
-<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Rootkit! Esse bicho morde? Proteja-se!]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2011/03/16/rootkit-esse-bicho-morde-proteja-se/"/>
-    <updated>2011-03-16T16:25:27-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2011/03/16/rootkit-esse-bicho-morde-proteja-se</id>
-    <content type="html"><![CDATA[<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/03/malware.jpg"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/03/malware.jpg" alt="" /></a></p>
-
-<p><strong>V</strong>ocê sabe o que é rootkit?</p>
-
-<p><strong>N</strong>unca vi, nem comi, eu só ouço falar!</p>
-
-<p><strong>É</strong> um vírus? É um trojan? É um spyware? Não, é um rootkit mesmo.</p>
-
-<p><strong>A</strong> verdade é que ainda não existe um consenso em relação ao que o rootkit é de fato. Muitos dizem que é um tipo de vírus, alguns dizem que é um trojan, como você chamaria? Eu prefiro chamar de malware, que, ao pé da letra, seria um termo utilizado para algum aplicativo contendo código malicioso. o.O Acho que seria um meio termo aceitável para que possamos utilizar como base.</p>
-
-<p><strong>M</strong>as esse bicho morde? É de comer?</p>
-
-<p><strong>B</strong>om, em tese um Rootkit é um tipo de malware, como expliquei acima, cuja principal intenção é se camuflar, impedindo que seu código seja encontrado por qualquer antivírus.</p>
-
-<p><strong>T</strong>eoricamente, é exatamente isto que ele tenta fazer. Passar despercebido. De fato a grande maioria dos antivírus não são capazes de rastrear Rootkits justamente por conta do seu comportamento. É aí que surgiram ferramentas especializadas neste tipo de busca. Alguns antivírus, os mais caros, já agregam excelentes ferramentas para buscar rootkits. Mas, como eles conseguem se camuflar tão bem?</p>
-
-<p><strong>E</strong>stas aplicações, rootkits, têm a capacidade de interceptar as solicitações feitas ao sistema operacional, podendo alterar o seu resultado.</p>
-
-<p><strong>I</strong>magine que você está utilizando sua máquina e seu sistema operacional solicita a leitura ou abertura de um determinado arquivo, podendo ser a seu mando ou mesmo do antivírus, por exemplo, o rootkit intercepta os dados que são requisitados e faz uma filtragem dessa informação, deixando passar apenas o que ele deseja, ou seja, código não infectado. E o que acontece? O antivírus ou qualquer outra ferramenta ficam impossibilitadas de encontrar o arquivo malicioso ou o código, dependendo do caso.</p>
-
-<p><strong>N</strong>ão é incomum encontrar o Rootkit como não apenas uma aplicação, mas um conjunto de aplicações ou, como também chamamos, toolkit.</p>
-
-<p><strong>R</strong>esumidamente poderíamos dizer que é um programa com código malicioso que busca se esconder de softwares de segurança e do usuário utilizando diversas técnicas avançadas de programação para tal.</p>
-
-<p><strong>G</strong>eralmente escondem suas chaves nos registros do sistema operacional e escondem seus processos no gerenciador de tarefas, o que torna uma missão quase impossível para um usuário identificar por conta própria. Outra prática comum de quem escreve rootkits é fazer com que eles se escondam em drivers de hardware, que são arquivos de sistema fundamentais para que o sistema operacional funcione corretamente com seus dispositivos.</p>
-
-<p><strong>O</strong> nome RootKit é por conta da função para a qual o mesmo é desenvolvido. Primeiramente ele é um kit de funcionalidades e códigos maliciosos cujo objetivo é se infiltrar nos sistemas de forma silenciosa e despercebida, geralmente liberando um  *backdoor para que o invasor possa posteriormente acessar o sistema infectado com privilégios de super usuário ou usuário administrador (root).</p>
-
-<p><strong>P</strong>ara quem nunca ouviu falar em backdoors, a explicação pode ter parecido um tanto quanto confusa, portanto aqui vai a nota de rodapé: Backdoor é, assim como na tradução ao pé da letra, uma porta dos fundos. Uma falha de segurança intencional que possibilita a invasão do seu sistema de forma que o invasor possa ter este acesso e controle com um mínimo de trabalho.</p>
-
-<p><strong>S</strong>em mais papo furado, vamos conhecer algumas ferramentas que buscam rootkits em seu Linux.</p>
-
-<p><img src="http://aboutonlinetips.com/wp-content/uploads/2008/11/picture-rootkit.png" alt="" /></p>
-
-<p><strong>RKHUNTER</strong></p>
-
-<p><strong>A</strong> primeira ferramenta que vou apresentar se chama rkhunter, que é a minha favorita.</p>
-
-<p><strong>S</strong>e, assim como eu, você for usuário do <a href="http://archlinux.org">Arch Linux</a>, poderá encontrar o rkhunter no <a href="http://aur.archlinux.org">AUR</a> através <a href="http://aur.archlinux.org/packages.php?ID=25940">deste link</a>.</p>
-
-<p><strong>A</strong> instalação é simples e segue o padrão de qualquer instalação a partir do AUR, conforme passos abaixo:</p>
-
-<p><strong>1-</strong> Descompacte o arquivo:</p>
-
-<p>[kalib@tuxcaverna downloads]$ tar -xvzf rkhunter.tar.gz</p>
-
-<p><strong>2-</strong> Acesse o diretório criado:</p>
-
-<p>[kalib@tuxcaverna downloads]$ cd rkhunter/</p>
-
-<p><strong>3-</strong> Execute o PKGBUILD para criação do pacote em si:</p>
-
-<p>[kalib@tuxcaverna rkhunter]$ makepkg</p>
-
-<p><strong>4-</strong> Com o pacote criado, basta instalar:</p>
-
-<p>[kalib@tuxcaverna rkhunter]$ sudo pacman -U rkhunter-1.3.8-1-any.pkg.tar.xz</p>
-
-<p><strong>F</strong>eito.</p>
-
-<p><strong>S</strong>eu rkhunter está pronto para ser utilizado, mas como toda e qualquer aplicação de varredura, como antivírus, por exemplo, é sempre recomendado atualizar sua base de dados antes de iniciar a busca, portanto digite o seguinte para atualizar a base com as propriedades dos arquivos existentes:</p>
-
-<h1>rkhunter &mdash;propupd</h1>
-
-<p><strong>E</strong>m seguida é a hora de atualizar a base de dados do rkhunter em si:</p>
-
-<h1>rkhunter &mdash;update</h1>
-
-<p><strong>A</strong>gora, vamos vasculhar o sistema:</p>
-
-<h1>rkhunter -c</h1>
-
-<p><strong>V</strong>ocê terá uma listagem das checagens parecida com esta:</p>
-
-<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/03/rkhunter11.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/03/rkhunter11.png" alt="" /></a></p>
-
-<p><strong>P</strong>erceba que é tudo apresentado de forma simples e objetiva.</p>
-
-<p><strong>N</strong>o final da checagem ele gera um arquivo onde ele armazena todas as informações que ele registrou bem como lhe aponta uma descrição dos resultados da busca.</p>
-
-<p><strong>TIGER</strong></p>
-
-<p><strong>E</strong>sta será a nossa segunda ferramenta.</p>
-
-<p><strong>O</strong> Tiger é uma ferramenta de segurança que não pensa tanto na aparência, portanto não espere uma tela tão amigável e colorida quanto a do rkhunter. ;]</p>
-
-<p><strong>A</strong> instalação da mesma no Arch Linux também se dá através do pacote do AUR que pode ser encontra <a href="http://aur.archlinux.org/packages.php?ID=1573">neste link</a>.</p>
-
-<p><strong>A</strong> instalação segue o mesmo procedimento que utilizamos no rkhunter, conforme abaixo:</p>
-
-<p>[kalib@tuxcaverna downloads]$ tar -xvzf tiger.tar.gz</p>
-
-<p>[kalib@tuxcaverna downloads]$ cd tiger/</p>
-
-<p>[kalib@tuxcaverna tiger]$ makepkg</p>
-
-<p>[kalib@tuxcaverna tiger]$ sudo pacman -U tiger-3.2.3-2-x86_64.pkg.tar.xz</p>
-
-<p><strong>F</strong>inalizado. Para executar, basta rodar:</p>
-
-<h1>tiger</h1>
-
-<p><strong>E</strong>le iniciará a busca e lhe trará uma interface como esta:</p>
-
-<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/03/rkhunter2.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/03/rkhunter2.png" alt="" /></a></p>
-
-<p><strong>A</strong>ssim como o rkhunter, no ato de finalização ele irá gerar um arquivo com o relatório da checagem. Ele lhe informará o caminho do arquivo, mas provavelmente será em /var/log/tiger/.</p>
-
-<p><strong>CHKROOTKIT</strong></p>
-
-<p><strong>A</strong>gora vamos para a terceira e última ferramenta deste post.</p>
-
-<p><strong>P</strong>ara usuário Arch, desta vez a instalação é ainda mais simples do que as duas anteriores, visto que o pacote já se encontra nos repositórios do pacman.</p>
-
-<p>[kalib@tuxcaverna ~]$ sudo pacman -S chkrootkit</p>
-
-<p><strong>I</strong>nstalado!</p>
-
-<p><strong>A</strong>ssim como o Tiger, o chkroot também possui uma interface simples sem cores ou enfeites, conforme pode ser visto abaixo:</p>
-
-<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/03/rkhunter3.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/03/rkhunter3.png" alt="" /></a></p>
-
-<p><strong>A</strong>pesar de não ser colorida e enfeitada, é uma interface bem simples e de fácil entendimento, concordam?</p>
-
-<p><strong>C</strong>laro, não existem apenas estas ferramentas para busca de rootkits e códigos maliciosos, mas levaria muito tempo para escrever sobre todos ou ao menos a maioria.</p>
-
-<p><strong>N</strong>o mais, acho que já é um bom começo para um entendimento básico sobre o que é esse tal Rootkit e o que esse bicho faz.</p>
-
-<p><strong>C</strong>om estas ferramentas as chances de algum rootkit passar despercebido em seu ambiente Linux já são bem limitadas.</p>
-
-<p><strong>A</strong>braços!</p>
 
 <p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
 ]]></content>
