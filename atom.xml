@@ -4,7 +4,7 @@
   <title><![CDATA[Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2013-08-29T19:59:15-03:00</updated>
+  <updated>2013-09-03T20:46:27-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -12,6 +12,26 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Correção do Bug entre Kernel Linux e Placas Broadcom]]></title>
+    <link href="http://blog.marcelocavalcante.net/blog/2013/09/03/correcao-do-bug-entre-kernel-linux-e-placas-broadcom/"/>
+    <updated>2013-09-03T20:33:00-03:00</updated>
+    <id>http://blog.marcelocavalcante.net/blog/2013/09/03/correcao-do-bug-entre-kernel-linux-e-placas-broadcom</id>
+    <content type="html"><![CDATA[<p><img class="left" src="http://blog.marcelocavalcante.net/imgs/catchbug.jpg" title="'Catching Big'" >
+<strong>B</strong>ug capturado e tratado!</p>
+
+<p><strong>D</strong>iversas pessoas se depararam com intermináveis erros de <em>kernel panic</em> após atualizar seu kernel para a versão <em>3.10.6</em> (e posteriores) quando utilizavam placas wireless da <em>Broadcom</em>. O erro reportado foi tratado e, apesar de ainda não estar resolvido no último kernel lançado, <em>3.10.10</em>, já se encontra na árvore de <em>Linus Torvalds</em>, conforme código e correção podem ser vistos através do seguinte link:</p>
+
+<p><a href="https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=2dfca312a91631311c1cf7c090246cc8103de038">mac80211: add a flag to indicate CCK support for HT clients</a></p>
+
+<p><strong>O</strong> problema se dava com o módulo brcm80211 que não conseguia lidar adequadamente com o envio de frames com taxas CCK como parte de uma sessão A-MPDU. Apesar de outros drivers/módulos da broadcom conseguirem conectar-se sem o kernel panic logo na inicialização do sistema, estes ainda podem enfrentar problemas em outros momentos sem esta correção. O patch corrige o erro reportado com módulos brcmsmac bem como outros.</p>
+
+<p><strong>A</strong>tualmente estou utilizando o último kernel disponibilizado, o <em>3.10.10</em>. Apesar de a correção ainda não ter saído nesta versão, estou utilizando uma versão do kernel com o patch já aplicado.</p>
+
+<p><strong>E</strong>speremos pelo kernel <em>3.11</em> que deverá ser lançado nos próximos dias e que, por sua vez, deverá resolver este problema definitivamente.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Tornando Seu SSH Mais Seguro]]></title>
@@ -1392,33 +1412,6 @@ device interrupt 47  base 0xc000</p>
 <p><strong>D</strong>os lugares onde o frio é brutal, até os distantes reinos de plenitude e sol, George R. R. Martin narra uma história de lordes e damas, soldados e mercenários, assassinos e bastardos, que se juntam em um tempo de presságios malignos. Entre disputas por reinos, tragédias e traições, vitória e terror, o destino dos Stark, seus aliados e seus inimigos é incerto. Mas cada um está se esforçando para ganhar este conflito mortal: a guerra dos tronos.</p>
 
 <p><strong>B</strong>oa leitura!</p>
-
-<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Casa nova.. em todos os sentidos...]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2011/09/06/casa-nova-em-todos-os-sentidos/"/>
-    <updated>2011-09-06T14:33:11-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2011/09/06/casa-nova-em-todos-os-sentidos</id>
-    <content type="html"><![CDATA[<p><img src="http://www.it-networks.org/wp-content/uploads/2011/04/imagesCAIK1UEI.jpg" alt="" /></p>
-
-<p><strong>S</strong>audações pessoal!</p>
-
-<p><strong>L</strong>ongo tempo sem publicar algo no blog, mas cá estou novamente.</p>
-
-<p><strong>A</strong> verdade é que passei por um período um tanto quanto conturbado. Estive em busca de um novo apartamento com a família, mudanças em meus horários da faculdade, trabalhos profissionais, projetos pessoais, projetos de software livre, estudo de novo idioma, etc.</p>
-
-<p><strong>M</strong>uita coisa mudou. Mudanças, quando acontecem todas ao mesmo tempo, podem nos deixar um tanto quanto esgotados. Foi basicamente isto o que aconteceu. Mas, agora que consegui me organizar novamente, acredito que seja hora de voltar tudo ao seu ritmo natural.</p>
-
-<p><strong>A</strong>cabei decidindo que depois de tanto tempo afastado e com tantas mudanças recentes, como por exemplo minha moradia, que mudou após longos 25 anos morando no mesmo local, talvez fosse a hora de mudar a casa também de meus posts. Porque não um novo espaço para o blog? Novo host, nova &ldquo;decoração&rdquo;, etc.</p>
-
-<p><strong>C</strong>á estamos, eu e o blog, de volta. Acredito que agora voltemos às atividades normais e rotineiras.</p>
-
-<p><strong>N</strong>os vemos no próximo post.</p>
-
-<p><strong>A</strong>braços!</p>
 
 <p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
 ]]></content>
