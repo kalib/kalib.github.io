@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Arch Linux | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/blog/categories/arch-linux/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2013-09-03T20:46:27-03:00</updated>
+  <updated>2013-09-11T11:32:53-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -12,6 +12,91 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Dica Rápida - Linux - Como Limpar o Conteúdo de um Arquivo Texto Sem Abrir o Mesmo]]></title>
+    <link href="http://blog.marcelocavalcante.net/blog/2013/09/11/dica-rapida-linux-como-limpar-o-conteudo-de-um-arquivo-texto-sem-abrir-o-mesmo/"/>
+    <updated>2013-09-11T11:05:00-03:00</updated>
+    <id>http://blog.marcelocavalcante.net/blog/2013/09/11/dica-rapida-linux-como-limpar-o-conteudo-de-um-arquivo-texto-sem-abrir-o-mesmo</id>
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/erase.jpg" title="&lsquo;Erasing text&rsquo;" >
+<strong>A</strong>rquivos de log, por vezes, podem ser muito extensos. Tão extensos que torna-se praticamente impossível a leitura de seu conteúdo com um editor de textos como o vim ou vi. Além disso, muitos deles podem chegar a ocupar Gigas e mais Gigas de seu espaço em disco, o que pode acabar sendo um desperdício de espaço em seu sistema de arquivos.</p>
+
+<p><strong>H</strong>oje passei por um problema deste tipo. Ao atualizar meu Arch Linux, percebi que comecei a receber erros devido ao meu espaço em disco o qual era apontado como &ldquo;insuficiente&rdquo;. O fato é que é muito comum em distribuições Linux utilizarmos um particionamento de forma a isolarmos um pouco cada partição para fins específicos. No meu caso, verifiquei que a minha partição raíz estava mesmo completamente cheia.</p>
+
+<p><code>
+ [kalib@tuxcaverna ~]$ df -h /
+ Sist. Arq.      Tam. Usado Disp. Uso% Montado em
+ /dev/sda3        30G   30G   0M  100% /
+</code></p>
+
+<p><strong>P</strong>ara resolver meu problema comecei limpando os pacotes que ficam em cache desnecessariamente através do pacman:</p>
+
+<p><code>
+ [kalib@tuxcaverna ~]$ pacman -Sc
+</code></p>
+
+<p><strong>E</strong>m seguida resolvi verificar quanto de espaço eu estava consumindo com logs de sistema:</p>
+
+<p><code>
+ [root@tuxcaverna ~]# cd /var/log
+ [root@tuxcaverna ~]# du -h .
+</code></p>
+
+<p><strong>O</strong> comando acima me mostrou que meu diretório de logs estava consumindo mais de 13G. Insano, certo? Na verdade, não. É comum que ao longo dos meses, ou mesmo anos, o sistema acumule logs e mais logs. Uma quantia absurda e, muitas vezes, desnecessária de informações. Como trata-se de meu notebook pessoal e não estou tendo qualquer erro em meu sistema, resolvi limpar estes logs, portanto o primeiro passo é identificar os maiores arquivos. No meu caso foram os arquivos:</p>
+
+<p><code>
+ everything.log    kernel.log    daemon.log
+</code></p>
+
+<p><strong>U</strong>ma vez que cada um destes arquivos possuía mais de 3G, resolvi limpá-los completamente. A saída mais rápida e KISS? <em>/dev/null neles</em>.</p>
+
+<p><code>
+ [root@tuxcaverna ~]# cat /dev/null &gt;everything.log
+</code></p>
+
+<p><strong>I</strong>sto limpará completamente o conteúdo do arquivo de texto informado. Vejamos o simples exemplo a seguir:</p>
+
+<p><strong>V</strong>amos criar um arquivo de texto vazio chamado <em>teste.txt</em>.</p>
+
+<p><code>
+ [root@tuxcaverna ~]# touch teste.txt
+</code></p>
+
+<p><strong>E</strong>m seguida, vamos inserir algum conteúdo no mesmo:</p>
+
+<p><code>
+ [root@tuxcaverna ~]# echo "Testando" &gt;teste.txt
+</code></p>
+
+<p><strong>V</strong>erifiquemos se meu texto realmente foi inserido no arquivo:</p>
+
+<p><code>
+ [root@tuxcaverna ~]# cat teste.txt
+ Testando
+</code></p>
+
+<p><strong>T</strong>udo certo. Agora vamos limpar o mesmo:</p>
+
+<p><code>
+ [root@tuxcaverna ~]# cat /dev/null &gt;teste.txt
+</code></p>
+
+<p><strong>A</strong>gora, vamos confirmar se o mesmo foi mesmo zerado:</p>
+
+<p><code>
+ [root@tuxcaverna ~]# cat teste.txt
+ [root@tuxcaverna ~]#
+</code></p>
+
+<p><strong>M</strong>issão cumprida. Apenas para constar a diferença:</p>
+
+<p><code>
+ [kalib@tuxcaverna ~]$ df -h /
+ Sist. Arq.      Tam. Usado Disp. Uso% Montado em
+ /dev/sda3        30G   16G   13G  56% /
+</code></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[KDE 4.11 Lançado e Disponível no Arch Linux]]></title>
@@ -294,33 +379,6 @@
 <p><strong>F</strong>eito. ;]</p>
 
 <p><strong>H</strong>ave Fun!</p>
-
-<p><strong>A</strong>braços!</p>
-
-<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[PROCURA-SE: Usuários de Arch Linux no Ceará]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2011/04/26/procura-se-usuarios-de-arch-linux-no-ceara/"/>
-    <updated>2011-04-26T10:20:12-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2011/04/26/procura-se-usuarios-de-arch-linux-no-ceara</id>
-    <content type="html"><![CDATA[<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/04/procurase.jpg"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/04/procurase.jpg" alt="" /></a></p>
-
-<p><strong>S</strong>e você é ou conhece algum usuário de <a href="http://archlinux.org/">Arch Linux</a> aqui no Ceará, favor entrar em contato.</p>
-
-<p><strong>I</strong>nfelizmente não estamos em condições de oferecer recompensas financeiras pelas <del>denúncias</del> ou comparecimentos voluntários. Quem sabe, uma cervejinha ou duas, até que rola.</p>
-
-<p><strong>B</strong>rincadeiras a parte, de fato estamos buscando usuários do Arch Linux em nosso estado.</p>
-
-<p><strong>O</strong> fato é que o <a href="http://archlinux-br.org">Arch Linux Brasil</a> como um todo vem começando uma campanha de &ldquo;localização&rdquo; de usuários em diversos estados como uma forma de estreitar as relações entre estes. A ideia é procurar uma forma de fazer com que os usuários de Arch Linux possam ter uma maior interação entre si, o que facilita na organização de encontros, eventos, install fests, etc.</p>
-
-<p><strong>N</strong>o momento estamos mapeando e buscando interessados na ideia, portanto fica o convite:</p>
-
-<p><strong>S</strong>e você é usuário do Arch Linux e mora no Ceará ou conhece algum usuário do Arch Linux por aqui, passe a informação.</p>
-
-<p><strong>P</strong>or favor se identifique através do seguinte link: <a href="http://forum.archlinux-br.org/viewforum.php?id=20">http://forum.archlinux-br.org/viewforum.php?id=20</a></p>
 
 <p><strong>A</strong>braços!</p>
 

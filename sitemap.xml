@@ -895,12 +895,18 @@
         <lastmod>2013-09-03T20:45:48-03:00</lastmod>
     </url>
     <url>
+        <loc>
+            http://blog.marcelocavalcante.net/blog/2013/09/11/dica-rapida-linux-como-limpar-o-conteudo-de-um-arquivo-texto-sem-abrir-o-mesmo/
+        </loc>
+        <lastmod>2013-09-11T11:32:11-03:00</lastmod>
+    </url>
+    <url>
         <loc>http://blog.marcelocavalcante.net/about/</loc>
         <lastmod>2013-08-01T11:35:15-03:00</lastmod>
     </url>
     <url>
         <loc>http://blog.marcelocavalcante.net/</loc>
-        <lastmod>2013-09-03T20:45:48-03:00</lastmod>
+        <lastmod>2013-09-11T11:32:11-03:00</lastmod>
     </url>
     <url>
         <loc>http://blog.marcelocavalcante.net/robots.txt</loc>
@@ -908,6 +914,6 @@
     </url>
     <url>
         <loc>http://blog.marcelocavalcante.net/blog/archives/</loc>
-        <lastmod>2013-09-03T20:45:48-03:00</lastmod>
+        <lastmod>2013-09-11T11:32:11-03:00</lastmod>
     </url>
 </urlset>
