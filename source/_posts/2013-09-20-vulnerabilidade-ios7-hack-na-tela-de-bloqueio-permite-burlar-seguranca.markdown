@@ -8,6 +8,7 @@ description: Vulnerabilidade na tela de bloqueio do iOS 7 permite hack que burla
 categories:
 - iOS
 - Seguranca
+- Cultura Hacker
 ---
 {% img center /imgs/vulnerability.jpg 'Vulnerability' %}
 **N**ão é de hoje que as telas de bloqueio (supostas proteções) de smartphones possuem *vulnerabilidades*. Mal foi lançado o novo iOS 7 e o mesmo já possui uma vulnerabilidade possibilitando a qualquer pessoa utilizar um simples hack para ter acesso à alguns dados do dono do smartphone com o iOS 7.
