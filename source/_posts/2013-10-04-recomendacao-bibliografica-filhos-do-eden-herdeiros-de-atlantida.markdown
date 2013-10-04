@@ -20,4 +20,4 @@ categories:
 
 > *Há uma guerra no céu. O confronto civil entre o arcanjo Miguel e as tropas revolucionárias de seu irmão, Gabriel, devasta as sete camadas do paraíso. Com as legiões divididas, as fortalezas sitiadas, os generais estabeleceram um armistício na terra, uma trégua frágil e delicada, que pode desmoronar a qualquer instante. Enquanto os querubins se enfrentam num embate de sangue e espadas, dois anjos são enviados ao mundo físico com a tarefa de resgatar Kaira, uma capitã dos exércitos rebeldes, desaparecida enquanto investigava uma suposta violação do tratado. A missão revelará as tramas de uma conspiração milenar, um plano que, se concluído, reverterá o equilíbrio de forças no céu e ameaçará toda vida humana na terra. Ao lado de Denyel, um ex-espião em busca de anistia, os celestiais partirão em uma jornada através de cidades, selvas e mares, enfrentarão demônios e deuses, numa trilha que os levará às ruínas da maior nação terrena anterior ao dilúvio – o reino perdido de Atlântida.*
 
-**B**oa leitura!
+**B**oa leitura! 
