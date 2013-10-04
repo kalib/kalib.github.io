@@ -9,7 +9,7 @@
   <meta name="author" content="Marcelo Cavalcante Rocha - Kalib">
 
   
-  <meta name="description" content="Saudações pessoas&hellip; Estava eu hoje começando a escrever um artigo para a segunda edição do Almanarch, quando bateu uma sede e levantei para &hellip;">
+  <meta name="description" content="Aqueles que são administradores de redes e servidores já devem ter passado por problemas parecidos com este. Nesta dica irei apresentar um comando &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -80,6 +80,90 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/07/09/limpando-o-cache-de-forma-rapida/">Limpando O Cache De Forma Rápida</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-07-09T11:14:00-03:00" pubdate data-updated="true">Jul 9<span>th</span>, 2008</time>
+        
+         | <a href="/blog/2008/07/09/limpando-o-cache-de-forma-rapida/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Aqueles que são administradores de redes e servidores já devem ter passado por problemas parecidos com este.</p>
+
+<p>Nesta dica irei apresentar um comando simples para limpar sua memória em cache.</p>
+
+<p>Resolvi escrever sobre isto por ter visto duas vezes na mesma semana problemas relacionados a isso. Um foi aqui mesmo onde trabalho, onde estávamos percebendo que o consumo de memória em um dos servidores estava muito alto, porém com pouca atividade no mesmo, no qual percebi que nada mais era do que muita memória alocada em cache sem necessidade no momento. Desenvolvedores java&hellip;vai entender.. hauhauha (brincadeira.. :p).</p>
+
+<p>Outro caso foi uma dúvida que surgiu, bem parecida, em um fórum do qual faço parte, onde um rapaz estava passando pelo mesmo problema no servidor dele&hellip; Com consumo exagerado de memória. Ele até colou o resultado do top no qual podíamos ver claramente que não haviam processos consumindo tudo aquilo de memória, e mais uma vez pudemos ver que o grande vilão era o cache, o que lhe passava essa impressão de memória totalmente consumida.</p>
+
+<p>O comando para se limpar este chache é o seguinte:</p>
+
+<blockquote><h1>echo 3 > /proc/sys/vm/drop_caches</h1></blockquote>
+
+<p>Exemplo:</p>
+
+<p>Aqui vai uma saída do meu top antes de rodar o comando. ( Reparem no consumo de memória armazenada em Cache na última linha!)</p>
+
+<blockquote><p>top &ndash; 09:40:03 up 1:42, 1 user, load average: 0.06, 0.20, 0.20</p></blockquote>
+
+<p>Tasks: 83 total, 2 running, 80 sleeping, 0 stopped, 1 zombie</p>
+
+<p>Cpu(s): 4.3%us, 0.5%sy, 0.2%ni, 95.0%id, 0.0%wa, 0.0%hi, 0.0%si, 0.0%st</p>
+
+<p>Mem: 1944240k total, 898916k used, 245324k free, 51176k buffers</p>
+
+<p>Swap: 996020k total, 0k used, 996020k free, 969000k cached</p>
+
+<blockquote></blockquote>
+
+<p>Repare agora o resultado obtido pelo top depois de executar o comando para limpar o cache:</p>
+
+<blockquote><p>top &ndash; 09:45:03 up 1:47, 1 user, load average: 0.32, 0.16, 0.17</p></blockquote>
+
+<p>Tasks: 85 total, 3 running, 81 sleeping, 0 stopped, 1 zombie</p>
+
+<p>Cpu(s): 11.2%us, 1.5%sy, 0.0%ni, 63.4%id, 23.9%wa, 0.0%hi, 0.0%si, 0.0%st</p>
+
+<p>Mem: 1944240k total, 329412k used, 1614828k free, 768k buffers</p>
+
+<p>Swap: 996020k total, 0k used, 996020k free, 69088k cached</p>
+
+<blockquote></blockquote>
+
+<p>A memória armazenada em cache caiu de ~969mb para ~69mb. ;]</p>
+
+<p>Bingo!</p>
+
+<p><a href="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif"><img src="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif" alt="" /></a></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -219,76 +303,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2008/06/03/minhas-primeiras-impressoes-com-o-arch-linux/">Minhas Primeiras Impressões Com O Arch Linux</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2008-06-03T14:54:00-03:00" pubdate data-updated="true">Jun 3<span>rd</span>, 2008</time>
-        
-         | <a href="/blog/2008/06/03/minhas-primeiras-impressoes-com-o-arch-linux/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h3></h3>
-
-<p><a href="http://4.bp.blogspot.com/_5kfJplBiYy0/SEWWyV8TkxI/AAAAAAAAAD0/_RJabFlJvxw/s1600-h/archlogo.jpg"><img src="http://4.bp.blogspot.com/_5kfJplBiYy0/SEWWyV8TkxI/AAAAAAAAAD0/_RJabFlJvxw/s200/archlogo.jpg" alt="" /></a>Quem me conhece sabe que sou um aventureiro quando se trata de distribuições Linux. Sempre utilizei várias distros dos mais variados tipos passando pelo Conectiva, Slackware, Suse, Kurumin, Ubuntu, Kalango, Kubuntu, Debian, Fluxbuntu, Goblinx, Fedora, Big, dentre outros. Agora é a vez do Arch.</p>
-
-<p>A simplicidade do Slackware sempre me fascinou, porém seu gerenciamento de pacotes me desanimou bastante há alguns anos atrás quando vi outras distribuições evoluindo tanto neste ponto como o Debian por exemplo. Foi quando fui fascinado pelo poder do apt-get/aptitude. Por outro lado, sempre gostei de ter os aplicativos mais atualizados e funcionando em minha máquina, e como esse não é o forte do Debian resolvi partir para distros baseadas nele, onde o Kubuntu se destacou ficando por mais tempo. Independente de minha máquina, também utilizo diariamente o Fedora, distribuição que utilizo no trabalho em minha estação. Diante de tantas mudanças, porque não tentar o Arch Linux agora?</p>
-
-<p>Há algum tempo ouço amigos falando sobre suas vantagens mas queria confirmar se era tudo verdade, ou apenas mais uma visão de usuário fanático por sua distro. E foi aí que tudo começou&hellip;</p>
-
-<p>Primeiramente parti para a filosofia e história do mesmo. Para quem não sabe, o Arch Linux foi criado em 2001 por <strong>Judd Vinet</strong> e, desde, então vem crescendo bastante. É uma distribuição rápida, leve, elegante e bastante flexível. No Brasil ainda é uma distro pouco conhecida e usada. Por ser otimizado para processadores i686, o Arch roda mais rápido que a maioria das distribuições que, por sua vez, utilizam pacotes para i386, porém por outro lado só roda em máquinas com processadores superiores ao pentium II. O Arch possui uma filosofia que se assemelha a do Slackware no estilo KISS, Keep It Simple Stupid, mantendo o sistema simples e bastante customizável de modo que pode-se configurar tudo possuindo um pouco de intimidade com o shell do Linux. Porém encontrei nele uma grande evolução com relação ao Slackware que resolveu se manter mais tradicional, enquanto que o Arch trouxe um gerenciador de pacotes chamado pacman. O pacman, de certa forma, lembra o apt-get/aptitude, com o qual é possível facilmente atualizar seu sistema, buscar, instalar ou remover pacotes de forma rápida e segura sem precisar se preocupar com problemas de dependências que o mesmo resolve por você corretamente.</p>
-
-<p>Sempre adorei ler, mas não ia ser uma simples leitura que me convenceria sobre o fato de o Arch ser uma boa distribuição Linux, mesmo porque em cinco minutos eu sou capaz de &ldquo;criar&rdquo; uma distribuição Kalib e escrever uma bela história sobre como ela funciona e torná-la assim a melhor distribuição Unix Like ou mesmo BSD, concorda? Sendo assim, parti para os primeiros testes reais.</p>
-
-<p><a href="http://3.bp.blogspot.com/_5kfJplBiYy0/SEWNdzRsaSI/AAAAAAAAADk/mc4TzoaAOfY/s1600-h/arch3.png"><img src="http://3.bp.blogspot.com/_5kfJplBiYy0/SEWNdzRsaSI/AAAAAAAAADk/mc4TzoaAOfY/s200/arch3.png" alt="" /></a>Como não queria particionar meu disco, pelo mesmo já ter muitas fatias, resolvi criar uma máquina virtual com o Arch Linux, utilizando para isto um aplicativo chamado Virtual Box.</p>
-
-<p>A instalação foi bem simples, sem maiores dificuldades, apesar de ser toda em modo texto sem as facilidades da interface gráfica, o que acaba por assustar um pouco os usuários iniciantes no mundo Linux. Sem maiores traumas passei pelo poucos passos de particionamento do disco, escolha dos pacotes e instalação dos mesmos.</p>
-
-<p>Após a instalação pude, ou melhor, TIVE que testar as habilidades do pacman no gerenciamento de pacotes. Porque TIVE? Bom, digamos que o Arch não traga muitos pacotes instalados por default. Tive de instalar as fontes, o xorg, interface gráfica (kdemod), driver de minha placa de áudio, driver de vídeo, etc&hellip; Mas nada que o pacman não tenha resolvido com bastante eficiência. ;] Fiquei surpreso com sua eficiência nesse momento.</p>
-
-<p>Após instalado, resolvi checar a eficiência de seus repositórios. Mandei o pacman instalar o amsn, apenas a nível de curiosidade para saber qual versão ele traria, e para minha surpresa ele me instalou a versão 0.97 que é a mais recente de todas, e que no kubuntu havia conseguido instalar apenas via svn. Realmente me surpreendeu muito o pacman.</p>
-
-<p>Outra coisa que me chamou bastante atenção foi a leveza com que o sistema se mostrou funcionar. Isto pode ser conferido nesta segunda screenshot onde eu estava rodando o top para monitorar os consumos do sistema.</p>
-
-<p><a href="http://3.bp.blogspot.com/_5kfJplBiYy0/SEWPY8j8tuI/AAAAAAAAADs/gEolntsO-9Q/s1600-h/archlinux2.png"><img src="http://3.bp.blogspot.com/_5kfJplBiYy0/SEWPY8j8tuI/AAAAAAAAADs/gEolntsO-9Q/s200/archlinux2.png" alt="" /></a>Em resumo, esta foi a primeira impressão que tive do Arch Linux. Uma distribuição bastante leve, eficiente, estável e extremamente maleável. Não é o tipo de distribuição que eu recomendaria para usuários que apenas desejam ter um sistema operacional com tudo funcionando, mas com certeza eu o indicaria para alguém que quer ter um excelente sistema e não tem medo de aprender ou ter que resolver problemas de configuração na unha. Esperemos para ver no que essa relação Kalib/Arch irá resultar. ;]</p>
-
-<p>Links:</p>
-
-<p><a href="http://www.archlinux-br.org/about/">1- Maiores detalhes sobre o Arch Linux e sua história</a></p>
-
-<p><a href="http://www.archlinux-br.org/download/">2- Download do Arch</a></p>
-
-<p><a href="http://www.vivaolinux.com.br/artigos/verArtigo.php?codigo=8256">3- Tutorial de Instalação</a></p>
-
-<p><a href="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif"><img src="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif" alt="" /></a></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/51/">&larr; Anteriores</a>
@@ -313,6 +327,10 @@ Me conheça melhor <a href="http://blog.marcelocavalcante.net/about">clicando aq
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/10/04/recomendacao-bibliografica-filhos-do-eden-herdeiros-de-atlantida/">Recomendação Bibliográfica - Filhos do Éden - Herdeiros de Atlântida</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/09/20/vulnerabilidade-ios7-hack-na-tela-de-bloqueio-permite-burlar-seguranca/">Vulnerabilidade iOS7 - Hack na Tela de Bloqueio Permite Burlar Segurança</a>
       </li>
     
@@ -328,15 +346,11 @@ Me conheça melhor <a href="http://blog.marcelocavalcante.net/about">clicando aq
         <a href="/blog/2013/08/28/tornando-seu-ssh-mais-seguro/">Tornando Seu SSH Mais Seguro</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/08/23/dia-rapida-linux-como-deletar-todos-os-arquivos-exceto-alguns-com-extensoes-especificas/">Dica Rápida - Linux - Como Deletar Todos os Arquivos Exceto Alguns (Com Extensões Específicas)?</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categorias</h1>
-    <span id="tag-cloud"><embed type='application/x-shockwave-flash' src='/javascripts/tagcloud.swf'width='100%' height='250' bgcolor='#f2f2f2' id='tagcloudflash' name='tagcloudflash' quality='high' allowscriptaccess='always'flashvars="tcolor=0x333333&amp;tcolor2=0x333333&amp;hicolor=0x000000&amp;tspeed=100&amp;distr=true&amp;mode=tags&amp;tagcloud=%3Ctags%3E%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fandroid%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3EAndroid%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Faptitude%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3EAptitude%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Farch-linux%27+style%3D%27font-size%3A+18.240310077519382%25%27%3EArch+Linux%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fasterisk%27+style%3D%27font-size%3A+7.5813953488372094%25%27%3EAsterisk%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fcensura%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3ECensura%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fchromium%27+style%3D%27font-size%3A+7.9689922480620154%25%27%3EChromium%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fcultura-hacker%27+style%3D%27font-size%3A+14.945736434108527%25%27%3ECultura+Hacker%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fdebian%27+style%3D%27font-size%3A+7.387596899224806%25%27%3EDebian%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fdia-livre%27+style%3D%27font-size%3A+7.775193798449612%25%27%3EDia+Livre%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Feventos%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3EEventos%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Ffedora%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3EFedora%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Ffirefox%27+style%3D%27font-size%3A+7.387596899224806%25%27%3EFirefox%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fflisol%27+style%3D%27font-size%3A+8.550387596899224%25%27%3EFlisol%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fgoogle%27+style%3D%27font-size%3A+7.775193798449612%25%27%3EGoogle%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fimpressoes%27+style%3D%27font-size%3A+32.0%25%27%3EImpressoes%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fios%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3EiOS%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fjava%27+style%3D%27font-size%3A+8.356589147286822%25%27%3EJava%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fjogos%27+style%3D%27font-size%3A+7.775193798449612%25%27%3EJogos%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fkde%27+style%3D%27font-size%3A+10.294573643410853%25%27%3EKDE%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fkubuntu%27+style%3D%27font-size%3A+7.5813953488372094%25%27%3EKubuntu%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fliberdade%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3ELiberdade%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Flinux%27+style%3D%27font-size%3A+24.635658914728683%25%27%3ELinux%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fliteratura%27+style%3D%27font-size%3A+11.45736434108527%25%27%3ELiteratura%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fmeio-ambiente%27+style%3D%27font-size%3A+7.775193798449612%25%27%3EMeio+Ambiente%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fpython%27+style%3D%27font-size%3A+8.744186046511627%25%27%3EPython%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Frails%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3ERails%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fredes%27+style%3D%27font-size%3A+10.10077519379845%25%27%3ERedes%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fruby%27+style%3D%27font-size%3A+7.9689922480620154%25%27%3ERuby%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fseguranca%27+style%3D%27font-size%3A+11.263565891472869%25%27%3ESeguranca%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fseguranca-digital%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3ESeguranca+Digital%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fsenha%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3ESenha%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fservidor%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3EServidor%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fsoftware-livre%27+style%3D%27font-size%3A+28.31782945736434%25%27%3ESoftware+Livre%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fssh%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3ESSH%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fsysadmin%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3ESysAdmin%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Ftux-ce%27+style%3D%27font-size%3A+9.51937984496124%25%27%3ETux-ce%3C%2Fa%3E+%3C%2Ftags%3E"></span>
+    <span id="tag-cloud"><embed type='application/x-shockwave-flash' src='/javascripts/tagcloud.swf'width='100%' height='250' bgcolor='#f2f2f2' id='tagcloudflash' name='tagcloudflash' quality='high' allowscriptaccess='always'flashvars="tcolor=0x333333&amp;tcolor2=0x333333&amp;hicolor=0x000000&amp;tspeed=100&amp;distr=true&amp;mode=tags&amp;tagcloud=%3Ctags%3E%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fandroid%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3EAndroid%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Faptitude%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3EAptitude%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Farch-linux%27+style%3D%27font-size%3A+18.240310077519382%25%27%3EArch+Linux%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fasterisk%27+style%3D%27font-size%3A+7.5813953488372094%25%27%3EAsterisk%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fcensura%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3ECensura%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fchromium%27+style%3D%27font-size%3A+7.9689922480620154%25%27%3EChromium%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fcultura%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3ECultura%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fcultura-hacker%27+style%3D%27font-size%3A+14.945736434108527%25%27%3ECultura+Hacker%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fdebian%27+style%3D%27font-size%3A+7.387596899224806%25%27%3EDebian%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fdia-livre%27+style%3D%27font-size%3A+7.775193798449612%25%27%3EDia+Livre%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Feventos%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3EEventos%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Ffedora%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3EFedora%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Ffirefox%27+style%3D%27font-size%3A+7.387596899224806%25%27%3EFirefox%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fflisol%27+style%3D%27font-size%3A+8.550387596899224%25%27%3EFlisol%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fgoogle%27+style%3D%27font-size%3A+7.775193798449612%25%27%3EGoogle%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fimpressoes%27+style%3D%27font-size%3A+32.0%25%27%3EImpressoes%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fios%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3EiOS%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fjava%27+style%3D%27font-size%3A+8.356589147286822%25%27%3EJava%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fjogos%27+style%3D%27font-size%3A+7.775193798449612%25%27%3EJogos%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fkde%27+style%3D%27font-size%3A+10.294573643410853%25%27%3EKDE%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fkubuntu%27+style%3D%27font-size%3A+7.5813953488372094%25%27%3EKubuntu%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fliberdade%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3ELiberdade%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Flinux%27+style%3D%27font-size%3A+24.635658914728683%25%27%3ELinux%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fliteratura%27+style%3D%27font-size%3A+11.651162790697676%25%27%3ELiteratura%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fmeio-ambiente%27+style%3D%27font-size%3A+7.775193798449612%25%27%3EMeio+Ambiente%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fpython%27+style%3D%27font-size%3A+8.744186046511627%25%27%3EPython%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Frails%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3ERails%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fredes%27+style%3D%27font-size%3A+10.10077519379845%25%27%3ERedes%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fruby%27+style%3D%27font-size%3A+7.9689922480620154%25%27%3ERuby%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fseguranca%27+style%3D%27font-size%3A+11.263565891472869%25%27%3ESeguranca%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fseguranca-digital%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3ESeguranca+Digital%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fsenha%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3ESenha%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fservidor%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3EServidor%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fsoftware-livre%27+style%3D%27font-size%3A+28.31782945736434%25%27%3ESoftware+Livre%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fssh%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3ESSH%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fsysadmin%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3ESysAdmin%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Ftux-ce%27+style%3D%27font-size%3A+9.51937984496124%25%27%3ETux-ce%3C%2Fa%3E+%3C%2Ftags%3E"></span>
 </section>
 <section>
   <h1>Estou lendo</h1>
