@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Redes | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/blog/categories/redes/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2013-10-23T09:51:56-03:00</updated>
+  <updated>2013-10-23T09:59:39-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -18,7 +18,7 @@
     <link href="http://blog.marcelocavalcante.net/blog/2013/09/03/correcao-do-bug-entre-kernel-linux-e-placas-broadcom/"/>
     <updated>2013-09-03T20:33:00-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2013/09/03/correcao-do-bug-entre-kernel-linux-e-placas-broadcom</id>
-    <content type="html"><![CDATA[<p><img class="left" src="/imgs/catchbug.jpg" title="&lsquo;Catching Big&rsquo;" >
+    <content type="html"><![CDATA[<p>{% img left /imgs/catchbug.jpg &lsquo;Catching Big&rsquo; %}
 <strong>B</strong>ug capturado e tratado!</p>
 
 <p><strong>D</strong>iversas pessoas se depararam com intermináveis erros de <em>kernel panic</em> após atualizar seu kernel para a versão <em>3.10.6</em> (e posteriores) quando utilizavam placas wireless da <em>Broadcom</em>. O erro reportado foi tratado e, apesar de ainda não estar resolvido no último kernel lançado, <em>3.10.10</em>, já se encontra na árvore de <em>Linus Torvalds</em>, conforme código e correção podem ser vistos através do seguinte link:</p>
@@ -38,7 +38,7 @@
     <link href="http://blog.marcelocavalcante.net/blog/2013/08/28/tornando-seu-ssh-mais-seguro/"/>
     <updated>2013-08-28T11:20:00-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2013/08/28/tornando-seu-ssh-mais-seguro</id>
-    <content type="html"><![CDATA[<p><img class="left" src="/imgs/openssh.png" title="&lsquo;OpenSSH&rsquo;" >
+    <content type="html"><![CDATA[<p>{% img left /imgs/openssh.png &lsquo;OpenSSH&rsquo; %}
 <strong>O</strong> <em>SSH</em> (Secure Shell) é um dos protocolos mais utilizados atualmente para transferência de arquivos ou mesmo conexão remota, principalmente em ambientes Linux/Unix e, por si só, já tem se provado ser confiável e seguro. O mesmo passou a ser o principal substituto ao <em>TELNET</em> por possuir a vantagem da criptografia na conexão entre o cliente e o servidor, além da possibilidade de criação de túneis, o que chamamos de <em>tunneling</em>, oferecendo assim a capacidade de redirecionar pacotes de dados. Mas não é por isso que devemos nos descuidar&hellip;</p>
 
 <p><strong>S</strong>empre existe espaço para melhorias.</p>
@@ -212,7 +212,7 @@
     <link href="http://blog.marcelocavalcante.net/blog/2013/08/14/incompatibilidade-kernel-linux-3-dot-10-dot-6-e-placa-wireless-broadcom/"/>
     <updated>2013-08-14T15:04:00-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2013/08/14/incompatibilidade-kernel-linux-3-dot-10-dot-6-e-placa-wireless-broadcom</id>
-    <content type="html"><![CDATA[<p><img class="center" src="/imgs/kernel_panic.gif" title="&lsquo;kernel_panic&rsquo;" ></p>
+    <content type="html"><![CDATA[<p>{% img center /imgs/kernel_panic.gif &lsquo;kernel_panic&rsquo; %}</p>
 
 <p><strong>K</strong>ernel Panic!</p>
 

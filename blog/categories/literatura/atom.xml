@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Literatura | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/blog/categories/literatura/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2013-10-23T09:51:56-03:00</updated>
+  <updated>2013-10-23T09:59:39-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -18,7 +18,7 @@
     <link href="http://blog.marcelocavalcante.net/blog/2013/10/04/recomendacao-bibliografica-filhos-do-eden-herdeiros-de-atlantida/"/>
     <updated>2013-10-04T08:27:00-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2013/10/04/recomendacao-bibliografica-filhos-do-eden-herdeiros-de-atlantida</id>
-    <content type="html"><![CDATA[<p><img class="left" src="/imgs/livros/filhosdoeden1.jpg" title="&lsquo;Filhos do Éden&rsquo;" >
+    <content type="html"><![CDATA[<p>{% img left /imgs/livros/filhosdoeden1.jpg &lsquo;Filhos do Éden&rsquo; %}
 <strong>A</strong>njos, Arcanjos e Demônios&hellip; Entidades que sempre despertaram a curiosidade e o interesse de milhares de pessoas. Não diferente, sempre tive um grande apreço por histórias, sejam em filmes ou literatura escrita, que abordem tais entidades.</p>
 
 <p><strong>S</strong>eguindo a trilha de seu outro livro, <a href="http://blog.marcelocavalcante.net/blog/2010/09/30/recomendacao-bibliografica-a-batalha-do-apocalipse/">A Batalha do Apocalipse</a>, o autor Eduardo Spohr narra com maestria o enredo no qual uma guerra civil acontece entre o Arcanjo Miguel e as tropas revolucionárias de seu irmão, o Arcanjo Gabriel.</p>
@@ -38,7 +38,7 @@
     <link href="http://blog.marcelocavalcante.net/blog/2013/08/08/recomendacao-bibliografica-gravidade/"/>
     <updated>2013-08-08T17:23:00-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2013/08/08/recomendacao-bibliografica-gravidade</id>
-    <content type="html"><![CDATA[<p><img class="center" src="/imgs/livros/gravidade.jpg" title="&lsquo;Gravidade&rsquo;" ></p>
+    <content type="html"><![CDATA[<p>{% img center /imgs/livros/gravidade.jpg &lsquo;Gravidade&rsquo; %}</p>
 
 <p><strong>O</strong> livro da vez se chama <em>Gravidade</em>, de <em>Tess Gerritsen</em>.</p>
 

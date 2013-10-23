@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Seguranca | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/blog/categories/seguranca/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2013-10-23T09:51:56-03:00</updated>
+  <updated>2013-10-23T09:59:39-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -18,7 +18,7 @@
     <link href="http://blog.marcelocavalcante.net/blog/2013/10/23/bleachbit-limpeza-de-disco-no-linux/"/>
     <updated>2013-10-23T09:02:00-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2013/10/23/bleachbit-limpeza-de-disco-no-linux</id>
-    <content type="html"><![CDATA[<p><img class="left" src="/imgs/disk-cleanup.jpg" title="&lsquo;Limpeza de Disco&rsquo;" >
+    <content type="html"><![CDATA[<p>{% img left /imgs/disk-cleanup.jpg &lsquo;Limpeza de Disco&rsquo; %}
 <strong>Q</strong>uando o assunto é segurança da informação, muitas vezes o óbvio é deixado de lado. Se pensa em anti-vírus, firewall, IDS (Intrusion Detection System), etc. Mas e o básico e óbvio? Raramente vejo profissionais preocupados com o lixo existente nos discos rígidos. Com <em>lixo</em> eu quero dizer aqueles arquivos temporários, antigos arquivos de cache que já não são necessários, ou mesmo rastros de informações de arquivos que já foram deletados. Sim, o fato de você deletar arquivos não significa que as informações daqueles arquivos foram completamente apagadas do disco. A <em>&ldquo;deleção regular de arquivos&rdquo;</em> não está apagando <em>os dados deletados</em>. Ela está apenas removendo os links dos inodes de arquivos, tornando assim possível a recuperação dos arquivos <em>deletados</em> com algum software forense.</p>
 
 <p><strong>E</strong>xistem várias alternativas para remover seus arquivos de forma segura. As alternativas poderão variar de acordo com o sistema de arquivos utilizado em seu disco, é claro. Uma das formas mais simples que conheço é através da ferramenta <strong>BleachBit</strong>.</p>
@@ -66,7 +66,7 @@
     <link href="http://blog.marcelocavalcante.net/blog/2013/09/20/vulnerabilidade-ios7-hack-na-tela-de-bloqueio-permite-burlar-seguranca/"/>
     <updated>2013-09-20T08:06:00-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2013/09/20/vulnerabilidade-ios7-hack-na-tela-de-bloqueio-permite-burlar-seguranca</id>
-    <content type="html"><![CDATA[<p><img class="center" src="/imgs/vulnerability.jpg" title="&lsquo;Vulnerability&rsquo;" >
+    <content type="html"><![CDATA[<p>{% img center /imgs/vulnerability.jpg &lsquo;Vulnerability&rsquo; %}
 <strong>N</strong>ão é de hoje que as telas de bloqueio (supostas proteções) de smartphones possuem <em>vulnerabilidades</em>. Mal foi lançado o novo iOS 7 e o mesmo já possui uma vulnerabilidade possibilitando a qualquer pessoa utilizar um simples hack para ter acesso à alguns dados do dono do smartphone com o iOS 7.</p>
 
 <p><strong>A</strong> Apple já notificou sobre a correção de aproximadamente 80 vulnerabilidades que comprometiam a segurança do aparelho mas, aparentemente, algumas passaram despercebidas. Dentre elas, a possibilidade de burlar a proteção de bloqueio do aparelho, o que nos permite acessar, por exemplo, as fotos contidas no aparelho sem a necessidade de conhecer a senha de proteção do mesmo.</p>
@@ -99,7 +99,7 @@
     <link href="http://blog.marcelocavalcante.net/blog/2013/08/28/tornando-seu-ssh-mais-seguro/"/>
     <updated>2013-08-28T11:20:00-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2013/08/28/tornando-seu-ssh-mais-seguro</id>
-    <content type="html"><![CDATA[<p><img class="left" src="/imgs/openssh.png" title="&lsquo;OpenSSH&rsquo;" >
+    <content type="html"><![CDATA[<p>{% img left /imgs/openssh.png &lsquo;OpenSSH&rsquo; %}
 <strong>O</strong> <em>SSH</em> (Secure Shell) é um dos protocolos mais utilizados atualmente para transferência de arquivos ou mesmo conexão remota, principalmente em ambientes Linux/Unix e, por si só, já tem se provado ser confiável e seguro. O mesmo passou a ser o principal substituto ao <em>TELNET</em> por possuir a vantagem da criptografia na conexão entre o cliente e o servidor, além da possibilidade de criação de túneis, o que chamamos de <em>tunneling</em>, oferecendo assim a capacidade de redirecionar pacotes de dados. Mas não é por isso que devemos nos descuidar&hellip;</p>
 
 <p><strong>S</strong>empre existe espaço para melhorias.</p>
@@ -273,7 +273,7 @@
     <link href="http://blog.marcelocavalcante.net/blog/2013/08/16/navegador-anti-censura-do-pirate-bay-supera-100-dot-000-downloads/"/>
     <updated>2013-08-16T09:37:00-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2013/08/16/navegador-anti-censura-do-pirate-bay-supera-100-dot-000-downloads</id>
-    <content type="html"><![CDATA[<p><img class="left" src="/imgs/piratebrowser.jpg" title="&lsquo;Pirate Browser&rsquo;" ></p>
+    <content type="html"><![CDATA[<p>{% img left /imgs/piratebrowser.jpg &lsquo;Pirate Browser&rsquo; %}</p>
 
 <p><strong>P</strong>ara quem ainda não sabe, o The Pirate Bay (TPB) é auto-intitulado <em>&ldquo;O tracker BitTorrent mais resiliente da galáxia&rdquo;</em>. De fato, ninguém pode negar a referência do The Pirate Bay no mundo dos torrents, certo?! O projeto foi criado entre 2003 e 2004 pela organização anticopyright sueca Piratbyrån, tornando-se independente em meados de Outubro de 2004.</p>
 
@@ -293,7 +293,7 @@
 
 <p><strong>P</strong>ara que não conhece, ou pouco conhece, a história do projeto The Pirate Bay, recomendo fortemente o filme <strong>TPB AFK: The Pirate Bay Away from Keyboard</strong>.</p>
 
-<p><img class="center" src="/imgs/tpb_afk.jpg" title="&lsquo;TPB AFK&rsquo;" ></p>
+<p>{% img center /imgs/tpb_afk.jpg &lsquo;TPB AFK&rsquo; %}</p>
 
 <p><strong>T</strong>rata-se de um documentário sobre a vida dos três fundadores do site de compartilhamento de arquivos The Pirate Bay, dirigido por <em>Simon Klose</em>. As gravações do documentário começaram no verão de 2008, e foram concluídas em 25 de Agosto de 2012.</p>
 
@@ -306,7 +306,7 @@
     <link href="http://blog.marcelocavalcante.net/blog/2013/08/12/dica-rapida-linux-melhorando-a-politica-de-senhas/"/>
     <updated>2013-08-12T08:41:00-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2013/08/12/dica-rapida-linux-melhorando-a-politica-de-senhas</id>
-    <content type="html"><![CDATA[<p><img class="center" src="/imgs/url.jpg" title="&lsquo;password&rsquo;" ></p>
+    <content type="html"><![CDATA[<p>{% img center /imgs/url.jpg &lsquo;password&rsquo; %}</p>
 
 <p><strong>N</strong>a dica anterior mencionei o uso do comando <em>chage</em> para <strong>forçar</strong> a alteração de senha por parte do usuário em sistemas Linux, mas e se além disso fosse possível melhorar esta prática, tornando a política de senhas de usuários um pouco mais segura?</p>
 
