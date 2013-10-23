@@ -4,7 +4,7 @@
   <title><![CDATA[Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2013-10-22T13:58:13-03:00</updated>
+  <updated>2013-10-23T09:51:56-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -12,6 +12,58 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[BleachBit - Limpeza de Disco no Linux]]></title>
+    <link href="http://blog.marcelocavalcante.net/blog/2013/10/23/bleachbit-limpeza-de-disco-no-linux/"/>
+    <updated>2013-10-23T09:02:00-03:00</updated>
+    <id>http://blog.marcelocavalcante.net/blog/2013/10/23/bleachbit-limpeza-de-disco-no-linux</id>
+    <content type="html"><![CDATA[<p><img class="left" src="http://blog.marcelocavalcante.net/imgs/disk-cleanup.jpg" title="'Limpeza de Disco'" >
+<strong>Q</strong>uando o assunto é segurança da informação, muitas vezes o óbvio é deixado de lado. Se pensa em anti-vírus, firewall, IDS (Intrusion Detection System), etc. Mas e o básico e óbvio? Raramente vejo profissionais preocupados com o lixo existente nos discos rígidos. Com <em>lixo</em> eu quero dizer aqueles arquivos temporários, antigos arquivos de cache que já não são necessários, ou mesmo rastros de informações de arquivos que já foram deletados. Sim, o fato de você deletar arquivos não significa que as informações daqueles arquivos foram completamente apagadas do disco. A <em>&ldquo;deleção regular de arquivos&rdquo;</em> não está apagando <em>os dados deletados</em>. Ela está apenas removendo os links dos inodes de arquivos, tornando assim possível a recuperação dos arquivos <em>deletados</em> com algum software forense.</p>
+
+<p><strong>E</strong>xistem várias alternativas para remover seus arquivos de forma segura. As alternativas poderão variar de acordo com o sistema de arquivos utilizado em seu disco, é claro. Uma das formas mais simples que conheço é através da ferramenta <strong>BleachBit</strong>.</p>
+
+<p><strong>B</strong>leachBit é um software livre criado para limpar e liberar espaço em disco, gerenciando assim melhor a sua privacidade e otimizando sistemas computacionais. Criado em 2008 para sistemas GNU/Linux, partiu de um controverso e polêmico debate sobre a necessidade de o GNU/Linux necessitar de uma ferramenta para limpeza de registros. Posteriormente o BleachBit passou a suportar também sistemas Microsoft Windows.</p>
+
+<p><strong>C</strong>om esta ferramenta você poderá não apenas limpar seu espaço em disco, mas também limpar vários arquivos típicos do sistema que não são necessários na maioria dos casos a longo prazo, arquivos estes que podem dar ao intruso informações desnecessárias sobre suas atividades. Não desejamos isto&hellip;</p>
+
+<p><strong>A</strong> instalação do mesmo é feita de forma simples e convencional. No caso do archlinux, o pacote se encontra disponível no repositório [community], portanto pode ser instalado regularmente através do pacman.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> [kalib@tuxcaverna ~]$ sudo pacman -Ss bleachbit
+</span><span class='line'> [sudo] password for kalib: 
+</span><span class='line'> community/bleachbit 0.9.6-1
+</span><span class='line'>    Deletes unneeded files to free disk space and maintain privacy
+</span><span class='line'> 
+</span><span class='line'> [kalib@tuxcaverna ~]$ sudo pacman -S bleachbit</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>N</strong>a maioria das distribuições baseadas em Debian, tal como o Ubuntu, o pacote poderá ser instalado através do aptitude ou apt-get:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> $ sudo apt-get update
+</span><span class='line'> $ sudo apt-get install bleachbit</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>O</strong> BleachBit possui uma interface gráfica simples, na qual você poderá selecionar o que você deseja destruir. Lembre-se que algumas funções são experimentais e podem causar problemas em seu sistema. Mas não há necessidade de se preocupar: O BleachBit lhe informa sobre isto e lhe dá a chance de cancelar a operação selecionada. ;]</p>
+
+<p><strong>O</strong> BleachBit possui uma vasta lista de <em>cleaners</em>, como ele chama as ferramentas internas de limpeza. Dentre a longa lista, podemos citar alguns como: <em>Adanaxis, Adobe Reader, aMSN, aMule, APT, Audacious, Bash, Beagle, Chromium, Downloader for X, Deep scan, Easytag, ELinks, emesene, Epiphany, Evolution, Exaile, Filezilla, Firefox, Flash, gedit, gFTP, GIMP, etc.</em> A lista é realmente longa. <a href="http://bleachbit.sourceforge.net/features">Lista completa de cleaners e demais recursos.</a></p>
+
+<p><strong>P</strong>ara executar o programa, basta procurar o mesmo através do menu de aplicativos de seu sistema, ou através do comando:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> [kalib@tuxcaverna ~]$ bleachbit</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>H</strong>ave fun!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Recomendação Bibliográfica - Filhos do Éden - Herdeiros de Atlântida]]></title>
@@ -1133,146 +1185,6 @@ device interrupt 47  base 0xc000</p>
 <p><a href="http://www.dialivre.net/portal/?page_id=8"><strong>Não perca tempo e garanta a sua vaga através do site do Dia Livre: www.dialivre.net</strong></a></p>
 
 <p><strong>A</strong>braços,</p>
-
-<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Política de senhas no Linux: Senhas com data para expirar!]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2011/09/27/politica-de-senhas-no-linux-senhas-com-data-para-expirar/"/>
-    <updated>2011-09-27T11:14:12-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2011/09/27/politica-de-senhas-no-linux-senhas-com-data-para-expirar</id>
-    <content type="html"><![CDATA[<p><a href="http://www.marcelocavalcante.net/portal/wp-content/uploads/2011/09/1197557350_90927cc5492.jpg"><img src="http://www.marcelocavalcante.net/portal/wp-content/uploads/2011/09/1197557350_90927cc5492.jpg" alt="" /></a></p>
-
-<p><strong>J</strong>á é sabido que a maior vulnerabilidade dentro das empresas ou mesmo computadores pessoais são justamente os próprios funcionários ou usuários.</p>
-
-<p><strong><img src="http://public-commoncraft.s3.amazonaws.com/SecurePasswords500.jpg" alt="" />M</strong>anter uma boa <strong>política de senhas</strong> é fundamental para garantir a segurança <strong>básica</strong> de suas informações e tentar minimizar as chances de alguém ter acesso indevido a elas.</p>
-
-<p><strong>V</strong>ou apresentar dicas simples para uma boa política de senhas que vão além das dicas comuns como &ldquo;mantenha uma senha que contenha mais de 8 caracteres, sendo eles números, letras minúsculas, maiúsculas e caracteres especiais&hellip;&rdquo;.</p>
-
-<p><strong>E</strong>m escritórios é importante haver também uma política de troca de senha regular. Mas, como forçar os usuários a seguirem essa política de troca de senha regular? Evitando que o mesmo se logue caso não troque a senha de forma periódica, claro.</p>
-
-<p><strong>V</strong>amos começar pelo básico.</p>
-
-<p><strong>1- Definindo a complexidade das senhas de usuários:</strong></p>
-
-<p><strong>P</strong>ara definir a complexidade, precisaremos alterar a configuração de definição de senhas de usuários. O processo pode ser diferente, de acordo com a sua distribuição.</p>
-
-<p><a href="http://www.archlinux.org/"><em><strong>A</strong>rch Linux:</em></a></p>
-
-<p><strong>E</strong>dite o arquivo <em>passwd</em> que se encontra em <em>/etc/pam.d/passwd</em>, da seguinte forma:</p>
-
-<p><em># vim /etc/pam.d/passwd</em></p>
-
-<p><em><a href="http://www.debian.org"><strong>D</strong>ebian</a>, <a href="http://www.ubuntu.com">Ubuntu</a>, <a href="http://www.redhat.com">RedHat</a>, <a href="http://www.centos.org">CentOS</a></em> e outras:</p>
-
-<p><em># vim /etc/pam.d/system-auth</em></p>
-
-<p><strong>C</strong>onfigure sua linha de senha de forma que fique algo parecido com o seguinte:</p>
-
-<p><em>password       required        pam_cracklib.so difok=3 minlen=10 ucredit=3 ocredit=2 retry=3</em></p>
-
-<p><strong>O</strong>nde:</p>
-
-<p><em>difok=3</em> &ndash;> Informa a quantidade de caracteres que podem se repetir em relação à última senha. Por exemplo: Se minha antiga senha era &ldquo;kalib&rdquo; e eu tento usar &ldquo;kalamba&rdquo; como nova senha, receberei uma informação de erro, pois eu repeti 3 letras que já existem na senha anterior &ldquo;kal&rdquo;.</p>
-
-<p><em>minlen=10</em> &ndash;> Informa qual a quantidade mínima de caracteres aceitos para a senha do usuário. No<img src="http://securepasswordgeneratortips.com/wp-content/uploads/2011/05/securepasswordgeneratortips08.jpg" alt="" /> exemplo, o mínimo de caracteres aceitos serão 10, caso contrário será apresentada uma mensagem de erro solicitando que o usuário tente uma nova senha.</p>
-
-<p><em>ucredit=3</em> &ndash;>Informa a quantidade de letras maiúsculas que deverão compor minha senha. No exemplo, eu precisarei utilizar no mínimo 3 letras em maiúsculo, ou &ldquo;Uper Characters&rdquo; em minha nova senha.</p>
-
-<p><em>ocredit=2</em> &ndash;> Informa a quantidade de &ldquo;outros caracteres&rdquo; ou caracteres especiais, como por exemplo *, &amp;, %, $, _, etc.</p>
-
-<p><em>retry=3</em> &ndash;> Informa quantas vezes o usuário vai poder tentar, em caso de senha indevida, antes de receber a mensagem de erro.</p>
-
-<p><strong>O</strong>utros parâmetros que podem ser utilizados são os seguintes:</p>
-
-<p><em>dcredit=x</em> &ndash;> Informa a quantidade de dígitos que deverão ser utilizados como números na senha, onde x é o número mínimo desejado.</p>
-
-<p><em>lcredit=x</em> &ndash;> Informa a quantidade de caracteres minúsculos, ou &ldquo;Lower Characters&rdquo;, mínimos em sua senha.</p>
-
-<p><strong>2- Definindo que a nova senha não poderá ser igual às anteriores:</strong></p>
-
-<p><strong>N</strong>o <strong>mesmo arquivo</strong> do ponto anterior, iremos inserir o parâmetro remember na linha conforme exemplo:</p>
-
-<p><em>password sufficient pam_unix.so use_authtok md5 shadow remember=10</em></p>
-
-<p><em>remember=10</em> &ndash;> Informa que a nova senha não poderá ser igual às últimas 10 senhas utilizadas por este usuário.</p>
-
-<p><strong>A</strong>gora que já sabemos como definir uma política para criação de senhas seguras, vamos conhecer o &ldquo;<strong>chage</strong>&rdquo;, que nos ajudará a definir a política de datas ou validade das senhas.</p>
-
-<p><strong>3- Checando as políticas de validade de senhas de um determinado usuário:</strong></p>
-
-<p><em># chage -l usuário</em></p>
-
-<p><strong>O</strong> comando acima verifica os atributos de validade daquela senha, e lhe retornará algo similar ao seguinte:</p>
-
-<pre><code>&lt;em&gt;Last password change : May 11, 2011&lt;/em&gt;
-
-
-
-
-&lt;em&gt;Password expires : never&lt;/em&gt;
-
-
-
-
-&lt;em&gt;Password inactive : never&lt;/em&gt;
-
-
-
-
-&lt;em&gt;Account expires : never&lt;/em&gt;
-
-
-
-
-&lt;em&gt;Minimum number of days between password change : 0&lt;/em&gt;
-
-
-
-
-&lt;em&gt;Maximum number of days between password change : 99999&lt;/em&gt;
-
-
-
-
-&lt;em&gt;Number of days of warning before password expires : 7&lt;/em&gt;
-</code></pre>
-
-<p><strong>A</strong>s informações acima apresentam dados como data de última mudança de senha, data de expiração, tempo de inatividade, quantidade mínima de dias para se trocar a senha antes de a mesma expirar, etc.</p>
-
-<p><strong>4- Criando uma &ldquo;validade&rdquo; ou período de expiração para a senha de um determinado usuário:</strong></p>
-
-<pre><code>&lt;em&gt;# chage -M 99999 linustorvalds&lt;/em&gt;
-</code></pre>
-
-<p><strong>E</strong>ste comando vai <strong>desabilitar</strong> o período de validade da senha, informando que a mesma não expira nunca.</p>
-
-<pre><code>&lt;em&gt;# chage -M 50 -m 7 -W 7 linustorvalds&lt;/em&gt;
-</code></pre>
-
-<p><strong>E</strong>ste comando <strong>aplica</strong> a política de senha para o usuário &ldquo;linustorvalds&rdquo; onde:
-<em>-M 50</em> &ndash;> Define que a senha será válida por um máximo de 50 dias, quando a mesma deverá ser trocada.
-<em>-m 7</em> &ndash;> Define o número mínimo de dias em que o usuário poderá trocar sua senha antes do período especificado para expiração. Caso o usuário possa trocar a qualquer momento ou dia, o valor deverá ser 0.
-<em>-W 7</em> &ndash;> Número de dias antes de expirar nos quais o usuário vai receber alertas informando que sua senha irá expirar.</p>
-
-<p><strong>C</strong>aso você deseje especificar um <strong>dia exato</strong> no qual a senha de determinado usuário vai expirar, você pode utilizar o parâmetro <em>-E</em> seguido da data desejada no formato <em>AAAA-MM-DD</em>.</p>
-
-<p><strong>A</strong>lém disto, você pode desejar que a senha do usuário &ldquo;linustorvalds&rdquo; seja trocada no <strong>próximo login</strong> do mesmo. Neste caso você poderá utilizar o parâmetro <em>-d</em>, conforme exemplo abaixo:</p>
-
-<pre><code>&lt;em&gt;# chage -d 0 linuxtorvalds&lt;/em&gt;
-</code></pre>
-
-<p><strong>O</strong> <em>-d</em> significa quantidade de dias também.</p>
-
-<pre><code>&lt;strong&gt;É&lt;/strong&gt; isso pessoal.
-
-
-
-
-&lt;strong&gt;H&lt;/strong&gt;ave fun!
-</code></pre>
 
 <p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
 ]]></content>
