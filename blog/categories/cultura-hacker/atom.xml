@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Cultura Hacker | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/blog/categories/cultura-hacker/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2013-10-23T09:59:39-03:00</updated>
+  <updated>2013-10-25T09:48:48-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -18,7 +18,7 @@
     <link href="http://blog.marcelocavalcante.net/blog/2013/09/20/vulnerabilidade-ios7-hack-na-tela-de-bloqueio-permite-burlar-seguranca/"/>
     <updated>2013-09-20T08:06:00-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2013/09/20/vulnerabilidade-ios7-hack-na-tela-de-bloqueio-permite-burlar-seguranca</id>
-    <content type="html"><![CDATA[<p>{% img center /imgs/vulnerability.jpg &lsquo;Vulnerability&rsquo; %}
+    <content type="html"><![CDATA[<p><img class="center" src="/imgs/vulnerability.jpg" title="&lsquo;Vulnerability&rsquo;" >
 <strong>N</strong>ão é de hoje que as telas de bloqueio (supostas proteções) de smartphones possuem <em>vulnerabilidades</em>. Mal foi lançado o novo iOS 7 e o mesmo já possui uma vulnerabilidade possibilitando a qualquer pessoa utilizar um simples hack para ter acesso à alguns dados do dono do smartphone com o iOS 7.</p>
 
 <p><strong>A</strong> Apple já notificou sobre a correção de aproximadamente 80 vulnerabilidades que comprometiam a segurança do aparelho mas, aparentemente, algumas passaram despercebidas. Dentre elas, a possibilidade de burlar a proteção de bloqueio do aparelho, o que nos permite acessar, por exemplo, as fotos contidas no aparelho sem a necessidade de conhecer a senha de proteção do mesmo.</p>

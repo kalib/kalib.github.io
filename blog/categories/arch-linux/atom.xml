@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Arch Linux | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/blog/categories/arch-linux/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2013-10-23T09:59:39-03:00</updated>
+  <updated>2013-10-25T09:48:48-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -18,7 +18,7 @@
     <link href="http://blog.marcelocavalcante.net/blog/2013/09/11/dica-rapida-linux-como-limpar-o-conteudo-de-um-arquivo-texto-sem-abrir-o-mesmo/"/>
     <updated>2013-09-11T11:05:00-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2013/09/11/dica-rapida-linux-como-limpar-o-conteudo-de-um-arquivo-texto-sem-abrir-o-mesmo</id>
-    <content type="html"><![CDATA[<p>{% img left /imgs/erase.jpg &lsquo;Erasing text&rsquo; %}
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/erase.jpg" title="&lsquo;Erasing text&rsquo;" >
 <strong>A</strong>rquivos de log, por vezes, podem ser muito extensos. Tão extensos que torna-se praticamente impossível a leitura de seu conteúdo com um editor de textos como o vim ou vi. Além disso, muitos deles podem chegar a ocupar Gigas e mais Gigas de seu espaço em disco, o que pode acabar sendo um desperdício de espaço em seu sistema de arquivos.</p>
 
 <p><strong>H</strong>oje passei por um problema deste tipo. Ao atualizar meu Arch Linux, percebi que comecei a receber erros devido ao meu espaço em disco o qual era apontado como &ldquo;insuficiente&rdquo;. O fato é que é muito comum em distribuições Linux utilizarmos um particionamento de forma a isolarmos um pouco cada partição para fins específicos. No meu caso, verifiquei que a minha partição raíz estava mesmo completamente cheia.</p>
@@ -103,7 +103,7 @@
     <link href="http://blog.marcelocavalcante.net/blog/2013/08/19/kde-4-dot-11-lancado-e-disponivel-no-arch-linux/"/>
     <updated>2013-08-19T08:07:00-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2013/08/19/kde-4-dot-11-lancado-e-disponivel-no-arch-linux</id>
-    <content type="html"><![CDATA[<p>{% img left /imgs/kde411.png &lsquo;KDE 4.11&rsquo; %}
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/kde411.png" title="&lsquo;KDE 4.11&rsquo;" >
 <strong>E</strong>m 14 de Agosto de 2013 a comunidade KDE anunciou oficialmente a última release do Ambiente de Trabalho KDE, a versão 4.11. Nesta última versão o projeto incorporou grandes atualizações na Área de Trabalho, Aplicações e plataforma de Desenvolvimento, oferecendo, além de correções, novas funcionalidades, das quais muitas serão importantes para a próxima evolução da plataforma KDE.</p>
 
 <p><strong>E</strong>ste último lançamento é dedicado a memória de <em>Atul &ldquo;toolz&rdquo; Chitnis</em>, um dos maiores representantes do movimento de Software Livre e Open Source na Índia e, também, um dos maiores responsáveis pela existência do projeto KDE na Índia. Atul deixou-nos no dia 3 de Junho, após uma longa batalha contra o Câncer. Que sua alma descanse em paz, é o desejo de todos os membros do projeto KDE e, certamente, de muitas outras pessoas que o conheceram.</p>
@@ -137,7 +137,7 @@
     <link href="http://blog.marcelocavalcante.net/blog/2013/08/14/incompatibilidade-kernel-linux-3-dot-10-dot-6-e-placa-wireless-broadcom/"/>
     <updated>2013-08-14T15:04:00-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2013/08/14/incompatibilidade-kernel-linux-3-dot-10-dot-6-e-placa-wireless-broadcom</id>
-    <content type="html"><![CDATA[<p>{% img center /imgs/kernel_panic.gif &lsquo;kernel_panic&rsquo; %}</p>
+    <content type="html"><![CDATA[<p><img class="center" src="/imgs/kernel_panic.gif" title="&lsquo;kernel_panic&rsquo;" ></p>
 
 <p><strong>K</strong>ernel Panic!</p>
 
