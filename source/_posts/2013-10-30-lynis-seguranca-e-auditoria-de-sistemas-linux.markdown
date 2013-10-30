@@ -20,6 +20,8 @@ categories:
 
 **D**entre suas verificações estão a avaliação dos métodos de autenticação disponíveis, certificados SSL expirados, softwares desatualizados, contas de usuários sem senhas, permissões incorretas em arquivos, erros de configuração, auditoria de firewall, etc.
 
+{% img left /imgs/lynis-screenshot.png 'Auditando' %}
+
 **Instalação:**
 
 **N**o Arch Linux, o pacote se encontra disponível no [AUR.](https://aur.archlinux.org/packages/lynis/), portanto o processo de instalação consiste nos seguintes passos:
