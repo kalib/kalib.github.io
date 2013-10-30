@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2013-10-30T10:47:14-03:00</updated>
+  <updated>2013-10-30T11:07:57-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -18,7 +18,7 @@
     <link href="http://blog.marcelocavalcante.net/blog/2013/10/30/lynis-seguranca-e-auditoria-de-sistemas-linux/"/>
     <updated>2013-10-30T10:00:00-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2013/10/30/lynis-seguranca-e-auditoria-de-sistemas-linux</id>
-    <content type="html"><![CDATA[<p><img class="left" src="/imgs/auditing.jpg" title="&lsquo;Auditando&rsquo;" >
+    <content type="html"><![CDATA[<p>{% img left /imgs/auditing.jpg &lsquo;Auditando&rsquo; %}
 <strong>P</strong>rocurando uma ferramenta de uso simples e rápido que seja capaz de realizar uma auditoria em sistemas Unix like? Talvez o <em>Lynis</em> seja exatamente o que você procura.</p>
 
 <p><strong>O</strong> Lynis é uma ferramenta para (especialistas) Unix com foco em <em>segurança</em> e <em>auditoria</em>, porque não dizer <em>hardening</em>, de sistemas. Ele escaneia o sistema e vários softwares disponíveis no mesmo com o fim de detectar vulnerabilidades. Além de informações relacionadas a segurança, ele também buscará diversas informações sobre o sistema, pacotes instalados e erros de configuração diversos.</p>
@@ -26,6 +26,8 @@
 <p><strong>E</strong>ste software ainda é útil e utilizado por outros softwares para ajudar em auditorias automatizadas, gerenciamento de patches de sistemas e escaneamento por vulnerabilidades e malwares. O público alvo do mesmo é composto por especialistas em segurança, pentesters, auditores de sistemas, administradores de redes/sistemas, etc.</p>
 
 <p><strong>D</strong>entre suas verificações estão a avaliação dos métodos de autenticação disponíveis, certificados SSL expirados, softwares desatualizados, contas de usuários sem senhas, permissões incorretas em arquivos, erros de configuração, auditoria de firewall, etc.</p>
+
+<p>{% img left /imgs/lynis-screenshot.png &lsquo;Auditando&rsquo; %}</p>
 
 <p><strong>Instalação:</strong></p>
 
@@ -61,7 +63,7 @@
     <link href="http://blog.marcelocavalcante.net/blog/2013/10/23/bleachbit-limpeza-de-disco-no-linux/"/>
     <updated>2013-10-23T09:02:00-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2013/10/23/bleachbit-limpeza-de-disco-no-linux</id>
-    <content type="html"><![CDATA[<p><img class="left" src="/imgs/disk-cleanup.jpg" title="&lsquo;Limpeza de Disco&rsquo;" >
+    <content type="html"><![CDATA[<p>{% img left /imgs/disk-cleanup.jpg &lsquo;Limpeza de Disco&rsquo; %}
 <strong>Q</strong>uando o assunto é segurança da informação, muitas vezes o óbvio é deixado de lado. Se pensa em anti-vírus, firewall, IDS (Intrusion Detection System), etc. Mas e o básico e óbvio? Raramente vejo profissionais preocupados com o lixo existente nos discos rígidos. Com <em>lixo</em> eu quero dizer aqueles arquivos temporários, antigos arquivos de cache que já não são necessários, ou mesmo rastros de informações de arquivos que já foram deletados. Sim, o fato de você deletar arquivos não significa que as informações daqueles arquivos foram completamente apagadas do disco. A <em>&ldquo;deleção regular de arquivos&rdquo;</em> não está apagando <em>os dados deletados</em>. Ela está apenas removendo os links dos inodes de arquivos, tornando assim possível a recuperação dos arquivos <em>deletados</em> com algum software forense.</p>
 
 <p><strong>E</strong>xistem várias alternativas para remover seus arquivos de forma segura. As alternativas poderão variar de acordo com o sistema de arquivos utilizado em seu disco, é claro. Uma das formas mais simples que conheço é através da ferramenta <strong>BleachBit</strong>.</p>
@@ -109,7 +111,7 @@
     <link href="http://blog.marcelocavalcante.net/blog/2013/09/11/dica-rapida-linux-como-limpar-o-conteudo-de-um-arquivo-texto-sem-abrir-o-mesmo/"/>
     <updated>2013-09-11T11:05:00-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2013/09/11/dica-rapida-linux-como-limpar-o-conteudo-de-um-arquivo-texto-sem-abrir-o-mesmo</id>
-    <content type="html"><![CDATA[<p><img class="left" src="/imgs/erase.jpg" title="&lsquo;Erasing text&rsquo;" >
+    <content type="html"><![CDATA[<p>{% img left /imgs/erase.jpg &lsquo;Erasing text&rsquo; %}
 <strong>A</strong>rquivos de log, por vezes, podem ser muito extensos. Tão extensos que torna-se praticamente impossível a leitura de seu conteúdo com um editor de textos como o vim ou vi. Além disso, muitos deles podem chegar a ocupar Gigas e mais Gigas de seu espaço em disco, o que pode acabar sendo um desperdício de espaço em seu sistema de arquivos.</p>
 
 <p><strong>H</strong>oje passei por um problema deste tipo. Ao atualizar meu Arch Linux, percebi que comecei a receber erros devido ao meu espaço em disco o qual era apontado como &ldquo;insuficiente&rdquo;. O fato é que é muito comum em distribuições Linux utilizarmos um particionamento de forma a isolarmos um pouco cada partição para fins específicos. No meu caso, verifiquei que a minha partição raíz estava mesmo completamente cheia.</p>
@@ -194,7 +196,7 @@
     <link href="http://blog.marcelocavalcante.net/blog/2013/09/03/correcao-do-bug-entre-kernel-linux-e-placas-broadcom/"/>
     <updated>2013-09-03T20:33:00-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2013/09/03/correcao-do-bug-entre-kernel-linux-e-placas-broadcom</id>
-    <content type="html"><![CDATA[<p><img class="left" src="/imgs/catchbug.jpg" title="&lsquo;Catching Big&rsquo;" >
+    <content type="html"><![CDATA[<p>{% img left /imgs/catchbug.jpg &lsquo;Catching Big&rsquo; %}
 <strong>B</strong>ug capturado e tratado!</p>
 
 <p><strong>D</strong>iversas pessoas se depararam com intermináveis erros de <em>kernel panic</em> após atualizar seu kernel para a versão <em>3.10.6</em> (e posteriores) quando utilizavam placas wireless da <em>Broadcom</em>. O erro reportado foi tratado e, apesar de ainda não estar resolvido no último kernel lançado, <em>3.10.10</em>, já se encontra na árvore de <em>Linus Torvalds</em>, conforme código e correção podem ser vistos através do seguinte link:</p>
@@ -214,7 +216,7 @@
     <link href="http://blog.marcelocavalcante.net/blog/2013/08/28/tornando-seu-ssh-mais-seguro/"/>
     <updated>2013-08-28T11:20:00-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2013/08/28/tornando-seu-ssh-mais-seguro</id>
-    <content type="html"><![CDATA[<p><img class="left" src="/imgs/openssh.png" title="&lsquo;OpenSSH&rsquo;" >
+    <content type="html"><![CDATA[<p>{% img left /imgs/openssh.png &lsquo;OpenSSH&rsquo; %}
 <strong>O</strong> <em>SSH</em> (Secure Shell) é um dos protocolos mais utilizados atualmente para transferência de arquivos ou mesmo conexão remota, principalmente em ambientes Linux/Unix e, por si só, já tem se provado ser confiável e seguro. O mesmo passou a ser o principal substituto ao <em>TELNET</em> por possuir a vantagem da criptografia na conexão entre o cliente e o servidor, além da possibilidade de criação de túneis, o que chamamos de <em>tunneling</em>, oferecendo assim a capacidade de redirecionar pacotes de dados. Mas não é por isso que devemos nos descuidar&hellip;</p>
 
 <p><strong>S</strong>empre existe espaço para melhorias.</p>
