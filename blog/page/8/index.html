@@ -9,7 +9,7 @@
   <meta name="author" content="Marcelo Cavalcante Rocha - Kalib">
 
   
-  <meta name="description" content="Saudações pessoal, Um feliz dia do programador para todos aqueles que, profissionalmente, curiosamente ou mesmo por mera falta do que fazer escrevem &hellip;">
+  <meta name="description" content="Já é sabido que a maior vulnerabilidade dentro das empresas ou mesmo computadores pessoais são justamente os próprios funcionários ou usuários. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -80,6 +80,175 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/09/27/politica-de-senhas-no-linux-senhas-com-data-para-expirar/">Política De Senhas No Linux: Senhas Com Data Para Expirar!</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-09-27T11:14:12-03:00" pubdate data-updated="true">Sep 27<span>th</span>, 2011</time>
+        
+         | <a href="/blog/2011/09/27/politica-de-senhas-no-linux-senhas-com-data-para-expirar/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://www.marcelocavalcante.net/portal/wp-content/uploads/2011/09/1197557350_90927cc5492.jpg"><img src="http://www.marcelocavalcante.net/portal/wp-content/uploads/2011/09/1197557350_90927cc5492.jpg" alt="" /></a></p>
+
+<p><strong>J</strong>á é sabido que a maior vulnerabilidade dentro das empresas ou mesmo computadores pessoais são justamente os próprios funcionários ou usuários.</p>
+
+<p><strong><img src="http://public-commoncraft.s3.amazonaws.com/SecurePasswords500.jpg" alt="" />M</strong>anter uma boa <strong>política de senhas</strong> é fundamental para garantir a segurança <strong>básica</strong> de suas informações e tentar minimizar as chances de alguém ter acesso indevido a elas.</p>
+
+<p><strong>V</strong>ou apresentar dicas simples para uma boa política de senhas que vão além das dicas comuns como &ldquo;mantenha uma senha que contenha mais de 8 caracteres, sendo eles números, letras minúsculas, maiúsculas e caracteres especiais&hellip;&rdquo;.</p>
+
+<p><strong>E</strong>m escritórios é importante haver também uma política de troca de senha regular. Mas, como forçar os usuários a seguirem essa política de troca de senha regular? Evitando que o mesmo se logue caso não troque a senha de forma periódica, claro.</p>
+
+<p><strong>V</strong>amos começar pelo básico.</p>
+
+<p><strong>1- Definindo a complexidade das senhas de usuários:</strong></p>
+
+<p><strong>P</strong>ara definir a complexidade, precisaremos alterar a configuração de definição de senhas de usuários. O processo pode ser diferente, de acordo com a sua distribuição.</p>
+
+<p><a href="http://www.archlinux.org/"><em><strong>A</strong>rch Linux:</em></a></p>
+
+<p><strong>E</strong>dite o arquivo <em>passwd</em> que se encontra em <em>/etc/pam.d/passwd</em>, da seguinte forma:</p>
+
+<p><em># vim /etc/pam.d/passwd</em></p>
+
+<p><em><a href="http://www.debian.org"><strong>D</strong>ebian</a>, <a href="http://www.ubuntu.com">Ubuntu</a>, <a href="http://www.redhat.com">RedHat</a>, <a href="http://www.centos.org">CentOS</a></em> e outras:</p>
+
+<p><em># vim /etc/pam.d/system-auth</em></p>
+
+<p><strong>C</strong>onfigure sua linha de senha de forma que fique algo parecido com o seguinte:</p>
+
+<p><em>password       required        pam_cracklib.so difok=3 minlen=10 ucredit=3 ocredit=2 retry=3</em></p>
+
+<p><strong>O</strong>nde:</p>
+
+<p><em>difok=3</em> &ndash;> Informa a quantidade de caracteres que podem se repetir em relação à última senha. Por exemplo: Se minha antiga senha era &ldquo;kalib&rdquo; e eu tento usar &ldquo;kalamba&rdquo; como nova senha, receberei uma informação de erro, pois eu repeti 3 letras que já existem na senha anterior &ldquo;kal&rdquo;.</p>
+
+<p><em>minlen=10</em> &ndash;> Informa qual a quantidade mínima de caracteres aceitos para a senha do usuário. No<img src="http://securepasswordgeneratortips.com/wp-content/uploads/2011/05/securepasswordgeneratortips08.jpg" alt="" /> exemplo, o mínimo de caracteres aceitos serão 10, caso contrário será apresentada uma mensagem de erro solicitando que o usuário tente uma nova senha.</p>
+
+<p><em>ucredit=3</em> &ndash;>Informa a quantidade de letras maiúsculas que deverão compor minha senha. No exemplo, eu precisarei utilizar no mínimo 3 letras em maiúsculo, ou &ldquo;Uper Characters&rdquo; em minha nova senha.</p>
+
+<p><em>ocredit=2</em> &ndash;> Informa a quantidade de &ldquo;outros caracteres&rdquo; ou caracteres especiais, como por exemplo *, &amp;, %, $, _, etc.</p>
+
+<p><em>retry=3</em> &ndash;> Informa quantas vezes o usuário vai poder tentar, em caso de senha indevida, antes de receber a mensagem de erro.</p>
+
+<p><strong>O</strong>utros parâmetros que podem ser utilizados são os seguintes:</p>
+
+<p><em>dcredit=x</em> &ndash;> Informa a quantidade de dígitos que deverão ser utilizados como números na senha, onde x é o número mínimo desejado.</p>
+
+<p><em>lcredit=x</em> &ndash;> Informa a quantidade de caracteres minúsculos, ou &ldquo;Lower Characters&rdquo;, mínimos em sua senha.</p>
+
+<p><strong>2- Definindo que a nova senha não poderá ser igual às anteriores:</strong></p>
+
+<p><strong>N</strong>o <strong>mesmo arquivo</strong> do ponto anterior, iremos inserir o parâmetro remember na linha conforme exemplo:</p>
+
+<p><em>password sufficient pam_unix.so use_authtok md5 shadow remember=10</em></p>
+
+<p><em>remember=10</em> &ndash;> Informa que a nova senha não poderá ser igual às últimas 10 senhas utilizadas por este usuário.</p>
+
+<p><strong>A</strong>gora que já sabemos como definir uma política para criação de senhas seguras, vamos conhecer o &ldquo;<strong>chage</strong>&rdquo;, que nos ajudará a definir a política de datas ou validade das senhas.</p>
+
+<p><strong>3- Checando as políticas de validade de senhas de um determinado usuário:</strong></p>
+
+<p><em># chage -l usuário</em></p>
+
+<p><strong>O</strong> comando acima verifica os atributos de validade daquela senha, e lhe retornará algo similar ao seguinte:</p>
+
+<pre><code>&lt;em&gt;Last password change : May 11, 2011&lt;/em&gt;
+
+
+
+
+&lt;em&gt;Password expires : never&lt;/em&gt;
+
+
+
+
+&lt;em&gt;Password inactive : never&lt;/em&gt;
+
+
+
+
+&lt;em&gt;Account expires : never&lt;/em&gt;
+
+
+
+
+&lt;em&gt;Minimum number of days between password change : 0&lt;/em&gt;
+
+
+
+
+&lt;em&gt;Maximum number of days between password change : 99999&lt;/em&gt;
+
+
+
+
+&lt;em&gt;Number of days of warning before password expires : 7&lt;/em&gt;
+</code></pre>
+
+<p><strong>A</strong>s informações acima apresentam dados como data de última mudança de senha, data de expiração, tempo de inatividade, quantidade mínima de dias para se trocar a senha antes de a mesma expirar, etc.</p>
+
+<p><strong>4- Criando uma &ldquo;validade&rdquo; ou período de expiração para a senha de um determinado usuário:</strong></p>
+
+<pre><code>&lt;em&gt;# chage -M 99999 linustorvalds&lt;/em&gt;
+</code></pre>
+
+<p><strong>E</strong>ste comando vai <strong>desabilitar</strong> o período de validade da senha, informando que a mesma não expira nunca.</p>
+
+<pre><code>&lt;em&gt;# chage -M 50 -m 7 -W 7 linustorvalds&lt;/em&gt;
+</code></pre>
+
+<p><strong>E</strong>ste comando <strong>aplica</strong> a política de senha para o usuário &ldquo;linustorvalds&rdquo; onde:
+<em>-M 50</em> &ndash;> Define que a senha será válida por um máximo de 50 dias, quando a mesma deverá ser trocada.
+<em>-m 7</em> &ndash;> Define o número mínimo de dias em que o usuário poderá trocar sua senha antes do período especificado para expiração. Caso o usuário possa trocar a qualquer momento ou dia, o valor deverá ser 0.
+<em>-W 7</em> &ndash;> Número de dias antes de expirar nos quais o usuário vai receber alertas informando que sua senha irá expirar.</p>
+
+<p><strong>C</strong>aso você deseje especificar um <strong>dia exato</strong> no qual a senha de determinado usuário vai expirar, você pode utilizar o parâmetro <em>-E</em> seguido da data desejada no formato <em>AAAA-MM-DD</em>.</p>
+
+<p><strong>A</strong>lém disto, você pode desejar que a senha do usuário &ldquo;linustorvalds&rdquo; seja trocada no <strong>próximo login</strong> do mesmo. Neste caso você poderá utilizar o parâmetro <em>-d</em>, conforme exemplo abaixo:</p>
+
+<pre><code>&lt;em&gt;# chage -d 0 linuxtorvalds&lt;/em&gt;
+</code></pre>
+
+<p><strong>O</strong> <em>-d</em> significa quantidade de dias também.</p>
+
+<pre><code>&lt;strong&gt;É&lt;/strong&gt; isso pessoal.
+
+
+
+
+&lt;strong&gt;H&lt;/strong&gt;ave fun!
+</code></pre>
+
+<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -392,66 +561,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/09/07/recomendacao-bibliografica-a-guerra-dos-tronos-as-cronicas-de-gelo-e-fogo-vol-i/">Recomendação Bibliográfica: A Guerra Dos Tronos - as Crônicas De Gelo E Fogo - Vol. I</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-09-07T10:43:38-03:00" pubdate data-updated="true">Sep 7<span>th</span>, 2011</time>
-        
-         | <a href="/blog/2011/09/07/recomendacao-bibliografica-a-guerra-dos-tronos-as-cronicas-de-gelo-e-fogo-vol-i/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><img src="http://marcelocavalcante.net/portal/imgs/livros/guerra_tronos.jpg" alt="" /></p>
-
-<p><strong>A</strong>fastado do blog como explicado no <strong><a href="http://www.marcelocavalcante.net/portal/?p=910">post anterior</a></strong>, mas não afastado de minha leitura diária.</p>
-
-<p><strong>O</strong> livro da vez, para variar, foi um presente de minha namorada, Mari.</p>
-
-<p><strong>A</strong> <strong>Guerra dos tronos</strong> é o primeiro livro da trilogia <strong>Crônicas de Gelo e Fogo</strong>.</p>
-
-<p><strong>P</strong>ouco provável que alguém não tenha ouvido falar dessa trilogia que fez e continua fazendo um grande sucesso, seja em forma de livros ou em forma de uma série de televisão de mesmo nome.</p>
-
-<p><strong>C</strong>omo bom amante de livros(e filmes) <strong>épicos</strong>, fiquei curioso em relação a esta história desde que bati os olhos pela primeira vez na capa de seus livros.</p>
-
-<p><strong>O</strong> livro é de autoria do escritor e roteirista estadunidense <strong><a href="http://pt.wikipedia.org/wiki/George_R._R._Martin">George Raymond Richard Martin</a></strong>, declarado em 2011 pela revista TIMES como uma das <strong>100 pessoas mais influentes do mundo</strong>.</p>
-
-<p><strong>A</strong>pesar de suas 592 páginas, a leitura é leve e desperta a curiosidade.</p>
-
-<p><strong>E</strong>m uma terra onde o verão pode durar décadas e o inverno uma vida, os problemas estão apenas começando. O frio está de volta e, nas florestas ao norte de Winterfell, forças sobrenaturais se espalham por trás da Muralha que protege a região. No centro do conflito estão os Stark do reino de Winterfell, uma família tão áspera quanto as terras que lhe pertencem.</p>
-
-<p><strong>D</strong>os lugares onde o frio é brutal, até os distantes reinos de plenitude e sol, George R. R. Martin narra uma história de lordes e damas, soldados e mercenários, assassinos e bastardos, que se juntam em um tempo de presságios malignos. Entre disputas por reinos, tragédias e traições, vitória e terror, o destino dos Stark, seus aliados e seus inimigos é incerto. Mas cada um está se esforçando para ganhar este conflito mortal: a guerra dos tronos.</p>
-
-<p><strong>B</strong>oa leitura!</p>
-
-<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/9/">&larr; Anteriores</a>
@@ -483,6 +592,10 @@ Me conheça melhor <a href="http://blog.marcelocavalcante.net/about">clicando aq
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/10/30/lynis-seguranca-e-auditoria-de-sistemas-linux/">Lynis - Segurança e Auditoria de Sistemas Linux</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/10/23/bleachbit-limpeza-de-disco-no-linux/">BleachBit - Limpeza de Disco no Linux</a>
       </li>
     
@@ -498,15 +611,11 @@ Me conheça melhor <a href="http://blog.marcelocavalcante.net/about">clicando aq
         <a href="/blog/2013/09/11/dica-rapida-linux-como-limpar-o-conteudo-de-um-arquivo-texto-sem-abrir-o-mesmo/">Dica Rápida - Linux - Como Limpar o Conteúdo de um Arquivo Texto Sem Abrir o Mesmo</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/09/03/correcao-do-bug-entre-kernel-linux-e-placas-broadcom/">Correção do Bug entre Kernel Linux e Placas Broadcom</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categorias</h1>
-    <span id="tag-cloud"><embed type='application/x-shockwave-flash' src='/javascripts/tagcloud.swf'width='100%' height='250' bgcolor='#f2f2f2' id='tagcloudflash' name='tagcloudflash' quality='high' allowscriptaccess='always'flashvars="tcolor=0x333333&amp;tcolor2=0x333333&amp;hicolor=0x000000&amp;tspeed=100&amp;distr=true&amp;mode=tags&amp;tagcloud=%3Ctags%3E%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fandroid%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3EAndroid%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Faptitude%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3EAptitude%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Farch-linux%27+style%3D%27font-size%3A+18.240310077519382%25%27%3EArch+Linux%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fasterisk%27+style%3D%27font-size%3A+7.5813953488372094%25%27%3EAsterisk%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fcensura%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3ECensura%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fchromium%27+style%3D%27font-size%3A+7.9689922480620154%25%27%3EChromium%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fcultura%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3ECultura%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fcultura-hacker%27+style%3D%27font-size%3A+14.945736434108527%25%27%3ECultura+Hacker%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fdebian%27+style%3D%27font-size%3A+7.387596899224806%25%27%3EDebian%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fdia-livre%27+style%3D%27font-size%3A+7.775193798449612%25%27%3EDia+Livre%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Feventos%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3EEventos%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Ffedora%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3EFedora%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Ffirefox%27+style%3D%27font-size%3A+7.387596899224806%25%27%3EFirefox%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fflisol%27+style%3D%27font-size%3A+8.550387596899224%25%27%3EFlisol%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fgoogle%27+style%3D%27font-size%3A+7.775193798449612%25%27%3EGoogle%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fimpressoes%27+style%3D%27font-size%3A+32.0%25%27%3EImpressoes%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fios%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3EiOS%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fjava%27+style%3D%27font-size%3A+8.356589147286822%25%27%3EJava%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fjogos%27+style%3D%27font-size%3A+7.775193798449612%25%27%3EJogos%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fkde%27+style%3D%27font-size%3A+10.294573643410853%25%27%3EKDE%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fkubuntu%27+style%3D%27font-size%3A+7.5813953488372094%25%27%3EKubuntu%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fliberdade%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3ELiberdade%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Flinux%27+style%3D%27font-size%3A+24.829457364341085%25%27%3ELinux%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fliteratura%27+style%3D%27font-size%3A+11.651162790697676%25%27%3ELiteratura%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fmeio-ambiente%27+style%3D%27font-size%3A+7.775193798449612%25%27%3EMeio+Ambiente%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fpython%27+style%3D%27font-size%3A+8.744186046511627%25%27%3EPython%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Frails%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3ERails%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fredes%27+style%3D%27font-size%3A+10.10077519379845%25%27%3ERedes%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fruby%27+style%3D%27font-size%3A+7.9689922480620154%25%27%3ERuby%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fseguranca%27+style%3D%27font-size%3A+11.45736434108527%25%27%3ESeguranca%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fseguranca-digital%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3ESeguranca+Digital%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fsenha%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3ESenha%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fservidor%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3EServidor%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fsoftware-livre%27+style%3D%27font-size%3A+28.511627906976745%25%27%3ESoftware+Livre%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fssh%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3ESSH%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fsysadmin%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3ESysAdmin%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Ftux-ce%27+style%3D%27font-size%3A+9.51937984496124%25%27%3ETux-ce%3C%2Fa%3E+%3C%2Ftags%3E"></span>
+    <span id="tag-cloud"><embed type='application/x-shockwave-flash' src='/javascripts/tagcloud.swf'width='100%' height='250' bgcolor='#f2f2f2' id='tagcloudflash' name='tagcloudflash' quality='high' allowscriptaccess='always'flashvars="tcolor=0x333333&amp;tcolor2=0x333333&amp;hicolor=0x000000&amp;tspeed=100&amp;distr=true&amp;mode=tags&amp;tagcloud=%3Ctags%3E%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fandroid%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3EAndroid%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Faptitude%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3EAptitude%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Farch-linux%27+style%3D%27font-size%3A+18.240310077519382%25%27%3EArch+Linux%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fasterisk%27+style%3D%27font-size%3A+7.5813953488372094%25%27%3EAsterisk%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fcensura%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3ECensura%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fchromium%27+style%3D%27font-size%3A+7.9689922480620154%25%27%3EChromium%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fcultura%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3ECultura%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fcultura-hacker%27+style%3D%27font-size%3A+14.945736434108527%25%27%3ECultura+Hacker%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fdebian%27+style%3D%27font-size%3A+7.387596899224806%25%27%3EDebian%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fdia-livre%27+style%3D%27font-size%3A+7.775193798449612%25%27%3EDia+Livre%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Feventos%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3EEventos%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Ffedora%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3EFedora%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Ffirefox%27+style%3D%27font-size%3A+7.387596899224806%25%27%3EFirefox%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fflisol%27+style%3D%27font-size%3A+8.550387596899224%25%27%3EFlisol%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fgoogle%27+style%3D%27font-size%3A+7.775193798449612%25%27%3EGoogle%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fimpressoes%27+style%3D%27font-size%3A+32.0%25%27%3EImpressoes%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fios%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3EiOS%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fjava%27+style%3D%27font-size%3A+8.356589147286822%25%27%3EJava%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fjogos%27+style%3D%27font-size%3A+7.775193798449612%25%27%3EJogos%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fkde%27+style%3D%27font-size%3A+10.294573643410853%25%27%3EKDE%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fkubuntu%27+style%3D%27font-size%3A+7.5813953488372094%25%27%3EKubuntu%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fliberdade%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3ELiberdade%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Flinux%27+style%3D%27font-size%3A+25.023255813953487%25%27%3ELinux%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fliteratura%27+style%3D%27font-size%3A+11.651162790697676%25%27%3ELiteratura%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fmeio-ambiente%27+style%3D%27font-size%3A+7.775193798449612%25%27%3EMeio+Ambiente%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fpython%27+style%3D%27font-size%3A+8.744186046511627%25%27%3EPython%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Frails%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3ERails%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fredes%27+style%3D%27font-size%3A+10.10077519379845%25%27%3ERedes%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fruby%27+style%3D%27font-size%3A+7.9689922480620154%25%27%3ERuby%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fseguranca%27+style%3D%27font-size%3A+11.651162790697676%25%27%3ESeguranca%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fseguranca-digital%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3ESeguranca+Digital%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fsenha%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3ESenha%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fservidor%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3EServidor%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fsoftware-livre%27+style%3D%27font-size%3A+28.705426356589147%25%27%3ESoftware+Livre%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fssh%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3ESSH%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fsysadmin%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3ESysAdmin%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Ftux-ce%27+style%3D%27font-size%3A+9.51937984496124%25%27%3ETux-ce%3C%2Fa%3E+%3C%2Ftags%3E"></span>
 </section>
 <section>
   <h1>Estou lendo</h1>

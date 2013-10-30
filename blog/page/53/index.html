@@ -9,7 +9,7 @@
   <meta name="author" content="Marcelo Cavalcante Rocha - Kalib">
 
   
-  <meta name="description" content="Novamente estou aqui para lhes passar uma pequena dica que para muitos pode nem ser novidade, porém para alguns a dúvida pode existir. Bom, para &hellip;">
+  <meta name="description" content="Versão em Português BR / Portuguese Version Saudações galera.. Aqui segue uma rápida dica que poderá ajudar aqueles que, assim como eu, instalaram o &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -80,6 +80,126 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/05/07/configurando-a-jre-para-funcionar-no-buntu-804-com-firefox-3-configuring-jre-on-buntu-804-to-work-with-firefox-30/">Configurando a JRE Para Funcionar No *buntu 8.04 Com Firefox 3 / Configuring JRE on *buntu 8.04 to Work With Firefox 3.0</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-05-07T13:14:00-03:00" pubdate data-updated="true">May 7<span>th</span>, 2008</time>
+        
+         | <a href="/blog/2008/05/07/configurando-a-jre-para-funcionar-no-buntu-804-com-firefox-3-configuring-jre-on-buntu-804-to-work-with-firefox-30/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h3></h3>
+
+<p><a href="http://2.bp.blogspot.com/_5kfJplBiYy0/SCHhSx0v4cI/AAAAAAAAACc/WAlMjjeTrlc/s1600-h/brazil.gif"><img src="http://2.bp.blogspot.com/_5kfJplBiYy0/SCHhSx0v4cI/AAAAAAAAACc/WAlMjjeTrlc/s320/brazil.gif" alt="" /></a>Versão em Português BR / Portuguese Version</p>
+
+<p>Saudações galera..</p>
+
+<p>Aqui segue uma rápida dica que poderá ajudar aqueles que, assim como eu, instalaram o *buntu 8.04 e perceberam que o mesmo possui o Firefox 3.0 em seus repositórios como o navegador padrão.</p>
+
+<p>Bom, ao tentar instalar, desde ontem, o plugin do java para poder acessar minha página do banco, encontrei uma solução bem simples depois de várias tentativas frustradas.</p>
+
+<p>Após tentar tudo que sempre utilizei como por exemplo baixar o pacote jre diretamente do site da sun, descompactar no diretório /usr/java (como sempre fiz por questão de organização), instalar e criar um link simbólico para o mesmo no diretório de plugins do Firefox, e mesmo assim não ter nenhum resultado concreto, pesquisei um pouco e achei uma solução bem mais simples e rápida.</p>
+
+<p>Basta descomentar as linhas referentes aos mirrors multiverse nos seus repositórios (/etc/apt/sources.list), dar um update (# aptitude update) e em seguida instalar os pacotes com o seguinte comando:</p>
+
+<h1>aptitude install sun-java6-jre sun-java6-plugin sun-java6-fonts</h1>
+
+<p>Feito isto reinicie o firefox e digite em sua barra de endereços:</p>
+
+<p>about:plugins</p>
+
+<p>Deverá agora constar em sua lista de plugins os referentes ao java. ;]</p>
+
+<p>Outro teste é digitar no seu console: $ java -version</p>
+
+<p>Você deverá ter um retorno similar a este:</p>
+
+<p>java version &ldquo;1.6.0_06&rdquo;</p>
+
+<p>Java&trade; SE Runtime Environment (build 1.6.0_06-b02)</p>
+
+<p>Java HotSpot&trade; Client VM (build 10.0-b22, mixed mode, sharing)</p>
+
+<p>Ou mesmo acessando alguma página que se utilize de java como o teclado virtual do Banco do Brasil por exemplo.</p>
+
+<p>;]</p>
+
+<p>Bom, espero ter ajudado com esta simples, porém eficiente dica.</p>
+
+<p>Abraços</p>
+
+<hr />
+
+<p><a href="http://3.bp.blogspot.com/_5kfJplBiYy0/SCHhxB0v4dI/AAAAAAAAACk/GLnUKyTOJcA/s1600-h/800px-Flag_of_Canada_svg.png"><img src="http://3.bp.blogspot.com/_5kfJplBiYy0/SCHhxB0v4dI/AAAAAAAAACk/GLnUKyTOJcA/s320/800px-Flag_of_Canada_svg.png" alt="" /></a>Versão em Inglês / English Version</p>
+
+<p>Hey Guys..</p>
+
+<p>Here I&rsquo;ll describe a simple and quickly way that can help those people who, like me, are trying to use *buntu 8.04 and have realized that it comes with Firefox 3.0 beta 5 on its repositories as the default web browser.</p>
+
+<p>Well, trying to install the java plugin since yesterday to access my bank account, I could find a simple way after some frustrated tries.</p>
+
+<p>After trying every ways i had always use, like for example downloading the jre package directly from the sun&rsquo;s website, install it and create a symbolic link at Firefox plugin&rsquo;s directory and have no positive answer, I decided to search on the web until realize that a simple aptitude&rsquo;s use could solve my problem and make it work correctly.</p>
+
+<p>All you have to do is uncomment (remove the # from the beggining of the line) the multiverse mirror&rsquo;s lines at your sources file (/etc/apt/sources.list). The next step is to make an upload on your mirrors and repositories (# aptitude update) and then install the necessary packages with the following line command:</p>
+
+<h1>aptitude install sun-java6-jre sun-java6-plugin sun-java6-fonts</h1>
+
+<p>It&rsquo;s done!</p>
+
+<p>Can&rsquo;t believe? Restart your Firefox and put the following command on your address bar:</p>
+
+<p>about:plugins</p>
+
+<p>You should find some lines describing your java plugin on the plugins page, like all your other plugins on Firefox.</p>
+
+<p>Another way to test and check it is typing the following command on a terminal or console:</p>
+
+<p>$ java -version</p>
+
+<p>You should receive some return like this:</p>
+
+<p>java version &ldquo;1.6.0_06&rdquo;</p>
+
+<p>Java&trade; SE Runtime Environment (build 1.6.0_06-b02)</p>
+
+<p>Java HotSpot&trade; Client VM (build 10.0-b22, mixed mode, sharing)</p>
+
+<p>Or, if you still not believing, you can try to access some website that uses java like some bank sites for example. ;]</p>
+
+<p>Well, i hope this text could help some of you guys.</p>
+
+<p>Take Care</p>
+
+<p><a href="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif"><img src="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif" alt="" /></a></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -214,122 +334,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2008/04/22/flisol-fortaleza-2008/">Flisol Fortaleza 2008</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2008-04-22T17:11:00-03:00" pubdate data-updated="true">Apr 22<span>nd</span>, 2008</time>
-        
-         | <a href="/blog/2008/04/22/flisol-fortaleza-2008/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Mais um ano chega e novamente estamos envolvidos com as vibrações que o Flisol sempre nos proporciona.</p>
-
-<p>Para aqueles que não conhecem ainda, o Flisol, Festival Latino Americano de Instalação de Software Livre, acontece anualmente em mais de 15 países da América-Latina simultaneamente. Logo em sua primeira edição, em 2005, Fortaleza saiu consagrada como tendo sido a cidade com o maior Flisol dentre as mais de 100 cidades latinoamericanas envolvidas no evento.</p>
-
-<p>O evento se resume em fazer instalações de software livre em máquinas de visitantes ou curiosos em conhecer um pouco da filosofia bem como funcionalidade desta vasta gama de possibilidades que é o Mundo do Software Livre. Apesar disto, desde sua primeira edição, aqui em Fortaleza procuramos sempre fazer uma grade recheada de palestras, workshops, atividades ou mini-cursos de forma a trazer uma maior vivência e compreensão aos visitantes que buscam ali muitas vezes mais do que um simples conhecimento introdutório.</p>
-
-<p>Focando o público iniciante, o evento deste ano está repleto de boas palestras para este tipo de público como forma de garantir que todos saiam de lá conhecendo a filosofia do software livre bem como a sua importância.</p>
-
-<p>O evento deste ano será no dia 26 de Abril (Sábado) das 9:00 às 17:00 na Faculdade Evolução: Rua Pedro I, 1276 &ndash; Centro. (Clique na foto para ampliar)</p>
-
-<p>A entrada é gratuita, porém incentivamos fortemente que sejam trazidos 2 kilos de alimentos não perecíveis, já que todo ano o Flisol Fortaleza ajuda alguma instituição com esta arrecadação.</p>
-
-<p>Além das palestras, teremos o tradicional install fest onde os visitantes poderão trazer suas máquinas para ter instalados nela softwares livres dos mais diversos tipos gratuitamente com o acompanhamento de pessoas da comunidade com bastante experiência no assunto, bem como tirar suas dúvidas sobre o assunto.</p>
-
-<p>Nos stands das comunidades também estarão sendo distribuídos cds com distribuições Linux bem como Softwares Livres diversos dentre outros brindes.</p>
-
-<p>Quem quizer ver fotos de versões passadas do Flisol em Fortaleza, abaixo disponibilizo links:</p>
-
-<p>Flisol 2006</p>
-
-<p>Flisol 2007</p>
-
-<p>Abaixo segue a grade de palestras do evento deste ano.</p>
-
-<p>09:00 – ABERTURA DO EVENTO</p>
-
-<p>10:00</p>
-
-<p>Sala 1 &ndash; Esperanto, Língua Livre &ndash; Humberto Xis</p>
-
-<p>Sala 2 – Slackware 12 e suas novidades – Luiz Antonio Oliveira</p>
-
-<p>Sala 3 – Apresentação da ferramenta eGroupWare – Fernando Chucre</p>
-
-<p>Sala 4 &ndash; OpenSocial: Construa a sua rede social &ndash; Christiano Milfont</p>
-
-<p>11:00</p>
-
-<p>Sala 1- Inclusão Sócio-digital para a cidadania: O uso do Software Livre na Educação pública nos LIES municipais – Sinara Duarte</p>
-
-<p>Sala 2 &ndash; Firefox: Domine a raposa de fogo – Rafael Siqueira Telles Vieira</p>
-
-<p>Sala 3 &ndash; Programação Orientada a Objetos com Java – Alessandro Moreira</p>
-
-<p>Sala 4 – Mais que um Linux, um Big Linux – Lucas Filho</p>
-
-<p>12:00 – INTERVALO</p>
-
-<p>14:00</p>
-
-<p>Sala 1 &ndash; Movimentos de software e cultura livre no estado – Uirá Porã</p>
-
-<p>Sala 2 &ndash; Gimp &ndash; Tratamento de imagens – Lucas Filho</p>
-
-<p>Sala 3 &ndash; P&amp;D e Software Livre – Alex Torquato Souza Carneiro</p>
-
-<p>Sala 4 – I Encontro de Desenvolvedores de Jogos do Ceará – David Ferreira</p>
-
-<p>15:00</p>
-
-<p>Sala 1 – Economia Solidária – Kelma Nunes</p>
-
-<p>Sala 2 &ndash; K3B: Gravação e Ripagem no Linux &ndash; Rafael Siqueira Telles Vieira</p>
-
-<p>Sala 3 – Mini-Curso Shell Script – Osvaldo Filho</p>
-
-<p>16:00</p>
-
-<p>Sala 1 &ndash; Sistema de HelpDek/ServiceDesk OpenSource Ocomon – Rafael Barreira Maia</p>
-
-<p>Sala 2 &ndash; BrOffice.org do básico ao avançado – Lucas Filho</p>
-
-<p>Sala 3 &ndash; Introdução a Desenvolvimento e Linguagens de Programação – Rafael de Carvalho Farias</p>
-
-<p>Local: Rua Pedro I, 1276 &ndash; Centro</p>
-
-<p>Horário: 09:00 &ndash; 17:00</p>
-
-<p>Inscrições: <a href="http://flisol-ce.890m.com">http://flisol-ce.890m.com</a></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/54/">&larr; Anteriores</a>
@@ -361,6 +365,10 @@ Me conheça melhor <a href="http://blog.marcelocavalcante.net/about">clicando aq
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/10/30/lynis-seguranca-e-auditoria-de-sistemas-linux/">Lynis - Segurança e Auditoria de Sistemas Linux</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/10/23/bleachbit-limpeza-de-disco-no-linux/">BleachBit - Limpeza de Disco no Linux</a>
       </li>
     
@@ -376,15 +384,11 @@ Me conheça melhor <a href="http://blog.marcelocavalcante.net/about">clicando aq
         <a href="/blog/2013/09/11/dica-rapida-linux-como-limpar-o-conteudo-de-um-arquivo-texto-sem-abrir-o-mesmo/">Dica Rápida - Linux - Como Limpar o Conteúdo de um Arquivo Texto Sem Abrir o Mesmo</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/09/03/correcao-do-bug-entre-kernel-linux-e-placas-broadcom/">Correção do Bug entre Kernel Linux e Placas Broadcom</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categorias</h1>
-    <span id="tag-cloud"><embed type='application/x-shockwave-flash' src='/javascripts/tagcloud.swf'width='100%' height='250' bgcolor='#f2f2f2' id='tagcloudflash' name='tagcloudflash' quality='high' allowscriptaccess='always'flashvars="tcolor=0x333333&amp;tcolor2=0x333333&amp;hicolor=0x000000&amp;tspeed=100&amp;distr=true&amp;mode=tags&amp;tagcloud=%3Ctags%3E%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fandroid%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3EAndroid%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Faptitude%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3EAptitude%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Farch-linux%27+style%3D%27font-size%3A+18.240310077519382%25%27%3EArch+Linux%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fasterisk%27+style%3D%27font-size%3A+7.5813953488372094%25%27%3EAsterisk%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fcensura%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3ECensura%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fchromium%27+style%3D%27font-size%3A+7.9689922480620154%25%27%3EChromium%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fcultura%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3ECultura%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fcultura-hacker%27+style%3D%27font-size%3A+14.945736434108527%25%27%3ECultura+Hacker%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fdebian%27+style%3D%27font-size%3A+7.387596899224806%25%27%3EDebian%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fdia-livre%27+style%3D%27font-size%3A+7.775193798449612%25%27%3EDia+Livre%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Feventos%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3EEventos%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Ffedora%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3EFedora%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Ffirefox%27+style%3D%27font-size%3A+7.387596899224806%25%27%3EFirefox%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fflisol%27+style%3D%27font-size%3A+8.550387596899224%25%27%3EFlisol%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fgoogle%27+style%3D%27font-size%3A+7.775193798449612%25%27%3EGoogle%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fimpressoes%27+style%3D%27font-size%3A+32.0%25%27%3EImpressoes%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fios%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3EiOS%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fjava%27+style%3D%27font-size%3A+8.356589147286822%25%27%3EJava%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fjogos%27+style%3D%27font-size%3A+7.775193798449612%25%27%3EJogos%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fkde%27+style%3D%27font-size%3A+10.294573643410853%25%27%3EKDE%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fkubuntu%27+style%3D%27font-size%3A+7.5813953488372094%25%27%3EKubuntu%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fliberdade%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3ELiberdade%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Flinux%27+style%3D%27font-size%3A+24.829457364341085%25%27%3ELinux%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fliteratura%27+style%3D%27font-size%3A+11.651162790697676%25%27%3ELiteratura%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fmeio-ambiente%27+style%3D%27font-size%3A+7.775193798449612%25%27%3EMeio+Ambiente%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fpython%27+style%3D%27font-size%3A+8.744186046511627%25%27%3EPython%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Frails%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3ERails%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fredes%27+style%3D%27font-size%3A+10.10077519379845%25%27%3ERedes%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fruby%27+style%3D%27font-size%3A+7.9689922480620154%25%27%3ERuby%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fseguranca%27+style%3D%27font-size%3A+11.45736434108527%25%27%3ESeguranca%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fseguranca-digital%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3ESeguranca+Digital%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fsenha%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3ESenha%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fservidor%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3EServidor%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fsoftware-livre%27+style%3D%27font-size%3A+28.511627906976745%25%27%3ESoftware+Livre%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fssh%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3ESSH%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fsysadmin%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3ESysAdmin%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Ftux-ce%27+style%3D%27font-size%3A+9.51937984496124%25%27%3ETux-ce%3C%2Fa%3E+%3C%2Ftags%3E"></span>
+    <span id="tag-cloud"><embed type='application/x-shockwave-flash' src='/javascripts/tagcloud.swf'width='100%' height='250' bgcolor='#f2f2f2' id='tagcloudflash' name='tagcloudflash' quality='high' allowscriptaccess='always'flashvars="tcolor=0x333333&amp;tcolor2=0x333333&amp;hicolor=0x000000&amp;tspeed=100&amp;distr=true&amp;mode=tags&amp;tagcloud=%3Ctags%3E%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fandroid%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3EAndroid%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Faptitude%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3EAptitude%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Farch-linux%27+style%3D%27font-size%3A+18.240310077519382%25%27%3EArch+Linux%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fasterisk%27+style%3D%27font-size%3A+7.5813953488372094%25%27%3EAsterisk%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fcensura%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3ECensura%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fchromium%27+style%3D%27font-size%3A+7.9689922480620154%25%27%3EChromium%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fcultura%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3ECultura%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fcultura-hacker%27+style%3D%27font-size%3A+14.945736434108527%25%27%3ECultura+Hacker%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fdebian%27+style%3D%27font-size%3A+7.387596899224806%25%27%3EDebian%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fdia-livre%27+style%3D%27font-size%3A+7.775193798449612%25%27%3EDia+Livre%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Feventos%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3EEventos%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Ffedora%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3EFedora%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Ffirefox%27+style%3D%27font-size%3A+7.387596899224806%25%27%3EFirefox%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fflisol%27+style%3D%27font-size%3A+8.550387596899224%25%27%3EFlisol%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fgoogle%27+style%3D%27font-size%3A+7.775193798449612%25%27%3EGoogle%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fimpressoes%27+style%3D%27font-size%3A+32.0%25%27%3EImpressoes%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fios%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3EiOS%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fjava%27+style%3D%27font-size%3A+8.356589147286822%25%27%3EJava%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fjogos%27+style%3D%27font-size%3A+7.775193798449612%25%27%3EJogos%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fkde%27+style%3D%27font-size%3A+10.294573643410853%25%27%3EKDE%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fkubuntu%27+style%3D%27font-size%3A+7.5813953488372094%25%27%3EKubuntu%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fliberdade%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3ELiberdade%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Flinux%27+style%3D%27font-size%3A+25.023255813953487%25%27%3ELinux%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fliteratura%27+style%3D%27font-size%3A+11.651162790697676%25%27%3ELiteratura%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fmeio-ambiente%27+style%3D%27font-size%3A+7.775193798449612%25%27%3EMeio+Ambiente%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fpython%27+style%3D%27font-size%3A+8.744186046511627%25%27%3EPython%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Frails%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3ERails%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fredes%27+style%3D%27font-size%3A+10.10077519379845%25%27%3ERedes%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fruby%27+style%3D%27font-size%3A+7.9689922480620154%25%27%3ERuby%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fseguranca%27+style%3D%27font-size%3A+11.651162790697676%25%27%3ESeguranca%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fseguranca-digital%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3ESeguranca+Digital%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fsenha%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3ESenha%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fservidor%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3EServidor%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fsoftware-livre%27+style%3D%27font-size%3A+28.705426356589147%25%27%3ESoftware+Livre%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fssh%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3ESSH%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fsysadmin%27+style%3D%27font-size%3A+7.1937984496124034%25%27%3ESysAdmin%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Ftux-ce%27+style%3D%27font-size%3A+9.51937984496124%25%27%3ETux-ce%3C%2Fa%3E+%3C%2Ftags%3E"></span>
 </section>
 <section>
   <h1>Estou lendo</h1>

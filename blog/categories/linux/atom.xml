@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2013-10-25T09:48:48-03:00</updated>
+  <updated>2013-10-30T10:47:14-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -12,6 +12,49 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Lynis - Segurança e Auditoria de Sistemas Linux]]></title>
+    <link href="http://blog.marcelocavalcante.net/blog/2013/10/30/lynis-seguranca-e-auditoria-de-sistemas-linux/"/>
+    <updated>2013-10-30T10:00:00-03:00</updated>
+    <id>http://blog.marcelocavalcante.net/blog/2013/10/30/lynis-seguranca-e-auditoria-de-sistemas-linux</id>
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/auditing.jpg" title="&lsquo;Auditando&rsquo;" >
+<strong>P</strong>rocurando uma ferramenta de uso simples e rápido que seja capaz de realizar uma auditoria em sistemas Unix like? Talvez o <em>Lynis</em> seja exatamente o que você procura.</p>
+
+<p><strong>O</strong> Lynis é uma ferramenta para (especialistas) Unix com foco em <em>segurança</em> e <em>auditoria</em>, porque não dizer <em>hardening</em>, de sistemas. Ele escaneia o sistema e vários softwares disponíveis no mesmo com o fim de detectar vulnerabilidades. Além de informações relacionadas a segurança, ele também buscará diversas informações sobre o sistema, pacotes instalados e erros de configuração diversos.</p>
+
+<p><strong>E</strong>ste software ainda é útil e utilizado por outros softwares para ajudar em auditorias automatizadas, gerenciamento de patches de sistemas e escaneamento por vulnerabilidades e malwares. O público alvo do mesmo é composto por especialistas em segurança, pentesters, auditores de sistemas, administradores de redes/sistemas, etc.</p>
+
+<p><strong>D</strong>entre suas verificações estão a avaliação dos métodos de autenticação disponíveis, certificados SSL expirados, softwares desatualizados, contas de usuários sem senhas, permissões incorretas em arquivos, erros de configuração, auditoria de firewall, etc.</p>
+
+<p><strong>Instalação:</strong></p>
+
+<p><strong>N</strong>o Arch Linux, o pacote se encontra disponível no <a href="https://aur.archlinux.org/packages/lynis/">AUR.</a>, portanto o processo de instalação consiste nos seguintes passos:</p>
+
+<p><strong>1.</strong> Download do <a href="https://aur.archlinux.org/packages/ly/lynis/lynis.tar.gz">Tarball</a> disponibilizado no AUR.
+<strong>2.</strong> Descompactação do tarball:
+<code>
+ $ tar -xvzf lynis.tar.gz
+</code>
+<strong>3.</strong> Entrar no diretório lynis que foi criado e em seguida iniciar a compilação/criação do pacote em si:
+<code>
+ $ cd lynis
+ $ makepkg
+</code>
+<strong>4.</strong> Instalação do pacote que foi criado (Apenas este passo com usuário root ou utilizando sudo):
+<code>
+ # pacman -U lynis-1.3.3-1-any.pkg.tar.xz
+</code></p>
+
+<p><strong>C</strong>aso você utilize o yaourt ou algum outro gerenciador de pacotes do Arch Linux que possua acesso direto aos pacotes do AUR, pode utilizá-los ao invés de utilizar os passos acima:</p>
+
+<p><code>
+ $ yaourt -S lynis
+</code></p>
+
+<p><strong>H</strong>appy Hacking!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[BleachBit - Limpeza de Disco no Linux]]></title>
@@ -337,64 +380,6 @@
 <p><strong>L</strong>embre-se sempre de reiniciar o serviço ssh após efetuar qualquer alteração de configuração.</p>
 
 <p><strong>D</strong>icas simples de serem implementadas mas que irão melhorar bastante a segurança de seu servidor SSH. ;]</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Dica Rápida - Linux - Como Deletar Todos os Arquivos Exceto Alguns (Com Extensões Específicas)?]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2013/08/23/dia-rapida-linux-como-deletar-todos-os-arquivos-exceto-alguns-com-extensoes-especificas/"/>
-    <updated>2013-08-23T16:55:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2013/08/23/dia-rapida-linux-como-deletar-todos-os-arquivos-exceto-alguns-com-extensoes-especificas</id>
-    <content type="html"><![CDATA[<p><img class="left" src="/imgs/delete.jpg" title="&lsquo;Delete Files&rsquo;" >
-<strong>É</strong> comum termos diretórios repletos de arquivos dos mais diferentes tipos e extensões, certo?! E quando desejamos remover vários arquivos ao mesmo tempo? Bom, o linux nos permite utilizar o comando rm para remover diversos arquivos ao mesmo tempo, certo? Da mesma forma, podemos facilmente excluir todos os arquivos de um determinado tipo ou extensão, conforme exemplo abaixo:</p>
-
-<p><code>
- $ rm *.py
-</code></p>
-
-<p><strong>O</strong> comando acima remove todos os arquivos com extensão .py (<em>geralmente arquivos de código fonte Python</em>) do diretório atual. Mas e se desejarmos remover não apenas os arquivos de código Python, mas também os de código Ruby? Da mesma forma, podemos apenas inserir esta nova informação:</p>
-
-<p><code>
- $ rm *.py *.rb
-</code></p>
-
-<p><strong>S</strong>imples&hellip; nenhuma novidade. Ok, mas e se desejarmos o caminho oposto? Se ao invés de especificar o que eu <em>desejo deletar</em>, eu preferir especificar o que eu <em>não desejo deletar</em>?</p>
-
-<p><strong>P</strong>orque eu desejaria isso? A ideia não é complicar, mas sim simplificar. Imaginemos que eu possuo um diretório com não apenas 2 ou 3 tipos de arquivos diferentes, mas sim 10, 20 ou mesmo 30. Eu apenas desejo manter os arquivos de 2 tipos ou extensões. Já imaginaram qual seria o tamanho do comando seguindo a linha de raciocínio acima? Algo como&hellip;</p>
-
-<p><code>
- $ rm *.py *.rb *.txt *.doc *.odt *.png *.jpg *.sh *.bat *.c *.bkp *.ppt *.pl ... ... ... ...
-</code></p>
-
-<p><strong>C</strong>ansei antes mesmo de digitar todos. Agora deve ter ficado claro o porque de ser mais simples poder especificar apenas o que não desejo que seja deletado.</p>
-
-<p><strong>V</strong>amos supor que eu possuo um diretório no qual se encontram os meus arquivos de diversos tipos e extensões, conforme listados abaixo:</p>
-
-<p>```
- $ ls</p>
-
-<p> arq2.avi  arq2.cdr  arq2.doc  arq2.html  arq2.mp3  arq2.php  arq2.ppt  arq2.vob  arq.c
- arq.dbf  arq.gif   arq.mov  arq.odt  arq.png  arq.rb  arq2.bat  arq2.cdx  arq2.exe
- arq2.jpg   arq2.mp4  arq2.pl   arq2.py   arq.avi   arq.cdr  arq.doc  arq.html  arq.mp3
- arq.php  arq.ppt  arq.vob  arq2.c    arq2.dbf  arq2.gif  arq2.mov   arq2.odt  arq2.png
- arq2.rb   arq.bat   arq.cdx  arq.exe  arq.jpg   arq.mp4  arq.pl   arq.py
-```</p>
-
-<p><strong>C</strong>omo podemos ver, temos arquivos de diversas extensões. Agora, supondo que eu desejo remover todos, exceto os arquivos com as extensões .rb e .py:</p>
-
-<p><code>
- $ rm !(*.rb|*.py)
-</code></p>
-
-<p><strong>N</strong>osso resultado?</p>
-
-<p>```
- $ ls</p>
-
-<p> arq2.py  arq2.rb  arq.py  arq.rb
-```</p>
-
-<p><strong>F</strong>eito. Oi, simples assim&hellip;</p>
 ]]></content>
   </entry>
   
