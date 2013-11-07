@@ -4,7 +4,7 @@
   <title><![CDATA[Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2013-10-30T11:04:42-03:00</updated>
+  <updated>2013-11-07T09:08:57-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -12,6 +12,129 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Dica Rápida - Linux - Como Não Deixar Rastros no History]]></title>
+    <link href="http://blog.marcelocavalcante.net/blog/2013/11/07/dica-rapida-linux-como-nao-deixar-rastros-no-history/"/>
+    <updated>2013-11-07T08:16:00-03:00</updated>
+    <id>http://blog.marcelocavalcante.net/blog/2013/11/07/dica-rapida-linux-como-nao-deixar-rastros-no-history</id>
+    <content type="html"><![CDATA[<p><img class="left" src="http://blog.marcelocavalcante.net/imgs/shhh.jpg" title="'Shhhh'" ></p>
+
+<p><strong>S</strong>hhhhhhh&hellip;.</p>
+
+<p><strong>Q</strong>ue tal digitar seus comandos em uma máquina Linux sem que os mesmos sejam registrados no <em>history</em> do sistema?</p>
+
+<p><strong>O</strong> history é responsável por armazenar um histórico dos últimos comandos digitados no sistema. Por exemplo:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> [kalib@tuxcaverna ~]$ history
+</span><span class='line'>    1  ls
+</span><span class='line'>    2  mkdir pc
+</span><span class='line'>    3  cd pc/
+</span><span class='line'>    4  ls
+</span><span class='line'>    5  mkdir pc2
+</span><span class='line'>    6  ls
+</span><span class='line'>    7  touch ps2/teste
+</span><span class='line'>    8  ls
+</span><span class='line'>    9  touch /
+</span><span class='line'>    ...
+</span><span class='line'>    ...
+</span><span class='line'>    496  route
+</span><span class='line'>    497  ifconfig
+</span><span class='line'>    498  cat teste 
+</span><span class='line'>    499  ls
+</span><span class='line'>    500  history</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>C</strong>omo podemos ver, o history me retornou um histórico dos meus últimos 500 comandos, incluindo o próprio comando <em>history</em>, que acabei de digitar.</p>
+
+<p><strong>V</strong>ejamos o registro de novos comandos:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> [kalib@tuxcaverna ~]$ echo "Teste"
+</span><span class='line'> Teste
+</span><span class='line'> [kalib@tuxcaverna ~]$ echo "Registra isso history"
+</span><span class='line'> Registra isso history
+</span><span class='line'> [kalib@tuxcaverna ~]$ history
+</span><span class='line'> ...
+</span><span class='line'> ...
+</span><span class='line'> 501  echo "Teste"
+</span><span class='line'> 502  echo "Registra isso history"
+</span><span class='line'> 503  history</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>E</strong>ntão, como não deixar registros no history? Utilizaremos os comandos <em>cat</em> e <em>bash</em> para isto:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> [kalib@tuxcaverna ~]$ cat | bash
+</span><span class='line'> pwd
+</span><span class='line'> /home/kalib
+</span><span class='line'> 
+</span><span class='line'> df -h
+</span><span class='line'> Sist. Arq.      Tam. Usado Disp. Uso% Montado em
+</span><span class='line'> /dev/sda3        30G   19G  9,3G  67% /
+</span><span class='line'> dev             2,9G     0  2,9G   0% /dev
+</span><span class='line'> run             2,9G  860K  2,9G   1% /run
+</span><span class='line'> tmpfs           2,9G     0  2,9G   0% /dev/shm
+</span><span class='line'> tmpfs           2,9G     0  2,9G   0% /sys/fs/cgroup
+</span><span class='line'> tmpfs           2,9G  108K  2,9G   1% /tmp
+</span><span class='line'> /dev/sda1        99M   23M   69M  25% /boot
+</span><span class='line'> /dev/sda4       427G  305G  101G  76% /home
+</span><span class='line'> 
+</span><span class='line'> cd testes
+</span><span class='line'> 
+</span><span class='line'> pwd
+</span><span class='line'> /home/kalib/testes</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>S</strong>imples, não?</p>
+
+<p><strong>H</strong>appy hacking&hellip;</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Lynis - Segurança e Auditoria de Sistemas Linux]]></title>
@@ -1147,72 +1270,6 @@ device interrupt 47  base 0xc000</p>
 <p>Vamos que vamos.</p>
 
 <p>Abraços,</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[3º Dia Livre - Programação Definida!]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2011/10/17/3c2ba-dia-livre-programacao-definida/"/>
-    <updated>2011-10-17T09:26:54-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2011/10/17/3c2ba-dia-livre-programacao-definida</id>
-    <content type="html"><![CDATA[<p><strong>N</strong>este fim de semana foi publicada a programação oficial do <strong><a href="http://www.dialivre.net/portal">3º Dia Livre</a></strong>, encontro para usuários, profissionais ou entusiastas do movimento de Software Livre no Ceará.</p>
-
-<p><strong>E</strong>sta 3ª edição contará com 4 palestras de temas bem diversificados como podem ver na grade abaixo:</p>
-
-<p>Horário</p>
-
-<p>Palestra</p>
-
-<p>Palestrante</p>
-
-<p>08:00
-&ndash; 08:10</p>
-
-<p>Abertura</p>
-
-<p>&ndash;</p>
-
-<p>08:10
-&ndash; 09:00</p>
-
-<p>CRUD Flex com Java</p>
-
-<p>Alessandro Moreira</p>
-
-<p>09:10
-&ndash; 10:00</p>
-
-<p>Gerenciando Nuvens Privadas com o Xen Cloud Platform</p>
-
-<p>Lorscheider Santiago</p>
-
-<p>10:10 &ndash; 11:00</p>
-
-<p>Gerenciando Projetos com Ferramentas Livres</p>
-
-<p>Paulo Cesar C. Branco</p>
-
-<p>11:10 &ndash; 12:00</p>
-
-<p>Arduino &ndash; Desenvolvendo com Hardware Livre</p>
-
-<p>Marcelo Melo</p>
-
-<p>&mdash;</p>
-
-<hr />
-
-<p>&ndash;</p>
-
-<p><strong>A</strong>inda não sabe o que é o Dia Livre? <strong><a href="http://www.dialivre.net/portal/?page_id=7">Clique aqui para conhecer!</a></strong></p>
-
-<p><strong>A</strong>s <strong>inscrições</strong> continuam abertas para esta 3ª edição que acontecerá no dia <strong>12 de Novembro</strong>, Sábado, na Faculdade Estácio FIC.</p>
-
-<p><strong>C</strong>lique <strong><a href="http://www.dialivre.net/portal/?page_id=8">aqui</a></strong> e faça sua inscrição gratuita.</p>
-
-<p><strong>A</strong>braços,</p>
-
-<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
 ]]></content>
   </entry>
   

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Software Livre | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/blog/categories/software-livre/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2013-10-30T11:07:57-03:00</updated>
+  <updated>2013-11-07T09:08:57-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -14,11 +14,94 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Dica Rápida - Linux - Como Não Deixar Rastros no History]]></title>
+    <link href="http://blog.marcelocavalcante.net/blog/2013/11/07/dica-rapida-linux-como-nao-deixar-rastros-no-history/"/>
+    <updated>2013-11-07T08:16:00-03:00</updated>
+    <id>http://blog.marcelocavalcante.net/blog/2013/11/07/dica-rapida-linux-como-nao-deixar-rastros-no-history</id>
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/shhh.jpg" title="&lsquo;Shhhh&rsquo;" ></p>
+
+<p><strong>S</strong>hhhhhhh&hellip;.</p>
+
+<p><strong>Q</strong>ue tal digitar seus comandos em uma máquina Linux sem que os mesmos sejam registrados no <em>history</em> do sistema?</p>
+
+<p><strong>O</strong> history é responsável por armazenar um histórico dos últimos comandos digitados no sistema. Por exemplo:</p>
+
+<p>```
+ [kalib@tuxcaverna ~]$ history</p>
+
+<pre><code>1  ls
+2  mkdir pc
+3  cd pc/
+4  ls
+5  mkdir pc2
+6  ls
+7  touch ps2/teste
+8  ls
+9  touch /
+...
+...
+496  route
+497  ifconfig
+498  cat teste 
+499  ls
+500  history
+</code></pre>
+
+<p>```</p>
+
+<p><strong>C</strong>omo podemos ver, o history me retornou um histórico dos meus últimos 500 comandos, incluindo o próprio comando <em>history</em>, que acabei de digitar.</p>
+
+<p><strong>V</strong>ejamos o registro de novos comandos:</p>
+
+<p><code>
+ [kalib@tuxcaverna ~]$ echo "Teste"
+ Teste
+ [kalib@tuxcaverna ~]$ echo "Registra isso history"
+ Registra isso history
+ [kalib@tuxcaverna ~]$ history
+ ...
+ ...
+ 501  echo "Teste"
+ 502  echo "Registra isso history"
+ 503  history
+</code></p>
+
+<p><strong>E</strong>ntão, como não deixar registros no history? Utilizaremos os comandos <em>cat</em> e <em>bash</em> para isto:</p>
+
+<p>```
+ [kalib@tuxcaverna ~]$ cat | bash
+ pwd
+ /home/kalib</p>
+
+<p> df -h
+ Sist. Arq.      Tam. Usado Disp. Uso% Montado em
+ /dev/sda3        30G   19G  9,3G  67% /
+ dev             2,9G     0  2,9G   0% /dev
+ run             2,9G  860K  2,9G   1% /run
+ tmpfs           2,9G     0  2,9G   0% /dev/shm
+ tmpfs           2,9G     0  2,9G   0% /sys/fs/cgroup
+ tmpfs           2,9G  108K  2,9G   1% /tmp
+ /dev/sda1        99M   23M   69M  25% /boot
+ /dev/sda4       427G  305G  101G  76% /home</p>
+
+<p> cd testes</p>
+
+<p> pwd
+ /home/kalib/testes
+```</p>
+
+<p><strong>S</strong>imples, não?</p>
+
+<p><strong>H</strong>appy hacking&hellip;</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Lynis - Segurança e Auditoria de Sistemas Linux]]></title>
     <link href="http://blog.marcelocavalcante.net/blog/2013/10/30/lynis-seguranca-e-auditoria-de-sistemas-linux/"/>
     <updated>2013-10-30T10:00:00-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2013/10/30/lynis-seguranca-e-auditoria-de-sistemas-linux</id>
-    <content type="html"><![CDATA[<p>{% img left /imgs/auditing.jpg &lsquo;Auditando&rsquo; %}
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/auditing.jpg" title="&lsquo;Auditando&rsquo;" >
 <strong>P</strong>rocurando uma ferramenta de uso simples e rápido que seja capaz de realizar uma auditoria em sistemas Unix like? Talvez o <em>Lynis</em> seja exatamente o que você procura.</p>
 
 <p><strong>O</strong> Lynis é uma ferramenta para (especialistas) Unix com foco em <em>segurança</em> e <em>auditoria</em>, porque não dizer <em>hardening</em>, de sistemas. Ele escaneia o sistema e vários softwares disponíveis no mesmo com o fim de detectar vulnerabilidades. Além de informações relacionadas a segurança, ele também buscará diversas informações sobre o sistema, pacotes instalados e erros de configuração diversos.</p>
@@ -27,7 +110,7 @@
 
 <p><strong>D</strong>entre suas verificações estão a avaliação dos métodos de autenticação disponíveis, certificados SSL expirados, softwares desatualizados, contas de usuários sem senhas, permissões incorretas em arquivos, erros de configuração, auditoria de firewall, etc.</p>
 
-<p>{% img left /imgs/lynis-screenshot.png &lsquo;Auditando&rsquo; %}</p>
+<p><img class="left" src="/imgs/lynis-screenshot.png" title="&lsquo;Auditando&rsquo;" ></p>
 
 <p><strong>Instalação:</strong></p>
 
@@ -63,7 +146,7 @@
     <link href="http://blog.marcelocavalcante.net/blog/2013/10/23/bleachbit-limpeza-de-disco-no-linux/"/>
     <updated>2013-10-23T09:02:00-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2013/10/23/bleachbit-limpeza-de-disco-no-linux</id>
-    <content type="html"><![CDATA[<p>{% img left /imgs/disk-cleanup.jpg &lsquo;Limpeza de Disco&rsquo; %}
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/disk-cleanup.jpg" title="&lsquo;Limpeza de Disco&rsquo;" >
 <strong>Q</strong>uando o assunto é segurança da informação, muitas vezes o óbvio é deixado de lado. Se pensa em anti-vírus, firewall, IDS (Intrusion Detection System), etc. Mas e o básico e óbvio? Raramente vejo profissionais preocupados com o lixo existente nos discos rígidos. Com <em>lixo</em> eu quero dizer aqueles arquivos temporários, antigos arquivos de cache que já não são necessários, ou mesmo rastros de informações de arquivos que já foram deletados. Sim, o fato de você deletar arquivos não significa que as informações daqueles arquivos foram completamente apagadas do disco. A <em>&ldquo;deleção regular de arquivos&rdquo;</em> não está apagando <em>os dados deletados</em>. Ela está apenas removendo os links dos inodes de arquivos, tornando assim possível a recuperação dos arquivos <em>deletados</em> com algum software forense.</p>
 
 <p><strong>E</strong>xistem várias alternativas para remover seus arquivos de forma segura. As alternativas poderão variar de acordo com o sistema de arquivos utilizado em seu disco, é claro. Uma das formas mais simples que conheço é através da ferramenta <strong>BleachBit</strong>.</p>
@@ -111,7 +194,7 @@
     <link href="http://blog.marcelocavalcante.net/blog/2013/09/11/dica-rapida-linux-como-limpar-o-conteudo-de-um-arquivo-texto-sem-abrir-o-mesmo/"/>
     <updated>2013-09-11T11:05:00-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2013/09/11/dica-rapida-linux-como-limpar-o-conteudo-de-um-arquivo-texto-sem-abrir-o-mesmo</id>
-    <content type="html"><![CDATA[<p>{% img left /imgs/erase.jpg &lsquo;Erasing text&rsquo; %}
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/erase.jpg" title="&lsquo;Erasing text&rsquo;" >
 <strong>A</strong>rquivos de log, por vezes, podem ser muito extensos. Tão extensos que torna-se praticamente impossível a leitura de seu conteúdo com um editor de textos como o vim ou vi. Além disso, muitos deles podem chegar a ocupar Gigas e mais Gigas de seu espaço em disco, o que pode acabar sendo um desperdício de espaço em seu sistema de arquivos.</p>
 
 <p><strong>H</strong>oje passei por um problema deste tipo. Ao atualizar meu Arch Linux, percebi que comecei a receber erros devido ao meu espaço em disco o qual era apontado como &ldquo;insuficiente&rdquo;. O fato é que é muito comum em distribuições Linux utilizarmos um particionamento de forma a isolarmos um pouco cada partição para fins específicos. No meu caso, verifiquei que a minha partição raíz estava mesmo completamente cheia.</p>
@@ -196,7 +279,7 @@
     <link href="http://blog.marcelocavalcante.net/blog/2013/09/03/correcao-do-bug-entre-kernel-linux-e-placas-broadcom/"/>
     <updated>2013-09-03T20:33:00-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2013/09/03/correcao-do-bug-entre-kernel-linux-e-placas-broadcom</id>
-    <content type="html"><![CDATA[<p>{% img left /imgs/catchbug.jpg &lsquo;Catching Big&rsquo; %}
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/catchbug.jpg" title="&lsquo;Catching Big&rsquo;" >
 <strong>B</strong>ug capturado e tratado!</p>
 
 <p><strong>D</strong>iversas pessoas se depararam com intermináveis erros de <em>kernel panic</em> após atualizar seu kernel para a versão <em>3.10.6</em> (e posteriores) quando utilizavam placas wireless da <em>Broadcom</em>. O erro reportado foi tratado e, apesar de ainda não estar resolvido no último kernel lançado, <em>3.10.10</em>, já se encontra na árvore de <em>Linus Torvalds</em>, conforme código e correção podem ser vistos através do seguinte link:</p>
@@ -208,180 +291,6 @@
 <p><strong>A</strong>tualmente estou utilizando o último kernel disponibilizado, o <em>3.10.10</em>. Apesar de a correção ainda não ter saído nesta versão, estou utilizando uma versão do kernel com o patch já aplicado.</p>
 
 <p><strong>E</strong>speremos pelo kernel <em>3.11</em> que deverá ser lançado nos próximos dias e que, por sua vez, deverá resolver este problema definitivamente.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Tornando Seu SSH Mais Seguro]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2013/08/28/tornando-seu-ssh-mais-seguro/"/>
-    <updated>2013-08-28T11:20:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2013/08/28/tornando-seu-ssh-mais-seguro</id>
-    <content type="html"><![CDATA[<p>{% img left /imgs/openssh.png &lsquo;OpenSSH&rsquo; %}
-<strong>O</strong> <em>SSH</em> (Secure Shell) é um dos protocolos mais utilizados atualmente para transferência de arquivos ou mesmo conexão remota, principalmente em ambientes Linux/Unix e, por si só, já tem se provado ser confiável e seguro. O mesmo passou a ser o principal substituto ao <em>TELNET</em> por possuir a vantagem da criptografia na conexão entre o cliente e o servidor, além da possibilidade de criação de túneis, o que chamamos de <em>tunneling</em>, oferecendo assim a capacidade de redirecionar pacotes de dados. Mas não é por isso que devemos nos descuidar&hellip;</p>
-
-<p><strong>S</strong>empre existe espaço para melhorias.</p>
-
-<p><strong>A</strong>s configurações do servidor SSH, geralmente, ficam localizadas em <em>/etc/ssh/sshd_config</em>. Vale lembrar que a cada alteração feita neste arquivo será necessário reiniciar o serviço SSH para que suas alterações possam ser efetivadas.</p>
-
-<p><strong>I</strong>ndo ao que interessa:</p>
-
-<p><strong>1- Altere a porta de escuta do SSH</strong></p>
-
-<p><strong>P</strong>or padrão o SSH aceita conexões na porta 22, portanto é importante alterar esta porta para dificultar as tentativas de ataques aleatórios de brute-force que buscam máquinas que disponibilizam o SSH através da porta padrão. Preferivelmente, é interessante optar por uma porta posterior a 1024, visto que a maioria dos softwares de escaneamento de portas e serviços não fazem uma varredura por portas muito altas. Esta é geralmente uma das primeiras configurações no arquivo <em>/etc/ssh/sshd_config</em>, conforme pode ser visto abaixo:</p>
-
-<p><code>
- Port 22
-</code></p>
-
-<p><strong>2- Permita apenas o protocolo SSH 2</strong></p>
-
-<p><strong>D</strong>ependendo de sua distribuição Linux, o padrão poderá ser a utilização de ambos os protocolos, 1 e 2. A versão 1 do protocolo SSH possui vulnerabilidades bastante conhecidas, portanto é preferível que utilize apenas o protocolo de versão 2, diminuindo assim suas chances de um ataque de inserção, por exemplo, conforme possível com a versão 1 do protocolo. Procure pela seguinte linha de configuração e altere-a mantendo apenas a opção <em>2</em>:</p>
-
-<p><code>
- Protocol 2,1
-</code></p>
-
-<p><strong>3- Decida quais usuários poderão logar-se via SSH</strong></p>
-
-<p><strong>P</strong>ermitir que qualquer usuário possa logar-se via SSH não é aconselhável, da mesma forma que permitir que o usuário root efetue login via SSH também é extremamante desencorajado devido às vulnerabilidades envolvidas. Por possuírem determinados (ou todos, no caso do root) privilégios no sistema, alguns usuários simplesmente não devem ter permissão de login via SSH, evitando assim que alguém utilize ferramentas de brute-force e consiga, por quebra de senha, logar-se em seu servidor com um usuário privilegiado. Para proibir o login do usuário root via SSH, altere a seguinte linha para <em>no</em>:</p>
-
-<p><code>
- PermitRootLogin yes
-</code></p>
-
-<p><strong>P</strong>ara definir quais usuários poderão ter acesso via SSH, insira o nome dos mesmos na seguinte linha, conforme exemplo abaixo:</p>
-
-<p><code>
- AllowUsers usuario1 usuario2 usuario3
-</code></p>
-
-<p><strong>4- Utilize uma chave pública DSA como mecanismo de autenticação</strong></p>
-
-<p><strong>A</strong>o invés de utilizar nomes de usuários e senhas para autenticar-se via SSH, você pode utilizar chaves públicas DSA. Outra opção é utilizar ambos os mecanismos, usuário e senha + chave. Uma das maiores vantagens de se utilizar chaves como mecanismo de autenticação é que você impossibilitará o acesso indevido através de ataques de força bruta ou brute force, pois você não precisará de um login e senha para logar-se ao servidor ou estação. Ao invés disso, você utilizará um par de chaves &ndash; uma pública e uma privada. No cenário de chaves DSA, a chave privada fica em sua máquina e uma cópia da chave pública fica no servidor que você deseja acessar via SSH.</p>
-
-<p><strong>A</strong>o tentar logar-se em um servidor configurado para autenticação via chave DSA, o mesmo verifica as chaves de ambos os lados e, se elas combinarem, autoriza seu login, caso contrário nega sua conexão.</p>
-
-<p><strong>N</strong>o arquivo de configuração do servidor SSH você irá procurar os seguintes parâmetros e deixá-los da seguinte forma:</p>
-
-<p><code>
- RSAAuthentication yes
- PubkeyAuthentication yes
- AuthorizedKeysFile %h/.ssh/authorized_keys
-</code></p>
-
-<p><strong>C</strong>aso você deseje utilizar <em>apenas</em> a autenticação por chaves DSA, você precisará desabilitar a autenticação por senha, deixando como <em>no</em> o seguinte parâmetro:</p>
-
-<p><code>
- PasswordAuthentication no
-</code></p>
-
-<p><strong>A</strong>gora que as regras de configuração para a autenticação via chaves foram criadas, vamos criar as chaves em si.</p>
-
-<p><strong>E</strong>m sua máquina, vamos digitar o seguinte comando para a criação de suas chaves pública e privada:</p>
-
-<p><code>
- $ ssh-keygen -t dsa -C "$(whoami)@$(hostname)-$(date -I)"
-</code></p>
-
-<p><strong>O</strong> sistema lhe perguntará se você deseja escolher um diretório no qual salvar suas chaves. Caso você não especifique nenhum, ele salvará no diretório .ssh que se encontra no home de seu usuário <em>(~/.ssh/id_dsa)</em>. Em seguida lhe perguntará se você deseja criar uma senha para sua chave (não é obrigatório).</p>
-
-<p><strong>A</strong>o finalizar este procedimento você receberá a confirmação de que o procedimento foi realizado. Algo similar a isto:</p>
-
-<p><code>
- Your identification has been saved in /home/username/.ssh/id_dsa.
- Your public key has been saved in /home/username/.ssh/id_dsa.pub.
- The key fingerprint is:
- dd:15:ee:24:20:14:11:01:b8:72:a2:0f:99:4c:79:7f username@localhost-2013-08-28
- The key's randomart image is:
- +--[DSA  1024]---+
- |     ..oB=.   .  |
- |    .    . . . . |
- |  .  .      . +  |
- | oo.o    . . =   |
- |o+.+.   S . . .  |
- |=.   . E         |
- | o    .          |
- |  .              |
- |                 |
- +-----------------+
-</code></p>
-
-<p><strong>O</strong> próximo passo é copiar a sua chave pública para o servidor que você deseja acessar via SSH. Você pode copiar de algumas formas diferentes:</p>
-
-<p><strong>4.1 &ndash; Copiando manualmente</strong></p>
-
-<p><strong>C</strong>opie o conteúdo retornado através do seguinte comando:</p>
-
-<p><code>
- $ cat ~/.ssh/id_dsa.pub
-</code></p>
-
-<p><strong>O</strong> retorno será algo similar a isto:</p>
-
-<p><code>
- ssh-dss AAAAB3NzaC1kc3MAAACBAKWJtlUANTuqKy1NN4bb5qBJLZVMnR+nr84hk7EWnHmpJgipRZ8Y/tUDJTpCab
- GwoMNYmPZaz62Nm5/F5Nl9yzgMmxfGja8OYt3bwir6A379NOWFM2NBq7Q107uH4L+MFszXKoCVn6rM9SddkAJL1V66
- eGX+Y+r1o/8wG773h9P5AAAAFQDh09qovWFzKJk0E58c0oRz9S4UAQAAAIBuVxw+LZDrWVVCLr4WMubRPJuFzXqqHN
- re9RUZ2kMrUENnAenYyJgjcBg7uJJA/wMfn7Oe32e4hvpU7SsXEUf7xT1sKb/UFyX9qTr5G0kkU6t8IYPjIQaqRIOQ
- mnRiqm7JCDd1GTAFU9n/ocK4sNPZDL8KeEEquZmk+ihKcu9FLwAAAIBlz+K7fcZSlA5hKewHOF7fA9IdwdMsbc2Ri7
- bSw4Fv70rQeMnYYUDeHQQJHeJJyScmuHswordGXYKe2tsf7fYn11CW46P9WxCRcargojxJNrRHlF5WiK15fhNMLtfx
- 7/+CSmoXnEUCw8uCCBVduGLyevZ3WC+FEx7/aqJjuUCNJg== username@localhost-2013-08-28
-</code></p>
-
-<p><strong>É</strong> exatamente este conteúdo que precisa ser copiado.</p>
-
-<p><strong>E</strong>m seguida você precisará colar este conteúdo no servidor desejado, porém incrementando dentro do seguinte arquivo (no servidor): <em>~/.ssh/authorized_keys</em></p>
-
-<p><strong>P</strong>ara facilitar, você poderá já ter copiado o arquivo da chave completo para o servidor. Veja nos próximos métodos algumas formas de o fazer.</p>
-
-<p><strong>4.2 &ndash; Método Simples &ndash; Deve ser usado antes de configurar o servidor para permitir autenticação por chaves</strong></p>
-
-<p><strong>S</strong>e o seu arquivo de chave é <em>~/.ssh/id_dsa</em>, você poderá simplesmente digitar o seguinte comando para enviar a chave para o servidor:</p>
-
-<p><code>
- $ ssh-copy-id servidor-remoto.com.br
-</code></p>
-
-<p><strong>C</strong>aso o nome de usuário em sua máquina seja diferente do nome de usuário no servidor, lembre-se de adicionar o nome do usuário do servidor antes do endereço do mesmo:</p>
-
-<p><code>
- $ ssh-copy-id nome-de-usuario@servidor-remoto.com.br
-</code></p>
-
-<p><strong>C</strong>aso o servidor esteja recebendo as conexões SSH em uma porta diferente da padrão (22), utilize (supondo que estamos utilizando a 221):</p>
-
-<p><code>
- $ ssh-copy-id -p 221 nome-de-usuario@servidor-remoto.com.br
-</code></p>
-
-<p><strong>4.3 &ndash; Método Tradicional &ndash; Deve ser usado antes de configurar o servidor para permitir autenticação por chaves</strong></p>
-
-<p><strong>P</strong>or padrão a chave pública precisa ser concatenada no arquivo <em>~/.ssh/authorized_keys</em>. Comece copiando a chave pública para o servidor remoto:</p>
-
-<p><code>
- $ scp ~/.ssh/id_dsa.pub nome-do-usuario@servidor-remoto.com.br:
-</code></p>
-
-<p><strong>O</strong> comando acima copiará a chave pública para o diretório home do usuário citado para o servidor via scp. Não esqueça de inluir o <em>:</em> ao final do endereço do servidor.</p>
-
-<p><strong>C</strong>aso o diretório <em>~/.ssh</em> ainda não exista no servidor, você precisará criá-lo. O mesmo com o arquivo <em>authorized_keys</em>:</p>
-
-<p><code>
- $ ssh nome-do-usuario@servidor-remoto.com.br
- nome-do-usuario@servidor-remoto's password:
- $ mkdir ~/.ssh
- $ cat ~/id_dsa.pub &gt;&gt; ~/.ssh/authorized_keys
- $ rm ~/id_dsa.pub
- $ chmod 600 ~/.ssh/authorized_keys
-</code></p>
-
-<p><strong>O</strong>s últimos dois comandos removem a chave pública do diretório do servidor e definem as permissões para o arquivo <em>authorized_keys</em> de forma que ele apenas possa ser lido ou escrito por você, o dono.</p>
-
-<p><strong>P</strong>ronto, sua chave já está no servidor após seguir uma das dicas acima.</p>
-
-<p><strong>L</strong>embre-se sempre de reiniciar o serviço ssh após efetuar qualquer alteração de configuração.</p>
-
-<p><strong>D</strong>icas simples de serem implementadas mas que irão melhorar bastante a segurança de seu servidor SSH. ;]</p>
 ]]></content>
   </entry>
   
