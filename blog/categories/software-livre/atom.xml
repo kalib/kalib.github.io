@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Software Livre | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/blog/categories/software-livre/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2013-11-07T09:08:57-03:00</updated>
+  <updated>2013-11-22T08:45:21-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -12,6 +12,53 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Dica Rápida - Linux - Informações Sobre Arquivos com o Comando stat]]></title>
+    <link href="http://blog.marcelocavalcante.net/blog/2013/11/22/dica-rapida-linux-informacoes-sobre-arquivos-com-o-comando-stat/"/>
+    <updated>2013-11-22T08:22:00-03:00</updated>
+    <id>http://blog.marcelocavalcante.net/blog/2013/11/22/dica-rapida-linux-informacoes-sobre-arquivos-com-o-comando-stat</id>
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/information.png" title="&lsquo;Information&rsquo;" ></p>
+
+<p><strong>Q</strong>ue os sistemas GNU/Linux possuem uma infinidade de comandos todo mundo sabe, o que nem todos conhecem, na verdade, são alguns comandos simples porém eficientes e importantes. Um deles é justamente o <em>stat</em>.</p>
+
+<p><strong>Q</strong>uando se está em frente ao terminal de um servidor que não possui interface gráfica, tudo o que está a nossa disposição são as ferramentas de linha de comando, portanto é bom conhecer uma boa variedade das mesmas, desde ferramentas para tarefas complexas até ferramentas para as atividades mais simples e banais.</p>
+
+<p><strong>A</strong> dica que deixo hoje é uma ferramenta que muitas pessoas desconhecem: <em>stat</em></p>
+
+<p><strong>O</strong> stat serve para apresentar as informações de status de um arquivo ou sistema de arquivos. Ele apresenta uma série de informações sobre o arquivo que você informar como argumento. Dentre as informações estão o <em>Tamanho</em>, <em>Blocos</em>, <em>Permissões de Acesso</em>, <em>Data e Hora de último acesso</em>, <em>Data e Hora de última modificação</em>, etc.</p>
+
+<p><strong>O</strong> uso é simples, bastando digitar: <em>stat &lt;caminho_do_arquivo_ou_sistema_de_arquivos></em>.</p>
+
+<p><code>
+ [kalib@tuxcaverna ~]$ stat testdisk.log
+  File: “testdisk.log”
+  Size: 102478          Blocks: 208        IO Block: 4096   arquivo comum
+ Device: 804h/2052d      Inode: 27001862    Links: 1
+ Access: (0644/-rw-r--r--)  Uid: ( 1000/   kalib)   Gid: (  100/   users)
+ Access: 2013-11-11 11:31:34.360892496 -0300
+ Modify: 2011-05-10 09:48:46.000000000 -0300
+ Change: 2011-05-11 15:01:29.019407886 -0300
+ Birth: -
+</code></p>
+
+<p>ou</p>
+
+<p><code>
+ [kalib@tuxcaverna ~]$ stat /dev/sda1
+  File: “/dev/sda1”
+  Size: 0               Blocks: 0          IO Block: 4096   arquivo especial de bloco
+ Device: 5h/5d   Inode: 7253        Links: 1     Device type: 8,1
+ Access: (0660/brw-rw----)  Uid: (    0/    root)   Gid: (    6/    disk)
+ Access: 2013-11-22 08:01:39.246618958 -0300
+ Modify: 2013-11-22 08:01:39.246618958 -0300
+ Change: 2013-11-22 08:01:39.246618958 -0300
+ Birth: -
+</code></p>
+
+<p><strong>H</strong>ave fun!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Dica Rápida - Linux - Como Não Deixar Rastros no History]]></title>
@@ -271,26 +318,6 @@
  Sist. Arq.      Tam. Usado Disp. Uso% Montado em
  /dev/sda3        30G   16G   13G  56% /
 </code></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Correção do Bug entre Kernel Linux e Placas Broadcom]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2013/09/03/correcao-do-bug-entre-kernel-linux-e-placas-broadcom/"/>
-    <updated>2013-09-03T20:33:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2013/09/03/correcao-do-bug-entre-kernel-linux-e-placas-broadcom</id>
-    <content type="html"><![CDATA[<p><img class="left" src="/imgs/catchbug.jpg" title="&lsquo;Catching Big&rsquo;" >
-<strong>B</strong>ug capturado e tratado!</p>
-
-<p><strong>D</strong>iversas pessoas se depararam com intermináveis erros de <em>kernel panic</em> após atualizar seu kernel para a versão <em>3.10.6</em> (e posteriores) quando utilizavam placas wireless da <em>Broadcom</em>. O erro reportado foi tratado e, apesar de ainda não estar resolvido no último kernel lançado, <em>3.10.10</em>, já se encontra na árvore de <em>Linus Torvalds</em>, conforme código e correção podem ser vistos através do seguinte link:</p>
-
-<p><a href="https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=2dfca312a91631311c1cf7c090246cc8103de038">mac80211: add a flag to indicate CCK support for HT clients</a></p>
-
-<p><strong>O</strong> problema se dava com o módulo brcm80211 que não conseguia lidar adequadamente com o envio de frames com taxas CCK como parte de uma sessão A-MPDU. Apesar de outros drivers/módulos da broadcom conseguirem conectar-se sem o kernel panic logo na inicialização do sistema, estes ainda podem enfrentar problemas em outros momentos sem esta correção. O patch corrige o erro reportado com módulos brcmsmac bem como outros.</p>
-
-<p><strong>A</strong>tualmente estou utilizando o último kernel disponibilizado, o <em>3.10.10</em>. Apesar de a correção ainda não ter saído nesta versão, estou utilizando uma versão do kernel com o patch já aplicado.</p>
-
-<p><strong>E</strong>speremos pelo kernel <em>3.11</em> que deverá ser lançado nos próximos dias e que, por sua vez, deverá resolver este problema definitivamente.</p>
 ]]></content>
   </entry>
   

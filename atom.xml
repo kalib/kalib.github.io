@@ -4,7 +4,7 @@
   <title><![CDATA[Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2013-11-07T09:08:57-03:00</updated>
+  <updated>2013-11-22T08:45:21-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -12,6 +12,69 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Dica Rápida - Linux - Informações Sobre Arquivos com o Comando stat]]></title>
+    <link href="http://blog.marcelocavalcante.net/blog/2013/11/22/dica-rapida-linux-informacoes-sobre-arquivos-com-o-comando-stat/"/>
+    <updated>2013-11-22T08:22:00-03:00</updated>
+    <id>http://blog.marcelocavalcante.net/blog/2013/11/22/dica-rapida-linux-informacoes-sobre-arquivos-com-o-comando-stat</id>
+    <content type="html"><![CDATA[<p><img class="left" src="http://blog.marcelocavalcante.net/imgs/information.png" title="'Information'" ></p>
+
+<p><strong>Q</strong>ue os sistemas GNU/Linux possuem uma infinidade de comandos todo mundo sabe, o que nem todos conhecem, na verdade, são alguns comandos simples porém eficientes e importantes. Um deles é justamente o <em>stat</em>.</p>
+
+<p><strong>Q</strong>uando se está em frente ao terminal de um servidor que não possui interface gráfica, tudo o que está a nossa disposição são as ferramentas de linha de comando, portanto é bom conhecer uma boa variedade das mesmas, desde ferramentas para tarefas complexas até ferramentas para as atividades mais simples e banais.</p>
+
+<p><strong>A</strong> dica que deixo hoje é uma ferramenta que muitas pessoas desconhecem: <em>stat</em></p>
+
+<p><strong>O</strong> stat serve para apresentar as informações de status de um arquivo ou sistema de arquivos. Ele apresenta uma série de informações sobre o arquivo que você informar como argumento. Dentre as informações estão o <em>Tamanho</em>, <em>Blocos</em>, <em>Permissões de Acesso</em>, <em>Data e Hora de último acesso</em>, <em>Data e Hora de última modificação</em>, etc.</p>
+
+<p><strong>O</strong> uso é simples, bastando digitar: <em>stat &lt;caminho_do_arquivo_ou_sistema_de_arquivos></em>.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> [kalib@tuxcaverna ~]$ stat testdisk.log 
+</span><span class='line'>  File: “testdisk.log”
+</span><span class='line'>  Size: 102478          Blocks: 208        IO Block: 4096   arquivo comum
+</span><span class='line'> Device: 804h/2052d      Inode: 27001862    Links: 1
+</span><span class='line'> Access: (0644/-rw-r--r--)  Uid: ( 1000/   kalib)   Gid: (  100/   users)
+</span><span class='line'> Access: 2013-11-11 11:31:34.360892496 -0300
+</span><span class='line'> Modify: 2011-05-10 09:48:46.000000000 -0300
+</span><span class='line'> Change: 2011-05-11 15:01:29.019407886 -0300
+</span><span class='line'> Birth: -</span></code></pre></td></tr></table></div></figure>
+
+
+<p>ou</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> [kalib@tuxcaverna ~]$ stat /dev/sda1 
+</span><span class='line'>  File: “/dev/sda1”
+</span><span class='line'>  Size: 0               Blocks: 0          IO Block: 4096   arquivo especial de bloco
+</span><span class='line'> Device: 5h/5d   Inode: 7253        Links: 1     Device type: 8,1
+</span><span class='line'> Access: (0660/brw-rw----)  Uid: (    0/    root)   Gid: (    6/    disk)
+</span><span class='line'> Access: 2013-11-22 08:01:39.246618958 -0300
+</span><span class='line'> Modify: 2013-11-22 08:01:39.246618958 -0300
+</span><span class='line'> Change: 2013-11-22 08:01:39.246618958 -0300
+</span><span class='line'> Birth: -</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>H</strong>ave fun!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Dica Rápida - Linux - Como Não Deixar Rastros no History]]></title>
@@ -1233,43 +1296,6 @@ TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 device interrupt 47  base 0xc000</p>
 
 <p><strong>H</strong>appy Hacking&hellip;</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Que tal ajudar o projeto KDE com apenas 1 minuto do seu tempo?]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2011/10/24/que-tal-ajudar-o-projeto-kde-com-apenas-1-minuto-do-seu-tempo/"/>
-    <updated>2011-10-24T14:56:48-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2011/10/24/que-tal-ajudar-o-projeto-kde-com-apenas-1-minuto-do-seu-tempo</id>
-    <content type="html"><![CDATA[<p><img src="http://images4.wikia.nocookie.net/__cb20061120200014/uncyclopedia/images/9/98/Konqi-official-logo-aboutkde-150x250.png" alt="" /></p>
-
-<p><strong>N</strong>ão acredita?</p>
-
-<p><strong>B</strong>om, aparentemente um <strong>banco alemão</strong> acredita que alguns projetos/instituições merecem ser ajudados financeiramente pelo seu impacto/importância.</p>
-
-<p><strong>S</strong>im, o projeto <strong><a href="http://kde.org">KDE</a></strong> está fazendo parte desta lista, mas para conseguir a doação de 1000 euros por parte deste banco, o projeto KDE precisa do seu voto. Sim, apenas seu voto que não leva mais que 1 minuto.</p>
-
-<p><strong>S</strong>e você utiliza o KDE no seu dia a dia, acredito que este seu <strong>1 minuto</strong> já é um ótimo &ldquo;pagamento&rdquo; ao projeto que lhe ajuda diariamente a resolver suas tarefas.</p>
-
-<p><strong>O</strong> banco alemão <strong>ING DiBa</strong> está doando <strong>1000 euros</strong> para <strong>1000 associações</strong>. A seleção será feita via votação online, portanto, se você der um voto para o KDE eV, temos boa chance de ser um dos vencedores.</p>
-
-<p><strong>O</strong> dinheiro será utilizado pelo KDE para financiar sprints, viagens, servidores, etc.</p>
-
-<p><strong>Como fazer para ajudar?</strong></p>
-
-<p><em>1- Acesse <strong><a href="https://verein.ing-diba.de/sonstiges/10115/kde-ev">https://verein.ing-diba.de/sonstiges/10115/kde-ev</a></strong> e clique em <strong>&ldquo;Stimme abgeben&rdquo;</strong>.</em></p>
-
-<p><em>2- Preencha seu email e o código captcha, clicando em seguida em <strong>&ldquo;absenden&rdquo;</strong>.</em></p>
-
-<p><em>3- Você receberá um email para confirmar o voto &ndash; clique no primeiro link deste email.</em></p>
-
-<p><em>4- No website &ndash; clique em <strong>&ldquo;Stimme abgeben&rdquo;</strong>.</em></p>
-
-<p>Você tem direito a 3 votos por conta de email.</p>
-
-<p>Vamos que vamos.</p>
-
-<p>Abraços,</p>
 ]]></content>
   </entry>
   
