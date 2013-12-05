@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Software Livre | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/blog/categories/software-livre/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2013-11-25T09:09:28-03:00</updated>
+  <updated>2013-12-05T09:24:44-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -12,6 +12,92 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Dica Rápida - Linux - Efeito de Texto Sendo Digitado? O pv Resolve]]></title>
+    <link href="http://blog.marcelocavalcante.net/blog/2013/12/05/dica-rapida-linux-efeito-de-texto-sendo-digitado-o-pv-resolve/"/>
+    <updated>2013-12-05T08:37:00-03:00</updated>
+    <id>http://blog.marcelocavalcante.net/blog/2013/12/05/dica-rapida-linux-efeito-de-texto-sendo-digitado-o-pv-resolve</id>
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/monitor.jpg" title="&lsquo;Texto em Monitor&rsquo;" >
+<strong>C</strong>ertamente você já cansou de ver em filmes e/ou séries de TV cenas nas quais um monitor apresenta um texto que, aparentemente, está sendo digitado em tempo real. É claro que eles não possuem uma pessoa digitando aquele texto ou série de comandos no momento da gravação. Então, que tal aprender uma forma de fazer isto no Linux?</p>
+
+<p><strong>O</strong> comando <em>pv</em> realizar perfeitamente este trabalho, podendo inclusive interagir com outros aplicativos e comandos.</p>
+
+<p><strong>M</strong>ão na massa&hellip;</p>
+
+<p><strong>A</strong>ntes de mais nada você precisará instalar o pv em sua distribuição. No Arch Linux, eu utilizo o pacman da forma convencional:</p>
+
+<p><code>
+ [kalib@tuxcaverna ~]$ sudo pacman -S pv
+</code></p>
+
+<p><strong>O</strong> pv está disponível nos repositórios de praticamente todas as distribuições, portanto utilize o gerenciador de pacotes de sua preferência para instalá-lo.</p>
+
+<p><strong>A</strong> utilização é simples, bastando que você utilize algum comando que, de alguma forma, exponha algum texto na tela e em seguida redirecione esta saída para o pv. O pv possui diversos parâmetros, mas eu gosto particularmente de utilizar -qL, onde o <em>q</em> significa &ldquo;quiet&rdquo; e o <em>L</em> significa latência, em seguida insiro um valor para a latência. Vamos ao exemplo:</p>
+
+<p><code>
+ [kalib@tuxcaverna ~]$ echo "Primeiro teste com pv" | pv -qL 20
+ Primeiro teste com pv
+</code></p>
+
+<p><strong>S</strong>e você digitar o mesmo comando, verá que ele irá escrever o texto na tela de forma &ldquo;automática&rdquo;: &ldquo;Primeiro teste com pv&rdquo;.</p>
+
+<p><strong>É</strong> claro, em uma gravação de Hollywood a linha na qual o comando foi passado não deveria aparecer, no caso: <em>[kalib@tuxcaverna ~]$ echo &ldquo;Primeiro teste com pv&rdquo; | pv -qL 20</em>. Que tal inserir um <em>clear</em> antes de nosso comando para limpar a tela antes da execução desejada?</p>
+
+<p><code>
+ [kalib@tuxcaverna ~]$ clear &amp;&amp; echo "Primeiro teste com pv" | pv -qL 20
+</code></p>
+
+<p><strong>P</strong>erceba que desta vez o comando digitado não aparece na tela. A única informação que será exibida será <em>Primeiro teste com pv</em>.</p>
+
+<p><strong>D</strong>iminuindo ou aumentando o valor da latência você diminuirá ou aumentará a velocidade de <em>digitação</em> do texto que você escolheu.</p>
+
+<p><strong>C</strong>omo informei no início, você pode unir o pv com outros programas ou comandos. Que tal fazer com que um texto um pouco maior seja exibido?</p>
+
+<p><strong>P</strong>ara este teste, eu criei um arquivo texto chamado <em>testepv</em>, conforme pode ser visto abaixo:</p>
+
+<p>```
+ [kalib@tuxcaverna ~]$ cat testepv</p>
+
+<p> Não obstante, a contínua expansão de nossa atividade oferece uma interessante oportunidade para verificação de todos os recursos funcionais envolvidos.
+ A prática cotidiana prova que o desenvolvimento contínuo de distintas formas de atuação nos obriga à análise de alternativas às soluções ortodoxas.
+ Por conseguinte, a competitividade nas transações comerciais estende o alcance e a importância da gestão inovadora da qual fazemos parte.
+```</p>
+
+<p><strong>N</strong>este caso, o texto pode ser digitado <em>automaticamente</em> com o pv, da seguinte forma:</p>
+
+<p><code>
+ [kalib@tuxcaverna ~]$ clear &amp;&amp; cat testepv | pv -qL 20
+</code></p>
+
+<p><strong>L</strong>egal? Que tal utilizarmos algo ainda melhor? Já ouviu falar no <em>figlet</em>? É outro comando/aplicativo Linux que muitas pessoas desconhecem. Comece instalando-o em seu sistema, caso você já não o possua. O figlet <em>desenha</em> o seu texto de uma forma um pouco mais <em>enfeitada</em>, se comparado ao puro <em>cat</em> ou <em>echo</em>. Exemplo:</p>
+
+<p>```
+ [kalib@tuxcaverna ~]$ figlet &ldquo;Teste do Figlet&rdquo;</p>
+
+<hr />
+
+<p> |<em>   </em>|<strong>  </strong><em>| |</em> <em><strong>    </strong>| | </em><strong>   |  </strong><em>(</em>) <strong> <em>| | </em></strong>| |<em>
+   | |/ _ \/ <strong>| </strong>/ _ \  / </em><code>|/ _ \  | |_  | |/ _</code> | |/ _ \ <strong>|
+   | |  </strong>/_<em> \ ||  __/ | (</em>| | (<em>) | |  </em>| | | (<em>| | |  __/ |</em>
+   |<em>|_<strong>||</strong></em>/_<em>___|  _</em>,<em>|___/  |</em>|   |<em>|_</em>, |<em>|___|_</em>|</p>
+
+<pre><code>                                            |___/            
+</code></pre>
+
+<p>```</p>
+
+<p><strong>N</strong>esse caso, vamos fazer com que o efeito <em>figlet</em> também pareça estar sendo digitado automaticamente e em tempo real:</p>
+
+<p><code>
+ [kalib@tuxcaverna ~]$ clear &amp;&amp; figlet "Teste do Figlet" | pv -qL 30
+</code></p>
+
+<p><strong>R</strong>esultado interessante, certo? Da mesma forma, o pv pode ser utilizado com diversos outros aplicativos que trazem alguma saída no terminal, como o cowsay e muitos outros. A sua criatividade é o limite.</p>
+
+<p><strong>H</strong>ave fun! \,,/_</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Dica Rápida - Linux - Informações Sobre Arquivos com o Comando stat]]></title>
@@ -233,91 +319,6 @@
 </code></p>
 
 <p><strong>H</strong>ave fun!</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Dica Rápida - Linux - Como Limpar o Conteúdo de um Arquivo Texto Sem Abrir o Mesmo]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2013/09/11/dica-rapida-linux-como-limpar-o-conteudo-de-um-arquivo-texto-sem-abrir-o-mesmo/"/>
-    <updated>2013-09-11T11:05:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2013/09/11/dica-rapida-linux-como-limpar-o-conteudo-de-um-arquivo-texto-sem-abrir-o-mesmo</id>
-    <content type="html"><![CDATA[<p><img class="left" src="/imgs/erase.jpg" title="&lsquo;Erasing text&rsquo;" >
-<strong>A</strong>rquivos de log, por vezes, podem ser muito extensos. Tão extensos que torna-se praticamente impossível a leitura de seu conteúdo com um editor de textos como o vim ou vi. Além disso, muitos deles podem chegar a ocupar Gigas e mais Gigas de seu espaço em disco, o que pode acabar sendo um desperdício de espaço em seu sistema de arquivos.</p>
-
-<p><strong>H</strong>oje passei por um problema deste tipo. Ao atualizar meu Arch Linux, percebi que comecei a receber erros devido ao meu espaço em disco o qual era apontado como &ldquo;insuficiente&rdquo;. O fato é que é muito comum em distribuições Linux utilizarmos um particionamento de forma a isolarmos um pouco cada partição para fins específicos. No meu caso, verifiquei que a minha partição raíz estava mesmo completamente cheia.</p>
-
-<p><code>
- [kalib@tuxcaverna ~]$ df -h /
- Sist. Arq.      Tam. Usado Disp. Uso% Montado em
- /dev/sda3        30G   30G   0M  100% /
-</code></p>
-
-<p><strong>P</strong>ara resolver meu problema comecei limpando os pacotes que ficam em cache desnecessariamente através do pacman:</p>
-
-<p><code>
- [kalib@tuxcaverna ~]$ pacman -Sc
-</code></p>
-
-<p><strong>E</strong>m seguida resolvi verificar quanto de espaço eu estava consumindo com logs de sistema:</p>
-
-<p><code>
- [root@tuxcaverna ~]# cd /var/log
- [root@tuxcaverna ~]# du -h .
-</code></p>
-
-<p><strong>O</strong> comando acima me mostrou que meu diretório de logs estava consumindo mais de 13G. Insano, certo? Na verdade, não. É comum que ao longo dos meses, ou mesmo anos, o sistema acumule logs e mais logs. Uma quantia absurda e, muitas vezes, desnecessária de informações. Como trata-se de meu notebook pessoal e não estou tendo qualquer erro em meu sistema, resolvi limpar estes logs, portanto o primeiro passo é identificar os maiores arquivos. No meu caso foram os arquivos:</p>
-
-<p><code>
- everything.log    kernel.log    daemon.log
-</code></p>
-
-<p><strong>U</strong>ma vez que cada um destes arquivos possuía mais de 3G, resolvi limpá-los completamente. A saída mais rápida e KISS? <em>/dev/null neles</em>.</p>
-
-<p><code>
- [root@tuxcaverna ~]# cat /dev/null &gt;everything.log
-</code></p>
-
-<p><strong>I</strong>sto limpará completamente o conteúdo do arquivo de texto informado. Vejamos o simples exemplo a seguir:</p>
-
-<p><strong>V</strong>amos criar um arquivo de texto vazio chamado <em>teste.txt</em>.</p>
-
-<p><code>
- [root@tuxcaverna ~]# touch teste.txt
-</code></p>
-
-<p><strong>E</strong>m seguida, vamos inserir algum conteúdo no mesmo:</p>
-
-<p><code>
- [root@tuxcaverna ~]# echo "Testando" &gt;teste.txt
-</code></p>
-
-<p><strong>V</strong>erifiquemos se meu texto realmente foi inserido no arquivo:</p>
-
-<p><code>
- [root@tuxcaverna ~]# cat teste.txt
- Testando
-</code></p>
-
-<p><strong>T</strong>udo certo. Agora vamos limpar o mesmo:</p>
-
-<p><code>
- [root@tuxcaverna ~]# cat /dev/null &gt;teste.txt
-</code></p>
-
-<p><strong>A</strong>gora, vamos confirmar se o mesmo foi mesmo zerado:</p>
-
-<p><code>
- [root@tuxcaverna ~]# cat teste.txt
- [root@tuxcaverna ~]#
-</code></p>
-
-<p><strong>M</strong>issão cumprida. Apenas para constar a diferença:</p>
-
-<p><code>
- [kalib@tuxcaverna ~]$ df -h /
- Sist. Arq.      Tam. Usado Disp. Uso% Montado em
- /dev/sda3        30G   16G   13G  56% /
-</code></p>
 ]]></content>
   </entry>
   

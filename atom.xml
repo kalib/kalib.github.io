@@ -4,7 +4,7 @@
   <title><![CDATA[Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2013-11-25T09:09:28-03:00</updated>
+  <updated>2013-12-05T09:24:44-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -12,6 +12,98 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Dica Rápida - Linux - Efeito de Texto Sendo Digitado? O pv Resolve]]></title>
+    <link href="http://blog.marcelocavalcante.net/blog/2013/12/05/dica-rapida-linux-efeito-de-texto-sendo-digitado-o-pv-resolve/"/>
+    <updated>2013-12-05T08:37:00-03:00</updated>
+    <id>http://blog.marcelocavalcante.net/blog/2013/12/05/dica-rapida-linux-efeito-de-texto-sendo-digitado-o-pv-resolve</id>
+    <content type="html"><![CDATA[<p><img class="left" src="http://blog.marcelocavalcante.net/imgs/monitor.jpg" title="'Texto em Monitor'" >
+<strong>C</strong>ertamente você já cansou de ver em filmes e/ou séries de TV cenas nas quais um monitor apresenta um texto que, aparentemente, está sendo digitado em tempo real. É claro que eles não possuem uma pessoa digitando aquele texto ou série de comandos no momento da gravação. Então, que tal aprender uma forma de fazer isto no Linux?</p>
+
+<p><strong>O</strong> comando <em>pv</em> realizar perfeitamente este trabalho, podendo inclusive interagir com outros aplicativos e comandos.</p>
+
+<p><strong>M</strong>ão na massa&hellip;</p>
+
+<p><strong>A</strong>ntes de mais nada você precisará instalar o pv em sua distribuição. No Arch Linux, eu utilizo o pacman da forma convencional:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> [kalib@tuxcaverna ~]$ sudo pacman -S pv</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>O</strong> pv está disponível nos repositórios de praticamente todas as distribuições, portanto utilize o gerenciador de pacotes de sua preferência para instalá-lo.</p>
+
+<p><strong>A</strong> utilização é simples, bastando que você utilize algum comando que, de alguma forma, exponha algum texto na tela e em seguida redirecione esta saída para o pv. O pv possui diversos parâmetros, mas eu gosto particularmente de utilizar -qL, onde o <em>q</em> significa &ldquo;quiet&rdquo; e o <em>L</em> significa latência, em seguida insiro um valor para a latência. Vamos ao exemplo:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> [kalib@tuxcaverna ~]$ echo "Primeiro teste com pv" | pv -qL 20
+</span><span class='line'> Primeiro teste com pv</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>S</strong>e você digitar o mesmo comando, verá que ele irá escrever o texto na tela de forma &ldquo;automática&rdquo;: &ldquo;Primeiro teste com pv&rdquo;.</p>
+
+<p><strong>É</strong> claro, em uma gravação de Hollywood a linha na qual o comando foi passado não deveria aparecer, no caso: <em>[kalib@tuxcaverna ~]$ echo &ldquo;Primeiro teste com pv&rdquo; | pv -qL 20</em>. Que tal inserir um <em>clear</em> antes de nosso comando para limpar a tela antes da execução desejada?</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> [kalib@tuxcaverna ~]$ clear && echo "Primeiro teste com pv" | pv -qL 20</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>P</strong>erceba que desta vez o comando digitado não aparece na tela. A única informação que será exibida será <em>Primeiro teste com pv</em>.</p>
+
+<p><strong>D</strong>iminuindo ou aumentando o valor da latência você diminuirá ou aumentará a velocidade de <em>digitação</em> do texto que você escolheu.</p>
+
+<p><strong>C</strong>omo informei no início, você pode unir o pv com outros programas ou comandos. Que tal fazer com que um texto um pouco maior seja exibido?</p>
+
+<p><strong>P</strong>ara este teste, eu criei um arquivo texto chamado <em>testepv</em>, conforme pode ser visto abaixo:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> [kalib@tuxcaverna ~]$ cat testepv
+</span><span class='line'>
+</span><span class='line'> Não obstante, a contínua expansão de nossa atividade oferece uma interessante oportunidade para verificação de todos os recursos funcionais envolvidos.
+</span><span class='line'> A prática cotidiana prova que o desenvolvimento contínuo de distintas formas de atuação nos obriga à análise de alternativas às soluções ortodoxas.
+</span><span class='line'> Por conseguinte, a competitividade nas transações comerciais estende o alcance e a importância da gestão inovadora da qual fazemos parte.</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>N</strong>este caso, o texto pode ser digitado <em>automaticamente</em> com o pv, da seguinte forma:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> [kalib@tuxcaverna ~]$ clear && cat testepv | pv -qL 20</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>L</strong>egal? Que tal utilizarmos algo ainda melhor? Já ouviu falar no <em>figlet</em>? É outro comando/aplicativo Linux que muitas pessoas desconhecem. Comece instalando-o em seu sistema, caso você já não o possua. O figlet <em>desenha</em> o seu texto de uma forma um pouco mais <em>enfeitada</em>, se comparado ao puro <em>cat</em> ou <em>echo</em>. Exemplo:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> [kalib@tuxcaverna ~]$ figlet "Teste do Figlet"
+</span><span class='line'>  _____         _             _         _____ _       _      _   
+</span><span class='line'> |_   _|__  ___| |_ ___    __| | ___   |  ___(_) __ _| | ___| |_ 
+</span><span class='line'>   | |/ _ \/ __| __/ _ \  / _` |/ _ \  | |_  | |/ _` | |/ _ \ __|
+</span><span class='line'>   | |  __/\__ \ ||  __/ | (_| | (_) | |  _| | | (_| | |  __/ |_ 
+</span><span class='line'>   |_|\___||___/\__\___|  \__,_|\___/  |_|   |_|\__, |_|\___|\__|
+</span><span class='line'>                                                |___/            </span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>N</strong>esse caso, vamos fazer com que o efeito <em>figlet</em> também pareça estar sendo digitado automaticamente e em tempo real:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> [kalib@tuxcaverna ~]$ clear && figlet "Teste do Figlet" | pv -qL 30</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>R</strong>esultado interessante, certo? Da mesma forma, o pv pode ser utilizado com diversos outros aplicativos que trazem alguma saída no terminal, como o cowsay e muitos outros. A sua criatividade é o limite.</p>
+
+<p><strong>H</strong>ave fun! \,,/_</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Recomendação Bibliográfica - As Treze Relíquias]]></title>
@@ -1064,45 +1156,6 @@
 <p><strong>V</strong>amos ver no que isso vai dar&hellip;</p>
 
 <p><strong>A</strong>braços,</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Recomendação Bibliográfica: Mago e Vidro (A Torre Negra - IV)]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2012/02/06/recomendacao-bibliografica-mago-e-vidro-a-torre-negra-iv/"/>
-    <updated>2012-02-06T09:26:17-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2012/02/06/recomendacao-bibliografica-mago-e-vidro-a-torre-negra-iv</id>
-    <content type="html"><![CDATA[<p><a href="http://marcelocavalcante.net/portal/imgs/livros/mago_e_vidro.jpg.pagespeed.ce.z_h39Fy6cb.jpg"><img src="http://marcelocavalcante.net/portal/imgs/livros/mago_e_vidro.jpg.pagespeed.ce.z_h39Fy6cb.jpg" alt="" /></a>****</p>
-
-<p><strong>D</strong>epois de minhas longas férias, estou de volta e começando os posts do ano com uma recomendação bibliográfica: <strong>Mago e Vidro</strong>, o quarto volume da saga <strong>A Torre Negra</strong>.</p>
-
-<p><strong>P</strong>ara quem não conhece a saga, sugiro a leitura dos 3 links a seguir:</p>
-
-<p><a href="http://www.marcelocavalcante.net/portal/2009/06/21/recomendacao-bibliografica-do-voo%C2%BF-o-pistoleiro/"><strong>A Torre Negra vol I &ndash; O Pistoleiro</strong></a></p>
-
-<p><a href="http://www.marcelocavalcante.net/portal/2009/09/08/recomendacao-bibliografica-a-escolha-dos-tres-a-torre-negra-vol-ii/"><strong>A Torre Negra vol II &ndash; A Escolha dos Três</strong></a></p>
-
-<p><a href="http://www.marcelocavalcante.net/portal/2010/02/22/recomendacao-bibliografica-a-torre-negra-vol-iii-as-terras-devastadas/"><strong>A Torre Negra vol III &ndash; As Torres Devastadas</strong></a></p>
-
-<p><strong>N</strong>este 4º livro, o consagrado autor <a href="http://pt.wikipedia.org/wiki/Stephen_King"><strong>Stephen King</strong></a> deixa um pouco de lado a trama inicial na qual os personagens estavam buscando a Torre Negra e foca as mais de 800 páginas do livro no passado do Pistoleiro Roland, mais especificamente em sua adolescência e suas primeiras aventuras.</p>
-
-<p><strong>J</strong>untamente com seus companheiros Cuthbert e Alain, Roland se apaixona e faz amigos e inimigos durante o que parecia uma simples missão passada por seu pai.</p>
-
-<p><strong>P</strong>ara quem já iniciou a saga, recomendo fortemente a continuação e, para quem ainda não iniciou e está sem um bom livro para ler, vale a pena pegar o primeiro livro desta aventura.</p>
-
-<p><strong>S</strong>egue breve sinopse do livro:</p>
-
-<blockquote><p><em>A estranha e inesquecível odisséia de Roland de Gilead em busca da Torre Negra continua. No quarto volume da série imaginada por Stephen King, novos perigos ameaçam o ka-tet de Roland &ndash; formado por Jake, Eddie Dean, Susannah e Oi.</em></p></blockquote>
-
-<p><em>Mago e Vidro retoma a eletrizante narrativa interrompida em As Terras Devastadas. Depois de enfrentar a terrível ameaça do monotrilho Blaine, o último pistoleiro e seus seguidores desembarcam na cidade de Topeka, no Kansas, e retomam o caminho do Feixe de Luz que conduz à Torre Negra. Roland revela então aos companheiros a história de seu passado, e a trágica perda de seu grande amor de juventude, a bela Susan Delgado.</em></p>
-
-<p><em>Prosseguindo em sua jornada, o ka-tet chega a um palácio de vdro verde onde encontra ninguem menos do que o antigo nêmesis de Roland: Marten Broadcloak, conhecido em alguns mundos como Randall Flagg, em outros como Richard Fannin,e em outro ainda como John Farson, o Homem Bom. E Roland e seus companheiros descobrem então uma pavorosa verdade sobre o passado do pistoleiro&hellip;</em></p>
-
-<p><em>Inspirada no universo imaginário de J.R.R. Tolkien e no poema épico do século XIX &ldquo;Childe Roland à Torre Negra Chegou&rdquo;, A Torre Negra mstura ficção científica, fantasia e terror numa narrativa que forma um verdadeiro mosaivo da cultura popular cotemporânea.</em></p>
-
-<p><strong>A</strong>braços</p>
-
-<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
 ]]></content>
   </entry>
   
