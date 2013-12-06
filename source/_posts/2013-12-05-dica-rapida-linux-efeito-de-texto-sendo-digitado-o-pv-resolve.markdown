@@ -13,7 +13,7 @@ categories:
 {% img left /imgs/monitor.jpg 'Texto em Monitor' %}
 **C**ertamente você já cansou de ver em filmes e/ou séries de TV cenas nas quais um monitor apresenta um texto que, aparentemente, está sendo digitado em tempo real. É claro que eles não possuem uma pessoa digitando aquele texto ou série de comandos no momento da gravação. Então, que tal aprender uma forma de fazer isto no Linux?
 
-**O** comando *pv* realizar perfeitamente este trabalho, podendo inclusive interagir com outros aplicativos e comandos.
+**O** comando *pv* realiza perfeitamente este trabalho, podendo inclusive interagir com outros aplicativos e comandos.
 
 **M**ão na massa...
 
