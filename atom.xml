@@ -4,7 +4,7 @@
   <title><![CDATA[Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2013-12-05T09:24:44-03:00</updated>
+  <updated>2013-12-06T09:15:46-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -21,7 +21,7 @@
     <content type="html"><![CDATA[<p><img class="left" src="http://blog.marcelocavalcante.net/imgs/monitor.jpg" title="'Texto em Monitor'" >
 <strong>C</strong>ertamente você já cansou de ver em filmes e/ou séries de TV cenas nas quais um monitor apresenta um texto que, aparentemente, está sendo digitado em tempo real. É claro que eles não possuem uma pessoa digitando aquele texto ou série de comandos no momento da gravação. Então, que tal aprender uma forma de fazer isto no Linux?</p>
 
-<p><strong>O</strong> comando <em>pv</em> realizar perfeitamente este trabalho, podendo inclusive interagir com outros aplicativos e comandos.</p>
+<p><strong>O</strong> comando <em>pv</em> realiza perfeitamente este trabalho, podendo inclusive interagir com outros aplicativos e comandos.</p>
 
 <p><strong>M</strong>ão na massa&hellip;</p>
 
