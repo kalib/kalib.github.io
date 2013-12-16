@@ -4,7 +4,7 @@
   <title><![CDATA[Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2013-12-16T15:12:58-03:00</updated>
+  <updated>2013-12-16T15:52:21-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -12,6 +12,23 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Sobre mim... Tarda mas não falha]]></title>
+    <link href="http://blog.marcelocavalcante.net/blog/2013/12/16/sobre-mim-dot-dot-dot-tarda-mas-nao-falha/"/>
+    <updated>2013-12-16T15:31:00-03:00</updated>
+    <id>http://blog.marcelocavalcante.net/blog/2013/12/16/sobre-mim-dot-dot-dot-tarda-mas-nao-falha</id>
+    <content type="html"><![CDATA[<p><strong>T</strong>arda, mas não falha&hellip; Reza o antigo ditado.</p>
+
+<p><strong>D</strong>a mesma forma, digo-lhes que tardou, mas não falhou. Confesso que nunca parei para elaborar a página &ldquo;Sobre mim&rdquo; deste blog. O link existia no topo, mas sempre esteve &ldquo;Em construção&rdquo;. Preguiça? Falta de interesse? Esquecimento? Acho que um pouco de cada.</p>
+
+<p><strong>H</strong>oje fui surpreendido por uma pessoa que acabou caindo no blog e em seguida me questionou sobre o porque de o blog já existir a tanto tempo e até hoje a página &ldquo;Sobre mim&rdquo; continuar contendo apenas as palavras &ldquo;Em construção&rdquo;.</p>
+
+<p><strong>I</strong>sto me fez tomar vergonha na cara.. e hoje inseri conteúdo <a href="http://blog.marcelocavalcante.net/about/"> nesta página</a>.</p>
+
+<p><strong>A</strong>gora sim&hellip; ;]</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Dica Rápida - Linux - Efeito de Texto Sendo Digitado? O pv Resolve]]></title>
@@ -1115,47 +1132,6 @@
 <p><strong>M</strong>aiores informações, programação e inscrições podem ser feitas <a href="http://railsgirls.com/fortaleza">através deste link</a>.</p>
 
 <p><strong>A</strong>braços!</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Renascimento...de cara nova]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2013/08/01/renascimento-dot-dot-dot-de-cara-nova/"/>
-    <updated>2013-08-01T19:45:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2013/08/01/renascimento-dot-dot-dot-de-cara-nova</id>
-    <content type="html"><![CDATA[<p><strong>E</strong>instein dizia:</p>
-
-<blockquote><p><em>&ldquo;O tempo é relativo e não pode ser medido exatamente do mesmo modo e por toda parte.&rdquo;</em></p></blockquote>
-
-<p><strong>É</strong> claro, isto não justifica o fato de eu ter abandonado o blog por mais de um ano, mas me dá uma certa sensação de&hellip;conforto. Se Albert Einstein afirmava que o tempo é relativo, quem sou eu para questionar isto? 1 ano sem postar&hellip; 1 mês sem postar&hellip; 1 semana sem postar.. o tempo é relativo, certo?! :p</p>
-
-<p><strong>O</strong> fato é que, se é para voltar depois de tanto tempo inativo, que seja com alguma novidade.</p>
-
-<p><strong>N</strong>ovidade?</p>
-
-<p><strong>N</strong>osso amigo Einstein também dizia, <em>&ldquo;Faça as coisas o mais simples que você puder, porém não se restrinja às mais simples.&rdquo;</em></p>
-
-<p><strong>P</strong>ara os que não lembram/conheciam meu antigo blog, se é que existe razão para não lembrar (1 semana sem postar não é nada&hellip;¬¬), abaixo segue uma pequena imagem do mesmo.</p>
-
-<p><img src="http://blog.marcelocavalcante.net/imgs/old_blog.png" height="458" width="400" alt="Antigo blog" /></p>
-
-<p><strong>C</strong>olorido, certo?! Um tanto quanto&hellip; cheio?! Ou, como dizem meus parceiros de surf: <em>Mó crowd velho</em></p>
-
-<p><strong>N</strong>ovamente seguindo os sábios pensamentos de Einstein, pensei: Porque não algo simples? Cá estamos nós. Um blog mais limpo, menos colorido, etc. Mas, a aparência não é tudo o que mudou. Toda a arquitetura e código por baixo do blog também mudaram.</p>
-
-<p><strong>O</strong> antigo blog era mantido com o CMS WordPress, o que me serviu muito bem durante alguns anos, mas resolvi experimentar algo novo. Octopress, cujo lema é: <em>A blogging framework for hackers</em>, ou, <em>Um framework de blogs para hackers</em>.</p>
-
-<p><strong>O</strong> Octopress é um framework para o Jekyll, o gerador de páginas estáticas usado pelo Github Pages. O mesmo funciona de forma bastante simples, lembrando a filosofia KISS (Keep It Simple Stupid), ou seja, simples do sentido de simplicidade e não de facilidade de uso. Como bom usuário de Arch Linux, defendo a filosofia KISS em vários aspectos, portanto resolvi trazê-la para meu blog também.</p>
-
-<blockquote><p><em>&ldquo;A coisa mais bela que o homem pode experimentar é o mistério. É essa emoção fundamental que está na raiz de toda ciência e toda arte.&rdquo;</em></p></blockquote>
-
-<p><strong>Q</strong>uem acha que a frase acima é de Albert Einstein, acertou&hellip;</p>
-
-<p><strong>P</strong>or nunca ter utilizado o Octopress antes, nem mesmo a linguagem de marcação &ldquo;markdown&rdquo;, a qual é utilizada para criação de páginas e posts no Octopress, me senti tentado a experimentar e ver no que isso pode dar.</p>
-
-<p><strong>V</strong>amos ver no que isso vai dar&hellip;</p>
-
-<p><strong>A</strong>braços,</p>
 ]]></content>
   </entry>
   
