@@ -4,7 +4,7 @@
   <title><![CDATA[Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2013-12-17T08:28:25-03:00</updated>
+  <updated>2013-12-19T08:46:38-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -12,6 +12,136 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Dica Rápida - Linux - Troubleshooting em Tempo de Execução com Strace]]></title>
+    <link href="http://blog.marcelocavalcante.net/blog/2013/12/19/dica-rapida-linux-troubleshooting-em-tempo-de-execucao-com-strace/"/>
+    <updated>2013-12-19T08:28:00-03:00</updated>
+    <id>http://blog.marcelocavalcante.net/blog/2013/12/19/dica-rapida-linux-troubleshooting-em-tempo-de-execucao-com-strace</id>
+    <content type="html"><![CDATA[<p><img class="left" src="http://blog.marcelocavalcante.net/imgs/troubleshoot.jpg" title="'Troubleshooting'" >
+<strong>S</strong>e algum dia você já precisou realizar uma análise para troubleshoot de algum comando em tempo de execução e não soube como fazê-lo, seus problemas acabaram. O <strong>strace</strong> faz justamente isso.</p>
+
+<p><strong>J</strong>á trabalhei em servidores de clientes comprometidos pós-invasão cujos comandos padrões <strong>Unix</strong> haviam sido substituídos por comandos <em>similares</em> (ao menos em nome) que realizam outras tarefas sem o conhecimento dos administradores dos mesmos.</p>
+
+<p><strong>O</strong> strace serve justamente para estes, bem como outros, casos. Ele lhe indica exatamente tudo o que acontece <em>por baixo dos panos</em> em seu sistema.</p>
+
+<p><strong>V</strong>ejamos um exemplo.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> [kalib@tuxcaverna ~]$ date
+</span><span class='line'> Qui Dez 19 08:41:55 BRT 2013</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>A</strong>gora vejamos a diferença com o uso do strace.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> [kalib@tuxcaverna ~]$ strace date
+</span><span class='line'> execve("/usr/bin/date", ["date"], [/* 59 vars */]) = 0
+</span><span class='line'> brk(0)                                  = 0x21df000
+</span><span class='line'> access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+</span><span class='line'> open("/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+</span><span class='line'> fstat(3, {st_mode=S_IFREG|0644, st_size=274630, ...}) = 0
+</span><span class='line'> mmap(NULL, 274630, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7fe0d3f3d000
+</span><span class='line'> close(3)                                = 0
+</span><span class='line'> open("/usr/lib/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+</span><span class='line'> read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0&gt;\0\1\0\0\0\20\34\2\0\0\0\0\0"..., 832) = 832
+</span><span class='line'> fstat(3, {st_mode=S_IFREG|0755, st_size=2031229, ...}) = 0
+</span><span class='line'> mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fe0d3f3c000
+</span><span class='line'> mmap(NULL, 3840528, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fe0d39b8000
+</span><span class='line'> mprotect(0x7fe0d3b58000, 2097152, PROT_NONE) = 0
+</span><span class='line'> mmap(0x7fe0d3d58000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1a0000) = 0x7fe0d3d58000
+</span><span class='line'> mmap(0x7fe0d3d5e000, 14864, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fe0d3d5e000
+</span><span class='line'> close(3)                                = 0
+</span><span class='line'> mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fe0d3f3b000
+</span><span class='line'> mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fe0d3f3a000
+</span><span class='line'> arch_prctl(ARCH_SET_FS, 0x7fe0d3f3b700) = 0
+</span><span class='line'> mprotect(0x7fe0d3d58000, 16384, PROT_READ) = 0
+</span><span class='line'> mprotect(0x60d000, 4096, PROT_READ)     = 0
+</span><span class='line'> mprotect(0x7fe0d3f81000, 4096, PROT_READ) = 0
+</span><span class='line'> munmap(0x7fe0d3f3d000, 274630)          = 0
+</span><span class='line'> brk(0)                                  = 0x21df000
+</span><span class='line'> brk(0x2200000)                          = 0x2200000
+</span><span class='line'> open("/usr/lib/locale/locale-archive", O_RDONLY|O_CLOEXEC) = 3
+</span><span class='line'> fstat(3, {st_mode=S_IFREG|0644, st_size=1863120, ...}) = 0
+</span><span class='line'> mmap(NULL, 1863120, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7fe0d37f1000
+</span><span class='line'> close(3)                                = 0
+</span><span class='line'> open("/etc/localtime", O_RDONLY|O_CLOEXEC) = 3
+</span><span class='line'> fstat(3, {st_mode=S_IFREG|0644, st_size=714, ...}) = 0
+</span><span class='line'> fstat(3, {st_mode=S_IFREG|0644, st_size=714, ...}) = 0
+</span><span class='line'> mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fe0d3f80000
+</span><span class='line'> read(3, "TZif2\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\3\0\0\0\3\0\0\0\0"..., 4096) = 714
+</span><span class='line'> lseek(3, -438, SEEK_CUR)                = 276
+</span><span class='line'> read(3, "TZif2\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\3\0\0\0\3\0\0\0\0"..., 4096) = 438
+</span><span class='line'> close(3)                                = 0
+</span><span class='line'> munmap(0x7fe0d3f80000, 4096)            = 0
+</span><span class='line'> fstat(1, {st_mode=S_IFCHR|0600, st_rdev=makedev(136, 2), ...}) = 0
+</span><span class='line'> mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fe0d3f80000
+</span><span class='line'> write(1, "Qui Dez 19 08:42:47 BRT 2013\n", 29Qui Dez 19 08:42:47 BRT 2013
+</span><span class='line'> ) = 29
+</span><span class='line'> close(1)                                = 0
+</span><span class='line'> munmap(0x7fe0d3f80000, 4096)            = 0
+</span><span class='line'> close(2)                                = 0
+</span><span class='line'> exit_group(0)                           = ?
+</span><span class='line'> +++ exited with 0 +++</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>O</strong> strace não é instalado por padrão em todas as distribuições, portanto é possível que você precise instalá-lo com o seu gerenciador de pacotes.</p>
+
+<p><strong>A</strong>lém do uso regular, ele possui diversos parâmetros que podem melhorar ou filtrar o seu uso. Você pode verificar a lista de parâmetros em seu manual de uso:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> [kalib@tuxcaverna ~]$ man strace</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Sobre mim... Tarda mas não falha]]></title>
@@ -1086,52 +1216,6 @@
 <p><strong>O</strong> parâmetro -d determina quando a senha do mesmo expira, ou deverá ser trocada. Você pode determinar uma data específica, a qual deve ser indicada no formato AAAA-MM-DD, porém, ao invés da data, o 0 indica que a senha deverá ser trocada após o primeiro login daquele usuário.</p>
 
 <p><strong>S</strong>imples, certo?!</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Rails Girls em Fortaleza - Um palco para a criatividade feminina]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2013/08/04/rails-girls-em-fortaleza-um-palco-para-a-criatividade-feminina/"/>
-    <updated>2013-08-04T12:17:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2013/08/04/rails-girls-em-fortaleza-um-palco-para-a-criatividade-feminina</id>
-    <content type="html"><![CDATA[<p><img class="center" src="http://blog.marcelocavalcante.net/imgs/evolucao_mulher.jpg" title="'evolução feminina'" ></p>
-
-<p><strong>E</strong> se sua namorada/esposa/irmã/mãe/vizinha/filha da vizinha/&hellip; pudesse finalmente entender que tanto código é esse que você digita no computador?</p>
-
-<p><strong>T</strong>alvez esta seja a sua oportunidade.. ou melhor, a dela!</p>
-
-<p><img class="center" src="http://blog.marcelocavalcante.net/imgs/rails_girls.png" title="'rails girls'" ></p>
-
-<h3>Rails Girls</h3>
-
-<iframe src="http://player.vimeo.com/video/17752439" width="400" height="300" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-
-
-<p><strong>O</strong> vídeo acima é da primeira edição, ocorrida na Finlândia, em 2010.</p>
-
-<p><strong>O</strong> Rails Girls é um evento mundial, o qual acontece em datas diferentes em diversas cidades pelo mundo, inclusive <strong>Fortaleza</strong>.</p>
-
-<p><strong>S</strong>eguindo a descrição oficial do evento&hellip;</p>
-
-<blockquote><p><em>Nosso objetivo é dar ferramentas e uma comunidade para que as mulheres entendam tecnologia e desenvolvam suas próprias ideias. Fazemos isto fornecendo uma grande experiência em construção de coisas e tornando a tecnologia mais acessível.</em></p>
-
-<p><em>Aprenda a desenho, prototipação, programação básica e seja apresentada ao mundo da tecnologia. O Rails Girls nasceu na Finlândia, mas hoje em dia é uma comunidade global de voluntários, sem fins lucrativos.</em></p></blockquote>
-
-<p><strong>M</strong>ais uma vez Fortaleza será a sede de um Rails Girls no Brasil.</p>
-
-<p><strong>V</strong>enha participar desse curso, totalmente gratuito, com dois dias intensivos onde poderá aprender muito sobre o mundo do desenvolvimento de software utilizando Ruby on Rails e ver que computador não é &ldquo;coisa de menino&rdquo;.</p>
-
-<p><strong>E</strong> o melhor, você não precisa saber nada sobre programação! Basta ter vontade de aprender coisas novas.</p>
-
-<p><strong>Q</strong>uando? <strong>16-17 de Agosto, 2013</strong></p>
-
-<p><strong>V</strong>enha aprender como desenvolver aplicativos web com a ajuda de excelentes coaches.</p>
-
-<p><strong>V</strong>ocê precisa de um laptop, curiosidade e imaginação.</p>
-
-<p><strong>M</strong>aiores informações, programação e inscrições podem ser feitas <a href="http://railsgirls.com/fortaleza">através deste link</a>.</p>
-
-<p><strong>A</strong>braços!</p>
 ]]></content>
   </entry>
   

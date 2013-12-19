@@ -955,12 +955,18 @@
         <lastmod>2013-12-16T15:41:57-03:00</lastmod>
     </url>
     <url>
+        <loc>
+            http://blog.marcelocavalcante.net/blog/2013/12/19/dica-rapida-linux-troubleshooting-em-tempo-de-execucao-com-strace/
+        </loc>
+        <lastmod>2013-12-19T08:45:58-03:00</lastmod>
+    </url>
+    <url>
         <loc>http://blog.marcelocavalcante.net/about/</loc>
         <lastmod>2013-12-17T08:28:12-03:00</lastmod>
     </url>
     <url>
         <loc>http://blog.marcelocavalcante.net/</loc>
-        <lastmod>2013-12-16T15:41:57-03:00</lastmod>
+        <lastmod>2013-12-19T08:45:58-03:00</lastmod>
     </url>
     <url>
         <loc>http://blog.marcelocavalcante.net/robots.txt</loc>
@@ -968,6 +974,6 @@
     </url>
     <url>
         <loc>http://blog.marcelocavalcante.net/blog/archives/</loc>
-        <lastmod>2013-12-16T15:41:57-03:00</lastmod>
+        <lastmod>2013-12-19T08:45:58-03:00</lastmod>
     </url>
 </urlset>
