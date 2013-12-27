@@ -9,7 +9,7 @@
   <meta name="author" content="Marcelo Cavalcante Rocha - Kalib">
 
   
-  <meta name="description" content="&ndash; DEV do Arch, qual é sua missão? &ndash; Empacotar antes de qualquer distribuição! &ndash; DEV do Arch o que é que você faz? &ndash; Eu &hellip;">
+  <meta name="description" content="Para quem não conhece, brute-force é um ataque bastante utilizado em serviços web tais como smtp, pop, ssh, ftp, iax dentre outros. O ataque &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -80,6 +80,270 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/01/31/brute-force-o-dirb-lhe-ajuda-a-identificar-vulnerabilidades-em-seu-site/">Brute-force? O Dirb Lhe Ajuda a Identificar Vulnerabilidades Em Seu Site</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-01-31T11:18:37-03:00" pubdate data-updated="true">Jan 31<span>st</span>, 2011</time>
+        
+         | <a href="/blog/2011/01/31/brute-force-o-dirb-lhe-ajuda-a-identificar-vulnerabilidades-em-seu-site/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img src="http://tdistler.com/wp-content/uploads/2010/06/sherlock_tux.jpg" alt="" /></p>
+
+<p><strong>P</strong>ara quem não conhece, brute-force é um ataque bastante utilizado em serviços web tais como smtp, pop, ssh, ftp, iax dentre outros. O ataque consiste em basicamente forçar o login em um determinado serviço que esteja disponível online sem que seja necessário um ataque mais sofisticado ou mesmo grandes conhecimentos sobre a tecnologia em questão. Por ser demasiado simples de se utilizar, visto que existem milhares de ferramentas disponíveis na web para este fim, ele acaba se tornando um dos pesadelos mais constantes dos administradores de redes, SysAdmins, etc.. Pois é um fato! Se você possui um serviço web ele já sofreu tentativa de ataques brute-force. Não sofreu? <del>Não se preocupe, sofrerá.</del> ;]</p>
+
+<p><strong>B</strong>asicamente existem duas formas de brute-force, porém eu prefiro acrescentar uma terceira forma&hellip;rude e grosseira, mas infelizmente já vi casos de pessoas que se utilizam dela, então vamos lá.</p>
+
+<p><strong>1- Brute-force puro ou força bruta</strong>, como prefiram chamar. É a metodologia mais lenta por testar uma quantidade absurdamente grande de combinações de caracteres de forma aleatória a ponto de tentar descobrir uma senha. Utilizam-se classes como &ldquo;alfanuméricos&rdquo;, &ldquo;numéricos&rdquo;, &ldquo;caracteres especiais&rdquo;, etc. Por exemplo. Supondo que nosso alfabeto fosse composto apenas das letras A, B e C. E alguém possui uma senha para um determinado serviço web. Com uma tentativa de brute-force, eu utilizaria uma ferramenta que geraria todas as combinações possíveis a partir destas 3 letras, o que, ocasionalmente, me daria acesso ao serviço uma vez que, com certeza, eu descobriria a senha, uma hora ou outra. A ferramenta começaria a tentar logar com senhas da seguite forma:</p>
+
+<p><em>A
+AA
+AB
+AC
+B
+C
+BA
+BB
+BC
+C
+CA
+CB
+CC
+AAB
+AAC
+&hellip;
+ACABCAACB
+&hellip;</em></p>
+
+<p><strong>E</strong>nfim.. Faria todas as combinações possíveis com estas 3 letras e cedo ou tarde teria sucesso no login, mas&hellip; Nosso alfabeto não é tão pequeno assim. E os números? E os caracteres especiais como %, $, #, @, !, &ldquo;, &amp;, *, (, ), _, &ndash;, +, =, etc&hellip;</p>
+
+<p><strong>J</strong>á imaginaram quantas tentativas seriam necessárias para se descobrir uma senha, por exemplo, de 8 caracteres contendo letras, números e caracteres especiais? o.O</p>
+
+<p><strong>Q</strong>uanto mais demorado for o ataque, mais fácil será de detectar o mesmo.</p>
+
+<p><strong>P</strong>or estas questões ele acaba não sendo a primeira opção para estes ataques. O que nos leva para a outra forma que é a mais utilizada hoje em dia e que tem se provado a mais eficaz, graças a triste realidade global de que as pessoas não possuem uma política eficiente para escolha de suas senhas, acabando por utilizar senhas com palavras reais como: deus, amor, sexo, felicidade, vida, segredo, secreto, etc.</p>
+
+<p><strong>2- Dicionários.</strong> Lembra daquela sua senha que faz sentido e você gosta porque é fácil de lembrar? Aquela &ldquo;deus&rdquo;, &ldquo;amor&rdquo;, &ldquo;sexo&rdquo;, &ldquo;cerveja&rdquo;, etc. Bom, ela corre grandes riscos se passar por um ataque que se utiliza de dicionários. Ataques com dicionários se resumem ao mesmo ataque de tentativa e erro com o intuito de logar em algum serviço web porém de forma mais coerente e orientada. O dicionário consiste em classes ou arquivos texto com uma sequência de palavras pré-formatadas pelo atacante que serão utilizadas como banco de possíveis senhas, ao invés de simplesmente sair tentando todas as combinações possíveis.</p>
+
+<p><strong>S</strong>upondo que sua senha seja &ldquo;cachorro&rdquo;. Eu lanço o ataque de brute-force utilizando-me de um dicionário de strings, ou palavras, que possui as seguintes:</p>
+
+<p><em>amor
+deus
+ceu
+inferno
+gato
+sexo
+divino
+futebol
+cachorro
+galinha
+absurdo
+segredo
+naodigo
+&hellip;
+&hellip;</em></p>
+
+<p><strong>C</strong>omo percebem, é uma simples lista de palavras. Porém, notaram que cachorro está na lista? Bom, o meu ataque faria de forma automática tentativas de login com todas estas possíveis senhas até chegar na vez do &ldquo;cachorro&rdquo;, que me resultaria em acesso à sua conta, serviço, site, aplicação ou o que quer que estivesse <del>&ldquo;protegido&rdquo;</del> com a senha &ldquo;cachorro&rdquo;.</p>
+
+<p><strong>I</strong>magine a mesma senha cachorro. Já imaginou quantas tentativas seriam necessárias com a outra técnica? A de combinações? Imaginem quantas milhares de combinações seriam necessárias utilizando o nosso alfabeto completo até chegarmos à palavra cachorro. o.O</p>
+
+<p><strong>C</strong>laro, quem utiliza-se de dicionários não possui um arquivo de strings tão curto como este exemplo que dei. Sequer apenas em português. Geralmente pegam arquivos prontos na internet que são feitos para este fim que possuem uma infinidade de palavras incluindo nomes próprios, cidades, países, objetos, frutas, etc, etc&hellip;</p>
+
+<p><strong>O</strong>u seja, se você possui uma senha bobinha e que é uma palavra de fato e faz sentido, pense seriamente em trocar por algo um pouco mais elaborado. ;]</p>
+
+<p><strong>S</strong>obre a terceira metodologia, se é que pode-se chamar assim, não possui um nome definido, sequer é reconhecida, porém vou citar pois ela é utilizada em casos mais amadores e específicos. O que seriam esses casos amadores e específicos? Algo como:</p>
+
+<p><em>* mulher/namorada tentando descobrir senha do orkut/email/etc do marido/namorado ou o oposto;
+* jovens tentando descobrir senha de orkut/email/msn/etc de outros jovens por qualquer motivo que o seja (briguinha na escola? o.O)&hellip;</em></p>
+
+<p><strong>3- Lammer ou seja o que deus quizer</strong>. Independente da causa e das pessoas envolvidas, por mais incrível que possa parecer, esta modalidade ainda é bastante utilizada por aí. E o que é pior? Muitas vezes funciona. Não tirando os &ldquo;méritos&rdquo; o.O da pessoa que consegue a senha de alguém através dessa &ldquo;metodologia&rdquo;, mas em 100% 200% dos casos a culpa é apenas da vítima que insiste em colocar uma senha mais do que absurda como por exemplo: telefone de casa, seu número de celular, sua data de nascimento, seu sobre-nome, nome da namorada, nome da sogra <del>(que o Diabo carregue)</del>, etc.</p>
+
+<p><strong>A</strong>cho que já ficou claro como essa metodologia funciona, certo? Caso não, é o seguinte. É um &ldquo;ataque&rdquo; (será que possa chamar assim?) completamente direcionado, como informei anteriormente, onde se conhece o alvo e sabe algumas informações sobre essa pessoa. Neste caso a pessoa, supondo a esposa, não vai se utilizar de tecnologia alguma ou ferramenta específica. Vai apenas abusar do bom senso, torcer pela inocência do marido e tentar a sorte.</p>
+
+<p><strong>E</strong>la abre algum navegador de internet, acessa a página do orkut do cidadão e começa a tentar senhas como: telefone de casa, data de nascimento dele(a), etc.. Sim, ainda hoje vejo senhas simples como estas citadas e que acabam por ser descobertas. E o que é pior? As pessoas dizem: &ldquo;Hackearam minhas senha!&rdquo; hehehe&hellip; Parece exagero? o.O</p>
+
+<p><strong>A</strong>credito que já falei demais sobre isso. Resumi as <del>3</del> 2 técnicas utlizadas para ataques de brute-force. Mas este não é o objetivo principal do post, mas sim como inspecionar seu site ou sistema web para saber se o mesmo está livre de tentativas deste tipo de ataque.</p>
+
+<p><strong>P</strong>ara isso utilizaremos a ferramenta <a href="http://sourceforge.net/projects/dirb/">Dirb</a>.</p>
+
+<p><strong>D</strong>irb é um URL Bruteforcer. Um WCS (Web Content Scanner) que tem a função de buscar por objetos Web Ocultos. Basicamente funciona com o lançamento um ataque baseado em dicionários contra o servidor Web analizando as respostas do mesmo. O principal propósito do Dirb é auditoria em aplicações web.</p>
+
+<p><strong>D</strong>entre as funcionalidades avançadas do Dirb destacam-se:</p>
+
+<p><em>* setar diferentes cookies;
+* adicionar qualquer tipo de HTTP header desejado;
+* utilizar proxys para mascarar a conexão;
+* utilizar catalogos ou arquivos utilizando dicionários definidos ou templates fazendo uma varredura direcionada.</em></p>
+
+<p><strong>M</strong>as, chega de falatório.. vamos ao teclado&hellip;</p>
+
+<p><strong>A</strong> ferramenta pode ser baixada através do site do projeto: <a href="http://sourceforge.net/projects/dirb/">http://sourceforge.net/projects/dirb/</a></p>
+
+<p><a href="http://sourceforge.net/projects/dirb/"></a><strong>A</strong> compilação é simples e sem grandes mistérios.</p>
+
+<p><strong>D</strong>escompacte o arquivo e compile seguindo os seguintes comandos:</p>
+
+<p><em>[kalib@tuxcaverna downloads]$ tar -xvzf dirb203.tar.gz</em></p>
+
+<p><em>[kalib@tuxcaverna downloads]$ cd dirb/</em></p>
+
+<p><em>[kalib@tuxcaverna dirb]$ ./configure</em></p>
+
+<p><em>[kalib@tuxcaverna dirb]$ make</em></p>
+
+<p><strong>P</strong>ronto. O Dirb está pronto para funcionar.</p>
+
+<p><strong>S</strong>e você apenas executar o dirb sem nenhum parâmetros lhe serão apresentados os parâmetros deisponíveis para utilização bem como uma descrição dos mesmos:</p>
+
+<p><em>[kalib@tuxcaverna dirb]$ ./dirb</em></p>
+
+<p><em>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;</em></p>
+
+<p><em>DIRB v2.03</em></p>
+
+<p><em>By The Dark Raver</em></p>
+
+<p><em>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;</em></p>
+
+<p><em>./dirb &lt;url_base> [&lt;wordlist_file(s)>] [options]</em></p>
+
+<p><em>[kalib@tuxcaverna dirb]$ ./dirb
+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-DIRB v2.03    By The Dark Raver&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+./dirb &lt;url_base> [&lt;wordlist_file(s)>] [options]
+&hellip;.
+&hellip;.
+&hellip;.</em></p>
+
+<p><strong>M</strong>as vamos ao uso mais básico.</p>
+
+<p><strong>A</strong> forma mais simples é utilizando apenas a URL que deseja testar, por exemplo _<a href="http://www.meulaboratorio.com.br_">http://www.meulaboratorio.com.br_</a></p>
+
+<p>_[kalib@tuxcaverna dirb]$ ./dirb <a href="http://www.meulaboratorio.com.br_">http://www.meulaboratorio.com.br_</a></p>
+
+<p><em>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;</em></p>
+
+<p><em>DIRB v2.03</em></p>
+
+<p><em>By The Dark Raver</em></p>
+
+<p><em>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;</em></p>
+
+<p><em>START_TIME: Mon Jan 31 10:05:16 2011</em></p>
+
+<p>_URL_BASE: <a href="http://www.meulaboratorio.com.br_">http://www.meulaboratorio.com.br_</a></p>
+
+<p><em>WORDLIST_FILES: wordlists/common.txt</em></p>
+
+<p><em>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;</em></p>
+
+<p><em>GENERATED WORDS: 1942</em></p>
+
+<p><em>&mdash;&mdash; Scanning URL: <a href="http://www.meulaboratorio.com.br/">http://www.meulaboratorio.com.br/</a> &mdash;&mdash;</em></p>
+
+<p>_+ <a href="http://www.meulaboratorio.com.br/A_">http://www.meulaboratorio.com.br/A_</a></p>
+
+<p><em>(FOUND: 301 [Moved Permanently] &ndash; Size: 241)</em></p>
+
+<p>_+ <a href="http://www.meulaboratorio.com.br/a_">http://www.meulaboratorio.com.br/a_</a></p>
+
+<p><em>(FOUND: 200 [Ok] &ndash; Size: 419)</em></p>
+
+<p>_+ <a href="http://www.meulaboratorio.com.br/about_">http://www.meulaboratorio.com.br/about_</a></p>
+
+<p><em>(FOUND: 301 [Moved Permanently] &ndash; Size: 237)</em></p>
+
+<p>_+ <a href="http://www.meulaboratorio.com.br/accessibility/_">http://www.meulaboratorio.com.br/accessibility/_</a></p>
+
+<p><em>==> DIRECTORY</em></p>
+
+<p>_+ <a href="http://www.meulaboratorio.com.br/account_">http://www.meulaboratorio.com.br/account_</a></p>
+
+<p><em>(FOUND: 302 [Moved Temporarily] &ndash; Size: 227)</em></p>
+
+<p>_+ <a href="http://www.meulaboratorio.com.br/accounts_">http://www.meulaboratorio.com.br/accounts_</a></p>
+
+<p><em>(FOUND: 302 [Moved Temporarily] &ndash; Size: 192)</em></p>
+
+<p>_+ <a href="http://www.meulaboratorio.com.br/ad_">http://www.meulaboratorio.com.br/ad_</a></p>
+
+<p><em>(FOUND: 301 [Moved Permanently] &ndash; Size: 223)</em></p>
+
+<p>_+ <a href="http://www.meulaboratorio.com.br/ads/_">http://www.meulaboratorio.com.br/ads/_</a></p>
+
+<p><em>==> DIRECTORY</em></p>
+
+<p><em>&hellip;
+&hellip;
+&hellip;</em></p>
+
+<p><strong>C</strong>ortei pois o resultado seria muito grande. Mas, como podem ver, ele escaneia a URL por diretórios, arquivos, etc., que podem ser alvos de tentativas de brute-force.</p>
+
+<p><strong>N</strong>o nosso simples caso, vi que foi identificado um diretório chamado accounts. Este diretório já é um alvo que merece ser inspecionado com mais atenção pois as chances de ele conter algo que interesse ao invasor são grandes.</p>
+
+<p><strong>C</strong>omo eu havia dito, o Dirb funciona com dicionários. Como devem ter reparado, eu não setei nenhum dicionário, portanto ele utilizou o dicionário padrão &ldquo;common&rdquo;. Mas você pode especificar manualmente qual dicionário deseja utilizar.</p>
+
+<p><strong>N</strong>o diretório dirb, você encontrará um diretório chamado wordlists que conterá os dicionários disponíveis.</p>
+
+<p><em>[kalib@tuxcaverna dirb]$ cd wordlists/</em></p>
+
+<p><em>[kalib@tuxcaverna wordlists]$ ls</em></p>
+
+<p><em>big.txt  catala.txt  common.txt  euskera.txt  extensions_common.txt  indexes.txt  mutations_common.txt  others  small.txt  spanish.txt  stress  vulns</em></p>
+
+<p><strong>B</strong>om, e sobre parâmetros?</p>
+
+<p><strong>V</strong>ou apresentar apenas algumas possibilidades.</p>
+
+<p><strong>P</strong>ara utilização de um dicionário em específico, basta adicionar o nome do dicionário desejado ao final do comando:</p>
+
+<p><em>[kalib@tuxcaverna wordlists]$ ./dirb <a href="http://www.meulaboratorio.com.br">http://www.meulaboratorio.com.br</a> euskera.txt</em></p>
+
+<p><strong>P</strong>ara utilização de SSL, apenas inclua o HTTPS na url desejada:</p>
+
+<p><em>[kalib@tuxcaverna wordlists]$ ./dirb <a href="https://www.meulaboratorio.com.br%C2%A0euskera.tx">https://www.meulaboratorio.com.br%C2%A0euskera.tx</a> -i</em></p>
+
+<p><strong>V</strong>ocê também pode utilizar múltiplos dicionários separando-os com vírgulas:</p>
+
+<p><em>[kalib@tuxcaverna wordlists]$ ./dirb <a href="http://www.meulaboratorio.com.br">http://www.meulaboratorio.com.br</a> euskera.txt,common.txt,spanish.txt,big.txt</em></p>
+
+<p><strong>A</strong>lém disto você pode filtrar sua busca por uma extensão em específico através do parâmetro -X:</p>
+
+<p><em>[kalib@tuxcaverna wordlists]$ ./dirb <a href="http://www.meulaboratorio.com.br">http://www.meulaboratorio.com.br</a> euskera.txt -X .asp,.php,.jsp</em></p>
+
+<p><strong>A</strong>gora é sair experimentando combinações e testando os resultados. Seja criativo em seus testes. ;]</p>
+
+<p><strong>A</strong>braços!</p>
+
+<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -263,78 +527,6 @@ eth1  Link encap:Ethernet  HWaddr <strong>1C:65:9D:6E:65:1B</strong></em></p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/12/20/recomendacao-bibliografica-as-brumas-de-avalon-vol-i-a-senhora-da-magia/">Recomendação Bibliográfica: As Brumas De Avalon Vol I - a Senhora Da Magia</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-12-20T09:54:58-03:00" pubdate data-updated="true">Dec 20<span>th</span>, 2010</time>
-        
-         | <a href="/blog/2010/12/20/recomendacao-bibliografica-as-brumas-de-avalon-vol-i-a-senhora-da-magia/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2010/12/avalon1.jpg"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2010/12/avalon1.jpg" alt="" /></a></p>
-
-<p><strong>S</strong>audações amigos&hellip;</p>
-
-<p><strong>S</strong>entiram saudades?</p>
-
-<p><strong>N</strong>ovamente passei por um jejum em relação ao blog. Sim, motivos de força maior. Tive alguns problemas em relação ao meu laptop portanto fiquei sem condições de dar atenção ao blog por algumas semanas. Agora, de laptop novo, posso voltar à rotina.</p>
-
-<p><strong>N</strong>ada melhor para começar do que assuntos que desopilam, correto? Bom, vésperas de feriado do Natal então, por favor Kalib, nada de baboseiras técnicas.</p>
-
-<p><strong>A</strong> recomendação bibliográfica deste mês é um livro um tanto quanto antigo, porém que ainda hoje me surpreende.</p>
-
-<p><strong>S</strong>e chama As Brumas de Avalon vol I &ndash; A Senhora da Magia.</p>
-
-<p><strong>L</strong>embro que li este livro pela primeira vez cerca de 6 ou 7 anos atrás e como coinscidentemente estou acompanhando uma série sobre o rei Artur, Merlin e companhia, bateu a saudade do livro e resolvi ler novamente. Relembrar a história.</p>
-
-<p><strong>B</strong>om, o livro é sem sombra de dúvidas uma excelente narrativa para quem gosta de contos de época, reinos, magia, etc.</p>
-
-<p><strong>D</strong>iferentemente de todas as histórias conhecidas sobre o rei Artur, seu reinado e conquistas, As Brumas de Avalon contam como tudo aconteceu a partir da perspectiva de mulheres da época que tiveram contato e laços com Artur. Sim, a Sacerdotisa Morgana, que passa a ser a protagonista principal da história, conta sua vida desde sua infância e como ela teve forte, para não dizer fundamental, influência em toda a história de sucesso do Rei Artur.</p>
-
-<p><strong>A</strong>lém de Morgana, o livro aborda a vida e influência de outras mulheres que também tiveram papéis essenciais para o desenvolvimento de Artur bem como de acontecimentos gerais. Vários outros aspectos místicos de antigas religiões como os Druídas e crenças pagãs baseadas no culto de uma Grande Deusa são abordados. Entre conflitos com a Igreja e rituais pagãos, Artur se prepara para assumir seu fardo.</p>
-
-<p><strong>E</strong>m meio a uma série de conflitos religiosos, Artur passa a ser o responsável por unificar e assegurar a harmonia da Bretanha comandando vários Reis que lhe devem jurar fidelidade.</p>
-
-<p><strong>S</strong>egue breve sinopse deste que é o primeiro livro de uma série que conta com 4 volumes retirada do site da <a href="http://www.livrariasaraiva.com.br/produto/2615172/as-brumas-de-avalon-1-a-senhora-da-magia/?ID=BB726B7B7DA0C140A12050458">Livraria Saraiva</a>:</p>
-
-<p><em>Neste enorme e emocionante romance, a lenda do rei Artur é contada pela primeira vez através das vidas, das visões e da percepção das mulheres que nela tiveram um papel central.
-Igraine, Viviane, Guinevere, Morgana. Elas revelam, com as suas vidas e sentimentos, a lenda de Artur, como se fosse nova de, ao mesmo tempo, levam o leitor a integrar-se na história, de maneira natural e profunda.
-Assim, esta obra proporciona uma narrativa soberba de uma lenda, e a recriação dessa lenda, bem como a brilhante contribuição para a literatura do ciclo arturiano.</em></p>
-
-<p><strong>A</strong>braços e um Feliz Natal a todos!</p>
-
-<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2010/12/grinch.jpg"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2010/12/grinch.jpg" alt="" /></a></p>
-
-<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/19/">&larr; Anteriores</a>
@@ -366,6 +558,10 @@ Me conheça melhor <a href="http://blog.marcelocavalcante.net/about">clicando aq
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/12/27/vulnerabilidade-no-firefox-descobrindo-senhas-salvas/">Vulnerabilidade no Firefox - Descobrindo Senhas Salvas</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/12/19/dica-rapida-linux-troubleshooting-em-tempo-de-execucao-com-strace/">Dica Rápida - Linux - Troubleshooting em Tempo de Execução com Strace</a>
       </li>
     
@@ -381,15 +577,11 @@ Me conheça melhor <a href="http://blog.marcelocavalcante.net/about">clicando aq
         <a href="/blog/2013/11/25/recomendacao-bibliografica-as-treze-reliquias/">Recomendação Bibliográfica - As Treze Relíquias</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/11/22/dica-rapida-linux-informacoes-sobre-arquivos-com-o-comando-stat/">Dica Rápida - Linux - Informações Sobre Arquivos com o Comando stat</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categorias</h1>
-    <span id="tag-cloud"><embed type='application/x-shockwave-flash' src='/javascripts/tagcloud.swf'width='100%' height='250' bgcolor='#f2f2f2' id='tagcloudflash' name='tagcloudflash' quality='high' allowscriptaccess='always'flashvars="tcolor=0x333333&amp;tcolor2=0x333333&amp;hicolor=0x000000&amp;tspeed=100&amp;distr=true&amp;mode=tags&amp;tagcloud=%3Ctags%3E%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fandroid%27+style%3D%27font-size%3A+7.1923076923076925%25%27%3EAndroid%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Faptitude%27+style%3D%27font-size%3A+7.1923076923076925%25%27%3EAptitude%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Farch-linux%27+style%3D%27font-size%3A+18.153846153846153%25%27%3EArch+Linux%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fasterisk%27+style%3D%27font-size%3A+7.576923076923077%25%27%3EAsterisk%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fcensura%27+style%3D%27font-size%3A+7.1923076923076925%25%27%3ECensura%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fchromium%27+style%3D%27font-size%3A+7.961538461538462%25%27%3EChromium%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fcultura%27+style%3D%27font-size%3A+7.384615384615385%25%27%3ECultura%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fcultura-hacker%27+style%3D%27font-size%3A+14.884615384615385%25%27%3ECultura+Hacker%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fdebian%27+style%3D%27font-size%3A+7.384615384615385%25%27%3EDebian%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fdia-livre%27+style%3D%27font-size%3A+7.769230769230769%25%27%3EDia+Livre%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Feventos%27+style%3D%27font-size%3A+7.1923076923076925%25%27%3EEventos%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Ffedora%27+style%3D%27font-size%3A+7.1923076923076925%25%27%3EFedora%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Ffirefox%27+style%3D%27font-size%3A+7.384615384615385%25%27%3EFirefox%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fflisol%27+style%3D%27font-size%3A+8.538461538461538%25%27%3EFlisol%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fgoogle%27+style%3D%27font-size%3A+7.769230769230769%25%27%3EGoogle%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fimpressoes%27+style%3D%27font-size%3A+32.0%25%27%3EImpressoes%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fios%27+style%3D%27font-size%3A+7.1923076923076925%25%27%3EiOS%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fjava%27+style%3D%27font-size%3A+8.346153846153847%25%27%3EJava%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fjogos%27+style%3D%27font-size%3A+7.769230769230769%25%27%3EJogos%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fkde%27+style%3D%27font-size%3A+10.26923076923077%25%27%3EKDE%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fkubuntu%27+style%3D%27font-size%3A+7.576923076923077%25%27%3EKubuntu%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fliberdade%27+style%3D%27font-size%3A+7.1923076923076925%25%27%3ELiberdade%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Flinux%27+style%3D%27font-size%3A+25.846153846153847%25%27%3ELinux%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fliteratura%27+style%3D%27font-size%3A+12.0%25%27%3ELiteratura%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fmeio-ambiente%27+style%3D%27font-size%3A+7.769230769230769%25%27%3EMeio+Ambiente%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fpython%27+style%3D%27font-size%3A+8.73076923076923%25%27%3EPython%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Frails%27+style%3D%27font-size%3A+7.1923076923076925%25%27%3ERails%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fredes%27+style%3D%27font-size%3A+10.076923076923077%25%27%3ERedes%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fruby%27+style%3D%27font-size%3A+7.961538461538462%25%27%3ERuby%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fseguranca%27+style%3D%27font-size%3A+12.192307692307693%25%27%3ESeguranca%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fseguranca-digital%27+style%3D%27font-size%3A+7.1923076923076925%25%27%3ESeguranca+Digital%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fsenha%27+style%3D%27font-size%3A+7.1923076923076925%25%27%3ESenha%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fservidor%27+style%3D%27font-size%3A+7.1923076923076925%25%27%3EServidor%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fsoftware-livre%27+style%3D%27font-size%3A+29.5%25%27%3ESoftware+Livre%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fssh%27+style%3D%27font-size%3A+7.1923076923076925%25%27%3ESSH%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fsysadmin%27+style%3D%27font-size%3A+7.1923076923076925%25%27%3ESysAdmin%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Ftux-ce%27+style%3D%27font-size%3A+9.5%25%27%3ETux-ce%3C%2Fa%3E+%3C%2Ftags%3E"></span>
+    <span id="tag-cloud"><embed type='application/x-shockwave-flash' src='/javascripts/tagcloud.swf'width='100%' height='250' bgcolor='#f2f2f2' id='tagcloudflash' name='tagcloudflash' quality='high' allowscriptaccess='always'flashvars="tcolor=0x333333&amp;tcolor2=0x333333&amp;hicolor=0x000000&amp;tspeed=100&amp;distr=true&amp;mode=tags&amp;tagcloud=%3Ctags%3E%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fandroid%27+style%3D%27font-size%3A+7.1923076923076925%25%27%3EAndroid%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Faptitude%27+style%3D%27font-size%3A+7.1923076923076925%25%27%3EAptitude%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Farch-linux%27+style%3D%27font-size%3A+18.153846153846153%25%27%3EArch+Linux%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fasterisk%27+style%3D%27font-size%3A+7.576923076923077%25%27%3EAsterisk%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fcensura%27+style%3D%27font-size%3A+7.1923076923076925%25%27%3ECensura%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fchromium%27+style%3D%27font-size%3A+7.961538461538462%25%27%3EChromium%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fcultura%27+style%3D%27font-size%3A+7.384615384615385%25%27%3ECultura%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fcultura-hacker%27+style%3D%27font-size%3A+14.884615384615385%25%27%3ECultura+Hacker%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fdebian%27+style%3D%27font-size%3A+7.384615384615385%25%27%3EDebian%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fdia-livre%27+style%3D%27font-size%3A+7.769230769230769%25%27%3EDia+Livre%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Feventos%27+style%3D%27font-size%3A+7.1923076923076925%25%27%3EEventos%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Ffedora%27+style%3D%27font-size%3A+7.1923076923076925%25%27%3EFedora%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Ffirefox%27+style%3D%27font-size%3A+7.576923076923077%25%27%3EFirefox%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fflisol%27+style%3D%27font-size%3A+8.538461538461538%25%27%3EFlisol%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fgoogle%27+style%3D%27font-size%3A+7.769230769230769%25%27%3EGoogle%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fimpressoes%27+style%3D%27font-size%3A+32.0%25%27%3EImpressoes%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fios%27+style%3D%27font-size%3A+7.1923076923076925%25%27%3EiOS%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fjava%27+style%3D%27font-size%3A+8.346153846153847%25%27%3EJava%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fjogos%27+style%3D%27font-size%3A+7.769230769230769%25%27%3EJogos%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fkde%27+style%3D%27font-size%3A+10.26923076923077%25%27%3EKDE%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fkubuntu%27+style%3D%27font-size%3A+7.576923076923077%25%27%3EKubuntu%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fliberdade%27+style%3D%27font-size%3A+7.1923076923076925%25%27%3ELiberdade%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Flinux%27+style%3D%27font-size%3A+25.846153846153847%25%27%3ELinux%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fliteratura%27+style%3D%27font-size%3A+12.0%25%27%3ELiteratura%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fmeio-ambiente%27+style%3D%27font-size%3A+7.769230769230769%25%27%3EMeio+Ambiente%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fpython%27+style%3D%27font-size%3A+8.73076923076923%25%27%3EPython%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Frails%27+style%3D%27font-size%3A+7.1923076923076925%25%27%3ERails%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fredes%27+style%3D%27font-size%3A+10.076923076923077%25%27%3ERedes%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fruby%27+style%3D%27font-size%3A+7.961538461538462%25%27%3ERuby%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fseguranca%27+style%3D%27font-size%3A+12.384615384615385%25%27%3ESeguranca%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fseguranca-digital%27+style%3D%27font-size%3A+7.1923076923076925%25%27%3ESeguranca+Digital%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fsenha%27+style%3D%27font-size%3A+7.1923076923076925%25%27%3ESenha%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fservidor%27+style%3D%27font-size%3A+7.1923076923076925%25%27%3EServidor%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fsoftware-livre%27+style%3D%27font-size%3A+29.692307692307693%25%27%3ESoftware+Livre%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fssh%27+style%3D%27font-size%3A+7.1923076923076925%25%27%3ESSH%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fsysadmin%27+style%3D%27font-size%3A+7.1923076923076925%25%27%3ESysAdmin%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Ftux-ce%27+style%3D%27font-size%3A+9.5%25%27%3ETux-ce%3C%2Fa%3E+%3C%2Ftags%3E"></span>
 </section>
 <section>
   <h1>Estou lendo</h1>

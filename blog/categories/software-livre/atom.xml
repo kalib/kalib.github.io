@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Software Livre | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/blog/categories/software-livre/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2013-12-19T08:46:38-03:00</updated>
+  <updated>2013-12-27T09:45:44-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -12,6 +12,65 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Vulnerabilidade no Firefox - Descobrindo Senhas Salvas]]></title>
+    <link href="http://blog.marcelocavalcante.net/blog/2013/12/27/vulnerabilidade-no-firefox-descobrindo-senhas-salvas/"/>
+    <updated>2013-12-27T08:40:00-03:00</updated>
+    <id>http://blog.marcelocavalcante.net/blog/2013/12/27/vulnerabilidade-no-firefox-descobrindo-senhas-salvas</id>
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/firefox_pass.png" title="&lsquo;Firefox Peaces&rsquo;" >
+<strong>U</strong>ma coisa é certa&hellip; usuários teimam em salvar senhas em navegadores para <em>facilitar</em> suas vidas durante a navegação na internet. Seja em emails, redes sociais, serviços online ou qualquer outra coisa, a opção <em>Salvar sua senha</em> parece possuir um enorme magnetismo ou um centro gravitacional extremamente denso a ponto de atrair o usuário para tal.</p>
+
+<p><strong>S</strong>erá que as pessoas não entendem o quão perigosa é a ideia de <em>salvar sua senha</em> onde quer que seja? É, praticamente, o mesmo risco assumido por quem anota suas senhas em <em>post-its</em> e os colam em seu monitor ou mesa.</p>
+
+<p><strong>H</strong>oje um colega me procurou para saber como recuperar uma senha que ele não lembrava mais. Já conhecendo o histórico do mesmo eu tinha certeza que ele tinha salvo esta senha no navegador. Então lhe mostrei como ele, ou qualquer outra pessoa, conseguiria facilmente descobrir todas as senhas salvas em seu navegador Firefox. A experiência foi boa por dois motivos:</p>
+
+<ol>
+<li>Ele conseguiu descobrir sua senha; <em>(a qual ele provavelmente não esqueceria se tivesse o costume de digitá-la sempre que necessário ao invés de salá-la no navegador)</em></li>
+<li>Ele entendeu o risco que ele corre com esta prática absurda;</li>
+</ol>
+
+
+<p><strong>V</strong>ejamos o quão <strong>simples</strong> <em>(para não dizer estúpido)</em> é o procedimento para descobrir as senhas salvas pelo usuário no navegador Firefox.</p>
+
+<ol>
+<li>Clique no menu <strong>Firefox</strong> que se encontra no canto superior esquerdo do navegador;</li>
+</ol>
+
+
+<p><img class="center" src="/imgs/firefox_pass_1.png" title="&lsquo;Firefox Pass 1&rsquo;" ></p>
+
+<ol>
+<li>Selecione a opção <strong>Preferências</strong> no menu e em seguida, novamente, <strong>Preferências</strong>;</li>
+</ol>
+
+
+<p><img class="center" src="/imgs/firefox_pass_2.png" title="&lsquo;Firefox Pass 2&rsquo;" ></p>
+
+<ol>
+<li>Na aba <strong>Segurança</strong>, clique no botão <strong>Senhas Salvas</strong>;</li>
+</ol>
+
+
+<p><img class="center" src="/imgs/firefox_pass_3.png" title="&lsquo;Firefox Pass 3&rsquo;" ></p>
+
+<ol>
+<li>Repare que na janela que será apresentada você terá uma lista de sites/serviços e usuários que deixaram suas senhas salvas. Nesta janela, clique no botão <strong>Mostrar Senhas</strong>;</li>
+</ol>
+
+
+<p><img class="center" src="/imgs/firefox_pass_4.png" title="&lsquo;Firefox Pass 4&rsquo;" ></p>
+
+<ol>
+<li>Agora você poderá ver as senhas salvas em texto plano, limpo e claro.</li>
+</ol>
+
+
+<p><img class="center" src="/imgs/firefox_pass_5.png" title="&lsquo;Firefox Pass 5&rsquo;" ></p>
+
+<p><strong>Lição aprendida: Não salve suas senhas!</strong></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Dica Rápida - Linux - Troubleshooting em Tempo de Execução com Strace]]></title>
@@ -242,89 +301,6 @@
 </code></p>
 
 <p><strong>H</strong>ave fun!</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Dica Rápida - Linux - Como Não Deixar Rastros no History]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2013/11/07/dica-rapida-linux-como-nao-deixar-rastros-no-history/"/>
-    <updated>2013-11-07T08:16:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2013/11/07/dica-rapida-linux-como-nao-deixar-rastros-no-history</id>
-    <content type="html"><![CDATA[<p><img class="left" src="/imgs/shhh.jpg" title="&lsquo;Shhhh&rsquo;" ></p>
-
-<p><strong>S</strong>hhhhhhh&hellip;.</p>
-
-<p><strong>Q</strong>ue tal digitar seus comandos em uma máquina Linux sem que os mesmos sejam registrados no <em>history</em> do sistema?</p>
-
-<p><strong>O</strong> history é responsável por armazenar um histórico dos últimos comandos digitados no sistema. Por exemplo:</p>
-
-<p>```
- [kalib@tuxcaverna ~]$ history</p>
-
-<pre><code>1  ls
-2  mkdir pc
-3  cd pc/
-4  ls
-5  mkdir pc2
-6  ls
-7  touch ps2/teste
-8  ls
-9  touch /
-...
-...
-496  route
-497  ifconfig
-498  cat teste 
-499  ls
-500  history
-</code></pre>
-
-<p>```</p>
-
-<p><strong>C</strong>omo podemos ver, o history me retornou um histórico dos meus últimos 500 comandos, incluindo o próprio comando <em>history</em>, que acabei de digitar.</p>
-
-<p><strong>V</strong>ejamos o registro de novos comandos:</p>
-
-<p><code>
- [kalib@tuxcaverna ~]$ echo "Teste"
- Teste
- [kalib@tuxcaverna ~]$ echo "Registra isso history"
- Registra isso history
- [kalib@tuxcaverna ~]$ history
- ...
- ...
- 501  echo "Teste"
- 502  echo "Registra isso history"
- 503  history
-</code></p>
-
-<p><strong>E</strong>ntão, como não deixar registros no history? Utilizaremos os comandos <em>cat</em> e <em>bash</em> para isto:</p>
-
-<p>```
- [kalib@tuxcaverna ~]$ cat | bash
- pwd
- /home/kalib</p>
-
-<p> df -h
- Sist. Arq.      Tam. Usado Disp. Uso% Montado em
- /dev/sda3        30G   19G  9,3G  67% /
- dev             2,9G     0  2,9G   0% /dev
- run             2,9G  860K  2,9G   1% /run
- tmpfs           2,9G     0  2,9G   0% /dev/shm
- tmpfs           2,9G     0  2,9G   0% /sys/fs/cgroup
- tmpfs           2,9G  108K  2,9G   1% /tmp
- /dev/sda1        99M   23M   69M  25% /boot
- /dev/sda4       427G  305G  101G  76% /home</p>
-
-<p> cd testes</p>
-
-<p> pwd
- /home/kalib/testes
-```</p>
-
-<p><strong>S</strong>imples, não?</p>
-
-<p><strong>H</strong>appy hacking&hellip;</p>
 ]]></content>
   </entry>
   

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Seguranca | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/blog/categories/seguranca/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2013-12-19T08:46:38-03:00</updated>
+  <updated>2013-12-27T09:45:44-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -12,6 +12,65 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Vulnerabilidade no Firefox - Descobrindo Senhas Salvas]]></title>
+    <link href="http://blog.marcelocavalcante.net/blog/2013/12/27/vulnerabilidade-no-firefox-descobrindo-senhas-salvas/"/>
+    <updated>2013-12-27T08:40:00-03:00</updated>
+    <id>http://blog.marcelocavalcante.net/blog/2013/12/27/vulnerabilidade-no-firefox-descobrindo-senhas-salvas</id>
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/firefox_pass.png" title="&lsquo;Firefox Peaces&rsquo;" >
+<strong>U</strong>ma coisa é certa&hellip; usuários teimam em salvar senhas em navegadores para <em>facilitar</em> suas vidas durante a navegação na internet. Seja em emails, redes sociais, serviços online ou qualquer outra coisa, a opção <em>Salvar sua senha</em> parece possuir um enorme magnetismo ou um centro gravitacional extremamente denso a ponto de atrair o usuário para tal.</p>
+
+<p><strong>S</strong>erá que as pessoas não entendem o quão perigosa é a ideia de <em>salvar sua senha</em> onde quer que seja? É, praticamente, o mesmo risco assumido por quem anota suas senhas em <em>post-its</em> e os colam em seu monitor ou mesa.</p>
+
+<p><strong>H</strong>oje um colega me procurou para saber como recuperar uma senha que ele não lembrava mais. Já conhecendo o histórico do mesmo eu tinha certeza que ele tinha salvo esta senha no navegador. Então lhe mostrei como ele, ou qualquer outra pessoa, conseguiria facilmente descobrir todas as senhas salvas em seu navegador Firefox. A experiência foi boa por dois motivos:</p>
+
+<ol>
+<li>Ele conseguiu descobrir sua senha; <em>(a qual ele provavelmente não esqueceria se tivesse o costume de digitá-la sempre que necessário ao invés de salá-la no navegador)</em></li>
+<li>Ele entendeu o risco que ele corre com esta prática absurda;</li>
+</ol>
+
+
+<p><strong>V</strong>ejamos o quão <strong>simples</strong> <em>(para não dizer estúpido)</em> é o procedimento para descobrir as senhas salvas pelo usuário no navegador Firefox.</p>
+
+<ol>
+<li>Clique no menu <strong>Firefox</strong> que se encontra no canto superior esquerdo do navegador;</li>
+</ol>
+
+
+<p><img class="center" src="/imgs/firefox_pass_1.png" title="&lsquo;Firefox Pass 1&rsquo;" ></p>
+
+<ol>
+<li>Selecione a opção <strong>Preferências</strong> no menu e em seguida, novamente, <strong>Preferências</strong>;</li>
+</ol>
+
+
+<p><img class="center" src="/imgs/firefox_pass_2.png" title="&lsquo;Firefox Pass 2&rsquo;" ></p>
+
+<ol>
+<li>Na aba <strong>Segurança</strong>, clique no botão <strong>Senhas Salvas</strong>;</li>
+</ol>
+
+
+<p><img class="center" src="/imgs/firefox_pass_3.png" title="&lsquo;Firefox Pass 3&rsquo;" ></p>
+
+<ol>
+<li>Repare que na janela que será apresentada você terá uma lista de sites/serviços e usuários que deixaram suas senhas salvas. Nesta janela, clique no botão <strong>Mostrar Senhas</strong>;</li>
+</ol>
+
+
+<p><img class="center" src="/imgs/firefox_pass_4.png" title="&lsquo;Firefox Pass 4&rsquo;" ></p>
+
+<ol>
+<li>Agora você poderá ver as senhas salvas em texto plano, limpo e claro.</li>
+</ol>
+
+
+<p><img class="center" src="/imgs/firefox_pass_5.png" title="&lsquo;Firefox Pass 5&rsquo;" ></p>
+
+<p><strong>Lição aprendida: Não salve suas senhas!</strong></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Dica Rápida - Linux - Troubleshooting em Tempo de Execução com Strace]]></title>
@@ -237,54 +296,6 @@
 </code></p>
 
 <p><strong>H</strong>appy Hacking!</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[BleachBit - Limpeza de Disco no Linux]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2013/10/23/bleachbit-limpeza-de-disco-no-linux/"/>
-    <updated>2013-10-23T09:02:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2013/10/23/bleachbit-limpeza-de-disco-no-linux</id>
-    <content type="html"><![CDATA[<p><img class="left" src="/imgs/disk-cleanup.jpg" title="&lsquo;Limpeza de Disco&rsquo;" >
-<strong>Q</strong>uando o assunto é segurança da informação, muitas vezes o óbvio é deixado de lado. Se pensa em anti-vírus, firewall, IDS (Intrusion Detection System), etc. Mas e o básico e óbvio? Raramente vejo profissionais preocupados com o lixo existente nos discos rígidos. Com <em>lixo</em> eu quero dizer aqueles arquivos temporários, antigos arquivos de cache que já não são necessários, ou mesmo rastros de informações de arquivos que já foram deletados. Sim, o fato de você deletar arquivos não significa que as informações daqueles arquivos foram completamente apagadas do disco. A <em>&ldquo;deleção regular de arquivos&rdquo;</em> não está apagando <em>os dados deletados</em>. Ela está apenas removendo os links dos inodes de arquivos, tornando assim possível a recuperação dos arquivos <em>deletados</em> com algum software forense.</p>
-
-<p><strong>E</strong>xistem várias alternativas para remover seus arquivos de forma segura. As alternativas poderão variar de acordo com o sistema de arquivos utilizado em seu disco, é claro. Uma das formas mais simples que conheço é através da ferramenta <strong>BleachBit</strong>.</p>
-
-<p><strong>B</strong>leachBit é um software livre criado para limpar e liberar espaço em disco, gerenciando assim melhor a sua privacidade e otimizando sistemas computacionais. Criado em 2008 para sistemas GNU/Linux, partiu de um controverso e polêmico debate sobre a necessidade de o GNU/Linux necessitar de uma ferramenta para limpeza de registros. Posteriormente o BleachBit passou a suportar também sistemas Microsoft Windows.</p>
-
-<p><strong>C</strong>om esta ferramenta você poderá não apenas limpar seu espaço em disco, mas também limpar vários arquivos típicos do sistema que não são necessários na maioria dos casos a longo prazo, arquivos estes que podem dar ao intruso informações desnecessárias sobre suas atividades. Não desejamos isto&hellip;</p>
-
-<p><strong>A</strong> instalação do mesmo é feita de forma simples e convencional. No caso do archlinux, o pacote se encontra disponível no repositório [community], portanto pode ser instalado regularmente através do pacman.</p>
-
-<p>```
- [kalib@tuxcaverna ~]$ sudo pacman -Ss bleachbit
- [sudo] password for kalib:
- community/bleachbit 0.9.6-1</p>
-
-<pre><code>Deletes unneeded files to free disk space and maintain privacy
-</code></pre>
-
-<p> [kalib@tuxcaverna ~]$ sudo pacman -S bleachbit
-```</p>
-
-<p><strong>N</strong>a maioria das distribuições baseadas em Debian, tal como o Ubuntu, o pacote poderá ser instalado através do aptitude ou apt-get:</p>
-
-<p><code>
- $ sudo apt-get update
- $ sudo apt-get install bleachbit
-</code></p>
-
-<p><strong>O</strong> BleachBit possui uma interface gráfica simples, na qual você poderá selecionar o que você deseja destruir. Lembre-se que algumas funções são experimentais e podem causar problemas em seu sistema. Mas não há necessidade de se preocupar: O BleachBit lhe informa sobre isto e lhe dá a chance de cancelar a operação selecionada. ;]</p>
-
-<p><strong>O</strong> BleachBit possui uma vasta lista de <em>cleaners</em>, como ele chama as ferramentas internas de limpeza. Dentre a longa lista, podemos citar alguns como: <em>Adanaxis, Adobe Reader, aMSN, aMule, APT, Audacious, Bash, Beagle, Chromium, Downloader for X, Deep scan, Easytag, ELinks, emesene, Epiphany, Evolution, Exaile, Filezilla, Firefox, Flash, gedit, gFTP, GIMP, etc.</em> A lista é realmente longa. <a href="http://bleachbit.sourceforge.net/features">Lista completa de cleaners e demais recursos.</a></p>
-
-<p><strong>P</strong>ara executar o programa, basta procurar o mesmo através do menu de aplicativos de seu sistema, ou através do comando:</p>
-
-<p><code>
- [kalib@tuxcaverna ~]$ bleachbit
-</code></p>
-
-<p><strong>H</strong>ave fun!</p>
 ]]></content>
   </entry>
   
