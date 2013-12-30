@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Seguranca | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/blog/categories/seguranca/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2013-12-30T09:36:22-03:00</updated>
+  <updated>2013-12-30T09:40:16-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -20,6 +20,8 @@
     <id>http://blog.marcelocavalcante.net/blog/2013/12/30/navegacao-anonima-atraves-da-rede-tor</id>
     <content type="html"><![CDATA[<p><img class="left" src="/imgs/tor_logo.png" title="&lsquo;Tor&rsquo;" >
 <strong>O</strong> ano de 2013 foi marcado por diversos acontecimentos de grande repercussão e, sem sombra de dúvidas, um deles foi o escândalo causado pelo vazamento de dados que provaram que algumas instituições, dentre elas a <em>NSA</em> (Agência de Segurança dos Estados Unidos), estavam espionando diversas entidades, empresas e até mesmo pessoas físicas nas mais diversas regiões do globo. Escândalos a parte, estas denúncias acabaram despertando um pouco mais (uma pena que não tenha sido muito mais) nas pessoas o interesse em preservar sua privacidade.</p>
+
+<p><strong>S</strong>endo assim, nada mais justo que dedicar o último post do ano ao <em>Tor</em>.</p>
 
 <p><strong>A</strong>inda vivemos em um mundo (principalmente nosso querido Brasil) onde as pessoas parecem simplesmente não se importar com o quesito privacidade. Não é difícil encontrar praticamente todas as informações sobre a maioria das pessoas pois elas mesmas fazem questão de expor isto aos sete ventos através das redes e mídias sociais. Divulgam dezenas de fotos de sua pessoa, bem como de seus parentes, informam dados pessoais, rotinas, locais que frequentam, horários, local de trabalho, amizades, áreas de interesse, etc. A lista é longa&hellip;</p>
 
@@ -66,6 +68,8 @@
 
 
 <p><strong>A</strong> rede Tor possui uma espécio de domínio próprio com terminação <em>.onion</em>, acessível apenas através da própria rede Tor. Páginas com este domínio são parte da chamada Deep Web, mas isto será assunto para um outro post por ser algo polêmico e extenso.</p>
+
+<p><strong>D</strong>esejo a todos um feliz ano novo com liberdade, privacidade e anonimato, quando necessário!</p>
 
 <p><strong>H</strong>appy Hacking!</p>
 ]]></content>
