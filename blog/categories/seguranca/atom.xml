@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Seguranca | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/blog/categories/seguranca/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2013-12-27T09:45:44-03:00</updated>
+  <updated>2013-12-30T09:36:22-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -12,6 +12,64 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Navegação Anônima Através da Rede Tor]]></title>
+    <link href="http://blog.marcelocavalcante.net/blog/2013/12/30/navegacao-anonima-atraves-da-rede-tor/"/>
+    <updated>2013-12-30T08:15:00-03:00</updated>
+    <id>http://blog.marcelocavalcante.net/blog/2013/12/30/navegacao-anonima-atraves-da-rede-tor</id>
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/tor_logo.png" title="&lsquo;Tor&rsquo;" >
+<strong>O</strong> ano de 2013 foi marcado por diversos acontecimentos de grande repercussão e, sem sombra de dúvidas, um deles foi o escândalo causado pelo vazamento de dados que provaram que algumas instituições, dentre elas a <em>NSA</em> (Agência de Segurança dos Estados Unidos), estavam espionando diversas entidades, empresas e até mesmo pessoas físicas nas mais diversas regiões do globo. Escândalos a parte, estas denúncias acabaram despertando um pouco mais (uma pena que não tenha sido muito mais) nas pessoas o interesse em preservar sua privacidade.</p>
+
+<p><strong>A</strong>inda vivemos em um mundo (principalmente nosso querido Brasil) onde as pessoas parecem simplesmente não se importar com o quesito privacidade. Não é difícil encontrar praticamente todas as informações sobre a maioria das pessoas pois elas mesmas fazem questão de expor isto aos sete ventos através das redes e mídias sociais. Divulgam dezenas de fotos de sua pessoa, bem como de seus parentes, informam dados pessoais, rotinas, locais que frequentam, horários, local de trabalho, amizades, áreas de interesse, etc. A lista é longa&hellip;</p>
+
+<p><strong>F</strong>elizmente algumas pessoas já começaram a atentar para a importância de manter sua privacidade e, para tal, passaram a buscar maneiras alternativas para <em>driblar</em> estas <em>espionagens</em> e outras formas de golpes tão comuns hoje em dia, mantendo assim o seu anonimato durante sua navegação. A rede <strong>Tor</strong>, ou <em>The Onion Router</em>, surgiu basicamente com este propósito.</p>
+
+<p><strong>T</strong>or é uma rede de computadores distribuída cuja finalidade primária é manter o anonimato na <em>internet</em>. Seu objetivo básico é garantir a privacidade e anonimato do usuário que está navegando através desta rede. Apesar de o uso do Tor ser simplificado em sistemas GNU/Linux, visto que a maioria das distribuições disponibilizam o pacote do Tor, também existem versões para sistemas Windows e Mac OS. Trata-se de uma rede de túneis criptografados, onde os roteadores da rede são computadores de usuários comuns que estão rodando um programa e possuem acesso à internet.</p>
+
+<p><strong>B</strong>asicamente, o usuário instala um programa, <em>tor-cliente</em>, em seu computador e este funcionará como um <em>proxy</em> para o mesmo. Os demais programas que o usuário utiliza para navegar na internet <em>(navegador, emule, etc.)</em> deverão ser configurados para navegar através deste proxy.</p>
+
+<p><strong>A</strong> partir daí, quando o usuário digitar em seu navegador o endereço destino, <em><a href="http://www.google.com*">http://www.google.com*</a> por exemplo, ao invés de a sua requisição passar por roteadores convencionais para atingir o destino, ele passará por túneis criptografados da rede Tor, para então chegar ao seu destino. Nestes túneis a sua requisição e informações passam por vários </em>nós<em> da rede Tor. Um exemplo prático do anonimato provido pelo Tor é a verificação do seu próprio IP. Caso deseje realizar o teste, experimente acessar o endereço </em><a href="http://www.meuip.com.br*">http://www.meuip.com.br*</a> antes de instalar e configurar o Tor em sua máquina. Este site lhe informará o seu atual endereço IP, no caso o endereço será o do seu roteador de acesso à rede pública. Em seguida, tente acessar novamente o mesmo endereço após ter instalado e configurado o Tor. Você perceberá que ele não retornará o seu endereço IP, mas sim um endereço IP qualquer de um nó da rede Tor. Ou seja, isto atrapalha a vida de quem quer que deseje rastrear a sua máquina a partir de um endereço que você tenha acessado ou mesmo de um email que você tenha enviado.</p>
+
+<p><strong>Instalação do Tor no Arch Linux</strong></p>
+
+<p><strong>C</strong>onforme informei no início, o Tor está disponível para praticamente todos os sistemas operacionais, mas vou focar a explicação de instalação para a minha distribuição, Arch Linux, embora o processo seja bastante similar para as demais distribuições GNU/Linux.</p>
+
+<ol>
+<li>Instale o Tor:</li>
+</ol>
+
+
+<p><code>
+ [kalib@tuxcaverna ~]$ sudo pacman -S tor
+</code></p>
+
+<ol>
+<li>Como um opcional, instale também o frontend ou GUI, o qual é desenvolvido em QT, <em>vidalia</em>. O vidalia, além de controlar o processo Tor, permite-lhe ver e configurar o status do Tor, monitorar o uso de banda e ver, filtrar ou realizar pesquisas em mensagens de log, etc.</li>
+</ol>
+
+
+<p><code>
+ [kalib@tuxcaverna ~]$ sudo pacman -S vidalia
+</code></p>
+
+<ol>
+<li>Inicie/Habilite o serviço utilizando o <em>systemd</em>.</li>
+</ol>
+
+
+<p><strong>A</strong> configuração padrão do Tor deverá funcionar para a maioria dos usuários, mas caso deseje alterar algo, verifique a documentação do Tor e altere as configurações em <em>/etc/tor/torrc</em>.</p>
+
+<ol>
+<li>Para utilizar um programa através da rede Tor, configure-o para utilizar o endereço <em>127.0.0.1</em> ou <em>localhost</em> como endereço proxy <em>SOCKS5</em> através da porta <em>9050</em> (porta padrão do Tor) ou <em>9051</em> (porta padrão utilizada quando se configura com o vidalia).</li>
+</ol>
+
+
+<p><strong>A</strong> rede Tor possui uma espécio de domínio próprio com terminação <em>.onion</em>, acessível apenas através da própria rede Tor. Páginas com este domínio são parte da chamada Deep Web, mas isto será assunto para um outro post por ser algo polêmico e extenso.</p>
+
+<p><strong>H</strong>appy Hacking!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Vulnerabilidade no Firefox - Descobrindo Senhas Salvas]]></title>
@@ -251,51 +309,6 @@
 <p><strong>S</strong>imples, não?</p>
 
 <p><strong>H</strong>appy hacking&hellip;</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Lynis - Segurança e Auditoria de Sistemas Linux]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2013/10/30/lynis-seguranca-e-auditoria-de-sistemas-linux/"/>
-    <updated>2013-10-30T10:00:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2013/10/30/lynis-seguranca-e-auditoria-de-sistemas-linux</id>
-    <content type="html"><![CDATA[<p><img class="left" src="/imgs/auditing.jpg" title="&lsquo;Auditando&rsquo;" >
-<strong>P</strong>rocurando uma ferramenta de uso simples e rápido que seja capaz de realizar uma auditoria em sistemas Unix like? Talvez o <em>Lynis</em> seja exatamente o que você procura.</p>
-
-<p><strong>O</strong> Lynis é uma ferramenta para (especialistas) Unix com foco em <em>segurança</em> e <em>auditoria</em>, porque não dizer <em>hardening</em>, de sistemas. Ele escaneia o sistema e vários softwares disponíveis no mesmo com o fim de detectar vulnerabilidades. Além de informações relacionadas a segurança, ele também buscará diversas informações sobre o sistema, pacotes instalados e erros de configuração diversos.</p>
-
-<p><strong>E</strong>ste software ainda é útil e utilizado por outros softwares para ajudar em auditorias automatizadas, gerenciamento de patches de sistemas e escaneamento por vulnerabilidades e malwares. O público alvo do mesmo é composto por especialistas em segurança, pentesters, auditores de sistemas, administradores de redes/sistemas, etc.</p>
-
-<p><strong>D</strong>entre suas verificações estão a avaliação dos métodos de autenticação disponíveis, certificados SSL expirados, softwares desatualizados, contas de usuários sem senhas, permissões incorretas em arquivos, erros de configuração, auditoria de firewall, etc.</p>
-
-<p><img class="left" src="/imgs/lynis-screenshot.png" title="&lsquo;Auditando&rsquo;" ></p>
-
-<p><strong>Instalação:</strong></p>
-
-<p><strong>N</strong>o Arch Linux, o pacote se encontra disponível no <a href="https://aur.archlinux.org/packages/lynis/">AUR.</a>, portanto o processo de instalação consiste nos seguintes passos:</p>
-
-<p><strong>1.</strong> Download do <a href="https://aur.archlinux.org/packages/ly/lynis/lynis.tar.gz">Tarball</a> disponibilizado no AUR.
-<strong>2.</strong> Descompactação do tarball:
-<code>
- $ tar -xvzf lynis.tar.gz
-</code>
-<strong>3.</strong> Entrar no diretório lynis que foi criado e em seguida iniciar a compilação/criação do pacote em si:
-<code>
- $ cd lynis
- $ makepkg
-</code>
-<strong>4.</strong> Instalação do pacote que foi criado (Apenas este passo com usuário root ou utilizando sudo):
-<code>
- # pacman -U lynis-1.3.3-1-any.pkg.tar.xz
-</code></p>
-
-<p><strong>C</strong>aso você utilize o yaourt ou algum outro gerenciador de pacotes do Arch Linux que possua acesso direto aos pacotes do AUR, pode utilizá-los ao invés de utilizar os passos acima:</p>
-
-<p><code>
- $ yaourt -S lynis
-</code></p>
-
-<p><strong>H</strong>appy Hacking!</p>
 ]]></content>
   </entry>
   
