@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Software Livre | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/blog/categories/software-livre/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2013-12-30T09:40:16-03:00</updated>
+  <updated>2014-01-03T10:12:40-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -12,6 +12,58 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Criptografando sua Partição Swap com o Ecryptfs]]></title>
+    <link href="http://blog.marcelocavalcante.net/blog/2014/01/03/criptografando-sua-particao-swap-com-o-ecryptfs/"/>
+    <updated>2014-01-03T08:48:00-03:00</updated>
+    <id>http://blog.marcelocavalcante.net/blog/2014/01/03/criptografando-sua-particao-swap-com-o-ecryptfs</id>
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/crypto.jpg" title="&lsquo;Criptografia&rsquo;" >
+<strong>C</strong>riptografia (Do grego <em>kryptós</em>, &ldquo;escondido&rdquo;, e <em>gráphein</em>, &ldquo;escrita&rdquo;) nada mais é do que o estudo e aplicação de técnicas com o intuito de ocultar informações, transformando a informação original em algo ilegível, exceto para seu destinatário final, o qual possui a chave ou método que será utilizado para tornar a informação legível novamente.</p>
+
+<p><strong>A</strong>pesar de muitas pessoas acharem que criptografia é algo novo, o uso de mensagens cifradas é bastante antigo. Em tempos passados a cifragem de mensagens era utilizada, principalmente em assuntos de guerra. De acordo com estudos históricos, o primeiro uso documentado da criptografia foi em torno de <em>1900 a.c.</em>, no Egito, quando um escriba usou hieróglifos fora do padrão numa inscrição.</p>
+
+<p><strong>A</strong>o que interessa&hellip;</p>
+
+<p><strong>M</strong>uitas pessoas, por alguma razão (como por exemplo performance ou não gostar da ideia de digitar gigantescas senhas duranto o boot), acabam não utilizando uma LVM encriptada. Para estas pessoas existe a opção de criptografar arquivos e diretórios após a instalação do SO através de softwares como o eCryptfs. Mas, além disto, existe um outro aspecto interessante e importante que, por muitas vezes (para não dizer quase sempre) é esquecido: criptografar a swap.</p>
+
+<p><strong>S</strong>e você é usuário GNU/Linux, muito provavelmente já sabe o que é Swap. Ela é especialmente utilizada em computadores mais antigos e que possuem pouca memória RAM. Nestes casos, um espaço do disco rígido é utilizado como swap para servir de auxílio à memória RAM em diferentes tarefas quando a mesma não for o suficiente para realizar aquelas tarefas. Por questões óbvias, a swap não é tão rápida quanto a memória principal e, além disso, a swap também possui seus pontos <em>críticos</em> em relação a segurança. A questão mais crítica da swap em termos de segurança é o fato de ela, conforme já dito, não estar localizada em sua RAM, mas sim em seu disco rígido, escrevendo informações nesta partição, deixando assim rastros de suas atividades no próprio disco rígido. Por exemplo, caso você utilize softwares de criptografia em seu computador, mas não possua sua swap criptografada, você corre o risco de ter as senhas de chaves que você digita salvas em sua swap (disco rígido). Algo não desejado, certo?</p>
+
+<p><strong>P</strong>ara criptografar a sua swap, primeiramente instale os pacotes necessários:</p>
+
+<p><strong>No Arch Linux</strong></p>
+
+<p><code>
+ [kalib@tuxcaverna ~]$ sudo pacman -S ecryptfs-utils cryptsetup
+</code></p>
+
+<p><strong>No Debian ou derivados</strong></p>
+
+<p><code>
+ [kalib@tuxcaverna ~]$ sudo apt-get install ecryptfs-utils cryptsetup
+</code></p>
+
+<p><strong>E</strong>m seguida, precisamos literalmente criptografar a swap utilizando o seguinte comando:</p>
+
+<p><code>
+ [kalib@tuxcaverna ~]$ sudo ecryptfs-setup-swap
+</code></p>
+
+<p><strong>N</strong>este momento, sua partição swap será desmontada, encriptada e montada novamente.</p>
+
+<p><strong>P</strong>ara certificar-se de que o procedimento funcionou, digite o seguinte comando:</p>
+
+<p><code>
+ [kalib@tuxcaverna ~]$ sudo blkid | grep swap
+</code></p>
+
+<p><strong>V</strong>ocê deverá receber as informações sobre sua partição de swap, inclusive o indicativo <em>cryptswap</em>.</p>
+
+<p><strong>C</strong>omo medida preventiva contra erros durante o boot, edite o arquivo <em>/etc/fstab</em>, retirando a entrada da swap não encriptada, deixando em seu lugar a entrada para a swap encriptada.</p>
+
+<p><strong>H</strong>appy Hacking!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Navegação Anônima Através da Rede Tor]]></title>
@@ -230,92 +282,6 @@
 <p><strong>I</strong>sto me fez tomar vergonha na cara.. e hoje inseri conteúdo <a href="http://blog.marcelocavalcante.net/about/"> nesta página</a>.</p>
 
 <p><strong>A</strong>gora sim&hellip; ;]</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Dica Rápida - Linux - Efeito de Texto Sendo Digitado? O pv Resolve]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2013/12/05/dica-rapida-linux-efeito-de-texto-sendo-digitado-o-pv-resolve/"/>
-    <updated>2013-12-05T08:37:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2013/12/05/dica-rapida-linux-efeito-de-texto-sendo-digitado-o-pv-resolve</id>
-    <content type="html"><![CDATA[<p><img class="left" src="/imgs/monitor.jpg" title="&lsquo;Texto em Monitor&rsquo;" >
-<strong>C</strong>ertamente você já cansou de ver em filmes e/ou séries de TV cenas nas quais um monitor apresenta um texto que, aparentemente, está sendo digitado em tempo real. É claro que eles não possuem uma pessoa digitando aquele texto ou série de comandos no momento da gravação. Então, que tal aprender uma forma de fazer isto no Linux?</p>
-
-<p><strong>O</strong> comando <em>pv</em> realiza perfeitamente este trabalho, podendo inclusive interagir com outros aplicativos e comandos.</p>
-
-<p><strong>M</strong>ão na massa&hellip;</p>
-
-<p><strong>A</strong>ntes de mais nada você precisará instalar o pv em sua distribuição. No Arch Linux, eu utilizo o pacman da forma convencional:</p>
-
-<p><code>
- [kalib@tuxcaverna ~]$ sudo pacman -S pv
-</code></p>
-
-<p><strong>O</strong> pv está disponível nos repositórios de praticamente todas as distribuições, portanto utilize o gerenciador de pacotes de sua preferência para instalá-lo.</p>
-
-<p><strong>A</strong> utilização é simples, bastando que você utilize algum comando que, de alguma forma, exponha algum texto na tela e em seguida redirecione esta saída para o pv. O pv possui diversos parâmetros, mas eu gosto particularmente de utilizar -qL, onde o <em>q</em> significa &ldquo;quiet&rdquo; e o <em>L</em> significa latência, em seguida insiro um valor para a latência. Vamos ao exemplo:</p>
-
-<p><code>
- [kalib@tuxcaverna ~]$ echo "Primeiro teste com pv" | pv -qL 20
- Primeiro teste com pv
-</code></p>
-
-<p><strong>S</strong>e você digitar o mesmo comando, verá que ele irá escrever o texto na tela de forma &ldquo;automática&rdquo;: &ldquo;Primeiro teste com pv&rdquo;.</p>
-
-<p><strong>É</strong> claro, em uma gravação de Hollywood a linha na qual o comando foi passado não deveria aparecer, no caso: <em>[kalib@tuxcaverna ~]$ echo &ldquo;Primeiro teste com pv&rdquo; | pv -qL 20</em>. Que tal inserir um <em>clear</em> antes de nosso comando para limpar a tela antes da execução desejada?</p>
-
-<p><code>
- [kalib@tuxcaverna ~]$ clear &amp;&amp; echo "Primeiro teste com pv" | pv -qL 20
-</code></p>
-
-<p><strong>P</strong>erceba que desta vez o comando digitado não aparece na tela. A única informação que será exibida será <em>Primeiro teste com pv</em>.</p>
-
-<p><strong>D</strong>iminuindo ou aumentando o valor da latência você diminuirá ou aumentará a velocidade de <em>digitação</em> do texto que você escolheu.</p>
-
-<p><strong>C</strong>omo informei no início, você pode unir o pv com outros programas ou comandos. Que tal fazer com que um texto um pouco maior seja exibido?</p>
-
-<p><strong>P</strong>ara este teste, eu criei um arquivo texto chamado <em>testepv</em>, conforme pode ser visto abaixo:</p>
-
-<p>```
- [kalib@tuxcaverna ~]$ cat testepv</p>
-
-<p> Não obstante, a contínua expansão de nossa atividade oferece uma interessante oportunidade para verificação de todos os recursos funcionais envolvidos.
- A prática cotidiana prova que o desenvolvimento contínuo de distintas formas de atuação nos obriga à análise de alternativas às soluções ortodoxas.
- Por conseguinte, a competitividade nas transações comerciais estende o alcance e a importância da gestão inovadora da qual fazemos parte.
-```</p>
-
-<p><strong>N</strong>este caso, o texto pode ser digitado <em>automaticamente</em> com o pv, da seguinte forma:</p>
-
-<p><code>
- [kalib@tuxcaverna ~]$ clear &amp;&amp; cat testepv | pv -qL 20
-</code></p>
-
-<p><strong>L</strong>egal? Que tal utilizarmos algo ainda melhor? Já ouviu falar no <em>figlet</em>? É outro comando/aplicativo Linux que muitas pessoas desconhecem. Comece instalando-o em seu sistema, caso você já não o possua. O figlet <em>desenha</em> o seu texto de uma forma um pouco mais <em>enfeitada</em>, se comparado ao puro <em>cat</em> ou <em>echo</em>. Exemplo:</p>
-
-<p>```
- [kalib@tuxcaverna ~]$ figlet &ldquo;Teste do Figlet&rdquo;</p>
-
-<hr />
-
-<p> |<em>   </em>|<strong>  </strong><em>| |</em> <em><strong>    </strong>| | </em><strong>   |  </strong><em>(</em>) <strong> <em>| | </em></strong>| |<em>
-   | |/ _ \/ <strong>| </strong>/ _ \  / </em><code>|/ _ \  | |_  | |/ _</code> | |/ _ \ <strong>|
-   | |  </strong>/_<em> \ ||  __/ | (</em>| | (<em>) | |  </em>| | | (<em>| | |  __/ |</em>
-   |<em>|_<strong>||</strong></em>/_<em>___|  _</em>,<em>|___/  |</em>|   |<em>|_</em>, |<em>|___|_</em>|</p>
-
-<pre><code>                                            |___/            
-</code></pre>
-
-<p>```</p>
-
-<p><strong>N</strong>esse caso, vamos fazer com que o efeito <em>figlet</em> também pareça estar sendo digitado automaticamente e em tempo real:</p>
-
-<p><code>
- [kalib@tuxcaverna ~]$ clear &amp;&amp; figlet "Teste do Figlet" | pv -qL 30
-</code></p>
-
-<p><strong>R</strong>esultado interessante, certo? Da mesma forma, o pv pode ser utilizado com diversos outros aplicativos que trazem alguma saída no terminal, como o cowsay e muitos outros. A sua criatividade é o limite.</p>
-
-<p><strong>H</strong>ave fun! \,,/_</p>
 ]]></content>
   </entry>
   

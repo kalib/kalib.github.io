@@ -4,7 +4,7 @@
   <title><![CDATA[Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2013-12-30T09:40:16-03:00</updated>
+  <updated>2014-01-03T10:12:40-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -12,6 +12,58 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Criptografando sua Partição Swap com o Ecryptfs]]></title>
+    <link href="http://blog.marcelocavalcante.net/blog/2014/01/03/criptografando-sua-particao-swap-com-o-ecryptfs/"/>
+    <updated>2014-01-03T08:48:00-03:00</updated>
+    <id>http://blog.marcelocavalcante.net/blog/2014/01/03/criptografando-sua-particao-swap-com-o-ecryptfs</id>
+    <content type="html"><![CDATA[<p><img class="left" src="http://blog.marcelocavalcante.net/imgs/crypto.jpg" title="'Criptografia'" >
+<strong>C</strong>riptografia (Do grego <em>kryptós</em>, &ldquo;escondido&rdquo;, e <em>gráphein</em>, &ldquo;escrita&rdquo;) nada mais é do que o estudo e aplicação de técnicas com o intuito de ocultar informações, transformando a informação original em algo ilegível, exceto para seu destinatário final, o qual possui a chave ou método que será utilizado para tornar a informação legível novamente.</p>
+
+<p><strong>A</strong>pesar de muitas pessoas acharem que criptografia é algo novo, o uso de mensagens cifradas é bastante antigo. Em tempos passados a cifragem de mensagens era utilizada, principalmente em assuntos de guerra. De acordo com estudos históricos, o primeiro uso documentado da criptografia foi em torno de <em>1900 a.c.</em>, no Egito, quando um escriba usou hieróglifos fora do padrão numa inscrição.</p>
+
+<p><strong>A</strong>o que interessa&hellip;</p>
+
+<p><strong>M</strong>uitas pessoas, por alguma razão (como por exemplo performance ou não gostar da ideia de digitar gigantescas senhas duranto o boot), acabam não utilizando uma LVM encriptada. Para estas pessoas existe a opção de criptografar arquivos e diretórios após a instalação do SO através de softwares como o eCryptfs. Mas, além disto, existe um outro aspecto interessante e importante que, por muitas vezes (para não dizer quase sempre) é esquecido: criptografar a swap.</p>
+
+<p><strong>S</strong>e você é usuário GNU/Linux, muito provavelmente já sabe o que é Swap. Ela é especialmente utilizada em computadores mais antigos e que possuem pouca memória RAM. Nestes casos, um espaço do disco rígido é utilizado como swap para servir de auxílio à memória RAM em diferentes tarefas quando a mesma não for o suficiente para realizar aquelas tarefas. Por questões óbvias, a swap não é tão rápida quanto a memória principal e, além disso, a swap também possui seus pontos <em>críticos</em> em relação a segurança. A questão mais crítica da swap em termos de segurança é o fato de ela, conforme já dito, não estar localizada em sua RAM, mas sim em seu disco rígido, escrevendo informações nesta partição, deixando assim rastros de suas atividades no próprio disco rígido. Por exemplo, caso você utilize softwares de criptografia em seu computador, mas não possua sua swap criptografada, você corre o risco de ter as senhas de chaves que você digita salvas em sua swap (disco rígido). Algo não desejado, certo?</p>
+
+<p><strong>P</strong>ara criptografar a sua swap, primeiramente instale os pacotes necessários:</p>
+
+<p><strong>No Arch Linux</strong></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> [kalib@tuxcaverna ~]$ sudo pacman -S ecryptfs-utils cryptsetup</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>No Debian ou derivados</strong></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> [kalib@tuxcaverna ~]$ sudo apt-get install ecryptfs-utils cryptsetup</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>E</strong>m seguida, precisamos literalmente criptografar a swap utilizando o seguinte comando:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> [kalib@tuxcaverna ~]$ sudo ecryptfs-setup-swap</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>N</strong>este momento, sua partição swap será desmontada, encriptada e montada novamente.</p>
+
+<p><strong>P</strong>ara certificar-se de que o procedimento funcionou, digite o seguinte comando:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> [kalib@tuxcaverna ~]$ sudo blkid | grep swap</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>V</strong>ocê deverá receber as informações sobre sua partição de swap, inclusive o indicativo <em>cryptswap</em>.</p>
+
+<p><strong>C</strong>omo medida preventiva contra erros durante o boot, edite o arquivo <em>/etc/fstab</em>, retirando a entrada da swap não encriptada, deixando em seu lugar a entrada para a swap encriptada.</p>
+
+<p><strong>H</strong>appy Hacking!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Navegação Anônima Através da Rede Tor]]></title>
@@ -1220,57 +1272,6 @@
 <p><strong>O</strong> nome do pacote poderá ser diferente para você. Estou utilizando a versão x64 do Arch.</p>
 
 <p><strong>P</strong>or enquanto é melhor manter a versão anterior do kernel, ao menos até o lançamento da versão 3.11, na qual o problema já foi resolvido.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Dica Rápida - Linux - Melhorando a Política de Senhas]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2013/08/12/dica-rapida-linux-melhorando-a-politica-de-senhas/"/>
-    <updated>2013-08-12T08:41:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2013/08/12/dica-rapida-linux-melhorando-a-politica-de-senhas</id>
-    <content type="html"><![CDATA[<p><img class="center" src="http://blog.marcelocavalcante.net/imgs/url.jpg" title="'password'" ></p>
-
-<p><strong>N</strong>a dica anterior mencionei o uso do comando <em>chage</em> para <strong>forçar</strong> a alteração de senha por parte do usuário em sistemas Linux, mas e se além disso fosse possível melhorar esta prática, tornando a política de senhas de usuários um pouco mais segura?</p>
-
-<p><strong>O</strong> chage também nos permite determinar quando exatamente desejamos que a senha daquele usuário expire, de forma que ele será forçado a criar uma nova senha após aquele determinado tempo. Isto é útil para evitar que uma mesma senha seja utilizada por um longo período de tempo. Particularmente, gosto de forçar a alteração de senhas a cada mês, mas isto dependerá dos sistemas que são acessados e de o quão críticas são as informações e sistemas em jogo.</p>
-
-<p><strong>O</strong> comando chage altera o número de dias entre a alteração de uma senha e sua alteração anterior. Esta informação fica registrada no sistema e será utilizada para determinar quando um usuário precisará alterar sua senha. Esta e outras configurações ficam armazenadas no arquivo de configuração <em>/etc/login.defs</em>, o qual determina configurações que englobem todos os usuários do sistema, inclusive um período máxima antes de uma senha ser expirada.</p>
-
-<p><strong>P</strong>ara verificar as informações sobre quando uma senha expira, digite:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'> # chage -l NomeDoUsuário</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>O</strong> comando acima lhe retornará informações gerais sobre aquela conta, tais como: data de última mudança de senha, data em que a senha irá expirar, status atual da senha, número mínimo entre troca de senhas, número máximo entre troca de senhas, número de dias de alerta sobre a mudança de senha, etc.</p>
-
-<p><strong>P</strong>ara efetivar a política de mudança de senha após um determinado tempo, você pode editar diretamente o arquivo <em>/etc/shadow</em> ou utilizar o comando <em>chage</em>, o qual recomendo ao invés do /etc/shadow.</p>
-
-<p><strong>N</strong>o arquivo <em>/etc/shadow</em>, a ordem dos campos é a seguinte:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'> {NomeDeUsuário}:{Senha}:{ÚltimaAlteraçãoDeSenha}:{Minimum_days}:{Maximum_days}:{Warn}:{Inactive}:{Expire}:</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Onde,</p>
-
-<p><strong>Minimum_days:</strong> <em>Quantididade mínima de dias entre alterações de senhas. Ex: Uma quantia mínima de dias antes que o usuário possa alterar sua senha.</em></p>
-
-<p><strong>Maximum_days:</strong> <em>Quantidade máxima de dias pelos quais uma senha será válida (após os quais os o usuário é forçado a alterar sua senha).</em></p>
-
-<p><strong>Warn:</strong> <em>O número de dias antes de a senha expirar nos quais o usuário será alertado sobre a sua senha expirar em breve.</em></p>
-
-<p><strong>Expire:</strong> <em>Quantidade de dias desde 1 de Janeiro de 1970 em que a conta expirará. Ex: uma data específica pode ser informada para que, a partir de tal data a senha não possa mais ser utilizada.</em></p>
-
-<p><strong>C</strong>onforme informei anteriormente, costumo recomendar a utilização do comando <em>chage</em> ao invás da edição do arquivo <em>/etc/shadow</em>, o que minimiza as chances de erros.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'> # chage -M 60 -m 7 -W 7 NomeDeUsuário</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>O</strong>nde, da mesma forma, <strong>M</strong> = Maximum_days, <strong>m</strong> = Minimum_days e <strong>W</strong> = warn.</p>
-
-<p><strong>B</strong>om proveito&hellip;</p>
 ]]></content>
   </entry>
   

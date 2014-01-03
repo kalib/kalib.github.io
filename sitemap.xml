@@ -973,12 +973,18 @@
         <lastmod>2013-12-30T09:40:13-03:00</lastmod>
     </url>
     <url>
+        <loc>
+            http://blog.marcelocavalcante.net/blog/2014/01/03/criptografando-sua-particao-swap-com-o-ecryptfs/
+        </loc>
+        <lastmod>2014-01-03T10:12:35-03:00</lastmod>
+    </url>
+    <url>
         <loc>http://blog.marcelocavalcante.net/about/</loc>
         <lastmod>2013-12-17T08:28:12-03:00</lastmod>
     </url>
     <url>
         <loc>http://blog.marcelocavalcante.net/</loc>
-        <lastmod>2013-12-30T09:40:13-03:00</lastmod>
+        <lastmod>2014-01-03T10:12:35-03:00</lastmod>
     </url>
     <url>
         <loc>http://blog.marcelocavalcante.net/robots.txt</loc>
@@ -986,6 +992,6 @@
     </url>
     <url>
         <loc>http://blog.marcelocavalcante.net/blog/archives/</loc>
-        <lastmod>2013-12-30T09:40:13-03:00</lastmod>
+        <lastmod>2014-01-03T10:12:35-03:00</lastmod>
     </url>
 </urlset>

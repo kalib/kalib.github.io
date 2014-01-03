@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Arch Linux | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/blog/categories/arch-linux/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2013-12-30T09:40:16-03:00</updated>
+  <updated>2014-01-03T10:12:40-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -12,6 +12,58 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Criptografando sua Partição Swap com o Ecryptfs]]></title>
+    <link href="http://blog.marcelocavalcante.net/blog/2014/01/03/criptografando-sua-particao-swap-com-o-ecryptfs/"/>
+    <updated>2014-01-03T08:48:00-03:00</updated>
+    <id>http://blog.marcelocavalcante.net/blog/2014/01/03/criptografando-sua-particao-swap-com-o-ecryptfs</id>
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/crypto.jpg" title="&lsquo;Criptografia&rsquo;" >
+<strong>C</strong>riptografia (Do grego <em>kryptós</em>, &ldquo;escondido&rdquo;, e <em>gráphein</em>, &ldquo;escrita&rdquo;) nada mais é do que o estudo e aplicação de técnicas com o intuito de ocultar informações, transformando a informação original em algo ilegível, exceto para seu destinatário final, o qual possui a chave ou método que será utilizado para tornar a informação legível novamente.</p>
+
+<p><strong>A</strong>pesar de muitas pessoas acharem que criptografia é algo novo, o uso de mensagens cifradas é bastante antigo. Em tempos passados a cifragem de mensagens era utilizada, principalmente em assuntos de guerra. De acordo com estudos históricos, o primeiro uso documentado da criptografia foi em torno de <em>1900 a.c.</em>, no Egito, quando um escriba usou hieróglifos fora do padrão numa inscrição.</p>
+
+<p><strong>A</strong>o que interessa&hellip;</p>
+
+<p><strong>M</strong>uitas pessoas, por alguma razão (como por exemplo performance ou não gostar da ideia de digitar gigantescas senhas duranto o boot), acabam não utilizando uma LVM encriptada. Para estas pessoas existe a opção de criptografar arquivos e diretórios após a instalação do SO através de softwares como o eCryptfs. Mas, além disto, existe um outro aspecto interessante e importante que, por muitas vezes (para não dizer quase sempre) é esquecido: criptografar a swap.</p>
+
+<p><strong>S</strong>e você é usuário GNU/Linux, muito provavelmente já sabe o que é Swap. Ela é especialmente utilizada em computadores mais antigos e que possuem pouca memória RAM. Nestes casos, um espaço do disco rígido é utilizado como swap para servir de auxílio à memória RAM em diferentes tarefas quando a mesma não for o suficiente para realizar aquelas tarefas. Por questões óbvias, a swap não é tão rápida quanto a memória principal e, além disso, a swap também possui seus pontos <em>críticos</em> em relação a segurança. A questão mais crítica da swap em termos de segurança é o fato de ela, conforme já dito, não estar localizada em sua RAM, mas sim em seu disco rígido, escrevendo informações nesta partição, deixando assim rastros de suas atividades no próprio disco rígido. Por exemplo, caso você utilize softwares de criptografia em seu computador, mas não possua sua swap criptografada, você corre o risco de ter as senhas de chaves que você digita salvas em sua swap (disco rígido). Algo não desejado, certo?</p>
+
+<p><strong>P</strong>ara criptografar a sua swap, primeiramente instale os pacotes necessários:</p>
+
+<p><strong>No Arch Linux</strong></p>
+
+<p><code>
+ [kalib@tuxcaverna ~]$ sudo pacman -S ecryptfs-utils cryptsetup
+</code></p>
+
+<p><strong>No Debian ou derivados</strong></p>
+
+<p><code>
+ [kalib@tuxcaverna ~]$ sudo apt-get install ecryptfs-utils cryptsetup
+</code></p>
+
+<p><strong>E</strong>m seguida, precisamos literalmente criptografar a swap utilizando o seguinte comando:</p>
+
+<p><code>
+ [kalib@tuxcaverna ~]$ sudo ecryptfs-setup-swap
+</code></p>
+
+<p><strong>N</strong>este momento, sua partição swap será desmontada, encriptada e montada novamente.</p>
+
+<p><strong>P</strong>ara certificar-se de que o procedimento funcionou, digite o seguinte comando:</p>
+
+<p><code>
+ [kalib@tuxcaverna ~]$ sudo blkid | grep swap
+</code></p>
+
+<p><strong>V</strong>ocê deverá receber as informações sobre sua partição de swap, inclusive o indicativo <em>cryptswap</em>.</p>
+
+<p><strong>C</strong>omo medida preventiva contra erros durante o boot, edite o arquivo <em>/etc/fstab</em>, retirando a entrada da swap não encriptada, deixando em seu lugar a entrada para a swap encriptada.</p>
+
+<p><strong>H</strong>appy Hacking!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Dica Rápida - Linux - Como Limpar o Conteúdo de um Arquivo Texto Sem Abrir o Mesmo]]></title>
@@ -308,79 +360,6 @@
 
 &lt;strong&gt;H&lt;/strong&gt;ave fun!
 </code></pre>
-
-<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Wicd-KDE - Tornando seu Wicd no KDE mais amigável]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2011/04/28/wicd-kde-tornando-seu-wicd-no-kde-mais-amigavel/"/>
-    <updated>2011-04-28T09:29:35-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2011/04/28/wicd-kde-tornando-seu-wicd-no-kde-mais-amigavel</id>
-    <content type="html"><![CDATA[<p><strong>S</strong>audações pessoal,</p>
-
-<p><strong>P</strong>ara aqueles que também não curtem de forma alguma a aparência padrão GTK do Wicd e não conhecem ainda a interface que foi lançada posteriormente em QT, fica a dica: Troquem com urgência!</p>
-
-<p><strong>E</strong> o network-manager?</p>
-
-<p><strong>B</strong>om, o network-manager é um excelente(sendo modesto) gerenciador de redes para o Linux, porém infelizmente ele peca muito em sua interface para o KDE. Compare o network-manager em suas interfaces gtk (Gnome) e qt (KDE) e entenderá o que eu digo. A versão para KDE é extremamente confusa e bagunçada em comparação com a interface para o Gnome.</p>
-
-<p><strong>E</strong>is que muitas distribuições começaram a sugerir a utilização do Wicd como gerenciador de redes para quem utiliza o KDE.</p>
-
-<p><strong>N</strong>o Arch, por exemplo, encorajamos fortemente o uso do Wicd com o KDE ao invés do network-manager. Sim, sempre utilizei ele, porém&hellip;</p>
-
-<p><img src="http://3.bp.blogspot.com/_lqr72cLxjWU/TKEXqNjH-3I/AAAAAAAAACM/WKa5EWZ75V0/s1600/screenshot-20100928@001439.png" alt="" /></p>
-
-<p><strong>E</strong> então? Meio bizarro, certo?! Alguém havia pensado em dizer &ldquo;Mas ele não é tão feio..&rdquo;?</p>
-
-<p><strong>B</strong>om, que tal apresentar uma alternativa a isto? O wicd-kde!</p>
-
-<p><strong>C</strong>omo uma imagem vale mais que mil palavras:</p>
-
-<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/04/wicdkde1.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/04/wicdkde1.png" alt="" /></a></p>
-
-<p><strong>M</strong>ais amigável certo? Uma interface mais limpa, organizada e bonita. Bem ao estilo &ldquo;clean&rdquo;, como alguns preferem dizer.</p>
-
-<p><strong>M</strong>as, deixando um pouco a frescura de lado. Não recomendo a utilização da interface em qt apenas por questões de estética.</p>
-
-<p><strong>A</strong> verdade é que o seu ambiente fica mais limpo com esta interface. Limpo? Sim.</p>
-
-<p><strong>S</strong>e você utiliza o KDE mas possui aplicações em gtk, por consequência você possuirá uma série de bibliotecas instaladas em seu ambiente para fazer com que esta aplicação em gtk funcione da maneira correta. Porém, se você instala uma aplicação em qt, pouca coisa adicional será necessária, visto que seu sistema já está preparado para rodar este tipo de aplicação.</p>
-
-<p><strong>D</strong>igamos que é uma união: Útil ao Agradável!</p>
-
-<p>E a parte que interessa? Instalar, instalar, instalar!</p>
-
-<p><strong>I</strong>nfelizmente, nem todas as distribuições empacotaram o wicd-kde até então, mas se você é usuário <strong><a href="http://archlinux.org">Arch Linux</a></strong>, a sua vida será mais fácil.</p>
-
-<p><strong>O</strong> pacote wicd-kde encontra-se pronto no <a href="http://aur.archlinux.org/packages.php?ID=40735">AUR</a>.</p>
-
-<p><strong>O</strong> processo é o já manjado:</p>
-
-<p><strong>1-</strong> Baixar o arquivo compactado:</p>
-
-<p>$ wget <a href="http://aur.archlinux.org/packages/wicd-client-kde-git/wicd-client-kde-git.tar.gz">http://aur.archlinux.org/packages/wicd-client-kde-git/wicd-client-kde-git.tar.gz</a></p>
-
-<p><strong>2-</strong> descompactar:</p>
-
-<p>$ tar -xvzf wicd-client-kde-git.tar.gz</p>
-
-<p><strong>3-</strong> entrar no diretório e em seguida executar o PKGBUILD para geração do pacote em si:</p>
-
-<p>$ cd wicd-client-kde-git</p>
-
-<p>$ makepkg</p>
-
-<p><strong>4-</strong> Instalar o pacote gerado:</p>
-
-<h1>pacman -U wicd-client-kde-git-20110426-1-x86_64.pkg.tar.xz</h1>
-
-<p><strong>F</strong>eito. ;]</p>
-
-<p><strong>H</strong>ave Fun!</p>
-
-<p><strong>A</strong>braços!</p>
 
 <p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
 ]]></content>
