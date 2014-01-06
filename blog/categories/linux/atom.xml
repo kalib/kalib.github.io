@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2014-01-05T11:15:06-03:00</updated>
+  <updated>2014-01-06T09:41:21-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -12,6 +12,40 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Dica de Segurança - Previna Ataques Bloqueando Pacotes ICMP Indesejados]]></title>
+    <link href="http://blog.marcelocavalcante.net/blog/2014/01/06/dica-de-seguranca-previna-ataques-bloqueando-pacotes-icmp-indesejados/"/>
+    <updated>2014-01-06T08:40:00-03:00</updated>
+    <id>http://blog.marcelocavalcante.net/blog/2014/01/06/dica-de-seguranca-previna-ataques-bloqueando-pacotes-icmp-indesejados</id>
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/you_shall_not_pass.jpg" title="&lsquo;Gandalf&rsquo;" >
+<strong>O</strong> protocolo <em>ICMP</em> pode ser utilizado para facilitar diversas rotinas e tarefas importantes de um administrador de redes, tais como na utilização de ferramentas como o <em>ping</em> e o <em>traceroute</em>, mas também pode ser manipulado por pessoas mal intencionadas que podem manipular mensagens ou pacotes ICMP para mapear sua rede.</p>
+
+<p><strong>É</strong> comum ver administradores de rede se preocupando e fazendo um ótimo trabalho em termos de filtrar o tráfego <em>TCP</em> e/ou <em>UDP</em>, porém quase sempre esquecem de dar a mesma atenção ao tráfego <em>ICMP</em>, sendo este tão crítico quanto os dois anteriores. Uma vez que este protocolo pode ser utilizado para mapear e realizar ataques em sua rede, ele não pode simplesmente ser deixado de lado.</p>
+
+<p><strong>I</strong>CMP, sigla para <em>Internet Control Message Protocol</em>, é um protocolo integrante do Protocolo IP utilizado para fornecer relatórios de erros à fonte original. Seu tráfego é, basicamente, baseado em mensagens trocadas entre hots, gateways, etc., cujo intuito é, principalmente, reportar erros, como por exemplo um pacote IP que não consegue chegar ao seu destino.</p>
+
+<p><strong>P</strong>or padrão, alguns servidores e firewalls bloqueiam as respostas ICMP como medida de segurança, tentando assim bloquear os ataques que consistem na sobrecarga da memória, enviando dados (em ping) até o sistema não ter a capacidade de administrar suas próprias funções. Bom, ao mesmo tempo em que é um mecanismo de defesa interessante, este bloqueio total acaba comprometendo e atrapalhando diversas atividades do administrador de redes, não sendo portanto a estratégia mais inteligente a ser adotada.</p>
+
+<p><strong>A</strong>o invés de bloquear o ICMP por completo, é mais interessante conhecer o que é bom e o que é ruim em termos de mensagens ICMP, de forma que sejam realizados filtros corretos. A importância desta gangorra é não permitir que o lado <em>ruim</em> do ICMP, como por exemplo ICMP Smurf, Ping of death, ataques com ICMP flood ou ICMP nuke, prejudiquem o administrador de redes que pode tirar proveito de boas ferramentas que se utilizam do ICMP, como o Ping e o Traceroute.</p>
+
+<p><strong>A</strong> estratégia mais simples, portanto, é utilizar uma regra geral contendo exceções.</p>
+
+<ol>
+<li>Bloquear todos os tipos de tráfego ICMP;</li>
+<li>Permitir ping &mdash; CMP Echo-Request outbound (saída) e Echo-Reply inbound (entrada);</li>
+<li>Permitir traceroute &mdash; TTL-Exceeded e Port-Unreachable inbound (entrada);</li>
+<li>Permitir path MTU &mdash; ICMP Fragmentation-DF-Set inbound (entrada).</li>
+</ol>
+
+
+<p><strong>É</strong> claro que este é apenas um exemplo, visto que você poderá permitir mais ou menos, de acordo com a sua necessidade.</p>
+
+<p><strong>N</strong>ão deixemos pobre a nossa configuração, facilitando as coisas para ataques quando isto pode ser facilmente bloqueado.</p>
+
+<p><strong>H</strong>appy Hacking!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Criptografando sua Partição Swap com o Ecryptfs]]></title>
@@ -247,53 +281,6 @@
 <p><strong>R</strong>esultado interessante, certo? Da mesma forma, o pv pode ser utilizado com diversos outros aplicativos que trazem alguma saída no terminal, como o cowsay e muitos outros. A sua criatividade é o limite.</p>
 
 <p><strong>H</strong>ave fun! \,,/_</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Dica Rápida - Linux - Informações Sobre Arquivos com o Comando stat]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2013/11/22/dica-rapida-linux-informacoes-sobre-arquivos-com-o-comando-stat/"/>
-    <updated>2013-11-22T08:22:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2013/11/22/dica-rapida-linux-informacoes-sobre-arquivos-com-o-comando-stat</id>
-    <content type="html"><![CDATA[<p><img class="left" src="/imgs/information.png" title="&lsquo;Information&rsquo;" ></p>
-
-<p><strong>Q</strong>ue os sistemas GNU/Linux possuem uma infinidade de comandos todo mundo sabe, o que nem todos conhecem, na verdade, são alguns comandos simples porém eficientes e importantes. Um deles é justamente o <em>stat</em>.</p>
-
-<p><strong>Q</strong>uando se está em frente ao terminal de um servidor que não possui interface gráfica, tudo o que está a nossa disposição são as ferramentas de linha de comando, portanto é bom conhecer uma boa variedade das mesmas, desde ferramentas para tarefas complexas até ferramentas para as atividades mais simples e banais.</p>
-
-<p><strong>A</strong> dica que deixo hoje é uma ferramenta que muitas pessoas desconhecem: <em>stat</em></p>
-
-<p><strong>O</strong> stat serve para apresentar as informações de status de um arquivo ou sistema de arquivos. Ele apresenta uma série de informações sobre o arquivo que você informar como argumento. Dentre as informações estão o <em>Tamanho</em>, <em>Blocos</em>, <em>Permissões de Acesso</em>, <em>Data e Hora de último acesso</em>, <em>Data e Hora de última modificação</em>, etc.</p>
-
-<p><strong>O</strong> uso é simples, bastando digitar: <em>stat &lt;caminho_do_arquivo_ou_sistema_de_arquivos></em>.</p>
-
-<p><code>
- [kalib@tuxcaverna ~]$ stat testdisk.log
-  File: “testdisk.log”
-  Size: 102478          Blocks: 208        IO Block: 4096   arquivo comum
- Device: 804h/2052d      Inode: 27001862    Links: 1
- Access: (0644/-rw-r--r--)  Uid: ( 1000/   kalib)   Gid: (  100/   users)
- Access: 2013-11-11 11:31:34.360892496 -0300
- Modify: 2011-05-10 09:48:46.000000000 -0300
- Change: 2011-05-11 15:01:29.019407886 -0300
- Birth: -
-</code></p>
-
-<p>ou</p>
-
-<p><code>
- [kalib@tuxcaverna ~]$ stat /dev/sda1
-  File: “/dev/sda1”
-  Size: 0               Blocks: 0          IO Block: 4096   arquivo especial de bloco
- Device: 5h/5d   Inode: 7253        Links: 1     Device type: 8,1
- Access: (0660/brw-rw----)  Uid: (    0/    root)   Gid: (    6/    disk)
- Access: 2013-11-22 08:01:39.246618958 -0300
- Modify: 2013-11-22 08:01:39.246618958 -0300
- Change: 2013-11-22 08:01:39.246618958 -0300
- Birth: -
-</code></p>
-
-<p><strong>H</strong>ave fun!</p>
 ]]></content>
   </entry>
   

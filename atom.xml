@@ -4,7 +4,7 @@
   <title><![CDATA[Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2014-01-05T11:15:06-03:00</updated>
+  <updated>2014-01-06T09:41:21-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -12,6 +12,40 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Dica de Segurança - Previna Ataques Bloqueando Pacotes ICMP Indesejados]]></title>
+    <link href="http://blog.marcelocavalcante.net/blog/2014/01/06/dica-de-seguranca-previna-ataques-bloqueando-pacotes-icmp-indesejados/"/>
+    <updated>2014-01-06T08:40:00-03:00</updated>
+    <id>http://blog.marcelocavalcante.net/blog/2014/01/06/dica-de-seguranca-previna-ataques-bloqueando-pacotes-icmp-indesejados</id>
+    <content type="html"><![CDATA[<p><img class="left" src="http://blog.marcelocavalcante.net/imgs/you_shall_not_pass.jpg" title="'Gandalf'" >
+<strong>O</strong> protocolo <em>ICMP</em> pode ser utilizado para facilitar diversas rotinas e tarefas importantes de um administrador de redes, tais como na utilização de ferramentas como o <em>ping</em> e o <em>traceroute</em>, mas também pode ser manipulado por pessoas mal intencionadas que podem manipular mensagens ou pacotes ICMP para mapear sua rede.</p>
+
+<p><strong>É</strong> comum ver administradores de rede se preocupando e fazendo um ótimo trabalho em termos de filtrar o tráfego <em>TCP</em> e/ou <em>UDP</em>, porém quase sempre esquecem de dar a mesma atenção ao tráfego <em>ICMP</em>, sendo este tão crítico quanto os dois anteriores. Uma vez que este protocolo pode ser utilizado para mapear e realizar ataques em sua rede, ele não pode simplesmente ser deixado de lado.</p>
+
+<p><strong>I</strong>CMP, sigla para <em>Internet Control Message Protocol</em>, é um protocolo integrante do Protocolo IP utilizado para fornecer relatórios de erros à fonte original. Seu tráfego é, basicamente, baseado em mensagens trocadas entre hots, gateways, etc., cujo intuito é, principalmente, reportar erros, como por exemplo um pacote IP que não consegue chegar ao seu destino.</p>
+
+<p><strong>P</strong>or padrão, alguns servidores e firewalls bloqueiam as respostas ICMP como medida de segurança, tentando assim bloquear os ataques que consistem na sobrecarga da memória, enviando dados (em ping) até o sistema não ter a capacidade de administrar suas próprias funções. Bom, ao mesmo tempo em que é um mecanismo de defesa interessante, este bloqueio total acaba comprometendo e atrapalhando diversas atividades do administrador de redes, não sendo portanto a estratégia mais inteligente a ser adotada.</p>
+
+<p><strong>A</strong>o invés de bloquear o ICMP por completo, é mais interessante conhecer o que é bom e o que é ruim em termos de mensagens ICMP, de forma que sejam realizados filtros corretos. A importância desta gangorra é não permitir que o lado <em>ruim</em> do ICMP, como por exemplo ICMP Smurf, Ping of death, ataques com ICMP flood ou ICMP nuke, prejudiquem o administrador de redes que pode tirar proveito de boas ferramentas que se utilizam do ICMP, como o Ping e o Traceroute.</p>
+
+<p><strong>A</strong> estratégia mais simples, portanto, é utilizar uma regra geral contendo exceções.</p>
+
+<ol>
+<li>Bloquear todos os tipos de tráfego ICMP;</li>
+<li>Permitir ping &mdash; CMP Echo-Request outbound (saída) e Echo-Reply inbound (entrada);</li>
+<li>Permitir traceroute &mdash; TTL-Exceeded e Port-Unreachable inbound (entrada);</li>
+<li>Permitir path MTU &mdash; ICMP Fragmentation-DF-Set inbound (entrada).</li>
+</ol>
+
+
+<p><strong>É</strong> claro que este é apenas um exemplo, visto que você poderá permitir mais ou menos, de acordo com a sua necessidade.</p>
+
+<p><strong>N</strong>ão deixemos pobre a nossa configuração, facilitando as coisas para ataques quando isto pode ser facilmente bloqueado.</p>
+
+<p><strong>H</strong>appy Hacking!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Criptografando sua Partição Swap com o Ecryptfs]]></title>
@@ -1231,47 +1265,6 @@
 <p><strong>T</strong>rata-se de um documentário sobre a vida dos três fundadores do site de compartilhamento de arquivos The Pirate Bay, dirigido por <em>Simon Klose</em>. As gravações do documentário começaram no verão de 2008, e foram concluídas em 25 de Agosto de 2012.</p>
 
 <p><strong>E</strong> a vida segue&hellip;</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Incompatibilidade: Kernel Linux 3.10.6 e Placa Wireless Broadcom Resultam em Kernel Panic]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2013/08/14/incompatibilidade-kernel-linux-3-dot-10-dot-6-e-placa-wireless-broadcom/"/>
-    <updated>2013-08-14T15:04:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2013/08/14/incompatibilidade-kernel-linux-3-dot-10-dot-6-e-placa-wireless-broadcom</id>
-    <content type="html"><![CDATA[<p><img class="center" src="http://blog.marcelocavalcante.net/imgs/kernel_panic.gif" title="'kernel_panic'" ></p>
-
-<p><strong>K</strong>ernel Panic!</p>
-
-<p><strong>F</strong>oi com isto que me deparei logo pela manhã ao chegar no trabalho ao ligar meu notebook.</p>
-
-<p><strong>O</strong>ntem rodei o habitual <em># pacman -Syu</em> para atualizar meu Arch Linux. Dentre as atualizações estava a nova versão estável do kernel linux: 3.10.6</p>
-
-<p><strong>H</strong>oje descobri que esta versão estava resultando em kernel panic para os usuários de placas wireless <em>Broadcom</em>. Sim, sou um deles.</p>
-
-<p><strong>A</strong>pós algumas buscas em logs, percebi que o problema estava se dando com minha placa wireless. Logo ao iniciar o notebook, após alguns segundos, tudo travava e eu recebia o aviso de <strong>kernel panic</strong>.</p>
-
-<p><strong>D</strong>esabilitando minha placa wireless consegui manter o notebook funcionando normalmente. Ao pesquisar, percebi que tratava-se de bug nesta versão do kernel.</p>
-
-<p><strong>S</strong>olução? Downgrade no kernel linux.</p>
-
-<p><strong>P</strong>ara quem ainda possui a versão anterior, <em>3.10.5</em> no diretório de cache, basta executar a instalação local com o pacman.</p>
-
-<p><strong>C</strong>om o seguinte comando você pode descobrir se o pacote ainda se encontra em seu cache:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'> $ ls /var/cache/pacman/pkg/ | grep linux-3.10.5</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>C</strong>aso você ainda possua o pacote, basta digitar:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'> # pacman -U /var/cache/pacman/pkg/linux-3.10.5-1-x86_64.pkg.tar.xz</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>O</strong> nome do pacote poderá ser diferente para você. Estou utilizando a versão x64 do Arch.</p>
-
-<p><strong>P</strong>or enquanto é melhor manter a versão anterior do kernel, ao menos até o lançamento da versão 3.11, na qual o problema já foi resolvido.</p>
 ]]></content>
   </entry>
   
