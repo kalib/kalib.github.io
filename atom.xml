@@ -4,7 +4,7 @@
   <title><![CDATA[Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2014-01-06T09:41:21-03:00</updated>
+  <updated>2014-01-14T09:28:38-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -12,6 +12,34 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Dica - Apostila Disponibilizada Gratuitamente - pfSense]]></title>
+    <link href="http://blog.marcelocavalcante.net/blog/2014/01/14/dica-apostila-disponibilizada-gratuitamente-pfsense/"/>
+    <updated>2014-01-14T08:27:00-03:00</updated>
+    <id>http://blog.marcelocavalcante.net/blog/2014/01/14/dica-apostila-disponibilizada-gratuitamente-pfsense</id>
+    <content type="html"><![CDATA[<p><img class="left" src="http://blog.marcelocavalcante.net/imgs/pfsense.png" title="'pfSense'" >
+<strong>G</strong>ostaria de passar adiante a notícia de que o colega <em>Leonardo Damasceno</em> acaba de compartilhar com a comunidade uma apostila de sua autoria sobre o <a href="http://www.pfsense.org"><strong>pfSense</strong></a>, de forma a divulgar mais este magnífico sistema, bem como facilitar a vida daqueles que ainda não o dominam.</p>
+
+<p><strong>S</strong>egue link direto fornecido pelo mesmo para <a href="https://www.dropbox.com/s/79ghzrs2vghbr38/pfSense%202.x%20-%20Leonardo%20Damasceno.pdf"><strong>download</strong></a>. A apostila ou livro, como prefira chamar, possui aproximadamente 70 páginas de informações úteis e diretas, sem muitas complicações.</p>
+
+<p><strong>N</strong>ão sabe o que é pfSense?</p>
+
+<p><img class="center" src="http://blog.marcelocavalcante.net/imgs/pfsense1.jpg" title="'pfSense1'" ></p>
+
+<p><strong>O</strong> pfSense é um sistema operacional baseado no <em>Free BSD</em> que pode ser instalado em um computador para servir como um firewall/roteador dedicado em uma rede. Como ferramenta <em>open source</em>, o pfSense tem se destacado nesta função, sendo considerado um dos melhores e mais confiáveis para este trabalho, oferecendo, além de sua estabilidade e confiabilidade, recursos e funções que geralmente são encontrados apenas em firewalls comerciais e caros. Não creio ser necessário lembrar a confiabilidade dos sistemas <em>Free BSD</em>&hellip;</p>
+
+<p><img class="center" src="http://blog.marcelocavalcante.net/imgs/pfsense2.jpg" title="'pfSense2'" ></p>
+
+<p><strong>E</strong>mbora seja uma versão customizada do Free BSD, não é necessário qualquer conhecimento sobre este sistema para operar o psSense, visto que ele é atualizado e completamente configurado através de uma interface web. Na maioria dos casos o pfSense tem sido aplicado como um firewall de perímetro, roteador, access point wireless, servidor DHCP, servidor DNS e VPN.</p>
+
+<p><img class="center" src="http://blog.marcelocavalcante.net/imgs/pfsense3.jpg" title="'pfSense3'" ></p>
+
+<p><strong>O</strong> mesmo apresenta diversos recursos gráficos para análise de tráfego, pacotes, performance, etc. Além de configurações avançadas para regras de firewall para LAN, WAN e utilizãção de Aliases de forma simples e intuitiva.</p>
+
+<p><img class="center" src="http://blog.marcelocavalcante.net/imgs/pfsense4.jpg" title="'pfSense4'" ></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Dica de Segurança - Previna Ataques Bloqueando Pacotes ICMP Indesejados]]></title>
@@ -1232,39 +1260,6 @@
 <p><strong>M</strong>aiores informações sobre esta release podem ser encontradas em <a href="http://community.kde.org/KDE_SC/4.11_Release_Notes">http://community.kde.org/KDE_SC/4.11_Release_Notes</a></p>
 
 <p><strong>D</strong>ivirtam-se com o novo KDE! ;]</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Navegador Anti-Censura do Pirate Bay Supera 100.000 Downloads]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2013/08/16/navegador-anti-censura-do-pirate-bay-supera-100-dot-000-downloads/"/>
-    <updated>2013-08-16T09:37:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2013/08/16/navegador-anti-censura-do-pirate-bay-supera-100-dot-000-downloads</id>
-    <content type="html"><![CDATA[<p><img class="left" src="http://blog.marcelocavalcante.net/imgs/piratebrowser.jpg" title="'Pirate Browser'" ></p>
-
-<p><strong>P</strong>ara quem ainda não sabe, o The Pirate Bay (TPB) é auto-intitulado <em>&ldquo;O tracker BitTorrent mais resiliente da galáxia&rdquo;</em>. De fato, ninguém pode negar a referência do The Pirate Bay no mundo dos torrents, certo?! O projeto foi criado entre 2003 e 2004 pela organização anticopyright sueca Piratbyrån, tornando-se independente em meados de Outubro de 2004.</p>
-
-<p><strong>E</strong>ntre idas e vindas, o The Pirate Bay lança uma nova <em>afronta direta</em> às autoridades e empresas que sempre tentaram impedir suas atividades. O <em>Pirate Browser</em>.</p>
-
-<p><strong>O</strong> Pirate Browser é o navegador lançado pelo projeto The Pirate Bay, cuja proposta é ser um navegador anti-censura, o qual permite que pessoas possam burlar filtros de acesso existentes em provedores de internet (ISP) e, assim, possam acessar sites bloqueados pelos mesmos. O navegador foi lançado em forma de <em>presente</em> aos seus usuários, visto ter sido lançado na data de comemoração de 10 anos do serviço.</p>
-
-<p><strong>N</strong>ão tratando-se de um navegador realmente novo, o Pirate Browser é na verdade uma versão <em>customizada</em> do já conhecido navegador <em>Firefox</em>, da Mozilla. O diferencial é que ele vem equipado com alguns plugins e patches, como um cliente Tor, bem como otimizações para acelerar o carregamento de páginas, através de configurações de proxy. A equipe do The Pirate Bay faz questão de informar que a ferramenta é apenas uma forma de burlar as censuras impostas na Internet, não garantindo qualquer anonimato aos usuários da mesma, conforme palavras de Winston, um dos responsáveis pelo projeto:</p>
-
-<blockquote><p><em>Não está fornecendo anonimato, tampouco seguro ao ponto de esconder sua identidade. O PirateBrowser foi feito apenas para contornar a censura e o bloqueio de sites. Se fizéssemos um navegador completamente anônimo, apenas iríamos tornar a navegação mais lenta.</em> &ndash; Winston.</p></blockquote>
-
-<p><strong>C</strong>om menos de 5 dias após seu lançamento, o navegador já recebeu mais de <em>100.000</em> downloads através do link direto e arquivo torrent oficial, o qual estava sendo compartilhado por mais de <em>5.000</em> pessoas no momento de seu lançamento.</p>
-
-<p><strong>A</strong>pesar de os próprios responsáveis pelo projeto afirmarem estar supresos pela quantidade de downloads, visto que eles realmente não esperavam por isto, afirmam que esta é apenas a primeira ferramenta que o projeto The Pirate Bay lançará.</p>
-
-<blockquote><p><em>Não imaginei que se disseminaria assim tão rapidamente. Acredito que as pessoas realmente querem acessar os sites que seus governos e cortes estão tentando esconder deles.</em> &ndash; Winston.</p></blockquote>
-
-<p><strong>P</strong>ara que não conhece, ou pouco conhece, a história do projeto The Pirate Bay, recomendo fortemente o filme <strong>TPB AFK: The Pirate Bay Away from Keyboard</strong>.</p>
-
-<p><img class="center" src="http://blog.marcelocavalcante.net/imgs/tpb_afk.jpg" title="'TPB AFK'" ></p>
-
-<p><strong>T</strong>rata-se de um documentário sobre a vida dos três fundadores do site de compartilhamento de arquivos The Pirate Bay, dirigido por <em>Simon Klose</em>. As gravações do documentário começaram no verão de 2008, e foram concluídas em 25 de Agosto de 2012.</p>
-
-<p><strong>E</strong> a vida segue&hellip;</p>
 ]]></content>
   </entry>
   

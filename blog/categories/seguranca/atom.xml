@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Seguranca | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/blog/categories/seguranca/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2014-01-06T09:41:21-03:00</updated>
+  <updated>2014-01-14T09:28:38-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -12,6 +12,34 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Dica - Apostila Disponibilizada Gratuitamente - pfSense]]></title>
+    <link href="http://blog.marcelocavalcante.net/blog/2014/01/14/dica-apostila-disponibilizada-gratuitamente-pfsense/"/>
+    <updated>2014-01-14T08:27:00-03:00</updated>
+    <id>http://blog.marcelocavalcante.net/blog/2014/01/14/dica-apostila-disponibilizada-gratuitamente-pfsense</id>
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/pfsense.png" title="&lsquo;pfSense&rsquo;" >
+<strong>G</strong>ostaria de passar adiante a notícia de que o colega <em>Leonardo Damasceno</em> acaba de compartilhar com a comunidade uma apostila de sua autoria sobre o <a href="http://www.pfsense.org"><strong>pfSense</strong></a>, de forma a divulgar mais este magnífico sistema, bem como facilitar a vida daqueles que ainda não o dominam.</p>
+
+<p><strong>S</strong>egue link direto fornecido pelo mesmo para <a href="https://www.dropbox.com/s/79ghzrs2vghbr38/pfSense%202.x%20-%20Leonardo%20Damasceno.pdf"><strong>download</strong></a>. A apostila ou livro, como prefira chamar, possui aproximadamente 70 páginas de informações úteis e diretas, sem muitas complicações.</p>
+
+<p><strong>N</strong>ão sabe o que é pfSense?</p>
+
+<p><img class="center" src="/imgs/pfsense1.jpg" title="&lsquo;pfSense1&rsquo;" ></p>
+
+<p><strong>O</strong> pfSense é um sistema operacional baseado no <em>Free BSD</em> que pode ser instalado em um computador para servir como um firewall/roteador dedicado em uma rede. Como ferramenta <em>open source</em>, o pfSense tem se destacado nesta função, sendo considerado um dos melhores e mais confiáveis para este trabalho, oferecendo, além de sua estabilidade e confiabilidade, recursos e funções que geralmente são encontrados apenas em firewalls comerciais e caros. Não creio ser necessário lembrar a confiabilidade dos sistemas <em>Free BSD</em>&hellip;</p>
+
+<p><img class="center" src="/imgs/pfsense2.jpg" title="&lsquo;pfSense2&rsquo;" ></p>
+
+<p><strong>E</strong>mbora seja uma versão customizada do Free BSD, não é necessário qualquer conhecimento sobre este sistema para operar o psSense, visto que ele é atualizado e completamente configurado através de uma interface web. Na maioria dos casos o pfSense tem sido aplicado como um firewall de perímetro, roteador, access point wireless, servidor DHCP, servidor DNS e VPN.</p>
+
+<p><img class="center" src="/imgs/pfsense3.jpg" title="&lsquo;pfSense3&rsquo;" ></p>
+
+<p><strong>O</strong> mesmo apresenta diversos recursos gráficos para análise de tráfego, pacotes, performance, etc. Além de configurações avançadas para regras de firewall para LAN, WAN e utilizãção de Aliases de forma simples e intuitiva.</p>
+
+<p><img class="center" src="/imgs/pfsense4.jpg" title="&lsquo;pfSense4&rsquo;" ></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Dica de Segurança - Previna Ataques Bloqueando Pacotes ICMP Indesejados]]></title>
@@ -217,88 +245,6 @@
 <p><img class="center" src="/imgs/firefox_pass_5.png" title="&lsquo;Firefox Pass 5&rsquo;" ></p>
 
 <p><strong>Lição aprendida: Não salve suas senhas!</strong></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Dica Rápida - Linux - Troubleshooting em Tempo de Execução com Strace]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2013/12/19/dica-rapida-linux-troubleshooting-em-tempo-de-execucao-com-strace/"/>
-    <updated>2013-12-19T08:28:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2013/12/19/dica-rapida-linux-troubleshooting-em-tempo-de-execucao-com-strace</id>
-    <content type="html"><![CDATA[<p><img class="left" src="/imgs/troubleshoot.jpg" title="&lsquo;Troubleshooting&rsquo;" >
-<strong>S</strong>e algum dia você já precisou realizar uma análise para troubleshoot de algum comando em tempo de execução e não soube como fazê-lo, seus problemas acabaram. O <strong>strace</strong> faz justamente isso.</p>
-
-<p><strong>J</strong>á trabalhei em servidores de clientes comprometidos pós-invasão cujos comandos padrões <strong>Unix</strong> haviam sido substituídos por comandos <em>similares</em> (ao menos em nome) que realizam outras tarefas sem o conhecimento dos administradores dos mesmos.</p>
-
-<p><strong>O</strong> strace serve justamente para estes, bem como outros, casos. Ele lhe indica exatamente tudo o que acontece <em>por baixo dos panos</em> em seu sistema.</p>
-
-<p><strong>V</strong>ejamos um exemplo.</p>
-
-<p><code>
- [kalib@tuxcaverna ~]$ date
- Qui Dez 19 08:41:55 BRT 2013
-</code></p>
-
-<p><strong>A</strong>gora vejamos a diferença com o uso do strace.</p>
-
-<p><code>
- [kalib@tuxcaverna ~]$ strace date
- execve("/usr/bin/date", ["date"], [/* 59 vars */]) = 0
- brk(0)                                  = 0x21df000
- access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
- open("/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
- fstat(3, {st_mode=S_IFREG|0644, st_size=274630, ...}) = 0
- mmap(NULL, 274630, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7fe0d3f3d000
- close(3)                                = 0
- open("/usr/lib/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
- read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0&gt;\0\1\0\0\0\20\34\2\0\0\0\0\0"..., 832) = 832
- fstat(3, {st_mode=S_IFREG|0755, st_size=2031229, ...}) = 0
- mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fe0d3f3c000
- mmap(NULL, 3840528, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fe0d39b8000
- mprotect(0x7fe0d3b58000, 2097152, PROT_NONE) = 0
- mmap(0x7fe0d3d58000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1a0000) = 0x7fe0d3d58000
- mmap(0x7fe0d3d5e000, 14864, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fe0d3d5e000
- close(3)                                = 0
- mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fe0d3f3b000
- mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fe0d3f3a000
- arch_prctl(ARCH_SET_FS, 0x7fe0d3f3b700) = 0
- mprotect(0x7fe0d3d58000, 16384, PROT_READ) = 0
- mprotect(0x60d000, 4096, PROT_READ)     = 0
- mprotect(0x7fe0d3f81000, 4096, PROT_READ) = 0
- munmap(0x7fe0d3f3d000, 274630)          = 0
- brk(0)                                  = 0x21df000
- brk(0x2200000)                          = 0x2200000
- open("/usr/lib/locale/locale-archive", O_RDONLY|O_CLOEXEC) = 3
- fstat(3, {st_mode=S_IFREG|0644, st_size=1863120, ...}) = 0
- mmap(NULL, 1863120, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7fe0d37f1000
- close(3)                                = 0
- open("/etc/localtime", O_RDONLY|O_CLOEXEC) = 3
- fstat(3, {st_mode=S_IFREG|0644, st_size=714, ...}) = 0
- fstat(3, {st_mode=S_IFREG|0644, st_size=714, ...}) = 0
- mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fe0d3f80000
- read(3, "TZif2\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\3\0\0\0\3\0\0\0\0"..., 4096) = 714
- lseek(3, -438, SEEK_CUR)                = 276
- read(3, "TZif2\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\3\0\0\0\3\0\0\0\0"..., 4096) = 438
- close(3)                                = 0
- munmap(0x7fe0d3f80000, 4096)            = 0
- fstat(1, {st_mode=S_IFCHR|0600, st_rdev=makedev(136, 2), ...}) = 0
- mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fe0d3f80000
- write(1, "Qui Dez 19 08:42:47 BRT 2013\n", 29Qui Dez 19 08:42:47 BRT 2013
- ) = 29
- close(1)                                = 0
- munmap(0x7fe0d3f80000, 4096)            = 0
- close(2)                                = 0
- exit_group(0)                           = ?
- +++ exited with 0 +++
-</code></p>
-
-<p><strong>O</strong> strace não é instalado por padrão em todas as distribuições, portanto é possível que você precise instalá-lo com o seu gerenciador de pacotes.</p>
-
-<p><strong>A</strong>lém do uso regular, ele possui diversos parâmetros que podem melhorar ou filtrar o seu uso. Você pode verificar a lista de parâmetros em seu manual de uso:</p>
-
-<p><code>
- [kalib@tuxcaverna ~]$ man strace
-</code></p>
 ]]></content>
   </entry>
   

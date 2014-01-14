@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2014-01-06T09:41:21-03:00</updated>
+  <updated>2014-01-14T09:28:38-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -12,6 +12,34 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Dica - Apostila Disponibilizada Gratuitamente - pfSense]]></title>
+    <link href="http://blog.marcelocavalcante.net/blog/2014/01/14/dica-apostila-disponibilizada-gratuitamente-pfsense/"/>
+    <updated>2014-01-14T08:27:00-03:00</updated>
+    <id>http://blog.marcelocavalcante.net/blog/2014/01/14/dica-apostila-disponibilizada-gratuitamente-pfsense</id>
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/pfsense.png" title="&lsquo;pfSense&rsquo;" >
+<strong>G</strong>ostaria de passar adiante a notícia de que o colega <em>Leonardo Damasceno</em> acaba de compartilhar com a comunidade uma apostila de sua autoria sobre o <a href="http://www.pfsense.org"><strong>pfSense</strong></a>, de forma a divulgar mais este magnífico sistema, bem como facilitar a vida daqueles que ainda não o dominam.</p>
+
+<p><strong>S</strong>egue link direto fornecido pelo mesmo para <a href="https://www.dropbox.com/s/79ghzrs2vghbr38/pfSense%202.x%20-%20Leonardo%20Damasceno.pdf"><strong>download</strong></a>. A apostila ou livro, como prefira chamar, possui aproximadamente 70 páginas de informações úteis e diretas, sem muitas complicações.</p>
+
+<p><strong>N</strong>ão sabe o que é pfSense?</p>
+
+<p><img class="center" src="/imgs/pfsense1.jpg" title="&lsquo;pfSense1&rsquo;" ></p>
+
+<p><strong>O</strong> pfSense é um sistema operacional baseado no <em>Free BSD</em> que pode ser instalado em um computador para servir como um firewall/roteador dedicado em uma rede. Como ferramenta <em>open source</em>, o pfSense tem se destacado nesta função, sendo considerado um dos melhores e mais confiáveis para este trabalho, oferecendo, além de sua estabilidade e confiabilidade, recursos e funções que geralmente são encontrados apenas em firewalls comerciais e caros. Não creio ser necessário lembrar a confiabilidade dos sistemas <em>Free BSD</em>&hellip;</p>
+
+<p><img class="center" src="/imgs/pfsense2.jpg" title="&lsquo;pfSense2&rsquo;" ></p>
+
+<p><strong>E</strong>mbora seja uma versão customizada do Free BSD, não é necessário qualquer conhecimento sobre este sistema para operar o psSense, visto que ele é atualizado e completamente configurado através de uma interface web. Na maioria dos casos o pfSense tem sido aplicado como um firewall de perímetro, roteador, access point wireless, servidor DHCP, servidor DNS e VPN.</p>
+
+<p><img class="center" src="/imgs/pfsense3.jpg" title="&lsquo;pfSense3&rsquo;" ></p>
+
+<p><strong>O</strong> mesmo apresenta diversos recursos gráficos para análise de tráfego, pacotes, performance, etc. Além de configurações avançadas para regras de firewall para LAN, WAN e utilizãção de Aliases de forma simples e intuitiva.</p>
+
+<p><img class="center" src="/imgs/pfsense4.jpg" title="&lsquo;pfSense4&rsquo;" ></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Dica de Segurança - Previna Ataques Bloqueando Pacotes ICMP Indesejados]]></title>
@@ -195,92 +223,6 @@
 <p><strong>I</strong>sto me fez tomar vergonha na cara.. e hoje inseri conteúdo <a href="http://blog.marcelocavalcante.net/about/"> nesta página</a>.</p>
 
 <p><strong>A</strong>gora sim&hellip; ;]</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Dica Rápida - Linux - Efeito de Texto Sendo Digitado? O pv Resolve]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2013/12/05/dica-rapida-linux-efeito-de-texto-sendo-digitado-o-pv-resolve/"/>
-    <updated>2013-12-05T08:37:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2013/12/05/dica-rapida-linux-efeito-de-texto-sendo-digitado-o-pv-resolve</id>
-    <content type="html"><![CDATA[<p><img class="left" src="/imgs/monitor.jpg" title="&lsquo;Texto em Monitor&rsquo;" >
-<strong>C</strong>ertamente você já cansou de ver em filmes e/ou séries de TV cenas nas quais um monitor apresenta um texto que, aparentemente, está sendo digitado em tempo real. É claro que eles não possuem uma pessoa digitando aquele texto ou série de comandos no momento da gravação. Então, que tal aprender uma forma de fazer isto no Linux?</p>
-
-<p><strong>O</strong> comando <em>pv</em> realiza perfeitamente este trabalho, podendo inclusive interagir com outros aplicativos e comandos.</p>
-
-<p><strong>M</strong>ão na massa&hellip;</p>
-
-<p><strong>A</strong>ntes de mais nada você precisará instalar o pv em sua distribuição. No Arch Linux, eu utilizo o pacman da forma convencional:</p>
-
-<p><code>
- [kalib@tuxcaverna ~]$ sudo pacman -S pv
-</code></p>
-
-<p><strong>O</strong> pv está disponível nos repositórios de praticamente todas as distribuições, portanto utilize o gerenciador de pacotes de sua preferência para instalá-lo.</p>
-
-<p><strong>A</strong> utilização é simples, bastando que você utilize algum comando que, de alguma forma, exponha algum texto na tela e em seguida redirecione esta saída para o pv. O pv possui diversos parâmetros, mas eu gosto particularmente de utilizar -qL, onde o <em>q</em> significa &ldquo;quiet&rdquo; e o <em>L</em> significa latência, em seguida insiro um valor para a latência. Vamos ao exemplo:</p>
-
-<p><code>
- [kalib@tuxcaverna ~]$ echo "Primeiro teste com pv" | pv -qL 20
- Primeiro teste com pv
-</code></p>
-
-<p><strong>S</strong>e você digitar o mesmo comando, verá que ele irá escrever o texto na tela de forma &ldquo;automática&rdquo;: &ldquo;Primeiro teste com pv&rdquo;.</p>
-
-<p><strong>É</strong> claro, em uma gravação de Hollywood a linha na qual o comando foi passado não deveria aparecer, no caso: <em>[kalib@tuxcaverna ~]$ echo &ldquo;Primeiro teste com pv&rdquo; | pv -qL 20</em>. Que tal inserir um <em>clear</em> antes de nosso comando para limpar a tela antes da execução desejada?</p>
-
-<p><code>
- [kalib@tuxcaverna ~]$ clear &amp;&amp; echo "Primeiro teste com pv" | pv -qL 20
-</code></p>
-
-<p><strong>P</strong>erceba que desta vez o comando digitado não aparece na tela. A única informação que será exibida será <em>Primeiro teste com pv</em>.</p>
-
-<p><strong>D</strong>iminuindo ou aumentando o valor da latência você diminuirá ou aumentará a velocidade de <em>digitação</em> do texto que você escolheu.</p>
-
-<p><strong>C</strong>omo informei no início, você pode unir o pv com outros programas ou comandos. Que tal fazer com que um texto um pouco maior seja exibido?</p>
-
-<p><strong>P</strong>ara este teste, eu criei um arquivo texto chamado <em>testepv</em>, conforme pode ser visto abaixo:</p>
-
-<p>```
- [kalib@tuxcaverna ~]$ cat testepv</p>
-
-<p> Não obstante, a contínua expansão de nossa atividade oferece uma interessante oportunidade para verificação de todos os recursos funcionais envolvidos.
- A prática cotidiana prova que o desenvolvimento contínuo de distintas formas de atuação nos obriga à análise de alternativas às soluções ortodoxas.
- Por conseguinte, a competitividade nas transações comerciais estende o alcance e a importância da gestão inovadora da qual fazemos parte.
-```</p>
-
-<p><strong>N</strong>este caso, o texto pode ser digitado <em>automaticamente</em> com o pv, da seguinte forma:</p>
-
-<p><code>
- [kalib@tuxcaverna ~]$ clear &amp;&amp; cat testepv | pv -qL 20
-</code></p>
-
-<p><strong>L</strong>egal? Que tal utilizarmos algo ainda melhor? Já ouviu falar no <em>figlet</em>? É outro comando/aplicativo Linux que muitas pessoas desconhecem. Comece instalando-o em seu sistema, caso você já não o possua. O figlet <em>desenha</em> o seu texto de uma forma um pouco mais <em>enfeitada</em>, se comparado ao puro <em>cat</em> ou <em>echo</em>. Exemplo:</p>
-
-<p>```
- [kalib@tuxcaverna ~]$ figlet &ldquo;Teste do Figlet&rdquo;</p>
-
-<hr />
-
-<p> |<em>   </em>|<strong>  </strong><em>| |</em> <em><strong>    </strong>| | </em><strong>   |  </strong><em>(</em>) <strong> <em>| | </em></strong>| |<em>
-   | |/ _ \/ <strong>| </strong>/ _ \  / </em><code>|/ _ \  | |_  | |/ _</code> | |/ _ \ <strong>|
-   | |  </strong>/_<em> \ ||  __/ | (</em>| | (<em>) | |  </em>| | | (<em>| | |  __/ |</em>
-   |<em>|_<strong>||</strong></em>/_<em>___|  _</em>,<em>|___/  |</em>|   |<em>|_</em>, |<em>|___|_</em>|</p>
-
-<pre><code>                                            |___/            
-</code></pre>
-
-<p>```</p>
-
-<p><strong>N</strong>esse caso, vamos fazer com que o efeito <em>figlet</em> também pareça estar sendo digitado automaticamente e em tempo real:</p>
-
-<p><code>
- [kalib@tuxcaverna ~]$ clear &amp;&amp; figlet "Teste do Figlet" | pv -qL 30
-</code></p>
-
-<p><strong>R</strong>esultado interessante, certo? Da mesma forma, o pv pode ser utilizado com diversos outros aplicativos que trazem alguma saída no terminal, como o cowsay e muitos outros. A sua criatividade é o limite.</p>
-
-<p><strong>H</strong>ave fun! \,,/_</p>
 ]]></content>
   </entry>
   
