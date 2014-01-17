@@ -4,7 +4,7 @@
   <title><![CDATA[Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2014-01-14T13:32:00-03:00</updated>
+  <updated>2014-01-17T10:50:47-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -12,6 +12,32 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Dica - Assistir Star Wars em um Console ou Terminal]]></title>
+    <link href="http://blog.marcelocavalcante.net/blog/2014/01/17/dica-assistir-star-wars-em-um-console-ou-terminal/"/>
+    <updated>2014-01-17T10:30:00-03:00</updated>
+    <id>http://blog.marcelocavalcante.net/blog/2014/01/17/dica-assistir-star-wars-em-um-console-ou-terminal</id>
+    <content type="html"><![CDATA[<p><img class="left" src="http://blog.marcelocavalcante.net/imgs/starwars.png" title="'Star Wars'" >
+<strong>Q</strong>uem disse que o terminal ou linha de comando serve apenas para trabalho e coisas chatas?</p>
+
+<p><strong>E</strong>stá entediado em frente ao seu terminal GNU/Linux?    Que tal algo para passar o tempo e, ao mesmo tempo, lhe trazer uma certa nostalgia? Assista Star Wars sem precisar sair de sua linha de comando ou terminal.</p>
+
+<p><strong>T</strong>udo o que você precisa digitar é:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> $ telnet towel.blinkenlights.nl</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>F</strong>eito isso, basta apreciar o show&hellip;</p>
+
+<p><img class="center" src="http://blog.marcelocavalcante.net/imgs/starwars_1.png" title="'Star Wars'" ></p>
+
+<p><img class="center" src="http://blog.marcelocavalcante.net/imgs/starwars_2.jpg" title="'Star Wars'" ></p>
+
+<p><strong>H</strong>ave fun!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Dica - Apostila Disponibilizada Gratuitamente - pfSense]]></title>
@@ -1226,40 +1252,6 @@
 
 
 <p><strong>F</strong>eito. Oi, simples assim&hellip;</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[KDE 4.11 Lançado e Disponível no Arch Linux]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2013/08/19/kde-4-dot-11-lancado-e-disponivel-no-arch-linux/"/>
-    <updated>2013-08-19T08:07:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2013/08/19/kde-4-dot-11-lancado-e-disponivel-no-arch-linux</id>
-    <content type="html"><![CDATA[<p><img class="left" src="http://blog.marcelocavalcante.net/imgs/kde411.png" title="'KDE 4.11'" >
-<strong>E</strong>m 14 de Agosto de 2013 a comunidade KDE anunciou oficialmente a última release do Ambiente de Trabalho KDE, a versão 4.11. Nesta última versão o projeto incorporou grandes atualizações na Área de Trabalho, Aplicações e plataforma de Desenvolvimento, oferecendo, além de correções, novas funcionalidades, das quais muitas serão importantes para a próxima evolução da plataforma KDE.</p>
-
-<p><strong>E</strong>ste último lançamento é dedicado a memória de <em>Atul &ldquo;toolz&rdquo; Chitnis</em>, um dos maiores representantes do movimento de Software Livre e Open Source na Índia e, também, um dos maiores responsáveis pela existência do projeto KDE na Índia. Atul deixou-nos no dia 3 de Junho, após uma longa batalha contra o Câncer. Que sua alma descanse em paz, é o desejo de todos os membros do projeto KDE e, certamente, de muitas outras pessoas que o conheceram.</p>
-
-<p><strong>A</strong> versão 4.11 do KDE irá receber um suporte de longo prazo, enquanto é preparada a transição para a versão 5.</p>
-
-<p><strong>A</strong>lém de melhorias  para as funcionalidades básicas, como uma barra de tarefas mais suave, um item de bateria mais inteligente e uma mesa de mistura de som melhorada, a introdução do KScreen também trouxe um tratamento mais inteligente de vários monitores ao ambiente de trabalho. Além disso, esta release trouxe ainda algumas melhorias de performance em grande escala, combinadas com alguns ajustes de usabilidade, para que o KDE possa ter uma experiência de utilização global mais agradável.</p>
-
-<p><strong>P</strong>rogramadores que utilizam as linguagens <em>Python</em> e <em>JavaScript</em> poderão perceber melhorias no Kate, o qual passou a trazer alguns plugins extras que melhoram a produtividade na escrita de código nesta ferramenta. O KDE PIM e o Dolphin também foram alvos de melhorias de performance, tornando-se mais rápidos e ganhando novas funcionalidades, sem mencionar, é claro, as aplicações educacionais do KDE, as quais receberam muitas novas funcionalidades.</p>
-
-<p><strong>N</strong>o Arch Linux, é claro, os pacotes já estão disponíveis nos repositórios oficiais. Se você já utiliza o KDE e deseja atualizar para esta nova versão, basta executar o já conhecido comando de atualizãção, através do gerenciador de pacotes pacman:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'> # pacman -Syu</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>S</strong>e você utiliza um gerenciador de pacotes alternativo, como o Yaourt, pode realizar a sua atualização como de costume também. Segue comando completo para usuários do yaourt:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'> # yaourt -Syu --aur</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>M</strong>aiores informações sobre esta release podem ser encontradas em <a href="http://community.kde.org/KDE_SC/4.11_Release_Notes">http://community.kde.org/KDE_SC/4.11_Release_Notes</a></p>
-
-<p><strong>D</strong>ivirtam-se com o novo KDE! ;]</p>
 ]]></content>
   </entry>
   

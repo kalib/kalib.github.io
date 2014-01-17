@@ -9,7 +9,7 @@
   <meta name="author" content="Marcelo Cavalcante Rocha - Kalib">
 
   
-  <meta name="description" content="Tarda, mas não falha&hellip; Reza o antigo ditado. Da mesma forma, digo-lhes que tardou, mas não falhou. Confesso que nunca parei para elaborar a &hellip;">
+  <meta name="description" content="Se algum dia você já precisou realizar uma análise para troubleshoot de algum comando em tempo de execução e não soube como fazê-lo, seus problemas &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -80,6 +80,165 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/12/19/dica-rapida-linux-troubleshooting-em-tempo-de-execucao-com-strace/">Dica Rápida - Linux - Troubleshooting Em Tempo De Execução Com Strace</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-19T08:28:00-03:00" pubdate data-updated="true">Dec 19<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/12/19/dica-rapida-linux-troubleshooting-em-tempo-de-execucao-com-strace/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img class="left" src="/imgs/troubleshoot.jpg" title="'Troubleshooting'" >
+<strong>S</strong>e algum dia você já precisou realizar uma análise para troubleshoot de algum comando em tempo de execução e não soube como fazê-lo, seus problemas acabaram. O <strong>strace</strong> faz justamente isso.</p>
+
+<p><strong>J</strong>á trabalhei em servidores de clientes comprometidos pós-invasão cujos comandos padrões <strong>Unix</strong> haviam sido substituídos por comandos <em>similares</em> (ao menos em nome) que realizam outras tarefas sem o conhecimento dos administradores dos mesmos.</p>
+
+<p><strong>O</strong> strace serve justamente para estes, bem como outros, casos. Ele lhe indica exatamente tudo o que acontece <em>por baixo dos panos</em> em seu sistema.</p>
+
+<p><strong>V</strong>ejamos um exemplo.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> [kalib@tuxcaverna ~]$ date
+</span><span class='line'> Qui Dez 19 08:41:55 BRT 2013</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>A</strong>gora vejamos a diferença com o uso do strace.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> [kalib@tuxcaverna ~]$ strace date
+</span><span class='line'> execve("/usr/bin/date", ["date"], [/* 59 vars */]) = 0
+</span><span class='line'> brk(0)                                  = 0x21df000
+</span><span class='line'> access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+</span><span class='line'> open("/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+</span><span class='line'> fstat(3, {st_mode=S_IFREG|0644, st_size=274630, ...}) = 0
+</span><span class='line'> mmap(NULL, 274630, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7fe0d3f3d000
+</span><span class='line'> close(3)                                = 0
+</span><span class='line'> open("/usr/lib/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+</span><span class='line'> read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0&gt;\0\1\0\0\0\20\34\2\0\0\0\0\0"..., 832) = 832
+</span><span class='line'> fstat(3, {st_mode=S_IFREG|0755, st_size=2031229, ...}) = 0
+</span><span class='line'> mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fe0d3f3c000
+</span><span class='line'> mmap(NULL, 3840528, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fe0d39b8000
+</span><span class='line'> mprotect(0x7fe0d3b58000, 2097152, PROT_NONE) = 0
+</span><span class='line'> mmap(0x7fe0d3d58000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1a0000) = 0x7fe0d3d58000
+</span><span class='line'> mmap(0x7fe0d3d5e000, 14864, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fe0d3d5e000
+</span><span class='line'> close(3)                                = 0
+</span><span class='line'> mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fe0d3f3b000
+</span><span class='line'> mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fe0d3f3a000
+</span><span class='line'> arch_prctl(ARCH_SET_FS, 0x7fe0d3f3b700) = 0
+</span><span class='line'> mprotect(0x7fe0d3d58000, 16384, PROT_READ) = 0
+</span><span class='line'> mprotect(0x60d000, 4096, PROT_READ)     = 0
+</span><span class='line'> mprotect(0x7fe0d3f81000, 4096, PROT_READ) = 0
+</span><span class='line'> munmap(0x7fe0d3f3d000, 274630)          = 0
+</span><span class='line'> brk(0)                                  = 0x21df000
+</span><span class='line'> brk(0x2200000)                          = 0x2200000
+</span><span class='line'> open("/usr/lib/locale/locale-archive", O_RDONLY|O_CLOEXEC) = 3
+</span><span class='line'> fstat(3, {st_mode=S_IFREG|0644, st_size=1863120, ...}) = 0
+</span><span class='line'> mmap(NULL, 1863120, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7fe0d37f1000
+</span><span class='line'> close(3)                                = 0
+</span><span class='line'> open("/etc/localtime", O_RDONLY|O_CLOEXEC) = 3
+</span><span class='line'> fstat(3, {st_mode=S_IFREG|0644, st_size=714, ...}) = 0
+</span><span class='line'> fstat(3, {st_mode=S_IFREG|0644, st_size=714, ...}) = 0
+</span><span class='line'> mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fe0d3f80000
+</span><span class='line'> read(3, "TZif2\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\3\0\0\0\3\0\0\0\0"..., 4096) = 714
+</span><span class='line'> lseek(3, -438, SEEK_CUR)                = 276
+</span><span class='line'> read(3, "TZif2\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\3\0\0\0\3\0\0\0\0"..., 4096) = 438
+</span><span class='line'> close(3)                                = 0
+</span><span class='line'> munmap(0x7fe0d3f80000, 4096)            = 0
+</span><span class='line'> fstat(1, {st_mode=S_IFCHR|0600, st_rdev=makedev(136, 2), ...}) = 0
+</span><span class='line'> mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fe0d3f80000
+</span><span class='line'> write(1, "Qui Dez 19 08:42:47 BRT 2013\n", 29Qui Dez 19 08:42:47 BRT 2013
+</span><span class='line'> ) = 29
+</span><span class='line'> close(1)                                = 0
+</span><span class='line'> munmap(0x7fe0d3f80000, 4096)            = 0
+</span><span class='line'> close(2)                                = 0
+</span><span class='line'> exit_group(0)                           = ?
+</span><span class='line'> +++ exited with 0 +++</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>O</strong> strace não é instalado por padrão em todas as distribuições, portanto é possível que você precise instalá-lo com o seu gerenciador de pacotes.</p>
+
+<p><strong>A</strong>lém do uso regular, ele possui diversos parâmetros que podem melhorar ou filtrar o seu uso. Você pode verificar a lista de parâmetros em seu manual de uso:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> [kalib@tuxcaverna ~]$ man strace</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -248,55 +407,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/11/25/recomendacao-bibliografica-as-treze-reliquias/">Recomendação Bibliográfica - as Treze Relíquias</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-11-25T08:30:00-03:00" pubdate data-updated="true">Nov 25<span>th</span>, 2013</time>
-        
-         | <a href="/blog/2013/11/25/recomendacao-bibliografica-as-treze-reliquias/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><img class="left" src="/imgs/livros/astrezereliquias.jpg" title="'As Treze Relíquias'" >
-<strong>S</strong>em sombra de dúvidas o livro superou minhas expectativas. Apesar de a sinopse passar a impressão de que se trata de mais um livro com temática sobrenatural voltado a um público mais jovem, a leitura revela o oposto. Certamente um livro que pode agradar diversas faixas etárias, trazendo foco no ocultismo, antigas religiões, artefatos mágicos, sexo e assassinatos com incrível crueldade, tudo isto em uma trama muito bem elaborada e descrita.</p>
-
-<p><strong>P</strong>or se tratar de assuntos que gosto, o livro prendeu minha atenção desde o início, visto que os autores souberam mesclar bem os diferentes temas em uma história conexa e personagens interessantes.</p>
-
-<p><strong>O</strong> fato de ser uma leitura bastante paralela, visto que acontecem muitas coisas ao mesmo tempo, torna o enredo mais atraente ainda, além de tornar a leitura mais rápida.</p>
-
-<p><strong>S</strong>inopse retirada do site da Livraria Saraiva:</p>
-
-<blockquote><p><em>Há mais de sete décadas treze crianças foram designadas para cuidar de artefatos antigos, dotados com um poder primitivo e letal. As relíquias, como foram chamadas, deveriam ser mantidas por seus guardiões em total segurança e afastadas umas das outras. Entretanto, agora um homem sinistro e sua amante estão atrás delas, roubando cada peça e eliminando seus protetores, deixando um rastro de crimes violentos. Aparentemente por acaso, a jovem Sarah Miller se envolverá nessa trama perigosa e terá que correr contra o tempo para elucidar os enigmas que rondam sua nova vida. Serão os guardiões seres de outro mundo? Qual será o segredo das relíquias milenares? Por que justamente Sarah foi atraída para esse jogo mortal? Uma história inquietante, povoada de lendas que até hoje rondam nosso imaginário, As treze relíquias mostra que há forças que nunca devem ser despertadas.</em></p></blockquote>
-
-<p><strong>B</strong>oa leitura!</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/4/">&larr; Anteriores</a>
@@ -328,6 +438,10 @@ Me conheça melhor <a href="http://blog.marcelocavalcante.net/about">clicando aq
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/01/17/dica-assistir-star-wars-em-um-console-ou-terminal/">Dica - Assistir Star Wars em um Console ou Terminal</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/01/14/dica-apostila-disponibilizada-gratuitamente-pfsense/">Dica - Apostila Disponibilizada Gratuitamente - pfSense</a>
       </li>
     
@@ -343,15 +457,11 @@ Me conheça melhor <a href="http://blog.marcelocavalcante.net/about">clicando aq
         <a href="/blog/2013/12/30/navegacao-anonima-atraves-da-rede-tor/">Navegação Anônima Através da Rede Tor</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/12/27/vulnerabilidade-no-firefox-descobrindo-senhas-salvas/">Vulnerabilidade no Firefox - Descobrindo Senhas Salvas</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categorias</h1>
-    <span id="tag-cloud"><embed type='application/x-shockwave-flash' src='/javascripts/tagcloud.swf'width='100%' height='250' bgcolor='#f2f2f2' id='tagcloudflash' name='tagcloudflash' quality='high' allowscriptaccess='always'flashvars="tcolor=0x333333&amp;tcolor2=0x333333&amp;hicolor=0x000000&amp;tspeed=100&amp;distr=true&amp;mode=tags&amp;tagcloud=%3Ctags%3E%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fandroid%27+style%3D%27font-size%3A+7.190839694656488%25%27%3EAndroid%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Faptitude%27+style%3D%27font-size%3A+7.190839694656488%25%27%3EAptitude%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Farch-linux%27+style%3D%27font-size%3A+18.259541984732824%25%27%3EArch+Linux%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fasterisk%27+style%3D%27font-size%3A+7.572519083969466%25%27%3EAsterisk%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fcensura%27+style%3D%27font-size%3A+7.190839694656488%25%27%3ECensura%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fchromium%27+style%3D%27font-size%3A+7.9541984732824424%25%27%3EChromium%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fcultura%27+style%3D%27font-size%3A+7.3816793893129775%25%27%3ECultura%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fcultura-hacker%27+style%3D%27font-size%3A+14.82442748091603%25%27%3ECultura+Hacker%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fdebian%27+style%3D%27font-size%3A+7.3816793893129775%25%27%3EDebian%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fdia-livre%27+style%3D%27font-size%3A+7.763358778625954%25%27%3EDia+Livre%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Feventos%27+style%3D%27font-size%3A+7.190839694656488%25%27%3EEventos%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Ffedora%27+style%3D%27font-size%3A+7.190839694656488%25%27%3EFedora%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Ffirefox%27+style%3D%27font-size%3A+7.572519083969466%25%27%3EFirefox%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fflisol%27+style%3D%27font-size%3A+8.526717557251908%25%27%3EFlisol%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Ffree-bsd%27+style%3D%27font-size%3A+7.190839694656488%25%27%3EFree+BSD%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fgoogle%27+style%3D%27font-size%3A+7.763358778625954%25%27%3EGoogle%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fimpressoes%27+style%3D%27font-size%3A+32.0%25%27%3EImpressoes%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fios%27+style%3D%27font-size%3A+7.190839694656488%25%27%3EiOS%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fjava%27+style%3D%27font-size%3A+8.335877862595419%25%27%3EJava%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fjogos%27+style%3D%27font-size%3A+7.763358778625954%25%27%3EJogos%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fkde%27+style%3D%27font-size%3A+10.244274809160306%25%27%3EKDE%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fkubuntu%27+style%3D%27font-size%3A+7.572519083969466%25%27%3EKubuntu%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fliberdade%27+style%3D%27font-size%3A+7.190839694656488%25%27%3ELiberdade%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Flinux%27+style%3D%27font-size%3A+26.27480916030534%25%27%3ELinux%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fliteratura%27+style%3D%27font-size%3A+11.961832061068701%25%27%3ELiteratura%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fmeio-ambiente%27+style%3D%27font-size%3A+7.763358778625954%25%27%3EMeio+Ambiente%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fpython%27+style%3D%27font-size%3A+8.717557251908397%25%27%3EPython%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Frails%27+style%3D%27font-size%3A+7.190839694656488%25%27%3ERails%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fredes%27+style%3D%27font-size%3A+10.816793893129772%25%27%3ERedes%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fruby%27+style%3D%27font-size%3A+7.9541984732824424%25%27%3ERuby%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fseguranca%27+style%3D%27font-size%3A+13.106870229007633%25%27%3ESeguranca%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fseguranca-digital%27+style%3D%27font-size%3A+7.190839694656488%25%27%3ESeguranca+Digital%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fsenha%27+style%3D%27font-size%3A+7.190839694656488%25%27%3ESenha%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fservidor%27+style%3D%27font-size%3A+7.190839694656488%25%27%3EServidor%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fsoftware-livre%27+style%3D%27font-size%3A+30.282442748091604%25%27%3ESoftware+Livre%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fssh%27+style%3D%27font-size%3A+7.190839694656488%25%27%3ESSH%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fsysadmin%27+style%3D%27font-size%3A+7.190839694656488%25%27%3ESysAdmin%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Ftux-ce%27+style%3D%27font-size%3A+9.48091603053435%25%27%3ETux-ce%3C%2Fa%3E+%3C%2Ftags%3E"></span>
+    <span id="tag-cloud"><embed type='application/x-shockwave-flash' src='/javascripts/tagcloud.swf'width='100%' height='250' bgcolor='#f2f2f2' id='tagcloudflash' name='tagcloudflash' quality='high' allowscriptaccess='always'flashvars="tcolor=0x333333&amp;tcolor2=0x333333&amp;hicolor=0x000000&amp;tspeed=100&amp;distr=true&amp;mode=tags&amp;tagcloud=%3Ctags%3E%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fandroid%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EAndroid%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Faptitude%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EAptitude%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Farch-linux%27+style%3D%27font-size%3A+18.174242424242422%25%27%3EArch+Linux%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fasterisk%27+style%3D%27font-size%3A+7.568181818181818%25%27%3EAsterisk%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fcensura%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3ECensura%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fchromium%27+style%3D%27font-size%3A+7.946969696969697%25%27%3EChromium%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fcultura%27+style%3D%27font-size%3A+7.378787878787879%25%27%3ECultura%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fcultura-hacker%27+style%3D%27font-size%3A+14.765151515151516%25%27%3ECultura+Hacker%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fdebian%27+style%3D%27font-size%3A+7.378787878787879%25%27%3EDebian%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fdia-livre%27+style%3D%27font-size%3A+7.757575757575758%25%27%3EDia+Livre%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Feventos%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EEventos%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Ffedora%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EFedora%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Ffirefox%27+style%3D%27font-size%3A+7.568181818181818%25%27%3EFirefox%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fflisol%27+style%3D%27font-size%3A+8.515151515151516%25%27%3EFlisol%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Ffree-bsd%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EFree+BSD%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fgoogle%27+style%3D%27font-size%3A+7.757575757575758%25%27%3EGoogle%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fimpressoes%27+style%3D%27font-size%3A+32.0%25%27%3EImpressoes%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fios%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EiOS%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fjava%27+style%3D%27font-size%3A+8.325757575757576%25%27%3EJava%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fjogos%27+style%3D%27font-size%3A+7.757575757575758%25%27%3EJogos%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fkde%27+style%3D%27font-size%3A+10.219696969696969%25%27%3EKDE%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fkubuntu%27+style%3D%27font-size%3A+7.568181818181818%25%27%3EKubuntu%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fliberdade%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3ELiberdade%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Flinux%27+style%3D%27font-size%3A+26.318181818181817%25%27%3ELinux%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fliteratura%27+style%3D%27font-size%3A+11.924242424242424%25%27%3ELiteratura%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fmeio-ambiente%27+style%3D%27font-size%3A+7.757575757575758%25%27%3EMeio+Ambiente%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fpython%27+style%3D%27font-size%3A+8.704545454545455%25%27%3EPython%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Frails%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3ERails%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fredes%27+style%3D%27font-size%3A+10.787878787878789%25%27%3ERedes%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fruby%27+style%3D%27font-size%3A+7.946969696969697%25%27%3ERuby%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fseguranca%27+style%3D%27font-size%3A+13.06060606060606%25%27%3ESeguranca%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fseguranca-digital%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3ESeguranca+Digital%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fsenha%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3ESenha%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fservidor%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EServidor%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fsoftware-livre%27+style%3D%27font-size%3A+30.106060606060606%25%27%3ESoftware+Livre%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fssh%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3ESSH%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Fsysadmin%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3ESysAdmin%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fblog.marcelocavalcante.net%2Fblog%2Fcategories%2Ftux-ce%27+style%3D%27font-size%3A+9.462121212121211%25%27%3ETux-ce%3C%2Fa%3E+%3C%2Ftags%3E"></span>
 </section>
 <section>
   <h1>Estou lendo</h1>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Impressoes | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/blog/categories/impressoes/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2014-01-14T13:32:00-03:00</updated>
+  <updated>2014-01-17T10:50:47-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -12,6 +12,32 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Dica - Assistir Star Wars em um Console ou Terminal]]></title>
+    <link href="http://blog.marcelocavalcante.net/blog/2014/01/17/dica-assistir-star-wars-em-um-console-ou-terminal/"/>
+    <updated>2014-01-17T10:30:00-03:00</updated>
+    <id>http://blog.marcelocavalcante.net/blog/2014/01/17/dica-assistir-star-wars-em-um-console-ou-terminal</id>
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/starwars.png" title="&lsquo;Star Wars&rsquo;" >
+<strong>Q</strong>uem disse que o terminal ou linha de comando serve apenas para trabalho e coisas chatas?</p>
+
+<p><strong>E</strong>stá entediado em frente ao seu terminal GNU/Linux?    Que tal algo para passar o tempo e, ao mesmo tempo, lhe trazer uma certa nostalgia? Assista Star Wars sem precisar sair de sua linha de comando ou terminal.</p>
+
+<p><strong>T</strong>udo o que você precisa digitar é:</p>
+
+<p><code>
+ $ telnet towel.blinkenlights.nl
+</code></p>
+
+<p><strong>F</strong>eito isso, basta apreciar o show&hellip;</p>
+
+<p><img class="center" src="/imgs/starwars_1.png" title="&lsquo;Star Wars&rsquo;" ></p>
+
+<p><img class="center" src="/imgs/starwars_2.jpg" title="&lsquo;Star Wars&rsquo;" ></p>
+
+<p><strong>H</strong>ave fun!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Navegação Anônima Através da Rede Tor]]></title>
@@ -174,33 +200,6 @@
 <p><strong>O</strong>nde, da mesma forma, <strong>M</strong> = Maximum_days, <strong>m</strong> = Minimum_days e <strong>W</strong> = warn.</p>
 
 <p><strong>B</strong>om proveito&hellip;</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Recomendação Bibliográfica: Gravidade]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2013/08/08/recomendacao-bibliografica-gravidade/"/>
-    <updated>2013-08-08T17:23:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2013/08/08/recomendacao-bibliografica-gravidade</id>
-    <content type="html"><![CDATA[<p><img class="center" src="/imgs/livros/gravidade.jpg" title="&lsquo;Gravidade&rsquo;" ></p>
-
-<p><strong>O</strong> livro da vez se chama <em>Gravidade</em>, de <em>Tess Gerritsen</em>.</p>
-
-<p><strong>T</strong>ess Gerritsen é, sem sombra de dúvidas, uma autora que conquistou um lugar (ou vários) bastante especial em minha estante. A cada livro que leio fico mais fascinado com a facilidade e maestria com a qual ela consegue cativar o leitor e ao mesmo tempo fazer com que o mesmo se sinta imerso no cenário e história como um todo.</p>
-
-<p><strong>F</strong>aço das palavras de <em>Stephen King</em> as minhas ao afirmar:</p>
-
-<blockquote><p><em>Tess Gerritsen é leitura obrigatória em minha casa. &ndash; Stephen King</em></p></blockquote>
-
-<p><strong>O</strong> livro aborda uma missão rotineira da NASA para uma estação espacial onde existe uma tripulação que precisa substituir um de seus astronatuas por motivos pessoais que o fazem precisar voltar ao planeta Terra. Diversas experiências ocorrem em paralelo na estação, enviadas por cientistas do mundo inteiro, com o intuito de ver os resultados de suas pesquisas em um ambiente com micro gravidade. Mas, como nem tudo é um mar de rosas, uma série de incidentes acaba por gerar situações complicadas, comprometendo a vida de diversos tripulantes e até mesmo a do planeta Terra.</p>
-
-<p><strong>O</strong> fato de Tess Gerritsen ter visitado pessoalmente as instalações reais da NASA, oportunidade na qual conversou com pessoas da instituição sobre diversos assuntos, tornou suas referências e relatos extremamente realistas e atraentes.</p>
-
-<p><strong>S</strong>egue sinopse retirada do site da <em>Livraria Saraiva</em>:</p>
-
-<blockquote><p><em>A pesquisadora Emma Watson está prestes a realizar a missão mais importante de sua vida: estudar o comportamento da vida terrestre no espaço. Escolhida pela Nasa para conduzir uma série de experimentos sobre o comportamento de organismos unicelulares, a Dra. Watson logo descobre a natureza aterrorizante desses organismos e precisa correr contra o tempo para conter uma doença mortal que pode ameaçar a Terra. Tess Gerritsen se aventura no campo do desconhecido, e o resultado é este suspense que mistura, de forma brilhante, ficção científica e medicina.</em></p></blockquote>
-
-<p><strong>S</strong>em sombra de dúvidas recomendo a leitura deste livro a todos os interessados em ficção científica e suspense.</p>
 ]]></content>
   </entry>
   

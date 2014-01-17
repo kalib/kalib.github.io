@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2014-01-14T13:32:00-03:00</updated>
+  <updated>2014-01-17T10:50:47-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -12,6 +12,32 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Dica - Assistir Star Wars em um Console ou Terminal]]></title>
+    <link href="http://blog.marcelocavalcante.net/blog/2014/01/17/dica-assistir-star-wars-em-um-console-ou-terminal/"/>
+    <updated>2014-01-17T10:30:00-03:00</updated>
+    <id>http://blog.marcelocavalcante.net/blog/2014/01/17/dica-assistir-star-wars-em-um-console-ou-terminal</id>
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/starwars.png" title="&lsquo;Star Wars&rsquo;" >
+<strong>Q</strong>uem disse que o terminal ou linha de comando serve apenas para trabalho e coisas chatas?</p>
+
+<p><strong>E</strong>stá entediado em frente ao seu terminal GNU/Linux?    Que tal algo para passar o tempo e, ao mesmo tempo, lhe trazer uma certa nostalgia? Assista Star Wars sem precisar sair de sua linha de comando ou terminal.</p>
+
+<p><strong>T</strong>udo o que você precisa digitar é:</p>
+
+<p><code>
+ $ telnet towel.blinkenlights.nl
+</code></p>
+
+<p><strong>F</strong>eito isso, basta apreciar o show&hellip;</p>
+
+<p><img class="center" src="/imgs/starwars_1.png" title="&lsquo;Star Wars&rsquo;" ></p>
+
+<p><img class="center" src="/imgs/starwars_2.jpg" title="&lsquo;Star Wars&rsquo;" ></p>
+
+<p><strong>H</strong>ave fun!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Dica - Apostila Disponibilizada Gratuitamente - pfSense]]></title>
@@ -206,23 +232,6 @@
 <p><code>
  [kalib@tuxcaverna ~]$ man strace
 </code></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Sobre mim... Tarda mas não falha]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2013/12/16/sobre-mim-dot-dot-dot-tarda-mas-nao-falha/"/>
-    <updated>2013-12-16T15:31:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2013/12/16/sobre-mim-dot-dot-dot-tarda-mas-nao-falha</id>
-    <content type="html"><![CDATA[<p><strong>T</strong>arda, mas não falha&hellip; Reza o antigo ditado.</p>
-
-<p><strong>D</strong>a mesma forma, digo-lhes que tardou, mas não falhou. Confesso que nunca parei para elaborar a página &ldquo;Sobre mim&rdquo; deste blog. O link existia no topo, mas sempre esteve &ldquo;Em construção&rdquo;. Preguiça? Falta de interesse? Esquecimento? Acho que um pouco de cada.</p>
-
-<p><strong>H</strong>oje fui surpreendido por uma pessoa que acabou caindo no blog e em seguida me questionou sobre o porque de o blog já existir a tanto tempo e até hoje a página &ldquo;Sobre mim&rdquo; continuar contendo apenas as palavras &ldquo;Em construção&rdquo;.</p>
-
-<p><strong>I</strong>sto me fez tomar vergonha na cara.. e hoje inseri conteúdo <a href="http://blog.marcelocavalcante.net/about/"> nesta página</a>.</p>
-
-<p><strong>A</strong>gora sim&hellip; ;]</p>
 ]]></content>
   </entry>
   
