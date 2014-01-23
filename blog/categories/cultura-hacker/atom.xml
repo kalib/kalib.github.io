@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Cultura Hacker | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/blog/categories/cultura-hacker/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2014-01-17T11:14:56-03:00</updated>
+  <updated>2014-01-23T11:08:53-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -12,6 +12,56 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Dica - Escondendo Seu Endereço de Email ao Divulgar Seu Endereço de Email]]></title>
+    <link href="http://blog.marcelocavalcante.net/blog/2014/01/23/dica-escondendo-seu-endereco-de-email-ao-divulgar-seu-endereco-de-email/"/>
+    <updated>2014-01-23T09:37:00-03:00</updated>
+    <id>http://blog.marcelocavalcante.net/blog/2014/01/23/dica-escondendo-seu-endereco-de-email-ao-divulgar-seu-endereco-de-email</id>
+    <content type="html"><![CDATA[<p><img class="center" src="/imgs/frog_camouflage.jpg" title="&lsquo;Camouflage&rsquo;" ></p>
+
+<p><strong>D</strong>a mesma forma que alguns animais só conseguem sobreviver utilizando-se de sua capacidade e/ou técnica de camuflar-se, misturando-se assim ao ambiente, para enganar seus predadores naturais, as pessoas do mundo atual praticamente precisam adotar as mesmas técnicas para manter seus endereços de email livres de um turbilhão de emails indesejados com propagandas de viagra, dicas para crescimento peniano, irregularidades em seu CPF, problemas em sua conta bancária, etc, etc.</p>
+
+<p><strong>U</strong>m dos métodos mais simples e mais utilizado é substituir a <em>@</em> por alguma outra coisa, como por exemplo:</p>
+
+<p><em>fulanoEMgmail.com</em>
+<em>fulanoAThotmail.com</em>
+&hellip;</p>
+
+<p><strong>M</strong>as existem aqueles que podem preferir levar isto à um nível mais elevado. Que tal fazer de uma forma mais geek?</p>
+
+<p><strong>O</strong> Linux pode lhe ajudar a fazer isto de forma inusitada, porém eficiente e confiável. Para nosso exemplo, vamos assumir que utilizaremos o email <em>fulano@marcelocavalcante.net</em>.</p>
+
+<p><strong>E</strong>xperimente o seguinte comando:</p>
+
+<p><code>
+ $ echo fulano@marcelocavalcante.net | tr a-z@. n-za-m.@
+</code></p>
+
+<p><strong>O</strong> retorno será algo como:</p>
+
+<p><code>
+ shynab.zneprybpninypnagr@arg
+</code></p>
+
+<p><strong>I</strong>legível, certo? Parabéns, você acaba de &ldquo;camuflar&rdquo; ou &ldquo;esconder&rdquo; o seu email. Este é o seu endereço de email. Como divulgar ele para que alguém possa entendê-lo? Bom, ao invés de divulgar um endereço de email, voê vai divulgar um comando, da seguinte forma:</p>
+
+<p><strong>echo shynab.zneprybpninypnagr@arg | tr a-z@. n-za-m.@</strong></p>
+
+<p><strong>D</strong>esta forma, quem copiar este comando e o executar em um terminal Linux, terá o seguinte resultado:</p>
+
+<p><code>
+ $ echo shynab.zneprybpninypnagr@arg | tr a-z@. n-za-m.@
+ fulano@marcelocavalcante.net
+</code></p>
+
+<p><em>*D</em>esta forma você evitar que robôs ou scanners saiam vasculhando seu endereço de email indexando conteúdos aleatórios pela internet e assim, reduzindo assim as chances de o seu endereço de email cair em listas de SPAM.</p>
+
+<p><strong>L</strong>egal, certo?!</p>
+
+<p><strong>H</strong>appy Hacking!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Vulnerabilidade iOS7 - Hack na Tela de Bloqueio Permite Burlar Segurança]]></title>
@@ -300,35 +350,6 @@ Rua Castro Monte, 1364 Varjota – Fortaleza, CE
 <p><strong>N</strong>ão deixe de fazer o <a href="http://www.segurancadigital.info/revista/185-revistas">download</a> desta edição e conferir o resultado desta força tarefa inicial.</p>
 
 <p><strong>E</strong>speramos que gostem.</p>
-
-<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Dia Livre - Lançamento oficial do site]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2011/05/16/dia-livre-lancamento-oficial-do-site/"/>
-    <updated>2011-05-16T10:37:50-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2011/05/16/dia-livre-lancamento-oficial-do-site</id>
-    <content type="html"><![CDATA[<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/05/Logo+dia-livre-01.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/05/Logo+dia-livre-01.png" alt="" /></a></p>
-
-<p><strong>G</strong>ostaria de comunicar sobre o lançamento oficial do <a href="http://dialivre.tux-ce.org">site do Dia Livre</a> que se deu ontem, Domingo.</p>
-
-<p><strong>R</strong>ecentemente escrevi <a href="http://marcelocavalcante.net/portal/2011/04/19/encontros-sobre-software-livre-escolha-um-nome/">aqui</a> sobre um encontro regular que pretendemos organizar para usuários e profissionais de Software Livre em nossa região.</p>
-
-<p><strong>O</strong>ntem o site do Dia Livre foi lançado oficialmente e servirá de ponto de acesso e informações sobre tudo o que envolve o mesmo, como fotos, vídeos, inscrições, agenda, notícias, etc.</p>
-
-<p><strong>E</strong>m suas várias edições pretendemos abordar os mais diversos temas que rondam o mundo da tecnologia e do Software Livre como desenvolvimento, design, redes, segurança, bancos de dados, segurança, etc. Além de tecnologia, o evento também tende a abordar temas ligados à cultura, inclusão digital e social, dentre outros aspectos de importância e relevância similar.</p>
-
-<p><strong>A</strong>inda não sabe o que é o Dia Livre?</p>
-
-<p><strong>Q</strong>ue tal visitar <a href="http://tux-ce.org/dialivre/dia-livre/">a página de apresentação do evento</a>?</p>
-
-<p><strong>D</strong>eseja se manter informado? Você também pode seguir o <a href="http://twitter.com/#!/@dia_livre">@dia_livre</a> no twitter e ficar por dentro do que rola.</p>
-
-<p><strong>E</strong>m breve teremos maiores notícias sobre a primeira edição.</p>
-
-<p><strong>A</strong>braços!</p>
 
 <p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
 ]]></content>
