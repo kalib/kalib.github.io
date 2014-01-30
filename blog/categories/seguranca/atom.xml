@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Seguranca | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/blog/categories/seguranca/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2014-01-23T11:08:53-03:00</updated>
+  <updated>2014-01-30T10:31:15-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -12,6 +12,102 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[BlackArch Linux - Uma nova distribuição para Pentesters]]></title>
+    <link href="http://blog.marcelocavalcante.net/blog/2014/01/30/blackarch-linux-uma-nova-distribuicao-para-pentesters/"/>
+    <updated>2014-01-30T08:47:00-03:00</updated>
+    <id>http://blog.marcelocavalcante.net/blog/2014/01/30/blackarch-linux-uma-nova-distribuicao-para-pentesters</id>
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/blackarch.jpg" title="&lsquo;BlackArch&rsquo;" ></p>
+
+<p><strong>U</strong>ma boa novidade para os profissionais de segurança: <a href="http://www.blackarch.org" target="_blank">BlackArch</a>! Para quem, assim como eu, gosta de como as coisas funcionam no Arch Linux essa é uma notícia particularmente boa, visto que o BlackArch não se trata realmente de uma nova distribuição, mas sim de uma <em>extensão</em> para o Arch Linux. Como assim? Bom, você possui duas opções para utilizar o BlackArch, sendo uma delas como uma distribuição completa, através de um Live CD, por exemplo, e a outra como uma extensão (um repositório de pacotes) para o Arch Linux, onde você poderá apenas inserir um repositório em sua já existente distribuição Arch Linux e ter acesso ao conjunto de ferramentas do BlackArch.</p>
+
+<p><strong>O</strong> BlackArch, atualmente, possui suporte para as arquiteturas i686 e x86_64, com previsão de suporte para ARM em breve (Sim, meu RaspBerry poderá se tornar uma ferramenta para pentests). No mais, o BlackArch hoje possui mais de 600 ferramentas, estando este número crescendo constantemente, e utiliza grupos modulares de pacotes, facilitando a instalação dos mesmos.</p>
+
+<p><strong>A</strong> ISO Live trás diversos gerenciadores de janelas ou ambientes gráficos, como o dwm, Fluxbox, Openbox, Awesome, Wmii, i3 e Spectrwm. É claro, ele também trás um instalador capaz de instalar a partir do fonte.</p>
+
+<p><strong>D</strong>entre as ferramentas existentes estão: 3proxy, 42zip, acccheck, aesfix, against, airflood, airoscript, bluepot, blueprint, braces, bss, bully, cisco-ocs, cmospwd, dbd, dc3dd, deblaze, dhcpig, enumiax, fakedns, &hellip; Vocẽ não espera que eu liste todos os mais de 600, certo?</p>
+
+<p><strong>Configurando como um Repositório Não-Oficial</strong></p>
+
+<p><strong>S</strong>e você já possui o Arch Linux instalado e deseja apenas inserir o BlackArch como um repositório em sua distro, execute os seguintes comandos como root, os quais servirão para assinar os pacotes: <em>(Se você não possui o Arch Linux instalado e/ou simplesmente deseja rodar o Live CD ou instalar o mesmo por completo, seja em uma máquina física ou virtual, siga para a seção <a href="#instalando">Instalando o BlackArch Linux utilizando a Live-ISO</a>)</em></p>
+
+<p>```
+ # wget -q <a href="http://blackarch.org/keyring/blackarch-keyring.pkg.tar.xz">http://blackarch.org/keyring/blackarch-keyring.pkg.tar.xz</a>{,.sig}</p>
+
+<p> # gpg &mdash;keyserver hkp://pgp.mit.edu &mdash;recv 4345771566D76038C7FEB43863EC0ADBEA87E4E3</p>
+
+<p> # gpg &mdash;keyserver-o no-auto-key-retrieve &mdash;with-f blackarch-keyring.pkg.tar.xz.sig</p>
+
+<p> # pacman-key &mdash;init</p>
+
+<p> # rm blackarch-keyring.pkg.tar.xz.sig</p>
+
+<p> # pacman &mdash;noc -U blackarch-keyring.pkg.tar.xz
+```</p>
+
+<p><strong>E</strong>m seguida, adicione as seguintes linhas ao seu arquivo <em>/etc/pacman.conf</em>:</p>
+
+<p><code>
+  [blackarch]
+  Server = &lt;mirror_site&gt;/$repo/os/$arch
+</code></p>
+
+<p><strong>Substitua</strong> <em>&lt;mirror_site></em> por um mirror de sua escolha, preferencialmente um dos <strong>mirrors oficiais</strong> contidos <a href="http://blackarch.org/download.html#mirrors" target="_blank"><em>neste link</em></a>.</p>
+
+<p><strong>U</strong>ma vez que você tenha seguido os passos acima, execute:</p>
+
+<p><code>
+ $ sudo pacman -Syyu
+</code></p>
+
+<p><strong>Instalando os pacotes</strong></p>
+
+<p><strong>A</strong>gora que você já preparou o terreno assinando e configurando o repositório do Black Arch, basta instalar os pacotes em seu Arch Linux.</p>
+
+<p><strong>P</strong>ara listar todas as ferramentas disponíveis, execute:</p>
+
+<p><code>
+ $ sudo pacman -Sgg | grep blackarch | cut -d' ' -f2 | sort -u
+</code></p>
+
+<p><strong>P</strong>ara instalar todas as ferramentas, execute:</p>
+
+<p><code>
+ $ sudo pacman -S blackarch
+</code></p>
+
+<p><strong>P</strong>ara instalar uma categoria de ferramentas, execute:</p>
+
+<p><code>
+ $ sudo pacman -S blackarch-&lt;categoria&gt;
+</code></p>
+
+<p><strong>P</strong>ara ver as categorias existentes no BlackArch, execute:</p>
+
+<p><code>
+ $ sudo pacman -Sg | grep blackarch
+</code></p>
+
+<p><strong><a name="instalando">Instalando o BlackArch Linux utilizando a Live-ISO</a></strong></p>
+
+<p><strong>A</strong>ntes de mais nada, <a href="http://blackarch.org/download.html" target="_blank">baixe a ISO a partir do site oficial</a>.</p>
+
+<p><strong>E</strong>m seguida, dê boot na ISO e instale o script de instalação do BlackArch:</p>
+
+<p><code>
+ $ sudo pacman -S blackarch-install-scripts
+</code></p>
+
+<p><strong>A</strong>gora, basta instalar:</p>
+
+<p><code>
+ # blackarch-install
+</code></p>
+
+<p><strong>H</strong>appy Hacking!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Dica - Escondendo Seu Endereço de Email ao Divulgar Seu Endereço de Email]]></title>
@@ -172,68 +268,6 @@
 <p><strong>V</strong>ocê deverá receber as informações sobre sua partição de swap, inclusive o indicativo <em>cryptswap</em>.</p>
 
 <p><strong>C</strong>omo medida preventiva contra erros durante o boot, edite o arquivo <em>/etc/fstab</em>, retirando a entrada da swap não encriptada, deixando em seu lugar a entrada para a swap encriptada.</p>
-
-<p><strong>H</strong>appy Hacking!</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Navegação Anônima Através da Rede Tor]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2013/12/30/navegacao-anonima-atraves-da-rede-tor/"/>
-    <updated>2013-12-30T08:15:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2013/12/30/navegacao-anonima-atraves-da-rede-tor</id>
-    <content type="html"><![CDATA[<p><img class="left" src="/imgs/tor_logo.png" title="&lsquo;Tor&rsquo;" >
-<strong>O</strong> ano de 2013 foi marcado por diversos acontecimentos de grande repercussão e, sem sombra de dúvidas, um deles foi o escândalo causado pelo vazamento de dados que provaram que algumas instituições, dentre elas a <em>NSA</em> (Agência de Segurança dos Estados Unidos), estavam espionando diversas entidades, empresas e até mesmo pessoas físicas nas mais diversas regiões do globo. Escândalos a parte, estas denúncias acabaram despertando um pouco mais (uma pena que não tenha sido muito mais) nas pessoas o interesse em preservar sua privacidade.</p>
-
-<p><strong>S</strong>endo assim, nada mais justo que dedicar o último post do ano ao <em>Tor</em>.</p>
-
-<p><strong>A</strong>inda vivemos em um mundo (principalmente nosso querido Brasil) onde as pessoas parecem simplesmente não se importar com o quesito privacidade. Não é difícil encontrar praticamente todas as informações sobre a maioria das pessoas pois elas mesmas fazem questão de expor isto aos sete ventos através das redes e mídias sociais. Divulgam dezenas de fotos de sua pessoa, bem como de seus parentes, informam dados pessoais, rotinas, locais que frequentam, horários, local de trabalho, amizades, áreas de interesse, etc. A lista é longa&hellip;</p>
-
-<p><strong>F</strong>elizmente algumas pessoas já começaram a atentar para a importância de manter sua privacidade e, para tal, passaram a buscar maneiras alternativas para <em>driblar</em> estas <em>espionagens</em> e outras formas de golpes tão comuns hoje em dia, mantendo assim o seu anonimato durante sua navegação. A rede <strong>Tor</strong>, ou <em>The Onion Router</em>, surgiu basicamente com este propósito.</p>
-
-<p><strong>T</strong>or é uma rede de computadores distribuída cuja finalidade primária é manter o anonimato na <em>internet</em>. Seu objetivo básico é garantir a privacidade e anonimato do usuário que está navegando através desta rede. Apesar de o uso do Tor ser simplificado em sistemas GNU/Linux, visto que a maioria das distribuições disponibilizam o pacote do Tor, também existem versões para sistemas Windows e Mac OS. Trata-se de uma rede de túneis criptografados, onde os roteadores da rede são computadores de usuários comuns que estão rodando um programa e possuem acesso à internet.</p>
-
-<p><strong>B</strong>asicamente, o usuário instala um programa, <em>tor-cliente</em>, em seu computador e este funcionará como um <em>proxy</em> para o mesmo. Os demais programas que o usuário utiliza para navegar na internet <em>(navegador, emule, etc.)</em> deverão ser configurados para navegar através deste proxy.</p>
-
-<p><strong>A</strong> partir daí, quando o usuário digitar em seu navegador o endereço destino, <em><a href="http://www.google.com*">http://www.google.com*</a> por exemplo, ao invés de a sua requisição passar por roteadores convencionais para atingir o destino, ele passará por túneis criptografados da rede Tor, para então chegar ao seu destino. Nestes túneis a sua requisição e informações passam por vários </em>nós<em> da rede Tor. Um exemplo prático do anonimato provido pelo Tor é a verificação do seu próprio IP. Caso deseje realizar o teste, experimente acessar o endereço </em><a href="http://www.meuip.com.br*">http://www.meuip.com.br*</a> antes de instalar e configurar o Tor em sua máquina. Este site lhe informará o seu atual endereço IP, no caso o endereço será o do seu roteador de acesso à rede pública. Em seguida, tente acessar novamente o mesmo endereço após ter instalado e configurado o Tor. Você perceberá que ele não retornará o seu endereço IP, mas sim um endereço IP qualquer de um nó da rede Tor. Ou seja, isto atrapalha a vida de quem quer que deseje rastrear a sua máquina a partir de um endereço que você tenha acessado ou mesmo de um email que você tenha enviado.</p>
-
-<p><strong>Instalação do Tor no Arch Linux</strong></p>
-
-<p><strong>C</strong>onforme informei no início, o Tor está disponível para praticamente todos os sistemas operacionais, mas vou focar a explicação de instalação para a minha distribuição, Arch Linux, embora o processo seja bastante similar para as demais distribuições GNU/Linux.</p>
-
-<ol>
-<li>Instale o Tor:</li>
-</ol>
-
-
-<p><code>
- [kalib@tuxcaverna ~]$ sudo pacman -S tor
-</code></p>
-
-<ol>
-<li>Como um opcional, instale também o frontend ou GUI, o qual é desenvolvido em QT, <em>vidalia</em>. O vidalia, além de controlar o processo Tor, permite-lhe ver e configurar o status do Tor, monitorar o uso de banda e ver, filtrar ou realizar pesquisas em mensagens de log, etc.</li>
-</ol>
-
-
-<p><code>
- [kalib@tuxcaverna ~]$ sudo pacman -S vidalia
-</code></p>
-
-<ol>
-<li>Inicie/Habilite o serviço utilizando o <em>systemd</em>.</li>
-</ol>
-
-
-<p><strong>A</strong> configuração padrão do Tor deverá funcionar para a maioria dos usuários, mas caso deseje alterar algo, verifique a documentação do Tor e altere as configurações em <em>/etc/tor/torrc</em>.</p>
-
-<ol>
-<li>Para utilizar um programa através da rede Tor, configure-o para utilizar o endereço <em>127.0.0.1</em> ou <em>localhost</em> como endereço proxy <em>SOCKS5</em> através da porta <em>9050</em> (porta padrão do Tor) ou <em>9051</em> (porta padrão utilizada quando se configura com o vidalia).</li>
-</ol>
-
-
-<p><strong>A</strong> rede Tor possui uma espécio de domínio próprio com terminação <em>.onion</em>, acessível apenas através da própria rede Tor. Páginas com este domínio são parte da chamada Deep Web, mas isto será assunto para um outro post por ser algo polêmico e extenso.</p>
-
-<p><strong>D</strong>esejo a todos um feliz ano novo com liberdade, privacidade e anonimato, quando necessário!</p>
 
 <p><strong>H</strong>appy Hacking!</p>
 ]]></content>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Arch Linux | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/blog/categories/arch-linux/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2014-01-23T11:08:53-03:00</updated>
+  <updated>2014-01-30T10:31:15-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -12,6 +12,102 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[BlackArch Linux - Uma nova distribuição para Pentesters]]></title>
+    <link href="http://blog.marcelocavalcante.net/blog/2014/01/30/blackarch-linux-uma-nova-distribuicao-para-pentesters/"/>
+    <updated>2014-01-30T08:47:00-03:00</updated>
+    <id>http://blog.marcelocavalcante.net/blog/2014/01/30/blackarch-linux-uma-nova-distribuicao-para-pentesters</id>
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/blackarch.jpg" title="&lsquo;BlackArch&rsquo;" ></p>
+
+<p><strong>U</strong>ma boa novidade para os profissionais de segurança: <a href="http://www.blackarch.org" target="_blank">BlackArch</a>! Para quem, assim como eu, gosta de como as coisas funcionam no Arch Linux essa é uma notícia particularmente boa, visto que o BlackArch não se trata realmente de uma nova distribuição, mas sim de uma <em>extensão</em> para o Arch Linux. Como assim? Bom, você possui duas opções para utilizar o BlackArch, sendo uma delas como uma distribuição completa, através de um Live CD, por exemplo, e a outra como uma extensão (um repositório de pacotes) para o Arch Linux, onde você poderá apenas inserir um repositório em sua já existente distribuição Arch Linux e ter acesso ao conjunto de ferramentas do BlackArch.</p>
+
+<p><strong>O</strong> BlackArch, atualmente, possui suporte para as arquiteturas i686 e x86_64, com previsão de suporte para ARM em breve (Sim, meu RaspBerry poderá se tornar uma ferramenta para pentests). No mais, o BlackArch hoje possui mais de 600 ferramentas, estando este número crescendo constantemente, e utiliza grupos modulares de pacotes, facilitando a instalação dos mesmos.</p>
+
+<p><strong>A</strong> ISO Live trás diversos gerenciadores de janelas ou ambientes gráficos, como o dwm, Fluxbox, Openbox, Awesome, Wmii, i3 e Spectrwm. É claro, ele também trás um instalador capaz de instalar a partir do fonte.</p>
+
+<p><strong>D</strong>entre as ferramentas existentes estão: 3proxy, 42zip, acccheck, aesfix, against, airflood, airoscript, bluepot, blueprint, braces, bss, bully, cisco-ocs, cmospwd, dbd, dc3dd, deblaze, dhcpig, enumiax, fakedns, &hellip; Vocẽ não espera que eu liste todos os mais de 600, certo?</p>
+
+<p><strong>Configurando como um Repositório Não-Oficial</strong></p>
+
+<p><strong>S</strong>e você já possui o Arch Linux instalado e deseja apenas inserir o BlackArch como um repositório em sua distro, execute os seguintes comandos como root, os quais servirão para assinar os pacotes: <em>(Se você não possui o Arch Linux instalado e/ou simplesmente deseja rodar o Live CD ou instalar o mesmo por completo, seja em uma máquina física ou virtual, siga para a seção <a href="#instalando">Instalando o BlackArch Linux utilizando a Live-ISO</a>)</em></p>
+
+<p>```
+ # wget -q <a href="http://blackarch.org/keyring/blackarch-keyring.pkg.tar.xz">http://blackarch.org/keyring/blackarch-keyring.pkg.tar.xz</a>{,.sig}</p>
+
+<p> # gpg &mdash;keyserver hkp://pgp.mit.edu &mdash;recv 4345771566D76038C7FEB43863EC0ADBEA87E4E3</p>
+
+<p> # gpg &mdash;keyserver-o no-auto-key-retrieve &mdash;with-f blackarch-keyring.pkg.tar.xz.sig</p>
+
+<p> # pacman-key &mdash;init</p>
+
+<p> # rm blackarch-keyring.pkg.tar.xz.sig</p>
+
+<p> # pacman &mdash;noc -U blackarch-keyring.pkg.tar.xz
+```</p>
+
+<p><strong>E</strong>m seguida, adicione as seguintes linhas ao seu arquivo <em>/etc/pacman.conf</em>:</p>
+
+<p><code>
+  [blackarch]
+  Server = &lt;mirror_site&gt;/$repo/os/$arch
+</code></p>
+
+<p><strong>Substitua</strong> <em>&lt;mirror_site></em> por um mirror de sua escolha, preferencialmente um dos <strong>mirrors oficiais</strong> contidos <a href="http://blackarch.org/download.html#mirrors" target="_blank"><em>neste link</em></a>.</p>
+
+<p><strong>U</strong>ma vez que você tenha seguido os passos acima, execute:</p>
+
+<p><code>
+ $ sudo pacman -Syyu
+</code></p>
+
+<p><strong>Instalando os pacotes</strong></p>
+
+<p><strong>A</strong>gora que você já preparou o terreno assinando e configurando o repositório do Black Arch, basta instalar os pacotes em seu Arch Linux.</p>
+
+<p><strong>P</strong>ara listar todas as ferramentas disponíveis, execute:</p>
+
+<p><code>
+ $ sudo pacman -Sgg | grep blackarch | cut -d' ' -f2 | sort -u
+</code></p>
+
+<p><strong>P</strong>ara instalar todas as ferramentas, execute:</p>
+
+<p><code>
+ $ sudo pacman -S blackarch
+</code></p>
+
+<p><strong>P</strong>ara instalar uma categoria de ferramentas, execute:</p>
+
+<p><code>
+ $ sudo pacman -S blackarch-&lt;categoria&gt;
+</code></p>
+
+<p><strong>P</strong>ara ver as categorias existentes no BlackArch, execute:</p>
+
+<p><code>
+ $ sudo pacman -Sg | grep blackarch
+</code></p>
+
+<p><strong><a name="instalando">Instalando o BlackArch Linux utilizando a Live-ISO</a></strong></p>
+
+<p><strong>A</strong>ntes de mais nada, <a href="http://blackarch.org/download.html" target="_blank">baixe a ISO a partir do site oficial</a>.</p>
+
+<p><strong>E</strong>m seguida, dê boot na ISO e instale o script de instalação do BlackArch:</p>
+
+<p><code>
+ $ sudo pacman -S blackarch-install-scripts
+</code></p>
+
+<p><strong>A</strong>gora, basta instalar:</p>
+
+<p><code>
+ # blackarch-install
+</code></p>
+
+<p><strong>H</strong>appy Hacking!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Criptografando sua Partição Swap com o Ecryptfs]]></title>
@@ -222,146 +318,6 @@
 <p><strong>O</strong> nome do pacote poderá ser diferente para você. Estou utilizando a versão x64 do Arch.</p>
 
 <p><strong>P</strong>or enquanto é melhor manter a versão anterior do kernel, ao menos até o lançamento da versão 3.11, na qual o problema já foi resolvido.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Política de senhas no Linux: Senhas com data para expirar!]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2011/09/27/politica-de-senhas-no-linux-senhas-com-data-para-expirar/"/>
-    <updated>2011-09-27T11:14:12-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2011/09/27/politica-de-senhas-no-linux-senhas-com-data-para-expirar</id>
-    <content type="html"><![CDATA[<p><a href="http://www.marcelocavalcante.net/portal/wp-content/uploads/2011/09/1197557350_90927cc5492.jpg"><img src="http://www.marcelocavalcante.net/portal/wp-content/uploads/2011/09/1197557350_90927cc5492.jpg" alt="" /></a></p>
-
-<p><strong>J</strong>á é sabido que a maior vulnerabilidade dentro das empresas ou mesmo computadores pessoais são justamente os próprios funcionários ou usuários.</p>
-
-<p><strong><img src="http://public-commoncraft.s3.amazonaws.com/SecurePasswords500.jpg" alt="" />M</strong>anter uma boa <strong>política de senhas</strong> é fundamental para garantir a segurança <strong>básica</strong> de suas informações e tentar minimizar as chances de alguém ter acesso indevido a elas.</p>
-
-<p><strong>V</strong>ou apresentar dicas simples para uma boa política de senhas que vão além das dicas comuns como &ldquo;mantenha uma senha que contenha mais de 8 caracteres, sendo eles números, letras minúsculas, maiúsculas e caracteres especiais&hellip;&rdquo;.</p>
-
-<p><strong>E</strong>m escritórios é importante haver também uma política de troca de senha regular. Mas, como forçar os usuários a seguirem essa política de troca de senha regular? Evitando que o mesmo se logue caso não troque a senha de forma periódica, claro.</p>
-
-<p><strong>V</strong>amos começar pelo básico.</p>
-
-<p><strong>1- Definindo a complexidade das senhas de usuários:</strong></p>
-
-<p><strong>P</strong>ara definir a complexidade, precisaremos alterar a configuração de definição de senhas de usuários. O processo pode ser diferente, de acordo com a sua distribuição.</p>
-
-<p><a href="http://www.archlinux.org/"><em><strong>A</strong>rch Linux:</em></a></p>
-
-<p><strong>E</strong>dite o arquivo <em>passwd</em> que se encontra em <em>/etc/pam.d/passwd</em>, da seguinte forma:</p>
-
-<p><em># vim /etc/pam.d/passwd</em></p>
-
-<p><em><a href="http://www.debian.org"><strong>D</strong>ebian</a>, <a href="http://www.ubuntu.com">Ubuntu</a>, <a href="http://www.redhat.com">RedHat</a>, <a href="http://www.centos.org">CentOS</a></em> e outras:</p>
-
-<p><em># vim /etc/pam.d/system-auth</em></p>
-
-<p><strong>C</strong>onfigure sua linha de senha de forma que fique algo parecido com o seguinte:</p>
-
-<p><em>password       required        pam_cracklib.so difok=3 minlen=10 ucredit=3 ocredit=2 retry=3</em></p>
-
-<p><strong>O</strong>nde:</p>
-
-<p><em>difok=3</em> &ndash;> Informa a quantidade de caracteres que podem se repetir em relação à última senha. Por exemplo: Se minha antiga senha era &ldquo;kalib&rdquo; e eu tento usar &ldquo;kalamba&rdquo; como nova senha, receberei uma informação de erro, pois eu repeti 3 letras que já existem na senha anterior &ldquo;kal&rdquo;.</p>
-
-<p><em>minlen=10</em> &ndash;> Informa qual a quantidade mínima de caracteres aceitos para a senha do usuário. No<img src="http://securepasswordgeneratortips.com/wp-content/uploads/2011/05/securepasswordgeneratortips08.jpg" alt="" /> exemplo, o mínimo de caracteres aceitos serão 10, caso contrário será apresentada uma mensagem de erro solicitando que o usuário tente uma nova senha.</p>
-
-<p><em>ucredit=3</em> &ndash;>Informa a quantidade de letras maiúsculas que deverão compor minha senha. No exemplo, eu precisarei utilizar no mínimo 3 letras em maiúsculo, ou &ldquo;Uper Characters&rdquo; em minha nova senha.</p>
-
-<p><em>ocredit=2</em> &ndash;> Informa a quantidade de &ldquo;outros caracteres&rdquo; ou caracteres especiais, como por exemplo *, &amp;, %, $, _, etc.</p>
-
-<p><em>retry=3</em> &ndash;> Informa quantas vezes o usuário vai poder tentar, em caso de senha indevida, antes de receber a mensagem de erro.</p>
-
-<p><strong>O</strong>utros parâmetros que podem ser utilizados são os seguintes:</p>
-
-<p><em>dcredit=x</em> &ndash;> Informa a quantidade de dígitos que deverão ser utilizados como números na senha, onde x é o número mínimo desejado.</p>
-
-<p><em>lcredit=x</em> &ndash;> Informa a quantidade de caracteres minúsculos, ou &ldquo;Lower Characters&rdquo;, mínimos em sua senha.</p>
-
-<p><strong>2- Definindo que a nova senha não poderá ser igual às anteriores:</strong></p>
-
-<p><strong>N</strong>o <strong>mesmo arquivo</strong> do ponto anterior, iremos inserir o parâmetro remember na linha conforme exemplo:</p>
-
-<p><em>password sufficient pam_unix.so use_authtok md5 shadow remember=10</em></p>
-
-<p><em>remember=10</em> &ndash;> Informa que a nova senha não poderá ser igual às últimas 10 senhas utilizadas por este usuário.</p>
-
-<p><strong>A</strong>gora que já sabemos como definir uma política para criação de senhas seguras, vamos conhecer o &ldquo;<strong>chage</strong>&rdquo;, que nos ajudará a definir a política de datas ou validade das senhas.</p>
-
-<p><strong>3- Checando as políticas de validade de senhas de um determinado usuário:</strong></p>
-
-<p><em># chage -l usuário</em></p>
-
-<p><strong>O</strong> comando acima verifica os atributos de validade daquela senha, e lhe retornará algo similar ao seguinte:</p>
-
-<pre><code>&lt;em&gt;Last password change : May 11, 2011&lt;/em&gt;
-
-
-
-
-&lt;em&gt;Password expires : never&lt;/em&gt;
-
-
-
-
-&lt;em&gt;Password inactive : never&lt;/em&gt;
-
-
-
-
-&lt;em&gt;Account expires : never&lt;/em&gt;
-
-
-
-
-&lt;em&gt;Minimum number of days between password change : 0&lt;/em&gt;
-
-
-
-
-&lt;em&gt;Maximum number of days between password change : 99999&lt;/em&gt;
-
-
-
-
-&lt;em&gt;Number of days of warning before password expires : 7&lt;/em&gt;
-</code></pre>
-
-<p><strong>A</strong>s informações acima apresentam dados como data de última mudança de senha, data de expiração, tempo de inatividade, quantidade mínima de dias para se trocar a senha antes de a mesma expirar, etc.</p>
-
-<p><strong>4- Criando uma &ldquo;validade&rdquo; ou período de expiração para a senha de um determinado usuário:</strong></p>
-
-<pre><code>&lt;em&gt;# chage -M 99999 linustorvalds&lt;/em&gt;
-</code></pre>
-
-<p><strong>E</strong>ste comando vai <strong>desabilitar</strong> o período de validade da senha, informando que a mesma não expira nunca.</p>
-
-<pre><code>&lt;em&gt;# chage -M 50 -m 7 -W 7 linustorvalds&lt;/em&gt;
-</code></pre>
-
-<p><strong>E</strong>ste comando <strong>aplica</strong> a política de senha para o usuário &ldquo;linustorvalds&rdquo; onde:
-<em>-M 50</em> &ndash;> Define que a senha será válida por um máximo de 50 dias, quando a mesma deverá ser trocada.
-<em>-m 7</em> &ndash;> Define o número mínimo de dias em que o usuário poderá trocar sua senha antes do período especificado para expiração. Caso o usuário possa trocar a qualquer momento ou dia, o valor deverá ser 0.
-<em>-W 7</em> &ndash;> Número de dias antes de expirar nos quais o usuário vai receber alertas informando que sua senha irá expirar.</p>
-
-<p><strong>C</strong>aso você deseje especificar um <strong>dia exato</strong> no qual a senha de determinado usuário vai expirar, você pode utilizar o parâmetro <em>-E</em> seguido da data desejada no formato <em>AAAA-MM-DD</em>.</p>
-
-<p><strong>A</strong>lém disto, você pode desejar que a senha do usuário &ldquo;linustorvalds&rdquo; seja trocada no <strong>próximo login</strong> do mesmo. Neste caso você poderá utilizar o parâmetro <em>-d</em>, conforme exemplo abaixo:</p>
-
-<pre><code>&lt;em&gt;# chage -d 0 linuxtorvalds&lt;/em&gt;
-</code></pre>
-
-<p><strong>O</strong> <em>-d</em> significa quantidade de dias também.</p>
-
-<pre><code>&lt;strong&gt;É&lt;/strong&gt; isso pessoal.
-
-
-
-
-&lt;strong&gt;H&lt;/strong&gt;ave fun!
-</code></pre>
-
-<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
 ]]></content>
   </entry>
   

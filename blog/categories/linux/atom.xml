@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2014-01-23T11:08:53-03:00</updated>
+  <updated>2014-01-30T10:31:15-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -12,6 +12,102 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[BlackArch Linux - Uma nova distribuição para Pentesters]]></title>
+    <link href="http://blog.marcelocavalcante.net/blog/2014/01/30/blackarch-linux-uma-nova-distribuicao-para-pentesters/"/>
+    <updated>2014-01-30T08:47:00-03:00</updated>
+    <id>http://blog.marcelocavalcante.net/blog/2014/01/30/blackarch-linux-uma-nova-distribuicao-para-pentesters</id>
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/blackarch.jpg" title="&lsquo;BlackArch&rsquo;" ></p>
+
+<p><strong>U</strong>ma boa novidade para os profissionais de segurança: <a href="http://www.blackarch.org" target="_blank">BlackArch</a>! Para quem, assim como eu, gosta de como as coisas funcionam no Arch Linux essa é uma notícia particularmente boa, visto que o BlackArch não se trata realmente de uma nova distribuição, mas sim de uma <em>extensão</em> para o Arch Linux. Como assim? Bom, você possui duas opções para utilizar o BlackArch, sendo uma delas como uma distribuição completa, através de um Live CD, por exemplo, e a outra como uma extensão (um repositório de pacotes) para o Arch Linux, onde você poderá apenas inserir um repositório em sua já existente distribuição Arch Linux e ter acesso ao conjunto de ferramentas do BlackArch.</p>
+
+<p><strong>O</strong> BlackArch, atualmente, possui suporte para as arquiteturas i686 e x86_64, com previsão de suporte para ARM em breve (Sim, meu RaspBerry poderá se tornar uma ferramenta para pentests). No mais, o BlackArch hoje possui mais de 600 ferramentas, estando este número crescendo constantemente, e utiliza grupos modulares de pacotes, facilitando a instalação dos mesmos.</p>
+
+<p><strong>A</strong> ISO Live trás diversos gerenciadores de janelas ou ambientes gráficos, como o dwm, Fluxbox, Openbox, Awesome, Wmii, i3 e Spectrwm. É claro, ele também trás um instalador capaz de instalar a partir do fonte.</p>
+
+<p><strong>D</strong>entre as ferramentas existentes estão: 3proxy, 42zip, acccheck, aesfix, against, airflood, airoscript, bluepot, blueprint, braces, bss, bully, cisco-ocs, cmospwd, dbd, dc3dd, deblaze, dhcpig, enumiax, fakedns, &hellip; Vocẽ não espera que eu liste todos os mais de 600, certo?</p>
+
+<p><strong>Configurando como um Repositório Não-Oficial</strong></p>
+
+<p><strong>S</strong>e você já possui o Arch Linux instalado e deseja apenas inserir o BlackArch como um repositório em sua distro, execute os seguintes comandos como root, os quais servirão para assinar os pacotes: <em>(Se você não possui o Arch Linux instalado e/ou simplesmente deseja rodar o Live CD ou instalar o mesmo por completo, seja em uma máquina física ou virtual, siga para a seção <a href="#instalando">Instalando o BlackArch Linux utilizando a Live-ISO</a>)</em></p>
+
+<p>```
+ # wget -q <a href="http://blackarch.org/keyring/blackarch-keyring.pkg.tar.xz">http://blackarch.org/keyring/blackarch-keyring.pkg.tar.xz</a>{,.sig}</p>
+
+<p> # gpg &mdash;keyserver hkp://pgp.mit.edu &mdash;recv 4345771566D76038C7FEB43863EC0ADBEA87E4E3</p>
+
+<p> # gpg &mdash;keyserver-o no-auto-key-retrieve &mdash;with-f blackarch-keyring.pkg.tar.xz.sig</p>
+
+<p> # pacman-key &mdash;init</p>
+
+<p> # rm blackarch-keyring.pkg.tar.xz.sig</p>
+
+<p> # pacman &mdash;noc -U blackarch-keyring.pkg.tar.xz
+```</p>
+
+<p><strong>E</strong>m seguida, adicione as seguintes linhas ao seu arquivo <em>/etc/pacman.conf</em>:</p>
+
+<p><code>
+  [blackarch]
+  Server = &lt;mirror_site&gt;/$repo/os/$arch
+</code></p>
+
+<p><strong>Substitua</strong> <em>&lt;mirror_site></em> por um mirror de sua escolha, preferencialmente um dos <strong>mirrors oficiais</strong> contidos <a href="http://blackarch.org/download.html#mirrors" target="_blank"><em>neste link</em></a>.</p>
+
+<p><strong>U</strong>ma vez que você tenha seguido os passos acima, execute:</p>
+
+<p><code>
+ $ sudo pacman -Syyu
+</code></p>
+
+<p><strong>Instalando os pacotes</strong></p>
+
+<p><strong>A</strong>gora que você já preparou o terreno assinando e configurando o repositório do Black Arch, basta instalar os pacotes em seu Arch Linux.</p>
+
+<p><strong>P</strong>ara listar todas as ferramentas disponíveis, execute:</p>
+
+<p><code>
+ $ sudo pacman -Sgg | grep blackarch | cut -d' ' -f2 | sort -u
+</code></p>
+
+<p><strong>P</strong>ara instalar todas as ferramentas, execute:</p>
+
+<p><code>
+ $ sudo pacman -S blackarch
+</code></p>
+
+<p><strong>P</strong>ara instalar uma categoria de ferramentas, execute:</p>
+
+<p><code>
+ $ sudo pacman -S blackarch-&lt;categoria&gt;
+</code></p>
+
+<p><strong>P</strong>ara ver as categorias existentes no BlackArch, execute:</p>
+
+<p><code>
+ $ sudo pacman -Sg | grep blackarch
+</code></p>
+
+<p><strong><a name="instalando">Instalando o BlackArch Linux utilizando a Live-ISO</a></strong></p>
+
+<p><strong>A</strong>ntes de mais nada, <a href="http://blackarch.org/download.html" target="_blank">baixe a ISO a partir do site oficial</a>.</p>
+
+<p><strong>E</strong>m seguida, dê boot na ISO e instale o script de instalação do BlackArch:</p>
+
+<p><code>
+ $ sudo pacman -S blackarch-install-scripts
+</code></p>
+
+<p><strong>A</strong>gora, basta instalar:</p>
+
+<p><code>
+ # blackarch-install
+</code></p>
+
+<p><strong>H</strong>appy Hacking!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Dica - Escondendo Seu Endereço de Email ao Divulgar Seu Endereço de Email]]></title>
@@ -146,58 +242,6 @@
 <p><strong>É</strong> claro que este é apenas um exemplo, visto que você poderá permitir mais ou menos, de acordo com a sua necessidade.</p>
 
 <p><strong>N</strong>ão deixemos pobre a nossa configuração, facilitando as coisas para ataques quando isto pode ser facilmente bloqueado.</p>
-
-<p><strong>H</strong>appy Hacking!</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Criptografando sua Partição Swap com o Ecryptfs]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2014/01/03/criptografando-sua-particao-swap-com-o-ecryptfs/"/>
-    <updated>2014-01-03T08:48:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2014/01/03/criptografando-sua-particao-swap-com-o-ecryptfs</id>
-    <content type="html"><![CDATA[<p><img class="left" src="/imgs/crypto.jpg" title="&lsquo;Criptografia&rsquo;" >
-<strong>C</strong>riptografia (Do grego <em>kryptós</em>, &ldquo;escondido&rdquo;, e <em>gráphein</em>, &ldquo;escrita&rdquo;) nada mais é do que o estudo e aplicação de técnicas com o intuito de ocultar informações, transformando a informação original em algo ilegível, exceto para seu destinatário final, o qual possui a chave ou método que será utilizado para tornar a informação legível novamente.</p>
-
-<p><strong>A</strong>pesar de muitas pessoas acharem que criptografia é algo novo, o uso de mensagens cifradas é bastante antigo. Em tempos passados a cifragem de mensagens era utilizada, principalmente em assuntos de guerra. De acordo com estudos históricos, o primeiro uso documentado da criptografia foi em torno de <em>1900 a.c.</em>, no Egito, quando um escriba usou hieróglifos fora do padrão numa inscrição.</p>
-
-<p><strong>A</strong>o que interessa&hellip;</p>
-
-<p><strong>M</strong>uitas pessoas, por alguma razão (como por exemplo performance ou não gostar da ideia de digitar gigantescas senhas duranto o boot), acabam não utilizando uma LVM encriptada. Para estas pessoas existe a opção de criptografar arquivos e diretórios após a instalação do SO através de softwares como o eCryptfs. Mas, além disto, existe um outro aspecto interessante e importante que, por muitas vezes (para não dizer quase sempre) é esquecido: criptografar a swap.</p>
-
-<p><strong>S</strong>e você é usuário GNU/Linux, muito provavelmente já sabe o que é Swap. Ela é especialmente utilizada em computadores mais antigos e que possuem pouca memória RAM. Nestes casos, um espaço do disco rígido é utilizado como swap para servir de auxílio à memória RAM em diferentes tarefas quando a mesma não for o suficiente para realizar aquelas tarefas. Por questões óbvias, a swap não é tão rápida quanto a memória principal e, além disso, a swap também possui seus pontos <em>críticos</em> em relação a segurança. A questão mais crítica da swap em termos de segurança é o fato de ela, conforme já dito, não estar localizada em sua RAM, mas sim em seu disco rígido, escrevendo informações nesta partição, deixando assim rastros de suas atividades no próprio disco rígido. Por exemplo, caso você utilize softwares de criptografia em seu computador, mas não possua sua swap criptografada, você corre o risco de ter as senhas de chaves que você digita salvas em sua swap (disco rígido). Algo não desejado, certo?</p>
-
-<p><strong>P</strong>ara criptografar a sua swap, primeiramente instale os pacotes necessários:</p>
-
-<p><strong>No Arch Linux</strong></p>
-
-<p><code>
- [kalib@tuxcaverna ~]$ sudo pacman -S ecryptfs-utils cryptsetup
-</code></p>
-
-<p><strong>No Debian ou derivados</strong></p>
-
-<p><code>
- [kalib@tuxcaverna ~]$ sudo apt-get install ecryptfs-utils cryptsetup
-</code></p>
-
-<p><strong>E</strong>m seguida, precisamos literalmente criptografar a swap utilizando o seguinte comando:</p>
-
-<p><code>
- [kalib@tuxcaverna ~]$ sudo ecryptfs-setup-swap
-</code></p>
-
-<p><strong>N</strong>este momento, sua partição swap será desmontada, encriptada e montada novamente.</p>
-
-<p><strong>P</strong>ara certificar-se de que o procedimento funcionou, digite o seguinte comando:</p>
-
-<p><code>
- [kalib@tuxcaverna ~]$ sudo blkid | grep swap
-</code></p>
-
-<p><strong>V</strong>ocê deverá receber as informações sobre sua partição de swap, inclusive o indicativo <em>cryptswap</em>.</p>
-
-<p><strong>C</strong>omo medida preventiva contra erros durante o boot, edite o arquivo <em>/etc/fstab</em>, retirando a entrada da swap não encriptada, deixando em seu lugar a entrada para a swap encriptada.</p>
 
 <p><strong>H</strong>appy Hacking!</p>
 ]]></content>
