@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Cultura Hacker | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/blog/categories/cultura-hacker/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2014-01-30T10:36:44-03:00</updated>
+  <updated>2014-02-13T22:32:09-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -14,11 +14,84 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Alterando os parâmetros do kernel em tempo real com o Systcl]]></title>
+    <link href="http://blog.marcelocavalcante.net/blog/2014/02/13/alterando-os-parametros-do-kernel-em-tempo-real-com-o-systcl/"/>
+    <updated>2014-02-13T22:02:00-03:00</updated>
+    <id>http://blog.marcelocavalcante.net/blog/2014/02/13/alterando-os-parametros-do-kernel-em-tempo-real-com-o-systcl</id>
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/linux-kernel.jpg" title="&lsquo;Linux Kernel&rsquo;" >
+<strong>O</strong> <em>kernel</em>, em se tratando de sistemas operacionais, é o núcleo e componente mais importante da maioria dos computadores. Basicamente, serve de ponte entre os aplicativos e o processamento real de dados feito a nível de hardware. É ele o responsável por gerenciar os recursos do sistema, podendo oferecer uma camada de abstração de nível mais baixo para os recursos, como processadores e dispositivos de entrada/saída, que os softwares aplicativos devem controlar para realizar sua função. Com o GNU/Linux não é diferente. O núcleo Linux (Linux Kernel) forma a estrutura do sistema operacional GNU/Linux.</p>
+
+<p><strong>C</strong>omo é de se esperar, o kernel possui diversos parâmetros configurados que definirão as características do seu sistema, controle de dispositivos, módulos, drivers, etc. Por vezes faz-se necessário alterar algum parâmetro do kernel para alguma tarefa ou rotina específica, portanto que tal ganhar tempo e alterar um ou mais parâmetros do kernel <em>on the fly</em>?!</p>
+
+<p><strong>O</strong> comando <em>sysctl</em> pode ajudar nesta tarefa. Ele ajuda a configurar os parâmetros do kernel em tempo de execução.</p>
+
+<p><strong>P</strong>ara listar os atuais parâmetros de seu kernel digite:</p>
+
+<p>```
+ [kalib@tuxcaverna ~]$ sysctl -a</p>
+
+<p> abi.vsyscall32 = 1
+ debug.exception-trace = 1
+ dev.cdrom.autoclose = 1
+ dev.cdrom.autoeject = 0
+ dev.cdrom.check_media = 0
+ dev.cdrom.lock = 1
+ dev.hpet.max-user-freq = 64
+ dev.mac_hid.mouse_button2_keycode = 97
+ dev.mac_hid.mouse_button3_keycode = 100
+ dev.mac_hid.mouse_button_emulation = 0
+ dev.scsi.logging_level = 0
+ fs.aio-max-nr = 65536
+ fs.aio-nr = 41192
+ fs.binfmt_misc.status = enabled
+ fs.dentry-state = 177183        161128  45      0       0       0
+ fs.dir-notify-enable = 1
+ fs.epoll.max_user_watches = 1209446
+ fs.file-max = 586836
+ fs.file-nr = 8992       0       586836
+ fs.inode-nr = 96800     290
+ fs.inotify.max_user_watches = 8192
+ fs.lease-break-time = 45
+ kernel.sched_cfs_bandwidth_slice_us = 5000
+ kernel.sched_child_runs_first = 0
+ kernel.version = #1 SMP PREEMPT Fri Jan 31 10:22:54 CET 2014
+ kernel.watchdog = 1
+ kernel.watchdog_thresh = 10
+ kernel.yama.ptrace_scope = 1
+ net.core.bpf_jit_enable = 0
+ net.core.busy_poll = 0
+ net.ipv4.cipso_cache_bucket_size = 10
+ net.ipv4.conf.all.accept_local = 0
+```</p>
+
+<p><strong>O</strong> retorno deste comando é bastante extenso, portanto colei aqui apenas algumas linhas aleatórias de meu resultado.</p>
+
+<p><strong>P</strong>ara alterar temporariamente um parâmetro, utilize o parâmetro -w do sysctl, indicando a variável que deseja alterar e o novo valor que será utilizado para a mesma.</p>
+
+<p><code>
+ [kalib@tuxcaverna ~]$ sysctl -w {nome-da-variável=valor}
+</code></p>
+
+<p><strong>N</strong>o caso acima a(s) alteração(ões) será(ão) perdida(s) após a reinicialização do sistema.</p>
+
+<p><strong>C</strong>aso deseje realizar alterações permanentes, edite o arquivo <em>/etc/sysctl.conf</em> e em seguida aplique suas modificações com o parâmetro -p do sysctl.</p>
+
+<p><code>
+ [kalib@tuxcaverna ~]$ sysctl -p
+</code></p>
+
+<p><strong>D</strong>esta forma, após a reinicialização suas modificações permanecerão ativas.</p>
+
+<p><strong>H</strong>appy Hacking!</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[BlackArch Linux - Uma nova distribuição para Pentesters]]></title>
     <link href="http://blog.marcelocavalcante.net/blog/2014/01/30/blackarch-linux-uma-nova-distribuicao-para-pentesters/"/>
     <updated>2014-01-30T08:47:00-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2014/01/30/blackarch-linux-uma-nova-distribuicao-para-pentesters</id>
-    <content type="html"><![CDATA[<p>{% img left /imgs/blackarch.jpg &lsquo;BlackArch&rsquo; %}</p>
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/blackarch.jpg" title="&lsquo;BlackArch&rsquo;" ></p>
 
 <p><strong>U</strong>ma boa novidade para os profissionais de segurança: <a href="http://www.blackarch.org" target="_blank">BlackArch</a>! Para quem, assim como eu, gosta de como as coisas funcionam no Arch Linux essa é uma notícia particularmente boa, visto que o BlackArch não se trata realmente de uma nova distribuição, mas sim de uma <em>extensão</em> para o Arch Linux. Como assim? Bom, você possui duas opções para utilizar o BlackArch, sendo uma delas como uma distribuição completa, através de um Live CD, por exemplo, e a outra como uma extensão (um repositório de pacotes) para o Arch Linux, onde você poderá apenas inserir um repositório em sua já existente distribuição Arch Linux e ter acesso ao conjunto de ferramentas do BlackArch.</p>
 
@@ -28,7 +101,7 @@
 
 <p><strong>D</strong>entre as ferramentas existentes estão: 3proxy, 42zip, acccheck, aesfix, against, airflood, airoscript, bluepot, blueprint, braces, bss, bully, cisco-ocs, cmospwd, dbd, dc3dd, deblaze, dhcpig, enumiax, fakedns, &hellip; Vocẽ não espera que eu liste todos os mais de 600, certo?</p>
 
-<p><a href="http://blackarch.org/images/screenshots/openbox.png" target="_blank">{% img center /imgs/openbox.png &lsquo;BlackArch Openbox&rsquo; %}</a></p>
+<p><a href="http://blackarch.org/images/screenshots/openbox.png" target="_blank"><img class="center" src="/imgs/openbox.png" title="&lsquo;BlackArch Openbox&rsquo;" ></a></p>
 
 <p><strong>Configurando como um Repositório Não-Oficial</strong></p>
 
@@ -116,7 +189,7 @@
     <link href="http://blog.marcelocavalcante.net/blog/2014/01/23/dica-escondendo-seu-endereco-de-email-ao-divulgar-seu-endereco-de-email/"/>
     <updated>2014-01-23T09:37:00-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2014/01/23/dica-escondendo-seu-endereco-de-email-ao-divulgar-seu-endereco-de-email</id>
-    <content type="html"><![CDATA[<p>{% img center /imgs/frog_camouflage.jpg &lsquo;Camouflage&rsquo; %}</p>
+    <content type="html"><![CDATA[<p><img class="center" src="/imgs/frog_camouflage.jpg" title="&lsquo;Camouflage&rsquo;" ></p>
 
 <p><strong>D</strong>a mesma forma que alguns animais só conseguem sobreviver utilizando-se de sua capacidade e/ou técnica de camuflar-se, misturando-se assim ao ambiente, para enganar seus predadores naturais, as pessoas do mundo atual praticamente precisam adotar as mesmas técnicas para manter seus endereços de email livres de um turbilhão de emails indesejados com propagandas de viagra, dicas para crescimento peniano, irregularidades em seu CPF, problemas em sua conta bancária, etc, etc.</p>
 
@@ -166,7 +239,7 @@
     <link href="http://blog.marcelocavalcante.net/blog/2013/09/20/vulnerabilidade-ios7-hack-na-tela-de-bloqueio-permite-burlar-seguranca/"/>
     <updated>2013-09-20T08:06:00-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2013/09/20/vulnerabilidade-ios7-hack-na-tela-de-bloqueio-permite-burlar-seguranca</id>
-    <content type="html"><![CDATA[<p>{% img center /imgs/vulnerability.jpg &lsquo;Vulnerability&rsquo; %}
+    <content type="html"><![CDATA[<p><img class="center" src="/imgs/vulnerability.jpg" title="&lsquo;Vulnerability&rsquo;" >
 <strong>N</strong>ão é de hoje que as telas de bloqueio (supostas proteções) de smartphones possuem <em>vulnerabilidades</em>. Mal foi lançado o novo iOS 7 e o mesmo já possui uma vulnerabilidade possibilitando a qualquer pessoa utilizar um simples hack para ter acesso à alguns dados do dono do smartphone com o iOS 7.</p>
 
 <p><strong>A</strong> Apple já notificou sobre a correção de aproximadamente 80 vulnerabilidades que comprometiam a segurança do aparelho mas, aparentemente, algumas passaram despercebidas. Dentre elas, a possibilidade de burlar a proteção de bloqueio do aparelho, o que nos permite acessar, por exemplo, as fotos contidas no aparelho sem a necessidade de conhecer a senha de proteção do mesmo.</p>
@@ -331,94 +404,6 @@
 </code></pre>
 
 <p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Dia Livre - Inscrições e grade do evento]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2011/07/19/dia-livre-inscricoes-e-grade-do-evento/"/>
-    <updated>2011-07-19T08:38:33-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2011/07/19/dia-livre-inscricoes-e-grade-do-evento</id>
-    <content type="html"><![CDATA[<p><img src="http://tux-ce.org/dialivre/wp-content/uploads/2011/05/Logo+dia-livre-01.png" alt="" /></p>
-
-<p><strong>É</strong> hora de se <a href="http://tux-ce.org/dialivre/inscricoes/">inscrever</a> no <a href="http://www.tux-ce.org/dialivre">Dia Livre</a>!</p>
-
-<p><strong>G</strong>ostaria de comunicar que a grade para o 1º Dia Livre já foi fechada e liberada.</p>
-
-<p><strong>N</strong>este sábado estarei ministrando a palestra &ldquo;Software Livre e Cultura Hacker: Tenha ética e ganharás respeito&rdquo; na <a href="http://www.ffb.edu.br/">Faculdade Farias Brito</a> durante o 1º Dia Livre.</p>
-
-<p><strong>S</strong>egue grade do encontro:</p>
-
-<p>Horário</p>
-
-<p>Palestra</p>
-
-<p>Palestrante</p>
-
-<p>08:00
-&ndash; 08:10</p>
-
-<p>Abertura</p>
-
-<p>&ndash;</p>
-
-<p>08:10
-&ndash; 09:00</p>
-
-<p>Bacula
-&ndash; Solução livre de Backup</p>
-
-<p>Diego
-Monte</p>
-
-<p>09:10
-&ndash; 10:00</p>
-
-<p>Criando
-soluções automatizadas com ShellScript</p>
-
-<p>Rafael
-de Carvalho Farias</p>
-
-<p>10:00
-&ndash; 10:20</p>
-
-<p>CoffeeBreak</p>
-
-<p>&ndash;</p>
-
-<p>10:30
-&ndash; 11:20</p>
-
-<p>Software Livre e a Cultura Hacker: Tenha Ética e Ganharás Respeito</p>
-
-<p>Marcelo Cavalcante</p>
-
-<p>11;30
-&ndash; 11:50</p>
-
-<p>Sorteio
-de brindes e encerramento</p>
-
-<p>&ndash;</p>
-
-<p><strong>Q</strong><strong>uando?</strong></p>
-
-<p>23 de Julho, Sábado – A partir das 08:00</p>
-
-<p><strong>Onde?</strong></p>
-
-<p>Faculdade Farias Brito
-Rua Castro Monte, 1364 Varjota – Fortaleza, CE
-<a href="http://www.tux-ce.org/dialivre/imgs/mapaffb.png"><img src="http://www.tux-ce.org/dialivre/imgs/mapaffb.png" alt="" /></a></p>
-
-<p><strong>S</strong>erão realizados dois sorteios ao final do encontro:</p>
-
-<p>1 camisa da Tux-CE;</p>
-
-<p>1 livro: The Art of Community &ndash; O'Reilly</p>
-
-<p><strong>N</strong>os vemos lá!</p>
 ]]></content>
   </entry>
   

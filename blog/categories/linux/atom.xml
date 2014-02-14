@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2014-01-30T10:36:44-03:00</updated>
+  <updated>2014-02-13T22:32:09-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -14,11 +14,84 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Alterando os parâmetros do kernel em tempo real com o Systcl]]></title>
+    <link href="http://blog.marcelocavalcante.net/blog/2014/02/13/alterando-os-parametros-do-kernel-em-tempo-real-com-o-systcl/"/>
+    <updated>2014-02-13T22:02:00-03:00</updated>
+    <id>http://blog.marcelocavalcante.net/blog/2014/02/13/alterando-os-parametros-do-kernel-em-tempo-real-com-o-systcl</id>
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/linux-kernel.jpg" title="&lsquo;Linux Kernel&rsquo;" >
+<strong>O</strong> <em>kernel</em>, em se tratando de sistemas operacionais, é o núcleo e componente mais importante da maioria dos computadores. Basicamente, serve de ponte entre os aplicativos e o processamento real de dados feito a nível de hardware. É ele o responsável por gerenciar os recursos do sistema, podendo oferecer uma camada de abstração de nível mais baixo para os recursos, como processadores e dispositivos de entrada/saída, que os softwares aplicativos devem controlar para realizar sua função. Com o GNU/Linux não é diferente. O núcleo Linux (Linux Kernel) forma a estrutura do sistema operacional GNU/Linux.</p>
+
+<p><strong>C</strong>omo é de se esperar, o kernel possui diversos parâmetros configurados que definirão as características do seu sistema, controle de dispositivos, módulos, drivers, etc. Por vezes faz-se necessário alterar algum parâmetro do kernel para alguma tarefa ou rotina específica, portanto que tal ganhar tempo e alterar um ou mais parâmetros do kernel <em>on the fly</em>?!</p>
+
+<p><strong>O</strong> comando <em>sysctl</em> pode ajudar nesta tarefa. Ele ajuda a configurar os parâmetros do kernel em tempo de execução.</p>
+
+<p><strong>P</strong>ara listar os atuais parâmetros de seu kernel digite:</p>
+
+<p>```
+ [kalib@tuxcaverna ~]$ sysctl -a</p>
+
+<p> abi.vsyscall32 = 1
+ debug.exception-trace = 1
+ dev.cdrom.autoclose = 1
+ dev.cdrom.autoeject = 0
+ dev.cdrom.check_media = 0
+ dev.cdrom.lock = 1
+ dev.hpet.max-user-freq = 64
+ dev.mac_hid.mouse_button2_keycode = 97
+ dev.mac_hid.mouse_button3_keycode = 100
+ dev.mac_hid.mouse_button_emulation = 0
+ dev.scsi.logging_level = 0
+ fs.aio-max-nr = 65536
+ fs.aio-nr = 41192
+ fs.binfmt_misc.status = enabled
+ fs.dentry-state = 177183        161128  45      0       0       0
+ fs.dir-notify-enable = 1
+ fs.epoll.max_user_watches = 1209446
+ fs.file-max = 586836
+ fs.file-nr = 8992       0       586836
+ fs.inode-nr = 96800     290
+ fs.inotify.max_user_watches = 8192
+ fs.lease-break-time = 45
+ kernel.sched_cfs_bandwidth_slice_us = 5000
+ kernel.sched_child_runs_first = 0
+ kernel.version = #1 SMP PREEMPT Fri Jan 31 10:22:54 CET 2014
+ kernel.watchdog = 1
+ kernel.watchdog_thresh = 10
+ kernel.yama.ptrace_scope = 1
+ net.core.bpf_jit_enable = 0
+ net.core.busy_poll = 0
+ net.ipv4.cipso_cache_bucket_size = 10
+ net.ipv4.conf.all.accept_local = 0
+```</p>
+
+<p><strong>O</strong> retorno deste comando é bastante extenso, portanto colei aqui apenas algumas linhas aleatórias de meu resultado.</p>
+
+<p><strong>P</strong>ara alterar temporariamente um parâmetro, utilize o parâmetro -w do sysctl, indicando a variável que deseja alterar e o novo valor que será utilizado para a mesma.</p>
+
+<p><code>
+ [kalib@tuxcaverna ~]$ sysctl -w {nome-da-variável=valor}
+</code></p>
+
+<p><strong>N</strong>o caso acima a(s) alteração(ões) será(ão) perdida(s) após a reinicialização do sistema.</p>
+
+<p><strong>C</strong>aso deseje realizar alterações permanentes, edite o arquivo <em>/etc/sysctl.conf</em> e em seguida aplique suas modificações com o parâmetro -p do sysctl.</p>
+
+<p><code>
+ [kalib@tuxcaverna ~]$ sysctl -p
+</code></p>
+
+<p><strong>D</strong>esta forma, após a reinicialização suas modificações permanecerão ativas.</p>
+
+<p><strong>H</strong>appy Hacking!</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[BlackArch Linux - Uma nova distribuição para Pentesters]]></title>
     <link href="http://blog.marcelocavalcante.net/blog/2014/01/30/blackarch-linux-uma-nova-distribuicao-para-pentesters/"/>
     <updated>2014-01-30T08:47:00-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2014/01/30/blackarch-linux-uma-nova-distribuicao-para-pentesters</id>
-    <content type="html"><![CDATA[<p>{% img left /imgs/blackarch.jpg &lsquo;BlackArch&rsquo; %}</p>
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/blackarch.jpg" title="&lsquo;BlackArch&rsquo;" ></p>
 
 <p><strong>U</strong>ma boa novidade para os profissionais de segurança: <a href="http://www.blackarch.org" target="_blank">BlackArch</a>! Para quem, assim como eu, gosta de como as coisas funcionam no Arch Linux essa é uma notícia particularmente boa, visto que o BlackArch não se trata realmente de uma nova distribuição, mas sim de uma <em>extensão</em> para o Arch Linux. Como assim? Bom, você possui duas opções para utilizar o BlackArch, sendo uma delas como uma distribuição completa, através de um Live CD, por exemplo, e a outra como uma extensão (um repositório de pacotes) para o Arch Linux, onde você poderá apenas inserir um repositório em sua já existente distribuição Arch Linux e ter acesso ao conjunto de ferramentas do BlackArch.</p>
 
@@ -28,7 +101,7 @@
 
 <p><strong>D</strong>entre as ferramentas existentes estão: 3proxy, 42zip, acccheck, aesfix, against, airflood, airoscript, bluepot, blueprint, braces, bss, bully, cisco-ocs, cmospwd, dbd, dc3dd, deblaze, dhcpig, enumiax, fakedns, &hellip; Vocẽ não espera que eu liste todos os mais de 600, certo?</p>
 
-<p><a href="http://blackarch.org/images/screenshots/openbox.png" target="_blank">{% img center /imgs/openbox.png &lsquo;BlackArch Openbox&rsquo; %}</a></p>
+<p><a href="http://blackarch.org/images/screenshots/openbox.png" target="_blank"><img class="center" src="/imgs/openbox.png" title="&lsquo;BlackArch Openbox&rsquo;" ></a></p>
 
 <p><strong>Configurando como um Repositório Não-Oficial</strong></p>
 
@@ -116,7 +189,7 @@
     <link href="http://blog.marcelocavalcante.net/blog/2014/01/23/dica-escondendo-seu-endereco-de-email-ao-divulgar-seu-endereco-de-email/"/>
     <updated>2014-01-23T09:37:00-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2014/01/23/dica-escondendo-seu-endereco-de-email-ao-divulgar-seu-endereco-de-email</id>
-    <content type="html"><![CDATA[<p>{% img center /imgs/frog_camouflage.jpg &lsquo;Camouflage&rsquo; %}</p>
+    <content type="html"><![CDATA[<p><img class="center" src="/imgs/frog_camouflage.jpg" title="&lsquo;Camouflage&rsquo;" ></p>
 
 <p><strong>D</strong>a mesma forma que alguns animais só conseguem sobreviver utilizando-se de sua capacidade e/ou técnica de camuflar-se, misturando-se assim ao ambiente, para enganar seus predadores naturais, as pessoas do mundo atual praticamente precisam adotar as mesmas técnicas para manter seus endereços de email livres de um turbilhão de emails indesejados com propagandas de viagra, dicas para crescimento peniano, irregularidades em seu CPF, problemas em sua conta bancária, etc, etc.</p>
 
@@ -166,7 +239,7 @@
     <link href="http://blog.marcelocavalcante.net/blog/2014/01/17/dica-assistir-star-wars-em-um-console-ou-terminal/"/>
     <updated>2014-01-17T10:30:00-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2014/01/17/dica-assistir-star-wars-em-um-console-ou-terminal</id>
-    <content type="html"><![CDATA[<p>{% img left /imgs/starwars.png &lsquo;Star Wars&rsquo; %}
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/starwars.png" title="&lsquo;Star Wars&rsquo;" >
 <strong>Q</strong>uem disse que o terminal ou linha de comando serve apenas para trabalho e coisas chatas?</p>
 
 <p><strong>E</strong>stá entediado em frente ao seu terminal GNU/Linux?    Que tal algo para passar o tempo e, ao mesmo tempo, lhe trazer uma certa nostalgia? Assista Star Wars sem precisar sair de sua linha de comando ou terminal.</p>
@@ -179,9 +252,9 @@
 
 <p><strong>F</strong>eito isso, basta apreciar o show&hellip;</p>
 
-<p>{% img center /imgs/starwars_1.png &lsquo;Star Wars&rsquo; %}</p>
+<p><img class="center" src="/imgs/starwars_1.png" title="&lsquo;Star Wars&rsquo;" ></p>
 
-<p>{% img center /imgs/starwars_2.jpg &lsquo;Star Wars&rsquo; %}</p>
+<p><img class="center" src="/imgs/starwars_2.jpg" title="&lsquo;Star Wars&rsquo;" ></p>
 
 <p><strong>H</strong>ave fun!</p>
 ]]></content>
@@ -192,60 +265,26 @@
     <link href="http://blog.marcelocavalcante.net/blog/2014/01/14/dica-apostila-disponibilizada-gratuitamente-pfsense/"/>
     <updated>2014-01-14T08:27:00-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2014/01/14/dica-apostila-disponibilizada-gratuitamente-pfsense</id>
-    <content type="html"><![CDATA[<p>{% img left /imgs/pfsense.png &lsquo;pfSense&rsquo; %}
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/pfsense.png" title="&lsquo;pfSense&rsquo;" >
 <strong>G</strong>ostaria de passar adiante a notícia de que o colega <em>Leonardo Damasceno</em> acaba de compartilhar com a comunidade uma apostila de sua autoria sobre o <a href="http://www.pfsense.org"><strong>pfSense</strong></a>, de forma a divulgar mais este magnífico sistema, bem como facilitar a vida daqueles que ainda não o dominam.</p>
 
 <p><strong>S</strong>egue link direto fornecido pelo mesmo para <a href="https://www.dropbox.com/s/79ghzrs2vghbr38/pfSense%202.x%20-%20Leonardo%20Damasceno.pdf"><strong>download</strong></a>. A apostila ou livro, como prefira chamar, possui aproximadamente 70 páginas de informações úteis e diretas, sem muitas complicações.</p>
 
 <p><strong>N</strong>ão sabe o que é pfSense?</p>
 
-<p>{% img center /imgs/pfsense1.jpg &lsquo;pfSense1&rsquo; %}</p>
+<p><img class="center" src="/imgs/pfsense1.jpg" title="&lsquo;pfSense1&rsquo;" ></p>
 
 <p><strong>O</strong> pfSense é um sistema operacional baseado no <em>Free BSD</em> que pode ser instalado em um computador para servir como um firewall/roteador dedicado em uma rede. Como ferramenta <em>open source</em>, o pfSense tem se destacado nesta função, sendo considerado um dos melhores e mais confiáveis para este trabalho, oferecendo, além de sua estabilidade e confiabilidade, recursos e funções que geralmente são encontrados apenas em firewalls comerciais e caros. Não creio ser necessário lembrar a confiabilidade dos sistemas <em>Free BSD</em>&hellip;</p>
 
-<p>{% img center /imgs/pfsense2.jpg &lsquo;pfSense2&rsquo; %}</p>
+<p><img class="center" src="/imgs/pfsense2.jpg" title="&lsquo;pfSense2&rsquo;" ></p>
 
 <p><strong>E</strong>mbora seja uma versão customizada do Free BSD, não é necessário qualquer conhecimento sobre este sistema para operar o psSense, visto que ele é atualizado e completamente configurado através de uma interface web. Na maioria dos casos o pfSense tem sido aplicado como um firewall de perímetro, roteador, access point wireless, servidor DHCP, servidor DNS e VPN.</p>
 
-<p>{% img center /imgs/pfsense3.jpg &lsquo;pfSense3&rsquo; %}</p>
+<p><img class="center" src="/imgs/pfsense3.jpg" title="&lsquo;pfSense3&rsquo;" ></p>
 
 <p><strong>O</strong> mesmo apresenta diversos recursos gráficos para análise de tráfego, pacotes, performance, etc. Além de configurações avançadas para regras de firewall para LAN, WAN e utilizãção de Aliases de forma simples e intuitiva.</p>
 
-<p>{% img center /imgs/pfsense4.jpg &lsquo;pfSense4&rsquo; %}</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Dica de Segurança - Previna Ataques Bloqueando Pacotes ICMP Indesejados]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2014/01/06/dica-de-seguranca-previna-ataques-bloqueando-pacotes-icmp-indesejados/"/>
-    <updated>2014-01-06T08:40:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2014/01/06/dica-de-seguranca-previna-ataques-bloqueando-pacotes-icmp-indesejados</id>
-    <content type="html"><![CDATA[<p>{% img left /imgs/you_shall_not_pass.jpg &lsquo;Gandalf&rsquo; %}
-<strong>O</strong> protocolo <em>ICMP</em> pode ser utilizado para facilitar diversas rotinas e tarefas importantes de um administrador de redes, tais como na utilização de ferramentas como o <em>ping</em> e o <em>traceroute</em>, mas também pode ser manipulado por pessoas mal intencionadas que podem manipular mensagens ou pacotes ICMP para mapear sua rede.</p>
-
-<p><strong>É</strong> comum ver administradores de rede se preocupando e fazendo um ótimo trabalho em termos de filtrar o tráfego <em>TCP</em> e/ou <em>UDP</em>, porém quase sempre esquecem de dar a mesma atenção ao tráfego <em>ICMP</em>, sendo este tão crítico quanto os dois anteriores. Uma vez que este protocolo pode ser utilizado para mapear e realizar ataques em sua rede, ele não pode simplesmente ser deixado de lado.</p>
-
-<p><strong>I</strong>CMP, sigla para <em>Internet Control Message Protocol</em>, é um protocolo integrante do Protocolo IP utilizado para fornecer relatórios de erros à fonte original. Seu tráfego é, basicamente, baseado em mensagens trocadas entre hots, gateways, etc., cujo intuito é, principalmente, reportar erros, como por exemplo um pacote IP que não consegue chegar ao seu destino.</p>
-
-<p><strong>P</strong>or padrão, alguns servidores e firewalls bloqueiam as respostas ICMP como medida de segurança, tentando assim bloquear os ataques que consistem na sobrecarga da memória, enviando dados (em ping) até o sistema não ter a capacidade de administrar suas próprias funções. Bom, ao mesmo tempo em que é um mecanismo de defesa interessante, este bloqueio total acaba comprometendo e atrapalhando diversas atividades do administrador de redes, não sendo portanto a estratégia mais inteligente a ser adotada.</p>
-
-<p><strong>A</strong>o invés de bloquear o ICMP por completo, é mais interessante conhecer o que é bom e o que é ruim em termos de mensagens ICMP, de forma que sejam realizados filtros corretos. A importância desta gangorra é não permitir que o lado <em>ruim</em> do ICMP, como por exemplo ICMP Smurf, Ping of death, ataques com ICMP flood ou ICMP nuke, prejudiquem o administrador de redes que pode tirar proveito de boas ferramentas que se utilizam do ICMP, como o Ping e o Traceroute.</p>
-
-<p><strong>A</strong> estratégia mais simples, portanto, é utilizar uma regra geral contendo exceções.</p>
-
-<ol>
-<li>Bloquear todos os tipos de tráfego ICMP;</li>
-<li>Permitir ping &mdash; CMP Echo-Request outbound (saída) e Echo-Reply inbound (entrada);</li>
-<li>Permitir traceroute &mdash; TTL-Exceeded e Port-Unreachable inbound (entrada);</li>
-<li>Permitir path MTU &mdash; ICMP Fragmentation-DF-Set inbound (entrada).</li>
-</ol>
-
-
-<p><strong>É</strong> claro que este é apenas um exemplo, visto que você poderá permitir mais ou menos, de acordo com a sua necessidade.</p>
-
-<p><strong>N</strong>ão deixemos pobre a nossa configuração, facilitando as coisas para ataques quando isto pode ser facilmente bloqueado.</p>
-
-<p><strong>H</strong>appy Hacking!</p>
+<p><img class="center" src="/imgs/pfsense4.jpg" title="&lsquo;pfSense4&rsquo;" ></p>
 ]]></content>
   </entry>
   
