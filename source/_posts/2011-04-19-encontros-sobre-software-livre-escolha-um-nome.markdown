@@ -15,14 +15,7 @@ categories:
 - Tux-ce
 ---
 
-[![](http://marcelocavalcante.net/portal/wp-content/uploads/2011/04/logo.gif)](http://marcelocavalcante.net/portal/wp-content/uploads/2011/04/logo.gif)
-
-
-
-
-[![](http://2.bp.blogspot.com/_fCxEYIfdYWY/TIY8qxYiLlI/AAAAAAAAAf4/WAVct3_ZvLA/s320/tux_teacher.png)](http://2.bp.blogspot.com/_fCxEYIfdYWY/TIY8qxYiLlI/AAAAAAAAAf4/WAVct3_ZvLA/s320/tux_teacher.png)
-
-
+{% img left /imgs/tux_teacher.png 'Tux Teacher' %}
 **S**audações pessoal,
 
 **A**credito que boa parte, se não praticamente todos, os usuários de Software Livre em nossa região já ouviram falar, ou participaram, do [Flisol - Festival Latino Americano de Instalação de Software Livre](http://marcelocavalcante.net/portal/2011/04/13/flisol-quixada-relato-e-parabens/).
@@ -54,6 +47,3 @@ categories:
 **C**ontamos com o seu voto para nos ajudar a iniciar este movimento.
 
 **A**braços!
-
-
-![](http://www.marcelocavalcante.net/portal/imgs/userbar.gif)

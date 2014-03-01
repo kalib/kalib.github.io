@@ -17,9 +17,7 @@ categories:
 - Tux-ce
 ---
 
-![](http://tux-ce.org/dialivre/wp-content/uploads/2011/05/Logo+dia-livre-01.png)
-
-
+{% img left /imgs/logo_dia_livre.png 'Dia Livre' %}
 **É** hora de se [inscrever](http://tux-ce.org/dialivre/inscricoes/) no [Dia Livre](http://www.tux-ce.org/dialivre)!
 
 **G**ostaria de comunicar que a grade para o 1º Dia Livre já foi fechada e liberada.

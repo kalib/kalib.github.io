@@ -27,7 +27,7 @@ categories:
 **N**o Arch, por exemplo, encorajamos fortemente o uso do Wicd com o KDE ao invés do network-manager. Sim, sempre utilizei ele, porém...
 
 
-![](http://3.bp.blogspot.com/_lqr72cLxjWU/TKEXqNjH-3I/AAAAAAAAACM/WKa5EWZ75V0/s1600/screenshot-20100928@001439.png)
+{% img left /imgs/wicdgtk.png 'Wicd Gtk' %}
 
 
 **E** então? Meio bizarro, certo?! Alguém havia pensado em dizer "Mas ele não é tão feio.."?
@@ -37,7 +37,7 @@ categories:
 **C**omo uma imagem vale mais que mil palavras:
 
 
-[![](http://marcelocavalcante.net/portal/wp-content/uploads/2011/04/wicdkde1.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2011/04/wicdkde1.png)
+{% img left /imgs/wicdqt.png 'Wicd Qt' %}
 
 
 **M**ais amigável certo? Uma interface mais limpa, organizada e bonita. Bem ao estilo "clean", como alguns preferem dizer.
@@ -92,6 +92,3 @@ $ makepkg
 **H**ave Fun!
 
 **A**braços!
-
-
-![](http://www.marcelocavalcante.net/portal/imgs/userbar.gif)

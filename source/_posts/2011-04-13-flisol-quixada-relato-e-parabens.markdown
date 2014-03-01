@@ -18,8 +18,6 @@ categories:
 - Tux-ce
 ---
 
-[caption id="" align="aligncenter" width="347" caption="Banner do Flisol quixadá"][![](http://www.sertaoemrede.org.br/fotos/38_86281302470956.jpg)](http://www.sertaoemrede.org.br/fotos/38_86281302470956.jpg)[/caption]
-
 **S**audações galera!
 
 **A**lgumas pessoas já me perguntaram nos últimos 3 dias porque eu não estava no Flisol Fortaleza este ano. "Cara, nem lhe vi lá pelo Flisol correndo pra cima e pra baixo esse ano."

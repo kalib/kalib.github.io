@@ -11,19 +11,16 @@ categories:
 - Python
 - Software Livre
 ---
-
-![](http://pylestras.appspot.com/static/img/python-logo.gif)
-
-
+{% img left /imgs/python-logo.gif 'Python' %}
 **G**ostaria de lembrar a todos os interessados que amanhã teremos o [III Pylestras](http://pylestras.appspot.com/) aqui em Fortaleza.
 
 **S**e você não faz ideia sobre o que seja Python ou sabe que é uma linguagem de programação mas não conhece maiores detalhes sobre a mesma, recomendo a leitura destes links bem como sua participação no evento, que com certeza será bem interessante.
 
-[The Zen Of Phyton](http://marcelocavalcante.net/portal/2008/11/24/the-zen-of-python/)
+[The Zen Of Phyton](http://blog.marcelocavalcante.net/blog/2008/11/24/the-zen-of-python/)
 
-[Porque Python?](http://marcelocavalcante.net/portal/2008/11/20/porque-python/)
+[Porque Python?](http://blog.marcelocavalcante.net/blog/2008/11/20/porque-python/)
 
-[Porque escolhi Python - Python para SysAdmins](http://marcelocavalcante.net/portal/2009/11/21/porque-escolhi-python-python-para-sysadmins/)
+[Porque escolhi Python - Python para SysAdmins](http://blog.marcelocavalcante.net/blog/2009/11/21/porque-escolhi-python-python-para-sysadmins/)
 
 **O** evento consiste em 4 palestras conforme apresentadas abaixo:
 
@@ -38,10 +35,10 @@ categories:
 **O** evento acontecerá na Faculdade Farias Brito no horário entre 8:00 e 12:00.
 
 
-[![](http://pylestras.appspot.com/static/img/pythonedjango.gif)](http://www.pythonedjango.com.br/)
+{% img center /imgs/pythonedjango.gif 'Python e Django' %}
 
 
-![](http://pylestras.appspot.com/static/img/logo_pugce.png)
+{% img left /imgs/logo_pugce.png 'Pug-CE' %}
 
 **A**lém das palestras o evento contará com um sorteio do livro Python e Django - Desenvolvimento Ágil de Aplicações Web.
 
@@ -50,6 +47,3 @@ categories:
 **P**ara maiores detalhes sobre o evento, visite a página: [Aqui!](http://pylestras.appspot.com/)
 
 **A**braços!
-
-
-![](http://www.marcelocavalcante.net/portal/imgs/userbar.gif)

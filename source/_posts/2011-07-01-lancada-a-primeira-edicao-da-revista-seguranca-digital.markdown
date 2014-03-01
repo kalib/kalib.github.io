@@ -16,13 +16,7 @@ categories:
 - Seguranca Digital
 - Software Livre
 ---
-
-
-
-
-[![](http://marcelocavalcante.net/portal/wp-content/uploads/2011/07/1_edicao_julho_2011.jpg)](http://marcelocavalcante.net/portal/wp-content/uploads/2011/07/1_edicao_julho_2011.jpg)
-
-
+{% img left /imgs/seguranca_digital_1.jpg 'Segurança Digital' %}
 **S**audações pessoal.
 
 **P**ara quem não sabe, hoje é o lançamento da primeira edição da [Revista Segurança Digital](http://www.segurancadigital.info/revista/185-revistas).
@@ -42,6 +36,3 @@ categories:
 **N**ão deixe de fazer o [download](http://www.segurancadigital.info/revista/185-revistas) desta edição e conferir o resultado desta força tarefa inicial.
 
 **E**speramos que gostem.
-
-
-![](http://www.marcelocavalcante.net/portal/imgs/userbar.gif)

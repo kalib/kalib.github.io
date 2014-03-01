@@ -13,10 +13,7 @@ categories:
 - Linux
 - Software Livre
 ---
-
-[![](http://www.insidelinux.com.br/wp-content/uploads/2010/10/gnome-kde.png)](http://www.insidelinux.com.br/wp-content/uploads/2010/10/gnome-kde.png)
-
-
+{% img center /imgs/gnome-kde.png 'Gnome Kde' %}
 **E**stranho o título?
 
 **B**om, de fato foi o que aconteceu. O KDE 4.6.2 foi lançado e para demonstrar que a briga entre usuários [KDE](http://www.kde.org) x [GNOME](http://www.gnome.org) simplesmente não faz sentido, esta release foi batizada de "Congrats", parabéns em português, em homenagem ao lançamento do GNOME 3 que teve mesma data.
@@ -33,7 +30,7 @@ categories:
 
 
 
-[caption id="" align="aligncenter" width="492" caption="The KDE Plasma Netbook Workspace"][![The KDE Plasma Netbook Workspace](http://kde.org/announcements/4.6/screenshots/46netbook2.png)](http://kde.org/announcements/4.6/screenshots/46netbook2.png)[/caption]
+{% img center /imgs/plasmanetbook.png 'The KDE Plasma Netbook Workspace' %}
 
 **M**uitas melhorias chegaram com esta release, no geral correções de bugs ou melhorias de performance. Para detalhes do changelog, acesse [este link](http://www.kde.org/announcements/changelogs/changelog4_6_1to4_6_2.php).
 
@@ -42,6 +39,3 @@ categories:
 **Q**ue isto sirva de exemplo para nós, usuários. ;]
 
 **A**braços!
-
-
-![](http://www.marcelocavalcante.net/portal/imgs/userbar.gif)

@@ -11,11 +11,9 @@ categories:
 - Impressoes
 - Literatura
 ---
+{% img center /imgs/livros/guerradostronos1.jpg 'Guerra dos Tronos' %}
 
-![](http://marcelocavalcante.net/portal/imgs/livros/guerra_tronos.jpg)
-
-
-**A**fastado do blog como explicado no **[post anterior](http://www.marcelocavalcante.net/portal/?p=910)**, mas não afastado de minha leitura diária.
+**A**fastado do blog como explicado no **post anterior**, mas não afastado de minha leitura diária.
 
 **O** livro da vez, para variar, foi um presente de minha namorada, Mari.
 
@@ -34,6 +32,3 @@ categories:
 **D**os lugares onde o frio é brutal, até os distantes reinos de plenitude e sol, George R. R. Martin narra uma história de lordes e damas, soldados e mercenários, assassinos e bastardos, que se juntam em um tempo de presságios malignos. Entre disputas por reinos, tragédias e traições, vitória e terror, o destino dos Stark, seus aliados e seus inimigos é incerto. Mas cada um está se esforçando para ganhar este conflito mortal: a guerra dos tronos.
 
 **B**oa leitura!
-
-
-![](http://www.marcelocavalcante.net/portal/imgs/userbar.gif)

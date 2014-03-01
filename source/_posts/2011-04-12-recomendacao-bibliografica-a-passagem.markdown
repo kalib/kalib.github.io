@@ -10,10 +10,7 @@ categories:
 - Impressoes
 - Literatura
 ---
-
-[![](http://marcelocavalcante.net/portal/imgs/livros/passagem.jpg)](http://marcelocavalcante.net/portal/imgs/livros/passagem.jpg)
-
-
+{% img left /imgs/livros/apassagem.jpg 'A Passagem' %}
 **C**omo citou o grande [Stephen King](http://pt.wikipedia.org/wiki/Stephen_King), "Esta é a história de vampiros que você não pode perder: 15 páginas são suficientes para cativá-lo; depois de 30, você se descobrirá prisioneiro, lendo noite adentro. Um livro com a força dos épicos."
 
 **P**ara quem, assim como eu, adora ficção, vampiros e contos que exploram o sobrenatural, mas que ao mesmo tempo está cansado de tanta babaquice e melação como Crepúsculo, Vampire Diaries, etc... Esta orba de [Justin Cronin](http://en.wikipedia.org/wiki/Justin_Cronin) promete ser uma excelente pedida.
@@ -30,7 +27,7 @@ categories:
 
 **O** mais esquisito parece ser a reação dela frente aos virais, bem como a reação deles ao se aproximarem dela.
 
-**S**em dúvida alguma, uma leitura que recomendo. Agradeço, novamente, à minha namorada, [Mari](http://marcelocavalcante.net/portal/wp-content/gallery/guara/02052009025.jpg), que, como sempre, me presenteia com excelentes livros. ;]
+**S**em dúvida alguma, uma leitura que recomendo. Agradeço, novamente, à minha namorada Mari que, como sempre, me presenteia com excelentes livros. ;]
 
 **S**egue sinopse do mesmo retirada da livraria Saraiva:
 
@@ -41,6 +38,3 @@ _"A Passagem" é um suspense implacável, uma alegoria da luta humana diante de 
 
 
 **A**braço e boa leitura!
-
-
-![](http://www.marcelocavalcante.net/portal/imgs/userbar.gif)

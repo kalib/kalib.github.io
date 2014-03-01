@@ -14,10 +14,7 @@ categories:
 - Seguranca
 - Software Livre
 ---
-
-![](http://tdistler.com/wp-content/uploads/2010/06/sherlock_tux.jpg)
-
-
+{% img left /imgs/sherlocktux.jpg 'Sherlock Tux' %}
 **P**ara quem não conhece, brute-force é um ataque bastante utilizado em serviços web tais como smtp, pop, ssh, ftp, iax dentre outros. O ataque consiste em basicamente forçar o login em um determinado serviço que esteja disponível online sem que seja necessário um ataque mais sofisticado ou mesmo grandes conhecimentos sobre a tecnologia em questão. Por ser demasiado simples de se utilizar, visto que existem milhares de ferramentas disponíveis na web para este fim, ele acaba se tornando um dos pesadelos mais constantes dos administradores de redes, SysAdmins, etc.. Pois é um fato! Se você possui um serviço web ele já sofreu tentativa de ataques brute-force. Não sofreu? <del>Não se preocupe, sofrerá.</del> ;]
 
 **B**asicamente existem duas formas de brute-force, porém eu prefiro acrescentar uma terceira forma...rude e grosseira, mas infelizmente já vi casos de pessoas que se utilizam dela, então vamos lá.
@@ -372,6 +369,3 @@ _[kalib@tuxcaverna wordlists]$ ./dirb http://www.meulaboratorio.com.br euskera.t
 **A**gora é sair experimentando combinações e testando os resultados. Seja criativo em seus testes. ;]
 
 **A**braços!
-
-
-![](http://www.marcelocavalcante.net/portal/imgs/userbar.gif)

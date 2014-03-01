@@ -14,9 +14,7 @@ categories:
 - Software Livre
 ---
 
-![](http://www.media-freaks.com/wp-content/uploads/2008/09/programmer-260x300.jpg)
-
-
+{% img left /imgs/programmer-260x300.jpg 'Programador' %}
 **S**audações pessoal,
 
 
@@ -35,7 +33,7 @@ categories:
 
 
 
-![](http://www.danielimamura.com.br/wp-content/uploads/2010/09/cartoonvidaprogramador.gif)
+{% img center /imgs/cartoonvidaprogramador.gif 'Programador Rotina' %}
 
 
 
@@ -45,7 +43,7 @@ categories:
 
 
 
-![](http://www.whitefang.com/wp-content/uploads/2010/03/Programming-Languages.jpg)
+{% img center /imgs/progLanguages.jpg 'Linguagens' %}
 
 
 
@@ -438,10 +436,3 @@ _select 'Feliz dia do Programador!';_
 
 
 **A**braço!
-
-
-
-
-
-
-![](http://www.marcelocavalcante.net/portal/imgs/userbar.gif)

@@ -7,10 +7,7 @@ slug: flisol-fortaleza-2011-inscricoes-e-chamada-de-trabalhos
 title: Flisol Fortaleza 2011 - Inscrições e Chamada de Trabalhos
 wordpress_id: 804
 ---
-
-[![](http://marcelocavalcante.net/portal/wp-content/uploads/2011/03/logo_flisol.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2011/03/logo_flisol.png)
-
-
+{% img left /imgs/flisol.png 'Flisol' %}
 **S**audações pessoal!
 
 **C**omo muitos de vocês já devem saber, estamos nos aproximando do mês de Abril, significando que o Flisol vem aí. Para quem ainda não conhece, o Flisol - Fórum Latino Americano de Instalação de Software Livre - é um dos maiores eventos do mundo no que diz respeito ao movimento de Software Livre. O evento é realizado anualmente e ocorre de forma simultânea em diversas cidades da América Latina, totalizando mais de 120 cidades em aproximadamente 20 países. O Flisol é um evento descentralizado, onde diversas comunidades organizam e realizam seu festival, de forma voluntária, tendo como principal objetivo promover o uso de Software Livre, apresentando sua filosofia, alcance, avanços e desenvolvimento ao público em geral.
@@ -30,6 +27,3 @@ wordpress_id: 804
 **P**ara maiores informações sobre o evento e novidades, acompanhe o site do evento ou siga no twitter @flisolceara.
 
 **A**braços!
-
-
-![](http://www.marcelocavalcante.net/portal/imgs/userbar.gif)

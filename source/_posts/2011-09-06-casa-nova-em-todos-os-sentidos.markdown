@@ -9,10 +9,7 @@ wordpress_id: 910
 categories:
 - Impressoes
 ---
-
-![](http://www.it-networks.org/wp-content/uploads/2011/04/imagesCAIK1UEI.jpg)
-
-
+{% img left /imgs/house_moving.jpg 'Mudança' %}
 **S**audações pessoal!
 
 **L**ongo tempo sem publicar algo no blog, mas cá estou novamente.
@@ -28,6 +25,3 @@ categories:
 **N**os vemos no próximo post.
 
 **A**braços!
-
-
-![](http://www.marcelocavalcante.net/portal/imgs/userbar.gif)

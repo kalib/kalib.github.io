@@ -39,7 +39,7 @@ categories:
 
 **C**omo instalar?
 
-![Arch Linux](http://blog.leandroinacio.eti.br/wp-content/uploads/2009/10/arch-linux-logo1.png)
+{% img left /imgs/archlinux.png 'ArchLinux' %}
 Bom, se você utiliza [Arch Linux](http://archlinux.org), pode pegar o pacote no AUR através do seguinte link(Lembrem-se de votar nele):
 
 [http://aur.archlinux.org/packages.php?ID=20809](http://aur.archlinux.org/packages.php?ID=20809)
@@ -68,7 +68,7 @@ Bom, se você utiliza [Arch Linux](http://archlinux.org), pode pegar o pacote no
 
 
 
-[![](http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster8.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster8.png)
+{% img center /imgs/dirbuster1.png 'Dirbuster' %}
 
 
 **C**omo explicado antes, ele funciona parecido com o Dirb, porém em uma interface GUI (gráfica).
@@ -96,19 +96,19 @@ Bom, se você utiliza [Arch Linux](http://archlinux.org), pode pegar o pacote no
 **B**om, vou escolher meu alvo e vou utilizar 20 threads em simultâneo. Não vou deixar a ferramenta rodando por muito tempo pois estou apenas fazendo uma demonstração.
 
 
-[![](http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster21.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster21.png)
+{% img center /imgs/dirbuster2.png 'Dirbuster' %}
 
 
 **C**omo podem ver, filtrei para que o brute-force comece no diretório raiz (/) e optei pela maior lista que o DirBuster possui como dicionário. Deixei rodando por cerca de 30 segundos e já tive o seguinte resultado.
 
 
-[![](http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster3.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster3.png)
+{% img center /imgs/dirbuster3.png 'Dirbuster' %}
 
 
 **A** parte borrada no início da imagem não é um defeito. Vocês não pensaram que eu iria deixar exposto o alvo no qual fiz o teste, certo? No caso, optei pelo site de uma de nossas instituições de ensino. Bom, a imagem acima é um exemplo do retorno que consigo com a ferramenta. É a visão em Lista. Além dela você pode optar pela visão em árvore, que, como o nome informa, lhe trará a árvore de diretórios, sub-diretórios e arquivos que foram encontrados. Abaixo um exemplo da visão em árvore:
 
 
-[![](http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster4.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster4.png)
+{% img center /imgs/dirbuster4.png 'Dirbuster' %}
 
 
 **O** resultado, mesmo deixando a ferramenta rodando por apenas 30 segundos, foi o esperado. Um espantoso caso de descuido com a segurança do site.
@@ -116,15 +116,15 @@ Bom, se você utiliza [Arch Linux](http://archlinux.org), pode pegar o pacote no
 **A**lguns leves exemplos que me chamaram a atenção na lista que consegui:
 
 
-[![](http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster5.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster5.png)
+{% img center /imgs/dirbuster5.png 'Dirbuster' %}
 
 
 **U**m diretório de administração exposto desta forma indicando que existe uma sessão do site com acesso permitido apenas para administradores. O que isso me leva a crer? Que quem conseguir acesso a esta sessão consegue manipular o sistema do site? O que nos leva a uma posterior análise da página index contida nele que possibilita uma tentativa de brute-force de login e senha? psssiiiuuuu... o.O
 
-[![](http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster6.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster6.png)
+{% img center /imgs/dirbuster6.png 'Dirbuster' %}
 ** U**m diretório para uploads de Arquivos? Que tal testar ele? Apenas usuários administradores possuem permissão de upload? Ou alunos conseguem fazer upload de fotos, trabalhos, por exemplo? De qualquer forma, isso me indica que existe a possibilidade de eu subir arquivos para o servidor deles. Que tal um script em php que me permitiria ter um console shell no servidor deles para inclusão, exclusão, edição, etc.. ? pssiiiiuuuu... o.O
 
-[![](http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster7.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster7.png)
+{% img center /imgs/dirbuster7.png 'Dirbuster' %}
 
 **P**ode não ser nada.. mas também pode ser muita coisa.. O que um diretório chamado "gerencia" faz ali tão exposto e com um nome tão... tão... discreto? o.O psssiiiuuuuu
 
@@ -135,6 +135,3 @@ Bom, se você utiliza [Arch Linux](http://archlinux.org), pode pegar o pacote no
 **H**appy Hacking...
 
 **PS: Wrong developers! Never play security by obscurity!**
-
-
-![](http://www.marcelocavalcante.net/portal/imgs/userbar.gif)

@@ -15,13 +15,10 @@ categories:
 - Seguranca
 - Software Livre
 ---
-
-[![](http://www.marcelocavalcante.net/portal/wp-content/uploads/2011/09/1197557350_90927cc5492.jpg)](http://www.marcelocavalcante.net/portal/wp-content/uploads/2011/09/1197557350_90927cc5492.jpg)
-
-
+{% img left /imgs/password1.jpg 'Password' %}
 **J**á é sabido que a maior vulnerabilidade dentro das empresas ou mesmo computadores pessoais são justamente os próprios funcionários ou usuários.
 
-**![](http://public-commoncraft.s3.amazonaws.com/SecurePasswords500.jpg)M**anter uma boa **política de senhas** é fundamental para garantir a segurança **básica** de suas informações e tentar minimizar as chances de alguém ter acesso indevido a elas.
+{% img left /imgs/securepasswords.jpg 'Securepasswords' %}M**anter uma boa **política de senhas** é fundamental para garantir a segurança **básica** de suas informações e tentar minimizar as chances de alguém ter acesso indevido a elas.
 
 **V**ou apresentar dicas simples para uma boa política de senhas que vão além das dicas comuns como "mantenha uma senha que contenha mais de 8 caracteres, sendo eles números, letras minúsculas, maiúsculas e caracteres especiais...".
 
@@ -175,8 +172,3 @@ _-W 7_ -> Número de dias antes de expirar nos quais o usuário vai receber aler
 
     
     <strong>H</strong>ave fun!
-
-
-
-
-![](http://www.marcelocavalcante.net/portal/imgs/userbar.gif)

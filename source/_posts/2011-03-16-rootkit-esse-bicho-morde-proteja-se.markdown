@@ -15,10 +15,7 @@ categories:
 - Seguranca
 - Software Livre
 ---
-
-[![](http://marcelocavalcante.net/portal/wp-content/uploads/2011/03/malware.jpg)](http://marcelocavalcante.net/portal/wp-content/uploads/2011/03/malware.jpg)
-
-
+{% img left /imgs/malware.jpg 'Malware' %}
 **V**ocê sabe o que é rootkit?
 
 **N**unca vi, nem comi, eu só ouço falar!
@@ -50,7 +47,7 @@ categories:
 **S**em mais papo furado, vamos conhecer algumas ferramentas que buscam rootkits em seu Linux.
 
 
-![](http://aboutonlinetips.com/wp-content/uploads/2008/11/picture-rootkit.png)
+{% img center /imgs/rootkit.png 'Rootkit' %}
 
 
 **RKHUNTER**
@@ -94,7 +91,7 @@ categories:
 **V**ocê terá uma listagem das checagens parecida com esta:
 
 
-[![](http://marcelocavalcante.net/portal/wp-content/uploads/2011/03/rkhunter11.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2011/03/rkhunter11.png)
+{% img center /imgs/rkhunter.jpg 'RKhunter' %}
 
 
 **P**erceba que é tudo apresentado de forma simples e objetiva.
@@ -125,10 +122,7 @@ categories:
 
 # tiger
 
-**E**le iniciará a busca e lhe trará uma interface como esta:
-
-
-[![](http://marcelocavalcante.net/portal/wp-content/uploads/2011/03/rkhunter2.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2011/03/rkhunter2.png)
+**E**le iniciará a busca e lhe trará uma interface.
 
 
 **A**ssim como o rkhunter, no ato de finalização ele irá gerar um arquivo com o relatório da checagem. Ele lhe informará o caminho do arquivo, mas provavelmente será em /var/log/tiger/.
@@ -147,7 +141,7 @@ categories:
 
 **A**ssim como o Tiger, o chkroot também possui uma interface simples sem cores ou enfeites, conforme pode ser visto abaixo:
 
-[![](http://marcelocavalcante.net/portal/wp-content/uploads/2011/03/rkhunter3.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2011/03/rkhunter3.png)
+{% img center /imgs/chkroot.png 'Python' %}
 
 **A**pesar de não ser colorida e enfeitada, é uma interface bem simples e de fácil entendimento, concordam?
 
@@ -158,6 +152,3 @@ categories:
 **C**om estas ferramentas as chances de algum rootkit passar despercebido em seu ambiente Linux já são bem limitadas.
 
 **A**braços!
-
-
-![](http://www.marcelocavalcante.net/portal/imgs/userbar.gif)

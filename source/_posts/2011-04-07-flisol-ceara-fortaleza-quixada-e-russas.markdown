@@ -14,10 +14,7 @@ categories:
 - Software Livre
 - Tux-ce
 ---
-
-[![](http://marcelocavalcante.net/portal/wp-content/uploads/2011/03/logo_flisol.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2011/03/logo_flisol.png)
-
-
+{% img left /imgs/flisol.png 'Flisol' %}
 **P**ara quem ainda não conhece, o Flisol - Fórum Latino Americano de Instalação de Software Livre - é um dos maiores eventos do mundo no que diz respeito ao movimento de Software Livre. O evento é realizado anualmente e ocorre de forma simultânea em diversas cidades da América Latina, totalizando mais de 120 cidades em aproximadamente 20 países. O Flisol é um evento descentralizado, onde diversas comunidades organizam e realizam seu festival, de forma voluntária, tendo como principal objetivo promover o uso de Software Livre, apresentando sua filosofia, alcance, avanços e desenvolvimento ao público em geral.
 
 **O** evento é gratuito e aberto a todo o público: curiosos, interessados e amantes do Software Livre. Nesse dia os voluntários propõe a instalação de Software Livre, como distribuições de Gnu/Linux, sistemas BSD, e aplicativos livres para Windows em geral. Alguns eventos também contam com palestras, oficinas, salas de degustação e gravações de mídias (live-CD/DVD e/ou pendrives).
@@ -56,6 +53,3 @@ Telefone: 88 3411-8550
 **N**os vemos no Flisol.
 
 **A**braços!
-
-
-![](http://www.marcelocavalcante.net/portal/imgs/userbar.gif)

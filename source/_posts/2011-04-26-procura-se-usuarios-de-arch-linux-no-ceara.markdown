@@ -12,10 +12,6 @@ categories:
 - Linux
 - Software Livre
 ---
-
-[![](http://marcelocavalcante.net/portal/wp-content/uploads/2011/04/procurase.jpg)](http://marcelocavalcante.net/portal/wp-content/uploads/2011/04/procurase.jpg)
-
-
 **S**e você é ou conhece algum usuário de [Arch Linux](http://archlinux.org/) aqui no Ceará, favor entrar em contato.
 
 **I**nfelizmente não estamos em condições de oferecer recompensas financeiras pelas <del>denúncias</del> ou comparecimentos voluntários. Quem sabe, uma cervejinha ou duas, até que rola.
@@ -31,6 +27,3 @@ categories:
 **P**or favor se identifique através do seguinte link: [http://forum.archlinux-br.org/viewforum.php?id=20](http://forum.archlinux-br.org/viewforum.php?id=20)
 
 **A**braços!
-
-
-![](http://www.marcelocavalcante.net/portal/imgs/userbar.gif)

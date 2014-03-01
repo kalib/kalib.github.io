@@ -12,9 +12,7 @@ categories:
 - Linux
 - Software Livre
 ---
-
-[![](http://www.ogilvy.co.uk/neo/files/2008/03/webcast-pic.png)](http://www.ogilvy.co.uk/neo/files/2008/03/webcast-pic.png)
-
+{% img center /imgs/webcast-pic.png 'Webcast' %}
 
 **C**ansado de apenas poder assistir aquele webcast ou vídeo-aula online? E se estiver em um local sem conec﻿tividade? Porque dor de cabeça? Sou usuário Linux! Obrigado por ter a ideia de criar o Linux e facilitar nossas vidas Linus. ;]
 
@@ -81,6 +79,3 @@ _rtmpdump -r "rtmpe://url_de_origem_do_streaming/arquivo_streaming.wmv" -o arqui
 **H**ave fun! ;]
 
 **A**braços!
-
-
-![](http://www.marcelocavalcante.net/portal/imgs/userbar.gif)

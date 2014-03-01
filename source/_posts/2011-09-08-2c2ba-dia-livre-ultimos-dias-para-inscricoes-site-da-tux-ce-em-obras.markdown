@@ -13,10 +13,7 @@ categories:
 - Software Livre
 - Tux-ce
 ---
-
-[![](http://www.marcelocavalcante.net/portal/wp-content/uploads/2011/09/Logo+dia-livre-01.png)](http://www.marcelocavalcante.net/portal/wp-content/uploads/2011/09/Logo+dia-livre-01.png)
-
-
+{% img left /imgs/logo_dia_livre.png 'Dia Livre' %}
 **S**audações amigos!
 
 **P**ara quem não sabe ainda, a **[Tux-CE](http://www.tux-ce.org)** está organizando um encontro regular para os usuários e profissinais de Software Livre, bem como interessados e curiosos sobre o tema. O nome dado ao projeto é **[Dia Livre](http://dialivre.tux-ce.org)**.
@@ -121,10 +118,7 @@ Lucas Filho
 Gostaria de aproveitar o post e comunicar que a página da Tux-CE está passando por uma grande migração, portanto estará indisponível, como alguns já devem ter percebido, pelos próximos 7 dias.
 
 
-[![](http://www.marcelocavalcante.net/portal/wp-content/uploads/2011/09/tuxindisp.png)](http://www.marcelocavalcante.net/portal/wp-content/uploads/2011/09/tuxindisp.png)
+{% img center /imgs/tux_working.jpg 'Tux Trabalhando' %}
 
 
 **A**braços,
-
-
-![](http://www.marcelocavalcante.net/portal/imgs/userbar.gif)

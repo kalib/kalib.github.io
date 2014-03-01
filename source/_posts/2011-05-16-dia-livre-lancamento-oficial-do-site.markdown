@@ -12,13 +12,10 @@ categories:
 - Linux
 - Software Livre
 ---
-
-[![](http://marcelocavalcante.net/portal/wp-content/uploads/2011/05/Logo+dia-livre-01.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2011/05/Logo+dia-livre-01.png)
-
-
+{% img left /imgs/logo_dia_livre.jpg 'Dia Livre' %}
 **G**ostaria de comunicar sobre o lançamento oficial do [site do Dia Livre](http://dialivre.tux-ce.org) que se deu ontem, Domingo.
 
-**R**ecentemente escrevi [aqui](http://marcelocavalcante.net/portal/2011/04/19/encontros-sobre-software-livre-escolha-um-nome/) sobre um encontro regular que pretendemos organizar para usuários e profissionais de Software Livre em nossa região.
+**R**ecentemente escrevi sobre um encontro regular que pretendemos organizar para usuários e profissionais de Software Livre em nossa região.
 
 **O**ntem o site do Dia Livre foi lançado oficialmente e servirá de ponto de acesso e informações sobre tudo o que envolve o mesmo, como fotos, vídeos, inscrições, agenda, notícias, etc.
 
