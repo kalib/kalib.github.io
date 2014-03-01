@@ -14,12 +14,7 @@ categories:
 - Software Livre
 ---
 
-[![](http://pixelmaverick.com/wp-content/uploads/2009/11/brunocb-sherlock-holmes-tux-5975.png)](http://pixelmaverick.com/wp-content/uploads/2009/11/brunocb-sherlock-holmes-tux-5975.png)
-****
-
-
-
-
+{% img left /imgs/cyberspace.jpg 'Cyberspace' %}
 **S**audações pessoal,
 
 

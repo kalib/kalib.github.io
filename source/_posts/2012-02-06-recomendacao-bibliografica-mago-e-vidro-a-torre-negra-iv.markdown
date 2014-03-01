@@ -11,17 +11,17 @@ categories:
 - Literatura
 ---
 
-[![](http://marcelocavalcante.net/portal/imgs/livros/mago_e_vidro.jpg.pagespeed.ce.z_h39Fy6cb.jpg)](http://marcelocavalcante.net/portal/imgs/livros/mago_e_vidro.jpg.pagespeed.ce.z_h39Fy6cb.jpg)****
+{% img left /imgs/livros/magoevidro.jpg 'Mago e Vidro' %}
 
 **D**epois de minhas longas férias, estou de volta e começando os posts do ano com uma recomendação bibliográfica: **Mago e Vidro**, o quarto volume da saga **A Torre Negra**.
 
 **P**ara quem não conhece a saga, sugiro a leitura dos 3 links a seguir:
 
-[**A Torre Negra vol I - O Pistoleiro**](http://www.marcelocavalcante.net/portal/2009/06/21/recomendacao-bibliografica-do-voo%C2%BF-o-pistoleiro/)
+[**A Torre Negra vol I - O Pistoleiro**](http://blog.marcelocavalcante.net/blog/2009/06/21/recomendacao-bibliografica-do-vooc2bf-o-pistoleiro/)
 
-[**A Torre Negra vol II - A Escolha dos Três**](http://www.marcelocavalcante.net/portal/2009/09/08/recomendacao-bibliografica-a-escolha-dos-tres-a-torre-negra-vol-ii/)
+[**A Torre Negra vol II - A Escolha dos Três**](http://blog.marcelocavalcante.net/blog/2009/09/08/recomendacao-bibliografica-a-escolha-dos-tres-a-torre-negra-vol-ii/)
 
-[**A Torre Negra vol III - As Torres Devastadas**](http://www.marcelocavalcante.net/portal/2010/02/22/recomendacao-bibliografica-a-torre-negra-vol-iii-as-terras-devastadas/)
+[**A Torre Negra vol III - As Torres Devastadas**](http://blog.marcelocavalcante.net/blog/2010/02/22/recomendacao-bibliografica-a-torre-negra-vol-iii-as-terras-devastadas/)
 
 **N**este 4º livro, o consagrado autor [**Stephen King**](http://pt.wikipedia.org/wiki/Stephen_King) deixa um pouco de lado a trama inicial na qual os personagens estavam buscando a Torre Negra e foca as mais de 800 páginas do livro no passado do Pistoleiro Roland, mais especificamente em sua adolescência e suas primeiras aventuras.
 
@@ -42,6 +42,3 @@ _Inspirada no universo imaginário de J.R.R. Tolkien e no poema épico do sécul
 
 
 **A**braços
-
-
-![](http://www.marcelocavalcante.net/portal/imgs/userbar.gif)

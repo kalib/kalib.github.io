@@ -14,9 +14,6 @@ categories:
 - Tux-ce
 ---
 
-[![](http://www.marcelocavalcante.net/portal/wp-content/uploads/2011/10/Logo+dia-livre-01-300x87.png)](http://www.marcelocavalcante.net/portal/wp-content/uploads/2011/10/Logo+dia-livre-01.png)
-
-
 **J**á estão abertas as inscrições para o **[3º Dia Livre](http://www.dialivre.net/portal)** em Fortaleza.
 
 **P**ara quem ainda não teve a oportunidade de participar de nenhuma edição, o **[Dia Livre](http://www.dialivre.net/portal/?page_id=7)** é um encontro bimestral organizado pela **[Tux-CE](http://www.tux-ce.org)** que busca aproximar os profissionais e entusiastas do **Software Livre**.
@@ -30,6 +27,3 @@ categories:
 [**Não perca tempo e garanta a sua vaga através do site do Dia Livre: www.dialivre.net**](http://www.dialivre.net/portal/?page_id=8)
 
 **A**braços,
-
-
-![](http://www.marcelocavalcante.net/portal/imgs/userbar.gif)
