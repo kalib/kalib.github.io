@@ -4,7 +4,7 @@
   <title><![CDATA[Category: KDE | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/blog/categories/kde/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2014-02-28T22:52:13-03:00</updated>
+  <updated>2014-03-01T17:03:09-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -101,7 +101,7 @@
 
 <p><strong>N</strong>o Arch, por exemplo, encorajamos fortemente o uso do Wicd com o KDE ao invés do network-manager. Sim, sempre utilizei ele, porém&hellip;</p>
 
-<p><img src="http://3.bp.blogspot.com/_lqr72cLxjWU/TKEXqNjH-3I/AAAAAAAAACM/WKa5EWZ75V0/s1600/screenshot-20100928@001439.png" alt="" /></p>
+<p><img class="left" src="/imgs/wicdgtk.png" title="&lsquo;Wicd Gtk&rsquo;" ></p>
 
 <p><strong>E</strong> então? Meio bizarro, certo?! Alguém havia pensado em dizer &ldquo;Mas ele não é tão feio..&rdquo;?</p>
 
@@ -109,7 +109,7 @@
 
 <p><strong>C</strong>omo uma imagem vale mais que mil palavras:</p>
 
-<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/04/wicdkde1.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/04/wicdkde1.png" alt="" /></a></p>
+<p><img class="left" src="/imgs/wicdqt.png" title="&lsquo;Wicd Qt&rsquo;" ></p>
 
 <p><strong>M</strong>ais amigável certo? Uma interface mais limpa, organizada e bonita. Bem ao estilo &ldquo;clean&rdquo;, como alguns preferem dizer.</p>
 
@@ -152,8 +152,6 @@
 <p><strong>H</strong>ave Fun!</p>
 
 <p><strong>A</strong>braços!</p>
-
-<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
 ]]></content>
   </entry>
   
@@ -162,9 +160,8 @@
     <link href="http://blog.marcelocavalcante.net/blog/2011/04/07/kde-4-6-2-lancado-parabens-ao-gnome/"/>
     <updated>2011-04-07T14:09:09-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2011/04/07/kde-4-6-2-lancado-parabens-ao-gnome</id>
-    <content type="html"><![CDATA[<p><a href="http://www.insidelinux.com.br/wp-content/uploads/2010/10/gnome-kde.png"><img src="http://www.insidelinux.com.br/wp-content/uploads/2010/10/gnome-kde.png" alt="" /></a></p>
-
-<p><strong>E</strong>stranho o título?</p>
+    <content type="html"><![CDATA[<p><img class="center" src="/imgs/gnome-kde.png" title="&lsquo;Gnome Kde&rsquo;" >
+<strong>E</strong>stranho o título?</p>
 
 <p><strong>B</strong>om, de fato foi o que aconteceu. O KDE 4.6.2 foi lançado e para demonstrar que a briga entre usuários <a href="http://www.kde.org">KDE</a> x <a href="http://www.gnome.org">GNOME</a> simplesmente não faz sentido, esta release foi batizada de &ldquo;Congrats&rdquo;, parabéns em português, em homenagem ao lançamento do GNOME 3 que teve mesma data.</p>
 
@@ -176,7 +173,7 @@
 
 <p><a href="http://kde.org/announcements/announce-4.6.2.php"></a><em><a href="http://kde.org/announcements/announce-4.6.2.php">“Com o codinome “Congrats" (parabéns) dedicamos este lançamento para os nossos amigos no lado GNOME, que lançam uma nova versão principal hoje.”</a></em></p>
 
-<p>[caption id=&ldquo;&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;492&rdquo; caption=&ldquo;The KDE Plasma Netbook Workspace&rdquo;]<a href="http://kde.org/announcements/4.6/screenshots/46netbook2.png"><img src="http://kde.org/announcements/4.6/screenshots/46netbook2.png" alt="The KDE Plasma Netbook Workspace" /></a>[/caption]</p>
+<p><img class="center" src="/imgs/plasmanetbook.png" title="&lsquo;The KDE Plasma Netbook Workspace&rsquo;" ></p>
 
 <p><strong>M</strong>uitas melhorias chegaram com esta release, no geral correções de bugs ou melhorias de performance. Para detalhes do changelog, acesse <a href="http://www.kde.org/announcements/changelogs/changelog4_6_1to4_6_2.php">este link</a>.</p>
 
@@ -185,8 +182,6 @@
 <p><strong>Q</strong>ue isto sirva de exemplo para nós, usuários. ;]</p>
 
 <p><strong>A</strong>braços!</p>
-
-<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
 ]]></content>
   </entry>
   

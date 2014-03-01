@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Ruby | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/blog/categories/ruby/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2014-02-28T22:52:13-03:00</updated>
+  <updated>2014-03-01T17:03:09-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -64,9 +64,8 @@
     <link href="http://blog.marcelocavalcante.net/blog/2011/09/13/feliz-dia-do-programador/"/>
     <updated>2011-09-13T10:11:39-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2011/09/13/feliz-dia-do-programador</id>
-    <content type="html"><![CDATA[<p><img src="http://www.media-freaks.com/wp-content/uploads/2008/09/programmer-260x300.jpg" alt="" /></p>
-
-<p><strong>S</strong>audações pessoal,</p>
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/programmer-260x300.jpg" title="&lsquo;Programador&rsquo;" >
+<strong>S</strong>audações pessoal,</p>
 
 <p><strong>U</strong>m feliz dia do programador para todos aqueles que, profissionalmente, curiosamente ou mesmo por mera falta do que fazer escrevem ou já escreveram linhas de código!</p>
 
@@ -74,11 +73,11 @@
 
 <p><strong>D</strong>esafiador&hellip;estressante&hellip;cansativo&hellip;divertido&hellip;prazeroso&hellip; Como em qualquer &ldquo;casamento&rdquo;&hellip; na alegria e na tristeza!</p>
 
-<p><img src="http://www.danielimamura.com.br/wp-content/uploads/2010/09/cartoonvidaprogramador.gif" alt="" /></p>
+<p><img class="center" src="/imgs/cartoonvidaprogramador.gif" title="&lsquo;Programador Rotina&rsquo;" ></p>
 
 <p><strong>O</strong>bviamente que eu não vou colocar em todas as centenas de linguagens de programação que existem.. portanto, se a sua linguagem favorita não foi homenageada abaixo, não fique triste. São muitas..difícil lembrar de todas.. O que vale é a intenção.</p>
 
-<p><img src="http://www.whitefang.com/wp-content/uploads/2010/03/Programming-Languages.jpg" alt="" /></p>
+<p><img class="center" src="/imgs/progLanguages.jpg" title="&lsquo;Linguagens&rsquo;" ></p>
 
 <p><strong>Assembly</strong></p>
 
@@ -236,8 +235,6 @@
 <p><em>select &lsquo;Feliz dia do Programador!&rsquo;;</em></p>
 
 <p><strong>A</strong>braço!</p>
-
-<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
 ]]></content>
   </entry>
   

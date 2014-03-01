@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Python | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/blog/categories/python/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2014-02-28T22:52:13-03:00</updated>
+  <updated>2014-03-01T17:03:09-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -18,9 +18,8 @@
     <link href="http://blog.marcelocavalcante.net/blog/2011/09/13/feliz-dia-do-programador/"/>
     <updated>2011-09-13T10:11:39-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2011/09/13/feliz-dia-do-programador</id>
-    <content type="html"><![CDATA[<p><img src="http://www.media-freaks.com/wp-content/uploads/2008/09/programmer-260x300.jpg" alt="" /></p>
-
-<p><strong>S</strong>audações pessoal,</p>
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/programmer-260x300.jpg" title="&lsquo;Programador&rsquo;" >
+<strong>S</strong>audações pessoal,</p>
 
 <p><strong>U</strong>m feliz dia do programador para todos aqueles que, profissionalmente, curiosamente ou mesmo por mera falta do que fazer escrevem ou já escreveram linhas de código!</p>
 
@@ -28,11 +27,11 @@
 
 <p><strong>D</strong>esafiador&hellip;estressante&hellip;cansativo&hellip;divertido&hellip;prazeroso&hellip; Como em qualquer &ldquo;casamento&rdquo;&hellip; na alegria e na tristeza!</p>
 
-<p><img src="http://www.danielimamura.com.br/wp-content/uploads/2010/09/cartoonvidaprogramador.gif" alt="" /></p>
+<p><img class="center" src="/imgs/cartoonvidaprogramador.gif" title="&lsquo;Programador Rotina&rsquo;" ></p>
 
 <p><strong>O</strong>bviamente que eu não vou colocar em todas as centenas de linguagens de programação que existem.. portanto, se a sua linguagem favorita não foi homenageada abaixo, não fique triste. São muitas..difícil lembrar de todas.. O que vale é a intenção.</p>
 
-<p><img src="http://www.whitefang.com/wp-content/uploads/2010/03/Programming-Languages.jpg" alt="" /></p>
+<p><img class="center" src="/imgs/progLanguages.jpg" title="&lsquo;Linguagens&rsquo;" ></p>
 
 <p><strong>Assembly</strong></p>
 
@@ -190,8 +189,6 @@
 <p><em>select &lsquo;Feliz dia do Programador!&rsquo;;</em></p>
 
 <p><strong>A</strong>braço!</p>
-
-<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
 ]]></content>
   </entry>
   
@@ -200,17 +197,16 @@
     <link href="http://blog.marcelocavalcante.net/blog/2011/03/24/iii-pylestras-neste-sabado/"/>
     <updated>2011-03-24T14:19:40-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2011/03/24/iii-pylestras-neste-sabado</id>
-    <content type="html"><![CDATA[<p><img src="http://pylestras.appspot.com/static/img/python-logo.gif" alt="" /></p>
-
-<p><strong>G</strong>ostaria de lembrar a todos os interessados que amanhã teremos o <a href="http://pylestras.appspot.com/">III Pylestras</a> aqui em Fortaleza.</p>
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/python-logo.gif" title="&lsquo;Python&rsquo;" >
+<strong>G</strong>ostaria de lembrar a todos os interessados que amanhã teremos o <a href="http://pylestras.appspot.com/">III Pylestras</a> aqui em Fortaleza.</p>
 
 <p><strong>S</strong>e você não faz ideia sobre o que seja Python ou sabe que é uma linguagem de programação mas não conhece maiores detalhes sobre a mesma, recomendo a leitura destes links bem como sua participação no evento, que com certeza será bem interessante.</p>
 
-<p><a href="http://marcelocavalcante.net/portal/2008/11/24/the-zen-of-python/">The Zen Of Phyton</a></p>
+<p><a href="http://blog.marcelocavalcante.net/blog/2008/11/24/the-zen-of-python/">The Zen Of Phyton</a></p>
 
-<p><a href="http://marcelocavalcante.net/portal/2008/11/20/porque-python/">Porque Python?</a></p>
+<p><a href="http://blog.marcelocavalcante.net/blog/2008/11/20/porque-python/">Porque Python?</a></p>
 
-<p><a href="http://marcelocavalcante.net/portal/2009/11/21/porque-escolhi-python-python-para-sysadmins/">Porque escolhi Python &ndash; Python para SysAdmins</a></p>
+<p><a href="http://blog.marcelocavalcante.net/blog/2009/11/21/porque-escolhi-python-python-para-sysadmins/">Porque escolhi Python &ndash; Python para SysAdmins</a></p>
 
 <p><strong>O</strong> evento consiste em 4 palestras conforme apresentadas abaixo:</p>
 
@@ -224,9 +220,9 @@
 
 <p><strong>O</strong> evento acontecerá na Faculdade Farias Brito no horário entre 8:00 e 12:00.</p>
 
-<p><a href="http://www.pythonedjango.com.br/"><img src="http://pylestras.appspot.com/static/img/pythonedjango.gif" alt="" /></a></p>
+<p><img class="center" src="/imgs/pythonedjango.gif" title="&lsquo;Python e Django&rsquo;" ></p>
 
-<p><img src="http://pylestras.appspot.com/static/img/logo_pugce.png" alt="" /></p>
+<p><img class="left" src="/imgs/logo_pugce.png" title="&lsquo;Pug-CE&rsquo;" ></p>
 
 <p><strong>A</strong>lém das palestras o evento contará com um sorteio do livro Python e Django &ndash; Desenvolvimento Ágil de Aplicações Web.</p>
 
@@ -235,8 +231,6 @@
 <p><strong>P</strong>ara maiores detalhes sobre o evento, visite a página: <a href="http://pylestras.appspot.com/">Aqui!</a></p>
 
 <p><strong>A</strong>braços!</p>
-
-<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
 ]]></content>
   </entry>
   
@@ -245,9 +239,8 @@
     <link href="http://blog.marcelocavalcante.net/blog/2011/02/25/amanha-ii-pylestras-python-user-group-ceara/"/>
     <updated>2011-02-25T08:38:02-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2011/02/25/amanha-ii-pylestras-python-user-group-ceara</id>
-    <content type="html"><![CDATA[<p><img src="http://pylestras.appspot.com/static/img/python-logo.gif" alt="" /></p>
-
-<p><strong>G</strong>ostaria de lembrar a todos os interessados que amanhã teremos o <a href="http://pylestras.appspot.com/">II Pylestras</a> aqui em Fortaleza.</p>
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/python-logo.gif" title="&lsquo;Python&rsquo;" >
+<strong>G</strong>ostaria de lembrar a todos os interessados que amanhã teremos o <a href="http://pylestras.appspot.com/">II Pylestras</a> aqui em Fortaleza.</p>
 
 <p>Se você não faz ideia sobre o que seja Python ou sabe que é uma linguagem de programação mas não conhece maiores detalhes sobre a mesma, recomendo a leitura destes links bem como sua participação no evento, que com certeza será bem interessante.</p>
 
@@ -265,9 +258,9 @@ _ * Técnicas para preparação e desenvolvimento de sites com Django</em></p>
 
 <p><strong>O</strong> evento acontecerá na <a href="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=pt-BR&amp;geocode=&amp;q=Faculdade+7+de+Setembro,+Fortaleza+-+Cear%C3%A1,+Brasil&amp;aq=2&amp;sll=37.926868,-95.712891&amp;sspn=30.000938,79.013672&amp;ie=UTF8&amp;hq=Faculdade+Sete+de+Setembro&amp;hnear=Faculdade+Sete+de+Setembro+-+Rua+Almirante+Maximiano+da+Fonseca,+1395+-+Eng.+Luciano+Cavalcante,+Fortaleza+-+Cear%C3%A1,+60811-020,+Brasil&amp;z=14">Fa7</a> (Faculdade 7 de Setembro) no horário entre 8:30 e 12:00.</p>
 
-<p><a href="http://www.pythonedjango.com.br/"><img src="http://pylestras.appspot.com/static/img/pythonedjango.gif" alt="" /></a></p>
+<p><img class="center" src="/imgs/pythonedjango.gif" title="&lsquo;Python e Django&rsquo;" ></p>
 
-<p><img src="http://pylestras.appspot.com/static/img/logo_pugce.png" alt="" /></p>
+<p><img class="center" src="/imgs/logo_pugce.png" title="&lsquo;Pug-CE&rsquo;" ></p>
 
 <p><strong>A</strong>lém das palestras o evento contará com um sorteio do livro Python e Django &ndash; Desenvolvimento Ágil de Aplicações Web.</p>
 
@@ -276,8 +269,6 @@ _ * Técnicas para preparação e desenvolvimento de sites com Django</em></p>
 <p><strong>P</strong>ara maiores detalhes sobre o evento, visite a página e faça sua <strong>inscrição</strong>: <a href="http://pylestras.appspot.com/">Aqui!</a></p>
 
 <p><strong>A</strong>braços!</p>
-
-<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
 ]]></content>
   </entry>
   

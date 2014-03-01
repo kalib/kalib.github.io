@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Flisol | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/blog/categories/flisol/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2014-02-28T22:52:13-03:00</updated>
+  <updated>2014-03-01T17:03:09-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -18,11 +18,8 @@
     <link href="http://blog.marcelocavalcante.net/blog/2011/04/19/encontros-sobre-software-livre-escolha-um-nome/"/>
     <updated>2011-04-19T14:50:41-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2011/04/19/encontros-sobre-software-livre-escolha-um-nome</id>
-    <content type="html"><![CDATA[<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/04/logo.gif"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/04/logo.gif" alt="" /></a></p>
-
-<p><a href="http://2.bp.blogspot.com/_fCxEYIfdYWY/TIY8qxYiLlI/AAAAAAAAAf4/WAVct3_ZvLA/s320/tux_teacher.png"><img src="http://2.bp.blogspot.com/_fCxEYIfdYWY/TIY8qxYiLlI/AAAAAAAAAf4/WAVct3_ZvLA/s320/tux_teacher.png" alt="" /></a></p>
-
-<p><strong>S</strong>audações pessoal,</p>
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/tux_teacher.png" title="&lsquo;Tux Teacher&rsquo;" >
+<strong>S</strong>audações pessoal,</p>
 
 <p><strong>A</strong>credito que boa parte, se não praticamente todos, os usuários de Software Livre em nossa região já ouviram falar, ou participaram, do <a href="http://marcelocavalcante.net/portal/2011/04/13/flisol-quixada-relato-e-parabens/">Flisol &ndash; Festival Latino Americano de Instalação de Software Livre</a>.</p>
 
@@ -53,8 +50,6 @@
 <p><strong>C</strong>ontamos com o seu voto para nos ajudar a iniciar este movimento.</p>
 
 <p><strong>A</strong>braços!</p>
-
-<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
 ]]></content>
   </entry>
   
@@ -63,9 +58,7 @@
     <link href="http://blog.marcelocavalcante.net/blog/2011/04/13/flisol-quixada-relato-e-parabens/"/>
     <updated>2011-04-13T15:06:54-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2011/04/13/flisol-quixada-relato-e-parabens</id>
-    <content type="html"><![CDATA[<p>[caption id=&ldquo;&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;347&rdquo; caption=&ldquo;Banner do Flisol quixadá&rdquo;]<a href="http://www.sertaoemrede.org.br/fotos/38_86281302470956.jpg"><img src="http://www.sertaoemrede.org.br/fotos/38_86281302470956.jpg" alt="" /></a>[/caption]</p>
-
-<p><strong>S</strong>audações galera!</p>
+    <content type="html"><![CDATA[<p><strong>S</strong>audações galera!</p>
 
 <p><strong>A</strong>lgumas pessoas já me perguntaram nos últimos 3 dias porque eu não estava no Flisol Fortaleza este ano. &ldquo;Cara, nem lhe vi lá pelo Flisol correndo pra cima e pra baixo esse ano.&rdquo;</p>
 
@@ -176,9 +169,8 @@
     <link href="http://blog.marcelocavalcante.net/blog/2011/04/07/flisol-ceara-fortaleza-quixada-e-russas/"/>
     <updated>2011-04-07T08:30:24-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2011/04/07/flisol-ceara-fortaleza-quixada-e-russas</id>
-    <content type="html"><![CDATA[<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/03/logo_flisol.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/03/logo_flisol.png" alt="" /></a></p>
-
-<p><strong>P</strong>ara quem ainda não conhece, o Flisol - Fórum Latino Americano de Instalação de Software Livre - é um dos maiores eventos do mundo no que diz respeito ao movimento de Software Livre. O evento é realizado anualmente e ocorre de forma simultânea em diversas cidades da América Latina, totalizando mais de 120 cidades em aproximadamente 20 países. O Flisol é um evento descentralizado, onde diversas comunidades organizam e realizam seu festival, de forma voluntária, tendo como principal objetivo promover o uso de Software Livre, apresentando sua filosofia, alcance, avanços e desenvolvimento ao público em geral.</p>
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/flisol.png" title="&lsquo;Flisol&rsquo;" >
+<strong>P</strong>ara quem ainda não conhece, o Flisol - Fórum Latino Americano de Instalação de Software Livre - é um dos maiores eventos do mundo no que diz respeito ao movimento de Software Livre. O evento é realizado anualmente e ocorre de forma simultânea em diversas cidades da América Latina, totalizando mais de 120 cidades em aproximadamente 20 países. O Flisol é um evento descentralizado, onde diversas comunidades organizam e realizam seu festival, de forma voluntária, tendo como principal objetivo promover o uso de Software Livre, apresentando sua filosofia, alcance, avanços e desenvolvimento ao público em geral.</p>
 
 <p><strong>O</strong> evento é gratuito e aberto a todo o público: curiosos, interessados e amantes do Software Livre. Nesse dia os voluntários propõe a instalação de Software Livre, como distribuições de Gnu/Linux, sistemas BSD, e aplicativos livres para Windows em geral. Alguns eventos também contam com palestras, oficinas, salas de degustação e gravações de mídias (live-CD/DVD e/ou pendrives).</p>
 
@@ -218,8 +210,6 @@ Telefone: 88 3411-8550</p>
 <p><strong>N</strong>os vemos no Flisol.</p>
 
 <p><strong>A</strong>braços!</p>
-
-<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
 ]]></content>
   </entry>
   

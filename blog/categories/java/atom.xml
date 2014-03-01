@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Java | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/blog/categories/java/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2014-02-28T22:52:13-03:00</updated>
+  <updated>2014-03-01T17:03:09-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -84,9 +84,8 @@
     <link href="http://blog.marcelocavalcante.net/blog/2011/09/13/feliz-dia-do-programador/"/>
     <updated>2011-09-13T10:11:39-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2011/09/13/feliz-dia-do-programador</id>
-    <content type="html"><![CDATA[<p><img src="http://www.media-freaks.com/wp-content/uploads/2008/09/programmer-260x300.jpg" alt="" /></p>
-
-<p><strong>S</strong>audações pessoal,</p>
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/programmer-260x300.jpg" title="&lsquo;Programador&rsquo;" >
+<strong>S</strong>audações pessoal,</p>
 
 <p><strong>U</strong>m feliz dia do programador para todos aqueles que, profissionalmente, curiosamente ou mesmo por mera falta do que fazer escrevem ou já escreveram linhas de código!</p>
 
@@ -94,11 +93,11 @@
 
 <p><strong>D</strong>esafiador&hellip;estressante&hellip;cansativo&hellip;divertido&hellip;prazeroso&hellip; Como em qualquer &ldquo;casamento&rdquo;&hellip; na alegria e na tristeza!</p>
 
-<p><img src="http://www.danielimamura.com.br/wp-content/uploads/2010/09/cartoonvidaprogramador.gif" alt="" /></p>
+<p><img class="center" src="/imgs/cartoonvidaprogramador.gif" title="&lsquo;Programador Rotina&rsquo;" ></p>
 
 <p><strong>O</strong>bviamente que eu não vou colocar em todas as centenas de linguagens de programação que existem.. portanto, se a sua linguagem favorita não foi homenageada abaixo, não fique triste. São muitas..difícil lembrar de todas.. O que vale é a intenção.</p>
 
-<p><img src="http://www.whitefang.com/wp-content/uploads/2010/03/Programming-Languages.jpg" alt="" /></p>
+<p><img class="center" src="/imgs/progLanguages.jpg" title="&lsquo;Linguagens&rsquo;" ></p>
 
 <p><strong>Assembly</strong></p>
 
@@ -256,8 +255,6 @@
 <p><em>select &lsquo;Feliz dia do Programador!&rsquo;;</em></p>
 
 <p><strong>A</strong>braço!</p>
-
-<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
 ]]></content>
   </entry>
   
@@ -286,7 +283,7 @@
 
 <p><strong>C</strong>omo instalar?</p>
 
-<p><img src="http://blog.leandroinacio.eti.br/wp-content/uploads/2009/10/arch-linux-logo1.png" alt="Arch Linux" />
+<p><img class="left" src="/imgs/archlinux.png" title="&lsquo;ArchLinux&rsquo;" >
 Bom, se você utiliza <a href="http://archlinux.org">Arch Linux</a>, pode pegar o pacote no AUR através do seguinte link(Lembrem-se de votar nele):</p>
 
 <p><a href="http://aur.archlinux.org/packages.php?ID=20809">http://aur.archlinux.org/packages.php?ID=20809</a></p>
@@ -309,7 +306,7 @@ Bom, se você utiliza <a href="http://archlinux.org">Arch Linux</a>, pode pegar 
 
 <p><strong>M</strong>as qual a cara do bicho?</p>
 
-<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster8.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster8.png" alt="" /></a></p>
+<p><img class="center" src="/imgs/dirbuster1.png" title="&lsquo;Dirbuster&rsquo;" ></p>
 
 <p><strong>C</strong>omo explicado antes, ele funciona parecido com o Dirb, porém em uma interface GUI (gráfica).</p>
 
@@ -337,28 +334,28 @@ Bom, se você utiliza <a href="http://archlinux.org">Arch Linux</a>, pode pegar 
 
 <p><strong>B</strong>om, vou escolher meu alvo e vou utilizar 20 threads em simultâneo. Não vou deixar a ferramenta rodando por muito tempo pois estou apenas fazendo uma demonstração.</p>
 
-<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster21.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster21.png" alt="" /></a></p>
+<p><img class="center" src="/imgs/dirbuster2.png" title="&lsquo;Dirbuster&rsquo;" ></p>
 
 <p><strong>C</strong>omo podem ver, filtrei para que o brute-force comece no diretório raiz (/) e optei pela maior lista que o DirBuster possui como dicionário. Deixei rodando por cerca de 30 segundos e já tive o seguinte resultado.</p>
 
-<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster3.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster3.png" alt="" /></a></p>
+<p><img class="center" src="/imgs/dirbuster3.png" title="&lsquo;Dirbuster&rsquo;" ></p>
 
 <p><strong>A</strong> parte borrada no início da imagem não é um defeito. Vocês não pensaram que eu iria deixar exposto o alvo no qual fiz o teste, certo? No caso, optei pelo site de uma de nossas instituições de ensino. Bom, a imagem acima é um exemplo do retorno que consigo com a ferramenta. É a visão em Lista. Além dela você pode optar pela visão em árvore, que, como o nome informa, lhe trará a árvore de diretórios, sub-diretórios e arquivos que foram encontrados. Abaixo um exemplo da visão em árvore:</p>
 
-<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster4.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster4.png" alt="" /></a></p>
+<p><img class="center" src="/imgs/dirbuster4.png" title="&lsquo;Dirbuster&rsquo;" ></p>
 
 <p><strong>O</strong> resultado, mesmo deixando a ferramenta rodando por apenas 30 segundos, foi o esperado. Um espantoso caso de descuido com a segurança do site.</p>
 
 <p><strong>A</strong>lguns leves exemplos que me chamaram a atenção na lista que consegui:</p>
 
-<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster5.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster5.png" alt="" /></a></p>
+<p><img class="center" src="/imgs/dirbuster5.png" title="&lsquo;Dirbuster&rsquo;" ></p>
 
 <p><strong>U</strong>m diretório de administração exposto desta forma indicando que existe uma sessão do site com acesso permitido apenas para administradores. O que isso me leva a crer? Que quem conseguir acesso a esta sessão consegue manipular o sistema do site? O que nos leva a uma posterior análise da página index contida nele que possibilita uma tentativa de brute-force de login e senha? psssiiiuuuu&hellip; o.O</p>
 
-<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster6.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster6.png" alt="" /></a>
+<p><img class="center" src="/imgs/dirbuster6.png" title="&lsquo;Dirbuster&rsquo;" >
 <strong> U</strong>m diretório para uploads de Arquivos? Que tal testar ele? Apenas usuários administradores possuem permissão de upload? Ou alunos conseguem fazer upload de fotos, trabalhos, por exemplo? De qualquer forma, isso me indica que existe a possibilidade de eu subir arquivos para o servidor deles. Que tal um script em php que me permitiria ter um console shell no servidor deles para inclusão, exclusão, edição, etc.. ? pssiiiiuuuu&hellip; o.O</p>
 
-<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster7.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/02/dirbuster7.png" alt="" /></a></p>
+<p><img class="center" src="/imgs/dirbuster7.png" title="&lsquo;Dirbuster&rsquo;" ></p>
 
 <p><strong>P</strong>ode não ser nada.. mas também pode ser muita coisa.. O que um diretório chamado &ldquo;gerencia&rdquo; faz ali tão exposto e com um nome tão&hellip; tão&hellip; discreto? o.O psssiiiuuuuu</p>
 
@@ -369,8 +366,6 @@ Bom, se você utiliza <a href="http://archlinux.org">Arch Linux</a>, pode pegar 
 <p><strong>H</strong>appy Hacking&hellip;</p>
 
 <p><strong>PS: Wrong developers! Never play security by obscurity!</strong></p>
-
-<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
 ]]></content>
   </entry>
   
