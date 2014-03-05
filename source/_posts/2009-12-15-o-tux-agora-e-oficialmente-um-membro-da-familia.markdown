@@ -13,11 +13,7 @@ categories:
 **S**audações pessoal,
 
 **E**ste post vai em homenagem ao mais novo membro de minha família. O Tux!
-
-
-[![15122009212](http://marcelocavalcante.net/portal/wp-content/uploads/2009/12/15122009212-300x225.jpg)](http://marcelocavalcante.net/portal/wp-content/uploads/2009/12/15122009212.jpg)
-
-
+{% img left /imgs/tuxdog1.jpg 'Tux' %}
 
 **E**xatamente, é um lindo labrador.
 
@@ -26,12 +22,7 @@ categories:
 **J**á possui suas tigelas de água e comida bem como alguns brinquedinhos, mas como ele chegou tarde da noite não deu tempo de comprar tudo ainda.
 
 **A**baixo uma foto do Tux com sua vovó (minha mãe). Sim, ele esta com cara de sono. Era tarde da noite e ele ainda não havia chegado em sua casa nova.
-
-
-[![14122009208](http://marcelocavalcante.net/portal/wp-content/uploads/2009/12/14122009208-300x225.jpg)](http://marcelocavalcante.net/portal/wp-content/uploads/2009/12/14122009208.jpg)
-
-
-
+{% img right /imgs/tuxdog2.jpg 'Criptografia' %}
 **Q**uem nunca sonhou em ter o Tux em casa? haha
 
 **A**gora eu o tenho.
@@ -39,12 +30,7 @@ categories:
 **J**á até pensei no presente para quando ele completar 1 ano de idade: Uma camisa do ceará! Glorioso alvinegro recém chegado à primeira divisão, elite do futebol brasileiro.
 
 **P**orque não dou agora? Sim, eu sei que ele ficaria lindo de alvinegro, mas venhamos e convenhamos.. um cachorro como um labrador não permanece nesse tamanho por mais de 2 meses... hehehe Melhor aguardar ele estabilizar o seu tamanho.
-
-
-[![15122009213](http://marcelocavalcante.net/portal/wp-content/uploads/2009/12/15122009213-300x225.jpg)](http://marcelocavalcante.net/portal/wp-content/uploads/2009/12/15122009213.jpg)
-
-
-
+{% img center /imgs/tuxdog3.jpg 'Criptografia' %}
 
 **I**sso aí.. saindo do banho e dando um bom dia para o Tux.. :p
 
@@ -52,8 +38,3 @@ categories:
 
 
 **A**braços galera...
-
-
-
-
-![](http://www.marcelocavalcante.net/portal/imgs/userbar.gif)

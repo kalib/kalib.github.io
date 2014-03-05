@@ -13,11 +13,7 @@ categories:
 - Software Livre
 - Tux-ce
 ---
-
-![](http://flisolceara.net/FLISOL2010/banners/laranja_horiz.png)
-
-
-
+{% img left /imgs/flisol.png 'Flisol' %}
 **S**audações pessoal!
 
 Quem é vivo sempre aparecer...
@@ -41,6 +37,3 @@ Quem é vivo sempre aparecer...
 **E**m breve volto a publicar maiores detalhes.
 
 **A**braços!
-
-
-![](http://www.marcelocavalcante.net/portal/imgs/userbar.gif)

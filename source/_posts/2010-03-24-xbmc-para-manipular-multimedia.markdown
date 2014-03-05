@@ -12,11 +12,7 @@ categories:
 - Linux
 - Software Livre
 ---
-
-[![XBMC_Logo](http://marcelocavalcante.net/portal/wp-content/uploads/2010/03/XBMC_Logo.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2010/03/XBMC_Logo.png)
-
-
-
+{% img left /imgs/xbmc.png 'XBMC' %}
 **O**lá pessoal, demorei mas apareci novamente.
 
 **C**omo todos sabiam, eu estava sem máquina. Meu notebook deu problemas e fiquei sem ele por um tempo.
@@ -25,11 +21,9 @@ categories:
 
 **S**eguem fotos da nova máquina.. Agora vai.. hehehe
 
-[![24032010384](http://marcelocavalcante.net/portal/wp-content/uploads/2010/03/24032010384-300x225.jpg)](http://marcelocavalcante.net/portal/wp-content/uploads/2010/03/24032010384.jpg)[![24032010385](http://marcelocavalcante.net/portal/wp-content/uploads/2010/03/24032010385-300x225.jpg)](http://marcelocavalcante.net/portal/wp-content/uploads/2010/03/24032010385.jpg)
-
-
-**[![24032010386](http://marcelocavalcante.net/portal/wp-content/uploads/2010/03/24032010386-300x225.jpg)](http://marcelocavalcante.net/portal/wp-content/uploads/2010/03/24032010386.jpg)**
-
+{% img center /imgs/inspiron.jpg 'Inspiron' %}
+{% img center /imgs/inspiron2.jpg 'Inspiron' %}
+{% img center /imgs/inspiron3.jpg 'Inspiron' %}
 
 
 **A**cho que dá pro gasto por um tempo...
@@ -58,6 +52,3 @@ Linux tuxcaverna 2.6.32-ARCH #1 SMP PREEMPT Mon Mar 15 20:44:03 CET 2010 x86_64 
 
 
 **A**braços
-
-
-![](http://www.marcelocavalcante.net/portal/imgs/userbar.gif)

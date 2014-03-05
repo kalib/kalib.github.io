@@ -11,16 +11,12 @@ categories:
 - Python
 - Software Livre
 ---
-
-[![](http://www.marcelocavalcante.net/banner728x90_3.png)](http://bit.ly/JpZFP)
-
-
-
+{% img left /imgs/python-logo.gif 'Criptografia' %}
 **B**om Dia galera...
 
 **G**ostaria de lhes lembrar que hoje, Sábado - 14 de Novembro, estará acontecendo o primeiro evento de Python do Ceará, PythOnCeará, organizado pela comunidade local de Python - Pug-CE.
 
-[![](http://www.marcelocavalcante.net/banner125x125_2.png)](http://www.marcelocavalcante.net/banner125x125_2.png)**O** evento promete ser um marco de startup para os pythonianos locais visto que será o degrau inicial para muitos outros eventos posteriores também organizados pela Pug-CE.
+**O** evento promete ser um marco de startup para os pythonianos locais visto que será o degrau inicial para muitos outros eventos posteriores também organizados pela Pug-CE.
 
 **O** evento será realizado na faculdade 7 Setembro - FA7 - e contará com 4 palestras de temas que envolvem tanto o usuário iniciante que não conhece python como ao usuário avançado.
 
@@ -39,6 +35,3 @@ horário: das 13:00 às 17:30
 dia: 14/11/09
 
 **A**braços
-
-
-![](http://www.marcelocavalcante.net/portal/imgs/userbar.gif)

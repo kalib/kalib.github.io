@@ -16,11 +16,7 @@ categories:
 
 **G**alera, ontem foi lançada a nova versão do kde.
 
-
-[![](http://kde.org/announcements/4.3/images/kde430-desktop.png)](http://kde.org/announcements/4.3/images/kde430-desktop.png)
-
-
-
+{% img center /imgs/kde430.png 'KDE 430' %}
 **N**esta versão 4.3.2 muitos bugs foram corrigidos. Abaixo uma pequena lista das principais mudanças:
 
 * Muitos bugs e quebras foram corrigidos trazendo ainda mais estabilidade para o KDE.
@@ -38,6 +34,3 @@ categories:
 
 
 **A**braços
-
-
-![](http://www.marcelocavalcante.net/portal/imgs/userbar.gif)

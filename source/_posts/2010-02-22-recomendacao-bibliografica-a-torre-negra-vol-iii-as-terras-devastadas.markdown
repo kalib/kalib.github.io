@@ -10,11 +10,7 @@ categories:
 - Impressoes
 - Literatura
 ---
-
-![](https://www.livrariasaraiva.com.br/imagem/imagem.dll?L=500&A=-1&pro_id=173185&PIM_Id=)
-
-
-
+{% img left /imgs/livros/asterrasdevastadas.jpg 'A Torre Negra' %}
 **O**lá pessoal, após o carnaval estou de volta ao meu blog que ficou abandonado por mais de uma semana.
 
 **N**ão pensem que foi descaso. Não estive pulando o carnaval. (Nem gosto disso. o.O) Não viajei e fiquei em casa estudando e trabalhando.. :/ Passou, passou...
@@ -25,9 +21,9 @@ categories:
 
 **P**ara quem não conhece a Saga e/ou não acompanhou meus posts sobre os dois primeiros volumes, sugiro que leia primeiro estes dois links:
 
-[A Torre Negra vol I - O Pistoleiro](http://marcelocavalcante.net/portal/2009/06/21/recomendacao-bibliografica-do-voo%c2%bf-o-pistoleiro/)
+[A Torre Negra vol I - O Pistoleiro](http://blog.marcelocavalcante.net/blog/2009/06/21/recomendacao-bibliografica-do-vooc2bf-o-pistoleiro/)
 
-[A Torre Negra vol II - A escolha dos três](http://marcelocavalcante.net/portal/2009/09/08/recomendacao-bibliografica-a-escolha-dos-tres-a-torre-negra-vol-ii/)
+[A Torre Negra vol II - A escolha dos três](http://blog.marcelocavalcante.net/blog/2009/09/08/recomendacao-bibliografica-a-escolha-dos-tres-a-torre-negra-vol-ii/)
 
 **N**este terceiro volume de título As Terras Devastadas, o pistoleiro continua sua busca pela Torre Negra juntamente com seus discípulos pelas estranhas Terras Devastadas enfrentando um mundo completamente diferente da realidade vivida até então pelos personagens, mesmo cada um sendo de um espaço diferente no tempo.
 
@@ -43,8 +39,3 @@ categories:
 
 
 **A**braços
-
-
-
-
-![](http://www.marcelocavalcante.net/portal/imgs/userbar.gif)

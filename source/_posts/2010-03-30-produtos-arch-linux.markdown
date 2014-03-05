@@ -11,10 +11,7 @@ categories:
 - Impressoes
 - Software Livre
 ---
-
-[![archL195x232-banner](http://marcelocavalcante.net/portal/wp-content/uploads/2010/03/archL195x232-banner.png)](http://www.lojageek.com/index.php/projetos-livres/distribuicoes-gnulinux/archlinux.html)
-
-
+{% img left /imgs/archbannergeek.png 'Arch Loja Geek' %}
 
 **S**audações pessoal,
 
@@ -22,12 +19,7 @@ categories:
 
 **C**ansado de procurar produtos do [Arch Linux](http://www.archlinux-br.org) e nunca encontrar no Brasil? Seus problemas acabaram!
 
-
-[![](http://www.lojageek.com/media/catalog/product/cache/1/image/5e06319eda06f020e43594a9c230972d/b/o/botom_001_archlinux_1_branco_1.png)](http://www.lojageek.com/media/catalog/product/cache/1/image/5e06319eda06f020e43594a9c230972d/b/o/botom_001_archlinux_1_branco_1.png)
-
-
-
-**O** pessoal da [LojaGeek.com](http://www.lojageek.com/index.php/projetos-livres/distribuicoes-gnulinux/archlinux.html) nos deu essa força. A loja está começando suas atividades agora e já possuem alguns produtos do Arch à [![](http://www.lojageek.com/media/catalog/product/cache/1/image/5e06319eda06f020e43594a9c230972d/a/r/archlinux_big_lado.jpeg)](http://www.lojageek.com/media/catalog/product/cache/1/image/5e06319eda06f020e43594a9c230972d/a/r/archlinux_big_lado.jpeg)nossa disposição.
+**O** pessoal da [LojaGeek.com](http://www.lojageek.com/index.php/projetos-livres/distribuicoes-gnulinux/archlinux.html) nos deu essa força. A loja está começando suas atividades agora e já possuem alguns produtos do Arch à nossa disposição.
 
 **E**m contato com eles, me informaram que os produtos atuais são apenas uma prévea do que está por vir. A ideia deles é ter uma loja que apoie de forma real o Software Livre bem como os projetos nacionais.
 
@@ -36,6 +28,3 @@ categories:
 **P**arabéns ao pessoal da LojaGeek.com e obrigado por disponibilizar produtos do Arch, visto que nunca encontrei em nehum outro site brasileiro.
 
 **A**braços!
-
-
-![](http://www.marcelocavalcante.net/portal/imgs/userbar.gif)

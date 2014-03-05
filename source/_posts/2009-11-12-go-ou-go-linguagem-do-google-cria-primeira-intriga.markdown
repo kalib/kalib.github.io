@@ -12,11 +12,7 @@ categories:
 - Impressoes
 - Software Livre
 ---
-
-![](http://code.google.com/p/go/logo?logo_id=1255411904)
-
-
-
+{% img left /imgs/go.png 'Criptografia' %}
 **A**cho que todos, ou quase todos, devem ter acompanhado a notícia de que a gigante Google criou uma linguagem de programação chamada Go.
 
 **M**uito foi falado em vários sites/blogs sobre as vantagens/desvantagens da mesma.
@@ -48,6 +44,3 @@ http://www.lulu.com/content/paperback-book/lets-go/641689
 **Q**ue coisa não?! o.O
 
 **A**braços
-
-
-![](http://www.marcelocavalcante.net/portal/imgs/userbar.gif)

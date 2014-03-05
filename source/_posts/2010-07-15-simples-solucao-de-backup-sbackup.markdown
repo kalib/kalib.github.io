@@ -14,8 +14,7 @@ categories:
 - Seguranca
 ---
 
-![](http://rlv.zcache.com/dont_backup_tomorrow_dog_shirt-p1558048941353860512vf3g_400.jpg)
-
+{% img center /imgs/backup.jpg 'Backup' %}
 
 **Q**uantas vezes você já foi surpreendido por alguma falha grave em seu sistema de arquivos, disco rígido ou mesmo por vírus (no caso de quem utiliza Sistemas Operacionais Genéricos) e depois de perder centenas de arquivos e informações se perguntou: Porque eu não fiz backup disso antes?
 
@@ -50,8 +49,7 @@ _* Restauração de Bakcup_
 **E** agora, a tão esperada Cara do Bixo.
 
 
-[![](http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/sb1.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/sb1.png)
-
+{% img center /imgs/sb1.png 'SimpleBackup' %}
 
 **E**ssa é a tela inicial. Simples e modesta. Sem propagandas ou logomarcas coloridas.
 
@@ -62,7 +60,7 @@ _* Restauração de Bakcup_
 **S**elecionada a opção de _"Somente backup manual"_, vamos à próxima aba chamada _"Inclusões"_. Nos será apresentada a tela a seguir:
 
 
-[![](http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/sb2.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/sb2.png)
+{% img center /imgs/sb2.png 'SimpleBackup' %}
 
 
 **P**or padrão ele vai trazer vários diretórios, pode Remover os diretórios que ele lhe trás e adicionar alguns poucos diretórios (de preferência com poucos arquivos, apenas para agilizar nosso teste. ;] Um total de 20 ou 30 MBs já resolve para nosso teste.
@@ -74,7 +72,7 @@ _* Restauração de Bakcup_
 **E**sta aba servirá para informarmos o que NÃO deverá entrar no backup. Esta sessão se divide em 4 categorias, como pode ser visto na imagem abaixo:
 
 
-[![](http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/sb3.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/sb3.png)
+{% img center /imgs/sb3.png 'SimpleBackup' %}
 
 
 **1- Pastas -** **A**qui você lista quais pastas ou arquivos não deseja incluir no backup. Repare que ele já trás vários diretórios por padrão. Pode remover todos. Por exemplo:
@@ -82,7 +80,7 @@ _* Restauração de Bakcup_
 **S**upondo que eu tenha marcado o diretório /home/kalib/imgs/ para backup, porém dentro deste diretório existem os diretórios /imgs1 /imgs2 e /imgs3. Eu não quero o /imgs3 em meu backup, então posso incluir nestas Exceções de Pastas o caminho "/home/kalib/imgs/imgs3/". Deverá ficar algo como ilustrado a seguir:
 
 
-[![](http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/sb4.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/sb4.png)
+{% img center /imgs/sb4.png 'SimpleBackup' %}
 
 
 **2- Tipos de arquivos - A**qui devemos descriminar quais tipos de arquivos iremos deixar fora fora do backup. Novamente, ele já trás vários diretórios por padrão. Pode remover todos. Esta função é útil por exemplo para quem não deseja levar no backup algum tipo de arquivos em específico.
@@ -94,7 +92,7 @@ _* Restauração de Bakcup_
 **D**everá ficar da seguinte forma:
 
 
-[![](http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/sb5.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/sb5.png)
+{% img center /imgs/sb5.png 'SimpleBackup' %}
 
 
 **3- Expressões Regulares - E**sta é para quem possui conhecimentos em regex. Caso você não entenda o que são expressões regulares, sugiro que remova os que ele trás por padrão e deixe este campo em branco.
@@ -104,7 +102,7 @@ _* Restauração de Bakcup_
 **A**gora vamos conhecer a próxima aba, _"Destino"_.
 
 
-[![](http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/sb6.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/sb6.png)
+{% img center /imgs/sb6.png 'SimpleBackup' %}
 
 
 **N**esta aba, como o próprio nome já diz, deveremos escolher o local para onde será enviado o nosso backup. Aqui temos três opções:
@@ -136,7 +134,7 @@ MINHA_SENHA = senha deste usuário
 **E**sta é a cara da criança:
 
 
-[![](http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/sb7.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/sb7.png)
+{% img center /imgs/sb7.png 'SimpleBackup' %}
 
 
 **C**omo nada disso importa para este nosso teste, deixe como na imagem acima mesmo... sem agendamentos e datas.
@@ -148,7 +146,7 @@ MINHA_SENHA = senha deste usuário
 **N**ovamente, deixemos isto para lá por enquanto. Não utilizaremos em nosso teste. Segue imagem:
 
 
-[![](http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/sb8.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/sb8.png)
+{% img center /imgs/sb8.png 'SimpleBackup' %}
 
 
 **F**eitas estas configurações, clique em _"Salvar"_. Isto irá gravar as configurações feitas por você. Após isto, basta clicar em _"Backup Agora!"_
@@ -168,7 +166,7 @@ MINHA_SENHA = senha deste usuário
 **E**sta é a aparência, também simples, da mesma:
 
 
-[![](http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/sb9.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/sb9.png)
+{% img center /imgs/sb9.png 'SimpleBackup' %}
 
 
 **T**udo o que tem a fazer é escolher o arquivo de backup que deseja restaurar e clicar em restaurar. ;]
@@ -178,6 +176,3 @@ MINHA_SENHA = senha deste usuário
 **Q**ue bom ter uma cópia de seus dados em casos de catástrofes, certo?!
 
 **A**braços!
-
-
-![](http://www.marcelocavalcante.net/portal/imgs/userbar.gif)

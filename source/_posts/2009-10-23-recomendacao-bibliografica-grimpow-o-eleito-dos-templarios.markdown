@@ -10,11 +10,7 @@ categories:
 - Impressoes
 - Literatura
 ---
-
-[![](http://www.livrariasaraiva.com.br/imagem/imagem.dll?tam=2&pro_id=1852928&PIM_Id=1097764)](http://www.livrariasaraiva.com.br/imagem/imagem.dll?tam=2&pro_id=1852928&PIM_Id=1097764)
-
-
-
+{% img left /imgs/livros/grinpow.jpg 'Grimpow' %}
 **S**audações pessoal..
 
 **N**ovamente estou trazendo uma recomendação bibliográfica. A escolha deste mês se chama Grimpow - O Eleito dos Templários.
@@ -32,6 +28,3 @@ categories:
 
 
 **A**braços
-
-
-![](http://www.marcelocavalcante.net/portal/imgs/userbar.gif)

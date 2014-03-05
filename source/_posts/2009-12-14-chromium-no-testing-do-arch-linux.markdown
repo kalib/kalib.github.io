@@ -13,11 +13,7 @@ categories:
 - Impressoes
 - Software Livre
 ---
-
-[![chromium-browser](http://marcelocavalcante.net/portal/wp-content/uploads/2009/08/chromium-browser.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2009/08/chromium-browser.png)
-
-
-
+{% img left /imgs/chromium.png 'Chromium' %}
 **S**audações pessoal...
 
 **J**á estava na hora eim?! Chromium passando para o repositório [testing] no Arch.
@@ -56,6 +52,3 @@ Include = /etc/pacman.d/mirrorlist_
 
 **U**sem com moderação.. :p
 **A**braços
-
-
-![](http://www.marcelocavalcante.net/portal/imgs/userbar.gif)

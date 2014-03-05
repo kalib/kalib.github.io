@@ -10,14 +10,10 @@ categories:
 - Impressoes
 - Literatura
 ---
-
-[![](http://www.livrariasaraiva.com.br/imagem/imagem.dll?L=125&qld=50&A=-1&pro_id=188949&PIM_Id=)](http://www.livrariasaraiva.com.br/imagem/imagem.dll?L=125&qld=50&A=-1&pro_id=188949&PIM_Id=)
-
-
-
+{% img left /imgs/livros/ovampirorei2.jpg 'O Vampiro Rei vol II' %}
 **É** chegada a hora de mais uma recomendação bibliográfica pessoal. Desta vez trago mais uma com o tema "Vampiros".
 
-**N**a verdade a recomendação deste mês se trata da continuação de uma outra recomendação que eu já havia feito e que pode ser conferida [neste link](http://marcelocavalcante.net/portal/2009/07/16/recomendacao-bibliografica-do-mes-o-vampiro-rei-vol-i/).
+**N**a verdade a recomendação deste mês se trata da continuação de uma outra recomendação que eu já havia feito e que pode ser conferida [neste link](http://blog.marcelocavalcante.net/blog/2009/07/16/recomendacao-bibliografica-do-mes-o-vampiro-rei-vol-i/).
 
 **E**ste livro continua a história da saga que se iniciou com o livro O Bento e continuada em O Vapiro Rei - Vol I. O da vez, O VAmpiro Rei - Vol II, é o responsável por dar continuidade e encerramento à saga.
 
@@ -38,6 +34,3 @@ categories:
 **E**spero que curtam. ;]
 
 **A**braços
-
-
-![](http://www.marcelocavalcante.net/portal/imgs/userbar.gif)

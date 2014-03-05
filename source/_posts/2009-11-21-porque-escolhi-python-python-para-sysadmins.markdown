@@ -11,11 +11,7 @@ categories:
 - Python
 - Software Livre
 ---
-
-[![python-logo-master-v3-trans](http://marcelocavalcante.net/portal/wp-content/uploads/2009/11/python-logo-master-v3-trans-300x101.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2009/11/python-logo-master-v3-trans.png)
-
-
-
+{% img left /imgs/python-logo.gif 'Python' %}
 **S**audações pessoal...
 
 **N**ovamente vou dedicar um post para responder uma pergunta que me fizeram. Não é a primeira vez que alguém me pergunta algo e eu resolvo responder em forma de post. Algumas pessoas já me perguntaram o que me leva a preferir Python à outras linguagens de programação. Mas como, coinscidentemente, de ontem para hoje 3 pessoas me fizeram a mesma pergunta, resolvi responder em forma de post e poupar um pouco de saliva (¿dedo no teclado?) e não responder de forma mais completa para um ou outro.
@@ -34,8 +30,7 @@ categories:
 
 **M**as de que me vale uma linguagem que me permite um rápido aprendizado, se a mesma não possui "poder"? Se a mesma não me permite realizar tarefas complexas e robustas? Bem, na verdade este é o **segundo motivo** pelo qual eu escolhi Python. Esta linguagem nos permite resolver problemas simples como analisar várias linhas de log e nos retirar apenas informações que nos sejam interessantes ou pertinentes gerando um relatório mais limpo e "legível" ao olho humano. Além de tarefas simples assim, o Python também vem sendo bastante utilizado para tarefas com maior grau de complexidade como análises de sequências genômicas, cálculos complexos de física, mecânica, mecatrônica, etc, sistemas web multithread ou mesmo pesadas análises estatísticas. Bom, se você é um SysAdmin, muito provavelmente você nunca precisará de nada disso, mas eu me sinto confortável em saber que estou estudando uma linguagem que me permitirá realizar tarefas mais complexas quando eu precisar. ;]
 
-[caption id="attachment_609" align="aligncenter" width="518" caption="Respota: Criador do Python"][![PythonCartoon](http://marcelocavalcante.net/portal/wp-content/uploads/2009/11/PythonCartoon.jpg)](http://marcelocavalcante.net/portal/wp-content/uploads/2009/11/PythonCartoon.jpg)[/caption]
-
+{% img center /imgs/pythoncartoon.jpg 'Python Cartoon' %}
 **O**k, Python me permite realizar até as tarefas complexas. Mas e a manutenção deste código. Como SysAdmin, não fico editando e revendo meus códigos todo dia. As vezes não entendemos nossos próprios códigos depois de alguns meses sem olhar para eles. O que eu queria dizer com aquela linha de código mesmo? O.o O Python foi criado com o intuito de possuir uma sintaxe simples e intuitiva, de forma que a manutenção de código se torna extremamente eficaz, mesmo por aqueles que não são os autores originais do código.  Mesmo depois de meses eu vou conseguir interpretar meu código e trabalhar nele. E esta foi a terceira razão pela qual eu escolhi Python, e que por sua vez está muito ligada à quarta razão.
 
 **O**** quarto motivo** pelo qual escolhi Python é a legibilidade do código e a forma como apenas batendo o olho podemos nos encontrar facilmente no código. O Python utiliza-se de espaços em branco para determinar onde começa ou termina um bloco de código. Esta forma de identação facilita muito a identificação de partes do código bem como o entendimento do mesmo.
@@ -146,13 +141,10 @@ print a,b
 
 **C**aso deseje mais informações sobre Python bem como suas vantagens, confira outros posts que fiz listados abaixo:
 
-[1- Porque Python?](http://marcelocavalcante.net/portal/2008/11/20/porque-python/)
+[1- Porque Python?](http://blog.marcelocavalcante.net/blog/2008/11/20/porque-python/)
 
-[2- Pydev: Preparando o Eclipse para o Python](http://marcelocavalcante.net/portal/2009/03/23/pydev-preparando-o-eclipse-para-o-python/)
+[2- Pydev: Preparando o Eclipse para o Python](http://blog.marcelocavalcante.net/blog/2009/03/23/pydev-preparando-o-eclipse-para-o-python/)
 
-[3- The Zen of Python](http://marcelocavalcante.net/portal/2008/11/24/the-zen-of-python/)
+[3- The Zen of Python](http://blog.marcelocavalcante.net/blog/2008/11/24/the-zen-of-python/)
 
 **A**braços
-
-
-![](http://www.marcelocavalcante.net/portal/imgs/userbar.gif)

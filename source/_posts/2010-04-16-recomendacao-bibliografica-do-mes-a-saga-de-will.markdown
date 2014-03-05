@@ -10,11 +10,7 @@ categories:
 - Impressoes
 - Literatura
 ---
-
-[![livro_will](http://marcelocavalcante.net/portal/wp-content/uploads/2010/04/livro_will.jpg)](http://marcelocavalcante.net/portal/wp-content/uploads/2010/04/livro_will.jpg)
-
-
-
+{% img left /imgs/livros/asagadewill.jpg 'Will' %}
 **S**audações!
 
 Desta vez venho lhes recomendar uma obra de Cheyla Furtado, uma escritora de minha cidade, Fortaleza, cujo livro foi extremamente bem elogiado pela mídia local em seu lançamento.
@@ -32,6 +28,3 @@ _'A Saga de Will' conta a história de um menino que mora em Gaia e, ao receber 
 **F**ica a recomendação. :p
 
 **A**braços!
-
-
-![](http://www.marcelocavalcante.net/portal/imgs/userbar.gif)

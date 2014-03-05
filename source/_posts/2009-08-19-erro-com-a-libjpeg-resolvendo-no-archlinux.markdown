@@ -11,11 +11,7 @@ categories:
 - Linux
 - Software Livre
 ---
-
-![](http://www.adslgr.com/forum/picture.php?albumid=214&pictureid=1984)
-
-
-
+{% img left /imgs/archlibjpeg.png 'Arch Libjpeg' %}
 **Q**uem está utilizando o [Archlinux](http://archlinux.org) devidamente atualizado, pode ter percebido alguns erros relacionados à libjpeg.so ao tentar executar alguma aplicação, como foi o meu caso com o [floola](http://www.floola.com), um gerenciador para meu ipod com o qual transfiro e manipulo minhas músicas pelo linux.
 
 **O** problema se deu pelo fato de o Archlinux já ter adotado a nova libjpeg. Esta versão 7 possui algumas vantagens em relação a versão anterior, porém muitos aplicativos ainda não foram atualizados para esta nova versão. Este foi o caso do floola por exemplo, que só funciona com a libjpeg6.
@@ -47,10 +43,3 @@ categories:
 **F**eito isto, pode executar novamente o software que estava apontando o erro. No meu caso foi o floola. Isto resolverá o seu problema. ;]
 
 **A**braços
-
-
-![](http://www.marcelocavalcante.net/portal/imgs/userbar.gif)
-
-
-
-

@@ -11,9 +11,7 @@ categories:
 - Literatura
 ---
 
-![](http://marcelocavalcante.net/portal/imgs/simbolo_perdido.jpg)
-
-
+{% img left /imgs/livros/osimboloperdido.jpg 'O Símbolo Perdido' %}
 **S**audações pessoal!
 
 **Q**ue tal um pouco mais de leitura?
@@ -51,6 +49,3 @@ Nas mãos de Dan Brown, Washington se revela tão fascinante quanto o Vaticano o
 
 
 **B**oa leitura...
-
-
-![](http://www.marcelocavalcante.net/portal/imgs/userbar.gif)

@@ -11,11 +11,7 @@ categories:
 - Flisol
 - Software Livre
 ---
-
-[![](http://flisolceara.net/FLISOL2010/banners/azul_horiz.png)](http://flisolceara.net)
-
-
-
+{% img left /imgs/flisol.png 'Flisol' %}
 
 **S**audações pessoal!
 

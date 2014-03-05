@@ -11,11 +11,7 @@ categories:
 - Ruby
 - Software Livre
 ---
-
-[![logomarca_cearaonrails](http://marcelocavalcante.net/portal/wp-content/uploads/2009/11/logomarca_cearaonrails.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2009/11/logomarca_cearaonrails.png)
-
-
-
+{% img left /imgs/cearaonrails.png 'Ceará On Rails' %}
 **S**audações pessoal, este ano o [Ceará On Rails](http://www.cearaonrails.com.br) terá sua segunda edição trazendo uma programação mais extensa em relação à anterior, em 2009.
 
 **O** Ruby tem ganho bastante destaque nos últimos anos pela sua praticidade e performance enquanto linguagem para desenvolvimento ágil e simples.
@@ -24,7 +20,7 @@ categories:
 
 **O** evento será realizado no dia 7 de Novembro em Fortaleza na Unifor a partir das 14 horas.
 
-**![](http://www.cearaonrails.com.br/images/banners/banner_210x60_participante.gif?1254746565)V**alor da entrada? Apenas uma gentil doação de 2 quilos de alimentos não perecíveis (arroz, feijão, açúcar, etc) que serão doados para a instituição [Lar Beneficiente Clara de Assis](http://www.cearaonrails.com.br/lardeclara).
+**V**alor da entrada? Apenas uma gentil doação de 2 quilos de alimentos não perecíveis (arroz, feijão, açúcar, etc) que serão doados para a instituição [Lar Beneficiente Clara de Assis](http://www.cearaonrails.com.br/lardeclara).
 
 **O** que? Você não acredita na comunidade local e acha que os alimentos serão desviados assim como quase tudo no Brasil? ¬¬
 
@@ -48,6 +44,3 @@ Horário
 **E** então, nos vemos lá?
 
 **A**braços
-
-
-![](http://www.marcelocavalcante.net/portal/imgs/userbar.gif)

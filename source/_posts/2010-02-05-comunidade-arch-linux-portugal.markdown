@@ -14,12 +14,7 @@ categories:
 - Linux
 - Software Livre
 ---
-
-[![levic-tux-portugal-1930](http://marcelocavalcante.net/portal/wp-content/uploads/2010/02/levic-tux-portugal-1930.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2010/02/levic-tux-portugal-1930.png)
-
-
-
-
+{% img left /imgs/tuxportugal.png 'Tux Portugal Arch Linux' %}
 **S**audações colegas! Ou deveria dizer "Boas"?¿
 
 
@@ -96,8 +91,3 @@ categories:
 
 
 **A**braços
-
-
-
-
-![](http://www.marcelocavalcante.net/portal/imgs/userbar.gif)

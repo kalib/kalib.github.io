@@ -44,7 +44,7 @@ _[kalib@tuxcaverna tools]$ ./android_
 **A** tela a seguir lhe será apresentada.
 
 
-[![](http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and01.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and01.png)
+{% img center /imgs/and01.png 'Android Emulator' %}
 
 
 **A**gora precisamos instalar o Android em si, portanto vamos começar vendo a lista de aplicativos disponíveis para instalação.
@@ -52,16 +52,14 @@ _[kalib@tuxcaverna tools]$ ./android_
 **R**epare que na lateral esquerda existem 5 abas. Vamos trabalhar por enquanto na aba _Available Packages_. Ao clicar nela, a seguinte tela lhe será apresentada:
 
 
-[![](http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and02.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and02.png)
-
+{% img center /imgs/and02.png 'Android Emulator' %}
 
 **C**lique na seta que se encontra ao lado da opção _https://dl-ssl.google.com/android/repository/repository.xml_
 
 **L**he será exibida uma lista de aplicativos disponíveis para instalação, conforme imagem:
 
 
-[![](http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and03.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and03.png)
-
+{% img center /imgs/and03.png 'Android Emulator' %}
 
 **N**o meu caso, vou selecionar apenas a versão 2.2 do Android. Mas, sinta-se livre para selecionar e instalar outras que estejam disponibilizadas.
 
@@ -72,20 +70,17 @@ _[kalib@tuxcaverna tools]$ ./android_
 **S**erá iniciado o download da(s) aplicação(ões) selecionada(s), conforme imagem abaixo.
 
 
-[![](http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and04.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and04.png)
-
+{% img center /imgs/and04.png 'Android Emulator' %}
 
 **A**o concluir o download, a tela ficará aguardando que você clique em **Close**, como na imagem a seguir:
 
 
-[![](http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and05.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and05.png)
-
+{% img center /imgs/and05.png 'Android Emulator' %}
 
 **A**pós isto, podemos ir para a aba _Installed Packages_. Lá veremos a lista do que instalamos. No meu caso, apenas o SDK Platform Android 2.2, API 8, revision 2, como na imagem a seguir:
 
 
-[![](http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and06.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and06.png)
-
+{% img center /imgs/and06.png 'Android Emulator' %}
 
 **A**gora vamos criar o dispositivo virtual. Clique na primeira aba, _Virtual Devices_, e em seguida clique no botão _New..._
 
@@ -104,8 +99,7 @@ Hardware: (Opções para abstração ou comunicação com o seu hardware)
 **P**ode preencher de forma parecida com o que eu fiz na imagem a seguir:
 
 
-[![](http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and07.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and07.png)
-
+{% img center /imgs/and07.png 'Android Emulator' %}
 
 **F**eito isto, clicamos em _Create AVD_.
 
@@ -116,25 +110,21 @@ Hardware: (Opções para abstração ou comunicação com o seu hardware)
 **E** o resultado? Nosso Android dando o seu primeiro boot.
 
 
-[![](http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and081.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and081.png)
+{% img center /imgs/and081.png 'Android Emulator' %}
 
 
 
-
-[![](http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and09.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and09.png)
-
+{% img center /imgs/and09.png 'Android Emulator' %}
 
 **V**ejamos o menu de principal...
 
 
-[![](http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and13.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and13.png)
-
+{% img center /imgs/and13.png 'Android Emulator' %}
 
 **Q**ue tal testar o browser? Sim, pode testar. Ele já está conectado na internet, caso, obviamente, a sua máquina (hospedeira) esteja conectada. Eles já se comunicam por bridge.
 
 
-[![](http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and10.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and10.png)
-
+{% img center /imgs/and10.png 'Android Emulator' %}
 
 
 
@@ -143,15 +133,10 @@ Hardware: (Opções para abstração ou comunicação com o seu hardware)
 
 
 
-[![](http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and11.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and11.png)
-[![](http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and12.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2010/07/and12.png)
+{% img center /imgs/and11.png 'Android Emulator' %}
+{% img center /imgs/and12.png 'Android Emulator' %}
 
 
 
 
 **A**braços!
-
-
-
-
-![](http://www.marcelocavalcante.net/portal/imgs/userbar.gif)

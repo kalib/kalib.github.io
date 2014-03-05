@@ -10,11 +10,7 @@ categories:
 - Impressoes
 - Literatura
 ---
-
-![](http://www.livrariasaraiva.com.br/imagem/imagem.dll?tam=2&pro_id=2637651&PIM_Id=123515389)
-
-
-
+{% img left /imgs/livros/jardimdeossos.jpg 'O Jardim de Ossos' %}
 **S**im, adoro livros com histórias macabras. Suspense e ficção sempre me chamaram bastante atenção.
 
 **A** escolha deste mês se chama O Jardim de Ossos. Um presente que ganhei de aniversário da Mari, minha namorada, e com certeza me despertou curiosidade desde o dia em que recebi.
@@ -38,10 +34,3 @@ categories:
 **E**spero que gostem...
 
 **A**braços
-
-
-![](http://www.marcelocavalcante.net/portal/imgs/userbar.gif)
-
-
-
-

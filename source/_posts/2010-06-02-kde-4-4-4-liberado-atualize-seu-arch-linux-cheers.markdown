@@ -13,11 +13,7 @@ categories:
 - Linux
 - Software Livre
 ---
-
-[![kde444](http://marcelocavalcante.net/portal/wp-content/uploads/2010/06/kde444.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2010/06/kde444.png)
-
-
-
+{% img left /imgs/kde444.png 'KDE 444' %}
 **S**audações pessoal!
 
 **D**epois de um longo tempo sem postar venho lhes informar que já podemos ter o [KDe 4.4.4](http://www.kde.org) em nosso [Arch Linux](http://www.archlinux.org).
@@ -45,14 +41,8 @@ _* Vários bugs na listagem de nomes do gerenciador de arquivos Dolphin foram co
 * Vários bugs nos games do KDE foram corrigidos..._
 Dentre outros...
 
-
-[![](http://www.kde.org/announcements/4.4/images/general-desktop.jpg)](http://www.kde.org/announcements/4.4/images/general-desktop.jpg)
-
-
+{% img left /imgs/kde444-desktop.jpg 'Kde Destop' %}
 
 **P**ara os curiosos de plantão que desejem já ir conhecendo o que ainda está por vir, a equipe de desenvolvimento do KDE já disponibilizou o primeiro beta da próxima release, KDE 4.5, que deverá estar disponível em Agosto.  Maiores informações podem ser obtidas [neste link](http://www.kde.org/announcements/announce-4.5-beta1.php).
 
 **A**braços!
-
-
-![](http://www.marcelocavalcante.net/portal/imgs/userbar.gif)

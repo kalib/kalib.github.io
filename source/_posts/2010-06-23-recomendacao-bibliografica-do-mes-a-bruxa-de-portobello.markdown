@@ -10,9 +10,7 @@ categories:
 - Impressoes
 - Literatura
 ---
-
-[![](http://marcelocavalcante.net/portal/imgs/bruxaportobello.jpg)](http://marcelocavalcante.net/portal/imgs/bruxaportobello.jpg)
-
+{% img left /imgs/livros/abruxadeportobello.jpg 'A Bruxa de Portobello' %}
 
 **M**ais uma recomendação para preencher os horários de ócio...
 
@@ -43,6 +41,3 @@ categories:
 
 
 **A**braços!
-
-
-![](http://www.marcelocavalcante.net/portal/imgs/userbar.gif)

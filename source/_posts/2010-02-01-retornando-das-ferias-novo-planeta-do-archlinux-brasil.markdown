@@ -11,11 +11,7 @@ categories:
 - Linux
 - Software Livre
 ---
-
-[![arch](http://marcelocavalcante.net/portal/wp-content/uploads/2010/02/arch.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2010/02/arch.png)
-
-
-
+{% img left /imgs/arch.png 'Arch' %}
 **S**audações Pessoal,
 
 **C**omo puderam perceber, estive ausente no último mês.
@@ -35,6 +31,3 @@ categories:
 **S**e ainda não faz parte do planeta, mas acha que seu site/blog poderia aparecer em nosso planeta por se encaixar na temática, pode entrar em contato comigo também.
 
 **A**braços e de volta ao trabalho pessoal...
-
-
-![](http://www.marcelocavalcante.net/portal/imgs/userbar.gif)

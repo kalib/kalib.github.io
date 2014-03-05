@@ -17,8 +17,7 @@ categories:
 
 **P**orque não começar com uma recomendação bibliográfica? Afinal, ganhei um excelente livro de minha namorada e o estou adorando. Acho que seria a melhor forma de "voltar ao ar".
 
-
-[![](http://marcelocavalcante.net/portal/imgs/livro_apocalipse.jpg)](http://marcelocavalcante.net/portal/imgs/livro_apocalipse.jpg)
+{% img left /imgs/livros/abatalhadoapocalipse.jpg 'A Batalha do Apocalipse' %}
 
 
 **A** recomendação deste mês é uma história fascinante de um autor brasileiro que conseguiu destaque imenso com esta obra. O carioca Eduardo Sophr, algumas vezes comparado à J. R. R. Tolkien, criador de O Senhor dos Anéis, é um enorme exemplo para toda a comunidade literária brasileira, visto que começou sua jornada na literatura praticamente sozinho, sem ajuda de grandes editoras. Optou por iniciar as vendas de seu livro por conta própria, da forma mais tradicional possível com impressões, envio pelos correios, divulgação na internet, etc. Posteriormente abriu sua própria editora.
@@ -40,6 +39,3 @@ categories:
 
 
 **A**braços!
-
-
-![](http://www.marcelocavalcante.net/portal/imgs/userbar.gif)

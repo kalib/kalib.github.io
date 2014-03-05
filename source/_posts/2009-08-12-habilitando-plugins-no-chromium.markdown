@@ -13,17 +13,14 @@ categories:
 - Linux
 - Software Livre
 ---
-
-[![chromium-browser](http://marcelocavalcante.net/portal/wp-content/uploads/2009/08/chromium-browser-300x300.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2009/08/chromium-browser.png)**T**odos que visitam meu blog já devem estar cansados de saber que estou bastante atento ao projeto chromium e ajudando com o possível para o desenvolvimento e divulgação do mesmo.
+{% img left /imgs/chromium-browser.png 'Chromium' %}
+**T**odos que visitam meu blog já devem estar cansados de saber que estou bastante atento ao projeto chromium e ajudando com o possível para o desenvolvimento e divulgação do mesmo.
 
 
 
 **B**om, eu já havia notificado aqui o fato de que o chromium passou a ter suporte à plugins como o flash por exemplo. De fato ele já suporta os plugins, mas muitos estão me procurando para perguntar porque o chromium cortou o suporte aos plugins, visto que nas builds mais recentes do chromium o suporte parece ter sido cortado, visto que os plugins não estão funcionando a princípio.
 
-
-[![shot_chromium](http://marcelocavalcante.net/portal/wp-content/uploads/2009/08/shot_chromium-300x187.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2009/08/shot_chromium.png)
-
-
+{% img center /imgs/shot_chromium.png 'Shot Chromium' %}
 
 **M**as, porque o meu funciona e o seu não?
 
@@ -62,10 +59,3 @@ Server = http://repo.archlinux-br.org/x86_64
 **F**eito!
 
 **B**om proveito...
-
-
-![](http://www.marcelocavalcante.net/portal/imgs/userbar.gif)
-
-
-
-

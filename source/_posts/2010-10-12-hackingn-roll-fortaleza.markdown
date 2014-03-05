@@ -10,10 +10,7 @@ categories:
 - Cultura Hacker
 - Impressoes
 ---
-
-[![](http://www.insert.uece.br/hackingnroll/img/logo.jpg)](http://www.insert.uece.br/hackingnroll/img/logo.jpg)
-
-
+{% img left /imgs/hackingroll.jpg 'Hacking Roll' %}
 **É** hora de separar suas melhores garrafas de cerveja café e seus melhores números de telefones para pedidos de pizza. O [Hacking'n Roll Fortaleza](http://www.insert.uece.br/hackingnroll/) vai começar!
 
 **O** evento soa mais como um desafio ao velho estilo Capture The Flag. Para quem conhece e acompanha a [Defcon](http://www.defcon.org/), o Capture The Flag não será nenhuma surpresa. Aos que não conhecem, se trata de um desafio, ou melhor uma série de desafios/questões que devem ser resolvidos em um determinado tempo.
@@ -29,6 +26,3 @@ categories:
 **P**ara maiores informações e inscrições, basta acessar a página do [Hacking'n Roll](http://www.insert.uece.br/hackingnroll/).
 
 **G**ood Hacking!
-
-
-![](http://www.marcelocavalcante.net/portal/imgs/userbar.gif)

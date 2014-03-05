@@ -12,11 +12,7 @@ categories:
 - Impressoes
 - Meio Ambiente
 ---
-
-![elixo](http://ipemsp.files.wordpress.com/2010/02/o-que-e-lixo-2.jpg?w=150&h=126)
-
-
-
+{% img left /imgs/reciclagem.jpg 'Reiclagem' %}
 **S**audações pessoal, todos dispostos a ajudar?
 
 **A**lgumas semanas atrás uma amiga me perguntou algumas coisas sobre reciclagem ou reaproveitamento de e-lixo ou lixo eletrônico para os menos íntimos. A mesma não informou estes termos mas a intenção foi parecida. Me perguntou sobre como se descartar corretamente mídias (cds, dvds) ou velhas peças de computador. E como estamos nos aproximando do FLISOL, aproveitei para divulgar uma iniciativa que teremos aqui em Fortaleza no dia 24 de Abril durante o [FLISOL](http://flisolceara.net) - Festival Latino Americano de Instalação de Software Livre.
@@ -38,6 +34,3 @@ categories:
 **N**os vemos lá.
 
 **A**braços!
-
-
-![](http://www.marcelocavalcante.net/portal/imgs/userbar.gif)

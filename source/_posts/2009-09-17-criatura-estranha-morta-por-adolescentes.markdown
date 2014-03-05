@@ -10,12 +10,7 @@ categories:
 - Impressoes
 - Meio Ambiente
 ---
-
-[![](http://gazetaonline.globo.com/_midias/jpg/180144-4ab24930596d5.jpg)](http://gazetaonline.globo.com/_midias/jpg/180144-4ab24930596d5.jpg)
-
-
-
-
+{% img left /imgs/etpanama.jpg 'Animal ou ET' %}
 **E**T ou espécie animal não catalogada?¿
 
 
@@ -57,11 +52,3 @@ categories:
 
 
 **A**braços
-
-
-
-
-![](http://www.marcelocavalcante.net/portal/imgs/userbar.gif)
-
-
-

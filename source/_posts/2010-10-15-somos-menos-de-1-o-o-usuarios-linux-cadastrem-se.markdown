@@ -13,10 +13,7 @@ categories:
 - Linux
 - Software Livre
 ---
-
-[![](http://marcelocavalcante.net/portal/wp-content/uploads/2010/10/tux_muscle.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2010/10/tux_muscle.png)
-
-
+{% img left /imgs/tuxmuscles.png 'Tux Muscles' %}
 **P**essoal, recentemente surgiram algumas notícias de fontes suspeitas informando que o Linux está em menos de 1% dos computadores desktop existentes no mundo hoje.
 
 **S**erá verdade?
@@ -34,6 +31,3 @@ categories:
 **S**e serve de incentivo, ainda estamos abaixo dos hermanos argentinos. ¬¬ Vamos dar um gás né galera?
 
 **A**braços!
-
-
-![](http://www.marcelocavalcante.net/portal/imgs/userbar.gif)

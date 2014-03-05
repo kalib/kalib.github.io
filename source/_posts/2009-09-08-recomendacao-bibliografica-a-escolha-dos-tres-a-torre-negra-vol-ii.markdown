@@ -10,14 +10,10 @@ categories:
 - Impressoes
 - Literatura
 ---
-
-[![aescolhatre](http://marcelocavalcante.net/portal/wp-content/uploads/2009/09/aescolhatre.jpg)](http://marcelocavalcante.net/portal/wp-content/uploads/2009/09/aescolhatre.jpg)
-
-
-
+{% img left /imgs/livros/aescolhatre.jpg 'A Escolha dos Três' %}
 **O**lá pessoal, que tal mais um pouco de leitura para desopilar?
 
-**O** livro que estou lendo agora se chama A Escolha dos Três. É a continuação da série A Torre Negra, que eu já havia citado em um post anteriormente. Pode conferir [aqui](http://marcelocavalcante.net/portal/2009/06/21/recomendacao-bibliografica-do-voo¿-o-pistoleiro/).
+**O** livro que estou lendo agora se chama A Escolha dos Três. É a continuação da série A Torre Negra, que eu já havia citado em um post anteriormente. Pode conferir [aqui](http://blog.marcelocavalcante.net/blog/2009/06/21/recomendacao-bibliografica-do-vooc2bf-o-pistoleiro/).
 
 **N**este segundo volume, a história do pistoleiro continua, precisando desta vez conhecer e resolver alguns enigmas com a participação e interação de 3 personagens distintos que poderão, ou não, dar um novo rumo à aventura.
 
@@ -30,6 +26,3 @@ categories:
 
 
 **A**braços
-
-
-![](http://www.marcelocavalcante.net/portal/imgs/userbar.gif)

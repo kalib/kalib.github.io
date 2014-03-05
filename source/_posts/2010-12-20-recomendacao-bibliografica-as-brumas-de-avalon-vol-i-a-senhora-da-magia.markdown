@@ -10,10 +10,7 @@ categories:
 - Impressoes
 - Literatura
 ---
-
-[![](http://marcelocavalcante.net/portal/wp-content/uploads/2010/12/avalon1.jpg)](http://marcelocavalcante.net/portal/wp-content/uploads/2010/12/avalon1.jpg)
-
-
+{% img left /imgs/livros/asbrumasdeavalon1.jpg 'As Brumas de Avalon' %}
 **S**audações amigos...
 
 **S**entiram saudades?
@@ -45,9 +42,4 @@ Assim, esta obra proporciona uma narrativa soberba de uma lenda, e a recriação
 **A**braços e um Feliz Natal a todos!
 
 
-[![](http://marcelocavalcante.net/portal/wp-content/uploads/2010/12/grinch.jpg)](http://marcelocavalcante.net/portal/wp-content/uploads/2010/12/grinch.jpg)
-
-
-
-
-![](http://www.marcelocavalcante.net/portal/imgs/userbar.gif)
+{% img left /imgs/grinch.jpg 'Grinch' %}

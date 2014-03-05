@@ -14,7 +14,7 @@ categories:
 - Software Livre
 ---
 
-![broadcom](http://cdn.venturebeat.com/wp-content/uploads/2010/10/broadcom-chip.jpg)
+{% img left /imgs/broadcomchip.jpg 'Broadcom' %}
 
 
 **C**omo diria a Feiticeira (não lembro o nome real dela), não é feitiçaria, é tecnologia!
@@ -24,7 +24,7 @@ categories:
 **M**as, como nem tudo é um mar de rosas... toda mudança trás impactos positivos e negativos.
 
 
-![](http://blog.grupojbr.com.br/up/g/gr/blog.grupojbr.com.br/img/20101114090300_634036567553112000vostro3300.jpg)
+{% img center /imgs/vostro3300.jpg 'Vostro 3300' %}
 
 
 **A** máquina escolhida foi um Dell Vostro 3300. Com certeza uma excelente máquina e que eu não deixaria de recomendar para ninguém.
@@ -94,6 +94,3 @@ _# iwlist eth1 scanning_
 **É** isto.. agora sua interface funcinoará da forma esperada.
 
 **A**braços!
-
-
-![](http://www.marcelocavalcante.net/portal/imgs/userbar.gif)

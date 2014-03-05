@@ -9,11 +9,7 @@ wordpress_id: 686
 categories:
 - Impressoes
 ---
-
-[![](http://www.paixaocanarinha.com.br/media/galeria/1187/1/5/5/0/o_brasil_os_jogos-1280551.jpg)](http://www.paixaocanarinha.com.br/media/galeria/1187/1/5/5/0/o_brasil_os_jogos-1280551.jpg)
-
-
-
+{% img center /imgs/brasil.jpg 'Brasil' %}
 **WOW HOJE TEM JOGO DO BRASIL!**
 
 **D**everia ser esta a minha expressão de hoje, mas infelizmente não é. Não sei bem o porque, creio que estou tão empolgado com a performance do meu time (Ceará) no campeonato brasileiro que acabei perdendo a atenção que deveria estar voltada para a copa.
@@ -47,6 +43,3 @@ categories:
 **E**, agora sim... **Pra Frente Brasil! Salve A Seleção!**
 
 **A**braços!
-
-
-![](http://www.marcelocavalcante.net/portal/imgs/userbar.gif)

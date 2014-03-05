@@ -13,10 +13,7 @@ categories:
 - Linux
 - Software Livre
 ---
-
-[![](http://marcelocavalcante.net/portal/wp-content/uploads/2011/01/kde46.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2011/01/kde46.png)
-
-
+{% img center /imgs/konqui.png 'Konqui' %}
 **- DEV do Arch, qual é sua missão?**
 
 **- Empacotar antes de qualquer distribuição!**
@@ -28,7 +25,7 @@ categories:
 **É** isso aí pessoal, ontem o projeto [KDE](http://kde.org) liberou o KDE 4.6 com muitas melhorias e o pessoal do [Arch](http://archlinux.org) já saiu na frente, claro. Sim, se você usa Arch, não precisa esperar, pode atualizar seu KDE com o seu rotineiro _# __pacman -Syu._
 
 
-_[![](http://kde.org/announcements/4.6/screenshots/46-w09.png)](http://kde.org/announcements/4.6/screenshots/46-w09.png)_
+{% img center /imgs/kde46.png 'KDE 46' %}
 
 
 **D**entre as grandes mudanças, gostaria de destacar o suporte nativo ao UPower, UDev e UDisks que podem ser utilizados ao invés do depreciado HAL. Para isso, o pacote hal deixa de ser uma dependência do kdebase-workspace e pode ser removido do seu sistema.
@@ -41,8 +38,7 @@ _[![](http://kde.org/announcements/4.6/screenshots/46-w09.png)](http://kde.org/a
 
 **O** KDE 4.6 também trouxe uma série de novos recursos que facilitam e tornam o sistema ainda mais leve para este tipo de usuário. O Plasma Netbook, otimizado para computadores mais portáteis, se tornou ainda mais leve e fácil de se utilizar através de uma tela touchscreen.
 
-
-[![](http://marcelocavalcante.net/portal/wp-content/uploads/2011/01/kde46_1.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2011/01/kde46_1.png)
+{% img center /imgs/kde46_1.png 'KDE 46' %}
 
 
 **V**árias modificações no dolphin, correções de bugs e aparência também foram implementadas, mas... se eu for realmente listar todas as modificações, posso acabar perdendo meu emprego, portanto vou apenas lhes deixar o link do site oficial onde podem ser encontradas todas as mudanças desta release: [http://kde.org/announcements/4.6/](http://kde.org/announcements/4.6/)
