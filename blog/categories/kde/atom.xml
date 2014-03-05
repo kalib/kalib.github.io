@@ -4,7 +4,7 @@
   <title><![CDATA[Category: KDE | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/blog/categories/kde/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2014-03-01T17:03:09-03:00</updated>
+  <updated>2014-03-05T20:52:04-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -190,9 +190,8 @@
     <link href="http://blog.marcelocavalcante.net/blog/2011/01/27/lancado-kde-4-6-sim-claro-se-voce-usa-arch-voce-nao-precisa-esperar/"/>
     <updated>2011-01-27T09:54:19-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2011/01/27/lancado-kde-4-6-sim-claro-se-voce-usa-arch-voce-nao-precisa-esperar</id>
-    <content type="html"><![CDATA[<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/01/kde46.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/01/kde46.png" alt="" /></a></p>
-
-<p><strong>&ndash; DEV do Arch, qual é sua missão?</strong></p>
+    <content type="html"><![CDATA[<p><img class="center" src="/imgs/konqui.png" title="&lsquo;Konqui&rsquo;" >
+<strong>&ndash; DEV do Arch, qual é sua missão?</strong></p>
 
 <p><strong>&ndash; Empacotar antes de qualquer distribuição!</strong></p>
 
@@ -202,7 +201,7 @@
 
 <p><strong>É</strong> isso aí pessoal, ontem o projeto <a href="http://kde.org">KDE</a> liberou o KDE 4.6 com muitas melhorias e o pessoal do <a href="http://archlinux.org">Arch</a> já saiu na frente, claro. Sim, se você usa Arch, não precisa esperar, pode atualizar seu KDE com o seu rotineiro <em># __pacman -Syu.</em></p>
 
-<p><em><a href="http://kde.org/announcements/4.6/screenshots/46-w09.png"><img src="http://kde.org/announcements/4.6/screenshots/46-w09.png" alt="" /></a></em></p>
+<p><img class="center" src="/imgs/kde46.png" title="&lsquo;KDE 46&rsquo;" ></p>
 
 <p><strong>D</strong>entre as grandes mudanças, gostaria de destacar o suporte nativo ao UPower, UDev e UDisks que podem ser utilizados ao invés do depreciado HAL. Para isso, o pacote hal deixa de ser uma dependência do kdebase-workspace e pode ser removido do seu sistema.</p>
 
@@ -214,7 +213,7 @@
 
 <p><strong>O</strong> KDE 4.6 também trouxe uma série de novos recursos que facilitam e tornam o sistema ainda mais leve para este tipo de usuário. O Plasma Netbook, otimizado para computadores mais portáteis, se tornou ainda mais leve e fácil de se utilizar através de uma tela touchscreen.</p>
 
-<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2011/01/kde46_1.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2011/01/kde46_1.png" alt="" /></a></p>
+<p><img class="center" src="/imgs/kde46_1.png" title="&lsquo;KDE 46&rsquo;" ></p>
 
 <p><strong>V</strong>árias modificações no dolphin, correções de bugs e aparência também foram implementadas, mas&hellip; se eu for realmente listar todas as modificações, posso acabar perdendo meu emprego, portanto vou apenas lhes deixar o link do site oficial onde podem ser encontradas todas as mudanças desta release: <a href="http://kde.org/announcements/4.6/">http://kde.org/announcements/4.6/</a></p>
 

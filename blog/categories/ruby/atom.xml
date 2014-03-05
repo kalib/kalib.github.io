@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Ruby | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/blog/categories/ruby/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2014-03-01T17:03:09-03:00</updated>
+  <updated>2014-03-05T20:52:04-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -243,9 +243,8 @@
     <link href="http://blog.marcelocavalcante.net/blog/2009/11/05/ceara-on-rails-2010/"/>
     <updated>2009-11-05T15:13:23-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2009/11/05/ceara-on-rails-2010</id>
-    <content type="html"><![CDATA[<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2009/11/logomarca_cearaonrails.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/11/logomarca_cearaonrails.png" alt="logomarca_cearaonrails" /></a></p>
-
-<p><strong>S</strong>audações pessoal, este ano o <a href="http://www.cearaonrails.com.br">Ceará On Rails</a> terá sua segunda edição trazendo uma programação mais extensa em relação à anterior, em 2009.</p>
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/cearaonrails.png" title="&lsquo;Ceará On Rails&rsquo;" >
+<strong>S</strong>audações pessoal, este ano o <a href="http://www.cearaonrails.com.br">Ceará On Rails</a> terá sua segunda edição trazendo uma programação mais extensa em relação à anterior, em 2009.</p>
 
 <p><strong>O</strong> Ruby tem ganho bastante destaque nos últimos anos pela sua praticidade e performance enquanto linguagem para desenvolvimento ágil e simples.</p>
 
@@ -253,7 +252,7 @@
 
 <p><strong>O</strong> evento será realizado no dia 7 de Novembro em Fortaleza na Unifor a partir das 14 horas.</p>
 
-<p><strong><img src="http://www.cearaonrails.com.br/images/banners/banner_210x60_participante.gif?1254746565" alt="" />V</strong>alor da entrada? Apenas uma gentil doação de 2 quilos de alimentos não perecíveis (arroz, feijão, açúcar, etc) que serão doados para a instituição <a href="http://www.cearaonrails.com.br/lardeclara">Lar Beneficiente Clara de Assis</a>.</p>
+<p><strong>V</strong>alor da entrada? Apenas uma gentil doação de 2 quilos de alimentos não perecíveis (arroz, feijão, açúcar, etc) que serão doados para a instituição <a href="http://www.cearaonrails.com.br/lardeclara">Lar Beneficiente Clara de Assis</a>.</p>
 
 <p><strong>O</strong> que? Você não acredita na comunidade local e acha que os alimentos serão desviados assim como quase tudo no Brasil? ¬¬</p>
 
@@ -277,8 +276,6 @@
 <p><strong>E</strong> então, nos vemos lá?</p>
 
 <p><strong>A</strong>braços</p>
-
-<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
 ]]></content>
   </entry>
   
