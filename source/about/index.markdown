@@ -11,7 +11,7 @@ Me chamo **Marcelo Cavalcante Rocha**, também conhecido como **Kalib**, e sou m
 
 Estou **noivo** de uma linda mulher chamada **Mariana**, formada em Administração de Empresas, com quem pretendo compartilhar o restante de minha vida.
 
-Caso deseje me contactar, sinta-se livre e envie um **email** para <a href="mailto:marcelo@marcelocavalcante.net">marcelo</a> neste(@) mesmo domínio. Também estou constantemente online no **IRC** como kalib, através da rede Freenode, nos canais #archlinux, #archlinux-br, #french e #mlug. Além disto, você pode simplesmente deixar um **comentário** aqui mesmo no stie/blog.
+Caso deseje me contactar, sinta-se livre e envie um **email** para <a href="mailto:marcelo@marcelocavalcante.net">marcelo</a> neste(@) mesmo domínio. Também estou constantemente online no **IRC** como kalib, através da rede Freenode, nos canais #archlinux, #archlinux-br, #french e #mlug. Além disto, você pode simplesmente deixar um **comentário** aqui mesmo no site/blog.
 
 <br><br>
 {% img left /about/megeek.png 'Show time' %}
