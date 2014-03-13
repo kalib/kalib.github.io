@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Cultura | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/blog/categories/cultura/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2014-03-11T19:38:13-03:00</updated>
+  <updated>2014-03-12T21:27:15-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -18,7 +18,7 @@
     <link href="http://blog.marcelocavalcante.net/blog/2013/11/25/recomendacao-bibliografica-as-treze-reliquias/"/>
     <updated>2013-11-25T08:30:00-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2013/11/25/recomendacao-bibliografica-as-treze-reliquias</id>
-    <content type="html"><![CDATA[<p><img class="left" src="/imgs/livros/astrezereliquias.jpg" title="&lsquo;As Treze Relíquias&rsquo;" >
+    <content type="html"><![CDATA[<p>{% img left /imgs/livros/astrezereliquias.jpg &lsquo;As Treze Relíquias&rsquo; %}
 <strong>S</strong>em sombra de dúvidas o livro superou minhas expectativas. Apesar de a sinopse passar a impressão de que se trata de mais um livro com temática sobrenatural voltado a um público mais jovem, a leitura revela o oposto. Certamente um livro que pode agradar diversas faixas etárias, trazendo foco no ocultismo, antigas religiões, artefatos mágicos, sexo e assassinatos com incrível crueldade, tudo isto em uma trama muito bem elaborada e descrita.</p>
 
 <p><strong>P</strong>or se tratar de assuntos que gosto, o livro prendeu minha atenção desde o início, visto que os autores souberam mesclar bem os diferentes temas em uma história conexa e personagens interessantes.</p>
@@ -38,7 +38,7 @@
     <link href="http://blog.marcelocavalcante.net/blog/2013/10/04/recomendacao-bibliografica-filhos-do-eden-herdeiros-de-atlantida/"/>
     <updated>2013-10-04T08:27:00-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2013/10/04/recomendacao-bibliografica-filhos-do-eden-herdeiros-de-atlantida</id>
-    <content type="html"><![CDATA[<p><img class="left" src="/imgs/livros/filhosdoeden1.jpg" title="&lsquo;Filhos do Éden&rsquo;" >
+    <content type="html"><![CDATA[<p>{% img left /imgs/livros/filhosdoeden1.jpg &lsquo;Filhos do Éden&rsquo; %}
 <strong>A</strong>njos, Arcanjos e Demônios&hellip; Entidades que sempre despertaram a curiosidade e o interesse de milhares de pessoas. Não diferente, sempre tive um grande apreço por histórias, sejam em filmes ou literatura escrita, que abordem tais entidades.</p>
 
 <p><strong>S</strong>eguindo a trilha de seu outro livro, <a href="http://blog.marcelocavalcante.net/blog/2010/09/30/recomendacao-bibliografica-a-batalha-do-apocalipse/">A Batalha do Apocalipse</a>, o autor Eduardo Spohr narra com maestria o enredo no qual uma guerra civil acontece entre o Arcanjo Miguel e as tropas revolucionárias de seu irmão, o Arcanjo Gabriel.</p>
