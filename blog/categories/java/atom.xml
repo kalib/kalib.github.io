@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Java | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/blog/categories/java/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2014-03-12T21:27:15-03:00</updated>
+  <updated>2014-03-13T20:52:34-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -84,7 +84,7 @@
     <link href="http://blog.marcelocavalcante.net/blog/2011/09/13/feliz-dia-do-programador/"/>
     <updated>2011-09-13T10:11:39-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2011/09/13/feliz-dia-do-programador</id>
-    <content type="html"><![CDATA[<p>{% img left /imgs/programmer-260x300.jpg &lsquo;Programador&rsquo; %}
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/programmer-260x300.jpg" title="&lsquo;Programador&rsquo;" >
 <strong>S</strong>audações pessoal,</p>
 
 <p><strong>U</strong>m feliz dia do programador para todos aqueles que, profissionalmente, curiosamente ou mesmo por mera falta do que fazer escrevem ou já escreveram linhas de código!</p>
@@ -93,11 +93,11 @@
 
 <p><strong>D</strong>esafiador&hellip;estressante&hellip;cansativo&hellip;divertido&hellip;prazeroso&hellip; Como em qualquer &ldquo;casamento&rdquo;&hellip; na alegria e na tristeza!</p>
 
-<p>{% img center /imgs/cartoonvidaprogramador.gif &lsquo;Programador Rotina&rsquo; %}</p>
+<p><img class="center" src="/imgs/cartoonvidaprogramador.gif" title="&lsquo;Programador Rotina&rsquo;" ></p>
 
 <p><strong>O</strong>bviamente que eu não vou colocar em todas as centenas de linguagens de programação que existem.. portanto, se a sua linguagem favorita não foi homenageada abaixo, não fique triste. São muitas..difícil lembrar de todas.. O que vale é a intenção.</p>
 
-<p>{% img center /imgs/progLanguages.jpg &lsquo;Linguagens&rsquo; %}</p>
+<p><img class="center" src="/imgs/progLanguages.jpg" title="&lsquo;Linguagens&rsquo;" ></p>
 
 <p><strong>Assembly</strong></p>
 
@@ -283,7 +283,7 @@
 
 <p><strong>C</strong>omo instalar?</p>
 
-<p>{% img left /imgs/archlinux.png &lsquo;ArchLinux&rsquo; %}
+<p><img class="left" src="/imgs/archlinux.png" title="&lsquo;ArchLinux&rsquo;" >
 Bom, se você utiliza <a href="http://archlinux.org">Arch Linux</a>, pode pegar o pacote no AUR através do seguinte link(Lembrem-se de votar nele):</p>
 
 <p><a href="http://aur.archlinux.org/packages.php?ID=20809">http://aur.archlinux.org/packages.php?ID=20809</a></p>
@@ -306,7 +306,7 @@ Bom, se você utiliza <a href="http://archlinux.org">Arch Linux</a>, pode pegar 
 
 <p><strong>M</strong>as qual a cara do bicho?</p>
 
-<p>{% img center /imgs/dirbuster1.png &lsquo;Dirbuster&rsquo; %}</p>
+<p><img class="center" src="/imgs/dirbuster1.png" title="&lsquo;Dirbuster&rsquo;" ></p>
 
 <p><strong>C</strong>omo explicado antes, ele funciona parecido com o Dirb, porém em uma interface GUI (gráfica).</p>
 
@@ -334,28 +334,28 @@ Bom, se você utiliza <a href="http://archlinux.org">Arch Linux</a>, pode pegar 
 
 <p><strong>B</strong>om, vou escolher meu alvo e vou utilizar 20 threads em simultâneo. Não vou deixar a ferramenta rodando por muito tempo pois estou apenas fazendo uma demonstração.</p>
 
-<p>{% img center /imgs/dirbuster2.png &lsquo;Dirbuster&rsquo; %}</p>
+<p><img class="center" src="/imgs/dirbuster2.png" title="&lsquo;Dirbuster&rsquo;" ></p>
 
 <p><strong>C</strong>omo podem ver, filtrei para que o brute-force comece no diretório raiz (/) e optei pela maior lista que o DirBuster possui como dicionário. Deixei rodando por cerca de 30 segundos e já tive o seguinte resultado.</p>
 
-<p>{% img center /imgs/dirbuster3.png &lsquo;Dirbuster&rsquo; %}</p>
+<p><img class="center" src="/imgs/dirbuster3.png" title="&lsquo;Dirbuster&rsquo;" ></p>
 
 <p><strong>A</strong> parte borrada no início da imagem não é um defeito. Vocês não pensaram que eu iria deixar exposto o alvo no qual fiz o teste, certo? No caso, optei pelo site de uma de nossas instituições de ensino. Bom, a imagem acima é um exemplo do retorno que consigo com a ferramenta. É a visão em Lista. Além dela você pode optar pela visão em árvore, que, como o nome informa, lhe trará a árvore de diretórios, sub-diretórios e arquivos que foram encontrados. Abaixo um exemplo da visão em árvore:</p>
 
-<p>{% img center /imgs/dirbuster4.png &lsquo;Dirbuster&rsquo; %}</p>
+<p><img class="center" src="/imgs/dirbuster4.png" title="&lsquo;Dirbuster&rsquo;" ></p>
 
 <p><strong>O</strong> resultado, mesmo deixando a ferramenta rodando por apenas 30 segundos, foi o esperado. Um espantoso caso de descuido com a segurança do site.</p>
 
 <p><strong>A</strong>lguns leves exemplos que me chamaram a atenção na lista que consegui:</p>
 
-<p>{% img center /imgs/dirbuster5.png &lsquo;Dirbuster&rsquo; %}</p>
+<p><img class="center" src="/imgs/dirbuster5.png" title="&lsquo;Dirbuster&rsquo;" ></p>
 
 <p><strong>U</strong>m diretório de administração exposto desta forma indicando que existe uma sessão do site com acesso permitido apenas para administradores. O que isso me leva a crer? Que quem conseguir acesso a esta sessão consegue manipular o sistema do site? O que nos leva a uma posterior análise da página index contida nele que possibilita uma tentativa de brute-force de login e senha? psssiiiuuuu&hellip; o.O</p>
 
-<p>{% img center /imgs/dirbuster6.png &lsquo;Dirbuster&rsquo; %}
+<p><img class="center" src="/imgs/dirbuster6.png" title="&lsquo;Dirbuster&rsquo;" >
 <strong> U</strong>m diretório para uploads de Arquivos? Que tal testar ele? Apenas usuários administradores possuem permissão de upload? Ou alunos conseguem fazer upload de fotos, trabalhos, por exemplo? De qualquer forma, isso me indica que existe a possibilidade de eu subir arquivos para o servidor deles. Que tal um script em php que me permitiria ter um console shell no servidor deles para inclusão, exclusão, edição, etc.. ? pssiiiiuuuu&hellip; o.O</p>
 
-<p>{% img center /imgs/dirbuster7.png &lsquo;Dirbuster&rsquo; %}</p>
+<p><img class="center" src="/imgs/dirbuster7.png" title="&lsquo;Dirbuster&rsquo;" ></p>
 
 <p><strong>P</strong>ode não ser nada.. mas também pode ser muita coisa.. O que um diretório chamado &ldquo;gerencia&rdquo; faz ali tão exposto e com um nome tão&hellip; tão&hellip; discreto? o.O psssiiiuuuuu</p>
 
@@ -400,19 +400,19 @@ Bom, se você utiliza <a href="http://archlinux.org">Arch Linux</a>, pode pegar 
 
 <p><strong>A</strong> tela a seguir lhe será apresentada.</p>
 
-<p>{% img center /imgs/and01.png &lsquo;Android Emulator&rsquo; %}</p>
+<p><img class="center" src="/imgs/and01.png" title="&lsquo;Android Emulator&rsquo;" ></p>
 
 <p><strong>A</strong>gora precisamos instalar o Android em si, portanto vamos começar vendo a lista de aplicativos disponíveis para instalação.</p>
 
 <p><strong>R</strong>epare que na lateral esquerda existem 5 abas. Vamos trabalhar por enquanto na aba <em>Available Packages</em>. Ao clicar nela, a seguinte tela lhe será apresentada:</p>
 
-<p>{% img center /imgs/and02.png &lsquo;Android Emulator&rsquo; %}</p>
+<p><img class="center" src="/imgs/and02.png" title="&lsquo;Android Emulator&rsquo;" ></p>
 
 <p><strong>C</strong>lique na seta que se encontra ao lado da opção _<a href="https://dl-ssl.google.com/android/repository/repository.xml_">https://dl-ssl.google.com/android/repository/repository.xml_</a></p>
 
 <p><strong>L</strong>he será exibida uma lista de aplicativos disponíveis para instalação, conforme imagem:</p>
 
-<p>{% img center /imgs/and03.png &lsquo;Android Emulator&rsquo; %}</p>
+<p><img class="center" src="/imgs/and03.png" title="&lsquo;Android Emulator&rsquo;" ></p>
 
 <p><strong>N</strong>o meu caso, vou selecionar apenas a versão 2.2 do Android. Mas, sinta-se livre para selecionar e instalar outras que estejam disponibilizadas.</p>
 
@@ -422,15 +422,15 @@ Bom, se você utiliza <a href="http://archlinux.org">Arch Linux</a>, pode pegar 
 
 <p><strong>S</strong>erá iniciado o download da(s) aplicação(ões) selecionada(s), conforme imagem abaixo.</p>
 
-<p>{% img center /imgs/and04.png &lsquo;Android Emulator&rsquo; %}</p>
+<p><img class="center" src="/imgs/and04.png" title="&lsquo;Android Emulator&rsquo;" ></p>
 
 <p><strong>A</strong>o concluir o download, a tela ficará aguardando que você clique em <strong>Close</strong>, como na imagem a seguir:</p>
 
-<p>{% img center /imgs/and05.png &lsquo;Android Emulator&rsquo; %}</p>
+<p><img class="center" src="/imgs/and05.png" title="&lsquo;Android Emulator&rsquo;" ></p>
 
 <p><strong>A</strong>pós isto, podemos ir para a aba <em>Installed Packages</em>. Lá veremos a lista do que instalamos. No meu caso, apenas o SDK Platform Android 2.2, API 8, revision 2, como na imagem a seguir:</p>
 
-<p>{% img center /imgs/and06.png &lsquo;Android Emulator&rsquo; %}</p>
+<p><img class="center" src="/imgs/and06.png" title="&lsquo;Android Emulator&rsquo;" ></p>
 
 <p><strong>A</strong>gora vamos criar o dispositivo virtual. Clique na primeira aba, <em>Virtual Devices</em>, e em seguida clique no botão <em>New&hellip;</em></p>
 
@@ -448,7 +448,7 @@ Bom, se você utiliza <a href="http://archlinux.org">Arch Linux</a>, pode pegar 
 
 <p><strong>P</strong>ode preencher de forma parecida com o que eu fiz na imagem a seguir:</p>
 
-<p>{% img center /imgs/and07.png &lsquo;Android Emulator&rsquo; %}</p>
+<p><img class="center" src="/imgs/and07.png" title="&lsquo;Android Emulator&rsquo;" ></p>
 
 <p><strong>F</strong>eito isto, clicamos em <em>Create AVD</em>.</p>
 
@@ -458,22 +458,22 @@ Bom, se você utiliza <a href="http://archlinux.org">Arch Linux</a>, pode pegar 
 
 <p><strong>E</strong> o resultado? Nosso Android dando o seu primeiro boot.</p>
 
-<p>{% img center /imgs/and081.png &lsquo;Android Emulator&rsquo; %}</p>
+<p><img class="center" src="/imgs/and081.png" title="&lsquo;Android Emulator&rsquo;" ></p>
 
-<p>{% img center /imgs/and09.png &lsquo;Android Emulator&rsquo; %}</p>
+<p><img class="center" src="/imgs/and09.png" title="&lsquo;Android Emulator&rsquo;" ></p>
 
 <p><strong>V</strong>ejamos o menu de principal&hellip;</p>
 
-<p>{% img center /imgs/and13.png &lsquo;Android Emulator&rsquo; %}</p>
+<p><img class="center" src="/imgs/and13.png" title="&lsquo;Android Emulator&rsquo;" ></p>
 
 <p><strong>Q</strong>ue tal testar o browser? Sim, pode testar. Ele já está conectado na internet, caso, obviamente, a sua máquina (hospedeira) esteja conectada. Eles já se comunicam por bridge.</p>
 
-<p>{% img center /imgs/and10.png &lsquo;Android Emulator&rsquo; %}</p>
+<p><img class="center" src="/imgs/and10.png" title="&lsquo;Android Emulator&rsquo;" ></p>
 
 <p><strong>N</strong>ão é que funciona mesmo?!</p>
 
-<p>{% img center /imgs/and11.png &lsquo;Android Emulator&rsquo; %}
-{% img center /imgs/and12.png &lsquo;Android Emulator&rsquo; %}</p>
+<p><img class="center" src="/imgs/and11.png" title="&lsquo;Android Emulator&rsquo;" >
+<img class="center" src="/imgs/and12.png" title="&lsquo;Android Emulator&rsquo;" ></p>
 
 <p><strong>A</strong>braços!</p>
 ]]></content>
@@ -484,7 +484,7 @@ Bom, se você utiliza <a href="http://archlinux.org">Arch Linux</a>, pode pegar 
     <link href="http://blog.marcelocavalcante.net/blog/2009/09/03/chromium-suportando-java-agora/"/>
     <updated>2009-09-03T16:15:34-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2009/09/03/chromium-suportando-java-agora</id>
-    <content type="html"><![CDATA[<p>{% img left /imgs/javachromium.png &lsquo;Java Chromium&rsquo; %}
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/javachromium.png" title="&lsquo;Java Chromium&rsquo;" >
 <strong>É</strong> isso aí galera..</p>
 
 <p><strong>D</strong>epois de dominar 100% o plugin flash, chegou a vez do nosso amigo Java.</p>

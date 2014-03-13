@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Meio Ambiente | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/blog/categories/meio-ambiente/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2014-03-12T21:27:15-03:00</updated>
+  <updated>2014-03-13T20:52:34-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -18,7 +18,7 @@
     <link href="http://blog.marcelocavalcante.net/blog/2010/04/09/lixo-eletronico-nao-sabe-o-que-fazer-o-flisol-sabe/"/>
     <updated>2010-04-09T15:24:24-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2010/04/09/lixo-eletronico-nao-sabe-o-que-fazer-o-flisol-sabe</id>
-    <content type="html"><![CDATA[<p>{% img left /imgs/reciclagem.jpg &lsquo;Reiclagem&rsquo; %}
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/reciclagem.jpg" title="&lsquo;Reiclagem&rsquo;" >
 <strong>S</strong>audações pessoal, todos dispostos a ajudar?</p>
 
 <p><strong>A</strong>lgumas semanas atrás uma amiga me perguntou algumas coisas sobre reciclagem ou reaproveitamento de e-lixo ou lixo eletrônico para os menos íntimos. A mesma não informou estes termos mas a intenção foi parecida. Me perguntou sobre como se descartar corretamente mídias (cds, dvds) ou velhas peças de computador. E como estamos nos aproximando do FLISOL, aproveitei para divulgar uma iniciativa que teremos aqui em Fortaleza no dia 24 de Abril durante o <a href="http://flisolceara.net">FLISOL</a> &ndash; Festival Latino Americano de Instalação de Software Livre.</p>
@@ -48,7 +48,7 @@
     <link href="http://blog.marcelocavalcante.net/blog/2009/09/17/criatura-estranha-morta-por-adolescentes/"/>
     <updated>2009-09-17T10:05:47-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2009/09/17/criatura-estranha-morta-por-adolescentes</id>
-    <content type="html"><![CDATA[<p>{% img left /imgs/etpanama.jpg &lsquo;Animal ou ET&rsquo; %}
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/etpanama.jpg" title="&lsquo;Animal ou ET&rsquo;" >
 <strong>E</strong>T ou espécie animal não catalogada?¿</p>
 
 <p><strong>E</strong>sta é a dúvida que está se passando na cabeça de muitas pessoas sobre o ser que foi encontrado e morto no Panamá.</p>
