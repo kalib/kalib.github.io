@@ -22,11 +22,7 @@ categories:
 **P**ara quem ainda não sabe, Chromium é o projeto open source que serve de base para o já conhecido Chrome do Google.
 
 **O**ntem saiu uma nova build do chromium que trás suporte total ao flash, precisando-se apenas criar um link simbólico para o seu já existente plugin flash que se encontra no diretório de seu firefox.
-
-
-[![chromium-flash](http://marcelocavalcante.net/portal/wp-content/uploads/2009/07/chromium-flash-300x178.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2009/07/chromium-flash.png)
-
-
+{% img center /imgs/chromium-flash.png 'Chromium' %}
 
 **E**sta nova build, já se encontra atualizada em nosso repositório nacional, graças ao nosso amigo [Paulo (aka thotypous)](http://matias.archlinux-br.org/), e você pode instalar, caso ainda não tenha, ou apenas atualizar o seu com os seguintes comandos:
 
@@ -54,10 +50,3 @@ about:
 **V**ocê verá claramente que o plugin flash está instalado. Agora é só correr pro abraço e testar em sites como o youtube por exemplo.
 
 **A**braços
-
-
-![](http://www.marcelocavalcante.net/portal/imgs/userbar.gif)
-
-
-
-

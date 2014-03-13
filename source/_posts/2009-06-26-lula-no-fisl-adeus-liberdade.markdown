@@ -13,11 +13,7 @@ categories:
 - Linux
 - Software Livre
 ---
-
-[![](http://4.bp.blogspot.com/_OJ0qwkgKMzI/R_PsBaOtnZI/AAAAAAAAA9k/PFmyyDTrxFQ/s400/lula+com+pinguim.JPG)](http://4.bp.blogspot.com/_OJ0qwkgKMzI/R_PsBaOtnZI/AAAAAAAAA9k/PFmyyDTrxFQ/s400/lula+com+pinguim.JPG)
-
-
-
+{% img center /imgs/lulatux.jpg 'Lula e Tux' %}
 **É** isso aí pessoal.. Terceiro dia de FISL e a bagunça rolou solta. Não lembro de ter visto sorrisos hoje na PUC. Apenas insatisfações e caras aborrecidas.
 
 **C**omo de costume, o FISL não cumpriu a promessa de uma rede decente WIFI. Desde o primeiro dia a wireless do evento não funciona. Cada um tenta se virar de alguma forma.. seja com 3g ou mesmo, como nosso caso no stand do Archlinux Brasil, levando um switch para navegar na rede cabeada sedida pelo evento. Mas, como disse anteriormente, esse "problema" já é praticamente uma marca registrada do evento e como tal não foi a causa da revolta. Portanto, COMPANHEIROS, acreditem.. a causa da revolta geral hoje foi a "visita" de nosso querido Presidente.
@@ -30,17 +26,10 @@ Nosso Presidente resolveu aparecer hoje no final da tarde. O problema? Simplesme
 
 **N**o mínimo é uma falta de respeito para com todos nós.
 
-**E** a pergunta que não quer calar... Onda está a liberdade em um evento, teoricamente, para a comunidade?
+**E** a pergunta que não quer calar... Onde está a liberdade em um evento, teoricamente, para a comunidade?
 
 **O** Software é Livre, o acesso não!?¡¿
 
 **PS: **Amanhã estarei no evento com meu crachá de cabeça para baixo.
 
 **A**braços
-
-
-![](http://www.marcelocavalcante.net/portal/imgs/userbar.gif)
-
-
-
-

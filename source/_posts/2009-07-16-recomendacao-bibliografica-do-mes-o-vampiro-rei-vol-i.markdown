@@ -10,11 +10,7 @@ categories:
 - Impressoes
 - Literatura
 ---
-
-[![livro](http://marcelocavalcante.net/portal/wp-content/uploads/2009/07/livro.jpeg)](http://marcelocavalcante.net/portal/wp-content/uploads/2009/07/livro.jpeg)
-
-
-
+{% img left /imgs/livros/vampirorei1.jpeg 'O Vampiro Rei Vol 1' %}
 **M**ais uma vez venho trazendo como recomendação bibliográfica um livro do autor André Vianco. Acho que todos aqui já perceberam que sou fan do trabalho do cara. ;]
 
 **O** livro do mês se chama O Vampiro Rei - Vol I.
@@ -33,10 +29,3 @@ Do lado dos humanos, bento Lucas faz crescer em seus semelhantes a chama da espe
 
 
 **B**oa leitura.
-
-
-![](http://www.marcelocavalcante.net/portal/imgs/userbar.gif)
-
-
-
-

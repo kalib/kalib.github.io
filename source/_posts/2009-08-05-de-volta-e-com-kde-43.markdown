@@ -11,12 +11,9 @@ categories:
 - Impressoes
 - Linux
 - Software Livre
+- KDE
 ---
-
-[![162_kde](http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/162_kde.jpg)](http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/162_kde.jpg)
-
-
-
+{% img left /imgs/162_kde.jpg 'KDE' %}
 **S**audações pessoal...
 
 **E**stive meio ausente nos últimos dias por problemas com minha máquina. Recentemente meu hd queimou e acabei ficando meio "inativo". Ontem consegui reinstalar todo o meu sistema operacional (Archlinux) e restaurar todos os meus backups.
@@ -31,15 +28,15 @@ categories:
 
 **O** design e os efeitos estão bem mais atraentes como por exemplo a vizualização de pastas de imagens com previews como na imagem a seguir.
 
-[![kde43-1](http://marcelocavalcante.net/portal/wp-content/uploads/2009/08/kde43-1-300x177.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2009/08/kde43-1.png)
+{% img center /imgs/kde43-1.png 'KDE' %}
 
 **O**utro efeito que muito me chamou a atenção, é a possibilidade de vizualizar e navegar entre arquivos e diretórios que se encontrem em minha área de trabalho apenas por passar o mouse em cima e segurar por um segundo, me possibilitando ver o conteúdo daquela determinada pasta bem como interagir com ela. Ao tirar o mouse de cima, ela some novamente. ;] Confira a imagem a seguir:
 
-[![kde43-2](http://marcelocavalcante.net/portal/wp-content/uploads/2009/08/kde43-2-300x214.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2009/08/kde43-2.png)
+{% img center /imgs/kde43-2.png 'KDE' %}
 
 **P**ara quem, assim como eu, gosta de notas rápidas em seu desktop, o knotes continua surpreendendo, trazendo agora as funções de negrito, sublinhado, centralizado, etc..
 
-![](file:///tmp/moz-screenshot.png)[![kde43-3](http://marcelocavalcante.net/portal/wp-content/uploads/2009/08/kde43-3-300x244.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2009/08/kde43-3.png)
+{% img center /imgs/kde43-3.png 'KDE' %}
 
 **M**uitas outras coisas novas surgiram, bem como efeitos de área, etc, etc, etc..
 
@@ -53,11 +50,4 @@ categories:
 
 # pacman -S kde
 
-**A**braços![](file:///tmp/moz-screenshot-1.png)
-
-
-![](http://www.marcelocavalcante.net/portal/imgs/userbar.gif)
-
-
-
-
+**A**braços!
