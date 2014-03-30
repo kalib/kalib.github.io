@@ -13,11 +13,7 @@ categories:
 - Linux
 - Software Livre
 ---
-
-![exportgooglechormebookmarks](http://marcelocavalcante.net/portal/wp-content/uploads/2009/05/exportgooglechormebookmarks-300x260.png)
-
-
-
+{% img left /imgs/exportgooglechormebookmarks.png 'Chromium' %}
 **S**audações pessoal, tudo tranquilo?
 
 **G**ostaria de lhes comunicar que o Google Chromium alpha já está pronto e rodando no Arch.
@@ -26,11 +22,7 @@ categories:
 
 **É** isso mesmo. Você que é usuário Arch Linux já pode fazer inveja à seus coleguinhas..
 
-
-[![chromium](http://marcelocavalcante.net/portal/wp-content/uploads/2009/05/chromium-300x187.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2009/05/chromium.png)
-
-
-
+{% img center /imgs/chromiumprint.png 'Chromium' %}
 **C**omo o próprio Paulo já explicou em seu post, vocês podem instalar de duas formas:
 
 1- Baixando o pacote chromium-browser no [AUR](http://aur.archlinux.org/packages.php?ID=24266).
@@ -42,10 +34,3 @@ categories:
 **P**essoal, essa é nossa chance de ajudar a testar o máximo possível e reportar todos os bugs. Isso vai ajudar o Google a melhorar cada vez mais o Google Chromium para o Linux como um todo.
 
 **A**braços
-
-
-![](http://www.marcelocavalcante.net/portal/imgs/userbar.gif)
-
-
-
-

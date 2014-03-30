@@ -11,11 +11,7 @@ categories:
 - Impressoes
 - Software Livre
 ---
-
-**![](http://www.tudolink.com/wp-content/2007/02/linux_vs_windows.jpg)**
-
-
-
+{% img center /imgs/linux_vs_windows.jpg 'Linux Windows' %}
 **S**ó nos faltava essa eim!?
 
 **D**epois de várias atitudes "questionáveis" em toda a sua história, me deparo com o seguinte texto publicado pelo [Vitorio Furusho](http://www.softwarelivre.org/news/13422).
@@ -221,10 +217,3 @@ Cresça, trabalhe e apareça :D
 **Q**uanta barbaridade eim!? Faço questão de publicar aqui o texto para que possamos atingir o máximo de leitores!
 
 **A**braços
-
-
-![](http://www.marcelocavalcante.net/portal/imgs/userbar.gif)
-
-
-
-

@@ -36,10 +36,3 @@ categories:
 **É** isso..conheçam um pouco sobre minha pessoa visitando a página Fotos ou clicando [**aqui**](http://marcelocavalcante.net/portal/fotos/).
 
 **A**braços
-
-
-![](http://www.marcelocavalcante.net/portal/imgs/userbar.gif)
-
-
-
-

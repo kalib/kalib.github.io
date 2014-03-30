@@ -11,12 +11,7 @@ categories:
 - Linux
 - Software Livre
 ---
-
-[![](http://kalib.pre.hw40.webservidor.net/wordpress/wp-content/uploads/2009/02/repobr.png)](http://kalib.pre.hw40.webservidor.net/wordpress/wp-content/uploads/2009/02/repobr.png)
-
-
-
-
+{% img center /imgs/repobr.png 'Repositório Archlinux Brasil' %}
 Saudaçes pessoal,
 
 
@@ -51,7 +46,4 @@ A política do repositório é: Adicionar qualquer pacote que esteja no [AUR](ht
 
 
 
-Para adicionar um pacote, mande um e-mail para repo@archlinux-br.org, dando uma breve explicação e o link para o AUR do pacote.[![](http://img376.imageshack.us/img376/8000/userbar635980sd7.gif)](http://img376.imageshack.us/img376/8000/userbar635980sd7.gif)
-
-
-
+Para adicionar um pacote, mande um e-mail para repo@archlinux-br.org, dando uma breve explicação e o link para o AUR do pacote.

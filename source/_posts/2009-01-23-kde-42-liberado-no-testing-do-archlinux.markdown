@@ -13,12 +13,7 @@ categories:
 - Linux
 - Software Livre
 ---
-
-[![](http://kalib.pre.hw40.webservidor.net/wordpress/wp-content/uploads/2009/02/162_kde.jpg)](http://kalib.pre.hw40.webservidor.net/wordpress/wp-content/uploads/2009/02/162_kde.jpg)
-
-
-
-
+{% img left /imgs/162_kde.jpg 'KDE' %}
 Olá pessoal...
 
 
@@ -62,11 +57,3 @@ Para os menos aventureiros e que não gostam de instalar pacotes que ainda se en
 
 
 Abraços
-
-
-
-
-[![](http://img376.imageshack.us/img376/8000/userbar635980sd7.gif)](http://img376.imageshack.us/img376/8000/userbar635980sd7.gif)
-
-
-

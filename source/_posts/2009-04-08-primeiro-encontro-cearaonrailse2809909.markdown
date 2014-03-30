@@ -11,35 +11,16 @@ categories:
 - Ruby
 - Software Livre
 ---
-
-![logomarca_cearaonrails](http://marcelocavalcante.net/portal/wp-content/uploads/2009/04/logomarca_cearaonrails.png)
-
-
-
-
+{% img center /imgs/logomarca_cearaonrails.png 'Ceará on Rails' %}
 **O**lá pessoal.
-
-
-
 
 **P**ara quem não conhece, Ceará On Rails é um evento voltado ao desenvolvimento web ágil com Ruby On Rails. Sua primeira edição foi em Novembro do ano passado. Estive presente e não me arrependi. Hoje teremos a segunda edição do evento. Fica o convite à todos que desejem aparecer por lá para conhecer um pouco mais sobre esta dinâmica e ágil forma de desenvolver para a Web.
 
-
-
-
 **CearáOnRails** – Grupo de Usuários Ruby e Rails do Ceará
-
-
-
 
 **Website** – [http://www.cearaonrails.org](http://www.cearaonrails.org/)
 
-
-
-
 **Lista de Discussão** - [http://groups.google.com.br/group/cearaonrails](http://groups.google.com.br/group/cearaonrails)
-
-
 
 **Local**: [Faculdade Christus.](http://www.fchristus.com.br/)
 
@@ -53,35 +34,18 @@ categories:
 
 19:00 às 19:10 _Abertura do Evento._
 
-
 19:10 às 19:50 _Palestra_: **Roteamento Rails de fora para dentro.**
 _Resumo_: Entender como é o funcionamento das rotas, como o rails trata as requisições http enviadas a ele por interação de request/response E se há rotas mapeadas no sistema e finalmente como melhor utilizá-las, se tornando url’s intuitivas.
 _Palestrante_: **Hermínio Torres - **Ccoordenador/Membro do grupo CearáOnRails e Programador Ruby.
-
-
 
 19:50 às 20:40 _Palestra_: **Gerência de Projetos com Scrum**.****
 _Resumo_: O Scrum é uma das metodologias de gerência de projetos.  O que é Scrum? Os papéis no Scrum. O conceito de Sprint. Product Backlog. Sprint Planning Meeting. Scrum Daily Meeting. Sprint Review. Sprint Retrospective.
 _Palestrante_: **Liliana Pedrosa Pinheiro Carrhá** - Analista de sistemas, especialista em Engenharia de Software. Atuação na coordenação de projetos de desenvolvimento e suporte a soluções com foco em melhoria de processo em desenvolvimento, implantação e treinamento de projetos. Conhecimentos adquiridos: UML, RUP, Scrum, Gerência de Projetos, MPS.Br, CMMI, Java, SQL Server, MySQL, ITIL e Redes.
 
-
 20:40 às 21:00 _Pausa do Evento(Coffe-Break)._
-
-
-
-
 
 21:00 às 21:50 _Palestra_: **Cloud On Rails.**
 _Resumo_: Entender como é o funcionamento das rotas, saber quais as principais rotas no rails e finalmente como melhor utilizá-las.
 _Palestrante_: **Hannes Tydén – **Programador Ruby e Membro do Ruby User Group Berlin, Developer Startup SoundCloud.
 
-
 21:50 às 22:00 _Fechamento do Evento._
-
-
-
-
-![](http://www.marcelocavalcante.net/portal/imgs/userbar.gif)
-
-
-

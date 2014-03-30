@@ -13,11 +13,7 @@ categories:
 - Linux
 - Software Livre
 ---
-
-![arch_fireworks](http://marcelocavalcante.net/portal/wp-content/uploads/2009/05/arch_fireworks-300x224.png)
-
-
-
+{% img left /imgs/arch_fireworks.png 'Arch Linux' %}
 **S**audações pessoal...
 
 **C**omo muitos já devem saber sou usuário da distribuição [Archlinux](http://www.archlinux.org) desde o ano passado à qual tenho me dedicado por ter finalmente achado uma distribuição na qual eu me sinto realmente em casa. Os resultados desta parceria, kalib/arch, passaram a surgir rapidamente, uma vez que comecei a tentar colaborar com a distribuição em minhas primeiras semanas com documentações, traduções, divulgação, suporte, etc.
@@ -51,10 +47,3 @@ A nova comissão espera dar continuidade ao andamento do projeto bem como procur
 **R**ecomendo também a leitura do [post](http://blog.hugodoria.org/2009/05/18/saida-do-projeto-arch-linux-brasil/) do Hugo no qual se despede do projeto em grande estilo.
 
 **A**braços
-
-
-![](http://www.marcelocavalcante.net/portal/imgs/userbar.gif)
-
-
-
-

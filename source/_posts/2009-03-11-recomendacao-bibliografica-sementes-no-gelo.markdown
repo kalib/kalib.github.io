@@ -10,20 +10,12 @@ categories:
 - Impressoes
 - Literatura
 ---
-
-
-
-
-![](http://www.livrariasaraiva.com.br/imagem/imagem.dll?tam=2&pro_id=111116&PIM_Id=108205)
-
-
-
-
+{% img left /imgs/livros/sementesnogelo.jpg 'Sementes no Gelo' %}
 Saudações pessoal...
 
 
 
-A bola da vez se chama Sementes do Gelo. Este é para quem gosta de histórias de suspense.
+A bola da vez se chama Sementes no Gelo. Este é para quem gosta de histórias de suspense.
 
 Segue descrição retirada do site da Saraiva:
 
@@ -34,6 +26,3 @@ Segue descrição retirada do site da Saraiva:
 Andre Vianco afirma ter tido a inspiração e a idéia para compor a obra assistindo a um telejornal onde a matéria tratava sobre embriões congelados e a legislação vigente em vários países. Em todos os países na ocasião era terminantemente proibido descartar os "ovos" fertilizados, que viriam a se tornar embriões viáveis para um futuro implante nas mães com dificuldade de fertilização natural.
 
 Com a população mundial de embriões congelados crescendo, o autor imagina um mundo onde esses seres, mesmo que minúsculos e congelados, possuem alma, espírito. Esses espíritos se desenvolvem e em determinada altura ganham o poder de se materializar para seus pais e também para aqueles que praticam violência contra crianças.
-
-![](http://img376.imageshack.us/img376/8000/userbar635980sd7.gif)
-

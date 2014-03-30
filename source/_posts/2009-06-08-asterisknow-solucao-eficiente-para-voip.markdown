@@ -14,7 +14,8 @@ categories:
 - Software Livre
 ---
 
-**[![](http://www.asterisknow.org/themes/asterisknow/images/logo.png)](http://www.asterisknow.org/themes/asterisknow/images/logo.png)Q**ue o mundo da telefonia está sofrendo grandes mudanças com a onda de conectividade web, todo mundo já sabe. A telefonia IP, VOIP, ou simplesmente voz sobre ip, vem expandindo cada vez mais as possibilidades para comunicação instantânea à longa distância à medida que os custos se tornam cada vez menores para o usuário final.
+{% img left /imgs/asterisknow.jpg 'Asterisk Now' %}
+Q**ue o mundo da telefonia está sofrendo grandes mudanças com a onda de conectividade web, todo mundo já sabe. A telefonia IP, VOIP, ou simplesmente voz sobre ip, vem expandindo cada vez mais as possibilidades para comunicação instantânea à longa distância à medida que os custos se tornam cada vez menores para o usuário final.
 
 **O** número de empresas e orgãos que se utilizam de voip como uma estratégia para redução de custos, bem como aumento da segurança e confiabilidade dos dados, é cada vez maior no mundo todo. Além do setor comercial, cada vez mais usuários domésticos se beneficiam do voip, muitas vezes sem se dar conta disto. Um exemplo clássico são usuários que utilizam softwares como o [skype](http://www.skype.com/) ou [gizmo](http://www.gizmoproject.com/) para realizarem ligações pessoais.
 
@@ -26,20 +27,10 @@ categories:
 
 **Ó**timo, então o AsteriskNow é apenas uma distribuição Linux trazendo o Asterisk pré-instalado?
 
-
-[![](http://blog.liberailvoip.it/wp-content/uploads/2007/12/asterisknow.jpg)](http://blog.liberailvoip.it/wp-content/uploads/2007/12/asterisknow.jpg)
-
-
+{% img center /imgs/asterisknowprint.jpg 'Asteriswk Now' %}
 
 **N**ão necessariamente. O AsteriskNow é na verdade uma solução VOIP ideal para quem deseja ter um PBX funcional e completo, mas não se sente confiante o suficiente para enfrentar o asterisk e suas linhas de comando. Através de uma interface gráfica amigável, como apresentado na imagem acima, o AsteriskNow trás todos os componentes necessários para o seu ideal funcionamento bem como uma simples instalação para principiantes, descartando possíveis incrementos que poderiam, de alguma forma, depreciar a segurança de seu ambiente.
 
 **S**em sombra de dúvidas umas excelente oportunidade para quem deseja conhecer as possibilidades que o Asterisk nos proporciona de forma simples e amigável para um primeiro contato.
 
 **A**braços
-
-
-![](http://www.marcelocavalcante.net/portal/imgs/userbar.gif)
-
-
-
-

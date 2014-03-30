@@ -17,8 +17,8 @@ tags:
 - Linux
 - Software Livre
 ---
-
-[![](http://kalib.pre.hw40.webservidor.net/wordpress/wp-content/uploads/2009/02/arch_fireworks-300x224.png)](http://kalib.pre.hw40.webservidor.net/wordpress/wp-content/uploads/2009/02/arch_fireworks.png)Saudações pessoal. É com imensa satisfação que lhes informo que a release 2009.02 do nosso Archlinux foi lançada. Dentre as principais mudanças destacam-se as seguintes:
+{% img left /imgs/arch_fireworks.png 'Archlinux Fireworks' %}
+Saudações pessoal. É com imensa satisfação que lhes informo que a release 2009.02 do nosso Archlinux foi lançada. Dentre as principais mudanças destacam-se as seguintes:
 
 
 
@@ -45,11 +45,3 @@ Como todos sabem o Arch é uma rolling release e como tal uma nova ISO não nece
   
 
 É isso aí... bem vindos ao mundo Arch!
-
-
-
-
-[![](http://img376.imageshack.us/img376/8000/userbar635980sd7.gif)](http://img376.imageshack.us/img376/8000/userbar635980sd7.gif)
-
-
-

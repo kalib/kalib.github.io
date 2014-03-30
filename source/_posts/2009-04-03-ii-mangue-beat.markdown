@@ -10,36 +10,15 @@ categories:
 - Impressoes
 - Meio Ambiente
 ---
-
-![capa](http://marcelocavalcante.net/portal/wp-content/uploads/2009/04/capa.gif)
-
-
-
-
+{% img left /imgs/capa.gif 'Mangue Beat' %}
 Já pensou em contribuir para a preservação do meio ambiente?
 
-
-
-
-
-
-
 II Mangue Beat 
-
-
-
 
 ... para não haver o terceiro!!!
 
 
-
-
-
-
-
 **Data**: 05 de Abril
-
-
 
 
 **Horário: **09:00
@@ -117,13 +96,4 @@ Contatos:  Luis Carlos ( 88031414 )
 
 
 
-OBS: Recomendamos usar chapeu/boné e blusa com mangas longas ou uso de protetores solares. E não esqueçam de levar suas garrafas com água!!! 
-
-
-
-
-![](http://img376.imageshack.us/img376/8000/userbar635980sd7.gif)
-
-
-
-
+OBS: Recomendamos usar chapeu/boné e blusa com mangas longas ou uso de protetores solares. E não esqueçam de levar suas garrafas com água!!!

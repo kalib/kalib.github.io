@@ -13,12 +13,7 @@ categories:
 - Literatura
 - Software Livre
 ---
-
-**![poster_inproprietario](http://marcelocavalcante.net/portal/wp-content/uploads/2009/05/poster_inproprietario-216x300.jpg)**
-
-
-
-
+{% img centro /imgs/poster_inproprietario.jpg 'Inproprietario' %}
 **O**lá pessoal, depois de um tempo afastado volto trazendo a dica de um pequeno filme que assisti neste fim de semana e recomendo que todos façam [download](http://www.mininova.org/tor/2571016).
 
 
@@ -32,12 +27,3 @@ categories:
 **C**omo os próprios autores pedem: "Assistam, copiem, divulguem e distribuam este pequeno filme."
 
 **S**egue link para o arquivo torrent: [http://www.mininova.org/tor/2571016](http://www.mininova.org/tor/2571016)
-
-**A**braços
-
-
-![](http://www.marcelocavalcante.net/portal/imgs/userbar.gif)
-
-
-
-

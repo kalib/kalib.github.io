@@ -30,6 +30,3 @@ Link do projeto: [http://code.google.com/p/gespeak/](http://code.google.com/p/ge
 Link do pacote no AUR: [http://aur.archlinux.org/packages.php?ID=24659](http://aur.archlinux.org/packages.php?ID=24659)
 
 Abraços
-
-![](http://img376.imageshack.us/img376/8000/userbar635980sd7.gif)
-

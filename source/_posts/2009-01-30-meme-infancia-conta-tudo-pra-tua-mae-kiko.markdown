@@ -38,13 +38,7 @@ Antes de mais nada devo deixar aqui as regras do jogo:
 
 Agora meu post em si...
 
-
-
-
-[![](http://kalib.pre.hw40.webservidor.net/wordpress/wp-content/uploads/2009/02/kalib_infa-225x300.png)](http://kalib.pre.hw40.webservidor.net/wordpress/wp-content/uploads/2009/02/kalib_infa.png)
-
-
-
+{% img center /imgs/kalib_infa.png 'Infância Kalib' %}
 
 Minhas explicações:
 
@@ -73,11 +67,3 @@ Minhas explicações:
 
 
 Depois de listar algumas coisas que tiveram destaque em minha infância, gostaria de conhecer um pouco mais sobre o passado das seguintes pessoas: [Gilfran Ribeiro](http://blog.gilfran.net/), [Kessia (even)](http://even.archlinux-br.org/blog), [Anderson Pereira](http://vivendotecnologia.blogspot.com/), [Diane](http://elidianemf.blogspot.com/) e [Felipe Morales](http://felipeblog.freehostia.com/wordpress/).
-
-
-
-
-[![](http://img376.imageshack.us/img376/8000/userbar635980sd7.gif)](http://img376.imageshack.us/img376/8000/userbar635980sd7.gif)
-
-
-

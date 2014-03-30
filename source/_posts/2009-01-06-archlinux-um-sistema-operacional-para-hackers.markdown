@@ -12,12 +12,7 @@ categories:
 - Linux
 - Software Livre
 ---
-
-[![](http://kalib.pre.hw40.webservidor.net/wordpress/wp-content/uploads/2009/02/hacker-294x300.jpg)](http://kalib.pre.hw40.webservidor.net/wordpress/wp-content/uploads/2009/02/hacker.jpg)
-
-
-
-
+{% img center /imgs/hacker1.jpg 'Hacker Archlinux' %}
 A resposta desta pergunta é muito relativa. Antes de mais nada devemos nos perguntar: O que mesmo é um Hacker? o.O  
 
   
@@ -47,9 +42,7 @@ O Archlinux é sim uma excelente escolha para estes famintos por conhecimento. A
 O Arch favorece o aprendizado da tecnologia bem como das funcionalidades e potenciais reais de um sistema Linux por lhe permitir ter um acesso às configurações que são escondidas/camufladas pela grande maioria das distribuições atuais. Configurações que vão desde básicas mudanças para melhoramento de seu Desktop, bem como configurações avançadas de segurança para protocolos que venham a ser utilizados por você em sua estação de trabalho.
 
 
-
-
-[![](http://kalib.pre.hw40.webservidor.net/wordpress/wp-content/uploads/2009/02/hacker21-269x300.jpg)](http://kalib.pre.hw40.webservidor.net/wordpress/wp-content/uploads/2009/02/hacker21.jpg)No Arch você geralmente precisará configurar arquivos e mexer em códigos de scripts, portanto é desejável uma certa “empatia” para com a querida telinha preta, o que não exclui aqueles que querem apenas um Desktop comum e funcional. O fato de desde sua instalação necessitar de uma certa pesquisa de como o fazer, por já pedir alguns conhecimentos com, por exemplo, seu gerenciador de pacotes, o pacman, estimula o usuário a iniciar suas buscas ou googladas já de início. Um prato cheio para quem gosta de fuçar, estudar e pesquisar. Qual hacker não gosta de quebrar a cabeça e correr atrás? o.O
+{% img left /imgs/hacker21.jpg 'Hacker Archlinux' %}No Arch você geralmente precisará configurar arquivos e mexer em códigos de scripts, portanto é desejável uma certa “empatia” para com a querida telinha preta, o que não exclui aqueles que querem apenas um Desktop comum e funcional. O fato de desde sua instalação necessitar de uma certa pesquisa de como o fazer, por já pedir alguns conhecimentos com, por exemplo, seu gerenciador de pacotes, o pacman, estimula o usuário a iniciar suas buscas ou googladas já de início. Um prato cheio para quem gosta de fuçar, estudar e pesquisar. Qual hacker não gosta de quebrar a cabeça e correr atrás? o.O
 
 
 
@@ -69,10 +62,4 @@ Em meu ver, estes aspectos citados acima respondem a pergunta original. Tire sua
 
 
 
-Abraços[![](http://img376.imageshack.us/img376/8000/userbar635980sd7.gif)](http://img376.imageshack.us/img376/8000/userbar635980sd7.gif)
-
-
-
-
-
-
+Abraços

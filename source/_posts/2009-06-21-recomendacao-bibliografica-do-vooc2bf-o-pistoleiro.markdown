@@ -10,11 +10,7 @@ categories:
 - Impressoes
 - Literatura
 ---
-
-[![](http://www.livrariasaraiva.com.br/imagem/imagem.dll?L=120&A=-1&pro_id=161998&PIM_Id=)](http://www.livrariasaraiva.com.br/imagem/imagem.dll?L=120&A=-1&pro_id=161998&PIM_Id=)
-
-
-
+{% img left /imgs/livros/opistoleiro.jpg 'O Pistoleiro' %}
 **S**audações pessoal..
 
 **C**omo já estão acostumados a ver, mensalmente estou inserindo recomendação de algum livro que eu esteja lendo. Bom, porque da mudança desta vez? Como muitos devem saber, estou em Gramado no momento. Sim, estarei no FISL deste ano em Porto Alegre juntamente com o pessoal do [Archlinux Brasil](http://www.archlinux-br.org). E como tivemos um loongoo voo, acabei pegando um livro para ler no trajeto.
@@ -37,10 +33,3 @@ _Este livro é o primeiro dos sete volumes de série A Torre Negra, obra mais am
 
 
 **A**braços
-
-
-![](http://www.marcelocavalcante.net/portal/imgs/userbar.gif)
-
-
-
-

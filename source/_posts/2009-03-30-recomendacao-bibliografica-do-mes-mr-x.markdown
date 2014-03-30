@@ -10,9 +10,7 @@ categories:
 - Impressoes
 - Literatura
 ---
-
-![](http://www.livrariasaraiva.com.br/imagem/imagem.dll?tam=2&pro_id=2610766&PIM_Id=123486578)
-
+{% img left /imgs/livros/mrx.jpg 'Mr X' %}
 **S**audações nobres colegas.
 
 **M**ais uma vez trago uma sugestão bibliográfica para aqueles momentos em que você não aguenta mais tecnologia, se você for dessa área, ou simplesmente busca algum equilíbrio extra entre corpo e mente.
@@ -29,6 +27,3 @@ Straub une personagens de grande dimensão psicológica, explorando as fronteira
 **C**omecei a leitura neste fim de semana e estou adorando o livro. A forma como o autor descreve as situações é realmente impressionante, bem como a forma como ele retrata os fatores psicológicos do personagem principal em seus constantes conflitos.
 
 **A**braços e boa leitura. ;]
-
-![](http://img376.imageshack.us/img376/8000/userbar635980sd7.gif)
-

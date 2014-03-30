@@ -11,7 +11,7 @@ categories:
 - Meio Ambiente
 ---
 
-**![](http://assets.wwf.org.br/img/header_horadoplaneta_2_20420.jpg)**
+{% img center /imgs/horadoplaneta.jpg 'Hora do Planeta' %}
 
 **Q**uantas horas por semana você pensa em seu planeta?? Seria pedir de mais uma hora por ano?
 
@@ -30,7 +30,3 @@ categories:
 
 
 ### [Cadastre-se! Ajude! Clique aqui!](http://www.earthhour.org/signup/br:pt-BR?subscribed=1)
-
-
-![](http://img376.imageshack.us/img376/8000/userbar635980sd7.gif)
-

@@ -15,12 +15,7 @@ categories:
 - Redes
 - Software Livre
 ---
-
-[![](http://marcelocavalcante.net/portal/wp-content/uploads/2009/03/kde_konsole1.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2009/03/kde_konsole1.png)
-
-
-
-
+{% img center /imgs/kde_konsole.png 'KDE Konsole' %}
 Algum dia precisou digitar o mesmo comando em mais de um servidor ou realizar a mesma configuração? Não gostou de ter que executar essa tarefa várias vezes, sendo uma em cada máquina?
 
 
@@ -85,7 +80,7 @@ Simples, certo?! ;]
 
 Abaixo disponibilizo um vídeo de demonstração de minha máquina executando a tarefa.  
 
-(Segue em dois formatos para que você escolha o que achar melhor.)
+(Segue em três formatos para que você escolha o que achar melhor.)
 
 
 
@@ -94,11 +89,3 @@ Abaixo disponibilizo um vídeo de demonstração de minha máquina executando a 
 
 [Formato avi](http://www.marcelocavalcante.net/repositorio/multikonsole.avi)
 [Formato flv](http://www.marcelocavalcante.net/repositorio/multikonsole.flv)
-
-
-
-
-![](http://img376.imageshack.us/img376/8000/userbar635980sd7.gif)
-
-
-

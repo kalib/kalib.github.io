@@ -114,11 +114,3 @@ Não me sinto na obrigação de retribuir das formas citadas, mas sinto prazer e
 
 
 Espero que cada vez mais esta filosofia esteja enraizada em nossa comunidade. Viva a Liberdade. Viva a inclusão social e digital.
-
-
-
-
-[![](http://img376.imageshack.us/img376/8000/userbar635980sd7.gif)](http://img376.imageshack.us/img376/8000/userbar635980sd7.gif)
-
-
-

@@ -21,13 +21,7 @@ Saudações pessoal...
 
 É com grande entusiasmo que venho lhes comentar que hoje a equipe de desenvolvimento do KDE liberou a primeira versão estável do tão esperado KDE 4.2. Com maior entusiasmo ainda venho adiantar que, como era de se esperar, o pessoal do Arch Linux se antecipou novamente e já possui o novo KDE em seus repositórios oficiais. Eu mesmo hoje pela manhã fiz meu upgrade com um simples # pacman -Syu.
 
-
-
-
-[![Free Image Hosting at www.ImageShack.us](http://img509.imageshack.us/img509/8316/imagefolders2aa1.th.png)](http://img509.imageshack.us/my.php?image=imagefolders2aa1.png)
-
-
-
+{% img center /imgs/kde42.png 'KDE 4.2' %}
 
 O KDE 4.2 trás muitas novidades como por exemplo temas mais bem elaborados e uma maior estabilidade na usabilidade dos plasmoids.
 
@@ -55,11 +49,3 @@ Como o próprio Pierre Schmitz, empacotador do KDE 4.2 no Archlinux, disse: "Mes
 
 
 Abraços
-
-
-
-
-[![](http://img376.imageshack.us/img376/8000/userbar635980sd7.gif)](http://img376.imageshack.us/img376/8000/userbar635980sd7.gif)
-
-
-

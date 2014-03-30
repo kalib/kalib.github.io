@@ -71,11 +71,3 @@ Seus problemas acabaram. Nosso amigo Hugo Doria escreveu um mini HOW TO para voc
 
 
 Abraços
-
-
-
-
-[![](http://img376.imageshack.us/img376/8000/userbar635980sd7.gif)](http://img376.imageshack.us/img376/8000/userbar635980sd7.gif)
-
-
-

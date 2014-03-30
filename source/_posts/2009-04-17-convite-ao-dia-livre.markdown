@@ -33,10 +33,3 @@ categories:
 **H**orário: 08:00 - 11:00
 
 **N**os vemos lá!?
-
-
-![](http://www.marcelocavalcante.net/portal/imgs/userbar.gif)
-
-
-
-

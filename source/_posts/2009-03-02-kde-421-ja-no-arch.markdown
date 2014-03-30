@@ -15,9 +15,7 @@ categories:
 - Seguranca
 - Software Livre
 ---
-
-[![](http://marcelocavalcante.net/portal/wp-content/uploads/2009/03/iceage_kde.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2009/03/iceage_kde.png)  
-
+{% img left /imgs/iceage_kde.png 'Criptografia' %}
 As vezes até esqueço o quão bom é ser usuário Arch Linux.
 
 
@@ -43,11 +41,3 @@ Já é de costume do pessoal do KDE, liberar sua nova versão para desenvolvedor
 
 
 Como é bom ser usuário de uma rolling release como o Arch.
-
-
-
-
-![](http://img376.imageshack.us/img376/8000/userbar635980sd7.gif)
-
-
-
