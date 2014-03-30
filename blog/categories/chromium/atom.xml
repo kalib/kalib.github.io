@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Chromium | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/blog/categories/chromium/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2014-03-13T20:52:34-03:00</updated>
+  <updated>2014-03-30T10:36:52-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -190,9 +190,8 @@ ln -s /usr/lib/mozilla/plugins/libflashplayer.so .</p></blockquote>
     <link href="http://blog.marcelocavalcante.net/blog/2009/05/28/chromium-pronto-para-o-arch/"/>
     <updated>2009-05-28T09:27:40-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2009/05/28/chromium-pronto-para-o-arch</id>
-    <content type="html"><![CDATA[<p><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/05/exportgooglechormebookmarks-300x260.png" alt="exportgooglechormebookmarks" /></p>
-
-<p><strong>S</strong>audações pessoal, tudo tranquilo?</p>
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/exportgooglechormebookmarks.png" title="&lsquo;Chromium&rsquo;" >
+<strong>S</strong>audações pessoal, tudo tranquilo?</p>
 
 <p><strong>G</strong>ostaria de lhes comunicar que o Google Chromium alpha já está pronto e rodando no Arch.</p>
 
@@ -200,9 +199,8 @@ ln -s /usr/lib/mozilla/plugins/libflashplayer.so .</p></blockquote>
 
 <p><strong>É</strong> isso mesmo. Você que é usuário Arch Linux já pode fazer inveja à seus coleguinhas..</p>
 
-<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2009/05/chromium.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/05/chromium-300x187.png" alt="chromium" /></a></p>
-
-<p><strong>C</strong>omo o próprio Paulo já explicou em seu post, vocês podem instalar de duas formas:</p>
+<p><img class="center" src="/imgs/chromiumprint.png" title="&lsquo;Chromium&rsquo;" >
+<strong>C</strong>omo o próprio Paulo já explicou em seu post, vocês podem instalar de duas formas:</p>
 
 <p>1- Baixando o pacote chromium-browser no <a href="http://aur.archlinux.org/packages.php?ID=24266">AUR</a>.</p>
 
@@ -213,8 +211,6 @@ ln -s /usr/lib/mozilla/plugins/libflashplayer.so .</p></blockquote>
 <p><strong>P</strong>essoal, essa é nossa chance de ajudar a testar o máximo possível e reportar todos os bugs. Isso vai ajudar o Google a melhorar cada vez mais o Google Chromium para o Linux como um todo.</p>
 
 <p><strong>A</strong>braços</p>
-
-<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
 ]]></content>
   </entry>
   
