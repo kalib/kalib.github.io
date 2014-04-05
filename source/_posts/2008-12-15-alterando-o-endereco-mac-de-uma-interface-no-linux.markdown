@@ -12,8 +12,8 @@ categories:
 - Seguranca
 - Software Livre
 ---
-
-[![](http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/placa11.gif)](http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/placa11.gif)Nesta curta dica irei apresentar uma dica simples e rápida de como alterar o endereço MAC de uma interface de rede no Linux.
+{% img left /imgs/placaderede.JPG 'Placa de Rede' %}
+Nesta curta dica irei apresentar uma dica simples e rápida de como alterar o endereço MAC de uma interface de rede no Linux.
 
 
 
@@ -113,11 +113,3 @@ Feito isto, pode conferir a alteração com o comando ifconfig eth0 novamente. ;
 
 
 Abraços pessoal...
-
-
-
-
-![](http://img376.imageshack.us/img376/8000/userbar635980sd7.gif)
-
-
-

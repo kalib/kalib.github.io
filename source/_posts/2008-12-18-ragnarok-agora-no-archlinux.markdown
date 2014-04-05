@@ -12,12 +12,7 @@ categories:
 - Linux
 - Software Livre
 ---
-
-[![](http://kalib.pre.hw40.webservidor.net/wordpress/wp-content/uploads/2009/02/ragban-300x114.png)](http://kalib.pre.hw40.webservidor.net/wordpress/wp-content/uploads/2009/02/ragban.png)
-
-
-
-
+{% img center /imgs/ragnaroklogo.jpg 'Ragnarok' %}
 Para os que curtem jogos de rpg online e em especial os que curtem o famoso Ragnarok, um dos mais jogados nos dias atuais, esta notícia será muito boa.
 
 
@@ -38,22 +33,9 @@ Inspirado no pessoal do [ubuntugames](http://ubuntugames.org/), estou preparando
 
 
 
-Como podem ver nos dois screenshots abaixo, o jogo já está rodando numa boa.
+Como podem ver no screenshot abaixo, o jogo já está rodando numa boa.
 
 
-
-
-[![](http://img390.imageshack.us/img390/5708/rag1rk0.th.png)](http://img84.imageshack.us/img84/7307/rag1ju1.png)[![](http://img125.imageshack.us/img125/92/rag2bf6.th.png)](http://img125.imageshack.us/img125/92/rag2bf6.png)
-
-
-
+{% img center /imgs/ragnarok.png 'Gandalf' %}
 
 **A**braços
-
-
-
-
-![](http://img376.imageshack.us/img376/8000/userbar635980sd7.gif)
-
-
-

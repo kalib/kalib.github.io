@@ -25,8 +25,8 @@ Este mês optei pelo livro ATLANTIS.
 
 
 
-
-[![](http://www.livrariasaraiva.com.br/imagem/imagem.dll?L=120&A=-1&pro_id=204913&PIM_Id=)](http://www.livrariasaraiva.com.br/imagem/imagem.dll?L=120&A=-1&pro_id=204913&PIM_Id=)"Neste romance carregado de dados reais e atualizados sobre um dos maiores mistérios da humanidade, o experiente arqueólogo Jack Howard depara-se com pistas que podem levar à cidade perdida, mencionada ainda na Antiguidade pelo filósofo grego Platão, e que representa a utopia do ideal de sociedade, de harmonia e de fartura. Durante milhares de anos, pesquisadores vêm tentando encontrar Atlântida. Um dia o arqueólogo marinho Jack Howard e sua equipe tiveram sorte. Enquanto mergulhavam em busca de um naufrágio do tempo de Homero, encontraram ruínas submersas que pareciam ser de Atlântida. Mas a informação vazou e um grupo de terroristas e mercenários fica sabendo que os segredos da Atlântida estavam prestes a ser revelados. Repentinamente, Jack e sua equipe se vêem envolvidos em um jogo de vida e morte. A revelação teria um alto preço."
+{% img left /imgs/livros/atlantis.jpg 'Atlantis' %}
+"Neste romance carregado de dados reais e atualizados sobre um dos maiores mistérios da humanidade, o experiente arqueólogo Jack Howard depara-se com pistas que podem levar à cidade perdida, mencionada ainda na Antiguidade pelo filósofo grego Platão, e que representa a utopia do ideal de sociedade, de harmonia e de fartura. Durante milhares de anos, pesquisadores vêm tentando encontrar Atlântida. Um dia o arqueólogo marinho Jack Howard e sua equipe tiveram sorte. Enquanto mergulhavam em busca de um naufrágio do tempo de Homero, encontraram ruínas submersas que pareciam ser de Atlântida. Mas a informação vazou e um grupo de terroristas e mercenários fica sabendo que os segredos da Atlântida estavam prestes a ser revelados. Repentinamente, Jack e sua equipe se vêem envolvidos em um jogo de vida e morte. A revelação teria um alto preço."
 
 
 
@@ -52,17 +52,9 @@ Bom, este livro é muito bom, para quem é o oposto do citado acima. Muitos fans
 
 
 
-Se você acha que preenche o perfil de leitor para esta orba, realmente recomendo.
+Se você acha que preenche o perfil de leitor para esta obra, realmente recomendo.
 
 
 
 
 Abraços
-
-
-
-
-![](http://img376.imageshack.us/img376/8000/userbar635980sd7.gif)
-
-
-
