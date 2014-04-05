@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Jogos | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/blog/categories/jogos/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2014-03-30T10:36:52-03:00</updated>
+  <updated>2014-04-05T13:33:25-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -154,9 +154,8 @@
     <link href="http://blog.marcelocavalcante.net/blog/2008/12/18/ragnarok-agora-no-archlinux/"/>
     <updated>2008-12-18T14:06:00-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2008/12/18/ragnarok-agora-no-archlinux</id>
-    <content type="html"><![CDATA[<p><a href="http://kalib.pre.hw40.webservidor.net/wordpress/wp-content/uploads/2009/02/ragban.png"><img src="http://kalib.pre.hw40.webservidor.net/wordpress/wp-content/uploads/2009/02/ragban-300x114.png" alt="" /></a></p>
-
-<p>Para os que curtem jogos de rpg online e em especial os que curtem o famoso Ragnarok, um dos mais jogados nos dias atuais, esta notícia será muito boa.</p>
+    <content type="html"><![CDATA[<p><img class="center" src="/imgs/ragnaroklogo.jpg" title="&lsquo;Ragnarok&rsquo;" >
+Para os que curtem jogos de rpg online e em especial os que curtem o famoso Ragnarok, um dos mais jogados nos dias atuais, esta notícia será muito boa.</p>
 
 <p>As perguntas sobre como rodar o ragnarok no Linux já estão bastante expostas na internet, recebendo várias respostas, sendo muitas delas bastante complexas ou insuficientes usando-se de gambiarras e mais gambiarras.</p>
 
@@ -164,13 +163,11 @@
 
 <p>Inspirado no pessoal do <a href="http://ubuntugames.org/">ubuntugames</a>, estou preparando o pacote para o Arch Linux e nos próximos dias devo estar disponibilizando o mesmo para utilização geral.</p>
 
-<p>Como podem ver nos dois screenshots abaixo, o jogo já está rodando numa boa.</p>
+<p>Como podem ver no screenshot abaixo, o jogo já está rodando numa boa.</p>
 
-<p><a href="http://img84.imageshack.us/img84/7307/rag1ju1.png"><img src="http://img390.imageshack.us/img390/5708/rag1rk0.th.png" alt="" /></a><a href="http://img125.imageshack.us/img125/92/rag2bf6.png"><img src="http://img125.imageshack.us/img125/92/rag2bf6.th.png" alt="" /></a></p>
+<p><img class="center" src="/imgs/ragnarok.png" title="&lsquo;Gandalf&rsquo;" ></p>
 
 <p><strong>A</strong>braços</p>
-
-<p><img src="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif" alt="" /></p>
 ]]></content>
   </entry>
   
