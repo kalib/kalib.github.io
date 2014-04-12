@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Ruby | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/blog/categories/ruby/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2014-04-05T13:33:25-03:00</updated>
+  <updated>2014-04-12T11:41:53-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -330,7 +330,8 @@
     <link href="http://blog.marcelocavalcante.net/blog/2008/11/12/ceara-on-rails-ai-vou-eu/"/>
     <updated>2008-11-12T10:22:00-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2008/11/12/ceara-on-rails-ai-vou-eu</id>
-    <content type="html"><![CDATA[<p><a href="http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/logomarca_cearaonrails.png"><img src="http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/logomarca_cearaonrails.png" alt="" /></a>O que é CearáOnRails?</p>
+    <content type="html"><![CDATA[<p><img class="center" src="/imgs/cearaonrails.png" title="&lsquo;Ceará on Rails&rsquo;" >
+O que é CearáOnRails?</p>
 
 <p>O CearáOnRails é um evento solidário que tem como tema o desenvolvimento de sistemas web e pretende divulgar e popularizar a linguagem de desenvolvimento Ruby e o Framework Rails no estado do Ceará. Esta iniciativa contribuirá de modo relevante para promover o uso e a difusão das tecnologias entre pessoas, especialmente profissionais na área e afins, servindo como um veículo de integração, interação e colaboração. Tanto o ruby como o Rails vem mudando a forma de desenvolvimento padrão adotada pelas demais tecnologias.</p>
 
@@ -371,8 +372,6 @@
 <p>Tema: Desenvolvimento fora da Média com Ruby e Rails</p>
 
 <p>Descrição: Porque é importante entender as novas tecnologias como Ruby e Rails e como elas agilizam seus projetos web.</p>
-
-<p><img src="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif" alt="" /></p>
 ]]></content>
   </entry>
   
