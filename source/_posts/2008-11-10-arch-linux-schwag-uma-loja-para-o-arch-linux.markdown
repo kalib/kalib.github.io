@@ -12,8 +12,7 @@ categories:
 - Linux
 - Software Livre
 ---
-
-[![](http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/camisa_arch.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/camisa_arch.png)Saudações galera..
+{% img center /imgs/arch_camisa.jpg 'Camisa Arch' %}Saudações galera..
 
 
 
@@ -28,9 +27,9 @@ O comércio eletrônico vem crescendo a cada dia e ganhando cada vez mais adepto
 
 
 
-Eu sou um grande adepto de comércio eletrônico e pelo menos uma vez por mês faço algum tipo de compra online sendo[![](http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/caneca_arch.gif)](http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/caneca_arch.gif) os livros os responsáveis pela minha maior parcela destas compras via web.
+Eu sou um grande adepto de comércio eletrônico e pelo menos uma vez por mês faço algum tipo de compra online sendo os livros os responsáveis pela minha maior parcela destas compras via web.
 
-
+{% img center /imgs/arch_caneca.jpg 'Caneca Arch' %}
 
 
 Aproveito para deixar aqui o link para esta incrível loja com produtos do Arch Linux e de outras várias coisas que desejar. Apesar de ser uma loja gringa, vale a pena conferir.
@@ -44,11 +43,3 @@ Segue Link: [http://www.zazzle.com/archlinux](http://www.zazzle.com/archlinux)
 
 
 Abraços
-
-
-
-
-![](http://img376.imageshack.us/img376/8000/userbar635980sd7.gif)
-
-
-

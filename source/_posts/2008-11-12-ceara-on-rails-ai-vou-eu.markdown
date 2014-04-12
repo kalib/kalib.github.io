@@ -11,8 +11,8 @@ categories:
 - Ruby
 - Software Livre
 ---
-
-[![](http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/logomarca_cearaonrails.png)](http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/logomarca_cearaonrails.png)O que é CearáOnRails?
+{% img center /imgs/cearaonrails.png 'Ceará on Rails' %}
+O que é CearáOnRails?
 
 
 
@@ -113,11 +113,3 @@ Tema: Desenvolvimento fora da Média com Ruby e Rails
 
 
 Descrição: Porque é importante entender as novas tecnologias como Ruby e Rails e como elas agilizam seus projetos web.
-
-
-
-
-![](http://img376.imageshack.us/img376/8000/userbar635980sd7.gif)
-
-
-

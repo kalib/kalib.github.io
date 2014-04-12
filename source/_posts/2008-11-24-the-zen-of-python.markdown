@@ -13,8 +13,8 @@ categories:
 - Python
 - Software Livre
 ---
-
-[![](http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/meditacao.jpg)](http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/meditacao.jpg)É isso mesmo...
+{% img center /imgs/meditacao.jpg 'Meditação' %}
+É isso mesmo...
 
 
 
@@ -122,11 +122,3 @@ Para sair do interpretador Python, pressionde as teclas Ctrl + D.
 
 
 Abraços
-
-
-
-
-![](http://img376.imageshack.us/img376/8000/userbar635980sd7.gif)
-
-
-

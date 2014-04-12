@@ -14,7 +14,7 @@ categories:
 - Software Livre
 ---
 
-[![](http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/java_arch_free.jpg)](http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/java_arch_free.jpg)Saudações pessoal,
+{% img center /imgs/arch_java.png 'Arch Java' %}Saudações pessoal,
 
 
 
@@ -51,7 +51,7 @@ Bem, nós pretendemos favorecer implementações de código aberto ao invés de 
 > 
 
 > 
-> Não, sériom porque vocês mudaram eles?  
+> Não, sério, porque vocês mudaram eles?  
 
 Porque o Aaron Griffin disse que o fizesse. :-D (apenas brincando)"
 > 
@@ -62,11 +62,3 @@ Porque o Aaron Griffin disse que o fizesse. :-D (apenas brincando)"
 
 
 Abraços
-
-
-
-
-![](http://img376.imageshack.us/img376/8000/userbar635980sd7.gif)
-
-
-

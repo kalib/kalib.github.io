@@ -9,8 +9,7 @@ wordpress_id: 50
 categories:
 - Impressoes
 ---
-
-[![](http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/re334236555.jpg)](http://marcelocavalcante.net/portal/wp-content/uploads/2009/02/re334236555.jpg)Olá pessoal..
+Olá pessoal..
 
 
 

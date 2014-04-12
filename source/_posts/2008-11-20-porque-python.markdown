@@ -12,7 +12,8 @@ categories:
 - Software Livre
 ---
 
-[![](http://2.bp.blogspot.com/_5kfJplBiYy0/SSWM4xGT-oI/AAAAAAAAAKk/r3OVmXQUcgk/s200/python.png)](http://2.bp.blogspot.com/_5kfJplBiYy0/SSWM4xGT-oI/AAAAAAAAAKk/r3OVmXQUcgk/s1600-h/python.png)**M**uitos me perguntam sobre as vantagens do Python e o porque de, dentre tantas linguagens de programação, eu optei por ter o python como minha paixão oficial. Para evitar dar várias respostas à diferentes pessoas, resolvi compilar aqui alguns dos motivos que encontrei e que em minhas pesquisas iniciais me motivaram a escolher o Python como minha linguagem favorita.
+{% img center /imgs/python-logo.gif 'Python' %}
+**M**uitos me perguntam sobre as vantagens do Python e o porque de, dentre tantas linguagens de programação, eu optei por ter o python como minha paixão oficial. Para evitar dar várias respostas à diferentes pessoas, resolvi compilar aqui alguns dos motivos que encontrei e que em minhas pesquisas iniciais me motivaram a escolher o Python como minha linguagem favorita.
 
 **C**omecemos então pelas origens do Python. A linguagem foi criada em 1989 pelo holandês Guido van Rossum em Amsterdã. Influenciada pela linguagem ABC, desenvolvida no CWI por Guido e outros nas décadas de 70 e 80. ABC tinha um foco bem definido: ser uma linguagem de programação para usuários inteligentes de computadores que não eram programadores: Físicos, Cientistas Sociais, dentre outros. O projeto de sistema operacional distribuído da época, o Amoeba, precisava de uma linguagem de script. Eis que surge então o Python, trazendo como sua base os seguintes aspectos:
 
@@ -84,7 +85,7 @@ Fácil de 	portar: além do Amoeba, também era desejado que ele rodasse em 	Uni
   * 
 
 
-**Descontraído:** o nome Python vem da séria de humor Monty Python's Flying Circus
+**Descontraído:** o nome Python vem da série de humor Monty Python's Flying Circus
 
 
 
@@ -406,7 +407,9 @@ Fácil de 	portar: além do Amoeba, também era desejado que ele rodasse em 	Uni
 
 
 	
-  * **GOOGLE:** Este é o maior case quando o assunto é Python. O Google é grande 	adepto do Python e utiliza em várias de suas ferramentas como: 	Sistema de Ajuda do GMail, Google Groups, Sistema de Compilação de 	aplicativos, Sistema de empacotamento e entrega de dados, Sistema de 	monitoramento e manutenção do cluster, Sistema de testes, Análise 	de registros, Prototipação, etc. "Requisito para contratar 	profissionais Java: Saber Python! :-)" (É mole?!)[![](http://2.bp.blogspot.com/_5kfJplBiYy0/SSWNHE12WuI/AAAAAAAAAK0/vJKsSfuZzaU/s320/pythonGdataLib_aboutTokens.jpg)](http://2.bp.blogspot.com/_5kfJplBiYy0/SSWNHE12WuI/AAAAAAAAAK0/vJKsSfuZzaU/s1600-h/pythonGdataLib_aboutTokens.jpg)
+  * **GOOGLE:** Este é o maior case quando o assunto é Python. O Google é grande 	adepto do Python e utiliza em várias de suas ferramentas como: 	Sistema de Ajuda do GMail, Google Groups, Sistema de Compilação de 	aplicativos, Sistema de empacotamento e entrega de dados, Sistema de 	monitoramento e manutenção do cluster, Sistema de testes, Análise 	de registros, Prototipação, etc. "Requisito para contratar 	profissionais Java: Saber Python! :-)" 
+
+  {% img center /imgs/google_python.jpg 'Google and Python' %}
 
 
 
