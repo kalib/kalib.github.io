@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Asterisk | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/blog/categories/asterisk/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2014-04-12T11:41:53-03:00</updated>
+  <updated>2014-05-01T22:44:23-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -69,7 +69,9 @@ Q**ue o mundo da telefonia está sofrendo grandes mudanças com a onda de conect
     <link href="http://blog.marcelocavalcante.net/blog/2008/10/27/asterisk-counter-seja-contado/"/>
     <updated>2008-10-27T14:29:00-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2008/10/27/asterisk-counter-seja-contado</id>
-    <content type="html"><![CDATA[<p><a href="http://asteriskcounter.sinologic.net/image.php?id=1148"><img src="http://asteriskcounter.sinologic.net/image.php?id=1148" alt="" /></a>Saudações pessoal&hellip;</p>
+    <content type="html"><![CDATA[<p><img class="center" src="/imgs/asterisk.png" title="&lsquo;Asterisk&rsquo;" ></p>
+
+<p>Saudações pessoal&hellip;</p>
 
 <p>Muitos aqui já conheciam o sistema <a href="http://counter.li.org/">Linux Counter</a> que servia para contabilizar e registrar usuários Linux como forma de documentar e ter controles estatísticos do crescimento da comunidade Linux mundial. Agora chegou a vez do Asterisk.</p>
 
@@ -78,8 +80,6 @@ Q**ue o mundo da telefonia está sofrendo grandes mudanças com a onda de conect
 <p>Segue a dica para você que utiliza ou trabalha com esta excelente tecnologia Livre de Voip. Eu sou o usuário de número <a href="http://asteriskcounter.sinologic.net/details.php?id=1148">1148</a>, e você? ;]</p>
 
 <p>Abraços</p>
-
-<p><img src="http://img376.imageshack.us/img376/8000/userbar635980sd7.gif" alt="" /></p>
 ]]></content>
   </entry>
   
