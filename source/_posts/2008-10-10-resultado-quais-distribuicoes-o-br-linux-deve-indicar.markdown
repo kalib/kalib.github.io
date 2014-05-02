@@ -78,11 +78,3 @@ Linux Mint - 1 votos
 
 
 Abraços
-
-
-
-
-![](http://img376.imageshack.us/img376/8000/userbar635980sd7.gif)
-
-
-

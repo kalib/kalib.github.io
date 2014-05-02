@@ -95,11 +95,3 @@ Respondido Michel? ;]
 
 
 Abraço pessoal
-
-
-
-
-![](http://img376.imageshack.us/img376/8000/userbar635980sd7.gif)
-
-
-

@@ -11,8 +11,9 @@ categories:
 - Linux
 - Software Livre
 ---
+{% img center /imgs/asterisk.png 'Asterisk' %}
 
-[![](http://asteriskcounter.sinologic.net/image.php?id=1148)](http://asteriskcounter.sinologic.net/image.php?id=1148)Saudações pessoal...
+Saudações pessoal...
 
 
 
@@ -33,11 +34,3 @@ Segue a dica para você que utiliza ou trabalha com esta excelente tecnologia Li
 
 
 Abraços
-
-
-
-
-![](http://img376.imageshack.us/img376/8000/userbar635980sd7.gif)
-
-
-

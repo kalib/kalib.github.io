@@ -9,8 +9,9 @@ wordpress_id: 39
 categories:
 - Impressoes
 ---
+{% img center /imgs/vivo.jpg 'Vivo' %}
 
-[![](http://3.bp.blogspot.com/_5kfJplBiYy0/SPdBXivzDYI/AAAAAAAAAJ0/wjRTlq6Yv5Y/s200/vivo.gif)](http://3.bp.blogspot.com/_5kfJplBiYy0/SPdBXivzDYI/AAAAAAAAAJ0/wjRTlq6Yv5Y/s1600-h/vivo.gif)Finalmente tenho o prazer de anunciar que a Operadora Vivo chegou a Fortaleza. Finalmente uma operadora decente em nossa cidade.
+Finalmente tenho o prazer de anunciar que a Operadora Vivo chegou a Fortaleza. Finalmente uma operadora decente em nossa cidade.
 
 
 
@@ -36,11 +37,3 @@ Dentre outras vantagens.
 
 
 Outra coisa que me surpreendeu foi o site deles bem como os recursos ofertados ao se fazer login com os dados de seu número. Vale a pena conferir.
-
-
-
-
-![](http://img376.imageshack.us/img376/8000/userbar635980sd7.gif)
-
-
-
