@@ -15,7 +15,7 @@ categories:
 {% img left /imgs/pfsense.png 'pfSense' %}
 **G**ostaria de passar adiante a notícia de que o colega *Leonardo Damasceno* acaba de compartilhar com a comunidade uma apostila de sua autoria sobre o [**pfSense**](http://www.pfsense.org), de forma a divulgar mais este magnífico sistema, bem como facilitar a vida daqueles que ainda não o dominam.
 
-**S**egue link direto fornecido pelo mesmo para [**download**](https://www.dropbox.com/s/79ghzrs2vghbr38/pfSense%202.x%20-%20Leonardo%20Damasceno.pdf). A apostila ou livro, como prefira chamar, possui aproximadamente 70 páginas de informações úteis e diretas, sem muitas complicações.
+**S**egue link direto fornecido pelo mesmo para [**download**](https://www.marcelocavalcante.net/repositorio/pfsense-leonardodamasceno.pdf). A apostila ou livro, como prefira chamar, possui aproximadamente 70 páginas de informações úteis e diretas, sem muitas complicações.
 
 **N**ão sabe o que é pfSense?
 
