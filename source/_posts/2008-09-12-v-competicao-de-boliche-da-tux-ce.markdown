@@ -11,7 +11,7 @@ categories:
 - Tux-ce
 ---
 
-[![](http://3.bp.blogspot.com/_5kfJplBiYy0/SMpmfjTU1DI/AAAAAAAAAIo/kvwfK8TYpnc/s320/caue_boliche_650px_black.jpg)](http://3.bp.blogspot.com/_5kfJplBiYy0/SMpmfjTU1DI/AAAAAAAAAIo/kvwfK8TYpnc/s1600-h/caue_boliche_650px_black.jpg)Para quem é membro antigo da casa([Tux-CE](http://www.tux-ce.org/)), teve a chance de presenciar a última competição que contou com a presença de lendas vivas na Tux-CE como o moonnight e o Mestre NGD. Figuras estas que ainda são desconhecidas para muitos dos novos membros da Tux-CE.
+Para quem é membro antigo da casa([Tux-CE](http://www.tux-ce.org/)), teve a chance de presenciar a última competição que contou com a presença de lendas vivas na Tux-CE como o moonnight e o Mestre NGD. Figuras estas que ainda são desconhecidas para muitos dos novos membros da Tux-CE.
 
 
 
@@ -41,11 +41,3 @@ Se você desejar, pode conferir as fotos da última competição de boliche da T
 
 
 Abraços
-
-
-
-
-![](http://img376.imageshack.us/img376/8000/userbar635980sd7.gif)
-
-
-

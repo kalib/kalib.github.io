@@ -32,7 +32,7 @@ No _Arch Linux_ o KDE é empacotado de um jeito que eu não curto. Nele, diversa
 
 
 
-Ao instalar o pacote _kdegraphics_, por exemplo, você acaba instalando diversas aplicações para manipulação gráfica. Mesmo que você queira apenas a "aplicação x" daquele pacote será obrigado a instalar o kdegraphics todo. Isso torna o KDE enorme e com diversas aplicações que você nunca usa.[![](http://bp3.blogger.com/_5kfJplBiYy0/SJWvv3vtmLI/AAAAAAAAAFM/snVgZsrb6Us/s200/thumb_kdemod41.png)](http://bp3.blogger.com/_5kfJplBiYy0/SJWvv3vtmLI/AAAAAAAAAFM/snVgZsrb6Us/s1600-h/thumb_kdemod41.png)
+Ao instalar o pacote _kdegraphics_, por exemplo, você acaba instalando diversas aplicações para manipulação gráfica. Mesmo que você queira apenas a "aplicação x" daquele pacote será obrigado a instalar o kdegraphics todo. Isso torna o KDE enorme e com diversas aplicações que você nunca usa.
 
 
 
@@ -295,11 +295,3 @@ Maiores informações:
 
 
 Deixo aqui os agradecimentos ao Hugo em nome de todos pela contribuição.
-
-
-
-
-![](http://img376.imageshack.us/img376/8000/userbar635980sd7.gif)
-
-
-

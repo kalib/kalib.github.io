@@ -9,12 +9,7 @@ wordpress_id: 31
 categories:
 - Impressoes
 ---
-
-
-
-
-[![](http://1.bp.blogspot.com/_5kfJplBiYy0/SL0eUc7sXWI/AAAAAAAAAHM/rBDpGxoKNB4/s200/chrome.png)](http://1.bp.blogspot.com/_5kfJplBiYy0/SL0eUc7sXWI/AAAAAAAAAHM/rBDpGxoKNB4/s1600-h/chrome.png)  
-
+{% img center /imgs/chrome.gif 'Google Chrome' %}
 Pois é pessoal. Quem ainda tem coragem de dizer que o Google não vai dominar o mundo?
 
 
@@ -39,9 +34,6 @@ Até hoje pela manhã não havia nenhuma confirmação com relação a este lan�
 
 
 
-
-[![](http://2.bp.blogspot.com/_5kfJplBiYy0/SL0eh6M3QfI/AAAAAAAAAHU/ZdRlXZDlaLI/s200/chrome-privacy.jpg)](http://2.bp.blogspot.com/_5kfJplBiYy0/SL0eh6M3QfI/AAAAAAAAAHU/ZdRlXZDlaLI/s1600-h/chrome-privacy.jpg)  
-
 A gigante também preparou uma [história em quadrinhos](http://books.google.com/books?id=8UsqHohwwVYC&printsec=frontcover#PPA16,M1) bem bacana para ilustrar a chegada de sua nova ferramenta.
 
 
@@ -52,11 +44,3 @@ Segue link oficial da fonte: [http://googleblog.blogspot.com/2008/09/fresh-take-
   
 
 Link para a história em quadrinhos: [h](http://books.google.com/books?id=8UsqHohwwVYC&printsec=frontcover#PPA16,M1)[ttp://books.google.com/books?id=8UsqHohwwVYC&printsec=frontcover#PPA16,M1](http://books.google.com/books?id=8UsqHohwwVYC&printsec=frontcover#PPA16,M1)
-
-
-
-
-[![](http://img376.imageshack.us/img376/8000/userbar635980sd7.gif)](http://googleblog.blogspot.com/2008/09/fresh-take-on-browser.html)
-
-
-

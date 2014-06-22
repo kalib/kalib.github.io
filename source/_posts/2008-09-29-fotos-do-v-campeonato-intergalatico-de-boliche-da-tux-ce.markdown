@@ -11,7 +11,7 @@ categories:
 - Tux-ce
 ---
 
-Para aqueles que não conhecem, a [Tux-CE](http://www.tux-ce.org/) é uma Comunidade Cearense de Software Livr[![](http://www.tux-ce.org/portal/files/images/IMG_1169.thumbnail.JPG)](http://www.tux-ce.org/portal/files/images/IMG_1169.thumbnail.JPG)e que fundei com alguns amigos no ano de 2006. Desde então, a Tux-CE se mostra atuante na participação de eventos locais de Software Livre, bem como organização de alguns deles.
+Para aqueles que não conhecem, a [Tux-CE](http://www.tux-ce.org/) é uma Comunidade Cearense de Software Livre que fundei com alguns amigos no ano de 2006. Desde então, a Tux-CE se mostra atuante na participação de eventos locais de Software Livre, bem como organização de alguns deles.
 
 
 
@@ -32,11 +32,3 @@ Segue link para álbum de fotos: [http://www.tux-ce.org/portal/image/tid/12](htt
 
 
 Abraços
-
-
-
-
-![](http://img376.imageshack.us/img376/8000/userbar635980sd7.gif)
-
-
-

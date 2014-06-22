@@ -32,19 +32,10 @@ Emuladores e Roms
 Com uma simples busca em seus repositórios através do pacman pela palavra “emulator” (# pacman -Ss emulator) poderemos achar emuladores disponíveis para várias plataformas como Gameboy, Mega Drive, Atari, Super Nintendo, Nintendo 64, entre outros.
 
 
-
-
-[![](http://2.bp.blogspot.com/_5kfJplBiYy0/SLqDlmM_cnI/AAAAAAAAAF0/19xIc80J66o/s200/chrono.png)](http://2.bp.blogspot.com/_5kfJplBiYy0/SLqDlmM_cnI/AAAAAAAAAF0/19xIc80J66o/s1600-h/chrono.png)
-
-
-
-
+{% img center /imgs/chronotrigger.jpg 'Chrono Trigger' %}
 Os emuladores são uma grande chance para quem gostaria de relembrar seus tempos de infância com games fantásticos como o da ilustração acima. O chamado Chrono Trigger foi e é um excelente jogo de RPG para Super Nintendo que fascinou muitas gerações por sua história onde passamos por várias eras diferentes do mundo entre passado, presente e futuro. Além deste, podemos relembrar outros clássicos desta época como Rock'n Roll Racing e outros vários, já que existem centenas de sites na internet com o único intuito de fornecer roms dos mais variados consoles possíveis.
 
-
-
-
-[![](http://3.bp.blogspot.com/_5kfJplBiYy0/SLqEFfSRBDI/AAAAAAAAAF8/yCJmpgpD5cY/s200/mario64_-_dire_dire_docks.png)](http://3.bp.blogspot.com/_5kfJplBiYy0/SLqEFfSRBDI/AAAAAAAAAF8/yCJmpgpD5cY/s1600-h/mario64_-_dire_dire_docks.png)Além destes antigos clássicos, podemos ainda nos divertir com jogos não tão antigos como por exemplo o Super Mário 64, do Nintendo 64, conforme ilustração ao lado e muitos outros.
+{% img center /imgs/mario64.jpg 'Mario 64' %}Além destes antigos clássicos, podemos ainda nos divertir com jogos não tão antigos como por exemplo o Super Mário 64, do Nintendo 64, conforme ilustração ao lado e muitos outros.
 
 
 
@@ -76,17 +67,16 @@ Como existem vários jogos e de várias categorias, irei abordar apenas 2 de alg
 
 
 
-**RPG**[![](http://4.bp.blogspot.com/_5kfJplBiYy0/SLqEsiftIlI/AAAAAAAAAGE/ptws8GdboS8/s200/mana.png)](http://4.bp.blogspot.com/_5kfJplBiYy0/SLqEsiftIlI/AAAAAAAAAGE/ptws8GdboS8/s1600-h/mana.png)
+**RPG**
+{% img center /imgs/mana.png 'The Mana World' %}
 
 
 
 
 Na variante RPG temos alguns bons jogos como o The Mana World que agradaria os fans de Ragnarok por ser bastante parecido com o mesmo. Com gráficos simples em 2D, o que permite àqueles que não possuem uma placa 3D jogar, o game lhe permite participar de aventuras em um ambiente online com vários outros jogadores no mundo.
 
-
-
-
-[![](http://4.bp.blogspot.com/_5kfJplBiYy0/SLqFEAL3znI/AAAAAAAAAGM/lm2BEzRHUZQ/s200/Eternal.jpg)](http://4.bp.blogspot.com/_5kfJplBiYy0/SLqFEAL3znI/AAAAAAAAAGM/lm2BEzRHUZQ/s1600-h/Eternal.jpg)Outro game que se destaca na categoria RPG é o Eternal Lands. Este com gráficos mais robustos necessita que você tenha uma placa com suporte a aceleração 3D. Neste incrível jogo online uma civilização é levada a destruir sua própria existência. Durante este jogo você passará pelos mais variados cenários, todos com ótimos detalhes gráficos.
+{% img center /imgs/eternallands.jpg 'Eternal Lands' %}
+Outro game que se destaca na categoria RPG é o Eternal Lands. Este com gráficos mais robustos necessita que você tenha uma placa com suporte a aceleração 3D. Neste incrível jogo online uma civilização é levada a destruir sua própria existência. Durante este jogo você passará pelos mais variados cenários, todos com ótimos detalhes gráficos.
 
 
 
@@ -96,17 +86,13 @@ Outros games que merecem ser averiguados nesta categoria: Adonthell, Dofus, KQ e
 
 
 
-**Estratégia**[![](http://2.bp.blogspot.com/_5kfJplBiYy0/SLqFlzy2F_I/AAAAAAAAAGU/zeNmlvTRYXY/s200/wesnoth-1.2-c.jpg)](http://2.bp.blogspot.com/_5kfJplBiYy0/SLqFlzy2F_I/AAAAAAAAAGU/zeNmlvTRYXY/s1600-h/wesnoth-1.2-c.jpg)
-
-
+**Estratégia**
+{% img center /imgs/wesnoth.jpg 'Battle of Wesnoth' %}
 
 
 Na categoria Estratégia eu deixo o destaque para o Battle of Wesnoth no qual você tem o objetivo de recrutar membros para sua tropa e conquistar territórios e vilas destruindo o líder de outras tropas nesta luta por conquistas. Com interface simples, este game também não precisa de uma placa com aceleração 3D. Segue ilustração ao lado:
 
-
-
-
-[![](http://1.bp.blogspot.com/_5kfJplBiYy0/SLqF9StD6oI/AAAAAAAAAGc/VeTfSF0m4Pc/s200/warzone.jpg)](http://1.bp.blogspot.com/_5kfJplBiYy0/SLqF9StD6oI/AAAAAAAAAGc/VeTfSF0m4Pc/s1600-h/warzone.jpg)Meu segundo destaque vai para Warzone 2100, no qual você pousa sua nave de trasporte em um mundo onde você deverá estabelecer seu território com a construção de bases, equipamentos, coleta de recursos, naves, tanques e etc. Você deverá crescer no jogo construindo novos veículos e planos de combate para o domínio do mundo, defendendo-se dos ataques inimigos. Este também requer uma placa de vídeo 3D com suporte a OpenGL. Segue imagem abaixo:
+{% img center /imgs/warzone.jpg 'Warzone 2100' %}Meu segundo destaque vai para Warzone 2100, no qual você pousa sua nave de trasporte em um mundo onde você deverá estabelecer seu território com a construção de bases, equipamentos, coleta de recursos, naves, tanques e etc. Você deverá crescer no jogo construindo novos veículos e planos de combate para o domínio do mundo, defendendo-se dos ataques inimigos. Este também requer uma placa de vídeo 3D com suporte a OpenGL. Segue imagem abaixo:
 
 
 
@@ -118,19 +104,12 @@ Outros games que merecem ser averiguados nesta categoria: Pingus e UFO: Alien In
 
 
 **Ação**
+{% img center /imgs/urbanterror.jpg 'Urban Terror' %}
+ Na categoria Ação, esta que é a favorita de muitos fans de games, gostaria de dar o grande destaque para o Urban Terror. Este que é um jogo baseado na engine do Quake, lhe trará vários cenários nos quais você faz parte de uma equipe, ou não, que deverá defender seu território, atacar os adversários, invadir territórios, sendo isto tudo com pessoas pela internet ou amigos em uma rede LAN. O jogo necessita uma placa com aceleração 3D e compatível com OpenGL. A vantagem desde jogo é que é facilmente instalado, precisando apenas descompactar e executar, já trazendo os executáveis para Linux, Mac e Windows, o que facilita na hora de reunir amigos que possuem diferentes plataformas em suas máquinas, onde o mesmo arquivo compactado em seu pendrive servirá para qualquer um deles.
 
 
-
-
-[![](http://4.bp.blogspot.com/_5kfJplBiYy0/SLqGbsiFwMI/AAAAAAAAAGk/BmCJZRYd6nI/s200/urbanterror_ingame.jpg)](http://4.bp.blogspot.com/_5kfJplBiYy0/SLqGbsiFwMI/AAAAAAAAAGk/BmCJZRYd6nI/s1600-h/urbanterror_ingame.jpg) Na categoria Ação, esta que é a favorita de muitos fans de games, gostaria de dar o grande destaque para o Urban Terror. Este que é um jogo baseado na engine do Quake, lhe trará vários cenários nos quais você faz parte de uma equipe, ou não, que deverá defender seu território, atacar os adversários, invadir territórios, sendo isto tudo com pessoas pela internet ou amigos em uma rede LAN. O jogo necessita uma placa com aceleração 3D e compatível com OpenGL. A vantagem desde jogo é que é facilmente instalado, precisando apenas descompactar e executar, já trazendo os executáveis para Linux, Mac e Windows, o que facilita na hora de reunir amigos que possuem diferentes plataformas em suas máquinas, onde o mesmo arquivo compactado em seu pendrive servirá para qualquer um deles.
-
-
-
-
-
-
-
-[![](http://4.bp.blogspot.com/_5kfJplBiYy0/SLqGpZ4GUMI/AAAAAAAAAGs/q1-OSIa4xvc/s200/OpenArena_02.jpg)](http://4.bp.blogspot.com/_5kfJplBiYy0/SLqGpZ4GUMI/AAAAAAAAAGs/q1-OSIa4xvc/s1600-h/OpenArena_02.jpg)Em segundo lugar, mas não inferior, deixo o Open Arena. Este, também em cima da engine do Quake, se trata de um jogo simples e direto ao ponto. Um jogo no qual você jogará sozinho contra o computador, ou jogares que estejam na rede ou internet. Neste também precisamos de aceleração 3D e suporte a OpenGL na placa.
+{% img center /imgs/openarena.jpg 'Open Arena' %}
+Em segundo lugar, mas não inferior, deixo o Open Arena. Este, também em cima da engine do Quake, se trata de um jogo simples e direto ao ponto. Um jogo no qual você jogará sozinho contra o computador, ou jogares que estejam na rede ou internet. Neste também precisamos de aceleração 3D e suporte a OpenGL na placa.
 
 
 
@@ -140,20 +119,13 @@ Outros games que merecem ser averiguados nesta categoria: America's Army, Enemy 
 
 
 
-**Simuladores**[![](http://3.bp.blogspot.com/_5kfJplBiYy0/SLqG-VMlxjI/AAAAAAAAAG0/_gNKixvCJj8/s200/flightgear.jpg)](http://3.bp.blogspot.com/_5kfJplBiYy0/SLqG-VMlxjI/AAAAAAAAAG0/_gNKixvCJj8/s1600-h/flightgear.jpg)
+**Simuladores**
+{% img center /imgs/flightgear.jpg 'Flight Gear' %}
 
+Em primeiro lugar gostaria de apontar o FlightGear. Este é o resultado de um projeto que visava um simulador de vôo extremamente realista com cenários e gráficos muito bons de forma que pudesse ser utilizado inclusive em treinamento de pilotos. Requer também uma placa com aceleração 3D e OpenGL.
 
-
-
-Em primeiro lugar gostaria de apontar o FlightGear. Este é o resultado de um projeto que visava um simulador de vôo extremamente realista com cenários e gráficos muito bons de forma que pudesse ser utilizado inclusive em treinamento de pilotos. Requer também uma placa com aceleração 3D e OpenGL. Segue imagem:
-
-
-
-
-
-
-
-[![](http://3.bp.blogspot.com/_5kfJplBiYy0/SLqHNvBEinI/AAAAAAAAAG8/1JBe0MWlF6A/s200/Lincityng.jpg)](http://3.bp.blogspot.com/_5kfJplBiYy0/SLqHNvBEinI/AAAAAAAAAG8/1JBe0MWlF6A/s1600-h/Lincityng.jpg)Em segundo lugar vou deixar o Lin City NG. Este animará os fans da série Sim City, já que o mesmo lembra muito as antigas versões do mesmo. Apesar dos gráficos não serem muito ricos, este divertido jogo será bastante útil para preencher suas horas sem ter o que fazer, no qual seu objetivo é construir cidades e gerenciá-las de forma a agradar sua população. Segue imagem do mesmo:
+{% img center /imgs/lincityng.jpg 'Lin City NG' %}
+Em segundo lugar vou deixar o Lin City NG. Este animará os fans da série Sim City, já que o mesmo lembra muito as antigas versões do mesmo. Apesar dos gráficos não serem muito ricos, este divertido jogo será bastante útil para preencher suas horas sem ter o que fazer, no qual seu objetivo é construir cidades e gerenciá-las de forma a agradar sua população. Segue imagem do mesmo:
 
 
 
@@ -187,11 +159,3 @@ Com relação aos dois acima citados, você poderá encontrá-los no [AUR](http:
 
 
 Espero que tenham gostado...
-
-
-
-
-![](http://img376.imageshack.us/img376/8000/userbar635980sd7.gif)
-
-
-

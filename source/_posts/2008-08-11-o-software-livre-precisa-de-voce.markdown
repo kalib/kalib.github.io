@@ -11,16 +11,8 @@ categories:
 - Linux
 - Software Livre
 ---
-
-### 
-
-
-
-
-
-
-
-[![](http://www.vivaolinux.com.br/imagens/artigos/comunidade/gnu.png)](http://www.vivaolinux.com.br/imagens/artigos/comunidade/gnu.png)Isso não é mentira. O Software Livre realmente precisa de você.
+{% img center /imgs/gnu.jpg 'GNU' %}
+Isso não é mentira. O Software Livre realmente precisa de você.
 
 
 
@@ -124,14 +116,3 @@ Espero ter dado algum incentivo a vocês. Ajudemos o Software Livre. Esta é a f
 
 
 Abraços.
-
-
-
-
-
-
-
-![](http://img376.imageshack.us/img376/8000/userbar635980sd7.gif)
-
-
-

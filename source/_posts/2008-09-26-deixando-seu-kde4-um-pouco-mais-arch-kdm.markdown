@@ -13,8 +13,8 @@ categories:
 - Linux
 - Software Livre
 ---
-
-Sabe aqueles horários em que você não tem o que fazer e acaba, literalmente, procurando [![](http://3.bp.blogspot.com/_5kfJplBiYy0/SNzoEm7yAiI/AAAAAAAAAJc/VjgYoUElLfU/s200/screenshot.png)](http://3.bp.blogspot.com/_5kfJplBiYy0/SNzoEm7yAiI/AAAAAAAAAJc/VjgYoUElLfU/s1600-h/screenshot.png)qualquer coisa pra mexer? Foi em um horário de almoço como este que fiz logoff em meu KDE4 e observei minha tela do KDM. Reparei em como os designers resposnsáveis fizeram um bom trabalho no KDE4. Foi aí que pensei: Porque não ter um pouquinho do gosto Arch Linux já na hora de me logar ao KDE4?
+{% img center /imgs/archkdm.png 'Arch Linux KDM' %}
+Sabe aqueles horários em que você não tem o que fazer e acaba, literalmente, procurando qualquer coisa pra mexer? Foi em um horário de almoço como este que fiz logoff em meu KDE4 e observei minha tela do KDM. Reparei em como os designers resposnsáveis fizeram um bom trabalho no KDE4. Foi aí que pensei: Porque não ter um pouquinho do gosto Arch Linux já na hora de me logar ao KDE4?
 
 
 
@@ -95,12 +95,4 @@ ps: Isto, levando em consideração que a imagem alterada se encontra dentro do 
 
 
 
-abraços
-
-
-
-
-![](http://img376.imageshack.us/img376/8000/userbar635980sd7.gif)
-
-
-
+Abraços!

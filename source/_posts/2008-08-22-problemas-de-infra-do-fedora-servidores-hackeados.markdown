@@ -13,8 +13,8 @@ categories:
 - Seguranca
 - Software Livre
 ---
-
-[![](http://2.bp.blogspot.com/_5kfJplBiYy0/SK67DllLZfI/AAAAAAAAAFs/Ng_aNe5Oy-A/s200/images.jpeg)](http://2.bp.blogspot.com/_5kfJplBiYy0/SK67DllLZfI/AAAAAAAAAFs/Ng_aNe5Oy-A/s1600-h/images.jpeg)Não sei se algum de vocês ficou sabendo..Mas na última semana foi notificado um problema na infra-estrutura do Fedora, e havia sido "recomendado" que nenhuma instalação ou atualizaçãp fosse feita, caso você use Fedora.
+{% img left /imgs/fedora.jpg 'Fedora' %}
+Não sei se algum de vocês ficou sabendo..Mas na última semana foi notificado um problema na infra-estrutura do Fedora, e havia sido "recomendado" que nenhuma instalação ou atualizaçãp fosse feita, caso você use Fedora.
 
 
 
@@ -40,11 +40,3 @@ Segue link com informações mais detalhadas: [http://www.redhat.com/archives/fe
 
 
 Abraços
-
-
-
-
-![](http://img376.imageshack.us/img376/8000/userbar635980sd7.gif)
-
-
-
