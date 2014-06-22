@@ -12,16 +12,8 @@ categories:
 - Linux
 - Software Livre
 ---
-
-### 
-
-
-
-
-
-
-
-![[logo125.jpg]](http://3.bp.blogspot.com/_5kfJplBiYy0/SIXsNZ7e4GI/AAAAAAAAAFE/YQFdlhUvqZ4/s1600/logo125.jpg)Semana passada completei um mês de utilização do Arch Linux, mas como não tive tempo para publicar nada, segue agora um resumo do que tenho obtido com o Arch Linux nesse 1 mês de uso intensivo do mesmo como distribuição oficial.
+{% img left /imgs/arch.png 'Arch Linux' %}
+Semana passada completei um mês de utilização do Arch Linux, mas como não tive tempo para publicar nada, segue agora um resumo do que tenho obtido com o Arch Linux nesse 1 mês de uso intensivo do mesmo como distribuição oficial.
 
 
 
@@ -38,7 +30,6 @@ Pacotes i686: A maioria dos computadores hoje em dia possuem processadores i686,
 
 Gerenciamento de pacotes: Este também foi um pequeno choque no começo para mim. Depois de testar várias distros me apeguei bastante ao Debian e ao Kubuntu pelo fato de eles trazerem consigo a maravilhosa ferramenta Aptitude. Não tiro aqui os méritos da mesma. Ela me manteve entre as espirais Debian por cerca de 2 anos. ;] Utilizar algo diferente, depois de tanto tempo foi mesmo um choque, mas a verdade é que logo na primeira semana o pacman, gerenciador de pacotes do Arch Linux, roubou em meu coração o lugar no qual se encontrava o Aptitude. Ainda gosto do aptitude, e continuo optando por ele como segunda escolha, mas devo ser justo em meus comentários. Acreditem, se depois de 2 anos como um fanático pelo aptitude, e meus posts anteriores não me deixam mentir, eu passei agora a adotar uma nova ferramenta, o pacman, é porque alguma coisa realmente me convenceu de que valeria a pena. Além de muito estável, a forma como o pacman funciona é simples e eficaz. Trazendo respostas rápidas à simples comandos com poucos parâmetros, posso resolver tudo o que preciso relacionado a meus pacotes sem a preocupação de tratar dependências ou quebrar pacotes, já que além de instalar as dependências juntamente com um pacote, ele também as removerá desde que as mesmas estejam orfãns, ou não necessárias para outros pacotes.  
 
-[![](http://bp1.blogger.com/_5kfJplBiYy0/SIXdAFxCsXI/AAAAAAAAAEs/Gyisjq0rjak/s200/archdia.png)](http://bp1.blogger.com/_5kfJplBiYy0/SIXdAFxCsXI/AAAAAAAAAEs/Gyisjq0rjak/s1600-h/archdia.png)  
 
 Pacotes Atualizados: Uma das coisas que mais me surpreendeu no Arch, é a velocidade com que as coisas acontecem. Desde que adotei o Arch como minha distribuição, adotei a prática de fazer um upgrade completo em meu sistema diariamente através do pacman. Fico muito contente em ver que diariamente, uso os pacotes em suas versões mais recentes. Dois que me chamaram a atenção foram por exemplo o amsn e firefox, já que são de uso diário. Bastou sair publicado no site oficial do amsn uma nova versão com correções de bugs, e no upgrade do dia seguinte, lá estava ele nos meus repositórios e logo em seguida rodando em minha máquina. O mesmo com o Firefox, após o nascimento do tão esperado Firefox 3.0, surgiram também descobertas sobre vulnerabilidades do mesmo. Assim que foi lançada a versão 3.0.1 do mesmo, no meu upgrade do dia seguinte, lá estava em minha máquina a raposa de fogo em sua versão 3.0.1 funcionando perfeitamente. O mesmo acontece com os outros vários pacotes que utilizo.
 
@@ -51,7 +42,7 @@ AUR: Como se já não bastasse o magnífico pacman pra gerenciar meus pacotes, t
 
 Rolling Release: Eis um outro fator primordial no Arch Linux. É uma distribuição Rolling Release. O que isso significa? Você não tem que se dar ao trabalho de baixar uma iso e reinstalar cada vez que surge uma versão nova do Arch Linux. O próprio pacman se responsabiliza de fazer este upgrade sem quebrar seu sistema. Você não precisa mais se manter com versões antigas de sua distribuição por não querer perder tanto tempo fazendo seus backups ou reinstalando tudo do zero. Tive a sorte de poder testar este recurso durante este 1 mês de testes com o Arch, já que no mês de Junho tivemos o lançamento da nova versão do Arch Linux, 2008.6 Overlord, e pude pessoalmente atestar a validade desta qualidade do Arch. Resultado? A minha distro foi totalmente atualizada para a nova versão do Arch, sem nenhum trauma. Tudo funcinou perfeitamente. Mais um ponto pro Arch em meu coração.  
 
-![[archoharch.png]](http://3.bp.blogspot.com/_5kfJplBiYy0/SIXgq0VwgnI/AAAAAAAAAE0/fNjEHzNHgc8/s1600/archoharch.png)  
+{% img center /imgs/archoharch.png 'Arch Oh Arch' %}
 
 Segurança: O Linux trás uma característica em comum, independente de distribuição, que é a segurança. Porém quanto menos serviços desnecessários rodando, menores serão as brechas e vulnerabilidades, portanto o Arch tem vantagem nisso. E por trazer algumas características do BSD, procura também uma estabilidade neste sentido. O próprio ports do BSD é utilizado no Arch Linux. ;]
 
@@ -64,14 +55,3 @@ Comunidade: A comunidade do Arch Linux, em especial a comunidade [archlinux-br](
 
 
 É isso pessoal, espero que assim como eu, possam experimentar e conhecer esta magnífica distribuição.
-
-
-
-
-[![](http://img376.imageshack.us/img376/8000/userbar635980sd7.gif)](http://img376.imageshack.us/img376/8000/userbar635980sd7.gif)
-
-
-
-
-
-

@@ -13,6 +13,8 @@ Estou **noivo** de uma linda mulher chamada **Mariana**, formada em Administraç
 
 Caso deseje me contactar, sinta-se livre e envie um **email** para <a href="mailto:marcelo@marcelocavalcante.net">marcelo</a> neste(@) mesmo domínio. Também estou constantemente online no **IRC** como kalib, através da rede Freenode, nos canais #archlinux, #archlinux-br, #french e #mlug. Além disto, você pode simplesmente deixar um **comentário** aqui mesmo no site/blog.
 
+Para maiores detalhes profissionais, acesse meu perfil no <a href="https://www.linkedin.com/pub/marcelo-cavalcante-rocha/99/703/648">linkedin clicando aqui</a> ou <a href="https://www.linkedin.com/profile/view?id=351108056&authType=NAME_SEARCH&authToken=aueE&locale=pt_BR&srchid=3511080561403446181045&srchindex=1&srchtotal=245&trk=vsrp_people_res_name&trkInfo=VSRPsearchId%3A3511080561403446181045%2CVSRPtargetId%3A351108056%2CVSRPcmpt%3Aprimary">aqui</a>.
+
 <br><br>
 {% img left /about/megeek.png 'Show time' %}
 Lado geek

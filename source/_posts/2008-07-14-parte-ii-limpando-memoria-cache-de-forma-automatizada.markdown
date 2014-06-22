@@ -170,11 +170,3 @@ Sinta-se livre agora para customizar os dias e horários da maneira que for mais
 
 
 Abraços
-
-
-
-
-[![](http://img376.imageshack.us/img376/8000/userbar635980sd7.gif)](http://img376.imageshack.us/img376/8000/userbar635980sd7.gif)
-
-
-

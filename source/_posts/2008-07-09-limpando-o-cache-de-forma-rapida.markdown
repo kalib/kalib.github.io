@@ -98,11 +98,3 @@ A memória armazenada em cache caiu de ~969mb para ~69mb. ;]
 
 
 Bingo!
-
-
-
-
-[![](http://img376.imageshack.us/img376/8000/userbar635980sd7.gif)](http://img376.imageshack.us/img376/8000/userbar635980sd7.gif)
-
-
-
