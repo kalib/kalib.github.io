@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Literatura | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/blog/categories/literatura/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2014-08-02T17:02:21-03:00</updated>
+  <updated>2014-08-03T07:56:39-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -12,6 +12,39 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Assista ao documentário sobre Aaron Swartz: O menino da internet]]></title>
+    <link href="http://blog.marcelocavalcante.net/blog/2014/08/03/assista-ao-documentario-sobre-aaron-swartz-o-menino-da-internet/"/>
+    <updated>2014-08-03T07:19:00-03:00</updated>
+    <id>http://blog.marcelocavalcante.net/blog/2014/08/03/assista-ao-documentario-sobre-aaron-swartz-o-menino-da-internet</id>
+    <content type="html"><![CDATA[<p>{% img center /imgs/aaron-swartz-movie.jpg &lsquo;Aaron Swartz Movie&rsquo; %}
+<code>
+ Informação é poder. Mas, como todo poder, há aqueles que querem mantê-la para si mesmos. O patrimônio cultural e científico do mundo, publicado ao longo dos séculos em livros e revistas, está cada vez mais szendo digitalizado e trancado por um punhado de corporações privadas. Enquanto isso, aqueles que foram bloqueados não estão em pé de braços cruzados. Eles estão bisbilhotando em buracos e escalando cercas libertando as informações trancadas pelos editores e compartilhando com seus amigos. Mas toda essa ação acontece no escuro, escondida no subterrâneo. É chamado de roubo ou pirataria, como se compartilhar uma riqueza de conhecimentos fosse o equivalente  de saquear um navio e matar sua tripulação. Mas compartilhar não é imoral - é um imperativo moral. Só os cegos pela ganância se recusam a deixar um amigo fazer uma cópia. Não há justiça em seguir leis injustas. É hora de virmos para a luz e, na grande tradição de desobediência civil, declararmos a nossa oposição a este roubo privado da cultura pública.
+</code></p>
+
+<p><strong>E</strong>ste é apenas um trecho do manifesto assinado por Aaron, entitulado &ldquo;Manifesto do guerrilheiro ao acesso livre&rdquo;.</p>
+
+<p><strong>R</strong>ecentemente foi lançado um documentário de Brian Knappenberger sobre <em>Aaron Swartz</em>, o qual foi considerado um dos principais nomes da internet e luta pela liberdade de acesso ao conhecimento dos últimos anos.</p>
+
+<p><strong>P</strong>ara quem ainda não sabe do que se trata, Aaron Swartz foi um dos criadores do RSS bem como do famoso site de notícias e debates Reddit.Após alguns anos lutando e enfrentando a justiça americana Aaron cometeu suicídio.</p>
+
+<p>{% img left /imgs/aaron_swartz.jpg &lsquo;Aaron Swartz&rsquo; %}<strong>A</strong>aron estava sendo condenado a cerca de 50 anos de prisão, bem como a pagar um montante superior a U$ 4 milhões em multas por querer tornar públicos os artigos acadêmicos e científicos que eram mantidos na base do JSTOR, o qual vendia o acesso a estes artigos que, na visão de Aaron, deveriam ser de domínio e acesso público.</p>
+
+<p><strong>A</strong>aron sempre defendeu e lutou para que o conhecimento fosse de livre acesso a todos. Lutou tanto que acabou sendo covardemente perseguido e pressionado pelo governo americano, o que acabou por lhe deixar exausto, psicologicamente e financeiramente, ao ponto de ele desistir da luta ao invés de simplesmente &ldquo;assumir&rdquo; que estava errado e aceitar os &ldquo;acordos&rdquo; que lhe foram oferecidos pela justiça americana.</p>
+
+<p><strong>S</strong>eu crime? A curiosidade. A fome por conhecimento. Também a vontade de expor este conhecimento a todos que o desejassem.</p>
+
+<p><strong>P</strong>ara quem por algum motivo ainda não conhece o recurso de legendas ou caption do YoutTube, caso a legenda do filme não apareça automaticamente, basta clicar no botão de legendas/caption, habilitando-o, conforme apresentado na imagem abaixo:</p>
+
+<p>{% img center /imgs/youtube_captions.png &lsquo;Youtube Captions&rsquo; %}</p>
+
+<iframe width="420" height="315" src="http://blog.marcelocavalcante.net//www.youtube.com/watch?v=2uj1EeiuK5U#t=frameborder" 178="0" allowfullscreen></iframe>
+
+
+<p><strong>A</strong>braços,</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Sobre mim... Tarda mas não falha]]></title>
@@ -35,7 +68,7 @@
     <link href="http://blog.marcelocavalcante.net/blog/2013/11/25/recomendacao-bibliografica-as-treze-reliquias/"/>
     <updated>2013-11-25T08:30:00-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2013/11/25/recomendacao-bibliografica-as-treze-reliquias</id>
-    <content type="html"><![CDATA[<p><img class="left" src="/imgs/livros/astrezereliquias.jpg" title="&lsquo;As Treze Relíquias&rsquo;" >
+    <content type="html"><![CDATA[<p>{% img left /imgs/livros/astrezereliquias.jpg &lsquo;As Treze Relíquias&rsquo; %}
 <strong>S</strong>em sombra de dúvidas o livro superou minhas expectativas. Apesar de a sinopse passar a impressão de que se trata de mais um livro com temática sobrenatural voltado a um público mais jovem, a leitura revela o oposto. Certamente um livro que pode agradar diversas faixas etárias, trazendo foco no ocultismo, antigas religiões, artefatos mágicos, sexo e assassinatos com incrível crueldade, tudo isto em uma trama muito bem elaborada e descrita.</p>
 
 <p><strong>P</strong>or se tratar de assuntos que gosto, o livro prendeu minha atenção desde o início, visto que os autores souberam mesclar bem os diferentes temas em uma história conexa e personagens interessantes.</p>
@@ -55,7 +88,7 @@
     <link href="http://blog.marcelocavalcante.net/blog/2013/10/04/recomendacao-bibliografica-filhos-do-eden-herdeiros-de-atlantida/"/>
     <updated>2013-10-04T08:27:00-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2013/10/04/recomendacao-bibliografica-filhos-do-eden-herdeiros-de-atlantida</id>
-    <content type="html"><![CDATA[<p><img class="left" src="/imgs/livros/filhosdoeden1.jpg" title="&lsquo;Filhos do Éden&rsquo;" >
+    <content type="html"><![CDATA[<p>{% img left /imgs/livros/filhosdoeden1.jpg &lsquo;Filhos do Éden&rsquo; %}
 <strong>A</strong>njos, Arcanjos e Demônios&hellip; Entidades que sempre despertaram a curiosidade e o interesse de milhares de pessoas. Não diferente, sempre tive um grande apreço por histórias, sejam em filmes ou literatura escrita, que abordem tais entidades.</p>
 
 <p><strong>S</strong>eguindo a trilha de seu outro livro, <a href="http://blog.marcelocavalcante.net/blog/2010/09/30/recomendacao-bibliografica-a-batalha-do-apocalipse/">A Batalha do Apocalipse</a>, o autor Eduardo Spohr narra com maestria o enredo no qual uma guerra civil acontece entre o Arcanjo Miguel e as tropas revolucionárias de seu irmão, o Arcanjo Gabriel.</p>
@@ -75,7 +108,7 @@
     <link href="http://blog.marcelocavalcante.net/blog/2013/08/08/recomendacao-bibliografica-gravidade/"/>
     <updated>2013-08-08T17:23:00-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2013/08/08/recomendacao-bibliografica-gravidade</id>
-    <content type="html"><![CDATA[<p><img class="center" src="/imgs/livros/gravidade.jpg" title="&lsquo;Gravidade&rsquo;" ></p>
+    <content type="html"><![CDATA[<p>{% img center /imgs/livros/gravidade.jpg &lsquo;Gravidade&rsquo; %}</p>
 
 <p><strong>O</strong> livro da vez se chama <em>Gravidade</em>, de <em>Tess Gerritsen</em>.</p>
 
@@ -94,43 +127,6 @@
 <blockquote><p><em>A pesquisadora Emma Watson está prestes a realizar a missão mais importante de sua vida: estudar o comportamento da vida terrestre no espaço. Escolhida pela Nasa para conduzir uma série de experimentos sobre o comportamento de organismos unicelulares, a Dra. Watson logo descobre a natureza aterrorizante desses organismos e precisa correr contra o tempo para conter uma doença mortal que pode ameaçar a Terra. Tess Gerritsen se aventura no campo do desconhecido, e o resultado é este suspense que mistura, de forma brilhante, ficção científica e medicina.</em></p></blockquote>
 
 <p><strong>S</strong>em sombra de dúvidas recomendo a leitura deste livro a todos os interessados em ficção científica e suspense.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Recomendação Bibliográfica: Mago e Vidro (A Torre Negra - IV)]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2012/02/06/recomendacao-bibliografica-mago-e-vidro-a-torre-negra-iv/"/>
-    <updated>2012-02-06T09:26:17-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2012/02/06/recomendacao-bibliografica-mago-e-vidro-a-torre-negra-iv</id>
-    <content type="html"><![CDATA[<p><img class="left" src="/imgs/livros/magoevidro.jpg" title="&lsquo;Mago e Vidro&rsquo;" ></p>
-
-<p><strong>D</strong>epois de minhas longas férias, estou de volta e começando os posts do ano com uma recomendação bibliográfica: <strong>Mago e Vidro</strong>, o quarto volume da saga <strong>A Torre Negra</strong>.</p>
-
-<p><strong>P</strong>ara quem não conhece a saga, sugiro a leitura dos 3 links a seguir:</p>
-
-<p><a href="http://blog.marcelocavalcante.net/blog/2009/06/21/recomendacao-bibliografica-do-vooc2bf-o-pistoleiro/"><strong>A Torre Negra vol I &ndash; O Pistoleiro</strong></a></p>
-
-<p><a href="http://blog.marcelocavalcante.net/blog/2009/09/08/recomendacao-bibliografica-a-escolha-dos-tres-a-torre-negra-vol-ii/"><strong>A Torre Negra vol II &ndash; A Escolha dos Três</strong></a></p>
-
-<p><a href="http://blog.marcelocavalcante.net/blog/2010/02/22/recomendacao-bibliografica-a-torre-negra-vol-iii-as-terras-devastadas/"><strong>A Torre Negra vol III &ndash; As Torres Devastadas</strong></a></p>
-
-<p><strong>N</strong>este 4º livro, o consagrado autor <a href="http://pt.wikipedia.org/wiki/Stephen_King"><strong>Stephen King</strong></a> deixa um pouco de lado a trama inicial na qual os personagens estavam buscando a Torre Negra e foca as mais de 800 páginas do livro no passado do Pistoleiro Roland, mais especificamente em sua adolescência e suas primeiras aventuras.</p>
-
-<p><strong>J</strong>untamente com seus companheiros Cuthbert e Alain, Roland se apaixona e faz amigos e inimigos durante o que parecia uma simples missão passada por seu pai.</p>
-
-<p><strong>P</strong>ara quem já iniciou a saga, recomendo fortemente a continuação e, para quem ainda não iniciou e está sem um bom livro para ler, vale a pena pegar o primeiro livro desta aventura.</p>
-
-<p><strong>S</strong>egue breve sinopse do livro:</p>
-
-<blockquote><p><em>A estranha e inesquecível odisséia de Roland de Gilead em busca da Torre Negra continua. No quarto volume da série imaginada por Stephen King, novos perigos ameaçam o ka-tet de Roland &ndash; formado por Jake, Eddie Dean, Susannah e Oi.</em></p></blockquote>
-
-<p><em>Mago e Vidro retoma a eletrizante narrativa interrompida em As Terras Devastadas. Depois de enfrentar a terrível ameaça do monotrilho Blaine, o último pistoleiro e seus seguidores desembarcam na cidade de Topeka, no Kansas, e retomam o caminho do Feixe de Luz que conduz à Torre Negra. Roland revela então aos companheiros a história de seu passado, e a trágica perda de seu grande amor de juventude, a bela Susan Delgado.</em></p>
-
-<p><em>Prosseguindo em sua jornada, o ka-tet chega a um palácio de vdro verde onde encontra ninguem menos do que o antigo nêmesis de Roland: Marten Broadcloak, conhecido em alguns mundos como Randall Flagg, em outros como Richard Fannin,e em outro ainda como John Farson, o Homem Bom. E Roland e seus companheiros descobrem então uma pavorosa verdade sobre o passado do pistoleiro&hellip;</em></p>
-
-<p><em>Inspirada no universo imaginário de J.R.R. Tolkien e no poema épico do século XIX &ldquo;Childe Roland à Torre Negra Chegou&rdquo;, A Torre Negra mstura ficção científica, fantasia e terror numa narrativa que forma um verdadeiro mosaivo da cultura popular cotemporânea.</em></p>
-
-<p><strong>A</strong>braços</p>
 ]]></content>
   </entry>
   

@@ -1015,12 +1015,18 @@
         <lastmod>2014-03-30T10:36:33-03:00</lastmod>
     </url>
     <url>
+        <loc>
+            http://blog.marcelocavalcante.net/blog/2014/08/03/assista-ao-documentario-sobre-aaron-swartz-o-menino-da-internet/
+        </loc>
+        <lastmod>2014-08-03T07:53:53-03:00</lastmod>
+    </url>
+    <url>
         <loc>http://blog.marcelocavalcante.net/about/</loc>
         <lastmod>2014-06-22T11:00:09-03:00</lastmod>
     </url>
     <url>
         <loc>http://blog.marcelocavalcante.net/</loc>
-        <lastmod>2014-06-22T10:56:41-03:00</lastmod>
+        <lastmod>2014-08-03T07:53:53-03:00</lastmod>
     </url>
     <url>
         <loc>http://blog.marcelocavalcante.net/robots.txt</loc>
@@ -1028,6 +1034,6 @@
     </url>
     <url>
         <loc>http://blog.marcelocavalcante.net/blog/archives/</loc>
-        <lastmod>2014-06-22T10:56:41-03:00</lastmod>
+        <lastmod>2014-08-03T07:53:53-03:00</lastmod>
     </url>
 </urlset>

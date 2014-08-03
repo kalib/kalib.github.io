@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Software Livre | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/blog/categories/software-livre/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2014-08-02T17:02:21-03:00</updated>
+  <updated>2014-08-03T07:56:39-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -14,30 +14,63 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Assista ao documentário sobre Aaron Swartz: O menino da internet]]></title>
+    <link href="http://blog.marcelocavalcante.net/blog/2014/08/03/assista-ao-documentario-sobre-aaron-swartz-o-menino-da-internet/"/>
+    <updated>2014-08-03T07:19:00-03:00</updated>
+    <id>http://blog.marcelocavalcante.net/blog/2014/08/03/assista-ao-documentario-sobre-aaron-swartz-o-menino-da-internet</id>
+    <content type="html"><![CDATA[<p>{% img center /imgs/aaron-swartz-movie.jpg &lsquo;Aaron Swartz Movie&rsquo; %}
+<code>
+ Informação é poder. Mas, como todo poder, há aqueles que querem mantê-la para si mesmos. O patrimônio cultural e científico do mundo, publicado ao longo dos séculos em livros e revistas, está cada vez mais szendo digitalizado e trancado por um punhado de corporações privadas. Enquanto isso, aqueles que foram bloqueados não estão em pé de braços cruzados. Eles estão bisbilhotando em buracos e escalando cercas libertando as informações trancadas pelos editores e compartilhando com seus amigos. Mas toda essa ação acontece no escuro, escondida no subterrâneo. É chamado de roubo ou pirataria, como se compartilhar uma riqueza de conhecimentos fosse o equivalente  de saquear um navio e matar sua tripulação. Mas compartilhar não é imoral - é um imperativo moral. Só os cegos pela ganância se recusam a deixar um amigo fazer uma cópia. Não há justiça em seguir leis injustas. É hora de virmos para a luz e, na grande tradição de desobediência civil, declararmos a nossa oposição a este roubo privado da cultura pública.
+</code></p>
+
+<p><strong>E</strong>ste é apenas um trecho do manifesto assinado por Aaron, entitulado &ldquo;Manifesto do guerrilheiro ao acesso livre&rdquo;.</p>
+
+<p><strong>R</strong>ecentemente foi lançado um documentário de Brian Knappenberger sobre <em>Aaron Swartz</em>, o qual foi considerado um dos principais nomes da internet e luta pela liberdade de acesso ao conhecimento dos últimos anos.</p>
+
+<p><strong>P</strong>ara quem ainda não sabe do que se trata, Aaron Swartz foi um dos criadores do RSS bem como do famoso site de notícias e debates Reddit.Após alguns anos lutando e enfrentando a justiça americana Aaron cometeu suicídio.</p>
+
+<p>{% img left /imgs/aaron_swartz.jpg &lsquo;Aaron Swartz&rsquo; %}<strong>A</strong>aron estava sendo condenado a cerca de 50 anos de prisão, bem como a pagar um montante superior a U$ 4 milhões em multas por querer tornar públicos os artigos acadêmicos e científicos que eram mantidos na base do JSTOR, o qual vendia o acesso a estes artigos que, na visão de Aaron, deveriam ser de domínio e acesso público.</p>
+
+<p><strong>A</strong>aron sempre defendeu e lutou para que o conhecimento fosse de livre acesso a todos. Lutou tanto que acabou sendo covardemente perseguido e pressionado pelo governo americano, o que acabou por lhe deixar exausto, psicologicamente e financeiramente, ao ponto de ele desistir da luta ao invés de simplesmente &ldquo;assumir&rdquo; que estava errado e aceitar os &ldquo;acordos&rdquo; que lhe foram oferecidos pela justiça americana.</p>
+
+<p><strong>S</strong>eu crime? A curiosidade. A fome por conhecimento. Também a vontade de expor este conhecimento a todos que o desejassem.</p>
+
+<p><strong>P</strong>ara quem por algum motivo ainda não conhece o recurso de legendas ou caption do YoutTube, caso a legenda do filme não apareça automaticamente, basta clicar no botão de legendas/caption, habilitando-o, conforme apresentado na imagem abaixo:</p>
+
+<p>{% img center /imgs/youtube_captions.png &lsquo;Youtube Captions&rsquo; %}</p>
+
+<iframe width="420" height="315" src="http://blog.marcelocavalcante.net//www.youtube.com/watch?v=2uj1EeiuK5U#t=frameborder" 178="0" allowfullscreen></iframe>
+
+
+<p><strong>A</strong>braços,</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Dica - Apostila Disponibilizada Gratuitamente - pfSense]]></title>
     <link href="http://blog.marcelocavalcante.net/blog/2014/01/14/dica-apostila-disponibilizada-gratuitamente-pfsense/"/>
     <updated>2014-01-14T08:27:00-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2014/01/14/dica-apostila-disponibilizada-gratuitamente-pfsense</id>
-    <content type="html"><![CDATA[<p><img class="left" src="/imgs/pfsense.png" title="&lsquo;pfSense&rsquo;" >
+    <content type="html"><![CDATA[<p>{% img left /imgs/pfsense.png &lsquo;pfSense&rsquo; %}
 <strong>G</strong>ostaria de passar adiante a notícia de que o colega <em>Leonardo Damasceno</em> acaba de compartilhar com a comunidade uma apostila de sua autoria sobre o <a href="http://www.pfsense.org"><strong>pfSense</strong></a>, de forma a divulgar mais este magnífico sistema, bem como facilitar a vida daqueles que ainda não o dominam.</p>
 
 <p><strong>S</strong>egue link direto fornecido pelo mesmo para <a href="http://www.marcelocavalcante.net/repositorio/pfsense-leonardodamasceno.pdf"><strong>download</strong></a>. A apostila ou livro, como prefira chamar, possui aproximadamente 70 páginas de informações úteis e diretas, sem muitas complicações.</p>
 
 <p><strong>N</strong>ão sabe o que é pfSense?</p>
 
-<p><img class="center" src="/imgs/pfsense1.jpg" title="&lsquo;pfSense1&rsquo;" ></p>
+<p>{% img center /imgs/pfsense1.jpg &lsquo;pfSense1&rsquo; %}</p>
 
 <p><strong>O</strong> pfSense é um sistema operacional baseado no <em>Free BSD</em> que pode ser instalado em um computador para servir como um firewall/roteador dedicado em uma rede. Como ferramenta <em>open source</em>, o pfSense tem se destacado nesta função, sendo considerado um dos melhores e mais confiáveis para este trabalho, oferecendo, além de sua estabilidade e confiabilidade, recursos e funções que geralmente são encontrados apenas em firewalls comerciais e caros. Não creio ser necessário lembrar a confiabilidade dos sistemas <em>Free BSD</em>&hellip;</p>
 
-<p><img class="center" src="/imgs/pfsense2.jpg" title="&lsquo;pfSense2&rsquo;" ></p>
+<p>{% img center /imgs/pfsense2.jpg &lsquo;pfSense2&rsquo; %}</p>
 
 <p><strong>E</strong>mbora seja uma versão customizada do Free BSD, não é necessário qualquer conhecimento sobre este sistema para operar o psSense, visto que ele é atualizado e completamente configurado através de uma interface web. Na maioria dos casos o pfSense tem sido aplicado como um firewall de perímetro, roteador, access point wireless, servidor DHCP, servidor DNS e VPN.</p>
 
-<p><img class="center" src="/imgs/pfsense3.jpg" title="&lsquo;pfSense3&rsquo;" ></p>
+<p>{% img center /imgs/pfsense3.jpg &lsquo;pfSense3&rsquo; %}</p>
 
 <p><strong>O</strong> mesmo apresenta diversos recursos gráficos para análise de tráfego, pacotes, performance, etc. Além de configurações avançadas para regras de firewall para LAN, WAN e utilizãção de Aliases de forma simples e intuitiva.</p>
 
-<p><img class="center" src="/imgs/pfsense4.jpg" title="&lsquo;pfSense4&rsquo;" ></p>
+<p>{% img center /imgs/pfsense4.jpg &lsquo;pfSense4&rsquo; %}</p>
 ]]></content>
   </entry>
   
@@ -46,7 +79,7 @@
     <link href="http://blog.marcelocavalcante.net/blog/2014/01/06/dica-de-seguranca-previna-ataques-bloqueando-pacotes-icmp-indesejados/"/>
     <updated>2014-01-06T08:40:00-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2014/01/06/dica-de-seguranca-previna-ataques-bloqueando-pacotes-icmp-indesejados</id>
-    <content type="html"><![CDATA[<p><img class="left" src="/imgs/you_shall_not_pass.jpg" title="&lsquo;Gandalf&rsquo;" >
+    <content type="html"><![CDATA[<p>{% img left /imgs/you_shall_not_pass.jpg &lsquo;Gandalf&rsquo; %}
 <strong>O</strong> protocolo <em>ICMP</em> pode ser utilizado para facilitar diversas rotinas e tarefas importantes de um administrador de redes, tais como na utilização de ferramentas como o <em>ping</em> e o <em>traceroute</em>, mas também pode ser manipulado por pessoas mal intencionadas que podem manipular mensagens ou pacotes ICMP para mapear sua rede.</p>
 
 <p><strong>É</strong> comum ver administradores de rede se preocupando e fazendo um ótimo trabalho em termos de filtrar o tráfego <em>TCP</em> e/ou <em>UDP</em>, porém quase sempre esquecem de dar a mesma atenção ao tráfego <em>ICMP</em>, sendo este tão crítico quanto os dois anteriores. Uma vez que este protocolo pode ser utilizado para mapear e realizar ataques em sua rede, ele não pode simplesmente ser deixado de lado.</p>
@@ -80,7 +113,7 @@
     <link href="http://blog.marcelocavalcante.net/blog/2014/01/03/criptografando-sua-particao-swap-com-o-ecryptfs/"/>
     <updated>2014-01-03T08:48:00-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2014/01/03/criptografando-sua-particao-swap-com-o-ecryptfs</id>
-    <content type="html"><![CDATA[<p><img class="left" src="/imgs/crypto.jpg" title="&lsquo;Criptografia&rsquo;" >
+    <content type="html"><![CDATA[<p>{% img left /imgs/crypto.jpg &lsquo;Criptografia&rsquo; %}
 <strong>C</strong>riptografia (Do grego <em>kryptós</em>, &ldquo;escondido&rdquo;, e <em>gráphein</em>, &ldquo;escrita&rdquo;) nada mais é do que o estudo e aplicação de técnicas com o intuito de ocultar informações, transformando a informação original em algo ilegível, exceto para seu destinatário final, o qual possui a chave ou método que será utilizado para tornar a informação legível novamente.</p>
 
 <p><strong>A</strong>pesar de muitas pessoas acharem que criptografia é algo novo, o uso de mensagens cifradas é bastante antigo. Em tempos passados a cifragem de mensagens era utilizada, principalmente em assuntos de guerra. De acordo com estudos históricos, o primeiro uso documentado da criptografia foi em torno de <em>1900 a.c.</em>, no Egito, quando um escriba usou hieróglifos fora do padrão numa inscrição.</p>
@@ -132,7 +165,7 @@
     <link href="http://blog.marcelocavalcante.net/blog/2013/12/30/navegacao-anonima-atraves-da-rede-tor/"/>
     <updated>2013-12-30T08:15:00-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2013/12/30/navegacao-anonima-atraves-da-rede-tor</id>
-    <content type="html"><![CDATA[<p><img class="left" src="/imgs/tor_logo.png" title="&lsquo;Tor&rsquo;" >
+    <content type="html"><![CDATA[<p>{% img left /imgs/tor_logo.png &lsquo;Tor&rsquo; %}
 <strong>O</strong> ano de 2013 foi marcado por diversos acontecimentos de grande repercussão e, sem sombra de dúvidas, um deles foi o escândalo causado pelo vazamento de dados que provaram que algumas instituições, dentre elas a <em>NSA</em> (Agência de Segurança dos Estados Unidos), estavam espionando diversas entidades, empresas e até mesmo pessoas físicas nas mais diversas regiões do globo. Escândalos a parte, estas denúncias acabaram despertando um pouco mais (uma pena que não tenha sido muito mais) nas pessoas o interesse em preservar sua privacidade.</p>
 
 <p><strong>S</strong>endo assim, nada mais justo que dedicar o último post do ano ao <em>Tor</em>.</p>
@@ -186,65 +219,6 @@
 <p><strong>D</strong>esejo a todos um feliz ano novo com liberdade, privacidade e anonimato, quando necessário!</p>
 
 <p><strong>H</strong>appy Hacking!</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Vulnerabilidade no Firefox - Descobrindo Senhas Salvas]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2013/12/27/vulnerabilidade-no-firefox-descobrindo-senhas-salvas/"/>
-    <updated>2013-12-27T08:40:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2013/12/27/vulnerabilidade-no-firefox-descobrindo-senhas-salvas</id>
-    <content type="html"><![CDATA[<p><img class="left" src="/imgs/firefox_pass.png" title="&lsquo;Firefox Peaces&rsquo;" >
-<strong>U</strong>ma coisa é certa&hellip; usuários teimam em salvar senhas em navegadores para <em>facilitar</em> suas vidas durante a navegação na internet. Seja em emails, redes sociais, serviços online ou qualquer outra coisa, a opção <em>Salvar sua senha</em> parece possuir um enorme magnetismo ou um centro gravitacional extremamente denso a ponto de atrair o usuário para tal.</p>
-
-<p><strong>S</strong>erá que as pessoas não entendem o quão perigosa é a ideia de <em>salvar sua senha</em> onde quer que seja? É, praticamente, o mesmo risco assumido por quem anota suas senhas em <em>post-its</em> e os colam em seu monitor ou mesa.</p>
-
-<p><strong>H</strong>oje um colega me procurou para saber como recuperar uma senha que ele não lembrava mais. Já conhecendo o histórico do mesmo eu tinha certeza que ele tinha salvo esta senha no navegador. Então lhe mostrei como ele, ou qualquer outra pessoa, conseguiria facilmente descobrir todas as senhas salvas em seu navegador Firefox. A experiência foi boa por dois motivos:</p>
-
-<ol>
-<li>Ele conseguiu descobrir sua senha; <em>(a qual ele provavelmente não esqueceria se tivesse o costume de digitá-la sempre que necessário ao invés de salá-la no navegador)</em></li>
-<li>Ele entendeu o risco que ele corre com esta prática absurda;</li>
-</ol>
-
-
-<p><strong>V</strong>ejamos o quão <strong>simples</strong> <em>(para não dizer estúpido)</em> é o procedimento para descobrir as senhas salvas pelo usuário no navegador Firefox.</p>
-
-<ol>
-<li>Clique no menu <strong>Firefox</strong> que se encontra no canto superior esquerdo do navegador;</li>
-</ol>
-
-
-<p><img class="center" src="/imgs/firefox_pass_1.png" title="&lsquo;Firefox Pass 1&rsquo;" ></p>
-
-<ol>
-<li>Selecione a opção <strong>Preferências</strong> no menu e em seguida, novamente, <strong>Preferências</strong>;</li>
-</ol>
-
-
-<p><img class="center" src="/imgs/firefox_pass_2.png" title="&lsquo;Firefox Pass 2&rsquo;" ></p>
-
-<ol>
-<li>Na aba <strong>Segurança</strong>, clique no botão <strong>Senhas Salvas</strong>;</li>
-</ol>
-
-
-<p><img class="center" src="/imgs/firefox_pass_3.png" title="&lsquo;Firefox Pass 3&rsquo;" ></p>
-
-<ol>
-<li>Repare que na janela que será apresentada você terá uma lista de sites/serviços e usuários que deixaram suas senhas salvas. Nesta janela, clique no botão <strong>Mostrar Senhas</strong>;</li>
-</ol>
-
-
-<p><img class="center" src="/imgs/firefox_pass_4.png" title="&lsquo;Firefox Pass 4&rsquo;" ></p>
-
-<ol>
-<li>Agora você poderá ver as senhas salvas em texto plano, limpo e claro.</li>
-</ol>
-
-
-<p><img class="center" src="/imgs/firefox_pass_5.png" title="&lsquo;Firefox Pass 5&rsquo;" ></p>
-
-<p><strong>Lição aprendida: Não salve suas senhas!</strong></p>
 ]]></content>
   </entry>
   

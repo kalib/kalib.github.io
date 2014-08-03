@@ -4,7 +4,7 @@
   <title><![CDATA[Category: SSH | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/blog/categories/ssh/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2014-08-02T17:02:21-03:00</updated>
+  <updated>2014-08-03T07:56:39-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -18,7 +18,7 @@
     <link href="http://blog.marcelocavalcante.net/blog/2013/08/28/tornando-seu-ssh-mais-seguro/"/>
     <updated>2013-08-28T11:20:00-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2013/08/28/tornando-seu-ssh-mais-seguro</id>
-    <content type="html"><![CDATA[<p><img class="left" src="/imgs/openssh.png" title="&lsquo;OpenSSH&rsquo;" >
+    <content type="html"><![CDATA[<p>{% img left /imgs/openssh.png &lsquo;OpenSSH&rsquo; %}
 <strong>O</strong> <em>SSH</em> (Secure Shell) é um dos protocolos mais utilizados atualmente para transferência de arquivos ou mesmo conexão remota, principalmente em ambientes Linux/Unix e, por si só, já tem se provado ser confiável e seguro. O mesmo passou a ser o principal substituto ao <em>TELNET</em> por possuir a vantagem da criptografia na conexão entre o cliente e o servidor, além da possibilidade de criação de túneis, o que chamamos de <em>tunneling</em>, oferecendo assim a capacidade de redirecionar pacotes de dados. Mas não é por isso que devemos nos descuidar&hellip;</p>
 
 <p><strong>S</strong>empre existe espaço para melhorias.</p>

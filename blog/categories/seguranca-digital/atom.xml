@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Seguranca Digital | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/blog/categories/seguranca-digital/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2014-08-02T17:02:21-03:00</updated>
+  <updated>2014-08-03T07:56:39-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -18,7 +18,7 @@
     <link href="http://blog.marcelocavalcante.net/blog/2011/07/01/lancada-a-primeira-edicao-da-revista-seguranca-digital/"/>
     <updated>2011-07-01T08:14:54-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2011/07/01/lancada-a-primeira-edicao-da-revista-seguranca-digital</id>
-    <content type="html"><![CDATA[<p><img class="left" src="/imgs/seguranca_digital_1.jpg" title="&lsquo;Segurança Digital&rsquo;" >
+    <content type="html"><![CDATA[<p>{% img left /imgs/seguranca_digital_1.jpg &lsquo;Segurança Digital&rsquo; %}
 <strong>S</strong>audações pessoal.</p>
 
 <p><strong>P</strong>ara quem não sabe, hoje é o lançamento da primeira edição da <a href="http://www.segurancadigital.info/revista/185-revistas">Revista Segurança Digital</a>.</p>
