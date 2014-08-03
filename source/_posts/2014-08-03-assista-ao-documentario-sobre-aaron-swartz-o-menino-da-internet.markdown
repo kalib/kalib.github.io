@@ -34,6 +34,8 @@ categories:
 
 {% img center /imgs/youtube_captions.png 'Youtube Captions' %}
 
+Link para o vídeo: https://www.youtube.com/watch?v=2uj1EeiuK5U
+
 <iframe width="420" height="315" src="http://www.youtube.com/watch?v=2uj1EeiuK5U" frameborder="0" allowfullscreen></iframe>
 
 **A**braços,
