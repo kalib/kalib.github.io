@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Chromium | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/blog/categories/chromium/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2014-08-03T07:56:39-03:00</updated>
+  <updated>2014-08-03T07:57:26-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -18,7 +18,7 @@
     <link href="http://blog.marcelocavalcante.net/blog/2009/12/14/chromium-no-testing-do-arch-linux/"/>
     <updated>2009-12-14T08:50:42-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2009/12/14/chromium-no-testing-do-arch-linux</id>
-    <content type="html"><![CDATA[<p>{% img left /imgs/chromium.png &lsquo;Chromium&rsquo; %}
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/chromium.png" title="&lsquo;Chromium&rsquo;" >
 <strong>S</strong>audações pessoal&hellip;</p>
 
 <p><strong>J</strong>á estava na hora eim?! Chromium passando para o repositório [testing] no Arch.</p>
@@ -65,7 +65,7 @@ Include = /etc/pacman.d/mirrorlist</em></p>
     <link href="http://blog.marcelocavalcante.net/blog/2009/09/03/chromium-suportando-java-agora/"/>
     <updated>2009-09-03T16:15:34-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2009/09/03/chromium-suportando-java-agora</id>
-    <content type="html"><![CDATA[<p>{% img left /imgs/javachromium.png &lsquo;Java Chromium&rsquo; %}
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/javachromium.png" title="&lsquo;Java Chromium&rsquo;" >
 <strong>É</strong> isso aí galera..</p>
 
 <p><strong>D</strong>epois de dominar 100% o plugin flash, chegou a vez do nosso amigo Java.</p>
@@ -99,12 +99,12 @@ Include = /etc/pacman.d/mirrorlist</em></p>
     <link href="http://blog.marcelocavalcante.net/blog/2009/08/12/habilitando-plugins-no-chromium/"/>
     <updated>2009-08-12T09:55:34-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2009/08/12/habilitando-plugins-no-chromium</id>
-    <content type="html"><![CDATA[<p>{% img left /imgs/chromium-browser.png &lsquo;Chromium&rsquo; %}
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/chromium-browser.png" title="&lsquo;Chromium&rsquo;" >
 <strong>T</strong>odos que visitam meu blog já devem estar cansados de saber que estou bastante atento ao projeto chromium e ajudando com o possível para o desenvolvimento e divulgação do mesmo.</p>
 
 <p><strong>B</strong>om, eu já havia notificado aqui o fato de que o chromium passou a ter suporte à plugins como o flash por exemplo. De fato ele já suporta os plugins, mas muitos estão me procurando para perguntar porque o chromium cortou o suporte aos plugins, visto que nas builds mais recentes do chromium o suporte parece ter sido cortado, visto que os plugins não estão funcionando a princípio.</p>
 
-<p>{% img center /imgs/shot_chromium.png &lsquo;Shot Chromium&rsquo; %}</p>
+<p><img class="center" src="/imgs/shot_chromium.png" title="&lsquo;Shot Chromium&rsquo;" ></p>
 
 <p><strong>M</strong>as, porque o meu funciona e o seu não?</p>
 
@@ -158,7 +158,7 @@ Server = <a href="http://repo.archlinux-br.org/x86_64">http://repo.archlinux-br
 <p><strong>P</strong>ara quem ainda não sabe, Chromium é o projeto open source que serve de base para o já conhecido Chrome do Google.</p>
 
 <p><strong>O</strong>ntem saiu uma nova build do chromium que trás suporte total ao flash, precisando-se apenas criar um link simbólico para o seu já existente plugin flash que se encontra no diretório de seu firefox.
-{% img center /imgs/chromium-flash.png &lsquo;Chromium&rsquo; %}</p>
+<img class="center" src="/imgs/chromium-flash.png" title="&lsquo;Chromium&rsquo;" ></p>
 
 <p><strong>E</strong>sta nova build, já se encontra atualizada em nosso repositório nacional, graças ao nosso amigo <a href="http://matias.archlinux-br.org/">Paulo (aka thotypous)</a>, e você pode instalar, caso ainda não tenha, ou apenas atualizar o seu com os seguintes comandos:</p>
 
@@ -190,7 +190,7 @@ ln -s /usr/lib/mozilla/plugins/libflashplayer.so .</p></blockquote>
     <link href="http://blog.marcelocavalcante.net/blog/2009/05/28/chromium-pronto-para-o-arch/"/>
     <updated>2009-05-28T09:27:40-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2009/05/28/chromium-pronto-para-o-arch</id>
-    <content type="html"><![CDATA[<p>{% img left /imgs/exportgooglechormebookmarks.png &lsquo;Chromium&rsquo; %}
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/exportgooglechormebookmarks.png" title="&lsquo;Chromium&rsquo;" >
 <strong>S</strong>audações pessoal, tudo tranquilo?</p>
 
 <p><strong>G</strong>ostaria de lhes comunicar que o Google Chromium alpha já está pronto e rodando no Arch.</p>
@@ -199,7 +199,7 @@ ln -s /usr/lib/mozilla/plugins/libflashplayer.so .</p></blockquote>
 
 <p><strong>É</strong> isso mesmo. Você que é usuário Arch Linux já pode fazer inveja à seus coleguinhas..</p>
 
-<p>{% img center /imgs/chromiumprint.png &lsquo;Chromium&rsquo; %}
+<p><img class="center" src="/imgs/chromiumprint.png" title="&lsquo;Chromium&rsquo;" >
 <strong>C</strong>omo o próprio Paulo já explicou em seu post, vocês podem instalar de duas formas:</p>
 
 <p>1- Baixando o pacote chromium-browser no <a href="http://aur.archlinux.org/packages.php?ID=24266">AUR</a>.</p>

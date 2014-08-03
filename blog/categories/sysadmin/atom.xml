@@ -4,7 +4,7 @@
   <title><![CDATA[Category: SysAdmin | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/blog/categories/sysadmin/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2014-08-03T07:56:39-03:00</updated>
+  <updated>2014-08-03T07:57:26-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -18,7 +18,7 @@
     <link href="http://blog.marcelocavalcante.net/blog/2013/08/06/dica-rapida-linux-forcar-usuario-a-trocar-senha-apos-primeiro-login/"/>
     <updated>2013-08-06T08:20:00-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2013/08/06/dica-rapida-linux-forcar-usuario-a-trocar-senha-apos-primeiro-login</id>
-    <content type="html"><![CDATA[<p>{% img center /imgs/password.jpg &lsquo;password&rsquo; %}</p>
+    <content type="html"><![CDATA[<p><img class="center" src="/imgs/password.jpg" title="&lsquo;password&rsquo;" ></p>
 
 <p><strong>É</strong> natural encontrar pessoas que utilizam linux a pouco tempo (ou que nunca utilizaram) questionando aspectos simples que seguem o jargão: <em>&ldquo;Mas no Windows eu consigo fazer isso, enquanto que no Linux&hellip;.&rdquo;</em></p>
 

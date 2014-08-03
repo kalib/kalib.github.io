@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Fedora | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/blog/categories/fedora/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2014-08-03T07:56:39-03:00</updated>
+  <updated>2014-08-03T07:57:26-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -18,7 +18,7 @@
     <link href="http://blog.marcelocavalcante.net/blog/2008/08/22/problemas-de-infra-do-fedora-servidores-hackeados/"/>
     <updated>2008-08-22T10:05:00-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2008/08/22/problemas-de-infra-do-fedora-servidores-hackeados</id>
-    <content type="html"><![CDATA[<p>{% img left /imgs/fedora.jpg &lsquo;Fedora&rsquo; %}
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/fedora.jpg" title="&lsquo;Fedora&rsquo;" >
 Não sei se algum de vocês ficou sabendo..Mas na última semana foi notificado um problema na infra-estrutura do Fedora, e havia sido &ldquo;recomendado&rdquo; que nenhuma instalação ou atualizaçãp fosse feita, caso você use Fedora.</p>
 
 <p>Até ontem eu não tinha visto nenhuma explicação para o caso, mas discutindo com colegas de trabalho já suspeitávamos de uma invasão nos servidores do fedora que pudessem ocasionar este tipo de problema&hellip;Bom, hoje achei esta nota no site da red hat, que confirma nossas suspeitas. Os servidores foram sim invadidos. O caso é gravíssimo, pois pode, ou não, ter interferido na árvore de pacotes&hellip;pois existe o risco de eles terem pego as chaves dos pacotes fedora.. :/</p>

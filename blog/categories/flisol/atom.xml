@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Flisol | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://blog.marcelocavalcante.net/blog/categories/flisol/atom.xml" rel="self"/>
   <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2014-08-03T07:56:39-03:00</updated>
+  <updated>2014-08-03T07:57:26-03:00</updated>
   <id>http://blog.marcelocavalcante.net/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -18,7 +18,7 @@
     <link href="http://blog.marcelocavalcante.net/blog/2011/04/19/encontros-sobre-software-livre-escolha-um-nome/"/>
     <updated>2011-04-19T14:50:41-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2011/04/19/encontros-sobre-software-livre-escolha-um-nome</id>
-    <content type="html"><![CDATA[<p>{% img left /imgs/tux_teacher.png &lsquo;Tux Teacher&rsquo; %}
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/tux_teacher.png" title="&lsquo;Tux Teacher&rsquo;" >
 <strong>S</strong>audações pessoal,</p>
 
 <p><strong>A</strong>credito que boa parte, se não praticamente todos, os usuários de Software Livre em nossa região já ouviram falar, ou participaram, do <a href="http://marcelocavalcante.net/portal/2011/04/13/flisol-quixada-relato-e-parabens/">Flisol &ndash; Festival Latino Americano de Instalação de Software Livre</a>.</p>
@@ -169,7 +169,7 @@
     <link href="http://blog.marcelocavalcante.net/blog/2011/04/07/flisol-ceara-fortaleza-quixada-e-russas/"/>
     <updated>2011-04-07T08:30:24-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2011/04/07/flisol-ceara-fortaleza-quixada-e-russas</id>
-    <content type="html"><![CDATA[<p>{% img left /imgs/flisol.png &lsquo;Flisol&rsquo; %}
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/flisol.png" title="&lsquo;Flisol&rsquo;" >
 <strong>P</strong>ara quem ainda não conhece, o Flisol - Fórum Latino Americano de Instalação de Software Livre - é um dos maiores eventos do mundo no que diz respeito ao movimento de Software Livre. O evento é realizado anualmente e ocorre de forma simultânea em diversas cidades da América Latina, totalizando mais de 120 cidades em aproximadamente 20 países. O Flisol é um evento descentralizado, onde diversas comunidades organizam e realizam seu festival, de forma voluntária, tendo como principal objetivo promover o uso de Software Livre, apresentando sua filosofia, alcance, avanços e desenvolvimento ao público em geral.</p>
 
 <p><strong>O</strong> evento é gratuito e aberto a todo o público: curiosos, interessados e amantes do Software Livre. Nesse dia os voluntários propõe a instalação de Software Livre, como distribuições de Gnu/Linux, sistemas BSD, e aplicativos livres para Windows em geral. Alguns eventos também contam com palestras, oficinas, salas de degustação e gravações de mídias (live-CD/DVD e/ou pendrives).</p>
@@ -218,7 +218,7 @@ Telefone: 88 3411-8550</p>
     <link href="http://blog.marcelocavalcante.net/blog/2010/04/09/lixo-eletronico-nao-sabe-o-que-fazer-o-flisol-sabe/"/>
     <updated>2010-04-09T15:24:24-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2010/04/09/lixo-eletronico-nao-sabe-o-que-fazer-o-flisol-sabe</id>
-    <content type="html"><![CDATA[<p>{% img left /imgs/reciclagem.jpg &lsquo;Reiclagem&rsquo; %}
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/reciclagem.jpg" title="&lsquo;Reiclagem&rsquo;" >
 <strong>S</strong>audações pessoal, todos dispostos a ajudar?</p>
 
 <p><strong>A</strong>lgumas semanas atrás uma amiga me perguntou algumas coisas sobre reciclagem ou reaproveitamento de e-lixo ou lixo eletrônico para os menos íntimos. A mesma não informou estes termos mas a intenção foi parecida. Me perguntou sobre como se descartar corretamente mídias (cds, dvds) ou velhas peças de computador. E como estamos nos aproximando do FLISOL, aproveitei para divulgar uma iniciativa que teremos aqui em Fortaleza no dia 24 de Abril durante o <a href="http://flisolceara.net">FLISOL</a> &ndash; Festival Latino Americano de Instalação de Software Livre.</p>
@@ -248,7 +248,7 @@ Telefone: 88 3411-8550</p>
     <link href="http://blog.marcelocavalcante.net/blog/2010/03/25/inscricoes-abertas-para-o-flisol-fortaleza-2010/"/>
     <updated>2010-03-25T16:54:42-03:00</updated>
     <id>http://blog.marcelocavalcante.net/blog/2010/03/25/inscricoes-abertas-para-o-flisol-fortaleza-2010</id>
-    <content type="html"><![CDATA[<p>{% img left /imgs/flisol.png &lsquo;Flisol&rsquo; %}</p>
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/flisol.png" title="&lsquo;Flisol&rsquo;" ></p>
 
 <p><strong>S</strong>audações pessoal!</p>
 
