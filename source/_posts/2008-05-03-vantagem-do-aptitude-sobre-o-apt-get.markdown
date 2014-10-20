@@ -13,10 +13,6 @@ categories:
 - Software Livre
 ---
 
-[![](http://1.bp.blogspot.com/_5kfJplBiYy0/SBx_jVJ9LUI/AAAAAAAAACU/1E4XfQHm1SY/s320/Swirl.jpg)](http://1.bp.blogspot.com/_5kfJplBiYy0/SBx_jVJ9LUI/AAAAAAAAACU/1E4XfQHm1SY/s1600-h/Swirl.jpg)
-
-
-
 Novamente estou aqui para lhes passar uma pequena dica que para muitos pode nem ser novidade, porém para alguns a dúvida pode existir.
 
 Bom, para aqueles que ainda não sabem, o apt é uma ferramenta da Debian para gerenciamento de pacotes de forma simples, amigável e rápida contando inclusive com a instalação automática de dependências necessárias para a finalização do processo. O que muitas pessoas ainda não sabem é que utilizando-se do comando "apt-get install NOME_PACOTE" serão instalados pacotes que o mesmo não removerá automaticamente posteriormente, fazendo assim um acúmulo de "lixo" em nosso sistema. Como assim? Suponhamos que eu queira instalar um aplicativo de instant messenger como por exemplo o amsn. Esta ferramenta possui dependências necessárias para seu funcionamento, sendo elas o TCL e o TK.
@@ -50,6 +46,3 @@ Imagine a quantidade de pacotes desnecessários que deve existir em sua máquina
 Para os fans de distribuições como o Fedora que utilizam-se da ferramenta Yum para instalar seus pacotes, caso tenha surgido a curiosidade, fica a informação de que, infelizmente, o yum ainda não possui este mecanismo. A mesma curiosidade surgiu em mim e resolvi testar, porém o yum, assim como o apt-get, apenas me removeu o amsn, deixando para trás as dependências que foram instaladas.
 
 Essa foi uma simples dica para aqueles que desconheciam este fato diferencial dentre os dois. Espero ter ajudado com esta pequena contribuição para com a comunidade. abraços e até a próxima.
-[](http://img376.imageshack.us/img376/8000/userbar635980sd7.gif)
-
-

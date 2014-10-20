@@ -9,7 +9,7 @@ footer: true
 {% img right /about/me.png 'Marcelo e Mari' %}
 Me chamo **Marcelo Cavalcante Rocha**, também conhecido como **Kalib**, e sou militante do **Software Livre** desde 2005. Formado em **Sistemas de Informação** e atual pós-graduando em **Governança de Tecnologia da Informação**, trabalho com administração de redes, sistemas e segurança da informação em ambientes mistos.
 
-Estou **noivo** de uma linda mulher chamada **Mariana**, formada em Administração de Empresas, com quem pretendo compartilhar o restante de minha vida.
+Sou **casado** com uma linda mulher chamada **Mariana**, formada em Administração de Empresas, com quem pretendo compartilhar o restante de minha vida.
 
 Caso deseje me contactar, sinta-se livre e envie um **email** para <a href="mailto:marcelo@marcelocavalcante.net">marcelo</a> neste(@) mesmo domínio. Também estou constantemente online no **IRC** como kalib, através da rede Freenode, nos canais #archlinux, #archlinux-br, #french e #mlug. Além disto, você pode simplesmente deixar um **comentário** aqui mesmo no site/blog.
 

@@ -14,15 +14,7 @@ categories:
 ---
 
 ### 
-
-
-
-
-
-
-
-[![](http://2.bp.blogspot.com/_5kfJplBiYy0/SDbByXYArLI/AAAAAAAAAC8/85vq870Fl7c/s320/gnu.jpg)](http://2.bp.blogspot.com/_5kfJplBiYy0/SDbByXYArLI/AAAAAAAAAC8/85vq870Fl7c/s1600-h/gnu.jpg)  
-
+{% img center /imgs/gnu.jpg 'GNU' %}
 Diante de nossa atual situação tecnológica seria impossível falarmos de GNU Linux sem antes entendermos o que é Software Livre ou de onde surgiu essa filosofia.
 
 
@@ -59,14 +51,4 @@ O projeto GNU não é somente desenvolvimento e distribuição de alguns softwar
 
 
 
-Com o passar dos anos, e baseado nessa filosofia do Software Livre, surgiu então o sistema operacional que hoje chamamos de GNU / Linux.[![](http://img376.imageshack.us/img376/8000/userbar635980sd7.gif)](http://img376.imageshack.us/img376/8000/userbar635980sd7.gif)
-
-
-
-
-
-
-
-
-
-
+Com o passar dos anos, e baseado nessa filosofia do Software Livre, surgiu então o sistema operacional que hoje chamamos de GNU / Linux.

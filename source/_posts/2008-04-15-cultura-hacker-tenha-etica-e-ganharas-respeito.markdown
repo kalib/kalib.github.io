@@ -58,11 +58,3 @@ Ainda nos dias de hoje existem cada vez mais pessoas, curiosas, que investem boa
 
 
 Alguns aceitam este novo termo, outros, onde eu me encaixo, preferem bater de frente e insistir na fortificação da ideologia hacker, mostrando o verdadeiro sentido do termo e tornando-o claro e conhecido por todos, para que algum dia quem sabe, os hackers sejam tratados com o devido respeito que merecem.
-
-
-
-
-![](http://img376.imageshack.us/img376/8000/userbar635980sd7.gif)
-
-
-

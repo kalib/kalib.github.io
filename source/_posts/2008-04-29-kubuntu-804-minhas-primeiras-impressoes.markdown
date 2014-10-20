@@ -13,8 +13,6 @@ categories:
 - Software Livre
 ---
 
-![](http://3.bp.blogspot.com/_5kfJplBiYy0/SBcnwFJ9LTI/AAAAAAAAACM/7rF76rr-ZL8/s320/kubuntu_splash.jpg)  
-
 Assim que saiu o Kubuntu 8.04 oficialmente, corri para baixar a iso antes mesmo de ser divulgado no site oficial como forma de evitar pegar uma banda completamente congestionada por centenas de pessoas baixando o mesmo arquivo na mesma fonte. Sim, existem algumas vantagens em se fazer parte das listas de discussão, desenvolvimento e debugs. :p
 
 
@@ -48,24 +46,9 @@ Logo que instalei a versão final nesta madrugada, parti para a instalação de 
 Fui aidiconando alguns outros aplicativos que uso no meu dia-a-dia como o amsn, em sua versão 0.98, thunderbird, xchat, yakuake, kooldock, eclipse, dia, gimp, jsms, etc...
 
 
-
-
-![](http://4.bp.blogspot.com/_5kfJplBiYy0/SBckYVJ9LSI/AAAAAAAAACE/CZMLJ4x8LZU/s320/first.png)
-
-
-
-
 Tudo funcionando redondinho e com uma performance bastante estável. A única coisa que pesou um pouco a nível de memória foi ao instalar o compiz e adicionar alguns efeitos, porém admito que nunca curti essas "frescuras" e instalei apenas a nível de teste, já que até a versão 7.10, o kubuntu não conseguia reconhecer minha placa de vídeo por default. Fiquei surpreso como até nisso ele se saiu bem. Reconheceu minha placa, instalou automaticamente o driver e o compiz juntamente. Em poucos segundos eu estava com os efeitos do compiz habilitados. Porém minha máquina é modesta e isso pesou um pouco para mim no quesito memória. Mas como disse antes, nunca fui fã dessas "frescuras" e logo desabilitei o compiz deixando novamente meu notebook respirar.
 
 
 
 
 Vou seguindo com meu segundo dia de testes no kubuntu 8.04 e veremos no que essa parceria kalib/kubuntu vai dar. ;]
-
-
-
-
-![](http://img376.imageshack.us/img376/8000/userbar635980sd7.gif)
-
-
-

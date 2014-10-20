@@ -135,11 +135,3 @@ Veja [Categorias de Software Livre   (18k characters)](http://www.gnu.org/philos
 
 
 O texto foi retirado do link: http://www.gnu.org/philosophy/free-sw.pt-br.html
-
-
-
-
-[![](http://img376.imageshack.us/img376/8000/userbar635980sd7.gif)](http://img376.imageshack.us/img376/8000/userbar635980sd7.gif)
-
-
-

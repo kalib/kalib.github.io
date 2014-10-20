@@ -14,14 +14,7 @@ categories:
 ---
 
 ### 
-
-
-
-
-
-
-
-[![](http://3.bp.blogspot.com/_5kfJplBiYy0/SD6j_nYArOI/AAAAAAAAADU/gbpphK2J8mM/s320/gnu-linux.jpg)](http://3.bp.blogspot.com/_5kfJplBiYy0/SD6j_nYArOI/AAAAAAAAADU/gbpphK2J8mM/s1600-h/gnu-linux.jpg)Imaginemos o seguinte padrão: Softwares são programados através de uma linguagem. O que é Linguagem? É um conjunto de códigos que funciona como Meio de Comunicação, seja ele entre Humano / Humano ou Humano / Máquina por exemplo.
+Imaginemos o seguinte padrão: Softwares são programados através de uma linguagem. O que é Linguagem? É um conjunto de códigos que funciona como Meio de Comunicação, seja ele entre Humano / Humano ou Humano / Máquina por exemplo.
 
 
 
@@ -84,14 +77,3 @@ Principais _vantagens_ da utilização de Software Livre:
 
 
 SOFTWARE LIVRE! Socialmente Justo...Economicamente Viável...Tecnologicamente Sustentável.
-
-
-
-
-[![](http://img376.imageshack.us/img376/8000/userbar635980sd7.gif)](http://img376.imageshack.us/img376/8000/userbar635980sd7.gif)
-
-
-
-
-
-

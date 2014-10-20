@@ -17,13 +17,7 @@ categories:
 
 ### 
 
-
-
-
-
-
-
-[![](http://2.bp.blogspot.com/_5kfJplBiYy0/SCHhSx0v4cI/AAAAAAAAACc/WAlMjjeTrlc/s320/brazil.gif)](http://2.bp.blogspot.com/_5kfJplBiYy0/SCHhSx0v4cI/AAAAAAAAACc/WAlMjjeTrlc/s1600-h/brazil.gif)Versão em Português BR / Portuguese Version
+Versão em Português BR / Portuguese Version
 
 
 
@@ -111,10 +105,7 @@ Abraços
 
 -----------------------------------------------------
 
-
-
-
-[![](http://3.bp.blogspot.com/_5kfJplBiYy0/SCHhxB0v4dI/AAAAAAAAACk/GLnUKyTOJcA/s320/800px-Flag_of_Canada_svg.png)](http://3.bp.blogspot.com/_5kfJplBiYy0/SCHhxB0v4dI/AAAAAAAAACk/GLnUKyTOJcA/s1600-h/800px-Flag_of_Canada_svg.png)Versão em Inglês / English Version
+Versão em Inglês / English Version
 
 
 
@@ -204,11 +195,3 @@ Well, i hope this text could help some of you guys.
 
 
 Take Care
-
-
-
-
-[![](http://img376.imageshack.us/img376/8000/userbar635980sd7.gif)](http://img376.imageshack.us/img376/8000/userbar635980sd7.gif)
-
-
-

@@ -13,14 +13,7 @@ categories:
 ---
 
 ### 
-
-
-
-
-
-
-
-[![](http://1.bp.blogspot.com/_5kfJplBiYy0/SEE5sXYArPI/AAAAAAAAADc/FQUeQoIz7t8/s320/dday_badge_fox.png)](http://1.bp.blogspot.com/_5kfJplBiYy0/SEE5sXYArPI/AAAAAAAAADc/FQUeQoIz7t8/s1600-h/dday_badge_fox.png)"Queremos estabelecer um Recorde Mundial no Guinness para o software mais baixado em 24 horas e com a sua ajuda temos certeza de que conseguiremos!"
+"Queremos estabelecer um Recorde Mundial no Guinness para o software mais baixado em 24 horas e com a sua ajuda temos certeza de que conseguiremos!"
 
 
 
@@ -56,11 +49,3 @@ Link do projeto: [http://www.spreadfirefo](http://www.spreadfirefox.com/pt-BR/wo
 
 
 []'s
-
-
-
-
-[![](http://img376.imageshack.us/img376/8000/userbar635980sd7.gif)](http://img376.imageshack.us/img376/8000/userbar635980sd7.gif)
-
-
-

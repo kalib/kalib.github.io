@@ -13,14 +13,8 @@ categories:
 ---
 
 ### 
-
-
-
-
-
-
-
-[![](http://4.bp.blogspot.com/_5kfJplBiYy0/SEWWyV8TkxI/AAAAAAAAAD0/_RJabFlJvxw/s200/archlogo.jpg)](http://4.bp.blogspot.com/_5kfJplBiYy0/SEWWyV8TkxI/AAAAAAAAAD0/_RJabFlJvxw/s1600-h/archlogo.jpg)Quem me conhece sabe que sou um aventureiro quando se trata de distribuições Linux. Sempre utilizei várias distros dos mais variados tipos passando pelo Conectiva, Slackware, Suse, Kurumin, Ubuntu, Kalango, Kubuntu, Debian, Fluxbuntu, Goblinx, Fedora, Big, dentre outros. Agora é a vez do Arch.
+{% img left /imgs/arch.png 'Arch Linux' %}
+Quem me conhece sabe que sou um aventureiro quando se trata de distribuições Linux. Sempre utilizei várias distros dos mais variados tipos passando pelo Conectiva, Slackware, Suse, Kurumin, Ubuntu, Kalango, Kubuntu, Debian, Fluxbuntu, Goblinx, Fedora, Big, dentre outros. Agora é a vez do Arch.
 
 
 
@@ -45,7 +39,7 @@ Sempre adorei ler, mas não ia ser uma simples leitura que me convenceria sobre 
 
 
 
-[![](http://3.bp.blogspot.com/_5kfJplBiYy0/SEWNdzRsaSI/AAAAAAAAADk/mc4TzoaAOfY/s200/arch3.png)](http://3.bp.blogspot.com/_5kfJplBiYy0/SEWNdzRsaSI/AAAAAAAAADk/mc4TzoaAOfY/s1600-h/arch3.png)Como não queria particionar meu disco, pelo mesmo já ter muitas fatias, resolvi criar uma máquina virtual com o Arch Linux, utilizando para isto um aplicativo chamado Virtual Box.
+Como não queria particionar meu disco, pelo mesmo já ter muitas fatias, resolvi criar uma máquina virtual com o Arch Linux, utilizando para isto um aplicativo chamado Virtual Box.
 
 
 
@@ -65,12 +59,11 @@ Após instalado, resolvi checar a eficiência de seus repositórios. Mandei o pa
 
 
 
-Outra coisa que me chamou bastante atenção foi a leveza com que o sistema se mostrou funcionar. Isto pode ser conferido nesta segunda screenshot onde eu estava rodando o top para monitorar os consumos do sistema.
+Outra coisa que me chamou bastante atenção foi a leveza com que o sistema se mostrou funcionar.
 
 
 
-
-[![](http://3.bp.blogspot.com/_5kfJplBiYy0/SEWPY8j8tuI/AAAAAAAAADs/gEolntsO-9Q/s200/archlinux2.png)](http://3.bp.blogspot.com/_5kfJplBiYy0/SEWPY8j8tuI/AAAAAAAAADs/gEolntsO-9Q/s1600-h/archlinux2.png)Em resumo, esta foi a primeira impressão que tive do Arch Linux. Uma distribuição bastante leve, eficiente, estável e extremamente maleável. Não é o tipo de distribuição que eu recomendaria para usuários que apenas desejam ter um sistema operacional com tudo funcionando, mas com certeza eu o indicaria para alguém que quer ter um excelente sistema e não tem medo de aprender ou ter que resolver problemas de configuração na unha. Esperemos para ver no que essa relação Kalib/Arch irá resultar. ;]
+Em resumo, esta foi a primeira impressão que tive do Arch Linux. Uma distribuição bastante leve, eficiente, estável e extremamente maleável. Não é o tipo de distribuição que eu recomendaria para usuários que apenas desejam ter um sistema operacional com tudo funcionando, mas com certeza eu o indicaria para alguém que quer ter um excelente sistema e não tem medo de aprender ou ter que resolver problemas de configuração na unha. Esperemos para ver no que essa relação Kalib/Arch irá resultar. ;]
 
 
 
@@ -82,11 +75,3 @@ Links:
 [2- Download do Arch](http://www.archlinux-br.org/download/)  
 
 [3- Tutorial de Instalação](http://www.vivaolinux.com.br/artigos/verArtigo.php?codigo=8256)
-
-
-
-
-[![](http://img376.imageshack.us/img376/8000/userbar635980sd7.gif)](http://img376.imageshack.us/img376/8000/userbar635980sd7.gif)
-
-
-
