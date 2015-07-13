@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Seguranca | Marcelo Cavalcante Rocha ~]]></title>
+  <link href="http://kalib.github.io/blog/categories/seguranca/atom.xml" rel="self"/>
+  <link href="http://kalib.github.io/"/>
+  <updated>2015-07-13T13:09:19-03:00</updated>
+  <id>http://kalib.github.io/</id>
+  <author>
+    <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Assista ao documentário sobre Aaron Swartz: O menino da internet]]></title>
+    <link href="http://kalib.github.io/blog/2014/08/03/assista-ao-documentario-sobre-aaron-swartz-o-menino-da-internet/"/>
+    <updated>2014-08-03T07:19:00-03:00</updated>
+    <id>http://kalib.github.io/blog/2014/08/03/assista-ao-documentario-sobre-aaron-swartz-o-menino-da-internet</id>
+    <content type="html"><![CDATA[<p><img class="center" src="/imgs/aaron-swartz-movie.jpg" title="&lsquo;Aaron Swartz Movie&rsquo;" >
+<code>
+ Informação é poder. Mas, como todo poder, há aqueles que querem mantê-la para si mesmos. O patrimônio cultural e científico do mundo, publicado ao longo dos séculos em livros e revistas, está cada vez mais szendo digitalizado e trancado por um punhado de corporações privadas. Enquanto isso, aqueles que foram bloqueados não estão em pé de braços cruzados. Eles estão bisbilhotando em buracos e escalando cercas libertando as informações trancadas pelos editores e compartilhando com seus amigos. Mas toda essa ação acontece no escuro, escondida no subterrâneo. É chamado de roubo ou pirataria, como se compartilhar uma riqueza de conhecimentos fosse o equivalente  de saquear um navio e matar sua tripulação. Mas compartilhar não é imoral - é um imperativo moral. Só os cegos pela ganância se recusam a deixar um amigo fazer uma cópia. Não há justiça em seguir leis injustas. É hora de virmos para a luz e, na grande tradição de desobediência civil, declararmos a nossa oposição a este roubo privado da cultura pública.
+</code></p>
+
+<p><strong>E</strong>ste é apenas um trecho do manifesto assinado por Aaron, entitulado &ldquo;Manifesto do guerrilheiro ao acesso livre&rdquo;.</p>
+
+<p><strong>R</strong>ecentemente foi lançado um documentário de Brian Knappenberger sobre <em>Aaron Swartz</em>, o qual foi considerado um dos principais nomes da internet e luta pela liberdade de acesso ao conhecimento dos últimos anos.</p>
+
+<p><strong>P</strong>ara quem ainda não sabe do que se trata, Aaron Swartz foi um dos criadores do RSS bem como do famoso site de notícias e debates Reddit.Após alguns anos lutando e enfrentando a justiça americana Aaron cometeu suicídio.</p>
+
+<p><img class="left" src="/imgs/aaron_swartz.jpg" title="&lsquo;Aaron Swartz&rsquo;" ><strong>A</strong>aron estava sendo condenado a cerca de 50 anos de prisão, bem como a pagar um montante superior a U$ 4 milhões em multas por querer tornar públicos os artigos acadêmicos e científicos que eram mantidos na base do JSTOR, o qual vendia o acesso a estes artigos que, na visão de Aaron, deveriam ser de domínio e acesso público.</p>
+
+<p><strong>A</strong>aron sempre defendeu e lutou para que o conhecimento fosse de livre acesso a todos. Lutou tanto que acabou sendo covardemente perseguido e pressionado pelo governo americano, o que acabou por lhe deixar exausto, psicologicamente e financeiramente, ao ponto de ele desistir da luta ao invés de simplesmente &ldquo;assumir&rdquo; que estava errado e aceitar os &ldquo;acordos&rdquo; que lhe foram oferecidos pela justiça americana.</p>
+
+<p><strong>S</strong>eu crime? A curiosidade. A fome por conhecimento. Também a vontade de expor este conhecimento a todos que o desejassem.</p>
+
+<p><strong>P</strong>ara quem por algum motivo ainda não conhece o recurso de legendas ou caption do YoutTube, caso a legenda do filme não apareça automaticamente, basta clicar no botão de legendas/caption, habilitando-o, conforme apresentado na imagem abaixo:</p>
+
+<p><img class="center" src="/imgs/youtube_captions.png" title="&lsquo;Youtube Captions&rsquo;" ></p>
+
+<iframe width="560" height="315" src="http://kalib.github.io//www.youtube.com/embed/2uj1EeiuK5U" frameborder="0" allowfullscreen></iframe>
+
+
+<p>Link para o vídeo: <a href="https://www.youtube.com/watch?v=2uj1EeiuK5U">https://www.youtube.com/watch?v=2uj1EeiuK5U</a></p>
+
+<p><strong>A</strong>braços,</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Alterando os parâmetros do kernel em tempo real com o Systcl]]></title>
+    <link href="http://kalib.github.io/blog/2014/02/13/alterando-os-parametros-do-kernel-em-tempo-real-com-o-systcl/"/>
+    <updated>2014-02-13T22:02:00-03:00</updated>
+    <id>http://kalib.github.io/blog/2014/02/13/alterando-os-parametros-do-kernel-em-tempo-real-com-o-systcl</id>
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/linux-kernel.jpg" title="&lsquo;Linux Kernel&rsquo;" >
+<strong>O</strong> <em>kernel</em>, em se tratando de sistemas operacionais, é o núcleo e componente mais importante da maioria dos computadores. Basicamente, serve de ponte entre os aplicativos e o processamento real de dados feito a nível de hardware. É ele o responsável por gerenciar os recursos do sistema, podendo oferecer uma camada de abstração de nível mais baixo para os recursos, como processadores e dispositivos de entrada/saída, que os softwares aplicativos devem controlar para realizar sua função. Com o GNU/Linux não é diferente. O núcleo Linux (Linux Kernel) forma a estrutura do sistema operacional GNU/Linux.</p>
+
+<p><strong>C</strong>omo é de se esperar, o kernel possui diversos parâmetros configurados que definirão as características do seu sistema, controle de dispositivos, módulos, drivers, etc. Por vezes faz-se necessário alterar algum parâmetro do kernel para alguma tarefa ou rotina específica, portanto que tal ganhar tempo e alterar um ou mais parâmetros do kernel <em>on the fly</em>?!</p>
+
+<p><strong>O</strong> comando <em>sysctl</em> pode ajudar nesta tarefa. Ele ajuda a configurar os parâmetros do kernel em tempo de execução.</p>
+
+<p><strong>P</strong>ara listar os atuais parâmetros de seu kernel digite:</p>
+
+<p>```
+ [kalib@tuxcaverna ~]$ sysctl -a</p>
+
+<p> abi.vsyscall32 = 1
+ debug.exception-trace = 1
+ dev.cdrom.autoclose = 1
+ dev.cdrom.autoeject = 0
+ dev.cdrom.check_media = 0
+ dev.cdrom.lock = 1
+ dev.hpet.max-user-freq = 64
+ dev.mac_hid.mouse_button2_keycode = 97
+ dev.mac_hid.mouse_button3_keycode = 100
+ dev.mac_hid.mouse_button_emulation = 0
+ dev.scsi.logging_level = 0
+ fs.aio-max-nr = 65536
+ fs.aio-nr = 41192
+ fs.binfmt_misc.status = enabled
+ fs.dentry-state = 177183        161128  45      0       0       0
+ fs.dir-notify-enable = 1
+ fs.epoll.max_user_watches = 1209446
+ fs.file-max = 586836
+ fs.file-nr = 8992       0       586836
+ fs.inode-nr = 96800     290
+ fs.inotify.max_user_watches = 8192
+ fs.lease-break-time = 45
+ kernel.sched_cfs_bandwidth_slice_us = 5000
+ kernel.sched_child_runs_first = 0
+ kernel.version = #1 SMP PREEMPT Fri Jan 31 10:22:54 CET 2014
+ kernel.watchdog = 1
+ kernel.watchdog_thresh = 10
+ kernel.yama.ptrace_scope = 1
+ net.core.bpf_jit_enable = 0
+ net.core.busy_poll = 0
+ net.ipv4.cipso_cache_bucket_size = 10
+ net.ipv4.conf.all.accept_local = 0
+```</p>
+
+<p><strong>O</strong> retorno deste comando é bastante extenso, portanto colei aqui apenas algumas linhas aleatórias de meu resultado.</p>
+
+<p><strong>P</strong>ara alterar temporariamente um parâmetro, utilize o parâmetro -w do sysctl, indicando a variável que deseja alterar e o novo valor que será utilizado para a mesma.</p>
+
+<p><code>
+ [kalib@tuxcaverna ~]$ sysctl -w {nome-da-variável=valor}
+</code></p>
+
+<p><strong>N</strong>o caso acima a(s) alteração(ões) será(ão) perdida(s) após a reinicialização do sistema.</p>
+
+<p><strong>C</strong>aso deseje realizar alterações permanentes, edite o arquivo <em>/etc/sysctl.conf</em> e em seguida aplique suas modificações com o parâmetro -p do sysctl.</p>
+
+<p><code>
+ [kalib@tuxcaverna ~]$ sysctl -p
+</code></p>
+
+<p><strong>D</strong>esta forma, após a reinicialização suas modificações permanecerão ativas.</p>
+
+<p><strong>H</strong>appy Hacking!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[BlackArch Linux - Uma nova distribuição para Pentesters]]></title>
+    <link href="http://kalib.github.io/blog/2014/01/30/blackarch-linux-uma-nova-distribuicao-para-pentesters/"/>
+    <updated>2014-01-30T08:47:00-03:00</updated>
+    <id>http://kalib.github.io/blog/2014/01/30/blackarch-linux-uma-nova-distribuicao-para-pentesters</id>
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/blackarch.jpg" title="&lsquo;BlackArch&rsquo;" ></p>
+
+<p><strong>U</strong>ma boa novidade para os profissionais de segurança: <a href="http://www.blackarch.org" target="_blank">BlackArch</a>! Para quem, assim como eu, gosta de como as coisas funcionam no Arch Linux essa é uma notícia particularmente boa, visto que o BlackArch não se trata realmente de uma nova distribuição, mas sim de uma <em>extensão</em> para o Arch Linux. Como assim? Bom, você possui duas opções para utilizar o BlackArch, sendo uma delas como uma distribuição completa, através de um Live CD, por exemplo, e a outra como uma extensão (um repositório de pacotes) para o Arch Linux, onde você poderá apenas inserir um repositório em sua já existente distribuição Arch Linux e ter acesso ao conjunto de ferramentas do BlackArch.</p>
+
+<p><strong>O</strong> BlackArch, atualmente, possui suporte para as arquiteturas i686 e x86_64, com previsão de suporte para ARM em breve (Sim, meu RaspBerry poderá se tornar uma ferramenta para pentests). No mais, o BlackArch hoje possui mais de 600 ferramentas, estando este número crescendo constantemente, e utiliza grupos modulares de pacotes, facilitando a instalação dos mesmos.</p>
+
+<p><strong>A</strong> ISO Live trás diversos gerenciadores de janelas ou ambientes gráficos, como o dwm, Fluxbox, Openbox, Awesome, Wmii, i3 e Spectrwm. É claro, ele também trás um instalador capaz de instalar a partir do fonte.</p>
+
+<p><strong>D</strong>entre as ferramentas existentes estão: 3proxy, 42zip, acccheck, aesfix, against, airflood, airoscript, bluepot, blueprint, braces, bss, bully, cisco-ocs, cmospwd, dbd, dc3dd, deblaze, dhcpig, enumiax, fakedns, &hellip; Vocẽ não espera que eu liste todos os mais de 600, certo?</p>
+
+<p><a href="http://blackarch.org/images/screenshots/openbox.png" target="_blank"><img class="center" src="/imgs/openbox.png" title="&lsquo;BlackArch Openbox&rsquo;" ></a></p>
+
+<p><strong>Configurando como um Repositório Não-Oficial</strong></p>
+
+<p><strong>S</strong>e você já possui o Arch Linux instalado e deseja apenas inserir o BlackArch como um repositório em sua distro, execute os seguintes comandos como root, os quais servirão para assinar os pacotes: <em>(Se você não possui o Arch Linux instalado e/ou simplesmente deseja rodar o Live CD ou instalar o mesmo por completo, seja em uma máquina física ou virtual, siga para a seção <a href="#instalando">Instalando o BlackArch Linux utilizando a Live-ISO</a>)</em></p>
+
+<p>```
+ # wget -q <a href="http://blackarch.org/keyring/blackarch-keyring.pkg.tar.xz">http://blackarch.org/keyring/blackarch-keyring.pkg.tar.xz</a>{,.sig}</p>
+
+<p> # gpg &mdash;keyserver hkp://pgp.mit.edu &mdash;recv 4345771566D76038C7FEB43863EC0ADBEA87E4E3</p>
+
+<p> # gpg &mdash;keyserver-o no-auto-key-retrieve &mdash;with-f blackarch-keyring.pkg.tar.xz.sig</p>
+
+<p> # pacman-key &mdash;init</p>
+
+<p> # rm blackarch-keyring.pkg.tar.xz.sig</p>
+
+<p> # pacman &mdash;noc -U blackarch-keyring.pkg.tar.xz
+```</p>
+
+<p><strong>E</strong>m seguida, adicione as seguintes linhas ao seu arquivo <em>/etc/pacman.conf</em>:</p>
+
+<p><code>
+  [blackarch]
+  Server = &lt;mirror_site&gt;/$repo/os/$arch
+</code></p>
+
+<p><strong>Substitua</strong> <em>&lt;mirror_site></em> por um mirror de sua escolha, preferencialmente um dos <strong>mirrors oficiais</strong> contidos <a href="http://blackarch.org/download.html#mirrors" target="_blank"><em>neste link</em></a>.</p>
+
+<p><strong>U</strong>ma vez que você tenha seguido os passos acima, execute:</p>
+
+<p><code>
+ $ sudo pacman -Syyu
+</code></p>
+
+<p><strong>Instalando os pacotes</strong></p>
+
+<p><strong>A</strong>gora que você já preparou o terreno assinando e configurando o repositório do Black Arch, basta instalar os pacotes em seu Arch Linux.</p>
+
+<p><strong>P</strong>ara listar todas as ferramentas disponíveis, execute:</p>
+
+<p><code>
+ $ sudo pacman -Sgg | grep blackarch | cut -d' ' -f2 | sort -u
+</code></p>
+
+<p><strong>P</strong>ara instalar todas as ferramentas, execute:</p>
+
+<p><code>
+ $ sudo pacman -S blackarch
+</code></p>
+
+<p><strong>P</strong>ara instalar uma categoria de ferramentas, execute:</p>
+
+<p><code>
+ $ sudo pacman -S blackarch-&lt;categoria&gt;
+</code></p>
+
+<p><strong>P</strong>ara ver as categorias existentes no BlackArch, execute:</p>
+
+<p><code>
+ $ sudo pacman -Sg | grep blackarch
+</code></p>
+
+<p><strong><a name="instalando">Instalando o BlackArch Linux utilizando a Live-ISO</a></strong></p>
+
+<p><strong>A</strong>ntes de mais nada, <a href="http://blackarch.org/download.html" target="_blank">baixe a ISO a partir do site oficial</a>.</p>
+
+<p><strong>E</strong>m seguida, dê boot na ISO e instale o script de instalação do BlackArch:</p>
+
+<p><code>
+ $ sudo pacman -S blackarch-install-scripts
+</code></p>
+
+<p><strong>A</strong>gora, basta instalar:</p>
+
+<p><code>
+ # blackarch-install
+</code></p>
+
+<p><strong>H</strong>appy Hacking!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Dica - Escondendo Seu Endereço de Email ao Divulgar Seu Endereço de Email]]></title>
+    <link href="http://kalib.github.io/blog/2014/01/23/dica-escondendo-seu-endereco-de-email-ao-divulgar-seu-endereco-de-email/"/>
+    <updated>2014-01-23T09:37:00-03:00</updated>
+    <id>http://kalib.github.io/blog/2014/01/23/dica-escondendo-seu-endereco-de-email-ao-divulgar-seu-endereco-de-email</id>
+    <content type="html"><![CDATA[<p><img class="center" src="/imgs/frog_camouflage.jpg" title="&lsquo;Camouflage&rsquo;" ></p>
+
+<p><strong>D</strong>a mesma forma que alguns animais só conseguem sobreviver utilizando-se de sua capacidade e/ou técnica de camuflar-se, misturando-se assim ao ambiente, para enganar seus predadores naturais, as pessoas do mundo atual praticamente precisam adotar as mesmas técnicas para manter seus endereços de email livres de um turbilhão de emails indesejados com propagandas de viagra, dicas para crescimento peniano, irregularidades em seu CPF, problemas em sua conta bancária, etc, etc.</p>
+
+<p><strong>U</strong>m dos métodos mais simples e mais utilizado é substituir a <em>@</em> por alguma outra coisa, como por exemplo:</p>
+
+<p><em>fulanoEMgmail.com</em>
+<em>fulanoAThotmail.com</em>
+&hellip;</p>
+
+<p><strong>M</strong>as existem aqueles que podem preferir levar isto à um nível mais elevado. Que tal fazer de uma forma mais geek?</p>
+
+<p><strong>O</strong> Linux pode lhe ajudar a fazer isto de forma inusitada, porém eficiente e confiável. Para nosso exemplo, vamos assumir que utilizaremos o email <em>fulano@marcelocavalcante.net</em>.</p>
+
+<p><strong>E</strong>xperimente o seguinte comando:</p>
+
+<p><code>
+ $ echo fulano@marcelocavalcante.net | tr a-z@. n-za-m.@
+</code></p>
+
+<p><strong>O</strong> retorno será algo como:</p>
+
+<p><code>
+ shynab.zneprybpninypnagr@arg
+</code></p>
+
+<p><strong>I</strong>legível, certo? Parabéns, você acaba de &ldquo;camuflar&rdquo; ou &ldquo;esconder&rdquo; o seu email. Este é o seu endereço de email. Como divulgar ele para que alguém possa entendê-lo? Bom, ao invés de divulgar um endereço de email, voê vai divulgar um comando, da seguinte forma:</p>
+
+<p><strong>echo shynab.zneprybpninypnagr@arg | tr a-z@. n-za-m.@</strong></p>
+
+<p><strong>D</strong>esta forma, quem copiar este comando e o executar em um terminal Linux, terá o seguinte resultado:</p>
+
+<p><code>
+ $ echo shynab.zneprybpninypnagr@arg | tr a-z@. n-za-m.@
+ fulano@marcelocavalcante.net
+</code></p>
+
+<p><em>*D</em>esta forma você evitar que robôs ou scanners saiam vasculhando seu endereço de email indexando conteúdos aleatórios pela internet e assim, reduzindo assim as chances de o seu endereço de email cair em listas de SPAM.fff</p>
+
+<p><strong>L</strong>egal, certo?!</p>
+
+<p><strong>H</strong>appy Hacking!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Dica - Apostila Disponibilizada Gratuitamente - pfSense]]></title>
+    <link href="http://kalib.github.io/blog/2014/01/14/dica-apostila-disponibilizada-gratuitamente-pfsense/"/>
+    <updated>2014-01-14T08:27:00-03:00</updated>
+    <id>http://kalib.github.io/blog/2014/01/14/dica-apostila-disponibilizada-gratuitamente-pfsense</id>
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/pfsense.png" title="&lsquo;pfSense&rsquo;" >
+<strong>G</strong>ostaria de passar adiante a notícia de que o colega <em>Leonardo Damasceno</em> acaba de compartilhar com a comunidade uma apostila de sua autoria sobre o <a href="http://www.pfsense.org"><strong>pfSense</strong></a>, de forma a divulgar mais este magnífico sistema, bem como facilitar a vida daqueles que ainda não o dominam.</p>
+
+<p><strong>S</strong>egue link direto fornecido pelo mesmo para <a href="http://www.marcelocavalcante.net/repositorio/pfsense-leonardodamasceno.pdf"><strong>download</strong></a>. A apostila ou livro, como prefira chamar, possui aproximadamente 70 páginas de informações úteis e diretas, sem muitas complicações.</p>
+
+<p><strong>N</strong>ão sabe o que é pfSense?</p>
+
+<p><img class="center" src="/imgs/pfsense1.jpg" title="&lsquo;pfSense1&rsquo;" ></p>
+
+<p><strong>O</strong> pfSense é um sistema operacional baseado no <em>Free BSD</em> que pode ser instalado em um computador para servir como um firewall/roteador dedicado em uma rede. Como ferramenta <em>open source</em>, o pfSense tem se destacado nesta função, sendo considerado um dos melhores e mais confiáveis para este trabalho, oferecendo, além de sua estabilidade e confiabilidade, recursos e funções que geralmente são encontrados apenas em firewalls comerciais e caros. Não creio ser necessário lembrar a confiabilidade dos sistemas <em>Free BSD</em>&hellip;</p>
+
+<p><img class="center" src="/imgs/pfsense2.jpg" title="&lsquo;pfSense2&rsquo;" ></p>
+
+<p><strong>E</strong>mbora seja uma versão customizada do Free BSD, não é necessário qualquer conhecimento sobre este sistema para operar o psSense, visto que ele é atualizado e completamente configurado através de uma interface web. Na maioria dos casos o pfSense tem sido aplicado como um firewall de perímetro, roteador, access point wireless, servidor DHCP, servidor DNS e VPN.</p>
+
+<p><img class="center" src="/imgs/pfsense3.jpg" title="&lsquo;pfSense3&rsquo;" ></p>
+
+<p><strong>O</strong> mesmo apresenta diversos recursos gráficos para análise de tráfego, pacotes, performance, etc. Além de configurações avançadas para regras de firewall para LAN, WAN e utilizãção de Aliases de forma simples e intuitiva.</p>
+
+<p><img class="center" src="/imgs/pfsense4.jpg" title="&lsquo;pfSense4&rsquo;" ></p>
+]]></content>
+  </entry>
+  
+</feed>

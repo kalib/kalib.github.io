@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Asterisk | Marcelo Cavalcante Rocha ~]]></title>
+  <link href="http://kalib.github.io/blog/categories/asterisk/atom.xml" rel="self"/>
+  <link href="http://kalib.github.io/"/>
+  <updated>2015-07-13T13:09:19-03:00</updated>
+  <id>http://kalib.github.io/</id>
+  <author>
+    <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[AsteriskNow - Solução eficiente para VOIP]]></title>
+    <link href="http://kalib.github.io/blog/2009/06/08/asterisknow-solucao-eficiente-para-voip/"/>
+    <updated>2009-06-08T16:04:41-03:00</updated>
+    <id>http://kalib.github.io/blog/2009/06/08/asterisknow-solucao-eficiente-para-voip</id>
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/asterisknow.jpg" title="&lsquo;Asterisk Now&rsquo;" >
+Q**ue o mundo da telefonia está sofrendo grandes mudanças com a onda de conectividade web, todo mundo já sabe. A telefonia IP, VOIP, ou simplesmente voz sobre ip, vem expandindo cada vez mais as possibilidades para comunicação instantânea à longa distância à medida que os custos se tornam cada vez menores para o usuário final.</p>
+
+<p><strong>O</strong> número de empresas e orgãos que se utilizam de voip como uma estratégia para redução de custos, bem como aumento da segurança e confiabilidade dos dados, é cada vez maior no mundo todo. Além do setor comercial, cada vez mais usuários domésticos se beneficiam do voip, muitas vezes sem se dar conta disto. Um exemplo clássico são usuários que utilizam softwares como o <a href="http://www.skype.com/">skype</a> ou <a href="http://www.gizmoproject.com/">gizmo</a> para realizarem ligações pessoais.</p>
+
+<p><strong>E</strong>ntão, o que seria o tal <a href="http://www.asterisknow.org">AsteriskNow</a>? Em resumo, seria uma distribuição Linux trazendo por padrão todos os pacotes e configurações necessárias para se ter um servidor Asterisk em plena funcionalidade, o que levanta, para muitos, uma segunda pergunta:</p>
+
+<p><strong>O</strong> que é esse <a href="http://www.asterisk.org/">Asterisk</a>? Ele morde?</p>
+
+<p><strong>C</strong>riado em 1999 por Mark Spencer, da <a href="http://www.digium.com/">Digium Inc</a>,  Asterisk é a solução líder no mundo quando o assunto é telefonia ip Open Source. O Asterisk é um conjunto de ferramentas capazes de lhe fornecer um PBX completo, eficiente e robusto em toda a sua funcionalidade que pode ser de uso pessoal ou comercial. O Asterisk é distribuído sob a licença GNU General Public License, ou simplesmente GNU GPL, estando assim disponível para download de forma totalmente gratuita. Sem sombra de dúvidas, o Asterisk é uma das soluções mais conhecidas no mundo quando o assunto é Open Source, principalmente quando o assunto é VOIP.</p>
+
+<p><strong>Ó</strong>timo, então o AsteriskNow é apenas uma distribuição Linux trazendo o Asterisk pré-instalado?</p>
+
+<p><img class="center" src="/imgs/asterisknowprint.jpg" title="&lsquo;Asteriswk Now&rsquo;" ></p>
+
+<p><strong>N</strong>ão necessariamente. O AsteriskNow é na verdade uma solução VOIP ideal para quem deseja ter um PBX funcional e completo, mas não se sente confiante o suficiente para enfrentar o asterisk e suas linhas de comando. Através de uma interface gráfica amigável, como apresentado na imagem acima, o AsteriskNow trás todos os componentes necessários para o seu ideal funcionamento bem como uma simples instalação para principiantes, descartando possíveis incrementos que poderiam, de alguma forma, depreciar a segurança de seu ambiente.</p>
+
+<p><strong>S</strong>em sombra de dúvidas umas excelente oportunidade para quem deseja conhecer as possibilidades que o Asterisk nos proporciona de forma simples e amigável para um primeiro contato.</p>
+
+<p><strong>A</strong>braços</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Gespeak empacotado hoje para o Arch]]></title>
+    <link href="http://kalib.github.io/blog/2009/03/13/gespeak-empacotado-hoje-para-o-arch/"/>
+    <updated>2009-03-13T19:44:08-03:00</updated>
+    <id>http://kalib.github.io/blog/2009/03/13/gespeak-empacotado-hoje-para-o-arch</id>
+    <content type="html"><![CDATA[<p>Ontem vi a notícia sobre o lançamento da versão 0.3 do aplicativo Gespeak. A mesma foi considerada a primeira versão estável do mesmo. Logo que vi resolvi empacotar para o Arch esta aplicação que poderia vir a ser útil para algumas pessoas, como é o meu caso.</p>
+
+<p>Para quem não conhece, o Gespeak é um front end para o Espeak. O Espeak nada mais é que um sintetizador de voz. Como perguntariam alguns amigos meus: &ldquo;What a porra is this?&rdquo;</p>
+
+<p>Um sintetizador de voz tem como objetivo transformar texto em áudio. Você digita algum texto e o aplicativo converte aquilo em áudio que pode ser utilizado de várias formas. A mais utilizada por mim é na administração de servidores de Voz rodando Asterisk, no qual posso gravar mensagens e utilizar facilmente de acordo com o meu propósito.</p>
+
+<p>O Gespeak é desenvolvido em PyGTK e ainda está no começo de seu desenvolvimento. Espero que possamos em breve acompanhar outras funções no mesmo. Eu mesmo já entrei em contato com o pessoal do projeto para solicitar algumas funções básicas que o Espeak possui por padrão via linha de comando.</p>
+
+<p>Hoje pela manhã o pacote para o Arch foi criado e já homologado pelo pessoal do projeto no final da tarde.</p>
+
+<p>Link do projeto: <a href="http://code.google.com/p/gespeak/">http://code.google.com/p/gespeak/</a></p>
+
+<p>Link do pacote no AUR: <a href="http://aur.archlinux.org/packages.php?ID=24659">http://aur.archlinux.org/packages.php?ID=24659</a></p>
+
+<p>Abraços</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Asterisk Counter - Seja Contado]]></title>
+    <link href="http://kalib.github.io/blog/2008/10/27/asterisk-counter-seja-contado/"/>
+    <updated>2008-10-27T14:29:00-03:00</updated>
+    <id>http://kalib.github.io/blog/2008/10/27/asterisk-counter-seja-contado</id>
+    <content type="html"><![CDATA[<p><img class="center" src="/imgs/asterisk.png" title="&lsquo;Asterisk&rsquo;" ></p>
+
+<p>Saudações pessoal&hellip;</p>
+
+<p>Muitos aqui já conheciam o sistema <a href="http://counter.li.org/">Linux Counter</a> que servia para contabilizar e registrar usuários Linux como forma de documentar e ter controles estatísticos do crescimento da comunidade Linux mundial. Agora chegou a vez do Asterisk.</p>
+
+<p>Recentemente foi disponibilizado o <a href="http://asteriskcounter.sinologic.net/">Asterisk Counter</a>. O mesmo consiste não apenas em contabilizar os usuários/profissionais de Asterisk como também estabelecer perfis que podem ser inclusive votados com comentários, como uma mini rede social (profissional) no assunto com referências vindas de outros usuários e assim por diante.</p>
+
+<p>Segue a dica para você que utiliza ou trabalha com esta excelente tecnologia Livre de Voip. Eu sou o usuário de número <a href="http://asteriskcounter.sinologic.net/details.php?id=1148">1148</a>, e você? ;]</p>
+
+<p>Abraços</p>
+]]></content>
+  </entry>
+  
+</feed>

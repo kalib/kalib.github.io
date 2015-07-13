@@ -1,0 +1,1179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Marcelo Cavalcante Rocha ~]]></title>
+  <link href="http://kalib.github.io/atom.xml" rel="self"/>
+  <link href="http://kalib.github.io/"/>
+  <updated>2015-07-13T13:09:19-03:00</updated>
+  <id>http://kalib.github.io/</id>
+  <author>
+    <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Assista ao documentário sobre Aaron Swartz: O menino da internet]]></title>
+    <link href="http://kalib.github.io/blog/2014/08/03/assista-ao-documentario-sobre-aaron-swartz-o-menino-da-internet/"/>
+    <updated>2014-08-03T07:19:00-03:00</updated>
+    <id>http://kalib.github.io/blog/2014/08/03/assista-ao-documentario-sobre-aaron-swartz-o-menino-da-internet</id>
+    <content type="html"><![CDATA[<p><img class="center" src="http://kalib.github.io/imgs/aaron-swartz-movie.jpg" title="'Aaron Swartz Movie'" >
+<code>
+ Informação é poder. Mas, como todo poder, há aqueles que querem mantê-la para si mesmos. O patrimônio cultural e científico do mundo, publicado ao longo dos séculos em livros e revistas, está cada vez mais szendo digitalizado e trancado por um punhado de corporações privadas. Enquanto isso, aqueles que foram bloqueados não estão em pé de braços cruzados. Eles estão bisbilhotando em buracos e escalando cercas libertando as informações trancadas pelos editores e compartilhando com seus amigos. Mas toda essa ação acontece no escuro, escondida no subterrâneo. É chamado de roubo ou pirataria, como se compartilhar uma riqueza de conhecimentos fosse o equivalente  de saquear um navio e matar sua tripulação. Mas compartilhar não é imoral - é um imperativo moral. Só os cegos pela ganância se recusam a deixar um amigo fazer uma cópia. Não há justiça em seguir leis injustas. É hora de virmos para a luz e, na grande tradição de desobediência civil, declararmos a nossa oposição a este roubo privado da cultura pública.
+</code></p>
+
+<p><strong>E</strong>ste é apenas um trecho do manifesto assinado por Aaron, entitulado &ldquo;Manifesto do guerrilheiro ao acesso livre&rdquo;.</p>
+
+<p><strong>R</strong>ecentemente foi lançado um documentário de Brian Knappenberger sobre <em>Aaron Swartz</em>, o qual foi considerado um dos principais nomes da internet e luta pela liberdade de acesso ao conhecimento dos últimos anos.</p>
+
+<p><strong>P</strong>ara quem ainda não sabe do que se trata, Aaron Swartz foi um dos criadores do RSS bem como do famoso site de notícias e debates Reddit.Após alguns anos lutando e enfrentando a justiça americana Aaron cometeu suicídio.</p>
+
+<p><img class="left" src="http://kalib.github.io/imgs/aaron_swartz.jpg" title="'Aaron Swartz'" ><strong>A</strong>aron estava sendo condenado a cerca de 50 anos de prisão, bem como a pagar um montante superior a U$ 4 milhões em multas por querer tornar públicos os artigos acadêmicos e científicos que eram mantidos na base do JSTOR, o qual vendia o acesso a estes artigos que, na visão de Aaron, deveriam ser de domínio e acesso público.</p>
+
+<p><strong>A</strong>aron sempre defendeu e lutou para que o conhecimento fosse de livre acesso a todos. Lutou tanto que acabou sendo covardemente perseguido e pressionado pelo governo americano, o que acabou por lhe deixar exausto, psicologicamente e financeiramente, ao ponto de ele desistir da luta ao invés de simplesmente &ldquo;assumir&rdquo; que estava errado e aceitar os &ldquo;acordos&rdquo; que lhe foram oferecidos pela justiça americana.</p>
+
+<p><strong>S</strong>eu crime? A curiosidade. A fome por conhecimento. Também a vontade de expor este conhecimento a todos que o desejassem.</p>
+
+<p><strong>P</strong>ara quem por algum motivo ainda não conhece o recurso de legendas ou caption do YoutTube, caso a legenda do filme não apareça automaticamente, basta clicar no botão de legendas/caption, habilitando-o, conforme apresentado na imagem abaixo:</p>
+
+<p><img class="center" src="http://kalib.github.io/imgs/youtube_captions.png" title="'Youtube Captions'" ></p>
+
+<iframe width="560" height="315" src="http://kalib.github.io//www.youtube.com/embed/2uj1EeiuK5U" frameborder="0" allowfullscreen></iframe>
+
+
+<p>Link para o vídeo: <a href="https://www.youtube.com/watch?v=2uj1EeiuK5U">https://www.youtube.com/watch?v=2uj1EeiuK5U</a></p>
+
+<p><strong>A</strong>braços,</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Alterando os parâmetros do kernel em tempo real com o Systcl]]></title>
+    <link href="http://kalib.github.io/blog/2014/02/13/alterando-os-parametros-do-kernel-em-tempo-real-com-o-systcl/"/>
+    <updated>2014-02-13T22:02:00-03:00</updated>
+    <id>http://kalib.github.io/blog/2014/02/13/alterando-os-parametros-do-kernel-em-tempo-real-com-o-systcl</id>
+    <content type="html"><![CDATA[<p><img class="left" src="http://kalib.github.io/imgs/linux-kernel.jpg" title="'Linux Kernel'" >
+<strong>O</strong> <em>kernel</em>, em se tratando de sistemas operacionais, é o núcleo e componente mais importante da maioria dos computadores. Basicamente, serve de ponte entre os aplicativos e o processamento real de dados feito a nível de hardware. É ele o responsável por gerenciar os recursos do sistema, podendo oferecer uma camada de abstração de nível mais baixo para os recursos, como processadores e dispositivos de entrada/saída, que os softwares aplicativos devem controlar para realizar sua função. Com o GNU/Linux não é diferente. O núcleo Linux (Linux Kernel) forma a estrutura do sistema operacional GNU/Linux.</p>
+
+<p><strong>C</strong>omo é de se esperar, o kernel possui diversos parâmetros configurados que definirão as características do seu sistema, controle de dispositivos, módulos, drivers, etc. Por vezes faz-se necessário alterar algum parâmetro do kernel para alguma tarefa ou rotina específica, portanto que tal ganhar tempo e alterar um ou mais parâmetros do kernel <em>on the fly</em>?!</p>
+
+<p><strong>O</strong> comando <em>sysctl</em> pode ajudar nesta tarefa. Ele ajuda a configurar os parâmetros do kernel em tempo de execução.</p>
+
+<p><strong>P</strong>ara listar os atuais parâmetros de seu kernel digite:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> [kalib@tuxcaverna ~]$ sysctl -a
+</span><span class='line'>  
+</span><span class='line'> abi.vsyscall32 = 1
+</span><span class='line'> debug.exception-trace = 1
+</span><span class='line'> dev.cdrom.autoclose = 1
+</span><span class='line'> dev.cdrom.autoeject = 0
+</span><span class='line'> dev.cdrom.check_media = 0
+</span><span class='line'> dev.cdrom.lock = 1
+</span><span class='line'> dev.hpet.max-user-freq = 64
+</span><span class='line'> dev.mac_hid.mouse_button2_keycode = 97
+</span><span class='line'> dev.mac_hid.mouse_button3_keycode = 100
+</span><span class='line'> dev.mac_hid.mouse_button_emulation = 0
+</span><span class='line'> dev.scsi.logging_level = 0
+</span><span class='line'> fs.aio-max-nr = 65536
+</span><span class='line'> fs.aio-nr = 41192
+</span><span class='line'> fs.binfmt_misc.status = enabled
+</span><span class='line'> fs.dentry-state = 177183        161128  45      0       0       0
+</span><span class='line'> fs.dir-notify-enable = 1
+</span><span class='line'> fs.epoll.max_user_watches = 1209446
+</span><span class='line'> fs.file-max = 586836
+</span><span class='line'> fs.file-nr = 8992       0       586836
+</span><span class='line'> fs.inode-nr = 96800     290
+</span><span class='line'> fs.inotify.max_user_watches = 8192
+</span><span class='line'> fs.lease-break-time = 45
+</span><span class='line'> kernel.sched_cfs_bandwidth_slice_us = 5000
+</span><span class='line'> kernel.sched_child_runs_first = 0
+</span><span class='line'> kernel.version = #1 SMP PREEMPT Fri Jan 31 10:22:54 CET 2014
+</span><span class='line'> kernel.watchdog = 1
+</span><span class='line'> kernel.watchdog_thresh = 10
+</span><span class='line'> kernel.yama.ptrace_scope = 1
+</span><span class='line'> net.core.bpf_jit_enable = 0
+</span><span class='line'> net.core.busy_poll = 0
+</span><span class='line'> net.ipv4.cipso_cache_bucket_size = 10
+</span><span class='line'> net.ipv4.conf.all.accept_local = 0</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>O</strong> retorno deste comando é bastante extenso, portanto colei aqui apenas algumas linhas aleatórias de meu resultado.</p>
+
+<p><strong>P</strong>ara alterar temporariamente um parâmetro, utilize o parâmetro -w do sysctl, indicando a variável que deseja alterar e o novo valor que será utilizado para a mesma.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> [kalib@tuxcaverna ~]$ sysctl -w {nome-da-variável=valor}</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>N</strong>o caso acima a(s) alteração(ões) será(ão) perdida(s) após a reinicialização do sistema.</p>
+
+<p><strong>C</strong>aso deseje realizar alterações permanentes, edite o arquivo <em>/etc/sysctl.conf</em> e em seguida aplique suas modificações com o parâmetro -p do sysctl.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> [kalib@tuxcaverna ~]$ sysctl -p</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>D</strong>esta forma, após a reinicialização suas modificações permanecerão ativas.</p>
+
+<p><strong>H</strong>appy Hacking!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[BlackArch Linux - Uma nova distribuição para Pentesters]]></title>
+    <link href="http://kalib.github.io/blog/2014/01/30/blackarch-linux-uma-nova-distribuicao-para-pentesters/"/>
+    <updated>2014-01-30T08:47:00-03:00</updated>
+    <id>http://kalib.github.io/blog/2014/01/30/blackarch-linux-uma-nova-distribuicao-para-pentesters</id>
+    <content type="html"><![CDATA[<p><img class="left" src="http://kalib.github.io/imgs/blackarch.jpg" title="'BlackArch'" ></p>
+
+<p><strong>U</strong>ma boa novidade para os profissionais de segurança: <a href="http://www.blackarch.org" target="_blank">BlackArch</a>! Para quem, assim como eu, gosta de como as coisas funcionam no Arch Linux essa é uma notícia particularmente boa, visto que o BlackArch não se trata realmente de uma nova distribuição, mas sim de uma <em>extensão</em> para o Arch Linux. Como assim? Bom, você possui duas opções para utilizar o BlackArch, sendo uma delas como uma distribuição completa, através de um Live CD, por exemplo, e a outra como uma extensão (um repositório de pacotes) para o Arch Linux, onde você poderá apenas inserir um repositório em sua já existente distribuição Arch Linux e ter acesso ao conjunto de ferramentas do BlackArch.</p>
+
+<p><strong>O</strong> BlackArch, atualmente, possui suporte para as arquiteturas i686 e x86_64, com previsão de suporte para ARM em breve (Sim, meu RaspBerry poderá se tornar uma ferramenta para pentests). No mais, o BlackArch hoje possui mais de 600 ferramentas, estando este número crescendo constantemente, e utiliza grupos modulares de pacotes, facilitando a instalação dos mesmos.</p>
+
+<p><strong>A</strong> ISO Live trás diversos gerenciadores de janelas ou ambientes gráficos, como o dwm, Fluxbox, Openbox, Awesome, Wmii, i3 e Spectrwm. É claro, ele também trás um instalador capaz de instalar a partir do fonte.</p>
+
+<p><strong>D</strong>entre as ferramentas existentes estão: 3proxy, 42zip, acccheck, aesfix, against, airflood, airoscript, bluepot, blueprint, braces, bss, bully, cisco-ocs, cmospwd, dbd, dc3dd, deblaze, dhcpig, enumiax, fakedns, &hellip; Vocẽ não espera que eu liste todos os mais de 600, certo?</p>
+
+<p><a href="http://blackarch.org/images/screenshots/openbox.png" target="_blank"><img class="center" src="http://kalib.github.io/imgs/openbox.png" title="'BlackArch Openbox'" ></a></p>
+
+<p><strong>Configurando como um Repositório Não-Oficial</strong></p>
+
+<p><strong>S</strong>e você já possui o Arch Linux instalado e deseja apenas inserir o BlackArch como um repositório em sua distro, execute os seguintes comandos como root, os quais servirão para assinar os pacotes: <em>(Se você não possui o Arch Linux instalado e/ou simplesmente deseja rodar o Live CD ou instalar o mesmo por completo, seja em uma máquina física ou virtual, siga para a seção <a href="#instalando">Instalando o BlackArch Linux utilizando a Live-ISO</a>)</em></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> # wget -q http://blackarch.org/keyring/blackarch-keyring.pkg.tar.xz{,.sig}
+</span><span class='line'>
+</span><span class='line'> # gpg --keyserver hkp://pgp.mit.edu --recv 4345771566D76038C7FEB43863EC0ADBEA87E4E3
+</span><span class='line'>
+</span><span class='line'> # gpg --keyserver-o no-auto-key-retrieve --with-f blackarch-keyring.pkg.tar.xz.sig
+</span><span class='line'>
+</span><span class='line'> # pacman-key --init
+</span><span class='line'>
+</span><span class='line'> # rm blackarch-keyring.pkg.tar.xz.sig
+</span><span class='line'>
+</span><span class='line'> # pacman --noc -U blackarch-keyring.pkg.tar.xz</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>E</strong>m seguida, adicione as seguintes linhas ao seu arquivo <em>/etc/pacman.conf</em>:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  [blackarch]
+</span><span class='line'>  Server = &lt;mirror_site&gt;/$repo/os/$arch</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>Substitua</strong> <em>&lt;mirror_site></em> por um mirror de sua escolha, preferencialmente um dos <strong>mirrors oficiais</strong> contidos <a href="http://blackarch.org/download.html#mirrors" target="_blank"><em>neste link</em></a>.</p>
+
+<p><strong>U</strong>ma vez que você tenha seguido os passos acima, execute:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> $ sudo pacman -Syyu</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>Instalando os pacotes</strong></p>
+
+<p><strong>A</strong>gora que você já preparou o terreno assinando e configurando o repositório do Black Arch, basta instalar os pacotes em seu Arch Linux.</p>
+
+<p><strong>P</strong>ara listar todas as ferramentas disponíveis, execute:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> $ sudo pacman -Sgg | grep blackarch | cut -d' ' -f2 | sort -u</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>P</strong>ara instalar todas as ferramentas, execute:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> $ sudo pacman -S blackarch</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>P</strong>ara instalar uma categoria de ferramentas, execute:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> $ sudo pacman -S blackarch-&lt;categoria&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>P</strong>ara ver as categorias existentes no BlackArch, execute:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> $ sudo pacman -Sg | grep blackarch</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong><a name="instalando">Instalando o BlackArch Linux utilizando a Live-ISO</a></strong></p>
+
+<p><strong>A</strong>ntes de mais nada, <a href="http://blackarch.org/download.html" target="_blank">baixe a ISO a partir do site oficial</a>.</p>
+
+<p><strong>E</strong>m seguida, dê boot na ISO e instale o script de instalação do BlackArch:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> $ sudo pacman -S blackarch-install-scripts</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>A</strong>gora, basta instalar:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> # blackarch-install</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>H</strong>appy Hacking!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Dica - Escondendo Seu Endereço de Email ao Divulgar Seu Endereço de Email]]></title>
+    <link href="http://kalib.github.io/blog/2014/01/23/dica-escondendo-seu-endereco-de-email-ao-divulgar-seu-endereco-de-email/"/>
+    <updated>2014-01-23T09:37:00-03:00</updated>
+    <id>http://kalib.github.io/blog/2014/01/23/dica-escondendo-seu-endereco-de-email-ao-divulgar-seu-endereco-de-email</id>
+    <content type="html"><![CDATA[<p><img class="center" src="http://kalib.github.io/imgs/frog_camouflage.jpg" title="'Camouflage'" ></p>
+
+<p><strong>D</strong>a mesma forma que alguns animais só conseguem sobreviver utilizando-se de sua capacidade e/ou técnica de camuflar-se, misturando-se assim ao ambiente, para enganar seus predadores naturais, as pessoas do mundo atual praticamente precisam adotar as mesmas técnicas para manter seus endereços de email livres de um turbilhão de emails indesejados com propagandas de viagra, dicas para crescimento peniano, irregularidades em seu CPF, problemas em sua conta bancária, etc, etc.</p>
+
+<p><strong>U</strong>m dos métodos mais simples e mais utilizado é substituir a <em>@</em> por alguma outra coisa, como por exemplo:</p>
+
+<p><em>fulanoEMgmail.com</em>
+<em>fulanoAThotmail.com</em>
+&hellip;</p>
+
+<p><strong>M</strong>as existem aqueles que podem preferir levar isto à um nível mais elevado. Que tal fazer de uma forma mais geek?</p>
+
+<p><strong>O</strong> Linux pode lhe ajudar a fazer isto de forma inusitada, porém eficiente e confiável. Para nosso exemplo, vamos assumir que utilizaremos o email <em>fulano@marcelocavalcante.net</em>.</p>
+
+<p><strong>E</strong>xperimente o seguinte comando:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> $ echo fulano@marcelocavalcante.net | tr a-z@. n-za-m.@</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>O</strong> retorno será algo como:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> shynab.zneprybpninypnagr@arg</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>I</strong>legível, certo? Parabéns, você acaba de &ldquo;camuflar&rdquo; ou &ldquo;esconder&rdquo; o seu email. Este é o seu endereço de email. Como divulgar ele para que alguém possa entendê-lo? Bom, ao invés de divulgar um endereço de email, voê vai divulgar um comando, da seguinte forma:</p>
+
+<p><strong>echo shynab.zneprybpninypnagr@arg | tr a-z@. n-za-m.@</strong></p>
+
+<p><strong>D</strong>esta forma, quem copiar este comando e o executar em um terminal Linux, terá o seguinte resultado:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> $ echo shynab.zneprybpninypnagr@arg | tr a-z@. n-za-m.@
+</span><span class='line'> fulano@marcelocavalcante.net</span></code></pre></td></tr></table></div></figure>
+
+
+<p><em>*D</em>esta forma você evitar que robôs ou scanners saiam vasculhando seu endereço de email indexando conteúdos aleatórios pela internet e assim, reduzindo assim as chances de o seu endereço de email cair em listas de SPAM.fff</p>
+
+<p><strong>L</strong>egal, certo?!</p>
+
+<p><strong>H</strong>appy Hacking!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Dica - Assistir Star Wars em um Console ou Terminal]]></title>
+    <link href="http://kalib.github.io/blog/2014/01/17/dica-assistir-star-wars-em-um-console-ou-terminal/"/>
+    <updated>2014-01-17T10:30:00-03:00</updated>
+    <id>http://kalib.github.io/blog/2014/01/17/dica-assistir-star-wars-em-um-console-ou-terminal</id>
+    <content type="html"><![CDATA[<p><img class="left" src="http://kalib.github.io/imgs/starwars.png" title="'Star Wars'" >
+<strong>Q</strong>uem disse que o terminal ou linha de comando serve apenas para trabalho e coisas chatas?</p>
+
+<p><strong>E</strong>stá entediado em frente ao seu terminal GNU/Linux?    Que tal algo para passar o tempo e, ao mesmo tempo, lhe trazer uma certa nostalgia? Assista Star Wars sem precisar sair de sua linha de comando ou terminal.</p>
+
+<p><strong>T</strong>udo o que você precisa digitar é:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> $ telnet towel.blinkenlights.nl</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>F</strong>eito isso, basta apreciar o show&hellip;</p>
+
+<p><img class="center" src="http://kalib.github.io/imgs/starwars_1.png" title="'Star Wars'" ></p>
+
+<p><img class="center" src="http://kalib.github.io/imgs/starwars_2.jpg" title="'Star Wars'" ></p>
+
+<p><strong>H</strong>ave fun!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Dica - Apostila Disponibilizada Gratuitamente - pfSense]]></title>
+    <link href="http://kalib.github.io/blog/2014/01/14/dica-apostila-disponibilizada-gratuitamente-pfsense/"/>
+    <updated>2014-01-14T08:27:00-03:00</updated>
+    <id>http://kalib.github.io/blog/2014/01/14/dica-apostila-disponibilizada-gratuitamente-pfsense</id>
+    <content type="html"><![CDATA[<p><img class="left" src="http://kalib.github.io/imgs/pfsense.png" title="'pfSense'" >
+<strong>G</strong>ostaria de passar adiante a notícia de que o colega <em>Leonardo Damasceno</em> acaba de compartilhar com a comunidade uma apostila de sua autoria sobre o <a href="http://www.pfsense.org"><strong>pfSense</strong></a>, de forma a divulgar mais este magnífico sistema, bem como facilitar a vida daqueles que ainda não o dominam.</p>
+
+<p><strong>S</strong>egue link direto fornecido pelo mesmo para <a href="http://www.marcelocavalcante.net/repositorio/pfsense-leonardodamasceno.pdf"><strong>download</strong></a>. A apostila ou livro, como prefira chamar, possui aproximadamente 70 páginas de informações úteis e diretas, sem muitas complicações.</p>
+
+<p><strong>N</strong>ão sabe o que é pfSense?</p>
+
+<p><img class="center" src="http://kalib.github.io/imgs/pfsense1.jpg" title="'pfSense1'" ></p>
+
+<p><strong>O</strong> pfSense é um sistema operacional baseado no <em>Free BSD</em> que pode ser instalado em um computador para servir como um firewall/roteador dedicado em uma rede. Como ferramenta <em>open source</em>, o pfSense tem se destacado nesta função, sendo considerado um dos melhores e mais confiáveis para este trabalho, oferecendo, além de sua estabilidade e confiabilidade, recursos e funções que geralmente são encontrados apenas em firewalls comerciais e caros. Não creio ser necessário lembrar a confiabilidade dos sistemas <em>Free BSD</em>&hellip;</p>
+
+<p><img class="center" src="http://kalib.github.io/imgs/pfsense2.jpg" title="'pfSense2'" ></p>
+
+<p><strong>E</strong>mbora seja uma versão customizada do Free BSD, não é necessário qualquer conhecimento sobre este sistema para operar o psSense, visto que ele é atualizado e completamente configurado através de uma interface web. Na maioria dos casos o pfSense tem sido aplicado como um firewall de perímetro, roteador, access point wireless, servidor DHCP, servidor DNS e VPN.</p>
+
+<p><img class="center" src="http://kalib.github.io/imgs/pfsense3.jpg" title="'pfSense3'" ></p>
+
+<p><strong>O</strong> mesmo apresenta diversos recursos gráficos para análise de tráfego, pacotes, performance, etc. Além de configurações avançadas para regras de firewall para LAN, WAN e utilizãção de Aliases de forma simples e intuitiva.</p>
+
+<p><img class="center" src="http://kalib.github.io/imgs/pfsense4.jpg" title="'pfSense4'" ></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Dica de Segurança - Previna Ataques Bloqueando Pacotes ICMP Indesejados]]></title>
+    <link href="http://kalib.github.io/blog/2014/01/06/dica-de-seguranca-previna-ataques-bloqueando-pacotes-icmp-indesejados/"/>
+    <updated>2014-01-06T08:40:00-03:00</updated>
+    <id>http://kalib.github.io/blog/2014/01/06/dica-de-seguranca-previna-ataques-bloqueando-pacotes-icmp-indesejados</id>
+    <content type="html"><![CDATA[<p><img class="left" src="http://kalib.github.io/imgs/you_shall_not_pass.jpg" title="'Gandalf'" >
+<strong>O</strong> protocolo <em>ICMP</em> pode ser utilizado para facilitar diversas rotinas e tarefas importantes de um administrador de redes, tais como na utilização de ferramentas como o <em>ping</em> e o <em>traceroute</em>, mas também pode ser manipulado por pessoas mal intencionadas que podem manipular mensagens ou pacotes ICMP para mapear sua rede.</p>
+
+<p><strong>É</strong> comum ver administradores de rede se preocupando e fazendo um ótimo trabalho em termos de filtrar o tráfego <em>TCP</em> e/ou <em>UDP</em>, porém quase sempre esquecem de dar a mesma atenção ao tráfego <em>ICMP</em>, sendo este tão crítico quanto os dois anteriores. Uma vez que este protocolo pode ser utilizado para mapear e realizar ataques em sua rede, ele não pode simplesmente ser deixado de lado.</p>
+
+<p><strong>I</strong>CMP, sigla para <em>Internet Control Message Protocol</em>, é um protocolo integrante do Protocolo IP utilizado para fornecer relatórios de erros à fonte original. Seu tráfego é, basicamente, baseado em mensagens trocadas entre hots, gateways, etc., cujo intuito é, principalmente, reportar erros, como por exemplo um pacote IP que não consegue chegar ao seu destino.</p>
+
+<p><strong>P</strong>or padrão, alguns servidores e firewalls bloqueiam as respostas ICMP como medida de segurança, tentando assim bloquear os ataques que consistem na sobrecarga da memória, enviando dados (em ping) até o sistema não ter a capacidade de administrar suas próprias funções. Bom, ao mesmo tempo em que é um mecanismo de defesa interessante, este bloqueio total acaba comprometendo e atrapalhando diversas atividades do administrador de redes, não sendo portanto a estratégia mais inteligente a ser adotada.</p>
+
+<p><strong>A</strong>o invés de bloquear o ICMP por completo, é mais interessante conhecer o que é bom e o que é ruim em termos de mensagens ICMP, de forma que sejam realizados filtros corretos. A importância desta gangorra é não permitir que o lado <em>ruim</em> do ICMP, como por exemplo ICMP Smurf, Ping of death, ataques com ICMP flood ou ICMP nuke, prejudiquem o administrador de redes que pode tirar proveito de boas ferramentas que se utilizam do ICMP, como o Ping e o Traceroute.</p>
+
+<p><strong>A</strong> estratégia mais simples, portanto, é utilizar uma regra geral contendo exceções.</p>
+
+<ol>
+<li>Bloquear todos os tipos de tráfego ICMP;</li>
+<li>Permitir ping &mdash; CMP Echo-Request outbound (saída) e Echo-Reply inbound (entrada);</li>
+<li>Permitir traceroute &mdash; TTL-Exceeded e Port-Unreachable inbound (entrada);</li>
+<li>Permitir path MTU &mdash; ICMP Fragmentation-DF-Set inbound (entrada).</li>
+</ol>
+
+
+<p><strong>É</strong> claro que este é apenas um exemplo, visto que você poderá permitir mais ou menos, de acordo com a sua necessidade.</p>
+
+<p><strong>N</strong>ão deixemos pobre a nossa configuração, facilitando as coisas para ataques quando isto pode ser facilmente bloqueado.</p>
+
+<p><strong>H</strong>appy Hacking!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Criptografando sua Partição Swap com o Ecryptfs]]></title>
+    <link href="http://kalib.github.io/blog/2014/01/03/criptografando-sua-particao-swap-com-o-ecryptfs/"/>
+    <updated>2014-01-03T08:48:00-03:00</updated>
+    <id>http://kalib.github.io/blog/2014/01/03/criptografando-sua-particao-swap-com-o-ecryptfs</id>
+    <content type="html"><![CDATA[<p><img class="left" src="http://kalib.github.io/imgs/crypto.jpg" title="'Criptografia'" >
+<strong>C</strong>riptografia (Do grego <em>kryptós</em>, &ldquo;escondido&rdquo;, e <em>gráphein</em>, &ldquo;escrita&rdquo;) nada mais é do que o estudo e aplicação de técnicas com o intuito de ocultar informações, transformando a informação original em algo ilegível, exceto para seu destinatário final, o qual possui a chave ou método que será utilizado para tornar a informação legível novamente.</p>
+
+<p><strong>A</strong>pesar de muitas pessoas acharem que criptografia é algo novo, o uso de mensagens cifradas é bastante antigo. Em tempos passados a cifragem de mensagens era utilizada, principalmente em assuntos de guerra. De acordo com estudos históricos, o primeiro uso documentado da criptografia foi em torno de <em>1900 a.c.</em>, no Egito, quando um escriba usou hieróglifos fora do padrão numa inscrição.</p>
+
+<p><strong>A</strong>o que interessa&hellip;</p>
+
+<p><strong>M</strong>uitas pessoas, por alguma razão (como por exemplo performance ou não gostar da ideia de digitar gigantescas senhas duranto o boot), acabam não utilizando uma LVM encriptada. Para estas pessoas existe a opção de criptografar arquivos e diretórios após a instalação do SO através de softwares como o eCryptfs. Mas, além disto, existe um outro aspecto interessante e importante que, por muitas vezes (para não dizer quase sempre) é esquecido: criptografar a swap.</p>
+
+<p><strong>S</strong>e você é usuário GNU/Linux, muito provavelmente já sabe o que é Swap. Ela é especialmente utilizada em computadores mais antigos e que possuem pouca memória RAM. Nestes casos, um espaço do disco rígido é utilizado como swap para servir de auxílio à memória RAM em diferentes tarefas quando a mesma não for o suficiente para realizar aquelas tarefas. Por questões óbvias, a swap não é tão rápida quanto a memória principal e, além disso, a swap também possui seus pontos <em>críticos</em> em relação a segurança. A questão mais crítica da swap em termos de segurança é o fato de ela, conforme já dito, não estar localizada em sua RAM, mas sim em seu disco rígido, escrevendo informações nesta partição, deixando assim rastros de suas atividades no próprio disco rígido. Por exemplo, caso você utilize softwares de criptografia em seu computador, mas não possua sua swap criptografada, você corre o risco de ter as senhas de chaves que você digita salvas em sua swap (disco rígido). Algo não desejado, certo?</p>
+
+<p><strong>P</strong>ara criptografar a sua swap, primeiramente instale os pacotes necessários:</p>
+
+<p><strong>No Arch Linux</strong></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> [kalib@tuxcaverna ~]$ sudo pacman -S ecryptfs-utils cryptsetup</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>No Debian ou derivados</strong></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> [kalib@tuxcaverna ~]$ sudo apt-get install ecryptfs-utils cryptsetup</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>E</strong>m seguida, precisamos literalmente criptografar a swap utilizando o seguinte comando:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> [kalib@tuxcaverna ~]$ sudo ecryptfs-setup-swap</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>N</strong>este momento, sua partição swap será desmontada, encriptada e montada novamente.</p>
+
+<p><strong>P</strong>ara certificar-se de que o procedimento funcionou, digite o seguinte comando:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> [kalib@tuxcaverna ~]$ sudo blkid | grep swap</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>V</strong>ocê deverá receber as informações sobre sua partição de swap, inclusive o indicativo <em>cryptswap</em>.</p>
+
+<p><strong>C</strong>omo medida preventiva contra erros durante o boot, edite o arquivo <em>/etc/fstab</em>, retirando a entrada da swap não encriptada, deixando em seu lugar a entrada para a swap encriptada.</p>
+
+<p><strong>H</strong>appy Hacking!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Navegação Anônima Através da Rede Tor]]></title>
+    <link href="http://kalib.github.io/blog/2013/12/30/navegacao-anonima-atraves-da-rede-tor/"/>
+    <updated>2013-12-30T08:15:00-03:00</updated>
+    <id>http://kalib.github.io/blog/2013/12/30/navegacao-anonima-atraves-da-rede-tor</id>
+    <content type="html"><![CDATA[<p><img class="left" src="http://kalib.github.io/imgs/tor_logo.png" title="'Tor'" >
+<strong>O</strong> ano de 2013 foi marcado por diversos acontecimentos de grande repercussão e, sem sombra de dúvidas, um deles foi o escândalo causado pelo vazamento de dados que provaram que algumas instituições, dentre elas a <em>NSA</em> (Agência de Segurança dos Estados Unidos), estavam espionando diversas entidades, empresas e até mesmo pessoas físicas nas mais diversas regiões do globo. Escândalos a parte, estas denúncias acabaram despertando um pouco mais (uma pena que não tenha sido muito mais) nas pessoas o interesse em preservar sua privacidade.</p>
+
+<p><strong>S</strong>endo assim, nada mais justo que dedicar o último post do ano ao <em>Tor</em>.</p>
+
+<p><strong>A</strong>inda vivemos em um mundo (principalmente nosso querido Brasil) onde as pessoas parecem simplesmente não se importar com o quesito privacidade. Não é difícil encontrar praticamente todas as informações sobre a maioria das pessoas pois elas mesmas fazem questão de expor isto aos sete ventos através das redes e mídias sociais. Divulgam dezenas de fotos de sua pessoa, bem como de seus parentes, informam dados pessoais, rotinas, locais que frequentam, horários, local de trabalho, amizades, áreas de interesse, etc. A lista é longa&hellip;</p>
+
+<p><strong>F</strong>elizmente algumas pessoas já começaram a atentar para a importância de manter sua privacidade e, para tal, passaram a buscar maneiras alternativas para <em>driblar</em> estas <em>espionagens</em> e outras formas de golpes tão comuns hoje em dia, mantendo assim o seu anonimato durante sua navegação. A rede <strong>Tor</strong>, ou <em>The Onion Router</em>, surgiu basicamente com este propósito.</p>
+
+<p><strong>T</strong>or é uma rede de computadores distribuída cuja finalidade primária é manter o anonimato na <em>internet</em>. Seu objetivo básico é garantir a privacidade e anonimato do usuário que está navegando através desta rede. Apesar de o uso do Tor ser simplificado em sistemas GNU/Linux, visto que a maioria das distribuições disponibilizam o pacote do Tor, também existem versões para sistemas Windows e Mac OS. Trata-se de uma rede de túneis criptografados, onde os roteadores da rede são computadores de usuários comuns que estão rodando um programa e possuem acesso à internet.</p>
+
+<p><strong>B</strong>asicamente, o usuário instala um programa, <em>tor-cliente</em>, em seu computador e este funcionará como um <em>proxy</em> para o mesmo. Os demais programas que o usuário utiliza para navegar na internet <em>(navegador, emule, etc.)</em> deverão ser configurados para navegar através deste proxy.</p>
+
+<p><strong>A</strong> partir daí, quando o usuário digitar em seu navegador o endereço destino, <em><a href="http://www.google.com*">http://www.google.com*</a> por exemplo, ao invés de a sua requisição passar por roteadores convencionais para atingir o destino, ele passará por túneis criptografados da rede Tor, para então chegar ao seu destino. Nestes túneis a sua requisição e informações passam por vários </em>nós<em> da rede Tor. Um exemplo prático do anonimato provido pelo Tor é a verificação do seu próprio IP. Caso deseje realizar o teste, experimente acessar o endereço </em><a href="http://www.meuip.com.br*">http://www.meuip.com.br*</a> antes de instalar e configurar o Tor em sua máquina. Este site lhe informará o seu atual endereço IP, no caso o endereço será o do seu roteador de acesso à rede pública. Em seguida, tente acessar novamente o mesmo endereço após ter instalado e configurado o Tor. Você perceberá que ele não retornará o seu endereço IP, mas sim um endereço IP qualquer de um nó da rede Tor. Ou seja, isto atrapalha a vida de quem quer que deseje rastrear a sua máquina a partir de um endereço que você tenha acessado ou mesmo de um email que você tenha enviado.</p>
+
+<p><strong>Instalação do Tor no Arch Linux</strong></p>
+
+<p><strong>C</strong>onforme informei no início, o Tor está disponível para praticamente todos os sistemas operacionais, mas vou focar a explicação de instalação para a minha distribuição, Arch Linux, embora o processo seja bastante similar para as demais distribuições GNU/Linux.</p>
+
+<ol>
+<li>Instale o Tor:</li>
+</ol>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> [kalib@tuxcaverna ~]$ sudo pacman -S tor</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li>Como um opcional, instale também o frontend ou GUI, o qual é desenvolvido em QT, <em>vidalia</em>. O vidalia, além de controlar o processo Tor, permite-lhe ver e configurar o status do Tor, monitorar o uso de banda e ver, filtrar ou realizar pesquisas em mensagens de log, etc.</li>
+</ol>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> [kalib@tuxcaverna ~]$ sudo pacman -S vidalia</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li>Inicie/Habilite o serviço utilizando o <em>systemd</em>.</li>
+</ol>
+
+
+<p><strong>A</strong> configuração padrão do Tor deverá funcionar para a maioria dos usuários, mas caso deseje alterar algo, verifique a documentação do Tor e altere as configurações em <em>/etc/tor/torrc</em>.</p>
+
+<ol>
+<li>Para utilizar um programa através da rede Tor, configure-o para utilizar o endereço <em>127.0.0.1</em> ou <em>localhost</em> como endereço proxy <em>SOCKS5</em> através da porta <em>9050</em> (porta padrão do Tor) ou <em>9051</em> (porta padrão utilizada quando se configura com o vidalia).</li>
+</ol>
+
+
+<p><strong>A</strong> rede Tor possui uma espécio de domínio próprio com terminação <em>.onion</em>, acessível apenas através da própria rede Tor. Páginas com este domínio são parte da chamada Deep Web, mas isto será assunto para um outro post por ser algo polêmico e extenso.</p>
+
+<p><strong>D</strong>esejo a todos um feliz ano novo com liberdade, privacidade e anonimato, quando necessário!</p>
+
+<p><strong>H</strong>appy Hacking!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Vulnerabilidade no Firefox - Descobrindo Senhas Salvas]]></title>
+    <link href="http://kalib.github.io/blog/2013/12/27/vulnerabilidade-no-firefox-descobrindo-senhas-salvas/"/>
+    <updated>2013-12-27T08:40:00-03:00</updated>
+    <id>http://kalib.github.io/blog/2013/12/27/vulnerabilidade-no-firefox-descobrindo-senhas-salvas</id>
+    <content type="html"><![CDATA[<p><img class="left" src="http://kalib.github.io/imgs/firefox_pass.png" title="'Firefox Peaces'" >
+<strong>U</strong>ma coisa é certa&hellip; usuários teimam em salvar senhas em navegadores para <em>facilitar</em> suas vidas durante a navegação na internet. Seja em emails, redes sociais, serviços online ou qualquer outra coisa, a opção <em>Salvar sua senha</em> parece possuir um enorme magnetismo ou um centro gravitacional extremamente denso a ponto de atrair o usuário para tal.</p>
+
+<p><strong>S</strong>erá que as pessoas não entendem o quão perigosa é a ideia de <em>salvar sua senha</em> onde quer que seja? É, praticamente, o mesmo risco assumido por quem anota suas senhas em <em>post-its</em> e os colam em seu monitor ou mesa.</p>
+
+<p><strong>H</strong>oje um colega me procurou para saber como recuperar uma senha que ele não lembrava mais. Já conhecendo o histórico do mesmo eu tinha certeza que ele tinha salvo esta senha no navegador. Então lhe mostrei como ele, ou qualquer outra pessoa, conseguiria facilmente descobrir todas as senhas salvas em seu navegador Firefox. A experiência foi boa por dois motivos:</p>
+
+<ol>
+<li>Ele conseguiu descobrir sua senha; <em>(a qual ele provavelmente não esqueceria se tivesse o costume de digitá-la sempre que necessário ao invés de salá-la no navegador)</em></li>
+<li>Ele entendeu o risco que ele corre com esta prática absurda;</li>
+</ol>
+
+
+<p><strong>V</strong>ejamos o quão <strong>simples</strong> <em>(para não dizer estúpido)</em> é o procedimento para descobrir as senhas salvas pelo usuário no navegador Firefox.</p>
+
+<ol>
+<li>Clique no menu <strong>Firefox</strong> que se encontra no canto superior esquerdo do navegador;</li>
+</ol>
+
+
+<p><img class="center" src="http://kalib.github.io/imgs/firefox_pass_1.png" title="'Firefox Pass 1'" ></p>
+
+<ol>
+<li>Selecione a opção <strong>Preferências</strong> no menu e em seguida, novamente, <strong>Preferências</strong>;</li>
+</ol>
+
+
+<p><img class="center" src="http://kalib.github.io/imgs/firefox_pass_2.png" title="'Firefox Pass 2'" ></p>
+
+<ol>
+<li>Na aba <strong>Segurança</strong>, clique no botão <strong>Senhas Salvas</strong>;</li>
+</ol>
+
+
+<p><img class="center" src="http://kalib.github.io/imgs/firefox_pass_3.png" title="'Firefox Pass 3'" ></p>
+
+<ol>
+<li>Repare que na janela que será apresentada você terá uma lista de sites/serviços e usuários que deixaram suas senhas salvas. Nesta janela, clique no botão <strong>Mostrar Senhas</strong>;</li>
+</ol>
+
+
+<p><img class="center" src="http://kalib.github.io/imgs/firefox_pass_4.png" title="'Firefox Pass 4'" ></p>
+
+<ol>
+<li>Agora você poderá ver as senhas salvas em texto plano, limpo e claro.</li>
+</ol>
+
+
+<p><img class="center" src="http://kalib.github.io/imgs/firefox_pass_5.png" title="'Firefox Pass 5'" ></p>
+
+<p><strong>Lição aprendida: Não salve suas senhas!</strong></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Dica Rápida - Linux - Troubleshooting em Tempo de Execução com Strace]]></title>
+    <link href="http://kalib.github.io/blog/2013/12/19/dica-rapida-linux-troubleshooting-em-tempo-de-execucao-com-strace/"/>
+    <updated>2013-12-19T08:28:00-03:00</updated>
+    <id>http://kalib.github.io/blog/2013/12/19/dica-rapida-linux-troubleshooting-em-tempo-de-execucao-com-strace</id>
+    <content type="html"><![CDATA[<p><img class="left" src="http://kalib.github.io/imgs/troubleshoot.jpg" title="'Troubleshooting'" >
+<strong>S</strong>e algum dia você já precisou realizar uma análise para troubleshoot de algum comando em tempo de execução e não soube como fazê-lo, seus problemas acabaram. O <strong>strace</strong> faz justamente isso.</p>
+
+<p><strong>J</strong>á trabalhei em servidores de clientes comprometidos pós-invasão cujos comandos padrões <strong>Unix</strong> haviam sido substituídos por comandos <em>similares</em> (ao menos em nome) que realizam outras tarefas sem o conhecimento dos administradores dos mesmos.</p>
+
+<p><strong>O</strong> strace serve justamente para estes, bem como outros, casos. Ele lhe indica exatamente tudo o que acontece <em>por baixo dos panos</em> em seu sistema.</p>
+
+<p><strong>V</strong>ejamos um exemplo.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> [kalib@tuxcaverna ~]$ date
+</span><span class='line'> Qui Dez 19 08:41:55 BRT 2013</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>A</strong>gora vejamos a diferença com o uso do strace.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> [kalib@tuxcaverna ~]$ strace date
+</span><span class='line'> execve("/usr/bin/date", ["date"], [/* 59 vars */]) = 0
+</span><span class='line'> brk(0)                                  = 0x21df000
+</span><span class='line'> access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+</span><span class='line'> open("/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+</span><span class='line'> fstat(3, {st_mode=S_IFREG|0644, st_size=274630, ...}) = 0
+</span><span class='line'> mmap(NULL, 274630, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7fe0d3f3d000
+</span><span class='line'> close(3)                                = 0
+</span><span class='line'> open("/usr/lib/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+</span><span class='line'> read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0&gt;\0\1\0\0\0\20\34\2\0\0\0\0\0"..., 832) = 832
+</span><span class='line'> fstat(3, {st_mode=S_IFREG|0755, st_size=2031229, ...}) = 0
+</span><span class='line'> mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fe0d3f3c000
+</span><span class='line'> mmap(NULL, 3840528, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fe0d39b8000
+</span><span class='line'> mprotect(0x7fe0d3b58000, 2097152, PROT_NONE) = 0
+</span><span class='line'> mmap(0x7fe0d3d58000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1a0000) = 0x7fe0d3d58000
+</span><span class='line'> mmap(0x7fe0d3d5e000, 14864, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fe0d3d5e000
+</span><span class='line'> close(3)                                = 0
+</span><span class='line'> mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fe0d3f3b000
+</span><span class='line'> mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fe0d3f3a000
+</span><span class='line'> arch_prctl(ARCH_SET_FS, 0x7fe0d3f3b700) = 0
+</span><span class='line'> mprotect(0x7fe0d3d58000, 16384, PROT_READ) = 0
+</span><span class='line'> mprotect(0x60d000, 4096, PROT_READ)     = 0
+</span><span class='line'> mprotect(0x7fe0d3f81000, 4096, PROT_READ) = 0
+</span><span class='line'> munmap(0x7fe0d3f3d000, 274630)          = 0
+</span><span class='line'> brk(0)                                  = 0x21df000
+</span><span class='line'> brk(0x2200000)                          = 0x2200000
+</span><span class='line'> open("/usr/lib/locale/locale-archive", O_RDONLY|O_CLOEXEC) = 3
+</span><span class='line'> fstat(3, {st_mode=S_IFREG|0644, st_size=1863120, ...}) = 0
+</span><span class='line'> mmap(NULL, 1863120, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7fe0d37f1000
+</span><span class='line'> close(3)                                = 0
+</span><span class='line'> open("/etc/localtime", O_RDONLY|O_CLOEXEC) = 3
+</span><span class='line'> fstat(3, {st_mode=S_IFREG|0644, st_size=714, ...}) = 0
+</span><span class='line'> fstat(3, {st_mode=S_IFREG|0644, st_size=714, ...}) = 0
+</span><span class='line'> mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fe0d3f80000
+</span><span class='line'> read(3, "TZif2\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\3\0\0\0\3\0\0\0\0"..., 4096) = 714
+</span><span class='line'> lseek(3, -438, SEEK_CUR)                = 276
+</span><span class='line'> read(3, "TZif2\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\3\0\0\0\3\0\0\0\0"..., 4096) = 438
+</span><span class='line'> close(3)                                = 0
+</span><span class='line'> munmap(0x7fe0d3f80000, 4096)            = 0
+</span><span class='line'> fstat(1, {st_mode=S_IFCHR|0600, st_rdev=makedev(136, 2), ...}) = 0
+</span><span class='line'> mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fe0d3f80000
+</span><span class='line'> write(1, "Qui Dez 19 08:42:47 BRT 2013\n", 29Qui Dez 19 08:42:47 BRT 2013
+</span><span class='line'> ) = 29
+</span><span class='line'> close(1)                                = 0
+</span><span class='line'> munmap(0x7fe0d3f80000, 4096)            = 0
+</span><span class='line'> close(2)                                = 0
+</span><span class='line'> exit_group(0)                           = ?
+</span><span class='line'> +++ exited with 0 +++</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>O</strong> strace não é instalado por padrão em todas as distribuições, portanto é possível que você precise instalá-lo com o seu gerenciador de pacotes.</p>
+
+<p><strong>A</strong>lém do uso regular, ele possui diversos parâmetros que podem melhorar ou filtrar o seu uso. Você pode verificar a lista de parâmetros em seu manual de uso:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> [kalib@tuxcaverna ~]$ man strace</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Sobre mim... Tarda mas não falha]]></title>
+    <link href="http://kalib.github.io/blog/2013/12/16/sobre-mim-dot-dot-dot-tarda-mas-nao-falha/"/>
+    <updated>2013-12-16T15:31:00-03:00</updated>
+    <id>http://kalib.github.io/blog/2013/12/16/sobre-mim-dot-dot-dot-tarda-mas-nao-falha</id>
+    <content type="html"><![CDATA[<p><strong>T</strong>arda, mas não falha&hellip; Reza o antigo ditado.</p>
+
+<p><strong>D</strong>a mesma forma, digo-lhes que tardou, mas não falhou. Confesso que nunca parei para elaborar a página &ldquo;Sobre mim&rdquo; deste blog. O link existia no topo, mas sempre esteve &ldquo;Em construção&rdquo;. Preguiça? Falta de interesse? Esquecimento? Acho que um pouco de cada.</p>
+
+<p><strong>H</strong>oje fui surpreendido por uma pessoa que acabou caindo no blog e em seguida me questionou sobre o porque de o blog já existir a tanto tempo e até hoje a página &ldquo;Sobre mim&rdquo; continuar contendo apenas as palavras &ldquo;Em construção&rdquo;.</p>
+
+<p><strong>I</strong>sto me fez tomar vergonha na cara.. e hoje inseri conteúdo <a href="http://blog.marcelocavalcante.net/about/"> nesta página</a>.</p>
+
+<p><strong>A</strong>gora sim&hellip; ;]</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Dica Rápida - Linux - Efeito de Texto Sendo Digitado? O pv Resolve]]></title>
+    <link href="http://kalib.github.io/blog/2013/12/05/dica-rapida-linux-efeito-de-texto-sendo-digitado-o-pv-resolve/"/>
+    <updated>2013-12-05T08:37:00-03:00</updated>
+    <id>http://kalib.github.io/blog/2013/12/05/dica-rapida-linux-efeito-de-texto-sendo-digitado-o-pv-resolve</id>
+    <content type="html"><![CDATA[<p><img class="left" src="http://kalib.github.io/imgs/monitor.jpg" title="'Texto em Monitor'" >
+<strong>C</strong>ertamente você já cansou de ver em filmes e/ou séries de TV cenas nas quais um monitor apresenta um texto que, aparentemente, está sendo digitado em tempo real. É claro que eles não possuem uma pessoa digitando aquele texto ou série de comandos no momento da gravação. Então, que tal aprender uma forma de fazer isto no Linux?</p>
+
+<p><strong>O</strong> comando <em>pv</em> realiza perfeitamente este trabalho, podendo inclusive interagir com outros aplicativos e comandos.</p>
+
+<p><strong>M</strong>ão na massa&hellip;</p>
+
+<p><strong>A</strong>ntes de mais nada você precisará instalar o pv em sua distribuição. No Arch Linux, eu utilizo o pacman da forma convencional:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> [kalib@tuxcaverna ~]$ sudo pacman -S pv</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>O</strong> pv está disponível nos repositórios de praticamente todas as distribuições, portanto utilize o gerenciador de pacotes de sua preferência para instalá-lo.</p>
+
+<p><strong>A</strong> utilização é simples, bastando que você utilize algum comando que, de alguma forma, exponha algum texto na tela e em seguida redirecione esta saída para o pv. O pv possui diversos parâmetros, mas eu gosto particularmente de utilizar -qL, onde o <em>q</em> significa &ldquo;quiet&rdquo; e o <em>L</em> significa latência, em seguida insiro um valor para a latência. Vamos ao exemplo:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> [kalib@tuxcaverna ~]$ echo "Primeiro teste com pv" | pv -qL 20
+</span><span class='line'> Primeiro teste com pv</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>S</strong>e você digitar o mesmo comando, verá que ele irá escrever o texto na tela de forma &ldquo;automática&rdquo;: &ldquo;Primeiro teste com pv&rdquo;.</p>
+
+<p><strong>É</strong> claro, em uma gravação de Hollywood a linha na qual o comando foi passado não deveria aparecer, no caso: <em>[kalib@tuxcaverna ~]$ echo &ldquo;Primeiro teste com pv&rdquo; | pv -qL 20</em>. Que tal inserir um <em>clear</em> antes de nosso comando para limpar a tela antes da execução desejada?</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> [kalib@tuxcaverna ~]$ clear && echo "Primeiro teste com pv" | pv -qL 20</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>P</strong>erceba que desta vez o comando digitado não aparece na tela. A única informação que será exibida será <em>Primeiro teste com pv</em>.</p>
+
+<p><strong>D</strong>iminuindo ou aumentando o valor da latência você diminuirá ou aumentará a velocidade de <em>digitação</em> do texto que você escolheu.</p>
+
+<p><strong>C</strong>omo informei no início, você pode unir o pv com outros programas ou comandos. Que tal fazer com que um texto um pouco maior seja exibido?</p>
+
+<p><strong>P</strong>ara este teste, eu criei um arquivo texto chamado <em>testepv</em>, conforme pode ser visto abaixo:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> [kalib@tuxcaverna ~]$ cat testepv
+</span><span class='line'>
+</span><span class='line'> Não obstante, a contínua expansão de nossa atividade oferece uma interessante oportunidade para verificação de todos os recursos funcionais envolvidos.
+</span><span class='line'> A prática cotidiana prova que o desenvolvimento contínuo de distintas formas de atuação nos obriga à análise de alternativas às soluções ortodoxas.
+</span><span class='line'> Por conseguinte, a competitividade nas transações comerciais estende o alcance e a importância da gestão inovadora da qual fazemos parte.</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>N</strong>este caso, o texto pode ser digitado <em>automaticamente</em> com o pv, da seguinte forma:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> [kalib@tuxcaverna ~]$ clear && cat testepv | pv -qL 20</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>L</strong>egal? Que tal utilizarmos algo ainda melhor? Já ouviu falar no <em>figlet</em>? É outro comando/aplicativo Linux que muitas pessoas desconhecem. Comece instalando-o em seu sistema, caso você já não o possua. O figlet <em>desenha</em> o seu texto de uma forma um pouco mais <em>enfeitada</em>, se comparado ao puro <em>cat</em> ou <em>echo</em>. Exemplo:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> [kalib@tuxcaverna ~]$ figlet "Teste do Figlet"
+</span><span class='line'>  _____         _             _         _____ _       _      _   
+</span><span class='line'> |_   _|__  ___| |_ ___    __| | ___   |  ___(_) __ _| | ___| |_ 
+</span><span class='line'>   | |/ _ \/ __| __/ _ \  / _` |/ _ \  | |_  | |/ _` | |/ _ \ __|
+</span><span class='line'>   | |  __/\__ \ ||  __/ | (_| | (_) | |  _| | | (_| | |  __/ |_ 
+</span><span class='line'>   |_|\___||___/\__\___|  \__,_|\___/  |_|   |_|\__, |_|\___|\__|
+</span><span class='line'>                                                |___/            </span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>N</strong>esse caso, vamos fazer com que o efeito <em>figlet</em> também pareça estar sendo digitado automaticamente e em tempo real:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> [kalib@tuxcaverna ~]$ clear && figlet "Teste do Figlet" | pv -qL 30</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>R</strong>esultado interessante, certo? Da mesma forma, o pv pode ser utilizado com diversos outros aplicativos que trazem alguma saída no terminal, como o cowsay e muitos outros. A sua criatividade é o limite.</p>
+
+<p><strong>H</strong>ave fun! \,,/_</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Recomendação Bibliográfica - As Treze Relíquias]]></title>
+    <link href="http://kalib.github.io/blog/2013/11/25/recomendacao-bibliografica-as-treze-reliquias/"/>
+    <updated>2013-11-25T08:30:00-03:00</updated>
+    <id>http://kalib.github.io/blog/2013/11/25/recomendacao-bibliografica-as-treze-reliquias</id>
+    <content type="html"><![CDATA[<p><img class="left" src="http://kalib.github.io/imgs/livros/astrezereliquias.jpg" title="'As Treze Relíquias'" >
+<strong>S</strong>em sombra de dúvidas o livro superou minhas expectativas. Apesar de a sinopse passar a impressão de que se trata de mais um livro com temática sobrenatural voltado a um público mais jovem, a leitura revela o oposto. Certamente um livro que pode agradar diversas faixas etárias, trazendo foco no ocultismo, antigas religiões, artefatos mágicos, sexo e assassinatos com incrível crueldade, tudo isto em uma trama muito bem elaborada e descrita.</p>
+
+<p><strong>P</strong>or se tratar de assuntos que gosto, o livro prendeu minha atenção desde o início, visto que os autores souberam mesclar bem os diferentes temas em uma história conexa e personagens interessantes.</p>
+
+<p><strong>O</strong> fato de ser uma leitura bastante paralela, visto que acontecem muitas coisas ao mesmo tempo, torna o enredo mais atraente ainda, além de tornar a leitura mais rápida.</p>
+
+<p><strong>S</strong>inopse retirada do site da Livraria Saraiva:</p>
+
+<blockquote><p><em>Há mais de sete décadas treze crianças foram designadas para cuidar de artefatos antigos, dotados com um poder primitivo e letal. As relíquias, como foram chamadas, deveriam ser mantidas por seus guardiões em total segurança e afastadas umas das outras. Entretanto, agora um homem sinistro e sua amante estão atrás delas, roubando cada peça e eliminando seus protetores, deixando um rastro de crimes violentos. Aparentemente por acaso, a jovem Sarah Miller se envolverá nessa trama perigosa e terá que correr contra o tempo para elucidar os enigmas que rondam sua nova vida. Serão os guardiões seres de outro mundo? Qual será o segredo das relíquias milenares? Por que justamente Sarah foi atraída para esse jogo mortal? Uma história inquietante, povoada de lendas que até hoje rondam nosso imaginário, As treze relíquias mostra que há forças que nunca devem ser despertadas.</em></p></blockquote>
+
+<p><strong>B</strong>oa leitura!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Dica Rápida - Linux - Informações Sobre Arquivos com o Comando stat]]></title>
+    <link href="http://kalib.github.io/blog/2013/11/22/dica-rapida-linux-informacoes-sobre-arquivos-com-o-comando-stat/"/>
+    <updated>2013-11-22T08:22:00-03:00</updated>
+    <id>http://kalib.github.io/blog/2013/11/22/dica-rapida-linux-informacoes-sobre-arquivos-com-o-comando-stat</id>
+    <content type="html"><![CDATA[<p><img class="left" src="http://kalib.github.io/imgs/information.png" title="'Information'" ></p>
+
+<p><strong>Q</strong>ue os sistemas GNU/Linux possuem uma infinidade de comandos todo mundo sabe, o que nem todos conhecem, na verdade, são alguns comandos simples porém eficientes e importantes. Um deles é justamente o <em>stat</em>.</p>
+
+<p><strong>Q</strong>uando se está em frente ao terminal de um servidor que não possui interface gráfica, tudo o que está a nossa disposição são as ferramentas de linha de comando, portanto é bom conhecer uma boa variedade das mesmas, desde ferramentas para tarefas complexas até ferramentas para as atividades mais simples e banais.</p>
+
+<p><strong>A</strong> dica que deixo hoje é uma ferramenta que muitas pessoas desconhecem: <em>stat</em></p>
+
+<p><strong>O</strong> stat serve para apresentar as informações de status de um arquivo ou sistema de arquivos. Ele apresenta uma série de informações sobre o arquivo que você informar como argumento. Dentre as informações estão o <em>Tamanho</em>, <em>Blocos</em>, <em>Permissões de Acesso</em>, <em>Data e Hora de último acesso</em>, <em>Data e Hora de última modificação</em>, etc.</p>
+
+<p><strong>O</strong> uso é simples, bastando digitar: <em>stat &lt;caminho_do_arquivo_ou_sistema_de_arquivos></em>.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> [kalib@tuxcaverna ~]$ stat testdisk.log 
+</span><span class='line'>  File: “testdisk.log”
+</span><span class='line'>  Size: 102478          Blocks: 208        IO Block: 4096   arquivo comum
+</span><span class='line'> Device: 804h/2052d      Inode: 27001862    Links: 1
+</span><span class='line'> Access: (0644/-rw-r--r--)  Uid: ( 1000/   kalib)   Gid: (  100/   users)
+</span><span class='line'> Access: 2013-11-11 11:31:34.360892496 -0300
+</span><span class='line'> Modify: 2011-05-10 09:48:46.000000000 -0300
+</span><span class='line'> Change: 2011-05-11 15:01:29.019407886 -0300
+</span><span class='line'> Birth: -</span></code></pre></td></tr></table></div></figure>
+
+
+<p>ou</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> [kalib@tuxcaverna ~]$ stat /dev/sda1 
+</span><span class='line'>  File: “/dev/sda1”
+</span><span class='line'>  Size: 0               Blocks: 0          IO Block: 4096   arquivo especial de bloco
+</span><span class='line'> Device: 5h/5d   Inode: 7253        Links: 1     Device type: 8,1
+</span><span class='line'> Access: (0660/brw-rw----)  Uid: (    0/    root)   Gid: (    6/    disk)
+</span><span class='line'> Access: 2013-11-22 08:01:39.246618958 -0300
+</span><span class='line'> Modify: 2013-11-22 08:01:39.246618958 -0300
+</span><span class='line'> Change: 2013-11-22 08:01:39.246618958 -0300
+</span><span class='line'> Birth: -</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>H</strong>ave fun!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Dica Rápida - Linux - Como Não Deixar Rastros no History]]></title>
+    <link href="http://kalib.github.io/blog/2013/11/07/dica-rapida-linux-como-nao-deixar-rastros-no-history/"/>
+    <updated>2013-11-07T08:16:00-03:00</updated>
+    <id>http://kalib.github.io/blog/2013/11/07/dica-rapida-linux-como-nao-deixar-rastros-no-history</id>
+    <content type="html"><![CDATA[<p><img class="left" src="http://kalib.github.io/imgs/shhh.jpg" title="'Shhhh'" ></p>
+
+<p><strong>S</strong>hhhhhhh&hellip;.</p>
+
+<p><strong>Q</strong>ue tal digitar seus comandos em uma máquina Linux sem que os mesmos sejam registrados no <em>history</em> do sistema?</p>
+
+<p><strong>O</strong> history é responsável por armazenar um histórico dos últimos comandos digitados no sistema. Por exemplo:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> [kalib@tuxcaverna ~]$ history
+</span><span class='line'>    1  ls
+</span><span class='line'>    2  mkdir pc
+</span><span class='line'>    3  cd pc/
+</span><span class='line'>    4  ls
+</span><span class='line'>    5  mkdir pc2
+</span><span class='line'>    6  ls
+</span><span class='line'>    7  touch ps2/teste
+</span><span class='line'>    8  ls
+</span><span class='line'>    9  touch /
+</span><span class='line'>    ...
+</span><span class='line'>    ...
+</span><span class='line'>    496  route
+</span><span class='line'>    497  ifconfig
+</span><span class='line'>    498  cat teste 
+</span><span class='line'>    499  ls
+</span><span class='line'>    500  history</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>C</strong>omo podemos ver, o history me retornou um histórico dos meus últimos 500 comandos, incluindo o próprio comando <em>history</em>, que acabei de digitar.</p>
+
+<p><strong>V</strong>ejamos o registro de novos comandos:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> [kalib@tuxcaverna ~]$ echo "Teste"
+</span><span class='line'> Teste
+</span><span class='line'> [kalib@tuxcaverna ~]$ echo "Registra isso history"
+</span><span class='line'> Registra isso history
+</span><span class='line'> [kalib@tuxcaverna ~]$ history
+</span><span class='line'> ...
+</span><span class='line'> ...
+</span><span class='line'> 501  echo "Teste"
+</span><span class='line'> 502  echo "Registra isso history"
+</span><span class='line'> 503  history</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>E</strong>ntão, como não deixar registros no history? Utilizaremos os comandos <em>cat</em> e <em>bash</em> para isto:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> [kalib@tuxcaverna ~]$ cat | bash
+</span><span class='line'> pwd
+</span><span class='line'> /home/kalib
+</span><span class='line'> 
+</span><span class='line'> df -h
+</span><span class='line'> Sist. Arq.      Tam. Usado Disp. Uso% Montado em
+</span><span class='line'> /dev/sda3        30G   19G  9,3G  67% /
+</span><span class='line'> dev             2,9G     0  2,9G   0% /dev
+</span><span class='line'> run             2,9G  860K  2,9G   1% /run
+</span><span class='line'> tmpfs           2,9G     0  2,9G   0% /dev/shm
+</span><span class='line'> tmpfs           2,9G     0  2,9G   0% /sys/fs/cgroup
+</span><span class='line'> tmpfs           2,9G  108K  2,9G   1% /tmp
+</span><span class='line'> /dev/sda1        99M   23M   69M  25% /boot
+</span><span class='line'> /dev/sda4       427G  305G  101G  76% /home
+</span><span class='line'> 
+</span><span class='line'> cd testes
+</span><span class='line'> 
+</span><span class='line'> pwd
+</span><span class='line'> /home/kalib/testes</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>S</strong>imples, não?</p>
+
+<p><strong>H</strong>appy hacking&hellip;</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Lynis - Segurança e Auditoria de Sistemas Linux]]></title>
+    <link href="http://kalib.github.io/blog/2013/10/30/lynis-seguranca-e-auditoria-de-sistemas-linux/"/>
+    <updated>2013-10-30T10:00:00-03:00</updated>
+    <id>http://kalib.github.io/blog/2013/10/30/lynis-seguranca-e-auditoria-de-sistemas-linux</id>
+    <content type="html"><![CDATA[<p><img class="left" src="http://kalib.github.io/imgs/auditing.jpg" title="'Auditando'" >
+<strong>P</strong>rocurando uma ferramenta de uso simples e rápido que seja capaz de realizar uma auditoria em sistemas Unix like? Talvez o <em>Lynis</em> seja exatamente o que você procura.</p>
+
+<p><strong>O</strong> Lynis é uma ferramenta para (especialistas) Unix com foco em <em>segurança</em> e <em>auditoria</em>, porque não dizer <em>hardening</em>, de sistemas. Ele escaneia o sistema e vários softwares disponíveis no mesmo com o fim de detectar vulnerabilidades. Além de informações relacionadas a segurança, ele também buscará diversas informações sobre o sistema, pacotes instalados e erros de configuração diversos.</p>
+
+<p><strong>E</strong>ste software ainda é útil e utilizado por outros softwares para ajudar em auditorias automatizadas, gerenciamento de patches de sistemas e escaneamento por vulnerabilidades e malwares. O público alvo do mesmo é composto por especialistas em segurança, pentesters, auditores de sistemas, administradores de redes/sistemas, etc.</p>
+
+<p><strong>D</strong>entre suas verificações estão a avaliação dos métodos de autenticação disponíveis, certificados SSL expirados, softwares desatualizados, contas de usuários sem senhas, permissões incorretas em arquivos, erros de configuração, auditoria de firewall, etc.</p>
+
+<p><img class="left" src="http://kalib.github.io/imgs/lynis-screenshot.png" title="'Auditando'" ></p>
+
+<p><strong>Instalação:</strong></p>
+
+<p><strong>N</strong>o Arch Linux, o pacote se encontra disponível no <a href="https://aur.archlinux.org/packages/lynis/">AUR.</a>, portanto o processo de instalação consiste nos seguintes passos:</p>
+
+<p><strong>1.</strong> Download do <a href="https://aur.archlinux.org/packages/ly/lynis/lynis.tar.gz">Tarball</a> disponibilizado no AUR.
+<strong>2.</strong> Descompactação do tarball:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> $ tar -xvzf lynis.tar.gz</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>3.</strong> Entrar no diretório lynis que foi criado e em seguida iniciar a compilação/criação do pacote em si:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> $ cd lynis
+</span><span class='line'> $ makepkg</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>4.</strong> Instalação do pacote que foi criado (Apenas este passo com usuário root ou utilizando sudo):</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> # pacman -U lynis-1.3.3-1-any.pkg.tar.xz</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>C</strong>aso você utilize o yaourt ou algum outro gerenciador de pacotes do Arch Linux que possua acesso direto aos pacotes do AUR, pode utilizá-los ao invés de utilizar os passos acima:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> $ yaourt -S lynis</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>H</strong>appy Hacking!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[BleachBit - Limpeza de Disco no Linux]]></title>
+    <link href="http://kalib.github.io/blog/2013/10/23/bleachbit-limpeza-de-disco-no-linux/"/>
+    <updated>2013-10-23T09:02:00-03:00</updated>
+    <id>http://kalib.github.io/blog/2013/10/23/bleachbit-limpeza-de-disco-no-linux</id>
+    <content type="html"><![CDATA[<p><img class="left" src="http://kalib.github.io/imgs/disk-cleanup.jpg" title="'Limpeza de Disco'" >
+<strong>Q</strong>uando o assunto é segurança da informação, muitas vezes o óbvio é deixado de lado. Se pensa em anti-vírus, firewall, IDS (Intrusion Detection System), etc. Mas e o básico e óbvio? Raramente vejo profissionais preocupados com o lixo existente nos discos rígidos. Com <em>lixo</em> eu quero dizer aqueles arquivos temporários, antigos arquivos de cache que já não são necessários, ou mesmo rastros de informações de arquivos que já foram deletados. Sim, o fato de você deletar arquivos não significa que as informações daqueles arquivos foram completamente apagadas do disco. A <em>&ldquo;deleção regular de arquivos&rdquo;</em> não está apagando <em>os dados deletados</em>. Ela está apenas removendo os links dos inodes de arquivos, tornando assim possível a recuperação dos arquivos <em>deletados</em> com algum software forense.</p>
+
+<p><strong>E</strong>xistem várias alternativas para remover seus arquivos de forma segura. As alternativas poderão variar de acordo com o sistema de arquivos utilizado em seu disco, é claro. Uma das formas mais simples que conheço é através da ferramenta <strong>BleachBit</strong>.</p>
+
+<p><strong>B</strong>leachBit é um software livre criado para limpar e liberar espaço em disco, gerenciando assim melhor a sua privacidade e otimizando sistemas computacionais. Criado em 2008 para sistemas GNU/Linux, partiu de um controverso e polêmico debate sobre a necessidade de o GNU/Linux necessitar de uma ferramenta para limpeza de registros. Posteriormente o BleachBit passou a suportar também sistemas Microsoft Windows.</p>
+
+<p><strong>C</strong>om esta ferramenta você poderá não apenas limpar seu espaço em disco, mas também limpar vários arquivos típicos do sistema que não são necessários na maioria dos casos a longo prazo, arquivos estes que podem dar ao intruso informações desnecessárias sobre suas atividades. Não desejamos isto&hellip;</p>
+
+<p><strong>A</strong> instalação do mesmo é feita de forma simples e convencional. No caso do archlinux, o pacote se encontra disponível no repositório [community], portanto pode ser instalado regularmente através do pacman.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> [kalib@tuxcaverna ~]$ sudo pacman -Ss bleachbit
+</span><span class='line'> [sudo] password for kalib: 
+</span><span class='line'> community/bleachbit 0.9.6-1
+</span><span class='line'>    Deletes unneeded files to free disk space and maintain privacy
+</span><span class='line'> 
+</span><span class='line'> [kalib@tuxcaverna ~]$ sudo pacman -S bleachbit</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>N</strong>a maioria das distribuições baseadas em Debian, tal como o Ubuntu, o pacote poderá ser instalado através do aptitude ou apt-get:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> $ sudo apt-get update
+</span><span class='line'> $ sudo apt-get install bleachbit</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>O</strong> BleachBit possui uma interface gráfica simples, na qual você poderá selecionar o que você deseja destruir. Lembre-se que algumas funções são experimentais e podem causar problemas em seu sistema. Mas não há necessidade de se preocupar: O BleachBit lhe informa sobre isto e lhe dá a chance de cancelar a operação selecionada. ;]</p>
+
+<p><strong>O</strong> BleachBit possui uma vasta lista de <em>cleaners</em>, como ele chama as ferramentas internas de limpeza. Dentre a longa lista, podemos citar alguns como: <em>Adanaxis, Adobe Reader, aMSN, aMule, APT, Audacious, Bash, Beagle, Chromium, Downloader for X, Deep scan, Easytag, ELinks, emesene, Epiphany, Evolution, Exaile, Filezilla, Firefox, Flash, gedit, gFTP, GIMP, etc.</em> A lista é realmente longa. <a href="http://bleachbit.sourceforge.net/features">Lista completa de cleaners e demais recursos.</a></p>
+
+<p><strong>P</strong>ara executar o programa, basta procurar o mesmo através do menu de aplicativos de seu sistema, ou através do comando:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> [kalib@tuxcaverna ~]$ bleachbit</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>H</strong>ave fun!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Recomendação Bibliográfica - Filhos do Éden - Herdeiros de Atlântida]]></title>
+    <link href="http://kalib.github.io/blog/2013/10/04/recomendacao-bibliografica-filhos-do-eden-herdeiros-de-atlantida/"/>
+    <updated>2013-10-04T08:27:00-03:00</updated>
+    <id>http://kalib.github.io/blog/2013/10/04/recomendacao-bibliografica-filhos-do-eden-herdeiros-de-atlantida</id>
+    <content type="html"><![CDATA[<p><img class="left" src="http://kalib.github.io/imgs/livros/filhosdoeden1.jpg" title="'Filhos do Éden'" >
+<strong>A</strong>njos, Arcanjos e Demônios&hellip; Entidades que sempre despertaram a curiosidade e o interesse de milhares de pessoas. Não diferente, sempre tive um grande apreço por histórias, sejam em filmes ou literatura escrita, que abordem tais entidades.</p>
+
+<p><strong>S</strong>eguindo a trilha de seu outro livro, <a href="http://blog.marcelocavalcante.net/blog/2010/09/30/recomendacao-bibliografica-a-batalha-do-apocalipse/">A Batalha do Apocalipse</a>, o autor Eduardo Spohr narra com maestria o enredo no qual uma guerra civil acontece entre o Arcanjo Miguel e as tropas revolucionárias de seu irmão, o Arcanjo Gabriel.</p>
+
+<p><strong>U</strong>ma obra tão recomendada quanto qualquer outra do autor, trás um enredo mais terreno, se comparado ao livro A Batalha do Apocalipse, porém não menos interessante e empolgante.</p>
+
+<p><strong>S</strong>inopse retirada do site da Livraria Saraiva:</p>
+
+<blockquote><p><em>Há uma guerra no céu. O confronto civil entre o arcanjo Miguel e as tropas revolucionárias de seu irmão, Gabriel, devasta as sete camadas do paraíso. Com as legiões divididas, as fortalezas sitiadas, os generais estabeleceram um armistício na terra, uma trégua frágil e delicada, que pode desmoronar a qualquer instante. Enquanto os querubins se enfrentam num embate de sangue e espadas, dois anjos são enviados ao mundo físico com a tarefa de resgatar Kaira, uma capitã dos exércitos rebeldes, desaparecida enquanto investigava uma suposta violação do tratado. A missão revelará as tramas de uma conspiração milenar, um plano que, se concluído, reverterá o equilíbrio de forças no céu e ameaçará toda vida humana na terra. Ao lado de Denyel, um ex-espião em busca de anistia, os celestiais partirão em uma jornada através de cidades, selvas e mares, enfrentarão demônios e deuses, numa trilha que os levará às ruínas da maior nação terrena anterior ao dilúvio – o reino perdido de Atlântida.</em></p></blockquote>
+
+<p><strong>B</strong>oa leitura!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Vulnerabilidade iOS7 - Hack na Tela de Bloqueio Permite Burlar Segurança]]></title>
+    <link href="http://kalib.github.io/blog/2013/09/20/vulnerabilidade-ios7-hack-na-tela-de-bloqueio-permite-burlar-seguranca/"/>
+    <updated>2013-09-20T08:06:00-03:00</updated>
+    <id>http://kalib.github.io/blog/2013/09/20/vulnerabilidade-ios7-hack-na-tela-de-bloqueio-permite-burlar-seguranca</id>
+    <content type="html"><![CDATA[<p><img class="center" src="http://kalib.github.io/imgs/vulnerability.jpg" title="'Vulnerability'" >
+<strong>N</strong>ão é de hoje que as telas de bloqueio (supostas proteções) de smartphones possuem <em>vulnerabilidades</em>. Mal foi lançado o novo iOS 7 e o mesmo já possui uma vulnerabilidade possibilitando a qualquer pessoa utilizar um simples hack para ter acesso à alguns dados do dono do smartphone com o iOS 7.</p>
+
+<p><strong>A</strong> Apple já notificou sobre a correção de aproximadamente 80 vulnerabilidades que comprometiam a segurança do aparelho mas, aparentemente, algumas passaram despercebidas. Dentre elas, a possibilidade de burlar a proteção de bloqueio do aparelho, o que nos permite acessar, por exemplo, as fotos contidas no aparelho sem a necessidade de conhecer a senha de proteção do mesmo.</p>
+
+<p><strong>O</strong> processo para reprodução do hack é o seguinte:</p>
+
+<p><strong>1-</strong> Quando estiver na tela de proteção com o aparelho bloqueado, deslize seu dedo de baixo para cima, de forma a abrir a <em>Central de Controle</em>. Nela, abra o aplicativo <em>relógio</em>.</p>
+
+<p><strong>2-</strong> Abra a sessão <em>Alarme</em> do aplicativo Relógio e pressione o botão <em>Power</em> até que o iOS lhe pergunte se você deseja desligar o aparelho.</p>
+
+<p><strong>3-</strong> Toque rapidamente no botão <em>Cancelar</em> e, imediatamente após isto pressione <em>duas vezes</em> o botão <em>Home</em>, sendo que a segunda vez precisa ser por um pouco mais de tempo. Dois segundos são o suficiente. Em seguida, solte o botão Home.</p>
+
+<p><strong>4-</strong> Você agora verá o <em>Gerenciador de Tarefas</em> com as aplicações em execução. Escolha a aplicação <em>Câmera</em> e a partir dela você poderá nevegar pelas fotos armazenadas no aparelho.</p>
+
+<p><strong>N</strong>a prática&hellip;</p>
+
+<iframe width="420" height="315" src="http://kalib.github.io//www.youtube.com/embed/v6h_xcER00c" frameborder="0" allowfullscreen></iframe>
+
+
+<p><strong>L</strong>indo&hellip;</p>
+
+<p><strong>C0ngr4tul4ti0n5 4ppl3!</strong></p>
+
+<p><strong>L</strong>et&rsquo;s H4ck and H4v3 Fun!</p>
+]]></content>
+  </entry>
+  
+</feed>

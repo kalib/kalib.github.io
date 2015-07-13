@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Firefox | Marcelo Cavalcante Rocha ~]]></title>
+  <link href="http://kalib.github.io/blog/categories/firefox/atom.xml" rel="self"/>
+  <link href="http://kalib.github.io/"/>
+  <updated>2015-07-13T13:09:19-03:00</updated>
+  <id>http://kalib.github.io/</id>
+  <author>
+    <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Vulnerabilidade no Firefox - Descobrindo Senhas Salvas]]></title>
+    <link href="http://kalib.github.io/blog/2013/12/27/vulnerabilidade-no-firefox-descobrindo-senhas-salvas/"/>
+    <updated>2013-12-27T08:40:00-03:00</updated>
+    <id>http://kalib.github.io/blog/2013/12/27/vulnerabilidade-no-firefox-descobrindo-senhas-salvas</id>
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/firefox_pass.png" title="&lsquo;Firefox Peaces&rsquo;" >
+<strong>U</strong>ma coisa é certa&hellip; usuários teimam em salvar senhas em navegadores para <em>facilitar</em> suas vidas durante a navegação na internet. Seja em emails, redes sociais, serviços online ou qualquer outra coisa, a opção <em>Salvar sua senha</em> parece possuir um enorme magnetismo ou um centro gravitacional extremamente denso a ponto de atrair o usuário para tal.</p>
+
+<p><strong>S</strong>erá que as pessoas não entendem o quão perigosa é a ideia de <em>salvar sua senha</em> onde quer que seja? É, praticamente, o mesmo risco assumido por quem anota suas senhas em <em>post-its</em> e os colam em seu monitor ou mesa.</p>
+
+<p><strong>H</strong>oje um colega me procurou para saber como recuperar uma senha que ele não lembrava mais. Já conhecendo o histórico do mesmo eu tinha certeza que ele tinha salvo esta senha no navegador. Então lhe mostrei como ele, ou qualquer outra pessoa, conseguiria facilmente descobrir todas as senhas salvas em seu navegador Firefox. A experiência foi boa por dois motivos:</p>
+
+<ol>
+<li>Ele conseguiu descobrir sua senha; <em>(a qual ele provavelmente não esqueceria se tivesse o costume de digitá-la sempre que necessário ao invés de salá-la no navegador)</em></li>
+<li>Ele entendeu o risco que ele corre com esta prática absurda;</li>
+</ol>
+
+
+<p><strong>V</strong>ejamos o quão <strong>simples</strong> <em>(para não dizer estúpido)</em> é o procedimento para descobrir as senhas salvas pelo usuário no navegador Firefox.</p>
+
+<ol>
+<li>Clique no menu <strong>Firefox</strong> que se encontra no canto superior esquerdo do navegador;</li>
+</ol>
+
+
+<p><img class="center" src="/imgs/firefox_pass_1.png" title="&lsquo;Firefox Pass 1&rsquo;" ></p>
+
+<ol>
+<li>Selecione a opção <strong>Preferências</strong> no menu e em seguida, novamente, <strong>Preferências</strong>;</li>
+</ol>
+
+
+<p><img class="center" src="/imgs/firefox_pass_2.png" title="&lsquo;Firefox Pass 2&rsquo;" ></p>
+
+<ol>
+<li>Na aba <strong>Segurança</strong>, clique no botão <strong>Senhas Salvas</strong>;</li>
+</ol>
+
+
+<p><img class="center" src="/imgs/firefox_pass_3.png" title="&lsquo;Firefox Pass 3&rsquo;" ></p>
+
+<ol>
+<li>Repare que na janela que será apresentada você terá uma lista de sites/serviços e usuários que deixaram suas senhas salvas. Nesta janela, clique no botão <strong>Mostrar Senhas</strong>;</li>
+</ol>
+
+
+<p><img class="center" src="/imgs/firefox_pass_4.png" title="&lsquo;Firefox Pass 4&rsquo;" ></p>
+
+<ol>
+<li>Agora você poderá ver as senhas salvas em texto plano, limpo e claro.</li>
+</ol>
+
+
+<p><img class="center" src="/imgs/firefox_pass_5.png" title="&lsquo;Firefox Pass 5&rsquo;" ></p>
+
+<p><strong>Lição aprendida: Não salve suas senhas!</strong></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Ajude o Firefox a estabelecer um recorde mundial]]></title>
+    <link href="http://kalib.github.io/blog/2008/05/31/ajude-o-firefox-a-estabelecer-um-recorde-mundial/"/>
+    <updated>2008-05-31T08:41:00-03:00</updated>
+    <id>http://kalib.github.io/blog/2008/05/31/ajude-o-firefox-a-estabelecer-um-recorde-mundial</id>
+    <content type="html"><![CDATA[<h3></h3>
+
+<p>&ldquo;Queremos estabelecer um Recorde Mundial no Guinness para o software mais baixado em 24 horas e com a sua ajuda temos certeza de que conseguiremos!&rdquo;</p>
+
+<p>A Fundação Mozilla pretende bater este recorde e entrar para o Guinness Book e para isso está contando com o apoio dos usuários e fans da raposa de fogo no Download Day 2008. Mas o que isso tudo significa?</p>
+
+<p>A fundação Mozilla lançou um site para este projeto no qual podemos nos cadastrar e participar desta corrente. No dia do download a Mozilla encaminhará uma chamada para todos os cadastrados para que possam fazer seus respectivos downloads.</p>
+
+<p>O site ainda nos mostra em tempo real a quantidade de pessoas já cadastradas bem como um mapa do mundo com detalhes sobre quantas pessoas já se cadastraram em cada país de nosso globo.</p>
+
+<p>A iniciativa é excelente para divulgar um excelente Software Livre que já ganhou muitos adeptos, mesmo aqueles que nem conheciam o significado da palavra Software Livre. Lembrando também que todo e qualquer incentivo ao uso de Software Livre é bastante bem vindo em um país em desenvolvimento como o nosso, portanto vamos ajudar nessa campanha pessoal. ;]</p>
+
+<p>Para participar é muito simples, bastando apenas clicar no link a seguir, na raposa do início do post ou mesmo no baner que disponibilizei no topo do site.</p>
+
+<p>Link do projeto: <a href="http://www.spreadfirefox.com/pt-BR/worldrecord">http://www.spreadfirefo</a><a href="http://www.spreadfirefox.com/pt-BR/worldrecord">x.com/pt-BR/worldrecord</a></p>
+
+<p>[]&rsquo;s</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Configurando a JRE para funcionar no *buntu 8.04 com firefox 3 / Configuring JRE on *buntu 8.04 to work with Firefox 3.0]]></title>
+    <link href="http://kalib.github.io/blog/2008/05/07/configurando-a-jre-para-funcionar-no-buntu-804-com-firefox-3-configuring-jre-on-buntu-804-to-work-with-firefox-30/"/>
+    <updated>2008-05-07T13:14:00-03:00</updated>
+    <id>http://kalib.github.io/blog/2008/05/07/configurando-a-jre-para-funcionar-no-buntu-804-com-firefox-3-configuring-jre-on-buntu-804-to-work-with-firefox-30</id>
+    <content type="html"><![CDATA[<h3></h3>
+
+<p>Versão em Português BR / Portuguese Version</p>
+
+<p>Saudações galera..</p>
+
+<p>Aqui segue uma rápida dica que poderá ajudar aqueles que, assim como eu, instalaram o *buntu 8.04 e perceberam que o mesmo possui o Firefox 3.0 em seus repositórios como o navegador padrão.</p>
+
+<p>Bom, ao tentar instalar, desde ontem, o plugin do java para poder acessar minha página do banco, encontrei uma solução bem simples depois de várias tentativas frustradas.</p>
+
+<p>Após tentar tudo que sempre utilizei como por exemplo baixar o pacote jre diretamente do site da sun, descompactar no diretório /usr/java (como sempre fiz por questão de organização), instalar e criar um link simbólico para o mesmo no diretório de plugins do Firefox, e mesmo assim não ter nenhum resultado concreto, pesquisei um pouco e achei uma solução bem mais simples e rápida.</p>
+
+<p>Basta descomentar as linhas referentes aos mirrors multiverse nos seus repositórios (/etc/apt/sources.list), dar um update (# aptitude update) e em seguida instalar os pacotes com o seguinte comando:</p>
+
+<h1>aptitude install sun-java6-jre sun-java6-plugin sun-java6-fonts</h1>
+
+<p>Feito isto reinicie o firefox e digite em sua barra de endereços:</p>
+
+<p>about:plugins</p>
+
+<p>Deverá agora constar em sua lista de plugins os referentes ao java. ;]</p>
+
+<p>Outro teste é digitar no seu console: $ java -version</p>
+
+<p>Você deverá ter um retorno similar a este:</p>
+
+<p>java version &ldquo;1.6.0_06&rdquo;</p>
+
+<p>Java&trade; SE Runtime Environment (build 1.6.0_06-b02)</p>
+
+<p>Java HotSpot&trade; Client VM (build 10.0-b22, mixed mode, sharing)</p>
+
+<p>Ou mesmo acessando alguma página que se utilize de java como o teclado virtual do Banco do Brasil por exemplo.</p>
+
+<p>;]</p>
+
+<p>Bom, espero ter ajudado com esta simples, porém eficiente dica.</p>
+
+<p>Abraços</p>
+
+<hr />
+
+<p>Versão em Inglês / English Version</p>
+
+<p>Hey Guys..</p>
+
+<p>Here I&rsquo;ll describe a simple and quickly way that can help those people who, like me, are trying to use *buntu 8.04 and have realized that it comes with Firefox 3.0 beta 5 on its repositories as the default web browser.</p>
+
+<p>Well, trying to install the java plugin since yesterday to access my bank account, I could find a simple way after some frustrated tries.</p>
+
+<p>After trying every ways i had always use, like for example downloading the jre package directly from the sun&rsquo;s website, install it and create a symbolic link at Firefox plugin&rsquo;s directory and have no positive answer, I decided to search on the web until realize that a simple aptitude&rsquo;s use could solve my problem and make it work correctly.</p>
+
+<p>All you have to do is uncomment (remove the # from the beggining of the line) the multiverse mirror&rsquo;s lines at your sources file (/etc/apt/sources.list). The next step is to make an upload on your mirrors and repositories (# aptitude update) and then install the necessary packages with the following line command:</p>
+
+<h1>aptitude install sun-java6-jre sun-java6-plugin sun-java6-fonts</h1>
+
+<p>It&rsquo;s done!</p>
+
+<p>Can&rsquo;t believe? Restart your Firefox and put the following command on your address bar:</p>
+
+<p>about:plugins</p>
+
+<p>You should find some lines describing your java plugin on the plugins page, like all your other plugins on Firefox.</p>
+
+<p>Another way to test and check it is typing the following command on a terminal or console:</p>
+
+<p>$ java -version</p>
+
+<p>You should receive some return like this:</p>
+
+<p>java version &ldquo;1.6.0_06&rdquo;</p>
+
+<p>Java&trade; SE Runtime Environment (build 1.6.0_06-b02)</p>
+
+<p>Java HotSpot&trade; Client VM (build 10.0-b22, mixed mode, sharing)</p>
+
+<p>Or, if you still not believing, you can try to access some website that uses java like some bank sites for example. ;]</p>
+
+<p>Well, i hope this text could help some of you guys.</p>
+
+<p>Take Care</p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,499 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Marcelo Cavalcante Rocha ~</title>
+  <meta name="author" content="Marcelo Cavalcante Rocha - Kalib">
+
+  
+  <meta name="description" content="Não sei se algum de vocês ficou sabendo..Mas na última semana foi notificado um problema na infra-estrutura do Fedora, e havia sido &ldquo; &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://kalib.github.io/blog/page/54/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Marcelo Cavalcante Rocha ~" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-42903485-1']);
+    _gaq.push(['_setDomainName','marcelocavalcante.net']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:kalib.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+    <li><a href="/">
+        <span class="blue_light">
+            Marcelo Cavalcante Rocha ~
+        </span>
+       
+           <span class="blue_dark">
+             Hacking the damn life...
+           </span>
+       
+    </a></li>
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Arquivos</a></li>
+  <li><a href="/about">Sobre mim</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/08/22/problemas-de-infra-do-fedora-servidores-hackeados/">Problemas De Infra Do Fedora - Servidores Hackeados</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-08-22T10:05:00-03:00" pubdate data-updated="true">Aug 22<span>nd</span>, 2008</time>
+        
+         | <a href="/blog/2008/08/22/problemas-de-infra-do-fedora-servidores-hackeados/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img class="left" src="/imgs/fedora.jpg" title="'Fedora'" >
+Não sei se algum de vocês ficou sabendo..Mas na última semana foi notificado um problema na infra-estrutura do Fedora, e havia sido &ldquo;recomendado&rdquo; que nenhuma instalação ou atualizaçãp fosse feita, caso você use Fedora.</p>
+
+<p>Até ontem eu não tinha visto nenhuma explicação para o caso, mas discutindo com colegas de trabalho já suspeitávamos de uma invasão nos servidores do fedora que pudessem ocasionar este tipo de problema&hellip;Bom, hoje achei esta nota no site da red hat, que confirma nossas suspeitas. Os servidores foram sim invadidos. O caso é gravíssimo, pois pode, ou não, ter interferido na árvore de pacotes&hellip;pois existe o risco de eles terem pego as chaves dos pacotes fedora.. :/</p>
+
+<p>Eu não sou usuário Fedora, mas para quem  é&hellip;fica o Alarme piscando!!</p>
+
+<p>É bom se manter informado e até lá não sair usando o yum para instalar ou atualizar pacotes. Apesar de na nota eles informarem que os problemas podem não ser graves, eu não arriscaria isso em um ambiente de produção na empresa em que trabalho. Só Deus sabe o que de fato aconteceu.</p>
+
+<p>Segue link com informações mais detalhadas: <a href="http://www.redhat.com/archives/fedora-announce-list/2008-August/msg00012.html">http://www.redhat.com/archives/fedora-announce-list/2008-August/msg00012.html</a></p>
+
+<p>Abraços</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/08/11/o-software-livre-precisa-de-voce/">O Software Livre Precisa De Você</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-08-11T09:42:00-03:00" pubdate data-updated="true">Aug 11<span>th</span>, 2008</time>
+        
+         | <a href="/blog/2008/08/11/o-software-livre-precisa-de-voce/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img class="center" src="/imgs/gnu.jpg" title="'GNU'" >
+Isso não é mentira. O Software Livre realmente precisa de você.</p>
+
+<p>Como todos sabemos, o Software Livre vem ganhando a cada dia mais nome no mercado e aceitação como solução  <a href="http://www.vivaolinux.com.br/artigo/O-Software-Livre-precisa-de-voce#">tecnológica</a>. É comum abrirmos nosso navegador ou leitor de notícias RSS e nos depararmos com notícias que nos mostram claramente essa evolução como a recente &ldquo;IBM empenhada em oferecer desktops Microsoft-Free&rdquo;, anunciada no site da Linux Magazine, na qual é abordada a nova parceria da IBM com alguns dos principais distribuidores Linux numa tentativa de oferecer melhores e mais viáveis condições de venda de computadores caseiros trazendo o Software Livre como essência da máquina. É importante vermos que ele passa a ganhar seu espaço não apenas pelo custo se comparado à <a href="http://www.vivaolinux.com.br/artigo/O-Software-Livre-precisa-de-voce#">Softwares</a> Proprietários, mas também pelo funcionamento eficaz do mesmo que está cada vez mais claro.</p>
+
+<p>Mas como um software ou sistema operacional como o Linux, que foi criado por uma pessoa inicialmente na Finlândia, poderia vir hoje a ter tamanha repercussão no mundo? Como ele poderia ganhar tanta voz, respeito e aceitação, diante do fato de que hoje é fácil chegar no colégio / faculdade / trabalho e conhecer alguém que fale do tal pinguim que roda gratuitamente em sua máquina? Como esse sistema ganhou importância tal a ponto de se manter diariamente atualizado e recebendo correções de bugs ou falhas de segurança?</p>
+
+<p>A resposta para essas e outras perguntas é o senso de COMUNIDADE que se formou em volta do mesmo. Como muitos já sabem, o Linux nasceu devagar na cabeça de um desenvolvedor chamado <em>Linus Torvalds</em>, que resolveu jogar sua idéia ao mundo expondo o que ele pensava em fazer e o &ldquo;como&rdquo; ele estava fazendo até então.</p>
+
+<p>Neste &ldquo;como&rdquo; está incluído o código inicialmente criado por ele, bem como a forma na qual ele estava trabalhando em cima do projeto. Juntamente com essas <a href="http://www.vivaolinux.com.br/artigo/O-Software-Livre-precisa-de-voce#">informações</a>, ele deixou o convite para todos os que desejassem ajudar na elaboração daquela que ele, provavelmente, não imaginasse que seria tão popular depois de alguns anos. Em menos de 24 horas Linus já havia recebido várias respostas a este convite com pessoas se oferecendo para lhe ajudar na tarefa que daria origem ao Sistema Operacional que hoje conhecemos como Linux.</p>
+
+<p>Da mesma forma que o Linux precisou de voluntários e pessoas do mundo inteiro para ajudar naquele projeto inicial, o Software Livre como um todo continua precisando, cada vez mais, de pessoas dispostas a ajudar nesta disseminação de uma solução que se mostra a cada dia: Socialmente Justa, Economicamente Viável e Tecnologicamente Sustentável. Que tal você ajudar também?</p>
+
+<p>Muitos até pensam em ajudar, mas muitas vezes acabam inibindo esta vontade por não saber exatamente como ajudar ou achar que só pode ajudar quem tem bons conhecimentos de programação. A verdade é que além de desenvolvimento, existem outras várias formas de ajudar o Software Livre e em alguma(s) delas seu perfil poderá se encaixar melhor.</p>
+
+<p><em>Divulgação</em> &ndash; O bom e velho boca-a-boca pode ajudar mais do que você imagina. Se você fala das vantagens do Software Livre para 5 pessoas e conseguir convencer 1 pessoa a pelo menos experimentar o Software Livre, já temos um grande lucro. Pois esta ação é multiplicadora e este 1 que experimentou por indicação sua poderá gostar e repassar a idéia para mais pessoas e assim por diante neste ciclo.</p>
+
+<p><em>Participação em listas ou fóruns na internet</em> &ndash; Aqui você ajuda no sentido de tirar dúvidas e dar apoio a quem possa estar começando com o Software Livre. Estas pessoas as vezes acabam desistindo do Software Livre por encontrar dificuldades e não ter ninguém para lhes ajudar ou tirar dúvidas.</p>
+
+<p><em>Documentação</em> &ndash; Escrever artigos, tutoriais, dicas e manuais sobre Software Livre, seja filosófico ou técnico, é sempre bom para ajudar aqueles que buscam <a href="http://www.vivaolinux.com.br/artigo/O-Software-Livre-precisa-de-voce?pagina=2#">informações</a> sobre o mesmo na internet, já que todos sabemos que até para dúvidas como por exemplo &ldquo;como dar nó em gravatas&rdquo;, o Google é o primeiro a ser chamado como forma de pesquisa. Escrever documentações e jogar pela web, seja em sites, blogs, papers, wikis, dentre outros, aumenta as chances deste curioso achar tal informação.</p>
+
+<p><em>Traduções</em> &ndash; Esta se divide em duas categorias:</p>
+
+<ul>
+<li><p>Tradução de documentações &ndash; Muita documentação já existe sobre Linux e Software Livre em geral, mas uma grande parte deste universo de documentações ainda não se encontra nativa em nossa língua (português do brasil). Esta é tão importante quanto a de documentação em si, já que amplia ainda mais as opções para quem busca informações e conhecimento sobre o assunto.</p></li>
+<li><p>Tradução de pacotes &ndash; Quem não gosta de ter seu  <a href="http://www.vivaolinux.com.br/artigo/O-Software-Livre-precisa-de-voce?pagina=2#">sistema operacional</a> escrito em sua língua? O papel do tradutor de pacotes também é de extrema importância, pois é ele quem vai tornar possível esta idéia de ter sua máquina funcionando 100% em sua língua nativa na qual as interfaces dos programas e <a href="http://www.vivaolinux.com.br/artigo/O-Software-Livre-precisa-de-voce?pagina=2#">aplicativos</a> estarão lhe passando as informações da forma mais clara possível. Cada distribuição possui a sua forma de organizar essa tradução de pacotes, o que geralmente é simples de se fazer e muito valorizado.</p></li>
+</ul>
+
+
+<p><em>Eventos e Install Fest</em> &ndash; Qual forma de divulgação seria melhor do que mostrar e/ou falar sobre um assunto pessoalmente? Os eventos possuem uma importância primordial neste sentido por estarem sempre trazendo atrativos como palestras e mini-cursos abordando o Software Livre como um todo, bem como especificações técnicas de um determinado assunto em particular. Aqui você além de ajudar na organização do evento, pode ajudar com palestras, mini-cursos ou mesmo reunindo alguns amigos e organizando um Install Fest dentro do mesmo, no qual vocês estarão recebendo máquinas de pessoas que desejam ter o Linux rodando em suas máquinas mas não se sentem, por alguma razão, seguros para fazer a instalação por conta própria. Um exemplo de evento que estaremos tendo em breve é o <a href="http://www.cesol.ufc.br/">CESOL</a> &ndash; Congresso Estadual de Software Livre, que acontecerá entre os dias 19 e 23 de Agosto.</p>
+
+<p><em>Doações</em> &ndash; Muitos projetos de Software Livre que você pode até utilizar no seu dia-a-dia são auto-sustentáveis e precisam de toda e qualquer forma de incentivo para ter uma continuidade garantida. Pessoas voluntárias utilizam suas horas vagas para desenvolver uma aplicação que muitas vezes será útil em diversas tarefas de nosso dia-a-dia. Além do tempo empregado na tarefa, muitas vezes existem custos para hospedagem da mesma a manutenção.</p>
+
+<p>Muitos aceitam doações por paypal por exemplo. Não é tão raro hoje em dia vermos empresas que utilizam-se de Softwares Livres para atender clientes, e como retribuição, façam uma doação ao projeto como forma de também garantir a continuidade do mesmo.</p>
+
+<p>Esta atitude é importante e deve sim ser encorajada. Muitos de nós as vezes ganham dinheiro por nada, como por exemplo com um blog que temos e ganhamos algum dinheiro por propagandas no mesmo, sem que nos custe nada. Este dinheiro também pode ser convertido em doação para algum projeto, como fez o <a href="http://www.google.com.br/url?sa=t&amp;ct=res&amp;cd=2&amp;url=http%3A%2F%2Fbr-linux.org%2Flinux%2Fcampanha-wikipedia&amp;ei=wE-bSJOYA5io8ATJ9I2WBQ&amp;usg=AFQjCNFUV_61r_WgmXzFHl0RAgjAvUfNJg&amp;sig2=tlZedHJYC8R2CkQSRDTdBg">BR-Linux</a> a pouco tempo.</p>
+
+<p>Estas são apenas algumas formas existentes para aqueles que pretendem ajudar de alguma forma o Software Livre. O importante é achar a sua forma de ajudar, não importa qual seja.</p>
+
+<p>Lembrando que cada distribuição tem a sua forma de organização e deve-se buscar estas formas na hora de resolver ajudar em algo.</p>
+
+<p>Espero ter dado algum incentivo a vocês. Ajudemos o Software Livre. Esta é a forma de retribuir por tudo que o mesmo já nos fez.</p>
+
+<p>Abraços.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/08/03/instalacao-do-kdemod-41-no-arch-linux/">Instalação Do KDEmod 4.1 No Arch Linux</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-08-03T10:07:00-03:00" pubdate data-updated="true">Aug 3<span>rd</span>, 2008</time>
+        
+         | <a href="/blog/2008/08/03/instalacao-do-kdemod-41-no-arch-linux/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Creio que todos os usuários de Arch Linux conhecem ou já ouviram falar do <a href="http://hugodoria.org/">Hugo Doria</a>. O Hugo é um dos maiores representantes do Arch Linux no Brasil e um dos atuais desenvolvedores do mesmo.</p>
+
+<p>Este artigo sobre instalação do KDEmod 4.1 foi escrito por ele e resolvi postar aqui para que possamos atingir mais público ainda. Quanto mais a informação correr, melhor. ;]</p>
+
+<p>Introdução</p>
+
+<p>No <em>Arch Linux</em> o KDE é empacotado de um jeito que eu não curto. Nele, diversas aplicações são &ldquo;englobadas&rdquo; em um só pacote (isso é o padrão na maioria das distribuições).</p>
+
+<p>Ao instalar o pacote <em>kdegraphics</em>, por exemplo, você acaba instalando diversas aplicações para manipulação gráfica. Mesmo que você queira apenas a &ldquo;aplicação x&rdquo; daquele pacote será obrigado a instalar o kdegraphics todo. Isso torna o KDE enorme e com diversas aplicações que você nunca usa.</p>
+
+<p>A solução para isto é usar o <a href="http://www.kdemod.ath.cx/">KDEMod</a>, um projeto que visa fornecer uma instalação modular do KDE e otimizada para o Arch Linux.</p>
+
+<p>NOTA: Não há planos para portar o KDEMod para outras distribuições.</p>
+
+<p>Instalação</p>
+
+<p>O primeiro passo a ser feito é remover toda e qualquer instalação do <em>KDEMod</em> anterior. Faça isso com:</p>
+
+<blockquote><h1>pacman -Rscn kdemod-complete</h1></blockquote>
+
+<p>Se você já está usando as versões betas do kdemod4, também faça:</p>
+
+<blockquote><h1>pacman -Rscn kdemod4-complete</h1></blockquote>
+
+<p>Verifique se tudo relacionado ao kde foi removido com:</p>
+
+<blockquote><h1>pacman -Q | grep kde</h1></blockquote>
+
+<p>Se aparecer algo, pode remover. Uma maneira mais direta de fazer isto é executando:</p>
+
+<blockquote><h1>pacman -Q | grep -i &ldquo;kde|qt&rdquo; | cut -d &ldquo; &rdquo; -f1 | xargs pacman -Rd</h1></blockquote>
+
+<p>É preciso, também, remover os arquivos de configuração do kdemod 3 e 4 anteriores, já que eles são incompatíveis com a nova versão:</p>
+
+<blockquote><p>$ rm -rf ~/.kde<em> ~/.kdemod</em></p></blockquote>
+
+<p>NOTA: Ao invés de removê-los eu sugiro que você faça um backup.</p>
+
+<p>Pronto, seu sistema está limpo e agora podemos instalar a nova versão sem problemas. Abra o arquivo <em>/etc/pacman.conf</em> com seu editor preferido e adicione:</p>
+
+<blockquote><p>[kdemod-core]</p></blockquote>
+
+<p>Server = <a href="http://kdemod.ath.cx/repo/core/i686">http://kdemod.ath.cx/repo/core/i686</a></p>
+
+<blockquote></blockquote>
+
+<p>NOTA:</p>
+
+<ul>
+<li>Remove qualquer entrada referente ao [kdemod] ou ao [kdemod-unstable]</li>
+</ul>
+
+
+<p>Para instalar o KDEMod faça:</p>
+
+<blockquote><h1>pacman -Sy kdemod</h1></blockquote>
+
+<p>Se quiser o kdemod completo faça:</p>
+
+<blockquote><h1>pacman -Sy kdemod-complete</h1></blockquote>
+
+<p>Seu KDEMod está pronto para uso. :) Para usá-lo basta editar seu ~/.xinitrc ou iniciar o kdm (gerenciador de login do KDE) com:</p>
+
+<blockquote><h1>/etc/rc.d/kdm restart</h1></blockquote>
+
+<p>O primeiro boot do KDE 4 demora um pouco, mas depois melhora. Portanto, não se preocupe.</p>
+
+<p>Caso você queira seu ambiente em português instale o pacote abaixo:</p>
+
+<blockquote><h1>pacman -Sy kdemod-kde-l10n-pt_br</h1></blockquote>
+
+<p>E selecione seu idioma nas configurações do KDE.</p>
+
+<p>Pacotes Adicionais</p>
+
+<p>Agora existe um repositório com alguns pacotes adicionais para o KDE (aplicativos, plasmoids etc). Para usá-lo adicione as seguintes linhas ao <em>/etc/pacman.conf</em>:</p>
+
+<blockquote><p>[kdemod-extragear]</p></blockquote>
+
+<p>Server = <a href="http://kdemod.ath.cx/repo/extragear/i686">http://kdemod.ath.cx/repo/extragear/i686</a></p>
+
+<blockquote></blockquote>
+
+<p>E sincronize a base de dados dos pacotes:</p>
+
+<blockquote><h1>pacman -Sy</h1></blockquote>
+
+<p>Para visualizar o que existe neste repositório faça:</p>
+
+<blockquote><h1>pacman -Sl kdemod-extragear</h1></blockquote>
+
+<p>Por enquanto ainda existem poucos pacotes neste repositório, mas vários outros estão sendo adicionados.</p>
+
+<p>Bem, é isso. Agora é só você aproveitar seu KDEMod 4. No momento que estou escrevendo este artigo ele se encontra na versão 4.1 e já está ficando fantástico.</p>
+
+<p>Maiores informações:</p>
+
+<ul>
+<li><a href="http://www.kdemod.ath.cx/">http://www.kdemod.ath.cx/</a></li>
+</ul>
+
+
+<p>Deixo aqui os agradecimentos ao Hugo em nome de todos pela contribuição.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/blog/page/55/">&larr; Anteriores</a>
+    
+    <a href="/blog/archives">Arquivos do Blog</a>
+    
+    <a class="next" href="/blog/page/53/">Novas &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1 align="left">Marcelo Cavalcante</h1>
+  <p><img class="right" src="http://www.marcelocavalcante.net/imgs/kalib_picture_pq_circle_pq.png" title="'kalib'" ><p align=rght>Sysadmin dinâmico, escrupulosamente curioso, reservadamente convencional, multitarefa, command line heavy-user, estudante e pesquisador, surfista por prazer, leitor inquieto e esposo apaixonado.<br>Me conheça melhor <a href="http://blog.marcelocavalcante.net/about">clicando aqui</a>.</p></p>
+</section><Section>
+  <h1>Timeline</h1>
+  <img align="center" src="/imgs/brazil-canada-flag2.png"><br><br>
+  <p><img src="/imgs/yellow_maple.png" style="float: left; margin-right: 2px; margin-bottom: 2px;"> 11/2015 - Landing</p>
+  <p><img src="/imgs/green_maple.png" style="float: left; margin-right: 2px; margin-bottom: 2px;"> 05/2015 - Passaportes recebidos</p>
+  <p><img src="/imgs/green_maple.png" style="float: left; margin-right: 2px; margin-bottom: 2px;"> 05/2015 - Vistos emitidos</p>
+  <p><img src="/imgs/green_maple.png" style="float: left; margin-right: 2px; margin-bottom: 2px;"> 04/2015 - Passaportes solicitados</p>
+  <p><img src="/imgs/green_maple.png" style="float: left; margin-right: 2px; margin-bottom: 2px;"> 03/2015 - Exames Médicos feitos</p>
+  <p><img src="/imgs/green_maple.png" style="float: left; margin-right: 2px; margin-bottom: 2px;"> 01/2015 - PER Recebido</p>
+  <p><img src="/imgs/green_maple.png" style="float: left; margin-right: 2px; margin-bottom: 2px;"> 12/2014 - Cartão de Crédito cobrado</p>
+  <p><img src="/imgs/green_maple.png" style="float: left; margin-right: 2px; margin-bottom: 2px;"> 09/2014 - Envio de aplicação</p>
+  <p><img src="/imgs/green_maple.png" style="float: left; margin-right: 2px; margin-bottom: 2px;"> 08/2014 - Preenchimento de Formulários</p>
+  <p><img src="/imgs/green_maple.png" style="float: left; margin-right: 2px; margin-bottom: 2px;"> 08/2014 - Caça aos documentos necessários</p>
+  <p><img src="/imgs/green_maple.png" style="float: left; margin-right: 2px; margin-bottom: 2px;"> 07/2014 - Exames de Proficiência - Inglês (IELTS)</p>
+  <p><img src="/imgs/green_maple.png" style="float: left; margin-right: 2px; margin-bottom: 2px;"> 06/2014 - Equivalência de Diploma (WES)</p>
+  <p><img src="/imgs/green_maple.png" style="float: left; margin-right: 2px; margin-bottom: 2px;"> 05/2014 - 1 mês de aulas focadas no exame IELTS (Inglês)</p>
+  <p><img src="/imgs/green_maple.png" style="float: left; margin-right: 2px; margin-bottom: 2px;"> 07/2013 - Início de estudos (Francês)</p>
+</section>
+
+<section>
+  <h1>Posts Recentes</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/08/03/assista-ao-documentario-sobre-aaron-swartz-o-menino-da-internet/">Assista ao documentário sobre Aaron Swartz: O menino da internet</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/13/alterando-os-parametros-do-kernel-em-tempo-real-com-o-systcl/">Alterando os parâmetros do kernel em tempo real com o Systcl</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/01/30/blackarch-linux-uma-nova-distribuicao-para-pentesters/">BlackArch Linux - Uma nova distribuição para Pentesters</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/01/23/dica-escondendo-seu-endereco-de-email-ao-divulgar-seu-endereco-de-email/">Dica - Escondendo Seu Endereço de Email ao Divulgar Seu Endereço de Email</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/01/17/dica-assistir-star-wars-em-um-console-ou-terminal/">Dica - Assistir Star Wars em um Console ou Terminal</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+  <h1>Categorias</h1>
+    <span id="tag-cloud"><embed type='application/x-shockwave-flash' src='/javascripts/tagcloud.swf'width='100%' height='250' bgcolor='#f2f2f2' id='tagcloudflash' name='tagcloudflash' quality='high' allowscriptaccess='always'flashvars="tcolor=0x333333&amp;tcolor2=0x333333&amp;hicolor=0x000000&amp;tspeed=100&amp;distr=true&amp;mode=tags&amp;tagcloud=%3Ctags%3E%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fandroid%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EAndroid%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Faptitude%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EAptitude%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Farch-linux%27+style%3D%27font-size%3A+18.363636363636363%25%27%3EArch+Linux%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fasterisk%27+style%3D%27font-size%3A+7.568181818181818%25%27%3EAsterisk%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fcensura%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3ECensura%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fchromium%27+style%3D%27font-size%3A+7.946969696969697%25%27%3EChromium%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fcultura%27+style%3D%27font-size%3A+7.378787878787879%25%27%3ECultura%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fcultura-hacker%27+style%3D%27font-size%3A+15.522727272727273%25%27%3ECultura+Hacker%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fdebian%27+style%3D%27font-size%3A+7.378787878787879%25%27%3EDebian%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fdia-livre%27+style%3D%27font-size%3A+7.757575757575758%25%27%3EDia+Livre%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Feventos%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EEventos%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Ffedora%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EFedora%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Ffirefox%27+style%3D%27font-size%3A+7.568181818181818%25%27%3EFirefox%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fflisol%27+style%3D%27font-size%3A+8.515151515151516%25%27%3EFlisol%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Ffree-bsd%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EFree+BSD%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fgoogle%27+style%3D%27font-size%3A+7.757575757575758%25%27%3EGoogle%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fimpressoes%27+style%3D%27font-size%3A+32.0%25%27%3EImpressoes%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Finternet%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EInternet%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fios%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EiOS%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fjava%27+style%3D%27font-size%3A+8.325757575757576%25%27%3EJava%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fjogos%27+style%3D%27font-size%3A+7.757575757575758%25%27%3EJogos%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fkde%27+style%3D%27font-size%3A+10.40909090909091%25%27%3EKDE%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fkubuntu%27+style%3D%27font-size%3A+7.568181818181818%25%27%3EKubuntu%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fliberdade%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3ELiberdade%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Flinux%27+style%3D%27font-size%3A+26.886363636363637%25%27%3ELinux%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fliteratura%27+style%3D%27font-size%3A+12.113636363636363%25%27%3ELiteratura%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fmeio-ambiente%27+style%3D%27font-size%3A+7.757575757575758%25%27%3EMeio+Ambiente%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fprivacidade%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EPrivacidade%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fpython%27+style%3D%27font-size%3A+8.704545454545455%25%27%3EPython%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Frails%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3ERails%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fredes%27+style%3D%27font-size%3A+10.787878787878789%25%27%3ERedes%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fruby%27+style%3D%27font-size%3A+7.946969696969697%25%27%3ERuby%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fseguranca%27+style%3D%27font-size%3A+13.818181818181818%25%27%3ESeguranca%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fseguranca-digital%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3ESeguranca+Digital%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fsenha%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3ESenha%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fservidor%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EServidor%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fsoftware-livre%27+style%3D%27font-size%3A+30.295454545454547%25%27%3ESoftware+Livre%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fssh%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3ESSH%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fsysadmin%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3ESysAdmin%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Ftux-ce%27+style%3D%27font-size%3A+9.462121212121211%25%27%3ETux-ce%3C%2Fa%3E+%3C%2Ftags%3E"></span>
+</section>
+<section>
+  <h1>Estou lendo</h1>
+  <img align="center" src="/imgs/livros/mago.jpg">
+</section>
+
+<section>
+  <h1> Eu apoio
+</h1>
+  <span>
+    <a href='http://archlinux.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/archlinux.org.png'></a><a href='http://asterisk.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/asterisk.org.png'></a><img style='padding: .5em; margin: .5em;' src='/images/stickers/glider.png' ><a href='http://kde.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/kde.org.png'></a><a href='http://linux.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/linux.org.png'></a><a href='http://octopress.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/octopress.org.png'></a><a href='http://opensource.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/opensource.org.png'></a><a href='http://python.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/python.org.png'></a><a href='http://raspberrypi.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/raspberrypi.org.png'></a><a href='http://ruby-lang.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/ruby-lang.org.png'></a>
+  </span>
+</section>
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Marcelo Cavalcante Rocha - Kalib -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'marcelocavalcante';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

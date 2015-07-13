@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Software Livre | Marcelo Cavalcante Rocha ~]]></title>
+  <link href="http://kalib.github.io/blog/categories/software-livre/atom.xml" rel="self"/>
+  <link href="http://kalib.github.io/"/>
+  <updated>2015-07-13T13:09:19-03:00</updated>
+  <id>http://kalib.github.io/</id>
+  <author>
+    <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Assista ao documentário sobre Aaron Swartz: O menino da internet]]></title>
+    <link href="http://kalib.github.io/blog/2014/08/03/assista-ao-documentario-sobre-aaron-swartz-o-menino-da-internet/"/>
+    <updated>2014-08-03T07:19:00-03:00</updated>
+    <id>http://kalib.github.io/blog/2014/08/03/assista-ao-documentario-sobre-aaron-swartz-o-menino-da-internet</id>
+    <content type="html"><![CDATA[<p><img class="center" src="/imgs/aaron-swartz-movie.jpg" title="&lsquo;Aaron Swartz Movie&rsquo;" >
+<code>
+ Informação é poder. Mas, como todo poder, há aqueles que querem mantê-la para si mesmos. O patrimônio cultural e científico do mundo, publicado ao longo dos séculos em livros e revistas, está cada vez mais szendo digitalizado e trancado por um punhado de corporações privadas. Enquanto isso, aqueles que foram bloqueados não estão em pé de braços cruzados. Eles estão bisbilhotando em buracos e escalando cercas libertando as informações trancadas pelos editores e compartilhando com seus amigos. Mas toda essa ação acontece no escuro, escondida no subterrâneo. É chamado de roubo ou pirataria, como se compartilhar uma riqueza de conhecimentos fosse o equivalente  de saquear um navio e matar sua tripulação. Mas compartilhar não é imoral - é um imperativo moral. Só os cegos pela ganância se recusam a deixar um amigo fazer uma cópia. Não há justiça em seguir leis injustas. É hora de virmos para a luz e, na grande tradição de desobediência civil, declararmos a nossa oposição a este roubo privado da cultura pública.
+</code></p>
+
+<p><strong>E</strong>ste é apenas um trecho do manifesto assinado por Aaron, entitulado &ldquo;Manifesto do guerrilheiro ao acesso livre&rdquo;.</p>
+
+<p><strong>R</strong>ecentemente foi lançado um documentário de Brian Knappenberger sobre <em>Aaron Swartz</em>, o qual foi considerado um dos principais nomes da internet e luta pela liberdade de acesso ao conhecimento dos últimos anos.</p>
+
+<p><strong>P</strong>ara quem ainda não sabe do que se trata, Aaron Swartz foi um dos criadores do RSS bem como do famoso site de notícias e debates Reddit.Após alguns anos lutando e enfrentando a justiça americana Aaron cometeu suicídio.</p>
+
+<p><img class="left" src="/imgs/aaron_swartz.jpg" title="&lsquo;Aaron Swartz&rsquo;" ><strong>A</strong>aron estava sendo condenado a cerca de 50 anos de prisão, bem como a pagar um montante superior a U$ 4 milhões em multas por querer tornar públicos os artigos acadêmicos e científicos que eram mantidos na base do JSTOR, o qual vendia o acesso a estes artigos que, na visão de Aaron, deveriam ser de domínio e acesso público.</p>
+
+<p><strong>A</strong>aron sempre defendeu e lutou para que o conhecimento fosse de livre acesso a todos. Lutou tanto que acabou sendo covardemente perseguido e pressionado pelo governo americano, o que acabou por lhe deixar exausto, psicologicamente e financeiramente, ao ponto de ele desistir da luta ao invés de simplesmente &ldquo;assumir&rdquo; que estava errado e aceitar os &ldquo;acordos&rdquo; que lhe foram oferecidos pela justiça americana.</p>
+
+<p><strong>S</strong>eu crime? A curiosidade. A fome por conhecimento. Também a vontade de expor este conhecimento a todos que o desejassem.</p>
+
+<p><strong>P</strong>ara quem por algum motivo ainda não conhece o recurso de legendas ou caption do YoutTube, caso a legenda do filme não apareça automaticamente, basta clicar no botão de legendas/caption, habilitando-o, conforme apresentado na imagem abaixo:</p>
+
+<p><img class="center" src="/imgs/youtube_captions.png" title="&lsquo;Youtube Captions&rsquo;" ></p>
+
+<iframe width="560" height="315" src="http://kalib.github.io//www.youtube.com/embed/2uj1EeiuK5U" frameborder="0" allowfullscreen></iframe>
+
+
+<p>Link para o vídeo: <a href="https://www.youtube.com/watch?v=2uj1EeiuK5U">https://www.youtube.com/watch?v=2uj1EeiuK5U</a></p>
+
+<p><strong>A</strong>braços,</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Dica - Apostila Disponibilizada Gratuitamente - pfSense]]></title>
+    <link href="http://kalib.github.io/blog/2014/01/14/dica-apostila-disponibilizada-gratuitamente-pfsense/"/>
+    <updated>2014-01-14T08:27:00-03:00</updated>
+    <id>http://kalib.github.io/blog/2014/01/14/dica-apostila-disponibilizada-gratuitamente-pfsense</id>
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/pfsense.png" title="&lsquo;pfSense&rsquo;" >
+<strong>G</strong>ostaria de passar adiante a notícia de que o colega <em>Leonardo Damasceno</em> acaba de compartilhar com a comunidade uma apostila de sua autoria sobre o <a href="http://www.pfsense.org"><strong>pfSense</strong></a>, de forma a divulgar mais este magnífico sistema, bem como facilitar a vida daqueles que ainda não o dominam.</p>
+
+<p><strong>S</strong>egue link direto fornecido pelo mesmo para <a href="http://www.marcelocavalcante.net/repositorio/pfsense-leonardodamasceno.pdf"><strong>download</strong></a>. A apostila ou livro, como prefira chamar, possui aproximadamente 70 páginas de informações úteis e diretas, sem muitas complicações.</p>
+
+<p><strong>N</strong>ão sabe o que é pfSense?</p>
+
+<p><img class="center" src="/imgs/pfsense1.jpg" title="&lsquo;pfSense1&rsquo;" ></p>
+
+<p><strong>O</strong> pfSense é um sistema operacional baseado no <em>Free BSD</em> que pode ser instalado em um computador para servir como um firewall/roteador dedicado em uma rede. Como ferramenta <em>open source</em>, o pfSense tem se destacado nesta função, sendo considerado um dos melhores e mais confiáveis para este trabalho, oferecendo, além de sua estabilidade e confiabilidade, recursos e funções que geralmente são encontrados apenas em firewalls comerciais e caros. Não creio ser necessário lembrar a confiabilidade dos sistemas <em>Free BSD</em>&hellip;</p>
+
+<p><img class="center" src="/imgs/pfsense2.jpg" title="&lsquo;pfSense2&rsquo;" ></p>
+
+<p><strong>E</strong>mbora seja uma versão customizada do Free BSD, não é necessário qualquer conhecimento sobre este sistema para operar o psSense, visto que ele é atualizado e completamente configurado através de uma interface web. Na maioria dos casos o pfSense tem sido aplicado como um firewall de perímetro, roteador, access point wireless, servidor DHCP, servidor DNS e VPN.</p>
+
+<p><img class="center" src="/imgs/pfsense3.jpg" title="&lsquo;pfSense3&rsquo;" ></p>
+
+<p><strong>O</strong> mesmo apresenta diversos recursos gráficos para análise de tráfego, pacotes, performance, etc. Além de configurações avançadas para regras de firewall para LAN, WAN e utilizãção de Aliases de forma simples e intuitiva.</p>
+
+<p><img class="center" src="/imgs/pfsense4.jpg" title="&lsquo;pfSense4&rsquo;" ></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Dica de Segurança - Previna Ataques Bloqueando Pacotes ICMP Indesejados]]></title>
+    <link href="http://kalib.github.io/blog/2014/01/06/dica-de-seguranca-previna-ataques-bloqueando-pacotes-icmp-indesejados/"/>
+    <updated>2014-01-06T08:40:00-03:00</updated>
+    <id>http://kalib.github.io/blog/2014/01/06/dica-de-seguranca-previna-ataques-bloqueando-pacotes-icmp-indesejados</id>
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/you_shall_not_pass.jpg" title="&lsquo;Gandalf&rsquo;" >
+<strong>O</strong> protocolo <em>ICMP</em> pode ser utilizado para facilitar diversas rotinas e tarefas importantes de um administrador de redes, tais como na utilização de ferramentas como o <em>ping</em> e o <em>traceroute</em>, mas também pode ser manipulado por pessoas mal intencionadas que podem manipular mensagens ou pacotes ICMP para mapear sua rede.</p>
+
+<p><strong>É</strong> comum ver administradores de rede se preocupando e fazendo um ótimo trabalho em termos de filtrar o tráfego <em>TCP</em> e/ou <em>UDP</em>, porém quase sempre esquecem de dar a mesma atenção ao tráfego <em>ICMP</em>, sendo este tão crítico quanto os dois anteriores. Uma vez que este protocolo pode ser utilizado para mapear e realizar ataques em sua rede, ele não pode simplesmente ser deixado de lado.</p>
+
+<p><strong>I</strong>CMP, sigla para <em>Internet Control Message Protocol</em>, é um protocolo integrante do Protocolo IP utilizado para fornecer relatórios de erros à fonte original. Seu tráfego é, basicamente, baseado em mensagens trocadas entre hots, gateways, etc., cujo intuito é, principalmente, reportar erros, como por exemplo um pacote IP que não consegue chegar ao seu destino.</p>
+
+<p><strong>P</strong>or padrão, alguns servidores e firewalls bloqueiam as respostas ICMP como medida de segurança, tentando assim bloquear os ataques que consistem na sobrecarga da memória, enviando dados (em ping) até o sistema não ter a capacidade de administrar suas próprias funções. Bom, ao mesmo tempo em que é um mecanismo de defesa interessante, este bloqueio total acaba comprometendo e atrapalhando diversas atividades do administrador de redes, não sendo portanto a estratégia mais inteligente a ser adotada.</p>
+
+<p><strong>A</strong>o invés de bloquear o ICMP por completo, é mais interessante conhecer o que é bom e o que é ruim em termos de mensagens ICMP, de forma que sejam realizados filtros corretos. A importância desta gangorra é não permitir que o lado <em>ruim</em> do ICMP, como por exemplo ICMP Smurf, Ping of death, ataques com ICMP flood ou ICMP nuke, prejudiquem o administrador de redes que pode tirar proveito de boas ferramentas que se utilizam do ICMP, como o Ping e o Traceroute.</p>
+
+<p><strong>A</strong> estratégia mais simples, portanto, é utilizar uma regra geral contendo exceções.</p>
+
+<ol>
+<li>Bloquear todos os tipos de tráfego ICMP;</li>
+<li>Permitir ping &mdash; CMP Echo-Request outbound (saída) e Echo-Reply inbound (entrada);</li>
+<li>Permitir traceroute &mdash; TTL-Exceeded e Port-Unreachable inbound (entrada);</li>
+<li>Permitir path MTU &mdash; ICMP Fragmentation-DF-Set inbound (entrada).</li>
+</ol>
+
+
+<p><strong>É</strong> claro que este é apenas um exemplo, visto que você poderá permitir mais ou menos, de acordo com a sua necessidade.</p>
+
+<p><strong>N</strong>ão deixemos pobre a nossa configuração, facilitando as coisas para ataques quando isto pode ser facilmente bloqueado.</p>
+
+<p><strong>H</strong>appy Hacking!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Criptografando sua Partição Swap com o Ecryptfs]]></title>
+    <link href="http://kalib.github.io/blog/2014/01/03/criptografando-sua-particao-swap-com-o-ecryptfs/"/>
+    <updated>2014-01-03T08:48:00-03:00</updated>
+    <id>http://kalib.github.io/blog/2014/01/03/criptografando-sua-particao-swap-com-o-ecryptfs</id>
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/crypto.jpg" title="&lsquo;Criptografia&rsquo;" >
+<strong>C</strong>riptografia (Do grego <em>kryptós</em>, &ldquo;escondido&rdquo;, e <em>gráphein</em>, &ldquo;escrita&rdquo;) nada mais é do que o estudo e aplicação de técnicas com o intuito de ocultar informações, transformando a informação original em algo ilegível, exceto para seu destinatário final, o qual possui a chave ou método que será utilizado para tornar a informação legível novamente.</p>
+
+<p><strong>A</strong>pesar de muitas pessoas acharem que criptografia é algo novo, o uso de mensagens cifradas é bastante antigo. Em tempos passados a cifragem de mensagens era utilizada, principalmente em assuntos de guerra. De acordo com estudos históricos, o primeiro uso documentado da criptografia foi em torno de <em>1900 a.c.</em>, no Egito, quando um escriba usou hieróglifos fora do padrão numa inscrição.</p>
+
+<p><strong>A</strong>o que interessa&hellip;</p>
+
+<p><strong>M</strong>uitas pessoas, por alguma razão (como por exemplo performance ou não gostar da ideia de digitar gigantescas senhas duranto o boot), acabam não utilizando uma LVM encriptada. Para estas pessoas existe a opção de criptografar arquivos e diretórios após a instalação do SO através de softwares como o eCryptfs. Mas, além disto, existe um outro aspecto interessante e importante que, por muitas vezes (para não dizer quase sempre) é esquecido: criptografar a swap.</p>
+
+<p><strong>S</strong>e você é usuário GNU/Linux, muito provavelmente já sabe o que é Swap. Ela é especialmente utilizada em computadores mais antigos e que possuem pouca memória RAM. Nestes casos, um espaço do disco rígido é utilizado como swap para servir de auxílio à memória RAM em diferentes tarefas quando a mesma não for o suficiente para realizar aquelas tarefas. Por questões óbvias, a swap não é tão rápida quanto a memória principal e, além disso, a swap também possui seus pontos <em>críticos</em> em relação a segurança. A questão mais crítica da swap em termos de segurança é o fato de ela, conforme já dito, não estar localizada em sua RAM, mas sim em seu disco rígido, escrevendo informações nesta partição, deixando assim rastros de suas atividades no próprio disco rígido. Por exemplo, caso você utilize softwares de criptografia em seu computador, mas não possua sua swap criptografada, você corre o risco de ter as senhas de chaves que você digita salvas em sua swap (disco rígido). Algo não desejado, certo?</p>
+
+<p><strong>P</strong>ara criptografar a sua swap, primeiramente instale os pacotes necessários:</p>
+
+<p><strong>No Arch Linux</strong></p>
+
+<p><code>
+ [kalib@tuxcaverna ~]$ sudo pacman -S ecryptfs-utils cryptsetup
+</code></p>
+
+<p><strong>No Debian ou derivados</strong></p>
+
+<p><code>
+ [kalib@tuxcaverna ~]$ sudo apt-get install ecryptfs-utils cryptsetup
+</code></p>
+
+<p><strong>E</strong>m seguida, precisamos literalmente criptografar a swap utilizando o seguinte comando:</p>
+
+<p><code>
+ [kalib@tuxcaverna ~]$ sudo ecryptfs-setup-swap
+</code></p>
+
+<p><strong>N</strong>este momento, sua partição swap será desmontada, encriptada e montada novamente.</p>
+
+<p><strong>P</strong>ara certificar-se de que o procedimento funcionou, digite o seguinte comando:</p>
+
+<p><code>
+ [kalib@tuxcaverna ~]$ sudo blkid | grep swap
+</code></p>
+
+<p><strong>V</strong>ocê deverá receber as informações sobre sua partição de swap, inclusive o indicativo <em>cryptswap</em>.</p>
+
+<p><strong>C</strong>omo medida preventiva contra erros durante o boot, edite o arquivo <em>/etc/fstab</em>, retirando a entrada da swap não encriptada, deixando em seu lugar a entrada para a swap encriptada.</p>
+
+<p><strong>H</strong>appy Hacking!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Navegação Anônima Através da Rede Tor]]></title>
+    <link href="http://kalib.github.io/blog/2013/12/30/navegacao-anonima-atraves-da-rede-tor/"/>
+    <updated>2013-12-30T08:15:00-03:00</updated>
+    <id>http://kalib.github.io/blog/2013/12/30/navegacao-anonima-atraves-da-rede-tor</id>
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/tor_logo.png" title="&lsquo;Tor&rsquo;" >
+<strong>O</strong> ano de 2013 foi marcado por diversos acontecimentos de grande repercussão e, sem sombra de dúvidas, um deles foi o escândalo causado pelo vazamento de dados que provaram que algumas instituições, dentre elas a <em>NSA</em> (Agência de Segurança dos Estados Unidos), estavam espionando diversas entidades, empresas e até mesmo pessoas físicas nas mais diversas regiões do globo. Escândalos a parte, estas denúncias acabaram despertando um pouco mais (uma pena que não tenha sido muito mais) nas pessoas o interesse em preservar sua privacidade.</p>
+
+<p><strong>S</strong>endo assim, nada mais justo que dedicar o último post do ano ao <em>Tor</em>.</p>
+
+<p><strong>A</strong>inda vivemos em um mundo (principalmente nosso querido Brasil) onde as pessoas parecem simplesmente não se importar com o quesito privacidade. Não é difícil encontrar praticamente todas as informações sobre a maioria das pessoas pois elas mesmas fazem questão de expor isto aos sete ventos através das redes e mídias sociais. Divulgam dezenas de fotos de sua pessoa, bem como de seus parentes, informam dados pessoais, rotinas, locais que frequentam, horários, local de trabalho, amizades, áreas de interesse, etc. A lista é longa&hellip;</p>
+
+<p><strong>F</strong>elizmente algumas pessoas já começaram a atentar para a importância de manter sua privacidade e, para tal, passaram a buscar maneiras alternativas para <em>driblar</em> estas <em>espionagens</em> e outras formas de golpes tão comuns hoje em dia, mantendo assim o seu anonimato durante sua navegação. A rede <strong>Tor</strong>, ou <em>The Onion Router</em>, surgiu basicamente com este propósito.</p>
+
+<p><strong>T</strong>or é uma rede de computadores distribuída cuja finalidade primária é manter o anonimato na <em>internet</em>. Seu objetivo básico é garantir a privacidade e anonimato do usuário que está navegando através desta rede. Apesar de o uso do Tor ser simplificado em sistemas GNU/Linux, visto que a maioria das distribuições disponibilizam o pacote do Tor, também existem versões para sistemas Windows e Mac OS. Trata-se de uma rede de túneis criptografados, onde os roteadores da rede são computadores de usuários comuns que estão rodando um programa e possuem acesso à internet.</p>
+
+<p><strong>B</strong>asicamente, o usuário instala um programa, <em>tor-cliente</em>, em seu computador e este funcionará como um <em>proxy</em> para o mesmo. Os demais programas que o usuário utiliza para navegar na internet <em>(navegador, emule, etc.)</em> deverão ser configurados para navegar através deste proxy.</p>
+
+<p><strong>A</strong> partir daí, quando o usuário digitar em seu navegador o endereço destino, <em><a href="http://www.google.com*">http://www.google.com*</a> por exemplo, ao invés de a sua requisição passar por roteadores convencionais para atingir o destino, ele passará por túneis criptografados da rede Tor, para então chegar ao seu destino. Nestes túneis a sua requisição e informações passam por vários </em>nós<em> da rede Tor. Um exemplo prático do anonimato provido pelo Tor é a verificação do seu próprio IP. Caso deseje realizar o teste, experimente acessar o endereço </em><a href="http://www.meuip.com.br*">http://www.meuip.com.br*</a> antes de instalar e configurar o Tor em sua máquina. Este site lhe informará o seu atual endereço IP, no caso o endereço será o do seu roteador de acesso à rede pública. Em seguida, tente acessar novamente o mesmo endereço após ter instalado e configurado o Tor. Você perceberá que ele não retornará o seu endereço IP, mas sim um endereço IP qualquer de um nó da rede Tor. Ou seja, isto atrapalha a vida de quem quer que deseje rastrear a sua máquina a partir de um endereço que você tenha acessado ou mesmo de um email que você tenha enviado.</p>
+
+<p><strong>Instalação do Tor no Arch Linux</strong></p>
+
+<p><strong>C</strong>onforme informei no início, o Tor está disponível para praticamente todos os sistemas operacionais, mas vou focar a explicação de instalação para a minha distribuição, Arch Linux, embora o processo seja bastante similar para as demais distribuições GNU/Linux.</p>
+
+<ol>
+<li>Instale o Tor:</li>
+</ol>
+
+
+<p><code>
+ [kalib@tuxcaverna ~]$ sudo pacman -S tor
+</code></p>
+
+<ol>
+<li>Como um opcional, instale também o frontend ou GUI, o qual é desenvolvido em QT, <em>vidalia</em>. O vidalia, além de controlar o processo Tor, permite-lhe ver e configurar o status do Tor, monitorar o uso de banda e ver, filtrar ou realizar pesquisas em mensagens de log, etc.</li>
+</ol>
+
+
+<p><code>
+ [kalib@tuxcaverna ~]$ sudo pacman -S vidalia
+</code></p>
+
+<ol>
+<li>Inicie/Habilite o serviço utilizando o <em>systemd</em>.</li>
+</ol>
+
+
+<p><strong>A</strong> configuração padrão do Tor deverá funcionar para a maioria dos usuários, mas caso deseje alterar algo, verifique a documentação do Tor e altere as configurações em <em>/etc/tor/torrc</em>.</p>
+
+<ol>
+<li>Para utilizar um programa através da rede Tor, configure-o para utilizar o endereço <em>127.0.0.1</em> ou <em>localhost</em> como endereço proxy <em>SOCKS5</em> através da porta <em>9050</em> (porta padrão do Tor) ou <em>9051</em> (porta padrão utilizada quando se configura com o vidalia).</li>
+</ol>
+
+
+<p><strong>A</strong> rede Tor possui uma espécio de domínio próprio com terminação <em>.onion</em>, acessível apenas através da própria rede Tor. Páginas com este domínio são parte da chamada Deep Web, mas isto será assunto para um outro post por ser algo polêmico e extenso.</p>
+
+<p><strong>D</strong>esejo a todos um feliz ano novo com liberdade, privacidade e anonimato, quando necessário!</p>
+
+<p><strong>H</strong>appy Hacking!</p>
+]]></content>
+  </entry>
+  
+</feed>

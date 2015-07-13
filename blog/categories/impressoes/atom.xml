@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Impressoes | Marcelo Cavalcante Rocha ~]]></title>
+  <link href="http://kalib.github.io/blog/categories/impressoes/atom.xml" rel="self"/>
+  <link href="http://kalib.github.io/"/>
+  <updated>2015-07-13T13:09:19-03:00</updated>
+  <id>http://kalib.github.io/</id>
+  <author>
+    <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Dica - Assistir Star Wars em um Console ou Terminal]]></title>
+    <link href="http://kalib.github.io/blog/2014/01/17/dica-assistir-star-wars-em-um-console-ou-terminal/"/>
+    <updated>2014-01-17T10:30:00-03:00</updated>
+    <id>http://kalib.github.io/blog/2014/01/17/dica-assistir-star-wars-em-um-console-ou-terminal</id>
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/starwars.png" title="&lsquo;Star Wars&rsquo;" >
+<strong>Q</strong>uem disse que o terminal ou linha de comando serve apenas para trabalho e coisas chatas?</p>
+
+<p><strong>E</strong>stá entediado em frente ao seu terminal GNU/Linux?    Que tal algo para passar o tempo e, ao mesmo tempo, lhe trazer uma certa nostalgia? Assista Star Wars sem precisar sair de sua linha de comando ou terminal.</p>
+
+<p><strong>T</strong>udo o que você precisa digitar é:</p>
+
+<p><code>
+ $ telnet towel.blinkenlights.nl
+</code></p>
+
+<p><strong>F</strong>eito isso, basta apreciar o show&hellip;</p>
+
+<p><img class="center" src="/imgs/starwars_1.png" title="&lsquo;Star Wars&rsquo;" ></p>
+
+<p><img class="center" src="/imgs/starwars_2.jpg" title="&lsquo;Star Wars&rsquo;" ></p>
+
+<p><strong>H</strong>ave fun!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Navegação Anônima Através da Rede Tor]]></title>
+    <link href="http://kalib.github.io/blog/2013/12/30/navegacao-anonima-atraves-da-rede-tor/"/>
+    <updated>2013-12-30T08:15:00-03:00</updated>
+    <id>http://kalib.github.io/blog/2013/12/30/navegacao-anonima-atraves-da-rede-tor</id>
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/tor_logo.png" title="&lsquo;Tor&rsquo;" >
+<strong>O</strong> ano de 2013 foi marcado por diversos acontecimentos de grande repercussão e, sem sombra de dúvidas, um deles foi o escândalo causado pelo vazamento de dados que provaram que algumas instituições, dentre elas a <em>NSA</em> (Agência de Segurança dos Estados Unidos), estavam espionando diversas entidades, empresas e até mesmo pessoas físicas nas mais diversas regiões do globo. Escândalos a parte, estas denúncias acabaram despertando um pouco mais (uma pena que não tenha sido muito mais) nas pessoas o interesse em preservar sua privacidade.</p>
+
+<p><strong>S</strong>endo assim, nada mais justo que dedicar o último post do ano ao <em>Tor</em>.</p>
+
+<p><strong>A</strong>inda vivemos em um mundo (principalmente nosso querido Brasil) onde as pessoas parecem simplesmente não se importar com o quesito privacidade. Não é difícil encontrar praticamente todas as informações sobre a maioria das pessoas pois elas mesmas fazem questão de expor isto aos sete ventos através das redes e mídias sociais. Divulgam dezenas de fotos de sua pessoa, bem como de seus parentes, informam dados pessoais, rotinas, locais que frequentam, horários, local de trabalho, amizades, áreas de interesse, etc. A lista é longa&hellip;</p>
+
+<p><strong>F</strong>elizmente algumas pessoas já começaram a atentar para a importância de manter sua privacidade e, para tal, passaram a buscar maneiras alternativas para <em>driblar</em> estas <em>espionagens</em> e outras formas de golpes tão comuns hoje em dia, mantendo assim o seu anonimato durante sua navegação. A rede <strong>Tor</strong>, ou <em>The Onion Router</em>, surgiu basicamente com este propósito.</p>
+
+<p><strong>T</strong>or é uma rede de computadores distribuída cuja finalidade primária é manter o anonimato na <em>internet</em>. Seu objetivo básico é garantir a privacidade e anonimato do usuário que está navegando através desta rede. Apesar de o uso do Tor ser simplificado em sistemas GNU/Linux, visto que a maioria das distribuições disponibilizam o pacote do Tor, também existem versões para sistemas Windows e Mac OS. Trata-se de uma rede de túneis criptografados, onde os roteadores da rede são computadores de usuários comuns que estão rodando um programa e possuem acesso à internet.</p>
+
+<p><strong>B</strong>asicamente, o usuário instala um programa, <em>tor-cliente</em>, em seu computador e este funcionará como um <em>proxy</em> para o mesmo. Os demais programas que o usuário utiliza para navegar na internet <em>(navegador, emule, etc.)</em> deverão ser configurados para navegar através deste proxy.</p>
+
+<p><strong>A</strong> partir daí, quando o usuário digitar em seu navegador o endereço destino, <em><a href="http://www.google.com*">http://www.google.com*</a> por exemplo, ao invés de a sua requisição passar por roteadores convencionais para atingir o destino, ele passará por túneis criptografados da rede Tor, para então chegar ao seu destino. Nestes túneis a sua requisição e informações passam por vários </em>nós<em> da rede Tor. Um exemplo prático do anonimato provido pelo Tor é a verificação do seu próprio IP. Caso deseje realizar o teste, experimente acessar o endereço </em><a href="http://www.meuip.com.br*">http://www.meuip.com.br*</a> antes de instalar e configurar o Tor em sua máquina. Este site lhe informará o seu atual endereço IP, no caso o endereço será o do seu roteador de acesso à rede pública. Em seguida, tente acessar novamente o mesmo endereço após ter instalado e configurado o Tor. Você perceberá que ele não retornará o seu endereço IP, mas sim um endereço IP qualquer de um nó da rede Tor. Ou seja, isto atrapalha a vida de quem quer que deseje rastrear a sua máquina a partir de um endereço que você tenha acessado ou mesmo de um email que você tenha enviado.</p>
+
+<p><strong>Instalação do Tor no Arch Linux</strong></p>
+
+<p><strong>C</strong>onforme informei no início, o Tor está disponível para praticamente todos os sistemas operacionais, mas vou focar a explicação de instalação para a minha distribuição, Arch Linux, embora o processo seja bastante similar para as demais distribuições GNU/Linux.</p>
+
+<ol>
+<li>Instale o Tor:</li>
+</ol>
+
+
+<p><code>
+ [kalib@tuxcaverna ~]$ sudo pacman -S tor
+</code></p>
+
+<ol>
+<li>Como um opcional, instale também o frontend ou GUI, o qual é desenvolvido em QT, <em>vidalia</em>. O vidalia, além de controlar o processo Tor, permite-lhe ver e configurar o status do Tor, monitorar o uso de banda e ver, filtrar ou realizar pesquisas em mensagens de log, etc.</li>
+</ol>
+
+
+<p><code>
+ [kalib@tuxcaverna ~]$ sudo pacman -S vidalia
+</code></p>
+
+<ol>
+<li>Inicie/Habilite o serviço utilizando o <em>systemd</em>.</li>
+</ol>
+
+
+<p><strong>A</strong> configuração padrão do Tor deverá funcionar para a maioria dos usuários, mas caso deseje alterar algo, verifique a documentação do Tor e altere as configurações em <em>/etc/tor/torrc</em>.</p>
+
+<ol>
+<li>Para utilizar um programa através da rede Tor, configure-o para utilizar o endereço <em>127.0.0.1</em> ou <em>localhost</em> como endereço proxy <em>SOCKS5</em> através da porta <em>9050</em> (porta padrão do Tor) ou <em>9051</em> (porta padrão utilizada quando se configura com o vidalia).</li>
+</ol>
+
+
+<p><strong>A</strong> rede Tor possui uma espécio de domínio próprio com terminação <em>.onion</em>, acessível apenas através da própria rede Tor. Páginas com este domínio são parte da chamada Deep Web, mas isto será assunto para um outro post por ser algo polêmico e extenso.</p>
+
+<p><strong>D</strong>esejo a todos um feliz ano novo com liberdade, privacidade e anonimato, quando necessário!</p>
+
+<p><strong>H</strong>appy Hacking!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Sobre mim... Tarda mas não falha]]></title>
+    <link href="http://kalib.github.io/blog/2013/12/16/sobre-mim-dot-dot-dot-tarda-mas-nao-falha/"/>
+    <updated>2013-12-16T15:31:00-03:00</updated>
+    <id>http://kalib.github.io/blog/2013/12/16/sobre-mim-dot-dot-dot-tarda-mas-nao-falha</id>
+    <content type="html"><![CDATA[<p><strong>T</strong>arda, mas não falha&hellip; Reza o antigo ditado.</p>
+
+<p><strong>D</strong>a mesma forma, digo-lhes que tardou, mas não falhou. Confesso que nunca parei para elaborar a página &ldquo;Sobre mim&rdquo; deste blog. O link existia no topo, mas sempre esteve &ldquo;Em construção&rdquo;. Preguiça? Falta de interesse? Esquecimento? Acho que um pouco de cada.</p>
+
+<p><strong>H</strong>oje fui surpreendido por uma pessoa que acabou caindo no blog e em seguida me questionou sobre o porque de o blog já existir a tanto tempo e até hoje a página &ldquo;Sobre mim&rdquo; continuar contendo apenas as palavras &ldquo;Em construção&rdquo;.</p>
+
+<p><strong>I</strong>sto me fez tomar vergonha na cara.. e hoje inseri conteúdo <a href="http://blog.marcelocavalcante.net/about/"> nesta página</a>.</p>
+
+<p><strong>A</strong>gora sim&hellip; ;]</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[KDE 4.11 Lançado e Disponível no Arch Linux]]></title>
+    <link href="http://kalib.github.io/blog/2013/08/19/kde-4-dot-11-lancado-e-disponivel-no-arch-linux/"/>
+    <updated>2013-08-19T08:07:00-03:00</updated>
+    <id>http://kalib.github.io/blog/2013/08/19/kde-4-dot-11-lancado-e-disponivel-no-arch-linux</id>
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/kde411.png" title="&lsquo;KDE 4.11&rsquo;" >
+<strong>E</strong>m 14 de Agosto de 2013 a comunidade KDE anunciou oficialmente a última release do Ambiente de Trabalho KDE, a versão 4.11. Nesta última versão o projeto incorporou grandes atualizações na Área de Trabalho, Aplicações e plataforma de Desenvolvimento, oferecendo, além de correções, novas funcionalidades, das quais muitas serão importantes para a próxima evolução da plataforma KDE.</p>
+
+<p><strong>E</strong>ste último lançamento é dedicado a memória de <em>Atul &ldquo;toolz&rdquo; Chitnis</em>, um dos maiores representantes do movimento de Software Livre e Open Source na Índia e, também, um dos maiores responsáveis pela existência do projeto KDE na Índia. Atul deixou-nos no dia 3 de Junho, após uma longa batalha contra o Câncer. Que sua alma descanse em paz, é o desejo de todos os membros do projeto KDE e, certamente, de muitas outras pessoas que o conheceram.</p>
+
+<p><strong>A</strong> versão 4.11 do KDE irá receber um suporte de longo prazo, enquanto é preparada a transição para a versão 5.</p>
+
+<p><strong>A</strong>lém de melhorias  para as funcionalidades básicas, como uma barra de tarefas mais suave, um item de bateria mais inteligente e uma mesa de mistura de som melhorada, a introdução do KScreen também trouxe um tratamento mais inteligente de vários monitores ao ambiente de trabalho. Além disso, esta release trouxe ainda algumas melhorias de performance em grande escala, combinadas com alguns ajustes de usabilidade, para que o KDE possa ter uma experiência de utilização global mais agradável.</p>
+
+<p><strong>P</strong>rogramadores que utilizam as linguagens <em>Python</em> e <em>JavaScript</em> poderão perceber melhorias no Kate, o qual passou a trazer alguns plugins extras que melhoram a produtividade na escrita de código nesta ferramenta. O KDE PIM e o Dolphin também foram alvos de melhorias de performance, tornando-se mais rápidos e ganhando novas funcionalidades, sem mencionar, é claro, as aplicações educacionais do KDE, as quais receberam muitas novas funcionalidades.</p>
+
+<p><strong>N</strong>o Arch Linux, é claro, os pacotes já estão disponíveis nos repositórios oficiais. Se você já utiliza o KDE e deseja atualizar para esta nova versão, basta executar o já conhecido comando de atualizãção, através do gerenciador de pacotes pacman:</p>
+
+<p><code>
+ # pacman -Syu
+</code></p>
+
+<p><strong>S</strong>e você utiliza um gerenciador de pacotes alternativo, como o Yaourt, pode realizar a sua atualização como de costume também. Segue comando completo para usuários do yaourt:</p>
+
+<p><code>
+ # yaourt -Syu --aur
+</code></p>
+
+<p><strong>M</strong>aiores informações sobre esta release podem ser encontradas em <a href="http://community.kde.org/KDE_SC/4.11_Release_Notes">http://community.kde.org/KDE_SC/4.11_Release_Notes</a></p>
+
+<p><strong>D</strong>ivirtam-se com o novo KDE! ;]</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Dica Rápida - Linux - Melhorando a Política de Senhas]]></title>
+    <link href="http://kalib.github.io/blog/2013/08/12/dica-rapida-linux-melhorando-a-politica-de-senhas/"/>
+    <updated>2013-08-12T08:41:00-03:00</updated>
+    <id>http://kalib.github.io/blog/2013/08/12/dica-rapida-linux-melhorando-a-politica-de-senhas</id>
+    <content type="html"><![CDATA[<p><img class="center" src="/imgs/url.jpg" title="&lsquo;password&rsquo;" ></p>
+
+<p><strong>N</strong>a dica anterior mencionei o uso do comando <em>chage</em> para <strong>forçar</strong> a alteração de senha por parte do usuário em sistemas Linux, mas e se além disso fosse possível melhorar esta prática, tornando a política de senhas de usuários um pouco mais segura?</p>
+
+<p><strong>O</strong> chage também nos permite determinar quando exatamente desejamos que a senha daquele usuário expire, de forma que ele será forçado a criar uma nova senha após aquele determinado tempo. Isto é útil para evitar que uma mesma senha seja utilizada por um longo período de tempo. Particularmente, gosto de forçar a alteração de senhas a cada mês, mas isto dependerá dos sistemas que são acessados e de o quão críticas são as informações e sistemas em jogo.</p>
+
+<p><strong>O</strong> comando chage altera o número de dias entre a alteração de uma senha e sua alteração anterior. Esta informação fica registrada no sistema e será utilizada para determinar quando um usuário precisará alterar sua senha. Esta e outras configurações ficam armazenadas no arquivo de configuração <em>/etc/login.defs</em>, o qual determina configurações que englobem todos os usuários do sistema, inclusive um período máxima antes de uma senha ser expirada.</p>
+
+<p><strong>P</strong>ara verificar as informações sobre quando uma senha expira, digite:</p>
+
+<p><code>
+ # chage -l NomeDoUsuário
+</code></p>
+
+<p><strong>O</strong> comando acima lhe retornará informações gerais sobre aquela conta, tais como: data de última mudança de senha, data em que a senha irá expirar, status atual da senha, número mínimo entre troca de senhas, número máximo entre troca de senhas, número de dias de alerta sobre a mudança de senha, etc.</p>
+
+<p><strong>P</strong>ara efetivar a política de mudança de senha após um determinado tempo, você pode editar diretamente o arquivo <em>/etc/shadow</em> ou utilizar o comando <em>chage</em>, o qual recomendo ao invés do /etc/shadow.</p>
+
+<p><strong>N</strong>o arquivo <em>/etc/shadow</em>, a ordem dos campos é a seguinte:</p>
+
+<p><code>
+ {NomeDeUsuário}:{Senha}:{ÚltimaAlteraçãoDeSenha}:{Minimum_days}:{Maximum_days}:{Warn}:{Inactive}:{Expire}:
+</code></p>
+
+<p>Onde,</p>
+
+<p><strong>Minimum_days:</strong> <em>Quantididade mínima de dias entre alterações de senhas. Ex: Uma quantia mínima de dias antes que o usuário possa alterar sua senha.</em></p>
+
+<p><strong>Maximum_days:</strong> <em>Quantidade máxima de dias pelos quais uma senha será válida (após os quais os o usuário é forçado a alterar sua senha).</em></p>
+
+<p><strong>Warn:</strong> <em>O número de dias antes de a senha expirar nos quais o usuário será alertado sobre a sua senha expirar em breve.</em></p>
+
+<p><strong>Expire:</strong> <em>Quantidade de dias desde 1 de Janeiro de 1970 em que a conta expirará. Ex: uma data específica pode ser informada para que, a partir de tal data a senha não possa mais ser utilizada.</em></p>
+
+<p><strong>C</strong>onforme informei anteriormente, costumo recomendar a utilização do comando <em>chage</em> ao invás da edição do arquivo <em>/etc/shadow</em>, o que minimiza as chances de erros.</p>
+
+<p><code>
+ # chage -M 60 -m 7 -W 7 NomeDeUsuário
+</code></p>
+
+<p><strong>O</strong>nde, da mesma forma, <strong>M</strong> = Maximum_days, <strong>m</strong> = Minimum_days e <strong>W</strong> = warn.</p>
+
+<p><strong>B</strong>om proveito&hellip;</p>
+]]></content>
+  </entry>
+  
+</feed>

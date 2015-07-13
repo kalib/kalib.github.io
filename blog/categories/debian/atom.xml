@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Debian | Marcelo Cavalcante Rocha ~]]></title>
+  <link href="http://kalib.github.io/blog/categories/debian/atom.xml" rel="self"/>
+  <link href="http://kalib.github.io/"/>
+  <updated>2015-07-13T13:09:19-03:00</updated>
+  <id>http://kalib.github.io/</id>
+  <author>
+    <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Política de senhas no Linux: Senhas com data para expirar!]]></title>
+    <link href="http://kalib.github.io/blog/2011/09/27/politica-de-senhas-no-linux-senhas-com-data-para-expirar/"/>
+    <updated>2011-09-27T11:14:12-03:00</updated>
+    <id>http://kalib.github.io/blog/2011/09/27/politica-de-senhas-no-linux-senhas-com-data-para-expirar</id>
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/password1.jpg" title="&lsquo;Password&rsquo;" >
+<strong>J</strong>á é sabido que a maior vulnerabilidade dentro das empresas ou mesmo computadores pessoais são justamente os próprios funcionários ou usuários.</p>
+
+<p><img class="left" src="/imgs/securepasswords.jpg" title="&lsquo;Securepasswords&rsquo;" >M<strong>anter uma boa </strong>política de senhas<strong> é fundamental para garantir a segurança </strong>básica** de suas informações e tentar minimizar as chances de alguém ter acesso indevido a elas.</p>
+
+<p><strong>V</strong>ou apresentar dicas simples para uma boa política de senhas que vão além das dicas comuns como &ldquo;mantenha uma senha que contenha mais de 8 caracteres, sendo eles números, letras minúsculas, maiúsculas e caracteres especiais&hellip;&rdquo;.</p>
+
+<p><strong>E</strong>m escritórios é importante haver também uma política de troca de senha regular. Mas, como forçar os usuários a seguirem essa política de troca de senha regular? Evitando que o mesmo se logue caso não troque a senha de forma periódica, claro.</p>
+
+<p><strong>V</strong>amos começar pelo básico.</p>
+
+<p><strong>1- Definindo a complexidade das senhas de usuários:</strong></p>
+
+<p><strong>P</strong>ara definir a complexidade, precisaremos alterar a configuração de definição de senhas de usuários. O processo pode ser diferente, de acordo com a sua distribuição.</p>
+
+<p><a href="http://www.archlinux.org/"><em><strong>A</strong>rch Linux:</em></a></p>
+
+<p><strong>E</strong>dite o arquivo <em>passwd</em> que se encontra em <em>/etc/pam.d/passwd</em>, da seguinte forma:</p>
+
+<p><em># vim /etc/pam.d/passwd</em></p>
+
+<p><em><a href="http://www.debian.org"><strong>D</strong>ebian</a>, <a href="http://www.ubuntu.com">Ubuntu</a>, <a href="http://www.redhat.com">RedHat</a>, <a href="http://www.centos.org">CentOS</a></em> e outras:</p>
+
+<p><em># vim /etc/pam.d/system-auth</em></p>
+
+<p><strong>C</strong>onfigure sua linha de senha de forma que fique algo parecido com o seguinte:</p>
+
+<p><em>password       required        pam_cracklib.so difok=3 minlen=10 ucredit=3 ocredit=2 retry=3</em></p>
+
+<p><strong>O</strong>nde:</p>
+
+<p><em>difok=3</em> &ndash;> Informa a quantidade de caracteres que podem se repetir em relação à última senha. Por exemplo: Se minha antiga senha era &ldquo;kalib&rdquo; e eu tento usar &ldquo;kalamba&rdquo; como nova senha, receberei uma informação de erro, pois eu repeti 3 letras que já existem na senha anterior &ldquo;kal&rdquo;.</p>
+
+<p><em>minlen=10</em> &ndash;> Informa qual a quantidade mínima de caracteres aceitos para a senha do usuário. No<img src="http://securepasswordgeneratortips.com/wp-content/uploads/2011/05/securepasswordgeneratortips08.jpg" alt="" /> exemplo, o mínimo de caracteres aceitos serão 10, caso contrário será apresentada uma mensagem de erro solicitando que o usuário tente uma nova senha.</p>
+
+<p><em>ucredit=3</em> &ndash;>Informa a quantidade de letras maiúsculas que deverão compor minha senha. No exemplo, eu precisarei utilizar no mínimo 3 letras em maiúsculo, ou &ldquo;Uper Characters&rdquo; em minha nova senha.</p>
+
+<p><em>ocredit=2</em> &ndash;> Informa a quantidade de &ldquo;outros caracteres&rdquo; ou caracteres especiais, como por exemplo *, &amp;, %, $, _, etc.</p>
+
+<p><em>retry=3</em> &ndash;> Informa quantas vezes o usuário vai poder tentar, em caso de senha indevida, antes de receber a mensagem de erro.</p>
+
+<p><strong>O</strong>utros parâmetros que podem ser utilizados são os seguintes:</p>
+
+<p><em>dcredit=x</em> &ndash;> Informa a quantidade de dígitos que deverão ser utilizados como números na senha, onde x é o número mínimo desejado.</p>
+
+<p><em>lcredit=x</em> &ndash;> Informa a quantidade de caracteres minúsculos, ou &ldquo;Lower Characters&rdquo;, mínimos em sua senha.</p>
+
+<p><strong>2- Definindo que a nova senha não poderá ser igual às anteriores:</strong></p>
+
+<p><strong>N</strong>o <strong>mesmo arquivo</strong> do ponto anterior, iremos inserir o parâmetro remember na linha conforme exemplo:</p>
+
+<p><em>password sufficient pam_unix.so use_authtok md5 shadow remember=10</em></p>
+
+<p><em>remember=10</em> &ndash;> Informa que a nova senha não poderá ser igual às últimas 10 senhas utilizadas por este usuário.</p>
+
+<p><strong>A</strong>gora que já sabemos como definir uma política para criação de senhas seguras, vamos conhecer o &ldquo;<strong>chage</strong>&rdquo;, que nos ajudará a definir a política de datas ou validade das senhas.</p>
+
+<p><strong>3- Checando as políticas de validade de senhas de um determinado usuário:</strong></p>
+
+<p><em># chage -l usuário</em></p>
+
+<p><strong>O</strong> comando acima verifica os atributos de validade daquela senha, e lhe retornará algo similar ao seguinte:</p>
+
+<pre><code>&lt;em&gt;Last password change : May 11, 2011&lt;/em&gt;
+
+
+
+
+&lt;em&gt;Password expires : never&lt;/em&gt;
+
+
+
+
+&lt;em&gt;Password inactive : never&lt;/em&gt;
+
+
+
+
+&lt;em&gt;Account expires : never&lt;/em&gt;
+
+
+
+
+&lt;em&gt;Minimum number of days between password change : 0&lt;/em&gt;
+
+
+
+
+&lt;em&gt;Maximum number of days between password change : 99999&lt;/em&gt;
+
+
+
+
+&lt;em&gt;Number of days of warning before password expires : 7&lt;/em&gt;
+</code></pre>
+
+<p><strong>A</strong>s informações acima apresentam dados como data de última mudança de senha, data de expiração, tempo de inatividade, quantidade mínima de dias para se trocar a senha antes de a mesma expirar, etc.</p>
+
+<p><strong>4- Criando uma &ldquo;validade&rdquo; ou período de expiração para a senha de um determinado usuário:</strong></p>
+
+<pre><code>&lt;em&gt;# chage -M 99999 linustorvalds&lt;/em&gt;
+</code></pre>
+
+<p><strong>E</strong>ste comando vai <strong>desabilitar</strong> o período de validade da senha, informando que a mesma não expira nunca.</p>
+
+<pre><code>&lt;em&gt;# chage -M 50 -m 7 -W 7 linustorvalds&lt;/em&gt;
+</code></pre>
+
+<p><strong>E</strong>ste comando <strong>aplica</strong> a política de senha para o usuário &ldquo;linustorvalds&rdquo; onde:
+<em>-M 50</em> &ndash;> Define que a senha será válida por um máximo de 50 dias, quando a mesma deverá ser trocada.
+<em>-m 7</em> &ndash;> Define o número mínimo de dias em que o usuário poderá trocar sua senha antes do período especificado para expiração. Caso o usuário possa trocar a qualquer momento ou dia, o valor deverá ser 0.
+<em>-W 7</em> &ndash;> Número de dias antes de expirar nos quais o usuário vai receber alertas informando que sua senha irá expirar.</p>
+
+<p><strong>C</strong>aso você deseje especificar um <strong>dia exato</strong> no qual a senha de determinado usuário vai expirar, você pode utilizar o parâmetro <em>-E</em> seguido da data desejada no formato <em>AAAA-MM-DD</em>.</p>
+
+<p><strong>A</strong>lém disto, você pode desejar que a senha do usuário &ldquo;linustorvalds&rdquo; seja trocada no <strong>próximo login</strong> do mesmo. Neste caso você poderá utilizar o parâmetro <em>-d</em>, conforme exemplo abaixo:</p>
+
+<pre><code>&lt;em&gt;# chage -d 0 linuxtorvalds&lt;/em&gt;
+</code></pre>
+
+<p><strong>O</strong> <em>-d</em> significa quantidade de dias também.</p>
+
+<pre><code>&lt;strong&gt;É&lt;/strong&gt; isso pessoal.
+
+
+
+
+&lt;strong&gt;H&lt;/strong&gt;ave fun!
+</code></pre>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Vantagem do Aptitude sobre o Apt-Get]]></title>
+    <link href="http://kalib.github.io/blog/2008/05/03/vantagem-do-aptitude-sobre-o-apt-get/"/>
+    <updated>2008-05-03T11:45:00-03:00</updated>
+    <id>http://kalib.github.io/blog/2008/05/03/vantagem-do-aptitude-sobre-o-apt-get</id>
+    <content type="html"><![CDATA[<p>Novamente estou aqui para lhes passar uma pequena dica que para muitos pode nem ser novidade, porém para alguns a dúvida pode existir.</p>
+
+<p>Bom, para aqueles que ainda não sabem, o apt é uma ferramenta da Debian para gerenciamento de pacotes de forma simples, amigável e rápida contando inclusive com a instalação automática de dependências necessárias para a finalização do processo. O que muitas pessoas ainda não sabem é que utilizando-se do comando &ldquo;apt-get install NOME_PACOTE&rdquo; serão instalados pacotes que o mesmo não removerá automaticamente posteriormente, fazendo assim um acúmulo de &ldquo;lixo&rdquo; em nosso sistema. Como assim? Suponhamos que eu queira instalar um aplicativo de instant messenger como por exemplo o amsn. Esta ferramenta possui dependências necessárias para seu funcionamento, sendo elas o TCL e o TK.</p>
+
+<p>O seguinte comando fará a instalação do amsn juntamente com suas dependências, sem que eu precise me preocupar em buscar por elas desesperadamente na internet:</p>
+
+<h1>apt-get install amsn</h1>
+
+<p>Ótimo! Agora tenho o meu messenger devidamente instalado, sem nenhuma dificuldade e funcionando perfeitamente. Porém, um certo dia resolvi remover essa ferramenta que com o tempo parei de usar, então para isso utilizo o seguinte comando:</p>
+
+<h1>apt-get remove amsn</h1>
+
+<p>Perfeito! Meu amsn está desinstalado sem dificuldade alguma. ;]</p>
+
+<p>Agora, e o que acontece com os dois pacotes que foram instalados juntamente com ele anteriormente? TCL e TK? Bom, eles continuam instalados, fazendo um certo acúmulo de  &ldquo;lixo&rdquo; em seu sistema. O mesmo ocorre com todos os pacotes que forem instalados em seu sistema e futuramente removidos com o apt-get.</p>
+
+<p>Onde entra o Aptitude nessa história?</p>
+
+<p>Bom, o aptitude tem um funcionamento bem semelhante para a instalação de pacotes. Passaremos a adotar o mesmo cenário aqui, instalando portanto o amsn:</p>
+
+<h1>aptitude install amsn</h1>
+
+<p>Assim como o apt-get, o aptitude irá instalar automaticamente as dependências do amsn, TCL e TK. Passado algum tempo, resolvo remover o amsn usando o seguinte comando:</p>
+
+<h1>aptitude remove amsn</h1>
+
+<p>Aparentemente ele terá o mesmo efeito do apt-get, com o grande diferencial de  excluir juntamente com o amsn, as suas dependências que outrora foram instaladas, TCL e TK.</p>
+
+<p>Imagine a quantidade de pacotes desnecessários que deve existir em sua máquina&hellip;provavelmente vários. O aptitude é uma solução para que isto não ocorra mais.</p>
+
+<p>Para os fans de distribuições como o Fedora que utilizam-se da ferramenta Yum para instalar seus pacotes, caso tenha surgido a curiosidade, fica a informação de que, infelizmente, o yum ainda não possui este mecanismo. A mesma curiosidade surgiu em mim e resolvi testar, porém o yum, assim como o apt-get, apenas me removeu o amsn, deixando para trás as dependências que foram instaladas.</p>
+
+<p>Essa foi uma simples dica para aqueles que desconheciam este fato diferencial dentre os dois. Espero ter ajudado com esta pequena contribuição para com a comunidade. abraços e até a próxima.</p>
+]]></content>
+  </entry>
+  
+</feed>
