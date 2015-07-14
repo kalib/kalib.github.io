@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Fedora | Marcelo Cavalcante Rocha ~]]></title>
-  <link href="http://blog.marcelocavalcante.net/blog/categories/fedora/atom.xml" rel="self"/>
-  <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2015-07-13T13:06:26-03:00</updated>
-  <id>http://blog.marcelocavalcante.net/</id>
+  <link href="http://kalib.github.io/blog/categories/fedora/atom.xml" rel="self"/>
+  <link href="http://kalib.github.io/"/>
+  <updated>2015-07-14T08:51:34-03:00</updated>
+  <id>http://kalib.github.io/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Problemas de Infra do Fedora - Servidores Hackeados]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2008/08/22/problemas-de-infra-do-fedora-servidores-hackeados/"/>
+    <link href="http://kalib.github.io/blog/2008/08/22/problemas-de-infra-do-fedora-servidores-hackeados/"/>
     <updated>2008-08-22T10:05:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2008/08/22/problemas-de-infra-do-fedora-servidores-hackeados</id>
+    <id>http://kalib.github.io/blog/2008/08/22/problemas-de-infra-do-fedora-servidores-hackeados</id>
     <content type="html"><![CDATA[<p><img class="left" src="/imgs/fedora.jpg" title="&lsquo;Fedora&rsquo;" >
 Não sei se algum de vocês ficou sabendo..Mas na última semana foi notificado um problema na infra-estrutura do Fedora, e havia sido &ldquo;recomendado&rdquo; que nenhuma instalação ou atualizaçãp fosse feita, caso você use Fedora.</p>
 

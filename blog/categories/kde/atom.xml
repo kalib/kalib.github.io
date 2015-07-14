@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: KDE | Marcelo Cavalcante Rocha ~]]></title>
-  <link href="http://blog.marcelocavalcante.net/blog/categories/kde/atom.xml" rel="self"/>
-  <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2015-07-13T13:06:26-03:00</updated>
-  <id>http://blog.marcelocavalcante.net/</id>
+  <link href="http://kalib.github.io/blog/categories/kde/atom.xml" rel="self"/>
+  <link href="http://kalib.github.io/"/>
+  <updated>2015-07-14T08:51:34-03:00</updated>
+  <id>http://kalib.github.io/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[KDE 4.11 Lançado e Disponível no Arch Linux]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2013/08/19/kde-4-dot-11-lancado-e-disponivel-no-arch-linux/"/>
+    <link href="http://kalib.github.io/blog/2013/08/19/kde-4-dot-11-lancado-e-disponivel-no-arch-linux/"/>
     <updated>2013-08-19T08:07:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2013/08/19/kde-4-dot-11-lancado-e-disponivel-no-arch-linux</id>
+    <id>http://kalib.github.io/blog/2013/08/19/kde-4-dot-11-lancado-e-disponivel-no-arch-linux</id>
     <content type="html"><![CDATA[<p><img class="left" src="/imgs/kde411.png" title="&lsquo;KDE 4.11&rsquo;" >
 <strong>E</strong>m 14 de Agosto de 2013 a comunidade KDE anunciou oficialmente a última release do Ambiente de Trabalho KDE, a versão 4.11. Nesta última versão o projeto incorporou grandes atualizações na Área de Trabalho, Aplicações e plataforma de Desenvolvimento, oferecendo, além de correções, novas funcionalidades, das quais muitas serão importantes para a próxima evolução da plataforma KDE.</p>
 
@@ -49,9 +49,9 @@
   
   <entry>
     <title type="html"><![CDATA[Que tal ajudar o projeto KDE com apenas 1 minuto do seu tempo?]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2011/10/24/que-tal-ajudar-o-projeto-kde-com-apenas-1-minuto-do-seu-tempo/"/>
+    <link href="http://kalib.github.io/blog/2011/10/24/que-tal-ajudar-o-projeto-kde-com-apenas-1-minuto-do-seu-tempo/"/>
     <updated>2011-10-24T14:56:48-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2011/10/24/que-tal-ajudar-o-projeto-kde-com-apenas-1-minuto-do-seu-tempo</id>
+    <id>http://kalib.github.io/blog/2011/10/24/que-tal-ajudar-o-projeto-kde-com-apenas-1-minuto-do-seu-tempo</id>
     <content type="html"><![CDATA[<p><img src="http://images4.wikia.nocookie.net/__cb20061120200014/uncyclopedia/images/9/98/Konqi-official-logo-aboutkde-150x250.png" alt="" /></p>
 
 <p><strong>N</strong>ão acredita?</p>
@@ -86,9 +86,9 @@
   
   <entry>
     <title type="html"><![CDATA[Wicd-KDE - Tornando seu Wicd no KDE mais amigável]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2011/04/28/wicd-kde-tornando-seu-wicd-no-kde-mais-amigavel/"/>
+    <link href="http://kalib.github.io/blog/2011/04/28/wicd-kde-tornando-seu-wicd-no-kde-mais-amigavel/"/>
     <updated>2011-04-28T09:29:35-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2011/04/28/wicd-kde-tornando-seu-wicd-no-kde-mais-amigavel</id>
+    <id>http://kalib.github.io/blog/2011/04/28/wicd-kde-tornando-seu-wicd-no-kde-mais-amigavel</id>
     <content type="html"><![CDATA[<p><strong>S</strong>audações pessoal,</p>
 
 <p><strong>P</strong>ara aqueles que também não curtem de forma alguma a aparência padrão GTK do Wicd e não conhecem ainda a interface que foi lançada posteriormente em QT, fica a dica: Troquem com urgência!</p>
@@ -157,9 +157,9 @@
   
   <entry>
     <title type="html"><![CDATA[KDE 4.6.2 lançado: Parabéns ao GNOME!]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2011/04/07/kde-4-6-2-lancado-parabens-ao-gnome/"/>
+    <link href="http://kalib.github.io/blog/2011/04/07/kde-4-6-2-lancado-parabens-ao-gnome/"/>
     <updated>2011-04-07T14:09:09-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2011/04/07/kde-4-6-2-lancado-parabens-ao-gnome</id>
+    <id>http://kalib.github.io/blog/2011/04/07/kde-4-6-2-lancado-parabens-ao-gnome</id>
     <content type="html"><![CDATA[<p><img class="center" src="/imgs/gnome-kde.png" title="&lsquo;Gnome Kde&rsquo;" >
 <strong>E</strong>stranho o título?</p>
 
@@ -187,9 +187,9 @@
   
   <entry>
     <title type="html"><![CDATA[Lançado KDE 4.6 - Sim, claro...se você usa Arch você não precisa esperar!]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2011/01/27/lancado-kde-4-6-sim-claro-se-voce-usa-arch-voce-nao-precisa-esperar/"/>
+    <link href="http://kalib.github.io/blog/2011/01/27/lancado-kde-4-6-sim-claro-se-voce-usa-arch-voce-nao-precisa-esperar/"/>
     <updated>2011-01-27T09:54:19-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2011/01/27/lancado-kde-4-6-sim-claro-se-voce-usa-arch-voce-nao-precisa-esperar</id>
+    <id>http://kalib.github.io/blog/2011/01/27/lancado-kde-4-6-sim-claro-se-voce-usa-arch-voce-nao-precisa-esperar</id>
     <content type="html"><![CDATA[<p><img class="center" src="/imgs/konqui.png" title="&lsquo;Konqui&rsquo;" >
 <strong>&ndash; DEV do Arch, qual é sua missão?</strong></p>
 

@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Arch Linux | Marcelo Cavalcante Rocha ~]]></title>
-  <link href="http://blog.marcelocavalcante.net/blog/categories/arch-linux/atom.xml" rel="self"/>
-  <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2015-07-13T13:06:26-03:00</updated>
-  <id>http://blog.marcelocavalcante.net/</id>
+  <link href="http://kalib.github.io/blog/categories/arch-linux/atom.xml" rel="self"/>
+  <link href="http://kalib.github.io/"/>
+  <updated>2015-07-14T08:51:34-03:00</updated>
+  <id>http://kalib.github.io/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[BlackArch Linux - Uma nova distribuição para Pentesters]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2014/01/30/blackarch-linux-uma-nova-distribuicao-para-pentesters/"/>
+    <link href="http://kalib.github.io/blog/2014/01/30/blackarch-linux-uma-nova-distribuicao-para-pentesters/"/>
     <updated>2014-01-30T08:47:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2014/01/30/blackarch-linux-uma-nova-distribuicao-para-pentesters</id>
+    <id>http://kalib.github.io/blog/2014/01/30/blackarch-linux-uma-nova-distribuicao-para-pentesters</id>
     <content type="html"><![CDATA[<p><img class="left" src="/imgs/blackarch.jpg" title="&lsquo;BlackArch&rsquo;" ></p>
 
 <p><strong>U</strong>ma boa novidade para os profissionais de segurança: <a href="http://www.blackarch.org" target="_blank">BlackArch</a>! Para quem, assim como eu, gosta de como as coisas funcionam no Arch Linux essa é uma notícia particularmente boa, visto que o BlackArch não se trata realmente de uma nova distribuição, mas sim de uma <em>extensão</em> para o Arch Linux. Como assim? Bom, você possui duas opções para utilizar o BlackArch, sendo uma delas como uma distribuição completa, através de um Live CD, por exemplo, e a outra como uma extensão (um repositório de pacotes) para o Arch Linux, onde você poderá apenas inserir um repositório em sua já existente distribuição Arch Linux e ter acesso ao conjunto de ferramentas do BlackArch.</p>
@@ -113,9 +113,9 @@
   
   <entry>
     <title type="html"><![CDATA[Criptografando sua Partição Swap com o Ecryptfs]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2014/01/03/criptografando-sua-particao-swap-com-o-ecryptfs/"/>
+    <link href="http://kalib.github.io/blog/2014/01/03/criptografando-sua-particao-swap-com-o-ecryptfs/"/>
     <updated>2014-01-03T08:48:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2014/01/03/criptografando-sua-particao-swap-com-o-ecryptfs</id>
+    <id>http://kalib.github.io/blog/2014/01/03/criptografando-sua-particao-swap-com-o-ecryptfs</id>
     <content type="html"><![CDATA[<p><img class="left" src="/imgs/crypto.jpg" title="&lsquo;Criptografia&rsquo;" >
 <strong>C</strong>riptografia (Do grego <em>kryptós</em>, &ldquo;escondido&rdquo;, e <em>gráphein</em>, &ldquo;escrita&rdquo;) nada mais é do que o estudo e aplicação de técnicas com o intuito de ocultar informações, transformando a informação original em algo ilegível, exceto para seu destinatário final, o qual possui a chave ou método que será utilizado para tornar a informação legível novamente.</p>
 
@@ -165,9 +165,9 @@
   
   <entry>
     <title type="html"><![CDATA[Dica Rápida - Linux - Como Limpar o Conteúdo de um Arquivo Texto Sem Abrir o Mesmo]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2013/09/11/dica-rapida-linux-como-limpar-o-conteudo-de-um-arquivo-texto-sem-abrir-o-mesmo/"/>
+    <link href="http://kalib.github.io/blog/2013/09/11/dica-rapida-linux-como-limpar-o-conteudo-de-um-arquivo-texto-sem-abrir-o-mesmo/"/>
     <updated>2013-09-11T11:05:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2013/09/11/dica-rapida-linux-como-limpar-o-conteudo-de-um-arquivo-texto-sem-abrir-o-mesmo</id>
+    <id>http://kalib.github.io/blog/2013/09/11/dica-rapida-linux-como-limpar-o-conteudo-de-um-arquivo-texto-sem-abrir-o-mesmo</id>
     <content type="html"><![CDATA[<p><img class="left" src="/imgs/erase.jpg" title="&lsquo;Erasing text&rsquo;" >
 <strong>A</strong>rquivos de log, por vezes, podem ser muito extensos. Tão extensos que torna-se praticamente impossível a leitura de seu conteúdo com um editor de textos como o vim ou vi. Além disso, muitos deles podem chegar a ocupar Gigas e mais Gigas de seu espaço em disco, o que pode acabar sendo um desperdício de espaço em seu sistema de arquivos.</p>
 
@@ -250,9 +250,9 @@
   
   <entry>
     <title type="html"><![CDATA[KDE 4.11 Lançado e Disponível no Arch Linux]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2013/08/19/kde-4-dot-11-lancado-e-disponivel-no-arch-linux/"/>
+    <link href="http://kalib.github.io/blog/2013/08/19/kde-4-dot-11-lancado-e-disponivel-no-arch-linux/"/>
     <updated>2013-08-19T08:07:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2013/08/19/kde-4-dot-11-lancado-e-disponivel-no-arch-linux</id>
+    <id>http://kalib.github.io/blog/2013/08/19/kde-4-dot-11-lancado-e-disponivel-no-arch-linux</id>
     <content type="html"><![CDATA[<p><img class="left" src="/imgs/kde411.png" title="&lsquo;KDE 4.11&rsquo;" >
 <strong>E</strong>m 14 de Agosto de 2013 a comunidade KDE anunciou oficialmente a última release do Ambiente de Trabalho KDE, a versão 4.11. Nesta última versão o projeto incorporou grandes atualizações na Área de Trabalho, Aplicações e plataforma de Desenvolvimento, oferecendo, além de correções, novas funcionalidades, das quais muitas serão importantes para a próxima evolução da plataforma KDE.</p>
 
@@ -284,9 +284,9 @@
   
   <entry>
     <title type="html"><![CDATA[Incompatibilidade: Kernel Linux 3.10.6 e Placa Wireless Broadcom Resultam em Kernel Panic]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2013/08/14/incompatibilidade-kernel-linux-3-dot-10-dot-6-e-placa-wireless-broadcom/"/>
+    <link href="http://kalib.github.io/blog/2013/08/14/incompatibilidade-kernel-linux-3-dot-10-dot-6-e-placa-wireless-broadcom/"/>
     <updated>2013-08-14T15:04:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2013/08/14/incompatibilidade-kernel-linux-3-dot-10-dot-6-e-placa-wireless-broadcom</id>
+    <id>http://kalib.github.io/blog/2013/08/14/incompatibilidade-kernel-linux-3-dot-10-dot-6-e-placa-wireless-broadcom</id>
     <content type="html"><![CDATA[<p><img class="center" src="/imgs/kernel_panic.gif" title="&lsquo;kernel_panic&rsquo;" ></p>
 
 <p><strong>K</strong>ernel Panic!</p>

@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Linux | Marcelo Cavalcante Rocha ~]]></title>
-  <link href="http://blog.marcelocavalcante.net/blog/categories/linux/atom.xml" rel="self"/>
-  <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2015-07-13T13:06:26-03:00</updated>
-  <id>http://blog.marcelocavalcante.net/</id>
+  <link href="http://kalib.github.io/blog/categories/linux/atom.xml" rel="self"/>
+  <link href="http://kalib.github.io/"/>
+  <updated>2015-07-14T08:51:34-03:00</updated>
+  <id>http://kalib.github.io/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Alterando os parâmetros do kernel em tempo real com o Systcl]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2014/02/13/alterando-os-parametros-do-kernel-em-tempo-real-com-o-systcl/"/>
+    <link href="http://kalib.github.io/blog/2014/02/13/alterando-os-parametros-do-kernel-em-tempo-real-com-o-systcl/"/>
     <updated>2014-02-13T22:02:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2014/02/13/alterando-os-parametros-do-kernel-em-tempo-real-com-o-systcl</id>
+    <id>http://kalib.github.io/blog/2014/02/13/alterando-os-parametros-do-kernel-em-tempo-real-com-o-systcl</id>
     <content type="html"><![CDATA[<p><img class="left" src="/imgs/linux-kernel.jpg" title="&lsquo;Linux Kernel&rsquo;" >
 <strong>O</strong> <em>kernel</em>, em se tratando de sistemas operacionais, é o núcleo e componente mais importante da maioria dos computadores. Basicamente, serve de ponte entre os aplicativos e o processamento real de dados feito a nível de hardware. É ele o responsável por gerenciar os recursos do sistema, podendo oferecer uma camada de abstração de nível mais baixo para os recursos, como processadores e dispositivos de entrada/saída, que os softwares aplicativos devem controlar para realizar sua função. Com o GNU/Linux não é diferente. O núcleo Linux (Linux Kernel) forma a estrutura do sistema operacional GNU/Linux.</p>
 
@@ -88,9 +88,9 @@
   
   <entry>
     <title type="html"><![CDATA[BlackArch Linux - Uma nova distribuição para Pentesters]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2014/01/30/blackarch-linux-uma-nova-distribuicao-para-pentesters/"/>
+    <link href="http://kalib.github.io/blog/2014/01/30/blackarch-linux-uma-nova-distribuicao-para-pentesters/"/>
     <updated>2014-01-30T08:47:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2014/01/30/blackarch-linux-uma-nova-distribuicao-para-pentesters</id>
+    <id>http://kalib.github.io/blog/2014/01/30/blackarch-linux-uma-nova-distribuicao-para-pentesters</id>
     <content type="html"><![CDATA[<p><img class="left" src="/imgs/blackarch.jpg" title="&lsquo;BlackArch&rsquo;" ></p>
 
 <p><strong>U</strong>ma boa novidade para os profissionais de segurança: <a href="http://www.blackarch.org" target="_blank">BlackArch</a>! Para quem, assim como eu, gosta de como as coisas funcionam no Arch Linux essa é uma notícia particularmente boa, visto que o BlackArch não se trata realmente de uma nova distribuição, mas sim de uma <em>extensão</em> para o Arch Linux. Como assim? Bom, você possui duas opções para utilizar o BlackArch, sendo uma delas como uma distribuição completa, através de um Live CD, por exemplo, e a outra como uma extensão (um repositório de pacotes) para o Arch Linux, onde você poderá apenas inserir um repositório em sua já existente distribuição Arch Linux e ter acesso ao conjunto de ferramentas do BlackArch.</p>
@@ -186,9 +186,9 @@
   
   <entry>
     <title type="html"><![CDATA[Dica - Escondendo Seu Endereço de Email ao Divulgar Seu Endereço de Email]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2014/01/23/dica-escondendo-seu-endereco-de-email-ao-divulgar-seu-endereco-de-email/"/>
+    <link href="http://kalib.github.io/blog/2014/01/23/dica-escondendo-seu-endereco-de-email-ao-divulgar-seu-endereco-de-email/"/>
     <updated>2014-01-23T09:37:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2014/01/23/dica-escondendo-seu-endereco-de-email-ao-divulgar-seu-endereco-de-email</id>
+    <id>http://kalib.github.io/blog/2014/01/23/dica-escondendo-seu-endereco-de-email-ao-divulgar-seu-endereco-de-email</id>
     <content type="html"><![CDATA[<p><img class="center" src="/imgs/frog_camouflage.jpg" title="&lsquo;Camouflage&rsquo;" ></p>
 
 <p><strong>D</strong>a mesma forma que alguns animais só conseguem sobreviver utilizando-se de sua capacidade e/ou técnica de camuflar-se, misturando-se assim ao ambiente, para enganar seus predadores naturais, as pessoas do mundo atual praticamente precisam adotar as mesmas técnicas para manter seus endereços de email livres de um turbilhão de emails indesejados com propagandas de viagra, dicas para crescimento peniano, irregularidades em seu CPF, problemas em sua conta bancária, etc, etc.</p>
@@ -236,9 +236,9 @@
   
   <entry>
     <title type="html"><![CDATA[Dica - Assistir Star Wars em um Console ou Terminal]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2014/01/17/dica-assistir-star-wars-em-um-console-ou-terminal/"/>
+    <link href="http://kalib.github.io/blog/2014/01/17/dica-assistir-star-wars-em-um-console-ou-terminal/"/>
     <updated>2014-01-17T10:30:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2014/01/17/dica-assistir-star-wars-em-um-console-ou-terminal</id>
+    <id>http://kalib.github.io/blog/2014/01/17/dica-assistir-star-wars-em-um-console-ou-terminal</id>
     <content type="html"><![CDATA[<p><img class="left" src="/imgs/starwars.png" title="&lsquo;Star Wars&rsquo;" >
 <strong>Q</strong>uem disse que o terminal ou linha de comando serve apenas para trabalho e coisas chatas?</p>
 
@@ -262,9 +262,9 @@
   
   <entry>
     <title type="html"><![CDATA[Dica - Apostila Disponibilizada Gratuitamente - pfSense]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2014/01/14/dica-apostila-disponibilizada-gratuitamente-pfsense/"/>
+    <link href="http://kalib.github.io/blog/2014/01/14/dica-apostila-disponibilizada-gratuitamente-pfsense/"/>
     <updated>2014-01-14T08:27:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2014/01/14/dica-apostila-disponibilizada-gratuitamente-pfsense</id>
+    <id>http://kalib.github.io/blog/2014/01/14/dica-apostila-disponibilizada-gratuitamente-pfsense</id>
     <content type="html"><![CDATA[<p><img class="left" src="/imgs/pfsense.png" title="&lsquo;pfSense&rsquo;" >
 <strong>G</strong>ostaria de passar adiante a notícia de que o colega <em>Leonardo Damasceno</em> acaba de compartilhar com a comunidade uma apostila de sua autoria sobre o <a href="http://www.pfsense.org"><strong>pfSense</strong></a>, de forma a divulgar mais este magnífico sistema, bem como facilitar a vida daqueles que ainda não o dominam.</p>
 

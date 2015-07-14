@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Debian | Marcelo Cavalcante Rocha ~]]></title>
-  <link href="http://blog.marcelocavalcante.net/blog/categories/debian/atom.xml" rel="self"/>
-  <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2015-07-13T13:06:26-03:00</updated>
-  <id>http://blog.marcelocavalcante.net/</id>
+  <link href="http://kalib.github.io/blog/categories/debian/atom.xml" rel="self"/>
+  <link href="http://kalib.github.io/"/>
+  <updated>2015-07-14T08:51:34-03:00</updated>
+  <id>http://kalib.github.io/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Política de senhas no Linux: Senhas com data para expirar!]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2011/09/27/politica-de-senhas-no-linux-senhas-com-data-para-expirar/"/>
+    <link href="http://kalib.github.io/blog/2011/09/27/politica-de-senhas-no-linux-senhas-com-data-para-expirar/"/>
     <updated>2011-09-27T11:14:12-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2011/09/27/politica-de-senhas-no-linux-senhas-com-data-para-expirar</id>
+    <id>http://kalib.github.io/blog/2011/09/27/politica-de-senhas-no-linux-senhas-com-data-para-expirar</id>
     <content type="html"><![CDATA[<p><img class="left" src="/imgs/password1.jpg" title="&lsquo;Password&rsquo;" >
 <strong>J</strong>á é sabido que a maior vulnerabilidade dentro das empresas ou mesmo computadores pessoais são justamente os próprios funcionários ou usuários.</p>
 
@@ -152,9 +152,9 @@
   
   <entry>
     <title type="html"><![CDATA[Vantagem do Aptitude sobre o Apt-Get]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2008/05/03/vantagem-do-aptitude-sobre-o-apt-get/"/>
+    <link href="http://kalib.github.io/blog/2008/05/03/vantagem-do-aptitude-sobre-o-apt-get/"/>
     <updated>2008-05-03T11:45:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2008/05/03/vantagem-do-aptitude-sobre-o-apt-get</id>
+    <id>http://kalib.github.io/blog/2008/05/03/vantagem-do-aptitude-sobre-o-apt-get</id>
     <content type="html"><![CDATA[<p>Novamente estou aqui para lhes passar uma pequena dica que para muitos pode nem ser novidade, porém para alguns a dúvida pode existir.</p>
 
 <p>Bom, para aqueles que ainda não sabem, o apt é uma ferramenta da Debian para gerenciamento de pacotes de forma simples, amigável e rápida contando inclusive com a instalação automática de dependências necessárias para a finalização do processo. O que muitas pessoas ainda não sabem é que utilizando-se do comando &ldquo;apt-get install NOME_PACOTE&rdquo; serão instalados pacotes que o mesmo não removerá automaticamente posteriormente, fazendo assim um acúmulo de &ldquo;lixo&rdquo; em nosso sistema. Como assim? Suponhamos que eu queira instalar um aplicativo de instant messenger como por exemplo o amsn. Esta ferramenta possui dependências necessárias para seu funcionamento, sendo elas o TCL e o TK.</p>

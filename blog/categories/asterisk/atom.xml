@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Asterisk | Marcelo Cavalcante Rocha ~]]></title>
-  <link href="http://blog.marcelocavalcante.net/blog/categories/asterisk/atom.xml" rel="self"/>
-  <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2015-07-13T13:06:26-03:00</updated>
-  <id>http://blog.marcelocavalcante.net/</id>
+  <link href="http://kalib.github.io/blog/categories/asterisk/atom.xml" rel="self"/>
+  <link href="http://kalib.github.io/"/>
+  <updated>2015-07-14T08:51:34-03:00</updated>
+  <id>http://kalib.github.io/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[AsteriskNow - Solução eficiente para VOIP]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2009/06/08/asterisknow-solucao-eficiente-para-voip/"/>
+    <link href="http://kalib.github.io/blog/2009/06/08/asterisknow-solucao-eficiente-para-voip/"/>
     <updated>2009-06-08T16:04:41-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2009/06/08/asterisknow-solucao-eficiente-para-voip</id>
+    <id>http://kalib.github.io/blog/2009/06/08/asterisknow-solucao-eficiente-para-voip</id>
     <content type="html"><![CDATA[<p><img class="left" src="/imgs/asterisknow.jpg" title="&lsquo;Asterisk Now&rsquo;" >
 Q**ue o mundo da telefonia está sofrendo grandes mudanças com a onda de conectividade web, todo mundo já sabe. A telefonia IP, VOIP, ou simplesmente voz sobre ip, vem expandindo cada vez mais as possibilidades para comunicação instantânea à longa distância à medida que os custos se tornam cada vez menores para o usuário final.</p>
 
@@ -43,9 +43,9 @@ Q**ue o mundo da telefonia está sofrendo grandes mudanças com a onda de conect
   
   <entry>
     <title type="html"><![CDATA[Gespeak empacotado hoje para o Arch]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2009/03/13/gespeak-empacotado-hoje-para-o-arch/"/>
+    <link href="http://kalib.github.io/blog/2009/03/13/gespeak-empacotado-hoje-para-o-arch/"/>
     <updated>2009-03-13T19:44:08-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2009/03/13/gespeak-empacotado-hoje-para-o-arch</id>
+    <id>http://kalib.github.io/blog/2009/03/13/gespeak-empacotado-hoje-para-o-arch</id>
     <content type="html"><![CDATA[<p>Ontem vi a notícia sobre o lançamento da versão 0.3 do aplicativo Gespeak. A mesma foi considerada a primeira versão estável do mesmo. Logo que vi resolvi empacotar para o Arch esta aplicação que poderia vir a ser útil para algumas pessoas, como é o meu caso.</p>
 
 <p>Para quem não conhece, o Gespeak é um front end para o Espeak. O Espeak nada mais é que um sintetizador de voz. Como perguntariam alguns amigos meus: &ldquo;What a porra is this?&rdquo;</p>
@@ -66,9 +66,9 @@ Q**ue o mundo da telefonia está sofrendo grandes mudanças com a onda de conect
   
   <entry>
     <title type="html"><![CDATA[Asterisk Counter - Seja Contado]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2008/10/27/asterisk-counter-seja-contado/"/>
+    <link href="http://kalib.github.io/blog/2008/10/27/asterisk-counter-seja-contado/"/>
     <updated>2008-10-27T14:29:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2008/10/27/asterisk-counter-seja-contado</id>
+    <id>http://kalib.github.io/blog/2008/10/27/asterisk-counter-seja-contado</id>
     <content type="html"><![CDATA[<p><img class="center" src="/imgs/asterisk.png" title="&lsquo;Asterisk&rsquo;" ></p>
 
 <p>Saudações pessoal&hellip;</p>

@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Ruby | Marcelo Cavalcante Rocha ~]]></title>
-  <link href="http://blog.marcelocavalcante.net/blog/categories/ruby/atom.xml" rel="self"/>
-  <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2015-07-13T13:06:26-03:00</updated>
-  <id>http://blog.marcelocavalcante.net/</id>
+  <link href="http://kalib.github.io/blog/categories/ruby/atom.xml" rel="self"/>
+  <link href="http://kalib.github.io/"/>
+  <updated>2015-07-14T08:51:34-03:00</updated>
+  <id>http://kalib.github.io/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Rails Girls em Fortaleza - Um palco para a criatividade feminina]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2013/08/04/rails-girls-em-fortaleza-um-palco-para-a-criatividade-feminina/"/>
+    <link href="http://kalib.github.io/blog/2013/08/04/rails-girls-em-fortaleza-um-palco-para-a-criatividade-feminina/"/>
     <updated>2013-08-04T12:17:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2013/08/04/rails-girls-em-fortaleza-um-palco-para-a-criatividade-feminina</id>
+    <id>http://kalib.github.io/blog/2013/08/04/rails-girls-em-fortaleza-um-palco-para-a-criatividade-feminina</id>
     <content type="html"><![CDATA[<p><img class="center" src="/imgs/evolucao_mulher.jpg" title="&lsquo;evolução feminina&rsquo;" ></p>
 
 <p><strong>E</strong> se sua namorada/esposa/irmã/mãe/vizinha/filha da vizinha/&hellip; pudesse finalmente entender que tanto código é esse que você digita no computador?</p>
@@ -61,9 +61,9 @@
   
   <entry>
     <title type="html"><![CDATA[Feliz dia do Programador!]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2011/09/13/feliz-dia-do-programador/"/>
+    <link href="http://kalib.github.io/blog/2011/09/13/feliz-dia-do-programador/"/>
     <updated>2011-09-13T10:11:39-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2011/09/13/feliz-dia-do-programador</id>
+    <id>http://kalib.github.io/blog/2011/09/13/feliz-dia-do-programador</id>
     <content type="html"><![CDATA[<p><img class="left" src="/imgs/programmer-260x300.jpg" title="&lsquo;Programador&rsquo;" >
 <strong>S</strong>audações pessoal,</p>
 
@@ -240,9 +240,9 @@
   
   <entry>
     <title type="html"><![CDATA[Ceará On Rails 2010]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2009/11/05/ceara-on-rails-2010/"/>
+    <link href="http://kalib.github.io/blog/2009/11/05/ceara-on-rails-2010/"/>
     <updated>2009-11-05T15:13:23-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2009/11/05/ceara-on-rails-2010</id>
+    <id>http://kalib.github.io/blog/2009/11/05/ceara-on-rails-2010</id>
     <content type="html"><![CDATA[<p><img class="left" src="/imgs/cearaonrails.png" title="&lsquo;Ceará On Rails&rsquo;" >
 <strong>S</strong>audações pessoal, este ano o <a href="http://www.cearaonrails.com.br">Ceará On Rails</a> terá sua segunda edição trazendo uma programação mais extensa em relação à anterior, em 2009.</p>
 
@@ -281,9 +281,9 @@
   
   <entry>
     <title type="html"><![CDATA[Primeiro encontro CearáOnRails’09]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2009/04/08/primeiro-encontro-cearaonrailse2809909/"/>
+    <link href="http://kalib.github.io/blog/2009/04/08/primeiro-encontro-cearaonrailse2809909/"/>
     <updated>2009-04-08T10:17:54-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2009/04/08/primeiro-encontro-cearaonrailse2809909</id>
+    <id>http://kalib.github.io/blog/2009/04/08/primeiro-encontro-cearaonrailse2809909</id>
     <content type="html"><![CDATA[<p><img class="center" src="/imgs/logomarca_cearaonrails.png" title="&lsquo;Ceará on Rails&rsquo;" >
 <strong>O</strong>lá pessoal.</p>
 
@@ -327,9 +327,9 @@
   
   <entry>
     <title type="html"><![CDATA[Ceará On Rails, aí vou eu...]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2008/11/12/ceara-on-rails-ai-vou-eu/"/>
+    <link href="http://kalib.github.io/blog/2008/11/12/ceara-on-rails-ai-vou-eu/"/>
     <updated>2008-11-12T10:22:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2008/11/12/ceara-on-rails-ai-vou-eu</id>
+    <id>http://kalib.github.io/blog/2008/11/12/ceara-on-rails-ai-vou-eu</id>
     <content type="html"><![CDATA[<p><img class="center" src="/imgs/cearaonrails.png" title="&lsquo;Ceará on Rails&rsquo;" >
 O que é CearáOnRails?</p>
 

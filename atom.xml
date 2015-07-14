@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Marcelo Cavalcante Rocha ~]]></title>
-  <link href="http://blog.marcelocavalcante.net/atom.xml" rel="self"/>
-  <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2015-07-13T13:06:26-03:00</updated>
-  <id>http://blog.marcelocavalcante.net/</id>
+  <link href="http://kalib.github.io/atom.xml" rel="self"/>
+  <link href="http://kalib.github.io/"/>
+  <updated>2015-07-14T08:51:34-03:00</updated>
+  <id>http://kalib.github.io/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
     
@@ -15,10 +15,10 @@
   
   <entry>
     <title type="html"><![CDATA[Assista ao documentário sobre Aaron Swartz: O menino da internet]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2014/08/03/assista-ao-documentario-sobre-aaron-swartz-o-menino-da-internet/"/>
+    <link href="http://kalib.github.io/blog/2014/08/03/assista-ao-documentario-sobre-aaron-swartz-o-menino-da-internet/"/>
     <updated>2014-08-03T07:19:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2014/08/03/assista-ao-documentario-sobre-aaron-swartz-o-menino-da-internet</id>
-    <content type="html"><![CDATA[<p><img class="center" src="http://blog.marcelocavalcante.net/imgs/aaron-swartz-movie.jpg" title="'Aaron Swartz Movie'" >
+    <id>http://kalib.github.io/blog/2014/08/03/assista-ao-documentario-sobre-aaron-swartz-o-menino-da-internet</id>
+    <content type="html"><![CDATA[<p><img class="center" src="http://kalib.github.io/imgs/aaron-swartz-movie.jpg" title="'Aaron Swartz Movie'" >
 <code>
  Informação é poder. Mas, como todo poder, há aqueles que querem mantê-la para si mesmos. O patrimônio cultural e científico do mundo, publicado ao longo dos séculos em livros e revistas, está cada vez mais szendo digitalizado e trancado por um punhado de corporações privadas. Enquanto isso, aqueles que foram bloqueados não estão em pé de braços cruzados. Eles estão bisbilhotando em buracos e escalando cercas libertando as informações trancadas pelos editores e compartilhando com seus amigos. Mas toda essa ação acontece no escuro, escondida no subterrâneo. É chamado de roubo ou pirataria, como se compartilhar uma riqueza de conhecimentos fosse o equivalente  de saquear um navio e matar sua tripulação. Mas compartilhar não é imoral - é um imperativo moral. Só os cegos pela ganância se recusam a deixar um amigo fazer uma cópia. Não há justiça em seguir leis injustas. É hora de virmos para a luz e, na grande tradição de desobediência civil, declararmos a nossa oposição a este roubo privado da cultura pública.
 </code></p>
@@ -29,7 +29,7 @@
 
 <p><strong>P</strong>ara quem ainda não sabe do que se trata, Aaron Swartz foi um dos criadores do RSS bem como do famoso site de notícias e debates Reddit.Após alguns anos lutando e enfrentando a justiça americana Aaron cometeu suicídio.</p>
 
-<p><img class="left" src="http://blog.marcelocavalcante.net/imgs/aaron_swartz.jpg" title="'Aaron Swartz'" ><strong>A</strong>aron estava sendo condenado a cerca de 50 anos de prisão, bem como a pagar um montante superior a U$ 4 milhões em multas por querer tornar públicos os artigos acadêmicos e científicos que eram mantidos na base do JSTOR, o qual vendia o acesso a estes artigos que, na visão de Aaron, deveriam ser de domínio e acesso público.</p>
+<p><img class="left" src="http://kalib.github.io/imgs/aaron_swartz.jpg" title="'Aaron Swartz'" ><strong>A</strong>aron estava sendo condenado a cerca de 50 anos de prisão, bem como a pagar um montante superior a U$ 4 milhões em multas por querer tornar públicos os artigos acadêmicos e científicos que eram mantidos na base do JSTOR, o qual vendia o acesso a estes artigos que, na visão de Aaron, deveriam ser de domínio e acesso público.</p>
 
 <p><strong>A</strong>aron sempre defendeu e lutou para que o conhecimento fosse de livre acesso a todos. Lutou tanto que acabou sendo covardemente perseguido e pressionado pelo governo americano, o que acabou por lhe deixar exausto, psicologicamente e financeiramente, ao ponto de ele desistir da luta ao invés de simplesmente &ldquo;assumir&rdquo; que estava errado e aceitar os &ldquo;acordos&rdquo; que lhe foram oferecidos pela justiça americana.</p>
 
@@ -37,9 +37,9 @@
 
 <p><strong>P</strong>ara quem por algum motivo ainda não conhece o recurso de legendas ou caption do YoutTube, caso a legenda do filme não apareça automaticamente, basta clicar no botão de legendas/caption, habilitando-o, conforme apresentado na imagem abaixo:</p>
 
-<p><img class="center" src="http://blog.marcelocavalcante.net/imgs/youtube_captions.png" title="'Youtube Captions'" ></p>
+<p><img class="center" src="http://kalib.github.io/imgs/youtube_captions.png" title="'Youtube Captions'" ></p>
 
-<iframe width="560" height="315" src="http://blog.marcelocavalcante.net//www.youtube.com/embed/2uj1EeiuK5U" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="http://kalib.github.io//www.youtube.com/embed/2uj1EeiuK5U" frameborder="0" allowfullscreen></iframe>
 
 
 <p>Link para o vídeo: <a href="https://www.youtube.com/watch?v=2uj1EeiuK5U">https://www.youtube.com/watch?v=2uj1EeiuK5U</a></p>
@@ -50,10 +50,10 @@
   
   <entry>
     <title type="html"><![CDATA[Alterando os parâmetros do kernel em tempo real com o Systcl]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2014/02/13/alterando-os-parametros-do-kernel-em-tempo-real-com-o-systcl/"/>
+    <link href="http://kalib.github.io/blog/2014/02/13/alterando-os-parametros-do-kernel-em-tempo-real-com-o-systcl/"/>
     <updated>2014-02-13T22:02:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2014/02/13/alterando-os-parametros-do-kernel-em-tempo-real-com-o-systcl</id>
-    <content type="html"><![CDATA[<p><img class="left" src="http://blog.marcelocavalcante.net/imgs/linux-kernel.jpg" title="'Linux Kernel'" >
+    <id>http://kalib.github.io/blog/2014/02/13/alterando-os-parametros-do-kernel-em-tempo-real-com-o-systcl</id>
+    <content type="html"><![CDATA[<p><img class="left" src="http://kalib.github.io/imgs/linux-kernel.jpg" title="'Linux Kernel'" >
 <strong>O</strong> <em>kernel</em>, em se tratando de sistemas operacionais, é o núcleo e componente mais importante da maioria dos computadores. Basicamente, serve de ponte entre os aplicativos e o processamento real de dados feito a nível de hardware. É ele o responsável por gerenciar os recursos do sistema, podendo oferecer uma camada de abstração de nível mais baixo para os recursos, como processadores e dispositivos de entrada/saída, que os softwares aplicativos devem controlar para realizar sua função. Com o GNU/Linux não é diferente. O núcleo Linux (Linux Kernel) forma a estrutura do sistema operacional GNU/Linux.</p>
 
 <p><strong>C</strong>omo é de se esperar, o kernel possui diversos parâmetros configurados que definirão as características do seu sistema, controle de dispositivos, módulos, drivers, etc. Por vezes faz-se necessário alterar algum parâmetro do kernel para alguma tarefa ou rotina específica, portanto que tal ganhar tempo e alterar um ou mais parâmetros do kernel <em>on the fly</em>?!</p>
@@ -156,10 +156,10 @@
   
   <entry>
     <title type="html"><![CDATA[BlackArch Linux - Uma nova distribuição para Pentesters]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2014/01/30/blackarch-linux-uma-nova-distribuicao-para-pentesters/"/>
+    <link href="http://kalib.github.io/blog/2014/01/30/blackarch-linux-uma-nova-distribuicao-para-pentesters/"/>
     <updated>2014-01-30T08:47:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2014/01/30/blackarch-linux-uma-nova-distribuicao-para-pentesters</id>
-    <content type="html"><![CDATA[<p><img class="left" src="http://blog.marcelocavalcante.net/imgs/blackarch.jpg" title="'BlackArch'" ></p>
+    <id>http://kalib.github.io/blog/2014/01/30/blackarch-linux-uma-nova-distribuicao-para-pentesters</id>
+    <content type="html"><![CDATA[<p><img class="left" src="http://kalib.github.io/imgs/blackarch.jpg" title="'BlackArch'" ></p>
 
 <p><strong>U</strong>ma boa novidade para os profissionais de segurança: <a href="http://www.blackarch.org" target="_blank">BlackArch</a>! Para quem, assim como eu, gosta de como as coisas funcionam no Arch Linux essa é uma notícia particularmente boa, visto que o BlackArch não se trata realmente de uma nova distribuição, mas sim de uma <em>extensão</em> para o Arch Linux. Como assim? Bom, você possui duas opções para utilizar o BlackArch, sendo uma delas como uma distribuição completa, através de um Live CD, por exemplo, e a outra como uma extensão (um repositório de pacotes) para o Arch Linux, onde você poderá apenas inserir um repositório em sua já existente distribuição Arch Linux e ter acesso ao conjunto de ferramentas do BlackArch.</p>
 
@@ -169,7 +169,7 @@
 
 <p><strong>D</strong>entre as ferramentas existentes estão: 3proxy, 42zip, acccheck, aesfix, against, airflood, airoscript, bluepot, blueprint, braces, bss, bully, cisco-ocs, cmospwd, dbd, dc3dd, deblaze, dhcpig, enumiax, fakedns, &hellip; Vocẽ não espera que eu liste todos os mais de 600, certo?</p>
 
-<p><a href="http://blackarch.org/images/screenshots/openbox.png" target="_blank"><img class="center" src="http://blog.marcelocavalcante.net/imgs/openbox.png" title="'BlackArch Openbox'" ></a></p>
+<p><a href="http://blackarch.org/images/screenshots/openbox.png" target="_blank"><img class="center" src="http://kalib.github.io/imgs/openbox.png" title="'BlackArch Openbox'" ></a></p>
 
 <p><strong>Configurando como um Repositório Não-Oficial</strong></p>
 
@@ -265,10 +265,10 @@
   
   <entry>
     <title type="html"><![CDATA[Dica - Escondendo Seu Endereço de Email ao Divulgar Seu Endereço de Email]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2014/01/23/dica-escondendo-seu-endereco-de-email-ao-divulgar-seu-endereco-de-email/"/>
+    <link href="http://kalib.github.io/blog/2014/01/23/dica-escondendo-seu-endereco-de-email-ao-divulgar-seu-endereco-de-email/"/>
     <updated>2014-01-23T09:37:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2014/01/23/dica-escondendo-seu-endereco-de-email-ao-divulgar-seu-endereco-de-email</id>
-    <content type="html"><![CDATA[<p><img class="center" src="http://blog.marcelocavalcante.net/imgs/frog_camouflage.jpg" title="'Camouflage'" ></p>
+    <id>http://kalib.github.io/blog/2014/01/23/dica-escondendo-seu-endereco-de-email-ao-divulgar-seu-endereco-de-email</id>
+    <content type="html"><![CDATA[<p><img class="center" src="http://kalib.github.io/imgs/frog_camouflage.jpg" title="'Camouflage'" ></p>
 
 <p><strong>D</strong>a mesma forma que alguns animais só conseguem sobreviver utilizando-se de sua capacidade e/ou técnica de camuflar-se, misturando-se assim ao ambiente, para enganar seus predadores naturais, as pessoas do mundo atual praticamente precisam adotar as mesmas técnicas para manter seus endereços de email livres de um turbilhão de emails indesejados com propagandas de viagra, dicas para crescimento peniano, irregularidades em seu CPF, problemas em sua conta bancária, etc, etc.</p>
 
@@ -316,10 +316,10 @@
   
   <entry>
     <title type="html"><![CDATA[Dica - Assistir Star Wars em um Console ou Terminal]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2014/01/17/dica-assistir-star-wars-em-um-console-ou-terminal/"/>
+    <link href="http://kalib.github.io/blog/2014/01/17/dica-assistir-star-wars-em-um-console-ou-terminal/"/>
     <updated>2014-01-17T10:30:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2014/01/17/dica-assistir-star-wars-em-um-console-ou-terminal</id>
-    <content type="html"><![CDATA[<p><img class="left" src="http://blog.marcelocavalcante.net/imgs/starwars.png" title="'Star Wars'" >
+    <id>http://kalib.github.io/blog/2014/01/17/dica-assistir-star-wars-em-um-console-ou-terminal</id>
+    <content type="html"><![CDATA[<p><img class="left" src="http://kalib.github.io/imgs/starwars.png" title="'Star Wars'" >
 <strong>Q</strong>uem disse que o terminal ou linha de comando serve apenas para trabalho e coisas chatas?</p>
 
 <p><strong>E</strong>stá entediado em frente ao seu terminal GNU/Linux?    Que tal algo para passar o tempo e, ao mesmo tempo, lhe trazer uma certa nostalgia? Assista Star Wars sem precisar sair de sua linha de comando ou terminal.</p>
@@ -332,9 +332,9 @@
 
 <p><strong>F</strong>eito isso, basta apreciar o show&hellip;</p>
 
-<p><img class="center" src="http://blog.marcelocavalcante.net/imgs/starwars_1.png" title="'Star Wars'" ></p>
+<p><img class="center" src="http://kalib.github.io/imgs/starwars_1.png" title="'Star Wars'" ></p>
 
-<p><img class="center" src="http://blog.marcelocavalcante.net/imgs/starwars_2.jpg" title="'Star Wars'" ></p>
+<p><img class="center" src="http://kalib.github.io/imgs/starwars_2.jpg" title="'Star Wars'" ></p>
 
 <p><strong>H</strong>ave fun!</p>
 ]]></content>
@@ -342,38 +342,38 @@
   
   <entry>
     <title type="html"><![CDATA[Dica - Apostila Disponibilizada Gratuitamente - pfSense]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2014/01/14/dica-apostila-disponibilizada-gratuitamente-pfsense/"/>
+    <link href="http://kalib.github.io/blog/2014/01/14/dica-apostila-disponibilizada-gratuitamente-pfsense/"/>
     <updated>2014-01-14T08:27:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2014/01/14/dica-apostila-disponibilizada-gratuitamente-pfsense</id>
-    <content type="html"><![CDATA[<p><img class="left" src="http://blog.marcelocavalcante.net/imgs/pfsense.png" title="'pfSense'" >
+    <id>http://kalib.github.io/blog/2014/01/14/dica-apostila-disponibilizada-gratuitamente-pfsense</id>
+    <content type="html"><![CDATA[<p><img class="left" src="http://kalib.github.io/imgs/pfsense.png" title="'pfSense'" >
 <strong>G</strong>ostaria de passar adiante a notícia de que o colega <em>Leonardo Damasceno</em> acaba de compartilhar com a comunidade uma apostila de sua autoria sobre o <a href="http://www.pfsense.org"><strong>pfSense</strong></a>, de forma a divulgar mais este magnífico sistema, bem como facilitar a vida daqueles que ainda não o dominam.</p>
 
 <p><strong>S</strong>egue link direto fornecido pelo mesmo para <a href="http://www.marcelocavalcante.net/repositorio/pfsense-leonardodamasceno.pdf"><strong>download</strong></a>. A apostila ou livro, como prefira chamar, possui aproximadamente 70 páginas de informações úteis e diretas, sem muitas complicações.</p>
 
 <p><strong>N</strong>ão sabe o que é pfSense?</p>
 
-<p><img class="center" src="http://blog.marcelocavalcante.net/imgs/pfsense1.jpg" title="'pfSense1'" ></p>
+<p><img class="center" src="http://kalib.github.io/imgs/pfsense1.jpg" title="'pfSense1'" ></p>
 
 <p><strong>O</strong> pfSense é um sistema operacional baseado no <em>Free BSD</em> que pode ser instalado em um computador para servir como um firewall/roteador dedicado em uma rede. Como ferramenta <em>open source</em>, o pfSense tem se destacado nesta função, sendo considerado um dos melhores e mais confiáveis para este trabalho, oferecendo, além de sua estabilidade e confiabilidade, recursos e funções que geralmente são encontrados apenas em firewalls comerciais e caros. Não creio ser necessário lembrar a confiabilidade dos sistemas <em>Free BSD</em>&hellip;</p>
 
-<p><img class="center" src="http://blog.marcelocavalcante.net/imgs/pfsense2.jpg" title="'pfSense2'" ></p>
+<p><img class="center" src="http://kalib.github.io/imgs/pfsense2.jpg" title="'pfSense2'" ></p>
 
 <p><strong>E</strong>mbora seja uma versão customizada do Free BSD, não é necessário qualquer conhecimento sobre este sistema para operar o psSense, visto que ele é atualizado e completamente configurado através de uma interface web. Na maioria dos casos o pfSense tem sido aplicado como um firewall de perímetro, roteador, access point wireless, servidor DHCP, servidor DNS e VPN.</p>
 
-<p><img class="center" src="http://blog.marcelocavalcante.net/imgs/pfsense3.jpg" title="'pfSense3'" ></p>
+<p><img class="center" src="http://kalib.github.io/imgs/pfsense3.jpg" title="'pfSense3'" ></p>
 
 <p><strong>O</strong> mesmo apresenta diversos recursos gráficos para análise de tráfego, pacotes, performance, etc. Além de configurações avançadas para regras de firewall para LAN, WAN e utilizãção de Aliases de forma simples e intuitiva.</p>
 
-<p><img class="center" src="http://blog.marcelocavalcante.net/imgs/pfsense4.jpg" title="'pfSense4'" ></p>
+<p><img class="center" src="http://kalib.github.io/imgs/pfsense4.jpg" title="'pfSense4'" ></p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Dica de Segurança - Previna Ataques Bloqueando Pacotes ICMP Indesejados]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2014/01/06/dica-de-seguranca-previna-ataques-bloqueando-pacotes-icmp-indesejados/"/>
+    <link href="http://kalib.github.io/blog/2014/01/06/dica-de-seguranca-previna-ataques-bloqueando-pacotes-icmp-indesejados/"/>
     <updated>2014-01-06T08:40:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2014/01/06/dica-de-seguranca-previna-ataques-bloqueando-pacotes-icmp-indesejados</id>
-    <content type="html"><![CDATA[<p><img class="left" src="http://blog.marcelocavalcante.net/imgs/you_shall_not_pass.jpg" title="'Gandalf'" >
+    <id>http://kalib.github.io/blog/2014/01/06/dica-de-seguranca-previna-ataques-bloqueando-pacotes-icmp-indesejados</id>
+    <content type="html"><![CDATA[<p><img class="left" src="http://kalib.github.io/imgs/you_shall_not_pass.jpg" title="'Gandalf'" >
 <strong>O</strong> protocolo <em>ICMP</em> pode ser utilizado para facilitar diversas rotinas e tarefas importantes de um administrador de redes, tais como na utilização de ferramentas como o <em>ping</em> e o <em>traceroute</em>, mas também pode ser manipulado por pessoas mal intencionadas que podem manipular mensagens ou pacotes ICMP para mapear sua rede.</p>
 
 <p><strong>É</strong> comum ver administradores de rede se preocupando e fazendo um ótimo trabalho em termos de filtrar o tráfego <em>TCP</em> e/ou <em>UDP</em>, porém quase sempre esquecem de dar a mesma atenção ao tráfego <em>ICMP</em>, sendo este tão crítico quanto os dois anteriores. Uma vez que este protocolo pode ser utilizado para mapear e realizar ataques em sua rede, ele não pode simplesmente ser deixado de lado.</p>
@@ -404,10 +404,10 @@
   
   <entry>
     <title type="html"><![CDATA[Criptografando sua Partição Swap com o Ecryptfs]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2014/01/03/criptografando-sua-particao-swap-com-o-ecryptfs/"/>
+    <link href="http://kalib.github.io/blog/2014/01/03/criptografando-sua-particao-swap-com-o-ecryptfs/"/>
     <updated>2014-01-03T08:48:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2014/01/03/criptografando-sua-particao-swap-com-o-ecryptfs</id>
-    <content type="html"><![CDATA[<p><img class="left" src="http://blog.marcelocavalcante.net/imgs/crypto.jpg" title="'Criptografia'" >
+    <id>http://kalib.github.io/blog/2014/01/03/criptografando-sua-particao-swap-com-o-ecryptfs</id>
+    <content type="html"><![CDATA[<p><img class="left" src="http://kalib.github.io/imgs/crypto.jpg" title="'Criptografia'" >
 <strong>C</strong>riptografia (Do grego <em>kryptós</em>, &ldquo;escondido&rdquo;, e <em>gráphein</em>, &ldquo;escrita&rdquo;) nada mais é do que o estudo e aplicação de técnicas com o intuito de ocultar informações, transformando a informação original em algo ilegível, exceto para seu destinatário final, o qual possui a chave ou método que será utilizado para tornar a informação legível novamente.</p>
 
 <p><strong>A</strong>pesar de muitas pessoas acharem que criptografia é algo novo, o uso de mensagens cifradas é bastante antigo. Em tempos passados a cifragem de mensagens era utilizada, principalmente em assuntos de guerra. De acordo com estudos históricos, o primeiro uso documentado da criptografia foi em torno de <em>1900 a.c.</em>, no Egito, quando um escriba usou hieróglifos fora do padrão numa inscrição.</p>
@@ -456,10 +456,10 @@
   
   <entry>
     <title type="html"><![CDATA[Navegação Anônima Através da Rede Tor]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2013/12/30/navegacao-anonima-atraves-da-rede-tor/"/>
+    <link href="http://kalib.github.io/blog/2013/12/30/navegacao-anonima-atraves-da-rede-tor/"/>
     <updated>2013-12-30T08:15:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2013/12/30/navegacao-anonima-atraves-da-rede-tor</id>
-    <content type="html"><![CDATA[<p><img class="left" src="http://blog.marcelocavalcante.net/imgs/tor_logo.png" title="'Tor'" >
+    <id>http://kalib.github.io/blog/2013/12/30/navegacao-anonima-atraves-da-rede-tor</id>
+    <content type="html"><![CDATA[<p><img class="left" src="http://kalib.github.io/imgs/tor_logo.png" title="'Tor'" >
 <strong>O</strong> ano de 2013 foi marcado por diversos acontecimentos de grande repercussão e, sem sombra de dúvidas, um deles foi o escândalo causado pelo vazamento de dados que provaram que algumas instituições, dentre elas a <em>NSA</em> (Agência de Segurança dos Estados Unidos), estavam espionando diversas entidades, empresas e até mesmo pessoas físicas nas mais diversas regiões do globo. Escândalos a parte, estas denúncias acabaram despertando um pouco mais (uma pena que não tenha sido muito mais) nas pessoas o interesse em preservar sua privacidade.</p>
 
 <p><strong>S</strong>endo assim, nada mais justo que dedicar o último post do ano ao <em>Tor</em>.</p>
@@ -518,10 +518,10 @@
   
   <entry>
     <title type="html"><![CDATA[Vulnerabilidade no Firefox - Descobrindo Senhas Salvas]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2013/12/27/vulnerabilidade-no-firefox-descobrindo-senhas-salvas/"/>
+    <link href="http://kalib.github.io/blog/2013/12/27/vulnerabilidade-no-firefox-descobrindo-senhas-salvas/"/>
     <updated>2013-12-27T08:40:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2013/12/27/vulnerabilidade-no-firefox-descobrindo-senhas-salvas</id>
-    <content type="html"><![CDATA[<p><img class="left" src="http://blog.marcelocavalcante.net/imgs/firefox_pass.png" title="'Firefox Peaces'" >
+    <id>http://kalib.github.io/blog/2013/12/27/vulnerabilidade-no-firefox-descobrindo-senhas-salvas</id>
+    <content type="html"><![CDATA[<p><img class="left" src="http://kalib.github.io/imgs/firefox_pass.png" title="'Firefox Peaces'" >
 <strong>U</strong>ma coisa é certa&hellip; usuários teimam em salvar senhas em navegadores para <em>facilitar</em> suas vidas durante a navegação na internet. Seja em emails, redes sociais, serviços online ou qualquer outra coisa, a opção <em>Salvar sua senha</em> parece possuir um enorme magnetismo ou um centro gravitacional extremamente denso a ponto de atrair o usuário para tal.</p>
 
 <p><strong>S</strong>erá que as pessoas não entendem o quão perigosa é a ideia de <em>salvar sua senha</em> onde quer que seja? É, praticamente, o mesmo risco assumido por quem anota suas senhas em <em>post-its</em> e os colam em seu monitor ou mesa.</p>
@@ -541,35 +541,35 @@
 </ol>
 
 
-<p><img class="center" src="http://blog.marcelocavalcante.net/imgs/firefox_pass_1.png" title="'Firefox Pass 1'" ></p>
+<p><img class="center" src="http://kalib.github.io/imgs/firefox_pass_1.png" title="'Firefox Pass 1'" ></p>
 
 <ol>
 <li>Selecione a opção <strong>Preferências</strong> no menu e em seguida, novamente, <strong>Preferências</strong>;</li>
 </ol>
 
 
-<p><img class="center" src="http://blog.marcelocavalcante.net/imgs/firefox_pass_2.png" title="'Firefox Pass 2'" ></p>
+<p><img class="center" src="http://kalib.github.io/imgs/firefox_pass_2.png" title="'Firefox Pass 2'" ></p>
 
 <ol>
 <li>Na aba <strong>Segurança</strong>, clique no botão <strong>Senhas Salvas</strong>;</li>
 </ol>
 
 
-<p><img class="center" src="http://blog.marcelocavalcante.net/imgs/firefox_pass_3.png" title="'Firefox Pass 3'" ></p>
+<p><img class="center" src="http://kalib.github.io/imgs/firefox_pass_3.png" title="'Firefox Pass 3'" ></p>
 
 <ol>
 <li>Repare que na janela que será apresentada você terá uma lista de sites/serviços e usuários que deixaram suas senhas salvas. Nesta janela, clique no botão <strong>Mostrar Senhas</strong>;</li>
 </ol>
 
 
-<p><img class="center" src="http://blog.marcelocavalcante.net/imgs/firefox_pass_4.png" title="'Firefox Pass 4'" ></p>
+<p><img class="center" src="http://kalib.github.io/imgs/firefox_pass_4.png" title="'Firefox Pass 4'" ></p>
 
 <ol>
 <li>Agora você poderá ver as senhas salvas em texto plano, limpo e claro.</li>
 </ol>
 
 
-<p><img class="center" src="http://blog.marcelocavalcante.net/imgs/firefox_pass_5.png" title="'Firefox Pass 5'" ></p>
+<p><img class="center" src="http://kalib.github.io/imgs/firefox_pass_5.png" title="'Firefox Pass 5'" ></p>
 
 <p><strong>Lição aprendida: Não salve suas senhas!</strong></p>
 ]]></content>
@@ -577,10 +577,10 @@
   
   <entry>
     <title type="html"><![CDATA[Dica Rápida - Linux - Troubleshooting em Tempo de Execução com Strace]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2013/12/19/dica-rapida-linux-troubleshooting-em-tempo-de-execucao-com-strace/"/>
+    <link href="http://kalib.github.io/blog/2013/12/19/dica-rapida-linux-troubleshooting-em-tempo-de-execucao-com-strace/"/>
     <updated>2013-12-19T08:28:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2013/12/19/dica-rapida-linux-troubleshooting-em-tempo-de-execucao-com-strace</id>
-    <content type="html"><![CDATA[<p><img class="left" src="http://blog.marcelocavalcante.net/imgs/troubleshoot.jpg" title="'Troubleshooting'" >
+    <id>http://kalib.github.io/blog/2013/12/19/dica-rapida-linux-troubleshooting-em-tempo-de-execucao-com-strace</id>
+    <content type="html"><![CDATA[<p><img class="left" src="http://kalib.github.io/imgs/troubleshoot.jpg" title="'Troubleshooting'" >
 <strong>S</strong>e algum dia você já precisou realizar uma análise para troubleshoot de algum comando em tempo de execução e não soube como fazê-lo, seus problemas acabaram. O <strong>strace</strong> faz justamente isso.</p>
 
 <p><strong>J</strong>á trabalhei em servidores de clientes comprometidos pós-invasão cujos comandos padrões <strong>Unix</strong> haviam sido substituídos por comandos <em>similares</em> (ao menos em nome) que realizam outras tarefas sem o conhecimento dos administradores dos mesmos.</p>
@@ -707,9 +707,9 @@
   
   <entry>
     <title type="html"><![CDATA[Sobre mim... Tarda mas não falha]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2013/12/16/sobre-mim-dot-dot-dot-tarda-mas-nao-falha/"/>
+    <link href="http://kalib.github.io/blog/2013/12/16/sobre-mim-dot-dot-dot-tarda-mas-nao-falha/"/>
     <updated>2013-12-16T15:31:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2013/12/16/sobre-mim-dot-dot-dot-tarda-mas-nao-falha</id>
+    <id>http://kalib.github.io/blog/2013/12/16/sobre-mim-dot-dot-dot-tarda-mas-nao-falha</id>
     <content type="html"><![CDATA[<p><strong>T</strong>arda, mas não falha&hellip; Reza o antigo ditado.</p>
 
 <p><strong>D</strong>a mesma forma, digo-lhes que tardou, mas não falhou. Confesso que nunca parei para elaborar a página &ldquo;Sobre mim&rdquo; deste blog. O link existia no topo, mas sempre esteve &ldquo;Em construção&rdquo;. Preguiça? Falta de interesse? Esquecimento? Acho que um pouco de cada.</p>
@@ -724,10 +724,10 @@
   
   <entry>
     <title type="html"><![CDATA[Dica Rápida - Linux - Efeito de Texto Sendo Digitado? O pv Resolve]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2013/12/05/dica-rapida-linux-efeito-de-texto-sendo-digitado-o-pv-resolve/"/>
+    <link href="http://kalib.github.io/blog/2013/12/05/dica-rapida-linux-efeito-de-texto-sendo-digitado-o-pv-resolve/"/>
     <updated>2013-12-05T08:37:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2013/12/05/dica-rapida-linux-efeito-de-texto-sendo-digitado-o-pv-resolve</id>
-    <content type="html"><![CDATA[<p><img class="left" src="http://blog.marcelocavalcante.net/imgs/monitor.jpg" title="'Texto em Monitor'" >
+    <id>http://kalib.github.io/blog/2013/12/05/dica-rapida-linux-efeito-de-texto-sendo-digitado-o-pv-resolve</id>
+    <content type="html"><![CDATA[<p><img class="left" src="http://kalib.github.io/imgs/monitor.jpg" title="'Texto em Monitor'" >
 <strong>C</strong>ertamente você já cansou de ver em filmes e/ou séries de TV cenas nas quais um monitor apresenta um texto que, aparentemente, está sendo digitado em tempo real. É claro que eles não possuem uma pessoa digitando aquele texto ou série de comandos no momento da gravação. Então, que tal aprender uma forma de fazer isto no Linux?</p>
 
 <p><strong>O</strong> comando <em>pv</em> realiza perfeitamente este trabalho, podendo inclusive interagir com outros aplicativos e comandos.</p>
@@ -816,10 +816,10 @@
   
   <entry>
     <title type="html"><![CDATA[Recomendação Bibliográfica - As Treze Relíquias]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2013/11/25/recomendacao-bibliografica-as-treze-reliquias/"/>
+    <link href="http://kalib.github.io/blog/2013/11/25/recomendacao-bibliografica-as-treze-reliquias/"/>
     <updated>2013-11-25T08:30:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2013/11/25/recomendacao-bibliografica-as-treze-reliquias</id>
-    <content type="html"><![CDATA[<p><img class="left" src="http://blog.marcelocavalcante.net/imgs/livros/astrezereliquias.jpg" title="'As Treze Relíquias'" >
+    <id>http://kalib.github.io/blog/2013/11/25/recomendacao-bibliografica-as-treze-reliquias</id>
+    <content type="html"><![CDATA[<p><img class="left" src="http://kalib.github.io/imgs/livros/astrezereliquias.jpg" title="'As Treze Relíquias'" >
 <strong>S</strong>em sombra de dúvidas o livro superou minhas expectativas. Apesar de a sinopse passar a impressão de que se trata de mais um livro com temática sobrenatural voltado a um público mais jovem, a leitura revela o oposto. Certamente um livro que pode agradar diversas faixas etárias, trazendo foco no ocultismo, antigas religiões, artefatos mágicos, sexo e assassinatos com incrível crueldade, tudo isto em uma trama muito bem elaborada e descrita.</p>
 
 <p><strong>P</strong>or se tratar de assuntos que gosto, o livro prendeu minha atenção desde o início, visto que os autores souberam mesclar bem os diferentes temas em uma história conexa e personagens interessantes.</p>
@@ -836,10 +836,10 @@
   
   <entry>
     <title type="html"><![CDATA[Dica Rápida - Linux - Informações Sobre Arquivos com o Comando stat]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2013/11/22/dica-rapida-linux-informacoes-sobre-arquivos-com-o-comando-stat/"/>
+    <link href="http://kalib.github.io/blog/2013/11/22/dica-rapida-linux-informacoes-sobre-arquivos-com-o-comando-stat/"/>
     <updated>2013-11-22T08:22:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2013/11/22/dica-rapida-linux-informacoes-sobre-arquivos-com-o-comando-stat</id>
-    <content type="html"><![CDATA[<p><img class="left" src="http://blog.marcelocavalcante.net/imgs/information.png" title="'Information'" ></p>
+    <id>http://kalib.github.io/blog/2013/11/22/dica-rapida-linux-informacoes-sobre-arquivos-com-o-comando-stat</id>
+    <content type="html"><![CDATA[<p><img class="left" src="http://kalib.github.io/imgs/information.png" title="'Information'" ></p>
 
 <p><strong>Q</strong>ue os sistemas GNU/Linux possuem uma infinidade de comandos todo mundo sabe, o que nem todos conhecem, na verdade, são alguns comandos simples porém eficientes e importantes. Um deles é justamente o <em>stat</em>.</p>
 
@@ -899,10 +899,10 @@
   
   <entry>
     <title type="html"><![CDATA[Dica Rápida - Linux - Como Não Deixar Rastros no History]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2013/11/07/dica-rapida-linux-como-nao-deixar-rastros-no-history/"/>
+    <link href="http://kalib.github.io/blog/2013/11/07/dica-rapida-linux-como-nao-deixar-rastros-no-history/"/>
     <updated>2013-11-07T08:16:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2013/11/07/dica-rapida-linux-como-nao-deixar-rastros-no-history</id>
-    <content type="html"><![CDATA[<p><img class="left" src="http://blog.marcelocavalcante.net/imgs/shhh.jpg" title="'Shhhh'" ></p>
+    <id>http://kalib.github.io/blog/2013/11/07/dica-rapida-linux-como-nao-deixar-rastros-no-history</id>
+    <content type="html"><![CDATA[<p><img class="left" src="http://kalib.github.io/imgs/shhh.jpg" title="'Shhhh'" ></p>
 
 <p><strong>S</strong>hhhhhhh&hellip;.</p>
 
@@ -1022,10 +1022,10 @@
   
   <entry>
     <title type="html"><![CDATA[Lynis - Segurança e Auditoria de Sistemas Linux]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2013/10/30/lynis-seguranca-e-auditoria-de-sistemas-linux/"/>
+    <link href="http://kalib.github.io/blog/2013/10/30/lynis-seguranca-e-auditoria-de-sistemas-linux/"/>
     <updated>2013-10-30T10:00:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2013/10/30/lynis-seguranca-e-auditoria-de-sistemas-linux</id>
-    <content type="html"><![CDATA[<p><img class="left" src="http://blog.marcelocavalcante.net/imgs/auditing.jpg" title="'Auditando'" >
+    <id>http://kalib.github.io/blog/2013/10/30/lynis-seguranca-e-auditoria-de-sistemas-linux</id>
+    <content type="html"><![CDATA[<p><img class="left" src="http://kalib.github.io/imgs/auditing.jpg" title="'Auditando'" >
 <strong>P</strong>rocurando uma ferramenta de uso simples e rápido que seja capaz de realizar uma auditoria em sistemas Unix like? Talvez o <em>Lynis</em> seja exatamente o que você procura.</p>
 
 <p><strong>O</strong> Lynis é uma ferramenta para (especialistas) Unix com foco em <em>segurança</em> e <em>auditoria</em>, porque não dizer <em>hardening</em>, de sistemas. Ele escaneia o sistema e vários softwares disponíveis no mesmo com o fim de detectar vulnerabilidades. Além de informações relacionadas a segurança, ele também buscará diversas informações sobre o sistema, pacotes instalados e erros de configuração diversos.</p>
@@ -1034,7 +1034,7 @@
 
 <p><strong>D</strong>entre suas verificações estão a avaliação dos métodos de autenticação disponíveis, certificados SSL expirados, softwares desatualizados, contas de usuários sem senhas, permissões incorretas em arquivos, erros de configuração, auditoria de firewall, etc.</p>
 
-<p><img class="left" src="http://blog.marcelocavalcante.net/imgs/lynis-screenshot.png" title="'Auditando'" ></p>
+<p><img class="left" src="http://kalib.github.io/imgs/lynis-screenshot.png" title="'Auditando'" ></p>
 
 <p><strong>Instalação:</strong></p>
 
@@ -1073,10 +1073,10 @@
   
   <entry>
     <title type="html"><![CDATA[BleachBit - Limpeza de Disco no Linux]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2013/10/23/bleachbit-limpeza-de-disco-no-linux/"/>
+    <link href="http://kalib.github.io/blog/2013/10/23/bleachbit-limpeza-de-disco-no-linux/"/>
     <updated>2013-10-23T09:02:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2013/10/23/bleachbit-limpeza-de-disco-no-linux</id>
-    <content type="html"><![CDATA[<p><img class="left" src="http://blog.marcelocavalcante.net/imgs/disk-cleanup.jpg" title="'Limpeza de Disco'" >
+    <id>http://kalib.github.io/blog/2013/10/23/bleachbit-limpeza-de-disco-no-linux</id>
+    <content type="html"><![CDATA[<p><img class="left" src="http://kalib.github.io/imgs/disk-cleanup.jpg" title="'Limpeza de Disco'" >
 <strong>Q</strong>uando o assunto é segurança da informação, muitas vezes o óbvio é deixado de lado. Se pensa em anti-vírus, firewall, IDS (Intrusion Detection System), etc. Mas e o básico e óbvio? Raramente vejo profissionais preocupados com o lixo existente nos discos rígidos. Com <em>lixo</em> eu quero dizer aqueles arquivos temporários, antigos arquivos de cache que já não são necessários, ou mesmo rastros de informações de arquivos que já foram deletados. Sim, o fato de você deletar arquivos não significa que as informações daqueles arquivos foram completamente apagadas do disco. A <em>&ldquo;deleção regular de arquivos&rdquo;</em> não está apagando <em>os dados deletados</em>. Ela está apenas removendo os links dos inodes de arquivos, tornando assim possível a recuperação dos arquivos <em>deletados</em> com algum software forense.</p>
 
 <p><strong>E</strong>xistem várias alternativas para remover seus arquivos de forma segura. As alternativas poderão variar de acordo com o sistema de arquivos utilizado em seu disco, é claro. Uma das formas mais simples que conheço é através da ferramenta <strong>BleachBit</strong>.</p>
@@ -1125,10 +1125,10 @@
   
   <entry>
     <title type="html"><![CDATA[Recomendação Bibliográfica - Filhos do Éden - Herdeiros de Atlântida]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2013/10/04/recomendacao-bibliografica-filhos-do-eden-herdeiros-de-atlantida/"/>
+    <link href="http://kalib.github.io/blog/2013/10/04/recomendacao-bibliografica-filhos-do-eden-herdeiros-de-atlantida/"/>
     <updated>2013-10-04T08:27:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2013/10/04/recomendacao-bibliografica-filhos-do-eden-herdeiros-de-atlantida</id>
-    <content type="html"><![CDATA[<p><img class="left" src="http://blog.marcelocavalcante.net/imgs/livros/filhosdoeden1.jpg" title="'Filhos do Éden'" >
+    <id>http://kalib.github.io/blog/2013/10/04/recomendacao-bibliografica-filhos-do-eden-herdeiros-de-atlantida</id>
+    <content type="html"><![CDATA[<p><img class="left" src="http://kalib.github.io/imgs/livros/filhosdoeden1.jpg" title="'Filhos do Éden'" >
 <strong>A</strong>njos, Arcanjos e Demônios&hellip; Entidades que sempre despertaram a curiosidade e o interesse de milhares de pessoas. Não diferente, sempre tive um grande apreço por histórias, sejam em filmes ou literatura escrita, que abordem tais entidades.</p>
 
 <p><strong>S</strong>eguindo a trilha de seu outro livro, <a href="http://blog.marcelocavalcante.net/blog/2010/09/30/recomendacao-bibliografica-a-batalha-do-apocalipse/">A Batalha do Apocalipse</a>, o autor Eduardo Spohr narra com maestria o enredo no qual uma guerra civil acontece entre o Arcanjo Miguel e as tropas revolucionárias de seu irmão, o Arcanjo Gabriel.</p>
@@ -1145,10 +1145,10 @@
   
   <entry>
     <title type="html"><![CDATA[Vulnerabilidade iOS7 - Hack na Tela de Bloqueio Permite Burlar Segurança]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2013/09/20/vulnerabilidade-ios7-hack-na-tela-de-bloqueio-permite-burlar-seguranca/"/>
+    <link href="http://kalib.github.io/blog/2013/09/20/vulnerabilidade-ios7-hack-na-tela-de-bloqueio-permite-burlar-seguranca/"/>
     <updated>2013-09-20T08:06:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2013/09/20/vulnerabilidade-ios7-hack-na-tela-de-bloqueio-permite-burlar-seguranca</id>
-    <content type="html"><![CDATA[<p><img class="center" src="http://blog.marcelocavalcante.net/imgs/vulnerability.jpg" title="'Vulnerability'" >
+    <id>http://kalib.github.io/blog/2013/09/20/vulnerabilidade-ios7-hack-na-tela-de-bloqueio-permite-burlar-seguranca</id>
+    <content type="html"><![CDATA[<p><img class="center" src="http://kalib.github.io/imgs/vulnerability.jpg" title="'Vulnerability'" >
 <strong>N</strong>ão é de hoje que as telas de bloqueio (supostas proteções) de smartphones possuem <em>vulnerabilidades</em>. Mal foi lançado o novo iOS 7 e o mesmo já possui uma vulnerabilidade possibilitando a qualquer pessoa utilizar um simples hack para ter acesso à alguns dados do dono do smartphone com o iOS 7.</p>
 
 <p><strong>A</strong> Apple já notificou sobre a correção de aproximadamente 80 vulnerabilidades que comprometiam a segurança do aparelho mas, aparentemente, algumas passaram despercebidas. Dentre elas, a possibilidade de burlar a proteção de bloqueio do aparelho, o que nos permite acessar, por exemplo, as fotos contidas no aparelho sem a necessidade de conhecer a senha de proteção do mesmo.</p>
@@ -1165,7 +1165,7 @@
 
 <p><strong>N</strong>a prática&hellip;</p>
 
-<iframe width="420" height="315" src="http://blog.marcelocavalcante.net//www.youtube.com/embed/v6h_xcER00c" frameborder="0" allowfullscreen></iframe>
+<iframe width="420" height="315" src="http://kalib.github.io//www.youtube.com/embed/v6h_xcER00c" frameborder="0" allowfullscreen></iframe>
 
 
 <p><strong>L</strong>indo&hellip;</p>

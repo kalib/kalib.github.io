@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Chromium | Marcelo Cavalcante Rocha ~]]></title>
-  <link href="http://blog.marcelocavalcante.net/blog/categories/chromium/atom.xml" rel="self"/>
-  <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2015-07-13T13:06:26-03:00</updated>
-  <id>http://blog.marcelocavalcante.net/</id>
+  <link href="http://kalib.github.io/blog/categories/chromium/atom.xml" rel="self"/>
+  <link href="http://kalib.github.io/"/>
+  <updated>2015-07-14T08:51:34-03:00</updated>
+  <id>http://kalib.github.io/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Chromium no [testing] do Arch Linux]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2009/12/14/chromium-no-testing-do-arch-linux/"/>
+    <link href="http://kalib.github.io/blog/2009/12/14/chromium-no-testing-do-arch-linux/"/>
     <updated>2009-12-14T08:50:42-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2009/12/14/chromium-no-testing-do-arch-linux</id>
+    <id>http://kalib.github.io/blog/2009/12/14/chromium-no-testing-do-arch-linux</id>
     <content type="html"><![CDATA[<p><img class="left" src="/imgs/chromium.png" title="&lsquo;Chromium&rsquo;" >
 <strong>S</strong>audações pessoal&hellip;</p>
 
@@ -62,9 +62,9 @@ Include = /etc/pacman.d/mirrorlist</em></p>
   
   <entry>
     <title type="html"><![CDATA[Chromium suportando Java agora! ]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2009/09/03/chromium-suportando-java-agora/"/>
+    <link href="http://kalib.github.io/blog/2009/09/03/chromium-suportando-java-agora/"/>
     <updated>2009-09-03T16:15:34-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2009/09/03/chromium-suportando-java-agora</id>
+    <id>http://kalib.github.io/blog/2009/09/03/chromium-suportando-java-agora</id>
     <content type="html"><![CDATA[<p><img class="left" src="/imgs/javachromium.png" title="&lsquo;Java Chromium&rsquo;" >
 <strong>É</strong> isso aí galera..</p>
 
@@ -96,9 +96,9 @@ Include = /etc/pacman.d/mirrorlist</em></p>
   
   <entry>
     <title type="html"><![CDATA[Habilitando plugins no chromium]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2009/08/12/habilitando-plugins-no-chromium/"/>
+    <link href="http://kalib.github.io/blog/2009/08/12/habilitando-plugins-no-chromium/"/>
     <updated>2009-08-12T09:55:34-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2009/08/12/habilitando-plugins-no-chromium</id>
+    <id>http://kalib.github.io/blog/2009/08/12/habilitando-plugins-no-chromium</id>
     <content type="html"><![CDATA[<p><img class="left" src="/imgs/chromium-browser.png" title="&lsquo;Chromium&rsquo;" >
 <strong>T</strong>odos que visitam meu blog já devem estar cansados de saber que estou bastante atento ao projeto chromium e ajudando com o possível para o desenvolvimento e divulgação do mesmo.</p>
 
@@ -148,9 +148,9 @@ Server = <a href="http://repo.archlinux-br.org/x86_64">http://repo.archlinux-br
   
   <entry>
     <title type="html"><![CDATA[Chromium ganha suporte ao Flash por completo]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2009/07/09/chromium-ganha-suporte-ao-flash-por-completo/"/>
+    <link href="http://kalib.github.io/blog/2009/07/09/chromium-ganha-suporte-ao-flash-por-completo/"/>
     <updated>2009-07-09T09:51:06-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2009/07/09/chromium-ganha-suporte-ao-flash-por-completo</id>
+    <id>http://kalib.github.io/blog/2009/07/09/chromium-ganha-suporte-ao-flash-por-completo</id>
     <content type="html"><![CDATA[<p><strong>S</strong>audações pessoal..</p>
 
 <p><strong>E</strong>u já havia postado aqui a notícia sobre o lançamento do navegador Chromium para o Linux, bem como o fato de o mesmo se encontrar disponível em nosso repositório nacional do Arch Linux. Na ocasião o projeto chromium ainda era bem imaturo e não possuía nenhum suporte à plugins. Bom, as coisas estão mudando.</p>
@@ -187,9 +187,9 @@ ln -s /usr/lib/mozilla/plugins/libflashplayer.so .</p></blockquote>
   
   <entry>
     <title type="html"><![CDATA[Chromium pronto para o Arch!]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2009/05/28/chromium-pronto-para-o-arch/"/>
+    <link href="http://kalib.github.io/blog/2009/05/28/chromium-pronto-para-o-arch/"/>
     <updated>2009-05-28T09:27:40-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2009/05/28/chromium-pronto-para-o-arch</id>
+    <id>http://kalib.github.io/blog/2009/05/28/chromium-pronto-para-o-arch</id>
     <content type="html"><![CDATA[<p><img class="left" src="/imgs/exportgooglechormebookmarks.png" title="&lsquo;Chromium&rsquo;" >
 <strong>S</strong>audações pessoal, tudo tranquilo?</p>
 

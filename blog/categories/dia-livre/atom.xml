@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Dia Livre | Marcelo Cavalcante Rocha ~]]></title>
-  <link href="http://blog.marcelocavalcante.net/blog/categories/dia-livre/atom.xml" rel="self"/>
-  <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2015-07-13T13:06:26-03:00</updated>
-  <id>http://blog.marcelocavalcante.net/</id>
+  <link href="http://kalib.github.io/blog/categories/dia-livre/atom.xml" rel="self"/>
+  <link href="http://kalib.github.io/"/>
+  <updated>2015-07-14T08:51:34-03:00</updated>
+  <id>http://kalib.github.io/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[3º Dia Livre - Programação Definida!]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2011/10/17/3c2ba-dia-livre-programacao-definida/"/>
+    <link href="http://kalib.github.io/blog/2011/10/17/3c2ba-dia-livre-programacao-definida/"/>
     <updated>2011-10-17T09:26:54-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2011/10/17/3c2ba-dia-livre-programacao-definida</id>
+    <id>http://kalib.github.io/blog/2011/10/17/3c2ba-dia-livre-programacao-definida</id>
     <content type="html"><![CDATA[<p><strong>N</strong>este fim de semana foi publicada a programação oficial do <strong><a href="http://www.dialivre.net/portal">3º Dia Livre</a></strong>, encontro para usuários, profissionais ou entusiastas do movimento de Software Livre no Ceará.</p>
 
 <p><strong>E</strong>sta 3ª edição contará com 4 palestras de temas bem diversificados como podem ver na grade abaixo:</p>
@@ -81,9 +81,9 @@
   
   <entry>
     <title type="html"><![CDATA[3º Dia Livre - Inscrições abertas]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2011/10/11/3c2ba-dia-livre-inscricoes-abertas/"/>
+    <link href="http://kalib.github.io/blog/2011/10/11/3c2ba-dia-livre-inscricoes-abertas/"/>
     <updated>2011-10-11T08:32:58-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2011/10/11/3c2ba-dia-livre-inscricoes-abertas</id>
+    <id>http://kalib.github.io/blog/2011/10/11/3c2ba-dia-livre-inscricoes-abertas</id>
     <content type="html"><![CDATA[<p><strong>J</strong>á estão abertas as inscrições para o <strong><a href="http://www.dialivre.net/portal">3º Dia Livre</a></strong> em Fortaleza.</p>
 
 <p><strong>P</strong>ara quem ainda não teve a oportunidade de participar de nenhuma edição, o <strong><a href="http://www.dialivre.net/portal/?page_id=7">Dia Livre</a></strong> é um encontro bimestral organizado pela <strong><a href="http://www.tux-ce.org">Tux-CE</a></strong> que busca aproximar os profissionais e entusiastas do <strong>Software Livre</strong>.</p>
@@ -102,9 +102,9 @@
   
   <entry>
     <title type="html"><![CDATA[2º Dia Livre - Últimos dias para inscrições! & Site da Tux-CE em obras!]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2011/09/08/2c2ba-dia-livre-ultimos-dias-para-inscricoes-site-da-tux-ce-em-obras/"/>
+    <link href="http://kalib.github.io/blog/2011/09/08/2c2ba-dia-livre-ultimos-dias-para-inscricoes-site-da-tux-ce-em-obras/"/>
     <updated>2011-09-08T14:02:04-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2011/09/08/2c2ba-dia-livre-ultimos-dias-para-inscricoes-site-da-tux-ce-em-obras</id>
+    <id>http://kalib.github.io/blog/2011/09/08/2c2ba-dia-livre-ultimos-dias-para-inscricoes-site-da-tux-ce-em-obras</id>
     <content type="html"><![CDATA[<p><img class="left" src="/imgs/logo_dia_livre.png" title="&lsquo;Dia Livre&rsquo;" >
 <strong>S</strong>audações amigos!</p>
 
@@ -170,9 +170,9 @@
   
   <entry>
     <title type="html"><![CDATA[Dia Livre - Inscrições e grade do evento]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2011/07/19/dia-livre-inscricoes-e-grade-do-evento/"/>
+    <link href="http://kalib.github.io/blog/2011/07/19/dia-livre-inscricoes-e-grade-do-evento/"/>
     <updated>2011-07-19T08:38:33-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2011/07/19/dia-livre-inscricoes-e-grade-do-evento</id>
+    <id>http://kalib.github.io/blog/2011/07/19/dia-livre-inscricoes-e-grade-do-evento</id>
     <content type="html"><![CDATA[<p><img class="left" src="/imgs/logo_dia_livre.png" title="&lsquo;Dia Livre&rsquo;" >
 <strong>É</strong> hora de se <a href="http://tux-ce.org/dialivre/inscricoes/">inscrever</a> no <a href="http://www.tux-ce.org/dialivre">Dia Livre</a>!</p>
 

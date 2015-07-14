@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://blog.marcelocavalcante.net/sitemap.xml 
+Sitemap: http://kalib.github.io/sitemap.xml 

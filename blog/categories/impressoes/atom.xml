@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Impressoes | Marcelo Cavalcante Rocha ~]]></title>
-  <link href="http://blog.marcelocavalcante.net/blog/categories/impressoes/atom.xml" rel="self"/>
-  <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2015-07-13T13:06:26-03:00</updated>
-  <id>http://blog.marcelocavalcante.net/</id>
+  <link href="http://kalib.github.io/blog/categories/impressoes/atom.xml" rel="self"/>
+  <link href="http://kalib.github.io/"/>
+  <updated>2015-07-14T08:51:34-03:00</updated>
+  <id>http://kalib.github.io/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Dica - Assistir Star Wars em um Console ou Terminal]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2014/01/17/dica-assistir-star-wars-em-um-console-ou-terminal/"/>
+    <link href="http://kalib.github.io/blog/2014/01/17/dica-assistir-star-wars-em-um-console-ou-terminal/"/>
     <updated>2014-01-17T10:30:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2014/01/17/dica-assistir-star-wars-em-um-console-ou-terminal</id>
+    <id>http://kalib.github.io/blog/2014/01/17/dica-assistir-star-wars-em-um-console-ou-terminal</id>
     <content type="html"><![CDATA[<p><img class="left" src="/imgs/starwars.png" title="&lsquo;Star Wars&rsquo;" >
 <strong>Q</strong>uem disse que o terminal ou linha de comando serve apenas para trabalho e coisas chatas?</p>
 
@@ -41,9 +41,9 @@
   
   <entry>
     <title type="html"><![CDATA[Navegação Anônima Através da Rede Tor]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2013/12/30/navegacao-anonima-atraves-da-rede-tor/"/>
+    <link href="http://kalib.github.io/blog/2013/12/30/navegacao-anonima-atraves-da-rede-tor/"/>
     <updated>2013-12-30T08:15:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2013/12/30/navegacao-anonima-atraves-da-rede-tor</id>
+    <id>http://kalib.github.io/blog/2013/12/30/navegacao-anonima-atraves-da-rede-tor</id>
     <content type="html"><![CDATA[<p><img class="left" src="/imgs/tor_logo.png" title="&lsquo;Tor&rsquo;" >
 <strong>O</strong> ano de 2013 foi marcado por diversos acontecimentos de grande repercussão e, sem sombra de dúvidas, um deles foi o escândalo causado pelo vazamento de dados que provaram que algumas instituições, dentre elas a <em>NSA</em> (Agência de Segurança dos Estados Unidos), estavam espionando diversas entidades, empresas e até mesmo pessoas físicas nas mais diversas regiões do globo. Escândalos a parte, estas denúncias acabaram despertando um pouco mais (uma pena que não tenha sido muito mais) nas pessoas o interesse em preservar sua privacidade.</p>
 
@@ -103,9 +103,9 @@
   
   <entry>
     <title type="html"><![CDATA[Sobre mim... Tarda mas não falha]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2013/12/16/sobre-mim-dot-dot-dot-tarda-mas-nao-falha/"/>
+    <link href="http://kalib.github.io/blog/2013/12/16/sobre-mim-dot-dot-dot-tarda-mas-nao-falha/"/>
     <updated>2013-12-16T15:31:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2013/12/16/sobre-mim-dot-dot-dot-tarda-mas-nao-falha</id>
+    <id>http://kalib.github.io/blog/2013/12/16/sobre-mim-dot-dot-dot-tarda-mas-nao-falha</id>
     <content type="html"><![CDATA[<p><strong>T</strong>arda, mas não falha&hellip; Reza o antigo ditado.</p>
 
 <p><strong>D</strong>a mesma forma, digo-lhes que tardou, mas não falhou. Confesso que nunca parei para elaborar a página &ldquo;Sobre mim&rdquo; deste blog. O link existia no topo, mas sempre esteve &ldquo;Em construção&rdquo;. Preguiça? Falta de interesse? Esquecimento? Acho que um pouco de cada.</p>
@@ -120,9 +120,9 @@
   
   <entry>
     <title type="html"><![CDATA[KDE 4.11 Lançado e Disponível no Arch Linux]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2013/08/19/kde-4-dot-11-lancado-e-disponivel-no-arch-linux/"/>
+    <link href="http://kalib.github.io/blog/2013/08/19/kde-4-dot-11-lancado-e-disponivel-no-arch-linux/"/>
     <updated>2013-08-19T08:07:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2013/08/19/kde-4-dot-11-lancado-e-disponivel-no-arch-linux</id>
+    <id>http://kalib.github.io/blog/2013/08/19/kde-4-dot-11-lancado-e-disponivel-no-arch-linux</id>
     <content type="html"><![CDATA[<p><img class="left" src="/imgs/kde411.png" title="&lsquo;KDE 4.11&rsquo;" >
 <strong>E</strong>m 14 de Agosto de 2013 a comunidade KDE anunciou oficialmente a última release do Ambiente de Trabalho KDE, a versão 4.11. Nesta última versão o projeto incorporou grandes atualizações na Área de Trabalho, Aplicações e plataforma de Desenvolvimento, oferecendo, além de correções, novas funcionalidades, das quais muitas serão importantes para a próxima evolução da plataforma KDE.</p>
 
@@ -154,9 +154,9 @@
   
   <entry>
     <title type="html"><![CDATA[Dica Rápida - Linux - Melhorando a Política de Senhas]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2013/08/12/dica-rapida-linux-melhorando-a-politica-de-senhas/"/>
+    <link href="http://kalib.github.io/blog/2013/08/12/dica-rapida-linux-melhorando-a-politica-de-senhas/"/>
     <updated>2013-08-12T08:41:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2013/08/12/dica-rapida-linux-melhorando-a-politica-de-senhas</id>
+    <id>http://kalib.github.io/blog/2013/08/12/dica-rapida-linux-melhorando-a-politica-de-senhas</id>
     <content type="html"><![CDATA[<p><img class="center" src="/imgs/url.jpg" title="&lsquo;password&rsquo;" ></p>
 
 <p><strong>N</strong>a dica anterior mencionei o uso do comando <em>chage</em> para <strong>forçar</strong> a alteração de senha por parte do usuário em sistemas Linux, mas e se além disso fosse possível melhorar esta prática, tornando a política de senhas de usuários um pouco mais segura?</p>

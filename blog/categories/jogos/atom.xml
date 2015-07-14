@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Jogos | Marcelo Cavalcante Rocha ~]]></title>
-  <link href="http://blog.marcelocavalcante.net/blog/categories/jogos/atom.xml" rel="self"/>
-  <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2015-07-13T13:06:26-03:00</updated>
-  <id>http://blog.marcelocavalcante.net/</id>
+  <link href="http://kalib.github.io/blog/categories/jogos/atom.xml" rel="self"/>
+  <link href="http://kalib.github.io/"/>
+  <updated>2015-07-14T08:51:34-03:00</updated>
+  <id>http://kalib.github.io/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Flisol Quixadá - Relato e Parabéns]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2011/04/13/flisol-quixada-relato-e-parabens/"/>
+    <link href="http://kalib.github.io/blog/2011/04/13/flisol-quixada-relato-e-parabens/"/>
     <updated>2011-04-13T15:06:54-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2011/04/13/flisol-quixada-relato-e-parabens</id>
+    <id>http://kalib.github.io/blog/2011/04/13/flisol-quixada-relato-e-parabens</id>
     <content type="html"><![CDATA[<p><strong>S</strong>audações galera!</p>
 
 <p><strong>A</strong>lgumas pessoas já me perguntaram nos últimos 3 dias porque eu não estava no Flisol Fortaleza este ano. &ldquo;Cara, nem lhe vi lá pelo Flisol correndo pra cima e pra baixo esse ano.&rdquo;</p>
@@ -126,9 +126,9 @@
   
   <entry>
     <title type="html"><![CDATA[Convite: Dia Livre]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2009/04/17/convite-ao-dia-livre/"/>
+    <link href="http://kalib.github.io/blog/2009/04/17/convite-ao-dia-livre/"/>
     <updated>2009-04-17T16:38:36-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2009/04/17/convite-ao-dia-livre</id>
+    <id>http://kalib.github.io/blog/2009/04/17/convite-ao-dia-livre</id>
     <content type="html"><![CDATA[<p><strong>S</strong>audações pessoal!</p>
 
 <p><strong>G</strong>ostaria de informar que amanhã teremos a segunda edição do Dia Livre aqui em Fortaleza.</p>
@@ -151,9 +151,9 @@
   
   <entry>
     <title type="html"><![CDATA[Ragnarok agora no ArchLinux]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2008/12/18/ragnarok-agora-no-archlinux/"/>
+    <link href="http://kalib.github.io/blog/2008/12/18/ragnarok-agora-no-archlinux/"/>
     <updated>2008-12-18T14:06:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2008/12/18/ragnarok-agora-no-archlinux</id>
+    <id>http://kalib.github.io/blog/2008/12/18/ragnarok-agora-no-archlinux</id>
     <content type="html"><![CDATA[<p><img class="center" src="/imgs/ragnaroklogo.jpg" title="&lsquo;Ragnarok&rsquo;" >
 Para os que curtem jogos de rpg online e em especial os que curtem o famoso Ragnarok, um dos mais jogados nos dias atuais, esta notícia será muito boa.</p>
 
@@ -173,9 +173,9 @@ Para os que curtem jogos de rpg online e em especial os que curtem o famoso Ragn
   
   <entry>
     <title type="html"><![CDATA[Jogos! Porque nem tudo é tela preta]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2008/08/31/jogos-porque-nem-tudo-e-tela-preta/"/>
+    <link href="http://kalib.github.io/blog/2008/08/31/jogos-porque-nem-tudo-e-tela-preta/"/>
     <updated>2008-08-31T08:39:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2008/08/31/jogos-porque-nem-tudo-e-tela-preta</id>
+    <id>http://kalib.github.io/blog/2008/08/31/jogos-porque-nem-tudo-e-tela-preta</id>
     <content type="html"><![CDATA[<p>Em minha primeira participação no <a href="http://www.archlinux-br.org/almanarch/">Almanarch</a> publiquei este artigo no qual gostaria de abordar um tema que acaba por assustar muitas pessoas que cogitam a idéia de utilizar Linux em suas máquinas. Muitos conseguem facilmente entender as vantagens do software livre em termos de segurança, qualidade, estabilidade, preço dentre outras, porém acabam por temer uma ou outra coisa. Neste artigo focarei aqueles que temem usar o Linux como sistema operacional padrão por achar que não vai mais poder se divertir com jogos.</p>
 
 <p>No Arch Linux não é difícil resolver este problema, já que os repositórios estão repletos de jogos prontos para animar o seu dia ou momento de ociosidade. Jogos estes que vão desde os mais simples e clássicos como roms de super nintendo, até mesmo simuladores de vôos repletos de ambientes e gráficos em 3D.</p>

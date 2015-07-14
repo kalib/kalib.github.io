@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Kubuntu | Marcelo Cavalcante Rocha ~]]></title>
-  <link href="http://blog.marcelocavalcante.net/blog/categories/kubuntu/atom.xml" rel="self"/>
-  <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2015-07-13T13:06:26-03:00</updated>
-  <id>http://blog.marcelocavalcante.net/</id>
+  <link href="http://kalib.github.io/blog/categories/kubuntu/atom.xml" rel="self"/>
+  <link href="http://kalib.github.io/"/>
+  <updated>2015-07-14T08:51:34-03:00</updated>
+  <id>http://kalib.github.io/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Brute-force? O Dirb... DirBuster lhe ajuda a identificar vulnerabilidades em seu site]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2011/02/15/brute-force-o-dirb-dirbuster-lhe-ajuda-a-identificar-vulnerabilidades-em-seu-site/"/>
+    <link href="http://kalib.github.io/blog/2011/02/15/brute-force-o-dirb-dirbuster-lhe-ajuda-a-identificar-vulnerabilidades-em-seu-site/"/>
     <updated>2011-02-15T10:23:19-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2011/02/15/brute-force-o-dirb-dirbuster-lhe-ajuda-a-identificar-vulnerabilidades-em-seu-site</id>
+    <id>http://kalib.github.io/blog/2011/02/15/brute-force-o-dirb-dirbuster-lhe-ajuda-a-identificar-vulnerabilidades-em-seu-site</id>
     <content type="html"><![CDATA[<p><strong>B</strong>om, para quem não conhece nada sobre Brute-Force ou apenas ouviu falar vagamente mas não tem certeza sobre o que realmente é um ataque deste tipo, sugiro dar uma lida em meu último post, onde apresentei algumas informações sobre brute-force bem como uma ferramenta que podemos utilizar para testar nossos sites e verificar o quão vulneráveis eles estão a este tipo de ataque. Segue link para o mesmo:</p>
 
 <p><a href="http://marcelocavalcante.net/portal/2011/01/31/brute-force-o-dirb-lhe-ajuda-a-identificar-vulnerabilidades-em-seu-site/">Brute-Force? O Dirb lhe ajuda a identificar vulnerabilidade em seu site!</a></p>
@@ -126,9 +126,9 @@ Bom, se você utiliza <a href="http://archlinux.org">Arch Linux</a>, pode pegar 
   
   <entry>
     <title type="html"><![CDATA[Configurando a JRE para funcionar no *buntu 8.04 com firefox 3 / Configuring JRE on *buntu 8.04 to work with Firefox 3.0]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2008/05/07/configurando-a-jre-para-funcionar-no-buntu-804-com-firefox-3-configuring-jre-on-buntu-804-to-work-with-firefox-30/"/>
+    <link href="http://kalib.github.io/blog/2008/05/07/configurando-a-jre-para-funcionar-no-buntu-804-com-firefox-3-configuring-jre-on-buntu-804-to-work-with-firefox-30/"/>
     <updated>2008-05-07T13:14:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2008/05/07/configurando-a-jre-para-funcionar-no-buntu-804-com-firefox-3-configuring-jre-on-buntu-804-to-work-with-firefox-30</id>
+    <id>http://kalib.github.io/blog/2008/05/07/configurando-a-jre-para-funcionar-no-buntu-804-com-firefox-3-configuring-jre-on-buntu-804-to-work-with-firefox-30</id>
     <content type="html"><![CDATA[<h3></h3>
 
 <p>Versão em Português BR / Portuguese Version</p>
@@ -215,9 +215,9 @@ Bom, se você utiliza <a href="http://archlinux.org">Arch Linux</a>, pode pegar 
   
   <entry>
     <title type="html"><![CDATA[Kubuntu 8.04 - Minhas primeiras impressões]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2008/04/29/kubuntu-804-minhas-primeiras-impressoes/"/>
+    <link href="http://kalib.github.io/blog/2008/04/29/kubuntu-804-minhas-primeiras-impressoes/"/>
     <updated>2008-04-29T10:13:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2008/04/29/kubuntu-804-minhas-primeiras-impressoes</id>
+    <id>http://kalib.github.io/blog/2008/04/29/kubuntu-804-minhas-primeiras-impressoes</id>
     <content type="html"><![CDATA[<p>Assim que saiu o Kubuntu 8.04 oficialmente, corri para baixar a iso antes mesmo de ser divulgado no site oficial como forma de evitar pegar uma banda completamente congestionada por centenas de pessoas baixando o mesmo arquivo na mesma fonte. Sim, existem algumas vantagens em se fazer parte das listas de discussão, desenvolvimento e debugs. :p</p>
 
 <p>Bom, apenas consegui tempo para instalar de fato, na madrugada de domingo/segunda pois o fim de semana foi muito corrido e tornou-se impossível realizar esta tarefa que há tanto tempo eu esperava. Porque tamanha espera? Digamos que as versões anteriores do Kubuntu não me deixaram satisfeito por questões de incompatibilidades com minha placa de áudio e como consequência tive de me manter na versão 6.06 até antes de ontem.</p>

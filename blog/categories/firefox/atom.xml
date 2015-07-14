@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Firefox | Marcelo Cavalcante Rocha ~]]></title>
-  <link href="http://blog.marcelocavalcante.net/blog/categories/firefox/atom.xml" rel="self"/>
-  <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2015-07-13T13:06:26-03:00</updated>
-  <id>http://blog.marcelocavalcante.net/</id>
+  <link href="http://kalib.github.io/blog/categories/firefox/atom.xml" rel="self"/>
+  <link href="http://kalib.github.io/"/>
+  <updated>2015-07-14T08:51:34-03:00</updated>
+  <id>http://kalib.github.io/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Vulnerabilidade no Firefox - Descobrindo Senhas Salvas]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2013/12/27/vulnerabilidade-no-firefox-descobrindo-senhas-salvas/"/>
+    <link href="http://kalib.github.io/blog/2013/12/27/vulnerabilidade-no-firefox-descobrindo-senhas-salvas/"/>
     <updated>2013-12-27T08:40:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2013/12/27/vulnerabilidade-no-firefox-descobrindo-senhas-salvas</id>
+    <id>http://kalib.github.io/blog/2013/12/27/vulnerabilidade-no-firefox-descobrindo-senhas-salvas</id>
     <content type="html"><![CDATA[<p><img class="left" src="/imgs/firefox_pass.png" title="&lsquo;Firefox Peaces&rsquo;" >
 <strong>U</strong>ma coisa é certa&hellip; usuários teimam em salvar senhas em navegadores para <em>facilitar</em> suas vidas durante a navegação na internet. Seja em emails, redes sociais, serviços online ou qualquer outra coisa, a opção <em>Salvar sua senha</em> parece possuir um enorme magnetismo ou um centro gravitacional extremamente denso a ponto de atrair o usuário para tal.</p>
 
@@ -74,9 +74,9 @@
   
   <entry>
     <title type="html"><![CDATA[Ajude o Firefox a estabelecer um recorde mundial]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2008/05/31/ajude-o-firefox-a-estabelecer-um-recorde-mundial/"/>
+    <link href="http://kalib.github.io/blog/2008/05/31/ajude-o-firefox-a-estabelecer-um-recorde-mundial/"/>
     <updated>2008-05-31T08:41:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2008/05/31/ajude-o-firefox-a-estabelecer-um-recorde-mundial</id>
+    <id>http://kalib.github.io/blog/2008/05/31/ajude-o-firefox-a-estabelecer-um-recorde-mundial</id>
     <content type="html"><![CDATA[<h3></h3>
 
 <p>&ldquo;Queremos estabelecer um Recorde Mundial no Guinness para o software mais baixado em 24 horas e com a sua ajuda temos certeza de que conseguiremos!&rdquo;</p>
@@ -99,9 +99,9 @@
   
   <entry>
     <title type="html"><![CDATA[Configurando a JRE para funcionar no *buntu 8.04 com firefox 3 / Configuring JRE on *buntu 8.04 to work with Firefox 3.0]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2008/05/07/configurando-a-jre-para-funcionar-no-buntu-804-com-firefox-3-configuring-jre-on-buntu-804-to-work-with-firefox-30/"/>
+    <link href="http://kalib.github.io/blog/2008/05/07/configurando-a-jre-para-funcionar-no-buntu-804-com-firefox-3-configuring-jre-on-buntu-804-to-work-with-firefox-30/"/>
     <updated>2008-05-07T13:14:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2008/05/07/configurando-a-jre-para-funcionar-no-buntu-804-com-firefox-3-configuring-jre-on-buntu-804-to-work-with-firefox-30</id>
+    <id>http://kalib.github.io/blog/2008/05/07/configurando-a-jre-para-funcionar-no-buntu-804-com-firefox-3-configuring-jre-on-buntu-804-to-work-with-firefox-30</id>
     <content type="html"><![CDATA[<h3></h3>
 
 <p>Versão em Português BR / Portuguese Version</p>

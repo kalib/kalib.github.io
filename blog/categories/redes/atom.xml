@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Redes | Marcelo Cavalcante Rocha ~]]></title>
-  <link href="http://blog.marcelocavalcante.net/blog/categories/redes/atom.xml" rel="self"/>
-  <link href="http://blog.marcelocavalcante.net/"/>
-  <updated>2015-07-13T13:06:26-03:00</updated>
-  <id>http://blog.marcelocavalcante.net/</id>
+  <link href="http://kalib.github.io/blog/categories/redes/atom.xml" rel="self"/>
+  <link href="http://kalib.github.io/"/>
+  <updated>2015-07-14T08:51:34-03:00</updated>
+  <id>http://kalib.github.io/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Dica - Apostila Disponibilizada Gratuitamente - pfSense]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2014/01/14/dica-apostila-disponibilizada-gratuitamente-pfsense/"/>
+    <link href="http://kalib.github.io/blog/2014/01/14/dica-apostila-disponibilizada-gratuitamente-pfsense/"/>
     <updated>2014-01-14T08:27:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2014/01/14/dica-apostila-disponibilizada-gratuitamente-pfsense</id>
+    <id>http://kalib.github.io/blog/2014/01/14/dica-apostila-disponibilizada-gratuitamente-pfsense</id>
     <content type="html"><![CDATA[<p><img class="left" src="/imgs/pfsense.png" title="&lsquo;pfSense&rsquo;" >
 <strong>G</strong>ostaria de passar adiante a notícia de que o colega <em>Leonardo Damasceno</em> acaba de compartilhar com a comunidade uma apostila de sua autoria sobre o <a href="http://www.pfsense.org"><strong>pfSense</strong></a>, de forma a divulgar mais este magnífico sistema, bem como facilitar a vida daqueles que ainda não o dominam.</p>
 
@@ -43,9 +43,9 @@
   
   <entry>
     <title type="html"><![CDATA[Dica de Segurança - Previna Ataques Bloqueando Pacotes ICMP Indesejados]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2014/01/06/dica-de-seguranca-previna-ataques-bloqueando-pacotes-icmp-indesejados/"/>
+    <link href="http://kalib.github.io/blog/2014/01/06/dica-de-seguranca-previna-ataques-bloqueando-pacotes-icmp-indesejados/"/>
     <updated>2014-01-06T08:40:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2014/01/06/dica-de-seguranca-previna-ataques-bloqueando-pacotes-icmp-indesejados</id>
+    <id>http://kalib.github.io/blog/2014/01/06/dica-de-seguranca-previna-ataques-bloqueando-pacotes-icmp-indesejados</id>
     <content type="html"><![CDATA[<p><img class="left" src="/imgs/you_shall_not_pass.jpg" title="&lsquo;Gandalf&rsquo;" >
 <strong>O</strong> protocolo <em>ICMP</em> pode ser utilizado para facilitar diversas rotinas e tarefas importantes de um administrador de redes, tais como na utilização de ferramentas como o <em>ping</em> e o <em>traceroute</em>, mas também pode ser manipulado por pessoas mal intencionadas que podem manipular mensagens ou pacotes ICMP para mapear sua rede.</p>
 
@@ -77,9 +77,9 @@
   
   <entry>
     <title type="html"><![CDATA[Criptografando sua Partição Swap com o Ecryptfs]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2014/01/03/criptografando-sua-particao-swap-com-o-ecryptfs/"/>
+    <link href="http://kalib.github.io/blog/2014/01/03/criptografando-sua-particao-swap-com-o-ecryptfs/"/>
     <updated>2014-01-03T08:48:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2014/01/03/criptografando-sua-particao-swap-com-o-ecryptfs</id>
+    <id>http://kalib.github.io/blog/2014/01/03/criptografando-sua-particao-swap-com-o-ecryptfs</id>
     <content type="html"><![CDATA[<p><img class="left" src="/imgs/crypto.jpg" title="&lsquo;Criptografia&rsquo;" >
 <strong>C</strong>riptografia (Do grego <em>kryptós</em>, &ldquo;escondido&rdquo;, e <em>gráphein</em>, &ldquo;escrita&rdquo;) nada mais é do que o estudo e aplicação de técnicas com o intuito de ocultar informações, transformando a informação original em algo ilegível, exceto para seu destinatário final, o qual possui a chave ou método que será utilizado para tornar a informação legível novamente.</p>
 
@@ -129,9 +129,9 @@
   
   <entry>
     <title type="html"><![CDATA[Navegação Anônima Através da Rede Tor]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2013/12/30/navegacao-anonima-atraves-da-rede-tor/"/>
+    <link href="http://kalib.github.io/blog/2013/12/30/navegacao-anonima-atraves-da-rede-tor/"/>
     <updated>2013-12-30T08:15:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2013/12/30/navegacao-anonima-atraves-da-rede-tor</id>
+    <id>http://kalib.github.io/blog/2013/12/30/navegacao-anonima-atraves-da-rede-tor</id>
     <content type="html"><![CDATA[<p><img class="left" src="/imgs/tor_logo.png" title="&lsquo;Tor&rsquo;" >
 <strong>O</strong> ano de 2013 foi marcado por diversos acontecimentos de grande repercussão e, sem sombra de dúvidas, um deles foi o escândalo causado pelo vazamento de dados que provaram que algumas instituições, dentre elas a <em>NSA</em> (Agência de Segurança dos Estados Unidos), estavam espionando diversas entidades, empresas e até mesmo pessoas físicas nas mais diversas regiões do globo. Escândalos a parte, estas denúncias acabaram despertando um pouco mais (uma pena que não tenha sido muito mais) nas pessoas o interesse em preservar sua privacidade.</p>
 
@@ -191,9 +191,9 @@
   
   <entry>
     <title type="html"><![CDATA[Correção do Bug entre Kernel Linux e Placas Broadcom]]></title>
-    <link href="http://blog.marcelocavalcante.net/blog/2013/09/03/correcao-do-bug-entre-kernel-linux-e-placas-broadcom/"/>
+    <link href="http://kalib.github.io/blog/2013/09/03/correcao-do-bug-entre-kernel-linux-e-placas-broadcom/"/>
     <updated>2013-09-03T20:33:00-03:00</updated>
-    <id>http://blog.marcelocavalcante.net/blog/2013/09/03/correcao-do-bug-entre-kernel-linux-e-placas-broadcom</id>
+    <id>http://kalib.github.io/blog/2013/09/03/correcao-do-bug-entre-kernel-linux-e-placas-broadcom</id>
     <content type="html"><![CDATA[<p><img class="left" src="/imgs/catchbug.jpg" title="&lsquo;Catching Big&rsquo;" >
 <strong>B</strong>ug capturado e tratado!</p>
 
