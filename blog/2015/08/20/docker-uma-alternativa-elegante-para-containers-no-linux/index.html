@@ -1,0 +1,970 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Docker - Uma alternativa elegante para containers no Linux - Marcelo Cavalcante Rocha ~</title>
+  <meta name="author" content="Marcelo Cavalcante Rocha - Kalib">
+
+  
+  <meta name="description" content="Cada vez mais precisamos de soluções ágeis para deploy de aplicações e serviços e as soluções de containers surgiram com este propósito. Conheça o &hellip;">
+  <meta name="keywords" content="Software Livre,Internet,Segurança,Linux,Ubuntu Server,Docker,Containers,DevOps">
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://kalib.github.io/blog/2015/08/20/docker-uma-alternativa-elegante-para-containers-no-linux/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Marcelo Cavalcante Rocha ~" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-42903485-1']);
+    _gaq.push(['_setDomainName','marcelocavalcante.net']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:kalib.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+    <li><a href="/">
+        <span class="blue_light">
+            Marcelo Cavalcante Rocha ~
+        </span>
+       
+           <span class="blue_dark">
+             Hacking the damn life...
+           </span>
+       
+    </a></li>
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Arquivos</a></li>
+  <li><a href="/about">Sobre mim</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Docker - Uma Alternativa Elegante Para Containers No Linux</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-08-20T11:01:00-03:00" pubdate data-updated="true">Aug 20<span>th</span>, 2015</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><img class="center" src="/imgs/dockerlogo.png" title="'Docker'" ></p>
+
+<p><strong>A</strong>ntes de falar sobre o Docker, é importante que se entenda o conceito de um container, portanto vamos começar do básico. A imagem acima, logomarca do Docker, deixa claro o que é um container. A baleia, representando um navio, carregando diversos caixotes ou containers ilustra o conceito físico de um container. Nada mais do que um enorme caixote que possui o intuito de isolar algo. Quando um grande navio transporta mercadorias de um porto para outro, ele costuma trazer diversos containers separando estas mercadorias, de forma que as coisas não fiquem misturadas e bagunçadas. A forma de separação vai depender dos critérios de organização utilizados pela embarcação, seja por proprietário, seja por categoria de produtos, etc. De qualquer forma, embora cada container possua seus elementos próprios, todos os containers compartilham alguns recursos básicos, como por exemplo a embarcação, que é o meio de transporte para todos os containers ali contidos.</p>
+
+<p><strong>D</strong>a mesma forma se dá no mundo dos computadores, onde o conceito de containers surgiu para separar e isolar alguns recursos e aplicações, otimizando os recursos que servem como base e que podem ser utilizados de forma compartilhada, como por exemplo o kernel do Sistema Operacional. De certa forma isto nos faz lembrar um pouco da virtualização, onde cada máquina virtual compartilha os recursos da máquina física, no entanto existe uma diferença clara no contexto de containers, visto que em um cenário de virtualização você precisará possuir um SO instalado na máquina física, com seu kernel e todos os seus recursos, e um SO instalado em sua máquina virtual, também com seu kernel e todos os seus recursos. Quando falamos em containers, imagine que você só precisará do kernel, bem como vários outros recursos, na máquina que será a hospedeira do container (a embarcação).</p>
+
+<p><strong>C</strong>ontainers Linux surgiram como uma tecnologia chave para empacotamento e entrega de aplicativos, combinando a leveza do isolamento de aplicativos com a flexibilidade de métodos de deploy baseados em imagens.</p>
+
+<p><strong>U</strong>ma das formas mais simples de se imaginar a vantagem da utilização de containers é imaginar que você possui uma empresa que hospeda servidores de aplicações para seus clientes. Se um novo cliente surge querendo hospedar a aplicação dele, você subirá uma nova máquina virtual, o que inclui todo um novo sistema operacional, enquanto que em uma solução baseada em containers você poderá ter apenas a sua máquina com um único kernel Linux provendo as priorizações de recursos (CPU, memória, I/O, rede, etc.) sem a necessidade de dar boot em um novo sistema operacional (máquinia virtual) na qual rodará a aplicação deste cliente.</p>
+
+<p><strong>D</strong>izem que uma imagem vale mais que mil palavras&hellip;</p>
+
+<p><img class="center" src="/imgs/docker_vmdiagram.png" title="'Virtual Machine Diagram'" ></p>
+
+<p><strong>N</strong>a imagem acima temos o cenário convencional com a utilização de <strong>Máquinas Virtuais</strong>. Em suma, temos um host físico, com seu respectivo SO e kernel. Acima deles temos a camada de virtualização ou HyperVisor, enquanto que acima desta teremos as máquinas virtuais, com seus respectivos SOs (cada um com seu kernel) instalados. No caso temos 3 VMs, com 3 SOs (cada um com seu kernel). Na camada acima encontramos o que realmente é necessário para o app do cliente funcionar, que são as bibliotecas e os binários. Por fim, o App do cliente em si.</p>
+
+<p><strong>V</strong>ejamos como fica o cenário com a utilização de containers, docker neste caso&hellip;</p>
+
+<p><img class="center" src="/imgs/docker_diagram.png" title="'Docker Diagram'" ></p>
+
+<p><strong>N</strong>o cenário com o Docker percebemos que a camada de SO das VMs sumiu, visto que ela não é mais necessária. Ao invés de Máquinas Virtuais, agora nós temos 3 containers, onde cada container roda os binários e bibliotecas de um SO, porém se aproveitando do kernel já existente no Host.</p>
+
+<p><strong>C</strong>om este grau de modularização nós ganhamos maior flexibilidade e agilidade no deploy de ambientes e aplicações.</p>
+
+<p><strong>U</strong>ma das vantagens da utilização do Docker é a existência de um repositório de imagens prontas que ficam disponibilizadas livremente para quem desejar utilizar. Seja uma imagem pronta de um container com CentOS, Ubuntu, etc.. Já existem centenas e centenas de imagens prontas para uso, sendo esta uma base de compartilhamento comunitário, mas&hellip;</p>
+
+<p><strong>V</strong>amos ao que interessa&hellip;</p>
+
+<p><strong>N</strong>os exemplos a seguir, estou utilizando o Ubuntu Server 15.04, visto que estou atualmente realizando uma POC de VPS com um novo host, portanto aproveitarei para fazer disto uma parte de meus testes nesta VPS. Sinta-se livre para utilizar sua máquina física com Ubuntu, com Debian, ou mesmo uma máquina virtual, caso não goste de realizar testes em sua máquina física, o resultado será o mesmo. Para que tudo funcione como esperamos, só existem 2 pré-requisitos a serem atendidos:</p>
+
+<p>1- O kernel do Linux que será utilizado deve ser igual ou superior ao 3.8;</p>
+
+<p>2- Caso você esteja realizando os testes em uma VM, seria interessante que sua máquina física tivesse comunicação com a VM. Isso pode ser testado com um ping da máquina física para a VM. No caso de sua máquina virtual ser instalada com interface gráfica, esta comunicação não será necessária, pois o único momento em que utilizaremos isto será para abrir um navegador e fazer um teste de acesso ao endereço da máquina virtual.</p>
+
+<p><strong>V</strong>amos lá. Para ter a certeza de que você atende o pré-requisito de kernel, utilize o comando &ldquo;uname -r&rdquo;:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> kalib@cloudcaverna:~$ uname -r
+</span><span class='line'> 3.19.0-25-generic</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>E</strong>stou com o kernel 3.19, portanto superior ao kernel 3.8 que é o pré-requisito mínimo. Vamos em frente.</p>
+
+<p><strong>P</strong>rimeiramente, vamos instalar o Docker. Seja lá qual for sua distribuição Linux, digite o comando: <strong>(O comando deve ser executado com o usuário root ou com o comando sudo!)</strong></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> # curl -sSL https://get.docker.com | sh</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>E</strong>le baixará e executará um script de instalação, no meu caso do Ubuntu ele irá instalar um repositório e em seguida instalará o docker. O próximo passo será iniciar o serviço do docker:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> # /etc/init.d/docker start
+</span><span class='line'> [ ok ] Starting docker (via systemctl): docker.service.</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>O</strong> docker possui uma série de scripts/comandos próprios para facilitar a sua administração, como por exemplo um script de <strong>ps</strong>, para que possamos ter a certeza de que ele está rodando e, além disso, saber se existem containers em execução, da mesma forma que faríamos com o ps do linux para ver os processos em andamento.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> # docker ps
+</span><span class='line'>
+</span><span class='line'> CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>P</strong>odemos ver que o docker está rodando, no entanto nenhum container está em execução. Na verdade, não temos nenhum container criado, portanto obviamente não poderia estar em execução.</p>
+
+<p><strong>A</strong>lém do ps, podemos utilizar o script <strong>images</strong> para ver quais imagens de containers já possuímos para uso:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> # docker images
+</span><span class='line'>
+</span><span class='line'> REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>D</strong>a mesma forma, não temos ainda nenhuma imagem baixada para uso.</p>
+
+<p><strong>U</strong>ma vez que estamos falando de containers, conforme dito anteriormente, a ideia é isolar ao máximo e otimizar o que precisamos para este container, portanto precisamos informar o processo que desejamos iniciar no container em questão.</p>
+
+<p><strong>V</strong>amos criar um container do Ubuntu, por exemplo, na versão 15.04, lançada em Abril deste ano, e vamos iniciar juntamente com ele o processo /bin/bash. O comando utilizado será: docker run -i -t ubuntu:15.04 /bin/bash</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> # docker run -i -t ubuntu:15.04 /bin/bash
+</span><span class='line'>
+</span><span class='line'> Unable to find image 'ubuntu:15.04' locally
+</span><span class='line'> 15.04: Pulling from library/ubuntu
+</span><span class='line'> 
+</span><span class='line'> 6e6a100fa147: Pull complete 
+</span><span class='line'> 13c0c663a321: Pull complete 
+</span><span class='line'> 2bd276ed39d5: Pull complete 
+</span><span class='line'> 013f3d01d247: Already exists 
+</span><span class='line'> library/ubuntu:15.04: The image you are pulling has been verified. Important: image verification is a tech preview feature and should not be relied on to provide security.
+</span><span class='line'> 
+</span><span class='line'> Digest: sha256:b2d4940544e515d4bc62b2a9ad3e6137b3e1e0937a41fdc1f0f30d12935e5b09
+</span><span class='line'> Status: Downloaded newer image for ubuntu:15.04
+</span><span class='line'> 
+</span><span class='line'> root@d70562e7533c:/#</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>É</strong> importante reparar que na primeira linha de execução ele me trouxe um alerta informando que não foi possível encontrar a imagem &ldquo;ubuntu:15.04&rdquo; localmente. Como disse acima, não temos ainda nenhuma imagem baixada, portanto ele não encontrou localmente e foi baixar diretamente no repositório de imagens do docker.</p>
+
+<p><strong>O</strong> procedimento foi extremamente rápido, certo? Acredite ou não, você já possui um container Ubuntu rodando em sua máquina. ;] Ainda não acredita? Repare novamente no seu prompt de comandos, veja que logo que ele finalizou o processo ele lhe deixou em um prompt &ldquo;estranho&rdquo;. No caso do meu exemplo acima, perceba que ao concluir o processo ele me deixou com o prompt assim:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> root@d70562e7533c:/#</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>N</strong>ão, minha máquina não se chama d70562e7533c. Tenho certeza de que a sua também não se chama.. seja lá qual for a combinação de caracteres que lhe foi apresentada no prompt. Na verdade, sempre que iniciamos um container, o comportamento default é que você já é logado nele. Em suma, seu container com ubuntu 15.04 já foi criado e você já está logado nele, e esta combinação de caracteres estranha é o ID que foi dado ao seu container.</p>
+
+<p><strong>A</strong>inda não acredita? Bom, você pode, por exemplo, dar um <strong>cat /etc/issue</strong>, para ver que você está de fato rodando um ubuntu 15.04. Claro, no meu caso não haverá diferença, pois minha máquina que está rodando o docker também é ubuntu 15.04.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> root@d70562e7533c:/# cat /etc/issue
+</span><span class='line'>
+</span><span class='line'> Ubuntu 15.04 \n \l
+</span><span class='line'> 
+</span><span class='line'> root@d70562e7533c:/#</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>O*utro teste, seria rodar </strong>ps -ef** no container. Você verá que não existe nenhum processo rodando. Aliás, haverá apenas 1 processo (além do próprio ps), que foi o processo indicado na criação: /bin/bash. Desta forma você terá a certeza de que não está no prompt de sua máquina mesmo, visto que na sua certamente existem dezenas ou centenas de processos rodando, do kernel, do usuário, etc.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> root@d70562e7533c:/# ps -ef
+</span><span class='line'>
+</span><span class='line'> UID        PID  PPID  C STIME TTY          TIME CMD
+</span><span class='line'> root         1     0  0 13:36 ?        00:00:00 /bin/bash
+</span><span class='line'> root         9     1  0 13:44 ?        00:00:00 ps -ef
+</span><span class='line'> 
+</span><span class='line'> root@d70562e7533c:/#</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>D</strong>a mesma forma você poderá experimentar outros comandos para testar (caso ainda não esteja acreditando que de forma tão &ldquo;oi, simples assim&rdquo; você já está com seu container pronto): ls, apt-get update, etc.. Tudo funcionando como se fosse uma máquina real, ou virtual, no entanto sem um kernel, visto que ela está utilizando o kernel da máquina host.</p>
+
+<p><strong>A</strong>gora que temos a certeza de que estamos em nosso container, você pode sair do container e voltar para sua máquina host. Para isso você precisará pressionar as teclas <strong>Ctrl + P + Q</strong>. Desta forma, você verá que seu prompt voltará para seu host enquanto que seu container continuará rodando, você apenas saiu do prompt do mesmo.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> root@d70562e7533c:/# root@cloudcaverna:~# 
+</span><span class='line'> 
+</span><span class='line'> root@cloudcaverna:~#</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>V</strong>amos verificar novamente o ps do docker, visto que da última vez ele estava vazio. Desta vez ele nos mostrará um processo em execução, que no caso é o container que criamos.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> root@cloudcaverna:~# docker ps
+</span><span class='line'>
+</span><span class='line'> CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+</span><span class='line'> d70562e7533c        ubuntu:15.04        "/bin/bash"         15 minutes ago      Up 15 minutes                           modest_khorana</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>N</strong>o retorno podemos ver o ID do nosso container, o nome da imagem que ele utiliza, o comando em execução, o tempo desde sua criação, o seu status, portas e nome.</p>
+
+<p><strong>O</strong> container ID poderá ser utilizado para voltar para nosso container através do comando <strong>docker attach &lt;container-id></strong>: (Após digitar o comando, pressione novamente Enter para liberar o prompt)</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> root@cloudcaverna:~# docker attach d70562e7533c
+</span><span class='line'> 
+</span><span class='line'> root@d70562e7533c:/#</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>N</strong>o exemplo anterior nós utilizamos a combinação <strong>Ctrl + P + Q</strong> para sair do container mantendo-o rodando. Vamos experimentar utilizar desta vez <strong>Ctrl + D</strong>. Desta forma você não apenas está saindo mas também desligando o container. Execute novamente a lista de processos/containers do docker para ver:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> root@cloudcaverna:~# docker ps
+</span><span class='line'>
+</span><span class='line'> CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>N</strong>o entanto, é importante lembrar que a imagem do Ubuntu 15.04 que baixamos, continua disponível para o caso de precisarmos criar novos containers Ubuntu 15.04:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> root@cloudcaverna:~# docker images
+</span><span class='line'>
+</span><span class='line'> REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+</span><span class='line'> ubuntu              15.04               013f3d01d247        17 hours ago        131.4 MB</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>S</strong>imples&hellip; Mas vamos fazer algo mais próximo do mundo real, afinal um container apenas com o Ubuntu rodando, ou qualquer outra que seja a distribuição escolhida, não tem muita utilidade, portanto vamos criar um container rodando um servidor web, para o caso de querermos hospedar um site ou aplicalção web neste container. Por ser mais leve e simples, vou utilizar o nginx no exemplo. Vamos utilizar o comando <strong>docker run -i -t -p 8080:80 ubuntu:15.04 /bin/bash</strong></p>
+
+<p><strong>N</strong>o comando acima estamos dizendo que queremos criar um novo container ubuntu 15.04 rodando o /bin/bash. Desta vez temos um parâmetro que não utilizamos anteriormente. O <strong>p</strong> serve para indicar a utilização de portas. Quando utilizamos <strong>p 8080:80</strong> estamos dizendo que vamos utilizar a porta 80 no container e que ela estará mapeada na porta 8080 do nosso host ou hospedeiro. Ou seja, quando instalarmos o Nginx no ubuntu do container, você poderá através de seu host abrir o navegador e acessar o seu endereço ip ou nome de host (caso você possua resolução de nomes funcionando) na porta 8080.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> root@cloudcaverna:~# docker run -i -t -p 8080:80 ubuntu:15.04 /bin/bash
+</span><span class='line'> 
+</span><span class='line'> root@08abb8611700:/#</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>O</strong> processo foi bem mais rápido desta vez, visto que já tínhamos a imagem do container ubuntu 15.04, portanto não tivemos a necessidade de baixar outra imagem. O seu container já está criado e você já está logado no prompt do mesmo, conforme pode ver através do ID do container que apareceu em seu prompt.</p>
+
+<p><strong>V</strong>amos agora instalar o servidor web nginx para realizarmos o nosso teste. Para isso vamos atualizar os repositórios e em seguida instalar o pacote: <strong>apt-get update &amp;&amp; apt-get install -y nginx</strong></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> root@08abb8611700:/# apt-get update && apt-get install -y nginx
+</span><span class='line'>
+</span><span class='line'> Ign http://archive.ubuntu.com vivid InRelease
+</span><span class='line'> Ign http://archive.ubuntu.com vivid-updates InRelease
+</span><span class='line'> Get:1 http://archive.ubuntu.com vivid/main Sources [1358 kB]
+</span><span class='line'> Get:2 http://archive.ubuntu.com vivid/restricted Sources [7100 B]
+</span><span class='line'> ...
+</span><span class='line'> Building dependency tree       
+</span><span class='line'> Reading state information... Done
+</span><span class='line'> The following extra packages will be installed:
+</span><span class='line'>  fontconfig-config fonts-dejavu-core geoip-database init-system-helpers libexpat1 libfontconfig1 libfreetype6 libgd3 libgeoip1 libicu52
+</span><span class='line'>  libjbig0 libjpeg-turbo8 libjpeg8 libpng12-0 libssl1.0.0 libtiff5 libvpx1 libx11-6 libx11-data libxau6 libxcb1 libxdmcp6 libxml2 libxpm4
+</span><span class='line'>  libxslt1.1 nginx-common nginx-core sgml-base ucf xml-core
+</span><span class='line'> Suggested packages:
+</span><span class='line'>  libgd-tools geoip-bin fcgiwrap nginx-doc ssl-cert sgml-base-doc debhelper
+</span><span class='line'> The following NEW packages will be installed:
+</span><span class='line'>  fontconfig-config fonts-dejavu-core geoip-database init-system-helpers libexpat1 libfontconfig1 libfreetype6 libgd3 libgeoip1 libicu52
+</span><span class='line'>  libjbig0 libjpeg-turbo8 libjpeg8 libpng12-0 libssl1.0.0 libtiff5 libvpx1 libx11-6 libx11-data libxau6 libxcb1 libxdmcp6 libxml2 libxpm4
+</span><span class='line'>  libxslt1.1 nginx nginx-common nginx-core sgml-base ucf xml-core
+</span><span class='line'> 0 upgraded, 31 newly installed, 0 to remove and 0 not upgraded.
+</span><span class='line'> Need to get 14.0 MB of archives.
+</span><span class='line'> After this operation, 53.3 MB of additional disk space will be used.
+</span><span class='line'> ...
+</span><span class='line'> Get:1 http://archive.ubuntu.com/ubuntu/ vivid/main libexpat1 amd64 2.1.0-6ubuntu1 [70.6 kB]
+</span><span class='line'> Processing triggers for systemd (219-7ubuntu6) ...
+</span><span class='line'> 
+</span><span class='line'> root@08abb8611700:/#</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>C</strong>ortei bastante a saída visto ser desnecessária, mas uma vez que o nginx esteja instalado, vamos iniciá-lo: <strong>/etc/init.d/nginx start</strong>. Em seguida, vamos utilizar o ps para ver os processos que estão rodando no nosso container:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> root@08abb8611700:/# /etc/init.d/nginx start
+</span><span class='line'>
+</span><span class='line'> root@08abb8611700:/# ps -ef
+</span><span class='line'>
+</span><span class='line'> UID        PID  PPID  C STIME TTY          TIME CMD
+</span><span class='line'> root         1     0  0 14:10 ?        00:00:00 /bin/bash
+</span><span class='line'> root       609     1  0 14:19 ?        00:00:00 nginx: master process /usr/sbin/nginx
+</span><span class='line'> www-data   610   609  0 14:19 ?        00:00:00 nginx: worker process
+</span><span class='line'> www-data   611   609  0 14:19 ?        00:00:00 nginx: worker process
+</span><span class='line'> www-data   612   609  0 14:19 ?        00:00:00 nginx: worker process
+</span><span class='line'> www-data   613   609  0 14:19 ?        00:00:00 nginx: worker process
+</span><span class='line'> root       614     1  0 14:19 ?        00:00:00 ps -ef
+</span><span class='line'> 
+</span><span class='line'> root@08abb8611700:/#</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>F</strong>eito isto, o serviço está rodando e já pode ser testado. Em seu host você poderá abrir o navegador e acessar o endereço local de seu host, com a porta 8080, visto que foi esta que definimos inicialmente para mapear a porta 80 do container: <strong>localhost:8080</strong></p>
+
+<p><strong>C</strong>aso esteja utilizando uma máquina virtual para fazer seus testes, você terá duas possibilidades:
+1- Caso sua máquina virtual possua alguma interface gráfica instalada, você poderá abrir o navegador da própria VM e acessar o mesmo endereço de localhost com a porta 8080;
+2- Caso sua VM não esteja com nenhum ambiente gráfico instalado, você poderá utilizar aplicações de CLI para testar (ex: lynx, curl, etc.) ou usar o navegador da máquina que serve de host para sua VM, levando em conta que você fez o teste descrito no início para ter certeza de que sua máquina física consegue se comunicar com sua VM. Neste caso, em sua máqunina física você acessará o endereço de sua vm no navegador, com a porta 8080.</p>
+
+<p><strong>R</strong>esultado? O Nginx em nosso container rodando perfeitamente.</p>
+
+<p><img class="center" src="/imgs/docker_nginx8080.png" title="'Nginx on Docker'" ></p>
+
+<p><strong>D</strong>a mesma forma feita anteriormente, podemos sair de nosso container com a combinação de teclas <strong>Ctrl + P + Q</strong> e verificar os processos/containers do docker em execução:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> root@08abb8611700:/# root@cloudcaverna:~# 
+</span><span class='line'>
+</span><span class='line'> root@cloudcaverna:~# docker ps
+</span><span class='line'>
+</span><span class='line'> CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS                  NAMES
+</span><span class='line'> 08abb8611700        ubuntu:15.04        "/bin/bash"         19 minutes ago      Up 19 minutes       0.0.0.0:8080-&gt;80/tcp   jolly_hawking
+</span><span class='line'> 
+</span><span class='line'> root@cloudcaverna:~#</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>É</strong> importante salientar que quando saímos do container com a combinação <strong>Ctrl + P + Q</strong> nós não estamos fechando o container, pois ele continua rodando, conforme pode ser visto com <strong>docker ps</strong>. No entanto, quando saímos do nosso antigo container com a combinação <strong>Ctrl + D</strong>, nós percebemos que ele finalizou de vez o container. Além de finalizar, ele excluiu o nosso container, visto que o mesmo não foi salvo, ou &ldquo;comittado&rdquo;. Se sairmos deste container no qual instalamos o nginx utilizando <strong>Ctrl + D</strong>, nós estaremos descartando tudo o que foi feito nele. Para poder finalizar o seu container sem perdê-lo, ou seja, mantendo o container salvo e tudo o que foi instalado/configurado nele, nós precisamos sair do container com a combinação <strong>Ctrl + P + Q</strong>, conforme fizemos acima, e em seguida realizar um commit deste container. Estaremos então criando uma imagem com o atual estado do container. Desta forma, se posteriormente precisarmos subir um novo container que rode o SO ubuntu 15.04 e que também possua o nginx, poderemos criar um novo container a partir desta imagem em poucos segundos. O commit se dá da seguinte forma: <strong>docker commit &lt;container-id> &lt;nome-que-vc-desejar></strong></p>
+
+<p><strong>L</strong>embrando que o id do container pode ser conseguido através do comando <strong>docker ps</strong> e que o <strong>nome-que-vc-desejar</strong> será o nome utilizado para identificar esta sua máquina/imagem.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> root@cloudcaverna:~# docker commit 08abb8611700 cloudcaverna/ubuntu-nginx:1.0
+</span><span class='line'>
+</span><span class='line'> b0922bc8f41295cadadbd131c075e29288b52e8bb2d9546cb7c0327eb95fe7dc
+</span><span class='line'> 
+</span><span class='line'> root@cloudcaverna:~#</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>U</strong>tilizei 1.0 ao final para ter uma ideia de versionamento, visto que o docker nos permite trabalhar desta forma. É uma questão de organização.</p>
+
+<p><strong>E</strong>m seguida você pode verificar sua imagem criada através do script <strong>images</strong> do docker, bem como o seu container ainda rodando através do script <strong>ps</strong>:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> root@cloudcaverna:~# docker images
+</span><span class='line'>
+</span><span class='line'> REPOSITORY                  TAG                 IMAGE ID            CREATED              VIRTUAL SIZE
+</span><span class='line'> cloudcaverna/ubuntu-nginx   1.0                 b0922bc8f412        About a minute ago   204.6 MB
+</span><span class='line'> ubuntu                      15.04               013f3d01d247        18 hours ago         131.4 MB
+</span><span class='line'> 
+</span><span class='line'> root@cloudcaverna:~# docker ps
+</span><span class='line'>
+</span><span class='line'> CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS                  NAMES
+</span><span class='line'> 08abb8611700        ubuntu:15.04        "/bin/bash"         49 minutes ago      Up 49 minutes       0.0.0.0:8080-&gt;80/tcp   jolly_hawking
+</span><span class='line'> 
+</span><span class='line'> root@cloudcaverna:~# </span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>V</strong>amos agora criar um novo container. Aqui você pode escolher como prosseguir. Eu criarei um container com a distribuição Arch Linux rodando, mas você pode seguir e criar outra com o Ubuntu caso deseje, então vejamos as opções:</p>
+
+<p><strong>Opção 1 &ndash; Caso escolha criar este segundo container como Arch Linux</strong></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> root@cloudcaverna:~# docker run -i -t -p 6660:80 base/archlinux /bin/bash
+</span><span class='line'>
+</span><span class='line'> Unable to find image 'base/archlinux:latest' locally
+</span><span class='line'> latest: Pulling from base/archlinux
+</span><span class='line'>
+</span><span class='line'> b31c6c1462e6: Pull complete 
+</span><span class='line'> b97e110c94d9: Already exists 
+</span><span class='line'> Digest: sha256:7905fad7578b9852999935fb0ba9c32fe16cece9e4d1d742a34f55ce9cebdfd1
+</span><span class='line'> Status: Downloaded newer image for base/archlinux:latest
+</span><span class='line'> 
+</span><span class='line'> [root@be266bf7e5a3 /]#
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>Opção 2 &ndash; Caso deseje criar um novo container Ubuntu aproveitando a imagem que já está pronta e com nginx já instalado</strong></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> docker run -i -t -p 6660:80 &lt;nome-que-vc-deu-para-sua-imagem&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Como eu dei o nome de <em>cloudcaverna/ubuntu-nginx</em>, eu utilizaria <em>docker run -i -t -p 6660:80 cloudcaverna/ubuntu-nginx</em>.</p>
+
+<p>Desta forma você não precisará sequer instalar o nginx novamente neste container, visto que você utilizou como base uma imagem que já possuía o nginx instalado, restando apenas a você testar no navegador novamente o endereço porém trocando a porta para 6660.</p>
+
+<p><strong>C</strong>omo eu resolvi seguir em frente com um container totalmente novo, baseado no Arch Linux, vou dar um <strong>cat /etc/issue</strong> para ver que realmente estou em um ambiente com a distribuição Arch Linux e vou instalar o nginx nele com o pacman, visto que este é o gerenciador de pacotes do Arch:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> [root@be266bf7e5a3 /]# cat /etc/issue
+</span><span class='line'>
+</span><span class='line'> Arch Linux \r (\l)
+</span><span class='line'>
+</span><span class='line'> [root@be266bf7e5a3 /]# pacman -Sy nginx
+</span><span class='line'>
+</span><span class='line'> :: Synchronizing package databases...
+</span><span class='line'> core                                                        121.2 KiB   203K/s 00:01 [#################################################] 100%
+</span><span class='line'> extra                                                      1773.8 KiB   644K/s 00:03 [#################################################] 100%
+</span><span class='line'> community                                                     2.7 MiB   936K/s 00:03 [#################################################] 100%
+</span><span class='line'> resolving dependencies...
+</span><span class='line'> looking for inter-conflicts...
+</span><span class='line'> 
+</span><span class='line'> Packages (1): nginx-1.8.0-1
+</span><span class='line'> 
+</span><span class='line'> Total Download Size:    0.34 MiB
+</span><span class='line'> Total Installed Size:   0.98 MiB
+</span><span class='line'> 
+</span><span class='line'> :: Proceed with installation? [Y/n] 
+</span><span class='line'> :: Retrieving packages ...
+</span><span class='line'> nginx-1.8.0-1-x86_64                                        349.5 KiB   266K/s 00:01  [#################################################] 100%
+</span><span class='line'> (1/1) installing nginx                                                                [ #################################################] 100%
+</span><span class='line'> 
+</span><span class='line'> [root@be266bf7e5a3 /]#</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>A</strong>gora que estou com o nginx rodando também neste container do Arch Linux, vou sair do container pressionando a combinação <strong>Ctrl + P + Q</strong> e em seguida rodar o script de <strong>ps</strong> do docker:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> [root@be266bf7e5a3 /]# root@cloudcaverna:~# 
+</span><span class='line'>
+</span><span class='line'> root@cloudcaverna:~# docker ps
+</span><span class='line'>
+</span><span class='line'> CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS                  NAMES
+</span><span class='line'> be266bf7e5a3        base/archlinux      "/bin/bash"         10 minutes ago      Up 10 minutes       0.0.0.0:6660-&gt;80/tcp   cocky_hoover
+</span><span class='line'> 08abb8611700        ubuntu:15.04        "/bin/bash"         About an hour ago   Up About an hour    0.0.0.0:8080-&gt;80/tcp   jolly_hawking
+</span><span class='line'> 
+</span><span class='line'> root@cloudcaverna:~# 
+</span><span class='line'> ```
+</span><span class='line'>
+</span><span class='line'> **D**esta vez eu possuo dois containers criados, sendo um com o ubuntu 15:04 e outro com o Arch Linux. Agora vou realizar o commit do meu container Arch Linux com nginx, para não perder esta imagem. Em seguida, executarei o script **images** para ver as imagens que já possuo:
+</span><span class='line'>
+</span><span class='line'> ```
+</span><span class='line'>  root@cloudcaverna:~# docker commit be266bf7e5a3 cloudcaverna/archlinux-nginx:1.0
+</span><span class='line'>
+</span><span class='line'> f4ea14bf23c47466fb256fff9e3ab32ca85fb0256a05007ef4972ad7ff5f2aa9
+</span><span class='line'> 
+</span><span class='line'> root@cloudcaverna:~# docker images
+</span><span class='line'>
+</span><span class='line'> REPOSITORY                     TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+</span><span class='line'> cloudcaverna/archlinux-nginx   1.0                 f4ea14bf23c4        5 seconds ago       285.9 MB
+</span><span class='line'> cloudcaverna/ubuntu-nginx      1.0                 b0922bc8f412        20 minutes ago      204.6 MB
+</span><span class='line'> ubuntu                         15.04               013f3d01d247        18 hours ago        131.4 MB
+</span><span class='line'> base/archlinux                 latest              b97e110c94d9        8 weeks ago         278.8 MB
+</span><span class='line'> 
+</span><span class='line'> root@cloudcaverna:~# </span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>A</strong>gora vou testar no navegador o nginx deste meu segundo container, o qual defini que utilizaria a porta 6660 do meu host:</p>
+
+<p><img class="center" src="/imgs/docker_nginx6660_8080.png" title="'Nginx on Docker'" ></p>
+
+<p><strong>R</strong>epare que acessei ambos os endereços, tanto o da porta 8080, o qual está apresentando o nginx do meu primeiro container, quanto o da porta 6660, que apresenta o nginx do meu segundo container. Ambos funcionando em paralelo, com ambientes distintos, sendo um Ubuntu e o outro Arch Linux, porém ambos compartilham o mesmo kernel, que é o do meu host.</p>
+
+<p><strong>O</strong> próprio script <strong>ps</strong> do docker lhe informa as portas que estão sendo utilizadas para cada container, caso você esteja em dúvida:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> root@cloudcaverna:~# docker ps
+</span><span class='line'>
+</span><span class='line'> CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS                  NAMES
+</span><span class='line'> be266bf7e5a3        base/archlinux      "/bin/bash"         26 minutes ago      Up 26 minutes       0.0.0.0:6660-&gt;80/tcp   cocky_hoover
+</span><span class='line'> 08abb8611700        ubuntu:15.04        "/bin/bash"         About an hour ago   Up About an hour    0.0.0.0:8080-&gt;80/tcp   jolly_hawking
+</span><span class='line'> 
+</span><span class='line'> root@cloudcaverna:~# </span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>D</strong>a mesma forma, você poderá fazer toda e qualquer operação que você faria em uma máquina qualquer, como por exemplo monitorar os logs de acesso do nginx. Basta se conectar em algum dos dois containers com <strong>docker attach &lt;container-id></strong> e em seguida abrir o arquivo de log do nginx com o tail: <strong>tail -f /var/log/nginx/access.log</strong>. Com o log rodando, pode acessar novamente no navegador o endereço com a porta que está mapeada para este container e você verá os logs do seu acesso.</p>
+
+<p><strong>A</strong>nteriormente nós vimos que com a combinação <strong>Ctrl + P + Q</strong> eu consigo sair do container porém ele permanecerá rodando. Com <strong>Ctrl + D</strong> eu finalizava o container de vez. Mas, supondo que eu queira parar temporariamente o container, posso utilizar o script <strong>stop</strong> do container inserindo o id do container que desejo parar:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> root@cloudcaverna:~# docker stop be266bf7e5a3
+</span><span class='line'> be266bf7e5a3
+</span><span class='line'> 
+</span><span class='line'> root@cloudcaverna:~#</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>E</strong>xiste ainda uma forma de ver o que foi alterado no container desde sua criação. É literalmente uma espécie de &ldquo;diff&rdquo;:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> root@cloudcaverna:~# docker diff 08abb8611700
+</span><span class='line'> C /.wh..wh.plnk
+</span><span class='line'> A /.wh..wh.plnk/93.1190648
+</span><span class='line'> C /bin
+</span><span class='line'> A /bin/running-in-container
+</span><span class='line'> A /core
+</span><span class='line'> C /etc
+</span><span class='line'> C /etc/default
+</span><span class='line'> A /etc/default/nginx
+</span><span class='line'> A /etc/fonts
+</span><span class='line'> A /etc/fonts/conf.avail
+</span><span class='line'> A /etc/fonts/conf.avail/10-antialias.conf
+</span><span class='line'> A /etc/fonts/conf.avail/10-autohint.conf
+</span><span class='line'> A /etc/fonts/conf.avail/10-hinting-full.conf
+</span><span class='line'> A /etc/fonts/conf.avail/10-hinting-medium.conf
+</span><span class='line'> A /etc/fonts/conf.avail/10-hinting-slight.conf
+</span><span class='line'> A /etc/fonts/conf.avail/10-hinting.conf
+</span><span class='line'> A /etc/fonts/conf.avail/10-no-sub-pixel.conf
+</span><span class='line'> A /etc/fonts/conf.avail/10-scale-bitmap-fonts.conf
+</span><span class='line'> A /etc/fonts/conf.avail/10-sub-pixel-bgr.conf
+</span><span class='line'> A /etc/fonts/conf.avail/10-sub-pixel-rgb.conf
+</span><span class='line'> A /etc/fonts/conf.avail/10-sub-pixel-vbgr.conf
+</span><span class='line'> A /etc/fonts/conf.avail/10-sub-pixel-vrgb.conf
+</span><span class='line'> A /etc/fonts/conf.avail/10-unhinted.conf
+</span><span class='line'> A /etc/fonts/conf.avail/11-lcdfilter-default.conf
+</span><span class='line'> A /etc/fonts/conf.avail/11-lcdfilter-legacy.conf
+</span><span class='line'> A /etc/fonts/conf.avail/11-lcdfilter-light.conf
+</span><span class='line'> ...
+</span><span class='line'> ...</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>A</strong> saída é extensa, portanto cortei aqui mesmo, mas você terá basicamente todo o diff do que foi alterado desde a criação do container.</p>
+
+<p><strong>R</strong>esumidamente, esta é a função do docker. Com criatividade e disposição se faz muita coisa com ele. Não é a toa que os big players de mercado já estão utilizando bastante esta ferramenta para soluções de container, como por exemplo: Amazon, Apcera, Cisco, CoreOS, Datera, VMWare, Verizon Labs, Red Hat, Google, RackSpace, Oracle, IBM, Intel, Microsoft, HP, etc.</p>
+
+<p><strong>L</strong>embrando que o endereço de repositórios com as imagens já existentes e disponibilizadas gratuitamente é <a href="https://hub.docker.com">https://hub.docker.com</a></p>
+
+<p><strong>A</strong>té a próxima&hellip;</p>
+
+<p><strong>H</strong>appy Hacking!</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Marcelo Cavalcante Rocha - Kalib</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-08-20T11:01:00-03:00" pubdate data-updated="true">Aug 20<span>th</span>, 2015</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/containers/'>Containers</a>, <a class='category' href='/blog/categories/devops/'>DevOps</a>, <a class='category' href='/blog/categories/docker/'>Docker</a>, <a class='category' href='/blog/categories/internet/'>Internet</a>, <a class='category' href='/blog/categories/linux/'>Linux</a>, <a class='category' href='/blog/categories/seguranca/'>Seguranca</a>, <a class='category' href='/blog/categories/software-livre/'>Software Livre</a>, <a class='category' href='/blog/categories/ubuntu/'>Ubuntu</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://kalib.github.io/blog/2015/08/20/docker-uma-alternativa-elegante-para-containers-no-linux/" data-via="" data-counturl="http://kalib.github.io/blog/2015/08/20/docker-uma-alternativa-elegante-para-containers-no-linux/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/08/03/assista-ao-documentario-sobre-aaron-swartz-o-menino-da-internet/" title="Previous Post: Assista ao documentário sobre Aaron Swartz: O menino da internet">&laquo; Assista ao documentário sobre Aaron Swartz: O menino da internet</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1 align="left">Marcelo Cavalcante</h1>
+  <p><img class="right" src="http://www.marcelocavalcante.net/imgs/kalib_picture_pq_circle_pq.png" title="'kalib'" ><p align=rght>Sysadmin dinâmico, escrupulosamente curioso, reservadamente convencional, multitarefa, command line heavy-user, estudante e pesquisador, surfista por prazer, leitor inquieto e esposo apaixonado.<br>Me conheça melhor <a href="http://blog.marcelocavalcante.net/about">clicando aqui</a>.</p></p>
+</section><Section>
+  <h1>Timeline</h1>
+  <img align="center" src="/imgs/brazil-canada-flag2.png"><br><br>
+  <p><img src="/imgs/yellow_maple.png" style="float: left; margin-right: 2px; margin-bottom: 2px;"> 11/2015 - Landing in Toronto</p>
+  <p><img src="/imgs/green_maple.png" style="float: left; margin-right: 2px; margin-bottom: 2px;"> 05/2015 - Passaportes recebidos</p>
+  <p><img src="/imgs/green_maple.png" style="float: left; margin-right: 2px; margin-bottom: 2px;"> 05/2015 - Vistos emitidos</p>
+  <p><img src="/imgs/green_maple.png" style="float: left; margin-right: 2px; margin-bottom: 2px;"> 04/2015 - Passaportes solicitados</p>
+  <p><img src="/imgs/green_maple.png" style="float: left; margin-right: 2px; margin-bottom: 2px;"> 03/2015 - Exames Médicos feitos</p>
+  <p><img src="/imgs/green_maple.png" style="float: left; margin-right: 2px; margin-bottom: 2px;"> 01/2015 - PER Recebido</p>
+  <p><img src="/imgs/green_maple.png" style="float: left; margin-right: 2px; margin-bottom: 2px;"> 12/2014 - Cartão de Crédito cobrado</p>
+  <p><img src="/imgs/green_maple.png" style="float: left; margin-right: 2px; margin-bottom: 2px;"> 09/2014 - Envio de aplicação</p>
+  <p><img src="/imgs/green_maple.png" style="float: left; margin-right: 2px; margin-bottom: 2px;"> 08/2014 - Preenchimento de Formulários</p>
+  <p><img src="/imgs/green_maple.png" style="float: left; margin-right: 2px; margin-bottom: 2px;"> 08/2014 - Caça aos documentos necessários</p>
+  <p><img src="/imgs/green_maple.png" style="float: left; margin-right: 2px; margin-bottom: 2px;"> 07/2014 - Exames de Proficiência - Inglês (IELTS)</p>
+  <p><img src="/imgs/green_maple.png" style="float: left; margin-right: 2px; margin-bottom: 2px;"> 06/2014 - Equivalência de Diploma (WES)</p>
+  <p><img src="/imgs/green_maple.png" style="float: left; margin-right: 2px; margin-bottom: 2px;"> 05/2014 - 1 mês de aulas focadas no exame IELTS (Inglês)</p>
+  <p><img src="/imgs/green_maple.png" style="float: left; margin-right: 2px; margin-bottom: 2px;"> 07/2013 - Início de estudos(Francês)</p>
+</section>
+
+<section>
+  <h1>Posts Recentes</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/08/20/docker-uma-alternativa-elegante-para-containers-no-linux/">Docker - Uma alternativa elegante para containers no Linux</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/08/03/assista-ao-documentario-sobre-aaron-swartz-o-menino-da-internet/">Assista ao documentário sobre Aaron Swartz: O menino da internet</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/13/alterando-os-parametros-do-kernel-em-tempo-real-com-o-systcl/">Alterando os parâmetros do kernel em tempo real com o Systcl</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/01/30/blackarch-linux-uma-nova-distribuicao-para-pentesters/">BlackArch Linux - Uma nova distribuição para Pentesters</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/01/23/dica-escondendo-seu-endereco-de-email-ao-divulgar-seu-endereco-de-email/">Dica - Escondendo Seu Endereço de Email ao Divulgar Seu Endereço de Email</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+  <h1>Categorias</h1>
+    <span id="tag-cloud"><embed type='application/x-shockwave-flash' src='/javascripts/tagcloud.swf'width='100%' height='250' bgcolor='#f2f2f2' id='tagcloudflash' name='tagcloudflash' quality='high' allowscriptaccess='always'flashvars="tcolor=0x333333&amp;tcolor2=0x333333&amp;hicolor=0x000000&amp;tspeed=100&amp;distr=true&amp;mode=tags&amp;tagcloud=%3Ctags%3E%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fandroid%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EAndroid%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Faptitude%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EAptitude%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Farch-linux%27+style%3D%27font-size%3A+18.363636363636363%25%27%3EArch+Linux%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fasterisk%27+style%3D%27font-size%3A+7.568181818181818%25%27%3EAsterisk%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fcensura%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3ECensura%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fchromium%27+style%3D%27font-size%3A+7.946969696969697%25%27%3EChromium%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fcontainers%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EContainers%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fcultura%27+style%3D%27font-size%3A+7.378787878787879%25%27%3ECultura%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fcultura-hacker%27+style%3D%27font-size%3A+15.522727272727273%25%27%3ECultura+Hacker%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fdebian%27+style%3D%27font-size%3A+7.378787878787879%25%27%3EDebian%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fdevops%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EDevOps%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fdia-livre%27+style%3D%27font-size%3A+7.757575757575758%25%27%3EDia+Livre%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fdocker%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EDocker%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Feventos%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EEventos%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Ffedora%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EFedora%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Ffirefox%27+style%3D%27font-size%3A+7.568181818181818%25%27%3EFirefox%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fflisol%27+style%3D%27font-size%3A+8.515151515151516%25%27%3EFlisol%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Ffree-bsd%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EFree+BSD%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fgoogle%27+style%3D%27font-size%3A+7.757575757575758%25%27%3EGoogle%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fimpressoes%27+style%3D%27font-size%3A+32.0%25%27%3EImpressoes%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Finternet%27+style%3D%27font-size%3A+7.378787878787879%25%27%3EInternet%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fios%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EiOS%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fjava%27+style%3D%27font-size%3A+8.325757575757576%25%27%3EJava%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fjogos%27+style%3D%27font-size%3A+7.757575757575758%25%27%3EJogos%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fkde%27+style%3D%27font-size%3A+10.40909090909091%25%27%3EKDE%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fkubuntu%27+style%3D%27font-size%3A+7.568181818181818%25%27%3EKubuntu%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fliberdade%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3ELiberdade%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Flinux%27+style%3D%27font-size%3A+27.075757575757574%25%27%3ELinux%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fliteratura%27+style%3D%27font-size%3A+12.113636363636363%25%27%3ELiteratura%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fmeio-ambiente%27+style%3D%27font-size%3A+7.757575757575758%25%27%3EMeio+Ambiente%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fprivacidade%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EPrivacidade%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fpython%27+style%3D%27font-size%3A+8.704545454545455%25%27%3EPython%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Frails%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3ERails%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fredes%27+style%3D%27font-size%3A+10.787878787878789%25%27%3ERedes%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fruby%27+style%3D%27font-size%3A+7.946969696969697%25%27%3ERuby%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fseguranca%27+style%3D%27font-size%3A+14.007575757575758%25%27%3ESeguranca%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fseguranca-digital%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3ESeguranca+Digital%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fsenha%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3ESenha%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fservidor%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EServidor%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fsoftware-livre%27+style%3D%27font-size%3A+30.484848484848484%25%27%3ESoftware+Livre%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fssh%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3ESSH%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fsysadmin%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3ESysAdmin%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Ftux-ce%27+style%3D%27font-size%3A+9.462121212121211%25%27%3ETux-ce%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fubuntu%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EUbuntu%3C%2Fa%3E+%3C%2Ftags%3E"></span>
+</section>
+<section>
+  <h1>Estou lendo</h1>
+  <img align="center" src="/imgs/livros/mago.jpg">
+</section>
+
+<section>
+  <h1> Eu apoio
+</h1>
+  <span>
+    <a href='http://archlinux.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/archlinux.org.png'></a><a href='http://asterisk.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/asterisk.org.png'></a><img style='padding: .5em; margin: .5em;' src='/images/stickers/glider.png' ><a href='http://kde.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/kde.org.png'></a><a href='http://linux.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/linux.org.png'></a><a href='http://octopress.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/octopress.org.png'></a><a href='http://opensource.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/opensource.org.png'></a><a href='http://python.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/python.org.png'></a><a href='http://raspberrypi.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/raspberrypi.org.png'></a><a href='http://ruby-lang.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/ruby-lang.org.png'></a>
+  </span>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Marcelo Cavalcante Rocha - Kalib -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'marcelocavalcante';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://kalib.github.io/blog/2015/08/20/docker-uma-alternativa-elegante-para-containers-no-linux/';
+        var disqus_url = 'http://kalib.github.io/blog/2015/08/20/docker-uma-alternativa-elegante-para-containers-no-linux/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

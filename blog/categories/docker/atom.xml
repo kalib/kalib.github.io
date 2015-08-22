@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Docker | Marcelo Cavalcante Rocha ~]]></title>
+  <link href="http://kalib.github.io/blog/categories/docker/atom.xml" rel="self"/>
+  <link href="http://kalib.github.io/"/>
+  <updated>2015-08-22T12:05:19-03:00</updated>
+  <id>http://kalib.github.io/</id>
+  <author>
+    <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Docker - Uma alternativa elegante para containers no Linux]]></title>
+    <link href="http://kalib.github.io/blog/2015/08/20/docker-uma-alternativa-elegante-para-containers-no-linux/"/>
+    <updated>2015-08-20T11:01:00-03:00</updated>
+    <id>http://kalib.github.io/blog/2015/08/20/docker-uma-alternativa-elegante-para-containers-no-linux</id>
+    <content type="html"><![CDATA[<p><img class="center" src="/imgs/dockerlogo.png" title="&lsquo;Docker&rsquo;" ></p>
+
+<p><strong>A</strong>ntes de falar sobre o Docker, é importante que se entenda o conceito de um container, portanto vamos começar do básico. A imagem acima, logomarca do Docker, deixa claro o que é um container. A baleia, representando um navio, carregando diversos caixotes ou containers ilustra o conceito físico de um container. Nada mais do que um enorme caixote que possui o intuito de isolar algo. Quando um grande navio transporta mercadorias de um porto para outro, ele costuma trazer diversos containers separando estas mercadorias, de forma que as coisas não fiquem misturadas e bagunçadas. A forma de separação vai depender dos critérios de organização utilizados pela embarcação, seja por proprietário, seja por categoria de produtos, etc. De qualquer forma, embora cada container possua seus elementos próprios, todos os containers compartilham alguns recursos básicos, como por exemplo a embarcação, que é o meio de transporte para todos os containers ali contidos.</p>
+
+<p><strong>D</strong>a mesma forma se dá no mundo dos computadores, onde o conceito de containers surgiu para separar e isolar alguns recursos e aplicações, otimizando os recursos que servem como base e que podem ser utilizados de forma compartilhada, como por exemplo o kernel do Sistema Operacional. De certa forma isto nos faz lembrar um pouco da virtualização, onde cada máquina virtual compartilha os recursos da máquina física, no entanto existe uma diferença clara no contexto de containers, visto que em um cenário de virtualização você precisará possuir um SO instalado na máquina física, com seu kernel e todos os seus recursos, e um SO instalado em sua máquina virtual, também com seu kernel e todos os seus recursos. Quando falamos em containers, imagine que você só precisará do kernel, bem como vários outros recursos, na máquina que será a hospedeira do container (a embarcação).</p>
+
+<p><strong>C</strong>ontainers Linux surgiram como uma tecnologia chave para empacotamento e entrega de aplicativos, combinando a leveza do isolamento de aplicativos com a flexibilidade de métodos de deploy baseados em imagens.</p>
+
+<p><strong>U</strong>ma das formas mais simples de se imaginar a vantagem da utilização de containers é imaginar que você possui uma empresa que hospeda servidores de aplicações para seus clientes. Se um novo cliente surge querendo hospedar a aplicação dele, você subirá uma nova máquina virtual, o que inclui todo um novo sistema operacional, enquanto que em uma solução baseada em containers você poderá ter apenas a sua máquina com um único kernel Linux provendo as priorizações de recursos (CPU, memória, I/O, rede, etc.) sem a necessidade de dar boot em um novo sistema operacional (máquinia virtual) na qual rodará a aplicação deste cliente.</p>
+
+<p><strong>D</strong>izem que uma imagem vale mais que mil palavras&hellip;</p>
+
+<p><img class="center" src="/imgs/docker_vmdiagram.png" title="&lsquo;Virtual Machine Diagram&rsquo;" ></p>
+
+<p><strong>N</strong>a imagem acima temos o cenário convencional com a utilização de <strong>Máquinas Virtuais</strong>. Em suma, temos um host físico, com seu respectivo SO e kernel. Acima deles temos a camada de virtualização ou HyperVisor, enquanto que acima desta teremos as máquinas virtuais, com seus respectivos SOs (cada um com seu kernel) instalados. No caso temos 3 VMs, com 3 SOs (cada um com seu kernel). Na camada acima encontramos o que realmente é necessário para o app do cliente funcionar, que são as bibliotecas e os binários. Por fim, o App do cliente em si.</p>
+
+<p><strong>V</strong>ejamos como fica o cenário com a utilização de containers, docker neste caso&hellip;</p>
+
+<p><img class="center" src="/imgs/docker_diagram.png" title="&lsquo;Docker Diagram&rsquo;" ></p>
+
+<p><strong>N</strong>o cenário com o Docker percebemos que a camada de SO das VMs sumiu, visto que ela não é mais necessária. Ao invés de Máquinas Virtuais, agora nós temos 3 containers, onde cada container roda os binários e bibliotecas de um SO, porém se aproveitando do kernel já existente no Host.</p>
+
+<p><strong>C</strong>om este grau de modularização nós ganhamos maior flexibilidade e agilidade no deploy de ambientes e aplicações.</p>
+
+<p><strong>U</strong>ma das vantagens da utilização do Docker é a existência de um repositório de imagens prontas que ficam disponibilizadas livremente para quem desejar utilizar. Seja uma imagem pronta de um container com CentOS, Ubuntu, etc.. Já existem centenas e centenas de imagens prontas para uso, sendo esta uma base de compartilhamento comunitário, mas&hellip;</p>
+
+<p><strong>V</strong>amos ao que interessa&hellip;</p>
+
+<p><strong>N</strong>os exemplos a seguir, estou utilizando o Ubuntu Server 15.04, visto que estou atualmente realizando uma POC de VPS com um novo host, portanto aproveitarei para fazer disto uma parte de meus testes nesta VPS. Sinta-se livre para utilizar sua máquina física com Ubuntu, com Debian, ou mesmo uma máquina virtual, caso não goste de realizar testes em sua máquina física, o resultado será o mesmo. Para que tudo funcione como esperamos, só existem 2 pré-requisitos a serem atendidos:</p>
+
+<p>1- O kernel do Linux que será utilizado deve ser igual ou superior ao 3.8;</p>
+
+<p>2- Caso você esteja realizando os testes em uma VM, seria interessante que sua máquina física tivesse comunicação com a VM. Isso pode ser testado com um ping da máquina física para a VM. No caso de sua máquina virtual ser instalada com interface gráfica, esta comunicação não será necessária, pois o único momento em que utilizaremos isto será para abrir um navegador e fazer um teste de acesso ao endereço da máquina virtual.</p>
+
+<p><strong>V</strong>amos lá. Para ter a certeza de que você atende o pré-requisito de kernel, utilize o comando &ldquo;uname -r&rdquo;:</p>
+
+<p><code>
+ kalib@cloudcaverna:~$ uname -r
+ 3.19.0-25-generic
+</code></p>
+
+<p><strong>E</strong>stou com o kernel 3.19, portanto superior ao kernel 3.8 que é o pré-requisito mínimo. Vamos em frente.</p>
+
+<p><strong>P</strong>rimeiramente, vamos instalar o Docker. Seja lá qual for sua distribuição Linux, digite o comando: <strong>(O comando deve ser executado com o usuário root ou com o comando sudo!)</strong></p>
+
+<p><code>
+ # curl -sSL https://get.docker.com | sh
+</code></p>
+
+<p><strong>E</strong>le baixará e executará um script de instalação, no meu caso do Ubuntu ele irá instalar um repositório e em seguida instalará o docker. O próximo passo será iniciar o serviço do docker:</p>
+
+<p><code>
+ # /etc/init.d/docker start
+ [ ok ] Starting docker (via systemctl): docker.service.
+</code></p>
+
+<p><strong>O</strong> docker possui uma série de scripts/comandos próprios para facilitar a sua administração, como por exemplo um script de <strong>ps</strong>, para que possamos ter a certeza de que ele está rodando e, além disso, saber se existem containers em execução, da mesma forma que faríamos com o ps do linux para ver os processos em andamento.</p>
+
+<p>```
+ # docker ps</p>
+
+<p> CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+```</p>
+
+<p><strong>P</strong>odemos ver que o docker está rodando, no entanto nenhum container está em execução. Na verdade, não temos nenhum container criado, portanto obviamente não poderia estar em execução.</p>
+
+<p><strong>A</strong>lém do ps, podemos utilizar o script <strong>images</strong> para ver quais imagens de containers já possuímos para uso:</p>
+
+<p>```
+ # docker images</p>
+
+<p> REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+```</p>
+
+<p><strong>D</strong>a mesma forma, não temos ainda nenhuma imagem baixada para uso.</p>
+
+<p><strong>U</strong>ma vez que estamos falando de containers, conforme dito anteriormente, a ideia é isolar ao máximo e otimizar o que precisamos para este container, portanto precisamos informar o processo que desejamos iniciar no container em questão.</p>
+
+<p><strong>V</strong>amos criar um container do Ubuntu, por exemplo, na versão 15.04, lançada em Abril deste ano, e vamos iniciar juntamente com ele o processo /bin/bash. O comando utilizado será: docker run -i -t ubuntu:15.04 /bin/bash</p>
+
+<p>```
+ # docker run -i -t ubuntu:15.04 /bin/bash</p>
+
+<p> Unable to find image &lsquo;ubuntu:15.04&rsquo; locally
+ 15.04: Pulling from library/ubuntu</p>
+
+<p> 6e6a100fa147: Pull complete
+ 13c0c663a321: Pull complete
+ 2bd276ed39d5: Pull complete
+ 013f3d01d247: Already exists
+ library/ubuntu:15.04: The image you are pulling has been verified. Important: image verification is a tech preview feature and should not be relied on to provide security.</p>
+
+<p> Digest: sha256:b2d4940544e515d4bc62b2a9ad3e6137b3e1e0937a41fdc1f0f30d12935e5b09
+ Status: Downloaded newer image for ubuntu:15.04</p>
+
+<p> root@d70562e7533c:/#
+```</p>
+
+<p><strong>É</strong> importante reparar que na primeira linha de execução ele me trouxe um alerta informando que não foi possível encontrar a imagem &ldquo;ubuntu:15.04&rdquo; localmente. Como disse acima, não temos ainda nenhuma imagem baixada, portanto ele não encontrou localmente e foi baixar diretamente no repositório de imagens do docker.</p>
+
+<p><strong>O</strong> procedimento foi extremamente rápido, certo? Acredite ou não, você já possui um container Ubuntu rodando em sua máquina. ;] Ainda não acredita? Repare novamente no seu prompt de comandos, veja que logo que ele finalizou o processo ele lhe deixou em um prompt &ldquo;estranho&rdquo;. No caso do meu exemplo acima, perceba que ao concluir o processo ele me deixou com o prompt assim:</p>
+
+<p><code>
+ root@d70562e7533c:/#
+</code></p>
+
+<p><strong>N</strong>ão, minha máquina não se chama d70562e7533c. Tenho certeza de que a sua também não se chama.. seja lá qual for a combinação de caracteres que lhe foi apresentada no prompt. Na verdade, sempre que iniciamos um container, o comportamento default é que você já é logado nele. Em suma, seu container com ubuntu 15.04 já foi criado e você já está logado nele, e esta combinação de caracteres estranha é o ID que foi dado ao seu container.</p>
+
+<p><strong>A</strong>inda não acredita? Bom, você pode, por exemplo, dar um <strong>cat /etc/issue</strong>, para ver que você está de fato rodando um ubuntu 15.04. Claro, no meu caso não haverá diferença, pois minha máquina que está rodando o docker também é ubuntu 15.04.</p>
+
+<p>```
+ root@d70562e7533c:/# cat /etc/issue</p>
+
+<p> Ubuntu 15.04 \n \l</p>
+
+<p> root@d70562e7533c:/#
+```</p>
+
+<p><strong>O*utro teste, seria rodar </strong>ps -ef** no container. Você verá que não existe nenhum processo rodando. Aliás, haverá apenas 1 processo (além do próprio ps), que foi o processo indicado na criação: /bin/bash. Desta forma você terá a certeza de que não está no prompt de sua máquina mesmo, visto que na sua certamente existem dezenas ou centenas de processos rodando, do kernel, do usuário, etc.</p>
+
+<p>```
+ root@d70562e7533c:/# ps -ef</p>
+
+<p> UID        PID  PPID  C STIME TTY          TIME CMD
+ root         1     0  0 13:36 ?        00:00:00 /bin/bash
+ root         9     1  0 13:44 ?        00:00:00 ps -ef</p>
+
+<p> root@d70562e7533c:/#
+```</p>
+
+<p><strong>D</strong>a mesma forma você poderá experimentar outros comandos para testar (caso ainda não esteja acreditando que de forma tão &ldquo;oi, simples assim&rdquo; você já está com seu container pronto): ls, apt-get update, etc.. Tudo funcionando como se fosse uma máquina real, ou virtual, no entanto sem um kernel, visto que ela está utilizando o kernel da máquina host.</p>
+
+<p><strong>A</strong>gora que temos a certeza de que estamos em nosso container, você pode sair do container e voltar para sua máquina host. Para isso você precisará pressionar as teclas <strong>Ctrl + P + Q</strong>. Desta forma, você verá que seu prompt voltará para seu host enquanto que seu container continuará rodando, você apenas saiu do prompt do mesmo.</p>
+
+<p>```
+ root@d70562e7533c:/# root@cloudcaverna:~#</p>
+
+<p> root@cloudcaverna:~#
+```</p>
+
+<p><strong>V</strong>amos verificar novamente o ps do docker, visto que da última vez ele estava vazio. Desta vez ele nos mostrará um processo em execução, que no caso é o container que criamos.</p>
+
+<p>```
+ root@cloudcaverna:~# docker ps</p>
+
+<p> CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+ d70562e7533c        ubuntu:15.04        &ldquo;/bin/bash&rdquo;         15 minutes ago      Up 15 minutes                           modest_khorana
+```</p>
+
+<p><strong>N</strong>o retorno podemos ver o ID do nosso container, o nome da imagem que ele utiliza, o comando em execução, o tempo desde sua criação, o seu status, portas e nome.</p>
+
+<p><strong>O</strong> container ID poderá ser utilizado para voltar para nosso container através do comando <strong>docker attach &lt;container-id></strong>: (Após digitar o comando, pressione novamente Enter para liberar o prompt)</p>
+
+<p>```
+ root@cloudcaverna:~# docker attach d70562e7533c</p>
+
+<p> root@d70562e7533c:/#
+```</p>
+
+<p><strong>N</strong>o exemplo anterior nós utilizamos a combinação <strong>Ctrl + P + Q</strong> para sair do container mantendo-o rodando. Vamos experimentar utilizar desta vez <strong>Ctrl + D</strong>. Desta forma você não apenas está saindo mas também desligando o container. Execute novamente a lista de processos/containers do docker para ver:</p>
+
+<p>```
+ root@cloudcaverna:~# docker ps</p>
+
+<p> CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+```</p>
+
+<p><strong>N</strong>o entanto, é importante lembrar que a imagem do Ubuntu 15.04 que baixamos, continua disponível para o caso de precisarmos criar novos containers Ubuntu 15.04:</p>
+
+<p>```
+ root@cloudcaverna:~# docker images</p>
+
+<p> REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+ ubuntu              15.04               013f3d01d247        17 hours ago        131.4 MB
+```</p>
+
+<p><strong>S</strong>imples&hellip; Mas vamos fazer algo mais próximo do mundo real, afinal um container apenas com o Ubuntu rodando, ou qualquer outra que seja a distribuição escolhida, não tem muita utilidade, portanto vamos criar um container rodando um servidor web, para o caso de querermos hospedar um site ou aplicalção web neste container. Por ser mais leve e simples, vou utilizar o nginx no exemplo. Vamos utilizar o comando <strong>docker run -i -t -p 8080:80 ubuntu:15.04 /bin/bash</strong></p>
+
+<p><strong>N</strong>o comando acima estamos dizendo que queremos criar um novo container ubuntu 15.04 rodando o /bin/bash. Desta vez temos um parâmetro que não utilizamos anteriormente. O <strong>p</strong> serve para indicar a utilização de portas. Quando utilizamos <strong>p 8080:80</strong> estamos dizendo que vamos utilizar a porta 80 no container e que ela estará mapeada na porta 8080 do nosso host ou hospedeiro. Ou seja, quando instalarmos o Nginx no ubuntu do container, você poderá através de seu host abrir o navegador e acessar o seu endereço ip ou nome de host (caso você possua resolução de nomes funcionando) na porta 8080.</p>
+
+<p>```
+ root@cloudcaverna:~# docker run -i -t -p 8080:80 ubuntu:15.04 /bin/bash</p>
+
+<p> root@08abb8611700:/#
+```</p>
+
+<p><strong>O</strong> processo foi bem mais rápido desta vez, visto que já tínhamos a imagem do container ubuntu 15.04, portanto não tivemos a necessidade de baixar outra imagem. O seu container já está criado e você já está logado no prompt do mesmo, conforme pode ver através do ID do container que apareceu em seu prompt.</p>
+
+<p><strong>V</strong>amos agora instalar o servidor web nginx para realizarmos o nosso teste. Para isso vamos atualizar os repositórios e em seguida instalar o pacote: <strong>apt-get update &amp;&amp; apt-get install -y nginx</strong></p>
+
+<p>```
+ root@08abb8611700:/# apt-get update &amp;&amp; apt-get install -y nginx</p>
+
+<p> Ign <a href="http://archive.ubuntu.com">http://archive.ubuntu.com</a> vivid InRelease
+ Ign <a href="http://archive.ubuntu.com">http://archive.ubuntu.com</a> vivid-updates InRelease
+ Get:1 <a href="http://archive.ubuntu.com">http://archive.ubuntu.com</a> vivid/main Sources [1358 kB]
+ Get:2 <a href="http://archive.ubuntu.com">http://archive.ubuntu.com</a> vivid/restricted Sources [7100 B]
+ &hellip;
+ Building dependency tree     <br/>
+ Reading state information&hellip; Done
+ The following extra packages will be installed:
+  fontconfig-config fonts-dejavu-core geoip-database init-system-helpers libexpat1 libfontconfig1 libfreetype6 libgd3 libgeoip1 libicu52
+  libjbig0 libjpeg-turbo8 libjpeg8 libpng12-0 libssl1.0.0 libtiff5 libvpx1 libx11-6 libx11-data libxau6 libxcb1 libxdmcp6 libxml2 libxpm4
+  libxslt1.1 nginx-common nginx-core sgml-base ucf xml-core
+ Suggested packages:
+  libgd-tools geoip-bin fcgiwrap nginx-doc ssl-cert sgml-base-doc debhelper
+ The following NEW packages will be installed:
+  fontconfig-config fonts-dejavu-core geoip-database init-system-helpers libexpat1 libfontconfig1 libfreetype6 libgd3 libgeoip1 libicu52
+  libjbig0 libjpeg-turbo8 libjpeg8 libpng12-0 libssl1.0.0 libtiff5 libvpx1 libx11-6 libx11-data libxau6 libxcb1 libxdmcp6 libxml2 libxpm4
+  libxslt1.1 nginx nginx-common nginx-core sgml-base ucf xml-core
+ 0 upgraded, 31 newly installed, 0 to remove and 0 not upgraded.
+ Need to get 14.0 MB of archives.
+ After this operation, 53.3 MB of additional disk space will be used.
+ &hellip;
+ Get:1 <a href="http://archive.ubuntu.com/ubuntu/">http://archive.ubuntu.com/ubuntu/</a> vivid/main libexpat1 amd64 2.1.0-6ubuntu1 [70.6 kB]
+ Processing triggers for systemd (219-7ubuntu6) &hellip;</p>
+
+<p> root@08abb8611700:/#
+```</p>
+
+<p><strong>C</strong>ortei bastante a saída visto ser desnecessária, mas uma vez que o nginx esteja instalado, vamos iniciá-lo: <strong>/etc/init.d/nginx start</strong>. Em seguida, vamos utilizar o ps para ver os processos que estão rodando no nosso container:</p>
+
+<p>```
+ root@08abb8611700:/# /etc/init.d/nginx start</p>
+
+<p> root@08abb8611700:/# ps -ef</p>
+
+<p> UID        PID  PPID  C STIME TTY          TIME CMD
+ root         1     0  0 14:10 ?        00:00:00 /bin/bash
+ root       609     1  0 14:19 ?        00:00:00 nginx: master process /usr/sbin/nginx
+ www-data   610   609  0 14:19 ?        00:00:00 nginx: worker process
+ www-data   611   609  0 14:19 ?        00:00:00 nginx: worker process
+ www-data   612   609  0 14:19 ?        00:00:00 nginx: worker process
+ www-data   613   609  0 14:19 ?        00:00:00 nginx: worker process
+ root       614     1  0 14:19 ?        00:00:00 ps -ef</p>
+
+<p> root@08abb8611700:/#
+```</p>
+
+<p><strong>F</strong>eito isto, o serviço está rodando e já pode ser testado. Em seu host você poderá abrir o navegador e acessar o endereço local de seu host, com a porta 8080, visto que foi esta que definimos inicialmente para mapear a porta 80 do container: <strong>localhost:8080</strong></p>
+
+<p><strong>C</strong>aso esteja utilizando uma máquina virtual para fazer seus testes, você terá duas possibilidades:
+1- Caso sua máquina virtual possua alguma interface gráfica instalada, você poderá abrir o navegador da própria VM e acessar o mesmo endereço de localhost com a porta 8080;
+2- Caso sua VM não esteja com nenhum ambiente gráfico instalado, você poderá utilizar aplicações de CLI para testar (ex: lynx, curl, etc.) ou usar o navegador da máquina que serve de host para sua VM, levando em conta que você fez o teste descrito no início para ter certeza de que sua máquina física consegue se comunicar com sua VM. Neste caso, em sua máqunina física você acessará o endereço de sua vm no navegador, com a porta 8080.</p>
+
+<p><strong>R</strong>esultado? O Nginx em nosso container rodando perfeitamente.</p>
+
+<p><img class="center" src="/imgs/docker_nginx8080.png" title="&lsquo;Nginx on Docker&rsquo;" ></p>
+
+<p><strong>D</strong>a mesma forma feita anteriormente, podemos sair de nosso container com a combinação de teclas <strong>Ctrl + P + Q</strong> e verificar os processos/containers do docker em execução:</p>
+
+<p>```
+ root@08abb8611700:/# root@cloudcaverna:~#</p>
+
+<p> root@cloudcaverna:~# docker ps</p>
+
+<p> CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS                  NAMES
+ 08abb8611700        ubuntu:15.04        &ldquo;/bin/bash&rdquo;         19 minutes ago      Up 19 minutes       0.0.0.0:8080->80/tcp   jolly_hawking</p>
+
+<p> root@cloudcaverna:~#
+```</p>
+
+<p><strong>É</strong> importante salientar que quando saímos do container com a combinação <strong>Ctrl + P + Q</strong> nós não estamos fechando o container, pois ele continua rodando, conforme pode ser visto com <strong>docker ps</strong>. No entanto, quando saímos do nosso antigo container com a combinação <strong>Ctrl + D</strong>, nós percebemos que ele finalizou de vez o container. Além de finalizar, ele excluiu o nosso container, visto que o mesmo não foi salvo, ou &ldquo;comittado&rdquo;. Se sairmos deste container no qual instalamos o nginx utilizando <strong>Ctrl + D</strong>, nós estaremos descartando tudo o que foi feito nele. Para poder finalizar o seu container sem perdê-lo, ou seja, mantendo o container salvo e tudo o que foi instalado/configurado nele, nós precisamos sair do container com a combinação <strong>Ctrl + P + Q</strong>, conforme fizemos acima, e em seguida realizar um commit deste container. Estaremos então criando uma imagem com o atual estado do container. Desta forma, se posteriormente precisarmos subir um novo container que rode o SO ubuntu 15.04 e que também possua o nginx, poderemos criar um novo container a partir desta imagem em poucos segundos. O commit se dá da seguinte forma: <strong>docker commit &lt;container-id> &lt;nome-que-vc-desejar></strong></p>
+
+<p><strong>L</strong>embrando que o id do container pode ser conseguido através do comando <strong>docker ps</strong> e que o <strong>nome-que-vc-desejar</strong> será o nome utilizado para identificar esta sua máquina/imagem.</p>
+
+<p>```
+ root@cloudcaverna:~# docker commit 08abb8611700 cloudcaverna/ubuntu-nginx:1.0</p>
+
+<p> b0922bc8f41295cadadbd131c075e29288b52e8bb2d9546cb7c0327eb95fe7dc</p>
+
+<p> root@cloudcaverna:~#
+```</p>
+
+<p><strong>U</strong>tilizei 1.0 ao final para ter uma ideia de versionamento, visto que o docker nos permite trabalhar desta forma. É uma questão de organização.</p>
+
+<p><strong>E</strong>m seguida você pode verificar sua imagem criada através do script <strong>images</strong> do docker, bem como o seu container ainda rodando através do script <strong>ps</strong>:</p>
+
+<p>```
+ root@cloudcaverna:~# docker images</p>
+
+<p> REPOSITORY                  TAG                 IMAGE ID            CREATED              VIRTUAL SIZE
+ cloudcaverna/ubuntu-nginx   1.0                 b0922bc8f412        About a minute ago   204.6 MB
+ ubuntu                      15.04               013f3d01d247        18 hours ago         131.4 MB</p>
+
+<p> root@cloudcaverna:~# docker ps</p>
+
+<p> CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS                  NAMES
+ 08abb8611700        ubuntu:15.04        &ldquo;/bin/bash&rdquo;         49 minutes ago      Up 49 minutes       0.0.0.0:8080->80/tcp   jolly_hawking</p>
+
+<p> root@cloudcaverna:~#
+```</p>
+
+<p><strong>V</strong>amos agora criar um novo container. Aqui você pode escolher como prosseguir. Eu criarei um container com a distribuição Arch Linux rodando, mas você pode seguir e criar outra com o Ubuntu caso deseje, então vejamos as opções:</p>
+
+<p><strong>Opção 1 &ndash; Caso escolha criar este segundo container como Arch Linux</strong></p>
+
+<p>```
+ root@cloudcaverna:~# docker run -i -t -p 6660:80 base/archlinux /bin/bash</p>
+
+<p> Unable to find image &lsquo;base/archlinux:latest&rsquo; locally
+ latest: Pulling from base/archlinux</p>
+
+<p> b31c6c1462e6: Pull complete
+ b97e110c94d9: Already exists
+ Digest: sha256:7905fad7578b9852999935fb0ba9c32fe16cece9e4d1d742a34f55ce9cebdfd1
+ Status: Downloaded newer image for base/archlinux:latest</p>
+
+<p> [root@be266bf7e5a3 /]#</p>
+
+<p>```</p>
+
+<p><strong>Opção 2 &ndash; Caso deseje criar um novo container Ubuntu aproveitando a imagem que já está pronta e com nginx já instalado</strong></p>
+
+<p><code>
+ docker run -i -t -p 6660:80 &lt;nome-que-vc-deu-para-sua-imagem&gt;
+</code></p>
+
+<p>Como eu dei o nome de <em>cloudcaverna/ubuntu-nginx</em>, eu utilizaria <em>docker run -i -t -p 6660:80 cloudcaverna/ubuntu-nginx</em>.</p>
+
+<p>Desta forma você não precisará sequer instalar o nginx novamente neste container, visto que você utilizou como base uma imagem que já possuía o nginx instalado, restando apenas a você testar no navegador novamente o endereço porém trocando a porta para 6660.</p>
+
+<p><strong>C</strong>omo eu resolvi seguir em frente com um container totalmente novo, baseado no Arch Linux, vou dar um <strong>cat /etc/issue</strong> para ver que realmente estou em um ambiente com a distribuição Arch Linux e vou instalar o nginx nele com o pacman, visto que este é o gerenciador de pacotes do Arch:</p>
+
+<p>```
+ [root@be266bf7e5a3 /]# cat /etc/issue</p>
+
+<p> Arch Linux \r (\l)</p>
+
+<p> [root@be266bf7e5a3 /]# pacman -Sy nginx</p>
+
+<p> :: Synchronizing package databases&hellip;
+ core                                                        121.2 KiB   203K/s 00:01 [#################################################] 100%
+ extra                                                      1773.8 KiB   644K/s 00:03 [#################################################] 100%
+ community                                                     2.7 MiB   936K/s 00:03 [#################################################] 100%
+ resolving dependencies&hellip;
+ looking for inter-conflicts&hellip;</p>
+
+<p> Packages (1): nginx-1.8.0-1</p>
+
+<p> Total Download Size:    0.34 MiB
+ Total Installed Size:   0.98 MiB</p>
+
+<p> :: Proceed with installation? [Y/n]
+ :: Retrieving packages &hellip;
+ nginx-1.8.0-1-x86_64                                        349.5 KiB   266K/s 00:01  [#################################################] 100%
+ (1/1) installing nginx                                                                [ #################################################] 100%</p>
+
+<p> [root@be266bf7e5a3 /]#
+```</p>
+
+<p><strong>A</strong>gora que estou com o nginx rodando também neste container do Arch Linux, vou sair do container pressionando a combinação <strong>Ctrl + P + Q</strong> e em seguida rodar o script de <strong>ps</strong> do docker:</p>
+
+<p>```
+ [root@be266bf7e5a3 /]# root@cloudcaverna:~#</p>
+
+<p> root@cloudcaverna:~# docker ps</p>
+
+<p> CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS                  NAMES
+ be266bf7e5a3        base/archlinux      &ldquo;/bin/bash&rdquo;         10 minutes ago      Up 10 minutes       0.0.0.0:6660->80/tcp   cocky_hoover
+ 08abb8611700        ubuntu:15.04        &ldquo;/bin/bash&rdquo;         About an hour ago   Up About an hour    0.0.0.0:8080->80/tcp   jolly_hawking</p>
+
+<p> root@cloudcaverna:~#
+ ```</p>
+
+<p> <strong>D</strong>esta vez eu possuo dois containers criados, sendo um com o ubuntu 15:04 e outro com o Arch Linux. Agora vou realizar o commit do meu container Arch Linux com nginx, para não perder esta imagem. Em seguida, executarei o script <strong>images</strong> para ver as imagens que já possuo:</p>
+
+<p> ```
+  root@cloudcaverna:~# docker commit be266bf7e5a3 cloudcaverna/archlinux-nginx:1.0</p>
+
+<p> f4ea14bf23c47466fb256fff9e3ab32ca85fb0256a05007ef4972ad7ff5f2aa9</p>
+
+<p> root@cloudcaverna:~# docker images</p>
+
+<p> REPOSITORY                     TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+ cloudcaverna/archlinux-nginx   1.0                 f4ea14bf23c4        5 seconds ago       285.9 MB
+ cloudcaverna/ubuntu-nginx      1.0                 b0922bc8f412        20 minutes ago      204.6 MB
+ ubuntu                         15.04               013f3d01d247        18 hours ago        131.4 MB
+ base/archlinux                 latest              b97e110c94d9        8 weeks ago         278.8 MB</p>
+
+<p> root@cloudcaverna:~#
+```
+<strong>A</strong>gora vou testar no navegador o nginx deste meu segundo container, o qual defini que utilizaria a porta 6660 do meu host:</p>
+
+<p><img class="center" src="/imgs/docker_nginx6660_8080.png" title="&lsquo;Nginx on Docker&rsquo;" ></p>
+
+<p><strong>R</strong>epare que acessei ambos os endereços, tanto o da porta 8080, o qual está apresentando o nginx do meu primeiro container, quanto o da porta 6660, que apresenta o nginx do meu segundo container. Ambos funcionando em paralelo, com ambientes distintos, sendo um Ubuntu e o outro Arch Linux, porém ambos compartilham o mesmo kernel, que é o do meu host.</p>
+
+<p><strong>O</strong> próprio script <strong>ps</strong> do docker lhe informa as portas que estão sendo utilizadas para cada container, caso você esteja em dúvida:</p>
+
+<p>```
+ root@cloudcaverna:~# docker ps</p>
+
+<p> CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS                  NAMES
+ be266bf7e5a3        base/archlinux      &ldquo;/bin/bash&rdquo;         26 minutes ago      Up 26 minutes       0.0.0.0:6660->80/tcp   cocky_hoover
+ 08abb8611700        ubuntu:15.04        &ldquo;/bin/bash&rdquo;         About an hour ago   Up About an hour    0.0.0.0:8080->80/tcp   jolly_hawking</p>
+
+<p> root@cloudcaverna:~#
+```</p>
+
+<p><strong>D</strong>a mesma forma, você poderá fazer toda e qualquer operação que você faria em uma máquina qualquer, como por exemplo monitorar os logs de acesso do nginx. Basta se conectar em algum dos dois containers com <strong>docker attach &lt;container-id></strong> e em seguida abrir o arquivo de log do nginx com o tail: <strong>tail -f /var/log/nginx/access.log</strong>. Com o log rodando, pode acessar novamente no navegador o endereço com a porta que está mapeada para este container e você verá os logs do seu acesso.</p>
+
+<p><strong>A</strong>nteriormente nós vimos que com a combinação <strong>Ctrl + P + Q</strong> eu consigo sair do container porém ele permanecerá rodando. Com <strong>Ctrl + D</strong> eu finalizava o container de vez. Mas, supondo que eu queira parar temporariamente o container, posso utilizar o script <strong>stop</strong> do container inserindo o id do container que desejo parar:</p>
+
+<p>```
+ root@cloudcaverna:~# docker stop be266bf7e5a3
+ be266bf7e5a3</p>
+
+<p> root@cloudcaverna:~#
+```</p>
+
+<p><strong>E</strong>xiste ainda uma forma de ver o que foi alterado no container desde sua criação. É literalmente uma espécie de &ldquo;diff&rdquo;:</p>
+
+<p><code>
+ root@cloudcaverna:~# docker diff 08abb8611700
+ C /.wh..wh.plnk
+ A /.wh..wh.plnk/93.1190648
+ C /bin
+ A /bin/running-in-container
+ A /core
+ C /etc
+ C /etc/default
+ A /etc/default/nginx
+ A /etc/fonts
+ A /etc/fonts/conf.avail
+ A /etc/fonts/conf.avail/10-antialias.conf
+ A /etc/fonts/conf.avail/10-autohint.conf
+ A /etc/fonts/conf.avail/10-hinting-full.conf
+ A /etc/fonts/conf.avail/10-hinting-medium.conf
+ A /etc/fonts/conf.avail/10-hinting-slight.conf
+ A /etc/fonts/conf.avail/10-hinting.conf
+ A /etc/fonts/conf.avail/10-no-sub-pixel.conf
+ A /etc/fonts/conf.avail/10-scale-bitmap-fonts.conf
+ A /etc/fonts/conf.avail/10-sub-pixel-bgr.conf
+ A /etc/fonts/conf.avail/10-sub-pixel-rgb.conf
+ A /etc/fonts/conf.avail/10-sub-pixel-vbgr.conf
+ A /etc/fonts/conf.avail/10-sub-pixel-vrgb.conf
+ A /etc/fonts/conf.avail/10-unhinted.conf
+ A /etc/fonts/conf.avail/11-lcdfilter-default.conf
+ A /etc/fonts/conf.avail/11-lcdfilter-legacy.conf
+ A /etc/fonts/conf.avail/11-lcdfilter-light.conf
+ ...
+ ...
+</code></p>
+
+<p><strong>A</strong> saída é extensa, portanto cortei aqui mesmo, mas você terá basicamente todo o diff do que foi alterado desde a criação do container.</p>
+
+<p><strong>R</strong>esumidamente, esta é a função do docker. Com criatividade e disposição se faz muita coisa com ele. Não é a toa que os big players de mercado já estão utilizando bastante esta ferramenta para soluções de container, como por exemplo: Amazon, Apcera, Cisco, CoreOS, Datera, VMWare, Verizon Labs, Red Hat, Google, RackSpace, Oracle, IBM, Intel, Microsoft, HP, etc.</p>
+
+<p><strong>L</strong>embrando que o endereço de repositórios com as imagens já existentes e disponibilizadas gratuitamente é <a href="https://hub.docker.com">https://hub.docker.com</a></p>
+
+<p><strong>A</strong>té a próxima&hellip;</p>
+
+<p><strong>H</strong>appy Hacking!</p>
+]]></content>
+  </entry>
+  
+</feed>

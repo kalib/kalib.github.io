@@ -9,7 +9,7 @@
   <meta name="author" content="Marcelo Cavalcante Rocha - Kalib">
 
   
-  <meta name="description" content="E se sua namorada/esposa/irmã/mãe/vizinha/filha da vizinha/&hellip; pudesse finalmente entender que tanto código é esse que você digita no &hellip;">
+  <meta name="description" content="É natural encontrar pessoas que utilizam linux a pouco tempo (ou que nunca utilizaram) questionando aspectos simples que seguem o jargão: &ldquo;Mas &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -80,6 +80,74 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/08/06/dica-rapida-linux-forcar-usuario-a-trocar-senha-apos-primeiro-login/">Dica Rápida - Linux - Forçar Usuário a Trocar Senha Após Primeiro Login</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-08-06T08:20:00-03:00" pubdate data-updated="true">Aug 6<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/08/06/dica-rapida-linux-forcar-usuario-a-trocar-senha-apos-primeiro-login/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img class="center" src="/imgs/password.jpg" title="'password'" ></p>
+
+<p><strong>É</strong> natural encontrar pessoas que utilizam linux a pouco tempo (ou que nunca utilizaram) questionando aspectos simples que seguem o jargão: <em>&ldquo;Mas no Windows eu consigo fazer isso, enquanto que no Linux&hellip;.&rdquo;</em></p>
+
+<p><strong>I</strong>sso não é novidade alguma e, de fato, é um comportamento esperado, embora demonstre apenas uma mera falta de boa vontade para pesquisar um pouco. O fato é que por vezes encontro pessoas me questionando sobre alguns destes <em>recursos em falta</em> no mundo Linux, quando na verdade eles, na grande maioria das vezes, não estão em falta.</p>
+
+<p><strong>U</strong>m exemplo recente disto se deu quando um colega (não se preocupe, seu nome está a salvo) me perguntou:</p>
+
+<blockquote><p><em>Porque o Linux não tem um recurso para forçar um usuário a alterar sua senha após o primeiro login? Isso me ajuda muito como SysAdmin em servidores Windows.</em></p></blockquote>
+
+<p><strong>D</strong>evo concordar com ele no sentido de que este recurso ajuda muito a vida de um SysAdmin. Sejamos justos, as pessoas vivem esquecendo suas senhas. Segunda-feira? Dia mundial do <em>&ldquo;esqueci minha senha, você pode gerar outra por favor?&rdquo;</em></p>
+
+<p><strong>P</strong>orém, devo acrescentar que o Linux possui sim este recurso (e não é uma novidade). O chage é apenas uma das formas de o fazer.</p>
+
+<p><strong>S</strong>upondo que seu usuário esqueceu sua senha e você deseja possibilitar que ele crie uma nova. Você pode mudar a senha dele para qualquer coisa que venha em sua mente, por exemplo: <em>123mudar456</em></p>
+
+<p><strong>E</strong>m seguida, digite o seguinte comando:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> # chage -d 0 {nome-do-usuário}</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>S</strong>upondo que eu tenha alterado a senha do usuário <em>linus.torvalds</em> para <em>123mudar456</em>, o comando seria:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> # chage -d 0 linus.torvalds</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>O</strong> parâmetro -d determina quando a senha do mesmo expira, ou deverá ser trocada. Você pode determinar uma data específica, a qual deve ser indicada no formato AAAA-MM-DD, porém, ao invés da data, o 0 indica que a senha deverá ser trocada após o primeiro login daquele usuário.</p>
+
+<p><strong>S</strong>imples, certo?!</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -226,72 +294,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/02/06/recomendacao-bibliografica-mago-e-vidro-a-torre-negra-iv/">Recomendação Bibliográfica: Mago E Vidro (a Torre Negra - IV)</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-02-06T09:26:17-03:00" pubdate data-updated="true">Feb 6<span>th</span>, 2012</time>
-        
-         | <a href="/blog/2012/02/06/recomendacao-bibliografica-mago-e-vidro-a-torre-negra-iv/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><img class="left" src="/imgs/livros/magoevidro.jpg" title="'Mago e Vidro'" ></p>
-
-<p><strong>D</strong>epois de minhas longas férias, estou de volta e começando os posts do ano com uma recomendação bibliográfica: <strong>Mago e Vidro</strong>, o quarto volume da saga <strong>A Torre Negra</strong>.</p>
-
-<p><strong>P</strong>ara quem não conhece a saga, sugiro a leitura dos 3 links a seguir:</p>
-
-<p><a href="http://blog.marcelocavalcante.net/blog/2009/06/21/recomendacao-bibliografica-do-vooc2bf-o-pistoleiro/"><strong>A Torre Negra vol I &ndash; O Pistoleiro</strong></a></p>
-
-<p><a href="http://blog.marcelocavalcante.net/blog/2009/09/08/recomendacao-bibliografica-a-escolha-dos-tres-a-torre-negra-vol-ii/"><strong>A Torre Negra vol II &ndash; A Escolha dos Três</strong></a></p>
-
-<p><a href="http://blog.marcelocavalcante.net/blog/2010/02/22/recomendacao-bibliografica-a-torre-negra-vol-iii-as-terras-devastadas/"><strong>A Torre Negra vol III &ndash; As Torres Devastadas</strong></a></p>
-
-<p><strong>N</strong>este 4º livro, o consagrado autor <a href="http://pt.wikipedia.org/wiki/Stephen_King"><strong>Stephen King</strong></a> deixa um pouco de lado a trama inicial na qual os personagens estavam buscando a Torre Negra e foca as mais de 800 páginas do livro no passado do Pistoleiro Roland, mais especificamente em sua adolescência e suas primeiras aventuras.</p>
-
-<p><strong>J</strong>untamente com seus companheiros Cuthbert e Alain, Roland se apaixona e faz amigos e inimigos durante o que parecia uma simples missão passada por seu pai.</p>
-
-<p><strong>P</strong>ara quem já iniciou a saga, recomendo fortemente a continuação e, para quem ainda não iniciou e está sem um bom livro para ler, vale a pena pegar o primeiro livro desta aventura.</p>
-
-<p><strong>S</strong>egue breve sinopse do livro:</p>
-
-<blockquote><p><em>A estranha e inesquecível odisséia de Roland de Gilead em busca da Torre Negra continua. No quarto volume da série imaginada por Stephen King, novos perigos ameaçam o ka-tet de Roland &ndash; formado por Jake, Eddie Dean, Susannah e Oi.</em></p></blockquote>
-
-<p><em>Mago e Vidro retoma a eletrizante narrativa interrompida em As Terras Devastadas. Depois de enfrentar a terrível ameaça do monotrilho Blaine, o último pistoleiro e seus seguidores desembarcam na cidade de Topeka, no Kansas, e retomam o caminho do Feixe de Luz que conduz à Torre Negra. Roland revela então aos companheiros a história de seu passado, e a trágica perda de seu grande amor de juventude, a bela Susan Delgado.</em></p>
-
-<p><em>Prosseguindo em sua jornada, o ka-tet chega a um palácio de vdro verde onde encontra ninguem menos do que o antigo nêmesis de Roland: Marten Broadcloak, conhecido em alguns mundos como Randall Flagg, em outros como Richard Fannin,e em outro ainda como John Farson, o Homem Bom. E Roland e seus companheiros descobrem então uma pavorosa verdade sobre o passado do pistoleiro&hellip;</em></p>
-
-<p><em>Inspirada no universo imaginário de J.R.R. Tolkien e no poema épico do século XIX &ldquo;Childe Roland à Torre Negra Chegou&rdquo;, A Torre Negra mstura ficção científica, fantasia e terror numa narrativa que forma um verdadeiro mosaivo da cultura popular cotemporânea.</em></p>
-
-<p><strong>A</strong>braços</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/12/">&larr; Anteriores</a>
@@ -331,6 +333,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/08/20/docker-uma-alternativa-elegante-para-containers-no-linux/">Docker - Uma alternativa elegante para containers no Linux</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/08/03/assista-ao-documentario-sobre-aaron-swartz-o-menino-da-internet/">Assista ao documentário sobre Aaron Swartz: O menino da internet</a>
       </li>
     
@@ -346,15 +352,11 @@
         <a href="/blog/2014/01/23/dica-escondendo-seu-endereco-de-email-ao-divulgar-seu-endereco-de-email/">Dica - Escondendo Seu Endereço de Email ao Divulgar Seu Endereço de Email</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2014/01/17/dica-assistir-star-wars-em-um-console-ou-terminal/">Dica - Assistir Star Wars em um Console ou Terminal</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categorias</h1>
-    <span id="tag-cloud"><embed type='application/x-shockwave-flash' src='/javascripts/tagcloud.swf'width='100%' height='250' bgcolor='#f2f2f2' id='tagcloudflash' name='tagcloudflash' quality='high' allowscriptaccess='always'flashvars="tcolor=0x333333&amp;tcolor2=0x333333&amp;hicolor=0x000000&amp;tspeed=100&amp;distr=true&amp;mode=tags&amp;tagcloud=%3Ctags%3E%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fandroid%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EAndroid%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Faptitude%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EAptitude%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Farch-linux%27+style%3D%27font-size%3A+18.363636363636363%25%27%3EArch+Linux%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fasterisk%27+style%3D%27font-size%3A+7.568181818181818%25%27%3EAsterisk%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fcensura%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3ECensura%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fchromium%27+style%3D%27font-size%3A+7.946969696969697%25%27%3EChromium%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fcultura%27+style%3D%27font-size%3A+7.378787878787879%25%27%3ECultura%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fcultura-hacker%27+style%3D%27font-size%3A+15.522727272727273%25%27%3ECultura+Hacker%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fdebian%27+style%3D%27font-size%3A+7.378787878787879%25%27%3EDebian%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fdia-livre%27+style%3D%27font-size%3A+7.757575757575758%25%27%3EDia+Livre%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Feventos%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EEventos%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Ffedora%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EFedora%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Ffirefox%27+style%3D%27font-size%3A+7.568181818181818%25%27%3EFirefox%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fflisol%27+style%3D%27font-size%3A+8.515151515151516%25%27%3EFlisol%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Ffree-bsd%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EFree+BSD%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fgoogle%27+style%3D%27font-size%3A+7.757575757575758%25%27%3EGoogle%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fimpressoes%27+style%3D%27font-size%3A+32.0%25%27%3EImpressoes%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Finternet%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EInternet%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fios%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EiOS%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fjava%27+style%3D%27font-size%3A+8.325757575757576%25%27%3EJava%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fjogos%27+style%3D%27font-size%3A+7.757575757575758%25%27%3EJogos%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fkde%27+style%3D%27font-size%3A+10.40909090909091%25%27%3EKDE%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fkubuntu%27+style%3D%27font-size%3A+7.568181818181818%25%27%3EKubuntu%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fliberdade%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3ELiberdade%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Flinux%27+style%3D%27font-size%3A+26.886363636363637%25%27%3ELinux%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fliteratura%27+style%3D%27font-size%3A+12.113636363636363%25%27%3ELiteratura%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fmeio-ambiente%27+style%3D%27font-size%3A+7.757575757575758%25%27%3EMeio+Ambiente%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fprivacidade%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EPrivacidade%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fpython%27+style%3D%27font-size%3A+8.704545454545455%25%27%3EPython%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Frails%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3ERails%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fredes%27+style%3D%27font-size%3A+10.787878787878789%25%27%3ERedes%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fruby%27+style%3D%27font-size%3A+7.946969696969697%25%27%3ERuby%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fseguranca%27+style%3D%27font-size%3A+13.818181818181818%25%27%3ESeguranca%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fseguranca-digital%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3ESeguranca+Digital%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fsenha%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3ESenha%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fservidor%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EServidor%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fsoftware-livre%27+style%3D%27font-size%3A+30.295454545454547%25%27%3ESoftware+Livre%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fssh%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3ESSH%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fsysadmin%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3ESysAdmin%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Ftux-ce%27+style%3D%27font-size%3A+9.462121212121211%25%27%3ETux-ce%3C%2Fa%3E+%3C%2Ftags%3E"></span>
+    <span id="tag-cloud"><embed type='application/x-shockwave-flash' src='/javascripts/tagcloud.swf'width='100%' height='250' bgcolor='#f2f2f2' id='tagcloudflash' name='tagcloudflash' quality='high' allowscriptaccess='always'flashvars="tcolor=0x333333&amp;tcolor2=0x333333&amp;hicolor=0x000000&amp;tspeed=100&amp;distr=true&amp;mode=tags&amp;tagcloud=%3Ctags%3E%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fandroid%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EAndroid%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Faptitude%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EAptitude%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Farch-linux%27+style%3D%27font-size%3A+18.363636363636363%25%27%3EArch+Linux%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fasterisk%27+style%3D%27font-size%3A+7.568181818181818%25%27%3EAsterisk%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fcensura%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3ECensura%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fchromium%27+style%3D%27font-size%3A+7.946969696969697%25%27%3EChromium%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fcontainers%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EContainers%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fcultura%27+style%3D%27font-size%3A+7.378787878787879%25%27%3ECultura%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fcultura-hacker%27+style%3D%27font-size%3A+15.522727272727273%25%27%3ECultura+Hacker%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fdebian%27+style%3D%27font-size%3A+7.378787878787879%25%27%3EDebian%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fdevops%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EDevOps%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fdia-livre%27+style%3D%27font-size%3A+7.757575757575758%25%27%3EDia+Livre%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fdocker%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EDocker%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Feventos%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EEventos%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Ffedora%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EFedora%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Ffirefox%27+style%3D%27font-size%3A+7.568181818181818%25%27%3EFirefox%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fflisol%27+style%3D%27font-size%3A+8.515151515151516%25%27%3EFlisol%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Ffree-bsd%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EFree+BSD%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fgoogle%27+style%3D%27font-size%3A+7.757575757575758%25%27%3EGoogle%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fimpressoes%27+style%3D%27font-size%3A+32.0%25%27%3EImpressoes%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Finternet%27+style%3D%27font-size%3A+7.378787878787879%25%27%3EInternet%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fios%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EiOS%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fjava%27+style%3D%27font-size%3A+8.325757575757576%25%27%3EJava%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fjogos%27+style%3D%27font-size%3A+7.757575757575758%25%27%3EJogos%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fkde%27+style%3D%27font-size%3A+10.40909090909091%25%27%3EKDE%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fkubuntu%27+style%3D%27font-size%3A+7.568181818181818%25%27%3EKubuntu%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fliberdade%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3ELiberdade%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Flinux%27+style%3D%27font-size%3A+27.075757575757574%25%27%3ELinux%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fliteratura%27+style%3D%27font-size%3A+12.113636363636363%25%27%3ELiteratura%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fmeio-ambiente%27+style%3D%27font-size%3A+7.757575757575758%25%27%3EMeio+Ambiente%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fprivacidade%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EPrivacidade%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fpython%27+style%3D%27font-size%3A+8.704545454545455%25%27%3EPython%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Frails%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3ERails%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fredes%27+style%3D%27font-size%3A+10.787878787878789%25%27%3ERedes%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fruby%27+style%3D%27font-size%3A+7.946969696969697%25%27%3ERuby%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fseguranca%27+style%3D%27font-size%3A+14.007575757575758%25%27%3ESeguranca%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fseguranca-digital%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3ESeguranca+Digital%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fsenha%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3ESenha%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fservidor%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EServidor%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fsoftware-livre%27+style%3D%27font-size%3A+30.484848484848484%25%27%3ESoftware+Livre%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fssh%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3ESSH%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fsysadmin%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3ESysAdmin%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Ftux-ce%27+style%3D%27font-size%3A+9.462121212121211%25%27%3ETux-ce%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fubuntu%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EUbuntu%3C%2Fa%3E+%3C%2Ftags%3E"></span>
 </section>
 <section>
   <h1>Estou lendo</h1>
