@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Kubuntu | Marcelo Cavalcante Rocha ~]]></title>
+  <link href="http://kalib.github.io/blog/categories/kubuntu/atom.xml" rel="self"/>
+  <link href="http://kalib.github.io/"/>
+  <updated>2015-12-27T10:47:27-05:00</updated>
+  <id>http://kalib.github.io/</id>
+  <author>
+    <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Brute-force? O Dirb... DirBuster lhe ajuda a identificar vulnerabilidades em seu site]]></title>
+    <link href="http://kalib.github.io/blog/2011/02/15/brute-force-o-dirb-dirbuster-lhe-ajuda-a-identificar-vulnerabilidades-em-seu-site/"/>
+    <updated>2011-02-15T08:23:19-05:00</updated>
+    <id>http://kalib.github.io/blog/2011/02/15/brute-force-o-dirb-dirbuster-lhe-ajuda-a-identificar-vulnerabilidades-em-seu-site</id>
+    <content type="html"><![CDATA[<p><strong>B</strong>om, para quem não conhece nada sobre Brute-Force ou apenas ouviu falar vagamente mas não tem certeza sobre o que realmente é um ataque deste tipo, sugiro dar uma lida em meu último post, onde apresentei algumas informações sobre brute-force bem como uma ferramenta que podemos utilizar para testar nossos sites e verificar o quão vulneráveis eles estão a este tipo de ataque. Segue link para o mesmo:</p>
+
+<p><a href="http://marcelocavalcante.net/portal/2011/01/31/brute-force-o-dirb-lhe-ajuda-a-identificar-vulnerabilidades-em-seu-site/">Brute-Force? O Dirb lhe ajuda a identificar vulnerabilidade em seu site!</a></p>
+
+<p><strong>A</strong>gora que já conhecemos um pouco sobre as técnicas de brute-force e a ferramenta Dirb, que tal conhecer outra mais apresentável?</p>
+
+<p><strong>M</strong>e refiro ao <a href="http://www.owasp.org/index.php/DirBuster">DirBuster</a>. Uma aplicação multithread desenvolvida pelo <a href="http://www.owasp.org/">OWASP</a> (The Open Web Application Security Project) que tem como objetivo realizar brute-force em diretórios e nomes de arquivos na web. Assim como o Dirb, o DirBuster trabalha em cima de dicionários ou listas. Ao todo ele trás 9 listas que podem ser utilizadas para nossas varreduras e testes. Como todas as suas listas foram criadas na unha, após exaustívas pesquisas e buscas na web por nomes mais utilizados para arquivos e diretórios em servidores web, o DirBuster mostra-se extremamente efetivo para este tipo de atividade conseguindo encontrar até mesmo os arquivos mais ocultos e escondidos.</p>
+
+<p><strong>M</strong>as se você não ficar satisfeito, <del>nós garantimos a devolução do seu dinheiro</del>, com apenas utilizar o modelo de dicionários, o DirBuster ainda lhe possibilita o ataque de brute-force mais purista. Tentativa e erro com combinações possíveis de caracteres. Claro, se você tem muito poder de processamento e tempo sobrando, boa sorte. ;]</p>
+
+<p><strong>L</strong>egal Kalib, quer dizer que agora posso sair invadindo sites?</p>
+
+<p><del>o.O Como diria o Chaves: Ai que burrrrroooo.. dá zero pra ele&hellip;</del></p>
+
+<p><strong>N</strong>ão amigo. O meu intuito não é incentivar ou apresentar qualquer mecanismo ou técnica para este tipo de atividade. O DirBuster não foi feito para este propósito e nem conseguirá efetuar isto. Ele não fará nenhum tipo de exploit em arquivos ou diretórios que ele encontre. O DirBuster serve exatamente para identificar possíveis alvos para estes tipos de ataque, o que nos permite agir de forma corretiva ou preventiva em nossos servidores web. ;]</p>
+
+<p><strong>C</strong>hega de lenga lenga.. vamos ao que interessa!</p>
+
+<p><strong>C</strong>omo instalar?</p>
+
+<p><img class="left" src="/imgs/archlinux.png" title="&lsquo;ArchLinux&rsquo;" >
+Bom, se você utiliza <a href="http://archlinux.org">Arch Linux</a>, pode pegar o pacote no AUR através do seguinte link(Lembrem-se de votar nele):</p>
+
+<p><a href="http://aur.archlinux.org/packages.php?ID=20809">http://aur.archlinux.org/packages.php?ID=20809</a></p>
+
+<p><strong>F</strong>eito isto, basta seguir o procedimento padrão para pacotes do AUR.</p>
+
+<blockquote><p>1- Descompactar: [kalib@tuxcaverna downloads]$ tar -xvzf dirbuster.tar.gz</p></blockquote>
+
+<p>2- Entrar no diretório dirbuster e gerar o pacote: [kalib@tuxcaverna dirbuster]$ makepkg</p>
+
+<p>3- Instalar o pacote: [kalib@tuxcaverna dirbuster]$ sudo pacman -U dirbuster-0.12-1-x86_64.pkg.tar.xz</p>
+
+<p><strong>F</strong>eito. ;]</p>
+
+<p><strong>O</strong>utras distribuições? Não tenho certeza se o pessoal de outras distribuições empacotou o DirBuster, portanto provavelmente você vai precisar baixar o arquivo compactado do site oficial do projeto. Busquei tanto no Debian quanto no (K)Ubuntu 10.10 e em nenhum destes encontrei o DirBuster nos repositórios através do aptitude.</p>
+
+<p><strong>P</strong>ortanto se você não utiliza o Arch, segue link para download da ferramenta:</p>
+
+<p><a href="http://www.owasp.org/index.php/DirBuster#tab=Download">http://www.owasp.org/index.php/DirBuster#tab=Download</a></p>
+
+<p><strong>M</strong>as qual a cara do bicho?</p>
+
+<p><img class="center" src="/imgs/dirbuster1.png" title="&lsquo;Dirbuster&rsquo;" ></p>
+
+<p><strong>C</strong>omo explicado antes, ele funciona parecido com o Dirb, porém em uma interface GUI (gráfica).</p>
+
+<p><strong>C</strong>omo podem ver, é uma interface simples e de fácil manuseio.</p>
+
+<p><strong>V</strong>amos aos pontos:</p>
+
+<p>1- No campo Target, você deverá inserir a URL que será alvo do seu brute-force de diretórios e arquivos web.</p>
+
+<p>2- Logo abaixo, vocẽ escolhe se deseja utilizar apenas GET ou HEAD &amp; GET.</p>
+
+<p>3- Agora é a vez de escolher quantas threads deseja utilizar. Quanto maior o número de threads, mais requisições simultâneas você estará utilizando. ;]</p>
+
+<p>4- Abaixo você deverá escolher o tipo de brute-force.</p>
+
+<ul>
+<li><p>Baseado em dicionários, neste caso você deverá escolher um dos dicionários que a ferramenta já lhe disponibiliza através do seguinte caminho: /opt/DirBuster/</p></li>
+<li><p>Baseado em brute-force puro. Neste caso você deverá escolher qual conjunto de caracteres deseja que sejam utilizados, quantidade mínima e máxima de caracteres por tentativa.</p></li>
+</ul>
+
+
+<p>5- Em seguida é a hora de escolher os filtros: Deseja fazer brute-force apenas em diretórios? Arquivos também? Modo recursivo? Extensões em branco? Diretório inicial para o scan? Que tipo de extensão?&hellip;</p>
+
+<p><strong>E</strong> como é o retorno que ele me dá?</p>
+
+<p><strong>B</strong>om, vou escolher meu alvo e vou utilizar 20 threads em simultâneo. Não vou deixar a ferramenta rodando por muito tempo pois estou apenas fazendo uma demonstração.</p>
+
+<p><img class="center" src="/imgs/dirbuster2.png" title="&lsquo;Dirbuster&rsquo;" ></p>
+
+<p><strong>C</strong>omo podem ver, filtrei para que o brute-force comece no diretório raiz (/) e optei pela maior lista que o DirBuster possui como dicionário. Deixei rodando por cerca de 30 segundos e já tive o seguinte resultado.</p>
+
+<p><img class="center" src="/imgs/dirbuster3.png" title="&lsquo;Dirbuster&rsquo;" ></p>
+
+<p><strong>A</strong> parte borrada no início da imagem não é um defeito. Vocês não pensaram que eu iria deixar exposto o alvo no qual fiz o teste, certo? No caso, optei pelo site de uma de nossas instituições de ensino. Bom, a imagem acima é um exemplo do retorno que consigo com a ferramenta. É a visão em Lista. Além dela você pode optar pela visão em árvore, que, como o nome informa, lhe trará a árvore de diretórios, sub-diretórios e arquivos que foram encontrados. Abaixo um exemplo da visão em árvore:</p>
+
+<p><img class="center" src="/imgs/dirbuster4.png" title="&lsquo;Dirbuster&rsquo;" ></p>
+
+<p><strong>O</strong> resultado, mesmo deixando a ferramenta rodando por apenas 30 segundos, foi o esperado. Um espantoso caso de descuido com a segurança do site.</p>
+
+<p><strong>A</strong>lguns leves exemplos que me chamaram a atenção na lista que consegui:</p>
+
+<p><img class="center" src="/imgs/dirbuster5.png" title="&lsquo;Dirbuster&rsquo;" ></p>
+
+<p><strong>U</strong>m diretório de administração exposto desta forma indicando que existe uma sessão do site com acesso permitido apenas para administradores. O que isso me leva a crer? Que quem conseguir acesso a esta sessão consegue manipular o sistema do site? O que nos leva a uma posterior análise da página index contida nele que possibilita uma tentativa de brute-force de login e senha? psssiiiuuuu&hellip; o.O</p>
+
+<p><img class="center" src="/imgs/dirbuster6.png" title="&lsquo;Dirbuster&rsquo;" >
+<strong> U</strong>m diretório para uploads de Arquivos? Que tal testar ele? Apenas usuários administradores possuem permissão de upload? Ou alunos conseguem fazer upload de fotos, trabalhos, por exemplo? De qualquer forma, isso me indica que existe a possibilidade de eu subir arquivos para o servidor deles. Que tal um script em php que me permitiria ter um console shell no servidor deles para inclusão, exclusão, edição, etc.. ? pssiiiiuuuu&hellip; o.O</p>
+
+<p><img class="center" src="/imgs/dirbuster7.png" title="&lsquo;Dirbuster&rsquo;" ></p>
+
+<p><strong>P</strong>ode não ser nada.. mas também pode ser muita coisa.. O que um diretório chamado &ldquo;gerencia&rdquo; faz ali tão exposto e com um nome tão&hellip; tão&hellip; discreto? o.O psssiiiuuuuu</p>
+
+<p><strong>A</strong>cho que já conseguiram entender um pouco do que o DirBuster faz.</p>
+
+<p><strong>A</strong>braços!</p>
+
+<p><strong>H</strong>appy Hacking&hellip;</p>
+
+<p><strong>PS: Wrong developers! Never play security by obscurity!</strong></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Configurando a JRE para funcionar no *buntu 8.04 com firefox 3 / Configuring JRE on *buntu 8.04 to work with Firefox 3.0]]></title>
+    <link href="http://kalib.github.io/blog/2008/05/07/configurando-a-jre-para-funcionar-no-buntu-804-com-firefox-3-configuring-jre-on-buntu-804-to-work-with-firefox-30/"/>
+    <updated>2008-05-07T12:14:00-04:00</updated>
+    <id>http://kalib.github.io/blog/2008/05/07/configurando-a-jre-para-funcionar-no-buntu-804-com-firefox-3-configuring-jre-on-buntu-804-to-work-with-firefox-30</id>
+    <content type="html"><![CDATA[<h3></h3>
+
+<p>Versão em Português BR / Portuguese Version</p>
+
+<p>Saudações galera..</p>
+
+<p>Aqui segue uma rápida dica que poderá ajudar aqueles que, assim como eu, instalaram o *buntu 8.04 e perceberam que o mesmo possui o Firefox 3.0 em seus repositórios como o navegador padrão.</p>
+
+<p>Bom, ao tentar instalar, desde ontem, o plugin do java para poder acessar minha página do banco, encontrei uma solução bem simples depois de várias tentativas frustradas.</p>
+
+<p>Após tentar tudo que sempre utilizei como por exemplo baixar o pacote jre diretamente do site da sun, descompactar no diretório /usr/java (como sempre fiz por questão de organização), instalar e criar um link simbólico para o mesmo no diretório de plugins do Firefox, e mesmo assim não ter nenhum resultado concreto, pesquisei um pouco e achei uma solução bem mais simples e rápida.</p>
+
+<p>Basta descomentar as linhas referentes aos mirrors multiverse nos seus repositórios (/etc/apt/sources.list), dar um update (# aptitude update) e em seguida instalar os pacotes com o seguinte comando:</p>
+
+<h1>aptitude install sun-java6-jre sun-java6-plugin sun-java6-fonts</h1>
+
+<p>Feito isto reinicie o firefox e digite em sua barra de endereços:</p>
+
+<p>about:plugins</p>
+
+<p>Deverá agora constar em sua lista de plugins os referentes ao java. ;]</p>
+
+<p>Outro teste é digitar no seu console: $ java -version</p>
+
+<p>Você deverá ter um retorno similar a este:</p>
+
+<p>java version &ldquo;1.6.0_06&rdquo;</p>
+
+<p>Java&trade; SE Runtime Environment (build 1.6.0_06-b02)</p>
+
+<p>Java HotSpot&trade; Client VM (build 10.0-b22, mixed mode, sharing)</p>
+
+<p>Ou mesmo acessando alguma página que se utilize de java como o teclado virtual do Banco do Brasil por exemplo.</p>
+
+<p>;]</p>
+
+<p>Bom, espero ter ajudado com esta simples, porém eficiente dica.</p>
+
+<p>Abraços</p>
+
+<hr />
+
+<p>Versão em Inglês / English Version</p>
+
+<p>Hey Guys..</p>
+
+<p>Here I&rsquo;ll describe a simple and quickly way that can help those people who, like me, are trying to use *buntu 8.04 and have realized that it comes with Firefox 3.0 beta 5 on its repositories as the default web browser.</p>
+
+<p>Well, trying to install the java plugin since yesterday to access my bank account, I could find a simple way after some frustrated tries.</p>
+
+<p>After trying every ways i had always use, like for example downloading the jre package directly from the sun&rsquo;s website, install it and create a symbolic link at Firefox plugin&rsquo;s directory and have no positive answer, I decided to search on the web until realize that a simple aptitude&rsquo;s use could solve my problem and make it work correctly.</p>
+
+<p>All you have to do is uncomment (remove the # from the beggining of the line) the multiverse mirror&rsquo;s lines at your sources file (/etc/apt/sources.list). The next step is to make an upload on your mirrors and repositories (# aptitude update) and then install the necessary packages with the following line command:</p>
+
+<h1>aptitude install sun-java6-jre sun-java6-plugin sun-java6-fonts</h1>
+
+<p>It&rsquo;s done!</p>
+
+<p>Can&rsquo;t believe? Restart your Firefox and put the following command on your address bar:</p>
+
+<p>about:plugins</p>
+
+<p>You should find some lines describing your java plugin on the plugins page, like all your other plugins on Firefox.</p>
+
+<p>Another way to test and check it is typing the following command on a terminal or console:</p>
+
+<p>$ java -version</p>
+
+<p>You should receive some return like this:</p>
+
+<p>java version &ldquo;1.6.0_06&rdquo;</p>
+
+<p>Java&trade; SE Runtime Environment (build 1.6.0_06-b02)</p>
+
+<p>Java HotSpot&trade; Client VM (build 10.0-b22, mixed mode, sharing)</p>
+
+<p>Or, if you still not believing, you can try to access some website that uses java like some bank sites for example. ;]</p>
+
+<p>Well, i hope this text could help some of you guys.</p>
+
+<p>Take Care</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Kubuntu 8.04 - Minhas primeiras impressões]]></title>
+    <link href="http://kalib.github.io/blog/2008/04/29/kubuntu-804-minhas-primeiras-impressoes/"/>
+    <updated>2008-04-29T09:13:00-04:00</updated>
+    <id>http://kalib.github.io/blog/2008/04/29/kubuntu-804-minhas-primeiras-impressoes</id>
+    <content type="html"><![CDATA[<p>Assim que saiu o Kubuntu 8.04 oficialmente, corri para baixar a iso antes mesmo de ser divulgado no site oficial como forma de evitar pegar uma banda completamente congestionada por centenas de pessoas baixando o mesmo arquivo na mesma fonte. Sim, existem algumas vantagens em se fazer parte das listas de discussão, desenvolvimento e debugs. :p</p>
+
+<p>Bom, apenas consegui tempo para instalar de fato, na madrugada de domingo/segunda pois o fim de semana foi muito corrido e tornou-se impossível realizar esta tarefa que há tanto tempo eu esperava. Porque tamanha espera? Digamos que as versões anteriores do Kubuntu não me deixaram satisfeito por questões de incompatibilidades com minha placa de áudio e como consequência tive de me manter na versão 6.06 até antes de ontem.</p>
+
+<p>Deixando de blablabla vamos ao que interessa.</p>
+
+<p>Logo ao dar boot no live cd do kubuntu 8.04, desde sua primeira beta test, pude constatar que haviam melhorias com relação ao reconhecimento de meu hardware. Tudo havia sido reconhecido automaticamente, desde minha placa de áudio ATI até meu dispositivo wireless da Atheros.</p>
+
+<p>Desde então estive numa espera pela release final, porém sempre baixando as versões beta bem como alpha para testes e ajudar com alguns bugs que por ventura eu viesse a encontrar.</p>
+
+<p>Logo que instalei a versão final nesta madrugada, parti para a instalação de alguns pacotes básicos de sobrevivência como o firefox por exemplo. Minha surpresa aqui foi em ver que nos repositórios havia a raposa em sua versão beta 3.0 como padrão. o.O Apesar do susto que levei em ver o kubuntu trazendo por default uma versão beta, fiquei animado em poder testá-la já que ainda não havia encontrado tempo para isso. Instalei e pude ver claras melhorias em relação às demais versões de nossa raposa de fogo. Sem grandes dificuldades consegui instalar os plugins de java e flash, já que esta versão do firefox ainda não consegue instalar automaticamente.</p>
+
+<p>Fui aidiconando alguns outros aplicativos que uso no meu dia-a-dia como o amsn, em sua versão 0.98, thunderbird, xchat, yakuake, kooldock, eclipse, dia, gimp, jsms, etc&hellip;</p>
+
+<p>Tudo funcionando redondinho e com uma performance bastante estável. A única coisa que pesou um pouco a nível de memória foi ao instalar o compiz e adicionar alguns efeitos, porém admito que nunca curti essas &ldquo;frescuras&rdquo; e instalei apenas a nível de teste, já que até a versão 7.10, o kubuntu não conseguia reconhecer minha placa de vídeo por default. Fiquei surpreso como até nisso ele se saiu bem. Reconheceu minha placa, instalou automaticamente o driver e o compiz juntamente. Em poucos segundos eu estava com os efeitos do compiz habilitados. Porém minha máquina é modesta e isso pesou um pouco para mim no quesito memória. Mas como disse antes, nunca fui fã dessas &ldquo;frescuras&rdquo; e logo desabilitei o compiz deixando novamente meu notebook respirar.</p>
+
+<p>Vou seguindo com meu segundo dia de testes no kubuntu 8.04 e veremos no que essa parceria kalib/kubuntu vai dar. ;]</p>
+]]></content>
+  </entry>
+  
+</feed>
