@@ -100,16 +100,16 @@ categories:
 
  Unable to find image 'ubuntu:15.04' locally
  15.04: Pulling from library/ubuntu
- 
- 6e6a100fa147: Pull complete 
- 13c0c663a321: Pull complete 
- 2bd276ed39d5: Pull complete 
- 013f3d01d247: Already exists 
+
+ 6e6a100fa147: Pull complete
+ 13c0c663a321: Pull complete
+ 2bd276ed39d5: Pull complete
+ 013f3d01d247: Already exists
  library/ubuntu:15.04: The image you are pulling has been verified. Important: image verification is a tech preview feature and should not be relied on to provide security.
- 
+
  Digest: sha256:b2d4940544e515d4bc62b2a9ad3e6137b3e1e0937a41fdc1f0f30d12935e5b09
  Status: Downloaded newer image for ubuntu:15.04
- 
+
  root@d70562e7533c:/#
 ```
 
@@ -129,7 +129,7 @@ categories:
  root@d70562e7533c:/# cat /etc/issue
 
  Ubuntu 15.04 \n \l
- 
+
  root@d70562e7533c:/#
 ```
 
@@ -141,7 +141,7 @@ categories:
  UID        PID  PPID  C STIME TTY          TIME CMD
  root         1     0  0 13:36 ?        00:00:00 /bin/bash
  root         9     1  0 13:44 ?        00:00:00 ps -ef
- 
+
  root@d70562e7533c:/#
 ```
 
@@ -150,8 +150,8 @@ categories:
 **A**gora que temos a certeza de que estamos em nosso container, você pode sair do container e voltar para sua máquina host. Para isso você precisará pressionar as teclas **Ctrl + P + Q**. Desta forma, você verá que seu prompt voltará para seu host enquanto que seu container continuará rodando, você apenas saiu do prompt do mesmo.
 
 ```
- root@d70562e7533c:/# root@cloudcaverna:~# 
- 
+ root@d70562e7533c:/# root@cloudcaverna:~#
+
  root@cloudcaverna:~#
 ```
 
@@ -170,7 +170,7 @@ categories:
 
 ```
  root@cloudcaverna:~# docker attach d70562e7533c
- 
+
  root@d70562e7533c:/#
 ```
 
@@ -197,7 +197,7 @@ categories:
 
 ```
  root@cloudcaverna:~# docker run -i -t -p 8080:80 ubuntu:15.04 /bin/bash
- 
+
  root@08abb8611700:/#
 ```
 
@@ -231,7 +231,7 @@ categories:
  ...
  Get:1 http://archive.ubuntu.com/ubuntu/ vivid/main libexpat1 amd64 2.1.0-6ubuntu1 [70.6 kB]
  Processing triggers for systemd (219-7ubuntu6) ...
- 
+
  root@08abb8611700:/#
 ```
 
@@ -250,7 +250,7 @@ categories:
  www-data   612   609  0 14:19 ?        00:00:00 nginx: worker process
  www-data   613   609  0 14:19 ?        00:00:00 nginx: worker process
  root       614     1  0 14:19 ?        00:00:00 ps -ef
- 
+
  root@08abb8611700:/#
 ```
 
@@ -267,13 +267,13 @@ categories:
 **D**a mesma forma feita anteriormente, podemos sair de nosso container com a combinação de teclas **Ctrl + P + Q** e verificar os processos/containers do docker em execução:
 
 ```
- root@08abb8611700:/# root@cloudcaverna:~# 
+ root@08abb8611700:/# root@cloudcaverna:~#
 
  root@cloudcaverna:~# docker ps
 
  CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS                  NAMES
  08abb8611700        ubuntu:15.04        "/bin/bash"         19 minutes ago      Up 19 minutes       0.0.0.0:8080->80/tcp   jolly_hawking
- 
+
  root@cloudcaverna:~#
 ```
 
@@ -285,7 +285,7 @@ categories:
  root@cloudcaverna:~# docker commit 08abb8611700 cloudcaverna/ubuntu-nginx:1.0
 
  b0922bc8f41295cadadbd131c075e29288b52e8bb2d9546cb7c0327eb95fe7dc
- 
+
  root@cloudcaverna:~#
 ```
 
@@ -299,13 +299,13 @@ categories:
  REPOSITORY                  TAG                 IMAGE ID            CREATED              VIRTUAL SIZE
  cloudcaverna/ubuntu-nginx   1.0                 b0922bc8f412        About a minute ago   204.6 MB
  ubuntu                      15.04               013f3d01d247        18 hours ago         131.4 MB
- 
+
  root@cloudcaverna:~# docker ps
 
  CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS                  NAMES
  08abb8611700        ubuntu:15.04        "/bin/bash"         49 minutes ago      Up 49 minutes       0.0.0.0:8080->80/tcp   jolly_hawking
- 
- root@cloudcaverna:~# 
+
+ root@cloudcaverna:~#
 ```
 
 **V**amos agora criar um novo container. Aqui você pode escolher como prosseguir. Eu criarei um container com a distribuição Arch Linux rodando, mas você pode seguir e criar outra com o Ubuntu caso deseje, então vejamos as opções:
@@ -318,11 +318,11 @@ categories:
  Unable to find image 'base/archlinux:latest' locally
  latest: Pulling from base/archlinux
 
- b31c6c1462e6: Pull complete 
- b97e110c94d9: Already exists 
+ b31c6c1462e6: Pull complete
+ b97e110c94d9: Already exists
  Digest: sha256:7905fad7578b9852999935fb0ba9c32fe16cece9e4d1d742a34f55ce9cebdfd1
  Status: Downloaded newer image for base/archlinux:latest
- 
+
  [root@be266bf7e5a3 /]#
 
 ```
@@ -352,32 +352,32 @@ Desta forma você não precisará sequer instalar o nginx novamente neste contai
  community                                                     2.7 MiB   936K/s 00:03 [#################################################] 100%
  resolving dependencies...
  looking for inter-conflicts...
- 
+
  Packages (1): nginx-1.8.0-1
- 
+
  Total Download Size:    0.34 MiB
  Total Installed Size:   0.98 MiB
- 
- :: Proceed with installation? [Y/n] 
+
+ :: Proceed with installation? [Y/n]
  :: Retrieving packages ...
  nginx-1.8.0-1-x86_64                                        349.5 KiB   266K/s 00:01  [#################################################] 100%
  (1/1) installing nginx                                                                [ #################################################] 100%
- 
+
  [root@be266bf7e5a3 /]#
 ```
 
 **A**gora que estou com o nginx rodando também neste container do Arch Linux, vou sair do container pressionando a combinação **Ctrl + P + Q** e em seguida rodar o script de **ps** do docker:
 
 ```
- [root@be266bf7e5a3 /]# root@cloudcaverna:~# 
+ [root@be266bf7e5a3 /]# root@cloudcaverna:~#
 
  root@cloudcaverna:~# docker ps
 
  CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS                  NAMES
  be266bf7e5a3        base/archlinux      "/bin/bash"         10 minutes ago      Up 10 minutes       0.0.0.0:6660->80/tcp   cocky_hoover
  08abb8611700        ubuntu:15.04        "/bin/bash"         About an hour ago   Up About an hour    0.0.0.0:8080->80/tcp   jolly_hawking
- 
- root@cloudcaverna:~# 
+
+ root@cloudcaverna:~#
  ```
 
  **D**esta vez eu possuo dois containers criados, sendo um com o ubuntu 15:04 e outro com o Arch Linux. Agora vou realizar o commit do meu container Arch Linux com nginx, para não perder esta imagem. Em seguida, executarei o script **images** para ver as imagens que já possuo:
@@ -386,7 +386,7 @@ Desta forma você não precisará sequer instalar o nginx novamente neste contai
   root@cloudcaverna:~# docker commit be266bf7e5a3 cloudcaverna/archlinux-nginx:1.0
 
  f4ea14bf23c47466fb256fff9e3ab32ca85fb0256a05007ef4972ad7ff5f2aa9
- 
+
  root@cloudcaverna:~# docker images
 
  REPOSITORY                     TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
@@ -394,8 +394,8 @@ Desta forma você não precisará sequer instalar o nginx novamente neste contai
  cloudcaverna/ubuntu-nginx      1.0                 b0922bc8f412        20 minutes ago      204.6 MB
  ubuntu                         15.04               013f3d01d247        18 hours ago        131.4 MB
  base/archlinux                 latest              b97e110c94d9        8 weeks ago         278.8 MB
- 
- root@cloudcaverna:~# 
+
+ root@cloudcaverna:~#
 ```
 **A**gora vou testar no navegador o nginx deste meu segundo container, o qual defini que utilizaria a porta 6660 do meu host:
 
@@ -411,8 +411,8 @@ Desta forma você não precisará sequer instalar o nginx novamente neste contai
  CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS                  NAMES
  be266bf7e5a3        base/archlinux      "/bin/bash"         26 minutes ago      Up 26 minutes       0.0.0.0:6660->80/tcp   cocky_hoover
  08abb8611700        ubuntu:15.04        "/bin/bash"         About an hour ago   Up About an hour    0.0.0.0:8080->80/tcp   jolly_hawking
- 
- root@cloudcaverna:~# 
+
+ root@cloudcaverna:~#
 ```
 
 **D**a mesma forma, você poderá fazer toda e qualquer operação que você faria em uma máquina qualquer, como por exemplo monitorar os logs de acesso do nginx. Basta se conectar em algum dos dois containers com **docker attach <container-id>** e em seguida abrir o arquivo de log do nginx com o tail: **tail -f /var/log/nginx/access.log**. Com o log rodando, pode acessar novamente no navegador o endereço com a porta que está mapeada para este container e você verá os logs do seu acesso.
@@ -422,7 +422,7 @@ Desta forma você não precisará sequer instalar o nginx novamente neste contai
 ```
  root@cloudcaverna:~# docker stop be266bf7e5a3
  be266bf7e5a3
- 
+
  root@cloudcaverna:~#
 ```
 
