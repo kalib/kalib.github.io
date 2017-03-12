@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Dia Livre | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://kalib.github.io/blog/categories/dia-livre/atom.xml" rel="self"/>
   <link href="http://kalib.github.io/"/>
-  <updated>2017-03-12T12:44:30-04:00</updated>
+  <updated>2017-03-12T15:14:19-04:00</updated>
   <id>http://kalib.github.io/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -105,7 +105,7 @@
     <link href="http://kalib.github.io/blog/2011/09/08/2c2ba-dia-livre-ultimos-dias-para-inscricoes-site-da-tux-ce-em-obras/"/>
     <updated>2011-09-08T13:02:04-04:00</updated>
     <id>http://kalib.github.io/blog/2011/09/08/2c2ba-dia-livre-ultimos-dias-para-inscricoes-site-da-tux-ce-em-obras</id>
-    <content type="html"><![CDATA[<p><img class="left" src="/imgs/logo_dia_livre.png" title="&lsquo;Dia Livre&rsquo;" >
+    <content type="html"><![CDATA[<p>{% img left /imgs/logo_dia_livre.png &lsquo;Dia Livre&rsquo; %}
 <strong>S</strong>audações amigos!</p>
 
 <p><strong>P</strong>ara quem não sabe ainda, a <strong><a href="http://www.tux-ce.org">Tux-CE</a></strong> está organizando um encontro regular para os usuários e profissinais de Software Livre, bem como interessados e curiosos sobre o tema. O nome dado ao projeto é <strong><a href="http://dialivre.tux-ce.org">Dia Livre</a></strong>.</p>
@@ -162,7 +162,7 @@
 
 <p>Gostaria de aproveitar o post e comunicar que a página da Tux-CE está passando por uma grande migração, portanto estará indisponível, como alguns já devem ter percebido, pelos próximos 7 dias.</p>
 
-<p><img class="center" src="/imgs/tux_working.jpg" title="&lsquo;Tux Trabalhando&rsquo;" ></p>
+<p>{% img center /imgs/tux_working.jpg &lsquo;Tux Trabalhando&rsquo; %}</p>
 
 <p><strong>A</strong>braços,</p>
 ]]></content>
@@ -173,7 +173,7 @@
     <link href="http://kalib.github.io/blog/2011/07/19/dia-livre-inscricoes-e-grade-do-evento/"/>
     <updated>2011-07-19T07:38:33-04:00</updated>
     <id>http://kalib.github.io/blog/2011/07/19/dia-livre-inscricoes-e-grade-do-evento</id>
-    <content type="html"><![CDATA[<p><img class="left" src="/imgs/logo_dia_livre.png" title="&lsquo;Dia Livre&rsquo;" >
+    <content type="html"><![CDATA[<p>{% img left /imgs/logo_dia_livre.png &lsquo;Dia Livre&rsquo; %}
 <strong>É</strong> hora de se <a href="http://tux-ce.org/dialivre/inscricoes/">inscrever</a> no <a href="http://www.tux-ce.org/dialivre">Dia Livre</a>!</p>
 
 <p><strong>G</strong>ostaria de comunicar que a grade para o 1º Dia Livre já foi fechada e liberada.</p>

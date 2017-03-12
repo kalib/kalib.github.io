@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Slack | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://kalib.github.io/blog/categories/slack/atom.xml" rel="self"/>
   <link href="http://kalib.github.io/"/>
-  <updated>2017-03-12T12:44:30-04:00</updated>
+  <updated>2017-03-12T15:14:19-04:00</updated>
   <id>http://kalib.github.io/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -18,7 +18,7 @@
     <link href="http://kalib.github.io/blog/2017/03/11/recebendo-alarmes-do-aws-diretamente-no-slack/"/>
     <updated>2017-03-11T12:03:00-05:00</updated>
     <id>http://kalib.github.io/blog/2017/03/11/recebendo-alarmes-do-aws-diretamente-no-slack</id>
-    <content type="html"><![CDATA[<p><img class="center" src="/imgs/aws_slack.png" title="&lsquo;AWS_Slack&rsquo;" ></p>
+    <content type="html"><![CDATA[<p>{% img center /imgs/aws_slack.png &lsquo;AWS_Slack&rsquo; %}</p>
 
 <p><strong>A</strong>ntes de entrar na configuração dos serviços, talvez seja necessário apresentar o <a href="http://www.slack.com">Slack</a>, visto que muitos ainda não conhecem ou utilizam esta poderosa e versátil ferramenta de comunicação instantânea para times.</p>
 
@@ -73,7 +73,7 @@
 
 <p><strong>P</strong>esquise por Incoming WebHooks e você terá apenas um resultado, portanto clique sem medo.</p>
 
-<p><img class="center" src="/imgs/slack1.png" title="&lsquo;Incoming WebHook&rsquo;" ></p>
+<p>{% img center /imgs/slack1.png &lsquo;Incoming WebHook&rsquo; %}</p>
 
 <p><strong>C</strong>lique no pequeno lápis que se encontrará no canto direito para editar as configurações do Incoming WebHook. Os únicos campos que precisaremos editar neste momento são os seguintes:
   * Post to Channel &ndash; Aqui indicarei o meu canal: #devops
@@ -333,7 +333,7 @@ Clique em <strong>Next</strong>, reveja suas configurações e clique em <strong
 
 <p>O resultado em seu Slack será algo assim&hellip;</p>
 
-<p><img class="center" src="/imgs/slack2.png" title="&lsquo;Notification_Slack&rsquo;" ></p>
+<p>{% img center /imgs/slack2.png &lsquo;Notification_Slack&rsquo; %}</p>
 
 <p><strong>P</strong>arabéns, você já está recebendo suas notificações via Slack. Basta criar outros alarmes no AWS utilizando a mesma Lambda Function e o mesmo SNS Topic.</p>
 

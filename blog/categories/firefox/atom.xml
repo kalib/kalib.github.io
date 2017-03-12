@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Firefox | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://kalib.github.io/blog/categories/firefox/atom.xml" rel="self"/>
   <link href="http://kalib.github.io/"/>
-  <updated>2017-03-12T12:44:30-04:00</updated>
+  <updated>2017-03-12T15:14:19-04:00</updated>
   <id>http://kalib.github.io/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -18,7 +18,7 @@
     <link href="http://kalib.github.io/blog/2013/12/27/vulnerabilidade-no-firefox-descobrindo-senhas-salvas/"/>
     <updated>2013-12-27T08:40:00-05:00</updated>
     <id>http://kalib.github.io/blog/2013/12/27/vulnerabilidade-no-firefox-descobrindo-senhas-salvas</id>
-    <content type="html"><![CDATA[<p><img class="left" src="/imgs/firefox_pass.png" title="&lsquo;Firefox Peaces&rsquo;" >
+    <content type="html"><![CDATA[<p>{% img left /imgs/firefox_pass.png &lsquo;Firefox Peaces&rsquo; %}
 <strong>U</strong>ma coisa é certa&hellip; usuários teimam em salvar senhas em navegadores para <em>facilitar</em> suas vidas durante a navegação na internet. Seja em emails, redes sociais, serviços online ou qualquer outra coisa, a opção <em>Salvar sua senha</em> parece possuir um enorme magnetismo ou um centro gravitacional extremamente denso a ponto de atrair o usuário para tal.</p>
 
 <p><strong>S</strong>erá que as pessoas não entendem o quão perigosa é a ideia de <em>salvar sua senha</em> onde quer que seja? É, praticamente, o mesmo risco assumido por quem anota suas senhas em <em>post-its</em> e os colam em seu monitor ou mesa.</p>
@@ -38,35 +38,35 @@
 </ol>
 
 
-<p><img class="center" src="/imgs/firefox_pass_1.png" title="&lsquo;Firefox Pass 1&rsquo;" ></p>
+<p>{% img center /imgs/firefox_pass_1.png &lsquo;Firefox Pass 1&rsquo; %}</p>
 
 <ol>
 <li>Selecione a opção <strong>Preferências</strong> no menu e em seguida, novamente, <strong>Preferências</strong>;</li>
 </ol>
 
 
-<p><img class="center" src="/imgs/firefox_pass_2.png" title="&lsquo;Firefox Pass 2&rsquo;" ></p>
+<p>{% img center /imgs/firefox_pass_2.png &lsquo;Firefox Pass 2&rsquo; %}</p>
 
 <ol>
 <li>Na aba <strong>Segurança</strong>, clique no botão <strong>Senhas Salvas</strong>;</li>
 </ol>
 
 
-<p><img class="center" src="/imgs/firefox_pass_3.png" title="&lsquo;Firefox Pass 3&rsquo;" ></p>
+<p>{% img center /imgs/firefox_pass_3.png &lsquo;Firefox Pass 3&rsquo; %}</p>
 
 <ol>
 <li>Repare que na janela que será apresentada você terá uma lista de sites/serviços e usuários que deixaram suas senhas salvas. Nesta janela, clique no botão <strong>Mostrar Senhas</strong>;</li>
 </ol>
 
 
-<p><img class="center" src="/imgs/firefox_pass_4.png" title="&lsquo;Firefox Pass 4&rsquo;" ></p>
+<p>{% img center /imgs/firefox_pass_4.png &lsquo;Firefox Pass 4&rsquo; %}</p>
 
 <ol>
 <li>Agora você poderá ver as senhas salvas em texto plano, limpo e claro.</li>
 </ol>
 
 
-<p><img class="center" src="/imgs/firefox_pass_5.png" title="&lsquo;Firefox Pass 5&rsquo;" ></p>
+<p>{% img center /imgs/firefox_pass_5.png &lsquo;Firefox Pass 5&rsquo; %}</p>
 
 <p><strong>Lição aprendida: Não salve suas senhas!</strong></p>
 ]]></content>
