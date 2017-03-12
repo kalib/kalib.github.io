@@ -9,7 +9,7 @@
   <meta name="author" content="Marcelo Cavalcante Rocha - Kalib">
 
   
-  <meta name="description" content="É chegada a hora de mais uma recomendação bibliográfica pessoal. Desta vez trago mais uma com o tema &ldquo;Vampiros&rdquo;. Na verdade a &hellip;">
+  <meta name="description" content="Saudações pessoal&hellip; Já estava na hora eim?! Chromium passando para o repositório [testing] no Arch. Para quem já vem acompanhando este projeto &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -80,6 +80,82 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/12/14/chromium-no-testing-do-arch-linux/">Chromium No [Testing] Do Arch Linux</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-12-14T06:50:42-05:00" pubdate data-updated="true">Dec 14<span>th</span>, 2009</time>
+        
+         | <a href="/blog/2009/12/14/chromium-no-testing-do-arch-linux/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img class="left" src="/imgs/chromium.png" title="'Chromium'" >
+<strong>S</strong>audações pessoal&hellip;</p>
+
+<p><strong>J</strong>á estava na hora eim?! Chromium passando para o repositório [testing] no Arch.</p>
+
+<p><strong>P</strong>ara quem já vem acompanhando este projeto desde seu início, tenho o prazer de anunciar esta novidade nos repositórios do Arch.</p>
+
+<p><strong>P</strong>or questões de segurança e estabilidade para os usuários como um todo, resolvemos manter também o pacote em nosso repositório nacional [archlinux-br] para evitar que os usuários do chromium tenham que habilitar o [testing] em seus sistemas correndo alguns riscos por pacotes pouco testados.</p>
+
+<p><strong>A</strong>ssim que o mesmo passar para repositórios mais confiáveis como o [extra], estaremos removendo do repositório nacional.</p>
+
+<p><strong>C</strong>om algumas mudanças nesta versão do pacote, não estamos mais utilizando o snapshot, mas sim a versão já considerada beta do próprio projeto chromium.</p>
+
+<p><strong>P</strong>ara os que já utilizam o repositório [archlinux-br] e já possuem o chromium instalado, basta mandar atualizar seu sistema normalmente com:</p>
+
+<p><em># pacman -Syu</em></p>
+
+<p><strong>P</strong>erceberá que o pacman informará que o chromium-snapshot precisará ser removido para a instalação do chromium. Podem confirmar sem medo algum. Ontem mesmo eu e <a href="http://matias.archlinux-br.org/">thotypous</a> realizamos os últimos testes neste sentido e tudo correrá bem.</p>
+
+<p><strong>P</strong>ara aqueles que ainda não utilizam o repositório [archlinux-br] e ainda não possuem o chromium instalado, a dica é a seguinte:</p>
+
+<p><strong>1-</strong> Habilite o repositório inserindo as seguintes linhas no arquivo /etc/pacman.conf:</p>
+
+<p>_[archlinux-br]
+Server = <a href="http://repo.archlinux-br.org/i686_">http://repo.archlinux-br.org/i686_</a></p>
+
+<p><strong>2-</strong> Atualize seus mirros e instale o chromium:</p>
+
+<p><em># pacman -Sy chromium</em></p>
+
+<p><strong>U</strong>ma terceira opção, indicada para os mais aventureiros, seria habilitar o repositório [testing]. Esta opção eu apenas recomendo para os que estão dispostos a ajudar mais diretamente no desenvolvimento do Arch e que desejem assumir alguns riscos de estabilidade, visto que muitos pacotes ali ainda se encontram em estado de teste. Neste caso, basta descomentar as linhas referente a ele no arquivo /etc/pacman.conf:</p>
+
+<p><em>[testing]
+Include = /etc/pacman.d/mirrorlist</em></p>
+
+<p><strong>F</strong>açam bom proveito pessoal. ;]</p>
+
+<p><strong>U</strong>sem com moderação.. :p
+<strong>A</strong>braços</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -266,70 +342,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/11/14/python-no-ceara-pythonceara/">Python No Ceará? PythOnCeará!</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-11-14T06:42:44-05:00" pubdate data-updated="true">Nov 14<span>th</span>, 2009</time>
-        
-         | <a href="/blog/2009/11/14/python-no-ceara-pythonceara/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><img class="left" src="/imgs/python-logo.gif" title="'Criptografia'" >
-<strong>B</strong>om Dia galera&hellip;</p>
-
-<p><strong>G</strong>ostaria de lhes lembrar que hoje, Sábado &ndash; 14 de Novembro, estará acontecendo o primeiro evento de Python do Ceará, PythOnCeará, organizado pela comunidade local de Python &ndash; Pug-CE.</p>
-
-<p><strong>O</strong> evento promete ser um marco de startup para os pythonianos locais visto que será o degrau inicial para muitos outros eventos posteriores também organizados pela Pug-CE.</p>
-
-<p><strong>O</strong> evento será realizado na faculdade 7 Setembro &ndash; FA7 &ndash; e contará com 4 palestras de temas que envolvem tanto o usuário iniciante que não conhece python como ao usuário avançado.</p>
-
-<ul>
-<li>&ldquo;Por que python?!&rdquo; – Tiago Freire (@tiagofreire)</li>
-<li>&ldquo;Python para Web e Desktop&rdquo; – Alec Nascimento (@alecnascimento)</li>
-<li>&ldquo;Django tem ritmo!&rdquo; – Italo Maia (@italomaia)</li>
-<li>&ldquo;Sokoban com PyS60&rdquo; – Fábio Cerqueira (@fabiocerqueira)</li>
-</ul>
-
-
-<p><strong>C</strong>ada palestra terá duração de 50 minutos havendo uma pequena pausa para o coffee break. =]</p>
-
-<p><strong>R</strong>ecomendo que todos os interessados em conhecer um pouco mais sobre esta linguagem magnífica que é o Python compareça.</p>
-
-<p>Mais informações sobre o encontro:
-local: FA7, em frente a Unifor, sala 35
-horário: das 13:00 às 17:30
-dia: 14/11/09</p>
-
-<p><strong>A</strong>braços</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/31/">&larr; Anteriores</a>
@@ -350,6 +362,10 @@ dia: 14/11/09</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2017/03/11/recebendo-alarmes-do-aws-diretamente-no-slack/">Recebendo Alarmes do AWS Diretamente no Slack</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/08/20/docker-uma-alternativa-elegante-para-containers-no-linux/">Docker - Uma alternativa elegante para containers no Linux</a>
       </li>
     
@@ -365,15 +381,11 @@ dia: 14/11/09</p>
         <a href="/blog/2014/01/30/blackarch-linux-uma-nova-distribuicao-para-pentesters/">BlackArch Linux - Uma nova distribuição para Pentesters</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2014/01/23/dica-escondendo-seu-endereco-de-email-ao-divulgar-seu-endereco-de-email/">Dica - Escondendo Seu Endereço de Email ao Divulgar Seu Endereço de Email</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categorias</h1>
-    <span id="tag-cloud"><embed type='application/x-shockwave-flash' src='/javascripts/tagcloud.swf'width='100%' height='250' bgcolor='#f2f2f2' id='tagcloudflash' name='tagcloudflash' quality='high' allowscriptaccess='always'flashvars="tcolor=0x333333&amp;tcolor2=0x333333&amp;hicolor=0x000000&amp;tspeed=100&amp;distr=true&amp;mode=tags&amp;tagcloud=%3Ctags%3E%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fandroid%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EAndroid%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Faptitude%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EAptitude%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Farch-linux%27+style%3D%27font-size%3A+18.363636363636363%25%27%3EArch+Linux%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fasterisk%27+style%3D%27font-size%3A+7.568181818181818%25%27%3EAsterisk%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fcensura%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3ECensura%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fchromium%27+style%3D%27font-size%3A+7.946969696969697%25%27%3EChromium%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fcontainers%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EContainers%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fcultura%27+style%3D%27font-size%3A+7.378787878787879%25%27%3ECultura%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fcultura-hacker%27+style%3D%27font-size%3A+15.522727272727273%25%27%3ECultura+Hacker%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fdebian%27+style%3D%27font-size%3A+7.378787878787879%25%27%3EDebian%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fdevops%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EDevOps%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fdia-livre%27+style%3D%27font-size%3A+7.757575757575758%25%27%3EDia+Livre%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fdocker%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EDocker%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Feventos%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EEventos%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Ffedora%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EFedora%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Ffirefox%27+style%3D%27font-size%3A+7.568181818181818%25%27%3EFirefox%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fflisol%27+style%3D%27font-size%3A+8.515151515151516%25%27%3EFlisol%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Ffree-bsd%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EFree+BSD%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fgoogle%27+style%3D%27font-size%3A+7.757575757575758%25%27%3EGoogle%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fimpressoes%27+style%3D%27font-size%3A+32.0%25%27%3EImpressoes%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Finternet%27+style%3D%27font-size%3A+7.378787878787879%25%27%3EInternet%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fios%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EiOS%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fjava%27+style%3D%27font-size%3A+8.325757575757576%25%27%3EJava%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fjogos%27+style%3D%27font-size%3A+7.757575757575758%25%27%3EJogos%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fkde%27+style%3D%27font-size%3A+10.40909090909091%25%27%3EKDE%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fkubuntu%27+style%3D%27font-size%3A+7.568181818181818%25%27%3EKubuntu%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fliberdade%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3ELiberdade%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Flinux%27+style%3D%27font-size%3A+27.075757575757574%25%27%3ELinux%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fliteratura%27+style%3D%27font-size%3A+12.113636363636363%25%27%3ELiteratura%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fmeio-ambiente%27+style%3D%27font-size%3A+7.757575757575758%25%27%3EMeio+Ambiente%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fprivacidade%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EPrivacidade%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fpython%27+style%3D%27font-size%3A+8.704545454545455%25%27%3EPython%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Frails%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3ERails%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fredes%27+style%3D%27font-size%3A+10.787878787878789%25%27%3ERedes%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fruby%27+style%3D%27font-size%3A+7.946969696969697%25%27%3ERuby%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fseguranca%27+style%3D%27font-size%3A+14.007575757575758%25%27%3ESeguranca%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fseguranca-digital%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3ESeguranca+Digital%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fsenha%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3ESenha%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fservidor%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EServidor%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fsoftware-livre%27+style%3D%27font-size%3A+30.484848484848484%25%27%3ESoftware+Livre%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fssh%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3ESSH%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fsysadmin%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3ESysAdmin%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Ftux-ce%27+style%3D%27font-size%3A+9.462121212121211%25%27%3ETux-ce%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fubuntu%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EUbuntu%3C%2Fa%3E+%3C%2Ftags%3E"></span>
+    <span id="tag-cloud"><embed type='application/x-shockwave-flash' src='/javascripts/tagcloud.swf'width='100%' height='250' bgcolor='#f2f2f2' id='tagcloudflash' name='tagcloudflash' quality='high' allowscriptaccess='always'flashvars="tcolor=0x333333&amp;tcolor2=0x333333&amp;hicolor=0x000000&amp;tspeed=100&amp;distr=true&amp;mode=tags&amp;tagcloud=%3Ctags%3E%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fandroid%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EAndroid%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Faptitude%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EAptitude%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Farch-linux%27+style%3D%27font-size%3A+18.363636363636363%25%27%3EArch+Linux%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fasterisk%27+style%3D%27font-size%3A+7.568181818181818%25%27%3EAsterisk%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Faws%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EAWS%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fcensura%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3ECensura%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fchromium%27+style%3D%27font-size%3A+7.946969696969697%25%27%3EChromium%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fcontainers%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EContainers%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fcultura%27+style%3D%27font-size%3A+7.378787878787879%25%27%3ECultura%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fcultura-hacker%27+style%3D%27font-size%3A+15.522727272727273%25%27%3ECultura+Hacker%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fdebian%27+style%3D%27font-size%3A+7.378787878787879%25%27%3EDebian%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fdevops%27+style%3D%27font-size%3A+7.378787878787879%25%27%3EDevOps%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fdia-livre%27+style%3D%27font-size%3A+7.757575757575758%25%27%3EDia+Livre%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fdocker%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EDocker%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Feventos%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EEventos%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Ffedora%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EFedora%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Ffirefox%27+style%3D%27font-size%3A+7.568181818181818%25%27%3EFirefox%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fflisol%27+style%3D%27font-size%3A+8.515151515151516%25%27%3EFlisol%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Ffree-bsd%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EFree+BSD%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fgoogle%27+style%3D%27font-size%3A+7.757575757575758%25%27%3EGoogle%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fimpressoes%27+style%3D%27font-size%3A+32.0%25%27%3EImpressoes%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Finternet%27+style%3D%27font-size%3A+7.568181818181818%25%27%3EInternet%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fios%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EiOS%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fjava%27+style%3D%27font-size%3A+8.325757575757576%25%27%3EJava%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fjogos%27+style%3D%27font-size%3A+7.757575757575758%25%27%3EJogos%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fkde%27+style%3D%27font-size%3A+10.40909090909091%25%27%3EKDE%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fkubuntu%27+style%3D%27font-size%3A+7.568181818181818%25%27%3EKubuntu%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fliberdade%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3ELiberdade%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Flinux%27+style%3D%27font-size%3A+27.075757575757574%25%27%3ELinux%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fliteratura%27+style%3D%27font-size%3A+12.113636363636363%25%27%3ELiteratura%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fmeio-ambiente%27+style%3D%27font-size%3A+7.757575757575758%25%27%3EMeio+Ambiente%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fprivacidade%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EPrivacidade%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fpython%27+style%3D%27font-size%3A+8.704545454545455%25%27%3EPython%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Frails%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3ERails%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fredes%27+style%3D%27font-size%3A+10.787878787878789%25%27%3ERedes%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fruby%27+style%3D%27font-size%3A+7.946969696969697%25%27%3ERuby%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fseguranca%27+style%3D%27font-size%3A+14.196969696969697%25%27%3ESeguranca%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fseguranca-digital%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3ESeguranca+Digital%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fsenha%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3ESenha%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fservidor%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EServidor%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fslack%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3ESlack%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fsoftware-livre%27+style%3D%27font-size%3A+30.484848484848484%25%27%3ESoftware+Livre%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fssh%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3ESSH%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fsysadmin%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3ESysadmin%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fsysadmin%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3ESysAdmin%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Ftux-ce%27+style%3D%27font-size%3A+9.462121212121211%25%27%3ETux-ce%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fubuntu%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EUbuntu%3C%2Fa%3E+%3C%2Ftags%3E"></span>
 </section>
 <section>
   <h1>Estou lendo</h1>
@@ -384,7 +396,7 @@ dia: 14/11/09</p>
   <h1> Eu apoio
 </h1>
   <span>
-    <a href='http://archlinux.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/archlinux.org.png'></a><a href='http://asterisk.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/asterisk.org.png'></a><img style='padding: .5em; margin: .5em;' src='/images/stickers/glider.png' ><a href='http://kde.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/kde.org.png'></a><a href='http://linux.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/linux.org.png'></a><a href='http://octopress.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/octopress.org.png'></a><a href='http://opensource.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/opensource.org.png'></a><a href='http://python.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/python.org.png'></a><a href='http://raspberrypi.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/raspberrypi.org.png'></a><a href='http://ruby-lang.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/ruby-lang.org.png'></a>
+    <a href='http://ansible.com'><img style='padding: .5em; margin: .5em;' src='/images/stickers/ansible.com.png'></a><a href='http://archlinux.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/archlinux.org.png'></a><a href='http://asterisk.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/asterisk.org.png'></a><a href='http://atom.io'><img style='padding: .5em; margin: .5em;' src='/images/stickers/atom.io.png'></a><a href='http://chef.io'><img style='padding: .5em; margin: .5em;' src='/images/stickers/chef.io.png'></a><a href='http://docker.com'><img style='padding: .5em; margin: .5em;' src='/images/stickers/docker.com.png'></a><a href='http://github.com'><img style='padding: .5em; margin: .5em;' src='/images/stickers/github.com.png'></a><img style='padding: .5em; margin: .5em;' src='/images/stickers/glider.png' ><a href='http://jenkins.io'><img style='padding: .5em; margin: .5em;' src='/images/stickers/jenkins.io.png'></a><a href='http://kde.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/kde.org.png'></a><a href='http://linux.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/linux.org.png'></a><a href='http://octopress.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/octopress.org.png'></a><a href='http://opensource.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/opensource.org.png'></a><a href='http://python.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/python.org.png'></a><a href='http://raspberrypi.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/raspberrypi.org.png'></a><a href='http://ruby-lang.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/ruby-lang.org.png'></a>
   </span>
 </section>
 
@@ -398,7 +410,7 @@ dia: 14/11/09</p>
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2016 - Marcelo Cavalcante Rocha - Kalib -
+  Copyright &copy; 2017 - Marcelo Cavalcante Rocha - Kalib -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 

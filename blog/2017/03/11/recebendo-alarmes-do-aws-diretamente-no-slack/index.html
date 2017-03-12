@@ -1,0 +1,721 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Recebendo Alarmes do AWS Diretamente no Slack - Marcelo Cavalcante Rocha ~</title>
+  <meta name="author" content="Marcelo Cavalcante Rocha - Kalib">
+
+  
+  <meta name="description" content="Monitoramento de serviços e infraestrutura é uma peça fundamental em qualquer corporação. Com as tendências de times cada vez mais ágeis e &hellip;">
+  <meta name="keywords" content="Slack,Internet,Segurança,Linux,AWS,Amazon,Devops,Monitoramento,CloudWatch,Cloud Computing,Nuvem,Lambda">
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://kalib.github.io/blog/2017/03/11/recebendo-alarmes-do-aws-diretamente-no-slack/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Marcelo Cavalcante Rocha ~" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-42903485-1']);
+    _gaq.push(['_setDomainName','marcelocavalcante.net']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:kalib.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+    <li><a href="/">
+        <span class="blue_light">
+            Marcelo Cavalcante Rocha ~
+        </span>
+       
+           <span class="blue_dark">
+             Hacking the damn life...
+           </span>
+       
+    </a></li>
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Arquivos</a></li>
+  <li><a href="/about">Sobre mim</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Recebendo Alarmes Do AWS Diretamente No Slack</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2017-03-11T12:03:00-05:00" pubdate data-updated="true">Mar 11<span>th</span>, 2017</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><img class="center" src="/imgs/aws_slack.png" title="'AWS_Slack'" ></p>
+
+<p><strong>A</strong>ntes de entrar na configuração dos serviços, talvez seja necessário apresentar o <a href="http://www.slack.com">Slack</a>, visto que muitos ainda não conhecem ou utilizam esta poderosa e versátil ferramenta de comunicação instantânea para times.</p>
+
+<p><strong>S</strong>lack é uma plataforma para comunicação entre times que desejam um ambiente mais dinâmico e ágil. Diferentemente de muitas plataformas de chat disponíveis, como o Google Hangouts, o Slack nos permite criar canais distintos com membros distintos de um mesmo time fazendo parte daquele canal específico. Não, não estou falando de chat em grupo, mas sim canais específicos que permitem integrações com serviços distintos, como receber notificações sobre commits feitos em um repositório ou branch específico no github, notificações de tickets abertos em ferramentas como o Jira, por exemplo, etc. O Slack é completamente programável e escalável, o que nos permite ter inúmeras funcionalidas.</p>
+
+<p><strong>P</strong>rovavelmente não seja necessário apresentar o AWS, ou Amazon Web Services, visto que já está no mercado desde 2006, no entanto cabe um resumo para os que não estão familiarizados com o mesmo (embora o público alvo deste post seja quem já possui alguma familiaridade com AWS).</p>
+
+<p><strong>A</strong>ws ou Amazon Web Services é uma plataforma de serviços em nuvem segura, oferecendo poder computacional, armazentamento de banco de dados, distribuição de conteúdo e outras funcionalidades.</p>
+
+<p><strong>P</strong>or que eu deveria ter alarmes e notificações do AWS em um serviço de chat como o Slack quando já recebo estas notificações por email?</p>
+
+<p><strong>É</strong> verdade que o uso mais comum para envio de alarmes e notificações do AWS costuma ser via email, no entanto fica fácil identificar alguns problemas com este método. O principal e mais recorrente que vejo é o caso de as notificações caírem em um email específico visto por poucas pessoas (na maioria das vezes) ou nem visto sequer, pois geralmente as pessoas ficam cansadas de olhar notificações e ter sua caixa de entrada entupida com eles portanto criam filtros que jogam os emails de notificação para um diretório que dificilmente será checado.</p>
+
+<p><strong>O</strong>utro problema comum com esta prática é a demora até que alguém leia a notificação no meio de tantos outros na pasta ou filtro criado e, muitas vezes, quando se vê a notificação, o problema já está aguardando uma solução há horas.</p>
+
+<p><strong>D</strong>eixando claro, não estou defendendo a ideia de abolir as notificações por email. Eu mesmo utilizo ambos, afinal o email continua bastante eficiente para fins de armazenamento e checagem histórica, por exemplo.</p>
+
+<p><strong>U</strong>ma vez que nos dias atuais os times de TI estão cada vez mais unificados e dinâmicos, buscando incorporar uma mentalidade DevOps e Agile, a comunicação rápida e eficiente se torna um fator primordial para o sucesso de qualquer projeto. Ter um local centralizado para conversar com os demais membros do time, trocar arquivos, detalhes de projetos, receber notificações de commits, prazos, tickets, documentação e, por que não, notificações de monitoramento e alarmes, torna-se essencial.</p>
+
+<p><strong>V</strong>amos então entender como funcionaria uma solução para enviar as notificações e alarmes do AWS para o Slack.</p>
+
+<p><strong>O</strong> que utilizaremos:</p>
+
+<ol>
+<li>No Slack:
+
+<ul>
+<li>Um plugin ou Slack App chamado <strong>Incoming WebHooks</strong></li>
+<li>O nome de um canal para envio das notificações</li>
+</ul>
+</li>
+<li>No AWS:
+
+<ul>
+<li>Serviço <strong>SNS Topic</strong></li>
+<li>Serviço <strong>CloudWatch</strong></li>
+<li>Serviço <strong>Lambda Function</strong></li>
+</ul>
+</li>
+</ol>
+
+
+<p><strong>V</strong>amos lá&hellip;</p>
+
+<p><strong>Slack</strong></p>
+
+<p><strong>V</strong>amos começar escolhendo o canal no Slack no qual desejo receber a minha notificação ou alarme: #devops</p>
+
+<p><em>Estou supondo que você já utiliza o Slack e já possui um time criado no mesmo. Caso ainda não, crie um time no Slack seguindo os passos descritos no <a href="https://slack.com/">site oficial</a> antes de seguir em frente&hellip; ;]</em></p>
+
+<p><strong>O</strong> próximo passo é configurar a integração instalando o Plugin ou Slack App <strong>Incoming WebHooks</strong>. Para isto, acesse a página de apps de seu time no Slack: <a href="https://SEUTIME.slack.com/apps">https://SEUTIME.slack.com/apps</a></p>
+
+<p><strong>P</strong>esquise por Incoming WebHooks e você terá apenas um resultado, portanto clique sem medo.</p>
+
+<p><img class="center" src="/imgs/slack1.png" title="'Incoming WebHook'" ></p>
+
+<p><strong>C</strong>lique no pequeno lápis que se encontrará no canto direito para editar as configurações do Incoming WebHook. Os únicos campos que precisaremos editar neste momento são os seguintes:
+  * Post to Channel &ndash; Aqui indicarei o meu canal: #devops
+  * Customize Name &ndash; Aqui indicarei um nome qualquer: AWS-Alerts</p>
+
+<p><strong>Importante:</strong> Repare que nesta página de configurações ele lhe passará uma entrada ou URL com o código para o seu WebHook. Esta informação estará listada em <strong>Webhook URL</strong> e será algo como: *<a href="https://hooks.slack.com/services/T434P71A4/U4G3JUG13/kPjvXY4Kd8wPm4TvrEqhN6Dv*.">https://hooks.slack.com/services/T434P71A4/U4G3JUG13/kPjvXY4Kd8wPm4TvrEqhN6Dv*.</a> Copie esta informação em algum local de fácil acesso pois precisaremos desta URL para a configuração que faremos a seguir no AWS.</p>
+
+<p><strong>S</strong>alve suas configurações e vamos configurar os serviços do AWS para que nosso WebHook possa receber as informações devidamente.</p>
+
+<p><strong>Amazon Web Services</strong></p>
+
+<p><strong>S</strong>e você já possui alguma familiaridade com o AWS, sabe que existem duas formas principais para administração e gerenciamento de nossos serviços: Pela interface web de gerenciamento (GUI) OU pela linha de comandos através da AWS CLI Tool que se comunica com a API do AWS. Este procedimento, assim como praticamente todos os outros, pode ser realizado por ambos os meios.</p>
+
+<p><strong>S</strong>e você também gosta de automação, provavelmente prefere utilizar a CLI, no entanto irei listar aqui o procedimento em ambos os meios.</p>
+
+<p><strong>Passo 1: Criando um SNS Topic para receber os alarmes</strong></p>
+
+<p><strong>1.1 &ndash; Pela Interface Web de Gerenciamento (GUI)</strong></p>
+
+<ul>
+<li>A partir da Dashboard principal, clique ou busque pelo serviço SNS;</li>
+<li>Crie um novo SNS Topic:
+
+<ul>
+<li>No menu da lateral esquerda, clique em <strong>Topics</strong>;</li>
+<li>Clique em <strong>Create new topic</strong>;</li>
+<li>Preencha os campos <strong>Name</strong> (obrigatório) e <strong>Display Name</strong> (opcional) para o seu tópico. Para este exemplo utilizarei <em>aws-slack-alerts</em> como <strong>Name</strong> e <em>aws-slack</em> como <strong>Display Name</strong>; <em>(O Display Name só é necessário em caso de você também desejar enviar notificações por SMS)</em></li>
+<li>Clique em <strong>Create Topic</strong></li>
+</ul>
+</li>
+<li>Agora você já deve ser capaz de ver seu SNS Topic na lista.</li>
+</ul>
+
+
+<p><strong>1.2 &ndash; Pela AWS CLI Tool</strong></p>
+
+<p><em>Estou assumindo que se você optou por utilizar este método, é porque já possui sua CLI configurada e autenticando em sua conta do AWS com sua chave. Caso você não saiba do que estou falando, sugiro que siga a <a href="https://aws.amazon.com/pt/cli/?sc_channel=PS&amp;sc_campaign=acquisition_CA&amp;sc_publisher=google&amp;sc_medium=command_line_b&amp;sc_content=aws_cli_bmm&amp;sc_detail=%2Baws%20%2Bcli&amp;sc_category=command_line&amp;sc_segment=161196437429&amp;sc_matchtype=b&amp;sc_country=CA&amp;s_kwcid=AL!4422!3!161196437429!b!!g!!%2Baws%20%2Bcli&amp;ef_id=V8jOHQAABelSRAnr:20170311204146:s">documentação oficial</a> para isto.</em></p>
+
+<ul>
+<li>Pela CLI tool, digite o seguinte comando, indicando a região na qual você deseja criar seu tópico e o nome desejado:</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">aws</span> <span class="n">sns</span> <span class="n">create</span><span class="o">-</span><span class="n">topic</span>
+</span><span class='line'>    <span class="o">--</span><span class="n">region</span> <span class="n">us</span><span class="o">-</span><span class="n">west</span><span class="o">-</span><span class="mi">1</span>
+</span><span class='line'>    <span class="o">--</span><span class="n">name</span> <span class="n">aws</span><span class="o">-</span><span class="n">slack</span><span class="o">-</span><span class="n">alerts</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li><strong>IMPORTANTE:</strong> Você receberá um identificador (TopicArn) para este alarme. Você precisará dele no passo seguinte.</li>
+<li>Caso queira ter certeza, você pode listar seus tópicos utilizando:</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">aws</span> <span class="n">sns</span> <span class="nb">list</span><span class="o">-</span><span class="n">topics</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>Passo 2: Criando um Alarme no serviço CloudWatch</strong></p>
+
+<p><strong>2.1 &ndash; Pela Interface Web de Gerenciamento (GUI)</strong></p>
+
+<ul>
+<li>A partir da Dashboard principal, clique ou busque pelo serviço <strong>CloudWatch</strong>;</li>
+<li>Crie um novo Alarme:
+
+<ul>
+<li>Clique em <strong>Alarms</strong>;</li>
+<li>Clique no botão <strong>Create Alarm</strong>;</li>
+<li>Escolha a categoria do alarme desejado. Para este exemplo utilizarei <strong>ELB Metric > Per-LB Metrics</strong> <em>(Dentre as várias categorias disponíveis, esta se refere à Load Balancers)</em>;</li>
+<li>Selecione a métrica exata desejada. No caso deste exemplo, preciso selecionar a métrica e o Load Balancer desejado. Ao escolher a métrica e o alvo (em meu caso um Load Balancer) clique em <strong>Next</strong>. Neste exemplo eu escolhi a métrica <strong>HTTPCode_Backend_5XX</strong> <em>(para monitorar 500 errors)</em> e um Load Balancer chamado <strong>LB-GuySpyV3</strong>;</li>
+<li>O próximo passo é definir um nome e uma descrição para este <strong>Alarme</strong>, bem como definir as triggers e períodos de monitoramento. Neste exemplo utilizei o nome <strong>LB-GuySpyV3-ELB_500</strong> para meu alarme; <em>(Não entrarei em detalhes quanto ao uso das triggers, visto que para cada tipo ou categoria de métrica, as triggers serão diferentes, bem como o cenário de seu ambiente e nível de criticidade. Em resumo, se você deseja monitorar o uso de CPU de um determinado servidor, a trigger seria o gatilho que ativaria o alarme, por exemplo: Só quero ser alarmado se o uso de CPU neste servidor ou instância for >= 90% e assim permanecer por pelo menos 60 segundos, ou por dois períodos seguidos de 60seg.)</em></li>
+<li>Na seção <strong>Actions</strong> da configuração do Alarme defina o <strong>State</strong> e indique que a notificação deverá ser enviada <strong>(Send notification to)</strong> para o <strong>SNS Topic</strong> que criamos anteriormente. Para este exemplo optei por <strong>State is ALARM</strong> e decidi enviar as notificações para <strong>aws-slack-alerts</strong>, sendo este o SNS Topic que criei no início;</li>
+<li>Finalize clicando em <strong>Create Alarm</strong>.</li>
+</ul>
+</li>
+</ul>
+
+
+<p>  <strong>2.2 &ndash; Pela AWS CLI Tool</strong></p>
+
+<p>  <em>Novamente&hellip; Estou assumindo que se você optou por utilizar este método, é porque já possui sua CLI configurada e autenticando em sua conta do AWS com sua chave. Caso você não saiba do que estou falando, sugiro que siga a <a href="https://aws.amazon.com/pt/cli/?sc_channel=PS&amp;sc_campaign=acquisition_CA&amp;sc_publisher=google&amp;sc_medium=command_line_b&amp;sc_content=aws_cli_bmm&amp;sc_detail=%2Baws%20%2Bcli&amp;sc_category=command_line&amp;sc_segment=161196437429&amp;sc_matchtype=b&amp;sc_country=CA&amp;s_kwcid=AL!4422!3!161196437429!b!!g!!%2Baws%20%2Bcli&amp;ef_id=V8jOHQAABelSRAnr:20170311204146:s">documentação oficial</a> para isto.</em></p>
+
+<ul>
+<li>Pela CLI tool, digite o seguinte comando, indicando os atributos abaixo:
+
+<ul>
+<li><strong>region</strong> <em>(Região)</em>;</li>
+<li><strong>alarm-name</strong> <em>(Nome do alarme)</em>;</li>
+<li><strong>alarm-description</strong> <em>(Descrição do alarme)</em>;</li>
+<li><strong>alarm-actions</strong> <em>(Definir a ação do alarme &ndash; Apontar para o TopicArn do SNS Topic que criamos anteriormente)</em>;</li>
+<li><strong>metric-name</strong> <em>(Nome da Métrica desejada)</em>;</li>
+<li><strong>namespace AWS/ELB &mdash;statistic</strong> <em>(Estatística desejada para aquela métrica, neste caso utilizarei Sum (Soma) ao invés de Average (Média))</em>;</li>
+<li><strong>dimensions</strong> <em>(O alvo desta métrica de monitoramento, no nosso caso um Load Balancer)</em>;</li>
+<li><strong>period</strong> e <strong>evaluation-periods</strong> <em>(Períodos desejados para a trigger)</em>;</li>
+<li><strong>threshold</strong> <em>(O valor desejado: Neste exemplo estou colocando o valor como 1, portanto receberei o alarme caso seja >= 1. Sim, eu sei que receberei o alarme a cada minuto, mas estou fazendo isto de propósito para recebermos a notificação a fim de teste. Nunca utilize um threshold desses em produção. :p)</em>;</li>
+<li><strong>comparison-operator</strong> <em>(Operador de comparação desejado, neste caso >=)</em>;</li>
+</ul>
+</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">aws</span> <span class="n">cloudwatch</span> <span class="n">put</span><span class="o">-</span><span class="n">metric</span><span class="o">-</span><span class="n">alarm</span> <span class="o">--</span><span class="n">region</span> <span class="n">us</span><span class="o">-</span><span class="n">west</span><span class="o">-</span><span class="mi">1</span>
+</span><span class='line'>    <span class="o">--</span><span class="n">alarm</span><span class="o">-</span><span class="n">name</span> <span class="s">&quot;LB-GuySpyV3-ELB_500&quot;</span>
+</span><span class='line'>    <span class="o">--</span><span class="n">alarm</span><span class="o">-</span><span class="n">description</span> <span class="s">&quot;Sends 500-errors to Slack&quot;</span>
+</span><span class='line'>    <span class="o">--</span><span class="n">actions</span><span class="o">-</span><span class="n">enabled</span>
+</span><span class='line'>    <span class="o">--</span><span class="n">alarm</span><span class="o">-</span><span class="n">actions</span> <span class="s">&quot;TheTopicArn from last step&quot;</span>
+</span><span class='line'>    <span class="o">--</span><span class="n">metric</span><span class="o">-</span><span class="n">name</span> <span class="s">&quot;HTTPCode_Backend_5XX&quot;</span>
+</span><span class='line'>    <span class="o">--</span><span class="n">namespace</span> <span class="n">AWS</span><span class="o">/</span><span class="n">ELB</span> <span class="o">--</span><span class="n">statistic</span> <span class="s">&quot;Sum&quot;</span>
+</span><span class='line'>    <span class="o">--</span><span class="n">dimensions</span> <span class="s">&quot;Name=LoadBalancerName,Value=LB-GuySpyV3&quot;</span>
+</span><span class='line'>    <span class="o">--</span><span class="n">period</span> <span class="mi">60</span>
+</span><span class='line'>    <span class="o">--</span><span class="n">evaluation</span><span class="o">-</span><span class="n">periods</span> <span class="mi">60</span>
+</span><span class='line'>    <span class="o">--</span><span class="n">threshold</span> <span class="mi">1</span>
+</span><span class='line'>    <span class="o">--</span><span class="n">comparison</span><span class="o">-</span><span class="n">operator</span> <span class="s">&quot;GreaterThanOrEqualToThreshold&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<p><strong>Passo 3: Criando uma Função Lambda como Assinante (Subscriber) do nosso SNS Topic</strong></p>
+
+<p><strong>3.1 &ndash; Pela Interface Web de Gerenciamento (GUI)</strong></p>
+
+<ul>
+<li>A partir da Dashboard principal, clique ou busque pelo serviço <strong>Lambda</strong>;</li>
+<li>Crie uma <strong>Nova Função Lambda</strong>:
+
+<ul>
+<li>Clique em <strong>Create a Lambda Function</strong>;</li>
+<li>Na tela <strong>Select Blueprint</strong> clique na opção <strong>cloudwatch-alarm-to-slack</strong>; <em>(Você poderá precisar buscar por esta opção)</em></li>
+<li>O próximo passo será a tela <strong>Configure Triggers</strong>. Selecione o <strong>SNS Topic</strong> que foi criado anteriormente (aws-slack-alerts neste exemplo) e marque a opção <strong>Enable Trigger</strong> e clique em Next;</li>
+<li>Em <strong>Configure Function</strong> dê um Nome e uma Descrição para a função e escolha <strong>Node.js.4.3</strong> como <strong>Runtime</strong>;</li>
+<li>No campo <strong>Lambda Function Code</strong> cole o seguinte código: <a href="https://gist.github.com/tomfa/b33f768908b0a83987d26f269e377e95">Disponível no github</a>
+
+<ul>
+<li>(Você deverá setar os valores das variáveis <strong>CHANNEL</strong> e <strong>PATH</strong>, onde CHANNEL é o canal do Slack para o qual você deseja mandar as notificações e PATH é a URL de seu WebHook, recebida quando configuramos o Incoming WebHook no Slack)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+<span class='line-number'>72</span>
+<span class='line-number'>73</span>
+<span class='line-number'>74</span>
+<span class='line-number'>75</span>
+<span class='line-number'>76</span>
+<span class='line-number'>77</span>
+<span class='line-number'>78</span>
+<span class='line-number'>79</span>
+<span class='line-number'>80</span>
+<span class='line-number'>81</span>
+<span class='line-number'>82</span>
+<span class='line-number'>83</span>
+<span class='line-number'>84</span>
+<span class='line-number'>85</span>
+<span class='line-number'>86</span>
+<span class='line-number'>87</span>
+<span class='line-number'>88</span>
+<span class='line-number'>89</span>
+<span class='line-number'>90</span>
+<span class='line-number'>91</span>
+<span class='line-number'>92</span>
+<span class='line-number'>93</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">var</span> <span class="n">https</span> <span class="o">=</span> <span class="n">require</span><span class="p">(</span><span class="s">&#39;https&#39;</span><span class="p">);</span>
+</span><span class='line'><span class="n">var</span> <span class="n">util</span> <span class="o">=</span> <span class="n">require</span><span class="p">(</span><span class="s">&#39;util&#39;</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">var</span> <span class="n">CHANNEL</span> <span class="o">=</span> <span class="s">&quot;#devops&quot;</span><span class="p">;</span>
+</span><span class='line'><span class="n">var</span> <span class="n">PATH</span> <span class="o">=</span> <span class="s">&quot;/services/T434P71A4/U4G3JUG13/kPjvXY4Kd8wPm4TvrEqhN6Dv&quot;</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">exports</span><span class="o">.</span><span class="n">handler</span> <span class="o">=</span> <span class="n">function</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">JSON</span><span class="o">.</span><span class="n">stringify</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">null</span><span class="p">,</span> <span class="mi">2</span><span class="p">));</span>
+</span><span class='line'>    <span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s">&#39;From SNS:&#39;</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">Records</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">Sns</span><span class="o">.</span><span class="n">Message</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">var</span> <span class="n">postData</span> <span class="o">=</span> <span class="p">{</span>
+</span><span class='line'>        <span class="s">&quot;channel&quot;</span><span class="p">:</span> <span class="n">CHANNEL</span><span class="p">,</span>
+</span><span class='line'>        <span class="s">&quot;username&quot;</span><span class="p">:</span> <span class="s">&quot;AWS SNS&quot;</span><span class="p">,</span>
+</span><span class='line'>        <span class="s">&quot;text&quot;</span><span class="p">:</span> <span class="s">&quot;*&quot;</span> <span class="o">+</span> <span class="n">event</span><span class="o">.</span><span class="n">Records</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">Sns</span><span class="o">.</span><span class="n">Subject</span> <span class="o">+</span> <span class="s">&quot;*&quot;</span><span class="p">,</span>
+</span><span class='line'>        <span class="s">&quot;icon_emoji&quot;</span><span class="p">:</span> <span class="s">&quot;:aws:&quot;</span>
+</span><span class='line'>    <span class="p">};</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">var</span> <span class="n">message</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">Records</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">Sns</span><span class="o">.</span><span class="n">Message</span><span class="p">;</span>
+</span><span class='line'>    <span class="n">var</span> <span class="n">severity</span> <span class="o">=</span> <span class="s">&quot;good&quot;</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">var</span> <span class="n">dangerMessages</span> <span class="o">=</span> <span class="p">[</span>
+</span><span class='line'>        <span class="s">&quot; but with errors&quot;</span><span class="p">,</span>
+</span><span class='line'>        <span class="s">&quot; to RED&quot;</span><span class="p">,</span>
+</span><span class='line'>        <span class="s">&quot;During an aborted deployment&quot;</span><span class="p">,</span>
+</span><span class='line'>        <span class="s">&quot;Failed to deploy application&quot;</span><span class="p">,</span>
+</span><span class='line'>        <span class="s">&quot;Failed to deploy configuration&quot;</span><span class="p">,</span>
+</span><span class='line'>        <span class="s">&quot;has a dependent object&quot;</span><span class="p">,</span>
+</span><span class='line'>        <span class="s">&quot;is not authorized to perform&quot;</span><span class="p">,</span>
+</span><span class='line'>        <span class="s">&quot;Pending to Degraded&quot;</span><span class="p">,</span>
+</span><span class='line'>        <span class="s">&quot;Stack deletion failed&quot;</span><span class="p">,</span>
+</span><span class='line'>        <span class="s">&quot;Unsuccessful command execution&quot;</span><span class="p">,</span>
+</span><span class='line'>        <span class="s">&quot;You do not have permission&quot;</span><span class="p">,</span>
+</span><span class='line'>        <span class="s">&quot;Your quota allows for 0 more running instance&quot;</span><span class="p">];</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">var</span> <span class="n">warningMessages</span> <span class="o">=</span> <span class="p">[</span>
+</span><span class='line'>        <span class="s">&quot; aborted operation.&quot;</span><span class="p">,</span>
+</span><span class='line'>        <span class="s">&quot; to YELLOW&quot;</span><span class="p">,</span>
+</span><span class='line'>        <span class="s">&quot;Adding instance &quot;</span><span class="p">,</span>
+</span><span class='line'>        <span class="s">&quot;Degraded to Info&quot;</span><span class="p">,</span>
+</span><span class='line'>        <span class="s">&quot;Deleting SNS topic&quot;</span><span class="p">,</span>
+</span><span class='line'>        <span class="s">&quot;is currently running under desired capacity&quot;</span><span class="p">,</span>
+</span><span class='line'>        <span class="s">&quot;Ok to Info&quot;</span><span class="p">,</span>
+</span><span class='line'>        <span class="s">&quot;Ok to Warning&quot;</span><span class="p">,</span>
+</span><span class='line'>        <span class="s">&quot;Pending Initialization&quot;</span><span class="p">,</span>
+</span><span class='line'>        <span class="s">&quot;Removed instance &quot;</span><span class="p">,</span>
+</span><span class='line'>        <span class="s">&quot;Rollback of environment&quot;</span>
+</span><span class='line'>        <span class="p">];</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">for</span><span class="p">(</span><span class="n">var</span> <span class="n">dangerMessagesItem</span> <span class="ow">in</span> <span class="n">dangerMessages</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="k">if</span> <span class="p">(</span><span class="n">message</span><span class="o">.</span><span class="n">indexOf</span><span class="p">(</span><span class="n">dangerMessages</span><span class="p">[</span><span class="n">dangerMessagesItem</span><span class="p">])</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>            <span class="n">severity</span> <span class="o">=</span> <span class="s">&quot;danger&quot;</span><span class="p">;</span>
+</span><span class='line'>            <span class="k">break</span><span class="p">;</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="o">//</span> <span class="n">Only</span> <span class="n">check</span> <span class="k">for</span> <span class="n">warning</span> <span class="n">messages</span> <span class="k">if</span> <span class="n">necessary</span>
+</span><span class='line'>    <span class="k">if</span> <span class="p">(</span><span class="n">severity</span> <span class="o">==</span> <span class="s">&quot;good&quot;</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="k">for</span><span class="p">(</span><span class="n">var</span> <span class="n">warningMessagesItem</span> <span class="ow">in</span> <span class="n">warningMessages</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>            <span class="k">if</span> <span class="p">(</span><span class="n">message</span><span class="o">.</span><span class="n">indexOf</span><span class="p">(</span><span class="n">warningMessages</span><span class="p">[</span><span class="n">warningMessagesItem</span><span class="p">])</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>                <span class="n">severity</span> <span class="o">=</span> <span class="s">&quot;warning&quot;</span><span class="p">;</span>
+</span><span class='line'>                <span class="k">break</span><span class="p">;</span>
+</span><span class='line'>            <span class="p">}</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">postData</span><span class="o">.</span><span class="n">attachments</span> <span class="o">=</span> <span class="p">[</span>
+</span><span class='line'>        <span class="p">{</span>
+</span><span class='line'>            <span class="s">&quot;color&quot;</span><span class="p">:</span> <span class="n">severity</span><span class="p">,</span>
+</span><span class='line'>            <span class="s">&quot;text&quot;</span><span class="p">:</span> <span class="n">message</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>    <span class="p">];</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">var</span> <span class="n">options</span> <span class="o">=</span> <span class="p">{</span>
+</span><span class='line'>        <span class="n">method</span><span class="p">:</span> <span class="s">&#39;POST&#39;</span><span class="p">,</span>
+</span><span class='line'>        <span class="n">hostname</span><span class="p">:</span> <span class="s">&#39;hooks.slack.com&#39;</span><span class="p">,</span>
+</span><span class='line'>        <span class="n">port</span><span class="p">:</span> <span class="mi">443</span><span class="p">,</span>
+</span><span class='line'>        <span class="n">path</span><span class="p">:</span> <span class="n">PATH</span>
+</span><span class='line'>    <span class="p">};</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">var</span> <span class="n">req</span> <span class="o">=</span> <span class="n">https</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">options</span><span class="p">,</span> <span class="n">function</span><span class="p">(</span><span class="n">res</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>      <span class="n">res</span><span class="o">.</span><span class="n">setEncoding</span><span class="p">(</span><span class="s">&#39;utf8&#39;</span><span class="p">);</span>
+</span><span class='line'>      <span class="n">res</span><span class="o">.</span><span class="n">on</span><span class="p">(</span><span class="s">&#39;data&#39;</span><span class="p">,</span> <span class="n">function</span> <span class="p">(</span><span class="n">chunk</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="n">context</span><span class="o">.</span><span class="n">done</span><span class="p">(</span><span class="n">null</span><span class="p">,</span> <span class="n">postData</span><span class="p">);</span>
+</span><span class='line'>      <span class="p">});</span>
+</span><span class='line'>    <span class="p">});</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">req</span><span class="o">.</span><span class="n">on</span><span class="p">(</span><span class="s">&#39;error&#39;</span><span class="p">,</span> <span class="n">function</span><span class="p">(</span><span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>      <span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s">&#39;problem with request: &#39;</span> <span class="o">+</span> <span class="n">e</span><span class="o">.</span><span class="n">message</span><span class="p">);</span>
+</span><span class='line'>    <span class="p">});</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">req</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">util</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;%j&quot;</span><span class="p">,</span> <span class="n">postData</span><span class="p">));</span>
+</span><span class='line'>    <span class="n">req</span><span class="o">.</span><span class="n">end</span><span class="p">();</span>
+</span><span class='line'><span class="p">};</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>O <strong>Handler</strong> deverá ser o default <code>index.handler</code>;
+
+<ul>
+<li>Para <strong>role</strong> selecione <strong>Create a custom role</strong>; <em>(Isto será necessário apenas para a sua primeira função)</em></li>
+<li>Na tela seguinte selecione <strong>lambda_basic_execution</strong> como <strong>IAM role</strong> e deixe o <strong>Policy Name</strong> com seu valor default. O AWS irá criar uma política de segurança padrão que nos dará os privilégios necessários. Clique em <strong>Allow</strong>;</li>
+<li>Certifique-se de que o valor para <strong>VPC</strong> na seção <strong>Advanced Settings</strong> seja <strong>No VPC</strong>;
+Clique em <strong>Next</strong>, reveja suas configurações e clique em <strong>Create Function</strong>;</li>
+</ul>
+</li>
+<li>Aguarde seu alarme acontecer e receba a notificação no Slack. :D</li>
+</ul>
+
+
+<p>O resultado em seu Slack será algo assim&hellip;</p>
+
+<p><img class="center" src="/imgs/slack2.png" title="'Notification_Slack'" ></p>
+
+<p><strong>P</strong>arabéns, você já está recebendo suas notificações via Slack. Basta criar outros alarmes no AWS utilizando a mesma Lambda Function e o mesmo SNS Topic.</p>
+
+<p><strong>H</strong>appy Hacking!</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Marcelo Cavalcante Rocha - Kalib</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2017-03-11T12:03:00-05:00" pubdate data-updated="true">Mar 11<span>th</span>, 2017</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/aws/'>AWS</a>, <a class='category' href='/blog/categories/devops/'>DevOps</a>, <a class='category' href='/blog/categories/internet/'>Internet</a>, <a class='category' href='/blog/categories/seguranca/'>Seguranca</a>, <a class='category' href='/blog/categories/slack/'>Slack</a>, <a class='category' href='/blog/categories/sysadmin/'>Sysadmin</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://kalib.github.io/blog/2017/03/11/recebendo-alarmes-do-aws-diretamente-no-slack/" data-via="" data-counturl="http://kalib.github.io/blog/2017/03/11/recebendo-alarmes-do-aws-diretamente-no-slack/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2015/08/20/docker-uma-alternativa-elegante-para-containers-no-linux/" title="Previous Post: Docker - Uma alternativa elegante para containers no Linux">&laquo; Docker - Uma alternativa elegante para containers no Linux</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1 align="left">Marcelo Cavalcante</h1>
+  <p><img class="right" src="http://www.marcelocavalcante.net/imgs/kalib_picture_pq_circle_pq.png" title="'kalib'" ><p align=rght>Sysadmin dinâmico, escrupulosamente curioso, reservadamente convencional, multitarefa, command line heavy-user, estudante e pesquisador, surfista por prazer, leitor inquieto e apaixonado por vinhos.<br>Me conheça melhor <a href="http://blog.marcelocavalcante.net/about">clicando aqui</a>.</p></p>
+</section><section>
+  <h1>Posts Recentes</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2017/03/11/recebendo-alarmes-do-aws-diretamente-no-slack/">Recebendo Alarmes do AWS Diretamente no Slack</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/08/20/docker-uma-alternativa-elegante-para-containers-no-linux/">Docker - Uma alternativa elegante para containers no Linux</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/08/03/assista-ao-documentario-sobre-aaron-swartz-o-menino-da-internet/">Assista ao documentário sobre Aaron Swartz: O menino da internet</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/13/alterando-os-parametros-do-kernel-em-tempo-real-com-o-systcl/">Alterando os parâmetros do kernel em tempo real com o Systcl</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/01/30/blackarch-linux-uma-nova-distribuicao-para-pentesters/">BlackArch Linux - Uma nova distribuição para Pentesters</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+  <h1>Categorias</h1>
+    <span id="tag-cloud"><embed type='application/x-shockwave-flash' src='/javascripts/tagcloud.swf'width='100%' height='250' bgcolor='#f2f2f2' id='tagcloudflash' name='tagcloudflash' quality='high' allowscriptaccess='always'flashvars="tcolor=0x333333&amp;tcolor2=0x333333&amp;hicolor=0x000000&amp;tspeed=100&amp;distr=true&amp;mode=tags&amp;tagcloud=%3Ctags%3E%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fandroid%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EAndroid%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Faptitude%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EAptitude%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Farch-linux%27+style%3D%27font-size%3A+18.363636363636363%25%27%3EArch+Linux%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fasterisk%27+style%3D%27font-size%3A+7.568181818181818%25%27%3EAsterisk%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Faws%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EAWS%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fcensura%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3ECensura%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fchromium%27+style%3D%27font-size%3A+7.946969696969697%25%27%3EChromium%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fcontainers%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EContainers%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fcultura%27+style%3D%27font-size%3A+7.378787878787879%25%27%3ECultura%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fcultura-hacker%27+style%3D%27font-size%3A+15.522727272727273%25%27%3ECultura+Hacker%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fdebian%27+style%3D%27font-size%3A+7.378787878787879%25%27%3EDebian%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fdevops%27+style%3D%27font-size%3A+7.378787878787879%25%27%3EDevOps%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fdia-livre%27+style%3D%27font-size%3A+7.757575757575758%25%27%3EDia+Livre%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fdocker%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EDocker%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Feventos%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EEventos%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Ffedora%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EFedora%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Ffirefox%27+style%3D%27font-size%3A+7.568181818181818%25%27%3EFirefox%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fflisol%27+style%3D%27font-size%3A+8.515151515151516%25%27%3EFlisol%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Ffree-bsd%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EFree+BSD%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fgoogle%27+style%3D%27font-size%3A+7.757575757575758%25%27%3EGoogle%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fimpressoes%27+style%3D%27font-size%3A+32.0%25%27%3EImpressoes%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Finternet%27+style%3D%27font-size%3A+7.568181818181818%25%27%3EInternet%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fios%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EiOS%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fjava%27+style%3D%27font-size%3A+8.325757575757576%25%27%3EJava%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fjogos%27+style%3D%27font-size%3A+7.757575757575758%25%27%3EJogos%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fkde%27+style%3D%27font-size%3A+10.40909090909091%25%27%3EKDE%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fkubuntu%27+style%3D%27font-size%3A+7.568181818181818%25%27%3EKubuntu%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fliberdade%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3ELiberdade%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Flinux%27+style%3D%27font-size%3A+27.075757575757574%25%27%3ELinux%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fliteratura%27+style%3D%27font-size%3A+12.113636363636363%25%27%3ELiteratura%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fmeio-ambiente%27+style%3D%27font-size%3A+7.757575757575758%25%27%3EMeio+Ambiente%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fprivacidade%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EPrivacidade%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fpython%27+style%3D%27font-size%3A+8.704545454545455%25%27%3EPython%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Frails%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3ERails%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fredes%27+style%3D%27font-size%3A+10.787878787878789%25%27%3ERedes%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fruby%27+style%3D%27font-size%3A+7.946969696969697%25%27%3ERuby%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fseguranca%27+style%3D%27font-size%3A+14.196969696969697%25%27%3ESeguranca%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fseguranca-digital%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3ESeguranca+Digital%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fsenha%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3ESenha%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fservidor%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EServidor%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fslack%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3ESlack%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fsoftware-livre%27+style%3D%27font-size%3A+30.484848484848484%25%27%3ESoftware+Livre%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fssh%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3ESSH%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fsysadmin%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3ESysadmin%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fsysadmin%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3ESysAdmin%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Ftux-ce%27+style%3D%27font-size%3A+9.462121212121211%25%27%3ETux-ce%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fkalib.github.io%2Fblog%2Fcategories%2Fubuntu%27+style%3D%27font-size%3A+7.1893939393939394%25%27%3EUbuntu%3C%2Fa%3E+%3C%2Ftags%3E"></span>
+</section>
+<section>
+  <h1>Estou lendo</h1>
+  <img align="center" src="/imgs/livros/mago.jpg">
+</section>
+
+<section>
+  <h1> Eu apoio
+</h1>
+  <span>
+    <a href='http://ansible.com'><img style='padding: .5em; margin: .5em;' src='/images/stickers/ansible.com.png'></a><a href='http://archlinux.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/archlinux.org.png'></a><a href='http://asterisk.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/asterisk.org.png'></a><a href='http://atom.io'><img style='padding: .5em; margin: .5em;' src='/images/stickers/atom.io.png'></a><a href='http://chef.io'><img style='padding: .5em; margin: .5em;' src='/images/stickers/chef.io.png'></a><a href='http://docker.com'><img style='padding: .5em; margin: .5em;' src='/images/stickers/docker.com.png'></a><a href='http://github.com'><img style='padding: .5em; margin: .5em;' src='/images/stickers/github.com.png'></a><img style='padding: .5em; margin: .5em;' src='/images/stickers/glider.png' ><a href='http://jenkins.io'><img style='padding: .5em; margin: .5em;' src='/images/stickers/jenkins.io.png'></a><a href='http://kde.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/kde.org.png'></a><a href='http://linux.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/linux.org.png'></a><a href='http://octopress.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/octopress.org.png'></a><a href='http://opensource.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/opensource.org.png'></a><a href='http://python.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/python.org.png'></a><a href='http://raspberrypi.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/raspberrypi.org.png'></a><a href='http://ruby-lang.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/ruby-lang.org.png'></a>
+  </span>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2017 - Marcelo Cavalcante Rocha - Kalib -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'marcelocavalcante';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://kalib.github.io/blog/2017/03/11/recebendo-alarmes-do-aws-diretamente-no-slack/';
+        var disqus_url = 'http://kalib.github.io/blog/2017/03/11/recebendo-alarmes-do-aws-diretamente-no-slack/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

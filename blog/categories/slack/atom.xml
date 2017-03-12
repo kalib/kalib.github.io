@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Slack | Marcelo Cavalcante Rocha ~]]></title>
+  <link href="http://kalib.github.io/blog/categories/slack/atom.xml" rel="self"/>
+  <link href="http://kalib.github.io/"/>
+  <updated>2017-03-12T12:44:30-04:00</updated>
+  <id>http://kalib.github.io/</id>
+  <author>
+    <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Recebendo Alarmes do AWS Diretamente no Slack]]></title>
+    <link href="http://kalib.github.io/blog/2017/03/11/recebendo-alarmes-do-aws-diretamente-no-slack/"/>
+    <updated>2017-03-11T12:03:00-05:00</updated>
+    <id>http://kalib.github.io/blog/2017/03/11/recebendo-alarmes-do-aws-diretamente-no-slack</id>
+    <content type="html"><![CDATA[<p><img class="center" src="/imgs/aws_slack.png" title="&lsquo;AWS_Slack&rsquo;" ></p>
+
+<p><strong>A</strong>ntes de entrar na configuração dos serviços, talvez seja necessário apresentar o <a href="http://www.slack.com">Slack</a>, visto que muitos ainda não conhecem ou utilizam esta poderosa e versátil ferramenta de comunicação instantânea para times.</p>
+
+<p><strong>S</strong>lack é uma plataforma para comunicação entre times que desejam um ambiente mais dinâmico e ágil. Diferentemente de muitas plataformas de chat disponíveis, como o Google Hangouts, o Slack nos permite criar canais distintos com membros distintos de um mesmo time fazendo parte daquele canal específico. Não, não estou falando de chat em grupo, mas sim canais específicos que permitem integrações com serviços distintos, como receber notificações sobre commits feitos em um repositório ou branch específico no github, notificações de tickets abertos em ferramentas como o Jira, por exemplo, etc. O Slack é completamente programável e escalável, o que nos permite ter inúmeras funcionalidas.</p>
+
+<p><strong>P</strong>rovavelmente não seja necessário apresentar o AWS, ou Amazon Web Services, visto que já está no mercado desde 2006, no entanto cabe um resumo para os que não estão familiarizados com o mesmo (embora o público alvo deste post seja quem já possui alguma familiaridade com AWS).</p>
+
+<p><strong>A</strong>ws ou Amazon Web Services é uma plataforma de serviços em nuvem segura, oferecendo poder computacional, armazentamento de banco de dados, distribuição de conteúdo e outras funcionalidades.</p>
+
+<p><strong>P</strong>or que eu deveria ter alarmes e notificações do AWS em um serviço de chat como o Slack quando já recebo estas notificações por email?</p>
+
+<p><strong>É</strong> verdade que o uso mais comum para envio de alarmes e notificações do AWS costuma ser via email, no entanto fica fácil identificar alguns problemas com este método. O principal e mais recorrente que vejo é o caso de as notificações caírem em um email específico visto por poucas pessoas (na maioria das vezes) ou nem visto sequer, pois geralmente as pessoas ficam cansadas de olhar notificações e ter sua caixa de entrada entupida com eles portanto criam filtros que jogam os emails de notificação para um diretório que dificilmente será checado.</p>
+
+<p><strong>O</strong>utro problema comum com esta prática é a demora até que alguém leia a notificação no meio de tantos outros na pasta ou filtro criado e, muitas vezes, quando se vê a notificação, o problema já está aguardando uma solução há horas.</p>
+
+<p><strong>D</strong>eixando claro, não estou defendendo a ideia de abolir as notificações por email. Eu mesmo utilizo ambos, afinal o email continua bastante eficiente para fins de armazenamento e checagem histórica, por exemplo.</p>
+
+<p><strong>U</strong>ma vez que nos dias atuais os times de TI estão cada vez mais unificados e dinâmicos, buscando incorporar uma mentalidade DevOps e Agile, a comunicação rápida e eficiente se torna um fator primordial para o sucesso de qualquer projeto. Ter um local centralizado para conversar com os demais membros do time, trocar arquivos, detalhes de projetos, receber notificações de commits, prazos, tickets, documentação e, por que não, notificações de monitoramento e alarmes, torna-se essencial.</p>
+
+<p><strong>V</strong>amos então entender como funcionaria uma solução para enviar as notificações e alarmes do AWS para o Slack.</p>
+
+<p><strong>O</strong> que utilizaremos:</p>
+
+<ol>
+<li>No Slack:
+
+<ul>
+<li>Um plugin ou Slack App chamado <strong>Incoming WebHooks</strong></li>
+<li>O nome de um canal para envio das notificações</li>
+</ul>
+</li>
+<li>No AWS:
+
+<ul>
+<li>Serviço <strong>SNS Topic</strong></li>
+<li>Serviço <strong>CloudWatch</strong></li>
+<li>Serviço <strong>Lambda Function</strong></li>
+</ul>
+</li>
+</ol>
+
+
+<p><strong>V</strong>amos lá&hellip;</p>
+
+<p><strong>Slack</strong></p>
+
+<p><strong>V</strong>amos começar escolhendo o canal no Slack no qual desejo receber a minha notificação ou alarme: #devops</p>
+
+<p><em>Estou supondo que você já utiliza o Slack e já possui um time criado no mesmo. Caso ainda não, crie um time no Slack seguindo os passos descritos no <a href="https://slack.com/">site oficial</a> antes de seguir em frente&hellip; ;]</em></p>
+
+<p><strong>O</strong> próximo passo é configurar a integração instalando o Plugin ou Slack App <strong>Incoming WebHooks</strong>. Para isto, acesse a página de apps de seu time no Slack: <a href="https://SEUTIME.slack.com/apps">https://SEUTIME.slack.com/apps</a></p>
+
+<p><strong>P</strong>esquise por Incoming WebHooks e você terá apenas um resultado, portanto clique sem medo.</p>
+
+<p><img class="center" src="/imgs/slack1.png" title="&lsquo;Incoming WebHook&rsquo;" ></p>
+
+<p><strong>C</strong>lique no pequeno lápis que se encontrará no canto direito para editar as configurações do Incoming WebHook. Os únicos campos que precisaremos editar neste momento são os seguintes:
+  * Post to Channel &ndash; Aqui indicarei o meu canal: #devops
+  * Customize Name &ndash; Aqui indicarei um nome qualquer: AWS-Alerts</p>
+
+<p><strong>Importante:</strong> Repare que nesta página de configurações ele lhe passará uma entrada ou URL com o código para o seu WebHook. Esta informação estará listada em <strong>Webhook URL</strong> e será algo como: *<a href="https://hooks.slack.com/services/T434P71A4/U4G3JUG13/kPjvXY4Kd8wPm4TvrEqhN6Dv*.">https://hooks.slack.com/services/T434P71A4/U4G3JUG13/kPjvXY4Kd8wPm4TvrEqhN6Dv*.</a> Copie esta informação em algum local de fácil acesso pois precisaremos desta URL para a configuração que faremos a seguir no AWS.</p>
+
+<p><strong>S</strong>alve suas configurações e vamos configurar os serviços do AWS para que nosso WebHook possa receber as informações devidamente.</p>
+
+<p><strong>Amazon Web Services</strong></p>
+
+<p><strong>S</strong>e você já possui alguma familiaridade com o AWS, sabe que existem duas formas principais para administração e gerenciamento de nossos serviços: Pela interface web de gerenciamento (GUI) OU pela linha de comandos através da AWS CLI Tool que se comunica com a API do AWS. Este procedimento, assim como praticamente todos os outros, pode ser realizado por ambos os meios.</p>
+
+<p><strong>S</strong>e você também gosta de automação, provavelmente prefere utilizar a CLI, no entanto irei listar aqui o procedimento em ambos os meios.</p>
+
+<p><strong>Passo 1: Criando um SNS Topic para receber os alarmes</strong></p>
+
+<p><strong>1.1 &ndash; Pela Interface Web de Gerenciamento (GUI)</strong></p>
+
+<ul>
+<li>A partir da Dashboard principal, clique ou busque pelo serviço SNS;</li>
+<li>Crie um novo SNS Topic:
+
+<ul>
+<li>No menu da lateral esquerda, clique em <strong>Topics</strong>;</li>
+<li>Clique em <strong>Create new topic</strong>;</li>
+<li>Preencha os campos <strong>Name</strong> (obrigatório) e <strong>Display Name</strong> (opcional) para o seu tópico. Para este exemplo utilizarei <em>aws-slack-alerts</em> como <strong>Name</strong> e <em>aws-slack</em> como <strong>Display Name</strong>; <em>(O Display Name só é necessário em caso de você também desejar enviar notificações por SMS)</em></li>
+<li>Clique em <strong>Create Topic</strong></li>
+</ul>
+</li>
+<li>Agora você já deve ser capaz de ver seu SNS Topic na lista.</li>
+</ul>
+
+
+<p><strong>1.2 &ndash; Pela AWS CLI Tool</strong></p>
+
+<p><em>Estou assumindo que se você optou por utilizar este método, é porque já possui sua CLI configurada e autenticando em sua conta do AWS com sua chave. Caso você não saiba do que estou falando, sugiro que siga a <a href="https://aws.amazon.com/pt/cli/?sc_channel=PS&amp;sc_campaign=acquisition_CA&amp;sc_publisher=google&amp;sc_medium=command_line_b&amp;sc_content=aws_cli_bmm&amp;sc_detail=%2Baws%20%2Bcli&amp;sc_category=command_line&amp;sc_segment=161196437429&amp;sc_matchtype=b&amp;sc_country=CA&amp;s_kwcid=AL!4422!3!161196437429!b!!g!!%2Baws%20%2Bcli&amp;ef_id=V8jOHQAABelSRAnr:20170311204146:s">documentação oficial</a> para isto.</em></p>
+
+<ul>
+<li>Pela CLI tool, digite o seguinte comando, indicando a região na qual você deseja criar seu tópico e o nome desejado:</li>
+</ul>
+
+
+<p>```python
+aws sns create-topic</p>
+
+<pre><code>--region us-west-1
+--name aws-slack-alerts
+</code></pre>
+
+<p>```
+  * <strong>IMPORTANTE:</strong> Você receberá um identificador (TopicArn) para este alarme. Você precisará dele no passo seguinte.
+  * Caso queira ter certeza, você pode listar seus tópicos utilizando:</p>
+
+<p><code>python
+aws sns list-topics
+</code></p>
+
+<p><strong>Passo 2: Criando um Alarme no serviço CloudWatch</strong></p>
+
+<p><strong>2.1 &ndash; Pela Interface Web de Gerenciamento (GUI)</strong></p>
+
+<ul>
+<li>A partir da Dashboard principal, clique ou busque pelo serviço <strong>CloudWatch</strong>;</li>
+<li>Crie um novo Alarme:
+
+<ul>
+<li>Clique em <strong>Alarms</strong>;</li>
+<li>Clique no botão <strong>Create Alarm</strong>;</li>
+<li>Escolha a categoria do alarme desejado. Para este exemplo utilizarei <strong>ELB Metric > Per-LB Metrics</strong> <em>(Dentre as várias categorias disponíveis, esta se refere à Load Balancers)</em>;</li>
+<li>Selecione a métrica exata desejada. No caso deste exemplo, preciso selecionar a métrica e o Load Balancer desejado. Ao escolher a métrica e o alvo (em meu caso um Load Balancer) clique em <strong>Next</strong>. Neste exemplo eu escolhi a métrica <strong>HTTPCode_Backend_5XX</strong> <em>(para monitorar 500 errors)</em> e um Load Balancer chamado <strong>LB-GuySpyV3</strong>;</li>
+<li>O próximo passo é definir um nome e uma descrição para este <strong>Alarme</strong>, bem como definir as triggers e períodos de monitoramento. Neste exemplo utilizei o nome <strong>LB-GuySpyV3-ELB_500</strong> para meu alarme; <em>(Não entrarei em detalhes quanto ao uso das triggers, visto que para cada tipo ou categoria de métrica, as triggers serão diferentes, bem como o cenário de seu ambiente e nível de criticidade. Em resumo, se você deseja monitorar o uso de CPU de um determinado servidor, a trigger seria o gatilho que ativaria o alarme, por exemplo: Só quero ser alarmado se o uso de CPU neste servidor ou instância for >= 90% e assim permanecer por pelo menos 60 segundos, ou por dois períodos seguidos de 60seg.)</em></li>
+<li>Na seção <strong>Actions</strong> da configuração do Alarme defina o <strong>State</strong> e indique que a notificação deverá ser enviada <strong>(Send notification to)</strong> para o <strong>SNS Topic</strong> que criamos anteriormente. Para este exemplo optei por <strong>State is ALARM</strong> e decidi enviar as notificações para <strong>aws-slack-alerts</strong>, sendo este o SNS Topic que criei no início;</li>
+<li>Finalize clicando em <strong>Create Alarm</strong>.</li>
+</ul>
+</li>
+</ul>
+
+
+<p>  <strong>2.2 &ndash; Pela AWS CLI Tool</strong></p>
+
+<p>  <em>Novamente&hellip; Estou assumindo que se você optou por utilizar este método, é porque já possui sua CLI configurada e autenticando em sua conta do AWS com sua chave. Caso você não saiba do que estou falando, sugiro que siga a <a href="https://aws.amazon.com/pt/cli/?sc_channel=PS&amp;sc_campaign=acquisition_CA&amp;sc_publisher=google&amp;sc_medium=command_line_b&amp;sc_content=aws_cli_bmm&amp;sc_detail=%2Baws%20%2Bcli&amp;sc_category=command_line&amp;sc_segment=161196437429&amp;sc_matchtype=b&amp;sc_country=CA&amp;s_kwcid=AL!4422!3!161196437429!b!!g!!%2Baws%20%2Bcli&amp;ef_id=V8jOHQAABelSRAnr:20170311204146:s">documentação oficial</a> para isto.</em></p>
+
+<ul>
+<li>Pela CLI tool, digite o seguinte comando, indicando os atributos abaixo:
+
+<ul>
+<li><strong>region</strong> <em>(Região)</em>;</li>
+<li><strong>alarm-name</strong> <em>(Nome do alarme)</em>;</li>
+<li><strong>alarm-description</strong> <em>(Descrição do alarme)</em>;</li>
+<li><strong>alarm-actions</strong> <em>(Definir a ação do alarme &ndash; Apontar para o TopicArn do SNS Topic que criamos anteriormente)</em>;</li>
+<li><strong>metric-name</strong> <em>(Nome da Métrica desejada)</em>;</li>
+<li><strong>namespace AWS/ELB &mdash;statistic</strong> <em>(Estatística desejada para aquela métrica, neste caso utilizarei Sum (Soma) ao invés de Average (Média))</em>;</li>
+<li><strong>dimensions</strong> <em>(O alvo desta métrica de monitoramento, no nosso caso um Load Balancer)</em>;</li>
+<li><strong>period</strong> e <strong>evaluation-periods</strong> <em>(Períodos desejados para a trigger)</em>;</li>
+<li><strong>threshold</strong> <em>(O valor desejado: Neste exemplo estou colocando o valor como 1, portanto receberei o alarme caso seja >= 1. Sim, eu sei que receberei o alarme a cada minuto, mas estou fazendo isto de propósito para recebermos a notificação a fim de teste. Nunca utilize um threshold desses em produção. :p)</em>;</li>
+<li><strong>comparison-operator</strong> <em>(Operador de comparação desejado, neste caso >=)</em>;</li>
+</ul>
+</li>
+</ul>
+
+
+<p>```python
+aws cloudwatch put-metric-alarm &mdash;region us-west-1</p>
+
+<pre><code>--alarm-name "LB-GuySpyV3-ELB_500"
+--alarm-description "Sends 500-errors to Slack"
+--actions-enabled
+--alarm-actions "TheTopicArn from last step"
+--metric-name "HTTPCode_Backend_5XX"
+--namespace AWS/ELB --statistic "Sum"
+--dimensions "Name=LoadBalancerName,Value=LB-GuySpyV3"
+--period 60
+--evaluation-periods 60
+--threshold 1
+--comparison-operator "GreaterThanOrEqualToThreshold"
+</code></pre>
+
+<p>```</p>
+
+<p><strong>Passo 3: Criando uma Função Lambda como Assinante (Subscriber) do nosso SNS Topic</strong></p>
+
+<p><strong>3.1 &ndash; Pela Interface Web de Gerenciamento (GUI)</strong></p>
+
+<ul>
+<li>A partir da Dashboard principal, clique ou busque pelo serviço <strong>Lambda</strong>;</li>
+<li>Crie uma <strong>Nova Função Lambda</strong>:
+
+<ul>
+<li>Clique em <strong>Create a Lambda Function</strong>;</li>
+<li>Na tela <strong>Select Blueprint</strong> clique na opção <strong>cloudwatch-alarm-to-slack</strong>; <em>(Você poderá precisar buscar por esta opção)</em></li>
+<li>O próximo passo será a tela <strong>Configure Triggers</strong>. Selecione o <strong>SNS Topic</strong> que foi criado anteriormente (aws-slack-alerts neste exemplo) e marque a opção <strong>Enable Trigger</strong> e clique em Next;</li>
+<li>Em <strong>Configure Function</strong> dê um Nome e uma Descrição para a função e escolha <strong>Node.js.4.3</strong> como <strong>Runtime</strong>;</li>
+<li>No campo <strong>Lambda Function Code</strong> cole o seguinte código: <a href="https://gist.github.com/tomfa/b33f768908b0a83987d26f269e377e95">Disponível no github</a>
+
+<ul>
+<li>(Você deverá setar os valores das variáveis <strong>CHANNEL</strong> e <strong>PATH</strong>, onde CHANNEL é o canal do Slack para o qual você deseja mandar as notificações e PATH é a URL de seu WebHook, recebida quando configuramos o Incoming WebHook no Slack)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<p>```python
+var https = require(&lsquo;https&rsquo;);
+var util = require(&lsquo;util&rsquo;);</p>
+
+<p>var CHANNEL = &ldquo;#devops&rdquo;;
+var PATH = &ldquo;/services/T434P71A4/U4G3JUG13/kPjvXY4Kd8wPm4TvrEqhN6Dv&rdquo;;</p>
+
+<p>exports.handler = function(event, context) {</p>
+
+<pre><code>console.log(JSON.stringify(event, null, 2));
+console.log('From SNS:', event.Records[0].Sns.Message);
+
+var postData = {
+    "channel": CHANNEL,
+    "username": "AWS SNS",
+    "text": "*" + event.Records[0].Sns.Subject + "*",
+    "icon_emoji": ":aws:"
+};
+
+var message = event.Records[0].Sns.Message;
+var severity = "good";
+
+var dangerMessages = [
+    " but with errors",
+    " to RED",
+    "During an aborted deployment",
+    "Failed to deploy application",
+    "Failed to deploy configuration",
+    "has a dependent object",
+    "is not authorized to perform",
+    "Pending to Degraded",
+    "Stack deletion failed",
+    "Unsuccessful command execution",
+    "You do not have permission",
+    "Your quota allows for 0 more running instance"];
+
+var warningMessages = [
+    " aborted operation.",
+    " to YELLOW",
+    "Adding instance ",
+    "Degraded to Info",
+    "Deleting SNS topic",
+    "is currently running under desired capacity",
+    "Ok to Info",
+    "Ok to Warning",
+    "Pending Initialization",
+    "Removed instance ",
+    "Rollback of environment"       
+    ];
+
+for(var dangerMessagesItem in dangerMessages) {
+    if (message.indexOf(dangerMessages[dangerMessagesItem]) != -1) {
+        severity = "danger";
+        break;
+    }
+}
+
+// Only check for warning messages if necessary
+if (severity == "good") {
+    for(var warningMessagesItem in warningMessages) {
+        if (message.indexOf(warningMessages[warningMessagesItem]) != -1) {
+            severity = "warning";
+            break;
+        }
+    }       
+}
+
+postData.attachments = [
+    {
+        "color": severity,
+        "text": message
+    }
+];
+
+var options = {
+    method: 'POST',
+    hostname: 'hooks.slack.com',
+    port: 443,
+    path: PATH
+};
+
+var req = https.request(options, function(res) {
+  res.setEncoding('utf8');
+  res.on('data', function (chunk) {
+    context.done(null, postData);
+  });
+});
+
+req.on('error', function(e) {
+  console.log('problem with request: ' + e.message);
+});   
+
+req.write(util.format("%j", postData));
+req.end();
+</code></pre>
+
+<p>};
+```</p>
+
+<ul>
+<li>O <strong>Handler</strong> deverá ser o default <code>index.handler</code>;
+
+<ul>
+<li>Para <strong>role</strong> selecione <strong>Create a custom role</strong>; <em>(Isto será necessário apenas para a sua primeira função)</em></li>
+<li>Na tela seguinte selecione <strong>lambda_basic_execution</strong> como <strong>IAM role</strong> e deixe o <strong>Policy Name</strong> com seu valor default. O AWS irá criar uma política de segurança padrão que nos dará os privilégios necessários. Clique em <strong>Allow</strong>;</li>
+<li>Certifique-se de que o valor para <strong>VPC</strong> na seção <strong>Advanced Settings</strong> seja <strong>No VPC</strong>;
+Clique em <strong>Next</strong>, reveja suas configurações e clique em <strong>Create Function</strong>;</li>
+</ul>
+</li>
+<li>Aguarde seu alarme acontecer e receba a notificação no Slack. :D</li>
+</ul>
+
+
+<p>O resultado em seu Slack será algo assim&hellip;</p>
+
+<p><img class="center" src="/imgs/slack2.png" title="&lsquo;Notification_Slack&rsquo;" ></p>
+
+<p><strong>P</strong>arabéns, você já está recebendo suas notificações via Slack. Basta criar outros alarmes no AWS utilizando a mesma Lambda Function e o mesmo SNS Topic.</p>
+
+<p><strong>H</strong>appy Hacking!</p>
+]]></content>
+  </entry>
+  
+</feed>
