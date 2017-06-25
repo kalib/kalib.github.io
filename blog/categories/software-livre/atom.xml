@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Software Livre | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://kalib.github.io/blog/categories/software-livre/atom.xml" rel="self"/>
   <link href="http://kalib.github.io/"/>
-  <updated>2017-03-12T15:14:19-04:00</updated>
+  <updated>2017-06-25T11:27:24-04:00</updated>
   <id>http://kalib.github.io/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -18,7 +18,7 @@
     <link href="http://kalib.github.io/blog/2015/08/20/docker-uma-alternativa-elegante-para-containers-no-linux/"/>
     <updated>2015-08-20T11:01:00-04:00</updated>
     <id>http://kalib.github.io/blog/2015/08/20/docker-uma-alternativa-elegante-para-containers-no-linux</id>
-    <content type="html"><![CDATA[<p>{% img center /imgs/dockerlogo.png &lsquo;Docker&rsquo; %}</p>
+    <content type="html"><![CDATA[<p><img class="center" src="/imgs/dockerlogo.png" title="&lsquo;Docker&rsquo;" ></p>
 
 <p><strong>A</strong>ntes de falar sobre o Docker, é importante que se entenda o conceito de um container, portanto vamos começar do básico. A imagem acima, logomarca do Docker, deixa claro o que é um container. A baleia, representando um navio, carregando diversos caixotes ou containers ilustra o conceito físico de um container. Nada mais do que um enorme caixote que possui o intuito de isolar algo. Quando um grande navio transporta mercadorias de um porto para outro, ele costuma trazer diversos containers separando estas mercadorias, de forma que as coisas não fiquem misturadas e bagunçadas. A forma de separação vai depender dos critérios de organização utilizados pela embarcação, seja por proprietário, seja por categoria de produtos, etc. De qualquer forma, embora cada container possua seus elementos próprios, todos os containers compartilham alguns recursos básicos, como por exemplo a embarcação, que é o meio de transporte para todos os containers ali contidos.</p>
 
@@ -30,13 +30,13 @@
 
 <p><strong>D</strong>izem que uma imagem vale mais que mil palavras&hellip;</p>
 
-<p>{% img center /imgs/docker_vmdiagram.png &lsquo;Virtual Machine Diagram&rsquo; %}</p>
+<p><img class="center" src="/imgs/docker_vmdiagram.png" title="&lsquo;Virtual Machine Diagram&rsquo;" ></p>
 
 <p><strong>N</strong>a imagem acima temos o cenário convencional com a utilização de <strong>Máquinas Virtuais</strong>. Em suma, temos um host físico, com seu respectivo SO e kernel. Acima deles temos a camada de virtualização ou HyperVisor, enquanto que acima desta teremos as máquinas virtuais, com seus respectivos SOs (cada um com seu kernel) instalados. No caso temos 3 VMs, com 3 SOs (cada um com seu kernel). Na camada acima encontramos o que realmente é necessário para o app do cliente funcionar, que são as bibliotecas e os binários. Por fim, o App do cliente em si.</p>
 
 <p><strong>V</strong>ejamos como fica o cenário com a utilização de containers, docker neste caso&hellip;</p>
 
-<p>{% img center /imgs/docker_diagram.png &lsquo;Docker Diagram&rsquo; %}</p>
+<p><img class="center" src="/imgs/docker_diagram.png" title="&lsquo;Docker Diagram&rsquo;" ></p>
 
 <p><strong>N</strong>o cenário com o Docker percebemos que a camada de SO das VMs sumiu, visto que ela não é mais necessária. Ao invés de Máquinas Virtuais, agora nós temos 3 containers, onde cada container roda os binários e bibliotecas de um SO, porém se aproveitando do kernel já existente no Host.</p>
 
@@ -265,7 +265,7 @@
 
 <p><strong>R</strong>esultado? O Nginx em nosso container rodando perfeitamente.</p>
 
-<p>{% img center /imgs/docker_nginx8080.png &lsquo;Nginx on Docker&rsquo; %}</p>
+<p><img class="center" src="/imgs/docker_nginx8080.png" title="&lsquo;Nginx on Docker&rsquo;" ></p>
 
 <p><strong>D</strong>a mesma forma feita anteriormente, podemos sair de nosso container com a combinação de teclas <strong>Ctrl + P + Q</strong> e verificar os processos/containers do docker em execução:</p>
 
@@ -402,7 +402,7 @@
 ```
 <strong>A</strong>gora vou testar no navegador o nginx deste meu segundo container, o qual defini que utilizaria a porta 6660 do meu host:</p>
 
-<p>{% img center /imgs/docker_nginx6660_8080.png &lsquo;Nginx on Docker&rsquo; %}</p>
+<p><img class="center" src="/imgs/docker_nginx6660_8080.png" title="&lsquo;Nginx on Docker&rsquo;" ></p>
 
 <p><strong>R</strong>epare que acessei ambos os endereços, tanto o da porta 8080, o qual está apresentando o nginx do meu primeiro container, quanto o da porta 6660, que apresenta o nginx do meu segundo container. Ambos funcionando em paralelo, com ambientes distintos, sendo um Ubuntu e o outro Arch Linux, porém ambos compartilham o mesmo kernel, que é o do meu host.</p>
 
@@ -480,7 +480,7 @@
     <link href="http://kalib.github.io/blog/2014/08/03/assista-ao-documentario-sobre-aaron-swartz-o-menino-da-internet/"/>
     <updated>2014-08-03T07:19:00-04:00</updated>
     <id>http://kalib.github.io/blog/2014/08/03/assista-ao-documentario-sobre-aaron-swartz-o-menino-da-internet</id>
-    <content type="html"><![CDATA[<p>{% img center /imgs/aaron-swartz-movie.jpg &lsquo;Aaron Swartz Movie&rsquo; %}
+    <content type="html"><![CDATA[<p><img class="center" src="/imgs/aaron-swartz-movie.jpg" title="&lsquo;Aaron Swartz Movie&rsquo;" >
 <code>
  Informação é poder. Mas, como todo poder, há aqueles que querem mantê-la para si mesmos. O patrimônio cultural e científico do mundo, publicado ao longo dos séculos em livros e revistas, está cada vez mais szendo digitalizado e trancado por um punhado de corporações privadas. Enquanto isso, aqueles que foram bloqueados não estão em pé de braços cruzados. Eles estão bisbilhotando em buracos e escalando cercas libertando as informações trancadas pelos editores e compartilhando com seus amigos. Mas toda essa ação acontece no escuro, escondida no subterrâneo. É chamado de roubo ou pirataria, como se compartilhar uma riqueza de conhecimentos fosse o equivalente  de saquear um navio e matar sua tripulação. Mas compartilhar não é imoral - é um imperativo moral. Só os cegos pela ganância se recusam a deixar um amigo fazer uma cópia. Não há justiça em seguir leis injustas. É hora de virmos para a luz e, na grande tradição de desobediência civil, declararmos a nossa oposição a este roubo privado da cultura pública.
 </code></p>
@@ -491,7 +491,7 @@
 
 <p><strong>P</strong>ara quem ainda não sabe do que se trata, Aaron Swartz foi um dos criadores do RSS bem como do famoso site de notícias e debates Reddit.Após alguns anos lutando e enfrentando a justiça americana Aaron cometeu suicídio.</p>
 
-<p>{% img left /imgs/aaron_swartz.jpg &lsquo;Aaron Swartz&rsquo; %}<strong>A</strong>aron estava sendo condenado a cerca de 50 anos de prisão, bem como a pagar um montante superior a U$ 4 milhões em multas por querer tornar públicos os artigos acadêmicos e científicos que eram mantidos na base do JSTOR, o qual vendia o acesso a estes artigos que, na visão de Aaron, deveriam ser de domínio e acesso público.</p>
+<p><img class="left" src="/imgs/aaron_swartz.jpg" title="&lsquo;Aaron Swartz&rsquo;" ><strong>A</strong>aron estava sendo condenado a cerca de 50 anos de prisão, bem como a pagar um montante superior a U$ 4 milhões em multas por querer tornar públicos os artigos acadêmicos e científicos que eram mantidos na base do JSTOR, o qual vendia o acesso a estes artigos que, na visão de Aaron, deveriam ser de domínio e acesso público.</p>
 
 <p><strong>A</strong>aron sempre defendeu e lutou para que o conhecimento fosse de livre acesso a todos. Lutou tanto que acabou sendo covardemente perseguido e pressionado pelo governo americano, o que acabou por lhe deixar exausto, psicologicamente e financeiramente, ao ponto de ele desistir da luta ao invés de simplesmente &ldquo;assumir&rdquo; que estava errado e aceitar os &ldquo;acordos&rdquo; que lhe foram oferecidos pela justiça americana.</p>
 
@@ -499,7 +499,7 @@
 
 <p><strong>P</strong>ara quem por algum motivo ainda não conhece o recurso de legendas ou caption do YoutTube, caso a legenda do filme não apareça automaticamente, basta clicar no botão de legendas/caption, habilitando-o, conforme apresentado na imagem abaixo:</p>
 
-<p>{% img center /imgs/youtube_captions.png &lsquo;Youtube Captions&rsquo; %}</p>
+<p><img class="center" src="/imgs/youtube_captions.png" title="&lsquo;Youtube Captions&rsquo;" ></p>
 
 <iframe width="560" height="315" src="http://kalib.github.io//www.youtube.com/embed/2uj1EeiuK5U" frameborder="0" allowfullscreen></iframe>
 
@@ -515,26 +515,26 @@
     <link href="http://kalib.github.io/blog/2014/01/14/dica-apostila-disponibilizada-gratuitamente-pfsense/"/>
     <updated>2014-01-14T08:27:00-05:00</updated>
     <id>http://kalib.github.io/blog/2014/01/14/dica-apostila-disponibilizada-gratuitamente-pfsense</id>
-    <content type="html"><![CDATA[<p>{% img left /imgs/pfsense.png &lsquo;pfSense&rsquo; %}
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/pfsense.png" title="&lsquo;pfSense&rsquo;" >
 <strong>G</strong>ostaria de passar adiante a notícia de que o colega <em>Leonardo Damasceno</em> acaba de compartilhar com a comunidade uma apostila de sua autoria sobre o <a href="http://www.pfsense.org"><strong>pfSense</strong></a>, de forma a divulgar mais este magnífico sistema, bem como facilitar a vida daqueles que ainda não o dominam.</p>
 
 <p><strong>S</strong>egue link direto fornecido pelo mesmo para <a href="http://www.marcelocavalcante.net/repositorio/pfsense-leonardodamasceno.pdf"><strong>download</strong></a>. A apostila ou livro, como prefira chamar, possui aproximadamente 70 páginas de informações úteis e diretas, sem muitas complicações.</p>
 
 <p><strong>N</strong>ão sabe o que é pfSense?</p>
 
-<p>{% img center /imgs/pfsense1.jpg &lsquo;pfSense1&rsquo; %}</p>
+<p><img class="center" src="/imgs/pfsense1.jpg" title="&lsquo;pfSense1&rsquo;" ></p>
 
 <p><strong>O</strong> pfSense é um sistema operacional baseado no <em>Free BSD</em> que pode ser instalado em um computador para servir como um firewall/roteador dedicado em uma rede. Como ferramenta <em>open source</em>, o pfSense tem se destacado nesta função, sendo considerado um dos melhores e mais confiáveis para este trabalho, oferecendo, além de sua estabilidade e confiabilidade, recursos e funções que geralmente são encontrados apenas em firewalls comerciais e caros. Não creio ser necessário lembrar a confiabilidade dos sistemas <em>Free BSD</em>&hellip;</p>
 
-<p>{% img center /imgs/pfsense2.jpg &lsquo;pfSense2&rsquo; %}</p>
+<p><img class="center" src="/imgs/pfsense2.jpg" title="&lsquo;pfSense2&rsquo;" ></p>
 
 <p><strong>E</strong>mbora seja uma versão customizada do Free BSD, não é necessário qualquer conhecimento sobre este sistema para operar o psSense, visto que ele é atualizado e completamente configurado através de uma interface web. Na maioria dos casos o pfSense tem sido aplicado como um firewall de perímetro, roteador, access point wireless, servidor DHCP, servidor DNS e VPN.</p>
 
-<p>{% img center /imgs/pfsense3.jpg &lsquo;pfSense3&rsquo; %}</p>
+<p><img class="center" src="/imgs/pfsense3.jpg" title="&lsquo;pfSense3&rsquo;" ></p>
 
 <p><strong>O</strong> mesmo apresenta diversos recursos gráficos para análise de tráfego, pacotes, performance, etc. Além de configurações avançadas para regras de firewall para LAN, WAN e utilizãção de Aliases de forma simples e intuitiva.</p>
 
-<p>{% img center /imgs/pfsense4.jpg &lsquo;pfSense4&rsquo; %}</p>
+<p><img class="center" src="/imgs/pfsense4.jpg" title="&lsquo;pfSense4&rsquo;" ></p>
 ]]></content>
   </entry>
   
@@ -543,7 +543,7 @@
     <link href="http://kalib.github.io/blog/2014/01/06/dica-de-seguranca-previna-ataques-bloqueando-pacotes-icmp-indesejados/"/>
     <updated>2014-01-06T08:40:00-05:00</updated>
     <id>http://kalib.github.io/blog/2014/01/06/dica-de-seguranca-previna-ataques-bloqueando-pacotes-icmp-indesejados</id>
-    <content type="html"><![CDATA[<p>{% img left /imgs/you_shall_not_pass.jpg &lsquo;Gandalf&rsquo; %}
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/you_shall_not_pass.jpg" title="&lsquo;Gandalf&rsquo;" >
 <strong>O</strong> protocolo <em>ICMP</em> pode ser utilizado para facilitar diversas rotinas e tarefas importantes de um administrador de redes, tais como na utilização de ferramentas como o <em>ping</em> e o <em>traceroute</em>, mas também pode ser manipulado por pessoas mal intencionadas que podem manipular mensagens ou pacotes ICMP para mapear sua rede.</p>
 
 <p><strong>É</strong> comum ver administradores de rede se preocupando e fazendo um ótimo trabalho em termos de filtrar o tráfego <em>TCP</em> e/ou <em>UDP</em>, porém quase sempre esquecem de dar a mesma atenção ao tráfego <em>ICMP</em>, sendo este tão crítico quanto os dois anteriores. Uma vez que este protocolo pode ser utilizado para mapear e realizar ataques em sua rede, ele não pode simplesmente ser deixado de lado.</p>
@@ -577,7 +577,7 @@
     <link href="http://kalib.github.io/blog/2014/01/03/criptografando-sua-particao-swap-com-o-ecryptfs/"/>
     <updated>2014-01-03T08:48:00-05:00</updated>
     <id>http://kalib.github.io/blog/2014/01/03/criptografando-sua-particao-swap-com-o-ecryptfs</id>
-    <content type="html"><![CDATA[<p>{% img left /imgs/crypto.jpg &lsquo;Criptografia&rsquo; %}
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/crypto.jpg" title="&lsquo;Criptografia&rsquo;" >
 <strong>C</strong>riptografia (Do grego <em>kryptós</em>, &ldquo;escondido&rdquo;, e <em>gráphein</em>, &ldquo;escrita&rdquo;) nada mais é do que o estudo e aplicação de técnicas com o intuito de ocultar informações, transformando a informação original em algo ilegível, exceto para seu destinatário final, o qual possui a chave ou método que será utilizado para tornar a informação legível novamente.</p>
 
 <p><strong>A</strong>pesar de muitas pessoas acharem que criptografia é algo novo, o uso de mensagens cifradas é bastante antigo. Em tempos passados a cifragem de mensagens era utilizada, principalmente em assuntos de guerra. De acordo com estudos históricos, o primeiro uso documentado da criptografia foi em torno de <em>1900 a.c.</em>, no Egito, quando um escriba usou hieróglifos fora do padrão numa inscrição.</p>

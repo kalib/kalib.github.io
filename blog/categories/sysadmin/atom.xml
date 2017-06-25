@@ -4,7 +4,7 @@
   <title><![CDATA[Category: SysAdmin | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://kalib.github.io/blog/categories/sysadmin/atom.xml" rel="self"/>
   <link href="http://kalib.github.io/"/>
-  <updated>2017-03-12T15:14:19-04:00</updated>
+  <updated>2017-06-25T11:27:24-04:00</updated>
   <id>http://kalib.github.io/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -18,7 +18,7 @@
     <link href="http://kalib.github.io/blog/2013/08/06/dica-rapida-linux-forcar-usuario-a-trocar-senha-apos-primeiro-login/"/>
     <updated>2013-08-06T08:20:00-04:00</updated>
     <id>http://kalib.github.io/blog/2013/08/06/dica-rapida-linux-forcar-usuario-a-trocar-senha-apos-primeiro-login</id>
-    <content type="html"><![CDATA[<p>{% img center /imgs/password.jpg &lsquo;password&rsquo; %}</p>
+    <content type="html"><![CDATA[<p><img class="center" src="/imgs/password.jpg" title="&lsquo;password&rsquo;" ></p>
 
 <p><strong>É</strong> natural encontrar pessoas que utilizam linux a pouco tempo (ou que nunca utilizaram) questionando aspectos simples que seguem o jargão: <em>&ldquo;Mas no Windows eu consigo fazer isso, enquanto que no Linux&hellip;.&rdquo;</em></p>
 

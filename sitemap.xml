@@ -927,8 +927,14 @@
         <lastmod>2017-03-12T12:44:24-04:00</lastmod>
     </url>
     <url>
+        <loc>
+            http://kalib.github.io/blog/2017/06/24/conhecendo-o-kubernetes-clusters-de-containers/
+        </loc>
+        <lastmod>2017-06-25T11:27:19-04:00</lastmod>
+    </url>
+    <url>
         <loc>http://kalib.github.io/</loc>
-        <lastmod>2017-03-12T15:06:07-04:00</lastmod>
+        <lastmod>2017-06-25T11:27:19-04:00</lastmod>
     </url>
     <url>
         <loc>http://kalib.github.io/robots.txt</loc>
@@ -936,7 +942,7 @@
     </url>
     <url>
         <loc>http://kalib.github.io/blog/archives/</loc>
-        <lastmod>2017-03-12T15:06:07-04:00</lastmod>
+        <lastmod>2017-06-25T11:27:19-04:00</lastmod>
     </url>
     <url>
         <loc>http://kalib.github.io/about/</loc>

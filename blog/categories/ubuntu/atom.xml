@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Ubuntu | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://kalib.github.io/blog/categories/ubuntu/atom.xml" rel="self"/>
   <link href="http://kalib.github.io/"/>
-  <updated>2017-03-12T15:14:19-04:00</updated>
+  <updated>2017-06-25T11:27:24-04:00</updated>
   <id>http://kalib.github.io/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -18,7 +18,7 @@
     <link href="http://kalib.github.io/blog/2015/08/20/docker-uma-alternativa-elegante-para-containers-no-linux/"/>
     <updated>2015-08-20T11:01:00-04:00</updated>
     <id>http://kalib.github.io/blog/2015/08/20/docker-uma-alternativa-elegante-para-containers-no-linux</id>
-    <content type="html"><![CDATA[<p>{% img center /imgs/dockerlogo.png &lsquo;Docker&rsquo; %}</p>
+    <content type="html"><![CDATA[<p><img class="center" src="/imgs/dockerlogo.png" title="&lsquo;Docker&rsquo;" ></p>
 
 <p><strong>A</strong>ntes de falar sobre o Docker, é importante que se entenda o conceito de um container, portanto vamos começar do básico. A imagem acima, logomarca do Docker, deixa claro o que é um container. A baleia, representando um navio, carregando diversos caixotes ou containers ilustra o conceito físico de um container. Nada mais do que um enorme caixote que possui o intuito de isolar algo. Quando um grande navio transporta mercadorias de um porto para outro, ele costuma trazer diversos containers separando estas mercadorias, de forma que as coisas não fiquem misturadas e bagunçadas. A forma de separação vai depender dos critérios de organização utilizados pela embarcação, seja por proprietário, seja por categoria de produtos, etc. De qualquer forma, embora cada container possua seus elementos próprios, todos os containers compartilham alguns recursos básicos, como por exemplo a embarcação, que é o meio de transporte para todos os containers ali contidos.</p>
 
@@ -30,13 +30,13 @@
 
 <p><strong>D</strong>izem que uma imagem vale mais que mil palavras&hellip;</p>
 
-<p>{% img center /imgs/docker_vmdiagram.png &lsquo;Virtual Machine Diagram&rsquo; %}</p>
+<p><img class="center" src="/imgs/docker_vmdiagram.png" title="&lsquo;Virtual Machine Diagram&rsquo;" ></p>
 
 <p><strong>N</strong>a imagem acima temos o cenário convencional com a utilização de <strong>Máquinas Virtuais</strong>. Em suma, temos um host físico, com seu respectivo SO e kernel. Acima deles temos a camada de virtualização ou HyperVisor, enquanto que acima desta teremos as máquinas virtuais, com seus respectivos SOs (cada um com seu kernel) instalados. No caso temos 3 VMs, com 3 SOs (cada um com seu kernel). Na camada acima encontramos o que realmente é necessário para o app do cliente funcionar, que são as bibliotecas e os binários. Por fim, o App do cliente em si.</p>
 
 <p><strong>V</strong>ejamos como fica o cenário com a utilização de containers, docker neste caso&hellip;</p>
 
-<p>{% img center /imgs/docker_diagram.png &lsquo;Docker Diagram&rsquo; %}</p>
+<p><img class="center" src="/imgs/docker_diagram.png" title="&lsquo;Docker Diagram&rsquo;" ></p>
 
 <p><strong>N</strong>o cenário com o Docker percebemos que a camada de SO das VMs sumiu, visto que ela não é mais necessária. Ao invés de Máquinas Virtuais, agora nós temos 3 containers, onde cada container roda os binários e bibliotecas de um SO, porém se aproveitando do kernel já existente no Host.</p>
 
@@ -265,7 +265,7 @@
 
 <p><strong>R</strong>esultado? O Nginx em nosso container rodando perfeitamente.</p>
 
-<p>{% img center /imgs/docker_nginx8080.png &lsquo;Nginx on Docker&rsquo; %}</p>
+<p><img class="center" src="/imgs/docker_nginx8080.png" title="&lsquo;Nginx on Docker&rsquo;" ></p>
 
 <p><strong>D</strong>a mesma forma feita anteriormente, podemos sair de nosso container com a combinação de teclas <strong>Ctrl + P + Q</strong> e verificar os processos/containers do docker em execução:</p>
 
@@ -402,7 +402,7 @@
 ```
 <strong>A</strong>gora vou testar no navegador o nginx deste meu segundo container, o qual defini que utilizaria a porta 6660 do meu host:</p>
 
-<p>{% img center /imgs/docker_nginx6660_8080.png &lsquo;Nginx on Docker&rsquo; %}</p>
+<p><img class="center" src="/imgs/docker_nginx6660_8080.png" title="&lsquo;Nginx on Docker&rsquo;" ></p>
 
 <p><strong>R</strong>epare que acessei ambos os endereços, tanto o da porta 8080, o qual está apresentando o nginx do meu primeiro container, quanto o da porta 6660, que apresenta o nginx do meu segundo container. Ambos funcionando em paralelo, com ambientes distintos, sendo um Ubuntu e o outro Arch Linux, porém ambos compartilham o mesmo kernel, que é o do meu host.</p>
 

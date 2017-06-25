@@ -4,7 +4,7 @@
   <title><![CDATA[Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://kalib.github.io/atom.xml" rel="self"/>
   <link href="http://kalib.github.io/"/>
-  <updated>2017-03-12T15:14:02-04:00</updated>
+  <updated>2017-06-25T11:27:24-04:00</updated>
   <id>http://kalib.github.io/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -12,6 +12,939 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Conhecendo o Kubernetes - Clusters de Containers]]></title>
+    <link href="http://kalib.github.io/blog/2017/06/24/conhecendo-o-kubernetes-clusters-de-containers/"/>
+    <updated>2017-06-24T09:32:00-04:00</updated>
+    <id>http://kalib.github.io/blog/2017/06/24/conhecendo-o-kubernetes-clusters-de-containers</id>
+    <content type="html"><![CDATA[<p><img class="center" src="http://kalib.github.io/imgs/kubernetes_logo.png" title="'Kubernetes'" ></p>
+
+<h2>O que é Kubernetes</h2>
+
+<p><strong>K</strong>ubernetes é uma solução Open Source desenvolvida pelo Google, originalmente chamada de K8s, como uma ferramenta para gerenciar clusters de containers (ou containeres, como prefira). Em 2005, quando a ferramenta foi desenvolvida, originalmente para uso interno, o Google doou o código à recém fundada <a href="https://www.cncf.io/">Cloud Native Computing Foundation</a>, em parceria com a <a href="https://www.linuxfoundation.org/">The Linux Foundation</a>.</p>
+
+<p><strong>O</strong> motivo do leme em sua logomarca é devido à origem grega da palavra, que vem de Kuvernetes, que representa a pessoa que pilota o navio, timoneiro.</p>
+
+<p><strong>C</strong>omo objetivo primário o Kubernetes provê uma plataforma de automação para deployments, escalonamento e operações de containers de aplicações em um cluster de hosts ou nodes.</p>
+
+<p><strong>A</strong>ntes de seguir com a explicação, instalação e configuração do Kubernetes, estou supondo que você já possui algum conhecimento básico sobre o que sejam containers e tenha alguma familiaridade com o <a href="https://www.docker.com">Docker</a>. Caso não possua um entendimento básico sobre containers e Docker, sugiro que leia algo antes de seguir com este artigo. Possuo um post introdutório sobre containers com um exemplo básico e prático sobre como criar containers com Docker, bem como iniciar uma simples aplicação web &ndash;  <a href="http://kalib.github.io/blog/2015/08/20/docker-uma-alternativa-elegante-para-containers-no-linux/">aqui</a>.</p>
+
+<p><strong>O</strong> Kubernetes é formado por uma série de componentes ou blocos que, quando utilizados coletivamente, fornecem um método de deployment, manutenção e escalonamento de clusters de aplicações baseadas em containers. Estes componentes, ou primitives como o Kubernetes os chama, foram desenvolvidos com o intuito de serem independentes, de forma que quase não se faz necessário ter conhecimento entre si para que possam funcionar e trabalhar juntos, visto que todos se comunicam e interligam através de uma API, sejam componentes internos do Kubernetes ou mesmo extensões e containers.</p>
+
+<p><strong>E</strong>mbora tenha sido inicialmente desenvolvido para o deployment e utilização de <strong>bilhões de containers</strong> internamente no Google, desde que seu código passou a ser distribuído abertamente com a licença <a href="http://commons.apache.org/proper/commons-daemon/license.html">Apache Commons</a> o Kubernetes tem sido adotado formalmente por praticamente todos os grandes provedores de serviços em nuvem.</p>
+
+<h2>Arquitetura do Kubernetes</h2>
+
+<p><img class="center" src="http://kalib.github.io/imgs/kubernetes_architecture.png" title="'Kubernetes Architecture'" ></p>
+
+<p><strong>D</strong>entre os principais componentes do Kubernetes, vamos destacar os seguintes:</p>
+
+<ul>
+<li><p><strong>Master ou Master Controller</strong> &ndash; Host que será o gerenciador principal do Kubernetes, responsável por gerenciar os Minions ou Nodes do Cluster;</p></li>
+<li><p><strong>Nodes ou Minions</strong> &ndash; Embora normalmente a nomenclatura em diversos serviços de tecnolocia seja Node, o Kubernetes prefere chamar de Minions os hosts que fazem parte de um Cluster gerenciado pelo próprio Kubernetes. Este minion pode ser um servidor físico ou virtual, necessitando possuir um serviço de gerenciamento de containers, como o Docker, por exemplo;</p></li>
+<li><p><strong>ETCD</strong> &ndash; Embora este seja um serviço independente, estou listando-o aqui pois este será fundamental em seu ciclo de desenvolvimento com o Kubernetes. Cada Minion deverá rodar o <a href="https://coreos.com/etcd/docs/latest/">ETCD</a> (serviço de comunicação e gerenciamento de configurações no formato par de Chave/Valor). O ETCD é utilizado para troca e armazenamento de informações sobre os containers, pods, minions, etc.</p></li>
+<li><p><strong>Pods</strong> &ndash; São grupos de containers (um ou mais) rodando em um único minion do cluster. Cada Pod receberá um endereço IP único no Cluster como forma de possibilitar a utilização de portas sem a necessidade de se preocupar com conflitos;</p></li>
+<li><p><strong>Labels</strong> &ndash; São informações de identificação na configuração e gerenciamento dos objetos (como Pods ou Minions) formados de pares &ldquo;chave:valor&rdquo;;</p></li>
+<li><p><strong>Controllers</strong> &ndash; Além do Master Controller, dependendo do tamanho de sua infraestrutura e quantidade de Pods e Minions, você pode optar por ter mais de um Controller para dividir a carga e tarefas de gerenciamento. Os Controllers gerenciam um grupo de pods e, dependendo do estado de configuração desejada, podem acionar outros Controllers para lidar com as replicações e escalonamento. Os Controllers também são responsáveis pela substituiçao de Pods, caso um entre em estado de falha.</p></li>
+</ul>
+
+
+<h2>Instalação</h2>
+
+<p><strong>V</strong>amos ao que interessa&hellip;</p>
+
+<p><strong>N</strong>ovamente estou supondo que você já possui alguma familiaridade com Containers, Docker e, por consequência, com GNU/Linux.</p>
+
+<p><strong>E</strong>estarei utilizando 4 servidores virtuais rodando CentOS 7 nos exemplos a seguir, mas fica a seu critério decidir quantos utilizar.</p>
+
+<p><em>Certamente você optar por utilizar outra distribuição, seja Debian, Ubuntu, etc.. Uma vez que optei pelo CentOS 7, estarei utilizando comandos voltados para esta distro, mas sinta-se livre para adaptar seus comandos, como substituir o &ldquo;yum&rdquo; pelo &ldquo;apt-get&rdquo;, &ldquo;pacman&rdquo;, etc..</em></p>
+
+<p><strong>E</strong>m minha configuração chamarei os servidores da seguinte forma:</p>
+
+<ul>
+<li>centos-master</li>
+<li>centos-minion1</li>
+<li>centos-minion2</li>
+<li>centos-minion3</li>
+</ul>
+
+
+<p><strong>A</strong> primeira coisa que se deve fazer sempre que se pensa em trabalhar com clusters, independente de ser um cluster de containers ou não, é ter a certeza de que os servidores terão uma correta sincronização de relógios entre si. A forma mais simples e eficiente no nosso contexto é com a utilização do NTP, portanto comece instalando o NTP nos 4 servidores, bem como habilitando o serviço e iniciando-o:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># yum install -y ntp</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># systemctl enable ntpd && systemctl start ntpd</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>C</strong>aso queira certificar-se de que o serviço está realmente rodando:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># systemctl status ntpd
+</span><span class='line'>
+</span><span class='line'>● ntpd.service - Network Time Service
+</span><span class='line'>   Loaded: loaded (/usr/lib/systemd/system/ntpd.service; enabled; vendor preset: disabled)
+</span><span class='line'>   Active: active (running) since Sat 2017-06-24 17:46:02 UTC; 3s ago
+</span><span class='line'>  Process: 1586 ExecStart=/usr/sbin/ntpd -u ntp:ntp $OPTIONS (code=exited, status=0/SUCCESS)
+</span><span class='line'> Main PID: 1587 (ntpd)
+</span><span class='line'>   Memory: 2.1M
+</span><span class='line'>   CGroup: /system.slice/ntpd.service
+</span><span class='line'>           └─1587 /usr/sbin/ntpd -u ntp:ntp -g</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>P</strong>inga?</p>
+
+<p><strong>É</strong> importante nos certificarmos de que os servidores conseguem se comunicar e de que conseguem resolver nomes corretamente.</p>
+
+<p><strong>N</strong>este exemplo, conforme informado mais acima, estamos utilizando 4 servidores com os seguintes nomes: <em>centos-master</em>, <em>centos-minion1</em>, <em>centos-minion2</em> e <em>centos-minion3</em>, portanto vamos editar o arquivo <strong>/etc/hosts</strong> de cada um deles para que possam se comunicar pelos nomes que desejamos:</p>
+
+<p><strong>Insira as seguintes linhas no arquivo /etc/hosts dos 4 servidores:</strong></p>
+
+<p><em>Lembre-se de substituir os IPs pelos IPs dos servidores em seu ambiente</em></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># Ip local do servidor master
+</span><span class='line'>172.31.22.126   centos-master
+</span><span class='line'>
+</span><span class='line'># Ip local do minion1
+</span><span class='line'>172.31.120.16   centos-minion1
+</span><span class='line'>
+</span><span class='line'># Ip local do minion2
+</span><span class='line'>172.31.25.6     centos-minion2
+</span><span class='line'>
+</span><span class='line'># Ip local do minion3
+</span><span class='line'>172.31.123.22   centos-minion3</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Feito isto, tente pingar do master para os 3 minions utilizando os nomes especificados no /etc/hosts:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[root@kalib1 ~]# ping centos-minion1
+</span><span class='line'>PING centos-minion1 (172.31.120.16) 56(84) bytes of data.
+</span><span class='line'>64 bytes from centos-minion1 (172.31.120.16): icmp_seq=1 ttl=64 time=1.06 ms
+</span><span class='line'>
+</span><span class='line'>[root@kalib1 ~]# ping centos-minion2
+</span><span class='line'>PING centos-minion2 (172.31.25.6) 56(84) bytes of data.
+</span><span class='line'>64 bytes from centos-minion2 (172.31.25.6): icmp_seq=1 ttl=64 time=0.588 ms
+</span><span class='line'>
+</span><span class='line'>[root@kalib1 ~]# ping centos-minion3
+</span><span class='line'>PING centos-minion3 (172.31.123.22) 56(84) bytes of data.
+</span><span class='line'>64 bytes from centos-minion3 (172.31.123.22): icmp_seq=1 ttl=64 time=1.24 ms</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>V</strong>ocê pode realizar o mesmo teste a partir dos minions, pingando entre si e também para o centos-master.</p>
+
+<p><strong>U</strong>ma vez que tenhamos certeza de que todos os hosts se comunicam, é hora de instalar mais alguns pacotes necessários.</p>
+
+<p><strong>P</strong>rimeiramente, vamos configurar o repositório do Docker para o CentOS 7:</p>
+
+<ul>
+<li>Configurações de repositório retiradas dos repositórios CBS do Centos: <a href="http://cbs.centos.org/repos/virt7-docker-common-release/">http://cbs.centos.org/repos/virt7-docker-common-release/</a></li>
+</ul>
+
+
+<p><strong>V</strong>amos criar o seguinte arquivo de repositório:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># vim /etc/yum.repos.d/virt7-docker-common-release.repos</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>O</strong> conteúdo deste arquivo será o seguinte:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[virt7-docker-common-release]
+</span><span class='line'>name=virt7-docker-common-release
+</span><span class='line'>baseurl=http://cbs.centos.org/repos/virt7-docker-common-release/x86_64/os/
+</span><span class='line'>gpgcheck=0</span></code></pre></td></tr></table></div></figure>
+
+
+<p><em>Este arquivo deverá ser criado nos 4 servidores.</em></p>
+
+<p><strong>E</strong>m seguida, vamos atualizar a nossa base de repositórios e pacotes, também <strong>nos 4 servidores</strong>, bem como habilitar o novo repositório para instalar os pacotes docker e kubernetes:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># yum update</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># yum install -y --enablerepo=virt7-docker-common-release docker kubernetes</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>C</strong>omo dito na introdução, também precisaremos do etcd para o armazenamento e troca de configurações, portanto vamos instalá-lo também nos 4 hosts:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># yum instal -y etcd</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Configuração</h2>
+
+<p><strong>V</strong>amos começar com a configuração básica dos serviços envolvidos. Primeiramente, vamos abrir o arquivo de configuração do kubernetes e fazer algumas alterações:</p>
+
+<p><em>/etc/kubernetes/config</em></p>
+
+<p><strong>N</strong>o arquivo config altere as seguintes linhas:</p>
+
+<p><em>Edite o valor do parâmetro KUBE_MASTER, de forma que nosso master possa ser encontrado pelo nome que definimos no hosts file. O valor original é &ldquo;&mdash;master=<a href="http://127.0.0.1:8080">http://127.0.0.1:8080</a>&rdquo;, portanto mudaremos para o seguinte:</em></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>KUBE_MASTER="--master=http://centos-master:8080"</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>A</strong>inda neste arquivo de configuração, vamos inserir a configuração do serviço ETCD, portanto inclua a seguinte linha ao final do arquivo:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>KUBE_ETCD_SERVERS="--etcd-servers=http://centos-master:2379"</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>S</strong>eu arquivo de configuração deverá estar similar a este:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>###
+</span><span class='line'># kubernetes system config
+</span><span class='line'>#
+</span><span class='line'># The following values are used to configure various aspects of all
+</span><span class='line'># kubernetes services, including
+</span><span class='line'>#
+</span><span class='line'>#   kube-apiserver.service
+</span><span class='line'>#   kube-controller-manager.service
+</span><span class='line'>#   kube-scheduler.service
+</span><span class='line'>#   kubelet.service
+</span><span class='line'>#   kube-proxy.service
+</span><span class='line'># logging to stderr means we get it in the systemd journal
+</span><span class='line'>KUBE_LOGTOSTDERR="--logtostderr=true"
+</span><span class='line'>
+</span><span class='line'># journal message level, 0 is debug
+</span><span class='line'>KUBE_LOG_LEVEL="--v=0"
+</span><span class='line'>
+</span><span class='line'># Should this cluster be allowed to run privileged docker containers
+</span><span class='line'>KUBE_ALLOW_PRIV="--allow-privileged=false"
+</span><span class='line'>
+</span><span class='line'># How the controller-manager, scheduler, and proxy find the apiserver
+</span><span class='line'>KUBE_MASTER="--master=http://centos-master:8080"
+</span><span class='line'>
+</span><span class='line'>KUBE_ETCD_SERVERS="--etcd-servers=http://centos-master:2379"</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>R</strong>epita esta mesma configuração nos 4 hosts. Todos eles devem utilizar exatamente os mesmos valores utilizados aqui, apontando KUBE_MASTER e KUBE_ETCD_SERVERS para centos-master, visto que este será o responsável por gerenciar todos os nossos minions.</p>
+
+<p><strong>U</strong>ma vez que o arquivo de configuração do kubernetes esteja pronto nos 4 hosts, vamos configurar o serviço de API do kubernetes:</p>
+
+<p><em>/etc/kubernetes/apiserver</em></p>
+
+<p><strong>Esta configuração abaixo será apenas para o Master.</strong></p>
+
+<p><em>Edite o valor do parâmetro KUBE_API_ADDRESS, que originalmente é &ldquo;&mdash;insecure-bind-address=127.0.0.1&rdquo;, de forma que possamos novamente receber comunicação dos demais hosts.</em></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>KUBE_API_ADDRESS="--address=0.0.0.0"</span></code></pre></td></tr></table></div></figure>
+
+
+<p><em>Descomente as linhas KUBE_API_PORT e KUBELET_PORT, para que possamos estabelecer as portas de comunicação com a API:</em></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># The port on the local server to listen on.
+</span><span class='line'>KUBE_API_PORT="--port=8080"
+</span><span class='line'>
+</span><span class='line'># Port minions listen on
+</span><span class='line'>KUBELET_PORT="--kubelet-port=10250"</span></code></pre></td></tr></table></div></figure>
+
+
+<p><em>Em nosso exemplo não utilizaremos o parâmetro KUBE_ADMISSION_CONTROL, o qual nos permite ter mais controles e restrições sobre quais nodes ou minios podem entrar em nosso ambiente, portanto vamos apenas comentar esta linha por enquanto:</em></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># default admission control policies
+</span><span class='line'># KUBE_ADMISSION_CONTROL="--admission-control=NamespaceLifecycle,NamespaceExists,LimitRanger,SecurityContextDeny,ServiceAccount,ResourceQuota"</span></code></pre></td></tr></table></div></figure>
+
+
+<p><em>Nosso arquivo /etc/kubernetes/apiserver deverá estar assim:</em></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>##
+</span><span class='line'># kubernetes system config
+</span><span class='line'>#
+</span><span class='line'># The following values are used to configure the kube-apiserver
+</span><span class='line'>#
+</span><span class='line'>
+</span><span class='line'># The address on the local server to listen to.
+</span><span class='line'>KUBE_API_ADDRESS="--address=0.0.0.0"
+</span><span class='line'>
+</span><span class='line'># The port on the local server to listen on.
+</span><span class='line'>KUBE_API_PORT="--port=8080"
+</span><span class='line'>
+</span><span class='line'># Port minions listen on
+</span><span class='line'>KUBELET_PORT="--kubelet-port=10250"
+</span><span class='line'>
+</span><span class='line'># Comma separated list of nodes in the etcd cluster
+</span><span class='line'>KUBE_ETCD_SERVERS="--etcd-servers=http://127.0.0.1:2379"
+</span><span class='line'>
+</span><span class='line'># Address range to use for services
+</span><span class='line'>KUBE_SERVICE_ADDRESSES="--service-cluster-ip-range=10.254.0.0/16"
+</span><span class='line'>
+</span><span class='line'># default admission control policies
+</span><span class='line'># KUBE_ADMISSION_CONTROL="--admission-control=NamespaceLifecycle,NamespaceExists,LimitRanger,SecurityContextDeny,ServiceAccount,ResourceQuota"
+</span><span class='line'>
+</span><span class='line'># Add your own!
+</span><span class='line'>KUBE_API_ARGS=""</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>S</strong>alve e feche o arquivo. Novamente, esta configuração deve ser feita apenas para o Master.</p>
+
+<p><strong>A</strong>gora vamos configurar o serviço ETCD:</p>
+
+<p><em>/etc/etcd/etcd.conf</em></p>
+
+<p><strong>Esta configuração abaixo será apenas para o Master.</strong></p>
+
+<p><em>Edite os valores dos parâmetros ETCD_LISTEN_CLIENT_URLS e ETCD_ADVERTISE_CLIENT_URLS, que originalmente apontam para localhost. Como desejamos que nosso etcd escute requisições dos demais hosts, altere para o seguinte:</em></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ETCD_LISTEN_CLIENT_URLS="http://0.0.0.0:2379"
+</span><span class='line'>...
+</span><span class='line'>...
+</span><span class='line'>ETCD_ADVERTISE_CLIENT_URLS="http://0.0.0.0:2379"</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>N</strong>ovamente, não é necessário alterar a configuração do etcd nos demais hosts, apenas no Master.</p>
+
+<p><strong>U</strong>ma vez que as configurações iniciais foram feitas, vamos habilitar e iniciar os serviços necessários <strong>no Master</strong>, sendo eles:</p>
+
+<ul>
+<li>etcd</li>
+<li>kube-apiserver</li>
+<li>kube-controller-manager</li>
+<li>kube-scheduler</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># systemctl enable etcd kube-apiserver kube-controller-manager kube-scheduler</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># systemctl start etcd kube-apiserver kube-controller-manager kube-scheduler</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>O</strong>s 4 serviços devem estar rodando. Para termos certeza, vamos checar o status dos mesmos:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># systemctl status etcd kube-apiserver kube-controller-manager kube-scheduler | grep "(running)"
+</span><span class='line'>   Active: active (running) since Sat 2017-06-24 21:45:37 UTC; 1min ago
+</span><span class='line'>   Active: active (running) since Sat 2017-06-24 21:46:13 UTC; 1min ago
+</span><span class='line'>   Active: active (running) since Sat 2017-06-24 21:44:25 UTC; 1min ago
+</span><span class='line'>   Active: active (running) since Sat 2017-06-24 21:44:25 UTC; 1min ago</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>N</strong>ovamente, estes serviços serão iniciados no Master, e não nos nodes/minions, visto que estes utilizarão outros serviços.</p>
+
+<p><strong>A</strong>gora vamos configurar o seguinte arquivo nos nodes/minions:</p>
+
+<p><em>/etc/kubernetes/kubelet</em></p>
+
+<p><strong>Este arquivo apenas deverá ser editado nos nodes/minions, não no Master.</strong></p>
+
+<p><em>Vamos alterar o valor do parâmetro KUBELET_ADDRESS para que aceite comunicação não apenas do localhost:</em></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>KUBELET_ADDRESS="--address=0.0.0.0"</span></code></pre></td></tr></table></div></figure>
+
+
+<p><em>Descomentaremos também a linha KUBELET_PORT, para que possamos ter uma porta definida para a comunicação do kubelet:</em></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># The port for the info server to serve on
+</span><span class='line'>KUBELET_PORT="--port=10250"</span></code></pre></td></tr></table></div></figure>
+
+
+<p><em>Vamos alterar o valor do parâmetro KUBELET_HOSTNAME para o nome que definimos <strong>para cada um dos minions</strong>, portanto em cada um deles este será um valor diferente. Supondo que este seja o minion1, utilizaremos:</em></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>KUBELET_HOSTNAME="--hostname-override=centos-minion1"</span></code></pre></td></tr></table></div></figure>
+
+
+<p><em>Vamos também alterar o valor para KUBELET_API_SERVER, apontando para o nosso Master:</em></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>KUBELET_API_SERVER="--api-servers=http://centos-master:8080"</span></code></pre></td></tr></table></div></figure>
+
+
+<p><em>Vamos comentar a linha KUBELET_POD_INFRA_CONTAINER, visto que não utilizaremos uma infraestrutura de containers externa, pois estaremos utilizando nossos próprios PODs e containers:</em></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># pod infrastructure container
+</span><span class='line'>#KUBELET_POD_INFRA_CONTAINER="--pod-infra-container-image=registry.access.redhat.com/rhel7/pod-infrastructure:latest"</span></code></pre></td></tr></table></div></figure>
+
+
+<p><em>Nosso arquivo deverá estar assim: (Lembrando que o parâmetro KUBELET_HOSTNAME deverá ser diferente para cada um dos 3 minions, respectivamente: centos-minion1, centos-minion2 e centos-minion3)</em></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>###
+</span><span class='line'># kubernetes kubelet (minion) config
+</span><span class='line'>
+</span><span class='line'># The address for the info server to serve on (set to 0.0.0.0 or "" for all interfaces)
+</span><span class='line'>KUBELET_ADDRESS="--address=0.0.0.0"
+</span><span class='line'>
+</span><span class='line'># The port for the info server to serve on
+</span><span class='line'>KUBELET_PORT="--port=10250"
+</span><span class='line'>
+</span><span class='line'># You may leave this blank to use the actual hostname
+</span><span class='line'>KUBELET_HOSTNAME="--hostname-override=centos-minion1"
+</span><span class='line'>
+</span><span class='line'># location of the api-server
+</span><span class='line'>KUBELET_API_SERVER="--api-servers=http://centos-master:8080"
+</span><span class='line'>
+</span><span class='line'># pod infrastructure container
+</span><span class='line'>#KUBELET_POD_INFRA_CONTAINER="--pod-infra-container-image=registry.access.redhat.com/rhel7/pod-infrastructure:latest"
+</span><span class='line'>
+</span><span class='line'># Add your own!
+</span><span class='line'>KUBELET_ARGS=""</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>U</strong>ma vez que estas configurações também estão feitas nos 3 minions, vamos habilitar e iniciar os serviços necessários nos minions:</p>
+
+<ul>
+<li>kube-proxy</li>
+<li>kube-kubelet</li>
+<li>docker</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># systemctl enable kube-proxy kubelet docker</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># systemctl start kube-proxy kubelet docker</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>N</strong>ovamente, vamos ter certeza de que os 3 serviços estão rodando:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># systemctl status kube-proxy kubelet docker | grep "(running)"
+</span><span class='line'>   Active: active (running) since Sat 2017-06-24 21:44:23 UTC; 1h 16min ago
+</span><span class='line'>   Active: active (running) since Sat 2017-06-24 21:44:27 UTC; 1h 16min ago
+</span><span class='line'>   Active: active (running) since Sat 2017-06-24 21:44:27 UTC; 1h 16min ago</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>N</strong>ovamente, estes 3 serviços devem ser habilitados e iniciados nos 3 minions.</p>
+
+<p><strong>N</strong>este momento já temos nosso cluster rodando, com um master e 3 minions. :D</p>
+
+<h2>Testando o Cluster com o Kubernetes</h2>
+
+<p><strong>A</strong>gora que temos a configuração básica de nosso Master Controller e de 3 minions, vamos testar nosso cluster.</p>
+
+<p><strong>U</strong>tilizaremos o utilitário kubectl (KubeControl) disponível com o kubernetes. Caso tenha interesse em ver os parâmetros e funções do mesmo&hellip; <em>$ man kubectl</em></p>
+
+<p><strong>V</strong>amos verificar a lista dos nodes ou minions que temos neste momento registrados em nosso Cluster. Vamos digitar alguns comandos em nosso Master Controller (centos-master):</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[root@kalib1 ~]# kubectl get nodes
+</span><span class='line'>NAME             STATUS    AGE
+</span><span class='line'>centos-minion1   Ready     17m
+</span><span class='line'>centos-minion2   Ready     15m
+</span><span class='line'>centos-minion3   Ready     10m</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>O</strong>s três nodes criados e configurados anteriormente já são reconhecidos pelo nosso Kubernetes através do Master Controller. Além de registrados, estão com o status Ready, o que indica que estão prontos para funcionar e executar o que precisarmos.</p>
+
+<p><em>Caso deseje conhecer mais parâmetros que a função <strong>get</strong> do kubectl possui, podemos invocar o manual desta função: $ man kubectl-get</em></p>
+
+<p><strong>A</strong>lém do status, podemos conseguir diversas outras informações dos nodes através do <em>kubectl</em>: <em>(Ex: kubectl describe nodes)</em> Isto lhe daria informações sobre todos os nodes. Vamos experimentar com um node em específico.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[root@kalib1 ~]# kubectl describe node centos-minion1
+</span><span class='line'>Name:                   centos-minion1
+</span><span class='line'>Role:
+</span><span class='line'>Labels:                 beta.kubernetes.io/arch=amd64
+</span><span class='line'>                        beta.kubernetes.io/os=linux
+</span><span class='line'>                        kubernetes.io/hostname=centos-minion1
+</span><span class='line'>Taints:                 &lt;none&gt;
+</span><span class='line'>CreationTimestamp:      Tue, 20 Jun 2017 19:27:31 +0000
+</span><span class='line'>Phase:
+</span><span class='line'>Conditions:
+</span><span class='line'>  Type                  Status  LastHeartbeatTime                       LastTransitionTime                      Reason     Message
+</span><span class='line'>  ----                  ------  -----------------                       ------------------                      ------     -------
+</span><span class='line'>  OutOfDisk             False   Sun, 25 Jun 2017 01:39:38 +0000         Fri, 23 Jun 2017 17:31:44 +0000         KubeletHasSufficientDisk    kubelet has sufficient disk space available
+</span><span class='line'>  MemoryPressure        False   Sun, 25 Jun 2017 01:39:38 +0000         Tue, 20 Jun 2017 19:27:31 +0000         KubeletHasSufficientMemory  kubelet has sufficient memory available
+</span><span class='line'>  DiskPressure          False   Sun, 25 Jun 2017 01:39:38 +0000         Tue, 20 Jun 2017 19:27:31 +0000         KubeletHasNoDiskPressure    kubelet has no disk pressure
+</span><span class='line'>  Ready                 True    Sun, 25 Jun 2017 01:39:38 +0000         Fri, 23 Jun 2017 17:31:54 +0000         KubeletReady                        kubelet is posting ready status
+</span><span class='line'>Addresses:              172.31.120.16,172.31.120.16,centos-minion1
+</span><span class='line'>Capacity:
+</span><span class='line'> alpha.kubernetes.io/nvidia-gpu:        0
+</span><span class='line'> cpu:                                   1
+</span><span class='line'> memory:                                1015348Ki
+</span><span class='line'> pods:                                  110
+</span><span class='line'>Allocatable:
+</span><span class='line'> alpha.kubernetes.io/nvidia-gpu:        0
+</span><span class='line'> cpu:                                   1
+</span><span class='line'> memory:                                1015348Ki
+</span><span class='line'> pods:                                  110
+</span><span class='line'>System Info:
+</span><span class='line'> Machine ID:                    f9afeb75a5a382dce8269887a67fbf58
+</span><span class='line'> System UUID:                   EC2C8A0E-91D6-F54E-5A49-534A6A903FDA
+</span><span class='line'> Boot ID:                       20961efd-c946-481a-97cb-7788209551ae
+</span><span class='line'> Kernel Version:                3.10.0-327.28.2.el7.x86_64
+</span><span class='line'> OS Image:                      CentOS Linux 7 (Core)
+</span><span class='line'> Operating System:              linux
+</span><span class='line'> Architecture:                  amd64
+</span><span class='line'> Container Runtime Version:     docker://1.12.6
+</span><span class='line'> Kubelet Version:               v1.5.2
+</span><span class='line'> Kube-Proxy Version:            v1.5.2
+</span><span class='line'>ExternalID:                     centos-minion1
+</span><span class='line'>Non-terminated Pods:            (0 in total)
+</span><span class='line'>  Namespace                     Name            CPU Requests    CPU Limits      Memory Requests Memory Limits
+</span><span class='line'>  ---------                     ----            ------------    ----------      --------------- -------------
+</span><span class='line'>Allocated resources:
+</span><span class='line'>  (Total limits may be over 100 percent, i.e., overcommitted.
+</span><span class='line'>  CPU Requests  CPU Limits      Memory Requests Memory Limits
+</span><span class='line'>  ------------  ----------      --------------- -------------
+</span><span class='line'>  0 (0%)        0 (0%)          0 (0%)          0 (0%)
+</span><span class='line'>Events:
+</span><span class='line'>  FirstSeen     LastSeen        Count   From                            SubObjectPath   Type            Reason             Message
+</span><span class='line'>  ---------     --------        -----   ----                            -------------   --------        ------             -------
+</span><span class='line'>  15m           15m             1       {kubelet centos-minion1}                        Normal          Starting           Starting kubelet.
+</span><span class='line'>  15m           15m             1       {kubelet centos-minion1}                        Warning         ImageGCFailed      unable to find data for container /
+</span><span class='line'>  15m           15m             2       {kubelet centos-minion1}                        Normal          NodeHasSufficientDisk       Node centos-minion1 status is now: NodeHasSufficientDisk
+</span><span class='line'>  15m           15m             2       {kubelet centos-minion1}                        Normal          NodeHasSufficientMemory     Node centos-minion1 status is now: NodeHasSufficientMemory
+</span><span class='line'>  15m           15m             2       {kubelet centos-minion1}                        Normal          NodeHasNoDiskPressure       Node centos-minion1 status is now: NodeHasNoDiskPressure
+</span><span class='line'>  15m           15m             1       {kubelet centos-minion1}                        Warning         Rebooted           Node centos-minion1 has been rebooted, boot id: 20961efd-c946-481a-97cb-7788209551ae</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>O</strong>bviamente recebemos um retorno com muitas informações em formato Json, o que nem sempre é como esperamos. Existem formas de filtrar os resultados e conseguir informações mais precisas, como o bom e velho grep:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[root@kalib1 ~]# kubectl describe node centos-minion1 | grep Addresses
+</span><span class='line'>Addresses:              172.31.120.16,172.31.120.16,centos-minion1</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>V</strong>ocê também pode utilizar expressões regulares e a sintaxe do próprio Kubernetes para consultas mais complexas, como por exemplo, formatar a minha saída Json de forma a pegar apenas a listagem de status dos meus nodes que estão com Ready = True:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[root@kalib1 ~]# kubectl get nodes -o jsonpath='{range .items[*]}{@.metadata.name}:{range @.status.conditions[*]}{@.type}={@.status};{end}{end}'| tr ';' "\n" | grep "Ready=True"
+</span><span class='line'>
+</span><span class='line'>Ready=True
+</span><span class='line'>Ready=True
+</span><span class='line'>Ready=True</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>A</strong> sua criatividade é o limite. ;]</p>
+
+<p><strong>N</strong>ão temos nenhum pod configurado, mas também poderíamos utilizar <em>kubectl get</em> para conseguir a listagem de nossos pods:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[root@kalib1 ~]# kubectl get pods
+</span><span class='line'>
+</span><span class='line'>No resources found.</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Criando pods</h2>
+
+<p><strong>A</strong>ssim como com o Docker, Ansible e algumas outras ferramentas, utilizaremos a linguagem <a href="https://pt.wikipedia.org/wiki/YAML">YAML</a> para criar nossos arquivos de configuração.</p>
+
+<p><strong>C</strong>riaremos um diretório chamado <em>Builds</em> em nosso Master Controller apenas para melhor organizar nossos arquivos de configuração e ficar mais fácil encontrá-los no futuro:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># mkdir Builds
+</span><span class='line'>
+</span><span class='line'># cd Builds</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>P</strong>ara criarmos Pods, o que fazemos na verdade é criar arquivos de configuração que vão dizer ao Kubernetes qual o estado em que desejamos nossa infraestrutura. O papel do Kubernetes é ler esta configuração e assegurar que o estado de nossa infraestrutura reflita o estado desejado.</p>
+
+<p><strong>P</strong>ara facilitar, vamos utilizar exemplos encontrados na própria documentação do Kubernetes. Comecemos com a criação de um Pod para um servidor web Nginx.</p>
+
+<p><strong>V</strong>amos criar um arquivo chamado nginx.yaml dentro do diretório Builds que criamos anteriormente:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># vim nginx.yaml</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>N</strong>o arquivo indicaremos alguns atributos ou variáveis, bem como seus respectivos valores:</p>
+
+<ul>
+<li>apiVersion &ndash; Indica a versão da API do kubernetes utilizada</li>
+<li>kind &ndash; o tipo de recurso que desejamos</li>
+<li>metadata &ndash; dados referentes ao recurso desejado</li>
+<li>spec &ndash; especificações sobre o que este recurso irá conter</li>
+</ul>
+
+
+<p><strong>V</strong>amos criar um Pod contendo um único container rodando a versão 1.7.9 do nginx bem como disponibilizando a porta 80 para receber conexões. Este deverá ser o conteúdo do arquivo <em>nginx.yaml</em>:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>apiVersion: v1
+</span><span class='line'>kind: Pod
+</span><span class='line'>metadata:
+</span><span class='line'>  name: nginx
+</span><span class='line'>spec:
+</span><span class='line'>  containers:
+</span><span class='line'>    - name: nginx
+</span><span class='line'>      image: nginx:1.7.9
+</span><span class='line'>      ports:
+</span><span class='line'>      - containerPort: 80</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>A</strong>ntes de executarmos, vamos nos certificar novamente de duas coisas:</p>
+
+<ul>
+<li>Que realmente não temos nenhum Pod criado e ativo;</li>
+<li>Que não temos nenhum container rodando em nossos nodes.</li>
+</ul>
+
+
+<p><em>No centos-master:</em></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[root@kalib1 Builds]# kubectl get pods
+</span><span class='line'>
+</span><span class='line'>No resources found.</span></code></pre></td></tr></table></div></figure>
+
+
+<p><em>No centos-minion1: (Execute o mesmo comando nos demais nodes (centos-minion2 e centos-minion3))</em></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[root@kalib2 ~]# docker ps
+</span><span class='line'>
+</span><span class='line'>CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES</span></code></pre></td></tr></table></div></figure>
+
+
+<p><em>Novamente: Se você não faz ideia do que acabei de digitar, (docker ps) volte e leia um pouco sobre <a href="http://kalib.github.io/blog/2015/08/20/docker-uma-alternativa-elegante-para-containers-no-linux/">Docker</a> antes de seguir com este artigo.</em></p>
+
+<p><strong>C</strong>omo podemos ver, não temos nenhum Pod, bem como nenhum container rodando em nossos nodes.</p>
+
+<p><strong>V</strong>amos utilizar <em>kubectl create</em> para criar o Pod utilizando o arquivo que criamos <em>nginx.yaml</em>: <em>Executaremos este comando no Master Controller &ndash; centos-master</em></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[root@kalib1 Builds]# kubectl create -f nginx.yaml
+</span><span class='line'>
+</span><span class='line'>pod "nginx" created</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>O</strong> Kubernetes está dizendo que nosso Pod &ldquo;nginx&rdquo; foi criado. Vamos verificar:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[root@kalib1 Builds]# kubectl get pods
+</span><span class='line'>
+</span><span class='line'>NAME      READY     STATUS    RESTARTS   AGE
+</span><span class='line'>nginx     1/1       Running   0          1m</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>O</strong> pod está criado e rodando. Agora, execute novamente <em>docker ps</em> nos 3 nodes para identificar em qual deles o container foi criado. Sim, como não especificamos nada, o Kubernetes vai verificar os recursos disponíveis no momento e vai lançar onde ele achar mais adequado.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[root@kalib4 ~]# docker ps
+</span><span class='line'>
+</span><span class='line'>CONTAINER ID        IMAGE                                      COMMAND                  CREATED             STATUS              PORTS               NAMES
+</span><span class='line'>6de8e22e1536        nginx:1.7.9                                "nginx -g 'daemon off"   2 minutes ago       Up 2 minutes                            k8s_nginx.b0df00ef_nginx_default_d4debd3a-594c-11e7-b587-06827a5b32d4_583881e0
+</span><span class='line'>ae49b36ae11b        gcr.io/google_containers/pause-amd64:3.0   "/pause"                 2 minutes ago       Up 2 minutes                            k8s_POD.b2390301_nginx_default_d4debd3a-594c-11e7-b587-06827a5b32d4_fb5c834f</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>S</strong>im, existem dois containers rodando. Um deles é o nosso &ldquo;nginx&rdquo;, enquanto que o outro é um container padrão do google chamado &ldquo;/pause&rdquo;, o qual será responsável pela manutenção de alguns recursos de nosso cluster.</p>
+
+<p><strong>P</strong>odemos novamente pedir a descrição deste pod que acabamos de criar:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[root@kalib1 Builds]# kubectl describe pod nginx
+</span><span class='line'>
+</span><span class='line'>Name:           nginx
+</span><span class='line'>Namespace:      default
+</span><span class='line'>Node:           centos-minion3/172.31.123.22
+</span><span class='line'>Start Time:     Sun, 25 Jun 2017 02:20:18 +0000
+</span><span class='line'>Labels:         &lt;none&gt;
+</span><span class='line'>Status:         Running
+</span><span class='line'>IP:             172.17.0.2
+</span><span class='line'>Controllers:    &lt;none&gt;
+</span><span class='line'>Containers:
+</span><span class='line'>  nginx:
+</span><span class='line'>    Container ID:               docker://6de8e22e153618271bb6e8095c68070126541331c8acfc3f5d1a654f4b978454
+</span><span class='line'>    Image:                      nginx:1.7.9
+</span><span class='line'>    Image ID:                   docker-pullable://docker.io/nginx@sha256:e3456c851a152494c3e4ff5fcc26f240206abac0c9d794affb40e0714846c451
+</span><span class='line'>    Port:                       80/TCP
+</span><span class='line'>    State:                      Running
+</span><span class='line'>      Started:                  Sun, 25 Jun 2017 02:20:27 +0000
+</span><span class='line'>    Ready:                      True
+</span><span class='line'>    Restart Count:              0
+</span><span class='line'>    Volume Mounts:              &lt;none&gt;
+</span><span class='line'>    Environment Variables:      &lt;none&gt;
+</span><span class='line'>Conditions:
+</span><span class='line'>  Type          Status
+</span><span class='line'>  Initialized   True
+</span><span class='line'>  Ready         True
+</span><span class='line'>  PodScheduled  True
+</span><span class='line'>No volumes.
+</span><span class='line'>QoS Class:      BestEffort
+</span><span class='line'>Tolerations:    &lt;none&gt;
+</span><span class='line'>Events:
+</span><span class='line'>  FirstSeen     LastSeen        Count   From                            SubObjectPath           Type            Reason     Message
+</span><span class='line'>  ---------     --------        -----   ----                            -------------           --------        ------     -------
+</span><span class='line'>  6m            6m              1       {default-scheduler }                                    Normal          Scheduled  Successfully assigned nginx to centos-minion3
+</span><span class='line'>  6m            6m              1       {kubelet centos-minion3}        spec.containers{nginx}  Normal          Pulling    pulling image "nginx:1.7.9"
+</span><span class='line'>  6m            6m              2       {kubelet centos-minion3}                                Warning         MissingClusterDNS   kubelet does not have ClusterDNS IP configured and cannot create Pod using "ClusterFirst" policy. Falling back to DNSDefault policy.
+</span><span class='line'>  6m            6m              1       {kubelet centos-minion3}        spec.containers{nginx}  Normal          Pulled     Successfully pulled image "nginx:1.7.9"
+</span><span class='line'>  6m            6m              1       {kubelet centos-minion3}        spec.containers{nginx}  Normal          Created    Created container with docker id 6de8e22e1536; Security:[seccomp=unconfined]
+</span><span class='line'>  6m            6m              1       {kubelet centos-minion3}        spec.containers{nginx}  Normal          Started    Started container with docker id 6de8e22e1536</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>O</strong>bviamente que isto é apenas a configuração mais básica que se possa imaginar, sem storage, mapeamentos de portas, redirecionamentos, rotas, etc. A ideia é apenas uma apresentação inicial..o que é o Kubernetes.</p>
+
+<p><strong>H</strong>appy Hacking</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Recebendo Alarmes do AWS Diretamente no Slack]]></title>
@@ -2166,58 +3099,6 @@ Clique em <strong>Next</strong>, reveja suas configurações e clique em <strong
 
 
 <p><strong>H</strong>appy Hacking!</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[BleachBit - Limpeza de Disco no Linux]]></title>
-    <link href="http://kalib.github.io/blog/2013/10/23/bleachbit-limpeza-de-disco-no-linux/"/>
-    <updated>2013-10-23T09:02:00-04:00</updated>
-    <id>http://kalib.github.io/blog/2013/10/23/bleachbit-limpeza-de-disco-no-linux</id>
-    <content type="html"><![CDATA[<p><img class="left" src="http://kalib.github.io/imgs/disk-cleanup.jpg" title="'Limpeza de Disco'" >
-<strong>Q</strong>uando o assunto é segurança da informação, muitas vezes o óbvio é deixado de lado. Se pensa em anti-vírus, firewall, IDS (Intrusion Detection System), etc. Mas e o básico e óbvio? Raramente vejo profissionais preocupados com o lixo existente nos discos rígidos. Com <em>lixo</em> eu quero dizer aqueles arquivos temporários, antigos arquivos de cache que já não são necessários, ou mesmo rastros de informações de arquivos que já foram deletados. Sim, o fato de você deletar arquivos não significa que as informações daqueles arquivos foram completamente apagadas do disco. A <em>&ldquo;deleção regular de arquivos&rdquo;</em> não está apagando <em>os dados deletados</em>. Ela está apenas removendo os links dos inodes de arquivos, tornando assim possível a recuperação dos arquivos <em>deletados</em> com algum software forense.</p>
-
-<p><strong>E</strong>xistem várias alternativas para remover seus arquivos de forma segura. As alternativas poderão variar de acordo com o sistema de arquivos utilizado em seu disco, é claro. Uma das formas mais simples que conheço é através da ferramenta <strong>BleachBit</strong>.</p>
-
-<p><strong>B</strong>leachBit é um software livre criado para limpar e liberar espaço em disco, gerenciando assim melhor a sua privacidade e otimizando sistemas computacionais. Criado em 2008 para sistemas GNU/Linux, partiu de um controverso e polêmico debate sobre a necessidade de o GNU/Linux necessitar de uma ferramenta para limpeza de registros. Posteriormente o BleachBit passou a suportar também sistemas Microsoft Windows.</p>
-
-<p><strong>C</strong>om esta ferramenta você poderá não apenas limpar seu espaço em disco, mas também limpar vários arquivos típicos do sistema que não são necessários na maioria dos casos a longo prazo, arquivos estes que podem dar ao intruso informações desnecessárias sobre suas atividades. Não desejamos isto&hellip;</p>
-
-<p><strong>A</strong> instalação do mesmo é feita de forma simples e convencional. No caso do archlinux, o pacote se encontra disponível no repositório [community], portanto pode ser instalado regularmente através do pacman.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'> [kalib@tuxcaverna ~]$ sudo pacman -Ss bleachbit
-</span><span class='line'> [sudo] password for kalib: 
-</span><span class='line'> community/bleachbit 0.9.6-1
-</span><span class='line'>    Deletes unneeded files to free disk space and maintain privacy
-</span><span class='line'> 
-</span><span class='line'> [kalib@tuxcaverna ~]$ sudo pacman -S bleachbit</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>N</strong>a maioria das distribuições baseadas em Debian, tal como o Ubuntu, o pacote poderá ser instalado através do aptitude ou apt-get:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'> $ sudo apt-get update
-</span><span class='line'> $ sudo apt-get install bleachbit</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>O</strong> BleachBit possui uma interface gráfica simples, na qual você poderá selecionar o que você deseja destruir. Lembre-se que algumas funções são experimentais e podem causar problemas em seu sistema. Mas não há necessidade de se preocupar: O BleachBit lhe informa sobre isto e lhe dá a chance de cancelar a operação selecionada. ;]</p>
-
-<p><strong>O</strong> BleachBit possui uma vasta lista de <em>cleaners</em>, como ele chama as ferramentas internas de limpeza. Dentre a longa lista, podemos citar alguns como: <em>Adanaxis, Adobe Reader, aMSN, aMule, APT, Audacious, Bash, Beagle, Chromium, Downloader for X, Deep scan, Easytag, ELinks, emesene, Epiphany, Evolution, Exaile, Filezilla, Firefox, Flash, gedit, gFTP, GIMP, etc.</em> A lista é realmente longa. <a href="http://bleachbit.sourceforge.net/features">Lista completa de cleaners e demais recursos.</a></p>
-
-<p><strong>P</strong>ara executar o programa, basta procurar o mesmo através do menu de aplicativos de seu sistema, ou através do comando:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'> [kalib@tuxcaverna ~]$ bleachbit</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>H</strong>ave fun!</p>
 ]]></content>
   </entry>
   

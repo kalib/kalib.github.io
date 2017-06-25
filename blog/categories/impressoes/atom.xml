@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Impressoes | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://kalib.github.io/blog/categories/impressoes/atom.xml" rel="self"/>
   <link href="http://kalib.github.io/"/>
-  <updated>2017-03-12T15:14:19-04:00</updated>
+  <updated>2017-06-25T11:27:24-04:00</updated>
   <id>http://kalib.github.io/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -18,7 +18,7 @@
     <link href="http://kalib.github.io/blog/2014/01/17/dica-assistir-star-wars-em-um-console-ou-terminal/"/>
     <updated>2014-01-17T10:30:00-05:00</updated>
     <id>http://kalib.github.io/blog/2014/01/17/dica-assistir-star-wars-em-um-console-ou-terminal</id>
-    <content type="html"><![CDATA[<p>{% img left /imgs/starwars.png &lsquo;Star Wars&rsquo; %}
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/starwars.png" title="&lsquo;Star Wars&rsquo;" >
 <strong>Q</strong>uem disse que o terminal ou linha de comando serve apenas para trabalho e coisas chatas?</p>
 
 <p><strong>E</strong>stá entediado em frente ao seu terminal GNU/Linux?    Que tal algo para passar o tempo e, ao mesmo tempo, lhe trazer uma certa nostalgia? Assista Star Wars sem precisar sair de sua linha de comando ou terminal.</p>
@@ -31,9 +31,9 @@
 
 <p><strong>F</strong>eito isso, basta apreciar o show&hellip;</p>
 
-<p>{% img center /imgs/starwars_1.png &lsquo;Star Wars&rsquo; %}</p>
+<p><img class="center" src="/imgs/starwars_1.png" title="&lsquo;Star Wars&rsquo;" ></p>
 
-<p>{% img center /imgs/starwars_2.jpg &lsquo;Star Wars&rsquo; %}</p>
+<p><img class="center" src="/imgs/starwars_2.jpg" title="&lsquo;Star Wars&rsquo;" ></p>
 
 <p><strong>H</strong>ave fun!</p>
 ]]></content>
@@ -44,7 +44,7 @@
     <link href="http://kalib.github.io/blog/2013/12/30/navegacao-anonima-atraves-da-rede-tor/"/>
     <updated>2013-12-30T08:15:00-05:00</updated>
     <id>http://kalib.github.io/blog/2013/12/30/navegacao-anonima-atraves-da-rede-tor</id>
-    <content type="html"><![CDATA[<p>{% img left /imgs/tor_logo.png &lsquo;Tor&rsquo; %}
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/tor_logo.png" title="&lsquo;Tor&rsquo;" >
 <strong>O</strong> ano de 2013 foi marcado por diversos acontecimentos de grande repercussão e, sem sombra de dúvidas, um deles foi o escândalo causado pelo vazamento de dados que provaram que algumas instituições, dentre elas a <em>NSA</em> (Agência de Segurança dos Estados Unidos), estavam espionando diversas entidades, empresas e até mesmo pessoas físicas nas mais diversas regiões do globo. Escândalos a parte, estas denúncias acabaram despertando um pouco mais (uma pena que não tenha sido muito mais) nas pessoas o interesse em preservar sua privacidade.</p>
 
 <p><strong>S</strong>endo assim, nada mais justo que dedicar o último post do ano ao <em>Tor</em>.</p>
@@ -123,7 +123,7 @@
     <link href="http://kalib.github.io/blog/2013/08/19/kde-4-dot-11-lancado-e-disponivel-no-arch-linux/"/>
     <updated>2013-08-19T08:07:00-04:00</updated>
     <id>http://kalib.github.io/blog/2013/08/19/kde-4-dot-11-lancado-e-disponivel-no-arch-linux</id>
-    <content type="html"><![CDATA[<p>{% img left /imgs/kde411.png &lsquo;KDE 4.11&rsquo; %}
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/kde411.png" title="&lsquo;KDE 4.11&rsquo;" >
 <strong>E</strong>m 14 de Agosto de 2013 a comunidade KDE anunciou oficialmente a última release do Ambiente de Trabalho KDE, a versão 4.11. Nesta última versão o projeto incorporou grandes atualizações na Área de Trabalho, Aplicações e plataforma de Desenvolvimento, oferecendo, além de correções, novas funcionalidades, das quais muitas serão importantes para a próxima evolução da plataforma KDE.</p>
 
 <p><strong>E</strong>ste último lançamento é dedicado a memória de <em>Atul &ldquo;toolz&rdquo; Chitnis</em>, um dos maiores representantes do movimento de Software Livre e Open Source na Índia e, também, um dos maiores responsáveis pela existência do projeto KDE na Índia. Atul deixou-nos no dia 3 de Junho, após uma longa batalha contra o Câncer. Que sua alma descanse em paz, é o desejo de todos os membros do projeto KDE e, certamente, de muitas outras pessoas que o conheceram.</p>
@@ -157,7 +157,7 @@
     <link href="http://kalib.github.io/blog/2013/08/12/dica-rapida-linux-melhorando-a-politica-de-senhas/"/>
     <updated>2013-08-12T08:41:00-04:00</updated>
     <id>http://kalib.github.io/blog/2013/08/12/dica-rapida-linux-melhorando-a-politica-de-senhas</id>
-    <content type="html"><![CDATA[<p>{% img center /imgs/url.jpg &lsquo;password&rsquo; %}</p>
+    <content type="html"><![CDATA[<p><img class="center" src="/imgs/url.jpg" title="&lsquo;password&rsquo;" ></p>
 
 <p><strong>N</strong>a dica anterior mencionei o uso do comando <em>chage</em> para <strong>forçar</strong> a alteração de senha por parte do usuário em sistemas Linux, mas e se além disso fosse possível melhorar esta prática, tornando a política de senhas de usuários um pouco mais segura?</p>
 

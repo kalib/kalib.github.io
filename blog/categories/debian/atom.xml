@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Debian | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://kalib.github.io/blog/categories/debian/atom.xml" rel="self"/>
   <link href="http://kalib.github.io/"/>
-  <updated>2017-03-12T15:14:19-04:00</updated>
+  <updated>2017-06-25T11:27:24-04:00</updated>
   <id>http://kalib.github.io/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -18,10 +18,10 @@
     <link href="http://kalib.github.io/blog/2011/09/27/politica-de-senhas-no-linux-senhas-com-data-para-expirar/"/>
     <updated>2011-09-27T10:14:12-04:00</updated>
     <id>http://kalib.github.io/blog/2011/09/27/politica-de-senhas-no-linux-senhas-com-data-para-expirar</id>
-    <content type="html"><![CDATA[<p>{% img left /imgs/password1.jpg &lsquo;Password&rsquo; %}
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/password1.jpg" title="&lsquo;Password&rsquo;" >
 <strong>J</strong>á é sabido que a maior vulnerabilidade dentro das empresas ou mesmo computadores pessoais são justamente os próprios funcionários ou usuários.</p>
 
-<p>{% img left /imgs/securepasswords.jpg &lsquo;Securepasswords&rsquo; %}M<strong>anter uma boa </strong>política de senhas<strong> é fundamental para garantir a segurança </strong>básica** de suas informações e tentar minimizar as chances de alguém ter acesso indevido a elas.</p>
+<p><img class="left" src="/imgs/securepasswords.jpg" title="&lsquo;Securepasswords&rsquo;" >M<strong>anter uma boa </strong>política de senhas<strong> é fundamental para garantir a segurança </strong>básica** de suas informações e tentar minimizar as chances de alguém ter acesso indevido a elas.</p>
 
 <p><strong>V</strong>ou apresentar dicas simples para uma boa política de senhas que vão além das dicas comuns como &ldquo;mantenha uma senha que contenha mais de 8 caracteres, sendo eles números, letras minúsculas, maiúsculas e caracteres especiais&hellip;&rdquo;.</p>
 

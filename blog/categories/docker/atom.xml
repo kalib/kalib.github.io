@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Docker | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://kalib.github.io/blog/categories/docker/atom.xml" rel="self"/>
   <link href="http://kalib.github.io/"/>
-  <updated>2017-03-12T15:14:19-04:00</updated>
+  <updated>2017-06-25T11:27:24-04:00</updated>
   <id>http://kalib.github.io/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -14,11 +14,795 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Conhecendo o Kubernetes - Clusters de Containers]]></title>
+    <link href="http://kalib.github.io/blog/2017/06/24/conhecendo-o-kubernetes-clusters-de-containers/"/>
+    <updated>2017-06-24T09:32:00-04:00</updated>
+    <id>http://kalib.github.io/blog/2017/06/24/conhecendo-o-kubernetes-clusters-de-containers</id>
+    <content type="html"><![CDATA[<p><img class="center" src="/imgs/kubernetes_logo.png" title="&lsquo;Kubernetes&rsquo;" ></p>
+
+<h2>O que é Kubernetes</h2>
+
+<p><strong>K</strong>ubernetes é uma solução Open Source desenvolvida pelo Google, originalmente chamada de K8s, como uma ferramenta para gerenciar clusters de containers (ou containeres, como prefira). Em 2005, quando a ferramenta foi desenvolvida, originalmente para uso interno, o Google doou o código à recém fundada <a href="https://www.cncf.io/">Cloud Native Computing Foundation</a>, em parceria com a <a href="https://www.linuxfoundation.org/">The Linux Foundation</a>.</p>
+
+<p><strong>O</strong> motivo do leme em sua logomarca é devido à origem grega da palavra, que vem de Kuvernetes, que representa a pessoa que pilota o navio, timoneiro.</p>
+
+<p><strong>C</strong>omo objetivo primário o Kubernetes provê uma plataforma de automação para deployments, escalonamento e operações de containers de aplicações em um cluster de hosts ou nodes.</p>
+
+<p><strong>A</strong>ntes de seguir com a explicação, instalação e configuração do Kubernetes, estou supondo que você já possui algum conhecimento básico sobre o que sejam containers e tenha alguma familiaridade com o <a href="https://www.docker.com">Docker</a>. Caso não possua um entendimento básico sobre containers e Docker, sugiro que leia algo antes de seguir com este artigo. Possuo um post introdutório sobre containers com um exemplo básico e prático sobre como criar containers com Docker, bem como iniciar uma simples aplicação web &ndash;  <a href="/blog/2015/08/20/docker-uma-alternativa-elegante-para-containers-no-linux/">aqui</a>.</p>
+
+<p><strong>O</strong> Kubernetes é formado por uma série de componentes ou blocos que, quando utilizados coletivamente, fornecem um método de deployment, manutenção e escalonamento de clusters de aplicações baseadas em containers. Estes componentes, ou primitives como o Kubernetes os chama, foram desenvolvidos com o intuito de serem independentes, de forma que quase não se faz necessário ter conhecimento entre si para que possam funcionar e trabalhar juntos, visto que todos se comunicam e interligam através de uma API, sejam componentes internos do Kubernetes ou mesmo extensões e containers.</p>
+
+<p><strong>E</strong>mbora tenha sido inicialmente desenvolvido para o deployment e utilização de <strong>bilhões de containers</strong> internamente no Google, desde que seu código passou a ser distribuído abertamente com a licença <a href="http://commons.apache.org/proper/commons-daemon/license.html">Apache Commons</a> o Kubernetes tem sido adotado formalmente por praticamente todos os grandes provedores de serviços em nuvem.</p>
+
+<h2>Arquitetura do Kubernetes</h2>
+
+<p><img class="center" src="/imgs/kubernetes_architecture.png" title="&lsquo;Kubernetes Architecture&rsquo;" ></p>
+
+<p><strong>D</strong>entre os principais componentes do Kubernetes, vamos destacar os seguintes:</p>
+
+<ul>
+<li><p><strong>Master ou Master Controller</strong> &ndash; Host que será o gerenciador principal do Kubernetes, responsável por gerenciar os Minions ou Nodes do Cluster;</p></li>
+<li><p><strong>Nodes ou Minions</strong> &ndash; Embora normalmente a nomenclatura em diversos serviços de tecnolocia seja Node, o Kubernetes prefere chamar de Minions os hosts que fazem parte de um Cluster gerenciado pelo próprio Kubernetes. Este minion pode ser um servidor físico ou virtual, necessitando possuir um serviço de gerenciamento de containers, como o Docker, por exemplo;</p></li>
+<li><p><strong>ETCD</strong> &ndash; Embora este seja um serviço independente, estou listando-o aqui pois este será fundamental em seu ciclo de desenvolvimento com o Kubernetes. Cada Minion deverá rodar o <a href="https://coreos.com/etcd/docs/latest/">ETCD</a> (serviço de comunicação e gerenciamento de configurações no formato par de Chave/Valor). O ETCD é utilizado para troca e armazenamento de informações sobre os containers, pods, minions, etc.</p></li>
+<li><p><strong>Pods</strong> &ndash; São grupos de containers (um ou mais) rodando em um único minion do cluster. Cada Pod receberá um endereço IP único no Cluster como forma de possibilitar a utilização de portas sem a necessidade de se preocupar com conflitos;</p></li>
+<li><p><strong>Labels</strong> &ndash; São informações de identificação na configuração e gerenciamento dos objetos (como Pods ou Minions) formados de pares &ldquo;chave:valor&rdquo;;</p></li>
+<li><p><strong>Controllers</strong> &ndash; Além do Master Controller, dependendo do tamanho de sua infraestrutura e quantidade de Pods e Minions, você pode optar por ter mais de um Controller para dividir a carga e tarefas de gerenciamento. Os Controllers gerenciam um grupo de pods e, dependendo do estado de configuração desejada, podem acionar outros Controllers para lidar com as replicações e escalonamento. Os Controllers também são responsáveis pela substituiçao de Pods, caso um entre em estado de falha.</p></li>
+</ul>
+
+
+<h2>Instalação</h2>
+
+<p><strong>V</strong>amos ao que interessa&hellip;</p>
+
+<p><strong>N</strong>ovamente estou supondo que você já possui alguma familiaridade com Containers, Docker e, por consequência, com GNU/Linux.</p>
+
+<p><strong>E</strong>estarei utilizando 4 servidores virtuais rodando CentOS 7 nos exemplos a seguir, mas fica a seu critério decidir quantos utilizar.</p>
+
+<p><em>Certamente você optar por utilizar outra distribuição, seja Debian, Ubuntu, etc.. Uma vez que optei pelo CentOS 7, estarei utilizando comandos voltados para esta distro, mas sinta-se livre para adaptar seus comandos, como substituir o &ldquo;yum&rdquo; pelo &ldquo;apt-get&rdquo;, &ldquo;pacman&rdquo;, etc..</em></p>
+
+<p><strong>E</strong>m minha configuração chamarei os servidores da seguinte forma:</p>
+
+<ul>
+<li>centos-master</li>
+<li>centos-minion1</li>
+<li>centos-minion2</li>
+<li>centos-minion3</li>
+</ul>
+
+
+<p><strong>A</strong> primeira coisa que se deve fazer sempre que se pensa em trabalhar com clusters, independente de ser um cluster de containers ou não, é ter a certeza de que os servidores terão uma correta sincronização de relógios entre si. A forma mais simples e eficiente no nosso contexto é com a utilização do NTP, portanto comece instalando o NTP nos 4 servidores, bem como habilitando o serviço e iniciando-o:</p>
+
+<p>```</p>
+
+<h1>yum install -y ntp</h1>
+
+<p>```</p>
+
+<p>```</p>
+
+<h1>systemctl enable ntpd &amp;&amp; systemctl start ntpd</h1>
+
+<p>```</p>
+
+<p><strong>C</strong>aso queira certificar-se de que o serviço está realmente rodando:</p>
+
+<p>```</p>
+
+<h1>systemctl status ntpd</h1>
+
+<p>● ntpd.service &ndash; Network Time Service
+   Loaded: loaded (/usr/lib/systemd/system/ntpd.service; enabled; vendor preset: disabled)
+   Active: active (running) since Sat 2017-06-24 17:46:02 UTC; 3s ago
+  Process: 1586 ExecStart=/usr/sbin/ntpd -u ntp:ntp $OPTIONS (code=exited, status=0/SUCCESS)
+ Main PID: 1587 (ntpd)
+   Memory: 2.1M
+   CGroup: /system.slice/ntpd.service</p>
+
+<pre><code>       └─1587 /usr/sbin/ntpd -u ntp:ntp -g
+</code></pre>
+
+<p>```</p>
+
+<p><strong>P</strong>inga?</p>
+
+<p><strong>É</strong> importante nos certificarmos de que os servidores conseguem se comunicar e de que conseguem resolver nomes corretamente.</p>
+
+<p><strong>N</strong>este exemplo, conforme informado mais acima, estamos utilizando 4 servidores com os seguintes nomes: <em>centos-master</em>, <em>centos-minion1</em>, <em>centos-minion2</em> e <em>centos-minion3</em>, portanto vamos editar o arquivo <strong>/etc/hosts</strong> de cada um deles para que possam se comunicar pelos nomes que desejamos:</p>
+
+<p><strong>Insira as seguintes linhas no arquivo /etc/hosts dos 4 servidores:</strong></p>
+
+<p><em>Lembre-se de substituir os IPs pelos IPs dos servidores em seu ambiente</em></p>
+
+<p>```</p>
+
+<h1>Ip local do servidor master</h1>
+
+<p>172.31.22.126   centos-master</p>
+
+<h1>Ip local do minion1</h1>
+
+<p>172.31.120.16   centos-minion1</p>
+
+<h1>Ip local do minion2</h1>
+
+<p>172.31.25.6     centos-minion2</p>
+
+<h1>Ip local do minion3</h1>
+
+<p>172.31.123.22   centos-minion3
+```</p>
+
+<p>Feito isto, tente pingar do master para os 3 minions utilizando os nomes especificados no /etc/hosts:</p>
+
+<p>```
+[root@kalib1 ~]# ping centos-minion1
+PING centos-minion1 (172.31.120.16) 56(84) bytes of data.
+64 bytes from centos-minion1 (172.31.120.16): icmp_seq=1 ttl=64 time=1.06 ms</p>
+
+<p>[root@kalib1 ~]# ping centos-minion2
+PING centos-minion2 (172.31.25.6) 56(84) bytes of data.
+64 bytes from centos-minion2 (172.31.25.6): icmp_seq=1 ttl=64 time=0.588 ms</p>
+
+<p>[root@kalib1 ~]# ping centos-minion3
+PING centos-minion3 (172.31.123.22) 56(84) bytes of data.
+64 bytes from centos-minion3 (172.31.123.22): icmp_seq=1 ttl=64 time=1.24 ms
+```</p>
+
+<p><strong>V</strong>ocê pode realizar o mesmo teste a partir dos minions, pingando entre si e também para o centos-master.</p>
+
+<p><strong>U</strong>ma vez que tenhamos certeza de que todos os hosts se comunicam, é hora de instalar mais alguns pacotes necessários.</p>
+
+<p><strong>P</strong>rimeiramente, vamos configurar o repositório do Docker para o CentOS 7:</p>
+
+<ul>
+<li>Configurações de repositório retiradas dos repositórios CBS do Centos: <a href="http://cbs.centos.org/repos/virt7-docker-common-release/">http://cbs.centos.org/repos/virt7-docker-common-release/</a></li>
+</ul>
+
+
+<p><strong>V</strong>amos criar o seguinte arquivo de repositório:</p>
+
+<p>```</p>
+
+<h1>vim /etc/yum.repos.d/virt7-docker-common-release.repos</h1>
+
+<p>```</p>
+
+<p><strong>O</strong> conteúdo deste arquivo será o seguinte:</p>
+
+<p><code>
+[virt7-docker-common-release]
+name=virt7-docker-common-release
+baseurl=http://cbs.centos.org/repos/virt7-docker-common-release/x86_64/os/
+gpgcheck=0
+</code></p>
+
+<p><em>Este arquivo deverá ser criado nos 4 servidores.</em></p>
+
+<p><strong>E</strong>m seguida, vamos atualizar a nossa base de repositórios e pacotes, também <strong>nos 4 servidores</strong>, bem como habilitar o novo repositório para instalar os pacotes docker e kubernetes:</p>
+
+<p>```</p>
+
+<h1>yum update</h1>
+
+<p>```</p>
+
+<p>```</p>
+
+<h1>yum install -y &mdash;enablerepo=virt7-docker-common-release docker kubernetes</h1>
+
+<p>```</p>
+
+<p><strong>C</strong>omo dito na introdução, também precisaremos do etcd para o armazenamento e troca de configurações, portanto vamos instalá-lo também nos 4 hosts:</p>
+
+<p>```</p>
+
+<h1>yum instal -y etcd</h1>
+
+<p>```</p>
+
+<h2>Configuração</h2>
+
+<p><strong>V</strong>amos começar com a configuração básica dos serviços envolvidos. Primeiramente, vamos abrir o arquivo de configuração do kubernetes e fazer algumas alterações:</p>
+
+<p><em>/etc/kubernetes/config</em></p>
+
+<p><strong>N</strong>o arquivo config altere as seguintes linhas:</p>
+
+<p><em>Edite o valor do parâmetro KUBE_MASTER, de forma que nosso master possa ser encontrado pelo nome que definimos no hosts file. O valor original é &ldquo;&mdash;master=<a href="http://127.0.0.1:8080">http://127.0.0.1:8080</a>&rdquo;, portanto mudaremos para o seguinte:</em></p>
+
+<p><code>
+KUBE_MASTER="--master=http://centos-master:8080"
+</code></p>
+
+<p><strong>A</strong>inda neste arquivo de configuração, vamos inserir a configuração do serviço ETCD, portanto inclua a seguinte linha ao final do arquivo:</p>
+
+<p><code>
+KUBE_ETCD_SERVERS="--etcd-servers=http://centos-master:2379"
+</code></p>
+
+<p><strong>S</strong>eu arquivo de configuração deverá estar similar a este:</p>
+
+<p>```</p>
+
+<h2>#</h2>
+
+<h1>kubernetes system config</h1>
+
+<p>#</p>
+
+<h1>The following values are used to configure various aspects of all</h1>
+
+<h1>kubernetes services, including</h1>
+
+<p>#</p>
+
+<h1>kube-apiserver.service</h1>
+
+<h1>kube-controller-manager.service</h1>
+
+<h1>kube-scheduler.service</h1>
+
+<h1>kubelet.service</h1>
+
+<h1>kube-proxy.service</h1>
+
+<h1>logging to stderr means we get it in the systemd journal</h1>
+
+<p>KUBE_LOGTOSTDERR=&ldquo;&mdash;logtostderr=true&rdquo;</p>
+
+<h1>journal message level, 0 is debug</h1>
+
+<p>KUBE_LOG_LEVEL=&ldquo;&mdash;v=0&rdquo;</p>
+
+<h1>Should this cluster be allowed to run privileged docker containers</h1>
+
+<p>KUBE_ALLOW_PRIV=&ldquo;&mdash;allow-privileged=false&rdquo;</p>
+
+<h1>How the controller-manager, scheduler, and proxy find the apiserver</h1>
+
+<p>KUBE_MASTER=&ldquo;&mdash;master=<a href="http://centos-master:8080">http://centos-master:8080</a>&rdquo;</p>
+
+<p>KUBE_ETCD_SERVERS=&ldquo;&mdash;etcd-servers=<a href="http://centos-master:2379">http://centos-master:2379</a>&rdquo;
+```</p>
+
+<p><strong>R</strong>epita esta mesma configuração nos 4 hosts. Todos eles devem utilizar exatamente os mesmos valores utilizados aqui, apontando KUBE_MASTER e KUBE_ETCD_SERVERS para centos-master, visto que este será o responsável por gerenciar todos os nossos minions.</p>
+
+<p><strong>U</strong>ma vez que o arquivo de configuração do kubernetes esteja pronto nos 4 hosts, vamos configurar o serviço de API do kubernetes:</p>
+
+<p><em>/etc/kubernetes/apiserver</em></p>
+
+<p><strong>Esta configuração abaixo será apenas para o Master.</strong></p>
+
+<p><em>Edite o valor do parâmetro KUBE_API_ADDRESS, que originalmente é &ldquo;&mdash;insecure-bind-address=127.0.0.1&rdquo;, de forma que possamos novamente receber comunicação dos demais hosts.</em></p>
+
+<p><code>
+KUBE_API_ADDRESS="--address=0.0.0.0"
+</code></p>
+
+<p><em>Descomente as linhas KUBE_API_PORT e KUBELET_PORT, para que possamos estabelecer as portas de comunicação com a API:</em></p>
+
+<p>```</p>
+
+<h1>The port on the local server to listen on.</h1>
+
+<p>KUBE_API_PORT=&ldquo;&mdash;port=8080&rdquo;</p>
+
+<h1>Port minions listen on</h1>
+
+<p>KUBELET_PORT=&ldquo;&mdash;kubelet-port=10250&rdquo;
+```</p>
+
+<p><em>Em nosso exemplo não utilizaremos o parâmetro KUBE_ADMISSION_CONTROL, o qual nos permite ter mais controles e restrições sobre quais nodes ou minios podem entrar em nosso ambiente, portanto vamos apenas comentar esta linha por enquanto:</em></p>
+
+<p>```</p>
+
+<h1>default admission control policies</h1>
+
+<h1>KUBE_ADMISSION_CONTROL=&ldquo;&mdash;admission-control=NamespaceLifecycle,NamespaceExists,LimitRanger,SecurityContextDeny,ServiceAccount,ResourceQuota&rdquo;</h1>
+
+<p>```</p>
+
+<p><em>Nosso arquivo /etc/kubernetes/apiserver deverá estar assim:</em></p>
+
+<p>```</p>
+
+<h1>#</h1>
+
+<h1>kubernetes system config</h1>
+
+<p>#</p>
+
+<h1>The following values are used to configure the kube-apiserver</h1>
+
+<p>#</p>
+
+<h1>The address on the local server to listen to.</h1>
+
+<p>KUBE_API_ADDRESS=&ldquo;&mdash;address=0.0.0.0&rdquo;</p>
+
+<h1>The port on the local server to listen on.</h1>
+
+<p>KUBE_API_PORT=&ldquo;&mdash;port=8080&rdquo;</p>
+
+<h1>Port minions listen on</h1>
+
+<p>KUBELET_PORT=&ldquo;&mdash;kubelet-port=10250&rdquo;</p>
+
+<h1>Comma separated list of nodes in the etcd cluster</h1>
+
+<p>KUBE_ETCD_SERVERS=&ldquo;&mdash;etcd-servers=<a href="http://127.0.0.1:2379">http://127.0.0.1:2379</a>&rdquo;</p>
+
+<h1>Address range to use for services</h1>
+
+<p>KUBE_SERVICE_ADDRESSES=&ldquo;&mdash;service-cluster-ip-range=10.254.0.0/16&rdquo;</p>
+
+<h1>default admission control policies</h1>
+
+<h1>KUBE_ADMISSION_CONTROL=&ldquo;&mdash;admission-control=NamespaceLifecycle,NamespaceExists,LimitRanger,SecurityContextDeny,ServiceAccount,ResourceQuota&rdquo;</h1>
+
+<h1>Add your own!</h1>
+
+<p>KUBE_API_ARGS=&ldquo;&rdquo;
+```</p>
+
+<p><strong>S</strong>alve e feche o arquivo. Novamente, esta configuração deve ser feita apenas para o Master.</p>
+
+<p><strong>A</strong>gora vamos configurar o serviço ETCD:</p>
+
+<p><em>/etc/etcd/etcd.conf</em></p>
+
+<p><strong>Esta configuração abaixo será apenas para o Master.</strong></p>
+
+<p><em>Edite os valores dos parâmetros ETCD_LISTEN_CLIENT_URLS e ETCD_ADVERTISE_CLIENT_URLS, que originalmente apontam para localhost. Como desejamos que nosso etcd escute requisições dos demais hosts, altere para o seguinte:</em></p>
+
+<p><code>
+ETCD_LISTEN_CLIENT_URLS="http://0.0.0.0:2379"
+...
+...
+ETCD_ADVERTISE_CLIENT_URLS="http://0.0.0.0:2379"
+</code></p>
+
+<p><strong>N</strong>ovamente, não é necessário alterar a configuração do etcd nos demais hosts, apenas no Master.</p>
+
+<p><strong>U</strong>ma vez que as configurações iniciais foram feitas, vamos habilitar e iniciar os serviços necessários <strong>no Master</strong>, sendo eles:</p>
+
+<ul>
+<li>etcd</li>
+<li>kube-apiserver</li>
+<li>kube-controller-manager</li>
+<li>kube-scheduler</li>
+</ul>
+
+
+<p>```</p>
+
+<h1>systemctl enable etcd kube-apiserver kube-controller-manager kube-scheduler</h1>
+
+<p>```</p>
+
+<p>```</p>
+
+<h1>systemctl start etcd kube-apiserver kube-controller-manager kube-scheduler</h1>
+
+<p>```</p>
+
+<p><strong>O</strong>s 4 serviços devem estar rodando. Para termos certeza, vamos checar o status dos mesmos:</p>
+
+<p>```</p>
+
+<h1>systemctl status etcd kube-apiserver kube-controller-manager kube-scheduler | grep &ldquo;(running)&rdquo;</h1>
+
+<p>   Active: active (running) since Sat 2017-06-24 21:45:37 UTC; 1min ago
+   Active: active (running) since Sat 2017-06-24 21:46:13 UTC; 1min ago
+   Active: active (running) since Sat 2017-06-24 21:44:25 UTC; 1min ago
+   Active: active (running) since Sat 2017-06-24 21:44:25 UTC; 1min ago
+```</p>
+
+<p><strong>N</strong>ovamente, estes serviços serão iniciados no Master, e não nos nodes/minions, visto que estes utilizarão outros serviços.</p>
+
+<p><strong>A</strong>gora vamos configurar o seguinte arquivo nos nodes/minions:</p>
+
+<p><em>/etc/kubernetes/kubelet</em></p>
+
+<p><strong>Este arquivo apenas deverá ser editado nos nodes/minions, não no Master.</strong></p>
+
+<p><em>Vamos alterar o valor do parâmetro KUBELET_ADDRESS para que aceite comunicação não apenas do localhost:</em></p>
+
+<p><code>
+KUBELET_ADDRESS="--address=0.0.0.0"
+</code></p>
+
+<p><em>Descomentaremos também a linha KUBELET_PORT, para que possamos ter uma porta definida para a comunicação do kubelet:</em></p>
+
+<p>```</p>
+
+<h1>The port for the info server to serve on</h1>
+
+<p>KUBELET_PORT=&ldquo;&mdash;port=10250&rdquo;
+```</p>
+
+<p><em>Vamos alterar o valor do parâmetro KUBELET_HOSTNAME para o nome que definimos <strong>para cada um dos minions</strong>, portanto em cada um deles este será um valor diferente. Supondo que este seja o minion1, utilizaremos:</em></p>
+
+<p><code>
+KUBELET_HOSTNAME="--hostname-override=centos-minion1"
+</code></p>
+
+<p><em>Vamos também alterar o valor para KUBELET_API_SERVER, apontando para o nosso Master:</em></p>
+
+<p><code>
+KUBELET_API_SERVER="--api-servers=http://centos-master:8080"
+</code></p>
+
+<p><em>Vamos comentar a linha KUBELET_POD_INFRA_CONTAINER, visto que não utilizaremos uma infraestrutura de containers externa, pois estaremos utilizando nossos próprios PODs e containers:</em></p>
+
+<p>```</p>
+
+<h1>pod infrastructure container</h1>
+
+<h1>KUBELET_POD_INFRA_CONTAINER=&ldquo;&mdash;pod-infra-container-image=registry.access.redhat.com/rhel7/pod-infrastructure:latest&rdquo;</h1>
+
+<p>```</p>
+
+<p><em>Nosso arquivo deverá estar assim: (Lembrando que o parâmetro KUBELET_HOSTNAME deverá ser diferente para cada um dos 3 minions, respectivamente: centos-minion1, centos-minion2 e centos-minion3)</em></p>
+
+<p>```</p>
+
+<h2>#</h2>
+
+<h1>kubernetes kubelet (minion) config</h1>
+
+<h1>The address for the info server to serve on (set to 0.0.0.0 or &ldquo;&rdquo; for all interfaces)</h1>
+
+<p>KUBELET_ADDRESS=&ldquo;&mdash;address=0.0.0.0&rdquo;</p>
+
+<h1>The port for the info server to serve on</h1>
+
+<p>KUBELET_PORT=&ldquo;&mdash;port=10250&rdquo;</p>
+
+<h1>You may leave this blank to use the actual hostname</h1>
+
+<p>KUBELET_HOSTNAME=&ldquo;&mdash;hostname-override=centos-minion1&rdquo;</p>
+
+<h1>location of the api-server</h1>
+
+<p>KUBELET_API_SERVER=&ldquo;&mdash;api-servers=<a href="http://centos-master:8080">http://centos-master:8080</a>&rdquo;</p>
+
+<h1>pod infrastructure container</h1>
+
+<h1>KUBELET_POD_INFRA_CONTAINER=&ldquo;&mdash;pod-infra-container-image=registry.access.redhat.com/rhel7/pod-infrastructure:latest&rdquo;</h1>
+
+<h1>Add your own!</h1>
+
+<p>KUBELET_ARGS=&ldquo;&rdquo;
+```</p>
+
+<p><strong>U</strong>ma vez que estas configurações também estão feitas nos 3 minions, vamos habilitar e iniciar os serviços necessários nos minions:</p>
+
+<ul>
+<li>kube-proxy</li>
+<li>kube-kubelet</li>
+<li>docker</li>
+</ul>
+
+
+<p>```</p>
+
+<h1>systemctl enable kube-proxy kubelet docker</h1>
+
+<p>```</p>
+
+<p>```</p>
+
+<h1>systemctl start kube-proxy kubelet docker</h1>
+
+<p>```</p>
+
+<p><strong>N</strong>ovamente, vamos ter certeza de que os 3 serviços estão rodando:</p>
+
+<p>```</p>
+
+<h1>systemctl status kube-proxy kubelet docker | grep &ldquo;(running)&rdquo;</h1>
+
+<p>   Active: active (running) since Sat 2017-06-24 21:44:23 UTC; 1h 16min ago
+   Active: active (running) since Sat 2017-06-24 21:44:27 UTC; 1h 16min ago
+   Active: active (running) since Sat 2017-06-24 21:44:27 UTC; 1h 16min ago
+```</p>
+
+<p><strong>N</strong>ovamente, estes 3 serviços devem ser habilitados e iniciados nos 3 minions.</p>
+
+<p><strong>N</strong>este momento já temos nosso cluster rodando, com um master e 3 minions. :D</p>
+
+<h2>Testando o Cluster com o Kubernetes</h2>
+
+<p><strong>A</strong>gora que temos a configuração básica de nosso Master Controller e de 3 minions, vamos testar nosso cluster.</p>
+
+<p><strong>U</strong>tilizaremos o utilitário kubectl (KubeControl) disponível com o kubernetes. Caso tenha interesse em ver os parâmetros e funções do mesmo&hellip; <em>$ man kubectl</em></p>
+
+<p><strong>V</strong>amos verificar a lista dos nodes ou minions que temos neste momento registrados em nosso Cluster. Vamos digitar alguns comandos em nosso Master Controller (centos-master):</p>
+
+<p><code>
+[root@kalib1 ~]# kubectl get nodes
+NAME             STATUS    AGE
+centos-minion1   Ready     17m
+centos-minion2   Ready     15m
+centos-minion3   Ready     10m
+</code></p>
+
+<p><strong>O</strong>s três nodes criados e configurados anteriormente já são reconhecidos pelo nosso Kubernetes através do Master Controller. Além de registrados, estão com o status Ready, o que indica que estão prontos para funcionar e executar o que precisarmos.</p>
+
+<p><em>Caso deseje conhecer mais parâmetros que a função <strong>get</strong> do kubectl possui, podemos invocar o manual desta função: $ man kubectl-get</em></p>
+
+<p><strong>A</strong>lém do status, podemos conseguir diversas outras informações dos nodes através do <em>kubectl</em>: <em>(Ex: kubectl describe nodes)</em> Isto lhe daria informações sobre todos os nodes. Vamos experimentar com um node em específico.</p>
+
+<p>```
+[root@kalib1 ~]# kubectl describe node centos-minion1
+Name:                   centos-minion1
+Role:
+Labels:                 beta.kubernetes.io/arch=amd64</p>
+
+<pre><code>                    beta.kubernetes.io/os=linux
+                    kubernetes.io/hostname=centos-minion1
+</code></pre>
+
+<p>Taints:                 <none>
+CreationTimestamp:      Tue, 20 Jun 2017 19:27:31 +0000
+Phase:
+Conditions:
+  Type                  Status  LastHeartbeatTime                       LastTransitionTime                      Reason     Message</p>
+
+<hr />
+
+<p>  OutOfDisk             False   Sun, 25 Jun 2017 01:39:38 +0000         Fri, 23 Jun 2017 17:31:44 +0000         KubeletHasSufficientDisk    kubelet has sufficient disk space available
+  MemoryPressure        False   Sun, 25 Jun 2017 01:39:38 +0000         Tue, 20 Jun 2017 19:27:31 +0000         KubeletHasSufficientMemory  kubelet has sufficient memory available
+  DiskPressure          False   Sun, 25 Jun 2017 01:39:38 +0000         Tue, 20 Jun 2017 19:27:31 +0000         KubeletHasNoDiskPressure    kubelet has no disk pressure
+  Ready                 True    Sun, 25 Jun 2017 01:39:38 +0000         Fri, 23 Jun 2017 17:31:54 +0000         KubeletReady                        kubelet is posting ready status
+Addresses:              172.31.120.16,172.31.120.16,centos-minion1
+Capacity:
+ alpha.kubernetes.io/nvidia-gpu:        0
+ cpu:                                   1
+ memory:                                1015348Ki
+ pods:                                  110
+Allocatable:
+ alpha.kubernetes.io/nvidia-gpu:        0
+ cpu:                                   1
+ memory:                                1015348Ki
+ pods:                                  110
+System Info:
+ Machine ID:                    f9afeb75a5a382dce8269887a67fbf58
+ System UUID:                   EC2C8A0E-91D6-F54E-5A49-534A6A903FDA
+ Boot ID:                       20961efd-c946-481a-97cb-7788209551ae
+ Kernel Version:                3.10.0-327.28.2.el7.x86_64
+ OS Image:                      CentOS Linux 7 (Core)
+ Operating System:              linux
+ Architecture:                  amd64
+ Container Runtime Version:     docker://1.12.6
+ Kubelet Version:               v1.5.2
+ Kube-Proxy Version:            v1.5.2
+ExternalID:                     centos-minion1
+Non-terminated Pods:            (0 in total)
+  Namespace                     Name            CPU Requests    CPU Limits      Memory Requests Memory Limits</p>
+
+<hr />
+
+<p>Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.
+  CPU Requests  CPU Limits      Memory Requests Memory Limits</p>
+
+<hr />
+
+<p>  0 (0%)        0 (0%)          0 (0%)          0 (0%)
+Events:
+  FirstSeen     LastSeen        Count   From                            SubObjectPath   Type            Reason             Message</p>
+
+<hr />
+
+<p>  15m           15m             1       {kubelet centos-minion1}                        Normal          Starting           Starting kubelet.
+  15m           15m             1       {kubelet centos-minion1}                        Warning         ImageGCFailed      unable to find data for container /
+  15m           15m             2       {kubelet centos-minion1}                        Normal          NodeHasSufficientDisk       Node centos-minion1 status is now: NodeHasSufficientDisk
+  15m           15m             2       {kubelet centos-minion1}                        Normal          NodeHasSufficientMemory     Node centos-minion1 status is now: NodeHasSufficientMemory
+  15m           15m             2       {kubelet centos-minion1}                        Normal          NodeHasNoDiskPressure       Node centos-minion1 status is now: NodeHasNoDiskPressure
+  15m           15m             1       {kubelet centos-minion1}                        Warning         Rebooted           Node centos-minion1 has been rebooted, boot id: 20961efd-c946-481a-97cb-7788209551ae
+```</p>
+
+<p><strong>O</strong>bviamente recebemos um retorno com muitas informações em formato Json, o que nem sempre é como esperamos. Existem formas de filtrar os resultados e conseguir informações mais precisas, como o bom e velho grep:</p>
+
+<p><code>
+[root@kalib1 ~]# kubectl describe node centos-minion1 | grep Addresses
+Addresses:              172.31.120.16,172.31.120.16,centos-minion1
+</code></p>
+
+<p><strong>V</strong>ocê também pode utilizar expressões regulares e a sintaxe do próprio Kubernetes para consultas mais complexas, como por exemplo, formatar a minha saída Json de forma a pegar apenas a listagem de status dos meus nodes que estão com Ready = True:</p>
+
+<p>```
+[root@kalib1 ~]# kubectl get nodes -o jsonpath=&lsquo;{range .items[<em>]}{@.metadata.name}:{range @.status.conditions[</em>]}{@.type}={@.status};{end}{end}&rsquo;| tr &lsquo;;&rsquo; &ldquo;\n&rdquo; | grep &ldquo;Ready=True&rdquo;</p>
+
+<p>Ready=True
+Ready=True
+Ready=True
+```</p>
+
+<p><strong>A</strong> sua criatividade é o limite. ;]</p>
+
+<p><strong>N</strong>ão temos nenhum pod configurado, mas também poderíamos utilizar <em>kubectl get</em> para conseguir a listagem de nossos pods:</p>
+
+<p>```
+[root@kalib1 ~]# kubectl get pods</p>
+
+<p>No resources found.
+```</p>
+
+<h2>Criando pods</h2>
+
+<p><strong>A</strong>ssim como com o Docker, Ansible e algumas outras ferramentas, utilizaremos a linguagem <a href="https://pt.wikipedia.org/wiki/YAML">YAML</a> para criar nossos arquivos de configuração.</p>
+
+<p><strong>C</strong>riaremos um diretório chamado <em>Builds</em> em nosso Master Controller apenas para melhor organizar nossos arquivos de configuração e ficar mais fácil encontrá-los no futuro:</p>
+
+<p>```</p>
+
+<h1>mkdir Builds</h1>
+
+<h1>cd Builds</h1>
+
+<p>```</p>
+
+<p><strong>P</strong>ara criarmos Pods, o que fazemos na verdade é criar arquivos de configuração que vão dizer ao Kubernetes qual o estado em que desejamos nossa infraestrutura. O papel do Kubernetes é ler esta configuração e assegurar que o estado de nossa infraestrutura reflita o estado desejado.</p>
+
+<p><strong>P</strong>ara facilitar, vamos utilizar exemplos encontrados na própria documentação do Kubernetes. Comecemos com a criação de um Pod para um servidor web Nginx.</p>
+
+<p><strong>V</strong>amos criar um arquivo chamado nginx.yaml dentro do diretório Builds que criamos anteriormente:</p>
+
+<p>```</p>
+
+<h1>vim nginx.yaml</h1>
+
+<p>```</p>
+
+<p><strong>N</strong>o arquivo indicaremos alguns atributos ou variáveis, bem como seus respectivos valores:</p>
+
+<ul>
+<li>apiVersion &ndash; Indica a versão da API do kubernetes utilizada</li>
+<li>kind &ndash; o tipo de recurso que desejamos</li>
+<li>metadata &ndash; dados referentes ao recurso desejado</li>
+<li>spec &ndash; especificações sobre o que este recurso irá conter</li>
+</ul>
+
+
+<p><strong>V</strong>amos criar um Pod contendo um único container rodando a versão 1.7.9 do nginx bem como disponibilizando a porta 80 para receber conexões. Este deverá ser o conteúdo do arquivo <em>nginx.yaml</em>:</p>
+
+<p>```
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+spec:
+  containers:</p>
+
+<pre><code>- name: nginx
+  image: nginx:1.7.9
+  ports:
+  - containerPort: 80
+</code></pre>
+
+<p>```</p>
+
+<p><strong>A</strong>ntes de executarmos, vamos nos certificar novamente de duas coisas:</p>
+
+<ul>
+<li>Que realmente não temos nenhum Pod criado e ativo;</li>
+<li>Que não temos nenhum container rodando em nossos nodes.</li>
+</ul>
+
+
+<p><em>No centos-master:</em></p>
+
+<p>```
+[root@kalib1 Builds]# kubectl get pods</p>
+
+<p>No resources found.
+```</p>
+
+<p><em>No centos-minion1: (Execute o mesmo comando nos demais nodes (centos-minion2 e centos-minion3))</em></p>
+
+<p>```
+[root@kalib2 ~]# docker ps</p>
+
+<p>CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+```</p>
+
+<p><em>Novamente: Se você não faz ideia do que acabei de digitar, (docker ps) volte e leia um pouco sobre <a href="/blog/2015/08/20/docker-uma-alternativa-elegante-para-containers-no-linux/">Docker</a> antes de seguir com este artigo.</em></p>
+
+<p><strong>C</strong>omo podemos ver, não temos nenhum Pod, bem como nenhum container rodando em nossos nodes.</p>
+
+<p><strong>V</strong>amos utilizar <em>kubectl create</em> para criar o Pod utilizando o arquivo que criamos <em>nginx.yaml</em>: <em>Executaremos este comando no Master Controller &ndash; centos-master</em></p>
+
+<p>```
+[root@kalib1 Builds]# kubectl create -f nginx.yaml</p>
+
+<p>pod &ldquo;nginx&rdquo; created
+```</p>
+
+<p><strong>O</strong> Kubernetes está dizendo que nosso Pod &ldquo;nginx&rdquo; foi criado. Vamos verificar:</p>
+
+<p>```
+[root@kalib1 Builds]# kubectl get pods</p>
+
+<p>NAME      READY     STATUS    RESTARTS   AGE
+nginx     1/1       Running   0          1m
+```</p>
+
+<p><strong>O</strong> pod está criado e rodando. Agora, execute novamente <em>docker ps</em> nos 3 nodes para identificar em qual deles o container foi criado. Sim, como não especificamos nada, o Kubernetes vai verificar os recursos disponíveis no momento e vai lançar onde ele achar mais adequado.</p>
+
+<p>```
+[root@kalib4 ~]# docker ps</p>
+
+<p>CONTAINER ID        IMAGE                                      COMMAND                  CREATED             STATUS              PORTS               NAMES
+6de8e22e1536        nginx:1.7.9                                &ldquo;nginx -g &lsquo;daemon off&rdquo;   2 minutes ago       Up 2 minutes                            k8s_nginx.b0df00ef_nginx_default_d4debd3a-594c-11e7-b587-06827a5b32d4_583881e0
+ae49b36ae11b        gcr.io/google_containers/pause-amd64:3.0   &ldquo;/pause&rdquo;                 2 minutes ago       Up 2 minutes                            k8s_POD.b2390301_nginx_default_d4debd3a-594c-11e7-b587-06827a5b32d4_fb5c834f
+```</p>
+
+<p><strong>S</strong>im, existem dois containers rodando. Um deles é o nosso &ldquo;nginx&rdquo;, enquanto que o outro é um container padrão do google chamado &ldquo;/pause&rdquo;, o qual será responsável pela manutenção de alguns recursos de nosso cluster.</p>
+
+<p><strong>P</strong>odemos novamente pedir a descrição deste pod que acabamos de criar:</p>
+
+<p>```
+[root@kalib1 Builds]# kubectl describe pod nginx</p>
+
+<p>Name:           nginx
+Namespace:      default
+Node:           centos-minion3/172.31.123.22
+Start Time:     Sun, 25 Jun 2017 02:20:18 +0000
+Labels:         <none>
+Status:         Running
+IP:             172.17.0.2
+Controllers:    <none>
+Containers:
+  nginx:</p>
+
+<pre><code>Container ID:               docker://6de8e22e153618271bb6e8095c68070126541331c8acfc3f5d1a654f4b978454
+Image:                      nginx:1.7.9
+Image ID:                   docker-pullable://docker.io/nginx@sha256:e3456c851a152494c3e4ff5fcc26f240206abac0c9d794affb40e0714846c451
+Port:                       80/TCP
+State:                      Running
+  Started:                  Sun, 25 Jun 2017 02:20:27 +0000
+Ready:                      True
+Restart Count:              0
+Volume Mounts:              &lt;none&gt;
+Environment Variables:      &lt;none&gt;
+</code></pre>
+
+<p>Conditions:
+  Type          Status
+  Initialized   True
+  Ready         True
+  PodScheduled  True
+No volumes.
+QoS Class:      BestEffort
+Tolerations:    <none>
+Events:
+  FirstSeen     LastSeen        Count   From                            SubObjectPath           Type            Reason     Message</p>
+
+<hr />
+
+<p>  6m            6m              1       {default-scheduler }                                    Normal          Scheduled  Successfully assigned nginx to centos-minion3
+  6m            6m              1       {kubelet centos-minion3}        spec.containers{nginx}  Normal          Pulling    pulling image &ldquo;nginx:1.7.9&rdquo;
+  6m            6m              2       {kubelet centos-minion3}                                Warning         MissingClusterDNS   kubelet does not have ClusterDNS IP configured and cannot create Pod using &ldquo;ClusterFirst&rdquo; policy. Falling back to DNSDefault policy.
+  6m            6m              1       {kubelet centos-minion3}        spec.containers{nginx}  Normal          Pulled     Successfully pulled image &ldquo;nginx:1.7.9&rdquo;
+  6m            6m              1       {kubelet centos-minion3}        spec.containers{nginx}  Normal          Created    Created container with docker id 6de8e22e1536; Security:[seccomp=unconfined]
+  6m            6m              1       {kubelet centos-minion3}        spec.containers{nginx}  Normal          Started    Started container with docker id 6de8e22e1536
+```</p>
+
+<p><strong>O</strong>bviamente que isto é apenas a configuração mais básica que se possa imaginar, sem storage, mapeamentos de portas, redirecionamentos, rotas, etc. A ideia é apenas uma apresentação inicial..o que é o Kubernetes.</p>
+
+<p><strong>H</strong>appy Hacking</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Docker - Uma alternativa elegante para containers no Linux]]></title>
     <link href="http://kalib.github.io/blog/2015/08/20/docker-uma-alternativa-elegante-para-containers-no-linux/"/>
     <updated>2015-08-20T11:01:00-04:00</updated>
     <id>http://kalib.github.io/blog/2015/08/20/docker-uma-alternativa-elegante-para-containers-no-linux</id>
-    <content type="html"><![CDATA[<p>{% img center /imgs/dockerlogo.png &lsquo;Docker&rsquo; %}</p>
+    <content type="html"><![CDATA[<p><img class="center" src="/imgs/dockerlogo.png" title="&lsquo;Docker&rsquo;" ></p>
 
 <p><strong>A</strong>ntes de falar sobre o Docker, é importante que se entenda o conceito de um container, portanto vamos começar do básico. A imagem acima, logomarca do Docker, deixa claro o que é um container. A baleia, representando um navio, carregando diversos caixotes ou containers ilustra o conceito físico de um container. Nada mais do que um enorme caixote que possui o intuito de isolar algo. Quando um grande navio transporta mercadorias de um porto para outro, ele costuma trazer diversos containers separando estas mercadorias, de forma que as coisas não fiquem misturadas e bagunçadas. A forma de separação vai depender dos critérios de organização utilizados pela embarcação, seja por proprietário, seja por categoria de produtos, etc. De qualquer forma, embora cada container possua seus elementos próprios, todos os containers compartilham alguns recursos básicos, como por exemplo a embarcação, que é o meio de transporte para todos os containers ali contidos.</p>
 
@@ -30,13 +814,13 @@
 
 <p><strong>D</strong>izem que uma imagem vale mais que mil palavras&hellip;</p>
 
-<p>{% img center /imgs/docker_vmdiagram.png &lsquo;Virtual Machine Diagram&rsquo; %}</p>
+<p><img class="center" src="/imgs/docker_vmdiagram.png" title="&lsquo;Virtual Machine Diagram&rsquo;" ></p>
 
 <p><strong>N</strong>a imagem acima temos o cenário convencional com a utilização de <strong>Máquinas Virtuais</strong>. Em suma, temos um host físico, com seu respectivo SO e kernel. Acima deles temos a camada de virtualização ou HyperVisor, enquanto que acima desta teremos as máquinas virtuais, com seus respectivos SOs (cada um com seu kernel) instalados. No caso temos 3 VMs, com 3 SOs (cada um com seu kernel). Na camada acima encontramos o que realmente é necessário para o app do cliente funcionar, que são as bibliotecas e os binários. Por fim, o App do cliente em si.</p>
 
 <p><strong>V</strong>ejamos como fica o cenário com a utilização de containers, docker neste caso&hellip;</p>
 
-<p>{% img center /imgs/docker_diagram.png &lsquo;Docker Diagram&rsquo; %}</p>
+<p><img class="center" src="/imgs/docker_diagram.png" title="&lsquo;Docker Diagram&rsquo;" ></p>
 
 <p><strong>N</strong>o cenário com o Docker percebemos que a camada de SO das VMs sumiu, visto que ela não é mais necessária. Ao invés de Máquinas Virtuais, agora nós temos 3 containers, onde cada container roda os binários e bibliotecas de um SO, porém se aproveitando do kernel já existente no Host.</p>
 
@@ -265,7 +1049,7 @@
 
 <p><strong>R</strong>esultado? O Nginx em nosso container rodando perfeitamente.</p>
 
-<p>{% img center /imgs/docker_nginx8080.png &lsquo;Nginx on Docker&rsquo; %}</p>
+<p><img class="center" src="/imgs/docker_nginx8080.png" title="&lsquo;Nginx on Docker&rsquo;" ></p>
 
 <p><strong>D</strong>a mesma forma feita anteriormente, podemos sair de nosso container com a combinação de teclas <strong>Ctrl + P + Q</strong> e verificar os processos/containers do docker em execução:</p>
 
@@ -402,7 +1186,7 @@
 ```
 <strong>A</strong>gora vou testar no navegador o nginx deste meu segundo container, o qual defini que utilizaria a porta 6660 do meu host:</p>
 
-<p>{% img center /imgs/docker_nginx6660_8080.png &lsquo;Nginx on Docker&rsquo; %}</p>
+<p><img class="center" src="/imgs/docker_nginx6660_8080.png" title="&lsquo;Nginx on Docker&rsquo;" ></p>
 
 <p><strong>R</strong>epare que acessei ambos os endereços, tanto o da porta 8080, o qual está apresentando o nginx do meu primeiro container, quanto o da porta 6660, que apresenta o nginx do meu segundo container. Ambos funcionando em paralelo, com ambientes distintos, sendo um Ubuntu e o outro Arch Linux, porém ambos compartilham o mesmo kernel, que é o do meu host.</p>
 
