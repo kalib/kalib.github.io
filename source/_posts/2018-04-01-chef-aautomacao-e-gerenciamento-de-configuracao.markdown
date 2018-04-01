@@ -70,7 +70,7 @@ categories:
 
 * Resource Type - Tipo de resource (Pode ser um pacote, serviço, arquivo...)
 * Resource Name - Nome do resource
-* Resource Properties - Propriedadeshttp://blog.marcelocavalcante.net/blog/2018/04/01/chef-aautomacao-e-gerenciamento-de-configuracao/ do resource
+* Resource Properties - Propriedades do resource
 * Actions - Ações a serem aplicadas ao resource
 
 **U**m exemplo de recipe para instalar o Apache em um servidor Ubuntu, por exemplo, seria o seguinte:
@@ -83,9 +83,9 @@ end
 
 No exemplo acima temos o tipo de resource como sendo "package", o nome do resource como sendo "httpd" e a ação "install".
 
-**O** que vai acontecer aqui? Bem simples, certo? O pacote httpd (Apache) será instalado. Mas o que acontece caso o pacote httpd já esteja instalado?
+**O** que vai acontecer aqui? Simples de entender, certo? O pacote httpd (Apache) será instalado. Mas o que acontece caso o pacote httpd já esteja instalado?
 
-**N**ada. Uma das características do Chef é a idempotência. Na matemática e ciência da computação, a idempotência é a propriedade que algumas operações têm de poderem ser aplicadas várias vezes sem que o valor do resultado se altere após a aplicação inicial. Ou seja, O Chef primeiramente confere se o estado desejado já está aplicado e, caso sim, ignora aquela instrução.
+**N**ada. Uma das características do Chef é a **idempotência**. Na matemática e ciência da computação, a idempotência é a propriedade que algumas operações têm de poderem ser aplicadas várias vezes sem que o valor do resultado se altere após a aplicação inicial. Ou seja, O Chef primeiramente confere se o estado desejado já está aplicado e, caso sim, ignora aquela instrução.
 
 **N**ovamente... A ideia para este post é dar uma breve introdução ao Chef, portanto não vou entrar em maiores detalhes sobre os tipos de resources e suas possíveis ações. Vamos ao que interessa...
 
