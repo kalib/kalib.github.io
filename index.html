@@ -770,13 +770,15 @@
 
 <p><strong>N</strong>este exemplo, provavelmente o site poderia continuar funcionando, pois foi alterada apenas a permissão de um único arquivo, certo? Mas imagine que sem querer ele acabou parando o serviço httpd, ou até desinstalou o mesmo? Em uma instalação padrão com Chef Server, existem agendamentos que fazem com que o Chef execute as recipes a cada X minutos, portanto o serviço seria inicializado novamente automaticamente, ou mesmo instalado caso necessário.</p>
 
-<p><strong>É</strong> fácil imaginar diversos cenários em que é útil ter a sua infraestrutura em formato de código, certo?</p>
+<p><strong>É</strong> fácil imaginar diversos cenários nos quais seria útil ter a sua infraestrutura em formato de código.</p>
 
-<p><strong>I</strong>magine uma catástrofe em que seu servidor simplesmente parou de funcionar e você precisará criar outro. Novamente você teria que executar aqueles comandos. Se desde o início tivesse utilizado o Chef, ou outra ferramenta de Gerenciamento de Configuração, você poderia ter a sua recipe armazenada em um repositório Git, por exemplo, conforme mencionado no início deste post, e bastaria apenas executar o seu chef-client para instalar os pacotes necessários, habilitar e inicializar serviços necessários, criar arquivos necessários, etc.</p>
+<p><strong>I</strong>magine uma catástrofe em que seu servidor simplesmente parou de funcionar e você precisará criar outro. Novamente você teria que executar aqueles comandos. Se desde o início tivesse utilizado Chef, ou outra ferramenta de Gerenciamento de Configuração, você poderia ter a sua recipe armazenada em um repositório Git, por exemplo, conforme mencionado no início deste post, e bastaria apenas executar o seu chef-client para instalar os pacotes necessários, habilitar e inicializar serviços, criar arquivos, etc.</p>
 
 <p><strong>A</strong> imaginação é o seu limite. ;]</p>
 
 <p><strong>E</strong>m posts futuros pretendo explorar mais a fundo o Chef, bem como outras ferramentas.</p>
+
+<p><strong>H</strong>appy Hacking!</p>
 </div>
   
   
