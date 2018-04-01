@@ -56,7 +56,7 @@ categories:
 
 **O** usuário escreve "recipes" (receitas) que descrevem como o Chef deve gerenciar aplicações, servidores e utilitários. Estas "recipes", as quais podem ser agrupadas em "cookbooks" (livros de receitas) descrevem uma série de recursos que devem estar em um determinado estado. Este recursos podem ser pacotes, serviços ou mesmo arquivos.
 
-**C**hef pode rodar em um modo cliente/servidor ou standalone, com o chamado "chef-solo". No modo cliente/servidor, o cliente Chef envia uma série de atributos sobre o node ou cliente/host para o Chef server. O Chef server utiliza [Solr](https://lucene.apache.org/solr) para indexar estes atributos e provê uma API para a qual os clientes possam fazer consultas. As recipes podem fazer requisições à esta base de atributos e utilizar os dados resultantes para configurar o cliente ou node.
+**C**hef pode rodar em um modo cliente/servidor ou standalone, com o chamado "chef-solo". No modo cliente/servidor, o cliente Chef envia uma série de atributos sobre o node ou cliente/host para o Chef server. O Chef server utiliza-se da ferramenta [Solr](https://lucene.apache.org/solr) para indexar estes atributos e provê uma API na qual os clientes podem fazer consultas. As recipes podem fazer requisições à esta base de atributos e utilizar os dados resultantes para configurar o cliente ou node.
 
 **E**mbora inicialmente o Chef fosse utilizado para gerenciar exclusivamente máquinas Linux, as versões mais atuais também suportam máquinas Windows.
 
