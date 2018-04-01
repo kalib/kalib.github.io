@@ -176,7 +176,7 @@
 <ul>
 <li>Resource Type &ndash; Tipo de resource (Pode ser um pacote, serviço, arquivo&hellip;)</li>
 <li>Resource Name &ndash; Nome do resource</li>
-<li>Resource Properties &ndash; Propriedades<a href="http://blog.marcelocavalcante.net/blog/2018/04/01/chef-aautomacao-e-gerenciamento-de-configuracao/">http://blog.marcelocavalcante.net/blog/2018/04/01/chef-aautomacao-e-gerenciamento-de-configuracao/</a> do resource</li>
+<li>Resource Properties &ndash; Propriedades do resource</li>
 <li>Actions &ndash; Ações a serem aplicadas ao resource</li>
 </ul>
 
@@ -193,9 +193,9 @@
 
 <p>No exemplo acima temos o tipo de resource como sendo &ldquo;package&rdquo;, o nome do resource como sendo &ldquo;httpd&rdquo; e a ação &ldquo;install&rdquo;.</p>
 
-<p><strong>O</strong> que vai acontecer aqui? Bem simples, certo? O pacote httpd (Apache) será instalado. Mas o que acontece caso o pacote httpd já esteja instalado?</p>
+<p><strong>O</strong> que vai acontecer aqui? Simples de entender, certo? O pacote httpd (Apache) será instalado. Mas o que acontece caso o pacote httpd já esteja instalado?</p>
 
-<p><strong>N</strong>ada. Uma das características do Chef é a idempotência. Na matemática e ciência da computação, a idempotência é a propriedade que algumas operações têm de poderem ser aplicadas várias vezes sem que o valor do resultado se altere após a aplicação inicial. Ou seja, O Chef primeiramente confere se o estado desejado já está aplicado e, caso sim, ignora aquela instrução.</p>
+<p><strong>N</strong>ada. Uma das características do Chef é a <strong>idempotência</strong>. Na matemática e ciência da computação, a idempotência é a propriedade que algumas operações têm de poderem ser aplicadas várias vezes sem que o valor do resultado se altere após a aplicação inicial. Ou seja, O Chef primeiramente confere se o estado desejado já está aplicado e, caso sim, ignora aquela instrução.</p>
 
 <p><strong>N</strong>ovamente&hellip; A ideia para este post é dar uma breve introdução ao Chef, portanto não vou entrar em maiores detalhes sobre os tipos de resources e suas possíveis ações. Vamos ao que interessa&hellip;</p>
 
