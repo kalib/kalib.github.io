@@ -34,17 +34,17 @@ categories:
 
 **C**onfigurar tudo isso manualmente em um único servidor é simples. Você poderia conectar-se via SSH no servidor, instalar o apache com o gerenciador de pacotes da distribuição utilizada, configurar o que for necessário no apache, iniciar o serviço, etc, etc, etc. Mas o que fazer quando sua infraestrutura cresce? Quando se quer maior disponibilidade do site, quando agora você roda este site em um cluster com 5 servidores?
 
-**B**asicamente a mesma coisa, certo? Você pode se conectar em cada um dos servidores e repetir os mesmos passos. O problema se dá justamente nessa repetição de passos, onde você pode cometer erros, perder tempo, etc. Além disso, o que acontece se um colega seu modificar algo em um dos servidores e não lhe avisar? E se ele esquecer de replicar esta mudança para os demais?
+**B**asicamente a mesma coisa, certo? Você pode se conectar em cada um dos servidores e repetir os mesmos passos. O problema se dá justamente nessa repetição de passos, onde você pode cometer erros, perder tempo, etc. Além disso, o que acontece se um colega seu modificar algo em um dos servidores e não lhe avisar? E se ele esquecer de replicar esta mudança nos demais?
 
-**É** fácil achar diversas razões pelas quais torna-se difícil administrar e gerenciar configurações em ambientes mais complexos. A ideia por trás de uma ferramenta de Gerenciamento de Configuração é justamente reduzir esta complexidade, eliminando a necessidade de se conectar manualmente em diversos servidores para aplicar as mesmas rotinas, passos e configurações.
+**É** fácil achar diversas razões pelas quais torna-se difícil administrar e gerenciar configurações em ambientes mais complexos. A ideia por trás de uma ferramenta de Gerenciamento de Configuração é justamente reduzir esta complexidade, eliminando a necessidade de conectar-se manualmente à diversos servidores para aplicar as mesmas rotinas, passos e configurações.
 
-**A**través de arquivos de texto podemos literalmente descrever o estado e ações desejadas para nossos serviços e sistemas. Por exemplo: Posso dizer que possuo um grupo de servidores chamado WebServer, o qual contém 10 servidores com o SO CentOS 7. Posso incluir a informação de que preciso que todos eles estejam com a versão X do Apache instalada e que o serviço esteja ativo e rodando. Além disso, posso dizer que quero que no diretório /var/www/meusite/ contenha todo o conteúdo que está em um mapeamento de rede específico, ou mesmo em um repositório que possuo no github.
+**A**través de arquivos de texto podemos literalmente descrever o estado e as ações desejadas para nossos serviços e sistemas. Por exemplo: Posso dizer que possuo um grupo de servidores chamado WebServer, o qual contém 10 servidores com o Sistema Operacional CentOS 7. Posso incluir a informação de que preciso que todos eles estejam com a versão X do Apache instalada e que o serviço esteja ativo e rodando. Além disso, posso dizer que desejo que exista no diretório /var/www/meusite/ todo o conteúdo que está em um mapeamento de rede específico, ou mesmo em um repositório que possuo no github.
 
 **A**o invés de me conectar em cada um dos 10 servidores para fazer tudo isso, um simples comando será o suficiente. O comando em específico dependerá da solução adotada, visto que existem diversas ferramentas de CM (Gerenciamento de Configuração). Mas, basicamente, ele irá ler o(s) arquivo(s) de "instruções" que nós definimos e saberá em quais servidores ele deverá instalar o Apache e configurar de acordo com o especificado, nos dando apenas o resultado final em forma de relatório simples.
 
-**E** se alguém da equipe alterar um arquivo de configuração diretamente em um dos servidores? A ferramenta, em sua próxima execucação, irá identificar que o estado desejado para aquele meu grupo de servidores está diferente em um dos servidores. Ela então irá modificar aquele arquivo específico naquele servidor para que ele volte ao seu estado desejado.
+**E** se alguém da equipe alterar um arquivo de configuração diretamente em um dos servidores? A ferramenta, em sua próxima execucação, irá identificar que o estado desejado para aquele meu grupo de servidores está diferente em um dos servidores. Ela então modificará aquele arquivo específico naquele servidor para que ele volte ao seu estado desejado.
 
-**A**lém desta segurança, nśo agora passamos a ter um ponto único de modificação. Ao desejarmos mudar algo, o faremos apenas no nosso "código", ao invés de o fazer nos 10 servidores manualmente.
+**A**lém desta segurança, nós agora passamos a ter um ponto único de modificação. Ao desejarmos mudar algo, o faremos apenas no nosso "código", ao invés de o fazer nos 10 servidores manualmente.
 
 **O** mesmo benefício se dá em caso de erros e falhas: um ponto único de correção.
 
@@ -70,7 +70,7 @@ categories:
 
 * Resource Type - Tipo de resource (Pode ser um pacote, serviço, arquivo...)
 * Resource Name - Nome do resource
-* Resource Properties - Propriedades do resource
+* Resource Properties - Propriedadeshttp://blog.marcelocavalcante.net/blog/2018/04/01/chef-aautomacao-e-gerenciamento-de-configuracao/ do resource
 * Actions - Ações a serem aplicadas ao resource
 
 **U**m exemplo de recipe para instalar o Apache em um servidor Ubuntu, por exemplo, seria o seguinte:
