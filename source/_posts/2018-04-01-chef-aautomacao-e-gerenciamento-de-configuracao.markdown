@@ -91,7 +91,7 @@ No exemplo acima temos o tipo de resource como sendo "package", o nome do resour
 
 ## Instalando o Chef
 
-**C**onforme explicado acima, o Chef pode ser utilizado em modo cliente/servidor ou standalone. Para esta introdução utilizaremos standalone para simplificar as coisas.
+**C**onforme explicado acima, o Chef pode ser utilizado em modo cliente/servidor ou standalone. Para esta introdução utilizaremos o modo standalone ou local para simplificar as coisas.
 
 **P**ara instalar podemos utilizar o gerenciador de pacotes da distribuição Linux que utilizamos ou baixando o chefdk (Development Kit) através da página de [downloads do chef](https://downloads.chef.io/chefdk).
 
@@ -167,7 +167,7 @@ inspec version: 1.51.21
 
 **P**ara facilitar o entendimento, vamos criar uma recipe simples para aplicarmos localmente.
 
-**V**amos começar criando uma recipe simples. Para isso, criaremos um arquivo chamado **exemplo.rb** com o seguinte conteúdo:
+**V**amos começar criando um arquivo chamado **exemplo.rb** com o seguinte conteúdo:
 
 ```
 package 'apache' do
