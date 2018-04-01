@@ -4,7 +4,7 @@ title: "Chef: Automação e Gerenciamento de Configuração"
 date: 2018-04-01 11:22
 comments: true
 keywords: Configuration Management,Chef,Containers,Cluster,Linux,Windows,Cloud,Devops,Nuvem,Automação,Configuration Management,CM,Ansible,Puppet
-description: SIstema Open Source desenvolvido pelo Google para o gerenciamento de cluster de containers tendo como características auto-scaling de serviços e containers, auto-monitoração de containers, permite o deploy de containers e serviços, load balancer, orquestração de containers, e orquestração de volumes de armazenamento.
+description: Chef é uma popular ferramenta de Gerenciamento de Configurações criado pela empresa de mesmo nome, Chef. O Chef é desenvolvido em Ruby e Erlang, utiliza uma linguagem DSL em Ruby puro para escrever arquivos de configuração de sistemas chamados "recipes".
 categories:
 - Devops
 - Sysadmin
@@ -13,14 +13,15 @@ categories:
 {% img center /imgs/cheflogo.png 'Chef' %}
 
 ## Uma coisa de cada vez
-**C**hef é uma popular ferramenta de Gerenciamento de Configurações criado pela empresa de mesmo nome, Chef. O [Chef](https://www.chef.io) é desenvolvido em [Ruby](http://www.ruby-lang.org) e [Erlang](https://www.erlang.org), utiliza uma linguagem DSL (domain-specific language) em Ruby puro para escrever arquivos de configuração de sistemas chamados "recipes" (receitas).
+**C**hef é uma popular ferramenta de Gerenciamento de Configurações criado pela empresa de mesmo nome, Chef. O [Chef](https://www.chef.io) é desenvolvido em [Ruby](http://www.ruby-lang.org) e [Erlang](https://www.erlang.org), e utiliza uma linguagem DSL (domain-specific language) em Ruby puro para escrever arquivos de configuração de sistemas chamados "recipes" (receitas).
 
-**A**ntes de falarmos sobre o Chef é importante entender primeiramente o conceito e utilidade de ferramentas de Gerenciamento de Configuração.
+**A**ntes de falarmos sobre o Chef é importante entender primeiramente o conceito e a utilidade de ferramentas de Gerenciamento de Configuração.
 
 ## Gerenciamento de Configuração
+
 **G**erenciamento de Configuração, ou CM (Configuration Management), é um processo de engenharia de sistemas que visa garantir a consistência entre ativos físicos e lógicos em um ambiente operacional. O processo de gerenciamento de configuração busca identificar e rastrear itens individuais de configuração, documentando capacidades funcionais e interdependências. Administradores, técnicos e desenvolvedores de sistemas podem utilizar ferramentas de Gerenciamento de Configuração para verificar o efeito que uma mudança em um item de configuração terá em outros sistemas.
 
-**E**m palavras simples, o objetivo de uma ferramenta de gerenciamento de configuração é simplificar a vida de quem administra serviços e sistemas/usr/share/licenses/teamviewer/LICENSE garantindo uma uniformidade no quesito configuração.
+**E**m palavras simples, o objetivo de uma ferramenta de gerenciamento de configuração é simplificar a vida de quem administra serviços e sistemas garantindo uma uniformidade no quesito configuração.
 
 **C**omo exemplo prático e simplista, imagine um servidor web que será responsável por hospedar um pequeno site em php. Este servidor possuirá alguns atributos/aplicativos/configurações, tais como:
 
