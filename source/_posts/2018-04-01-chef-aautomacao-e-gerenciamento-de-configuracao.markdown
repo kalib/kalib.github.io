@@ -181,7 +181,7 @@ end
 * Resource Type: package (Pois queremos instalar o pacote httpd)
 * Resource Name: apache (Embora o nome do pacote no CentOS seja httpd, o nome do nosso resource aqui é apache, mas poderia ser qualquer coisa que desejarmos)
 * Resource Properties: Aqui temos apenas *package_name* como propriedade, no qual damos o nome do pacote desejado. OBS: Caso não utilizemos a propriedade *package_name*, ele buscará por um pacote com mesmo nome do resource. No nosso caso, demos o nome *apache* para nosso resource, portanto ele buscaria por um pacote chamado *apache* e falharia, pois no CentOS este pacote não existe.
-* Actions: install (Temos apenas uma ação para esta recipe, que é justamente a de instalar o pacote, CASO já não esteja instalado (idempotência))
+* Actions: install (Temos apenas uma ação para esta recipe, que é justamente a de instalar o pacote, caso já não esteja instalado (idempotência))
 
 **S**alve o arquivo e verifique o mesmo com os dois passos a seguir:
 
@@ -207,7 +207,7 @@ FC071: Missing LICENSE file: ../LICENSE:1
 PS: Não se espante por enquanto com estes Warnings. Ele apenas está indicando que não possuímos um metadata, um readme e uma licença, pois não os criamos para este exemplo.
 
 **V**erificado o código e aprovado, vamos executar esta recipe localmente.
-*(Repare no retorno que será apresentado, onde ele verifica o tipo de resource e identifica que estamos rodando em uma máquina CentoOS, portanto ele utiliza por padrão o yum para instalar o pacote desejado.)*
+*(Repare no retorno que será apresentado, onde ele verifica o tipo de resource e identifica que estamos rodando em uma máquina CentoOS, portanto utiliza por padrão o yum para instalar o pacote desejado.)*
 
 ```
 # chef-client --local-mode exemplo.rb
@@ -242,7 +242,7 @@ Chef Client finished, 1/1 resources updated in 16 seconds
            man:apachectl(8)
 ```
 
-**I**sto está correto, afinal o Chef vai deixar a máquina no estado que determinamos. E o determinado foi apenas instalar o pacote httpd. Mas de nada ele serve sem estar rodando como serviço, portanto vamos editar nossa recipe exemplo.rb e incluir nela um novo resource, desta vez um resource do tipo *service*, ou serviço. Sim, podemos ter diversos resources em uma mesma recipe. ;]
+**I**sto está correto, afinal o Chef vai deixar a máquina no estado que determinamos. O determinado foi apenas instalar o pacote httpd. Mas de nada ele serve sem estar rodando como serviço, portanto vamos editar nossa recipe *exemplo.rb* e incluir nela um novo resource, desta vez um resource do tipo *service*, ou serviço. Sim, podemos ter diversos resources em uma mesma recipe. ;]
 
 **E**dite sua recipe para que ela possua o seguinte conteúdo:
 
