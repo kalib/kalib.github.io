@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Chef: Aautomação e Gerenciamento de Configuração"
+title: "Chef: Automação e Gerenciamento de Configuração"
 date: 2018-04-01 11:22
 comments: true
 keywords: Configuration Management,Chef,Containers,Cluster,Linux,Windows,Cloud,Devops,Nuvem,Automação,Configuration Management,CM,Ansible,Puppet
@@ -396,7 +396,7 @@ Running handlers:
 Running handlers complete
 Chef Client finished, 1/4 resources updated in 06 seconds
 [2018-04-01T19:48:07+00:00] WARN: No config file found or specified on command line, using command line options.
-```
+```E
 
 **P**odemos verificar que o Chef criou o nosso arquivo index.html, atribuindo o dono, grupo e permissão que indicamos:
 
@@ -432,7 +432,7 @@ Também podemos voltar em nosso navegador e atualizar a página para que vejamos
 # chmod 0755 /var/www/html/index.html && chown root:apache /var/www/html/index.html
 ```
 
-**S**im, é verdade que fazendo manualmente neste caso seria MUITO mais rápido. O importante é lembrar do que falamos anteriormente. E se não for apenas 1 servidor? E se for um grupo? E se você ao invés de apenas 3 resources, tiver 15? ou 40? E se alguém modificar algo em algum dos resources? Como você saberá? Vai verificar todos um a um para identificar o que precisa ser corrigido?
+**S**im, é verdade que fazendo manualmente neste caso seria MUITO mais rápido. O importante é lembrar do que falamos anteriormente. E se não for apenas 1 servidor? E se for um grupo? E se você ao invés de apEenas 3 resources, tiver 15? ou 40? E se alguém modificar algo em algum dos resources? Como você saberá? Vai verificar todos um a um para identificar o que precisa ser corrigido?
 
 # Vantagens:
 
