@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Chef | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://kalib.github.io/blog/categories/chef/atom.xml" rel="self"/>
   <link href="http://kalib.github.io/"/>
-  <updated>2018-04-01T17:28:21-04:00</updated>
+  <updated>2018-04-01T17:31:00-04:00</updated>
   <id>http://kalib.github.io/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -109,7 +109,7 @@ package &lsquo;httpd&rsquo; do</p>
 
 <h2>Instalando o Chef</h2>
 
-<p><strong>C</strong>onforme explicado acima, o Chef pode ser utilizado em modo cliente/servidor ou standalone. Para esta introdução utilizaremos standalone para simplificar as coisas.</p>
+<p><strong>C</strong>onforme explicado acima, o Chef pode ser utilizado em modo cliente/servidor ou standalone. Para esta introdução utilizaremos o modo standalone ou local para simplificar as coisas.</p>
 
 <p><strong>P</strong>ara instalar podemos utilizar o gerenciador de pacotes da distribuição Linux que utilizamos ou baixando o chefdk (Development Kit) através da página de <a href="https://downloads.chef.io/chefdk">downloads do chef</a>.</p>
 
@@ -185,7 +185,7 @@ inspec version: 1.51.21
 
 <p><strong>P</strong>ara facilitar o entendimento, vamos criar uma recipe simples para aplicarmos localmente.</p>
 
-<p><strong>V</strong>amos começar criando uma recipe simples. Para isso, criaremos um arquivo chamado <strong>exemplo.rb</strong> com o seguinte conteúdo:</p>
+<p><strong>V</strong>amos começar criando um arquivo chamado <strong>exemplo.rb</strong> com o seguinte conteúdo:</p>
 
 <p>```
 package &lsquo;apache&rsquo; do</p>
