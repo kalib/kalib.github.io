@@ -364,7 +364,7 @@ end
 # ruby -c exemplo.rb && foodcritic exemplo.rb
 ```
 
-**E** executar nossa recipe. (Assim como anteriormente, o Chef ignorará as instruções referentes aos resources que já se encontram no estado desejado)
+**E** executaremos novamente nossa recipe. (Assim como anteriormente, o Chef ignorará as instruções referentes aos resources que já se encontram no estado desejado)
 
 ```
 # chef-client --local-mode exemplo.rb          
@@ -397,7 +397,7 @@ Running handlers:
 Running handlers complete
 Chef Client finished, 1/4 resources updated in 06 seconds
 [2018-04-01T19:48:07+00:00] WARN: No config file found or specified on command line, using command line options.
-```E
+```
 
 **P**odemos verificar que o Chef criou o nosso arquivo index.html, atribuindo o dono, grupo e permissão que indicamos:
 
