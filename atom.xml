@@ -4,7 +4,7 @@
   <title><![CDATA[Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://kalib.github.io/atom.xml" rel="self"/>
   <link href="http://kalib.github.io/"/>
-  <updated>2018-04-01T17:23:17-04:00</updated>
+  <updated>2018-04-01T17:25:41-04:00</updated>
   <id>http://kalib.github.io/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -68,7 +68,7 @@
 
 <p><strong>O</strong> usuário escreve &ldquo;recipes&rdquo; (receitas) que descrevem como o Chef deve gerenciar aplicações, servidores e utilitários. Estas &ldquo;recipes&rdquo;, as quais podem ser agrupadas em &ldquo;cookbooks&rdquo; (livros de receitas) descrevem uma série de recursos que devem estar em um determinado estado. Este recursos podem ser pacotes, serviços ou mesmo arquivos.</p>
 
-<p><strong>C</strong>hef pode rodar em um modo cliente/servidor ou standalone, com o chamado &ldquo;chef-solo&rdquo;. No modo cliente/servidor, o cliente Chef envia uma série de atributos sobre o node ou cliente/host para o Chef server. O Chef server utiliza <a href="https://lucene.apache.org/solr">Solr</a> para indexar estes atributos e provê uma API para a qual os clientes possam fazer consultas. As recipes podem fazer requisições à esta base de atributos e utilizar os dados resultantes para configurar o cliente ou node.</p>
+<p><strong>C</strong>hef pode rodar em um modo cliente/servidor ou standalone, com o chamado &ldquo;chef-solo&rdquo;. No modo cliente/servidor, o cliente Chef envia uma série de atributos sobre o node ou cliente/host para o Chef server. O Chef server utiliza-se da ferramenta <a href="https://lucene.apache.org/solr">Solr</a> para indexar estes atributos e provê uma API na qual os clientes podem fazer consultas. As recipes podem fazer requisições à esta base de atributos e utilizar os dados resultantes para configurar o cliente ou node.</p>
 
 <p><strong>E</strong>mbora inicialmente o Chef fosse utilizado para gerenciar exclusivamente máquinas Linux, as versões mais atuais também suportam máquinas Windows.</p>
 
