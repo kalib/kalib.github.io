@@ -474,10 +474,12 @@ Chef Client finished, 1/4 resources updated in 06 seconds
 
 **N**este exemplo, provavelmente o site poderia continuar funcionando, pois foi alterada apenas a permissão de um único arquivo, certo? Mas imagine que sem querer ele acabou parando o serviço httpd, ou até desinstalou o mesmo? Em uma instalação padrão com Chef Server, existem agendamentos que fazem com que o Chef execute as recipes a cada X minutos, portanto o serviço seria inicializado novamente automaticamente, ou mesmo instalado caso necessário.
 
-**É** fácil imaginar diversos cenários em que é útil ter a sua infraestrutura em formato de código, certo?
+**É** fácil imaginar diversos cenários nos quais seria útil ter a sua infraestrutura em formato de código.
 
-**I**magine uma catástrofe em que seu servidor simplesmente parou de funcionar e você precisará criar outro. Novamente você teria que executar aqueles comandos. Se desde o início tivesse utilizado o Chef, ou outra ferramenta de Gerenciamento de Configuração, você poderia ter a sua recipe armazenada em um repositório Git, por exemplo, conforme mencionado no início deste post, e bastaria apenas executar o seu chef-client para instalar os pacotes necessários, habilitar e inicializar serviços necessários, criar arquivos necessários, etc.
+**I**magine uma catástrofe em que seu servidor simplesmente parou de funcionar e você precisará criar outro. Novamente você teria que executar aqueles comandos. Se desde o início tivesse utilizado Chef, ou outra ferramenta de Gerenciamento de Configuração, você poderia ter a sua recipe armazenada em um repositório Git, por exemplo, conforme mencionado no início deste post, e bastaria apenas executar o seu chef-client para instalar os pacotes necessários, habilitar e inicializar serviços, criar arquivos, etc.
 
 **A** imaginação é o seu limite. ;]
 
 **E**m posts futuros pretendo explorar mais a fundo o Chef, bem como outras ferramentas.
+
+**H**appy Hacking!
