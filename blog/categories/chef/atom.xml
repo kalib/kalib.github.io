@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Chef | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://kalib.github.io/blog/categories/chef/atom.xml" rel="self"/>
   <link href="http://kalib.github.io/"/>
-  <updated>2018-04-01T17:40:31-04:00</updated>
+  <updated>2018-04-01T17:42:28-04:00</updated>
   <id>http://kalib.github.io/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -492,13 +492,13 @@ Chef Client finished, &frac14; resources updated in 06 seconds
 -rwxr-xr-x. 1 root apache 12 Apr  1 19:48 index.html
 ```</p>
 
-<p>Também podemos voltar em nosso navegador e atualizar a página para que vejamos o nosso Hello World ao invés da página padrão do Apache.</p>
+<p><strong>T</strong>ambém podemos voltar em nosso navegador e atualizar a página para que vejamos o nosso Hello World ao invés da página padrão do Apache.</p>
 
 <p><img class="center" src="/imgs/chef_httpd_hw.png" title="&lsquo;Chef&rsquo;" ></p>
 
 <h2>Vale a pena?</h2>
 
-<p><strong>P</strong>ara realizarmos este mesmo processo todo manualmente, na mesma máquina CentoOS seria mais rápido do que utilizando o Chef. Vamos rever:</p>
+<p><strong>R</strong>ealizar este processo manualmente na mesma máquina CentoOS seria mais rápido do que utilizando o Chef. Vamos rever:</p>
 
 <p><strong>O</strong> que precisamos?</p>
 
@@ -509,7 +509,7 @@ Chef Client finished, &frac14; resources updated in 06 seconds
 </ul>
 
 
-<p><strong>F</strong>azendo manualmente seria apenas uma questão de executarmos X comandos:</p>
+<p><strong>F</strong>azendo manualmente seria apenas uma questão de executarmos 4 comandos:</p>
 
 <p>```</p>
 

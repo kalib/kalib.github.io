@@ -4,7 +4,7 @@
   <title><![CDATA[Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://kalib.github.io/atom.xml" rel="self"/>
   <link href="http://kalib.github.io/"/>
-  <updated>2018-04-01T17:40:31-04:00</updated>
+  <updated>2018-04-01T17:42:28-04:00</updated>
   <id>http://kalib.github.io/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -580,13 +580,13 @@
 </span><span class='line'>-rwxr-xr-x. 1 root apache 12 Apr  1 19:48 index.html</span></code></pre></td></tr></table></div></figure>
 
 
-<p>Também podemos voltar em nosso navegador e atualizar a página para que vejamos o nosso Hello World ao invés da página padrão do Apache.</p>
+<p><strong>T</strong>ambém podemos voltar em nosso navegador e atualizar a página para que vejamos o nosso Hello World ao invés da página padrão do Apache.</p>
 
 <p><img class="center" src="http://kalib.github.io/imgs/chef_httpd_hw.png" title="'Chef'" ></p>
 
 <h2>Vale a pena?</h2>
 
-<p><strong>P</strong>ara realizarmos este mesmo processo todo manualmente, na mesma máquina CentoOS seria mais rápido do que utilizando o Chef. Vamos rever:</p>
+<p><strong>R</strong>ealizar este processo manualmente na mesma máquina CentoOS seria mais rápido do que utilizando o Chef. Vamos rever:</p>
 
 <p><strong>O</strong> que precisamos?</p>
 
@@ -597,7 +597,7 @@
 </ul>
 
 
-<p><strong>F</strong>azendo manualmente seria apenas uma questão de executarmos X comandos:</p>
+<p><strong>F</strong>azendo manualmente seria apenas uma questão de executarmos 4 comandos:</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
