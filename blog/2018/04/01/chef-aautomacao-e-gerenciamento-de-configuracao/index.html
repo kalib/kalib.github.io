@@ -440,7 +440,7 @@
 </pre></td><td class='code'><pre><code class=''><span class='line'># ruby -c exemplo.rb && foodcritic exemplo.rb</span></code></pre></td></tr></table></div></figure>
 
 
-<p><strong>E</strong> executar nossa recipe. (Novamente, uma vez que o pacote httpd já está instalado, esta parte da recipe será ignorada automaticamente pelo Chef.)</p>
+<p><strong>E</strong> executando nossa recipe. (Novamente, o pacote httpd já está instalado, esta parte da recipe será ignorada automaticamente pelo Chef.)</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -540,7 +540,7 @@
 </span><span class='line'>root      2425  0.0  0.0 112660   976 pts/0    R+   19:33   0:00 grep --color=auto httpd</span></code></pre></td></tr></table></div></figure>
 
 
-<p><strong>A</strong>lém disso, você pode testar seu novo servidor web diretamente em seu browser. Caso esteja executando tudo em localhost, pode utilizar <em>localhost</em> como endereço. Caso contrário, pode utilizar o endereço ip da máquina em questão.</p>
+<p><strong>A</strong>lém disso, você pode testar seu novo servidor web diretamente em seu navegador. Caso esteja executando tudo em localhost, pode utilizar <em>localhost</em> como endereço. Caso contrário, pode utilizar o endereço ip da máquina em questão.</p>
 
 <p><img class="center" src="/imgs/chef_httpd_default.png" title="'Chef'" ></p>
 
@@ -581,7 +581,7 @@
 <p><strong>O</strong> que adicionamos aqui?</p>
 
 <ul>
-<li>Resource Type: file (Pois queremos gerenciar o nosso arquivo index.html, o quão, caso não exista, será criado)</li>
+<li>Resource Type: file (Pois queremos gerenciar o nosso arquivo index.html, o qual, caso não exista, será criado)</li>
 <li>Resource Name: /var/www/html/index.html (Poderíamos ter utilizado qualquer nome, mas para simplificar e não precisarmos utilizar uma propriedade de nome, deixaremos o resource com o nome do arquivo que vamos utilizar, <em>/var/www/html/index.html</em>)</li>
 <li>Content: Hello World! (Para simplificar teremos uma simples string <em>Hello World!</em> como conteúdo de nosso site)</li>
 <li>Mode: Permissão que desejamos atribuir ao arquivo index.html</li>
