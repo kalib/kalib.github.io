@@ -269,7 +269,7 @@ end
 # ruby -c exemplo.rb && foodcritic exemplo.rb
 ```
 
-**E** executar nossa recipe. (Novamente, uma vez que o pacote httpd já está instalado, esta parte da recipe será ignorada automaticamente pelo Chef.)
+**E** executando nossa recipe. (Novamente, o pacote httpd já está instalado, esta parte da recipe será ignorada automaticamente pelo Chef.)
 
 ```
 # chef-client --local-mode exemplo.rb
@@ -325,7 +325,7 @@ apache    2414  0.0  0.1 226040  2872 ?        S    19:32   0:00 /usr/sbin/httpd
 root      2425  0.0  0.0 112660   976 pts/0    R+   19:33   0:00 grep --color=auto httpd
 ```
 
-**A**lém disso, você pode testar seu novo servidor web diretamente em seu browser. Caso esteja executando tudo em localhost, pode utilizar *localhost* como endereço. Caso contrário, pode utilizar o endereço ip da máquina em questão.
+**A**lém disso, você pode testar seu novo servidor web diretamente em seu navegador. Caso esteja executando tudo em localhost, pode utilizar *localhost* como endereço. Caso contrário, pode utilizar o endereço ip da máquina em questão.
 
 {% img center /imgs/chef_httpd_default.png 'Chef' %}
 
@@ -351,7 +351,7 @@ end
 
 **O** que adicionamos aqui?
 
-* Resource Type: file (Pois queremos gerenciar o nosso arquivo index.html, o quão, caso não exista, será criado)
+* Resource Type: file (Pois queremos gerenciar o nosso arquivo index.html, o qual, caso não exista, será criado)
 * Resource Name: /var/www/html/index.html (Poderíamos ter utilizado qualquer nome, mas para simplificar e não precisarmos utilizar uma propriedade de nome, deixaremos o resource com o nome do arquivo que vamos utilizar, */var/www/html/index.html*)
 * Content: Hello World! (Para simplificar teremos uma simples string *Hello World!* como conteúdo de nosso site)
 * Mode: Permissão que desejamos atribuir ao arquivo index.html
