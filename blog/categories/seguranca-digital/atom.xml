@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Seguranca Digital | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://kalib.github.io/blog/categories/seguranca-digital/atom.xml" rel="self"/>
   <link href="http://kalib.github.io/"/>
-  <updated>2018-04-01T16:35:45-04:00</updated>
+  <updated>2018-04-01T16:56:26-04:00</updated>
   <id>http://kalib.github.io/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -18,7 +18,7 @@
     <link href="http://kalib.github.io/blog/2011/07/01/lancada-a-primeira-edicao-da-revista-seguranca-digital/"/>
     <updated>2011-07-01T07:14:54-04:00</updated>
     <id>http://kalib.github.io/blog/2011/07/01/lancada-a-primeira-edicao-da-revista-seguranca-digital</id>
-    <content type="html"><![CDATA[<p>{% img left /imgs/seguranca_digital_1.jpg &lsquo;Segurança Digital&rsquo; %}
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/seguranca_digital_1.jpg" title="&lsquo;Segurança Digital&rsquo;" >
 <strong>S</strong>audações pessoal.</p>
 
 <p><strong>P</strong>ara quem não sabe, hoje é o lançamento da primeira edição da <a href="http://www.segurancadigital.info/revista/185-revistas">Revista Segurança Digital</a>.</p>

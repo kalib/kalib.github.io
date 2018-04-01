@@ -4,7 +4,7 @@
   <title><![CDATA[Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://kalib.github.io/atom.xml" rel="self"/>
   <link href="http://kalib.github.io/"/>
-  <updated>2018-04-01T16:35:22-04:00</updated>
+  <updated>2018-04-01T16:56:26-04:00</updated>
   <id>http://kalib.github.io/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -22,15 +22,15 @@
 
 <h2>Uma coisa de cada vez</h2>
 
-<p><strong>C</strong>hef é uma popular ferramenta de Gerenciamento de Configurações criado pela empresa de mesmo nome, Chef. O <a href="https://www.chef.io">Chef</a> é desenvolvido em <a href="http://www.ruby-lang.org">Ruby</a> e <a href="https://www.erlang.org">Erlang</a>, utiliza uma linguagem DSL (domain-specific language) em Ruby puro para escrever arquivos de configuração de sistemas chamados &ldquo;recipes&rdquo; (receitas).</p>
+<p><strong>C</strong>hef é uma popular ferramenta de Gerenciamento de Configurações criado pela empresa de mesmo nome, Chef. O <a href="https://www.chef.io">Chef</a> é desenvolvido em <a href="http://www.ruby-lang.org">Ruby</a> e <a href="https://www.erlang.org">Erlang</a>, e utiliza uma linguagem DSL (domain-specific language) em Ruby puro para escrever arquivos de configuração de sistemas chamados &ldquo;recipes&rdquo; (receitas).</p>
 
-<p><strong>A</strong>ntes de falarmos sobre o Chef é importante entender primeiramente o conceito e utilidade de ferramentas de Gerenciamento de Configuração.</p>
+<p><strong>A</strong>ntes de falarmos sobre o Chef é importante entender primeiramente o conceito e a utilidade de ferramentas de Gerenciamento de Configuração.</p>
 
 <h2>Gerenciamento de Configuração</h2>
 
 <p><strong>G</strong>erenciamento de Configuração, ou CM (Configuration Management), é um processo de engenharia de sistemas que visa garantir a consistência entre ativos físicos e lógicos em um ambiente operacional. O processo de gerenciamento de configuração busca identificar e rastrear itens individuais de configuração, documentando capacidades funcionais e interdependências. Administradores, técnicos e desenvolvedores de sistemas podem utilizar ferramentas de Gerenciamento de Configuração para verificar o efeito que uma mudança em um item de configuração terá em outros sistemas.</p>
 
-<p><strong>E</strong>m palavras simples, o objetivo de uma ferramenta de gerenciamento de configuração é simplificar a vida de quem administra serviços e sistemas/usr/share/licenses/teamviewer/LICENSE garantindo uma uniformidade no quesito configuração.</p>
+<p><strong>E</strong>m palavras simples, o objetivo de uma ferramenta de gerenciamento de configuração é simplificar a vida de quem administra serviços e sistemas garantindo uma uniformidade no quesito configuração.</p>
 
 <p><strong>C</strong>omo exemplo prático e simplista, imagine um servidor web que será responsável por hospedar um pequeno site em php. Este servidor possuirá alguns atributos/aplicativos/configurações, tais como:</p>
 

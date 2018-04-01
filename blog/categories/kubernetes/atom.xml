@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Kubernetes | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://kalib.github.io/blog/categories/kubernetes/atom.xml" rel="self"/>
   <link href="http://kalib.github.io/"/>
-  <updated>2018-04-01T16:35:45-04:00</updated>
+  <updated>2018-04-01T16:56:26-04:00</updated>
   <id>http://kalib.github.io/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -18,7 +18,7 @@
     <link href="http://kalib.github.io/blog/2017/06/24/conhecendo-o-kubernetes-clusters-de-containers/"/>
     <updated>2017-06-24T09:32:00-04:00</updated>
     <id>http://kalib.github.io/blog/2017/06/24/conhecendo-o-kubernetes-clusters-de-containers</id>
-    <content type="html"><![CDATA[<p>{% img center /imgs/kubernetes_logo.png &lsquo;Kubernetes&rsquo; %}</p>
+    <content type="html"><![CDATA[<p><img class="center" src="/imgs/kubernetes_logo.png" title="&lsquo;Kubernetes&rsquo;" ></p>
 
 <h2>O que é Kubernetes</h2>
 
@@ -36,7 +36,7 @@
 
 <h2>Arquitetura do Kubernetes</h2>
 
-<p>{% img center /imgs/kubernetes_architecture.png &lsquo;Kubernetes Architecture&rsquo; %}</p>
+<p><img class="center" src="/imgs/kubernetes_architecture.png" title="&lsquo;Kubernetes Architecture&rsquo;" ></p>
 
 <p><strong>D</strong>entre os principais componentes do Kubernetes, vamos destacar os seguintes:</p>
 

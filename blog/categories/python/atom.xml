@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Python | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://kalib.github.io/blog/categories/python/atom.xml" rel="self"/>
   <link href="http://kalib.github.io/"/>
-  <updated>2018-04-01T16:35:45-04:00</updated>
+  <updated>2018-04-01T16:56:26-04:00</updated>
   <id>http://kalib.github.io/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -18,7 +18,7 @@
     <link href="http://kalib.github.io/blog/2011/09/13/feliz-dia-do-programador/"/>
     <updated>2011-09-13T09:11:39-04:00</updated>
     <id>http://kalib.github.io/blog/2011/09/13/feliz-dia-do-programador</id>
-    <content type="html"><![CDATA[<p>{% img left /imgs/programmer-260x300.jpg &lsquo;Programador&rsquo; %}
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/programmer-260x300.jpg" title="&lsquo;Programador&rsquo;" >
 <strong>S</strong>audações pessoal,</p>
 
 <p><strong>U</strong>m feliz dia do programador para todos aqueles que, profissionalmente, curiosamente ou mesmo por mera falta do que fazer escrevem ou já escreveram linhas de código!</p>
@@ -27,11 +27,11 @@
 
 <p><strong>D</strong>esafiador&hellip;estressante&hellip;cansativo&hellip;divertido&hellip;prazeroso&hellip; Como em qualquer &ldquo;casamento&rdquo;&hellip; na alegria e na tristeza!</p>
 
-<p>{% img center /imgs/cartoonvidaprogramador.gif &lsquo;Programador Rotina&rsquo; %}</p>
+<p><img class="center" src="/imgs/cartoonvidaprogramador.gif" title="&lsquo;Programador Rotina&rsquo;" ></p>
 
 <p><strong>O</strong>bviamente que eu não vou colocar em todas as centenas de linguagens de programação que existem.. portanto, se a sua linguagem favorita não foi homenageada abaixo, não fique triste. São muitas..difícil lembrar de todas.. O que vale é a intenção.</p>
 
-<p>{% img center /imgs/progLanguages.jpg &lsquo;Linguagens&rsquo; %}</p>
+<p><img class="center" src="/imgs/progLanguages.jpg" title="&lsquo;Linguagens&rsquo;" ></p>
 
 <p><strong>Assembly</strong></p>
 
@@ -197,7 +197,7 @@
     <link href="http://kalib.github.io/blog/2011/03/24/iii-pylestras-neste-sabado/"/>
     <updated>2011-03-24T13:19:40-04:00</updated>
     <id>http://kalib.github.io/blog/2011/03/24/iii-pylestras-neste-sabado</id>
-    <content type="html"><![CDATA[<p>{% img left /imgs/python-logo.gif &lsquo;Python&rsquo; %}
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/python-logo.gif" title="&lsquo;Python&rsquo;" >
 <strong>G</strong>ostaria de lembrar a todos os interessados que amanhã teremos o <a href="http://pylestras.appspot.com/">III Pylestras</a> aqui em Fortaleza.</p>
 
 <p><strong>S</strong>e você não faz ideia sobre o que seja Python ou sabe que é uma linguagem de programação mas não conhece maiores detalhes sobre a mesma, recomendo a leitura destes links bem como sua participação no evento, que com certeza será bem interessante.</p>
@@ -220,9 +220,9 @@
 
 <p><strong>O</strong> evento acontecerá na Faculdade Farias Brito no horário entre 8:00 e 12:00.</p>
 
-<p>{% img center /imgs/pythonedjango.gif &lsquo;Python e Django&rsquo; %}</p>
+<p><img class="center" src="/imgs/pythonedjango.gif" title="&lsquo;Python e Django&rsquo;" ></p>
 
-<p>{% img left /imgs/logo_pugce.png &lsquo;Pug-CE&rsquo; %}</p>
+<p><img class="left" src="/imgs/logo_pugce.png" title="&lsquo;Pug-CE&rsquo;" ></p>
 
 <p><strong>A</strong>lém das palestras o evento contará com um sorteio do livro Python e Django &ndash; Desenvolvimento Ágil de Aplicações Web.</p>
 
@@ -239,7 +239,7 @@
     <link href="http://kalib.github.io/blog/2011/02/25/amanha-ii-pylestras-python-user-group-ceara/"/>
     <updated>2011-02-25T06:38:02-05:00</updated>
     <id>http://kalib.github.io/blog/2011/02/25/amanha-ii-pylestras-python-user-group-ceara</id>
-    <content type="html"><![CDATA[<p>{% img left /imgs/python-logo.gif &lsquo;Python&rsquo; %}
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/python-logo.gif" title="&lsquo;Python&rsquo;" >
 <strong>G</strong>ostaria de lembrar a todos os interessados que amanhã teremos o <a href="http://pylestras.appspot.com/">II Pylestras</a> aqui em Fortaleza.</p>
 
 <p>Se você não faz ideia sobre o que seja Python ou sabe que é uma linguagem de programação mas não conhece maiores detalhes sobre a mesma, recomendo a leitura destes links bem como sua participação no evento, que com certeza será bem interessante.</p>
@@ -258,9 +258,9 @@ _ * Técnicas para preparação e desenvolvimento de sites com Django</em></p>
 
 <p><strong>O</strong> evento acontecerá na <a href="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=pt-BR&amp;geocode=&amp;q=Faculdade+7+de+Setembro,+Fortaleza+-+Cear%C3%A1,+Brasil&amp;aq=2&amp;sll=37.926868,-95.712891&amp;sspn=30.000938,79.013672&amp;ie=UTF8&amp;hq=Faculdade+Sete+de+Setembro&amp;hnear=Faculdade+Sete+de+Setembro+-+Rua+Almirante+Maximiano+da+Fonseca,+1395+-+Eng.+Luciano+Cavalcante,+Fortaleza+-+Cear%C3%A1,+60811-020,+Brasil&amp;z=14">Fa7</a> (Faculdade 7 de Setembro) no horário entre 8:30 e 12:00.</p>
 
-<p>{% img center /imgs/pythonedjango.gif &lsquo;Python e Django&rsquo; %}</p>
+<p><img class="center" src="/imgs/pythonedjango.gif" title="&lsquo;Python e Django&rsquo;" ></p>
 
-<p>{% img center /imgs/logo_pugce.png &lsquo;Pug-CE&rsquo; %}</p>
+<p><img class="center" src="/imgs/logo_pugce.png" title="&lsquo;Pug-CE&rsquo;" ></p>
 
 <p><strong>A</strong>lém das palestras o evento contará com um sorteio do livro Python e Django &ndash; Desenvolvimento Ágil de Aplicações Web.</p>
 
@@ -277,7 +277,7 @@ _ * Técnicas para preparação e desenvolvimento de sites com Django</em></p>
     <link href="http://kalib.github.io/blog/2009/11/21/porque-escolhi-python-python-para-sysadmins/"/>
     <updated>2009-11-21T08:12:42-05:00</updated>
     <id>http://kalib.github.io/blog/2009/11/21/porque-escolhi-python-python-para-sysadmins</id>
-    <content type="html"><![CDATA[<p>{% img left /imgs/python-logo.gif &lsquo;Python&rsquo; %}
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/python-logo.gif" title="&lsquo;Python&rsquo;" >
 <strong>S</strong>audações pessoal&hellip;</p>
 
 <p><strong>N</strong>ovamente vou dedicar um post para responder uma pergunta que me fizeram. Não é a primeira vez que alguém me pergunta algo e eu resolvo responder em forma de post. Algumas pessoas já me perguntaram o que me leva a preferir Python à outras linguagens de programação. Mas como, coinscidentemente, de ontem para hoje 3 pessoas me fizeram a mesma pergunta, resolvi responder em forma de post e poupar um pouco de saliva (¿dedo no teclado?) e não responder de forma mais completa para um ou outro.</p>
@@ -296,7 +296,7 @@ _ * Técnicas para preparação e desenvolvimento de sites com Django</em></p>
 
 <p><strong>M</strong>as de que me vale uma linguagem que me permite um rápido aprendizado, se a mesma não possui &ldquo;poder&rdquo;? Se a mesma não me permite realizar tarefas complexas e robustas? Bem, na verdade este é o <strong>segundo motivo</strong> pelo qual eu escolhi Python. Esta linguagem nos permite resolver problemas simples como analisar várias linhas de log e nos retirar apenas informações que nos sejam interessantes ou pertinentes gerando um relatório mais limpo e &ldquo;legível&rdquo; ao olho humano. Além de tarefas simples assim, o Python também vem sendo bastante utilizado para tarefas com maior grau de complexidade como análises de sequências genômicas, cálculos complexos de física, mecânica, mecatrônica, etc, sistemas web multithread ou mesmo pesadas análises estatísticas. Bom, se você é um SysAdmin, muito provavelmente você nunca precisará de nada disso, mas eu me sinto confortável em saber que estou estudando uma linguagem que me permitirá realizar tarefas mais complexas quando eu precisar. ;]</p>
 
-<p>{% img center /imgs/pythoncartoon.jpg &lsquo;Python Cartoon&rsquo; %}
+<p><img class="center" src="/imgs/pythoncartoon.jpg" title="&lsquo;Python Cartoon&rsquo;" >
 <strong>O</strong>k, Python me permite realizar até as tarefas complexas. Mas e a manutenção deste código. Como SysAdmin, não fico editando e revendo meus códigos todo dia. As vezes não entendemos nossos próprios códigos depois de alguns meses sem olhar para eles. O que eu queria dizer com aquela linha de código mesmo? O.o O Python foi criado com o intuito de possuir uma sintaxe simples e intuitiva, de forma que a manutenção de código se torna extremamente eficaz, mesmo por aqueles que não são os autores originais do código.  Mesmo depois de meses eu vou conseguir interpretar meu código e trabalhar nele. E esta foi a terceira razão pela qual eu escolhi Python, e que por sua vez está muito ligada à quarta razão.</p>
 
 <p><strong>O</strong><strong> quarto motivo</strong> pelo qual escolhi Python é a legibilidade do código e a forma como apenas batendo o olho podemos nos encontrar facilmente no código. O Python utiliza-se de espaços em branco para determinar onde começa ou termina um bloco de código. Esta forma de identação facilita muito a identificação de partes do código bem como o entendimento do mesmo.</p>
@@ -374,7 +374,7 @@ _ * Técnicas para preparação e desenvolvimento de sites com Django</em></p>
     <link href="http://kalib.github.io/blog/2009/11/14/python-no-ceara-pythonceara/"/>
     <updated>2009-11-14T06:42:44-05:00</updated>
     <id>http://kalib.github.io/blog/2009/11/14/python-no-ceara-pythonceara</id>
-    <content type="html"><![CDATA[<p>{% img left /imgs/python-logo.gif &lsquo;Criptografia&rsquo; %}
+    <content type="html"><![CDATA[<p><img class="left" src="/imgs/python-logo.gif" title="&lsquo;Criptografia&rsquo;" >
 <strong>B</strong>om Dia galera&hellip;</p>
 
 <p><strong>G</strong>ostaria de lhes lembrar que hoje, Sábado &ndash; 14 de Novembro, estará acontecendo o primeiro evento de Python do Ceará, PythOnCeará, organizado pela comunidade local de Python &ndash; Pug-CE.</p>
