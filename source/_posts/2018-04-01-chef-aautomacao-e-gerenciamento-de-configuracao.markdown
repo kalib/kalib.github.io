@@ -48,13 +48,13 @@ categories:
 
 **O** mesmo benefício se dá em caso de erros e falhas: um ponto único de correção.
 
-**C**om este mecanismo de descrever o estado de nossa infraestrutura em arquivos de texto/código, entramos em um novo conceito: Infrastructure as Code, ou Infraestrutura como Código. Uma vez que temos nossa infraestrutura em formato de códivo, podemos literalmente versionar e gerenciar nossa infraestrutura com repositórios Git, por exemplo.
+**C**om este mecanismo de descrever o estado de nossa infraestrutura em arquivos de texto/código, entramos em um novo conceito: Infrastructure as Code, ou Infraestrutura como Código. Uma vez que temos nossa infraestrutura em formato de código, podemos literalmente versionar e gerenciar nossa infraestrutura com repositórios Git, por exemplo.
 
 ## O que é Chef?
 
 **C**onforme dito mais acima, Chef é uma das mais populares ferramentas de Gerenciamento de Configuração disponíveis atualmente. É compatível e facilmente integrado à plataformas de computação em nuvem, tais como Internap, Amazon EC2, Google Cloud Platform, OpenStack, SoftLayer, Microsoft Azure e Rackspace, provendo e configurando servidores automaticamente.
 
-**O** usuário escreve "recipes" (receitas) que descrevem como o Chef deve gerenciar aplicações em servidores e utilitários. Estes "recipes", os quais podem ser agrupados em "cookbooks" (livros de receitas) descrevem uma série de recursos que devem estar em um determinado estado. Este recursos podem ser pacotes, serviços ou mesmo arquivos.
+**O** usuário escreve "recipes" (receitas) que descrevem como o Chef deve gerenciar aplicações, servidores e utilitários. Estas "recipes", as quais podem ser agrupadas em "cookbooks" (livros de receitas) descrevem uma série de recursos que devem estar em um determinado estado. Este recursos podem ser pacotes, serviços ou mesmo arquivos.
 
 **C**hef pode rodar em um modo cliente/servidor ou standalone, com o chamado "chef-solo". No modo cliente/servidor, o cliente Chef envia uma série de atributos sobre o node ou cliente/host para o Chef server. O Chef server utiliza [Solr](https://lucene.apache.org/solr) para indexar estes atributos e provê uma API para a qual os clientes possam fazer consultas. As recipes podem fazer requisições à esta base de atributos e utilizar os dados resultantes para configurar o cliente ou node.
 
