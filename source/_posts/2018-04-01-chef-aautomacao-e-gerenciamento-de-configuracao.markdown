@@ -407,13 +407,13 @@ total 4.0K
 -rwxr-xr-x. 1 root apache 12 Apr  1 19:48 index.html
 ```
 
-Também podemos voltar em nosso navegador e atualizar a página para que vejamos o nosso Hello World ao invés da página padrão do Apache.
+**T**ambém podemos voltar em nosso navegador e atualizar a página para que vejamos o nosso Hello World ao invés da página padrão do Apache.
 
 {% img center /imgs/chef_httpd_hw.png 'Chef' %}
 
 ## Vale a pena?
 
-**P**ara realizarmos este mesmo processo todo manualmente, na mesma máquina CentoOS seria mais rápido do que utilizando o Chef. Vamos rever:
+**R**ealizar este processo manualmente na mesma máquina CentoOS seria mais rápido do que utilizando o Chef. Vamos rever:
 
 **O** que precisamos?
 
@@ -421,7 +421,7 @@ Também podemos voltar em nosso navegador e atualizar a página para que vejamos
 * Habilitar e Iniciar o serviço httpd
 * Criar o arquivo index.html com o conteúdo "Hello World!"
 
-**F**azendo manualmente seria apenas uma questão de executarmos X comandos:
+**F**azendo manualmente seria apenas uma questão de executarmos 4 comandos:
 
 ```
 # yum install httpd
