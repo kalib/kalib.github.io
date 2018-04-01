@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Ruby | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://kalib.github.io/blog/categories/ruby/atom.xml" rel="self"/>
   <link href="http://kalib.github.io/"/>
-  <updated>2017-08-12T16:26:09-04:00</updated>
+  <updated>2018-04-01T16:26:10-04:00</updated>
   <id>http://kalib.github.io/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -18,13 +18,13 @@
     <link href="http://kalib.github.io/blog/2013/08/04/rails-girls-em-fortaleza-um-palco-para-a-criatividade-feminina/"/>
     <updated>2013-08-04T12:17:00-04:00</updated>
     <id>http://kalib.github.io/blog/2013/08/04/rails-girls-em-fortaleza-um-palco-para-a-criatividade-feminina</id>
-    <content type="html"><![CDATA[<p><img class="center" src="/imgs/evolucao_mulher.jpg" title="&lsquo;evolução feminina&rsquo;" ></p>
+    <content type="html"><![CDATA[<p>{% img center /imgs/evolucao_mulher.jpg &lsquo;evolução feminina&rsquo; %}</p>
 
 <p><strong>E</strong> se sua namorada/esposa/irmã/mãe/vizinha/filha da vizinha/&hellip; pudesse finalmente entender que tanto código é esse que você digita no computador?</p>
 
 <p><strong>T</strong>alvez esta seja a sua oportunidade.. ou melhor, a dela!</p>
 
-<p><img class="center" src="/imgs/rails_girls.png" title="&lsquo;rails girls&rsquo;" ></p>
+<p>{% img center /imgs/rails_girls.png &lsquo;rails girls&rsquo; %}</p>
 
 <h3>Rails Girls</h3>
 
@@ -64,7 +64,7 @@
     <link href="http://kalib.github.io/blog/2011/09/13/feliz-dia-do-programador/"/>
     <updated>2011-09-13T09:11:39-04:00</updated>
     <id>http://kalib.github.io/blog/2011/09/13/feliz-dia-do-programador</id>
-    <content type="html"><![CDATA[<p><img class="left" src="/imgs/programmer-260x300.jpg" title="&lsquo;Programador&rsquo;" >
+    <content type="html"><![CDATA[<p>{% img left /imgs/programmer-260x300.jpg &lsquo;Programador&rsquo; %}
 <strong>S</strong>audações pessoal,</p>
 
 <p><strong>U</strong>m feliz dia do programador para todos aqueles que, profissionalmente, curiosamente ou mesmo por mera falta do que fazer escrevem ou já escreveram linhas de código!</p>
@@ -73,11 +73,11 @@
 
 <p><strong>D</strong>esafiador&hellip;estressante&hellip;cansativo&hellip;divertido&hellip;prazeroso&hellip; Como em qualquer &ldquo;casamento&rdquo;&hellip; na alegria e na tristeza!</p>
 
-<p><img class="center" src="/imgs/cartoonvidaprogramador.gif" title="&lsquo;Programador Rotina&rsquo;" ></p>
+<p>{% img center /imgs/cartoonvidaprogramador.gif &lsquo;Programador Rotina&rsquo; %}</p>
 
 <p><strong>O</strong>bviamente que eu não vou colocar em todas as centenas de linguagens de programação que existem.. portanto, se a sua linguagem favorita não foi homenageada abaixo, não fique triste. São muitas..difícil lembrar de todas.. O que vale é a intenção.</p>
 
-<p><img class="center" src="/imgs/progLanguages.jpg" title="&lsquo;Linguagens&rsquo;" ></p>
+<p>{% img center /imgs/progLanguages.jpg &lsquo;Linguagens&rsquo; %}</p>
 
 <p><strong>Assembly</strong></p>
 
@@ -243,7 +243,7 @@
     <link href="http://kalib.github.io/blog/2009/11/05/ceara-on-rails-2010/"/>
     <updated>2009-11-05T13:13:23-05:00</updated>
     <id>http://kalib.github.io/blog/2009/11/05/ceara-on-rails-2010</id>
-    <content type="html"><![CDATA[<p><img class="left" src="/imgs/cearaonrails.png" title="&lsquo;Ceará On Rails&rsquo;" >
+    <content type="html"><![CDATA[<p>{% img left /imgs/cearaonrails.png &lsquo;Ceará On Rails&rsquo; %}
 <strong>S</strong>audações pessoal, este ano o <a href="http://www.cearaonrails.com.br">Ceará On Rails</a> terá sua segunda edição trazendo uma programação mais extensa em relação à anterior, em 2009.</p>
 
 <p><strong>O</strong> Ruby tem ganho bastante destaque nos últimos anos pela sua praticidade e performance enquanto linguagem para desenvolvimento ágil e simples.</p>
@@ -284,7 +284,7 @@
     <link href="http://kalib.github.io/blog/2009/04/08/primeiro-encontro-cearaonrailse2809909/"/>
     <updated>2009-04-08T09:17:54-04:00</updated>
     <id>http://kalib.github.io/blog/2009/04/08/primeiro-encontro-cearaonrailse2809909</id>
-    <content type="html"><![CDATA[<p><img class="center" src="/imgs/logomarca_cearaonrails.png" title="&lsquo;Ceará on Rails&rsquo;" >
+    <content type="html"><![CDATA[<p>{% img center /imgs/logomarca_cearaonrails.png &lsquo;Ceará on Rails&rsquo; %}
 <strong>O</strong>lá pessoal.</p>
 
 <p><strong>P</strong>ara quem não conhece, Ceará On Rails é um evento voltado ao desenvolvimento web ágil com Ruby On Rails. Sua primeira edição foi em Novembro do ano passado. Estive presente e não me arrependi. Hoje teremos a segunda edição do evento. Fica o convite à todos que desejem aparecer por lá para conhecer um pouco mais sobre esta dinâmica e ágil forma de desenvolver para a Web.</p>
@@ -330,7 +330,7 @@
     <link href="http://kalib.github.io/blog/2008/11/12/ceara-on-rails-ai-vou-eu/"/>
     <updated>2008-11-12T08:22:00-05:00</updated>
     <id>http://kalib.github.io/blog/2008/11/12/ceara-on-rails-ai-vou-eu</id>
-    <content type="html"><![CDATA[<p><img class="center" src="/imgs/cearaonrails.png" title="&lsquo;Ceará on Rails&rsquo;" >
+    <content type="html"><![CDATA[<p>{% img center /imgs/cearaonrails.png &lsquo;Ceará on Rails&rsquo; %}
 O que é CearáOnRails?</p>
 
 <p>O CearáOnRails é um evento solidário que tem como tema o desenvolvimento de sistemas web e pretende divulgar e popularizar a linguagem de desenvolvimento Ruby e o Framework Rails no estado do Ceará. Esta iniciativa contribuirá de modo relevante para promover o uso e a difusão das tecnologias entre pessoas, especialmente profissionais na área e afins, servindo como um veículo de integração, interação e colaboração. Tanto o ruby como o Rails vem mudando a forma de desenvolvimento padrão adotada pelas demais tecnologias.</p>

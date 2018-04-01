@@ -9,7 +9,7 @@
   <meta name="author" content="Marcelo Cavalcante Rocha - Kalib">
 
   
-  <meta name="description" content="Da mesma forma que alguns animais só conseguem sobreviver utilizando-se de sua capacidade e/ou técnica de camuflar-se, misturando-se assim ao &hellip;">
+  <meta name="description" content="Uma boa novidade para os profissionais de segurança: BlackArch! Para quem, assim como eu, gosta de como as coisas funcionam no Arch Linux essa é uma &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -80,6 +80,144 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/01/30/blackarch-linux-uma-nova-distribuicao-para-pentesters/">BlackArch Linux - Uma Nova Distribuição Para Pentesters</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-01-30T08:47:00-05:00" pubdate data-updated="true">Jan 30<span>th</span>, 2014</time>
+        
+         | <a href="/blog/2014/01/30/blackarch-linux-uma-nova-distribuicao-para-pentesters/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img class="left" src="/imgs/blackarch.jpg" title="'BlackArch'" ></p>
+
+<p><strong>U</strong>ma boa novidade para os profissionais de segurança: <a href="http://www.blackarch.org" target="_blank">BlackArch</a>! Para quem, assim como eu, gosta de como as coisas funcionam no Arch Linux essa é uma notícia particularmente boa, visto que o BlackArch não se trata realmente de uma nova distribuição, mas sim de uma <em>extensão</em> para o Arch Linux. Como assim? Bom, você possui duas opções para utilizar o BlackArch, sendo uma delas como uma distribuição completa, através de um Live CD, por exemplo, e a outra como uma extensão (um repositório de pacotes) para o Arch Linux, onde você poderá apenas inserir um repositório em sua já existente distribuição Arch Linux e ter acesso ao conjunto de ferramentas do BlackArch.</p>
+
+<p><strong>O</strong> BlackArch, atualmente, possui suporte para as arquiteturas i686 e x86_64, com previsão de suporte para ARM em breve (Sim, meu RaspBerry poderá se tornar uma ferramenta para pentests). No mais, o BlackArch hoje possui mais de 600 ferramentas, estando este número crescendo constantemente, e utiliza grupos modulares de pacotes, facilitando a instalação dos mesmos.</p>
+
+<p><strong>A</strong> ISO Live trás diversos gerenciadores de janelas ou ambientes gráficos, como o dwm, Fluxbox, Openbox, Awesome, Wmii, i3 e Spectrwm. É claro, ele também trás um instalador capaz de instalar a partir do fonte.</p>
+
+<p><strong>D</strong>entre as ferramentas existentes estão: 3proxy, 42zip, acccheck, aesfix, against, airflood, airoscript, bluepot, blueprint, braces, bss, bully, cisco-ocs, cmospwd, dbd, dc3dd, deblaze, dhcpig, enumiax, fakedns, &hellip; Vocẽ não espera que eu liste todos os mais de 600, certo?</p>
+
+<p><a href="http://blackarch.org/images/screenshots/openbox.png" target="_blank"><img class="center" src="/imgs/openbox.png" title="'BlackArch Openbox'" ></a></p>
+
+<p><strong>Configurando como um Repositório Não-Oficial</strong></p>
+
+<p><strong>S</strong>e você já possui o Arch Linux instalado e deseja apenas inserir o BlackArch como um repositório em sua distro, execute os seguintes comandos como root, os quais servirão para assinar os pacotes: <em>(Se você não possui o Arch Linux instalado e/ou simplesmente deseja rodar o Live CD ou instalar o mesmo por completo, seja em uma máquina física ou virtual, siga para a seção <a href="#instalando">Instalando o BlackArch Linux utilizando a Live-ISO</a>)</em></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> # wget -q http://blackarch.org/keyring/blackarch-keyring.pkg.tar.xz{,.sig}
+</span><span class='line'>
+</span><span class='line'> # gpg --keyserver hkp://pgp.mit.edu --recv 4345771566D76038C7FEB43863EC0ADBEA87E4E3
+</span><span class='line'>
+</span><span class='line'> # gpg --keyserver-o no-auto-key-retrieve --with-f blackarch-keyring.pkg.tar.xz.sig
+</span><span class='line'>
+</span><span class='line'> # pacman-key --init
+</span><span class='line'>
+</span><span class='line'> # rm blackarch-keyring.pkg.tar.xz.sig
+</span><span class='line'>
+</span><span class='line'> # pacman --noc -U blackarch-keyring.pkg.tar.xz</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>E</strong>m seguida, adicione as seguintes linhas ao seu arquivo <em>/etc/pacman.conf</em>:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  [blackarch]
+</span><span class='line'>  Server = &lt;mirror_site&gt;/$repo/os/$arch</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>Substitua</strong> <em>&lt;mirror_site></em> por um mirror de sua escolha, preferencialmente um dos <strong>mirrors oficiais</strong> contidos <a href="http://blackarch.org/download.html#mirrors" target="_blank"><em>neste link</em></a>.</p>
+
+<p><strong>U</strong>ma vez que você tenha seguido os passos acima, execute:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> $ sudo pacman -Syyu</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>Instalando os pacotes</strong></p>
+
+<p><strong>A</strong>gora que você já preparou o terreno assinando e configurando o repositório do Black Arch, basta instalar os pacotes em seu Arch Linux.</p>
+
+<p><strong>P</strong>ara listar todas as ferramentas disponíveis, execute:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> $ sudo pacman -Sgg | grep blackarch | cut -d' ' -f2 | sort -u</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>P</strong>ara instalar todas as ferramentas, execute:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> $ sudo pacman -S blackarch</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>P</strong>ara instalar uma categoria de ferramentas, execute:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> $ sudo pacman -S blackarch-&lt;categoria&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>P</strong>ara ver as categorias existentes no BlackArch, execute:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> $ sudo pacman -Sg | grep blackarch</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong><a name="instalando">Instalando o BlackArch Linux utilizando a Live-ISO</a></strong></p>
+
+<p><strong>A</strong>ntes de mais nada, <a href="http://blackarch.org/download.html" target="_blank">baixe a ISO a partir do site oficial</a>.</p>
+
+<p><strong>E</strong>m seguida, dê boot na ISO e instale o script de instalação do BlackArch:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> $ sudo pacman -S blackarch-install-scripts</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>A</strong>gora, basta instalar:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> # blackarch-install</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>H</strong>appy Hacking!</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -216,63 +354,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/01/14/dica-apostila-disponibilizada-gratuitamente-pfsense/">Dica - Apostila Disponibilizada Gratuitamente - pfSense</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-01-14T08:27:00-05:00" pubdate data-updated="true">Jan 14<span>th</span>, 2014</time>
-        
-         | <a href="/blog/2014/01/14/dica-apostila-disponibilizada-gratuitamente-pfsense/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><img class="left" src="/imgs/pfsense.png" title="'pfSense'" >
-<strong>G</strong>ostaria de passar adiante a notícia de que o colega <em>Leonardo Damasceno</em> acaba de compartilhar com a comunidade uma apostila de sua autoria sobre o <a href="http://www.pfsense.org"><strong>pfSense</strong></a>, de forma a divulgar mais este magnífico sistema, bem como facilitar a vida daqueles que ainda não o dominam.</p>
-
-<p><strong>S</strong>egue link direto fornecido pelo mesmo para <a href="http://www.marcelocavalcante.net/repositorio/pfsense-leonardodamasceno.pdf"><strong>download</strong></a>. A apostila ou livro, como prefira chamar, possui aproximadamente 70 páginas de informações úteis e diretas, sem muitas complicações.</p>
-
-<p><strong>N</strong>ão sabe o que é pfSense?</p>
-
-<p><img class="center" src="/imgs/pfsense1.jpg" title="'pfSense1'" ></p>
-
-<p><strong>O</strong> pfSense é um sistema operacional baseado no <em>Free BSD</em> que pode ser instalado em um computador para servir como um firewall/roteador dedicado em uma rede. Como ferramenta <em>open source</em>, o pfSense tem se destacado nesta função, sendo considerado um dos melhores e mais confiáveis para este trabalho, oferecendo, além de sua estabilidade e confiabilidade, recursos e funções que geralmente são encontrados apenas em firewalls comerciais e caros. Não creio ser necessário lembrar a confiabilidade dos sistemas <em>Free BSD</em>&hellip;</p>
-
-<p><img class="center" src="/imgs/pfsense2.jpg" title="'pfSense2'" ></p>
-
-<p><strong>E</strong>mbora seja uma versão customizada do Free BSD, não é necessário qualquer conhecimento sobre este sistema para operar o psSense, visto que ele é atualizado e completamente configurado através de uma interface web. Na maioria dos casos o pfSense tem sido aplicado como um firewall de perímetro, roteador, access point wireless, servidor DHCP, servidor DNS e VPN.</p>
-
-<p><img class="center" src="/imgs/pfsense3.jpg" title="'pfSense3'" ></p>
-
-<p><strong>O</strong> mesmo apresenta diversos recursos gráficos para análise de tráfego, pacotes, performance, etc. Além de configurações avançadas para regras de firewall para LAN, WAN e utilizãção de Aliases de forma simples e intuitiva.</p>
-
-<p><img class="center" src="/imgs/pfsense4.jpg" title="'pfSense4'" ></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/4/">&larr; Anteriores</a>
@@ -293,6 +374,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2018/04/01/chef-aautomacao-e-gerenciamento-de-configuracao/">Chef: Aautomação e Gerenciamento de Configuração</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2017/06/24/conhecendo-o-kubernetes-clusters-de-containers/">Conhecendo o Kubernetes - Clusters de Containers</a>
       </li>
     
@@ -306,10 +391,6 @@
     
       <li class="post">
         <a href="/blog/2014/08/03/assista-ao-documentario-sobre-aaron-swartz-o-menino-da-internet/">Assista ao documentário sobre Aaron Swartz: O menino da internet</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/02/13/alterando-os-parametros-do-kernel-em-tempo-real-com-o-systcl/">Alterando os parâmetros do kernel em tempo real com o Systcl</a>
       </li>
     
   </ul>
@@ -336,7 +417,7 @@
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2017 - Marcelo Cavalcante Rocha - Kalib -
+  Copyright &copy; 2018 - Marcelo Cavalcante Rocha - Kalib -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 

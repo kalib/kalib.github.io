@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Eventos | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://kalib.github.io/blog/categories/eventos/atom.xml" rel="self"/>
   <link href="http://kalib.github.io/"/>
-  <updated>2017-08-12T16:26:09-04:00</updated>
+  <updated>2018-04-01T16:26:10-04:00</updated>
   <id>http://kalib.github.io/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -18,13 +18,13 @@
     <link href="http://kalib.github.io/blog/2013/08/04/rails-girls-em-fortaleza-um-palco-para-a-criatividade-feminina/"/>
     <updated>2013-08-04T12:17:00-04:00</updated>
     <id>http://kalib.github.io/blog/2013/08/04/rails-girls-em-fortaleza-um-palco-para-a-criatividade-feminina</id>
-    <content type="html"><![CDATA[<p><img class="center" src="/imgs/evolucao_mulher.jpg" title="&lsquo;evolução feminina&rsquo;" ></p>
+    <content type="html"><![CDATA[<p>{% img center /imgs/evolucao_mulher.jpg &lsquo;evolução feminina&rsquo; %}</p>
 
 <p><strong>E</strong> se sua namorada/esposa/irmã/mãe/vizinha/filha da vizinha/&hellip; pudesse finalmente entender que tanto código é esse que você digita no computador?</p>
 
 <p><strong>T</strong>alvez esta seja a sua oportunidade.. ou melhor, a dela!</p>
 
-<p><img class="center" src="/imgs/rails_girls.png" title="&lsquo;rails girls&rsquo;" ></p>
+<p>{% img center /imgs/rails_girls.png &lsquo;rails girls&rsquo; %}</p>
 
 <h3>Rails Girls</h3>
 

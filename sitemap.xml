@@ -933,8 +933,14 @@
         <lastmod>2017-06-25T11:27:19-04:00</lastmod>
     </url>
     <url>
+        <loc>
+            http://kalib.github.io/blog/2018/04/01/chef-aautomacao-e-gerenciamento-de-configuracao/
+        </loc>
+        <lastmod>2018-04-01T16:23:12-04:00</lastmod>
+    </url>
+    <url>
         <loc>http://kalib.github.io/</loc>
-        <lastmod>2017-06-25T11:27:19-04:00</lastmod>
+        <lastmod>2018-04-01T16:23:12-04:00</lastmod>
     </url>
     <url>
         <loc>http://kalib.github.io/robots.txt</loc>
@@ -942,7 +948,7 @@
     </url>
     <url>
         <loc>http://kalib.github.io/blog/archives/</loc>
-        <lastmod>2017-06-25T11:27:19-04:00</lastmod>
+        <lastmod>2018-04-01T16:23:12-04:00</lastmod>
     </url>
     <url>
         <loc>http://kalib.github.io/about/</loc>

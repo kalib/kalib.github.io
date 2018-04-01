@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Android | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://kalib.github.io/blog/categories/android/atom.xml" rel="self"/>
   <link href="http://kalib.github.io/"/>
-  <updated>2017-08-12T16:26:09-04:00</updated>
+  <updated>2018-04-01T16:26:10-04:00</updated>
   <id>http://kalib.github.io/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -44,19 +44,19 @@
 
 <p><strong>A</strong> tela a seguir lhe será apresentada.</p>
 
-<p><img class="center" src="/imgs/and01.png" title="&lsquo;Android Emulator&rsquo;" ></p>
+<p>{% img center /imgs/and01.png &lsquo;Android Emulator&rsquo; %}</p>
 
 <p><strong>A</strong>gora precisamos instalar o Android em si, portanto vamos começar vendo a lista de aplicativos disponíveis para instalação.</p>
 
 <p><strong>R</strong>epare que na lateral esquerda existem 5 abas. Vamos trabalhar por enquanto na aba <em>Available Packages</em>. Ao clicar nela, a seguinte tela lhe será apresentada:</p>
 
-<p><img class="center" src="/imgs/and02.png" title="&lsquo;Android Emulator&rsquo;" ></p>
+<p>{% img center /imgs/and02.png &lsquo;Android Emulator&rsquo; %}</p>
 
 <p><strong>C</strong>lique na seta que se encontra ao lado da opção _<a href="https://dl-ssl.google.com/android/repository/repository.xml_">https://dl-ssl.google.com/android/repository/repository.xml_</a></p>
 
 <p><strong>L</strong>he será exibida uma lista de aplicativos disponíveis para instalação, conforme imagem:</p>
 
-<p><img class="center" src="/imgs/and03.png" title="&lsquo;Android Emulator&rsquo;" ></p>
+<p>{% img center /imgs/and03.png &lsquo;Android Emulator&rsquo; %}</p>
 
 <p><strong>N</strong>o meu caso, vou selecionar apenas a versão 2.2 do Android. Mas, sinta-se livre para selecionar e instalar outras que estejam disponibilizadas.</p>
 
@@ -66,15 +66,15 @@
 
 <p><strong>S</strong>erá iniciado o download da(s) aplicação(ões) selecionada(s), conforme imagem abaixo.</p>
 
-<p><img class="center" src="/imgs/and04.png" title="&lsquo;Android Emulator&rsquo;" ></p>
+<p>{% img center /imgs/and04.png &lsquo;Android Emulator&rsquo; %}</p>
 
 <p><strong>A</strong>o concluir o download, a tela ficará aguardando que você clique em <strong>Close</strong>, como na imagem a seguir:</p>
 
-<p><img class="center" src="/imgs/and05.png" title="&lsquo;Android Emulator&rsquo;" ></p>
+<p>{% img center /imgs/and05.png &lsquo;Android Emulator&rsquo; %}</p>
 
 <p><strong>A</strong>pós isto, podemos ir para a aba <em>Installed Packages</em>. Lá veremos a lista do que instalamos. No meu caso, apenas o SDK Platform Android 2.2, API 8, revision 2, como na imagem a seguir:</p>
 
-<p><img class="center" src="/imgs/and06.png" title="&lsquo;Android Emulator&rsquo;" ></p>
+<p>{% img center /imgs/and06.png &lsquo;Android Emulator&rsquo; %}</p>
 
 <p><strong>A</strong>gora vamos criar o dispositivo virtual. Clique na primeira aba, <em>Virtual Devices</em>, e em seguida clique no botão <em>New&hellip;</em></p>
 
@@ -92,7 +92,7 @@
 
 <p><strong>P</strong>ode preencher de forma parecida com o que eu fiz na imagem a seguir:</p>
 
-<p><img class="center" src="/imgs/and07.png" title="&lsquo;Android Emulator&rsquo;" ></p>
+<p>{% img center /imgs/and07.png &lsquo;Android Emulator&rsquo; %}</p>
 
 <p><strong>F</strong>eito isto, clicamos em <em>Create AVD</em>.</p>
 
@@ -102,22 +102,22 @@
 
 <p><strong>E</strong> o resultado? Nosso Android dando o seu primeiro boot.</p>
 
-<p><img class="center" src="/imgs/and081.png" title="&lsquo;Android Emulator&rsquo;" ></p>
+<p>{% img center /imgs/and081.png &lsquo;Android Emulator&rsquo; %}</p>
 
-<p><img class="center" src="/imgs/and09.png" title="&lsquo;Android Emulator&rsquo;" ></p>
+<p>{% img center /imgs/and09.png &lsquo;Android Emulator&rsquo; %}</p>
 
 <p><strong>V</strong>ejamos o menu de principal&hellip;</p>
 
-<p><img class="center" src="/imgs/and13.png" title="&lsquo;Android Emulator&rsquo;" ></p>
+<p>{% img center /imgs/and13.png &lsquo;Android Emulator&rsquo; %}</p>
 
 <p><strong>Q</strong>ue tal testar o browser? Sim, pode testar. Ele já está conectado na internet, caso, obviamente, a sua máquina (hospedeira) esteja conectada. Eles já se comunicam por bridge.</p>
 
-<p><img class="center" src="/imgs/and10.png" title="&lsquo;Android Emulator&rsquo;" ></p>
+<p>{% img center /imgs/and10.png &lsquo;Android Emulator&rsquo; %}</p>
 
 <p><strong>N</strong>ão é que funciona mesmo?!</p>
 
-<p><img class="center" src="/imgs/and11.png" title="&lsquo;Android Emulator&rsquo;" >
-<img class="center" src="/imgs/and12.png" title="&lsquo;Android Emulator&rsquo;" ></p>
+<p>{% img center /imgs/and11.png &lsquo;Android Emulator&rsquo; %}
+{% img center /imgs/and12.png &lsquo;Android Emulator&rsquo; %}</p>
 
 <p><strong>A</strong>braços!</p>
 ]]></content>

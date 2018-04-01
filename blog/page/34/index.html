@@ -9,7 +9,7 @@
   <meta name="author" content="Marcelo Cavalcante Rocha - Kalib">
 
   
-  <meta name="description" content="Quem está utilizando o Archlinux devidamente atualizado, pode ter percebido alguns erros relacionados à libjpeg.so ao tentar executar alguma &hellip;">
+  <meta name="description" content="É isso aí galera.. Depois de dominar 100% o plugin flash, chegou a vez do nosso amigo Java. O chromium já está suportando o plugin java. Hoje posso &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -80,6 +80,69 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/09/03/chromium-suportando-java-agora/">Chromium Suportando Java Agora!</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-09-03T15:15:34-04:00" pubdate data-updated="true">Sep 3<span>rd</span>, 2009</time>
+        
+         | <a href="/blog/2009/09/03/chromium-suportando-java-agora/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img class="left" src="/imgs/javachromium.png" title="'Java Chromium'" >
+<strong>É</strong> isso aí galera..</p>
+
+<p><strong>D</strong>epois de dominar 100% o plugin flash, chegou a vez do nosso amigo Java.</p>
+
+<p><strong>O</strong> chromium já está suportando o plugin java.</p>
+
+<p><strong>H</strong>oje posso, finalmente, dizer que o Chromium é meu navegador padrão. Nos últimos dias, a única coisa que eu não fazia no chromium era acessar aplicações que necessitem do java, como por exemplo o site do banco do brasil.</p>
+
+<p><strong>M</strong>as estas são sombras passadas&hellip;</p>
+
+<p><strong>F</strong>aça os testes você mesmo.</p>
+
+<p><strong>I</strong>nicialize seu chromium com a seguinte chamada&hellip;</p>
+
+<blockquote><p>$ chromium-browser &mdash;enable-plugins &mdash;enable-greasemonkey &mdash;enable-user-scripts</p></blockquote>
+
+<p>&hellip;e seja feliz com tudo que o chromium tem a lhe oferecer. ;]</p>
+
+<p>Para aqueles que ainda não conhecem ou não tem o chromium instalado, sugiro a leitura dos seguintes posts anteriores:</p>
+
+<p><strong><a href="http://blog.marcelocavalcante.net/blog/2009/05/28/chromium-pronto-para-o-arch/">Aqui</a>
+<a href="http://blog.marcelocavalcante.net/blog/2009/07/09/chromium-ganha-suporte-ao-flash-por-completo/">Aqui</a>
+<a href="http://blog.marcelocavalcante.net/blog/2009/08/12/habilitando-plugins-no-chromium/">e Aqui </a></strong></p>
+
+<p><strong>A</strong>braços</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -203,87 +266,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/08/12/habilitando-plugins-no-chromium/">Habilitando Plugins No Chromium</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-08-12T08:55:34-04:00" pubdate data-updated="true">Aug 12<span>th</span>, 2009</time>
-        
-         | <a href="/blog/2009/08/12/habilitando-plugins-no-chromium/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><img class="left" src="/imgs/chromium-browser.png" title="'Chromium'" >
-<strong>T</strong>odos que visitam meu blog já devem estar cansados de saber que estou bastante atento ao projeto chromium e ajudando com o possível para o desenvolvimento e divulgação do mesmo.</p>
-
-<p><strong>B</strong>om, eu já havia notificado aqui o fato de que o chromium passou a ter suporte à plugins como o flash por exemplo. De fato ele já suporta os plugins, mas muitos estão me procurando para perguntar porque o chromium cortou o suporte aos plugins, visto que nas builds mais recentes do chromium o suporte parece ter sido cortado, visto que os plugins não estão funcionando a princípio.</p>
-
-<p><img class="center" src="/imgs/shot_chromium.png" title="'Shot Chromium'" ></p>
-
-<p><strong>M</strong>as, porque o meu funciona e o seu não?</p>
-
-<p><strong>N</strong>ão é mágica..nem feitiçaria.. Vamos à realidade.</p>
-
-<p><strong>O</strong> suporte do chromium aos plugins ainda não está 100% homologado, o que resulta em alguns bugs e falhas, podendo acarretar em uso excessivo de processamento ou outros recursos de sua máquina em alguns casos. Sabendo disso, o projeto chromium adotou a posição de não tornar o suporte à plugins uma opção &ldquo;default&rdquo;.</p>
-
-<p><strong>P</strong>ara utilizar os plugins em seu chromium você precisa iniciar o seu chromium com o seguinte parâmetro:</p>
-
-<p>$ chromium-browser &mdash;enable-plugins</p>
-
-<p><strong>L</strong>embrando que nestas novas builds do chromium não existe mais a necessidade de criar os links simbólicos para os plugins. Ele já detecta automaticamente os plugins que você tem instalados.</p>
-
-<p><strong>P</strong>ara testar, pode abrir o seguinte endereço ou mesmo acessar algo como o youtube:</p>
-
-<p>about:plugins</p>
-
-<p><strong>C</strong>aso você ainda não tenha o chromium instalado em sua máquina pode buscar informações na internet sobre como o fazer em sua distro. Caso use Archlinux, pode seguir os passos abaixo:</p>
-
-<p><strong>1-</strong> Adicione o repositório brasileiro em sua lista de mirrors. Adicione as seguintes linhas em seu arquivo /etc/pacman.conf :</p>
-
-<p>[archlinuxbr]
-Server = <a href="http://repo.archlinux-br.org/i686">http://repo.archlinux-br.org/i686</a></p>
-
-<p>ou</p>
-
-<p>[archlinuxbr]
-Server = <a href="http://repo.archlinux-br.org/x86_64">http://repo.archlinux-br.org/x86_64</a></p>
-
-<p><strong>2- </strong>Atualize seus mirrors e instale o chromium:</p>
-
-<h1>pacman -Sy</h1>
-
-<h1>pacman -S chromium-snapshot</h1>
-
-<p><strong>F</strong>eito!</p>
-
-<p><strong>B</strong>om proveito&hellip;</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/35/">&larr; Anteriores</a>
@@ -304,6 +286,10 @@ Server = <a href="http://repo.archlinux-br.org/x86_64">http://repo.archlinux-br
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2018/04/01/chef-aautomacao-e-gerenciamento-de-configuracao/">Chef: Aautomação e Gerenciamento de Configuração</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2017/06/24/conhecendo-o-kubernetes-clusters-de-containers/">Conhecendo o Kubernetes - Clusters de Containers</a>
       </li>
     
@@ -317,10 +303,6 @@ Server = <a href="http://repo.archlinux-br.org/x86_64">http://repo.archlinux-br
     
       <li class="post">
         <a href="/blog/2014/08/03/assista-ao-documentario-sobre-aaron-swartz-o-menino-da-internet/">Assista ao documentário sobre Aaron Swartz: O menino da internet</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/02/13/alterando-os-parametros-do-kernel-em-tempo-real-com-o-systcl/">Alterando os parâmetros do kernel em tempo real com o Systcl</a>
       </li>
     
   </ul>
@@ -347,7 +329,7 @@ Server = <a href="http://repo.archlinux-br.org/x86_64">http://repo.archlinux-br
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2017 - Marcelo Cavalcante Rocha - Kalib -
+  Copyright &copy; 2018 - Marcelo Cavalcante Rocha - Kalib -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 

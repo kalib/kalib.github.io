@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Meio Ambiente | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://kalib.github.io/blog/categories/meio-ambiente/atom.xml" rel="self"/>
   <link href="http://kalib.github.io/"/>
-  <updated>2017-08-12T16:26:09-04:00</updated>
+  <updated>2018-04-01T16:26:10-04:00</updated>
   <id>http://kalib.github.io/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -18,7 +18,7 @@
     <link href="http://kalib.github.io/blog/2010/04/09/lixo-eletronico-nao-sabe-o-que-fazer-o-flisol-sabe/"/>
     <updated>2010-04-09T14:24:24-04:00</updated>
     <id>http://kalib.github.io/blog/2010/04/09/lixo-eletronico-nao-sabe-o-que-fazer-o-flisol-sabe</id>
-    <content type="html"><![CDATA[<p><img class="left" src="/imgs/reciclagem.jpg" title="&lsquo;Reiclagem&rsquo;" >
+    <content type="html"><![CDATA[<p>{% img left /imgs/reciclagem.jpg &lsquo;Reiclagem&rsquo; %}
 <strong>S</strong>audações pessoal, todos dispostos a ajudar?</p>
 
 <p><strong>A</strong>lgumas semanas atrás uma amiga me perguntou algumas coisas sobre reciclagem ou reaproveitamento de e-lixo ou lixo eletrônico para os menos íntimos. A mesma não informou estes termos mas a intenção foi parecida. Me perguntou sobre como se descartar corretamente mídias (cds, dvds) ou velhas peças de computador. E como estamos nos aproximando do FLISOL, aproveitei para divulgar uma iniciativa que teremos aqui em Fortaleza no dia 24 de Abril durante o <a href="http://flisolceara.net">FLISOL</a> &ndash; Festival Latino Americano de Instalação de Software Livre.</p>
@@ -48,7 +48,7 @@
     <link href="http://kalib.github.io/blog/2009/09/17/criatura-estranha-morta-por-adolescentes/"/>
     <updated>2009-09-17T09:05:47-04:00</updated>
     <id>http://kalib.github.io/blog/2009/09/17/criatura-estranha-morta-por-adolescentes</id>
-    <content type="html"><![CDATA[<p><img class="left" src="/imgs/etpanama.jpg" title="&lsquo;Animal ou ET&rsquo;" >
+    <content type="html"><![CDATA[<p>{% img left /imgs/etpanama.jpg &lsquo;Animal ou ET&rsquo; %}
 <strong>E</strong>T ou espécie animal não catalogada?¿</p>
 
 <p><strong>E</strong>sta é a dúvida que está se passando na cabeça de muitas pessoas sobre o ser que foi encontrado e morto no Panamá.</p>
@@ -74,7 +74,7 @@
     <link href="http://kalib.github.io/blog/2009/04/03/ii-mangue-beat/"/>
     <updated>2009-04-03T08:29:29-04:00</updated>
     <id>http://kalib.github.io/blog/2009/04/03/ii-mangue-beat</id>
-    <content type="html"><![CDATA[<p><img class="left" src="/imgs/capa.gif" title="&lsquo;Mangue Beat&rsquo;" >
+    <content type="html"><![CDATA[<p>{% img left /imgs/capa.gif &lsquo;Mangue Beat&rsquo; %}
 Já pensou em contribuir para a preservação do meio ambiente?</p>
 
 <p>II Mangue Beat</p>
@@ -116,7 +116,7 @@ Já pensou em contribuir para a preservação do meio ambiente?</p>
     <link href="http://kalib.github.io/blog/2009/03/26/hora-do-planeta-2009/"/>
     <updated>2009-03-26T13:52:04-04:00</updated>
     <id>http://kalib.github.io/blog/2009/03/26/hora-do-planeta-2009</id>
-    <content type="html"><![CDATA[<p><img class="center" src="/imgs/horadoplaneta.jpg" title="&lsquo;Hora do Planeta&rsquo;" ></p>
+    <content type="html"><![CDATA[<p>{% img center /imgs/horadoplaneta.jpg &lsquo;Hora do Planeta&rsquo; %}</p>
 
 <p><strong>Q</strong>uantas horas por semana você pensa em seu planeta?? Seria pedir de mais uma hora por ano?</p>
 
