@@ -433,7 +433,7 @@ total 4.0K
 # chmod 0755 /var/www/html/index.html && chown root:apache /var/www/html/index.html
 ```
 
-**S**im, é verdade que fazendo manualmente neste caso seria MUITO mais rápido. O importante é lembrar do que falamos anteriormente. E se não for apenas 1 servidor? E se for um grupo? E se você ao invés de apEenas 3 resources, tiver 15? ou 40? E se alguém modificar algo em algum dos resources? Como você saberá? Vai verificar todos um a um para identificar o que precisa ser corrigido?
+**S**im, é verdade que fazendo manualmente neste caso seria MUITO mais rápido. O importante é lembrar do que falamos anteriormente: E se não for apenas 1 servidor? E se for um grupo? E se ao invés de apenas 3 resources, tiver 15? ou 40? E se alguém modificar algo em algum dos resources? Como você saberá qual foi? Vai verificar todos um a um para identificar o que precisa ser corrigido?
 
 # Vantagens:
 
@@ -443,7 +443,7 @@ total 4.0K
 # chmod 0666 /var/www/html/index.html
 ```
 
-**L**embrando que em nossa recipe exemplo.rb, definimos a permissão 0755. Neste caso, sempre que executarmos a recipe, ela vai verificar todos os resources e corrigir o que quer que tenha sido alterado.
+**L**embrando que em nossa recipe exemplo.rb, definimos a permissão 0755. Neste caso, sempre que executarmos a recipe, o Chef irá verificar todos os resources e corrigir o que quer que tenha sido alterado.
 
 ```
 # chef-client --local-mode exemplo.rb
@@ -470,7 +470,7 @@ Chef Client finished, 1/4 resources updated in 06 seconds
 [2018-04-01T20:04:14+00:00] WARN: No config file found or specified on command line, using command line options.
 ```
 
-**R**epare na linha *- change mode from '0666' to '0755'. O Chef acabou de corrigir automaticamente sem que nós tenhamos de vasculhar cada componente e arquivo em nosso servidor para saber o que foi alterado ou o que está fora do desejado. Novamente, aqui foi em um servidor único, com apenas um arquivo. Imagine ter que varrer manualmente diversos servidores e diversos arquivos e diretórios?
+**R**epare na linha *- change mode from '0666' to '0755'*. O Chef acabou de corrigir automaticamente sem que nós tenhamos de vasculhar cada componente e arquivo em nosso servidor para saber o que foi alterado ou o que está diferente do estado desejado. Novamente, aqui tratamos de um servidor único, com apenas um arquivo. Imagine ter que varrer manualmente diversos servidores e diversos arquivos e diretórios?
 
 **N**este exemplo, provavelmente o site poderia continuar funcionando, pois foi alterada apenas a permissão de um único arquivo, certo? Mas imagine que sem querer ele acabou parando o serviço httpd, ou até desinstalou o mesmo? Em uma instalação padrão com Chef Server, existem agendamentos que fazem com que o Chef execute as recipes a cada X minutos, portanto o serviço seria inicializado novamente automaticamente, ou mesmo instalado caso necessário.
 
