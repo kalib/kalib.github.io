@@ -4,7 +4,7 @@
   <title><![CDATA[Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://kalib.github.io/atom.xml" rel="self"/>
   <link href="http://kalib.github.io/"/>
-  <updated>2018-04-01T17:34:48-04:00</updated>
+  <updated>2018-04-01T17:35:43-04:00</updated>
   <id>http://kalib.github.io/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -220,7 +220,7 @@
 <li>Resource Type: package (Pois queremos instalar o pacote httpd)</li>
 <li>Resource Name: apache (Embora o nome do pacote no CentOS seja httpd, o nome do nosso resource aqui é apache, mas poderia ser qualquer coisa que desejarmos)</li>
 <li>Resource Properties: Aqui temos apenas <em>package_name</em> como propriedade, no qual damos o nome do pacote desejado. OBS: Caso não utilizemos a propriedade <em>package_name</em>, ele buscará por um pacote com mesmo nome do resource. No nosso caso, demos o nome <em>apache</em> para nosso resource, portanto ele buscaria por um pacote chamado <em>apache</em> e falharia, pois no CentOS este pacote não existe.</li>
-<li>Actions: install (Temos apenas uma ação para esta recipe, que é justamente a de instalar o pacote, CASO já não esteja instalado (idempotência))</li>
+<li>Actions: install (Temos apenas uma ação para esta recipe, que é justamente a de instalar o pacote, caso já não esteja instalado (idempotência))</li>
 </ul>
 
 
@@ -255,7 +255,7 @@
 <p>PS: Não se espante por enquanto com estes Warnings. Ele apenas está indicando que não possuímos um metadata, um readme e uma licença, pois não os criamos para este exemplo.</p>
 
 <p><strong>V</strong>erificado o código e aprovado, vamos executar esta recipe localmente.
-<em>(Repare no retorno que será apresentado, onde ele verifica o tipo de resource e identifica que estamos rodando em uma máquina CentoOS, portanto ele utiliza por padrão o yum para instalar o pacote desejado.)</em></p>
+<em>(Repare no retorno que será apresentado, onde ele verifica o tipo de resource e identifica que estamos rodando em uma máquina CentoOS, portanto utiliza por padrão o yum para instalar o pacote desejado.)</em></p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -313,7 +313,7 @@
 </span><span class='line'>           man:apachectl(8)</span></code></pre></td></tr></table></div></figure>
 
 
-<p><strong>I</strong>sto está correto, afinal o Chef vai deixar a máquina no estado que determinamos. E o determinado foi apenas instalar o pacote httpd. Mas de nada ele serve sem estar rodando como serviço, portanto vamos editar nossa recipe exemplo.rb e incluir nela um novo resource, desta vez um resource do tipo <em>service</em>, ou serviço. Sim, podemos ter diversos resources em uma mesma recipe. ;]</p>
+<p><strong>I</strong>sto está correto, afinal o Chef vai deixar a máquina no estado que determinamos. O determinado foi apenas instalar o pacote httpd. Mas de nada ele serve sem estar rodando como serviço, portanto vamos editar nossa recipe <em>exemplo.rb</em> e incluir nela um novo resource, desta vez um resource do tipo <em>service</em>, ou serviço. Sim, podemos ter diversos resources em uma mesma recipe. ;]</p>
 
 <p><strong>E</strong>dite sua recipe para que ela possua o seguinte conteúdo:</p>
 
