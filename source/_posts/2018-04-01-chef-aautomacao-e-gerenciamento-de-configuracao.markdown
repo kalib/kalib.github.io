@@ -150,7 +150,7 @@ $ wget https://packages.chef.io/files/stable/chefdk/2.5.3/el/7/chefdk-2.5.3-1.el
 $ sudo rpm -ivh chefdk-2.5.3-1.el7.x86_64.rpm
 ```
 
-**3- Confirmar que deu tudo certo:***
+**3- Confirmar que deu tudo certo:**
 
 ```
 $ chef --version
