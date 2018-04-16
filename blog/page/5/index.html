@@ -9,7 +9,7 @@
   <meta name="author" content="Marcelo Cavalcante Rocha - Kalib">
 
   
-  <meta name="description" content="Criptografia (Do grego kryptós, &ldquo;escondido&rdquo;, e gráphein, &ldquo;escrita&rdquo;) nada mais é do que o estudo e aplicação de técnicas com &hellip;">
+  <meta name="description" content="O protocolo ICMP pode ser utilizado para facilitar diversas rotinas e tarefas importantes de um administrador de redes, tais como na utilização de &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -80,6 +80,69 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/01/06/dica-de-seguranca-previna-ataques-bloqueando-pacotes-icmp-indesejados/">Dica De Segurança - Previna Ataques Bloqueando Pacotes ICMP Indesejados</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-01-06T08:40:00-05:00" pubdate data-updated="true">Jan 6<span>th</span>, 2014</time>
+        
+         | <a href="/blog/2014/01/06/dica-de-seguranca-previna-ataques-bloqueando-pacotes-icmp-indesejados/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img class="left" src="/imgs/you_shall_not_pass.jpg" title="'Gandalf'" >
+<strong>O</strong> protocolo <em>ICMP</em> pode ser utilizado para facilitar diversas rotinas e tarefas importantes de um administrador de redes, tais como na utilização de ferramentas como o <em>ping</em> e o <em>traceroute</em>, mas também pode ser manipulado por pessoas mal intencionadas que podem manipular mensagens ou pacotes ICMP para mapear sua rede.</p>
+
+<p><strong>É</strong> comum ver administradores de rede se preocupando e fazendo um ótimo trabalho em termos de filtrar o tráfego <em>TCP</em> e/ou <em>UDP</em>, porém quase sempre esquecem de dar a mesma atenção ao tráfego <em>ICMP</em>, sendo este tão crítico quanto os dois anteriores. Uma vez que este protocolo pode ser utilizado para mapear e realizar ataques em sua rede, ele não pode simplesmente ser deixado de lado.</p>
+
+<p><strong>I</strong>CMP, sigla para <em>Internet Control Message Protocol</em>, é um protocolo integrante do Protocolo IP utilizado para fornecer relatórios de erros à fonte original. Seu tráfego é, basicamente, baseado em mensagens trocadas entre hots, gateways, etc., cujo intuito é, principalmente, reportar erros, como por exemplo um pacote IP que não consegue chegar ao seu destino.</p>
+
+<p><strong>P</strong>or padrão, alguns servidores e firewalls bloqueiam as respostas ICMP como medida de segurança, tentando assim bloquear os ataques que consistem na sobrecarga da memória, enviando dados (em ping) até o sistema não ter a capacidade de administrar suas próprias funções. Bom, ao mesmo tempo em que é um mecanismo de defesa interessante, este bloqueio total acaba comprometendo e atrapalhando diversas atividades do administrador de redes, não sendo portanto a estratégia mais inteligente a ser adotada.</p>
+
+<p><strong>A</strong>o invés de bloquear o ICMP por completo, é mais interessante conhecer o que é bom e o que é ruim em termos de mensagens ICMP, de forma que sejam realizados filtros corretos. A importância desta gangorra é não permitir que o lado <em>ruim</em> do ICMP, como por exemplo ICMP Smurf, Ping of death, ataques com ICMP flood ou ICMP nuke, prejudiquem o administrador de redes que pode tirar proveito de boas ferramentas que se utilizam do ICMP, como o Ping e o Traceroute.</p>
+
+<p><strong>A</strong> estratégia mais simples, portanto, é utilizar uma regra geral contendo exceções.</p>
+
+<ol>
+<li>Bloquear todos os tipos de tráfego ICMP;</li>
+<li>Permitir ping &mdash; CMP Echo-Request outbound (saída) e Echo-Reply inbound (entrada);</li>
+<li>Permitir traceroute &mdash; TTL-Exceeded e Port-Unreachable inbound (entrada);</li>
+<li>Permitir path MTU &mdash; ICMP Fragmentation-DF-Set inbound (entrada).</li>
+</ol>
+
+
+<p><strong>É</strong> claro que este é apenas um exemplo, visto que você poderá permitir mais ou menos, de acordo com a sua necessidade.</p>
+
+<p><strong>N</strong>ão deixemos pobre a nossa configuração, facilitando as coisas para ataques quando isto pode ser facilmente bloqueado.</p>
+
+<p><strong>H</strong>appy Hacking!</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -253,94 +316,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/12/27/vulnerabilidade-no-firefox-descobrindo-senhas-salvas/">Vulnerabilidade No Firefox - Descobrindo Senhas Salvas</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-12-27T08:40:00-05:00" pubdate data-updated="true">Dec 27<span>th</span>, 2013</time>
-        
-         | <a href="/blog/2013/12/27/vulnerabilidade-no-firefox-descobrindo-senhas-salvas/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><img class="left" src="/imgs/firefox_pass.png" title="'Firefox Peaces'" >
-<strong>U</strong>ma coisa é certa&hellip; usuários teimam em salvar senhas em navegadores para <em>facilitar</em> suas vidas durante a navegação na internet. Seja em emails, redes sociais, serviços online ou qualquer outra coisa, a opção <em>Salvar sua senha</em> parece possuir um enorme magnetismo ou um centro gravitacional extremamente denso a ponto de atrair o usuário para tal.</p>
-
-<p><strong>S</strong>erá que as pessoas não entendem o quão perigosa é a ideia de <em>salvar sua senha</em> onde quer que seja? É, praticamente, o mesmo risco assumido por quem anota suas senhas em <em>post-its</em> e os colam em seu monitor ou mesa.</p>
-
-<p><strong>H</strong>oje um colega me procurou para saber como recuperar uma senha que ele não lembrava mais. Já conhecendo o histórico do mesmo eu tinha certeza que ele tinha salvo esta senha no navegador. Então lhe mostrei como ele, ou qualquer outra pessoa, conseguiria facilmente descobrir todas as senhas salvas em seu navegador Firefox. A experiência foi boa por dois motivos:</p>
-
-<ol>
-<li>Ele conseguiu descobrir sua senha; <em>(a qual ele provavelmente não esqueceria se tivesse o costume de digitá-la sempre que necessário ao invés de salá-la no navegador)</em></li>
-<li>Ele entendeu o risco que ele corre com esta prática absurda;</li>
-</ol>
-
-
-<p><strong>V</strong>ejamos o quão <strong>simples</strong> <em>(para não dizer estúpido)</em> é o procedimento para descobrir as senhas salvas pelo usuário no navegador Firefox.</p>
-
-<ol>
-<li>Clique no menu <strong>Firefox</strong> que se encontra no canto superior esquerdo do navegador;</li>
-</ol>
-
-
-<p><img class="center" src="/imgs/firefox_pass_1.png" title="'Firefox Pass 1'" ></p>
-
-<ol>
-<li>Selecione a opção <strong>Preferências</strong> no menu e em seguida, novamente, <strong>Preferências</strong>;</li>
-</ol>
-
-
-<p><img class="center" src="/imgs/firefox_pass_2.png" title="'Firefox Pass 2'" ></p>
-
-<ol>
-<li>Na aba <strong>Segurança</strong>, clique no botão <strong>Senhas Salvas</strong>;</li>
-</ol>
-
-
-<p><img class="center" src="/imgs/firefox_pass_3.png" title="'Firefox Pass 3'" ></p>
-
-<ol>
-<li>Repare que na janela que será apresentada você terá uma lista de sites/serviços e usuários que deixaram suas senhas salvas. Nesta janela, clique no botão <strong>Mostrar Senhas</strong>;</li>
-</ol>
-
-
-<p><img class="center" src="/imgs/firefox_pass_4.png" title="'Firefox Pass 4'" ></p>
-
-<ol>
-<li>Agora você poderá ver as senhas salvas em texto plano, limpo e claro.</li>
-</ol>
-
-
-<p><img class="center" src="/imgs/firefox_pass_5.png" title="'Firefox Pass 5'" ></p>
-
-<p><strong>Lição aprendida: Não salve suas senhas!</strong></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/6/">&larr; Anteriores</a>
@@ -361,6 +336,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2018/04/16/10-anos-d/">10 anos! :D</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2018/04/14/chef-uso-de-condicionais-not-if-e-only-if/">Chef: Uso de Condicionais not_if e only_if</a>
       </li>
     
@@ -374,10 +353,6 @@
     
       <li class="post">
         <a href="/blog/2017/03/11/recebendo-alarmes-do-aws-diretamente-no-slack/">Recebendo Alarmes do AWS Diretamente no Slack</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/08/20/docker-uma-alternativa-elegante-para-containers-no-linux/">Docker - Uma alternativa elegante para containers no Linux</a>
       </li>
     
   </ul>

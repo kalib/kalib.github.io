@@ -4,7 +4,7 @@
   <title><![CDATA[Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://kalib.github.io/atom.xml" rel="self"/>
   <link href="http://kalib.github.io/"/>
-  <updated>2018-04-15T20:45:08-04:00</updated>
+  <updated>2018-04-16T00:51:51-04:00</updated>
   <id>http://kalib.github.io/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -12,6 +12,17 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[10 anos! :D]]></title>
+    <link href="http://kalib.github.io/blog/2018/04/16/10-anos-d/"/>
+    <updated>2018-04-16T00:41:00-04:00</updated>
+    <id>http://kalib.github.io/blog/2018/04/16/10-anos-d</id>
+    <content type="html"><![CDATA[<p><img src="http://kalib.github.io/imgs/birthday.gif" alt="10_Years_BIrthday" /></p>
+
+<p><strong>10 Anos de Blog! Tempo voa!</strong></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Chef: Uso de Condicionais not_if e only_if]]></title>
@@ -4205,69 +4216,6 @@ Clique em <strong>Next</strong>, reveja suas configurações e clique em <strong
 <blockquote><p><em>Há mais de sete décadas treze crianças foram designadas para cuidar de artefatos antigos, dotados com um poder primitivo e letal. As relíquias, como foram chamadas, deveriam ser mantidas por seus guardiões em total segurança e afastadas umas das outras. Entretanto, agora um homem sinistro e sua amante estão atrás delas, roubando cada peça e eliminando seus protetores, deixando um rastro de crimes violentos. Aparentemente por acaso, a jovem Sarah Miller se envolverá nessa trama perigosa e terá que correr contra o tempo para elucidar os enigmas que rondam sua nova vida. Serão os guardiões seres de outro mundo? Qual será o segredo das relíquias milenares? Por que justamente Sarah foi atraída para esse jogo mortal? Uma história inquietante, povoada de lendas que até hoje rondam nosso imaginário, As treze relíquias mostra que há forças que nunca devem ser despertadas.</em></p></blockquote>
 
 <p><strong>B</strong>oa leitura!</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Dica Rápida - Linux - Informações Sobre Arquivos com o Comando stat]]></title>
-    <link href="http://kalib.github.io/blog/2013/11/22/dica-rapida-linux-informacoes-sobre-arquivos-com-o-comando-stat/"/>
-    <updated>2013-11-22T08:22:00-05:00</updated>
-    <id>http://kalib.github.io/blog/2013/11/22/dica-rapida-linux-informacoes-sobre-arquivos-com-o-comando-stat</id>
-    <content type="html"><![CDATA[<p><img class="left" src="http://kalib.github.io/imgs/information.png" title="'Information'" ></p>
-
-<p><strong>Q</strong>ue os sistemas GNU/Linux possuem uma infinidade de comandos todo mundo sabe, o que nem todos conhecem, na verdade, são alguns comandos simples porém eficientes e importantes. Um deles é justamente o <em>stat</em>.</p>
-
-<p><strong>Q</strong>uando se está em frente ao terminal de um servidor que não possui interface gráfica, tudo o que está a nossa disposição são as ferramentas de linha de comando, portanto é bom conhecer uma boa variedade das mesmas, desde ferramentas para tarefas complexas até ferramentas para as atividades mais simples e banais.</p>
-
-<p><strong>A</strong> dica que deixo hoje é uma ferramenta que muitas pessoas desconhecem: <em>stat</em></p>
-
-<p><strong>O</strong> stat serve para apresentar as informações de status de um arquivo ou sistema de arquivos. Ele apresenta uma série de informações sobre o arquivo que você informar como argumento. Dentre as informações estão o <em>Tamanho</em>, <em>Blocos</em>, <em>Permissões de Acesso</em>, <em>Data e Hora de último acesso</em>, <em>Data e Hora de última modificação</em>, etc.</p>
-
-<p><strong>O</strong> uso é simples, bastando digitar: <em>stat &lt;caminho_do_arquivo_ou_sistema_de_arquivos></em>.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'> [kalib@tuxcaverna ~]$ stat testdisk.log 
-</span><span class='line'>  File: “testdisk.log”
-</span><span class='line'>  Size: 102478          Blocks: 208        IO Block: 4096   arquivo comum
-</span><span class='line'> Device: 804h/2052d      Inode: 27001862    Links: 1
-</span><span class='line'> Access: (0644/-rw-r--r--)  Uid: ( 1000/   kalib)   Gid: (  100/   users)
-</span><span class='line'> Access: 2013-11-11 11:31:34.360892496 -0300
-</span><span class='line'> Modify: 2011-05-10 09:48:46.000000000 -0300
-</span><span class='line'> Change: 2011-05-11 15:01:29.019407886 -0300
-</span><span class='line'> Birth: -</span></code></pre></td></tr></table></div></figure>
-
-
-<p>ou</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'> [kalib@tuxcaverna ~]$ stat /dev/sda1 
-</span><span class='line'>  File: “/dev/sda1”
-</span><span class='line'>  Size: 0               Blocks: 0          IO Block: 4096   arquivo especial de bloco
-</span><span class='line'> Device: 5h/5d   Inode: 7253        Links: 1     Device type: 8,1
-</span><span class='line'> Access: (0660/brw-rw----)  Uid: (    0/    root)   Gid: (    6/    disk)
-</span><span class='line'> Access: 2013-11-22 08:01:39.246618958 -0300
-</span><span class='line'> Modify: 2013-11-22 08:01:39.246618958 -0300
-</span><span class='line'> Change: 2013-11-22 08:01:39.246618958 -0300
-</span><span class='line'> Birth: -</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>H</strong>ave fun!</p>
 ]]></content>
   </entry>
   
