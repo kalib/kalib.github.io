@@ -9,7 +9,7 @@
   <meta name="author" content="Marcelo Cavalcante Rocha - Kalib">
 
   
-  <meta name="description" content="Uma coisa de cada vez Chef é uma popular ferramenta de Gerenciamento de Configurações criado pela empresa de mesmo nome, Chef. O Chef é desenvolvido &hellip;">
+  <meta name="description" content="Pare e volte uma casa Se você nunca utilizou ou sabe pouco sobre o Chef é importante que você pare aqui mesmo e volte uma casa. Sugiro que leia o &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -80,6 +80,702 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2018/04/14/chef-uso-de-condicionais-not-if-e-only-if/">Chef: Uso De Condicionais Not_if E Only_if</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2018-04-14T19:33:00-04:00" pubdate data-updated="true">Apr 14<span>th</span>, 2018</time>
+        
+         | <a href="/blog/2018/04/14/chef-uso-de-condicionais-not-if-e-only-if/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img class="center" src="/imgs/chef-logo2.png" title="'Chef'" ></p>
+
+<h2>Pare e volte uma casa</h2>
+
+<p><img class="center" src="/imgs/volte1casa.jpeg" title="'Volte1Casa'" >
+<strong>S</strong>e você nunca utilizou ou sabe pouco sobre o <em>Chef</em> é importante que você pare aqui mesmo e volte uma casa. Sugiro que leia o post <a href="http://blog.marcelocavalcante.net/blog/2018/04/01/chef-aautomacao-e-gerenciamento-de-configuracao/">Chef: Automação e Gerenciamento de Configuração</a> antes de seguir este, uma vez que através dele você entenderá o que é, e como funciona o Chef, bem como sua instalação básica.</p>
+
+<h2>Resources</h2>
+
+<p><strong>C</strong>onforme dito no post anterior, resource é uma descrição de estado que:</p>
+
+<ul>
+<li>Descreve o estado desejado para um item de configuração</li>
+<li>Declara os passos necessários para levar o item especificado ao estado desejado</li>
+<li>Especifica o tipo de resource &ndash; por exemplo, <code>package</code>, <code>template</code> ou <code>service</code></li>
+<li>Lita detalhes adicionais (também conhecidos como propriedades de resources), conforme necessário</li>
+<li>São agrupados em <em>recipes</em>, que descrevem configurações em geral</li>
+</ul>
+
+
+<h2>Utilizando (Guardas) not_if e only_if</h2>
+
+<p><strong>T</strong>odos os resources (incluindo os personalizados) no Chef compartilham um conjunto de opções comuns: ações, propriedades, condicionais, notificações e paths relativos.</p>
+
+<p><strong>Guards</strong></p>
+
+<p><strong>P</strong>ropriedades de <em>guarda</em>, ou <code>guards</code>, como são chamadas no Chef, podem ser utilizadas para avaliar o estado de um node durante a fase de execução do chef-client. Esta avaliação funciona como uma condicional e, baseando-se nos resultados da mesma, a propriedade guard é então utilizada para indicar ao chef-client se ele deve ou não continuar a execução de um resource. Uma propriedade guard aceita tanto um valor string quanto um bloco de código Ruby.</p>
+
+<ul>
+<li>A string é executada como um comando shell. Caso o comando retorne <code>0</code> (true), a propriedade guard é aplicada. Caso o comando retorne qualquer outro valor a propriedade guard não será aplicada.</li>
+<li>Um bloco é executado como um código Ruby que deve retornar <code>true</code> ou <code>false</code>. Da mesma forma, caso o comando retorne <code>true</code>, a propriedade guard é aplicada. Caso o comando retorne <code>false</code> a propriedade guard não será aplicada.</li>
+</ul>
+
+
+<p><strong>U</strong>ma <strong>guard</strong> é importante para garantir que um resource seja idempotente ao permitir um teste no próprio resource certificando-se de que o mesmo se encontra no estado desejado de forma que o chef-client não faça nada.</p>
+
+<p><strong>Atributos</strong></p>
+
+<p><strong>O</strong>s seguintes atributos podem ser utilizados para definir uma guard que é avaliada durante a fase de execução do chef-client:</p>
+
+<p><code>not_if</code> &ndash; <strong>Impede</strong> a execução de um resource quando a condição retornar <code>true</code>.</p>
+
+<p><code>only_if</code> &ndash; Permite a execução de um resource <strong>apenas</strong> quando a condição retornar <code>true</code>.</p>
+
+<h2>Mãos à obra</h2>
+
+<p><strong>P</strong>ara simplificar seguirei utilizando a recipe utilizada no post anterior. Não sabe o que é uma recipe? <code>-&gt;</code> Novamente, caso não entenda o que estou dizendo, volte uma casa e leia o <a href="http://blog.marcelocavalcante.net/blog/2018/04/01/chef-aautomacao-e-gerenciamento-de-configuracao/">post anterior</a>, no qual explico o que é uma recipe, bem como cada elemento da mesma, visto que a utilizaremos aqui.</p>
+
+<p><strong>N</strong>ossa recipe era a seguinte:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>package 'apache' do
+</span><span class='line'>        package_name 'httpd'
+</span><span class='line'>        action :install
+</span><span class='line'>end
+</span><span class='line'>
+</span><span class='line'>service 'httpd' do
+</span><span class='line'>        action [:enable, :start]
+</span><span class='line'>end
+</span><span class='line'>
+</span><span class='line'>file '/var/www/html/index.html' do
+</span><span class='line'>        content 'Hello World!'
+</span><span class='line'>        mode '0755'
+</span><span class='line'>        owner 'root'
+</span><span class='line'>        group 'apache'
+</span><span class='line'>end</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>C</strong>omo primeira alteração vamos editar o arquivo <code>/etc/motd</code>. Este arquivo nada mais é do que a definição de um baner que será apresentado sempre que alguém se logar em seu servidor.</p>
+
+<p><strong>P</strong>or padrão, este arquivo costuma vir vazio. Este é o caso da máquina utilizada para este exemplo:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[root@kalib6 ~]# cat /etc/motd
+</span><span class='line'>[root@kalib6 ~]#</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>C</strong>omeçaremos definindo o conteúdo que deverá existir em nosso arquivo <code>/etc/motd</code> incluindo um resource do tipo <code>file</code> no final de nossa recipe <code>exemplo.rb</code>:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>package 'apache' do
+</span><span class='line'>        package_name 'httpd'
+</span><span class='line'>        action :install
+</span><span class='line'>end
+</span><span class='line'>
+</span><span class='line'>service 'httpd' do
+</span><span class='line'>        action [:enable, :start]
+</span><span class='line'>end
+</span><span class='line'>
+</span><span class='line'>file '/var/www/html/index.html' do
+</span><span class='line'>        content 'Hello World!'
+</span><span class='line'>        mode '0755'
+</span><span class='line'>        owner 'root'
+</span><span class='line'>        group 'apache'
+</span><span class='line'>end
+</span><span class='line'>
+</span><span class='line'>file '/etc/motd' do
+</span><span class='line'>        content 'Bem Vindo!'
+</span><span class='line'>end</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>A</strong>té aqui nenhuma novidade (caso você tenha lido de fato o post anterior ou já tenha utilizado Chef anteriormente), apenas incluímos mais um resource em nossa recipe <code>exemplo.rb</code> informando que o arquivo <code>/etc/motd</code> deve existir e que seu conteúdo deverá ser <em>Bem Vindo!</em>.</p>
+
+<p><strong>V</strong>alidando e executando localmente nossa recipe conforme feito anteriormente veremos que todos os demais passos ou resources serão ignorados por já estarem estarem no estado desejado (idempotência), restando apenas a inclusão do conteúdo no <code>/etc/motd</code>:</p>
+
+<p><strong>Validando</strong></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[root@kalib6 ~]# ruby -c exemplo.rb && foodcritic exemplo.rb
+</span><span class='line'>Syntax OK
+</span><span class='line'>Checking 1 files
+</span><span class='line'>x
+</span><span class='line'>FC011: Missing README in markdown format: ../README.md:1
+</span><span class='line'>FC031: Cookbook without metadata.rb file: ../metadata.rb:1
+</span><span class='line'>FC071: Missing LICENSE file: ../LICENSE:1</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>Executando</strong></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[root@kalib6 ~]# chef-client --local-mode exemplo.rb
+</span><span class='line'>[2018-04-15T22:03:26+00:00] WARN: No config file found or specified on command line, using command line options.
+</span><span class='line'>[2018-04-15T22:03:26+00:00] WARN: No cookbooks directory found at or above current directory.  Assuming /root.
+</span><span class='line'>Starting Chef Client, version 13.8.5
+</span><span class='line'>resolving cookbooks for run list: []
+</span><span class='line'>Synchronizing Cookbooks:
+</span><span class='line'>Installing Cookbook Gems:
+</span><span class='line'>Compiling Cookbooks...
+</span><span class='line'>[2018-04-15T22:03:29+00:00] WARN: Node kalib6.test.com has an empty run list.
+</span><span class='line'>Converging 4 resources
+</span><span class='line'>Recipe: @recipe_files::/root/exemplo.rb
+</span><span class='line'>  * yum_package[apache] action install (up to date)
+</span><span class='line'>  * service[httpd] action enable (up to date)
+</span><span class='line'>  * service[httpd] action start (up to date)
+</span><span class='line'>  * file[/var/www/html/index.html] action create (up to date)
+</span><span class='line'>  * file[/etc/motd] action create
+</span><span class='line'>    - update content in file /etc/motd from e3b0c4 to f13843
+</span><span class='line'>    --- /etc/motd       2018-04-15 20:51:00.411479476 +0000
+</span><span class='line'>    +++ /etc/.chef-motd20180415-1681-1p1fm7m    2018-04-15 22:03:42.142091791 +0000
+</span><span class='line'>    @@ -1 +1,2 @@
+</span><span class='line'>    +Bem Vindo!
+</span><span class='line'>    - restore selinux security context
+</span><span class='line'>
+</span><span class='line'>Running handlers:
+</span><span class='line'>Running handlers complete
+</span><span class='line'>Chef Client finished, 1/5 resources updated in 15 seconds</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>P</strong>ara termos certeza de que o nosso arquivo foi corretamente alterado&hellip;</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[root@kalib6 ~]# cat /etc/motd
+</span><span class='line'>Bem Vindo!</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>N</strong>ovamente, nenhuma novidade até aqui.</p>
+
+<p><strong>V</strong>amos agora utilizar o tipo de resource <code>execute</code>, o qual nos permite executar um comando a cada execução do chef-client. Vale lembrar que uma das características do Chef é a idempotência, portanto o <code>execute</code> pode ser considerado uma exceção, já que o comando será executado sempre, mesmo que já tenha sido executado anteriormente. E é neste tipo de situação que os <code>guards</code> se mostram importantes.</p>
+
+<p><strong>C</strong>omecemos inserindo um resource do tipo <code>execute</code> em nossa recipe:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>package 'apache' do
+</span><span class='line'>        package_name 'httpd'
+</span><span class='line'>        action :install
+</span><span class='line'>end
+</span><span class='line'>
+</span><span class='line'>service 'httpd' do
+</span><span class='line'>        action [:enable, :start]
+</span><span class='line'>end
+</span><span class='line'>
+</span><span class='line'>file '/var/www/html/index.html' do
+</span><span class='line'>        content 'Hello World!'
+</span><span class='line'>        mode '0755'
+</span><span class='line'>        owner 'root'
+</span><span class='line'>        group 'apache'
+</span><span class='line'>end
+</span><span class='line'>
+</span><span class='line'>file '/etc/motd' do
+</span><span class='line'>        content 'Bem Vindo!'
+</span><span class='line'>end
+</span><span class='line'>
+</span><span class='line'>execute 'meu-comando' do
+</span><span class='line'>        command 'echo " Obrigado!" &gt;&gt; /etc/motd'
+</span><span class='line'>        only_if 'test -r /etc/motd'
+</span><span class='line'>end</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>O</strong> que adicionamos aqui?</p>
+
+<ul>
+<li>Resource Type: execute (Para que possamos executar um comando)</li>
+<li>Resource Name: meu-comando (Poderíamos ter utilizado qualquer nome)</li>
+<li>Command: &lsquo;echo &ldquo; Obrigado!&rdquo; >> /etc/motd&rsquo; (O comando que desejamos executar. Estou utilizando <code>echo</code> para inserir * Obrigado!* ao meu arquivo <code>/etc/motd</code>)</li>
+<li>Guard: only_if &lsquo;test -r /etc/motd&rsquo; (<code>only_if</code> implica que meu resource <em>meu-comando</em> será executado <strong>apenas</strong> caso o resultado de <code>test -r /etc/motd</code> seja positivo. <em>test -r</em> irá verificar se o arquivo <code>/etc/motd</code> existe no sistema. Caso sim, meu comando <code>echo " Obrigado!" &gt;&gt; /etc/motd</code> será executado conforme planejado, do contrário será ignorado)</li>
+</ul>
+
+
+<p><strong>N</strong>ós já sabemos que o arquivo existe, portanto esperamos que * Obrigado!* seja adicionada ao mesmo após execução do chef-client.</p>
+
+<p><strong>Verificando nosso código</strong></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[root@kalib6 ~]# ruby -c exemplo.rb && foodcritic exemplo.rb
+</span><span class='line'>Syntax OK
+</span><span class='line'>Checking 1 files
+</span><span class='line'>x
+</span><span class='line'>FC011: Missing README in markdown format: ../README.md:1
+</span><span class='line'>FC031: Cookbook without metadata.rb file: ../metadata.rb:1
+</span><span class='line'>FC071: Missing LICENSE file: ../LICENSE:1</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>Tudo ok. Executando&hellip;</strong></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[root@kalib6 ~]# chef-client --local-mode exemplo.rb
+</span><span class='line'>[2018-04-15T23:08:54+00:00] WARN: No config file found or specified on command line, using command line options.
+</span><span class='line'>[2018-04-15T23:08:54+00:00] WARN: No cookbooks directory found at or above current directory.  Assuming /root.
+</span><span class='line'>Starting Chef Client, version 13.8.5
+</span><span class='line'>resolving cookbooks for run list: []
+</span><span class='line'>Synchronizing Cookbooks:
+</span><span class='line'>Installing Cookbook Gems:
+</span><span class='line'>Compiling Cookbooks...
+</span><span class='line'>[2018-04-15T23:09:03+00:00] WARN: Node kalib6.test.com has an empty run list.
+</span><span class='line'>Converging 5 resources
+</span><span class='line'>Recipe: @recipe_files::/root/exemplo.rb
+</span><span class='line'>  * yum_package[apache] action install (up to date)
+</span><span class='line'>  * service[httpd] action enable (up to date)
+</span><span class='line'>  * service[httpd] action start (up to date)
+</span><span class='line'>  * file[/var/www/html/index.html] action create (up to date)
+</span><span class='line'>  * file[/etc/motd] action create (up to date)
+</span><span class='line'>  * execute[meu-comando] action run
+</span><span class='line'>    - execute echo " Obrigado!" &gt;&gt; /etc/motd
+</span><span class='line'>
+</span><span class='line'>Running handlers:
+</span><span class='line'>Running handlers complete
+</span><span class='line'>Chef Client finished, 1/6 resources updated in 31 seconds</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>R</strong>epare que o Chef executou o comando para inserir <code>Obrigado!</code>.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[root@kalib6 ~]# cat /etc/motd
+</span><span class='line'>Bem Vindo! Obrigado!</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>C</strong>onforme dito anteriormente, o resource <code>execute</code> irá executar o meu comando SEMPRE que o chef-client rodar. Vejamos o que acontece ao executar novamente o chef-client sem alterar a recipe.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[root@kalib6 ~]# chef-client --local-mode exemplo.rb
+</span><span class='line'>[2018-04-15T23:18:10+00:00] WARN: No config file found or specified on command line, using command line options.
+</span><span class='line'>[2018-04-15T23:18:10+00:00] WARN: No cookbooks directory found at or above current directory.  Assuming /root.
+</span><span class='line'>Starting Chef Client, version 13.8.5
+</span><span class='line'>resolving cookbooks for run list: []
+</span><span class='line'>Synchronizing Cookbooks:
+</span><span class='line'>Installing Cookbook Gems:
+</span><span class='line'>Compiling Cookbooks...
+</span><span class='line'>[2018-04-15T23:18:20+00:00] WARN: Node kalib6.test.com has an empty run list.
+</span><span class='line'>Converging 5 resources
+</span><span class='line'>Recipe: @recipe_files::/root/exemplo.rb
+</span><span class='line'>  * yum_package[apache] action install (up to date)
+</span><span class='line'>  * service[httpd] action enable (up to date)
+</span><span class='line'>  * service[httpd] action start (up to date)
+</span><span class='line'>  * file[/var/www/html/index.html] action create (up to date)
+</span><span class='line'>  * file[/etc/motd] action create
+</span><span class='line'>    - update content in file /etc/motd from 201ddf to f13843
+</span><span class='line'>    --- /etc/motd       2018-04-15 23:16:13.705005377 +0000
+</span><span class='line'>    +++ /etc/.chef-motd20180415-2432-zhtjnq     2018-04-15 23:18:42.138379629 +0000
+</span><span class='line'>    @@ -1,2 +1,2 @@
+</span><span class='line'>    -Bem Vindo! Obrigado!
+</span><span class='line'>    +Bem Vindo!
+</span><span class='line'>    - restore selinux security context
+</span><span class='line'>  * execute[meu-comando] action run
+</span><span class='line'>    - execute echo " Obrigado!" &gt;&gt; /etc/motd
+</span><span class='line'>
+</span><span class='line'>Running handlers:
+</span><span class='line'>Running handlers complete
+</span><span class='line'>Chef Client finished, 2/6 resources updated in 31 seconds</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>C</strong>omo em nossa recipe temos o resource <code>file</code> que determina o conteúdo do arquivo <code>/etc/motd</code> como sendo <code>Bem Vindo!</code>, o chef percebeu que o arquivo se encontrava diferente, pois acrescentamos o <code>Obrigado!</code> no passo anterior. O arquivo foi corrigido, voltando a ter seu conteúdo original, em seguida o Chef inseriu novamente <code>Obrigado!</code>, pois assim está determinado em nossa recipe.</p>
+
+<p><strong>É</strong> fácil perceber isto nas linhas a seguir, retiradas do resultado de nossa última execução do chef-client:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>* file[/etc/motd] action create
+</span><span class='line'>  - update content in file /etc/motd from 201ddf to f13843
+</span><span class='line'>  --- /etc/motd       2018-04-15 23:16:13.705005377 +0000
+</span><span class='line'>  +++ /etc/.chef-motd20180415-2432-zhtjnq     2018-04-15 23:18:42.138379629 +0000
+</span><span class='line'>  @@ -1,2 +1,2 @@
+</span><span class='line'>  -Bem Vindo! Obrigado!
+</span><span class='line'>  +Bem Vindo!
+</span><span class='line'>  - restore selinux security context
+</span><span class='line'>* execute[meu-comando] action run
+</span><span class='line'>  - execute echo " Obrigado!" &gt;&gt; /etc/motd</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>S</strong>e verificarmos nosso arquivo, veremos que ele está da mesma forma:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[root@kalib6 ~]# cat /etc/motd
+</span><span class='line'>Bem Vindo! Obrigado!</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>P</strong>ara percebermos a diferença, vamos comentar as linhas do resource file <code>/etc/motd</code>:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>...
+</span><span class='line'>#file '/etc/motd' do
+</span><span class='line'>#       content 'Bem Vindo!'
+</span><span class='line'>#end
+</span><span class='line'>...</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>A</strong>o comentar estas linhas, nossa recipe não mais indicará que o conteúdo do arquivo <code>/etc/motd</code> deve ser <code>Bem Vindo!</code>, portanto vejamos o que acontece quando executamos novamente o chef-client.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[root@kalib6 ~]# chef-client --local-mode exemplo.rb
+</span><span class='line'>[2018-04-15T23:28:32+00:00] WARN: No config file found or specified on command line, using command line options.
+</span><span class='line'>[2018-04-15T23:28:33+00:00] WARN: No cookbooks directory found at or above current directory.  Assuming /root.
+</span><span class='line'>Starting Chef Client, version 13.8.5
+</span><span class='line'>resolving cookbooks for run list: []
+</span><span class='line'>Synchronizing Cookbooks:
+</span><span class='line'>Installing Cookbook Gems:
+</span><span class='line'>Compiling Cookbooks...
+</span><span class='line'>[2018-04-15T23:28:42+00:00] WARN: Node kalib6.test.com has an empty run list.
+</span><span class='line'>Converging 4 resources
+</span><span class='line'>Recipe: @recipe_files::/root/exemplo.rb
+</span><span class='line'>  * yum_package[apache] action install (up to date)
+</span><span class='line'>  * service[httpd] action enable (up to date)
+</span><span class='line'>  * service[httpd] action start (up to date)
+</span><span class='line'>  * file[/var/www/html/index.html] action create (up to date)
+</span><span class='line'>  * execute[meu-comando] action run
+</span><span class='line'>    - execute echo " Obrigado!" &gt;&gt; /etc/motd
+</span><span class='line'>
+</span><span class='line'>Running handlers:
+</span><span class='line'>Running handlers complete
+</span><span class='line'>Chef Client finished, 1/5 resources updated in 32 seconds</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>U</strong>ma vez que nosso arquivo <code>/etc/motd</code> já possuía o conteúdo <code>Bem Vindo! Obrigado!</code> e desta vez não tentou garantir que o conteúdo do mesmo fosse apenas <code>Bem Vindo!</code>, vejamos como ele se encontra:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[root@kalib6 ~]# cat /etc/motd
+</span><span class='line'>Bem Vindo! Obrigado!
+</span><span class='line'> Obrigado!
+</span><span class='line'> ```
+</span><span class='line'>
+</span><span class='line'> **C**omo esperado, inserimos mais um ` Obrigado!` ao arquivo. Se executarmos novamente o chef-client, estaremos acrescentando novamente um ` Obrigado!` ao arquivo, pois o mesmo existe e não estamos mais tentando validar seu conteúdo.
+</span><span class='line'>
+</span><span class='line'> **E** se removermos manualmente o arquivo `/etc/motd`?
+</span><span class='line'>
+</span><span class='line'> ```
+</span><span class='line'>[root@kalib6 ~]# rm /etc/motd
+</span><span class='line'>rm: remove regular file ‘/etc/motd’? y
+</span><span class='line'>[root@kalib6 ~]# cat /etc/motd
+</span><span class='line'>cat: /etc/motd: No such file or directory</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>V</strong>ejamos o que o chef-client fará:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>... (Ignorando linhas desnecessárias)
+</span><span class='line'>  * execute[meu-comando] action run (skipped due to only_if)
+</span><span class='line'>...</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>C</strong>omo já tínhamos comentado as linhas que garantem que o <code>/etc/motd</code> existe e possui o conteúdo <code>Bem Vindo!</code>, o resource que incluiría <code>Obrigado!</code> foi ignorado, pois em nossa guard temos a condição <code>only_if</code>, que indica que o comando só será executado SE o arquivo /etc/motd existir. Para ter certeza disto, vamos verificar:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[root@kalib6 ~]# cat /etc/motd
+</span><span class='line'>cat: /etc/motd: No such file or directory</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>A</strong>proveitando a situação, vamos alterar nossa recipe e utilizar <code>not_if</code> ao invés de <code>only_if</code>:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>package 'apache' do
+</span><span class='line'>        package_name 'httpd'
+</span><span class='line'>        action :install
+</span><span class='line'>end
+</span><span class='line'>
+</span><span class='line'>service 'httpd' do
+</span><span class='line'>        action [:enable, :start]
+</span><span class='line'>end
+</span><span class='line'>
+</span><span class='line'>file '/var/www/html/index.html' do
+</span><span class='line'>        content 'Hello World!'
+</span><span class='line'>        mode '0755'
+</span><span class='line'>        owner 'root'
+</span><span class='line'>        group 'apache'
+</span><span class='line'>end
+</span><span class='line'>
+</span><span class='line'>#file '/etc/motd' do
+</span><span class='line'>#       content 'Bem Vindo!'
+</span><span class='line'>#end
+</span><span class='line'>
+</span><span class='line'>execute 'meu-comando' do
+</span><span class='line'>        command 'echo " Obrigado!" &gt;&gt; /etc/motd'
+</span><span class='line'>        not_if 'test -r /etc/motd'
+</span><span class='line'>end</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>J</strong>á sabemos que o arquivo não existe, portanto a nossa regra agora será satisfeita, visto que queremos adicionar o conteúdo <code>Obrigado!</code> APENAS caso o arquivo NÃO exista.</p>
+
+<p><strong>V</strong>ale lembrar que, por padrão, o comando <code>echo ' Obrigado!' &gt;&gt; /etc/motd</code> irá adicionar o conteúdo ao arquivo e, caso o mesmo não exista, ele será criado com o determinado conteúdo. Isto não é um recurso do Chef, mas sim do próprio linux/echo. Executando nosso chef-client:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>... (Ignorando linhas desnecessárias)
+</span><span class='line'>* execute[meu-comando] action run
+</span><span class='line'>  - execute echo " Obrigado!" &gt;&gt; /etc/motd
+</span><span class='line'>
+</span><span class='line'>Running handlers:
+</span><span class='line'>Running handlers complete</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>R</strong>epare que o arquivo foi criado apenas com o conteúdo <code>Obrigado!</code>, conforme descrito em nossa recipe.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[root@kalib6 ~]# cat /etc/motd
+</span><span class='line'> Obrigado!</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>C</strong>aso o chef-client seja executado novamente, nada acontecerá, uma vez que o resource atual indica que o comando APENAS deverá ser executado caso o arquivo NÃO exista.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>... (Ignorando linhas desnecessárias)
+</span><span class='line'>  * execute[meu-comando] action run (skipped due to not_if)
+</span><span class='line'>...</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>S</strong>imples, certo?! É importante lembrar que o Chef executará os resources na devida ordem em que forem listados na recipe, portanto é importante alinhar todas as instruções e resources de acordo com o resultado desejado.</p>
+
+<p><strong>H</strong>appy hacking!</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -271,7 +967,7 @@
 </pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo rpm -ivh chefdk-2.5.3-1.el7.x86_64.rpm</span></code></pre></td></tr></table></div></figure>
 
 
-<p><strong>3- Confirmar que deu tudo certo:</strong>*</p>
+<p><strong>3- Confirmar que deu tudo certo:</strong></p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -1748,469 +2444,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2017/03/11/recebendo-alarmes-do-aws-diretamente-no-slack/">Recebendo Alarmes Do AWS Diretamente No Slack</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2017-03-11T12:03:00-05:00" pubdate data-updated="true">Mar 11<span>th</span>, 2017</time>
-        
-         | <a href="/blog/2017/03/11/recebendo-alarmes-do-aws-diretamente-no-slack/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><img class="center" src="/imgs/aws_slack.png" title="'AWS_Slack'" ></p>
-
-<p><strong>A</strong>ntes de entrar na configuração dos serviços, talvez seja necessário apresentar o <a href="http://www.slack.com">Slack</a>, visto que muitos ainda não conhecem ou utilizam esta poderosa e versátil ferramenta de comunicação instantânea para times.</p>
-
-<p><strong>S</strong>lack é uma plataforma para comunicação entre times que desejam um ambiente mais dinâmico e ágil. Diferentemente de muitas plataformas de chat disponíveis, como o Google Hangouts, o Slack nos permite criar canais distintos com membros distintos de um mesmo time fazendo parte daquele canal específico. Não, não estou falando de chat em grupo, mas sim canais específicos que permitem integrações com serviços distintos, como receber notificações sobre commits feitos em um repositório ou branch específico no github, notificações de tickets abertos em ferramentas como o Jira, por exemplo, etc. O Slack é completamente programável e escalável, o que nos permite ter inúmeras funcionalidas.</p>
-
-<p><strong>P</strong>rovavelmente não seja necessário apresentar o AWS, ou Amazon Web Services, visto que já está no mercado desde 2006, no entanto cabe um resumo para os que não estão familiarizados com o mesmo (embora o público alvo deste post seja quem já possui alguma familiaridade com AWS).</p>
-
-<p><strong>A</strong>ws ou Amazon Web Services é uma plataforma de serviços em nuvem segura, oferecendo poder computacional, armazentamento de banco de dados, distribuição de conteúdo e outras funcionalidades.</p>
-
-<p><strong>P</strong>or que eu deveria ter alarmes e notificações do AWS em um serviço de chat como o Slack quando já recebo estas notificações por email?</p>
-
-<p><strong>É</strong> verdade que o uso mais comum para envio de alarmes e notificações do AWS costuma ser via email, no entanto fica fácil identificar alguns problemas com este método. O principal e mais recorrente que vejo é o caso de as notificações caírem em um email específico visto por poucas pessoas (na maioria das vezes) ou nem visto sequer, pois geralmente as pessoas ficam cansadas de olhar notificações e ter sua caixa de entrada entupida com eles portanto criam filtros que jogam os emails de notificação para um diretório que dificilmente será checado.</p>
-
-<p><strong>O</strong>utro problema comum com esta prática é a demora até que alguém leia a notificação no meio de tantos outros na pasta ou filtro criado e, muitas vezes, quando se vê a notificação, o problema já está aguardando uma solução há horas.</p>
-
-<p><strong>D</strong>eixando claro, não estou defendendo a ideia de abolir as notificações por email. Eu mesmo utilizo ambos, afinal o email continua bastante eficiente para fins de armazenamento e checagem histórica, por exemplo.</p>
-
-<p><strong>U</strong>ma vez que nos dias atuais os times de TI estão cada vez mais unificados e dinâmicos, buscando incorporar uma mentalidade DevOps e Agile, a comunicação rápida e eficiente se torna um fator primordial para o sucesso de qualquer projeto. Ter um local centralizado para conversar com os demais membros do time, trocar arquivos, detalhes de projetos, receber notificações de commits, prazos, tickets, documentação e, por que não, notificações de monitoramento e alarmes, torna-se essencial.</p>
-
-<p><strong>V</strong>amos então entender como funcionaria uma solução para enviar as notificações e alarmes do AWS para o Slack.</p>
-
-<p><strong>O</strong> que utilizaremos:</p>
-
-<ol>
-<li>No Slack:
-
-<ul>
-<li>Um plugin ou Slack App chamado <strong>Incoming WebHooks</strong></li>
-<li>O nome de um canal para envio das notificações</li>
-</ul>
-</li>
-<li>No AWS:
-
-<ul>
-<li>Serviço <strong>SNS Topic</strong></li>
-<li>Serviço <strong>CloudWatch</strong></li>
-<li>Serviço <strong>Lambda Function</strong></li>
-</ul>
-</li>
-</ol>
-
-
-<p><strong>V</strong>amos lá&hellip;</p>
-
-<p><strong>Slack</strong></p>
-
-<p><strong>V</strong>amos começar escolhendo o canal no Slack no qual desejo receber a minha notificação ou alarme: #devops</p>
-
-<p><em>Estou supondo que você já utiliza o Slack e já possui um time criado no mesmo. Caso ainda não, crie um time no Slack seguindo os passos descritos no <a href="https://slack.com/">site oficial</a> antes de seguir em frente&hellip; ;]</em></p>
-
-<p><strong>O</strong> próximo passo é configurar a integração instalando o Plugin ou Slack App <strong>Incoming WebHooks</strong>. Para isto, acesse a página de apps de seu time no Slack: <a href="https://SEUTIME.slack.com/apps">https://SEUTIME.slack.com/apps</a></p>
-
-<p><strong>P</strong>esquise por Incoming WebHooks e você terá apenas um resultado, portanto clique sem medo.</p>
-
-<p><img class="center" src="/imgs/slack1.png" title="'Incoming WebHook'" ></p>
-
-<p><strong>C</strong>lique no pequeno lápis que se encontrará no canto direito para editar as configurações do Incoming WebHook. Os únicos campos que precisaremos editar neste momento são os seguintes:
-  * Post to Channel &ndash; Aqui indicarei o meu canal: #devops
-  * Customize Name &ndash; Aqui indicarei um nome qualquer: AWS-Alerts</p>
-
-<p><strong>Importante:</strong> Repare que nesta página de configurações ele lhe passará uma entrada ou URL com o código para o seu WebHook. Esta informação estará listada em <strong>Webhook URL</strong> e será algo como: *<a href="https://hooks.slack.com/services/T434P71A4/U4G3JUG13/kPjvXY4Kd8wPm4TvrEqhN6Dv*.">https://hooks.slack.com/services/T434P71A4/U4G3JUG13/kPjvXY4Kd8wPm4TvrEqhN6Dv*.</a> Copie esta informação em algum local de fácil acesso pois precisaremos desta URL para a configuração que faremos a seguir no AWS.</p>
-
-<p><strong>S</strong>alve suas configurações e vamos configurar os serviços do AWS para que nosso WebHook possa receber as informações devidamente.</p>
-
-<p><strong>Amazon Web Services</strong></p>
-
-<p><strong>S</strong>e você já possui alguma familiaridade com o AWS, sabe que existem duas formas principais para administração e gerenciamento de nossos serviços: Pela interface web de gerenciamento (GUI) OU pela linha de comandos através da AWS CLI Tool que se comunica com a API do AWS. Este procedimento, assim como praticamente todos os outros, pode ser realizado por ambos os meios.</p>
-
-<p><strong>S</strong>e você também gosta de automação, provavelmente prefere utilizar a CLI, no entanto irei listar aqui o procedimento em ambos os meios.</p>
-
-<p><strong>Passo 1: Criando um SNS Topic para receber os alarmes</strong></p>
-
-<p><strong>1.1 &ndash; Pela Interface Web de Gerenciamento (GUI)</strong></p>
-
-<ul>
-<li>A partir da Dashboard principal, clique ou busque pelo serviço SNS;</li>
-<li>Crie um novo SNS Topic:
-
-<ul>
-<li>No menu da lateral esquerda, clique em <strong>Topics</strong>;</li>
-<li>Clique em <strong>Create new topic</strong>;</li>
-<li>Preencha os campos <strong>Name</strong> (obrigatório) e <strong>Display Name</strong> (opcional) para o seu tópico. Para este exemplo utilizarei <em>aws-slack-alerts</em> como <strong>Name</strong> e <em>aws-slack</em> como <strong>Display Name</strong>; <em>(O Display Name só é necessário em caso de você também desejar enviar notificações por SMS)</em></li>
-<li>Clique em <strong>Create Topic</strong></li>
-</ul>
-</li>
-<li>Agora você já deve ser capaz de ver seu SNS Topic na lista.</li>
-</ul>
-
-
-<p><strong>1.2 &ndash; Pela AWS CLI Tool</strong></p>
-
-<p><em>Estou assumindo que se você optou por utilizar este método, é porque já possui sua CLI configurada e autenticando em sua conta do AWS com sua chave. Caso você não saiba do que estou falando, sugiro que siga a <a href="https://aws.amazon.com/pt/cli/?sc_channel=PS&amp;sc_campaign=acquisition_CA&amp;sc_publisher=google&amp;sc_medium=command_line_b&amp;sc_content=aws_cli_bmm&amp;sc_detail=%2Baws%20%2Bcli&amp;sc_category=command_line&amp;sc_segment=161196437429&amp;sc_matchtype=b&amp;sc_country=CA&amp;s_kwcid=AL!4422!3!161196437429!b!!g!!%2Baws%20%2Bcli&amp;ef_id=V8jOHQAABelSRAnr:20170311204146:s">documentação oficial</a> para isto.</em></p>
-
-<ul>
-<li>Pela CLI tool, digite o seguinte comando, indicando a região na qual você deseja criar seu tópico e o nome desejado:</li>
-</ul>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">aws</span> <span class="n">sns</span> <span class="n">create</span><span class="o">-</span><span class="n">topic</span>
-</span><span class='line'>    <span class="o">--</span><span class="n">region</span> <span class="n">us</span><span class="o">-</span><span class="n">west</span><span class="o">-</span><span class="mi">1</span>
-</span><span class='line'>    <span class="o">--</span><span class="n">name</span> <span class="n">aws</span><span class="o">-</span><span class="n">slack</span><span class="o">-</span><span class="n">alerts</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li><strong>IMPORTANTE:</strong> Você receberá um identificador (TopicArn) para este alarme. Você precisará dele no passo seguinte.</li>
-<li>Caso queira ter certeza, você pode listar seus tópicos utilizando:</li>
-</ul>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">aws</span> <span class="n">sns</span> <span class="nb">list</span><span class="o">-</span><span class="n">topics</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>Passo 2: Criando um Alarme no serviço CloudWatch</strong></p>
-
-<p><strong>2.1 &ndash; Pela Interface Web de Gerenciamento (GUI)</strong></p>
-
-<ul>
-<li>A partir da Dashboard principal, clique ou busque pelo serviço <strong>CloudWatch</strong>;</li>
-<li>Crie um novo Alarme:
-
-<ul>
-<li>Clique em <strong>Alarms</strong>;</li>
-<li>Clique no botão <strong>Create Alarm</strong>;</li>
-<li>Escolha a categoria do alarme desejado. Para este exemplo utilizarei <strong>ELB Metric > Per-LB Metrics</strong> <em>(Dentre as várias categorias disponíveis, esta se refere à Load Balancers)</em>;</li>
-<li>Selecione a métrica exata desejada. No caso deste exemplo, preciso selecionar a métrica e o Load Balancer desejado. Ao escolher a métrica e o alvo (em meu caso um Load Balancer) clique em <strong>Next</strong>. Neste exemplo eu escolhi a métrica <strong>HTTPCode_Backend_5XX</strong> <em>(para monitorar 500 errors)</em> e um Load Balancer chamado <strong>LB-GuySpyV3</strong>;</li>
-<li>O próximo passo é definir um nome e uma descrição para este <strong>Alarme</strong>, bem como definir as triggers e períodos de monitoramento. Neste exemplo utilizei o nome <strong>LB-GuySpyV3-ELB_500</strong> para meu alarme; <em>(Não entrarei em detalhes quanto ao uso das triggers, visto que para cada tipo ou categoria de métrica, as triggers serão diferentes, bem como o cenário de seu ambiente e nível de criticidade. Em resumo, se você deseja monitorar o uso de CPU de um determinado servidor, a trigger seria o gatilho que ativaria o alarme, por exemplo: Só quero ser alarmado se o uso de CPU neste servidor ou instância for >= 90% e assim permanecer por pelo menos 60 segundos, ou por dois períodos seguidos de 60seg.)</em></li>
-<li>Na seção <strong>Actions</strong> da configuração do Alarme defina o <strong>State</strong> e indique que a notificação deverá ser enviada <strong>(Send notification to)</strong> para o <strong>SNS Topic</strong> que criamos anteriormente. Para este exemplo optei por <strong>State is ALARM</strong> e decidi enviar as notificações para <strong>aws-slack-alerts</strong>, sendo este o SNS Topic que criei no início;</li>
-<li>Finalize clicando em <strong>Create Alarm</strong>.</li>
-</ul>
-</li>
-</ul>
-
-
-<p>  <strong>2.2 &ndash; Pela AWS CLI Tool</strong></p>
-
-<p>  <em>Novamente&hellip; Estou assumindo que se você optou por utilizar este método, é porque já possui sua CLI configurada e autenticando em sua conta do AWS com sua chave. Caso você não saiba do que estou falando, sugiro que siga a <a href="https://aws.amazon.com/pt/cli/?sc_channel=PS&amp;sc_campaign=acquisition_CA&amp;sc_publisher=google&amp;sc_medium=command_line_b&amp;sc_content=aws_cli_bmm&amp;sc_detail=%2Baws%20%2Bcli&amp;sc_category=command_line&amp;sc_segment=161196437429&amp;sc_matchtype=b&amp;sc_country=CA&amp;s_kwcid=AL!4422!3!161196437429!b!!g!!%2Baws%20%2Bcli&amp;ef_id=V8jOHQAABelSRAnr:20170311204146:s">documentação oficial</a> para isto.</em></p>
-
-<ul>
-<li>Pela CLI tool, digite o seguinte comando, indicando os atributos abaixo:
-
-<ul>
-<li><strong>region</strong> <em>(Região)</em>;</li>
-<li><strong>alarm-name</strong> <em>(Nome do alarme)</em>;</li>
-<li><strong>alarm-description</strong> <em>(Descrição do alarme)</em>;</li>
-<li><strong>alarm-actions</strong> <em>(Definir a ação do alarme &ndash; Apontar para o TopicArn do SNS Topic que criamos anteriormente)</em>;</li>
-<li><strong>metric-name</strong> <em>(Nome da Métrica desejada)</em>;</li>
-<li><strong>namespace AWS/ELB &mdash;statistic</strong> <em>(Estatística desejada para aquela métrica, neste caso utilizarei Sum (Soma) ao invés de Average (Média))</em>;</li>
-<li><strong>dimensions</strong> <em>(O alvo desta métrica de monitoramento, no nosso caso um Load Balancer)</em>;</li>
-<li><strong>period</strong> e <strong>evaluation-periods</strong> <em>(Períodos desejados para a trigger)</em>;</li>
-<li><strong>threshold</strong> <em>(O valor desejado: Neste exemplo estou colocando o valor como 1, portanto receberei o alarme caso seja >= 1. Sim, eu sei que receberei o alarme a cada minuto, mas estou fazendo isto de propósito para recebermos a notificação a fim de teste. Nunca utilize um threshold desses em produção. :p)</em>;</li>
-<li><strong>comparison-operator</strong> <em>(Operador de comparação desejado, neste caso >=)</em>;</li>
-</ul>
-</li>
-</ul>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">aws</span> <span class="n">cloudwatch</span> <span class="n">put</span><span class="o">-</span><span class="n">metric</span><span class="o">-</span><span class="n">alarm</span> <span class="o">--</span><span class="n">region</span> <span class="n">us</span><span class="o">-</span><span class="n">west</span><span class="o">-</span><span class="mi">1</span>
-</span><span class='line'>    <span class="o">--</span><span class="n">alarm</span><span class="o">-</span><span class="n">name</span> <span class="s">&quot;LB-GuySpyV3-ELB_500&quot;</span>
-</span><span class='line'>    <span class="o">--</span><span class="n">alarm</span><span class="o">-</span><span class="n">description</span> <span class="s">&quot;Sends 500-errors to Slack&quot;</span>
-</span><span class='line'>    <span class="o">--</span><span class="n">actions</span><span class="o">-</span><span class="n">enabled</span>
-</span><span class='line'>    <span class="o">--</span><span class="n">alarm</span><span class="o">-</span><span class="n">actions</span> <span class="s">&quot;TheTopicArn from last step&quot;</span>
-</span><span class='line'>    <span class="o">--</span><span class="n">metric</span><span class="o">-</span><span class="n">name</span> <span class="s">&quot;HTTPCode_Backend_5XX&quot;</span>
-</span><span class='line'>    <span class="o">--</span><span class="n">namespace</span> <span class="n">AWS</span><span class="o">/</span><span class="n">ELB</span> <span class="o">--</span><span class="n">statistic</span> <span class="s">&quot;Sum&quot;</span>
-</span><span class='line'>    <span class="o">--</span><span class="n">dimensions</span> <span class="s">&quot;Name=LoadBalancerName,Value=LB-GuySpyV3&quot;</span>
-</span><span class='line'>    <span class="o">--</span><span class="n">period</span> <span class="mi">60</span>
-</span><span class='line'>    <span class="o">--</span><span class="n">evaluation</span><span class="o">-</span><span class="n">periods</span> <span class="mi">60</span>
-</span><span class='line'>    <span class="o">--</span><span class="n">threshold</span> <span class="mi">1</span>
-</span><span class='line'>    <span class="o">--</span><span class="n">comparison</span><span class="o">-</span><span class="n">operator</span> <span class="s">&quot;GreaterThanOrEqualToThreshold&quot;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p></p>
-
-<p><strong>Passo 3: Criando uma Função Lambda como Assinante (Subscriber) do nosso SNS Topic</strong></p>
-
-<p><strong>3.1 &ndash; Pela Interface Web de Gerenciamento (GUI)</strong></p>
-
-<ul>
-<li>A partir da Dashboard principal, clique ou busque pelo serviço <strong>Lambda</strong>;</li>
-<li>Crie uma <strong>Nova Função Lambda</strong>:
-
-<ul>
-<li>Clique em <strong>Create a Lambda Function</strong>;</li>
-<li>Na tela <strong>Select Blueprint</strong> clique na opção <strong>cloudwatch-alarm-to-slack</strong>; <em>(Você poderá precisar buscar por esta opção)</em></li>
-<li>O próximo passo será a tela <strong>Configure Triggers</strong>. Selecione o <strong>SNS Topic</strong> que foi criado anteriormente (aws-slack-alerts neste exemplo) e marque a opção <strong>Enable Trigger</strong> e clique em Next;</li>
-<li>Em <strong>Configure Function</strong> dê um Nome e uma Descrição para a função e escolha <strong>Node.js.4.3</strong> como <strong>Runtime</strong>;</li>
-<li>No campo <strong>Lambda Function Code</strong> cole o seguinte código: <a href="https://gist.github.com/tomfa/b33f768908b0a83987d26f269e377e95">Disponível no github</a>
-
-<ul>
-<li>(Você deverá setar os valores das variáveis <strong>CHANNEL</strong> e <strong>PATH</strong>, onde CHANNEL é o canal do Slack para o qual você deseja mandar as notificações e PATH é a URL de seu WebHook, recebida quando configuramos o Incoming WebHook no Slack)</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-<span class='line-number'>50</span>
-<span class='line-number'>51</span>
-<span class='line-number'>52</span>
-<span class='line-number'>53</span>
-<span class='line-number'>54</span>
-<span class='line-number'>55</span>
-<span class='line-number'>56</span>
-<span class='line-number'>57</span>
-<span class='line-number'>58</span>
-<span class='line-number'>59</span>
-<span class='line-number'>60</span>
-<span class='line-number'>61</span>
-<span class='line-number'>62</span>
-<span class='line-number'>63</span>
-<span class='line-number'>64</span>
-<span class='line-number'>65</span>
-<span class='line-number'>66</span>
-<span class='line-number'>67</span>
-<span class='line-number'>68</span>
-<span class='line-number'>69</span>
-<span class='line-number'>70</span>
-<span class='line-number'>71</span>
-<span class='line-number'>72</span>
-<span class='line-number'>73</span>
-<span class='line-number'>74</span>
-<span class='line-number'>75</span>
-<span class='line-number'>76</span>
-<span class='line-number'>77</span>
-<span class='line-number'>78</span>
-<span class='line-number'>79</span>
-<span class='line-number'>80</span>
-<span class='line-number'>81</span>
-<span class='line-number'>82</span>
-<span class='line-number'>83</span>
-<span class='line-number'>84</span>
-<span class='line-number'>85</span>
-<span class='line-number'>86</span>
-<span class='line-number'>87</span>
-<span class='line-number'>88</span>
-<span class='line-number'>89</span>
-<span class='line-number'>90</span>
-<span class='line-number'>91</span>
-<span class='line-number'>92</span>
-<span class='line-number'>93</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">var</span> <span class="n">https</span> <span class="o">=</span> <span class="n">require</span><span class="p">(</span><span class="s">&#39;https&#39;</span><span class="p">);</span>
-</span><span class='line'><span class="n">var</span> <span class="n">util</span> <span class="o">=</span> <span class="n">require</span><span class="p">(</span><span class="s">&#39;util&#39;</span><span class="p">);</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">var</span> <span class="n">CHANNEL</span> <span class="o">=</span> <span class="s">&quot;#devops&quot;</span><span class="p">;</span>
-</span><span class='line'><span class="n">var</span> <span class="n">PATH</span> <span class="o">=</span> <span class="s">&quot;/services/T434P71A4/U4G3JUG13/kPjvXY4Kd8wPm4TvrEqhN6Dv&quot;</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">exports</span><span class="o">.</span><span class="n">handler</span> <span class="o">=</span> <span class="n">function</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>    <span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">JSON</span><span class="o">.</span><span class="n">stringify</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">null</span><span class="p">,</span> <span class="mi">2</span><span class="p">));</span>
-</span><span class='line'>    <span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s">&#39;From SNS:&#39;</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">Records</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">Sns</span><span class="o">.</span><span class="n">Message</span><span class="p">);</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="n">var</span> <span class="n">postData</span> <span class="o">=</span> <span class="p">{</span>
-</span><span class='line'>        <span class="s">&quot;channel&quot;</span><span class="p">:</span> <span class="n">CHANNEL</span><span class="p">,</span>
-</span><span class='line'>        <span class="s">&quot;username&quot;</span><span class="p">:</span> <span class="s">&quot;AWS SNS&quot;</span><span class="p">,</span>
-</span><span class='line'>        <span class="s">&quot;text&quot;</span><span class="p">:</span> <span class="s">&quot;*&quot;</span> <span class="o">+</span> <span class="n">event</span><span class="o">.</span><span class="n">Records</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">Sns</span><span class="o">.</span><span class="n">Subject</span> <span class="o">+</span> <span class="s">&quot;*&quot;</span><span class="p">,</span>
-</span><span class='line'>        <span class="s">&quot;icon_emoji&quot;</span><span class="p">:</span> <span class="s">&quot;:aws:&quot;</span>
-</span><span class='line'>    <span class="p">};</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="n">var</span> <span class="n">message</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">Records</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">Sns</span><span class="o">.</span><span class="n">Message</span><span class="p">;</span>
-</span><span class='line'>    <span class="n">var</span> <span class="n">severity</span> <span class="o">=</span> <span class="s">&quot;good&quot;</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="n">var</span> <span class="n">dangerMessages</span> <span class="o">=</span> <span class="p">[</span>
-</span><span class='line'>        <span class="s">&quot; but with errors&quot;</span><span class="p">,</span>
-</span><span class='line'>        <span class="s">&quot; to RED&quot;</span><span class="p">,</span>
-</span><span class='line'>        <span class="s">&quot;During an aborted deployment&quot;</span><span class="p">,</span>
-</span><span class='line'>        <span class="s">&quot;Failed to deploy application&quot;</span><span class="p">,</span>
-</span><span class='line'>        <span class="s">&quot;Failed to deploy configuration&quot;</span><span class="p">,</span>
-</span><span class='line'>        <span class="s">&quot;has a dependent object&quot;</span><span class="p">,</span>
-</span><span class='line'>        <span class="s">&quot;is not authorized to perform&quot;</span><span class="p">,</span>
-</span><span class='line'>        <span class="s">&quot;Pending to Degraded&quot;</span><span class="p">,</span>
-</span><span class='line'>        <span class="s">&quot;Stack deletion failed&quot;</span><span class="p">,</span>
-</span><span class='line'>        <span class="s">&quot;Unsuccessful command execution&quot;</span><span class="p">,</span>
-</span><span class='line'>        <span class="s">&quot;You do not have permission&quot;</span><span class="p">,</span>
-</span><span class='line'>        <span class="s">&quot;Your quota allows for 0 more running instance&quot;</span><span class="p">];</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="n">var</span> <span class="n">warningMessages</span> <span class="o">=</span> <span class="p">[</span>
-</span><span class='line'>        <span class="s">&quot; aborted operation.&quot;</span><span class="p">,</span>
-</span><span class='line'>        <span class="s">&quot; to YELLOW&quot;</span><span class="p">,</span>
-</span><span class='line'>        <span class="s">&quot;Adding instance &quot;</span><span class="p">,</span>
-</span><span class='line'>        <span class="s">&quot;Degraded to Info&quot;</span><span class="p">,</span>
-</span><span class='line'>        <span class="s">&quot;Deleting SNS topic&quot;</span><span class="p">,</span>
-</span><span class='line'>        <span class="s">&quot;is currently running under desired capacity&quot;</span><span class="p">,</span>
-</span><span class='line'>        <span class="s">&quot;Ok to Info&quot;</span><span class="p">,</span>
-</span><span class='line'>        <span class="s">&quot;Ok to Warning&quot;</span><span class="p">,</span>
-</span><span class='line'>        <span class="s">&quot;Pending Initialization&quot;</span><span class="p">,</span>
-</span><span class='line'>        <span class="s">&quot;Removed instance &quot;</span><span class="p">,</span>
-</span><span class='line'>        <span class="s">&quot;Rollback of environment&quot;</span>
-</span><span class='line'>        <span class="p">];</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">for</span><span class="p">(</span><span class="n">var</span> <span class="n">dangerMessagesItem</span> <span class="ow">in</span> <span class="n">dangerMessages</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>        <span class="k">if</span> <span class="p">(</span><span class="n">message</span><span class="o">.</span><span class="n">indexOf</span><span class="p">(</span><span class="n">dangerMessages</span><span class="p">[</span><span class="n">dangerMessagesItem</span><span class="p">])</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>            <span class="n">severity</span> <span class="o">=</span> <span class="s">&quot;danger&quot;</span><span class="p">;</span>
-</span><span class='line'>            <span class="k">break</span><span class="p">;</span>
-</span><span class='line'>        <span class="p">}</span>
-</span><span class='line'>    <span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="o">//</span> <span class="n">Only</span> <span class="n">check</span> <span class="k">for</span> <span class="n">warning</span> <span class="n">messages</span> <span class="k">if</span> <span class="n">necessary</span>
-</span><span class='line'>    <span class="k">if</span> <span class="p">(</span><span class="n">severity</span> <span class="o">==</span> <span class="s">&quot;good&quot;</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>        <span class="k">for</span><span class="p">(</span><span class="n">var</span> <span class="n">warningMessagesItem</span> <span class="ow">in</span> <span class="n">warningMessages</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>            <span class="k">if</span> <span class="p">(</span><span class="n">message</span><span class="o">.</span><span class="n">indexOf</span><span class="p">(</span><span class="n">warningMessages</span><span class="p">[</span><span class="n">warningMessagesItem</span><span class="p">])</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>                <span class="n">severity</span> <span class="o">=</span> <span class="s">&quot;warning&quot;</span><span class="p">;</span>
-</span><span class='line'>                <span class="k">break</span><span class="p">;</span>
-</span><span class='line'>            <span class="p">}</span>
-</span><span class='line'>        <span class="p">}</span>
-</span><span class='line'>    <span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="n">postData</span><span class="o">.</span><span class="n">attachments</span> <span class="o">=</span> <span class="p">[</span>
-</span><span class='line'>        <span class="p">{</span>
-</span><span class='line'>            <span class="s">&quot;color&quot;</span><span class="p">:</span> <span class="n">severity</span><span class="p">,</span>
-</span><span class='line'>            <span class="s">&quot;text&quot;</span><span class="p">:</span> <span class="n">message</span>
-</span><span class='line'>        <span class="p">}</span>
-</span><span class='line'>    <span class="p">];</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="n">var</span> <span class="n">options</span> <span class="o">=</span> <span class="p">{</span>
-</span><span class='line'>        <span class="n">method</span><span class="p">:</span> <span class="s">&#39;POST&#39;</span><span class="p">,</span>
-</span><span class='line'>        <span class="n">hostname</span><span class="p">:</span> <span class="s">&#39;hooks.slack.com&#39;</span><span class="p">,</span>
-</span><span class='line'>        <span class="n">port</span><span class="p">:</span> <span class="mi">443</span><span class="p">,</span>
-</span><span class='line'>        <span class="n">path</span><span class="p">:</span> <span class="n">PATH</span>
-</span><span class='line'>    <span class="p">};</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="n">var</span> <span class="n">req</span> <span class="o">=</span> <span class="n">https</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">options</span><span class="p">,</span> <span class="n">function</span><span class="p">(</span><span class="n">res</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>      <span class="n">res</span><span class="o">.</span><span class="n">setEncoding</span><span class="p">(</span><span class="s">&#39;utf8&#39;</span><span class="p">);</span>
-</span><span class='line'>      <span class="n">res</span><span class="o">.</span><span class="n">on</span><span class="p">(</span><span class="s">&#39;data&#39;</span><span class="p">,</span> <span class="n">function</span> <span class="p">(</span><span class="n">chunk</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>        <span class="n">context</span><span class="o">.</span><span class="n">done</span><span class="p">(</span><span class="n">null</span><span class="p">,</span> <span class="n">postData</span><span class="p">);</span>
-</span><span class='line'>      <span class="p">});</span>
-</span><span class='line'>    <span class="p">});</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="n">req</span><span class="o">.</span><span class="n">on</span><span class="p">(</span><span class="s">&#39;error&#39;</span><span class="p">,</span> <span class="n">function</span><span class="p">(</span><span class="n">e</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>      <span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s">&#39;problem with request: &#39;</span> <span class="o">+</span> <span class="n">e</span><span class="o">.</span><span class="n">message</span><span class="p">);</span>
-</span><span class='line'>    <span class="p">});</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="n">req</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">util</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;%j&quot;</span><span class="p">,</span> <span class="n">postData</span><span class="p">));</span>
-</span><span class='line'>    <span class="n">req</span><span class="o">.</span><span class="n">end</span><span class="p">();</span>
-</span><span class='line'><span class="p">};</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>O <strong>Handler</strong> deverá ser o default <code>index.handler</code>;
-
-<ul>
-<li>Para <strong>role</strong> selecione <strong>Create a custom role</strong>; <em>(Isto será necessário apenas para a sua primeira função)</em></li>
-<li>Na tela seguinte selecione <strong>lambda_basic_execution</strong> como <strong>IAM role</strong> e deixe o <strong>Policy Name</strong> com seu valor default. O AWS irá criar uma política de segurança padrão que nos dará os privilégios necessários. Clique em <strong>Allow</strong>;</li>
-<li>Certifique-se de que o valor para <strong>VPC</strong> na seção <strong>Advanced Settings</strong> seja <strong>No VPC</strong>;
-Clique em <strong>Next</strong>, reveja suas configurações e clique em <strong>Create Function</strong>;</li>
-</ul>
-</li>
-<li>Aguarde seu alarme acontecer e receba a notificação no Slack. :D</li>
-</ul>
-
-
-<p>O resultado em seu Slack será algo assim&hellip;</p>
-
-<p><img class="center" src="/imgs/slack2.png" title="'Notification_Slack'" ></p>
-
-<p><strong>P</strong>arabéns, você já está recebendo suas notificações via Slack. Basta criar outros alarmes no AWS utilizando a mesma Lambda Function e o mesmo SNS Topic.</p>
-
-<p><strong>H</strong>appy Hacking!</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Anteriores</a>
@@ -2229,6 +2462,10 @@ Clique em <strong>Next</strong>, reveja suas configurações e clique em <strong
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2018/04/14/chef-uso-de-condicionais-not-if-e-only-if/">Chef: Uso de Condicionais not_if e only_if</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2018/04/01/chef-aautomacao-e-gerenciamento-de-configuracao/">Chef: Automação e Gerenciamento de Configuração</a>
       </li>
     
@@ -2242,10 +2479,6 @@ Clique em <strong>Next</strong>, reveja suas configurações e clique em <strong
     
       <li class="post">
         <a href="/blog/2015/08/20/docker-uma-alternativa-elegante-para-containers-no-linux/">Docker - Uma alternativa elegante para containers no Linux</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/08/03/assista-ao-documentario-sobre-aaron-swartz-o-menino-da-internet/">Assista ao documentário sobre Aaron Swartz: O menino da internet</a>
       </li>
     
   </ul>

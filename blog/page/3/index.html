@@ -9,7 +9,7 @@
   <meta name="author" content="Marcelo Cavalcante Rocha - Kalib">
 
   
-  <meta name="description" content="Uma boa novidade para os profissionais de segurança: BlackArch! Para quem, assim como eu, gosta de como as coisas funcionam no Arch Linux essa é uma &hellip;">
+  <meta name="description" content="O kernel, em se tratando de sistemas operacionais, é o núcleo e componente mais importante da maioria dos computadores. Basicamente, serve de ponte &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -80,6 +80,141 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/02/13/alterando-os-parametros-do-kernel-em-tempo-real-com-o-systcl/">Alterando Os Parâmetros Do Kernel Em Tempo Real Com O Systcl</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-02-13T22:02:00-05:00" pubdate data-updated="true">Feb 13<span>th</span>, 2014</time>
+        
+         | <a href="/blog/2014/02/13/alterando-os-parametros-do-kernel-em-tempo-real-com-o-systcl/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img class="left" src="/imgs/linux-kernel.jpg" title="'Linux Kernel'" >
+<strong>O</strong> <em>kernel</em>, em se tratando de sistemas operacionais, é o núcleo e componente mais importante da maioria dos computadores. Basicamente, serve de ponte entre os aplicativos e o processamento real de dados feito a nível de hardware. É ele o responsável por gerenciar os recursos do sistema, podendo oferecer uma camada de abstração de nível mais baixo para os recursos, como processadores e dispositivos de entrada/saída, que os softwares aplicativos devem controlar para realizar sua função. Com o GNU/Linux não é diferente. O núcleo Linux (Linux Kernel) forma a estrutura do sistema operacional GNU/Linux.</p>
+
+<p><strong>C</strong>omo é de se esperar, o kernel possui diversos parâmetros configurados que definirão as características do seu sistema, controle de dispositivos, módulos, drivers, etc. Por vezes faz-se necessário alterar algum parâmetro do kernel para alguma tarefa ou rotina específica, portanto que tal ganhar tempo e alterar um ou mais parâmetros do kernel <em>on the fly</em>?!</p>
+
+<p><strong>O</strong> comando <em>sysctl</em> pode ajudar nesta tarefa. Ele ajuda a configurar os parâmetros do kernel em tempo de execução.</p>
+
+<p><strong>P</strong>ara listar os atuais parâmetros de seu kernel digite:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> [kalib@tuxcaverna ~]$ sysctl -a
+</span><span class='line'>  
+</span><span class='line'> abi.vsyscall32 = 1
+</span><span class='line'> debug.exception-trace = 1
+</span><span class='line'> dev.cdrom.autoclose = 1
+</span><span class='line'> dev.cdrom.autoeject = 0
+</span><span class='line'> dev.cdrom.check_media = 0
+</span><span class='line'> dev.cdrom.lock = 1
+</span><span class='line'> dev.hpet.max-user-freq = 64
+</span><span class='line'> dev.mac_hid.mouse_button2_keycode = 97
+</span><span class='line'> dev.mac_hid.mouse_button3_keycode = 100
+</span><span class='line'> dev.mac_hid.mouse_button_emulation = 0
+</span><span class='line'> dev.scsi.logging_level = 0
+</span><span class='line'> fs.aio-max-nr = 65536
+</span><span class='line'> fs.aio-nr = 41192
+</span><span class='line'> fs.binfmt_misc.status = enabled
+</span><span class='line'> fs.dentry-state = 177183        161128  45      0       0       0
+</span><span class='line'> fs.dir-notify-enable = 1
+</span><span class='line'> fs.epoll.max_user_watches = 1209446
+</span><span class='line'> fs.file-max = 586836
+</span><span class='line'> fs.file-nr = 8992       0       586836
+</span><span class='line'> fs.inode-nr = 96800     290
+</span><span class='line'> fs.inotify.max_user_watches = 8192
+</span><span class='line'> fs.lease-break-time = 45
+</span><span class='line'> kernel.sched_cfs_bandwidth_slice_us = 5000
+</span><span class='line'> kernel.sched_child_runs_first = 0
+</span><span class='line'> kernel.version = #1 SMP PREEMPT Fri Jan 31 10:22:54 CET 2014
+</span><span class='line'> kernel.watchdog = 1
+</span><span class='line'> kernel.watchdog_thresh = 10
+</span><span class='line'> kernel.yama.ptrace_scope = 1
+</span><span class='line'> net.core.bpf_jit_enable = 0
+</span><span class='line'> net.core.busy_poll = 0
+</span><span class='line'> net.ipv4.cipso_cache_bucket_size = 10
+</span><span class='line'> net.ipv4.conf.all.accept_local = 0</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>O</strong> retorno deste comando é bastante extenso, portanto colei aqui apenas algumas linhas aleatórias de meu resultado.</p>
+
+<p><strong>P</strong>ara alterar temporariamente um parâmetro, utilize o parâmetro -w do sysctl, indicando a variável que deseja alterar e o novo valor que será utilizado para a mesma.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> [kalib@tuxcaverna ~]$ sysctl -w {nome-da-variável=valor}</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>N</strong>o caso acima a(s) alteração(ões) será(ão) perdida(s) após a reinicialização do sistema.</p>
+
+<p><strong>C</strong>aso deseje realizar alterações permanentes, edite o arquivo <em>/etc/sysctl.conf</em> e em seguida aplique suas modificações com o parâmetro -p do sysctl.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> [kalib@tuxcaverna ~]$ sysctl -p</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>D</strong>esta forma, após a reinicialização suas modificações permanecerão ativas.</p>
+
+<p><strong>H</strong>appy Hacking!</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -299,61 +434,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/01/17/dica-assistir-star-wars-em-um-console-ou-terminal/">Dica - Assistir Star Wars Em Um Console Ou Terminal</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-01-17T10:30:00-05:00" pubdate data-updated="true">Jan 17<span>th</span>, 2014</time>
-        
-         | <a href="/blog/2014/01/17/dica-assistir-star-wars-em-um-console-ou-terminal/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><img class="left" src="/imgs/starwars.png" title="'Star Wars'" >
-<strong>Q</strong>uem disse que o terminal ou linha de comando serve apenas para trabalho e coisas chatas?</p>
-
-<p><strong>E</strong>stá entediado em frente ao seu terminal GNU/Linux?    Que tal algo para passar o tempo e, ao mesmo tempo, lhe trazer uma certa nostalgia? Assista Star Wars sem precisar sair de sua linha de comando ou terminal.</p>
-
-<p><strong>T</strong>udo o que você precisa digitar é:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'> $ telnet towel.blinkenlights.nl</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>F</strong>eito isso, basta apreciar o show&hellip;</p>
-
-<p><img class="center" src="/imgs/starwars_1.png" title="'Star Wars'" ></p>
-
-<p><img class="center" src="/imgs/starwars_2.jpg" title="'Star Wars'" ></p>
-
-<p><strong>H</strong>ave fun!</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/4/">&larr; Anteriores</a>
@@ -374,6 +454,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2018/04/14/chef-uso-de-condicionais-not-if-e-only-if/">Chef: Uso de Condicionais not_if e only_if</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2018/04/01/chef-aautomacao-e-gerenciamento-de-configuracao/">Chef: Automação e Gerenciamento de Configuração</a>
       </li>
     
@@ -387,10 +471,6 @@
     
       <li class="post">
         <a href="/blog/2015/08/20/docker-uma-alternativa-elegante-para-containers-no-linux/">Docker - Uma alternativa elegante para containers no Linux</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/08/03/assista-ao-documentario-sobre-aaron-swartz-o-menino-da-internet/">Assista ao documentário sobre Aaron Swartz: O menino da internet</a>
       </li>
     
   </ul>
