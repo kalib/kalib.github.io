@@ -169,7 +169,7 @@ package 'apache' do
         package_name 'httpd'
         action :install
 end
-
+https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
 service 'httpd' do
         action [:enable, :start]
 end

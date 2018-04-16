@@ -219,7 +219,7 @@ resolving cookbooks for run list: []
 Synchronizing Cookbooks:
 Installing Cookbook Gems:
 Compiling Cookbooks...
-[2018-04-01T19:18:03+00:00] WARN: Node kalib6.mylabserver.com has an empty run list.
+[2018-04-01T19:18:03+00:00] WARN: Node kalib6.test.com has an empty run list.
 Converging 1 resources
 Recipe: @recipe_files::/root/exemplo.rb
   * yum_package[apache] action install
@@ -280,7 +280,7 @@ resolving cookbooks for run list: []
 Synchronizing Cookbooks:
 Installing Cookbook Gems:
 Compiling Cookbooks...
-[2018-04-01T19:32:28+00:00] WARN: Node kalib6.mylabserver.com has an empty run list.
+[2018-04-01T19:32:28+00:00] WARN: Node kalib6.test.com has an empty run list.
 Converging 2 resources
 Recipe: @recipe_files::/root/exemplo.rb
   * yum_package[apache] action install (up to date)
@@ -314,8 +314,8 @@ Chef Client finished, 2/3 resources updated in 06 seconds
            ├─2413 /usr/sbin/httpd -DFOREGROUND
            └─2414 /usr/sbin/httpd -DFOREGROUND
 
-Apr 01 19:32:33 kalib6.mylabserver.com systemd[1]: Starting The Apache HTTP Server...
-Apr 01 19:32:33 kalib6.mylabserver.com systemd[1]: Started The Apache HTTP Server.
+Apr 01 19:32:33 kalib6.test.com systemd[1]: Starting The Apache HTTP Server...
+Apr 01 19:32:33 kalib6.test.com systemd[1]: Started The Apache HTTP Server.
 root      2409  0.0  0.2 226040  4948 ?        Ss   19:32   0:00 /usr/sbin/httpd -DFOREGROUND
 apache    2410  0.0  0.1 226040  2872 ?        S    19:32   0:00 /usr/sbin/httpd -DFOREGROUND
 apache    2411  0.0  0.1 226040  2872 ?        S    19:32   0:00 /usr/sbin/httpd -DFOREGROUND
@@ -375,7 +375,7 @@ resolving cookbooks for run list: []
 Synchronizing Cookbooks:
 Installing Cookbook Gems:
 Compiling Cookbooks...
-[2018-04-01T19:48:02+00:00] WARN: Node kalib6.mylabserver.com has an empty run list.
+[2018-04-01T19:48:02+00:00] WARN: Node kalib6.test.com has an empty run list.
 Converging 3 resources
 Recipe: @recipe_files::/root/exemplo.rb
   * yum_package[apache] action install (up to date)
@@ -454,7 +454,7 @@ resolving cookbooks for run list: []
 Synchronizing Cookbooks:
 Installing Cookbook Gems:
 Compiling Cookbooks...
-[2018-04-01T20:04:10+00:00] WARN: Node kalib6.mylabserver.com has an empty run list.
+[2018-04-01T20:04:10+00:00] WARN: Node kalib6.test.com has an empty run list.
 Converging 3 resources
 Recipe: @recipe_files::/root/exemplo.rb
   * yum_package[apache] action install (up to date)
