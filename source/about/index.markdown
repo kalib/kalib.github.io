@@ -7,7 +7,7 @@ sharing: true
 footer: true
 ---
 {% img right /about/me1.png 'Marcelo' %}
-Me chamo **Marcelo Cavalcante Rocha**, também conhecido como **Kalib**, e sou militante do **Software Livre** desde 2005. Formado em **Sistemas de Informação** e pós-graduado em **Governança de Tecnologia da Informação**, trabalho com administração de redes, DevOps e segurança da informação em ambientes mistos.
+Me chamo **Marcelo Cavalcante Rocha**, também conhecido como **Kalib**, e sou militante do **Software Livre** desde 2005. Atualmente Engenheiro DevOps na empresa <a href="https://www.thinkresearch.com">Think Research</a>, em Toronto, Canadá, e formado em **Sistemas de Informação** e pós-graduado em **Governança de Tecnologia da Informação**.
 
 
 Caso deseje me contactar, sinta-se livre e envie um **email** para <a href="mailto:marcelo@marcelocavalcante.net">marcelo</a> neste(@) mesmo domínio. Também estou constantemente online no **IRC** como kalib, através da rede Freenode, nos canais #archlinux, #archlinux-br, #french e #mlug. Além disto, você pode simplesmente deixar um **comentário** aqui mesmo no site/blog.
@@ -66,4 +66,3 @@ Para os que ficaram curiosos com a foto, trata-se do Tux, meu cão labrador, com
 ------
 
 Em termos de música, não sei bem como definir meu estilo, visto que escuto diversos estilos distintos mas, para mim, **Pink Floyd** continua incomparável, entre qualquer banda de qualquer estilo. Eu também sou um grande fã de Metallica e escuto clássicos como Bob Marley, Led Zeppelin, Black Sabbath, The Doors, Jimi Hendrix, Chico Buarque, Raul Seixas, etc. Nos dias atuais eu poderia listar Blind Guardian, Chevelle, Epica, Foo Fighters, Fenix TX, Hammerfall, Korn, Mae, Millencolin, NOFX, Over It, Papa Roach, POD, etc.
-
