@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Jogos | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://kalib.github.io/blog/categories/jogos/atom.xml" rel="self"/>
   <link href="http://kalib.github.io/"/>
-  <updated>2018-07-29T10:56:48-04:00</updated>
+  <updated>2018-07-29T11:27:56-04:00</updated>
   <id>http://kalib.github.io/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -154,7 +154,7 @@
     <link href="http://kalib.github.io/blog/2008/12/18/ragnarok-agora-no-archlinux/"/>
     <updated>2008-12-18T12:06:00-05:00</updated>
     <id>http://kalib.github.io/blog/2008/12/18/ragnarok-agora-no-archlinux</id>
-    <content type="html"><![CDATA[<p><img class="center" src="/imgs/ragnaroklogo.jpg" title="&lsquo;Ragnarok&rsquo;" >
+    <content type="html"><![CDATA[<p>{% img center /imgs/ragnaroklogo.jpg &lsquo;Ragnarok&rsquo; %}
 Para os que curtem jogos de rpg online e em especial os que curtem o famoso Ragnarok, um dos mais jogados nos dias atuais, esta notícia será muito boa.</p>
 
 <p>As perguntas sobre como rodar o ragnarok no Linux já estão bastante expostas na internet, recebendo várias respostas, sendo muitas delas bastante complexas ou insuficientes usando-se de gambiarras e mais gambiarras.</p>
@@ -165,7 +165,7 @@ Para os que curtem jogos de rpg online e em especial os que curtem o famoso Ragn
 
 <p>Como podem ver no screenshot abaixo, o jogo já está rodando numa boa.</p>
 
-<p><img class="center" src="/imgs/ragnarok.png" title="&lsquo;Gandalf&rsquo;" ></p>
+<p>{% img center /imgs/ragnarok.png &lsquo;Gandalf&rsquo; %}</p>
 
 <p><strong>A</strong>braços</p>
 ]]></content>
@@ -184,10 +184,10 @@ Para os que curtem jogos de rpg online e em especial os que curtem o famoso Ragn
 
 <p>Com uma simples busca em seus repositórios através do pacman pela palavra “emulator” (# pacman -Ss emulator) poderemos achar emuladores disponíveis para várias plataformas como Gameboy, Mega Drive, Atari, Super Nintendo, Nintendo 64, entre outros.</p>
 
-<p><img class="center" src="/imgs/chronotrigger.jpg" title="&lsquo;Chrono Trigger&rsquo;" >
+<p>{% img center /imgs/chronotrigger.jpg &lsquo;Chrono Trigger&rsquo; %}
 Os emuladores são uma grande chance para quem gostaria de relembrar seus tempos de infância com games fantásticos como o da ilustração acima. O chamado Chrono Trigger foi e é um excelente jogo de RPG para Super Nintendo que fascinou muitas gerações por sua história onde passamos por várias eras diferentes do mundo entre passado, presente e futuro. Além deste, podemos relembrar outros clássicos desta época como Rock'n Roll Racing e outros vários, já que existem centenas de sites na internet com o único intuito de fornecer roms dos mais variados consoles possíveis.</p>
 
-<p><img class="center" src="/imgs/mario64.jpg" title="&lsquo;Mario 64&rsquo;" >Além destes antigos clássicos, podemos ainda nos divertir com jogos não tão antigos como por exemplo o Super Mário 64, do Nintendo 64, conforme ilustração ao lado e muitos outros.</p>
+<p>{% img center /imgs/mario64.jpg &lsquo;Mario 64&rsquo; %}Além destes antigos clássicos, podemos ainda nos divertir com jogos não tão antigos como por exemplo o Super Mário 64, do Nintendo 64, conforme ilustração ao lado e muitos outros.</p>
 
 <p>Vale lembrar que neste artigo meu foco não é incentivar o uso exclusivo destes roms, já que estes são disponibilizados apenas para testes, onde caso você não tenha o game original, deverá manter o rom em seu computador por apenas 24hs por medidas legais.</p>
 
@@ -202,39 +202,39 @@ Os emuladores são uma grande chance para quem gostaria de relembrar seus tempos
 <p>**</p>
 
 <p><strong>RPG</strong>
-<img class="center" src="/imgs/mana.png" title="&lsquo;The Mana World&rsquo;" ></p>
+{% img center /imgs/mana.png &lsquo;The Mana World&rsquo; %}</p>
 
 <p>Na variante RPG temos alguns bons jogos como o The Mana World que agradaria os fans de Ragnarok por ser bastante parecido com o mesmo. Com gráficos simples em 2D, o que permite àqueles que não possuem uma placa 3D jogar, o game lhe permite participar de aventuras em um ambiente online com vários outros jogadores no mundo.</p>
 
-<p><img class="center" src="/imgs/eternallands.jpg" title="&lsquo;Eternal Lands&rsquo;" >
+<p>{% img center /imgs/eternallands.jpg &lsquo;Eternal Lands&rsquo; %}
 Outro game que se destaca na categoria RPG é o Eternal Lands. Este com gráficos mais robustos necessita que você tenha uma placa com suporte a aceleração 3D. Neste incrível jogo online uma civilização é levada a destruir sua própria existência. Durante este jogo você passará pelos mais variados cenários, todos com ótimos detalhes gráficos.</p>
 
 <p>Outros games que merecem ser averiguados nesta categoria: Adonthell, Dofus, KQ e Vendetta.</p>
 
 <p><strong>Estratégia</strong>
-<img class="center" src="/imgs/wesnoth.jpg" title="&lsquo;Battle of Wesnoth&rsquo;" ></p>
+{% img center /imgs/wesnoth.jpg &lsquo;Battle of Wesnoth&rsquo; %}</p>
 
 <p>Na categoria Estratégia eu deixo o destaque para o Battle of Wesnoth no qual você tem o objetivo de recrutar membros para sua tropa e conquistar territórios e vilas destruindo o líder de outras tropas nesta luta por conquistas. Com interface simples, este game também não precisa de uma placa com aceleração 3D. Segue ilustração ao lado:</p>
 
-<p><img class="center" src="/imgs/warzone.jpg" title="&lsquo;Warzone 2100&rsquo;" >Meu segundo destaque vai para Warzone 2100, no qual você pousa sua nave de trasporte em um mundo onde você deverá estabelecer seu território com a construção de bases, equipamentos, coleta de recursos, naves, tanques e etc. Você deverá crescer no jogo construindo novos veículos e planos de combate para o domínio do mundo, defendendo-se dos ataques inimigos. Este também requer uma placa de vídeo 3D com suporte a OpenGL. Segue imagem abaixo:</p>
+<p>{% img center /imgs/warzone.jpg &lsquo;Warzone 2100&rsquo; %}Meu segundo destaque vai para Warzone 2100, no qual você pousa sua nave de trasporte em um mundo onde você deverá estabelecer seu território com a construção de bases, equipamentos, coleta de recursos, naves, tanques e etc. Você deverá crescer no jogo construindo novos veículos e planos de combate para o domínio do mundo, defendendo-se dos ataques inimigos. Este também requer uma placa de vídeo 3D com suporte a OpenGL. Segue imagem abaixo:</p>
 
 <p>Outros games que merecem ser averiguados nesta categoria: Pingus e UFO: Alien Invasion</p>
 
 <p><strong>Ação</strong>
-<img class="center" src="/imgs/urbanterror.jpg" title="&lsquo;Urban Terror&rsquo;" >
+{% img center /imgs/urbanterror.jpg &lsquo;Urban Terror&rsquo; %}
  Na categoria Ação, esta que é a favorita de muitos fans de games, gostaria de dar o grande destaque para o Urban Terror. Este que é um jogo baseado na engine do Quake, lhe trará vários cenários nos quais você faz parte de uma equipe, ou não, que deverá defender seu território, atacar os adversários, invadir territórios, sendo isto tudo com pessoas pela internet ou amigos em uma rede LAN. O jogo necessita uma placa com aceleração 3D e compatível com OpenGL. A vantagem desde jogo é que é facilmente instalado, precisando apenas descompactar e executar, já trazendo os executáveis para Linux, Mac e Windows, o que facilita na hora de reunir amigos que possuem diferentes plataformas em suas máquinas, onde o mesmo arquivo compactado em seu pendrive servirá para qualquer um deles.</p>
 
-<p><img class="center" src="/imgs/openarena.jpg" title="&lsquo;Open Arena&rsquo;" >
+<p>{% img center /imgs/openarena.jpg &lsquo;Open Arena&rsquo; %}
 Em segundo lugar, mas não inferior, deixo o Open Arena. Este, também em cima da engine do Quake, se trata de um jogo simples e direto ao ponto. Um jogo no qual você jogará sozinho contra o computador, ou jogares que estejam na rede ou internet. Neste também precisamos de aceleração 3D e suporte a OpenGL na placa.</p>
 
 <p>Outros games que merecem ser averiguados nesta categoria: America&rsquo;s Army, Enemy Territory e Tremulous.</p>
 
 <p><strong>Simuladores</strong>
-<img class="center" src="/imgs/flightgear.jpg" title="&lsquo;Flight Gear&rsquo;" ></p>
+{% img center /imgs/flightgear.jpg &lsquo;Flight Gear&rsquo; %}</p>
 
 <p>Em primeiro lugar gostaria de apontar o FlightGear. Este é o resultado de um projeto que visava um simulador de vôo extremamente realista com cenários e gráficos muito bons de forma que pudesse ser utilizado inclusive em treinamento de pilotos. Requer também uma placa com aceleração 3D e OpenGL.</p>
 
-<p><img class="center" src="/imgs/lincityng.jpg" title="&lsquo;Lin City NG&rsquo;" >
+<p>{% img center /imgs/lincityng.jpg &lsquo;Lin City NG&rsquo; %}
 Em segundo lugar vou deixar o Lin City NG. Este animará os fans da série Sim City, já que o mesmo lembra muito as antigas versões do mesmo. Apesar dos gráficos não serem muito ricos, este divertido jogo será bastante útil para preencher suas horas sem ter o que fazer, no qual seu objetivo é construir cidades e gerenciá-las de forma a agradar sua população. Segue imagem do mesmo:</p>
 
 <p>Outros games que merecem ser averiguados nesta categoria: Racer, BillarGL e Trigger.</p>
