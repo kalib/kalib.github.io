@@ -7,7 +7,7 @@ sharing: true
 footer: true
 ---
 {% img right /about/me1.png 'Marcelo' %}
-Me chamo **Marcelo Cavalcante Rocha**, também conhecido como **Kalib**, e sou militante do **Software Livre** desde 2005. Atualmente Engenheiro DevOps na empresa <a href="https://www.thinkresearch.com">Think Research</a>, em Toronto, Canadá, e formado em **Sistemas de Informação** e pós-graduado em **Governança de Tecnologia da Informação**.
+Me chamo **Marcelo Cavalcante Rocha**, também conhecido como **Kalib**, e sou militante do **Software Livre** desde 2005. Atualmente Engenheiro DevOps na empresa <a href="https://www.thinkresearch.com" target="_blank">Think Research</a>, em Toronto, Canadá, e formado em **Sistemas de Informação** e pós-graduado em **Governança de Tecnologia da Informação**.
 
 
 Caso deseje me contactar, sinta-se livre e envie um **email** para <a href="mailto:marcelo@marcelocavalcante.net">marcelo</a> neste(@) mesmo domínio. Também estou constantemente online no **IRC** como kalib, através da rede Freenode, nos canais #archlinux, #archlinux-br, #french e #mlug. Além disto, você pode simplesmente deixar um **comentário** aqui mesmo no site/blog.
