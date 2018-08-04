@@ -57,7 +57,7 @@ Sempre fui fascinado pela habilidade <font color="gray">(porque não dizer mági
 
 o.O E **Tolkien**? O fato de eu não ter incluído **John Ronald Reuel Tolkien** na lista acima não tira seu mérito. <font color="gray">(Senhor dos Anéis. Preciso falar algo mais?)</font> Apenas achei que não seria justo de minha parte inserir Tolkien no mesmo parágrafo, da mesma forma que seus livros me cativaram de forma diferente se comparado aos demais. A escrita de Tolkien é brilhante e, se você for corajoso e persistente o suficiente para encarar as primeiras 200 páginas de qualquer um de seus livros, você logo passa a ser transportado para um novo mundo.
 
-Para os que ficaram curiosos com a foto, trata-se do Tux, meu cão labrador, com quem corro e/ou caminho diariamente.
+Para os que ficaram curiosos com a foto, trata-se do Tux, cão labrador de minha família.
 
 
 <br><br>
