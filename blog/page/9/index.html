@@ -9,7 +9,7 @@
   <meta name="author" content="Marcelo Cavalcante Rocha - Kalib">
 
   
-  <meta name="description" content="Anjos, Arcanjos e Demônios&hellip; Entidades que sempre despertaram a curiosidade e o interesse de milhares de pessoas. Não diferente, sempre tive &hellip;">
+  <meta name="description" content="Quando o assunto é segurança da informação, muitas vezes o óbvio é deixado de lado. Se pensa em anti-vírus, firewall, IDS (Intrusion Detection &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -80,6 +80,87 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/10/23/bleachbit-limpeza-de-disco-no-linux/">BleachBit - Limpeza De Disco No Linux</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-10-23T09:02:00-04:00" pubdate data-updated="true">Oct 23<span>rd</span>, 2013</time>
+        
+         | <a href="/blog/2013/10/23/bleachbit-limpeza-de-disco-no-linux/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img class="left" src="/imgs/disk-cleanup.jpg" title="'Limpeza de Disco'" >
+<strong>Q</strong>uando o assunto é segurança da informação, muitas vezes o óbvio é deixado de lado. Se pensa em anti-vírus, firewall, IDS (Intrusion Detection System), etc. Mas e o básico e óbvio? Raramente vejo profissionais preocupados com o lixo existente nos discos rígidos. Com <em>lixo</em> eu quero dizer aqueles arquivos temporários, antigos arquivos de cache que já não são necessários, ou mesmo rastros de informações de arquivos que já foram deletados. Sim, o fato de você deletar arquivos não significa que as informações daqueles arquivos foram completamente apagadas do disco. A <em>&ldquo;deleção regular de arquivos&rdquo;</em> não está apagando <em>os dados deletados</em>. Ela está apenas removendo os links dos inodes de arquivos, tornando assim possível a recuperação dos arquivos <em>deletados</em> com algum software forense.</p>
+
+<p><strong>E</strong>xistem várias alternativas para remover seus arquivos de forma segura. As alternativas poderão variar de acordo com o sistema de arquivos utilizado em seu disco, é claro. Uma das formas mais simples que conheço é através da ferramenta <strong>BleachBit</strong>.</p>
+
+<p><strong>B</strong>leachBit é um software livre criado para limpar e liberar espaço em disco, gerenciando assim melhor a sua privacidade e otimizando sistemas computacionais. Criado em 2008 para sistemas GNU/Linux, partiu de um controverso e polêmico debate sobre a necessidade de o GNU/Linux necessitar de uma ferramenta para limpeza de registros. Posteriormente o BleachBit passou a suportar também sistemas Microsoft Windows.</p>
+
+<p><strong>C</strong>om esta ferramenta você poderá não apenas limpar seu espaço em disco, mas também limpar vários arquivos típicos do sistema que não são necessários na maioria dos casos a longo prazo, arquivos estes que podem dar ao intruso informações desnecessárias sobre suas atividades. Não desejamos isto&hellip;</p>
+
+<p><strong>A</strong> instalação do mesmo é feita de forma simples e convencional. No caso do archlinux, o pacote se encontra disponível no repositório [community], portanto pode ser instalado regularmente através do pacman.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> [kalib@tuxcaverna ~]$ sudo pacman -Ss bleachbit
+</span><span class='line'> [sudo] password for kalib: 
+</span><span class='line'> community/bleachbit 0.9.6-1
+</span><span class='line'>    Deletes unneeded files to free disk space and maintain privacy
+</span><span class='line'> 
+</span><span class='line'> [kalib@tuxcaverna ~]$ sudo pacman -S bleachbit</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>N</strong>a maioria das distribuições baseadas em Debian, tal como o Ubuntu, o pacote poderá ser instalado através do aptitude ou apt-get:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> $ sudo apt-get update
+</span><span class='line'> $ sudo apt-get install bleachbit</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>O</strong> BleachBit possui uma interface gráfica simples, na qual você poderá selecionar o que você deseja destruir. Lembre-se que algumas funções são experimentais e podem causar problemas em seu sistema. Mas não há necessidade de se preocupar: O BleachBit lhe informa sobre isto e lhe dá a chance de cancelar a operação selecionada. ;]</p>
+
+<p><strong>O</strong> BleachBit possui uma vasta lista de <em>cleaners</em>, como ele chama as ferramentas internas de limpeza. Dentre a longa lista, podemos citar alguns como: <em>Adanaxis, Adobe Reader, aMSN, aMule, APT, Audacious, Bash, Beagle, Chromium, Downloader for X, Deep scan, Easytag, ELinks, emesene, Epiphany, Evolution, Exaile, Filezilla, Firefox, Flash, gedit, gFTP, GIMP, etc.</em> A lista é realmente longa. <a href="http://bleachbit.sourceforge.net/features">Lista completa de cleaners e demais recursos.</a></p>
+
+<p><strong>P</strong>ara executar o programa, basta procurar o mesmo através do menu de aplicativos de seu sistema, ou através do comando:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> [kalib@tuxcaverna ~]$ bleachbit</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>H</strong>ave fun!</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -192,127 +273,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/09/11/dica-rapida-linux-como-limpar-o-conteudo-de-um-arquivo-texto-sem-abrir-o-mesmo/">Dica Rápida - Linux - Como Limpar O Conteúdo De Um Arquivo Texto Sem Abrir O Mesmo</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-09-11T11:05:00-04:00" pubdate data-updated="true">Sep 11<span>th</span>, 2013</time>
-        
-         | <a href="/blog/2013/09/11/dica-rapida-linux-como-limpar-o-conteudo-de-um-arquivo-texto-sem-abrir-o-mesmo/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><img class="left" src="/imgs/erase.jpg" title="'Erasing text'" >
-<strong>A</strong>rquivos de log, por vezes, podem ser muito extensos. Tão extensos que torna-se praticamente impossível a leitura de seu conteúdo com um editor de textos como o vim ou vi. Além disso, muitos deles podem chegar a ocupar Gigas e mais Gigas de seu espaço em disco, o que pode acabar sendo um desperdício de espaço em seu sistema de arquivos.</p>
-
-<p><strong>H</strong>oje passei por um problema deste tipo. Ao atualizar meu Arch Linux, percebi que comecei a receber erros devido ao meu espaço em disco o qual era apontado como &ldquo;insuficiente&rdquo;. O fato é que é muito comum em distribuições Linux utilizarmos um particionamento de forma a isolarmos um pouco cada partição para fins específicos. No meu caso, verifiquei que a minha partição raíz estava mesmo completamente cheia.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'> [kalib@tuxcaverna ~]$ df -h /
-</span><span class='line'> Sist. Arq.      Tam. Usado Disp. Uso% Montado em
-</span><span class='line'> /dev/sda3        30G   30G   0M  100% /</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>P</strong>ara resolver meu problema comecei limpando os pacotes que ficam em cache desnecessariamente através do pacman:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'> [kalib@tuxcaverna ~]$ pacman -Sc</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>E</strong>m seguida resolvi verificar quanto de espaço eu estava consumindo com logs de sistema:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'> [root@tuxcaverna ~]# cd /var/log
-</span><span class='line'> [root@tuxcaverna ~]# du -h .</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>O</strong> comando acima me mostrou que meu diretório de logs estava consumindo mais de 13G. Insano, certo? Na verdade, não. É comum que ao longo dos meses, ou mesmo anos, o sistema acumule logs e mais logs. Uma quantia absurda e, muitas vezes, desnecessária de informações. Como trata-se de meu notebook pessoal e não estou tendo qualquer erro em meu sistema, resolvi limpar estes logs, portanto o primeiro passo é identificar os maiores arquivos. No meu caso foram os arquivos:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'> everything.log    kernel.log    daemon.log</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>U</strong>ma vez que cada um destes arquivos possuía mais de 3G, resolvi limpá-los completamente. A saída mais rápida e KISS? <em>/dev/null neles</em>.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'> [root@tuxcaverna ~]# cat /dev/null &gt;everything.log</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>I</strong>sto limpará completamente o conteúdo do arquivo de texto informado. Vejamos o simples exemplo a seguir:</p>
-
-<p><strong>V</strong>amos criar um arquivo de texto vazio chamado <em>teste.txt</em>.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'> [root@tuxcaverna ~]# touch teste.txt</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>E</strong>m seguida, vamos inserir algum conteúdo no mesmo:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'> [root@tuxcaverna ~]# echo "Testando" &gt;teste.txt</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>V</strong>erifiquemos se meu texto realmente foi inserido no arquivo:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'> [root@tuxcaverna ~]# cat teste.txt
-</span><span class='line'> Testando</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>T</strong>udo certo. Agora vamos limpar o mesmo:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'> [root@tuxcaverna ~]# cat /dev/null &gt;teste.txt</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>A</strong>gora, vamos confirmar se o mesmo foi mesmo zerado:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'> [root@tuxcaverna ~]# cat teste.txt
-</span><span class='line'> [root@tuxcaverna ~]#</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>M</strong>issão cumprida. Apenas para constar a diferença:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'> [kalib@tuxcaverna ~]$ df -h /
-</span><span class='line'> Sist. Arq.      Tam. Usado Disp. Uso% Montado em
-</span><span class='line'> /dev/sda3        30G   16G   13G  56% /</span></code></pre></td></tr></table></div></figure>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/10/">&larr; Anteriores</a>
@@ -333,6 +293,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2018/07/30/automatizando-a-criacao-de-imagens-com-packer/">Automatizando a Criação de Imagens com Packer</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2018/04/16/10-anos-d/">10 anos! :D</a>
       </li>
     
@@ -348,10 +312,6 @@
         <a href="/blog/2017/06/24/conhecendo-o-kubernetes-clusters-de-containers/">Conhecendo o Kubernetes - Clusters de Containers</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2017/03/11/recebendo-alarmes-do-aws-diretamente-no-slack/">Recebendo Alarmes do AWS Diretamente no Slack</a>
-      </li>
-    
   </ul>
 </section>
 <section>
@@ -362,7 +322,7 @@
   <h1> Eu apoio
 </h1>
   <span>
-    <a href='http://ansible.com'><img style='padding: .5em; margin: .5em;' src='/images/stickers/ansible.com.png'></a><a href='http://archlinux.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/archlinux.org.png'></a><a href='http://asterisk.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/asterisk.org.png'></a><a href='http://atom.io'><img style='padding: .5em; margin: .5em;' src='/images/stickers/atom.io.png'></a><a href='http://chef.io'><img style='padding: .5em; margin: .5em;' src='/images/stickers/chef.io.png'></a><a href='http://djangoproject.com'><img style='padding: .5em; margin: .5em;' src='/images/stickers/djangoproject.com.png'></a><a href='http://docker.com'><img style='padding: .5em; margin: .5em;' src='/images/stickers/docker.com.png'></a><a href='http://github.com'><img style='padding: .5em; margin: .5em;' src='/images/stickers/github.com.png'></a><img style='padding: .5em; margin: .5em;' src='/images/stickers/glider.png' ><a href='http://jenkins.io'><img style='padding: .5em; margin: .5em;' src='/images/stickers/jenkins.io.png'></a><a href='http://kde.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/kde.org.png'></a><a href='http://kubernetes.io'><img style='padding: .5em; margin: .5em;' src='/images/stickers/kubernetes.io.png'></a><a href='http://linux.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/linux.org.png'></a><a href='http://octopress.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/octopress.org.png'></a><a href='http://opensource.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/opensource.org.png'></a><a href='http://puppet.com'><img style='padding: .5em; margin: .5em;' src='/images/stickers/puppet.com.png'></a><a href='http://python.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/python.org.png'></a><a href='http://raspberrypi.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/raspberrypi.org.png'></a><a href='http://ruby-lang.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/ruby-lang.org.png'></a><a href='http://vagrantup.com'><img style='padding: .5em; margin: .5em;' src='/images/stickers/vagrantup.com.png'></a>
+    <a href='http://ansible.com'><img style='padding: .5em; margin: .5em;' src='/images/stickers/ansible.com.png'></a><a href='http://archlinux.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/archlinux.org.png'></a><a href='http://asterisk.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/asterisk.org.png'></a><a href='http://atom.io'><img style='padding: .5em; margin: .5em;' src='/images/stickers/atom.io.png'></a><a href='http://chef.io'><img style='padding: .5em; margin: .5em;' src='/images/stickers/chef.io.png'></a><a href='http://djangoproject.com'><img style='padding: .5em; margin: .5em;' src='/images/stickers/djangoproject.com.png'></a><a href='http://docker.com'><img style='padding: .5em; margin: .5em;' src='/images/stickers/docker.com.png'></a><a href='http://github.com'><img style='padding: .5em; margin: .5em;' src='/images/stickers/github.com.png'></a><img style='padding: .5em; margin: .5em;' src='/images/stickers/glider.png' ><a href='http://jenkins.io'><img style='padding: .5em; margin: .5em;' src='/images/stickers/jenkins.io.png'></a><a href='http://kde.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/kde.org.png'></a><a href='http://kubernetes.io'><img style='padding: .5em; margin: .5em;' src='/images/stickers/kubernetes.io.png'></a><a href='http://linux.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/linux.org.png'></a><a href='http://octopress.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/octopress.org.png'></a><a href='http://opensource.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/opensource.org.png'></a><a href='http://packer.io'><img style='padding: .5em; margin: .5em;' src='/images/stickers/packer.io.png'></a><a href='http://puppet.com'><img style='padding: .5em; margin: .5em;' src='/images/stickers/puppet.com.png'></a><a href='http://python.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/python.org.png'></a><a href='http://raspberrypi.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/raspberrypi.org.png'></a><a href='http://ruby-lang.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/ruby-lang.org.png'></a><a href='http://terraform.io'><img style='padding: .5em; margin: .5em;' src='/images/stickers/terraform.io.png'></a><a href='http://vagrantup.com'><img style='padding: .5em; margin: .5em;' src='/images/stickers/vagrantup.com.png'></a>
   </span>
 </section>
 

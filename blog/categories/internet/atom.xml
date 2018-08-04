@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Internet | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://kalib.github.io/blog/categories/internet/atom.xml" rel="self"/>
   <link href="http://kalib.github.io/"/>
-  <updated>2018-07-29T11:27:56-04:00</updated>
+  <updated>2018-08-03T20:21:26-04:00</updated>
   <id>http://kalib.github.io/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -18,7 +18,7 @@
     <link href="http://kalib.github.io/blog/2017/03/11/recebendo-alarmes-do-aws-diretamente-no-slack/"/>
     <updated>2017-03-11T12:03:00-05:00</updated>
     <id>http://kalib.github.io/blog/2017/03/11/recebendo-alarmes-do-aws-diretamente-no-slack</id>
-    <content type="html"><![CDATA[<p>{% img center /imgs/aws_slack.png &lsquo;AWS_Slack&rsquo; %}</p>
+    <content type="html"><![CDATA[<p><img class="center" src="/imgs/aws_slack.png" title="&lsquo;AWS_Slack&rsquo;" ></p>
 
 <p><strong>A</strong>ntes de entrar na configuração dos serviços, talvez seja necessário apresentar o <a href="http://www.slack.com">Slack</a>, visto que muitos ainda não conhecem ou utilizam esta poderosa e versátil ferramenta de comunicação instantânea para times.</p>
 
@@ -73,7 +73,7 @@
 
 <p><strong>P</strong>esquise por Incoming WebHooks e você terá apenas um resultado, portanto clique sem medo.</p>
 
-<p>{% img center /imgs/slack1.png &lsquo;Incoming WebHook&rsquo; %}</p>
+<p><img class="center" src="/imgs/slack1.png" title="&lsquo;Incoming WebHook&rsquo;" ></p>
 
 <p><strong>C</strong>lique no pequeno lápis que se encontrará no canto direito para editar as configurações do Incoming WebHook. Os únicos campos que precisaremos editar neste momento são os seguintes:
   * Post to Channel &ndash; Aqui indicarei o meu canal: #devops
@@ -333,7 +333,7 @@ Clique em <strong>Next</strong>, reveja suas configurações e clique em <strong
 
 <p>O resultado em seu Slack será algo assim&hellip;</p>
 
-<p>{% img center /imgs/slack2.png &lsquo;Notification_Slack&rsquo; %}</p>
+<p><img class="center" src="/imgs/slack2.png" title="&lsquo;Notification_Slack&rsquo;" ></p>
 
 <p><strong>P</strong>arabéns, você já está recebendo suas notificações via Slack. Basta criar outros alarmes no AWS utilizando a mesma Lambda Function e o mesmo SNS Topic.</p>
 
@@ -346,7 +346,7 @@ Clique em <strong>Next</strong>, reveja suas configurações e clique em <strong
     <link href="http://kalib.github.io/blog/2015/08/20/docker-uma-alternativa-elegante-para-containers-no-linux/"/>
     <updated>2015-08-20T11:01:00-04:00</updated>
     <id>http://kalib.github.io/blog/2015/08/20/docker-uma-alternativa-elegante-para-containers-no-linux</id>
-    <content type="html"><![CDATA[<p>{% img center /imgs/dockerlogo.png &lsquo;Docker&rsquo; %}</p>
+    <content type="html"><![CDATA[<p><img class="center" src="/imgs/dockerlogo.png" title="&lsquo;Docker&rsquo;" ></p>
 
 <p><strong>A</strong>ntes de falar sobre o Docker, é importante que se entenda o conceito de um container, portanto vamos começar do básico. A imagem acima, logomarca do Docker, deixa claro o que é um container. A baleia, representando um navio, carregando diversos caixotes ou containers ilustra o conceito físico de um container. Nada mais do que um enorme caixote que possui o intuito de isolar algo. Quando um grande navio transporta mercadorias de um porto para outro, ele costuma trazer diversos containers separando estas mercadorias, de forma que as coisas não fiquem misturadas e bagunçadas. A forma de separação vai depender dos critérios de organização utilizados pela embarcação, seja por proprietário, seja por categoria de produtos, etc. De qualquer forma, embora cada container possua seus elementos próprios, todos os containers compartilham alguns recursos básicos, como por exemplo a embarcação, que é o meio de transporte para todos os containers ali contidos.</p>
 
@@ -358,13 +358,13 @@ Clique em <strong>Next</strong>, reveja suas configurações e clique em <strong
 
 <p><strong>D</strong>izem que uma imagem vale mais que mil palavras&hellip;</p>
 
-<p>{% img center /imgs/docker_vmdiagram.png &lsquo;Virtual Machine Diagram&rsquo; %}</p>
+<p><img class="center" src="/imgs/docker_vmdiagram.png" title="&lsquo;Virtual Machine Diagram&rsquo;" ></p>
 
 <p><strong>N</strong>a imagem acima temos o cenário convencional com a utilização de <strong>Máquinas Virtuais</strong>. Em suma, temos um host físico, com seu respectivo SO e kernel. Acima deles temos a camada de virtualização ou HyperVisor, enquanto que acima desta teremos as máquinas virtuais, com seus respectivos SOs (cada um com seu kernel) instalados. No caso temos 3 VMs, com 3 SOs (cada um com seu kernel). Na camada acima encontramos o que realmente é necessário para o app do cliente funcionar, que são as bibliotecas e os binários. Por fim, o App do cliente em si.</p>
 
 <p><strong>V</strong>ejamos como fica o cenário com a utilização de containers, docker neste caso&hellip;</p>
 
-<p>{% img center /imgs/docker_diagram.png &lsquo;Docker Diagram&rsquo; %}</p>
+<p><img class="center" src="/imgs/docker_diagram.png" title="&lsquo;Docker Diagram&rsquo;" ></p>
 
 <p><strong>N</strong>o cenário com o Docker percebemos que a camada de SO das VMs sumiu, visto que ela não é mais necessária. Ao invés de Máquinas Virtuais, agora nós temos 3 containers, onde cada container roda os binários e bibliotecas de um SO, porém se aproveitando do kernel já existente no Host.</p>
 
@@ -593,7 +593,7 @@ Clique em <strong>Next</strong>, reveja suas configurações e clique em <strong
 
 <p><strong>R</strong>esultado? O Nginx em nosso container rodando perfeitamente.</p>
 
-<p>{% img center /imgs/docker_nginx8080.png &lsquo;Nginx on Docker&rsquo; %}</p>
+<p><img class="center" src="/imgs/docker_nginx8080.png" title="&lsquo;Nginx on Docker&rsquo;" ></p>
 
 <p><strong>D</strong>a mesma forma feita anteriormente, podemos sair de nosso container com a combinação de teclas <strong>Ctrl + P + Q</strong> e verificar os processos/containers do docker em execução:</p>
 
@@ -730,7 +730,7 @@ Clique em <strong>Next</strong>, reveja suas configurações e clique em <strong
 ```
 <strong>A</strong>gora vou testar no navegador o nginx deste meu segundo container, o qual defini que utilizaria a porta 6660 do meu host:</p>
 
-<p>{% img center /imgs/docker_nginx6660_8080.png &lsquo;Nginx on Docker&rsquo; %}</p>
+<p><img class="center" src="/imgs/docker_nginx6660_8080.png" title="&lsquo;Nginx on Docker&rsquo;" ></p>
 
 <p><strong>R</strong>epare que acessei ambos os endereços, tanto o da porta 8080, o qual está apresentando o nginx do meu primeiro container, quanto o da porta 6660, que apresenta o nginx do meu segundo container. Ambos funcionando em paralelo, com ambientes distintos, sendo um Ubuntu e o outro Arch Linux, porém ambos compartilham o mesmo kernel, que é o do meu host.</p>
 
@@ -808,7 +808,7 @@ Clique em <strong>Next</strong>, reveja suas configurações e clique em <strong
     <link href="http://kalib.github.io/blog/2014/08/03/assista-ao-documentario-sobre-aaron-swartz-o-menino-da-internet/"/>
     <updated>2014-08-03T07:19:00-04:00</updated>
     <id>http://kalib.github.io/blog/2014/08/03/assista-ao-documentario-sobre-aaron-swartz-o-menino-da-internet</id>
-    <content type="html"><![CDATA[<p>{% img center /imgs/aaron-swartz-movie.jpg &lsquo;Aaron Swartz Movie&rsquo; %}
+    <content type="html"><![CDATA[<p><img class="center" src="/imgs/aaron-swartz-movie.jpg" title="&lsquo;Aaron Swartz Movie&rsquo;" >
 <code>
  Informação é poder. Mas, como todo poder, há aqueles que querem mantê-la para si mesmos. O patrimônio cultural e científico do mundo, publicado ao longo dos séculos em livros e revistas, está cada vez mais szendo digitalizado e trancado por um punhado de corporações privadas. Enquanto isso, aqueles que foram bloqueados não estão em pé de braços cruzados. Eles estão bisbilhotando em buracos e escalando cercas libertando as informações trancadas pelos editores e compartilhando com seus amigos. Mas toda essa ação acontece no escuro, escondida no subterrâneo. É chamado de roubo ou pirataria, como se compartilhar uma riqueza de conhecimentos fosse o equivalente  de saquear um navio e matar sua tripulação. Mas compartilhar não é imoral - é um imperativo moral. Só os cegos pela ganância se recusam a deixar um amigo fazer uma cópia. Não há justiça em seguir leis injustas. É hora de virmos para a luz e, na grande tradição de desobediência civil, declararmos a nossa oposição a este roubo privado da cultura pública.
 </code></p>
@@ -819,7 +819,7 @@ Clique em <strong>Next</strong>, reveja suas configurações e clique em <strong
 
 <p><strong>P</strong>ara quem ainda não sabe do que se trata, Aaron Swartz foi um dos criadores do RSS bem como do famoso site de notícias e debates Reddit.Após alguns anos lutando e enfrentando a justiça americana Aaron cometeu suicídio.</p>
 
-<p>{% img left /imgs/aaron_swartz.jpg &lsquo;Aaron Swartz&rsquo; %}<strong>A</strong>aron estava sendo condenado a cerca de 50 anos de prisão, bem como a pagar um montante superior a U$ 4 milhões em multas por querer tornar públicos os artigos acadêmicos e científicos que eram mantidos na base do JSTOR, o qual vendia o acesso a estes artigos que, na visão de Aaron, deveriam ser de domínio e acesso público.</p>
+<p><img class="left" src="/imgs/aaron_swartz.jpg" title="&lsquo;Aaron Swartz&rsquo;" ><strong>A</strong>aron estava sendo condenado a cerca de 50 anos de prisão, bem como a pagar um montante superior a U$ 4 milhões em multas por querer tornar públicos os artigos acadêmicos e científicos que eram mantidos na base do JSTOR, o qual vendia o acesso a estes artigos que, na visão de Aaron, deveriam ser de domínio e acesso público.</p>
 
 <p><strong>A</strong>aron sempre defendeu e lutou para que o conhecimento fosse de livre acesso a todos. Lutou tanto que acabou sendo covardemente perseguido e pressionado pelo governo americano, o que acabou por lhe deixar exausto, psicologicamente e financeiramente, ao ponto de ele desistir da luta ao invés de simplesmente &ldquo;assumir&rdquo; que estava errado e aceitar os &ldquo;acordos&rdquo; que lhe foram oferecidos pela justiça americana.</p>
 
@@ -827,7 +827,7 @@ Clique em <strong>Next</strong>, reveja suas configurações e clique em <strong
 
 <p><strong>P</strong>ara quem por algum motivo ainda não conhece o recurso de legendas ou caption do YoutTube, caso a legenda do filme não apareça automaticamente, basta clicar no botão de legendas/caption, habilitando-o, conforme apresentado na imagem abaixo:</p>
 
-<p>{% img center /imgs/youtube_captions.png &lsquo;Youtube Captions&rsquo; %}</p>
+<p><img class="center" src="/imgs/youtube_captions.png" title="&lsquo;Youtube Captions&rsquo;" ></p>
 
 <iframe width="560" height="315" src="http://kalib.github.io//www.youtube.com/embed/2uj1EeiuK5U" frameborder="0" allowfullscreen></iframe>
 

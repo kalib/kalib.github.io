@@ -9,7 +9,7 @@
   <meta name="author" content="Marcelo Cavalcante Rocha - Kalib">
 
   
-  <meta name="description" content="Shhhhhhh&hellip;. Que tal digitar seus comandos em uma máquina Linux sem que os mesmos sejam registrados no history do sistema? O history é &hellip;">
+  <meta name="description" content="Que os sistemas GNU/Linux possuem uma infinidade de comandos todo mundo sabe, o que nem todos conhecem, na verdade, são alguns comandos simples &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -80,6 +80,98 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/11/22/dica-rapida-linux-informacoes-sobre-arquivos-com-o-comando-stat/">Dica Rápida - Linux - Informações Sobre Arquivos Com O Comando Stat</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-11-22T08:22:00-05:00" pubdate data-updated="true">Nov 22<span>nd</span>, 2013</time>
+        
+         | <a href="/blog/2013/11/22/dica-rapida-linux-informacoes-sobre-arquivos-com-o-comando-stat/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img class="left" src="/imgs/information.png" title="'Information'" ></p>
+
+<p><strong>Q</strong>ue os sistemas GNU/Linux possuem uma infinidade de comandos todo mundo sabe, o que nem todos conhecem, na verdade, são alguns comandos simples porém eficientes e importantes. Um deles é justamente o <em>stat</em>.</p>
+
+<p><strong>Q</strong>uando se está em frente ao terminal de um servidor que não possui interface gráfica, tudo o que está a nossa disposição são as ferramentas de linha de comando, portanto é bom conhecer uma boa variedade das mesmas, desde ferramentas para tarefas complexas até ferramentas para as atividades mais simples e banais.</p>
+
+<p><strong>A</strong> dica que deixo hoje é uma ferramenta que muitas pessoas desconhecem: <em>stat</em></p>
+
+<p><strong>O</strong> stat serve para apresentar as informações de status de um arquivo ou sistema de arquivos. Ele apresenta uma série de informações sobre o arquivo que você informar como argumento. Dentre as informações estão o <em>Tamanho</em>, <em>Blocos</em>, <em>Permissões de Acesso</em>, <em>Data e Hora de último acesso</em>, <em>Data e Hora de última modificação</em>, etc.</p>
+
+<p><strong>O</strong> uso é simples, bastando digitar: <em>stat &lt;caminho_do_arquivo_ou_sistema_de_arquivos></em>.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> [kalib@tuxcaverna ~]$ stat testdisk.log 
+</span><span class='line'>  File: “testdisk.log”
+</span><span class='line'>  Size: 102478          Blocks: 208        IO Block: 4096   arquivo comum
+</span><span class='line'> Device: 804h/2052d      Inode: 27001862    Links: 1
+</span><span class='line'> Access: (0644/-rw-r--r--)  Uid: ( 1000/   kalib)   Gid: (  100/   users)
+</span><span class='line'> Access: 2013-11-11 11:31:34.360892496 -0300
+</span><span class='line'> Modify: 2011-05-10 09:48:46.000000000 -0300
+</span><span class='line'> Change: 2011-05-11 15:01:29.019407886 -0300
+</span><span class='line'> Birth: -</span></code></pre></td></tr></table></div></figure>
+
+
+<p>ou</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> [kalib@tuxcaverna ~]$ stat /dev/sda1 
+</span><span class='line'>  File: “/dev/sda1”
+</span><span class='line'>  Size: 0               Blocks: 0          IO Block: 4096   arquivo especial de bloco
+</span><span class='line'> Device: 5h/5d   Inode: 7253        Links: 1     Device type: 8,1
+</span><span class='line'> Access: (0660/brw-rw----)  Uid: (    0/    root)   Gid: (    6/    disk)
+</span><span class='line'> Access: 2013-11-22 08:01:39.246618958 -0300
+</span><span class='line'> Modify: 2013-11-22 08:01:39.246618958 -0300
+</span><span class='line'> Change: 2013-11-22 08:01:39.246618958 -0300
+</span><span class='line'> Birth: -</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>H</strong>ave fun!</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -313,87 +405,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/10/23/bleachbit-limpeza-de-disco-no-linux/">BleachBit - Limpeza De Disco No Linux</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-10-23T09:02:00-04:00" pubdate data-updated="true">Oct 23<span>rd</span>, 2013</time>
-        
-         | <a href="/blog/2013/10/23/bleachbit-limpeza-de-disco-no-linux/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><img class="left" src="/imgs/disk-cleanup.jpg" title="'Limpeza de Disco'" >
-<strong>Q</strong>uando o assunto é segurança da informação, muitas vezes o óbvio é deixado de lado. Se pensa em anti-vírus, firewall, IDS (Intrusion Detection System), etc. Mas e o básico e óbvio? Raramente vejo profissionais preocupados com o lixo existente nos discos rígidos. Com <em>lixo</em> eu quero dizer aqueles arquivos temporários, antigos arquivos de cache que já não são necessários, ou mesmo rastros de informações de arquivos que já foram deletados. Sim, o fato de você deletar arquivos não significa que as informações daqueles arquivos foram completamente apagadas do disco. A <em>&ldquo;deleção regular de arquivos&rdquo;</em> não está apagando <em>os dados deletados</em>. Ela está apenas removendo os links dos inodes de arquivos, tornando assim possível a recuperação dos arquivos <em>deletados</em> com algum software forense.</p>
-
-<p><strong>E</strong>xistem várias alternativas para remover seus arquivos de forma segura. As alternativas poderão variar de acordo com o sistema de arquivos utilizado em seu disco, é claro. Uma das formas mais simples que conheço é através da ferramenta <strong>BleachBit</strong>.</p>
-
-<p><strong>B</strong>leachBit é um software livre criado para limpar e liberar espaço em disco, gerenciando assim melhor a sua privacidade e otimizando sistemas computacionais. Criado em 2008 para sistemas GNU/Linux, partiu de um controverso e polêmico debate sobre a necessidade de o GNU/Linux necessitar de uma ferramenta para limpeza de registros. Posteriormente o BleachBit passou a suportar também sistemas Microsoft Windows.</p>
-
-<p><strong>C</strong>om esta ferramenta você poderá não apenas limpar seu espaço em disco, mas também limpar vários arquivos típicos do sistema que não são necessários na maioria dos casos a longo prazo, arquivos estes que podem dar ao intruso informações desnecessárias sobre suas atividades. Não desejamos isto&hellip;</p>
-
-<p><strong>A</strong> instalação do mesmo é feita de forma simples e convencional. No caso do archlinux, o pacote se encontra disponível no repositório [community], portanto pode ser instalado regularmente através do pacman.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'> [kalib@tuxcaverna ~]$ sudo pacman -Ss bleachbit
-</span><span class='line'> [sudo] password for kalib: 
-</span><span class='line'> community/bleachbit 0.9.6-1
-</span><span class='line'>    Deletes unneeded files to free disk space and maintain privacy
-</span><span class='line'> 
-</span><span class='line'> [kalib@tuxcaverna ~]$ sudo pacman -S bleachbit</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>N</strong>a maioria das distribuições baseadas em Debian, tal como o Ubuntu, o pacote poderá ser instalado através do aptitude ou apt-get:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'> $ sudo apt-get update
-</span><span class='line'> $ sudo apt-get install bleachbit</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>O</strong> BleachBit possui uma interface gráfica simples, na qual você poderá selecionar o que você deseja destruir. Lembre-se que algumas funções são experimentais e podem causar problemas em seu sistema. Mas não há necessidade de se preocupar: O BleachBit lhe informa sobre isto e lhe dá a chance de cancelar a operação selecionada. ;]</p>
-
-<p><strong>O</strong> BleachBit possui uma vasta lista de <em>cleaners</em>, como ele chama as ferramentas internas de limpeza. Dentre a longa lista, podemos citar alguns como: <em>Adanaxis, Adobe Reader, aMSN, aMule, APT, Audacious, Bash, Beagle, Chromium, Downloader for X, Deep scan, Easytag, ELinks, emesene, Epiphany, Evolution, Exaile, Filezilla, Firefox, Flash, gedit, gFTP, GIMP, etc.</em> A lista é realmente longa. <a href="http://bleachbit.sourceforge.net/features">Lista completa de cleaners e demais recursos.</a></p>
-
-<p><strong>P</strong>ara executar o programa, basta procurar o mesmo através do menu de aplicativos de seu sistema, ou através do comando:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'> [kalib@tuxcaverna ~]$ bleachbit</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>H</strong>ave fun!</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/9/">&larr; Anteriores</a>
@@ -414,6 +425,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2018/07/30/automatizando-a-criacao-de-imagens-com-packer/">Automatizando a Criação de Imagens com Packer</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2018/04/16/10-anos-d/">10 anos! :D</a>
       </li>
     
@@ -429,10 +444,6 @@
         <a href="/blog/2017/06/24/conhecendo-o-kubernetes-clusters-de-containers/">Conhecendo o Kubernetes - Clusters de Containers</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2017/03/11/recebendo-alarmes-do-aws-diretamente-no-slack/">Recebendo Alarmes do AWS Diretamente no Slack</a>
-      </li>
-    
   </ul>
 </section>
 <section>
@@ -443,7 +454,7 @@
   <h1> Eu apoio
 </h1>
   <span>
-    <a href='http://ansible.com'><img style='padding: .5em; margin: .5em;' src='/images/stickers/ansible.com.png'></a><a href='http://archlinux.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/archlinux.org.png'></a><a href='http://asterisk.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/asterisk.org.png'></a><a href='http://atom.io'><img style='padding: .5em; margin: .5em;' src='/images/stickers/atom.io.png'></a><a href='http://chef.io'><img style='padding: .5em; margin: .5em;' src='/images/stickers/chef.io.png'></a><a href='http://djangoproject.com'><img style='padding: .5em; margin: .5em;' src='/images/stickers/djangoproject.com.png'></a><a href='http://docker.com'><img style='padding: .5em; margin: .5em;' src='/images/stickers/docker.com.png'></a><a href='http://github.com'><img style='padding: .5em; margin: .5em;' src='/images/stickers/github.com.png'></a><img style='padding: .5em; margin: .5em;' src='/images/stickers/glider.png' ><a href='http://jenkins.io'><img style='padding: .5em; margin: .5em;' src='/images/stickers/jenkins.io.png'></a><a href='http://kde.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/kde.org.png'></a><a href='http://kubernetes.io'><img style='padding: .5em; margin: .5em;' src='/images/stickers/kubernetes.io.png'></a><a href='http://linux.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/linux.org.png'></a><a href='http://octopress.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/octopress.org.png'></a><a href='http://opensource.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/opensource.org.png'></a><a href='http://puppet.com'><img style='padding: .5em; margin: .5em;' src='/images/stickers/puppet.com.png'></a><a href='http://python.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/python.org.png'></a><a href='http://raspberrypi.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/raspberrypi.org.png'></a><a href='http://ruby-lang.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/ruby-lang.org.png'></a><a href='http://vagrantup.com'><img style='padding: .5em; margin: .5em;' src='/images/stickers/vagrantup.com.png'></a>
+    <a href='http://ansible.com'><img style='padding: .5em; margin: .5em;' src='/images/stickers/ansible.com.png'></a><a href='http://archlinux.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/archlinux.org.png'></a><a href='http://asterisk.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/asterisk.org.png'></a><a href='http://atom.io'><img style='padding: .5em; margin: .5em;' src='/images/stickers/atom.io.png'></a><a href='http://chef.io'><img style='padding: .5em; margin: .5em;' src='/images/stickers/chef.io.png'></a><a href='http://djangoproject.com'><img style='padding: .5em; margin: .5em;' src='/images/stickers/djangoproject.com.png'></a><a href='http://docker.com'><img style='padding: .5em; margin: .5em;' src='/images/stickers/docker.com.png'></a><a href='http://github.com'><img style='padding: .5em; margin: .5em;' src='/images/stickers/github.com.png'></a><img style='padding: .5em; margin: .5em;' src='/images/stickers/glider.png' ><a href='http://jenkins.io'><img style='padding: .5em; margin: .5em;' src='/images/stickers/jenkins.io.png'></a><a href='http://kde.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/kde.org.png'></a><a href='http://kubernetes.io'><img style='padding: .5em; margin: .5em;' src='/images/stickers/kubernetes.io.png'></a><a href='http://linux.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/linux.org.png'></a><a href='http://octopress.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/octopress.org.png'></a><a href='http://opensource.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/opensource.org.png'></a><a href='http://packer.io'><img style='padding: .5em; margin: .5em;' src='/images/stickers/packer.io.png'></a><a href='http://puppet.com'><img style='padding: .5em; margin: .5em;' src='/images/stickers/puppet.com.png'></a><a href='http://python.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/python.org.png'></a><a href='http://raspberrypi.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/raspberrypi.org.png'></a><a href='http://ruby-lang.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/ruby-lang.org.png'></a><a href='http://terraform.io'><img style='padding: .5em; margin: .5em;' src='/images/stickers/terraform.io.png'></a><a href='http://vagrantup.com'><img style='padding: .5em; margin: .5em;' src='/images/stickers/vagrantup.com.png'></a>
   </span>
 </section>
 

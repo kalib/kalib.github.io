@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Chef | Marcelo Cavalcante Rocha ~]]></title>
   <link href="http://kalib.github.io/blog/categories/chef/atom.xml" rel="self"/>
   <link href="http://kalib.github.io/"/>
-  <updated>2018-07-29T11:27:56-04:00</updated>
+  <updated>2018-08-03T20:21:26-04:00</updated>
   <id>http://kalib.github.io/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -18,11 +18,11 @@
     <link href="http://kalib.github.io/blog/2018/04/14/chef-uso-de-condicionais-not-if-e-only-if/"/>
     <updated>2018-04-14T19:33:00-04:00</updated>
     <id>http://kalib.github.io/blog/2018/04/14/chef-uso-de-condicionais-not-if-e-only-if</id>
-    <content type="html"><![CDATA[<p>{% img center /imgs/chef-logo2.png &lsquo;Chef&rsquo; %}</p>
+    <content type="html"><![CDATA[<p><img class="center" src="/imgs/chef-logo2.png" title="&lsquo;Chef&rsquo;" ></p>
 
 <h2>Pare e volte uma casa</h2>
 
-<p>{% img center /imgs/volte1casa.jpeg &lsquo;Volte1Casa&rsquo; %}
+<p><img class="center" src="/imgs/volte1casa.jpeg" title="&lsquo;Volte1Casa&rsquo;" >
 <strong>S</strong>e você nunca utilizou ou sabe pouco sobre o <em>Chef</em> é importante que você pare aqui mesmo e volte uma casa. Sugiro que leia o post <a href="http://blog.marcelocavalcante.net/blog/2018/04/01/chef-aautomacao-e-gerenciamento-de-configuracao/">Chef: Automação e Gerenciamento de Configuração</a> antes de seguir este, uma vez que através dele você entenderá o que é, e como funciona o Chef, bem como sua instalação básica.</p>
 
 <h2>Resources</h2>
@@ -530,7 +530,7 @@ Running handlers complete
     <link href="http://kalib.github.io/blog/2018/04/01/chef-aautomacao-e-gerenciamento-de-configuracao/"/>
     <updated>2018-04-01T11:22:00-04:00</updated>
     <id>http://kalib.github.io/blog/2018/04/01/chef-aautomacao-e-gerenciamento-de-configuracao</id>
-    <content type="html"><![CDATA[<p>{% img center /imgs/cheflogo.png &lsquo;Chef&rsquo; %}</p>
+    <content type="html"><![CDATA[<p><img class="center" src="/imgs/cheflogo.png" title="&lsquo;Chef&rsquo;" ></p>
 
 <h2>Uma coisa de cada vez</h2>
 
@@ -904,7 +904,7 @@ root      2425  0.0  0.0 112660   976 pts/0    R+   19:33   0:00 grep &mdash;col
 
 <p><strong>A</strong>lém disso, você pode testar seu novo servidor web diretamente em seu navegador. Caso esteja executando tudo em localhost, pode utilizar <em>localhost</em> como endereço. Caso contrário, pode utilizar o endereço ip da máquina em questão.</p>
 
-<p>{% img center /imgs/chef_httpd_default.png &lsquo;Chef&rsquo; %}</p>
+<p><img class="center" src="/imgs/chef_httpd_default.png" title="&lsquo;Chef&rsquo;" ></p>
 
 <p><strong>A</strong> página padrão do Apache não é algo que queremos, portanto vamos criar nosso próprio site (Hello World) para exemplificar melhor. Para isto editaremos novamente nossa recipe e incluiremos mais um resource, do tipo <em>file</em>, ou arquivo. O conteúdo de sua recipe deverá ficar assim:</p>
 
@@ -1006,7 +1006,7 @@ Chef Client finished, &frac14; resources updated in 06 seconds
 
 <p><strong>T</strong>ambém podemos voltar em nosso navegador e atualizar a página para que vejamos o nosso Hello World ao invés da página padrão do Apache.</p>
 
-<p>{% img center /imgs/chef_httpd_hw.png &lsquo;Chef&rsquo; %}</p>
+<p><img class="center" src="/imgs/chef_httpd_hw.png" title="&lsquo;Chef&rsquo;" ></p>
 
 <h2>Vale a pena?</h2>
 

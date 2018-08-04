@@ -1,0 +1,783 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Automatizando a Criação de Imagens com Packer - Marcelo Cavalcante Rocha ~</title>
+  <meta name="author" content="Marcelo Cavalcante Rocha - Kalib">
+
+  
+  <meta name="description" content="Packer é uma ferramenta Open Source, criada e mantida pela HashiCorp, para a criação de imagens de máquinas idênticas para múltiplas plataformas a &hellip;">
+  <meta name="keywords" content="Configuration Management,Packer,HashiCorp,SO,Linux,Devops,Cloud,AWS,Nuvem,Automação,CM,Docker,Google Cloud,Chef,Puppet,Kubernetes">
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://kalib.github.io/blog/2018/07/30/automatizando-a-criacao-de-imagens-com-packer/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Marcelo Cavalcante Rocha ~" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-42903485-1']);
+    _gaq.push(['_setDomainName','marcelocavalcante.net']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:kalib.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+    <li><a href="/">
+        <span class="blue_light">
+            Marcelo Cavalcante Rocha ~
+        </span>
+       
+           <span class="blue_dark">
+             Hacking the damn life...
+           </span>
+       
+    </a></li>
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Arquivos</a></li>
+  <li><a href="/about">Sobre mim</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Automatizando a Criação De Imagens Com Packer</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2018-07-30T07:15:00-04:00" pubdate data-updated="true">Jul 30<span>th</span>, 2018</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><img class="center" src="/imgs/packer.png" title="'Packer'" ></p>
+
+<h2>O que é Packer e qual sua importância</h2>
+
+<p><strong>P</strong>acker é uma ferramenta Open Source, criada e mantida pela <a href="https://www.hashicorp.com">HashiCorp</a>, para a criação de imagens de máquinas idênticas para múltiplas plataformas a partir de uma única fonte ou código de configuração. O <a href="https://www.packer.io/">Packer</a> é leve, roda em praticamente todos os principais Sistemas Operacionais e possui alta performance, permitindo a criação de imagens para múltiplas plataformas em paralelo.</p>
+
+<p><strong>U</strong>ma imagem de máquina, nada mais é que um arquivo estático que contém um sistema operacional pré-configurado, com determinados softwares instalados e que pode ser utilizada para criar novas máquinas ou servidores de forma mais rápida, evitando o trabalho repetitivo de instalar o sistema operacional e configurar aplicações padrões.</p>
+
+<p><strong>E</strong>xistem diversos formatos diferentes de imagens que podem ser criadas através do Packer, como por exemplo Amazon EC2, VirtualBox, VMware, Google Cloud Platform, Microsoft Azure, Docker, QEMU, CloudStack, DigitalOcean, etc.</p>
+
+<p><strong>O</strong> Packer suporta e é compatível com diversas ferramentas de provisionamento e automação, como shell script, Ansible, Puppet, Chef, etc., fazendo com que a criação de imagens seja ainda mais simples, dinâmica e robusta.</p>
+
+<p><strong>A</strong> ideia de criar imagens não é nova, visto que Sysadmins já o fazem há muitos anos, porém esta sempre foi uma tarefa tediosa, demorada e muito pouco produtiva. Basicamente a ideia de se construir uma imagem partia de, antes de mais nada, realizar de fato uma instalação completa de um Sistema Operacional e em seguida utilizar algum aplicativo para &ldquo;salvar&rdquo; aquele estado em uma imagem, que poderia ser posteriormente aplicada em outras máquinas. Isto por si só já facilitava muito a vida de Sysadmins em geral, visto que eles apenas realizavam a instalação completa do SO uma vez. Caso, além do SO, fossem necessárias outras aplicações, o processo seria basicamente o mesmo, instalando-se uma vez o SO completo e em seguida instalando todas as aplicações desejadas para a imagem.</p>
+
+<p><strong>A</strong>té então a criação da imagem parecia ser um sucesso, no entanto isto era algo improdutivo por ser absolutamente estático e imutável. Sempre que fosse necessário fazer uma mudança na imagem, atualizar versão de sistema operacional, aplicar patches, atualizar demais aplicações ou mudar configurações, novamente o processo deveria se repetir do início. Não é necessário sequer mencionar que não era nada simples gerenciar e versionar isto.</p>
+
+<p><strong>E</strong>is que surge o Packer para deixar a criação de imagens menos entediante, flexível e mais gerenciável.</p>
+
+<h2>Instalação</h2>
+
+<p><strong>A</strong> instalação não é complexa e pode ser feita através do binário disponível na página de downloads do Packer: <a href="https://www.packer.io/downloads.html">https://www.packer.io/downloads.html</a></p>
+
+<p><strong>Ubuntu</strong> &ndash; Caso não queira instalar através do binário fornecido no link acima, pode instalar via:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo apt-get install packer -y</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>Arch linux</strong> &ndash; Caso não queira instalar através do binário fornecido no link acima, pode instalar através do pacote disponível no <a href="https://aur.archlinux.org/packages/packer/">AUR</a>.</p>
+
+<p><strong>OS X</strong> &ndash; Caso não queira instalar através do binário fornecido no link acima, pode instalar através do homebrew:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ brew install packer</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>I</strong>ndependente de sua forma de instalação, confirme que a instalação foi concluída com sucesso:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ packer
+</span><span class='line'>Usage: packer [--version] [--help] &lt;command&gt; [&lt;args&gt;]
+</span><span class='line'>
+</span><span class='line'>Available commands are:
+</span><span class='line'>    build       build image(s) from template
+</span><span class='line'>    fix         fixes templates from old versions of packer
+</span><span class='line'>    inspect     see components of a template
+</span><span class='line'>    push        push a template and supporting files to a Packer build service
+</span><span class='line'>    validate    check that a template is valid
+</span><span class='line'>    version     Prints the Packer version</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>S</strong>e você recebeu algo similar, significa que você já pode começar a criar suas imagens. Caso tenha recebido um erro informando que o Packer não foi encontrado, significa que o mesmo não foi inserido corretamente na variável de ambiente de seu PATH. Certifique-se de inserir o diretório no qual o Packer foi instalado em seu PATH.</p>
+
+<h2>Criando Imagens com o Packer</h2>
+
+<p><strong>C</strong>onforme dito anteriormente, o Packer pode criar imagens para diversas extensões e plataformas, portanto o primeiro passo é saber para qual plataforma você deseja criar sua imagem.</p>
+
+<p><strong>P</strong>ara este tutorial introdutório, utilizaremos o Docker como destino para nossa imagem, ou seja, criaremos uma imagem de container que poderá rodar com o Docker.</p>
+
+<p><strong>OBS:</strong> A partir deste ponto estou assumindo que você já possui o Docker instalado em seu sistema. Para confirmar, digite:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ docker --version
+</span><span class='line'>Docker version 18.06.0-ce, build 0ffa825</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>Vamos ao Packer.</strong></p>
+
+<p><strong>P</strong>rimeiramente mostrarei como não tenho nenhuma imagem Docker neste momento em meu sistema:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ docker ps
+</span><span class='line'>CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>1-</strong> Escolha um editor de textos de sua preferência e inicie um arquivo chamado <em>template.json</em>;</p>
+
+<p><strong>2-</strong> Digite o seguinte em seu arquivo <em>template.json</em>.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>{
+</span><span class='line'>  "builders": [{
+</span><span class='line'>    "type": "docker",
+</span><span class='line'>    "image": "ubuntu",
+</span><span class='line'>    "commit": true
+</span><span class='line'>  }]
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>O</strong> que temos&hellip;</p>
+
+<p><em>builders:</em> Abre o bloco builders (construtores), onde iniciamos as instruções que definirão como a nossa imagem será criada;</p>
+
+<p><em>type:</em> Especifica o tipo de construtor que será utilizado. Neste exemplo escolhemos Docker. Aqui poderíamos utilizar AWS EC2, Google Cloud Instance, etc.</p>
+
+<p><em>image:</em> Parâmetro no qual indicaremos qual imagem será utilizada como origem para a nossa imagem final.</p>
+
+<p><em>commit:</em> Indica que queremos realizar o commit da imagem gerada no final.</p>
+
+<p><em>*OBS:</em> É importante lembrar que o Packer possui uma infinidade de parâmetros ou propriedades diferentes que podem ser específicos para cada tipo de builder. Lista de parâmetros e opções para o builder <a href="https://www.packer.io/docs/builders/docker.html">Docker</a>.</p>
+
+<p><strong>P</strong>rimeiramente, o indicado é validarmos a sintaxe de nosso código json: <em>($ packer validate template.json)</em></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ packer validate template.json
+</span><span class='line'>Template validated successfully.</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>O</strong> código parece estar correto do ponto de vista do Packer. Caso houvesse algo errado com o código, a mensagem daria alguma pista de onde está o erro. Removerei o último <strong>}</strong> do arquivo template.json para forçar um erro: <em>($ packer validate template.json)</em></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ packer validate template.json
+</span><span class='line'>Failed to parse template: Error parsing JSON: unexpected end of JSON input
+</span><span class='line'>At line 7, column 1 (offset 88):
+</span><span class='line'>    6:   }]
+</span><span class='line'>    7:</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>C</strong>om o arquivo de volta à sua versão correta, o próximo passo seria de fato o build, onde criaremos a imgem desejado de acordo com as intruções que demos: <em>($ packer build template.json)</em></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ packer build template.json
+</span><span class='line'>docker output will be in this color.
+</span><span class='line'>
+</span><span class='line'>==&gt; docker: Creating a temporary directory for sharing data...
+</span><span class='line'>==&gt; docker: Pulling Docker image: ubuntu
+</span><span class='line'>    docker: Using default tag: latest
+</span><span class='line'>    docker: latest: Pulling from library/ubuntu
+</span><span class='line'>    docker: c64513b74145: Pulling fs layer
+</span><span class='line'>    docker: 01b8b12bad90: Pulling fs layer
+</span><span class='line'>    docker: c5d85cf7a05f: Pulling fs layer
+</span><span class='line'>    docker: b6b268720157: Pulling fs layer
+</span><span class='line'>    docker: e12192999ff1: Pulling fs layer
+</span><span class='line'>    docker: b6b268720157: Waiting
+</span><span class='line'>    docker: e12192999ff1: Waiting
+</span><span class='line'>    docker: c5d85cf7a05f: Verifying Checksum
+</span><span class='line'>    docker: c5d85cf7a05f: Download complete
+</span><span class='line'>    docker: 01b8b12bad90: Verifying Checksum
+</span><span class='line'>    docker: 01b8b12bad90: Download complete
+</span><span class='line'>    docker: e12192999ff1: Verifying Checksum
+</span><span class='line'>    docker: e12192999ff1: Download complete
+</span><span class='line'>    docker: b6b268720157: Verifying Checksum
+</span><span class='line'>    docker: b6b268720157: Download complete
+</span><span class='line'>    docker: c64513b74145: Verifying Checksum
+</span><span class='line'>    docker: c64513b74145: Download complete
+</span><span class='line'>    docker: c64513b74145: Pull complete
+</span><span class='line'>    docker: 01b8b12bad90: Pull complete
+</span><span class='line'>    docker: c5d85cf7a05f: Pull complete
+</span><span class='line'>    docker: b6b268720157: Pull complete
+</span><span class='line'>    docker: e12192999ff1: Pull complete
+</span><span class='line'>    docker: Digest: sha256:3f119dc0737f57f704ebecac8a6d8477b0f6ca1ca0332c7ee1395ed2c6a82be7
+</span><span class='line'>    docker: Status: Downloaded newer image for ubuntu:latest
+</span><span class='line'>==&gt; docker: Starting docker container...
+</span><span class='line'>    docker: Run command: docker run -v /Users/kalib/.packer.d/tmp/packer-docker835877235:/packer-files -d -i -t ubuntu /bin/bash
+</span><span class='line'>    docker: Container ID: 50211726119aa045b0bc5eb9da8c9af243bc179fef0aad3cd94156d0f2a7a45a
+</span><span class='line'>==&gt; docker: Committing the container
+</span><span class='line'>    docker: Image ID: sha256:3a6a21aab4706e2b512f0c1fcbe8265e2527d4794f7c6fbdc5e4faf907d10622
+</span><span class='line'>==&gt; docker: Killing the container: 50211726119aa045b0bc5eb9da8c9af243bc179fef0aad3cd94156d0f2a7a45a
+</span><span class='line'>Build 'docker' finished.
+</span><span class='line'>
+</span><span class='line'>==&gt; Builds finished. The artifacts of successful builds are:
+</span><span class='line'>--&gt; docker: Imported Docker image: sha256:3a6a21aab4706e2b512f0c1fcbe8265e2527d4794f7c6fbdc5e4faf907d10622</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>N</strong>a saída do comando, ou output, podemos ver todos os passos e instruções que foram realizadas na criação de nossa imagem. Neste exemplo, o Docker baixou a última imagem ubuntu dos repositórios do Docker e em seguida gerou nossa imagem.</p>
+
+<p><strong>P</strong>ara confirmar, podemos utilizar novamente o <em>docker images</em>:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>docker images
+</span><span class='line'>REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+</span><span class='line'>&lt;none&gt;              &lt;none&gt;              3a6a21aab470        5 minutes ago       83.5MB
+</span><span class='line'>ubuntu              latest              735f80812f90        6 days ago          83.5MB</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>C</strong>omo esperado, agora temos duas imagens: a do ubuntu padrão, que foi baixada para servir de base para a nossa, bem como a nossa, até então sem nome.</p>
+
+<p><strong>D</strong>e certa forma nada foi feito até então. Nós apenas geramos uma imagem idêntica à que já existia do ubuntu, sem qualquer mudança. Vamos então dar algum sentido à nossa imagem em seguida. Além disso, podemos perceber que nossa imagem não tinha sequer nome, ficando listada como <em><none></em>. Corrigiremos isso também.</p>
+
+<p><strong>O</strong> Packer considera o Docker apenas como uma plataforma para gerar/rodar containers e, como tal, para gerar uma imagem o Packer descarta a necessidade da utilização de um Dockerfile, como de costume para quem já criou containers com Docker. Através de blocos de código <em>changes</em> e <em>provisioners</em>, o Packer nos permite passar praticamente todas as informações de metadata que fariam parte de um Dockerfile.</p>
+
+<p><strong>P</strong>ara demonstrar, criaremos uma imagem de um ubuntu rodando <em>nginx</em>, porém utilizaremos a imagem padrão do ubuntu que já baixamos anteriormente.</p>
+
+<p><strong>O</strong> código do template.json agora deverá ser o seguinte:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>{
+</span><span class='line'>  "builders": [{
+</span><span class='line'>    "type": "docker",
+</span><span class='line'>    "image": "ubuntu",
+</span><span class='line'>    "commit": true,
+</span><span class='line'>    "changes": [
+</span><span class='line'>      "CMD [\"nginx\", \"-g\", \"daemon off;\"]",
+</span><span class='line'>      "EXPOSE 80"
+</span><span class='line'>   ]
+</span><span class='line'>  }],
+</span><span class='line'>  "provisioners": [
+</span><span class='line'>    {
+</span><span class='line'>      "type" : "shell",
+</span><span class='line'>      "inline" : ["apt-get update && apt-get install -y nginx"]
+</span><span class='line'>    }
+</span><span class='line'>  ],
+</span><span class='line'>  "post-processors": [
+</span><span class='line'>      {
+</span><span class='line'>        "type": "docker-tag",
+</span><span class='line'>        "repository": "kalib/ubuntunginx",
+</span><span class='line'>        "tag": "0.1"
+</span><span class='line'>      }
+</span><span class='line'>  ]
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>V</strong>ejamos o que foi incluído:</p>
+
+<p><em>changes:</em> Parâmetro que nos permite alterar a meta-data de nossa imagem docker.</p>
+
+<p>  <em>CMD [\&ldquo;nginx\&rdquo;, \&ldquo;-g\&rdquo;, \&ldquo;daemon off;\&rdquo;]:</em> Comando para iniciar o nginx no container, assim como faríamos utilizando Dockerfile.</p>
+
+<p>  <em>EXPOSE 80:</em> Da mesma forma, apenas informando que a porta 80 no container deverá estar disponível, assim como faríamos em um Dockerfile.</p>
+
+<p><em>provisioners:</em> É onde indicamos que ferramentas utilizaremos para provisionar as alterações/configurações em nossa imagem. Podemos ter um ou mais provisioners ao mesmo tempo. Neste exemplo estaremos utilizando um simples comando bash, portanto nosso provisioner será <em>bash</em>, mas poderia ser chef, ansible, puppet, ou mesmo um script bash mais complexo, mas como o objetivo para este post é uma abordagem simples e introdutória, manteremos o provisioner mais simples possível.</p>
+
+<p>  <em>type:</em> especificamos que o tipo de provisioner será <em>bash</em>.</p>
+
+<p>  <em>inline:</em> Inserimos o comando bash que desejamos que seja executado para personalizar nossa imagem. Neste caso, <em>apt-get update &amp;&amp; apt-get install -y nginx</em> irá atualizar a base de dados dos repositórios e em seguida instalar o nginx.</p>
+
+<p><em>post-processors:</em> Como o nome já diz, são instruções ou processors que acontecem ao final do build.</p>
+
+<p>  <em>type:</em> Indica o tipo de post-processor que utilizaremos. No exemplo, utilizaremos <em>docker-tag</em>, para que possamos dar uma tag/nome para nossa imagem. (Lembrando que como uma boa prática, ao criar uma imagem Docker, sempre inserimos o padrão <em>repositório/imagem</em>)</p>
+
+<p>  <em>repository:</em> É onde indicamos o repositório e o nome da imagem que criaremos.</p>
+
+<p>  <em>tag:</em> Onde podemos definir a tag que ajudar a manter o controle de versão de nossa imagem.</p>
+
+<p><strong>N</strong>ovamente, vamos validar nosso código:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ packer validate template.json
+</span><span class='line'>Template validated successfully.</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>D</strong>esta vez o output será muito extenso, portanto colarei apenas alguns trechos aqui para demonstrar o resultado:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ packer build template.json
+</span><span class='line'>docker output will be in this color.
+</span><span class='line'>
+</span><span class='line'>==&gt; docker: Creating a temporary directory for sharing data...
+</span><span class='line'>==&gt; docker: Pulling Docker image: ubuntu
+</span><span class='line'>    docker: Using default tag: latest
+</span><span class='line'>    docker: latest: Pulling from library/ubuntu
+</span><span class='line'>    docker: Digest: sha256:3f119dc0737f57f704ebecac8a6d8477b0f6ca1ca0332c7ee1395ed2c6a82be7
+</span><span class='line'>    docker: Status: Image is up to date for ubuntu:latest
+</span><span class='line'>==&gt; docker: Starting docker container...
+</span><span class='line'>    docker: Run command: docker run -v /Users/kalib/.packer.d/tmp/packer-docker737353515:/packer-files -d -i -t ubuntu /bin/bash
+</span><span class='line'>    docker: Container ID: 097a85a796e0e928fbc82cd6618bd60e286b46dfadad20e823027fc2f93d25db
+</span><span class='line'>==&gt; docker: Provisioning with shell script: /var/folders/nn/njz4sd054fv_tvq30vh0zygh0000gp/T/packer-shell161880041
+</span><span class='line'>    docker: Get:1 http://archive.ubuntu.com/ubuntu bionic InRelease [242 kB]
+</span><span class='line'>    docker: Get:2 http://security.ubuntu.com/ubuntu bionic-security InRelease [83.2 kB]
+</span><span class='line'>    ...
+</span><span class='line'>    ...
+</span><span class='line'>    docker: Reading state information...
+</span><span class='line'>docker: The following additional packages will be installed:
+</span><span class='line'>docker:   fontconfig-config fonts-dejavu-core geoip-database libbsd0 libexpat1
+</span><span class='line'>docker:   libfontconfig1 libfreetype6 libgd3 libgeoip1 libicu60 libjbig0
+</span><span class='line'>docker:   libjpeg-turbo8 libjpeg8 libnginx-mod-http-geoip
+</span><span class='line'>docker:   libnginx-mod-http-image-filter libnginx-mod-http-xslt-filter
+</span><span class='line'>docker:   libnginx-mod-mail libnginx-mod-stream libpng16-16 libssl1.1 libtiff5
+</span><span class='line'>docker:   libwebp6 libx11-6 libx11-data libxau6 libxcb1 libxdmcp6 libxml2 libxpm4
+</span><span class='line'>docker:   libxslt1.1 multiarch-support nginx-common nginx-core ucf
+</span><span class='line'>docker: Suggested packages:
+</span><span class='line'>docker:   libgd-tools geoip-bin fcgiwrap nginx-doc ssl-cert
+</span><span class='line'>docker: The following NEW packages will be installed:
+</span><span class='line'>docker:   fontconfig-config fonts-dejavu-core geoip-database libbsd0 libexpat1
+</span><span class='line'>docker:   libfontconfig1 libfreetype6 libgd3 libgeoip1 libicu60 libjbig0
+</span><span class='line'>docker:   libjpeg-turbo8 libjpeg8 libnginx-mod-http-geoip
+</span><span class='line'>docker:   libnginx-mod-http-image-filter libnginx-mod-http-xslt-filter
+</span><span class='line'>docker:   libnginx-mod-mail libnginx-mod-stream libpng16-16 libssl1.1 libtiff5
+</span><span class='line'>docker:   libwebp6 libx11-6 libx11-data libxau6 libxcb1 libxdmcp6 libxml2 libxpm4
+</span><span class='line'>docker:   libxslt1.1 multiarch-support nginx nginx-common nginx-core ucf
+</span><span class='line'>docker: 0 upgraded, 35 newly installed, 0 to remove and 0 not upgraded.
+</span><span class='line'>docker: Need to get 16.1 MB of archives.
+</span><span class='line'>docker: After this operation, 58.8 MB of additional disk space will be used.
+</span><span class='line'>docker: Get:1 http://archive.ubuntu.com/ubuntu bionic/main amd64 multiarch-support amd64 2.27-3ubuntu1 [6916 B]
+</span><span class='line'>docker: Get:2 http://archive.ubuntu.com/ubuntu bionic/main amd64 libxau6 amd64 1:1.0.8-1 [8376 B]
+</span><span class='line'>docker: Get:3 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libjpeg-turbo8 amd64 1.5.2
+</span><span class='line'>...
+</span><span class='line'>...
+</span><span class='line'>docker: Setting up nginx (1.14.0-0ubuntu1) ...
+</span><span class='line'>    docker: Processing triggers for libc-bin (2.27-3ubuntu1) ...
+</span><span class='line'>==&gt; docker: Committing the container
+</span><span class='line'>    docker: Image ID: sha256:0cbafebeaf17d8b8e8eccad87e706845993b78265a99e3e0f1ef8bd0bd724aa7
+</span><span class='line'>==&gt; docker: Killing the container: 097a85a796e0e928fbc82cd6618bd60e286b46dfadad20e823027fc2f93d25db
+</span><span class='line'>==&gt; docker: Running post-processor: docker-tag
+</span><span class='line'>    docker (docker-tag): Tagging image: sha256:0cbafebeaf17d8b8e8eccad87e706845993b78265a99e3e0f1ef8bd0bd724aa7
+</span><span class='line'>    docker (docker-tag): Repository: kalib/ubuntunginx:0.1
+</span><span class='line'>Build 'docker' finished.
+</span><span class='line'>
+</span><span class='line'>==&gt; Builds finished. The artifacts of successful builds are:
+</span><span class='line'>--&gt; docker: Imported Docker image: sha256:0cbafebeaf17d8b8e8eccad87e706845993b78265a99e3e0f1ef8bd0bd724aa7
+</span><span class='line'>--&gt; docker: Imported Docker image: kalib/ubuntunginx:0.1</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>C</strong>omo podemos ver, todos os passos foram executados, incluindo a atualização da lista de pacotes dos repositórios, a instalação do nginx e a criação da imagem com o repositório, nome e tag de versão que indicamos.</p>
+
+<p><strong>V</strong>ejamos nossa imagem na lista de imagens disponíveis no Docker:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ docker images
+</span><span class='line'>REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+</span><span class='line'>kalib/ubuntunginx   0.1                 0cbafebeaf17        5 minutes ago       182MB
+</span><span class='line'>&lt;none&gt;              &lt;none&gt;              4d86b1edf015        43 minutes ago      83.5MB
+</span><span class='line'>ubuntu              latest              735f80812f90        6 days ago          83.5MB</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>S</strong>ucesso, aparentemente nossa imagem foi criada conforme o esperado. Hora de testar e ver se tudo realmente funcionou.</p>
+
+<p><strong>OBS:</strong> Como dito no início do post, o objetivo deste post não é ensinar Docker, portanto estou assumindo que você já possui alguma familiaridade com esta ferramenta.</p>
+
+<p><strong>V</strong>amos iniciar um container a partir desta nossa imagem em background, mapeando a porta 80 do container na porta 80 de nosso host, para facilitar o teste:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ docker run -d -p 80:80 kalib/ubuntunginx:0.1
+</span><span class='line'>53de48d3e7708a7ac16dbb5ba6ed71b8672201729264e51945ee3412a02e0deb</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>N</strong>enhuma mensagem de erro, portanto ao que tudo indica nosso container está rodando corretamente. Vamos confirmar isto com <em>docker ps</em>:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ docker ps
+</span><span class='line'>CONTAINER ID        IMAGE                   COMMAND                  CREATED             STATUS              PORTS                NAMES
+</span><span class='line'>53de48d3e770        kalib/ubuntunginx:0.1   "nginx -g 'daemon of…"   5 seconds ago       Up 4 seconds        0.0.0.0:80-&gt;80/tcp   clever_keldysh</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>T</strong>udo certo aqui também. Podemos ver nosso container rodando, o processo do nginx aparentemente rodando, bem como a porta 80 mapeada como esperado. Vamos abrir o browser em nosso host e acessar <em>localhost:80</em>&hellip;</p>
+
+<p><img class="center" src="/imgs/packer_nginx.png" title="'Packer'" ></p>
+
+<p><strong>P</strong>ronto, validamos a nossa imagem criando um container e confirmando que o nginx está de fato rodando como deveria.</p>
+
+<p><strong>E</strong>m futuros posts, pretendo dar exemplos mais aprofundados, utilizando combinações com outros provisioners, como Puppet, Ansible e Shell Scripts, bem como outros builders, como por exemplo o AWS.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Marcelo Cavalcante Rocha - Kalib</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2018-07-30T07:15:00-04:00" pubdate data-updated="true">Jul 30<span>th</span>, 2018</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/cloud/'>Cloud</a>, <a class='category' href='/blog/categories/devops/'>Devops</a>, <a class='category' href='/blog/categories/packer/'>Packer</a>, <a class='category' href='/blog/categories/sysadmin/'>Sysadmin</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://kalib.github.io/blog/2018/07/30/automatizando-a-criacao-de-imagens-com-packer/" data-via="" data-counturl="http://kalib.github.io/blog/2018/07/30/automatizando-a-criacao-de-imagens-com-packer/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2018/04/16/10-anos-d/" title="Previous Post: 10 anos! :D">&laquo; 10 anos! :D</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1 align="left">Marcelo Cavalcante</h1>
+  <p><img class="right" src="http://www.marcelocavalcante.net/imgs/kalib_picture_pq_circle_pq.png" title="'kalib'" ><p align=rght>Sysadmin dinâmico, escrupulosamente curioso, reservadamente convencional, multitarefa, command line heavy-user, estudante e pesquisador, surfista por prazer, leitor inquieto e apaixonado por vinhos.<br>Me conheça melhor <a href="http://blog.marcelocavalcante.net/about">clicando aqui</a>.</p></p>
+</section><section>
+  <h1>Posts Recentes</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2018/07/30/automatizando-a-criacao-de-imagens-com-packer/">Automatizando a Criação de Imagens com Packer</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2018/04/16/10-anos-d/">10 anos! :D</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2018/04/14/chef-uso-de-condicionais-not-if-e-only-if/">Chef: Uso de Condicionais not_if e only_if</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2018/04/01/chef-aautomacao-e-gerenciamento-de-configuracao/">Chef: Automação e Gerenciamento de Configuração</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2017/06/24/conhecendo-o-kubernetes-clusters-de-containers/">Conhecendo o Kubernetes - Clusters de Containers</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+  <h1>Estou lendo</h1>
+  <img align="center" src="/imgs/livros/spiritprophecy.jpg">
+</section>
+<section>
+  <h1> Eu apoio
+</h1>
+  <span>
+    <a href='http://ansible.com'><img style='padding: .5em; margin: .5em;' src='/images/stickers/ansible.com.png'></a><a href='http://archlinux.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/archlinux.org.png'></a><a href='http://asterisk.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/asterisk.org.png'></a><a href='http://atom.io'><img style='padding: .5em; margin: .5em;' src='/images/stickers/atom.io.png'></a><a href='http://chef.io'><img style='padding: .5em; margin: .5em;' src='/images/stickers/chef.io.png'></a><a href='http://djangoproject.com'><img style='padding: .5em; margin: .5em;' src='/images/stickers/djangoproject.com.png'></a><a href='http://docker.com'><img style='padding: .5em; margin: .5em;' src='/images/stickers/docker.com.png'></a><a href='http://github.com'><img style='padding: .5em; margin: .5em;' src='/images/stickers/github.com.png'></a><img style='padding: .5em; margin: .5em;' src='/images/stickers/glider.png' ><a href='http://jenkins.io'><img style='padding: .5em; margin: .5em;' src='/images/stickers/jenkins.io.png'></a><a href='http://kde.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/kde.org.png'></a><a href='http://kubernetes.io'><img style='padding: .5em; margin: .5em;' src='/images/stickers/kubernetes.io.png'></a><a href='http://linux.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/linux.org.png'></a><a href='http://octopress.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/octopress.org.png'></a><a href='http://opensource.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/opensource.org.png'></a><a href='http://packer.io'><img style='padding: .5em; margin: .5em;' src='/images/stickers/packer.io.png'></a><a href='http://puppet.com'><img style='padding: .5em; margin: .5em;' src='/images/stickers/puppet.com.png'></a><a href='http://python.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/python.org.png'></a><a href='http://raspberrypi.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/raspberrypi.org.png'></a><a href='http://ruby-lang.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/ruby-lang.org.png'></a><a href='http://terraform.io'><img style='padding: .5em; margin: .5em;' src='/images/stickers/terraform.io.png'></a><a href='http://vagrantup.com'><img style='padding: .5em; margin: .5em;' src='/images/stickers/vagrantup.com.png'></a>
+  </span>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2018 - Marcelo Cavalcante Rocha - Kalib -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'marcelocavalcante';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://kalib.github.io/blog/2018/07/30/automatizando-a-criacao-de-imagens-com-packer/';
+        var disqus_url = 'http://kalib.github.io/blog/2018/07/30/automatizando-a-criacao-de-imagens-com-packer/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

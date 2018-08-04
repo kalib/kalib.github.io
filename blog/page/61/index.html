@@ -9,7 +9,7 @@
   <meta name="author" content="Marcelo Cavalcante Rocha - Kalib">
 
   
-  <meta name="description" content="Assim que saiu o Kubuntu 8.04 oficialmente, corri para baixar a iso antes mesmo de ser divulgado no site oficial como forma de evitar pegar uma banda &hellip;">
+  <meta name="description" content="Novamente estou aqui para lhes passar uma pequena dica que para muitos pode nem ser novidade, porém para alguns a dúvida pode existir. Bom, para &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -80,6 +80,76 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/05/03/vantagem-do-aptitude-sobre-o-apt-get/">Vantagem Do Aptitude Sobre O Apt-Get</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-05-03T10:45:00-04:00" pubdate data-updated="true">May 3<span>rd</span>, 2008</time>
+        
+         | <a href="/blog/2008/05/03/vantagem-do-aptitude-sobre-o-apt-get/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Novamente estou aqui para lhes passar uma pequena dica que para muitos pode nem ser novidade, porém para alguns a dúvida pode existir.</p>
+
+<p>Bom, para aqueles que ainda não sabem, o apt é uma ferramenta da Debian para gerenciamento de pacotes de forma simples, amigável e rápida contando inclusive com a instalação automática de dependências necessárias para a finalização do processo. O que muitas pessoas ainda não sabem é que utilizando-se do comando &ldquo;apt-get install NOME_PACOTE&rdquo; serão instalados pacotes que o mesmo não removerá automaticamente posteriormente, fazendo assim um acúmulo de &ldquo;lixo&rdquo; em nosso sistema. Como assim? Suponhamos que eu queira instalar um aplicativo de instant messenger como por exemplo o amsn. Esta ferramenta possui dependências necessárias para seu funcionamento, sendo elas o TCL e o TK.</p>
+
+<p>O seguinte comando fará a instalação do amsn juntamente com suas dependências, sem que eu precise me preocupar em buscar por elas desesperadamente na internet:</p>
+
+<h1>apt-get install amsn</h1>
+
+<p>Ótimo! Agora tenho o meu messenger devidamente instalado, sem nenhuma dificuldade e funcionando perfeitamente. Porém, um certo dia resolvi remover essa ferramenta que com o tempo parei de usar, então para isso utilizo o seguinte comando:</p>
+
+<h1>apt-get remove amsn</h1>
+
+<p>Perfeito! Meu amsn está desinstalado sem dificuldade alguma. ;]</p>
+
+<p>Agora, e o que acontece com os dois pacotes que foram instalados juntamente com ele anteriormente? TCL e TK? Bom, eles continuam instalados, fazendo um certo acúmulo de  &ldquo;lixo&rdquo; em seu sistema. O mesmo ocorre com todos os pacotes que forem instalados em seu sistema e futuramente removidos com o apt-get.</p>
+
+<p>Onde entra o Aptitude nessa história?</p>
+
+<p>Bom, o aptitude tem um funcionamento bem semelhante para a instalação de pacotes. Passaremos a adotar o mesmo cenário aqui, instalando portanto o amsn:</p>
+
+<h1>aptitude install amsn</h1>
+
+<p>Assim como o apt-get, o aptitude irá instalar automaticamente as dependências do amsn, TCL e TK. Passado algum tempo, resolvo remover o amsn usando o seguinte comando:</p>
+
+<h1>aptitude remove amsn</h1>
+
+<p>Aparentemente ele terá o mesmo efeito do apt-get, com o grande diferencial de  excluir juntamente com o amsn, as suas dependências que outrora foram instaladas, TCL e TK.</p>
+
+<p>Imagine a quantidade de pacotes desnecessários que deve existir em sua máquina&hellip;provavelmente vários. O aptitude é uma solução para que isto não ocorra mais.</p>
+
+<p>Para os fans de distribuições como o Fedora que utilizam-se da ferramenta Yum para instalar seus pacotes, caso tenha surgido a curiosidade, fica a informação de que, infelizmente, o yum ainda não possui este mecanismo. A mesma curiosidade surgiu em mim e resolvi testar, porém o yum, assim como o apt-get, apenas me removeu o amsn, deixando para trás as dependências que foram instaladas.</p>
+
+<p>Essa foi uma simples dica para aqueles que desconheciam este fato diferencial dentre os dois. Espero ter ajudado com esta pequena contribuição para com a comunidade. abraços e até a próxima.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -251,58 +321,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2008/04/16/procura-se-seguranca-particular/">Procura-se Segurança Particular</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2008-04-16T13:40:00-04:00" pubdate data-updated="true">Apr 16<span>th</span>, 2008</time>
-        
-         | <a href="/blog/2008/04/16/procura-se-seguranca-particular/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Pode parecer estranho mas de fato este título já deve ter passado pela cabeça de muitos administradores de redes/infra-estruturas empresariais.</p>
-
-<p>Por incrível que pareça, ainda nos dias de hoje, o administrador de redes é muitas vezes visto pelos demais funcionários da empresa com um certo desprezo. Porquê? Bom, basicamente é pelo fato de ele fazer o que é pago para fazer.</p>
-
-<p>Como um carcará voando sob a presa, o administrador gera medo e raiva nos demais funcionários pelo fato de ter que policiar e capturar atos que vão contra as políticas do local de trabalho. Vida ingrata e ao mesmo tempo honrosa a de quem precisa fazer valer a regra existente.</p>
-
-<p>Este é o principal motivo pelo qual Precisa-se de segurança particular. Por incrível que pareça, já ouvi história de administradores de redes que encontraram seus pneus furados sem &ldquo;motivo algum&rdquo; pessoalmente falando.</p>
-
-<p>Diariamente somos torturados por pessoas reclamando que serviço X está lento ou que acesso Y está impossível de se realizar. Porém ao fazer uma breve análise das possíveis causas, constantemente percebemos que os causadores são os mesmos que estão reclamando. E como eles causam isso? Acessando sites de jogos online, pornografia, downloads dentre outros tipos de acessos indevidos que consomem banda de internet ou mesmo recursos do servidor onde muitas vezes seus colegas de trabalho acabam se prejudicando.</p>
-
-<p>Até aí não haveria problema, concordam? Bastaria matar os processos deste indivíduo ou mesmo sua sessão. Porém, o que eles não sabem é que, há uma enorme cobrança da diretoria da empresa para com o lado responsável pela administração de redes e infra estrutura. Os diretores nos cobram cada vez mais uma estabilidade no ambiente de produção e quando acontece um problema desse tipo, eles querem uma respota concreta, que envolve uma causa bem como uma solução do problema apresentado. Para isto temos que acabar por literalmente mostrar o que(quem) está atrapalhando o andamento dos processos da empresa e como o faz.</p>
-
-<p>Sim. Geralmente somos mal vistos na empresa. Deuses, assim alguns nos chamam, como nos tempos da Grécia Antiga. Onipotentes e onipresentes são estes seres aos quais os mortais apenas podem orar tementes aos castigos que lhes podem ser lançados.</p>
-
-<p>abraços pessoal</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/62/">&larr; Anteriores</a>
@@ -323,6 +341,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2018/07/30/automatizando-a-criacao-de-imagens-com-packer/">Automatizando a Criação de Imagens com Packer</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2018/04/16/10-anos-d/">10 anos! :D</a>
       </li>
     
@@ -338,10 +360,6 @@
         <a href="/blog/2017/06/24/conhecendo-o-kubernetes-clusters-de-containers/">Conhecendo o Kubernetes - Clusters de Containers</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2017/03/11/recebendo-alarmes-do-aws-diretamente-no-slack/">Recebendo Alarmes do AWS Diretamente no Slack</a>
-      </li>
-    
   </ul>
 </section>
 <section>
@@ -352,7 +370,7 @@
   <h1> Eu apoio
 </h1>
   <span>
-    <a href='http://ansible.com'><img style='padding: .5em; margin: .5em;' src='/images/stickers/ansible.com.png'></a><a href='http://archlinux.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/archlinux.org.png'></a><a href='http://asterisk.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/asterisk.org.png'></a><a href='http://atom.io'><img style='padding: .5em; margin: .5em;' src='/images/stickers/atom.io.png'></a><a href='http://chef.io'><img style='padding: .5em; margin: .5em;' src='/images/stickers/chef.io.png'></a><a href='http://djangoproject.com'><img style='padding: .5em; margin: .5em;' src='/images/stickers/djangoproject.com.png'></a><a href='http://docker.com'><img style='padding: .5em; margin: .5em;' src='/images/stickers/docker.com.png'></a><a href='http://github.com'><img style='padding: .5em; margin: .5em;' src='/images/stickers/github.com.png'></a><img style='padding: .5em; margin: .5em;' src='/images/stickers/glider.png' ><a href='http://jenkins.io'><img style='padding: .5em; margin: .5em;' src='/images/stickers/jenkins.io.png'></a><a href='http://kde.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/kde.org.png'></a><a href='http://kubernetes.io'><img style='padding: .5em; margin: .5em;' src='/images/stickers/kubernetes.io.png'></a><a href='http://linux.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/linux.org.png'></a><a href='http://octopress.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/octopress.org.png'></a><a href='http://opensource.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/opensource.org.png'></a><a href='http://puppet.com'><img style='padding: .5em; margin: .5em;' src='/images/stickers/puppet.com.png'></a><a href='http://python.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/python.org.png'></a><a href='http://raspberrypi.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/raspberrypi.org.png'></a><a href='http://ruby-lang.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/ruby-lang.org.png'></a><a href='http://vagrantup.com'><img style='padding: .5em; margin: .5em;' src='/images/stickers/vagrantup.com.png'></a>
+    <a href='http://ansible.com'><img style='padding: .5em; margin: .5em;' src='/images/stickers/ansible.com.png'></a><a href='http://archlinux.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/archlinux.org.png'></a><a href='http://asterisk.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/asterisk.org.png'></a><a href='http://atom.io'><img style='padding: .5em; margin: .5em;' src='/images/stickers/atom.io.png'></a><a href='http://chef.io'><img style='padding: .5em; margin: .5em;' src='/images/stickers/chef.io.png'></a><a href='http://djangoproject.com'><img style='padding: .5em; margin: .5em;' src='/images/stickers/djangoproject.com.png'></a><a href='http://docker.com'><img style='padding: .5em; margin: .5em;' src='/images/stickers/docker.com.png'></a><a href='http://github.com'><img style='padding: .5em; margin: .5em;' src='/images/stickers/github.com.png'></a><img style='padding: .5em; margin: .5em;' src='/images/stickers/glider.png' ><a href='http://jenkins.io'><img style='padding: .5em; margin: .5em;' src='/images/stickers/jenkins.io.png'></a><a href='http://kde.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/kde.org.png'></a><a href='http://kubernetes.io'><img style='padding: .5em; margin: .5em;' src='/images/stickers/kubernetes.io.png'></a><a href='http://linux.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/linux.org.png'></a><a href='http://octopress.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/octopress.org.png'></a><a href='http://opensource.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/opensource.org.png'></a><a href='http://packer.io'><img style='padding: .5em; margin: .5em;' src='/images/stickers/packer.io.png'></a><a href='http://puppet.com'><img style='padding: .5em; margin: .5em;' src='/images/stickers/puppet.com.png'></a><a href='http://python.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/python.org.png'></a><a href='http://raspberrypi.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/raspberrypi.org.png'></a><a href='http://ruby-lang.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/ruby-lang.org.png'></a><a href='http://terraform.io'><img style='padding: .5em; margin: .5em;' src='/images/stickers/terraform.io.png'></a><a href='http://vagrantup.com'><img style='padding: .5em; margin: .5em;' src='/images/stickers/vagrantup.com.png'></a>
   </span>
 </section>
 
