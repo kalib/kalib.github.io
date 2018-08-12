@@ -19,29 +19,29 @@ categories:
 
 **A** plataforma AWS da Amazon é atualmente uma das maiores e mais populares quando o assunto é Cloud e automação em nuvem, permitindo o uso de soluções de infra estrutura completamente na nuvem, sem a necessidade de termos Hardware físico, otimizando custos e nos dando mais flexibilidade.
 
-**A** própria plataforma nos disponibiliza diversos recursos para facilitar a implementação de nossas soluções e tornar nossas tarefas rotineiras mais simples. Por exemplo, para a criação de VMs, ou instâncias, no AWS de forma mais rápida, podemos utiliar uma imagem previamente criada, de forma que possamos evitar alguns passos e configurações repetitivas.
+**A** própria plataforma nos disponibiliza diversos recursos para facilitar a implementação de nossas soluções e tornar nossas tarefas rotineiras mais simples. Por exemplo, para a criação de VMs, ou instâncias, no AWS de forma mais rápida, podemos utilizar uma imagem previamente criada, de forma que possamos evitar alguns passos e configurações repetitivas.
 
-**U**ma vez que eu identifico uma necessidade para minha aplicação e sei que preciso de uma máquina virtual com configurações e aplicações específicas para poder rodar minha aplicação, eu posso criar uma imagem com todos estes pré-requisitos de forma que ao resolver criar uma nova VM, eu não precise realizar todos estes passos manualmente. Além de evitar trabalho repetitivo, nos garante uma maior flexibilidade ao ter nossa infraestrutura como código, de forma que podemos literalmente ter as instruções que compõem nossa infraestrutura em um repositório Git, por exemplo, e nos permitindo realizar alterações nesta imagem também de forma simples e rápida para a geração de novas imagens de instâncias com as nossas alterações em poucos segundos ou minutos, dependendo da quantidade de alterações envolvdidas.
+**U**ma vez que eu identifico uma necessidade para minha aplicação e sei que preciso de uma máquina virtual com configurações e aplicações específicas para poder rodar minha aplicação, eu posso criar uma imagem com todos estes pré-requisitos de forma que ao resolver criar uma nova VM, eu não precise realizar todos estes passos manualmente. Além de evitar trabalho repetitivo, nos garante uma maior flexibilidade ao ter nossa infraestrutura como código, de forma que podemos literalmente ter as instruções que compõem nossa infraestrutura em um repositório Git, por exemplo, além de nos permitir realizar alterações nesta imagem também de forma simples e rápida para a geração de novas imagens de instâncias com as nossas alterações em poucos segundos ou minutos, dependendo da quantidade de alterações envolvdidas.
 
 **S**e você ainda não faz ideia de o que seja o Packer ou o que ele é capaz de fazer, sugiro que volte uma casa e leia meu [post anterior](http://blog.marcelocavalcante.net/blog/2018/07/30/automatizando-a-criacao-de-imagens-com-packer/), onde explico o que é o Packer e apresento um simples exemplo de seu uso para a criação de imagens para o Docker.
 
-**O** intuito deste post é mostrar como podemos estruturar um simples código para que possamos criar uma imagem no AWS que poderá ser utilizada posteriormente para a criação de instâncias no AWS. Esta imagem será criada através do Packer. Para incrementar ainda mais nossa imagem, utilizaremos o recurso de provisioners (ou provedores) disponível no Packer. Utilizaremos dois provisioners como recursos externos para o provisionamento e configuração de nossa imagem, sendo eles bash script e [Puppet](https://puppet.com/).
+**O** intuito deste post é mostrar como podemos estruturar um simples código para que possamos criar uma imagem no AWS que poderá ser utilizada posteriormente para a criação de instâncias. Esta imagem será criada através do Packer e, para incrementar ainda mais nossa imagem, utilizaremos o recurso de provisioners (ou provisionadores/provedores) disponível no Packer. Utilizaremos dois provisioners como recursos externos para o provisionamento e configuração de nossa imagem, sendo eles bash script e [Puppet](https://puppet.com/).
 
 ## AWS
 
-**U**ma vez que estou assumindo que você já possui o Packer instalado, bem como assumindo que você já possui uma ideia de como ele funciona, vamos iniciar pelo AWS. (Ainda não possui o Packer e não sabe o que ele faz? Novamente, [volte uma casa](http://blog.marcelocavalcante.net/blog/2018/07/30/automatizando-a-criacao-de-imagens-com-packer/).)
+**U**ma vez que estou assumindo que você já possui o Packer instalado, bem como que você já possui uma ideia de como ele funciona, vamos iniciar pelo AWS. (Ainda não possui o Packer e não sabe o que ele faz? Novamente, [volte uma casa](http://blog.marcelocavalcante.net/blog/2018/07/30/automatizando-a-criacao-de-imagens-com-packer/).)
 
-**O** primeiro pré-requisito para este post/tutorial é uma conta no AWS. Caso você não possua uma e queira repetir os passos aqui descritos, siga e crie uma. Lembrando que o AWS lhe dá uma série de recursos que podem ser utilizados gratuitamente no que eles chamam de "Free Tier". Uma vez que utilizaremos apenas recursos simples aqui. O ideal é que você exclua os recursos e encerre sua conta após o término deste exercício para evitar ser cobrado por algo. Caso não o faça e resolva continuar testando algumas coisas, você pode ser cobrado em alguns centavos. (Por sua responsabilidade, claro.)
+**O** primeiro pré-requisito para este post/tutorial é uma conta no AWS. Caso você não possua uma e queira repetir os passos aqui descritos, siga e crie uma. Lembrando que o AWS lhe dá uma série de recursos que podem ser utilizados gratuitamente no que eles chamam de "Free Tier". Uma vez que utilizaremos apenas recursos simples aqui, você não deverá ser cobrado por nada ao seguir os exemplos deste post. O ideal é que você exclua os recursos ou encerre sua conta após o término deste exercício para evitar ser cobrado por algo. Caso não o faça e resolva continuar testando algumas coisas no AWS, você pode ser cobrado em alguns centavos ou reais, dependendo de o que resolva testar e por quanto. (Sua responsabilidade, claro.)
 
 **A** conta no AWS pode ser criada aqui: https://aws.amazon.com/free/
 
-**U**ma vez que a conta no AWS está criada e pronta para uso, o primeiro passo será de fato conseguir uma chave para que possamos nos comunicar com o AWS via CLI através de uma API. Durante a criação de nosso código com o Packer precisaremos utilizar esta chave de acesso, portanto vá em frente e crie uma através deste link: https://console.aws.amazon.com/iam/home?#security_credential
+**U**ma vez que a conta no AWS esteja criada e pronta para uso, o primeiro passo será de fato conseguir uma chave para que possamos nos comunicar com o AWS via CLI através de uma API. Durante a criação de nosso código com o Packer precisaremos utilizar esta chave de acesso, portanto vá em frente e crie uma através deste link: https://console.aws.amazon.com/iam/home?#security_credential
 
-**C**lique na opção Access Keys, ou Chaves de Acesso, e crie uma nova. **É extremamente importante** que você esteja atento neste momento, pois ele apenas lhe mostrará a senha da chave para a chave uma única vez, portanto esteja pronto para copiar e salvar ambos os valores, a chave e a senha. Será algo similar a isto:
+**C**lique na opção Access Keys, ou Chaves de Acesso, e crie uma nova. **É extremamente importante** que você esteja atento neste momento, pois ele apenas lhe mostrará o ID e senha para a chave uma única vez, portanto esteja pronto para copiar e salvar ambos os valores. Será algo similar a isto:
 
 {% img center /imgs/aws_key.png 'AWS Key' %}
 
-**É** claro que eu já excluí essa chave... :p
+**É** claro que eu já excluí essa chave... :p Não perca seu tempo... >]
 
 **U**ma vez que você tenha salvo ambos os valores, vamos tratar da identificação/autenticação com o AWS.
 
@@ -67,14 +67,14 @@ $ export AWS_ACCESS_KEY_ID=SUA ACCESS KEY AQUI
 $ export AWS_SECRET_ACCESS_KEY=SUA SECRET ACCESS KEY AQUI
 ```
 
-**C**onfirme que os valores foram salvos corretamente:
+**C**ertifique-se de que os valores foram definidos corretamente:
 
 ```
 $ echo $AWS_ACCESS_KEY_ID
 $ echo $AWS_SECRET_ACCESS_KEY
 ```
 
-Por hora, isso é tudo de que precisaremos para o AWS.
+Por hora isso é tudo de que precisaremos para o AWS.
 
 ## Packer
 
@@ -111,7 +111,7 @@ Error initializing core: 1 error(s) occurred:
 * at least one builder must be defined
 ```
 
-**P**or enquanto ignore este erro. Nossa sintaxe esta correta. O Packer apenas está nos dizendo que não conseguiu iniciar o projeto pois ao menos um builder deve ser definido e, até então, nós não definimos nenhum. Este será o nosso próximo passo. Desta vez, ao invés de utilizarmos um builder de tipo Docker, utilizaremos um do tipo *amazon-ebs*. Começaremos inserindo uma vírgula ao fim do bloco de variáveis e nosso código agora ficará da seguinte forma:
+**P**or enquanto ignore este erro, nossa sintaxe esta correta. O Packer apenas está nos dizendo que não conseguiu iniciar o projeto pois ao menos um builder deve ser definido e, até então, nós não definimos nenhum. Este será o nosso próximo passo. Desta vez, ao invés de utilizarmos um builder do tipo Docker, utilizaremos um do tipo *amazon-ebs*. Começaremos inserindo uma vírgula ao fim do bloco de variáveis e nosso código agora ficará da seguinte forma:
 
 ```
 {
@@ -145,7 +145,7 @@ Error initializing core: 1 error(s) occurred:
 
 *builders:* Inciamos nosso bloco de builders com as intruções ou parâmetros que definirão as especificações mais básicas para a criação de nossa imagem no AWS.
 
-*type:* Aqui indicamos o tipo de builders que utilizaremos. No caso do EC2 do AWS, o tipo se chama *amazon-ebs*. Basicamente este builder irá utilizar uma imagem previamente existente, como as fornecidas por padrão pela Amazon, para criar uma nova imagem que poderá ser futuramente utilizada para provisionar suas instâncias EC2 com com EBS (Elastic Block Storage).
+*type:* Aqui indicamos o tipo de builders que utilizaremos. No caso do EC2 do AWS, o tipo se chama *amazon-ebs*. Basicamente este builder irá utilizar uma imagem previamente existente, como as fornecidas por padrão pela Amazon, para criar uma nova imagem que poderá ser futuramente utilizada para provisionar suas instâncias EC2 com EBS (Elastic Block Storage).
 
 *access_key:* e *secret_key:* Aqui apenas indicamos que queremos utilizar o valor das variáveis que criamos mais acima. É importante lembrar que quando as definimos, utilizamos *env*, para indicar que a origem delas estava em nossas variáveis de ambiente. Agora estamos utilizando *user* para indicar que são variáveis criadas em nosso código mesmo (usuário).
 
@@ -157,7 +157,7 @@ Error initializing core: 1 error(s) occurred:
 
 *virtualization_type:* Nosso primeiro parâmetro de filtro será o tipo de virtualização que desejamos utilizar. Se você já utilizou AWS antes, provavelmente reparou que você possui algumas formas de virtualização disponíveis, como HVM e PV. Utilizaremos HVM em nosso código.
 
-*name:* Aqui indicamos o nome da imagem *source* que queremos utilizar como base de nossa imagem. Como a Canonical vive atualizando suas imagens no marketplace do AWS, não utilizaremos um nome exato aqui, pois correria o risco de esta imagem ter sido descontinuada ou mesmo de estar desatualizada quando você estiver lendo e executando este tutorial, portanto utilizaremos um coringa (asterísco) e indicaremos um parâmetro extra para dizer que queremos utilizar a mais recente. Para nome, utilizaremos apenas: *ubuntu/images/\*ubuntu-xenial-16.04-amd64-server-\** onde o asterísco do final indica que não nos importa o final do nome, e qualquer coisa será válida.
+*name:* Aqui indicamos o nome da imagem *source* que queremos utilizar como base de nossa imagem. Como a Canonical vive atualizando suas imagens no marketplace do AWS, não utilizaremos um nome exato aqui, pois correríamos o risco de esta imagem ter sido descontinuada ou mesmo de estar desatualizada quando você estiver lendo e executando este tutorial, portanto utilizaremos um coringa (asterísco) e indicaremos um parâmetro extra para dizer que queremos utilizar a mais recente. Para nome, utilizaremos apenas: *ubuntu/images/\*ubuntu-xenial-16.04-amd64-server-\** onde o asterísco do final indica que não nos importa o final do nome, e qualquer coisa será válida.
 
 *root-device-type:* Indicamos *ebs* como tipo de storage para nossa imagem e tipo de instância.
 
@@ -223,7 +223,7 @@ Build 'amazon-ebs' finished.
 us-east-1: ami-0bbd7494d2e6cee71
 ```
 
-**V**erificando em minha interface de instâncias da região que escolhe (us-east-1) posso ver que existe uma instância que foi criada mas que já foi terminada, ou deletada. Esta é a instância que o Packer criou automaticamente para dar início à criação de nossa imagem:
+**V**erificando em minha interface de instâncias da região que escolhi (us-east-1) posso ver que existe uma instância que foi criada mas que já foi terminada ou deletada. Esta é a instância que o Packer criou automaticamente para dar início à criação de nossa imagem:
 
 {% img center /imgs/packer_aws_instance1.png 'Packer Instance' %}
 
@@ -235,7 +235,7 @@ us-east-1: ami-0bbd7494d2e6cee71
 
 **V**amos incrementar um pouco nossa imagem realizando mudanças em nosso Ubuntu. De nada nos valeria criar uma imagem se ela não tiver nenhuma customização, certo?!
 
-**C**omeçaremos criando um simples shell script chamado setup.sh com o seguinte conteúdo:
+**C**omeçaremos criando um simples shell script chamado *setup.sh* com o seguinte conteúdo:
 
 ```
 #!/bin/bash
@@ -249,7 +249,7 @@ sudo apt-get install puppet -y
 
 **T**rata-se de um simples script que basicamente irá atualizar o sistema operacional e em seguida instalar o Puppet no mesmo.
 
-**V**oltando ao nosso arquivo ubuntuaws.json, vamos incluir um bloco de código *provisioner* ou provisionador. Existem diversos tipos de provisioner, mas para este momento, utilizaremos apenas um, chamado *shell* pois desejamos executar um shell script. Nosso código agora estará assim:
+**V**oltando ao nosso arquivo ubuntuaws.json, vamos incluir um bloco de código *provisioner* ou provisionador. Existem diversos tipos de provisioners, mas para este momento utilizaremos apenas um, chamado *shell* pois desejamos executar um shell script. Nosso código agora estará assim:
 
 ```
 {
@@ -397,7 +397,7 @@ Build 'amazon-ebs' finished.
 us-east-1: ami-06fe27bd22afcaa71
 ```
 
-**A** partir deste momento já temos duas imagens criadas. Uma vez que a primeira não tinha nada de diferente do Ubuntu convencional e padrão do AWS, poderíamos muito bem deletá-la. Já a segunda imagem, é um pouco diferente da imagem padrão, visto que ela já conta com um sistema mais atual (apt-get upgrade), bem como possui o puppet já instalado nela.
+**A** partir deste momento já temos duas imagens criadas. Uma vez que a primeira não tinha nada de diferente do Ubuntu convencional e padrão do AWS, poderíamos muito bem deletá-la. Já a segunda imagem, é um pouco diferente da imagem padrão, visto que ela já conta com um sistema mais atualizado (apt-get upgrade), bem como possui o puppet já instalado nela.
 
 **D**esta mesma maneira seria possível fazer um deployment bem mais complexo de acordo com suas necessidades e, sempre que lhe fosse necessário atualizar ou modificar algo, você poderia gerar uma nova imagem e aplicá-la onde desejasse.
 
@@ -407,9 +407,9 @@ us-east-1: ami-06fe27bd22afcaa71
 
 **U**ma vez que o objetivo deste post não é apresentar o [Puppet](https://puppet.com) em si, por hora ficaremos apenas com a informação de que o Puppet é uma ferramenta open source para gerenciamento de configurações (CM Tool - Configuration Management Tool) muito robusta e flexível.
 
-**E**m futuros posts pretendo apresentar mais detalhes e explicações sobre o Puppet em si, mas para este post o objetivo é apenas demonstrar a flexibilidade do Packer para a criação de imagens, mesmo quando se integra diversos elementos a ele, como bash script e Puppet.
+**E**m futuros posts pretendo apresentar mais detalhes e explicações sobre o Puppet em si, mas para este post o objetivo é apenas demonstrar a flexibilidade do Packer para a criação de imagens, mesmo quando integramos diversos elementos a ele, como bash script e Puppet.
 
-**C**rie um novo arquivo chamado *deployment*.pp. O Puppet chama seus arquivos de configuração ou instruções de manifests (manifestos) e estes sempre possuem a extensão .pp.
+**C**rie um novo arquivo chamado *deployment.pp*. O Puppet chama seus arquivos de configuração ou instruções de manifests (manifestos) e estes sempre possuem a extensão .pp.
 
 **I**nsira o seguinte conteúdo em seu arquivo *deployment.pp*:
 
@@ -506,7 +506,7 @@ $ puppet parser validate deployment.pp
 
 **O** que incluímos? Apenas mais um item dentro do bloco provisioners, porém desta vez com o tipo *puppet-masterless*:
 
-*type:* Indicamos que o tipo deste provisioner é *puppet-masterless*. O Puppet pode funcionar de forma cliente servidor, ou de forma autônoma, sem um master. Aqui queremos que ele funcione de forma autônoma e independente, portanto utilizaremos *puppet-masterless* (puppet sem master).
+*type:* Indicamos que o tipo deste provisioner é *puppet-masterless*. O Puppet pode funcionar de forma cliente/servidor, ou de forma autônoma, sem um master. Aqui queremos que ele funcione de forma autônoma e independente, portanto utilizaremos *puppet-masterless* (puppet sem master).
 
 *manifest_file:* Indicamos que arquivo(s) de manifesto(s) do puppet devem ser executados. Neste caso, iremos apenas apontar para nosso *deployment.pp*.
 
@@ -556,7 +556,7 @@ amazon-ebs output will be in this color.
     amazon-ebs: Notice: Finished catalog run in 35.64 seconds
 
 #####
---->>> FINALIZOU O NOSSO MANIFESTO PUPPET <<<---
+--->>> FINALIZOU A EXECUÇÃO DO MANIFESTO PUPPET <<<---
 #####
 
 ==> amazon-ebs: Stopping the source instance...
@@ -583,7 +583,7 @@ us-east-1: ami-04b480ee18474759c
 
 **P**or exemplo, você poderia ter uma pipeline no *Jenkins* que iniciasse o build de uma nova imagem atualizada, que por sua vez chamasse shell script e puppet para provisionamento e configuração desta imagem, em seguida o Jenkins poderia chamar o terraform para criar uma instância ou múltiplas instâncias em um cluster por trás de um load balancer utilizando a imagem que foi criada pelo Packer, etc..etc..etc.. Sua criatividade será o seu limite.
 
-**P**ara confirmarmos apenas que nosso código completo funcionou e que nossa imagem foi gerada com sucesso, você pode criar manualmente uma instância a partir do AWS com esta sua nova imagem.
+**P**ara confirmarmos que nosso código completo funcionou e que nossa imagem foi gerada com sucesso, você pode criar manualmente uma instância a partir do AWS com esta sua nova imagem.
 
 ## Testando sua imagem
 
@@ -601,7 +601,7 @@ us-east-1: ami-04b480ee18474759c
 
 {% img center /imgs/packer_aws_image3.png 'Packer Image' %}
 
-6- Na tela seguinte, deixe tudo como está **exceto** a opção de Atribuir Ip Público/Auto-Assign Public IP. Ative esta opção, em seguida clique em *Próximo*, conforme imagem abaixo:
+6- Na tela seguinte, deixe tudo como está **exceto** a opção de *Atribuir Ip Público/Auto-Assign Public IP*. Ative esta opção, em seguida clique em *Próximo*, conforme imagem abaixo:
 
 {% img center /imgs/packer_aws_image4.png 'Packer Image' %}
 
@@ -615,9 +615,9 @@ us-east-1: ami-04b480ee18474759c
 
 10- Em seguida, confirme novamente e clique em *Lançar/Launch*;
 
-11- Uma janela popup será apresentada lhe perguntando se você deseja criar um par de chaves ou não. Fica a seu critério. Caso deseje se conectar a esta instância via ssh, crie uma chave, do contrário, pode prosseguir sem criar uma chave. Como eu apenas quero testar se o servidor web estará rodando, e como já abrimos a porta 80 no firewall, poderemos confirmar isto através de nosso navegador, portanto ignorarei a chave e clicarei em Lançar Instância/Launch Instance;
+11- Uma janela popup será apresentada lhe perguntando se você deseja criar um par de chaves. Fica a seu critério. Caso deseje se conectar a esta instância via ssh, crie uma chave, do contrário, pode prosseguir sem criar uma chave. Como eu apenas quero testar se o servidor web estará rodando, e já abrimos a porta 80 no firewall, poderemos confirmar isto através de nosso navegador, portanto ignorarei a chave e clicarei em Lançar Instância/Launch Instance;
 
-12- O AWS lhe informará que sua instância está sendo criada. Como se trata de uma instância Linux, costuma ser um processo rápido, geralmente de menos de 2 minutos. Você pode ir para a página principal de instâncias e aguardar sua instância estar no status *running*;
+12- O AWS lhe informará que sua instância está sendo criada. Como se trata de uma instância Linux, costuma ser um processo rápido, geralmente leva algo entre 1 e 2 minutos. Você pode ir para a página principal de instâncias e aguardar sua instância estar com status *running*;
 
 13- Copie o IP público ou externo que o AWS atribuiu à sua instância conforme imagem abaixo:
 
