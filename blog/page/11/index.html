@@ -9,7 +9,7 @@
   <meta name="author" content="Marcelo Cavalcante Rocha - Kalib">
 
   
-  <meta name="description" content="É comum termos diretórios repletos de arquivos dos mais diferentes tipos e extensões, certo?! E quando desejamos remover vários arquivos ao mesmo &hellip;">
+  <meta name="description" content="O SSH (Secure Shell) é um dos protocolos mais utilizados atualmente para transferência de arquivos ou mesmo conexão remota, principalmente em &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -80,6 +80,237 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/08/28/tornando-seu-ssh-mais-seguro/">Tornando Seu SSH Mais Seguro</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-08-28T11:20:00-04:00" pubdate data-updated="true">Aug 28<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/08/28/tornando-seu-ssh-mais-seguro/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img class="left" src="/imgs/openssh.png" title="'OpenSSH'" >
+<strong>O</strong> <em>SSH</em> (Secure Shell) é um dos protocolos mais utilizados atualmente para transferência de arquivos ou mesmo conexão remota, principalmente em ambientes Linux/Unix e, por si só, já tem se provado ser confiável e seguro. O mesmo passou a ser o principal substituto ao <em>TELNET</em> por possuir a vantagem da criptografia na conexão entre o cliente e o servidor, além da possibilidade de criação de túneis, o que chamamos de <em>tunneling</em>, oferecendo assim a capacidade de redirecionar pacotes de dados. Mas não é por isso que devemos nos descuidar&hellip;</p>
+
+<p><strong>S</strong>empre existe espaço para melhorias.</p>
+
+<p><strong>A</strong>s configurações do servidor SSH, geralmente, ficam localizadas em <em>/etc/ssh/sshd_config</em>. Vale lembrar que a cada alteração feita neste arquivo será necessário reiniciar o serviço SSH para que suas alterações possam ser efetivadas.</p>
+
+<p><strong>I</strong>ndo ao que interessa:</p>
+
+<p><strong>1- Altere a porta de escuta do SSH</strong></p>
+
+<p><strong>P</strong>or padrão o SSH aceita conexões na porta 22, portanto é importante alterar esta porta para dificultar as tentativas de ataques aleatórios de brute-force que buscam máquinas que disponibilizam o SSH através da porta padrão. Preferivelmente, é interessante optar por uma porta posterior a 1024, visto que a maioria dos softwares de escaneamento de portas e serviços não fazem uma varredura por portas muito altas. Esta é geralmente uma das primeiras configurações no arquivo <em>/etc/ssh/sshd_config</em>, conforme pode ser visto abaixo:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> Port 22</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>2- Permita apenas o protocolo SSH 2</strong></p>
+
+<p><strong>D</strong>ependendo de sua distribuição Linux, o padrão poderá ser a utilização de ambos os protocolos, 1 e 2. A versão 1 do protocolo SSH possui vulnerabilidades bastante conhecidas, portanto é preferível que utilize apenas o protocolo de versão 2, diminuindo assim suas chances de um ataque de inserção, por exemplo, conforme possível com a versão 1 do protocolo. Procure pela seguinte linha de configuração e altere-a mantendo apenas a opção <em>2</em>:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> Protocol 2,1</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>3- Decida quais usuários poderão logar-se via SSH</strong></p>
+
+<p><strong>P</strong>ermitir que qualquer usuário possa logar-se via SSH não é aconselhável, da mesma forma que permitir que o usuário root efetue login via SSH também é extremamante desencorajado devido às vulnerabilidades envolvidas. Por possuírem determinados (ou todos, no caso do root) privilégios no sistema, alguns usuários simplesmente não devem ter permissão de login via SSH, evitando assim que alguém utilize ferramentas de brute-force e consiga, por quebra de senha, logar-se em seu servidor com um usuário privilegiado. Para proibir o login do usuário root via SSH, altere a seguinte linha para <em>no</em>:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> PermitRootLogin yes</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>P</strong>ara definir quais usuários poderão ter acesso via SSH, insira o nome dos mesmos na seguinte linha, conforme exemplo abaixo:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> AllowUsers usuario1 usuario2 usuario3</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>4- Utilize uma chave pública DSA como mecanismo de autenticação</strong></p>
+
+<p><strong>A</strong>o invés de utilizar nomes de usuários e senhas para autenticar-se via SSH, você pode utilizar chaves públicas DSA. Outra opção é utilizar ambos os mecanismos, usuário e senha + chave. Uma das maiores vantagens de se utilizar chaves como mecanismo de autenticação é que você impossibilitará o acesso indevido através de ataques de força bruta ou brute force, pois você não precisará de um login e senha para logar-se ao servidor ou estação. Ao invés disso, você utilizará um par de chaves &ndash; uma pública e uma privada. No cenário de chaves DSA, a chave privada fica em sua máquina e uma cópia da chave pública fica no servidor que você deseja acessar via SSH.</p>
+
+<p><strong>A</strong>o tentar logar-se em um servidor configurado para autenticação via chave DSA, o mesmo verifica as chaves de ambos os lados e, se elas combinarem, autoriza seu login, caso contrário nega sua conexão.</p>
+
+<p><strong>N</strong>o arquivo de configuração do servidor SSH você irá procurar os seguintes parâmetros e deixá-los da seguinte forma:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> RSAAuthentication yes
+</span><span class='line'> PubkeyAuthentication yes
+</span><span class='line'> AuthorizedKeysFile %h/.ssh/authorized_keys</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>C</strong>aso você deseje utilizar <em>apenas</em> a autenticação por chaves DSA, você precisará desabilitar a autenticação por senha, deixando como <em>no</em> o seguinte parâmetro:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> PasswordAuthentication no</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>A</strong>gora que as regras de configuração para a autenticação via chaves foram criadas, vamos criar as chaves em si.</p>
+
+<p><strong>E</strong>m sua máquina, vamos digitar o seguinte comando para a criação de suas chaves pública e privada:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> $ ssh-keygen -t dsa -C "$(whoami)@$(hostname)-$(date -I)"</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>O</strong> sistema lhe perguntará se você deseja escolher um diretório no qual salvar suas chaves. Caso você não especifique nenhum, ele salvará no diretório .ssh que se encontra no home de seu usuário <em>(~/.ssh/id_dsa)</em>. Em seguida lhe perguntará se você deseja criar uma senha para sua chave (não é obrigatório).</p>
+
+<p><strong>A</strong>o finalizar este procedimento você receberá a confirmação de que o procedimento foi realizado. Algo similar a isto:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> Your identification has been saved in /home/username/.ssh/id_dsa.
+</span><span class='line'> Your public key has been saved in /home/username/.ssh/id_dsa.pub.
+</span><span class='line'> The key fingerprint is:
+</span><span class='line'> dd:15:ee:24:20:14:11:01:b8:72:a2:0f:99:4c:79:7f username@localhost-2013-08-28
+</span><span class='line'> The key's randomart image is:
+</span><span class='line'> +--[DSA  1024]---+
+</span><span class='line'> |     ..oB=.   .  |
+</span><span class='line'> |    .    . . . . |
+</span><span class='line'> |  .  .      . +  |
+</span><span class='line'> | oo.o    . . =   |
+</span><span class='line'> |o+.+.   S . . .  |
+</span><span class='line'> |=.   . E         |
+</span><span class='line'> | o    .          |
+</span><span class='line'> |  .              |
+</span><span class='line'> |                 |
+</span><span class='line'> +-----------------+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>O</strong> próximo passo é copiar a sua chave pública para o servidor que você deseja acessar via SSH. Você pode copiar de algumas formas diferentes:</p>
+
+<p><strong>4.1 &ndash; Copiando manualmente</strong></p>
+
+<p><strong>C</strong>opie o conteúdo retornado através do seguinte comando:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> $ cat ~/.ssh/id_dsa.pub</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>O</strong> retorno será algo similar a isto:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> ssh-dss AAAAB3NzaC1kc3MAAACBAKWJtlUANTuqKy1NN4bb5qBJLZVMnR+nr84hk7EWnHmpJgipRZ8Y/tUDJTpCab
+</span><span class='line'> GwoMNYmPZaz62Nm5/F5Nl9yzgMmxfGja8OYt3bwir6A379NOWFM2NBq7Q107uH4L+MFszXKoCVn6rM9SddkAJL1V66
+</span><span class='line'> eGX+Y+r1o/8wG773h9P5AAAAFQDh09qovWFzKJk0E58c0oRz9S4UAQAAAIBuVxw+LZDrWVVCLr4WMubRPJuFzXqqHN
+</span><span class='line'> re9RUZ2kMrUENnAenYyJgjcBg7uJJA/wMfn7Oe32e4hvpU7SsXEUf7xT1sKb/UFyX9qTr5G0kkU6t8IYPjIQaqRIOQ
+</span><span class='line'> mnRiqm7JCDd1GTAFU9n/ocK4sNPZDL8KeEEquZmk+ihKcu9FLwAAAIBlz+K7fcZSlA5hKewHOF7fA9IdwdMsbc2Ri7
+</span><span class='line'> bSw4Fv70rQeMnYYUDeHQQJHeJJyScmuHswordGXYKe2tsf7fYn11CW46P9WxCRcargojxJNrRHlF5WiK15fhNMLtfx
+</span><span class='line'> 7/+CSmoXnEUCw8uCCBVduGLyevZ3WC+FEx7/aqJjuUCNJg== username@localhost-2013-08-28</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>É</strong> exatamente este conteúdo que precisa ser copiado.</p>
+
+<p><strong>E</strong>m seguida você precisará colar este conteúdo no servidor desejado, porém incrementando dentro do seguinte arquivo (no servidor): <em>~/.ssh/authorized_keys</em></p>
+
+<p><strong>P</strong>ara facilitar, você poderá já ter copiado o arquivo da chave completo para o servidor. Veja nos próximos métodos algumas formas de o fazer.</p>
+
+<p><strong>4.2 &ndash; Método Simples &ndash; Deve ser usado antes de configurar o servidor para permitir autenticação por chaves</strong></p>
+
+<p><strong>S</strong>e o seu arquivo de chave é <em>~/.ssh/id_dsa</em>, você poderá simplesmente digitar o seguinte comando para enviar a chave para o servidor:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> $ ssh-copy-id servidor-remoto.com.br</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>C</strong>aso o nome de usuário em sua máquina seja diferente do nome de usuário no servidor, lembre-se de adicionar o nome do usuário do servidor antes do endereço do mesmo:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> $ ssh-copy-id nome-de-usuario@servidor-remoto.com.br</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>C</strong>aso o servidor esteja recebendo as conexões SSH em uma porta diferente da padrão (22), utilize (supondo que estamos utilizando a 221):</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> $ ssh-copy-id -p 221 nome-de-usuario@servidor-remoto.com.br</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>4.3 &ndash; Método Tradicional &ndash; Deve ser usado antes de configurar o servidor para permitir autenticação por chaves</strong></p>
+
+<p><strong>P</strong>or padrão a chave pública precisa ser concatenada no arquivo <em>~/.ssh/authorized_keys</em>. Comece copiando a chave pública para o servidor remoto:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> $ scp ~/.ssh/id_dsa.pub nome-do-usuario@servidor-remoto.com.br:</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>O</strong> comando acima copiará a chave pública para o diretório home do usuário citado para o servidor via scp. Não esqueça de inluir o <em>:</em> ao final do endereço do servidor.</p>
+
+<p><strong>C</strong>aso o diretório <em>~/.ssh</em> ainda não exista no servidor, você precisará criá-lo. O mesmo com o arquivo <em>authorized_keys</em>:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> $ ssh nome-do-usuario@servidor-remoto.com.br
+</span><span class='line'> nome-do-usuario@servidor-remoto's password:
+</span><span class='line'> $ mkdir ~/.ssh
+</span><span class='line'> $ cat ~/id_dsa.pub &gt;&gt; ~/.ssh/authorized_keys
+</span><span class='line'> $ rm ~/id_dsa.pub
+</span><span class='line'> $ chmod 600 ~/.ssh/authorized_keys</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>O</strong>s últimos dois comandos removem a chave pública do diretório do servidor e definem as permissões para o arquivo <em>authorized_keys</em> de forma que ele apenas possa ser lido ou escrito por você, o dono.</p>
+
+<p><strong>P</strong>ronto, sua chave já está no servidor após seguir uma das dicas acima.</p>
+
+<p><strong>L</strong>embre-se sempre de reiniciar o serviço ssh após efetuar qualquer alteração de configuração.</p>
+
+<p><strong>D</strong>icas simples de serem implementadas mas que irão melhorar bastante a segurança de seu servidor SSH. ;]</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -239,68 +470,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/08/16/navegador-anti-censura-do-pirate-bay-supera-100-dot-000-downloads/">Navegador Anti-Censura Do Pirate Bay Supera 100.000 Downloads</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-08-16T09:37:00-04:00" pubdate data-updated="true">Aug 16<span>th</span>, 2013</time>
-        
-         | <a href="/blog/2013/08/16/navegador-anti-censura-do-pirate-bay-supera-100-dot-000-downloads/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><img class="left" src="/imgs/piratebrowser.jpg" title="'Pirate Browser'" ></p>
-
-<p><strong>P</strong>ara quem ainda não sabe, o The Pirate Bay (TPB) é auto-intitulado <em>&ldquo;O tracker BitTorrent mais resiliente da galáxia&rdquo;</em>. De fato, ninguém pode negar a referência do The Pirate Bay no mundo dos torrents, certo?! O projeto foi criado entre 2003 e 2004 pela organização anticopyright sueca Piratbyrån, tornando-se independente em meados de Outubro de 2004.</p>
-
-<p><strong>E</strong>ntre idas e vindas, o The Pirate Bay lança uma nova <em>afronta direta</em> às autoridades e empresas que sempre tentaram impedir suas atividades. O <em>Pirate Browser</em>.</p>
-
-<p><strong>O</strong> Pirate Browser é o navegador lançado pelo projeto The Pirate Bay, cuja proposta é ser um navegador anti-censura, o qual permite que pessoas possam burlar filtros de acesso existentes em provedores de internet (ISP) e, assim, possam acessar sites bloqueados pelos mesmos. O navegador foi lançado em forma de <em>presente</em> aos seus usuários, visto ter sido lançado na data de comemoração de 10 anos do serviço.</p>
-
-<p><strong>N</strong>ão tratando-se de um navegador realmente novo, o Pirate Browser é na verdade uma versão <em>customizada</em> do já conhecido navegador <em>Firefox</em>, da Mozilla. O diferencial é que ele vem equipado com alguns plugins e patches, como um cliente Tor, bem como otimizações para acelerar o carregamento de páginas, através de configurações de proxy. A equipe do The Pirate Bay faz questão de informar que a ferramenta é apenas uma forma de burlar as censuras impostas na Internet, não garantindo qualquer anonimato aos usuários da mesma, conforme palavras de Winston, um dos responsáveis pelo projeto:</p>
-
-<blockquote><p><em>Não está fornecendo anonimato, tampouco seguro ao ponto de esconder sua identidade. O PirateBrowser foi feito apenas para contornar a censura e o bloqueio de sites. Se fizéssemos um navegador completamente anônimo, apenas iríamos tornar a navegação mais lenta.</em> &ndash; Winston.</p></blockquote>
-
-<p><strong>C</strong>om menos de 5 dias após seu lançamento, o navegador já recebeu mais de <em>100.000</em> downloads através do link direto e arquivo torrent oficial, o qual estava sendo compartilhado por mais de <em>5.000</em> pessoas no momento de seu lançamento.</p>
-
-<p><strong>A</strong>pesar de os próprios responsáveis pelo projeto afirmarem estar supresos pela quantidade de downloads, visto que eles realmente não esperavam por isto, afirmam que esta é apenas a primeira ferramenta que o projeto The Pirate Bay lançará.</p>
-
-<blockquote><p><em>Não imaginei que se disseminaria assim tão rapidamente. Acredito que as pessoas realmente querem acessar os sites que seus governos e cortes estão tentando esconder deles.</em> &ndash; Winston.</p></blockquote>
-
-<p><strong>P</strong>ara que não conhece, ou pouco conhece, a história do projeto The Pirate Bay, recomendo fortemente o filme <strong>TPB AFK: The Pirate Bay Away from Keyboard</strong>.</p>
-
-<p><img class="center" src="/imgs/tpb_afk.jpg" title="'TPB AFK'" ></p>
-
-<p><strong>T</strong>rata-se de um documentário sobre a vida dos três fundadores do site de compartilhamento de arquivos The Pirate Bay, dirigido por <em>Simon Klose</em>. As gravações do documentário começaram no verão de 2008, e foram concluídas em 25 de Agosto de 2012.</p>
-
-<p><strong>E</strong> a vida segue&hellip;</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/12/">&larr; Anteriores</a>
@@ -321,6 +490,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2018/08/11/criando-uma-imagem-aws-ec2-com-packer-e-puppet/">Criando uma Imagem AWS EC2 com Packer e Puppet</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2018/07/30/automatizando-a-criacao-de-imagens-com-packer/">Automatizando a Criação de Imagens com Packer</a>
       </li>
     
@@ -334,10 +507,6 @@
     
       <li class="post">
         <a href="/blog/2018/04/01/chef-aautomacao-e-gerenciamento-de-configuracao/">Chef: Automação e Gerenciamento de Configuração</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2017/06/24/conhecendo-o-kubernetes-clusters-de-containers/">Conhecendo o Kubernetes - Clusters de Containers</a>
       </li>
     
   </ul>
