@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
+<feed xmlns="https://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Kubernetes | Marcelo Cavalcante Rocha ~]]></title>
-  <link href="http://kalib.github.io/blog/categories/kubernetes/atom.xml" rel="self"/>
-  <link href="http://kalib.github.io/"/>
-  <updated>2018-08-11T22:38:27-04:00</updated>
-  <id>http://kalib.github.io/</id>
+  <link href="https://kalib.github.io/blog/categories/kubernetes/atom.xml" rel="self"/>
+  <link href="https://kalib.github.io/"/>
+  <updated>2018-08-13T20:11:15-04:00</updated>
+  <id>https://kalib.github.io/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
     
   </author>
-  <generator uri="http://octopress.org/">Octopress</generator>
+  <generator uri="https://octopress.org/">Octopress</generator>
 
   
   <entry>
     <title type="html"><![CDATA[Conhecendo o Kubernetes - Clusters de Containers]]></title>
-    <link href="http://kalib.github.io/blog/2017/06/24/conhecendo-o-kubernetes-clusters-de-containers/"/>
+    <link href="https://kalib.github.io/blog/2017/06/24/conhecendo-o-kubernetes-clusters-de-containers/"/>
     <updated>2017-06-24T09:32:00-04:00</updated>
-    <id>http://kalib.github.io/blog/2017/06/24/conhecendo-o-kubernetes-clusters-de-containers</id>
+    <id>https://kalib.github.io/blog/2017/06/24/conhecendo-o-kubernetes-clusters-de-containers</id>
     <content type="html"><![CDATA[<p><img class="center" src="/imgs/kubernetes_logo.png" title="&lsquo;Kubernetes&rsquo;" ></p>
 
 <h2>O que é Kubernetes</h2>
@@ -32,7 +32,7 @@
 
 <p><strong>O</strong> Kubernetes é formado por uma série de componentes ou blocos que, quando utilizados coletivamente, fornecem um método de deployment, manutenção e escalonamento de clusters de aplicações baseadas em containers. Estes componentes, ou primitives como o Kubernetes os chama, foram desenvolvidos com o intuito de serem independentes, de forma que quase não se faz necessário ter conhecimento entre si para que possam funcionar e trabalhar juntos, visto que todos se comunicam e interligam através de uma API, sejam componentes internos do Kubernetes ou mesmo extensões e containers.</p>
 
-<p><strong>E</strong>mbora tenha sido inicialmente desenvolvido para o deployment e utilização de <strong>bilhões de containers</strong> internamente no Google, desde que seu código passou a ser distribuído abertamente com a licença <a href="http://commons.apache.org/proper/commons-daemon/license.html">Apache Commons</a> o Kubernetes tem sido adotado formalmente por praticamente todos os grandes provedores de serviços em nuvem.</p>
+<p><strong>E</strong>mbora tenha sido inicialmente desenvolvido para o deployment e utilização de <strong>bilhões de containers</strong> internamente no Google, desde que seu código passou a ser distribuído abertamente com a licença <a href="https://commons.apache.org/proper/commons-daemon/license.html">Apache Commons</a> o Kubernetes tem sido adotado formalmente por praticamente todos os grandes provedores de serviços em nuvem.</p>
 
 <h2>Arquitetura do Kubernetes</h2>
 
@@ -155,7 +155,7 @@ PING centos-minion3 (172.31.123.22) 56(84) bytes of data.
 <p><strong>P</strong>rimeiramente, vamos configurar o repositório do Docker para o CentOS 7:</p>
 
 <ul>
-<li>Configurações de repositório retiradas dos repositórios CBS do Centos: <a href="http://cbs.centos.org/repos/virt7-docker-common-release/">http://cbs.centos.org/repos/virt7-docker-common-release/</a></li>
+<li>Configurações de repositório retiradas dos repositórios CBS do Centos: <a href="https://cbs.centos.org/repos/virt7-docker-common-release/">https://cbs.centos.org/repos/virt7-docker-common-release/</a></li>
 </ul>
 
 
@@ -172,7 +172,7 @@ PING centos-minion3 (172.31.123.22) 56(84) bytes of data.
 <p><code>
 [virt7-docker-common-release]
 name=virt7-docker-common-release
-baseurl=http://cbs.centos.org/repos/virt7-docker-common-release/x86_64/os/
+baseurl=https://cbs.centos.org/repos/virt7-docker-common-release/x86_64/os/
 gpgcheck=0
 </code></p>
 
@@ -208,16 +208,16 @@ gpgcheck=0
 
 <p><strong>N</strong>o arquivo config altere as seguintes linhas:</p>
 
-<p><em>Edite o valor do parâmetro KUBE_MASTER, de forma que nosso master possa ser encontrado pelo nome que definimos no hosts file. O valor original é &ldquo;&mdash;master=<a href="http://127.0.0.1:8080">http://127.0.0.1:8080</a>&rdquo;, portanto mudaremos para o seguinte:</em></p>
+<p><em>Edite o valor do parâmetro KUBE_MASTER, de forma que nosso master possa ser encontrado pelo nome que definimos no hosts file. O valor original é &ldquo;&mdash;master=<a href="https://127.0.0.1:8080">https://127.0.0.1:8080</a>&rdquo;, portanto mudaremos para o seguinte:</em></p>
 
 <p><code>
-KUBE_MASTER="--master=http://centos-master:8080"
+KUBE_MASTER="--master=https://centos-master:8080"
 </code></p>
 
 <p><strong>A</strong>inda neste arquivo de configuração, vamos inserir a configuração do serviço ETCD, portanto inclua a seguinte linha ao final do arquivo:</p>
 
 <p><code>
-KUBE_ETCD_SERVERS="--etcd-servers=http://centos-master:2379"
+KUBE_ETCD_SERVERS="--etcd-servers=https://centos-master:2379"
 </code></p>
 
 <p><strong>S</strong>eu arquivo de configuração deverá estar similar a este:</p>
@@ -260,9 +260,9 @@ KUBE_ETCD_SERVERS="--etcd-servers=http://centos-master:2379"
 
 <h1>How the controller-manager, scheduler, and proxy find the apiserver</h1>
 
-<p>KUBE_MASTER=&ldquo;&mdash;master=<a href="http://centos-master:8080">http://centos-master:8080</a>&rdquo;</p>
+<p>KUBE_MASTER=&ldquo;&mdash;master=<a href="https://centos-master:8080">https://centos-master:8080</a>&rdquo;</p>
 
-<p>KUBE_ETCD_SERVERS=&ldquo;&mdash;etcd-servers=<a href="http://centos-master:2379">http://centos-master:2379</a>&rdquo;
+<p>KUBE_ETCD_SERVERS=&ldquo;&mdash;etcd-servers=<a href="https://centos-master:2379">https://centos-master:2379</a>&rdquo;
 ```</p>
 
 <p><strong>R</strong>epita esta mesma configuração nos 4 hosts. Todos eles devem utilizar exatamente os mesmos valores utilizados aqui, apontando KUBE_MASTER e KUBE_ETCD_SERVERS para centos-master, visto que este será o responsável por gerenciar todos os nossos minions.</p>
@@ -330,7 +330,7 @@ KUBE_API_ADDRESS="--address=0.0.0.0"
 
 <h1>Comma separated list of nodes in the etcd cluster</h1>
 
-<p>KUBE_ETCD_SERVERS=&ldquo;&mdash;etcd-servers=<a href="http://127.0.0.1:2379">http://127.0.0.1:2379</a>&rdquo;</p>
+<p>KUBE_ETCD_SERVERS=&ldquo;&mdash;etcd-servers=<a href="https://127.0.0.1:2379">https://127.0.0.1:2379</a>&rdquo;</p>
 
 <h1>Address range to use for services</h1>
 
@@ -356,10 +356,10 @@ KUBE_API_ADDRESS="--address=0.0.0.0"
 <p><em>Edite os valores dos parâmetros ETCD_LISTEN_CLIENT_URLS e ETCD_ADVERTISE_CLIENT_URLS, que originalmente apontam para localhost. Como desejamos que nosso etcd escute requisições dos demais hosts, altere para o seguinte:</em></p>
 
 <p><code>
-ETCD_LISTEN_CLIENT_URLS="http://0.0.0.0:2379"
+ETCD_LISTEN_CLIENT_URLS="https://0.0.0.0:2379"
 ...
 ...
-ETCD_ADVERTISE_CLIENT_URLS="http://0.0.0.0:2379"
+ETCD_ADVERTISE_CLIENT_URLS="https://0.0.0.0:2379"
 </code></p>
 
 <p><strong>N</strong>ovamente, não é necessário alterar a configuração do etcd nos demais hosts, apenas no Master.</p>
@@ -430,7 +430,7 @@ KUBELET_HOSTNAME="--hostname-override=centos-minion1"
 <p><em>Vamos também alterar o valor para KUBELET_API_SERVER, apontando para o nosso Master:</em></p>
 
 <p><code>
-KUBELET_API_SERVER="--api-servers=http://centos-master:8080"
+KUBELET_API_SERVER="--api-servers=https://centos-master:8080"
 </code></p>
 
 <p><em>Vamos comentar a linha KUBELET_POD_INFRA_CONTAINER, visto que não utilizaremos uma infraestrutura de containers externa, pois estaremos utilizando nossos próprios PODs e containers:</em></p>
@@ -465,7 +465,7 @@ KUBELET_API_SERVER="--api-servers=http://centos-master:8080"
 
 <h1>location of the api-server</h1>
 
-<p>KUBELET_API_SERVER=&ldquo;&mdash;api-servers=<a href="http://centos-master:8080">http://centos-master:8080</a>&rdquo;</p>
+<p>KUBELET_API_SERVER=&ldquo;&mdash;api-servers=<a href="https://centos-master:8080">https://centos-master:8080</a>&rdquo;</p>
 
 <h1>pod infrastructure container</h1>
 

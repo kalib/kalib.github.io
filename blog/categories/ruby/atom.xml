@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
+<feed xmlns="https://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Ruby | Marcelo Cavalcante Rocha ~]]></title>
-  <link href="http://kalib.github.io/blog/categories/ruby/atom.xml" rel="self"/>
-  <link href="http://kalib.github.io/"/>
-  <updated>2018-08-11T22:38:27-04:00</updated>
-  <id>http://kalib.github.io/</id>
+  <link href="https://kalib.github.io/blog/categories/ruby/atom.xml" rel="self"/>
+  <link href="https://kalib.github.io/"/>
+  <updated>2018-08-13T20:11:15-04:00</updated>
+  <id>https://kalib.github.io/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
     
   </author>
-  <generator uri="http://octopress.org/">Octopress</generator>
+  <generator uri="https://octopress.org/">Octopress</generator>
 
   
   <entry>
     <title type="html"><![CDATA[Rails Girls em Fortaleza - Um palco para a criatividade feminina]]></title>
-    <link href="http://kalib.github.io/blog/2013/08/04/rails-girls-em-fortaleza-um-palco-para-a-criatividade-feminina/"/>
+    <link href="https://kalib.github.io/blog/2013/08/04/rails-girls-em-fortaleza-um-palco-para-a-criatividade-feminina/"/>
     <updated>2013-08-04T12:17:00-04:00</updated>
-    <id>http://kalib.github.io/blog/2013/08/04/rails-girls-em-fortaleza-um-palco-para-a-criatividade-feminina</id>
+    <id>https://kalib.github.io/blog/2013/08/04/rails-girls-em-fortaleza-um-palco-para-a-criatividade-feminina</id>
     <content type="html"><![CDATA[<p><img class="center" src="/imgs/evolucao_mulher.jpg" title="&lsquo;evolução feminina&rsquo;" ></p>
 
 <p><strong>E</strong> se sua namorada/esposa/irmã/mãe/vizinha/filha da vizinha/&hellip; pudesse finalmente entender que tanto código é esse que você digita no computador?</p>
@@ -28,7 +28,7 @@
 
 <h3>Rails Girls</h3>
 
-<iframe src="http://player.vimeo.com/video/17752439" width="400" height="300" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+<iframe src="https://player.vimeo.com/video/17752439" width="400" height="300" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 
 
 <p><strong>O</strong> vídeo acima é da primeira edição, ocorrida na Finlândia, em 2010.</p>
@@ -53,7 +53,7 @@
 
 <p><strong>V</strong>ocê precisa de um laptop, curiosidade e imaginação.</p>
 
-<p><strong>M</strong>aiores informações, programação e inscrições podem ser feitas <a href="http://railsgirls.com/fortaleza">através deste link</a>.</p>
+<p><strong>M</strong>aiores informações, programação e inscrições podem ser feitas <a href="https://railsgirls.com/fortaleza">através deste link</a>.</p>
 
 <p><strong>A</strong>braços!</p>
 ]]></content>
@@ -61,9 +61,9 @@
   
   <entry>
     <title type="html"><![CDATA[Feliz dia do Programador!]]></title>
-    <link href="http://kalib.github.io/blog/2011/09/13/feliz-dia-do-programador/"/>
+    <link href="https://kalib.github.io/blog/2011/09/13/feliz-dia-do-programador/"/>
     <updated>2011-09-13T09:11:39-04:00</updated>
-    <id>http://kalib.github.io/blog/2011/09/13/feliz-dia-do-programador</id>
+    <id>https://kalib.github.io/blog/2011/09/13/feliz-dia-do-programador</id>
     <content type="html"><![CDATA[<p><img class="left" src="/imgs/programmer-260x300.jpg" title="&lsquo;Programador&rsquo;" >
 <strong>S</strong>audações pessoal,</p>
 
@@ -240,11 +240,11 @@
   
   <entry>
     <title type="html"><![CDATA[Ceará On Rails 2010]]></title>
-    <link href="http://kalib.github.io/blog/2009/11/05/ceara-on-rails-2010/"/>
+    <link href="https://kalib.github.io/blog/2009/11/05/ceara-on-rails-2010/"/>
     <updated>2009-11-05T13:13:23-05:00</updated>
-    <id>http://kalib.github.io/blog/2009/11/05/ceara-on-rails-2010</id>
+    <id>https://kalib.github.io/blog/2009/11/05/ceara-on-rails-2010</id>
     <content type="html"><![CDATA[<p><img class="left" src="/imgs/cearaonrails.png" title="&lsquo;Ceará On Rails&rsquo;" >
-<strong>S</strong>audações pessoal, este ano o <a href="http://www.cearaonrails.com.br">Ceará On Rails</a> terá sua segunda edição trazendo uma programação mais extensa em relação à anterior, em 2009.</p>
+<strong>S</strong>audações pessoal, este ano o <a href="https://www.cearaonrails.com.br">Ceará On Rails</a> terá sua segunda edição trazendo uma programação mais extensa em relação à anterior, em 2009.</p>
 
 <p><strong>O</strong> Ruby tem ganho bastante destaque nos últimos anos pela sua praticidade e performance enquanto linguagem para desenvolvimento ágil e simples.</p>
 
@@ -252,7 +252,7 @@
 
 <p><strong>O</strong> evento será realizado no dia 7 de Novembro em Fortaleza na Unifor a partir das 14 horas.</p>
 
-<p><strong>V</strong>alor da entrada? Apenas uma gentil doação de 2 quilos de alimentos não perecíveis (arroz, feijão, açúcar, etc) que serão doados para a instituição <a href="http://www.cearaonrails.com.br/lardeclara">Lar Beneficiente Clara de Assis</a>.</p>
+<p><strong>V</strong>alor da entrada? Apenas uma gentil doação de 2 quilos de alimentos não perecíveis (arroz, feijão, açúcar, etc) que serão doados para a instituição <a href="https://www.cearaonrails.com.br/lardeclara">Lar Beneficiente Clara de Assis</a>.</p>
 
 <p><strong>O</strong> que? Você não acredita na comunidade local e acha que os alimentos serão desviados assim como quase tudo no Brasil? ¬¬</p>
 
@@ -281,9 +281,9 @@
   
   <entry>
     <title type="html"><![CDATA[Primeiro encontro CearáOnRails’09]]></title>
-    <link href="http://kalib.github.io/blog/2009/04/08/primeiro-encontro-cearaonrailse2809909/"/>
+    <link href="https://kalib.github.io/blog/2009/04/08/primeiro-encontro-cearaonrailse2809909/"/>
     <updated>2009-04-08T09:17:54-04:00</updated>
-    <id>http://kalib.github.io/blog/2009/04/08/primeiro-encontro-cearaonrailse2809909</id>
+    <id>https://kalib.github.io/blog/2009/04/08/primeiro-encontro-cearaonrailse2809909</id>
     <content type="html"><![CDATA[<p><img class="center" src="/imgs/logomarca_cearaonrails.png" title="&lsquo;Ceará on Rails&rsquo;" >
 <strong>O</strong>lá pessoal.</p>
 
@@ -291,13 +291,13 @@
 
 <p><strong>CearáOnRails</strong> – Grupo de Usuários Ruby e Rails do Ceará</p>
 
-<p><strong>Website</strong> – <a href="http://www.cearaonrails.org/">http://www.cearaonrails.org</a></p>
+<p><strong>Website</strong> – <a href="https://www.cearaonrails.org/">https://www.cearaonrails.org</a></p>
 
-<p><strong>Lista de Discussão</strong> &ndash; <a href="http://groups.google.com.br/group/cearaonrails">http://groups.google.com.br/group/cearaonrails</a></p>
+<p><strong>Lista de Discussão</strong> &ndash; <a href="https://groups.google.com.br/group/cearaonrails">https://groups.google.com.br/group/cearaonrails</a></p>
 
-<p><strong>Local</strong>: <a href="http://www.fchristus.com.br/">Faculdade Christus.</a></p>
+<p><strong>Local</strong>: <a href="https://www.fchristus.com.br/">Faculdade Christus.</a></p>
 
-<p><strong>Endereço</strong>: Campus Dom Luís, está situado na Avenida Dom Luís, 911, Bairro Aldeota, próximo ao Shopping Aldeota. Localização com o <a href="http://maps.google.com.br/maps?f=q&amp;source=s_q&amp;hl=pt-BR&amp;q=-3.734378,+-38.493294&amp;vps=3&amp;jsv=151e&amp;sll=-3.734336,-38.492918&amp;sspn=0.005717,0.011373&amp;ie=UTF8&amp;geocode=FZYEx_8dkqO0_Q&amp;split=0">Google Maps</a>.</p>
+<p><strong>Endereço</strong>: Campus Dom Luís, está situado na Avenida Dom Luís, 911, Bairro Aldeota, próximo ao Shopping Aldeota. Localização com o <a href="https://maps.google.com.br/maps?f=q&amp;source=s_q&amp;hl=pt-BR&amp;q=-3.734378,+-38.493294&amp;vps=3&amp;jsv=151e&amp;sll=-3.734336,-38.492918&amp;sspn=0.005717,0.011373&amp;ie=UTF8&amp;geocode=FZYEx_8dkqO0_Q&amp;split=0">Google Maps</a>.</p>
 
 <p><strong>Contato:</strong> (85) 8884.8466</p>
 
@@ -327,9 +327,9 @@
   
   <entry>
     <title type="html"><![CDATA[Ceará On Rails, aí vou eu...]]></title>
-    <link href="http://kalib.github.io/blog/2008/11/12/ceara-on-rails-ai-vou-eu/"/>
+    <link href="https://kalib.github.io/blog/2008/11/12/ceara-on-rails-ai-vou-eu/"/>
     <updated>2008-11-12T08:22:00-05:00</updated>
-    <id>http://kalib.github.io/blog/2008/11/12/ceara-on-rails-ai-vou-eu</id>
+    <id>https://kalib.github.io/blog/2008/11/12/ceara-on-rails-ai-vou-eu</id>
     <content type="html"><![CDATA[<p><img class="center" src="/imgs/cearaonrails.png" title="&lsquo;Ceará on Rails&rsquo;" >
 O que é CearáOnRails?</p>
 

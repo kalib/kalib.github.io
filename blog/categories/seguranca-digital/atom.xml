@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
+<feed xmlns="https://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Seguranca Digital | Marcelo Cavalcante Rocha ~]]></title>
-  <link href="http://kalib.github.io/blog/categories/seguranca-digital/atom.xml" rel="self"/>
-  <link href="http://kalib.github.io/"/>
-  <updated>2018-08-11T22:38:27-04:00</updated>
-  <id>http://kalib.github.io/</id>
+  <link href="https://kalib.github.io/blog/categories/seguranca-digital/atom.xml" rel="self"/>
+  <link href="https://kalib.github.io/"/>
+  <updated>2018-08-13T20:11:15-04:00</updated>
+  <id>https://kalib.github.io/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
     
   </author>
-  <generator uri="http://octopress.org/">Octopress</generator>
+  <generator uri="https://octopress.org/">Octopress</generator>
 
   
   <entry>
     <title type="html"><![CDATA[Lançada a primeira edição da Revista Segurança Digital]]></title>
-    <link href="http://kalib.github.io/blog/2011/07/01/lancada-a-primeira-edicao-da-revista-seguranca-digital/"/>
+    <link href="https://kalib.github.io/blog/2011/07/01/lancada-a-primeira-edicao-da-revista-seguranca-digital/"/>
     <updated>2011-07-01T07:14:54-04:00</updated>
-    <id>http://kalib.github.io/blog/2011/07/01/lancada-a-primeira-edicao-da-revista-seguranca-digital</id>
+    <id>https://kalib.github.io/blog/2011/07/01/lancada-a-primeira-edicao-da-revista-seguranca-digital</id>
     <content type="html"><![CDATA[<p><img class="left" src="/imgs/seguranca_digital_1.jpg" title="&lsquo;Segurança Digital&rsquo;" >
 <strong>S</strong>audações pessoal.</p>
 
-<p><strong>P</strong>ara quem não sabe, hoje é o lançamento da primeira edição da <a href="http://www.segurancadigital.info/revista/185-revistas">Revista Segurança Digital</a>.</p>
+<p><strong>P</strong>ara quem não sabe, hoje é o lançamento da primeira edição da <a href="https://www.segurancadigital.info/revista/185-revistas">Revista Segurança Digital</a>.</p>
 
-<p><a href="http://www.segurancadigital.info"><strong>S</strong>egurança Digital</a> é o mais novo projeto no qual estou engajado e espero poder ajudar no que for possível para a constante melhoria do projeto.</p>
+<p><a href="https://www.segurancadigital.info"><strong>S</strong>egurança Digital</a> é o mais novo projeto no qual estou engajado e espero poder ajudar no que for possível para a constante melhoria do projeto.</p>
 
 <p><strong>É</strong> com grande satisfação que estamos fazendo o lançamento oficial de nosso projeto com a primeira edição da Revista Segurança Digital. Neste mês de Julho a revista aborda aspectos mais genéricos em relação à Segurança da Informação como um todo. Desde as técnicas de FootPrinting e Varredura para identificação de vulnerabilidades e possíveis brechas até estratégias e mecanismos de Enumeração para reconhecimento de ambientes.</p>
 
@@ -35,7 +35,7 @@
 
 <p><strong>A</strong>proveitamos para informar sobre a mais nova parceria realizada entre o Projeto Segurança Digital e a empresa de consultoria e soluções livres 4Linux que é líder no mercado no que diz respeito à soluções de tecnologia com ferramentas livres bem como treinamentos especializados nos mais diversos segmentos da computação como redes, bancos de dados, segurança, programação, dentre outros.</p>
 
-<p><strong>N</strong>ão deixe de fazer o <a href="http://www.segurancadigital.info/revista/185-revistas">download</a> desta edição e conferir o resultado desta força tarefa inicial.</p>
+<p><strong>N</strong>ão deixe de fazer o <a href="https://www.segurancadigital.info/revista/185-revistas">download</a> desta edição e conferir o resultado desta força tarefa inicial.</p>
 
 <p><strong>E</strong>speramos que gostem.</p>
 ]]></content>

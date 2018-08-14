@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
+<feed xmlns="https://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Slack | Marcelo Cavalcante Rocha ~]]></title>
-  <link href="http://kalib.github.io/blog/categories/slack/atom.xml" rel="self"/>
-  <link href="http://kalib.github.io/"/>
-  <updated>2018-08-11T22:38:27-04:00</updated>
-  <id>http://kalib.github.io/</id>
+  <link href="https://kalib.github.io/blog/categories/slack/atom.xml" rel="self"/>
+  <link href="https://kalib.github.io/"/>
+  <updated>2018-08-13T20:11:15-04:00</updated>
+  <id>https://kalib.github.io/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
     
   </author>
-  <generator uri="http://octopress.org/">Octopress</generator>
+  <generator uri="https://octopress.org/">Octopress</generator>
 
   
   <entry>
     <title type="html"><![CDATA[Recebendo Alarmes do AWS Diretamente no Slack]]></title>
-    <link href="http://kalib.github.io/blog/2017/03/11/recebendo-alarmes-do-aws-diretamente-no-slack/"/>
+    <link href="https://kalib.github.io/blog/2017/03/11/recebendo-alarmes-do-aws-diretamente-no-slack/"/>
     <updated>2017-03-11T12:03:00-05:00</updated>
-    <id>http://kalib.github.io/blog/2017/03/11/recebendo-alarmes-do-aws-diretamente-no-slack</id>
+    <id>https://kalib.github.io/blog/2017/03/11/recebendo-alarmes-do-aws-diretamente-no-slack</id>
     <content type="html"><![CDATA[<p><img class="center" src="/imgs/aws_slack.png" title="&lsquo;AWS_Slack&rsquo;" ></p>
 
-<p><strong>A</strong>ntes de entrar na configuração dos serviços, talvez seja necessário apresentar o <a href="http://www.slack.com">Slack</a>, visto que muitos ainda não conhecem ou utilizam esta poderosa e versátil ferramenta de comunicação instantânea para times.</p>
+<p><strong>A</strong>ntes de entrar na configuração dos serviços, talvez seja necessário apresentar o <a href="https://www.slack.com">Slack</a>, visto que muitos ainda não conhecem ou utilizam esta poderosa e versátil ferramenta de comunicação instantânea para times.</p>
 
 <p><strong>S</strong>lack é uma plataforma para comunicação entre times que desejam um ambiente mais dinâmico e ágil. Diferentemente de muitas plataformas de chat disponíveis, como o Google Hangouts, o Slack nos permite criar canais distintos com membros distintos de um mesmo time fazendo parte daquele canal específico. Não, não estou falando de chat em grupo, mas sim canais específicos que permitem integrações com serviços distintos, como receber notificações sobre commits feitos em um repositório ou branch específico no github, notificações de tickets abertos em ferramentas como o Jira, por exemplo, etc. O Slack é completamente programável e escalável, o que nos permite ter inúmeras funcionalidas.</p>
 

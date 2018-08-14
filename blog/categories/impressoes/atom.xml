@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
+<feed xmlns="https://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Impressoes | Marcelo Cavalcante Rocha ~]]></title>
-  <link href="http://kalib.github.io/blog/categories/impressoes/atom.xml" rel="self"/>
-  <link href="http://kalib.github.io/"/>
-  <updated>2018-08-11T22:38:27-04:00</updated>
-  <id>http://kalib.github.io/</id>
+  <link href="https://kalib.github.io/blog/categories/impressoes/atom.xml" rel="self"/>
+  <link href="https://kalib.github.io/"/>
+  <updated>2018-08-13T20:11:15-04:00</updated>
+  <id>https://kalib.github.io/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
     
   </author>
-  <generator uri="http://octopress.org/">Octopress</generator>
+  <generator uri="https://octopress.org/">Octopress</generator>
 
   
   <entry>
     <title type="html"><![CDATA[Dica - Assistir Star Wars em um Console ou Terminal]]></title>
-    <link href="http://kalib.github.io/blog/2014/01/17/dica-assistir-star-wars-em-um-console-ou-terminal/"/>
+    <link href="https://kalib.github.io/blog/2014/01/17/dica-assistir-star-wars-em-um-console-ou-terminal/"/>
     <updated>2014-01-17T10:30:00-05:00</updated>
-    <id>http://kalib.github.io/blog/2014/01/17/dica-assistir-star-wars-em-um-console-ou-terminal</id>
+    <id>https://kalib.github.io/blog/2014/01/17/dica-assistir-star-wars-em-um-console-ou-terminal</id>
     <content type="html"><![CDATA[<p><img class="left" src="/imgs/starwars.png" title="&lsquo;Star Wars&rsquo;" >
 <strong>Q</strong>uem disse que o terminal ou linha de comando serve apenas para trabalho e coisas chatas?</p>
 
@@ -41,9 +41,9 @@
   
   <entry>
     <title type="html"><![CDATA[Navegação Anônima Através da Rede Tor]]></title>
-    <link href="http://kalib.github.io/blog/2013/12/30/navegacao-anonima-atraves-da-rede-tor/"/>
+    <link href="https://kalib.github.io/blog/2013/12/30/navegacao-anonima-atraves-da-rede-tor/"/>
     <updated>2013-12-30T08:15:00-05:00</updated>
-    <id>http://kalib.github.io/blog/2013/12/30/navegacao-anonima-atraves-da-rede-tor</id>
+    <id>https://kalib.github.io/blog/2013/12/30/navegacao-anonima-atraves-da-rede-tor</id>
     <content type="html"><![CDATA[<p><img class="left" src="/imgs/tor_logo.png" title="&lsquo;Tor&rsquo;" >
 <strong>O</strong> ano de 2013 foi marcado por diversos acontecimentos de grande repercussão e, sem sombra de dúvidas, um deles foi o escândalo causado pelo vazamento de dados que provaram que algumas instituições, dentre elas a <em>NSA</em> (Agência de Segurança dos Estados Unidos), estavam espionando diversas entidades, empresas e até mesmo pessoas físicas nas mais diversas regiões do globo. Escândalos a parte, estas denúncias acabaram despertando um pouco mais (uma pena que não tenha sido muito mais) nas pessoas o interesse em preservar sua privacidade.</p>
 
@@ -57,7 +57,7 @@
 
 <p><strong>B</strong>asicamente, o usuário instala um programa, <em>tor-cliente</em>, em seu computador e este funcionará como um <em>proxy</em> para o mesmo. Os demais programas que o usuário utiliza para navegar na internet <em>(navegador, emule, etc.)</em> deverão ser configurados para navegar através deste proxy.</p>
 
-<p><strong>A</strong> partir daí, quando o usuário digitar em seu navegador o endereço destino, <em><a href="http://www.google.com*">http://www.google.com*</a> por exemplo, ao invés de a sua requisição passar por roteadores convencionais para atingir o destino, ele passará por túneis criptografados da rede Tor, para então chegar ao seu destino. Nestes túneis a sua requisição e informações passam por vários </em>nós<em> da rede Tor. Um exemplo prático do anonimato provido pelo Tor é a verificação do seu próprio IP. Caso deseje realizar o teste, experimente acessar o endereço </em><a href="http://www.meuip.com.br*">http://www.meuip.com.br*</a> antes de instalar e configurar o Tor em sua máquina. Este site lhe informará o seu atual endereço IP, no caso o endereço será o do seu roteador de acesso à rede pública. Em seguida, tente acessar novamente o mesmo endereço após ter instalado e configurado o Tor. Você perceberá que ele não retornará o seu endereço IP, mas sim um endereço IP qualquer de um nó da rede Tor. Ou seja, isto atrapalha a vida de quem quer que deseje rastrear a sua máquina a partir de um endereço que você tenha acessado ou mesmo de um email que você tenha enviado.</p>
+<p><strong>A</strong> partir daí, quando o usuário digitar em seu navegador o endereço destino, <em><a href="https://www.google.com*">https://www.google.com*</a> por exemplo, ao invés de a sua requisição passar por roteadores convencionais para atingir o destino, ele passará por túneis criptografados da rede Tor, para então chegar ao seu destino. Nestes túneis a sua requisição e informações passam por vários </em>nós<em> da rede Tor. Um exemplo prático do anonimato provido pelo Tor é a verificação do seu próprio IP. Caso deseje realizar o teste, experimente acessar o endereço </em><a href="https://www.meuip.com.br*">https://www.meuip.com.br*</a> antes de instalar e configurar o Tor em sua máquina. Este site lhe informará o seu atual endereço IP, no caso o endereço será o do seu roteador de acesso à rede pública. Em seguida, tente acessar novamente o mesmo endereço após ter instalado e configurado o Tor. Você perceberá que ele não retornará o seu endereço IP, mas sim um endereço IP qualquer de um nó da rede Tor. Ou seja, isto atrapalha a vida de quem quer que deseje rastrear a sua máquina a partir de um endereço que você tenha acessado ou mesmo de um email que você tenha enviado.</p>
 
 <p><strong>Instalação do Tor no Arch Linux</strong></p>
 
@@ -103,16 +103,16 @@
   
   <entry>
     <title type="html"><![CDATA[Sobre mim... Tarda mas não falha]]></title>
-    <link href="http://kalib.github.io/blog/2013/12/16/sobre-mim-dot-dot-dot-tarda-mas-nao-falha/"/>
+    <link href="https://kalib.github.io/blog/2013/12/16/sobre-mim-dot-dot-dot-tarda-mas-nao-falha/"/>
     <updated>2013-12-16T15:31:00-05:00</updated>
-    <id>http://kalib.github.io/blog/2013/12/16/sobre-mim-dot-dot-dot-tarda-mas-nao-falha</id>
+    <id>https://kalib.github.io/blog/2013/12/16/sobre-mim-dot-dot-dot-tarda-mas-nao-falha</id>
     <content type="html"><![CDATA[<p><strong>T</strong>arda, mas não falha&hellip; Reza o antigo ditado.</p>
 
 <p><strong>D</strong>a mesma forma, digo-lhes que tardou, mas não falhou. Confesso que nunca parei para elaborar a página &ldquo;Sobre mim&rdquo; deste blog. O link existia no topo, mas sempre esteve &ldquo;Em construção&rdquo;. Preguiça? Falta de interesse? Esquecimento? Acho que um pouco de cada.</p>
 
 <p><strong>H</strong>oje fui surpreendido por uma pessoa que acabou caindo no blog e em seguida me questionou sobre o porque de o blog já existir a tanto tempo e até hoje a página &ldquo;Sobre mim&rdquo; continuar contendo apenas as palavras &ldquo;Em construção&rdquo;.</p>
 
-<p><strong>I</strong>sto me fez tomar vergonha na cara.. e hoje inseri conteúdo <a href="http://blog.marcelocavalcante.net/about/"> nesta página</a>.</p>
+<p><strong>I</strong>sto me fez tomar vergonha na cara.. e hoje inseri conteúdo <a href="https://blog.marcelocavalcante.net/about/"> nesta página</a>.</p>
 
 <p><strong>A</strong>gora sim&hellip; ;]</p>
 ]]></content>
@@ -120,9 +120,9 @@
   
   <entry>
     <title type="html"><![CDATA[KDE 4.11 Lançado e Disponível no Arch Linux]]></title>
-    <link href="http://kalib.github.io/blog/2013/08/19/kde-4-dot-11-lancado-e-disponivel-no-arch-linux/"/>
+    <link href="https://kalib.github.io/blog/2013/08/19/kde-4-dot-11-lancado-e-disponivel-no-arch-linux/"/>
     <updated>2013-08-19T08:07:00-04:00</updated>
-    <id>http://kalib.github.io/blog/2013/08/19/kde-4-dot-11-lancado-e-disponivel-no-arch-linux</id>
+    <id>https://kalib.github.io/blog/2013/08/19/kde-4-dot-11-lancado-e-disponivel-no-arch-linux</id>
     <content type="html"><![CDATA[<p><img class="left" src="/imgs/kde411.png" title="&lsquo;KDE 4.11&rsquo;" >
 <strong>E</strong>m 14 de Agosto de 2013 a comunidade KDE anunciou oficialmente a última release do Ambiente de Trabalho KDE, a versão 4.11. Nesta última versão o projeto incorporou grandes atualizações na Área de Trabalho, Aplicações e plataforma de Desenvolvimento, oferecendo, além de correções, novas funcionalidades, das quais muitas serão importantes para a próxima evolução da plataforma KDE.</p>
 
@@ -146,7 +146,7 @@
  # yaourt -Syu --aur
 </code></p>
 
-<p><strong>M</strong>aiores informações sobre esta release podem ser encontradas em <a href="http://community.kde.org/KDE_SC/4.11_Release_Notes">http://community.kde.org/KDE_SC/4.11_Release_Notes</a></p>
+<p><strong>M</strong>aiores informações sobre esta release podem ser encontradas em <a href="https://community.kde.org/KDE_SC/4.11_Release_Notes">https://community.kde.org/KDE_SC/4.11_Release_Notes</a></p>
 
 <p><strong>D</strong>ivirtam-se com o novo KDE! ;]</p>
 ]]></content>
@@ -154,9 +154,9 @@
   
   <entry>
     <title type="html"><![CDATA[Dica Rápida - Linux - Melhorando a Política de Senhas]]></title>
-    <link href="http://kalib.github.io/blog/2013/08/12/dica-rapida-linux-melhorando-a-politica-de-senhas/"/>
+    <link href="https://kalib.github.io/blog/2013/08/12/dica-rapida-linux-melhorando-a-politica-de-senhas/"/>
     <updated>2013-08-12T08:41:00-04:00</updated>
-    <id>http://kalib.github.io/blog/2013/08/12/dica-rapida-linux-melhorando-a-politica-de-senhas</id>
+    <id>https://kalib.github.io/blog/2013/08/12/dica-rapida-linux-melhorando-a-politica-de-senhas</id>
     <content type="html"><![CDATA[<p><img class="center" src="/imgs/url.jpg" title="&lsquo;password&rsquo;" ></p>
 
 <p><strong>N</strong>a dica anterior mencionei o uso do comando <em>chage</em> para <strong>forçar</strong> a alteração de senha por parte do usuário em sistemas Linux, mas e se além disso fosse possível melhorar esta prática, tornando a política de senhas de usuários um pouco mais segura?</p>

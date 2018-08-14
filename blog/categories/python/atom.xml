@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
+<feed xmlns="https://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Python | Marcelo Cavalcante Rocha ~]]></title>
-  <link href="http://kalib.github.io/blog/categories/python/atom.xml" rel="self"/>
-  <link href="http://kalib.github.io/"/>
-  <updated>2018-08-11T22:38:27-04:00</updated>
-  <id>http://kalib.github.io/</id>
+  <link href="https://kalib.github.io/blog/categories/python/atom.xml" rel="self"/>
+  <link href="https://kalib.github.io/"/>
+  <updated>2018-08-13T20:11:15-04:00</updated>
+  <id>https://kalib.github.io/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
     
   </author>
-  <generator uri="http://octopress.org/">Octopress</generator>
+  <generator uri="https://octopress.org/">Octopress</generator>
 
   
   <entry>
     <title type="html"><![CDATA[Feliz dia do Programador!]]></title>
-    <link href="http://kalib.github.io/blog/2011/09/13/feliz-dia-do-programador/"/>
+    <link href="https://kalib.github.io/blog/2011/09/13/feliz-dia-do-programador/"/>
     <updated>2011-09-13T09:11:39-04:00</updated>
-    <id>http://kalib.github.io/blog/2011/09/13/feliz-dia-do-programador</id>
+    <id>https://kalib.github.io/blog/2011/09/13/feliz-dia-do-programador</id>
     <content type="html"><![CDATA[<p><img class="left" src="/imgs/programmer-260x300.jpg" title="&lsquo;Programador&rsquo;" >
 <strong>S</strong>audações pessoal,</p>
 
@@ -194,19 +194,19 @@
   
   <entry>
     <title type="html"><![CDATA[III Pylestras - Neste Sábado]]></title>
-    <link href="http://kalib.github.io/blog/2011/03/24/iii-pylestras-neste-sabado/"/>
+    <link href="https://kalib.github.io/blog/2011/03/24/iii-pylestras-neste-sabado/"/>
     <updated>2011-03-24T13:19:40-04:00</updated>
-    <id>http://kalib.github.io/blog/2011/03/24/iii-pylestras-neste-sabado</id>
+    <id>https://kalib.github.io/blog/2011/03/24/iii-pylestras-neste-sabado</id>
     <content type="html"><![CDATA[<p><img class="left" src="/imgs/python-logo.gif" title="&lsquo;Python&rsquo;" >
-<strong>G</strong>ostaria de lembrar a todos os interessados que amanhã teremos o <a href="http://pylestras.appspot.com/">III Pylestras</a> aqui em Fortaleza.</p>
+<strong>G</strong>ostaria de lembrar a todos os interessados que amanhã teremos o <a href="https://pylestras.appspot.com/">III Pylestras</a> aqui em Fortaleza.</p>
 
 <p><strong>S</strong>e você não faz ideia sobre o que seja Python ou sabe que é uma linguagem de programação mas não conhece maiores detalhes sobre a mesma, recomendo a leitura destes links bem como sua participação no evento, que com certeza será bem interessante.</p>
 
-<p><a href="http://blog.marcelocavalcante.net/blog/2008/11/24/the-zen-of-python/">The Zen Of Phyton</a></p>
+<p><a href="https://blog.marcelocavalcante.net/blog/2008/11/24/the-zen-of-python/">The Zen Of Phyton</a></p>
 
-<p><a href="http://blog.marcelocavalcante.net/blog/2008/11/20/porque-python/">Porque Python?</a></p>
+<p><a href="https://blog.marcelocavalcante.net/blog/2008/11/20/porque-python/">Porque Python?</a></p>
 
-<p><a href="http://blog.marcelocavalcante.net/blog/2009/11/21/porque-escolhi-python-python-para-sysadmins/">Porque escolhi Python &ndash; Python para SysAdmins</a></p>
+<p><a href="https://blog.marcelocavalcante.net/blog/2009/11/21/porque-escolhi-python-python-para-sysadmins/">Porque escolhi Python &ndash; Python para SysAdmins</a></p>
 
 <p><strong>O</strong> evento consiste em 4 palestras conforme apresentadas abaixo:</p>
 
@@ -226,9 +226,9 @@
 
 <p><strong>A</strong>lém das palestras o evento contará com um sorteio do livro Python e Django &ndash; Desenvolvimento Ágil de Aplicações Web.</p>
 
-<p><strong>O</strong> evento está sendo organizado pelo pessoal do <a href="http://pug-ce.python.org.br/sobre/">PUG-CE</a> (Python User Group Ceará).</p>
+<p><strong>O</strong> evento está sendo organizado pelo pessoal do <a href="https://pug-ce.python.org.br/sobre/">PUG-CE</a> (Python User Group Ceará).</p>
 
-<p><strong>P</strong>ara maiores detalhes sobre o evento, visite a página: <a href="http://pylestras.appspot.com/">Aqui!</a></p>
+<p><strong>P</strong>ara maiores detalhes sobre o evento, visite a página: <a href="https://pylestras.appspot.com/">Aqui!</a></p>
 
 <p><strong>A</strong>braços!</p>
 ]]></content>
@@ -236,19 +236,19 @@
   
   <entry>
     <title type="html"><![CDATA[Amanhã - II Pylestras - Python User Group Ceará]]></title>
-    <link href="http://kalib.github.io/blog/2011/02/25/amanha-ii-pylestras-python-user-group-ceara/"/>
+    <link href="https://kalib.github.io/blog/2011/02/25/amanha-ii-pylestras-python-user-group-ceara/"/>
     <updated>2011-02-25T06:38:02-05:00</updated>
-    <id>http://kalib.github.io/blog/2011/02/25/amanha-ii-pylestras-python-user-group-ceara</id>
+    <id>https://kalib.github.io/blog/2011/02/25/amanha-ii-pylestras-python-user-group-ceara</id>
     <content type="html"><![CDATA[<p><img class="left" src="/imgs/python-logo.gif" title="&lsquo;Python&rsquo;" >
-<strong>G</strong>ostaria de lembrar a todos os interessados que amanhã teremos o <a href="http://pylestras.appspot.com/">II Pylestras</a> aqui em Fortaleza.</p>
+<strong>G</strong>ostaria de lembrar a todos os interessados que amanhã teremos o <a href="https://pylestras.appspot.com/">II Pylestras</a> aqui em Fortaleza.</p>
 
 <p>Se você não faz ideia sobre o que seja Python ou sabe que é uma linguagem de programação mas não conhece maiores detalhes sobre a mesma, recomendo a leitura destes links bem como sua participação no evento, que com certeza será bem interessante.</p>
 
-<p><a href="http://marcelocavalcante.net/portal/2008/11/24/the-zen-of-python/">The Zen Of Phyton</a></p>
+<p><a href="https://marcelocavalcante.net/portal/2008/11/24/the-zen-of-python/">The Zen Of Phyton</a></p>
 
-<p><a href="http://marcelocavalcante.net/portal/2008/11/20/porque-python/">Porque Python?</a></p>
+<p><a href="https://marcelocavalcante.net/portal/2008/11/20/porque-python/">Porque Python?</a></p>
 
-<p><a href="http://marcelocavalcante.net/portal/2009/11/21/porque-escolhi-python-python-para-sysadmins/">Porque escolhi Python &ndash; Python para SysAdmins</a></p>
+<p><a href="https://marcelocavalcante.net/portal/2009/11/21/porque-escolhi-python-python-para-sysadmins/">Porque escolhi Python &ndash; Python para SysAdmins</a></p>
 
 <p><strong>O</strong> evento consiste em 3 palestras conforme apresentadas abaixo:</p>
 
@@ -256,7 +256,7 @@
 _ * Arduino: Soluções para um mundo moderno<em>
 _ * Técnicas para preparação e desenvolvimento de sites com Django</em></p>
 
-<p><strong>O</strong> evento acontecerá na <a href="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=pt-BR&amp;geocode=&amp;q=Faculdade+7+de+Setembro,+Fortaleza+-+Cear%C3%A1,+Brasil&amp;aq=2&amp;sll=37.926868,-95.712891&amp;sspn=30.000938,79.013672&amp;ie=UTF8&amp;hq=Faculdade+Sete+de+Setembro&amp;hnear=Faculdade+Sete+de+Setembro+-+Rua+Almirante+Maximiano+da+Fonseca,+1395+-+Eng.+Luciano+Cavalcante,+Fortaleza+-+Cear%C3%A1,+60811-020,+Brasil&amp;z=14">Fa7</a> (Faculdade 7 de Setembro) no horário entre 8:30 e 12:00.</p>
+<p><strong>O</strong> evento acontecerá na <a href="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=pt-BR&amp;geocode=&amp;q=Faculdade+7+de+Setembro,+Fortaleza+-+Cear%C3%A1,+Brasil&amp;aq=2&amp;sll=37.926868,-95.712891&amp;sspn=30.000938,79.013672&amp;ie=UTF8&amp;hq=Faculdade+Sete+de+Setembro&amp;hnear=Faculdade+Sete+de+Setembro+-+Rua+Almirante+Maximiano+da+Fonseca,+1395+-+Eng.+Luciano+Cavalcante,+Fortaleza+-+Cear%C3%A1,+60811-020,+Brasil&amp;z=14">Fa7</a> (Faculdade 7 de Setembro) no horário entre 8:30 e 12:00.</p>
 
 <p><img class="center" src="/imgs/pythonedjango.gif" title="&lsquo;Python e Django&rsquo;" ></p>
 
@@ -264,9 +264,9 @@ _ * Técnicas para preparação e desenvolvimento de sites com Django</em></p>
 
 <p><strong>A</strong>lém das palestras o evento contará com um sorteio do livro Python e Django &ndash; Desenvolvimento Ágil de Aplicações Web.</p>
 
-<p><strong>O</strong> evento está sendo organizado pelo pessoal do <a href="http://pug-ce.python.org.br/sobre/">PUG-CE</a> (Python User Group Ceará).</p>
+<p><strong>O</strong> evento está sendo organizado pelo pessoal do <a href="https://pug-ce.python.org.br/sobre/">PUG-CE</a> (Python User Group Ceará).</p>
 
-<p><strong>P</strong>ara maiores detalhes sobre o evento, visite a página e faça sua <strong>inscrição</strong>: <a href="http://pylestras.appspot.com/">Aqui!</a></p>
+<p><strong>P</strong>ara maiores detalhes sobre o evento, visite a página e faça sua <strong>inscrição</strong>: <a href="https://pylestras.appspot.com/">Aqui!</a></p>
 
 <p><strong>A</strong>braços!</p>
 ]]></content>
@@ -274,9 +274,9 @@ _ * Técnicas para preparação e desenvolvimento de sites com Django</em></p>
   
   <entry>
     <title type="html"><![CDATA[Porque escolhi Python? Python para SysAdmins!]]></title>
-    <link href="http://kalib.github.io/blog/2009/11/21/porque-escolhi-python-python-para-sysadmins/"/>
+    <link href="https://kalib.github.io/blog/2009/11/21/porque-escolhi-python-python-para-sysadmins/"/>
     <updated>2009-11-21T08:12:42-05:00</updated>
-    <id>http://kalib.github.io/blog/2009/11/21/porque-escolhi-python-python-para-sysadmins</id>
+    <id>https://kalib.github.io/blog/2009/11/21/porque-escolhi-python-python-para-sysadmins</id>
     <content type="html"><![CDATA[<p><img class="left" src="/imgs/python-logo.gif" title="&lsquo;Python&rsquo;" >
 <strong>S</strong>audações pessoal&hellip;</p>
 
@@ -359,11 +359,11 @@ _ * Técnicas para preparação e desenvolvimento de sites com Django</em></p>
 
 <p><strong>C</strong>aso deseje mais informações sobre Python bem como suas vantagens, confira outros posts que fiz listados abaixo:</p>
 
-<p><a href="http://blog.marcelocavalcante.net/blog/2008/11/20/porque-python/">1- Porque Python?</a></p>
+<p><a href="https://blog.marcelocavalcante.net/blog/2008/11/20/porque-python/">1- Porque Python?</a></p>
 
-<p><a href="http://blog.marcelocavalcante.net/blog/2009/03/23/pydev-preparando-o-eclipse-para-o-python/">2- Pydev: Preparando o Eclipse para o Python</a></p>
+<p><a href="https://blog.marcelocavalcante.net/blog/2009/03/23/pydev-preparando-o-eclipse-para-o-python/">2- Pydev: Preparando o Eclipse para o Python</a></p>
 
-<p><a href="http://blog.marcelocavalcante.net/blog/2008/11/24/the-zen-of-python/">3- The Zen of Python</a></p>
+<p><a href="https://blog.marcelocavalcante.net/blog/2008/11/24/the-zen-of-python/">3- The Zen of Python</a></p>
 
 <p><strong>A</strong>braços</p>
 ]]></content>
@@ -371,9 +371,9 @@ _ * Técnicas para preparação e desenvolvimento de sites com Django</em></p>
   
   <entry>
     <title type="html"><![CDATA[Python no Ceará? PythOnCeará!]]></title>
-    <link href="http://kalib.github.io/blog/2009/11/14/python-no-ceara-pythonceara/"/>
+    <link href="https://kalib.github.io/blog/2009/11/14/python-no-ceara-pythonceara/"/>
     <updated>2009-11-14T06:42:44-05:00</updated>
-    <id>http://kalib.github.io/blog/2009/11/14/python-no-ceara-pythonceara</id>
+    <id>https://kalib.github.io/blog/2009/11/14/python-no-ceara-pythonceara</id>
     <content type="html"><![CDATA[<p><img class="left" src="/imgs/python-logo.gif" title="&lsquo;Criptografia&rsquo;" >
 <strong>B</strong>om Dia galera&hellip;</p>
 

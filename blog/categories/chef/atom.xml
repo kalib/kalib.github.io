@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
+<feed xmlns="https://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Chef | Marcelo Cavalcante Rocha ~]]></title>
-  <link href="http://kalib.github.io/blog/categories/chef/atom.xml" rel="self"/>
-  <link href="http://kalib.github.io/"/>
-  <updated>2018-08-11T22:38:27-04:00</updated>
-  <id>http://kalib.github.io/</id>
+  <link href="https://kalib.github.io/blog/categories/chef/atom.xml" rel="self"/>
+  <link href="https://kalib.github.io/"/>
+  <updated>2018-08-13T20:11:15-04:00</updated>
+  <id>https://kalib.github.io/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
     
   </author>
-  <generator uri="http://octopress.org/">Octopress</generator>
+  <generator uri="https://octopress.org/">Octopress</generator>
 
   
   <entry>
     <title type="html"><![CDATA[Chef: Uso de Condicionais not_if e only_if]]></title>
-    <link href="http://kalib.github.io/blog/2018/04/14/chef-uso-de-condicionais-not-if-e-only-if/"/>
+    <link href="https://kalib.github.io/blog/2018/04/14/chef-uso-de-condicionais-not-if-e-only-if/"/>
     <updated>2018-04-14T19:33:00-04:00</updated>
-    <id>http://kalib.github.io/blog/2018/04/14/chef-uso-de-condicionais-not-if-e-only-if</id>
+    <id>https://kalib.github.io/blog/2018/04/14/chef-uso-de-condicionais-not-if-e-only-if</id>
     <content type="html"><![CDATA[<p><img class="center" src="/imgs/chef-logo2.png" title="&lsquo;Chef&rsquo;" ></p>
 
 <h2>Pare e volte uma casa</h2>
 
 <p><img class="center" src="/imgs/volte1casa.jpeg" title="&lsquo;Volte1Casa&rsquo;" >
-<strong>S</strong>e você nunca utilizou ou sabe pouco sobre o <em>Chef</em> é importante que você pare aqui mesmo e volte uma casa. Sugiro que leia o post <a href="http://blog.marcelocavalcante.net/blog/2018/04/01/chef-aautomacao-e-gerenciamento-de-configuracao/">Chef: Automação e Gerenciamento de Configuração</a> antes de seguir este, uma vez que através dele você entenderá o que é, e como funciona o Chef, bem como sua instalação básica.</p>
+<strong>S</strong>e você nunca utilizou ou sabe pouco sobre o <em>Chef</em> é importante que você pare aqui mesmo e volte uma casa. Sugiro que leia o post <a href="https://blog.marcelocavalcante.net/blog/2018/04/01/chef-aautomacao-e-gerenciamento-de-configuracao/">Chef: Automação e Gerenciamento de Configuração</a> antes de seguir este, uma vez que através dele você entenderá o que é, e como funciona o Chef, bem como sua instalação básica.</p>
 
 <h2>Resources</h2>
 
@@ -64,7 +64,7 @@
 
 <h2>Mãos à obra</h2>
 
-<p><strong>P</strong>ara simplificar seguirei utilizando a recipe utilizada no post anterior. Não sabe o que é uma recipe? <code>-&gt;</code> Novamente, caso não entenda o que estou dizendo, volte uma casa e leia o <a href="http://blog.marcelocavalcante.net/blog/2018/04/01/chef-aautomacao-e-gerenciamento-de-configuracao/">post anterior</a>, no qual explico o que é uma recipe, bem como cada elemento da mesma, visto que a utilizaremos aqui.</p>
+<p><strong>P</strong>ara simplificar seguirei utilizando a recipe utilizada no post anterior. Não sabe o que é uma recipe? <code>-&gt;</code> Novamente, caso não entenda o que estou dizendo, volte uma casa e leia o <a href="https://blog.marcelocavalcante.net/blog/2018/04/01/chef-aautomacao-e-gerenciamento-de-configuracao/">post anterior</a>, no qual explico o que é uma recipe, bem como cada elemento da mesma, visto que a utilizaremos aqui.</p>
 
 <p><strong>N</strong>ossa recipe era a seguinte:</p>
 
@@ -527,14 +527,14 @@ Running handlers complete
   
   <entry>
     <title type="html"><![CDATA[Chef: Automação e Gerenciamento de Configuração]]></title>
-    <link href="http://kalib.github.io/blog/2018/04/01/chef-aautomacao-e-gerenciamento-de-configuracao/"/>
+    <link href="https://kalib.github.io/blog/2018/04/01/chef-aautomacao-e-gerenciamento-de-configuracao/"/>
     <updated>2018-04-01T11:22:00-04:00</updated>
-    <id>http://kalib.github.io/blog/2018/04/01/chef-aautomacao-e-gerenciamento-de-configuracao</id>
+    <id>https://kalib.github.io/blog/2018/04/01/chef-aautomacao-e-gerenciamento-de-configuracao</id>
     <content type="html"><![CDATA[<p><img class="center" src="/imgs/cheflogo.png" title="&lsquo;Chef&rsquo;" ></p>
 
 <h2>Uma coisa de cada vez</h2>
 
-<p><strong>C</strong>hef é uma popular ferramenta de Gerenciamento de Configurações criado pela empresa de mesmo nome, Chef. O <a href="https://www.chef.io">Chef</a> é desenvolvido em <a href="http://www.ruby-lang.org">Ruby</a> e <a href="https://www.erlang.org">Erlang</a>, e utiliza uma linguagem DSL (domain-specific language) em Ruby puro para escrever arquivos de configuração de sistemas chamados &ldquo;recipes&rdquo; (receitas).</p>
+<p><strong>C</strong>hef é uma popular ferramenta de Gerenciamento de Configurações criado pela empresa de mesmo nome, Chef. O <a href="https://www.chef.io">Chef</a> é desenvolvido em <a href="https://www.ruby-lang.org">Ruby</a> e <a href="https://www.erlang.org">Erlang</a>, e utiliza uma linguagem DSL (domain-specific language) em Ruby puro para escrever arquivos de configuração de sistemas chamados &ldquo;recipes&rdquo; (receitas).</p>
 
 <p><strong>A</strong>ntes de falarmos sobre o Chef é importante entender primeiramente o conceito e a utilidade de ferramentas de Gerenciamento de Configuração.</p>
 

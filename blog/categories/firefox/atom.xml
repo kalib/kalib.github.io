@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
+<feed xmlns="https://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Firefox | Marcelo Cavalcante Rocha ~]]></title>
-  <link href="http://kalib.github.io/blog/categories/firefox/atom.xml" rel="self"/>
-  <link href="http://kalib.github.io/"/>
-  <updated>2018-08-11T22:38:27-04:00</updated>
-  <id>http://kalib.github.io/</id>
+  <link href="https://kalib.github.io/blog/categories/firefox/atom.xml" rel="self"/>
+  <link href="https://kalib.github.io/"/>
+  <updated>2018-08-13T20:11:15-04:00</updated>
+  <id>https://kalib.github.io/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
     
   </author>
-  <generator uri="http://octopress.org/">Octopress</generator>
+  <generator uri="https://octopress.org/">Octopress</generator>
 
   
   <entry>
     <title type="html"><![CDATA[Vulnerabilidade no Firefox - Descobrindo Senhas Salvas]]></title>
-    <link href="http://kalib.github.io/blog/2013/12/27/vulnerabilidade-no-firefox-descobrindo-senhas-salvas/"/>
+    <link href="https://kalib.github.io/blog/2013/12/27/vulnerabilidade-no-firefox-descobrindo-senhas-salvas/"/>
     <updated>2013-12-27T08:40:00-05:00</updated>
-    <id>http://kalib.github.io/blog/2013/12/27/vulnerabilidade-no-firefox-descobrindo-senhas-salvas</id>
+    <id>https://kalib.github.io/blog/2013/12/27/vulnerabilidade-no-firefox-descobrindo-senhas-salvas</id>
     <content type="html"><![CDATA[<p><img class="left" src="/imgs/firefox_pass.png" title="&lsquo;Firefox Peaces&rsquo;" >
 <strong>U</strong>ma coisa é certa&hellip; usuários teimam em salvar senhas em navegadores para <em>facilitar</em> suas vidas durante a navegação na internet. Seja em emails, redes sociais, serviços online ou qualquer outra coisa, a opção <em>Salvar sua senha</em> parece possuir um enorme magnetismo ou um centro gravitacional extremamente denso a ponto de atrair o usuário para tal.</p>
 
@@ -74,9 +74,9 @@
   
   <entry>
     <title type="html"><![CDATA[Ajude o Firefox a estabelecer um recorde mundial]]></title>
-    <link href="http://kalib.github.io/blog/2008/05/31/ajude-o-firefox-a-estabelecer-um-recorde-mundial/"/>
+    <link href="https://kalib.github.io/blog/2008/05/31/ajude-o-firefox-a-estabelecer-um-recorde-mundial/"/>
     <updated>2008-05-31T07:41:00-04:00</updated>
-    <id>http://kalib.github.io/blog/2008/05/31/ajude-o-firefox-a-estabelecer-um-recorde-mundial</id>
+    <id>https://kalib.github.io/blog/2008/05/31/ajude-o-firefox-a-estabelecer-um-recorde-mundial</id>
     <content type="html"><![CDATA[<h3></h3>
 
 <p>&ldquo;Queremos estabelecer um Recorde Mundial no Guinness para o software mais baixado em 24 horas e com a sua ajuda temos certeza de que conseguiremos!&rdquo;</p>
@@ -91,7 +91,7 @@
 
 <p>Para participar é muito simples, bastando apenas clicar no link a seguir, na raposa do início do post ou mesmo no baner que disponibilizei no topo do site.</p>
 
-<p>Link do projeto: <a href="http://www.spreadfirefox.com/pt-BR/worldrecord">http://www.spreadfirefo</a><a href="http://www.spreadfirefox.com/pt-BR/worldrecord">x.com/pt-BR/worldrecord</a></p>
+<p>Link do projeto: <a href="https://www.spreadfirefox.com/pt-BR/worldrecord">https://www.spreadfirefo</a><a href="https://www.spreadfirefox.com/pt-BR/worldrecord">x.com/pt-BR/worldrecord</a></p>
 
 <p>[]&rsquo;s</p>
 ]]></content>
@@ -99,9 +99,9 @@
   
   <entry>
     <title type="html"><![CDATA[Configurando a JRE para funcionar no *buntu 8.04 com firefox 3 / Configuring JRE on *buntu 8.04 to work with Firefox 3.0]]></title>
-    <link href="http://kalib.github.io/blog/2008/05/07/configurando-a-jre-para-funcionar-no-buntu-804-com-firefox-3-configuring-jre-on-buntu-804-to-work-with-firefox-30/"/>
+    <link href="https://kalib.github.io/blog/2008/05/07/configurando-a-jre-para-funcionar-no-buntu-804-com-firefox-3-configuring-jre-on-buntu-804-to-work-with-firefox-30/"/>
     <updated>2008-05-07T12:14:00-04:00</updated>
-    <id>http://kalib.github.io/blog/2008/05/07/configurando-a-jre-para-funcionar-no-buntu-804-com-firefox-3-configuring-jre-on-buntu-804-to-work-with-firefox-30</id>
+    <id>https://kalib.github.io/blog/2008/05/07/configurando-a-jre-para-funcionar-no-buntu-804-com-firefox-3-configuring-jre-on-buntu-804-to-work-with-firefox-30</id>
     <content type="html"><![CDATA[<h3></h3>
 
 <p>Versão em Português BR / Portuguese Version</p>

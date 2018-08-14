@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
+<feed xmlns="https://www.w3.org/2005/Atom">
 
   <title><![CDATA[Marcelo Cavalcante Rocha ~]]></title>
-  <link href="http://kalib.github.io/atom.xml" rel="self"/>
-  <link href="http://kalib.github.io/"/>
-  <updated>2018-08-11T22:38:27-04:00</updated>
-  <id>http://kalib.github.io/</id>
+  <link href="https://kalib.github.io/atom.xml" rel="self"/>
+  <link href="https://kalib.github.io/"/>
+  <updated>2018-08-13T20:11:15-04:00</updated>
+  <id>https://kalib.github.io/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
     
   </author>
-  <generator uri="http://octopress.org/">Octopress</generator>
+  <generator uri="https://octopress.org/">Octopress</generator>
 
   
   <entry>
     <title type="html"><![CDATA[Criando uma Imagem AWS EC2 com Packer e Puppet]]></title>
-    <link href="http://kalib.github.io/blog/2018/08/11/criando-uma-imagem-aws-ec2-com-packer-e-puppet/"/>
+    <link href="https://kalib.github.io/blog/2018/08/11/criando-uma-imagem-aws-ec2-com-packer-e-puppet/"/>
     <updated>2018-08-11T09:12:00-04:00</updated>
-    <id>http://kalib.github.io/blog/2018/08/11/criando-uma-imagem-aws-ec2-com-packer-e-puppet</id>
-    <content type="html"><![CDATA[<p><img class="center" src="http://kalib.github.io/imgs/packer_puppet_aws_bash.png" title="'Packer_Puppet_Bash_AWS'" ></p>
+    <id>https://kalib.github.io/blog/2018/08/11/criando-uma-imagem-aws-ec2-com-packer-e-puppet</id>
+    <content type="html"><![CDATA[<p><img class="center" src="https://kalib.github.io/imgs/packer_puppet_aws_bash.png" title="'Packer_Puppet_Bash_AWS'" ></p>
 
 <h2>Packer, Puppet, Bash e AWS</h2>
 
@@ -28,13 +28,13 @@
 
 <p><strong>U</strong>ma vez que eu identifico uma necessidade para minha aplicação e sei que preciso de uma máquina virtual com configurações e aplicações específicas para poder rodar minha aplicação, eu posso criar uma imagem com todos estes pré-requisitos de forma que ao resolver criar uma nova VM, eu não precise realizar todos estes passos manualmente. Além de evitar trabalho repetitivo, nos garante uma maior flexibilidade ao ter nossa infraestrutura como código, de forma que podemos literalmente ter as instruções que compõem nossa infraestrutura em um repositório Git, por exemplo, além de nos permitir realizar alterações nesta imagem também de forma simples e rápida para a geração de novas imagens de instâncias com as nossas alterações em poucos segundos ou minutos, dependendo da quantidade de alterações envolvdidas.</p>
 
-<p><strong>S</strong>e você ainda não faz ideia de o que seja o Packer ou o que ele é capaz de fazer, sugiro que volte uma casa e leia meu <a href="http://blog.marcelocavalcante.net/blog/2018/07/30/automatizando-a-criacao-de-imagens-com-packer/">post anterior</a>, onde explico o que é o Packer e apresento um simples exemplo de seu uso para a criação de imagens para o Docker.</p>
+<p><strong>S</strong>e você ainda não faz ideia de o que seja o Packer ou o que ele é capaz de fazer, sugiro que volte uma casa e leia meu <a href="https://blog.marcelocavalcante.net/blog/2018/07/30/automatizando-a-criacao-de-imagens-com-packer/">post anterior</a>, onde explico o que é o Packer e apresento um simples exemplo de seu uso para a criação de imagens para o Docker.</p>
 
 <p><strong>O</strong> intuito deste post é mostrar como podemos estruturar um simples código para que possamos criar uma imagem no AWS que poderá ser utilizada posteriormente para a criação de instâncias. Esta imagem será criada através do Packer e, para incrementar ainda mais nossa imagem, utilizaremos o recurso de provisioners (ou provisionadores/provedores) disponível no Packer. Utilizaremos dois provisioners como recursos externos para o provisionamento e configuração de nossa imagem, sendo eles bash script e <a href="https://puppet.com/">Puppet</a>.</p>
 
 <h2>AWS</h2>
 
-<p><strong>U</strong>ma vez que estou assumindo que você já possui o Packer instalado, bem como que você já possui uma ideia de como ele funciona, vamos iniciar pelo AWS. (Ainda não possui o Packer e não sabe o que ele faz? Novamente, <a href="http://blog.marcelocavalcante.net/blog/2018/07/30/automatizando-a-criacao-de-imagens-com-packer/">volte uma casa</a>.)</p>
+<p><strong>U</strong>ma vez que estou assumindo que você já possui o Packer instalado, bem como que você já possui uma ideia de como ele funciona, vamos iniciar pelo AWS. (Ainda não possui o Packer e não sabe o que ele faz? Novamente, <a href="https://blog.marcelocavalcante.net/blog/2018/07/30/automatizando-a-criacao-de-imagens-com-packer/">volte uma casa</a>.)</p>
 
 <p><strong>O</strong> primeiro pré-requisito para este post/tutorial é uma conta no AWS. Caso você não possua uma e queira repetir os passos aqui descritos, siga e crie uma. Lembrando que o AWS lhe dá uma série de recursos que podem ser utilizados gratuitamente no que eles chamam de &ldquo;Free Tier&rdquo;. Uma vez que utilizaremos apenas recursos simples aqui, você não deverá ser cobrado por nada ao seguir os exemplos deste post. O ideal é que você exclua os recursos ou encerre sua conta após o término deste exercício para evitar ser cobrado por algo. Caso não o faça e resolva continuar testando algumas coisas no AWS, você pode ser cobrado em alguns centavos ou reais, dependendo de o que resolva testar e por quanto. (Sua responsabilidade, claro.)</p>
 
@@ -44,7 +44,7 @@
 
 <p><strong>C</strong>lique na opção Access Keys, ou Chaves de Acesso, e crie uma nova. <strong>É extremamente importante</strong> que você esteja atento neste momento, pois ele apenas lhe mostrará o ID e senha para a chave uma única vez, portanto esteja pronto para copiar e salvar ambos os valores. Será algo similar a isto:</p>
 
-<p><img class="center" src="http://kalib.github.io/imgs/aws_key.png" title="'AWS Key'" ></p>
+<p><img class="center" src="https://kalib.github.io/imgs/aws_key.png" title="'AWS Key'" ></p>
 
 <p><strong>É</strong> claro que eu já excluí essa chave&hellip; :p Não perca seu tempo&hellip; >]</p>
 
@@ -92,7 +92,7 @@
 
 <p><strong>H</strong>ora de começarmos a escrever nosso código que será utilizado pelo Packer para a criação de nossa imagem.</p>
 
-<p><strong>D</strong>esta vez estaremos criando uma imagem EC2 para o AWS, portanto alguns provisioners e parâmetros serão diferentes dos utilizados no <a href="http://blog.marcelocavalcante.net/blog/2018/07/30/automatizando-a-criacao-de-imagens-com-packer/">post anterior</a>, onde criamos uma imagem para o Docker.</p>
+<p><strong>D</strong>esta vez estaremos criando uma imagem EC2 para o AWS, portanto alguns provisioners e parâmetros serão diferentes dos utilizados no <a href="https://blog.marcelocavalcante.net/blog/2018/07/30/automatizando-a-criacao-de-imagens-com-packer/">post anterior</a>, onde criamos uma imagem para o Docker.</p>
 
 <p><strong>C</strong>omecemos criando um arquivo json vazio. Chamarei meu arquivo de <em>ubuntuaws.json</em>.</p>
 
@@ -208,7 +208,7 @@
 
 <p><em>owners:</em> Indicamos o dono da imagem. Na página do AWS, cada imagem é vinculada a um dono, conforme imagem abaixo:</p>
 
-<p><img class="center" src="http://kalib.github.io/imgs/aws_ubuntu_ami.png" title="'AWS Ubuntu AMI'" ></p>
+<p><img class="center" src="https://kalib.github.io/imgs/aws_ubuntu_ami.png" title="'AWS Ubuntu AMI'" ></p>
 
 <p><em>most_recent:</em> Este é o parâmetro que, quando definido como <em>true</em>, fará com que seja utilizada a imagem mais recente que atenda aos demais filtros utilizados para a imagem.</p>
 
@@ -304,11 +304,11 @@
 
 <p><strong>V</strong>erificando em minha interface de instâncias da região que escolhi (us-east-1) posso ver que existe uma instância que foi criada mas que já foi terminada ou deletada. Esta é a instância que o Packer criou automaticamente para dar início à criação de nossa imagem:</p>
 
-<p><img class="center" src="http://kalib.github.io/imgs/packer_aws_instance1.png" title="'Packer Instance'" ></p>
+<p><img class="center" src="https://kalib.github.io/imgs/packer_aws_instance1.png" title="'Packer Instance'" ></p>
 
 <p><strong>D</strong>a mesma forma, se formos na interface de imagens (AMI), veremos a nossa imagem recém criada:</p>
 
-<p><img class="center" src="http://kalib.github.io/imgs/packer_aws_image1.png" title="'Packer Image'" ></p>
+<p><img class="center" src="https://kalib.github.io/imgs/packer_aws_image1.png" title="'Packer Image'" ></p>
 
 <p><strong>D</strong>e certa forma não fizemos nada aqui, visto que utilizamos uma imagem base do Ubuntu com o Packer e salvamos uma nova imagem sem mudar absolutamente nada neste Ubuntu, portanto basicamente criamos apenas uma cópia da imagem original. Nada empolgante&hellip;</p>
 
@@ -533,8 +533,8 @@
 </span><span class='line'>######
 </span><span class='line'>
 </span><span class='line'>==&gt; amazon-ebs: Provisioning with shell script: ./setup.sh
-</span><span class='line'>    amazon-ebs: Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial InRelease
-</span><span class='line'>    amazon-ebs: Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-updates InRelease [109 kB]
+</span><span class='line'>    amazon-ebs: Hit:1 https://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial InRelease
+</span><span class='line'>    amazon-ebs: Get:2 https://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-updates InRelease [109 kB]
 </span><span class='line'>
 </span><span class='line'>######
 </span><span class='line'>---&gt;&gt;&gt; NESTE MOMENTO O COMANDO "SUDO APT-GET UPDATE" ESTÁ SENDO EXECUTADO &lt;&lt;&lt;---
@@ -552,8 +552,8 @@
 </span><span class='line'>amazon-ebs: 4 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 </span><span class='line'>amazon-ebs: Need to get 1,188 kB of archives.
 </span><span class='line'>amazon-ebs: After this operation, 76.8 kB of additional disk space will be used.
-</span><span class='line'>amazon-ebs: Get:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 gpgv amd64 1.4.20-1ubuntu3.3 [165 kB]
-</span><span class='line'>amazon-ebs: Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 gnupg amd64 1.4.20-1ubuntu3.3 [626 kB]
+</span><span class='line'>amazon-ebs: Get:1 https://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 gpgv amd64 1.4.20-1ubuntu3.3 [165 kB]
+</span><span class='line'>amazon-ebs: Get:2 https://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 gnupg amd64 1.4.20-1ubuntu3.3 [626 kB]
 </span><span class='line'>
 </span><span class='line'>...
 </span><span class='line'>...
@@ -581,7 +581,7 @@
 </span><span class='line'> amazon-ebs: 0 upgraded, 31 newly installed, 0 to remove and 0 not upgraded.
 </span><span class='line'> amazon-ebs: Need to get 8,267 kB of archives.
 </span><span class='line'> amazon-ebs: After this operation, 38.2 MB of additional disk space will be used.
-</span><span class='line'> amazon-ebs: Get:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 fonts-lato all 2.0-1 [2,693 kB]
+</span><span class='line'> amazon-ebs: Get:1 https://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 fonts-lato all 2.0-1 [2,693 kB]
 </span><span class='line'>...
 </span><span class='line'>...
 </span><span class='line'>
@@ -927,15 +927,15 @@
 
 <p>4- Ao selecionar a imagem, clique em Lançar/Launch, conforme imagem abaixo:</p>
 
-<p><img class="center" src="http://kalib.github.io/imgs/packer_aws_image2.png" title="'Packer Image'" ></p>
+<p><img class="center" src="https://kalib.github.io/imgs/packer_aws_image2.png" title="'Packer Image'" ></p>
 
 <p>5- Selecione o tipo de instância padrão que pode ser utilizada gratuitamente para este exemplo, <em>t2.micro</em>, em seguida clique em <em>Próximo/Next</em>, conforme imagem abaixo:</p>
 
-<p><img class="center" src="http://kalib.github.io/imgs/packer_aws_image3.png" title="'Packer Image'" ></p>
+<p><img class="center" src="https://kalib.github.io/imgs/packer_aws_image3.png" title="'Packer Image'" ></p>
 
 <p>6- Na tela seguinte, deixe tudo como está <strong>exceto</strong> a opção de <em>Atribuir Ip Público/Auto-Assign Public IP</em>. Ative esta opção, em seguida clique em <em>Próximo</em>, conforme imagem abaixo:</p>
 
-<p><img class="center" src="http://kalib.github.io/imgs/packer_aws_image4.png" title="'Packer Image'" ></p>
+<p><img class="center" src="https://kalib.github.io/imgs/packer_aws_image4.png" title="'Packer Image'" ></p>
 
 <p>7- Na tela seguinte, pode manter o padrão de 8GB de disco/storage e clicar em <em>Próximo</em>;</p>
 
@@ -943,7 +943,7 @@
 
 <p>9- Nas configurações de Grupo de Segurança/Security Group, pode manter o padrão, mas certifique-se de <strong>inserir mais uma regra de firewall</strong> para que possamos testar o servidor web. Por padrão o AWS já apresentará a porta 22 (SSH) aberta, portanto vamos abrir também a porta 80, conforme imagem abaixo. Em seguida, clique em Revisar e Lançar/Review and Launch;</p>
 
-<p><img class="center" src="http://kalib.github.io/imgs/packer_aws_image5.png" title="'Packer Image'" ></p>
+<p><img class="center" src="https://kalib.github.io/imgs/packer_aws_image5.png" title="'Packer Image'" ></p>
 
 <p>10- Em seguida, confirme novamente e clique em <em>Lançar/Launch</em>;</p>
 
@@ -953,11 +953,11 @@
 
 <p>13- Copie o IP público ou externo que o AWS atribuiu à sua instância conforme imagem abaixo:</p>
 
-<p><img class="center" src="http://kalib.github.io/imgs/packer_aws_image6.png" title="'Packer Image'" ></p>
+<p><img class="center" src="https://kalib.github.io/imgs/packer_aws_image6.png" title="'Packer Image'" ></p>
 
 <p>14- Agora cole o ip em qualquer browser e você deverá ver uma página default do apache que está rodando em seu novo servidor web:</p>
 
-<p><img class="center" src="http://kalib.github.io/imgs/packer_aws_image7.png" title="'Packer Image'" ></p>
+<p><img class="center" src="https://kalib.github.io/imgs/packer_aws_image7.png" title="'Packer Image'" ></p>
 
 <p><strong>F</strong>inalizado.</p>
 
@@ -977,10 +977,10 @@
   
   <entry>
     <title type="html"><![CDATA[Automatizando a Criação de Imagens com Packer]]></title>
-    <link href="http://kalib.github.io/blog/2018/07/30/automatizando-a-criacao-de-imagens-com-packer/"/>
+    <link href="https://kalib.github.io/blog/2018/07/30/automatizando-a-criacao-de-imagens-com-packer/"/>
     <updated>2018-07-30T07:15:00-04:00</updated>
-    <id>http://kalib.github.io/blog/2018/07/30/automatizando-a-criacao-de-imagens-com-packer</id>
-    <content type="html"><![CDATA[<p><img class="center" src="http://kalib.github.io/imgs/packer.png" title="'Packer'" ></p>
+    <id>https://kalib.github.io/blog/2018/07/30/automatizando-a-criacao-de-imagens-com-packer</id>
+    <content type="html"><![CDATA[<p><img class="center" src="https://kalib.github.io/imgs/packer.png" title="'Packer'" ></p>
 
 <h2>O que é Packer e qual sua importância</h2>
 
@@ -1382,8 +1382,8 @@
 </span><span class='line'>    docker: Run command: docker run -v /Users/kalib/.packer.d/tmp/packer-docker737353515:/packer-files -d -i -t ubuntu /bin/bash
 </span><span class='line'>    docker: Container ID: 097a85a796e0e928fbc82cd6618bd60e286b46dfadad20e823027fc2f93d25db
 </span><span class='line'>==&gt; docker: Provisioning with shell script: /var/folders/nn/njz4sd054fv_tvq30vh0zygh0000gp/T/packer-shell161880041
-</span><span class='line'>    docker: Get:1 http://archive.ubuntu.com/ubuntu bionic InRelease [242 kB]
-</span><span class='line'>    docker: Get:2 http://security.ubuntu.com/ubuntu bionic-security InRelease [83.2 kB]
+</span><span class='line'>    docker: Get:1 https://archive.ubuntu.com/ubuntu bionic InRelease [242 kB]
+</span><span class='line'>    docker: Get:2 https://security.ubuntu.com/ubuntu bionic-security InRelease [83.2 kB]
 </span><span class='line'>    ...
 </span><span class='line'>    ...
 </span><span class='line'>    docker: Reading state information...
@@ -1408,9 +1408,9 @@
 </span><span class='line'>docker: 0 upgraded, 35 newly installed, 0 to remove and 0 not upgraded.
 </span><span class='line'>docker: Need to get 16.1 MB of archives.
 </span><span class='line'>docker: After this operation, 58.8 MB of additional disk space will be used.
-</span><span class='line'>docker: Get:1 http://archive.ubuntu.com/ubuntu bionic/main amd64 multiarch-support amd64 2.27-3ubuntu1 [6916 B]
-</span><span class='line'>docker: Get:2 http://archive.ubuntu.com/ubuntu bionic/main amd64 libxau6 amd64 1:1.0.8-1 [8376 B]
-</span><span class='line'>docker: Get:3 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libjpeg-turbo8 amd64 1.5.2
+</span><span class='line'>docker: Get:1 https://archive.ubuntu.com/ubuntu bionic/main amd64 multiarch-support amd64 2.27-3ubuntu1 [6916 B]
+</span><span class='line'>docker: Get:2 https://archive.ubuntu.com/ubuntu bionic/main amd64 libxau6 amd64 1:1.0.8-1 [8376 B]
+</span><span class='line'>docker: Get:3 https://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libjpeg-turbo8 amd64 1.5.2
 </span><span class='line'>...
 </span><span class='line'>...
 </span><span class='line'>docker: Setting up nginx (1.14.0-0ubuntu1) ...
@@ -1468,7 +1468,7 @@
 
 <p><strong>T</strong>udo certo aqui também. Podemos ver nosso container rodando, o processo do nginx aparentemente rodando, bem como a porta 80 mapeada como esperado. Vamos abrir o browser em nosso host e acessar <em>localhost:80</em>&hellip;</p>
 
-<p><img class="center" src="http://kalib.github.io/imgs/packer_nginx.png" title="'Packer'" ></p>
+<p><img class="center" src="https://kalib.github.io/imgs/packer_nginx.png" title="'Packer'" ></p>
 
 <p><strong>P</strong>ronto, validamos a nossa imagem criando um container e confirmando que o nginx está de fato rodando como deveria.</p>
 
@@ -1478,10 +1478,10 @@
   
   <entry>
     <title type="html"><![CDATA[10 anos! :D]]></title>
-    <link href="http://kalib.github.io/blog/2018/04/16/10-anos-d/"/>
+    <link href="https://kalib.github.io/blog/2018/04/16/10-anos-d/"/>
     <updated>2018-04-16T00:41:00-04:00</updated>
-    <id>http://kalib.github.io/blog/2018/04/16/10-anos-d</id>
-    <content type="html"><![CDATA[<p><img src="http://kalib.github.io/imgs/birthday.gif" alt="10_Years_BIrthday" /></p>
+    <id>https://kalib.github.io/blog/2018/04/16/10-anos-d</id>
+    <content type="html"><![CDATA[<p><img src="https://kalib.github.io/imgs/birthday.gif" alt="10_Years_BIrthday" /></p>
 
 <p><strong>10 Anos de Blog! Tempo voa!</strong></p>
 ]]></content>
@@ -1489,15 +1489,15 @@
   
   <entry>
     <title type="html"><![CDATA[Chef: Uso de Condicionais not_if e only_if]]></title>
-    <link href="http://kalib.github.io/blog/2018/04/14/chef-uso-de-condicionais-not-if-e-only-if/"/>
+    <link href="https://kalib.github.io/blog/2018/04/14/chef-uso-de-condicionais-not-if-e-only-if/"/>
     <updated>2018-04-14T19:33:00-04:00</updated>
-    <id>http://kalib.github.io/blog/2018/04/14/chef-uso-de-condicionais-not-if-e-only-if</id>
-    <content type="html"><![CDATA[<p><img class="center" src="http://kalib.github.io/imgs/chef-logo2.png" title="'Chef'" ></p>
+    <id>https://kalib.github.io/blog/2018/04/14/chef-uso-de-condicionais-not-if-e-only-if</id>
+    <content type="html"><![CDATA[<p><img class="center" src="https://kalib.github.io/imgs/chef-logo2.png" title="'Chef'" ></p>
 
 <h2>Pare e volte uma casa</h2>
 
-<p><img class="center" src="http://kalib.github.io/imgs/volte1casa.jpeg" title="'Volte1Casa'" >
-<strong>S</strong>e você nunca utilizou ou sabe pouco sobre o <em>Chef</em> é importante que você pare aqui mesmo e volte uma casa. Sugiro que leia o post <a href="http://blog.marcelocavalcante.net/blog/2018/04/01/chef-aautomacao-e-gerenciamento-de-configuracao/">Chef: Automação e Gerenciamento de Configuração</a> antes de seguir este, uma vez que através dele você entenderá o que é, e como funciona o Chef, bem como sua instalação básica.</p>
+<p><img class="center" src="https://kalib.github.io/imgs/volte1casa.jpeg" title="'Volte1Casa'" >
+<strong>S</strong>e você nunca utilizou ou sabe pouco sobre o <em>Chef</em> é importante que você pare aqui mesmo e volte uma casa. Sugiro que leia o post <a href="https://blog.marcelocavalcante.net/blog/2018/04/01/chef-aautomacao-e-gerenciamento-de-configuracao/">Chef: Automação e Gerenciamento de Configuração</a> antes de seguir este, uma vez que através dele você entenderá o que é, e como funciona o Chef, bem como sua instalação básica.</p>
 
 <h2>Resources</h2>
 
@@ -1538,7 +1538,7 @@
 
 <h2>Mãos à obra</h2>
 
-<p><strong>P</strong>ara simplificar seguirei utilizando a recipe utilizada no post anterior. Não sabe o que é uma recipe? <code>-&gt;</code> Novamente, caso não entenda o que estou dizendo, volte uma casa e leia o <a href="http://blog.marcelocavalcante.net/blog/2018/04/01/chef-aautomacao-e-gerenciamento-de-configuracao/">post anterior</a>, no qual explico o que é uma recipe, bem como cada elemento da mesma, visto que a utilizaremos aqui.</p>
+<p><strong>P</strong>ara simplificar seguirei utilizando a recipe utilizada no post anterior. Não sabe o que é uma recipe? <code>-&gt;</code> Novamente, caso não entenda o que estou dizendo, volte uma casa e leia o <a href="https://blog.marcelocavalcante.net/blog/2018/04/01/chef-aautomacao-e-gerenciamento-de-configuracao/">post anterior</a>, no qual explico o que é uma recipe, bem como cada elemento da mesma, visto que a utilizaremos aqui.</p>
 
 <p><strong>N</strong>ossa recipe era a seguinte:</p>
 
@@ -2156,14 +2156,14 @@
   
   <entry>
     <title type="html"><![CDATA[Chef: Automação e Gerenciamento de Configuração]]></title>
-    <link href="http://kalib.github.io/blog/2018/04/01/chef-aautomacao-e-gerenciamento-de-configuracao/"/>
+    <link href="https://kalib.github.io/blog/2018/04/01/chef-aautomacao-e-gerenciamento-de-configuracao/"/>
     <updated>2018-04-01T11:22:00-04:00</updated>
-    <id>http://kalib.github.io/blog/2018/04/01/chef-aautomacao-e-gerenciamento-de-configuracao</id>
-    <content type="html"><![CDATA[<p><img class="center" src="http://kalib.github.io/imgs/cheflogo.png" title="'Chef'" ></p>
+    <id>https://kalib.github.io/blog/2018/04/01/chef-aautomacao-e-gerenciamento-de-configuracao</id>
+    <content type="html"><![CDATA[<p><img class="center" src="https://kalib.github.io/imgs/cheflogo.png" title="'Chef'" ></p>
 
 <h2>Uma coisa de cada vez</h2>
 
-<p><strong>C</strong>hef é uma popular ferramenta de Gerenciamento de Configurações criado pela empresa de mesmo nome, Chef. O <a href="https://www.chef.io">Chef</a> é desenvolvido em <a href="http://www.ruby-lang.org">Ruby</a> e <a href="https://www.erlang.org">Erlang</a>, e utiliza uma linguagem DSL (domain-specific language) em Ruby puro para escrever arquivos de configuração de sistemas chamados &ldquo;recipes&rdquo; (receitas).</p>
+<p><strong>C</strong>hef é uma popular ferramenta de Gerenciamento de Configurações criado pela empresa de mesmo nome, Chef. O <a href="https://www.chef.io">Chef</a> é desenvolvido em <a href="https://www.ruby-lang.org">Ruby</a> e <a href="https://www.erlang.org">Erlang</a>, e utiliza uma linguagem DSL (domain-specific language) em Ruby puro para escrever arquivos de configuração de sistemas chamados &ldquo;recipes&rdquo; (receitas).</p>
 
 <p><strong>A</strong>ntes de falarmos sobre o Chef é importante entender primeiramente o conceito e a utilidade de ferramentas de Gerenciamento de Configuração.</p>
 
@@ -2593,7 +2593,7 @@
 
 <p><strong>A</strong>lém disso, você pode testar seu novo servidor web diretamente em seu navegador. Caso esteja executando tudo em localhost, pode utilizar <em>localhost</em> como endereço. Caso contrário, pode utilizar o endereço ip da máquina em questão.</p>
 
-<p><img class="center" src="http://kalib.github.io/imgs/chef_httpd_default.png" title="'Chef'" ></p>
+<p><img class="center" src="https://kalib.github.io/imgs/chef_httpd_default.png" title="'Chef'" ></p>
 
 <p><strong>A</strong> página padrão do Apache não é algo que queremos, portanto vamos criar nosso próprio site (Hello World) para exemplificar melhor. Para isto editaremos novamente nossa recipe e incluiremos mais um resource, do tipo <em>file</em>, ou arquivo. O conteúdo de sua recipe deverá ficar assim:</p>
 
@@ -2723,7 +2723,7 @@
 
 <p><strong>T</strong>ambém podemos voltar em nosso navegador e atualizar a página para que vejamos o nosso Hello World ao invés da página padrão do Apache.</p>
 
-<p><img class="center" src="http://kalib.github.io/imgs/chef_httpd_hw.png" title="'Chef'" ></p>
+<p><img class="center" src="https://kalib.github.io/imgs/chef_httpd_hw.png" title="'Chef'" ></p>
 
 <h2>Vale a pena?</h2>
 
@@ -2832,10 +2832,10 @@
   
   <entry>
     <title type="html"><![CDATA[Conhecendo o Kubernetes - Clusters de Containers]]></title>
-    <link href="http://kalib.github.io/blog/2017/06/24/conhecendo-o-kubernetes-clusters-de-containers/"/>
+    <link href="https://kalib.github.io/blog/2017/06/24/conhecendo-o-kubernetes-clusters-de-containers/"/>
     <updated>2017-06-24T09:32:00-04:00</updated>
-    <id>http://kalib.github.io/blog/2017/06/24/conhecendo-o-kubernetes-clusters-de-containers</id>
-    <content type="html"><![CDATA[<p><img class="center" src="http://kalib.github.io/imgs/kubernetes_logo.png" title="'Kubernetes'" ></p>
+    <id>https://kalib.github.io/blog/2017/06/24/conhecendo-o-kubernetes-clusters-de-containers</id>
+    <content type="html"><![CDATA[<p><img class="center" src="https://kalib.github.io/imgs/kubernetes_logo.png" title="'Kubernetes'" ></p>
 
 <h2>O que é Kubernetes</h2>
 
@@ -2845,15 +2845,15 @@
 
 <p><strong>C</strong>omo objetivo primário o Kubernetes provê uma plataforma de automação para deployments, escalonamento e operações de containers de aplicações em um cluster de hosts ou nodes.</p>
 
-<p><strong>A</strong>ntes de seguir com a explicação, instalação e configuração do Kubernetes, estou supondo que você já possui algum conhecimento básico sobre o que sejam containers e tenha alguma familiaridade com o <a href="https://www.docker.com">Docker</a>. Caso não possua um entendimento básico sobre containers e Docker, sugiro que leia algo antes de seguir com este artigo. Possuo um post introdutório sobre containers com um exemplo básico e prático sobre como criar containers com Docker, bem como iniciar uma simples aplicação web &ndash;  <a href="http://kalib.github.io/blog/2015/08/20/docker-uma-alternativa-elegante-para-containers-no-linux/">aqui</a>.</p>
+<p><strong>A</strong>ntes de seguir com a explicação, instalação e configuração do Kubernetes, estou supondo que você já possui algum conhecimento básico sobre o que sejam containers e tenha alguma familiaridade com o <a href="https://www.docker.com">Docker</a>. Caso não possua um entendimento básico sobre containers e Docker, sugiro que leia algo antes de seguir com este artigo. Possuo um post introdutório sobre containers com um exemplo básico e prático sobre como criar containers com Docker, bem como iniciar uma simples aplicação web &ndash;  <a href="https://kalib.github.io/blog/2015/08/20/docker-uma-alternativa-elegante-para-containers-no-linux/">aqui</a>.</p>
 
 <p><strong>O</strong> Kubernetes é formado por uma série de componentes ou blocos que, quando utilizados coletivamente, fornecem um método de deployment, manutenção e escalonamento de clusters de aplicações baseadas em containers. Estes componentes, ou primitives como o Kubernetes os chama, foram desenvolvidos com o intuito de serem independentes, de forma que quase não se faz necessário ter conhecimento entre si para que possam funcionar e trabalhar juntos, visto que todos se comunicam e interligam através de uma API, sejam componentes internos do Kubernetes ou mesmo extensões e containers.</p>
 
-<p><strong>E</strong>mbora tenha sido inicialmente desenvolvido para o deployment e utilização de <strong>bilhões de containers</strong> internamente no Google, desde que seu código passou a ser distribuído abertamente com a licença <a href="http://commons.apache.org/proper/commons-daemon/license.html">Apache Commons</a> o Kubernetes tem sido adotado formalmente por praticamente todos os grandes provedores de serviços em nuvem.</p>
+<p><strong>E</strong>mbora tenha sido inicialmente desenvolvido para o deployment e utilização de <strong>bilhões de containers</strong> internamente no Google, desde que seu código passou a ser distribuído abertamente com a licença <a href="https://commons.apache.org/proper/commons-daemon/license.html">Apache Commons</a> o Kubernetes tem sido adotado formalmente por praticamente todos os grandes provedores de serviços em nuvem.</p>
 
 <h2>Arquitetura do Kubernetes</h2>
 
-<p><img class="center" src="http://kalib.github.io/imgs/kubernetes_architecture.png" title="'Kubernetes Architecture'" ></p>
+<p><img class="center" src="https://kalib.github.io/imgs/kubernetes_architecture.png" title="'Kubernetes Architecture'" ></p>
 
 <p><strong>D</strong>entre os principais componentes do Kubernetes, vamos destacar os seguintes:</p>
 
@@ -2990,7 +2990,7 @@
 <p><strong>P</strong>rimeiramente, vamos configurar o repositório do Docker para o CentOS 7:</p>
 
 <ul>
-<li>Configurações de repositório retiradas dos repositórios CBS do Centos: <a href="http://cbs.centos.org/repos/virt7-docker-common-release/">http://cbs.centos.org/repos/virt7-docker-common-release/</a></li>
+<li>Configurações de repositório retiradas dos repositórios CBS do Centos: <a href="https://cbs.centos.org/repos/virt7-docker-common-release/">https://cbs.centos.org/repos/virt7-docker-common-release/</a></li>
 </ul>
 
 
@@ -3008,7 +3008,7 @@
 <span class='line-number'>4</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>[virt7-docker-common-release]
 </span><span class='line'>name=virt7-docker-common-release
-</span><span class='line'>baseurl=http://cbs.centos.org/repos/virt7-docker-common-release/x86_64/os/
+</span><span class='line'>baseurl=https://cbs.centos.org/repos/virt7-docker-common-release/x86_64/os/
 </span><span class='line'>gpgcheck=0</span></code></pre></td></tr></table></div></figure>
 
 
@@ -3040,16 +3040,16 @@
 
 <p><strong>N</strong>o arquivo config altere as seguintes linhas:</p>
 
-<p><em>Edite o valor do parâmetro KUBE_MASTER, de forma que nosso master possa ser encontrado pelo nome que definimos no hosts file. O valor original é &ldquo;&mdash;master=<a href="http://127.0.0.1:8080">http://127.0.0.1:8080</a>&rdquo;, portanto mudaremos para o seguinte:</em></p>
+<p><em>Edite o valor do parâmetro KUBE_MASTER, de forma que nosso master possa ser encontrado pelo nome que definimos no hosts file. O valor original é &ldquo;&mdash;master=<a href="https://127.0.0.1:8080">https://127.0.0.1:8080</a>&rdquo;, portanto mudaremos para o seguinte:</em></p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>KUBE_MASTER="--master=http://centos-master:8080"</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class=''><span class='line'>KUBE_MASTER="--master=https://centos-master:8080"</span></code></pre></td></tr></table></div></figure>
 
 
 <p><strong>A</strong>inda neste arquivo de configuração, vamos inserir a configuração do serviço ETCD, portanto inclua a seguinte linha ao final do arquivo:</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>KUBE_ETCD_SERVERS="--etcd-servers=http://centos-master:2379"</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class=''><span class='line'>KUBE_ETCD_SERVERS="--etcd-servers=https://centos-master:2379"</span></code></pre></td></tr></table></div></figure>
 
 
 <p><strong>S</strong>eu arquivo de configuração deverá estar similar a este:</p>
@@ -3099,9 +3099,9 @@
 </span><span class='line'>KUBE_ALLOW_PRIV="--allow-privileged=false"
 </span><span class='line'>
 </span><span class='line'># How the controller-manager, scheduler, and proxy find the apiserver
-</span><span class='line'>KUBE_MASTER="--master=http://centos-master:8080"
+</span><span class='line'>KUBE_MASTER="--master=https://centos-master:8080"
 </span><span class='line'>
-</span><span class='line'>KUBE_ETCD_SERVERS="--etcd-servers=http://centos-master:2379"</span></code></pre></td></tr></table></div></figure>
+</span><span class='line'>KUBE_ETCD_SERVERS="--etcd-servers=https://centos-master:2379"</span></code></pre></td></tr></table></div></figure>
 
 
 <p><strong>R</strong>epita esta mesma configuração nos 4 hosts. Todos eles devem utilizar exatamente os mesmos valores utilizados aqui, apontando KUBE_MASTER e KUBE_ETCD_SERVERS para centos-master, visto que este será o responsável por gerenciar todos os nossos minions.</p>
@@ -3184,7 +3184,7 @@
 </span><span class='line'>KUBELET_PORT="--kubelet-port=10250"
 </span><span class='line'>
 </span><span class='line'># Comma separated list of nodes in the etcd cluster
-</span><span class='line'>KUBE_ETCD_SERVERS="--etcd-servers=http://127.0.0.1:2379"
+</span><span class='line'>KUBE_ETCD_SERVERS="--etcd-servers=https://127.0.0.1:2379"
 </span><span class='line'>
 </span><span class='line'># Address range to use for services
 </span><span class='line'>KUBE_SERVICE_ADDRESSES="--service-cluster-ip-range=10.254.0.0/16"
@@ -3210,10 +3210,10 @@
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>ETCD_LISTEN_CLIENT_URLS="http://0.0.0.0:2379"
+</pre></td><td class='code'><pre><code class=''><span class='line'>ETCD_LISTEN_CLIENT_URLS="https://0.0.0.0:2379"
 </span><span class='line'>...
 </span><span class='line'>...
-</span><span class='line'>ETCD_ADVERTISE_CLIENT_URLS="http://0.0.0.0:2379"</span></code></pre></td></tr></table></div></figure>
+</span><span class='line'>ETCD_ADVERTISE_CLIENT_URLS="https://0.0.0.0:2379"</span></code></pre></td></tr></table></div></figure>
 
 
 <p><strong>N</strong>ovamente, não é necessário alterar a configuração do etcd nos demais hosts, apenas no Master.</p>
@@ -3283,7 +3283,7 @@
 <p><em>Vamos também alterar o valor para KUBELET_API_SERVER, apontando para o nosso Master:</em></p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>KUBELET_API_SERVER="--api-servers=http://centos-master:8080"</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class=''><span class='line'>KUBELET_API_SERVER="--api-servers=https://centos-master:8080"</span></code></pre></td></tr></table></div></figure>
 
 
 <p><em>Vamos comentar a linha KUBELET_POD_INFRA_CONTAINER, visto que não utilizaremos uma infraestrutura de containers externa, pois estaremos utilizando nossos próprios PODs e containers:</em></p>
@@ -3329,7 +3329,7 @@
 </span><span class='line'>KUBELET_HOSTNAME="--hostname-override=centos-minion1"
 </span><span class='line'>
 </span><span class='line'># location of the api-server
-</span><span class='line'>KUBELET_API_SERVER="--api-servers=http://centos-master:8080"
+</span><span class='line'>KUBELET_API_SERVER="--api-servers=https://centos-master:8080"
 </span><span class='line'>
 </span><span class='line'># pod infrastructure container
 </span><span class='line'>#KUBELET_POD_INFRA_CONTAINER="--pod-infra-container-image=registry.access.redhat.com/rhel7/pod-infrastructure:latest"
@@ -3633,7 +3633,7 @@
 </span><span class='line'>CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES</span></code></pre></td></tr></table></div></figure>
 
 
-<p><em>Novamente: Se você não faz ideia do que acabei de digitar, (docker ps) volte e leia um pouco sobre <a href="http://kalib.github.io/blog/2015/08/20/docker-uma-alternativa-elegante-para-containers-no-linux/">Docker</a> antes de seguir com este artigo.</em></p>
+<p><em>Novamente: Se você não faz ideia do que acabei de digitar, (docker ps) volte e leia um pouco sobre <a href="https://kalib.github.io/blog/2015/08/20/docker-uma-alternativa-elegante-para-containers-no-linux/">Docker</a> antes de seguir com este artigo.</em></p>
 
 <p><strong>C</strong>omo podemos ver, não temos nenhum Pod, bem como nenhum container rodando em nossos nodes.</p>
 
@@ -3765,12 +3765,12 @@
   
   <entry>
     <title type="html"><![CDATA[Recebendo Alarmes do AWS Diretamente no Slack]]></title>
-    <link href="http://kalib.github.io/blog/2017/03/11/recebendo-alarmes-do-aws-diretamente-no-slack/"/>
+    <link href="https://kalib.github.io/blog/2017/03/11/recebendo-alarmes-do-aws-diretamente-no-slack/"/>
     <updated>2017-03-11T12:03:00-05:00</updated>
-    <id>http://kalib.github.io/blog/2017/03/11/recebendo-alarmes-do-aws-diretamente-no-slack</id>
-    <content type="html"><![CDATA[<p><img class="center" src="http://kalib.github.io/imgs/aws_slack.png" title="'AWS_Slack'" ></p>
+    <id>https://kalib.github.io/blog/2017/03/11/recebendo-alarmes-do-aws-diretamente-no-slack</id>
+    <content type="html"><![CDATA[<p><img class="center" src="https://kalib.github.io/imgs/aws_slack.png" title="'AWS_Slack'" ></p>
 
-<p><strong>A</strong>ntes de entrar na configuração dos serviços, talvez seja necessário apresentar o <a href="http://www.slack.com">Slack</a>, visto que muitos ainda não conhecem ou utilizam esta poderosa e versátil ferramenta de comunicação instantânea para times.</p>
+<p><strong>A</strong>ntes de entrar na configuração dos serviços, talvez seja necessário apresentar o <a href="https://www.slack.com">Slack</a>, visto que muitos ainda não conhecem ou utilizam esta poderosa e versátil ferramenta de comunicação instantânea para times.</p>
 
 <p><strong>S</strong>lack é uma plataforma para comunicação entre times que desejam um ambiente mais dinâmico e ágil. Diferentemente de muitas plataformas de chat disponíveis, como o Google Hangouts, o Slack nos permite criar canais distintos com membros distintos de um mesmo time fazendo parte daquele canal específico. Não, não estou falando de chat em grupo, mas sim canais específicos que permitem integrações com serviços distintos, como receber notificações sobre commits feitos em um repositório ou branch específico no github, notificações de tickets abertos em ferramentas como o Jira, por exemplo, etc. O Slack é completamente programável e escalável, o que nos permite ter inúmeras funcionalidas.</p>
 
@@ -3823,7 +3823,7 @@
 
 <p><strong>P</strong>esquise por Incoming WebHooks e você terá apenas um resultado, portanto clique sem medo.</p>
 
-<p><img class="center" src="http://kalib.github.io/imgs/slack1.png" title="'Incoming WebHook'" ></p>
+<p><img class="center" src="https://kalib.github.io/imgs/slack1.png" title="'Incoming WebHook'" ></p>
 
 <p><strong>C</strong>lique no pequeno lápis que se encontrará no canto direito para editar as configurações do Incoming WebHook. Os únicos campos que precisaremos editar neste momento são os seguintes:
   * Post to Channel &ndash; Aqui indicarei o meu canal: #devops
@@ -4189,7 +4189,7 @@ Clique em <strong>Next</strong>, reveja suas configurações e clique em <strong
 
 <p>O resultado em seu Slack será algo assim&hellip;</p>
 
-<p><img class="center" src="http://kalib.github.io/imgs/slack2.png" title="'Notification_Slack'" ></p>
+<p><img class="center" src="https://kalib.github.io/imgs/slack2.png" title="'Notification_Slack'" ></p>
 
 <p><strong>P</strong>arabéns, você já está recebendo suas notificações via Slack. Basta criar outros alarmes no AWS utilizando a mesma Lambda Function e o mesmo SNS Topic.</p>
 
@@ -4199,10 +4199,10 @@ Clique em <strong>Next</strong>, reveja suas configurações e clique em <strong
   
   <entry>
     <title type="html"><![CDATA[Docker - Uma alternativa elegante para containers no Linux]]></title>
-    <link href="http://kalib.github.io/blog/2015/08/20/docker-uma-alternativa-elegante-para-containers-no-linux/"/>
+    <link href="https://kalib.github.io/blog/2015/08/20/docker-uma-alternativa-elegante-para-containers-no-linux/"/>
     <updated>2015-08-20T11:01:00-04:00</updated>
-    <id>http://kalib.github.io/blog/2015/08/20/docker-uma-alternativa-elegante-para-containers-no-linux</id>
-    <content type="html"><![CDATA[<p><img class="center" src="http://kalib.github.io/imgs/dockerlogo.png" title="'Docker'" ></p>
+    <id>https://kalib.github.io/blog/2015/08/20/docker-uma-alternativa-elegante-para-containers-no-linux</id>
+    <content type="html"><![CDATA[<p><img class="center" src="https://kalib.github.io/imgs/dockerlogo.png" title="'Docker'" ></p>
 
 <p><strong>A</strong>ntes de falar sobre o Docker, é importante que se entenda o conceito de um container, portanto vamos começar do básico. A imagem acima, logomarca do Docker, deixa claro o que é um container. A baleia, representando um navio, carregando diversos caixotes ou containers ilustra o conceito físico de um container. Nada mais do que um enorme caixote que possui o intuito de isolar algo. Quando um grande navio transporta mercadorias de um porto para outro, ele costuma trazer diversos containers separando estas mercadorias, de forma que as coisas não fiquem misturadas e bagunçadas. A forma de separação vai depender dos critérios de organização utilizados pela embarcação, seja por proprietário, seja por categoria de produtos, etc. De qualquer forma, embora cada container possua seus elementos próprios, todos os containers compartilham alguns recursos básicos, como por exemplo a embarcação, que é o meio de transporte para todos os containers ali contidos.</p>
 
@@ -4214,13 +4214,13 @@ Clique em <strong>Next</strong>, reveja suas configurações e clique em <strong
 
 <p><strong>D</strong>izem que uma imagem vale mais que mil palavras&hellip;</p>
 
-<p><img class="center" src="http://kalib.github.io/imgs/docker_vmdiagram.png" title="'Virtual Machine Diagram'" ></p>
+<p><img class="center" src="https://kalib.github.io/imgs/docker_vmdiagram.png" title="'Virtual Machine Diagram'" ></p>
 
 <p><strong>N</strong>a imagem acima temos o cenário convencional com a utilização de <strong>Máquinas Virtuais</strong>. Em suma, temos um host físico, com seu respectivo SO e kernel. Acima deles temos a camada de virtualização ou HyperVisor, enquanto que acima desta teremos as máquinas virtuais, com seus respectivos SOs (cada um com seu kernel) instalados. No caso temos 3 VMs, com 3 SOs (cada um com seu kernel). Na camada acima encontramos o que realmente é necessário para o app do cliente funcionar, que são as bibliotecas e os binários. Por fim, o App do cliente em si.</p>
 
 <p><strong>V</strong>ejamos como fica o cenário com a utilização de containers, docker neste caso&hellip;</p>
 
-<p><img class="center" src="http://kalib.github.io/imgs/docker_diagram.png" title="'Docker Diagram'" ></p>
+<p><img class="center" src="https://kalib.github.io/imgs/docker_diagram.png" title="'Docker Diagram'" ></p>
 
 <p><strong>N</strong>o cenário com o Docker percebemos que a camada de SO das VMs sumiu, visto que ela não é mais necessária. Ao invés de Máquinas Virtuais, agora nós temos 3 containers, onde cada container roda os binários e bibliotecas de um SO, porém se aproveitando do kernel já existente no Host.</p>
 
@@ -4465,10 +4465,10 @@ Clique em <strong>Next</strong>, reveja suas configurações e clique em <strong
 <span class='line-number'>27</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'> root@08abb8611700:/# apt-get update && apt-get install -y nginx
 </span><span class='line'>
-</span><span class='line'> Ign http://archive.ubuntu.com vivid InRelease
-</span><span class='line'> Ign http://archive.ubuntu.com vivid-updates InRelease
-</span><span class='line'> Get:1 http://archive.ubuntu.com vivid/main Sources [1358 kB]
-</span><span class='line'> Get:2 http://archive.ubuntu.com vivid/restricted Sources [7100 B]
+</span><span class='line'> Ign https://archive.ubuntu.com vivid InRelease
+</span><span class='line'> Ign https://archive.ubuntu.com vivid-updates InRelease
+</span><span class='line'> Get:1 https://archive.ubuntu.com vivid/main Sources [1358 kB]
+</span><span class='line'> Get:2 https://archive.ubuntu.com vivid/restricted Sources [7100 B]
 </span><span class='line'> ...
 </span><span class='line'> Building dependency tree       
 </span><span class='line'> Reading state information... Done
@@ -4486,7 +4486,7 @@ Clique em <strong>Next</strong>, reveja suas configurações e clique em <strong
 </span><span class='line'> Need to get 14.0 MB of archives.
 </span><span class='line'> After this operation, 53.3 MB of additional disk space will be used.
 </span><span class='line'> ...
-</span><span class='line'> Get:1 http://archive.ubuntu.com/ubuntu/ vivid/main libexpat1 amd64 2.1.0-6ubuntu1 [70.6 kB]
+</span><span class='line'> Get:1 https://archive.ubuntu.com/ubuntu/ vivid/main libexpat1 amd64 2.1.0-6ubuntu1 [70.6 kB]
 </span><span class='line'> Processing triggers for systemd (219-7ubuntu6) ...
 </span><span class='line'>
 </span><span class='line'> root@08abb8611700:/#</span></code></pre></td></tr></table></div></figure>
@@ -4532,7 +4532,7 @@ Clique em <strong>Next</strong>, reveja suas configurações e clique em <strong
 
 <p><strong>R</strong>esultado? O Nginx em nosso container rodando perfeitamente.</p>
 
-<p><img class="center" src="http://kalib.github.io/imgs/docker_nginx8080.png" title="'Nginx on Docker'" ></p>
+<p><img class="center" src="https://kalib.github.io/imgs/docker_nginx8080.png" title="'Nginx on Docker'" ></p>
 
 <p><strong>D</strong>a mesma forma feita anteriormente, podemos sair de nosso container com a combinação de teclas <strong>Ctrl + P + Q</strong> e verificar os processos/containers do docker em execução:</p>
 
@@ -4751,7 +4751,7 @@ Clique em <strong>Next</strong>, reveja suas configurações e clique em <strong
 
 <p><strong>A</strong>gora vou testar no navegador o nginx deste meu segundo container, o qual defini que utilizaria a porta 6660 do meu host:</p>
 
-<p><img class="center" src="http://kalib.github.io/imgs/docker_nginx6660_8080.png" title="'Nginx on Docker'" ></p>
+<p><img class="center" src="https://kalib.github.io/imgs/docker_nginx6660_8080.png" title="'Nginx on Docker'" ></p>
 
 <p><strong>R</strong>epare que acessei ambos os endereços, tanto o da porta 8080, o qual está apresentando o nginx do meu primeiro container, quanto o da porta 6660, que apresenta o nginx do meu segundo container. Ambos funcionando em paralelo, com ambientes distintos, sendo um Ubuntu e o outro Arch Linux, porém ambos compartilham o mesmo kernel, que é o do meu host.</p>
 
@@ -4863,10 +4863,10 @@ Clique em <strong>Next</strong>, reveja suas configurações e clique em <strong
   
   <entry>
     <title type="html"><![CDATA[Assista ao documentário sobre Aaron Swartz: O menino da internet]]></title>
-    <link href="http://kalib.github.io/blog/2014/08/03/assista-ao-documentario-sobre-aaron-swartz-o-menino-da-internet/"/>
+    <link href="https://kalib.github.io/blog/2014/08/03/assista-ao-documentario-sobre-aaron-swartz-o-menino-da-internet/"/>
     <updated>2014-08-03T07:19:00-04:00</updated>
-    <id>http://kalib.github.io/blog/2014/08/03/assista-ao-documentario-sobre-aaron-swartz-o-menino-da-internet</id>
-    <content type="html"><![CDATA[<p><img class="center" src="http://kalib.github.io/imgs/aaron-swartz-movie.jpg" title="'Aaron Swartz Movie'" >
+    <id>https://kalib.github.io/blog/2014/08/03/assista-ao-documentario-sobre-aaron-swartz-o-menino-da-internet</id>
+    <content type="html"><![CDATA[<p><img class="center" src="https://kalib.github.io/imgs/aaron-swartz-movie.jpg" title="'Aaron Swartz Movie'" >
 <code>
  Informação é poder. Mas, como todo poder, há aqueles que querem mantê-la para si mesmos. O patrimônio cultural e científico do mundo, publicado ao longo dos séculos em livros e revistas, está cada vez mais szendo digitalizado e trancado por um punhado de corporações privadas. Enquanto isso, aqueles que foram bloqueados não estão em pé de braços cruzados. Eles estão bisbilhotando em buracos e escalando cercas libertando as informações trancadas pelos editores e compartilhando com seus amigos. Mas toda essa ação acontece no escuro, escondida no subterrâneo. É chamado de roubo ou pirataria, como se compartilhar uma riqueza de conhecimentos fosse o equivalente  de saquear um navio e matar sua tripulação. Mas compartilhar não é imoral - é um imperativo moral. Só os cegos pela ganância se recusam a deixar um amigo fazer uma cópia. Não há justiça em seguir leis injustas. É hora de virmos para a luz e, na grande tradição de desobediência civil, declararmos a nossa oposição a este roubo privado da cultura pública.
 </code></p>
@@ -4877,7 +4877,7 @@ Clique em <strong>Next</strong>, reveja suas configurações e clique em <strong
 
 <p><strong>P</strong>ara quem ainda não sabe do que se trata, Aaron Swartz foi um dos criadores do RSS bem como do famoso site de notícias e debates Reddit.Após alguns anos lutando e enfrentando a justiça americana Aaron cometeu suicídio.</p>
 
-<p><img class="left" src="http://kalib.github.io/imgs/aaron_swartz.jpg" title="'Aaron Swartz'" ><strong>A</strong>aron estava sendo condenado a cerca de 50 anos de prisão, bem como a pagar um montante superior a U$ 4 milhões em multas por querer tornar públicos os artigos acadêmicos e científicos que eram mantidos na base do JSTOR, o qual vendia o acesso a estes artigos que, na visão de Aaron, deveriam ser de domínio e acesso público.</p>
+<p><img class="left" src="https://kalib.github.io/imgs/aaron_swartz.jpg" title="'Aaron Swartz'" ><strong>A</strong>aron estava sendo condenado a cerca de 50 anos de prisão, bem como a pagar um montante superior a U$ 4 milhões em multas por querer tornar públicos os artigos acadêmicos e científicos que eram mantidos na base do JSTOR, o qual vendia o acesso a estes artigos que, na visão de Aaron, deveriam ser de domínio e acesso público.</p>
 
 <p><strong>A</strong>aron sempre defendeu e lutou para que o conhecimento fosse de livre acesso a todos. Lutou tanto que acabou sendo covardemente perseguido e pressionado pelo governo americano, o que acabou por lhe deixar exausto, psicologicamente e financeiramente, ao ponto de ele desistir da luta ao invés de simplesmente &ldquo;assumir&rdquo; que estava errado e aceitar os &ldquo;acordos&rdquo; que lhe foram oferecidos pela justiça americana.</p>
 
@@ -4885,9 +4885,9 @@ Clique em <strong>Next</strong>, reveja suas configurações e clique em <strong
 
 <p><strong>P</strong>ara quem por algum motivo ainda não conhece o recurso de legendas ou caption do YoutTube, caso a legenda do filme não apareça automaticamente, basta clicar no botão de legendas/caption, habilitando-o, conforme apresentado na imagem abaixo:</p>
 
-<p><img class="center" src="http://kalib.github.io/imgs/youtube_captions.png" title="'Youtube Captions'" ></p>
+<p><img class="center" src="https://kalib.github.io/imgs/youtube_captions.png" title="'Youtube Captions'" ></p>
 
-<iframe width="560" height="315" src="http://kalib.github.io//www.youtube.com/embed/2uj1EeiuK5U" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://kalib.github.io//www.youtube.com/embed/2uj1EeiuK5U" frameborder="0" allowfullscreen></iframe>
 
 
 <p>Link para o vídeo: <a href="https://www.youtube.com/watch?v=2uj1EeiuK5U">https://www.youtube.com/watch?v=2uj1EeiuK5U</a></p>
@@ -4898,10 +4898,10 @@ Clique em <strong>Next</strong>, reveja suas configurações e clique em <strong
   
   <entry>
     <title type="html"><![CDATA[Alterando os parâmetros do kernel em tempo real com o Systcl]]></title>
-    <link href="http://kalib.github.io/blog/2014/02/13/alterando-os-parametros-do-kernel-em-tempo-real-com-o-systcl/"/>
+    <link href="https://kalib.github.io/blog/2014/02/13/alterando-os-parametros-do-kernel-em-tempo-real-com-o-systcl/"/>
     <updated>2014-02-13T22:02:00-05:00</updated>
-    <id>http://kalib.github.io/blog/2014/02/13/alterando-os-parametros-do-kernel-em-tempo-real-com-o-systcl</id>
-    <content type="html"><![CDATA[<p><img class="left" src="http://kalib.github.io/imgs/linux-kernel.jpg" title="'Linux Kernel'" >
+    <id>https://kalib.github.io/blog/2014/02/13/alterando-os-parametros-do-kernel-em-tempo-real-com-o-systcl</id>
+    <content type="html"><![CDATA[<p><img class="left" src="https://kalib.github.io/imgs/linux-kernel.jpg" title="'Linux Kernel'" >
 <strong>O</strong> <em>kernel</em>, em se tratando de sistemas operacionais, é o núcleo e componente mais importante da maioria dos computadores. Basicamente, serve de ponte entre os aplicativos e o processamento real de dados feito a nível de hardware. É ele o responsável por gerenciar os recursos do sistema, podendo oferecer uma camada de abstração de nível mais baixo para os recursos, como processadores e dispositivos de entrada/saída, que os softwares aplicativos devem controlar para realizar sua função. Com o GNU/Linux não é diferente. O núcleo Linux (Linux Kernel) forma a estrutura do sistema operacional GNU/Linux.</p>
 
 <p><strong>C</strong>omo é de se esperar, o kernel possui diversos parâmetros configurados que definirão as características do seu sistema, controle de dispositivos, módulos, drivers, etc. Por vezes faz-se necessário alterar algum parâmetro do kernel para alguma tarefa ou rotina específica, portanto que tal ganhar tempo e alterar um ou mais parâmetros do kernel <em>on the fly</em>?!</p>
@@ -5004,12 +5004,12 @@ Clique em <strong>Next</strong>, reveja suas configurações e clique em <strong
   
   <entry>
     <title type="html"><![CDATA[BlackArch Linux - Uma nova distribuição para Pentesters]]></title>
-    <link href="http://kalib.github.io/blog/2014/01/30/blackarch-linux-uma-nova-distribuicao-para-pentesters/"/>
+    <link href="https://kalib.github.io/blog/2014/01/30/blackarch-linux-uma-nova-distribuicao-para-pentesters/"/>
     <updated>2014-01-30T08:47:00-05:00</updated>
-    <id>http://kalib.github.io/blog/2014/01/30/blackarch-linux-uma-nova-distribuicao-para-pentesters</id>
-    <content type="html"><![CDATA[<p><img class="left" src="http://kalib.github.io/imgs/blackarch.jpg" title="'BlackArch'" ></p>
+    <id>https://kalib.github.io/blog/2014/01/30/blackarch-linux-uma-nova-distribuicao-para-pentesters</id>
+    <content type="html"><![CDATA[<p><img class="left" src="https://kalib.github.io/imgs/blackarch.jpg" title="'BlackArch'" ></p>
 
-<p><strong>U</strong>ma boa novidade para os profissionais de segurança: <a href="http://www.blackarch.org" target="_blank">BlackArch</a>! Para quem, assim como eu, gosta de como as coisas funcionam no Arch Linux essa é uma notícia particularmente boa, visto que o BlackArch não se trata realmente de uma nova distribuição, mas sim de uma <em>extensão</em> para o Arch Linux. Como assim? Bom, você possui duas opções para utilizar o BlackArch, sendo uma delas como uma distribuição completa, através de um Live CD, por exemplo, e a outra como uma extensão (um repositório de pacotes) para o Arch Linux, onde você poderá apenas inserir um repositório em sua já existente distribuição Arch Linux e ter acesso ao conjunto de ferramentas do BlackArch.</p>
+<p><strong>U</strong>ma boa novidade para os profissionais de segurança: <a href="https://www.blackarch.org" target="_blank">BlackArch</a>! Para quem, assim como eu, gosta de como as coisas funcionam no Arch Linux essa é uma notícia particularmente boa, visto que o BlackArch não se trata realmente de uma nova distribuição, mas sim de uma <em>extensão</em> para o Arch Linux. Como assim? Bom, você possui duas opções para utilizar o BlackArch, sendo uma delas como uma distribuição completa, através de um Live CD, por exemplo, e a outra como uma extensão (um repositório de pacotes) para o Arch Linux, onde você poderá apenas inserir um repositório em sua já existente distribuição Arch Linux e ter acesso ao conjunto de ferramentas do BlackArch.</p>
 
 <p><strong>O</strong> BlackArch, atualmente, possui suporte para as arquiteturas i686 e x86_64, com previsão de suporte para ARM em breve (Sim, meu RaspBerry poderá se tornar uma ferramenta para pentests). No mais, o BlackArch hoje possui mais de 600 ferramentas, estando este número crescendo constantemente, e utiliza grupos modulares de pacotes, facilitando a instalação dos mesmos.</p>
 
@@ -5017,7 +5017,7 @@ Clique em <strong>Next</strong>, reveja suas configurações e clique em <strong
 
 <p><strong>D</strong>entre as ferramentas existentes estão: 3proxy, 42zip, acccheck, aesfix, against, airflood, airoscript, bluepot, blueprint, braces, bss, bully, cisco-ocs, cmospwd, dbd, dc3dd, deblaze, dhcpig, enumiax, fakedns, &hellip; Vocẽ não espera que eu liste todos os mais de 600, certo?</p>
 
-<p><a href="http://blackarch.org/images/screenshots/openbox.png" target="_blank"><img class="center" src="http://kalib.github.io/imgs/openbox.png" title="'BlackArch Openbox'" ></a></p>
+<p><a href="https://blackarch.org/images/screenshots/openbox.png" target="_blank"><img class="center" src="https://kalib.github.io/imgs/openbox.png" title="'BlackArch Openbox'" ></a></p>
 
 <p><strong>Configurando como um Repositório Não-Oficial</strong></p>
 
@@ -5034,7 +5034,7 @@ Clique em <strong>Next</strong>, reveja suas configurações e clique em <strong
 <span class='line-number'>9</span>
 <span class='line-number'>10</span>
 <span class='line-number'>11</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'> # wget -q http://blackarch.org/keyring/blackarch-keyring.pkg.tar.xz{,.sig}
+</pre></td><td class='code'><pre><code class=''><span class='line'> # wget -q https://blackarch.org/keyring/blackarch-keyring.pkg.tar.xz{,.sig}
 </span><span class='line'>
 </span><span class='line'> # gpg --keyserver hkp://pgp.mit.edu --recv 4345771566D76038C7FEB43863EC0ADBEA87E4E3
 </span><span class='line'>
@@ -5055,7 +5055,7 @@ Clique em <strong>Next</strong>, reveja suas configurações e clique em <strong
 </span><span class='line'>  Server = &lt;mirror_site&gt;/$repo/os/$arch</span></code></pre></td></tr></table></div></figure>
 
 
-<p><strong>Substitua</strong> <em>&lt;mirror_site></em> por um mirror de sua escolha, preferencialmente um dos <strong>mirrors oficiais</strong> contidos <a href="http://blackarch.org/download.html#mirrors" target="_blank"><em>neste link</em></a>.</p>
+<p><strong>Substitua</strong> <em>&lt;mirror_site></em> por um mirror de sua escolha, preferencialmente um dos <strong>mirrors oficiais</strong> contidos <a href="https://blackarch.org/download.html#mirrors" target="_blank"><em>neste link</em></a>.</p>
 
 <p><strong>U</strong>ma vez que você tenha seguido os passos acima, execute:</p>
 
@@ -5093,7 +5093,7 @@ Clique em <strong>Next</strong>, reveja suas configurações e clique em <strong
 
 <p><strong><a name="instalando">Instalando o BlackArch Linux utilizando a Live-ISO</a></strong></p>
 
-<p><strong>A</strong>ntes de mais nada, <a href="http://blackarch.org/download.html" target="_blank">baixe a ISO a partir do site oficial</a>.</p>
+<p><strong>A</strong>ntes de mais nada, <a href="https://blackarch.org/download.html" target="_blank">baixe a ISO a partir do site oficial</a>.</p>
 
 <p><strong>E</strong>m seguida, dê boot na ISO e instale o script de instalação do BlackArch:</p>
 
@@ -5113,10 +5113,10 @@ Clique em <strong>Next</strong>, reveja suas configurações e clique em <strong
   
   <entry>
     <title type="html"><![CDATA[Dica - Escondendo Seu Endereço de Email ao Divulgar Seu Endereço de Email]]></title>
-    <link href="http://kalib.github.io/blog/2014/01/23/dica-escondendo-seu-endereco-de-email-ao-divulgar-seu-endereco-de-email/"/>
+    <link href="https://kalib.github.io/blog/2014/01/23/dica-escondendo-seu-endereco-de-email-ao-divulgar-seu-endereco-de-email/"/>
     <updated>2014-01-23T09:37:00-05:00</updated>
-    <id>http://kalib.github.io/blog/2014/01/23/dica-escondendo-seu-endereco-de-email-ao-divulgar-seu-endereco-de-email</id>
-    <content type="html"><![CDATA[<p><img class="center" src="http://kalib.github.io/imgs/frog_camouflage.jpg" title="'Camouflage'" ></p>
+    <id>https://kalib.github.io/blog/2014/01/23/dica-escondendo-seu-endereco-de-email-ao-divulgar-seu-endereco-de-email</id>
+    <content type="html"><![CDATA[<p><img class="center" src="https://kalib.github.io/imgs/frog_camouflage.jpg" title="'Camouflage'" ></p>
 
 <p><strong>D</strong>a mesma forma que alguns animais só conseguem sobreviver utilizando-se de sua capacidade e/ou técnica de camuflar-se, misturando-se assim ao ambiente, para enganar seus predadores naturais, as pessoas do mundo atual praticamente precisam adotar as mesmas técnicas para manter seus endereços de email livres de um turbilhão de emails indesejados com propagandas de viagra, dicas para crescimento peniano, irregularidades em seu CPF, problemas em sua conta bancária, etc, etc.</p>
 
@@ -5164,10 +5164,10 @@ Clique em <strong>Next</strong>, reveja suas configurações e clique em <strong
   
   <entry>
     <title type="html"><![CDATA[Dica - Assistir Star Wars em um Console ou Terminal]]></title>
-    <link href="http://kalib.github.io/blog/2014/01/17/dica-assistir-star-wars-em-um-console-ou-terminal/"/>
+    <link href="https://kalib.github.io/blog/2014/01/17/dica-assistir-star-wars-em-um-console-ou-terminal/"/>
     <updated>2014-01-17T10:30:00-05:00</updated>
-    <id>http://kalib.github.io/blog/2014/01/17/dica-assistir-star-wars-em-um-console-ou-terminal</id>
-    <content type="html"><![CDATA[<p><img class="left" src="http://kalib.github.io/imgs/starwars.png" title="'Star Wars'" >
+    <id>https://kalib.github.io/blog/2014/01/17/dica-assistir-star-wars-em-um-console-ou-terminal</id>
+    <content type="html"><![CDATA[<p><img class="left" src="https://kalib.github.io/imgs/starwars.png" title="'Star Wars'" >
 <strong>Q</strong>uem disse que o terminal ou linha de comando serve apenas para trabalho e coisas chatas?</p>
 
 <p><strong>E</strong>stá entediado em frente ao seu terminal GNU/Linux?    Que tal algo para passar o tempo e, ao mesmo tempo, lhe trazer uma certa nostalgia? Assista Star Wars sem precisar sair de sua linha de comando ou terminal.</p>
@@ -5180,9 +5180,9 @@ Clique em <strong>Next</strong>, reveja suas configurações e clique em <strong
 
 <p><strong>F</strong>eito isso, basta apreciar o show&hellip;</p>
 
-<p><img class="center" src="http://kalib.github.io/imgs/starwars_1.png" title="'Star Wars'" ></p>
+<p><img class="center" src="https://kalib.github.io/imgs/starwars_1.png" title="'Star Wars'" ></p>
 
-<p><img class="center" src="http://kalib.github.io/imgs/starwars_2.jpg" title="'Star Wars'" ></p>
+<p><img class="center" src="https://kalib.github.io/imgs/starwars_2.jpg" title="'Star Wars'" ></p>
 
 <p><strong>H</strong>ave fun!</p>
 ]]></content>
@@ -5190,38 +5190,38 @@ Clique em <strong>Next</strong>, reveja suas configurações e clique em <strong
   
   <entry>
     <title type="html"><![CDATA[Dica - Apostila Disponibilizada Gratuitamente - pfSense]]></title>
-    <link href="http://kalib.github.io/blog/2014/01/14/dica-apostila-disponibilizada-gratuitamente-pfsense/"/>
+    <link href="https://kalib.github.io/blog/2014/01/14/dica-apostila-disponibilizada-gratuitamente-pfsense/"/>
     <updated>2014-01-14T08:27:00-05:00</updated>
-    <id>http://kalib.github.io/blog/2014/01/14/dica-apostila-disponibilizada-gratuitamente-pfsense</id>
-    <content type="html"><![CDATA[<p><img class="left" src="http://kalib.github.io/imgs/pfsense.png" title="'pfSense'" >
-<strong>G</strong>ostaria de passar adiante a notícia de que o colega <em>Leonardo Damasceno</em> acaba de compartilhar com a comunidade uma apostila de sua autoria sobre o <a href="http://www.pfsense.org"><strong>pfSense</strong></a>, de forma a divulgar mais este magnífico sistema, bem como facilitar a vida daqueles que ainda não o dominam.</p>
+    <id>https://kalib.github.io/blog/2014/01/14/dica-apostila-disponibilizada-gratuitamente-pfsense</id>
+    <content type="html"><![CDATA[<p><img class="left" src="https://kalib.github.io/imgs/pfsense.png" title="'pfSense'" >
+<strong>G</strong>ostaria de passar adiante a notícia de que o colega <em>Leonardo Damasceno</em> acaba de compartilhar com a comunidade uma apostila de sua autoria sobre o <a href="https://www.pfsense.org"><strong>pfSense</strong></a>, de forma a divulgar mais este magnífico sistema, bem como facilitar a vida daqueles que ainda não o dominam.</p>
 
-<p><strong>S</strong>egue link direto fornecido pelo mesmo para <a href="http://www.marcelocavalcante.net/repositorio/pfsense-leonardodamasceno.pdf"><strong>download</strong></a>. A apostila ou livro, como prefira chamar, possui aproximadamente 70 páginas de informações úteis e diretas, sem muitas complicações.</p>
+<p><strong>S</strong>egue link direto fornecido pelo mesmo para <a href="https://www.marcelocavalcante.net/repositorio/pfsense-leonardodamasceno.pdf"><strong>download</strong></a>. A apostila ou livro, como prefira chamar, possui aproximadamente 70 páginas de informações úteis e diretas, sem muitas complicações.</p>
 
 <p><strong>N</strong>ão sabe o que é pfSense?</p>
 
-<p><img class="center" src="http://kalib.github.io/imgs/pfsense1.jpg" title="'pfSense1'" ></p>
+<p><img class="center" src="https://kalib.github.io/imgs/pfsense1.jpg" title="'pfSense1'" ></p>
 
 <p><strong>O</strong> pfSense é um sistema operacional baseado no <em>Free BSD</em> que pode ser instalado em um computador para servir como um firewall/roteador dedicado em uma rede. Como ferramenta <em>open source</em>, o pfSense tem se destacado nesta função, sendo considerado um dos melhores e mais confiáveis para este trabalho, oferecendo, além de sua estabilidade e confiabilidade, recursos e funções que geralmente são encontrados apenas em firewalls comerciais e caros. Não creio ser necessário lembrar a confiabilidade dos sistemas <em>Free BSD</em>&hellip;</p>
 
-<p><img class="center" src="http://kalib.github.io/imgs/pfsense2.jpg" title="'pfSense2'" ></p>
+<p><img class="center" src="https://kalib.github.io/imgs/pfsense2.jpg" title="'pfSense2'" ></p>
 
 <p><strong>E</strong>mbora seja uma versão customizada do Free BSD, não é necessário qualquer conhecimento sobre este sistema para operar o psSense, visto que ele é atualizado e completamente configurado através de uma interface web. Na maioria dos casos o pfSense tem sido aplicado como um firewall de perímetro, roteador, access point wireless, servidor DHCP, servidor DNS e VPN.</p>
 
-<p><img class="center" src="http://kalib.github.io/imgs/pfsense3.jpg" title="'pfSense3'" ></p>
+<p><img class="center" src="https://kalib.github.io/imgs/pfsense3.jpg" title="'pfSense3'" ></p>
 
 <p><strong>O</strong> mesmo apresenta diversos recursos gráficos para análise de tráfego, pacotes, performance, etc. Além de configurações avançadas para regras de firewall para LAN, WAN e utilizãção de Aliases de forma simples e intuitiva.</p>
 
-<p><img class="center" src="http://kalib.github.io/imgs/pfsense4.jpg" title="'pfSense4'" ></p>
+<p><img class="center" src="https://kalib.github.io/imgs/pfsense4.jpg" title="'pfSense4'" ></p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Dica de Segurança - Previna Ataques Bloqueando Pacotes ICMP Indesejados]]></title>
-    <link href="http://kalib.github.io/blog/2014/01/06/dica-de-seguranca-previna-ataques-bloqueando-pacotes-icmp-indesejados/"/>
+    <link href="https://kalib.github.io/blog/2014/01/06/dica-de-seguranca-previna-ataques-bloqueando-pacotes-icmp-indesejados/"/>
     <updated>2014-01-06T08:40:00-05:00</updated>
-    <id>http://kalib.github.io/blog/2014/01/06/dica-de-seguranca-previna-ataques-bloqueando-pacotes-icmp-indesejados</id>
-    <content type="html"><![CDATA[<p><img class="left" src="http://kalib.github.io/imgs/you_shall_not_pass.jpg" title="'Gandalf'" >
+    <id>https://kalib.github.io/blog/2014/01/06/dica-de-seguranca-previna-ataques-bloqueando-pacotes-icmp-indesejados</id>
+    <content type="html"><![CDATA[<p><img class="left" src="https://kalib.github.io/imgs/you_shall_not_pass.jpg" title="'Gandalf'" >
 <strong>O</strong> protocolo <em>ICMP</em> pode ser utilizado para facilitar diversas rotinas e tarefas importantes de um administrador de redes, tais como na utilização de ferramentas como o <em>ping</em> e o <em>traceroute</em>, mas também pode ser manipulado por pessoas mal intencionadas que podem manipular mensagens ou pacotes ICMP para mapear sua rede.</p>
 
 <p><strong>É</strong> comum ver administradores de rede se preocupando e fazendo um ótimo trabalho em termos de filtrar o tráfego <em>TCP</em> e/ou <em>UDP</em>, porém quase sempre esquecem de dar a mesma atenção ao tráfego <em>ICMP</em>, sendo este tão crítico quanto os dois anteriores. Uma vez que este protocolo pode ser utilizado para mapear e realizar ataques em sua rede, ele não pode simplesmente ser deixado de lado.</p>
@@ -5252,10 +5252,10 @@ Clique em <strong>Next</strong>, reveja suas configurações e clique em <strong
   
   <entry>
     <title type="html"><![CDATA[Criptografando sua Partição Swap com o Ecryptfs]]></title>
-    <link href="http://kalib.github.io/blog/2014/01/03/criptografando-sua-particao-swap-com-o-ecryptfs/"/>
+    <link href="https://kalib.github.io/blog/2014/01/03/criptografando-sua-particao-swap-com-o-ecryptfs/"/>
     <updated>2014-01-03T08:48:00-05:00</updated>
-    <id>http://kalib.github.io/blog/2014/01/03/criptografando-sua-particao-swap-com-o-ecryptfs</id>
-    <content type="html"><![CDATA[<p><img class="left" src="http://kalib.github.io/imgs/crypto.jpg" title="'Criptografia'" >
+    <id>https://kalib.github.io/blog/2014/01/03/criptografando-sua-particao-swap-com-o-ecryptfs</id>
+    <content type="html"><![CDATA[<p><img class="left" src="https://kalib.github.io/imgs/crypto.jpg" title="'Criptografia'" >
 <strong>C</strong>riptografia (Do grego <em>kryptós</em>, &ldquo;escondido&rdquo;, e <em>gráphein</em>, &ldquo;escrita&rdquo;) nada mais é do que o estudo e aplicação de técnicas com o intuito de ocultar informações, transformando a informação original em algo ilegível, exceto para seu destinatário final, o qual possui a chave ou método que será utilizado para tornar a informação legível novamente.</p>
 
 <p><strong>A</strong>pesar de muitas pessoas acharem que criptografia é algo novo, o uso de mensagens cifradas é bastante antigo. Em tempos passados a cifragem de mensagens era utilizada, principalmente em assuntos de guerra. De acordo com estudos históricos, o primeiro uso documentado da criptografia foi em torno de <em>1900 a.c.</em>, no Egito, quando um escriba usou hieróglifos fora do padrão numa inscrição.</p>
@@ -5304,10 +5304,10 @@ Clique em <strong>Next</strong>, reveja suas configurações e clique em <strong
   
   <entry>
     <title type="html"><![CDATA[Navegação Anônima Através da Rede Tor]]></title>
-    <link href="http://kalib.github.io/blog/2013/12/30/navegacao-anonima-atraves-da-rede-tor/"/>
+    <link href="https://kalib.github.io/blog/2013/12/30/navegacao-anonima-atraves-da-rede-tor/"/>
     <updated>2013-12-30T08:15:00-05:00</updated>
-    <id>http://kalib.github.io/blog/2013/12/30/navegacao-anonima-atraves-da-rede-tor</id>
-    <content type="html"><![CDATA[<p><img class="left" src="http://kalib.github.io/imgs/tor_logo.png" title="'Tor'" >
+    <id>https://kalib.github.io/blog/2013/12/30/navegacao-anonima-atraves-da-rede-tor</id>
+    <content type="html"><![CDATA[<p><img class="left" src="https://kalib.github.io/imgs/tor_logo.png" title="'Tor'" >
 <strong>O</strong> ano de 2013 foi marcado por diversos acontecimentos de grande repercussão e, sem sombra de dúvidas, um deles foi o escândalo causado pelo vazamento de dados que provaram que algumas instituições, dentre elas a <em>NSA</em> (Agência de Segurança dos Estados Unidos), estavam espionando diversas entidades, empresas e até mesmo pessoas físicas nas mais diversas regiões do globo. Escândalos a parte, estas denúncias acabaram despertando um pouco mais (uma pena que não tenha sido muito mais) nas pessoas o interesse em preservar sua privacidade.</p>
 
 <p><strong>S</strong>endo assim, nada mais justo que dedicar o último post do ano ao <em>Tor</em>.</p>
@@ -5320,7 +5320,7 @@ Clique em <strong>Next</strong>, reveja suas configurações e clique em <strong
 
 <p><strong>B</strong>asicamente, o usuário instala um programa, <em>tor-cliente</em>, em seu computador e este funcionará como um <em>proxy</em> para o mesmo. Os demais programas que o usuário utiliza para navegar na internet <em>(navegador, emule, etc.)</em> deverão ser configurados para navegar através deste proxy.</p>
 
-<p><strong>A</strong> partir daí, quando o usuário digitar em seu navegador o endereço destino, <em><a href="http://www.google.com*">http://www.google.com*</a> por exemplo, ao invés de a sua requisição passar por roteadores convencionais para atingir o destino, ele passará por túneis criptografados da rede Tor, para então chegar ao seu destino. Nestes túneis a sua requisição e informações passam por vários </em>nós<em> da rede Tor. Um exemplo prático do anonimato provido pelo Tor é a verificação do seu próprio IP. Caso deseje realizar o teste, experimente acessar o endereço </em><a href="http://www.meuip.com.br*">http://www.meuip.com.br*</a> antes de instalar e configurar o Tor em sua máquina. Este site lhe informará o seu atual endereço IP, no caso o endereço será o do seu roteador de acesso à rede pública. Em seguida, tente acessar novamente o mesmo endereço após ter instalado e configurado o Tor. Você perceberá que ele não retornará o seu endereço IP, mas sim um endereço IP qualquer de um nó da rede Tor. Ou seja, isto atrapalha a vida de quem quer que deseje rastrear a sua máquina a partir de um endereço que você tenha acessado ou mesmo de um email que você tenha enviado.</p>
+<p><strong>A</strong> partir daí, quando o usuário digitar em seu navegador o endereço destino, <em><a href="https://www.google.com*">https://www.google.com*</a> por exemplo, ao invés de a sua requisição passar por roteadores convencionais para atingir o destino, ele passará por túneis criptografados da rede Tor, para então chegar ao seu destino. Nestes túneis a sua requisição e informações passam por vários </em>nós<em> da rede Tor. Um exemplo prático do anonimato provido pelo Tor é a verificação do seu próprio IP. Caso deseje realizar o teste, experimente acessar o endereço </em><a href="https://www.meuip.com.br*">https://www.meuip.com.br*</a> antes de instalar e configurar o Tor em sua máquina. Este site lhe informará o seu atual endereço IP, no caso o endereço será o do seu roteador de acesso à rede pública. Em seguida, tente acessar novamente o mesmo endereço após ter instalado e configurado o Tor. Você perceberá que ele não retornará o seu endereço IP, mas sim um endereço IP qualquer de um nó da rede Tor. Ou seja, isto atrapalha a vida de quem quer que deseje rastrear a sua máquina a partir de um endereço que você tenha acessado ou mesmo de um email que você tenha enviado.</p>
 
 <p><strong>Instalação do Tor no Arch Linux</strong></p>
 
@@ -5366,10 +5366,10 @@ Clique em <strong>Next</strong>, reveja suas configurações e clique em <strong
   
   <entry>
     <title type="html"><![CDATA[Vulnerabilidade no Firefox - Descobrindo Senhas Salvas]]></title>
-    <link href="http://kalib.github.io/blog/2013/12/27/vulnerabilidade-no-firefox-descobrindo-senhas-salvas/"/>
+    <link href="https://kalib.github.io/blog/2013/12/27/vulnerabilidade-no-firefox-descobrindo-senhas-salvas/"/>
     <updated>2013-12-27T08:40:00-05:00</updated>
-    <id>http://kalib.github.io/blog/2013/12/27/vulnerabilidade-no-firefox-descobrindo-senhas-salvas</id>
-    <content type="html"><![CDATA[<p><img class="left" src="http://kalib.github.io/imgs/firefox_pass.png" title="'Firefox Peaces'" >
+    <id>https://kalib.github.io/blog/2013/12/27/vulnerabilidade-no-firefox-descobrindo-senhas-salvas</id>
+    <content type="html"><![CDATA[<p><img class="left" src="https://kalib.github.io/imgs/firefox_pass.png" title="'Firefox Peaces'" >
 <strong>U</strong>ma coisa é certa&hellip; usuários teimam em salvar senhas em navegadores para <em>facilitar</em> suas vidas durante a navegação na internet. Seja em emails, redes sociais, serviços online ou qualquer outra coisa, a opção <em>Salvar sua senha</em> parece possuir um enorme magnetismo ou um centro gravitacional extremamente denso a ponto de atrair o usuário para tal.</p>
 
 <p><strong>S</strong>erá que as pessoas não entendem o quão perigosa é a ideia de <em>salvar sua senha</em> onde quer que seja? É, praticamente, o mesmo risco assumido por quem anota suas senhas em <em>post-its</em> e os colam em seu monitor ou mesa.</p>
@@ -5389,35 +5389,35 @@ Clique em <strong>Next</strong>, reveja suas configurações e clique em <strong
 </ol>
 
 
-<p><img class="center" src="http://kalib.github.io/imgs/firefox_pass_1.png" title="'Firefox Pass 1'" ></p>
+<p><img class="center" src="https://kalib.github.io/imgs/firefox_pass_1.png" title="'Firefox Pass 1'" ></p>
 
 <ol>
 <li>Selecione a opção <strong>Preferências</strong> no menu e em seguida, novamente, <strong>Preferências</strong>;</li>
 </ol>
 
 
-<p><img class="center" src="http://kalib.github.io/imgs/firefox_pass_2.png" title="'Firefox Pass 2'" ></p>
+<p><img class="center" src="https://kalib.github.io/imgs/firefox_pass_2.png" title="'Firefox Pass 2'" ></p>
 
 <ol>
 <li>Na aba <strong>Segurança</strong>, clique no botão <strong>Senhas Salvas</strong>;</li>
 </ol>
 
 
-<p><img class="center" src="http://kalib.github.io/imgs/firefox_pass_3.png" title="'Firefox Pass 3'" ></p>
+<p><img class="center" src="https://kalib.github.io/imgs/firefox_pass_3.png" title="'Firefox Pass 3'" ></p>
 
 <ol>
 <li>Repare que na janela que será apresentada você terá uma lista de sites/serviços e usuários que deixaram suas senhas salvas. Nesta janela, clique no botão <strong>Mostrar Senhas</strong>;</li>
 </ol>
 
 
-<p><img class="center" src="http://kalib.github.io/imgs/firefox_pass_4.png" title="'Firefox Pass 4'" ></p>
+<p><img class="center" src="https://kalib.github.io/imgs/firefox_pass_4.png" title="'Firefox Pass 4'" ></p>
 
 <ol>
 <li>Agora você poderá ver as senhas salvas em texto plano, limpo e claro.</li>
 </ol>
 
 
-<p><img class="center" src="http://kalib.github.io/imgs/firefox_pass_5.png" title="'Firefox Pass 5'" ></p>
+<p><img class="center" src="https://kalib.github.io/imgs/firefox_pass_5.png" title="'Firefox Pass 5'" ></p>
 
 <p><strong>Lição aprendida: Não salve suas senhas!</strong></p>
 ]]></content>
@@ -5425,10 +5425,10 @@ Clique em <strong>Next</strong>, reveja suas configurações e clique em <strong
   
   <entry>
     <title type="html"><![CDATA[Dica Rápida - Linux - Troubleshooting em Tempo de Execução com Strace]]></title>
-    <link href="http://kalib.github.io/blog/2013/12/19/dica-rapida-linux-troubleshooting-em-tempo-de-execucao-com-strace/"/>
+    <link href="https://kalib.github.io/blog/2013/12/19/dica-rapida-linux-troubleshooting-em-tempo-de-execucao-com-strace/"/>
     <updated>2013-12-19T08:28:00-05:00</updated>
-    <id>http://kalib.github.io/blog/2013/12/19/dica-rapida-linux-troubleshooting-em-tempo-de-execucao-com-strace</id>
-    <content type="html"><![CDATA[<p><img class="left" src="http://kalib.github.io/imgs/troubleshoot.jpg" title="'Troubleshooting'" >
+    <id>https://kalib.github.io/blog/2013/12/19/dica-rapida-linux-troubleshooting-em-tempo-de-execucao-com-strace</id>
+    <content type="html"><![CDATA[<p><img class="left" src="https://kalib.github.io/imgs/troubleshoot.jpg" title="'Troubleshooting'" >
 <strong>S</strong>e algum dia você já precisou realizar uma análise para troubleshoot de algum comando em tempo de execução e não soube como fazê-lo, seus problemas acabaram. O <strong>strace</strong> faz justamente isso.</p>
 
 <p><strong>J</strong>á trabalhei em servidores de clientes comprometidos pós-invasão cujos comandos padrões <strong>Unix</strong> haviam sido substituídos por comandos <em>similares</em> (ao menos em nome) que realizam outras tarefas sem o conhecimento dos administradores dos mesmos.</p>
@@ -5555,16 +5555,16 @@ Clique em <strong>Next</strong>, reveja suas configurações e clique em <strong
   
   <entry>
     <title type="html"><![CDATA[Sobre mim... Tarda mas não falha]]></title>
-    <link href="http://kalib.github.io/blog/2013/12/16/sobre-mim-dot-dot-dot-tarda-mas-nao-falha/"/>
+    <link href="https://kalib.github.io/blog/2013/12/16/sobre-mim-dot-dot-dot-tarda-mas-nao-falha/"/>
     <updated>2013-12-16T15:31:00-05:00</updated>
-    <id>http://kalib.github.io/blog/2013/12/16/sobre-mim-dot-dot-dot-tarda-mas-nao-falha</id>
+    <id>https://kalib.github.io/blog/2013/12/16/sobre-mim-dot-dot-dot-tarda-mas-nao-falha</id>
     <content type="html"><![CDATA[<p><strong>T</strong>arda, mas não falha&hellip; Reza o antigo ditado.</p>
 
 <p><strong>D</strong>a mesma forma, digo-lhes que tardou, mas não falhou. Confesso que nunca parei para elaborar a página &ldquo;Sobre mim&rdquo; deste blog. O link existia no topo, mas sempre esteve &ldquo;Em construção&rdquo;. Preguiça? Falta de interesse? Esquecimento? Acho que um pouco de cada.</p>
 
 <p><strong>H</strong>oje fui surpreendido por uma pessoa que acabou caindo no blog e em seguida me questionou sobre o porque de o blog já existir a tanto tempo e até hoje a página &ldquo;Sobre mim&rdquo; continuar contendo apenas as palavras &ldquo;Em construção&rdquo;.</p>
 
-<p><strong>I</strong>sto me fez tomar vergonha na cara.. e hoje inseri conteúdo <a href="http://blog.marcelocavalcante.net/about/"> nesta página</a>.</p>
+<p><strong>I</strong>sto me fez tomar vergonha na cara.. e hoje inseri conteúdo <a href="https://blog.marcelocavalcante.net/about/"> nesta página</a>.</p>
 
 <p><strong>A</strong>gora sim&hellip; ;]</p>
 ]]></content>

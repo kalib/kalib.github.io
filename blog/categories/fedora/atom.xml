@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
+<feed xmlns="https://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Fedora | Marcelo Cavalcante Rocha ~]]></title>
-  <link href="http://kalib.github.io/blog/categories/fedora/atom.xml" rel="self"/>
-  <link href="http://kalib.github.io/"/>
-  <updated>2018-08-11T22:38:27-04:00</updated>
-  <id>http://kalib.github.io/</id>
+  <link href="https://kalib.github.io/blog/categories/fedora/atom.xml" rel="self"/>
+  <link href="https://kalib.github.io/"/>
+  <updated>2018-08-13T20:11:15-04:00</updated>
+  <id>https://kalib.github.io/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
     
   </author>
-  <generator uri="http://octopress.org/">Octopress</generator>
+  <generator uri="https://octopress.org/">Octopress</generator>
 
   
   <entry>
     <title type="html"><![CDATA[Problemas de Infra do Fedora - Servidores Hackeados]]></title>
-    <link href="http://kalib.github.io/blog/2008/08/22/problemas-de-infra-do-fedora-servidores-hackeados/"/>
+    <link href="https://kalib.github.io/blog/2008/08/22/problemas-de-infra-do-fedora-servidores-hackeados/"/>
     <updated>2008-08-22T09:05:00-04:00</updated>
-    <id>http://kalib.github.io/blog/2008/08/22/problemas-de-infra-do-fedora-servidores-hackeados</id>
+    <id>https://kalib.github.io/blog/2008/08/22/problemas-de-infra-do-fedora-servidores-hackeados</id>
     <content type="html"><![CDATA[<p><img class="left" src="/imgs/fedora.jpg" title="&lsquo;Fedora&rsquo;" >
 Não sei se algum de vocês ficou sabendo..Mas na última semana foi notificado um problema na infra-estrutura do Fedora, e havia sido &ldquo;recomendado&rdquo; que nenhuma instalação ou atualizaçãp fosse feita, caso você use Fedora.</p>
 
@@ -27,7 +27,7 @@ Não sei se algum de vocês ficou sabendo..Mas na última semana foi notificado 
 
 <p>É bom se manter informado e até lá não sair usando o yum para instalar ou atualizar pacotes. Apesar de na nota eles informarem que os problemas podem não ser graves, eu não arriscaria isso em um ambiente de produção na empresa em que trabalho. Só Deus sabe o que de fato aconteceu.</p>
 
-<p>Segue link com informações mais detalhadas: <a href="http://www.redhat.com/archives/fedora-announce-list/2008-August/msg00012.html">http://www.redhat.com/archives/fedora-announce-list/2008-August/msg00012.html</a></p>
+<p>Segue link com informações mais detalhadas: <a href="https://www.redhat.com/archives/fedora-announce-list/2008-August/msg00012.html">https://www.redhat.com/archives/fedora-announce-list/2008-August/msg00012.html</a></p>
 
 <p>Abraços</p>
 ]]></content>

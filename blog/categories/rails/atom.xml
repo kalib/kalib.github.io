@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
+<feed xmlns="https://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Rails | Marcelo Cavalcante Rocha ~]]></title>
-  <link href="http://kalib.github.io/blog/categories/rails/atom.xml" rel="self"/>
-  <link href="http://kalib.github.io/"/>
-  <updated>2018-08-11T22:38:27-04:00</updated>
-  <id>http://kalib.github.io/</id>
+  <link href="https://kalib.github.io/blog/categories/rails/atom.xml" rel="self"/>
+  <link href="https://kalib.github.io/"/>
+  <updated>2018-08-13T20:11:15-04:00</updated>
+  <id>https://kalib.github.io/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
     
   </author>
-  <generator uri="http://octopress.org/">Octopress</generator>
+  <generator uri="https://octopress.org/">Octopress</generator>
 
   
   <entry>
     <title type="html"><![CDATA[Rails Girls em Fortaleza - Um palco para a criatividade feminina]]></title>
-    <link href="http://kalib.github.io/blog/2013/08/04/rails-girls-em-fortaleza-um-palco-para-a-criatividade-feminina/"/>
+    <link href="https://kalib.github.io/blog/2013/08/04/rails-girls-em-fortaleza-um-palco-para-a-criatividade-feminina/"/>
     <updated>2013-08-04T12:17:00-04:00</updated>
-    <id>http://kalib.github.io/blog/2013/08/04/rails-girls-em-fortaleza-um-palco-para-a-criatividade-feminina</id>
+    <id>https://kalib.github.io/blog/2013/08/04/rails-girls-em-fortaleza-um-palco-para-a-criatividade-feminina</id>
     <content type="html"><![CDATA[<p><img class="center" src="/imgs/evolucao_mulher.jpg" title="&lsquo;evolução feminina&rsquo;" ></p>
 
 <p><strong>E</strong> se sua namorada/esposa/irmã/mãe/vizinha/filha da vizinha/&hellip; pudesse finalmente entender que tanto código é esse que você digita no computador?</p>
@@ -28,7 +28,7 @@
 
 <h3>Rails Girls</h3>
 
-<iframe src="http://player.vimeo.com/video/17752439" width="400" height="300" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+<iframe src="https://player.vimeo.com/video/17752439" width="400" height="300" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 
 
 <p><strong>O</strong> vídeo acima é da primeira edição, ocorrida na Finlândia, em 2010.</p>
@@ -53,7 +53,7 @@
 
 <p><strong>V</strong>ocê precisa de um laptop, curiosidade e imaginação.</p>
 
-<p><strong>M</strong>aiores informações, programação e inscrições podem ser feitas <a href="http://railsgirls.com/fortaleza">através deste link</a>.</p>
+<p><strong>M</strong>aiores informações, programação e inscrições podem ser feitas <a href="https://railsgirls.com/fortaleza">através deste link</a>.</p>
 
 <p><strong>A</strong>braços!</p>
 ]]></content>

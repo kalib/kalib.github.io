@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
+<feed xmlns="https://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Containers | Marcelo Cavalcante Rocha ~]]></title>
-  <link href="http://kalib.github.io/blog/categories/containers/atom.xml" rel="self"/>
-  <link href="http://kalib.github.io/"/>
-  <updated>2018-08-11T22:38:27-04:00</updated>
-  <id>http://kalib.github.io/</id>
+  <link href="https://kalib.github.io/blog/categories/containers/atom.xml" rel="self"/>
+  <link href="https://kalib.github.io/"/>
+  <updated>2018-08-13T20:11:15-04:00</updated>
+  <id>https://kalib.github.io/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
     
   </author>
-  <generator uri="http://octopress.org/">Octopress</generator>
+  <generator uri="https://octopress.org/">Octopress</generator>
 
   
   <entry>
     <title type="html"><![CDATA[Docker - Uma alternativa elegante para containers no Linux]]></title>
-    <link href="http://kalib.github.io/blog/2015/08/20/docker-uma-alternativa-elegante-para-containers-no-linux/"/>
+    <link href="https://kalib.github.io/blog/2015/08/20/docker-uma-alternativa-elegante-para-containers-no-linux/"/>
     <updated>2015-08-20T11:01:00-04:00</updated>
-    <id>http://kalib.github.io/blog/2015/08/20/docker-uma-alternativa-elegante-para-containers-no-linux</id>
+    <id>https://kalib.github.io/blog/2015/08/20/docker-uma-alternativa-elegante-para-containers-no-linux</id>
     <content type="html"><![CDATA[<p><img class="center" src="/imgs/dockerlogo.png" title="&lsquo;Docker&rsquo;" ></p>
 
 <p><strong>A</strong>ntes de falar sobre o Docker, é importante que se entenda o conceito de um container, portanto vamos começar do básico. A imagem acima, logomarca do Docker, deixa claro o que é um container. A baleia, representando um navio, carregando diversos caixotes ou containers ilustra o conceito físico de um container. Nada mais do que um enorme caixote que possui o intuito de isolar algo. Quando um grande navio transporta mercadorias de um porto para outro, ele costuma trazer diversos containers separando estas mercadorias, de forma que as coisas não fiquem misturadas e bagunçadas. A forma de separação vai depender dos critérios de organização utilizados pela embarcação, seja por proprietário, seja por categoria de produtos, etc. De qualquer forma, embora cada container possua seus elementos próprios, todos os containers compartilham alguns recursos básicos, como por exemplo a embarcação, que é o meio de transporte para todos os containers ali contidos.</p>
@@ -211,10 +211,10 @@
 <p>```
  root@08abb8611700:/# apt-get update &amp;&amp; apt-get install -y nginx</p>
 
-<p> Ign <a href="http://archive.ubuntu.com">http://archive.ubuntu.com</a> vivid InRelease
- Ign <a href="http://archive.ubuntu.com">http://archive.ubuntu.com</a> vivid-updates InRelease
- Get:1 <a href="http://archive.ubuntu.com">http://archive.ubuntu.com</a> vivid/main Sources [1358 kB]
- Get:2 <a href="http://archive.ubuntu.com">http://archive.ubuntu.com</a> vivid/restricted Sources [7100 B]
+<p> Ign <a href="https://archive.ubuntu.com">https://archive.ubuntu.com</a> vivid InRelease
+ Ign <a href="https://archive.ubuntu.com">https://archive.ubuntu.com</a> vivid-updates InRelease
+ Get:1 <a href="https://archive.ubuntu.com">https://archive.ubuntu.com</a> vivid/main Sources [1358 kB]
+ Get:2 <a href="https://archive.ubuntu.com">https://archive.ubuntu.com</a> vivid/restricted Sources [7100 B]
  &hellip;
  Building dependency tree     <br/>
  Reading state information&hellip; Done
@@ -232,7 +232,7 @@
  Need to get 14.0 MB of archives.
  After this operation, 53.3 MB of additional disk space will be used.
  &hellip;
- Get:1 <a href="http://archive.ubuntu.com/ubuntu/">http://archive.ubuntu.com/ubuntu/</a> vivid/main libexpat1 amd64 2.1.0-6ubuntu1 [70.6 kB]
+ Get:1 <a href="https://archive.ubuntu.com/ubuntu/">https://archive.ubuntu.com/ubuntu/</a> vivid/main libexpat1 amd64 2.1.0-6ubuntu1 [70.6 kB]
  Processing triggers for systemd (219-7ubuntu6) &hellip;</p>
 
 <p> root@08abb8611700:/#

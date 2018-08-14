@@ -12,22 +12,22 @@
   <meta name="description" content="Packer, Puppet, Bash e AWS A plataforma AWS da Amazon é atualmente uma das maiores e mais populares quando o assunto é Cloud e automação em nuvem, &hellip;">
   
 
-  <!-- http://t.co/dKP3o1e -->
+  <!-- https://t.co/dKP3o1e -->
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://kalib.github.io/">
+  <link rel="canonical" href="https://kalib.github.io/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
   <script src="/javascripts/ender.js"></script>
   <script src="/javascripts/octopress.js" type="text/javascript"></script>
   <link href="/atom.xml" rel="alternate" title="Marcelo Cavalcante Rocha ~" type="application/atom+xml">
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+  <!--Fonts from Google"s Web font directory at https://google.com/webfonts -->
+<link href="https://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
   
   <script type="text/javascript">
@@ -38,7 +38,7 @@
 
     (function() {
       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
   </script>
@@ -52,7 +52,7 @@
   
 </ul>
   
-<form action="http://google.com/search" method="get">
+<form action="https://google.com/search" method="get">
   <fieldset role="search">
     <input type="hidden" name="q" value="site:kalib.github.io" />
     <input class="search" type="text" name="q" results="0" placeholder="Search"/>
@@ -121,13 +121,13 @@
 
 <p><strong>U</strong>ma vez que eu identifico uma necessidade para minha aplicação e sei que preciso de uma máquina virtual com configurações e aplicações específicas para poder rodar minha aplicação, eu posso criar uma imagem com todos estes pré-requisitos de forma que ao resolver criar uma nova VM, eu não precise realizar todos estes passos manualmente. Além de evitar trabalho repetitivo, nos garante uma maior flexibilidade ao ter nossa infraestrutura como código, de forma que podemos literalmente ter as instruções que compõem nossa infraestrutura em um repositório Git, por exemplo, além de nos permitir realizar alterações nesta imagem também de forma simples e rápida para a geração de novas imagens de instâncias com as nossas alterações em poucos segundos ou minutos, dependendo da quantidade de alterações envolvdidas.</p>
 
-<p><strong>S</strong>e você ainda não faz ideia de o que seja o Packer ou o que ele é capaz de fazer, sugiro que volte uma casa e leia meu <a href="http://blog.marcelocavalcante.net/blog/2018/07/30/automatizando-a-criacao-de-imagens-com-packer/">post anterior</a>, onde explico o que é o Packer e apresento um simples exemplo de seu uso para a criação de imagens para o Docker.</p>
+<p><strong>S</strong>e você ainda não faz ideia de o que seja o Packer ou o que ele é capaz de fazer, sugiro que volte uma casa e leia meu <a href="https://blog.marcelocavalcante.net/blog/2018/07/30/automatizando-a-criacao-de-imagens-com-packer/">post anterior</a>, onde explico o que é o Packer e apresento um simples exemplo de seu uso para a criação de imagens para o Docker.</p>
 
 <p><strong>O</strong> intuito deste post é mostrar como podemos estruturar um simples código para que possamos criar uma imagem no AWS que poderá ser utilizada posteriormente para a criação de instâncias. Esta imagem será criada através do Packer e, para incrementar ainda mais nossa imagem, utilizaremos o recurso de provisioners (ou provisionadores/provedores) disponível no Packer. Utilizaremos dois provisioners como recursos externos para o provisionamento e configuração de nossa imagem, sendo eles bash script e <a href="https://puppet.com/">Puppet</a>.</p>
 
 <h2>AWS</h2>
 
-<p><strong>U</strong>ma vez que estou assumindo que você já possui o Packer instalado, bem como que você já possui uma ideia de como ele funciona, vamos iniciar pelo AWS. (Ainda não possui o Packer e não sabe o que ele faz? Novamente, <a href="http://blog.marcelocavalcante.net/blog/2018/07/30/automatizando-a-criacao-de-imagens-com-packer/">volte uma casa</a>.)</p>
+<p><strong>U</strong>ma vez que estou assumindo que você já possui o Packer instalado, bem como que você já possui uma ideia de como ele funciona, vamos iniciar pelo AWS. (Ainda não possui o Packer e não sabe o que ele faz? Novamente, <a href="https://blog.marcelocavalcante.net/blog/2018/07/30/automatizando-a-criacao-de-imagens-com-packer/">volte uma casa</a>.)</p>
 
 <p><strong>O</strong> primeiro pré-requisito para este post/tutorial é uma conta no AWS. Caso você não possua uma e queira repetir os passos aqui descritos, siga e crie uma. Lembrando que o AWS lhe dá uma série de recursos que podem ser utilizados gratuitamente no que eles chamam de &ldquo;Free Tier&rdquo;. Uma vez que utilizaremos apenas recursos simples aqui, você não deverá ser cobrado por nada ao seguir os exemplos deste post. O ideal é que você exclua os recursos ou encerre sua conta após o término deste exercício para evitar ser cobrado por algo. Caso não o faça e resolva continuar testando algumas coisas no AWS, você pode ser cobrado em alguns centavos ou reais, dependendo de o que resolva testar e por quanto. (Sua responsabilidade, claro.)</p>
 
@@ -185,7 +185,7 @@
 
 <p><strong>H</strong>ora de começarmos a escrever nosso código que será utilizado pelo Packer para a criação de nossa imagem.</p>
 
-<p><strong>D</strong>esta vez estaremos criando uma imagem EC2 para o AWS, portanto alguns provisioners e parâmetros serão diferentes dos utilizados no <a href="http://blog.marcelocavalcante.net/blog/2018/07/30/automatizando-a-criacao-de-imagens-com-packer/">post anterior</a>, onde criamos uma imagem para o Docker.</p>
+<p><strong>D</strong>esta vez estaremos criando uma imagem EC2 para o AWS, portanto alguns provisioners e parâmetros serão diferentes dos utilizados no <a href="https://blog.marcelocavalcante.net/blog/2018/07/30/automatizando-a-criacao-de-imagens-com-packer/">post anterior</a>, onde criamos uma imagem para o Docker.</p>
 
 <p><strong>C</strong>omecemos criando um arquivo json vazio. Chamarei meu arquivo de <em>ubuntuaws.json</em>.</p>
 
@@ -626,8 +626,8 @@
 </span><span class='line'>######
 </span><span class='line'>
 </span><span class='line'>==&gt; amazon-ebs: Provisioning with shell script: ./setup.sh
-</span><span class='line'>    amazon-ebs: Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial InRelease
-</span><span class='line'>    amazon-ebs: Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-updates InRelease [109 kB]
+</span><span class='line'>    amazon-ebs: Hit:1 https://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial InRelease
+</span><span class='line'>    amazon-ebs: Get:2 https://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-updates InRelease [109 kB]
 </span><span class='line'>
 </span><span class='line'>######
 </span><span class='line'>---&gt;&gt;&gt; NESTE MOMENTO O COMANDO "SUDO APT-GET UPDATE" ESTÁ SENDO EXECUTADO &lt;&lt;&lt;---
@@ -645,8 +645,8 @@
 </span><span class='line'>amazon-ebs: 4 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 </span><span class='line'>amazon-ebs: Need to get 1,188 kB of archives.
 </span><span class='line'>amazon-ebs: After this operation, 76.8 kB of additional disk space will be used.
-</span><span class='line'>amazon-ebs: Get:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 gpgv amd64 1.4.20-1ubuntu3.3 [165 kB]
-</span><span class='line'>amazon-ebs: Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 gnupg amd64 1.4.20-1ubuntu3.3 [626 kB]
+</span><span class='line'>amazon-ebs: Get:1 https://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 gpgv amd64 1.4.20-1ubuntu3.3 [165 kB]
+</span><span class='line'>amazon-ebs: Get:2 https://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 gnupg amd64 1.4.20-1ubuntu3.3 [626 kB]
 </span><span class='line'>
 </span><span class='line'>...
 </span><span class='line'>...
@@ -674,7 +674,7 @@
 </span><span class='line'> amazon-ebs: 0 upgraded, 31 newly installed, 0 to remove and 0 not upgraded.
 </span><span class='line'> amazon-ebs: Need to get 8,267 kB of archives.
 </span><span class='line'> amazon-ebs: After this operation, 38.2 MB of additional disk space will be used.
-</span><span class='line'> amazon-ebs: Get:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 fonts-lato all 2.0-1 [2,693 kB]
+</span><span class='line'> amazon-ebs: Get:1 https://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 fonts-lato all 2.0-1 [2,693 kB]
 </span><span class='line'>...
 </span><span class='line'>...
 </span><span class='line'>
@@ -1504,8 +1504,8 @@
 </span><span class='line'>    docker: Run command: docker run -v /Users/kalib/.packer.d/tmp/packer-docker737353515:/packer-files -d -i -t ubuntu /bin/bash
 </span><span class='line'>    docker: Container ID: 097a85a796e0e928fbc82cd6618bd60e286b46dfadad20e823027fc2f93d25db
 </span><span class='line'>==&gt; docker: Provisioning with shell script: /var/folders/nn/njz4sd054fv_tvq30vh0zygh0000gp/T/packer-shell161880041
-</span><span class='line'>    docker: Get:1 http://archive.ubuntu.com/ubuntu bionic InRelease [242 kB]
-</span><span class='line'>    docker: Get:2 http://security.ubuntu.com/ubuntu bionic-security InRelease [83.2 kB]
+</span><span class='line'>    docker: Get:1 https://archive.ubuntu.com/ubuntu bionic InRelease [242 kB]
+</span><span class='line'>    docker: Get:2 https://security.ubuntu.com/ubuntu bionic-security InRelease [83.2 kB]
 </span><span class='line'>    ...
 </span><span class='line'>    ...
 </span><span class='line'>    docker: Reading state information...
@@ -1530,9 +1530,9 @@
 </span><span class='line'>docker: 0 upgraded, 35 newly installed, 0 to remove and 0 not upgraded.
 </span><span class='line'>docker: Need to get 16.1 MB of archives.
 </span><span class='line'>docker: After this operation, 58.8 MB of additional disk space will be used.
-</span><span class='line'>docker: Get:1 http://archive.ubuntu.com/ubuntu bionic/main amd64 multiarch-support amd64 2.27-3ubuntu1 [6916 B]
-</span><span class='line'>docker: Get:2 http://archive.ubuntu.com/ubuntu bionic/main amd64 libxau6 amd64 1:1.0.8-1 [8376 B]
-</span><span class='line'>docker: Get:3 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libjpeg-turbo8 amd64 1.5.2
+</span><span class='line'>docker: Get:1 https://archive.ubuntu.com/ubuntu bionic/main amd64 multiarch-support amd64 2.27-3ubuntu1 [6916 B]
+</span><span class='line'>docker: Get:2 https://archive.ubuntu.com/ubuntu bionic/main amd64 libxau6 amd64 1:1.0.8-1 [8376 B]
+</span><span class='line'>docker: Get:3 https://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libjpeg-turbo8 amd64 1.5.2
 </span><span class='line'>...
 </span><span class='line'>...
 </span><span class='line'>docker: Setting up nginx (1.14.0-0ubuntu1) ...
@@ -1654,7 +1654,7 @@
   
     <section>
   <h1 align="left">Marcelo Cavalcante</h1>
-  <p><img class="right" src="http://www.marcelocavalcante.net/imgs/kalib_picture_pq_circle_pq.png" title="'kalib'" ><p align=rght>Sysadmin dinâmico, escrupulosamente curioso, reservadamente convencional, multitarefa, command line heavy-user, estudante e pesquisador, surfista por prazer, leitor inquieto e apaixonado por vinhos.<br>Me conheça melhor <a href="http://blog.marcelocavalcante.net/about">clicando aqui</a>.</p></p>
+  <p><img class="right" src="https://www.marcelocavalcante.net/imgs/kalib_picture_pq_circle_pq.png" title="'kalib'" ><p align=rght>Sysadmin dinâmico, escrupulosamente curioso, reservadamente convencional, multitarefa, command line heavy-user, estudante e pesquisador, surfista por prazer, leitor inquieto e apaixonado por vinhos.<br>Me conheça melhor <a href="https://blog.marcelocavalcante.net/about">clicando aqui</a>.</p></p>
 </section><section>
   <h1>Posts Recentes</h1>
   <ul id="recent_posts">
@@ -1689,7 +1689,7 @@
   <h1> Eu apoio
 </h1>
   <span>
-    <a href='http://ansible.com'><img style='padding: .5em; margin: .5em;' src='/images/stickers/ansible.com.png'></a><a href='http://archlinux.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/archlinux.org.png'></a><a href='http://asterisk.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/asterisk.org.png'></a><a href='http://atom.io'><img style='padding: .5em; margin: .5em;' src='/images/stickers/atom.io.png'></a><a href='http://chef.io'><img style='padding: .5em; margin: .5em;' src='/images/stickers/chef.io.png'></a><a href='http://djangoproject.com'><img style='padding: .5em; margin: .5em;' src='/images/stickers/djangoproject.com.png'></a><a href='http://docker.com'><img style='padding: .5em; margin: .5em;' src='/images/stickers/docker.com.png'></a><a href='http://github.com'><img style='padding: .5em; margin: .5em;' src='/images/stickers/github.com.png'></a><img style='padding: .5em; margin: .5em;' src='/images/stickers/glider.png' ><a href='http://jenkins.io'><img style='padding: .5em; margin: .5em;' src='/images/stickers/jenkins.io.png'></a><a href='http://kde.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/kde.org.png'></a><a href='http://kubernetes.io'><img style='padding: .5em; margin: .5em;' src='/images/stickers/kubernetes.io.png'></a><a href='http://linux.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/linux.org.png'></a><a href='http://octopress.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/octopress.org.png'></a><a href='http://opensource.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/opensource.org.png'></a><a href='http://packer.io'><img style='padding: .5em; margin: .5em;' src='/images/stickers/packer.io.png'></a><a href='http://puppet.com'><img style='padding: .5em; margin: .5em;' src='/images/stickers/puppet.com.png'></a><a href='http://python.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/python.org.png'></a><a href='http://raspberrypi.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/raspberrypi.org.png'></a><a href='http://ruby-lang.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/ruby-lang.org.png'></a><a href='http://terraform.io'><img style='padding: .5em; margin: .5em;' src='/images/stickers/terraform.io.png'></a><a href='http://vagrantup.com'><img style='padding: .5em; margin: .5em;' src='/images/stickers/vagrantup.com.png'></a>
+    <a href='https://ansible.com'><img style='padding: .5em; margin: .5em;' src='/images/stickers/ansible.com.png'></a><a href='https://archlinux.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/archlinux.org.png'></a><a href='https://asterisk.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/asterisk.org.png'></a><a href='https://atom.io'><img style='padding: .5em; margin: .5em;' src='/images/stickers/atom.io.png'></a><a href='https://chef.io'><img style='padding: .5em; margin: .5em;' src='/images/stickers/chef.io.png'></a><a href='https://djangoproject.com'><img style='padding: .5em; margin: .5em;' src='/images/stickers/djangoproject.com.png'></a><a href='https://docker.com'><img style='padding: .5em; margin: .5em;' src='/images/stickers/docker.com.png'></a><a href='https://github.com'><img style='padding: .5em; margin: .5em;' src='/images/stickers/github.com.png'></a><img style='padding: .5em; margin: .5em;' src='/images/stickers/glider.png' ><a href='https://jenkins.io'><img style='padding: .5em; margin: .5em;' src='/images/stickers/jenkins.io.png'></a><a href='https://kde.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/kde.org.png'></a><a href='https://kubernetes.io'><img style='padding: .5em; margin: .5em;' src='/images/stickers/kubernetes.io.png'></a><a href='https://linux.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/linux.org.png'></a><a href='https://octopress.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/octopress.org.png'></a><a href='https://opensource.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/opensource.org.png'></a><a href='https://packer.io'><img style='padding: .5em; margin: .5em;' src='/images/stickers/packer.io.png'></a><a href='https://puppet.com'><img style='padding: .5em; margin: .5em;' src='/images/stickers/puppet.com.png'></a><a href='https://python.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/python.org.png'></a><a href='https://raspberrypi.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/raspberrypi.org.png'></a><a href='https://ruby-lang.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/ruby-lang.org.png'></a><a href='https://terraform.io'><img style='padding: .5em; margin: .5em;' src='/images/stickers/terraform.io.png'></a><a href='https://vagrantup.com'><img style='padding: .5em; margin: .5em;' src='/images/stickers/vagrantup.com.png'></a>
   </span>
 </section>
 
@@ -1704,7 +1704,7 @@
   </div>
   <footer role="contentinfo"><p>
   Copyright &copy; 2018 - Marcelo Cavalcante Rocha - Kalib -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+  <span class="credit">Powered by <a href="https://octopress.org">Octopress</a></span>
 </p>
 
 </footer>
@@ -1718,7 +1718,7 @@
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      dsq.src = 'https://' + disqus_shortname + '.disqus.com/' + disqus_script;
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
@@ -1751,7 +1751,7 @@
       var twitterWidgets = document.createElement('script');
       twitterWidgets.type = 'text/javascript';
       twitterWidgets.async = true;
-      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      twitterWidgets.src = 'https://platform.twitter.com/widgets.js';
       document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
     })();
   </script>

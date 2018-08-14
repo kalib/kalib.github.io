@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
+<feed xmlns="https://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: KDE | Marcelo Cavalcante Rocha ~]]></title>
-  <link href="http://kalib.github.io/blog/categories/kde/atom.xml" rel="self"/>
-  <link href="http://kalib.github.io/"/>
-  <updated>2018-08-11T22:38:27-04:00</updated>
-  <id>http://kalib.github.io/</id>
+  <link href="https://kalib.github.io/blog/categories/kde/atom.xml" rel="self"/>
+  <link href="https://kalib.github.io/"/>
+  <updated>2018-08-13T20:11:15-04:00</updated>
+  <id>https://kalib.github.io/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
     
   </author>
-  <generator uri="http://octopress.org/">Octopress</generator>
+  <generator uri="https://octopress.org/">Octopress</generator>
 
   
   <entry>
     <title type="html"><![CDATA[KDE 4.11 Lançado e Disponível no Arch Linux]]></title>
-    <link href="http://kalib.github.io/blog/2013/08/19/kde-4-dot-11-lancado-e-disponivel-no-arch-linux/"/>
+    <link href="https://kalib.github.io/blog/2013/08/19/kde-4-dot-11-lancado-e-disponivel-no-arch-linux/"/>
     <updated>2013-08-19T08:07:00-04:00</updated>
-    <id>http://kalib.github.io/blog/2013/08/19/kde-4-dot-11-lancado-e-disponivel-no-arch-linux</id>
+    <id>https://kalib.github.io/blog/2013/08/19/kde-4-dot-11-lancado-e-disponivel-no-arch-linux</id>
     <content type="html"><![CDATA[<p><img class="left" src="/imgs/kde411.png" title="&lsquo;KDE 4.11&rsquo;" >
 <strong>E</strong>m 14 de Agosto de 2013 a comunidade KDE anunciou oficialmente a última release do Ambiente de Trabalho KDE, a versão 4.11. Nesta última versão o projeto incorporou grandes atualizações na Área de Trabalho, Aplicações e plataforma de Desenvolvimento, oferecendo, além de correções, novas funcionalidades, das quais muitas serão importantes para a próxima evolução da plataforma KDE.</p>
 
@@ -41,7 +41,7 @@
  # yaourt -Syu --aur
 </code></p>
 
-<p><strong>M</strong>aiores informações sobre esta release podem ser encontradas em <a href="http://community.kde.org/KDE_SC/4.11_Release_Notes">http://community.kde.org/KDE_SC/4.11_Release_Notes</a></p>
+<p><strong>M</strong>aiores informações sobre esta release podem ser encontradas em <a href="https://community.kde.org/KDE_SC/4.11_Release_Notes">https://community.kde.org/KDE_SC/4.11_Release_Notes</a></p>
 
 <p><strong>D</strong>ivirtam-se com o novo KDE! ;]</p>
 ]]></content>
@@ -49,16 +49,16 @@
   
   <entry>
     <title type="html"><![CDATA[Que tal ajudar o projeto KDE com apenas 1 minuto do seu tempo?]]></title>
-    <link href="http://kalib.github.io/blog/2011/10/24/que-tal-ajudar-o-projeto-kde-com-apenas-1-minuto-do-seu-tempo/"/>
+    <link href="https://kalib.github.io/blog/2011/10/24/que-tal-ajudar-o-projeto-kde-com-apenas-1-minuto-do-seu-tempo/"/>
     <updated>2011-10-24T13:56:48-04:00</updated>
-    <id>http://kalib.github.io/blog/2011/10/24/que-tal-ajudar-o-projeto-kde-com-apenas-1-minuto-do-seu-tempo</id>
-    <content type="html"><![CDATA[<p><img src="http://images4.wikia.nocookie.net/__cb20061120200014/uncyclopedia/images/9/98/Konqi-official-logo-aboutkde-150x250.png" alt="" /></p>
+    <id>https://kalib.github.io/blog/2011/10/24/que-tal-ajudar-o-projeto-kde-com-apenas-1-minuto-do-seu-tempo</id>
+    <content type="html"><![CDATA[<p><img src="https://images4.wikia.nocookie.net/__cb20061120200014/uncyclopedia/images/9/98/Konqi-official-logo-aboutkde-150x250.png" alt="" /></p>
 
 <p><strong>N</strong>ão acredita?</p>
 
 <p><strong>B</strong>om, aparentemente um <strong>banco alemão</strong> acredita que alguns projetos/instituições merecem ser ajudados financeiramente pelo seu impacto/importância.</p>
 
-<p><strong>S</strong>im, o projeto <strong><a href="http://kde.org">KDE</a></strong> está fazendo parte desta lista, mas para conseguir a doação de 1000 euros por parte deste banco, o projeto KDE precisa do seu voto. Sim, apenas seu voto que não leva mais que 1 minuto.</p>
+<p><strong>S</strong>im, o projeto <strong><a href="https://kde.org">KDE</a></strong> está fazendo parte desta lista, mas para conseguir a doação de 1000 euros por parte deste banco, o projeto KDE precisa do seu voto. Sim, apenas seu voto que não leva mais que 1 minuto.</p>
 
 <p><strong>S</strong>e você utiliza o KDE no seu dia a dia, acredito que este seu <strong>1 minuto</strong> já é um ótimo &ldquo;pagamento&rdquo; ao projeto que lhe ajuda diariamente a resolver suas tarefas.</p>
 
@@ -86,9 +86,9 @@
   
   <entry>
     <title type="html"><![CDATA[Wicd-KDE - Tornando seu Wicd no KDE mais amigável]]></title>
-    <link href="http://kalib.github.io/blog/2011/04/28/wicd-kde-tornando-seu-wicd-no-kde-mais-amigavel/"/>
+    <link href="https://kalib.github.io/blog/2011/04/28/wicd-kde-tornando-seu-wicd-no-kde-mais-amigavel/"/>
     <updated>2011-04-28T08:29:35-04:00</updated>
-    <id>http://kalib.github.io/blog/2011/04/28/wicd-kde-tornando-seu-wicd-no-kde-mais-amigavel</id>
+    <id>https://kalib.github.io/blog/2011/04/28/wicd-kde-tornando-seu-wicd-no-kde-mais-amigavel</id>
     <content type="html"><![CDATA[<p><strong>S</strong>audações pessoal,</p>
 
 <p><strong>P</strong>ara aqueles que também não curtem de forma alguma a aparência padrão GTK do Wicd e não conhecem ainda a interface que foi lançada posteriormente em QT, fica a dica: Troquem com urgência!</p>
@@ -123,15 +123,15 @@
 
 <p>E a parte que interessa? Instalar, instalar, instalar!</p>
 
-<p><strong>I</strong>nfelizmente, nem todas as distribuições empacotaram o wicd-kde até então, mas se você é usuário <strong><a href="http://archlinux.org">Arch Linux</a></strong>, a sua vida será mais fácil.</p>
+<p><strong>I</strong>nfelizmente, nem todas as distribuições empacotaram o wicd-kde até então, mas se você é usuário <strong><a href="https://archlinux.org">Arch Linux</a></strong>, a sua vida será mais fácil.</p>
 
-<p><strong>O</strong> pacote wicd-kde encontra-se pronto no <a href="http://aur.archlinux.org/packages.php?ID=40735">AUR</a>.</p>
+<p><strong>O</strong> pacote wicd-kde encontra-se pronto no <a href="https://aur.archlinux.org/packages.php?ID=40735">AUR</a>.</p>
 
 <p><strong>O</strong> processo é o já manjado:</p>
 
 <p><strong>1-</strong> Baixar o arquivo compactado:</p>
 
-<p>$ wget <a href="http://aur.archlinux.org/packages/wicd-client-kde-git/wicd-client-kde-git.tar.gz">http://aur.archlinux.org/packages/wicd-client-kde-git/wicd-client-kde-git.tar.gz</a></p>
+<p>$ wget <a href="https://aur.archlinux.org/packages/wicd-client-kde-git/wicd-client-kde-git.tar.gz">https://aur.archlinux.org/packages/wicd-client-kde-git/wicd-client-kde-git.tar.gz</a></p>
 
 <p><strong>2-</strong> descompactar:</p>
 
@@ -157,13 +157,13 @@
   
   <entry>
     <title type="html"><![CDATA[KDE 4.6.2 lançado: Parabéns ao GNOME!]]></title>
-    <link href="http://kalib.github.io/blog/2011/04/07/kde-4-6-2-lancado-parabens-ao-gnome/"/>
+    <link href="https://kalib.github.io/blog/2011/04/07/kde-4-6-2-lancado-parabens-ao-gnome/"/>
     <updated>2011-04-07T13:09:09-04:00</updated>
-    <id>http://kalib.github.io/blog/2011/04/07/kde-4-6-2-lancado-parabens-ao-gnome</id>
+    <id>https://kalib.github.io/blog/2011/04/07/kde-4-6-2-lancado-parabens-ao-gnome</id>
     <content type="html"><![CDATA[<p><img class="center" src="/imgs/gnome-kde.png" title="&lsquo;Gnome Kde&rsquo;" >
 <strong>E</strong>stranho o título?</p>
 
-<p><strong>B</strong>om, de fato foi o que aconteceu. O KDE 4.6.2 foi lançado e para demonstrar que a briga entre usuários <a href="http://www.kde.org">KDE</a> x <a href="http://www.gnome.org">GNOME</a> simplesmente não faz sentido, esta release foi batizada de &ldquo;Congrats&rdquo;, parabéns em português, em homenagem ao lançamento do GNOME 3 que teve mesma data.</p>
+<p><strong>B</strong>om, de fato foi o que aconteceu. O KDE 4.6.2 foi lançado e para demonstrar que a briga entre usuários <a href="https://www.kde.org">KDE</a> x <a href="https://www.gnome.org">GNOME</a> simplesmente não faz sentido, esta release foi batizada de &ldquo;Congrats&rdquo;, parabéns em português, em homenagem ao lançamento do GNOME 3 que teve mesma data.</p>
 
 <p><strong>R</strong>ealmente é deplorável quando as listas, fórums e canais estão infectados com insultos contra ambiente gráfico X ou distribuição Y. É claro que sempre vão existir diferenças e brincadeiras sobre qual é o melhor, quem tem vantagem, etc. Afinal, somos humanos e temos gostos diferentes, certo?! Assim como existem piadas e brincadeiras entre torcedores de times opostos, no mundo da computação isso sempre vai existir também. O problema é quando se torna algo de mal gosto ou agressivo.</p>
 
@@ -171,11 +171,11 @@
 
 <p><strong>P</strong>ara demonstrar que o projeto KDE realmente não liga para estas briguinhas infantis, e que não encara o projeto GNOME como um oponente que deve ser batido, a nova release do KDE 4.6.2 recebeu o nome de &ldquo;Congrats&rdquo; para homenagear o tão esperado lançamento do GNOME 3. Segue um pequeno trecho traduzido da notícia oficial no site do KDE:</p>
 
-<p><a href="http://kde.org/announcements/announce-4.6.2.php"></a><em><a href="http://kde.org/announcements/announce-4.6.2.php">“Com o codinome “Congrats" (parabéns) dedicamos este lançamento para os nossos amigos no lado GNOME, que lançam uma nova versão principal hoje.”</a></em></p>
+<p><a href="https://kde.org/announcements/announce-4.6.2.php"></a><em><a href="https://kde.org/announcements/announce-4.6.2.php">“Com o codinome “Congrats" (parabéns) dedicamos este lançamento para os nossos amigos no lado GNOME, que lançam uma nova versão principal hoje.”</a></em></p>
 
 <p><img class="center" src="/imgs/plasmanetbook.png" title="&lsquo;The KDE Plasma Netbook Workspace&rsquo;" ></p>
 
-<p><strong>M</strong>uitas melhorias chegaram com esta release, no geral correções de bugs ou melhorias de performance. Para detalhes do changelog, acesse <a href="http://www.kde.org/announcements/changelogs/changelog4_6_1to4_6_2.php">este link</a>.</p>
+<p><strong>M</strong>uitas melhorias chegaram com esta release, no geral correções de bugs ou melhorias de performance. Para detalhes do changelog, acesse <a href="https://www.kde.org/announcements/changelogs/changelog4_6_1to4_6_2.php">este link</a>.</p>
 
 <p><strong>C</strong>laro, se você é usuário Arch Linux, já pode ter o seu KDE 4.6.2, que encontra-se disponível nos repositórios do pacman. Basta atualizar seu sistema, caso já tenha o KDE instalado em outra versão: pacman -Syu</p>
 
@@ -187,9 +187,9 @@
   
   <entry>
     <title type="html"><![CDATA[Lançado KDE 4.6 - Sim, claro...se você usa Arch você não precisa esperar!]]></title>
-    <link href="http://kalib.github.io/blog/2011/01/27/lancado-kde-4-6-sim-claro-se-voce-usa-arch-voce-nao-precisa-esperar/"/>
+    <link href="https://kalib.github.io/blog/2011/01/27/lancado-kde-4-6-sim-claro-se-voce-usa-arch-voce-nao-precisa-esperar/"/>
     <updated>2011-01-27T07:54:19-05:00</updated>
-    <id>http://kalib.github.io/blog/2011/01/27/lancado-kde-4-6-sim-claro-se-voce-usa-arch-voce-nao-precisa-esperar</id>
+    <id>https://kalib.github.io/blog/2011/01/27/lancado-kde-4-6-sim-claro-se-voce-usa-arch-voce-nao-precisa-esperar</id>
     <content type="html"><![CDATA[<p><img class="center" src="/imgs/konqui.png" title="&lsquo;Konqui&rsquo;" >
 <strong>&ndash; DEV do Arch, qual é sua missão?</strong></p>
 
@@ -199,7 +199,7 @@
 
 <p><strong>&ndash; Eu empacoto coisas que assustam o Satanás!</strong></p>
 
-<p><strong>É</strong> isso aí pessoal, ontem o projeto <a href="http://kde.org">KDE</a> liberou o KDE 4.6 com muitas melhorias e o pessoal do <a href="http://archlinux.org">Arch</a> já saiu na frente, claro. Sim, se você usa Arch, não precisa esperar, pode atualizar seu KDE com o seu rotineiro <em># __pacman -Syu.</em></p>
+<p><strong>É</strong> isso aí pessoal, ontem o projeto <a href="https://kde.org">KDE</a> liberou o KDE 4.6 com muitas melhorias e o pessoal do <a href="https://archlinux.org">Arch</a> já saiu na frente, claro. Sim, se você usa Arch, não precisa esperar, pode atualizar seu KDE com o seu rotineiro <em># __pacman -Syu.</em></p>
 
 <p><img class="center" src="/imgs/kde46.png" title="&lsquo;KDE 46&rsquo;" ></p>
 
@@ -215,7 +215,7 @@
 
 <p><img class="center" src="/imgs/kde46_1.png" title="&lsquo;KDE 46&rsquo;" ></p>
 
-<p><strong>V</strong>árias modificações no dolphin, correções de bugs e aparência também foram implementadas, mas&hellip; se eu for realmente listar todas as modificações, posso acabar perdendo meu emprego, portanto vou apenas lhes deixar o link do site oficial onde podem ser encontradas todas as mudanças desta release: <a href="http://kde.org/announcements/4.6/">http://kde.org/announcements/4.6/</a></p>
+<p><strong>V</strong>árias modificações no dolphin, correções de bugs e aparência também foram implementadas, mas&hellip; se eu for realmente listar todas as modificações, posso acabar perdendo meu emprego, portanto vou apenas lhes deixar o link do site oficial onde podem ser encontradas todas as mudanças desta release: <a href="https://kde.org/announcements/4.6/">https://kde.org/announcements/4.6/</a></p>
 
 <p><strong>A</strong>braços!</p>
 ]]></content>

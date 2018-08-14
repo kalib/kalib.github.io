@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
+<feed xmlns="https://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Internet | Marcelo Cavalcante Rocha ~]]></title>
-  <link href="http://kalib.github.io/blog/categories/internet/atom.xml" rel="self"/>
-  <link href="http://kalib.github.io/"/>
-  <updated>2018-08-11T22:38:27-04:00</updated>
-  <id>http://kalib.github.io/</id>
+  <link href="https://kalib.github.io/blog/categories/internet/atom.xml" rel="self"/>
+  <link href="https://kalib.github.io/"/>
+  <updated>2018-08-13T20:11:15-04:00</updated>
+  <id>https://kalib.github.io/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
     
   </author>
-  <generator uri="http://octopress.org/">Octopress</generator>
+  <generator uri="https://octopress.org/">Octopress</generator>
 
   
   <entry>
     <title type="html"><![CDATA[Recebendo Alarmes do AWS Diretamente no Slack]]></title>
-    <link href="http://kalib.github.io/blog/2017/03/11/recebendo-alarmes-do-aws-diretamente-no-slack/"/>
+    <link href="https://kalib.github.io/blog/2017/03/11/recebendo-alarmes-do-aws-diretamente-no-slack/"/>
     <updated>2017-03-11T12:03:00-05:00</updated>
-    <id>http://kalib.github.io/blog/2017/03/11/recebendo-alarmes-do-aws-diretamente-no-slack</id>
+    <id>https://kalib.github.io/blog/2017/03/11/recebendo-alarmes-do-aws-diretamente-no-slack</id>
     <content type="html"><![CDATA[<p><img class="center" src="/imgs/aws_slack.png" title="&lsquo;AWS_Slack&rsquo;" ></p>
 
-<p><strong>A</strong>ntes de entrar na configuração dos serviços, talvez seja necessário apresentar o <a href="http://www.slack.com">Slack</a>, visto que muitos ainda não conhecem ou utilizam esta poderosa e versátil ferramenta de comunicação instantânea para times.</p>
+<p><strong>A</strong>ntes de entrar na configuração dos serviços, talvez seja necessário apresentar o <a href="https://www.slack.com">Slack</a>, visto que muitos ainda não conhecem ou utilizam esta poderosa e versátil ferramenta de comunicação instantânea para times.</p>
 
 <p><strong>S</strong>lack é uma plataforma para comunicação entre times que desejam um ambiente mais dinâmico e ágil. Diferentemente de muitas plataformas de chat disponíveis, como o Google Hangouts, o Slack nos permite criar canais distintos com membros distintos de um mesmo time fazendo parte daquele canal específico. Não, não estou falando de chat em grupo, mas sim canais específicos que permitem integrações com serviços distintos, como receber notificações sobre commits feitos em um repositório ou branch específico no github, notificações de tickets abertos em ferramentas como o Jira, por exemplo, etc. O Slack é completamente programável e escalável, o que nos permite ter inúmeras funcionalidas.</p>
 
@@ -343,9 +343,9 @@ Clique em <strong>Next</strong>, reveja suas configurações e clique em <strong
   
   <entry>
     <title type="html"><![CDATA[Docker - Uma alternativa elegante para containers no Linux]]></title>
-    <link href="http://kalib.github.io/blog/2015/08/20/docker-uma-alternativa-elegante-para-containers-no-linux/"/>
+    <link href="https://kalib.github.io/blog/2015/08/20/docker-uma-alternativa-elegante-para-containers-no-linux/"/>
     <updated>2015-08-20T11:01:00-04:00</updated>
-    <id>http://kalib.github.io/blog/2015/08/20/docker-uma-alternativa-elegante-para-containers-no-linux</id>
+    <id>https://kalib.github.io/blog/2015/08/20/docker-uma-alternativa-elegante-para-containers-no-linux</id>
     <content type="html"><![CDATA[<p><img class="center" src="/imgs/dockerlogo.png" title="&lsquo;Docker&rsquo;" ></p>
 
 <p><strong>A</strong>ntes de falar sobre o Docker, é importante que se entenda o conceito de um container, portanto vamos começar do básico. A imagem acima, logomarca do Docker, deixa claro o que é um container. A baleia, representando um navio, carregando diversos caixotes ou containers ilustra o conceito físico de um container. Nada mais do que um enorme caixote que possui o intuito de isolar algo. Quando um grande navio transporta mercadorias de um porto para outro, ele costuma trazer diversos containers separando estas mercadorias, de forma que as coisas não fiquem misturadas e bagunçadas. A forma de separação vai depender dos critérios de organização utilizados pela embarcação, seja por proprietário, seja por categoria de produtos, etc. De qualquer forma, embora cada container possua seus elementos próprios, todos os containers compartilham alguns recursos básicos, como por exemplo a embarcação, que é o meio de transporte para todos os containers ali contidos.</p>
@@ -539,10 +539,10 @@ Clique em <strong>Next</strong>, reveja suas configurações e clique em <strong
 <p>```
  root@08abb8611700:/# apt-get update &amp;&amp; apt-get install -y nginx</p>
 
-<p> Ign <a href="http://archive.ubuntu.com">http://archive.ubuntu.com</a> vivid InRelease
- Ign <a href="http://archive.ubuntu.com">http://archive.ubuntu.com</a> vivid-updates InRelease
- Get:1 <a href="http://archive.ubuntu.com">http://archive.ubuntu.com</a> vivid/main Sources [1358 kB]
- Get:2 <a href="http://archive.ubuntu.com">http://archive.ubuntu.com</a> vivid/restricted Sources [7100 B]
+<p> Ign <a href="https://archive.ubuntu.com">https://archive.ubuntu.com</a> vivid InRelease
+ Ign <a href="https://archive.ubuntu.com">https://archive.ubuntu.com</a> vivid-updates InRelease
+ Get:1 <a href="https://archive.ubuntu.com">https://archive.ubuntu.com</a> vivid/main Sources [1358 kB]
+ Get:2 <a href="https://archive.ubuntu.com">https://archive.ubuntu.com</a> vivid/restricted Sources [7100 B]
  &hellip;
  Building dependency tree     <br/>
  Reading state information&hellip; Done
@@ -560,7 +560,7 @@ Clique em <strong>Next</strong>, reveja suas configurações e clique em <strong
  Need to get 14.0 MB of archives.
  After this operation, 53.3 MB of additional disk space will be used.
  &hellip;
- Get:1 <a href="http://archive.ubuntu.com/ubuntu/">http://archive.ubuntu.com/ubuntu/</a> vivid/main libexpat1 amd64 2.1.0-6ubuntu1 [70.6 kB]
+ Get:1 <a href="https://archive.ubuntu.com/ubuntu/">https://archive.ubuntu.com/ubuntu/</a> vivid/main libexpat1 amd64 2.1.0-6ubuntu1 [70.6 kB]
  Processing triggers for systemd (219-7ubuntu6) &hellip;</p>
 
 <p> root@08abb8611700:/#
@@ -805,9 +805,9 @@ Clique em <strong>Next</strong>, reveja suas configurações e clique em <strong
   
   <entry>
     <title type="html"><![CDATA[Assista ao documentário sobre Aaron Swartz: O menino da internet]]></title>
-    <link href="http://kalib.github.io/blog/2014/08/03/assista-ao-documentario-sobre-aaron-swartz-o-menino-da-internet/"/>
+    <link href="https://kalib.github.io/blog/2014/08/03/assista-ao-documentario-sobre-aaron-swartz-o-menino-da-internet/"/>
     <updated>2014-08-03T07:19:00-04:00</updated>
-    <id>http://kalib.github.io/blog/2014/08/03/assista-ao-documentario-sobre-aaron-swartz-o-menino-da-internet</id>
+    <id>https://kalib.github.io/blog/2014/08/03/assista-ao-documentario-sobre-aaron-swartz-o-menino-da-internet</id>
     <content type="html"><![CDATA[<p><img class="center" src="/imgs/aaron-swartz-movie.jpg" title="&lsquo;Aaron Swartz Movie&rsquo;" >
 <code>
  Informação é poder. Mas, como todo poder, há aqueles que querem mantê-la para si mesmos. O patrimônio cultural e científico do mundo, publicado ao longo dos séculos em livros e revistas, está cada vez mais szendo digitalizado e trancado por um punhado de corporações privadas. Enquanto isso, aqueles que foram bloqueados não estão em pé de braços cruzados. Eles estão bisbilhotando em buracos e escalando cercas libertando as informações trancadas pelos editores e compartilhando com seus amigos. Mas toda essa ação acontece no escuro, escondida no subterrâneo. É chamado de roubo ou pirataria, como se compartilhar uma riqueza de conhecimentos fosse o equivalente  de saquear um navio e matar sua tripulação. Mas compartilhar não é imoral - é um imperativo moral. Só os cegos pela ganância se recusam a deixar um amigo fazer uma cópia. Não há justiça em seguir leis injustas. É hora de virmos para a luz e, na grande tradição de desobediência civil, declararmos a nossa oposição a este roubo privado da cultura pública.
@@ -829,7 +829,7 @@ Clique em <strong>Next</strong>, reveja suas configurações e clique em <strong
 
 <p><img class="center" src="/imgs/youtube_captions.png" title="&lsquo;Youtube Captions&rsquo;" ></p>
 
-<iframe width="560" height="315" src="http://kalib.github.io//www.youtube.com/embed/2uj1EeiuK5U" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://kalib.github.io//www.youtube.com/embed/2uj1EeiuK5U" frameborder="0" allowfullscreen></iframe>
 
 
 <p>Link para o vídeo: <a href="https://www.youtube.com/watch?v=2uj1EeiuK5U">https://www.youtube.com/watch?v=2uj1EeiuK5U</a></p>

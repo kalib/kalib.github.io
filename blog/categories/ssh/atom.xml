@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
+<feed xmlns="https://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: SSH | Marcelo Cavalcante Rocha ~]]></title>
-  <link href="http://kalib.github.io/blog/categories/ssh/atom.xml" rel="self"/>
-  <link href="http://kalib.github.io/"/>
-  <updated>2018-08-11T22:38:27-04:00</updated>
-  <id>http://kalib.github.io/</id>
+  <link href="https://kalib.github.io/blog/categories/ssh/atom.xml" rel="self"/>
+  <link href="https://kalib.github.io/"/>
+  <updated>2018-08-13T20:11:15-04:00</updated>
+  <id>https://kalib.github.io/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
     
   </author>
-  <generator uri="http://octopress.org/">Octopress</generator>
+  <generator uri="https://octopress.org/">Octopress</generator>
 
   
   <entry>
     <title type="html"><![CDATA[Tornando Seu SSH Mais Seguro]]></title>
-    <link href="http://kalib.github.io/blog/2013/08/28/tornando-seu-ssh-mais-seguro/"/>
+    <link href="https://kalib.github.io/blog/2013/08/28/tornando-seu-ssh-mais-seguro/"/>
     <updated>2013-08-28T11:20:00-04:00</updated>
-    <id>http://kalib.github.io/blog/2013/08/28/tornando-seu-ssh-mais-seguro</id>
+    <id>https://kalib.github.io/blog/2013/08/28/tornando-seu-ssh-mais-seguro</id>
     <content type="html"><![CDATA[<p><img class="left" src="/imgs/openssh.png" title="&lsquo;OpenSSH&rsquo;" >
 <strong>O</strong> <em>SSH</em> (Secure Shell) é um dos protocolos mais utilizados atualmente para transferência de arquivos ou mesmo conexão remota, principalmente em ambientes Linux/Unix e, por si só, já tem se provado ser confiável e seguro. O mesmo passou a ser o principal substituto ao <em>TELNET</em> por possuir a vantagem da criptografia na conexão entre o cliente e o servidor, além da possibilidade de criação de túneis, o que chamamos de <em>tunneling</em>, oferecendo assim a capacidade de redirecionar pacotes de dados. Mas não é por isso que devemos nos descuidar&hellip;</p>
 

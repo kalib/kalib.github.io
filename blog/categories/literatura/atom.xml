@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
+<feed xmlns="https://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Literatura | Marcelo Cavalcante Rocha ~]]></title>
-  <link href="http://kalib.github.io/blog/categories/literatura/atom.xml" rel="self"/>
-  <link href="http://kalib.github.io/"/>
-  <updated>2018-08-11T22:38:27-04:00</updated>
-  <id>http://kalib.github.io/</id>
+  <link href="https://kalib.github.io/blog/categories/literatura/atom.xml" rel="self"/>
+  <link href="https://kalib.github.io/"/>
+  <updated>2018-08-13T20:11:15-04:00</updated>
+  <id>https://kalib.github.io/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
     
   </author>
-  <generator uri="http://octopress.org/">Octopress</generator>
+  <generator uri="https://octopress.org/">Octopress</generator>
 
   
   <entry>
     <title type="html"><![CDATA[Assista ao documentário sobre Aaron Swartz: O menino da internet]]></title>
-    <link href="http://kalib.github.io/blog/2014/08/03/assista-ao-documentario-sobre-aaron-swartz-o-menino-da-internet/"/>
+    <link href="https://kalib.github.io/blog/2014/08/03/assista-ao-documentario-sobre-aaron-swartz-o-menino-da-internet/"/>
     <updated>2014-08-03T07:19:00-04:00</updated>
-    <id>http://kalib.github.io/blog/2014/08/03/assista-ao-documentario-sobre-aaron-swartz-o-menino-da-internet</id>
+    <id>https://kalib.github.io/blog/2014/08/03/assista-ao-documentario-sobre-aaron-swartz-o-menino-da-internet</id>
     <content type="html"><![CDATA[<p><img class="center" src="/imgs/aaron-swartz-movie.jpg" title="&lsquo;Aaron Swartz Movie&rsquo;" >
 <code>
  Informação é poder. Mas, como todo poder, há aqueles que querem mantê-la para si mesmos. O patrimônio cultural e científico do mundo, publicado ao longo dos séculos em livros e revistas, está cada vez mais szendo digitalizado e trancado por um punhado de corporações privadas. Enquanto isso, aqueles que foram bloqueados não estão em pé de braços cruzados. Eles estão bisbilhotando em buracos e escalando cercas libertando as informações trancadas pelos editores e compartilhando com seus amigos. Mas toda essa ação acontece no escuro, escondida no subterrâneo. É chamado de roubo ou pirataria, como se compartilhar uma riqueza de conhecimentos fosse o equivalente  de saquear um navio e matar sua tripulação. Mas compartilhar não é imoral - é um imperativo moral. Só os cegos pela ganância se recusam a deixar um amigo fazer uma cópia. Não há justiça em seguir leis injustas. É hora de virmos para a luz e, na grande tradição de desobediência civil, declararmos a nossa oposição a este roubo privado da cultura pública.
@@ -39,7 +39,7 @@
 
 <p><img class="center" src="/imgs/youtube_captions.png" title="&lsquo;Youtube Captions&rsquo;" ></p>
 
-<iframe width="560" height="315" src="http://kalib.github.io//www.youtube.com/embed/2uj1EeiuK5U" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://kalib.github.io//www.youtube.com/embed/2uj1EeiuK5U" frameborder="0" allowfullscreen></iframe>
 
 
 <p>Link para o vídeo: <a href="https://www.youtube.com/watch?v=2uj1EeiuK5U">https://www.youtube.com/watch?v=2uj1EeiuK5U</a></p>
@@ -50,16 +50,16 @@
   
   <entry>
     <title type="html"><![CDATA[Sobre mim... Tarda mas não falha]]></title>
-    <link href="http://kalib.github.io/blog/2013/12/16/sobre-mim-dot-dot-dot-tarda-mas-nao-falha/"/>
+    <link href="https://kalib.github.io/blog/2013/12/16/sobre-mim-dot-dot-dot-tarda-mas-nao-falha/"/>
     <updated>2013-12-16T15:31:00-05:00</updated>
-    <id>http://kalib.github.io/blog/2013/12/16/sobre-mim-dot-dot-dot-tarda-mas-nao-falha</id>
+    <id>https://kalib.github.io/blog/2013/12/16/sobre-mim-dot-dot-dot-tarda-mas-nao-falha</id>
     <content type="html"><![CDATA[<p><strong>T</strong>arda, mas não falha&hellip; Reza o antigo ditado.</p>
 
 <p><strong>D</strong>a mesma forma, digo-lhes que tardou, mas não falhou. Confesso que nunca parei para elaborar a página &ldquo;Sobre mim&rdquo; deste blog. O link existia no topo, mas sempre esteve &ldquo;Em construção&rdquo;. Preguiça? Falta de interesse? Esquecimento? Acho que um pouco de cada.</p>
 
 <p><strong>H</strong>oje fui surpreendido por uma pessoa que acabou caindo no blog e em seguida me questionou sobre o porque de o blog já existir a tanto tempo e até hoje a página &ldquo;Sobre mim&rdquo; continuar contendo apenas as palavras &ldquo;Em construção&rdquo;.</p>
 
-<p><strong>I</strong>sto me fez tomar vergonha na cara.. e hoje inseri conteúdo <a href="http://blog.marcelocavalcante.net/about/"> nesta página</a>.</p>
+<p><strong>I</strong>sto me fez tomar vergonha na cara.. e hoje inseri conteúdo <a href="https://blog.marcelocavalcante.net/about/"> nesta página</a>.</p>
 
 <p><strong>A</strong>gora sim&hellip; ;]</p>
 ]]></content>
@@ -67,9 +67,9 @@
   
   <entry>
     <title type="html"><![CDATA[Recomendação Bibliográfica - As Treze Relíquias]]></title>
-    <link href="http://kalib.github.io/blog/2013/11/25/recomendacao-bibliografica-as-treze-reliquias/"/>
+    <link href="https://kalib.github.io/blog/2013/11/25/recomendacao-bibliografica-as-treze-reliquias/"/>
     <updated>2013-11-25T08:30:00-05:00</updated>
-    <id>http://kalib.github.io/blog/2013/11/25/recomendacao-bibliografica-as-treze-reliquias</id>
+    <id>https://kalib.github.io/blog/2013/11/25/recomendacao-bibliografica-as-treze-reliquias</id>
     <content type="html"><![CDATA[<p><img class="left" src="/imgs/livros/astrezereliquias.jpg" title="&lsquo;As Treze Relíquias&rsquo;" >
 <strong>S</strong>em sombra de dúvidas o livro superou minhas expectativas. Apesar de a sinopse passar a impressão de que se trata de mais um livro com temática sobrenatural voltado a um público mais jovem, a leitura revela o oposto. Certamente um livro que pode agradar diversas faixas etárias, trazendo foco no ocultismo, antigas religiões, artefatos mágicos, sexo e assassinatos com incrível crueldade, tudo isto em uma trama muito bem elaborada e descrita.</p>
 
@@ -87,13 +87,13 @@
   
   <entry>
     <title type="html"><![CDATA[Recomendação Bibliográfica - Filhos do Éden - Herdeiros de Atlântida]]></title>
-    <link href="http://kalib.github.io/blog/2013/10/04/recomendacao-bibliografica-filhos-do-eden-herdeiros-de-atlantida/"/>
+    <link href="https://kalib.github.io/blog/2013/10/04/recomendacao-bibliografica-filhos-do-eden-herdeiros-de-atlantida/"/>
     <updated>2013-10-04T08:27:00-04:00</updated>
-    <id>http://kalib.github.io/blog/2013/10/04/recomendacao-bibliografica-filhos-do-eden-herdeiros-de-atlantida</id>
+    <id>https://kalib.github.io/blog/2013/10/04/recomendacao-bibliografica-filhos-do-eden-herdeiros-de-atlantida</id>
     <content type="html"><![CDATA[<p><img class="left" src="/imgs/livros/filhosdoeden1.jpg" title="&lsquo;Filhos do Éden&rsquo;" >
 <strong>A</strong>njos, Arcanjos e Demônios&hellip; Entidades que sempre despertaram a curiosidade e o interesse de milhares de pessoas. Não diferente, sempre tive um grande apreço por histórias, sejam em filmes ou literatura escrita, que abordem tais entidades.</p>
 
-<p><strong>S</strong>eguindo a trilha de seu outro livro, <a href="http://blog.marcelocavalcante.net/blog/2010/09/30/recomendacao-bibliografica-a-batalha-do-apocalipse/">A Batalha do Apocalipse</a>, o autor Eduardo Spohr narra com maestria o enredo no qual uma guerra civil acontece entre o Arcanjo Miguel e as tropas revolucionárias de seu irmão, o Arcanjo Gabriel.</p>
+<p><strong>S</strong>eguindo a trilha de seu outro livro, <a href="https://blog.marcelocavalcante.net/blog/2010/09/30/recomendacao-bibliografica-a-batalha-do-apocalipse/">A Batalha do Apocalipse</a>, o autor Eduardo Spohr narra com maestria o enredo no qual uma guerra civil acontece entre o Arcanjo Miguel e as tropas revolucionárias de seu irmão, o Arcanjo Gabriel.</p>
 
 <p><strong>U</strong>ma obra tão recomendada quanto qualquer outra do autor, trás um enredo mais terreno, se comparado ao livro A Batalha do Apocalipse, porém não menos interessante e empolgante.</p>
 
@@ -107,9 +107,9 @@
   
   <entry>
     <title type="html"><![CDATA[Recomendação Bibliográfica: Gravidade]]></title>
-    <link href="http://kalib.github.io/blog/2013/08/08/recomendacao-bibliografica-gravidade/"/>
+    <link href="https://kalib.github.io/blog/2013/08/08/recomendacao-bibliografica-gravidade/"/>
     <updated>2013-08-08T17:23:00-04:00</updated>
-    <id>http://kalib.github.io/blog/2013/08/08/recomendacao-bibliografica-gravidade</id>
+    <id>https://kalib.github.io/blog/2013/08/08/recomendacao-bibliografica-gravidade</id>
     <content type="html"><![CDATA[<p><img class="center" src="/imgs/livros/gravidade.jpg" title="&lsquo;Gravidade&rsquo;" ></p>
 
 <p><strong>O</strong> livro da vez se chama <em>Gravidade</em>, de <em>Tess Gerritsen</em>.</p>

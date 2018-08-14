@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
+<feed xmlns="https://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Java | Marcelo Cavalcante Rocha ~]]></title>
-  <link href="http://kalib.github.io/blog/categories/java/atom.xml" rel="self"/>
-  <link href="http://kalib.github.io/"/>
-  <updated>2018-08-11T22:38:27-04:00</updated>
-  <id>http://kalib.github.io/</id>
+  <link href="https://kalib.github.io/blog/categories/java/atom.xml" rel="self"/>
+  <link href="https://kalib.github.io/"/>
+  <updated>2018-08-13T20:11:15-04:00</updated>
+  <id>https://kalib.github.io/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
     
   </author>
-  <generator uri="http://octopress.org/">Octopress</generator>
+  <generator uri="https://octopress.org/">Octopress</generator>
 
   
   <entry>
     <title type="html"><![CDATA[3º Dia Livre - Programação Definida!]]></title>
-    <link href="http://kalib.github.io/blog/2011/10/17/3c2ba-dia-livre-programacao-definida/"/>
+    <link href="https://kalib.github.io/blog/2011/10/17/3c2ba-dia-livre-programacao-definida/"/>
     <updated>2011-10-17T08:26:54-04:00</updated>
-    <id>http://kalib.github.io/blog/2011/10/17/3c2ba-dia-livre-programacao-definida</id>
-    <content type="html"><![CDATA[<p><strong>N</strong>este fim de semana foi publicada a programação oficial do <strong><a href="http://www.dialivre.net/portal">3º Dia Livre</a></strong>, encontro para usuários, profissionais ou entusiastas do movimento de Software Livre no Ceará.</p>
+    <id>https://kalib.github.io/blog/2011/10/17/3c2ba-dia-livre-programacao-definida</id>
+    <content type="html"><![CDATA[<p><strong>N</strong>este fim de semana foi publicada a programação oficial do <strong><a href="https://www.dialivre.net/portal">3º Dia Livre</a></strong>, encontro para usuários, profissionais ou entusiastas do movimento de Software Livre no Ceará.</p>
 
 <p><strong>E</strong>sta 3ª edição contará com 4 palestras de temas bem diversificados como podem ver na grade abaixo:</p>
 
@@ -67,23 +67,23 @@
 
 <p>&ndash;</p>
 
-<p><strong>A</strong>inda não sabe o que é o Dia Livre? <strong><a href="http://www.dialivre.net/portal/?page_id=7">Clique aqui para conhecer!</a></strong></p>
+<p><strong>A</strong>inda não sabe o que é o Dia Livre? <strong><a href="https://www.dialivre.net/portal/?page_id=7">Clique aqui para conhecer!</a></strong></p>
 
 <p><strong>A</strong>s <strong>inscrições</strong> continuam abertas para esta 3ª edição que acontecerá no dia <strong>12 de Novembro</strong>, Sábado, na Faculdade Estácio FIC.</p>
 
-<p><strong>C</strong>lique <strong><a href="http://www.dialivre.net/portal/?page_id=8">aqui</a></strong> e faça sua inscrição gratuita.</p>
+<p><strong>C</strong>lique <strong><a href="https://www.dialivre.net/portal/?page_id=8">aqui</a></strong> e faça sua inscrição gratuita.</p>
 
 <p><strong>A</strong>braços,</p>
 
-<p><img src="http://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
+<p><img src="https://www.marcelocavalcante.net/portal/imgs/userbar.gif" alt="" /></p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Feliz dia do Programador!]]></title>
-    <link href="http://kalib.github.io/blog/2011/09/13/feliz-dia-do-programador/"/>
+    <link href="https://kalib.github.io/blog/2011/09/13/feliz-dia-do-programador/"/>
     <updated>2011-09-13T09:11:39-04:00</updated>
-    <id>http://kalib.github.io/blog/2011/09/13/feliz-dia-do-programador</id>
+    <id>https://kalib.github.io/blog/2011/09/13/feliz-dia-do-programador</id>
     <content type="html"><![CDATA[<p><img class="left" src="/imgs/programmer-260x300.jpg" title="&lsquo;Programador&rsquo;" >
 <strong>S</strong>audações pessoal,</p>
 
@@ -260,16 +260,16 @@
   
   <entry>
     <title type="html"><![CDATA[Brute-force? O Dirb... DirBuster lhe ajuda a identificar vulnerabilidades em seu site]]></title>
-    <link href="http://kalib.github.io/blog/2011/02/15/brute-force-o-dirb-dirbuster-lhe-ajuda-a-identificar-vulnerabilidades-em-seu-site/"/>
+    <link href="https://kalib.github.io/blog/2011/02/15/brute-force-o-dirb-dirbuster-lhe-ajuda-a-identificar-vulnerabilidades-em-seu-site/"/>
     <updated>2011-02-15T08:23:19-05:00</updated>
-    <id>http://kalib.github.io/blog/2011/02/15/brute-force-o-dirb-dirbuster-lhe-ajuda-a-identificar-vulnerabilidades-em-seu-site</id>
+    <id>https://kalib.github.io/blog/2011/02/15/brute-force-o-dirb-dirbuster-lhe-ajuda-a-identificar-vulnerabilidades-em-seu-site</id>
     <content type="html"><![CDATA[<p><strong>B</strong>om, para quem não conhece nada sobre Brute-Force ou apenas ouviu falar vagamente mas não tem certeza sobre o que realmente é um ataque deste tipo, sugiro dar uma lida em meu último post, onde apresentei algumas informações sobre brute-force bem como uma ferramenta que podemos utilizar para testar nossos sites e verificar o quão vulneráveis eles estão a este tipo de ataque. Segue link para o mesmo:</p>
 
-<p><a href="http://marcelocavalcante.net/portal/2011/01/31/brute-force-o-dirb-lhe-ajuda-a-identificar-vulnerabilidades-em-seu-site/">Brute-Force? O Dirb lhe ajuda a identificar vulnerabilidade em seu site!</a></p>
+<p><a href="https://marcelocavalcante.net/portal/2011/01/31/brute-force-o-dirb-lhe-ajuda-a-identificar-vulnerabilidades-em-seu-site/">Brute-Force? O Dirb lhe ajuda a identificar vulnerabilidade em seu site!</a></p>
 
 <p><strong>A</strong>gora que já conhecemos um pouco sobre as técnicas de brute-force e a ferramenta Dirb, que tal conhecer outra mais apresentável?</p>
 
-<p><strong>M</strong>e refiro ao <a href="http://www.owasp.org/index.php/DirBuster">DirBuster</a>. Uma aplicação multithread desenvolvida pelo <a href="http://www.owasp.org/">OWASP</a> (The Open Web Application Security Project) que tem como objetivo realizar brute-force em diretórios e nomes de arquivos na web. Assim como o Dirb, o DirBuster trabalha em cima de dicionários ou listas. Ao todo ele trás 9 listas que podem ser utilizadas para nossas varreduras e testes. Como todas as suas listas foram criadas na unha, após exaustívas pesquisas e buscas na web por nomes mais utilizados para arquivos e diretórios em servidores web, o DirBuster mostra-se extremamente efetivo para este tipo de atividade conseguindo encontrar até mesmo os arquivos mais ocultos e escondidos.</p>
+<p><strong>M</strong>e refiro ao <a href="https://www.owasp.org/index.php/DirBuster">DirBuster</a>. Uma aplicação multithread desenvolvida pelo <a href="https://www.owasp.org/">OWASP</a> (The Open Web Application Security Project) que tem como objetivo realizar brute-force em diretórios e nomes de arquivos na web. Assim como o Dirb, o DirBuster trabalha em cima de dicionários ou listas. Ao todo ele trás 9 listas que podem ser utilizadas para nossas varreduras e testes. Como todas as suas listas foram criadas na unha, após exaustívas pesquisas e buscas na web por nomes mais utilizados para arquivos e diretórios em servidores web, o DirBuster mostra-se extremamente efetivo para este tipo de atividade conseguindo encontrar até mesmo os arquivos mais ocultos e escondidos.</p>
 
 <p><strong>M</strong>as se você não ficar satisfeito, <del>nós garantimos a devolução do seu dinheiro</del>, com apenas utilizar o modelo de dicionários, o DirBuster ainda lhe possibilita o ataque de brute-force mais purista. Tentativa e erro com combinações possíveis de caracteres. Claro, se você tem muito poder de processamento e tempo sobrando, boa sorte. ;]</p>
 
@@ -284,9 +284,9 @@
 <p><strong>C</strong>omo instalar?</p>
 
 <p><img class="left" src="/imgs/archlinux.png" title="&lsquo;ArchLinux&rsquo;" >
-Bom, se você utiliza <a href="http://archlinux.org">Arch Linux</a>, pode pegar o pacote no AUR através do seguinte link(Lembrem-se de votar nele):</p>
+Bom, se você utiliza <a href="https://archlinux.org">Arch Linux</a>, pode pegar o pacote no AUR através do seguinte link(Lembrem-se de votar nele):</p>
 
-<p><a href="http://aur.archlinux.org/packages.php?ID=20809">http://aur.archlinux.org/packages.php?ID=20809</a></p>
+<p><a href="https://aur.archlinux.org/packages.php?ID=20809">https://aur.archlinux.org/packages.php?ID=20809</a></p>
 
 <p><strong>F</strong>eito isto, basta seguir o procedimento padrão para pacotes do AUR.</p>
 
@@ -302,7 +302,7 @@ Bom, se você utiliza <a href="http://archlinux.org">Arch Linux</a>, pode pegar 
 
 <p><strong>P</strong>ortanto se você não utiliza o Arch, segue link para download da ferramenta:</p>
 
-<p><a href="http://www.owasp.org/index.php/DirBuster#tab=Download">http://www.owasp.org/index.php/DirBuster#tab=Download</a></p>
+<p><a href="https://www.owasp.org/index.php/DirBuster#tab=Download">https://www.owasp.org/index.php/DirBuster#tab=Download</a></p>
 
 <p><strong>M</strong>as qual a cara do bicho?</p>
 
@@ -371,12 +371,12 @@ Bom, se você utiliza <a href="http://archlinux.org">Arch Linux</a>, pode pegar 
   
   <entry>
     <title type="html"><![CDATA[Que tal testar o Android em seu Linux?]]></title>
-    <link href="http://kalib.github.io/blog/2010/07/20/que-tal-testar-o-android-em-seu-linux/"/>
+    <link href="https://kalib.github.io/blog/2010/07/20/que-tal-testar-o-android-em-seu-linux/"/>
     <updated>2010-07-20T13:29:41-04:00</updated>
-    <id>http://kalib.github.io/blog/2010/07/20/que-tal-testar-o-android-em-seu-linux</id>
-    <content type="html"><![CDATA[<p><strong>S</strong>e você é da área de tecnologia, com certeza já ouviu falar deste tal <a href="http://www.android.com/">Android</a> que vem ganhando cada vez mais notoriedade e mercado no mundo dos smartphones. Não ouviu falar? Sugiro que repense suas escolhas acadêmicas e/ou profissionais. Talvez não tenha feito a escolha certa. Atualize-se.</p>
+    <id>https://kalib.github.io/blog/2010/07/20/que-tal-testar-o-android-em-seu-linux</id>
+    <content type="html"><![CDATA[<p><strong>S</strong>e você é da área de tecnologia, com certeza já ouviu falar deste tal <a href="https://www.android.com/">Android</a> que vem ganhando cada vez mais notoriedade e mercado no mundo dos smartphones. Não ouviu falar? Sugiro que repense suas escolhas acadêmicas e/ou profissionais. Talvez não tenha feito a escolha certa. Atualize-se.</p>
 
-<p><strong>O</strong> fato é que o Android, como todos já sabemos, é um dos mais &ldquo;populares&rdquo; sistemas operacionais atuais para smartphones. Usei a palavra populares entre aspas pelo fato de ele ainda não ser muito utilizado, porém com certeza é muito citado. Desenvolvido inicialmente pela gigante <a href="http://www.google.com">Google</a>, passando a ser mantido posteriormente pela <a href="http://www.openhandsetalliance.com/">Open Handset Alliance</a>, o Android é um sistema operacional baseado no kernel Linux, permite que qualquer programador desenvolva uma aplicação em java, por exemplo, e controle o dispositivo através de bibliotecas desenvolvidas pela Google.</p>
+<p><strong>O</strong> fato é que o Android, como todos já sabemos, é um dos mais &ldquo;populares&rdquo; sistemas operacionais atuais para smartphones. Usei a palavra populares entre aspas pelo fato de ele ainda não ser muito utilizado, porém com certeza é muito citado. Desenvolvido inicialmente pela gigante <a href="https://www.google.com">Google</a>, passando a ser mantido posteriormente pela <a href="https://www.openhandsetalliance.com/">Open Handset Alliance</a>, o Android é um sistema operacional baseado no kernel Linux, permite que qualquer programador desenvolva uma aplicação em java, por exemplo, e controle o dispositivo através de bibliotecas desenvolvidas pela Google.</p>
 
 <p><strong>A</strong>penas recentemente o Android vem ganhando realmente mercado em smartphones e aparelhos genéricos, os famosos xing-lings ou MPx da vida.</p>
 
@@ -384,9 +384,9 @@ Bom, se você utiliza <a href="http://archlinux.org">Arch Linux</a>, pode pegar 
 
 <p><strong>A</strong>qui estarei descrevendo o procedimento para instalação no Linux, porém não possui muita diferença e o processo pode ser facilmente adaptado no caso de usuários do OS X ou Windows.</p>
 
-<p><strong>A</strong>ntes de mais nada preciso informar que ele possui como requisito básico o <a href="http://www.java.com/pt_BR/">Java</a>. Se você não possui java instalado em sua máquina, esta é a hora de o instalar.</p>
+<p><strong>A</strong>ntes de mais nada preciso informar que ele possui como requisito básico o <a href="https://www.java.com/pt_BR/">Java</a>. Se você não possui java instalado em sua máquina, esta é a hora de o instalar.</p>
 
-<p><strong>P</strong>ara começar, precisamos baixar o emulador SDK disponibilizado pelo google no link: <a href="http://developer.android.com/sdk/index.html">http://developer.android.com/sdk/index.html</a></p>
+<p><strong>P</strong>ara começar, precisamos baixar o emulador SDK disponibilizado pelo google no link: <a href="https://developer.android.com/sdk/index.html">https://developer.android.com/sdk/index.html</a></p>
 
 <p><strong>N</strong>o meu caso, estarei trabalhando em cima da versão para Linux.</p>
 
@@ -481,9 +481,9 @@ Bom, se você utiliza <a href="http://archlinux.org">Arch Linux</a>, pode pegar 
   
   <entry>
     <title type="html"><![CDATA[Chromium suportando Java agora! ]]></title>
-    <link href="http://kalib.github.io/blog/2009/09/03/chromium-suportando-java-agora/"/>
+    <link href="https://kalib.github.io/blog/2009/09/03/chromium-suportando-java-agora/"/>
     <updated>2009-09-03T15:15:34-04:00</updated>
-    <id>http://kalib.github.io/blog/2009/09/03/chromium-suportando-java-agora</id>
+    <id>https://kalib.github.io/blog/2009/09/03/chromium-suportando-java-agora</id>
     <content type="html"><![CDATA[<p><img class="left" src="/imgs/javachromium.png" title="&lsquo;Java Chromium&rsquo;" >
 <strong>É</strong> isso aí galera..</p>
 
@@ -505,9 +505,9 @@ Bom, se você utiliza <a href="http://archlinux.org">Arch Linux</a>, pode pegar 
 
 <p>Para aqueles que ainda não conhecem ou não tem o chromium instalado, sugiro a leitura dos seguintes posts anteriores:</p>
 
-<p><strong><a href="http://blog.marcelocavalcante.net/blog/2009/05/28/chromium-pronto-para-o-arch/">Aqui</a>
-<a href="http://blog.marcelocavalcante.net/blog/2009/07/09/chromium-ganha-suporte-ao-flash-por-completo/">Aqui</a>
-<a href="http://blog.marcelocavalcante.net/blog/2009/08/12/habilitando-plugins-no-chromium/">e Aqui </a></strong></p>
+<p><strong><a href="https://blog.marcelocavalcante.net/blog/2009/05/28/chromium-pronto-para-o-arch/">Aqui</a>
+<a href="https://blog.marcelocavalcante.net/blog/2009/07/09/chromium-ganha-suporte-ao-flash-por-completo/">Aqui</a>
+<a href="https://blog.marcelocavalcante.net/blog/2009/08/12/habilitando-plugins-no-chromium/">e Aqui </a></strong></p>
 
 <p><strong>A</strong>braços</p>
 ]]></content>

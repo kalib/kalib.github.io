@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
+<feed xmlns="https://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Linux | Marcelo Cavalcante Rocha ~]]></title>
-  <link href="http://kalib.github.io/blog/categories/linux/atom.xml" rel="self"/>
-  <link href="http://kalib.github.io/"/>
-  <updated>2018-08-11T22:38:27-04:00</updated>
-  <id>http://kalib.github.io/</id>
+  <link href="https://kalib.github.io/blog/categories/linux/atom.xml" rel="self"/>
+  <link href="https://kalib.github.io/"/>
+  <updated>2018-08-13T20:11:15-04:00</updated>
+  <id>https://kalib.github.io/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
     
   </author>
-  <generator uri="http://octopress.org/">Octopress</generator>
+  <generator uri="https://octopress.org/">Octopress</generator>
 
   
   <entry>
     <title type="html"><![CDATA[Docker - Uma alternativa elegante para containers no Linux]]></title>
-    <link href="http://kalib.github.io/blog/2015/08/20/docker-uma-alternativa-elegante-para-containers-no-linux/"/>
+    <link href="https://kalib.github.io/blog/2015/08/20/docker-uma-alternativa-elegante-para-containers-no-linux/"/>
     <updated>2015-08-20T11:01:00-04:00</updated>
-    <id>http://kalib.github.io/blog/2015/08/20/docker-uma-alternativa-elegante-para-containers-no-linux</id>
+    <id>https://kalib.github.io/blog/2015/08/20/docker-uma-alternativa-elegante-para-containers-no-linux</id>
     <content type="html"><![CDATA[<p><img class="center" src="/imgs/dockerlogo.png" title="&lsquo;Docker&rsquo;" ></p>
 
 <p><strong>A</strong>ntes de falar sobre o Docker, é importante que se entenda o conceito de um container, portanto vamos começar do básico. A imagem acima, logomarca do Docker, deixa claro o que é um container. A baleia, representando um navio, carregando diversos caixotes ou containers ilustra o conceito físico de um container. Nada mais do que um enorme caixote que possui o intuito de isolar algo. Quando um grande navio transporta mercadorias de um porto para outro, ele costuma trazer diversos containers separando estas mercadorias, de forma que as coisas não fiquem misturadas e bagunçadas. A forma de separação vai depender dos critérios de organização utilizados pela embarcação, seja por proprietário, seja por categoria de produtos, etc. De qualquer forma, embora cada container possua seus elementos próprios, todos os containers compartilham alguns recursos básicos, como por exemplo a embarcação, que é o meio de transporte para todos os containers ali contidos.</p>
@@ -211,10 +211,10 @@
 <p>```
  root@08abb8611700:/# apt-get update &amp;&amp; apt-get install -y nginx</p>
 
-<p> Ign <a href="http://archive.ubuntu.com">http://archive.ubuntu.com</a> vivid InRelease
- Ign <a href="http://archive.ubuntu.com">http://archive.ubuntu.com</a> vivid-updates InRelease
- Get:1 <a href="http://archive.ubuntu.com">http://archive.ubuntu.com</a> vivid/main Sources [1358 kB]
- Get:2 <a href="http://archive.ubuntu.com">http://archive.ubuntu.com</a> vivid/restricted Sources [7100 B]
+<p> Ign <a href="https://archive.ubuntu.com">https://archive.ubuntu.com</a> vivid InRelease
+ Ign <a href="https://archive.ubuntu.com">https://archive.ubuntu.com</a> vivid-updates InRelease
+ Get:1 <a href="https://archive.ubuntu.com">https://archive.ubuntu.com</a> vivid/main Sources [1358 kB]
+ Get:2 <a href="https://archive.ubuntu.com">https://archive.ubuntu.com</a> vivid/restricted Sources [7100 B]
  &hellip;
  Building dependency tree     <br/>
  Reading state information&hellip; Done
@@ -232,7 +232,7 @@
  Need to get 14.0 MB of archives.
  After this operation, 53.3 MB of additional disk space will be used.
  &hellip;
- Get:1 <a href="http://archive.ubuntu.com/ubuntu/">http://archive.ubuntu.com/ubuntu/</a> vivid/main libexpat1 amd64 2.1.0-6ubuntu1 [70.6 kB]
+ Get:1 <a href="https://archive.ubuntu.com/ubuntu/">https://archive.ubuntu.com/ubuntu/</a> vivid/main libexpat1 amd64 2.1.0-6ubuntu1 [70.6 kB]
  Processing triggers for systemd (219-7ubuntu6) &hellip;</p>
 
 <p> root@08abb8611700:/#
@@ -477,9 +477,9 @@
   
   <entry>
     <title type="html"><![CDATA[Alterando os parâmetros do kernel em tempo real com o Systcl]]></title>
-    <link href="http://kalib.github.io/blog/2014/02/13/alterando-os-parametros-do-kernel-em-tempo-real-com-o-systcl/"/>
+    <link href="https://kalib.github.io/blog/2014/02/13/alterando-os-parametros-do-kernel-em-tempo-real-com-o-systcl/"/>
     <updated>2014-02-13T22:02:00-05:00</updated>
-    <id>http://kalib.github.io/blog/2014/02/13/alterando-os-parametros-do-kernel-em-tempo-real-com-o-systcl</id>
+    <id>https://kalib.github.io/blog/2014/02/13/alterando-os-parametros-do-kernel-em-tempo-real-com-o-systcl</id>
     <content type="html"><![CDATA[<p><img class="left" src="/imgs/linux-kernel.jpg" title="&lsquo;Linux Kernel&rsquo;" >
 <strong>O</strong> <em>kernel</em>, em se tratando de sistemas operacionais, é o núcleo e componente mais importante da maioria dos computadores. Basicamente, serve de ponte entre os aplicativos e o processamento real de dados feito a nível de hardware. É ele o responsável por gerenciar os recursos do sistema, podendo oferecer uma camada de abstração de nível mais baixo para os recursos, como processadores e dispositivos de entrada/saída, que os softwares aplicativos devem controlar para realizar sua função. Com o GNU/Linux não é diferente. O núcleo Linux (Linux Kernel) forma a estrutura do sistema operacional GNU/Linux.</p>
 
@@ -550,12 +550,12 @@
   
   <entry>
     <title type="html"><![CDATA[BlackArch Linux - Uma nova distribuição para Pentesters]]></title>
-    <link href="http://kalib.github.io/blog/2014/01/30/blackarch-linux-uma-nova-distribuicao-para-pentesters/"/>
+    <link href="https://kalib.github.io/blog/2014/01/30/blackarch-linux-uma-nova-distribuicao-para-pentesters/"/>
     <updated>2014-01-30T08:47:00-05:00</updated>
-    <id>http://kalib.github.io/blog/2014/01/30/blackarch-linux-uma-nova-distribuicao-para-pentesters</id>
+    <id>https://kalib.github.io/blog/2014/01/30/blackarch-linux-uma-nova-distribuicao-para-pentesters</id>
     <content type="html"><![CDATA[<p><img class="left" src="/imgs/blackarch.jpg" title="&lsquo;BlackArch&rsquo;" ></p>
 
-<p><strong>U</strong>ma boa novidade para os profissionais de segurança: <a href="http://www.blackarch.org" target="_blank">BlackArch</a>! Para quem, assim como eu, gosta de como as coisas funcionam no Arch Linux essa é uma notícia particularmente boa, visto que o BlackArch não se trata realmente de uma nova distribuição, mas sim de uma <em>extensão</em> para o Arch Linux. Como assim? Bom, você possui duas opções para utilizar o BlackArch, sendo uma delas como uma distribuição completa, através de um Live CD, por exemplo, e a outra como uma extensão (um repositório de pacotes) para o Arch Linux, onde você poderá apenas inserir um repositório em sua já existente distribuição Arch Linux e ter acesso ao conjunto de ferramentas do BlackArch.</p>
+<p><strong>U</strong>ma boa novidade para os profissionais de segurança: <a href="https://www.blackarch.org" target="_blank">BlackArch</a>! Para quem, assim como eu, gosta de como as coisas funcionam no Arch Linux essa é uma notícia particularmente boa, visto que o BlackArch não se trata realmente de uma nova distribuição, mas sim de uma <em>extensão</em> para o Arch Linux. Como assim? Bom, você possui duas opções para utilizar o BlackArch, sendo uma delas como uma distribuição completa, através de um Live CD, por exemplo, e a outra como uma extensão (um repositório de pacotes) para o Arch Linux, onde você poderá apenas inserir um repositório em sua já existente distribuição Arch Linux e ter acesso ao conjunto de ferramentas do BlackArch.</p>
 
 <p><strong>O</strong> BlackArch, atualmente, possui suporte para as arquiteturas i686 e x86_64, com previsão de suporte para ARM em breve (Sim, meu RaspBerry poderá se tornar uma ferramenta para pentests). No mais, o BlackArch hoje possui mais de 600 ferramentas, estando este número crescendo constantemente, e utiliza grupos modulares de pacotes, facilitando a instalação dos mesmos.</p>
 
@@ -563,14 +563,14 @@
 
 <p><strong>D</strong>entre as ferramentas existentes estão: 3proxy, 42zip, acccheck, aesfix, against, airflood, airoscript, bluepot, blueprint, braces, bss, bully, cisco-ocs, cmospwd, dbd, dc3dd, deblaze, dhcpig, enumiax, fakedns, &hellip; Vocẽ não espera que eu liste todos os mais de 600, certo?</p>
 
-<p><a href="http://blackarch.org/images/screenshots/openbox.png" target="_blank"><img class="center" src="/imgs/openbox.png" title="&lsquo;BlackArch Openbox&rsquo;" ></a></p>
+<p><a href="https://blackarch.org/images/screenshots/openbox.png" target="_blank"><img class="center" src="/imgs/openbox.png" title="&lsquo;BlackArch Openbox&rsquo;" ></a></p>
 
 <p><strong>Configurando como um Repositório Não-Oficial</strong></p>
 
 <p><strong>S</strong>e você já possui o Arch Linux instalado e deseja apenas inserir o BlackArch como um repositório em sua distro, execute os seguintes comandos como root, os quais servirão para assinar os pacotes: <em>(Se você não possui o Arch Linux instalado e/ou simplesmente deseja rodar o Live CD ou instalar o mesmo por completo, seja em uma máquina física ou virtual, siga para a seção <a href="#instalando">Instalando o BlackArch Linux utilizando a Live-ISO</a>)</em></p>
 
 <p>```
- # wget -q <a href="http://blackarch.org/keyring/blackarch-keyring.pkg.tar.xz">http://blackarch.org/keyring/blackarch-keyring.pkg.tar.xz</a>{,.sig}</p>
+ # wget -q <a href="https://blackarch.org/keyring/blackarch-keyring.pkg.tar.xz">https://blackarch.org/keyring/blackarch-keyring.pkg.tar.xz</a>{,.sig}</p>
 
 <p> # gpg &mdash;keyserver hkp://pgp.mit.edu &mdash;recv 4345771566D76038C7FEB43863EC0ADBEA87E4E3</p>
 
@@ -590,7 +590,7 @@
   Server = &lt;mirror_site&gt;/$repo/os/$arch
 </code></p>
 
-<p><strong>Substitua</strong> <em>&lt;mirror_site></em> por um mirror de sua escolha, preferencialmente um dos <strong>mirrors oficiais</strong> contidos <a href="http://blackarch.org/download.html#mirrors" target="_blank"><em>neste link</em></a>.</p>
+<p><strong>Substitua</strong> <em>&lt;mirror_site></em> por um mirror de sua escolha, preferencialmente um dos <strong>mirrors oficiais</strong> contidos <a href="https://blackarch.org/download.html#mirrors" target="_blank"><em>neste link</em></a>.</p>
 
 <p><strong>U</strong>ma vez que você tenha seguido os passos acima, execute:</p>
 
@@ -628,7 +628,7 @@
 
 <p><strong><a name="instalando">Instalando o BlackArch Linux utilizando a Live-ISO</a></strong></p>
 
-<p><strong>A</strong>ntes de mais nada, <a href="http://blackarch.org/download.html" target="_blank">baixe a ISO a partir do site oficial</a>.</p>
+<p><strong>A</strong>ntes de mais nada, <a href="https://blackarch.org/download.html" target="_blank">baixe a ISO a partir do site oficial</a>.</p>
 
 <p><strong>E</strong>m seguida, dê boot na ISO e instale o script de instalação do BlackArch:</p>
 
@@ -648,9 +648,9 @@
   
   <entry>
     <title type="html"><![CDATA[Dica - Escondendo Seu Endereço de Email ao Divulgar Seu Endereço de Email]]></title>
-    <link href="http://kalib.github.io/blog/2014/01/23/dica-escondendo-seu-endereco-de-email-ao-divulgar-seu-endereco-de-email/"/>
+    <link href="https://kalib.github.io/blog/2014/01/23/dica-escondendo-seu-endereco-de-email-ao-divulgar-seu-endereco-de-email/"/>
     <updated>2014-01-23T09:37:00-05:00</updated>
-    <id>http://kalib.github.io/blog/2014/01/23/dica-escondendo-seu-endereco-de-email-ao-divulgar-seu-endereco-de-email</id>
+    <id>https://kalib.github.io/blog/2014/01/23/dica-escondendo-seu-endereco-de-email-ao-divulgar-seu-endereco-de-email</id>
     <content type="html"><![CDATA[<p><img class="center" src="/imgs/frog_camouflage.jpg" title="&lsquo;Camouflage&rsquo;" ></p>
 
 <p><strong>D</strong>a mesma forma que alguns animais só conseguem sobreviver utilizando-se de sua capacidade e/ou técnica de camuflar-se, misturando-se assim ao ambiente, para enganar seus predadores naturais, as pessoas do mundo atual praticamente precisam adotar as mesmas técnicas para manter seus endereços de email livres de um turbilhão de emails indesejados com propagandas de viagra, dicas para crescimento peniano, irregularidades em seu CPF, problemas em sua conta bancária, etc, etc.</p>
@@ -698,9 +698,9 @@
   
   <entry>
     <title type="html"><![CDATA[Dica - Assistir Star Wars em um Console ou Terminal]]></title>
-    <link href="http://kalib.github.io/blog/2014/01/17/dica-assistir-star-wars-em-um-console-ou-terminal/"/>
+    <link href="https://kalib.github.io/blog/2014/01/17/dica-assistir-star-wars-em-um-console-ou-terminal/"/>
     <updated>2014-01-17T10:30:00-05:00</updated>
-    <id>http://kalib.github.io/blog/2014/01/17/dica-assistir-star-wars-em-um-console-ou-terminal</id>
+    <id>https://kalib.github.io/blog/2014/01/17/dica-assistir-star-wars-em-um-console-ou-terminal</id>
     <content type="html"><![CDATA[<p><img class="left" src="/imgs/starwars.png" title="&lsquo;Star Wars&rsquo;" >
 <strong>Q</strong>uem disse que o terminal ou linha de comando serve apenas para trabalho e coisas chatas?</p>
 
