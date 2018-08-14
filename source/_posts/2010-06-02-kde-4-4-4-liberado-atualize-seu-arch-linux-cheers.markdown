@@ -16,7 +16,7 @@ categories:
 {% img left /imgs/kde444.png 'KDE 444' %}
 **S**audações pessoal!
 
-**D**epois de um longo tempo sem postar venho lhes informar que já podemos ter o [KDe 4.4.4](http://www.kde.org) em nosso [Arch Linux](http://www.archlinux.org).
+**D**epois de um longo tempo sem postar venho lhes informar que já podemos ter o [KDe 4.4.4](https://www.kde.org) em nosso [Arch Linux](https://www.archlinux.org).
 
 **O** mesmo já seencontra devidamente empacotado e disponível em nossos repositórios. Por se tratar de uma quantidade grande de pacotes (mais de 300 MB), execute o comando para atualizar seu sistema antes de prosseguir com a leitura do post.
 
@@ -30,7 +30,7 @@ _# pacman -Syu_
 
 **E**ste é o codinome da versão 4.4.4 do KDE que foi liberada ontem, 1 de Junho, pela equipe do projeto. Lançamento este que, façamos justiça, merece mesmo um brinde.
 
-**C**heers, ou KDE 4.4.4 para os menos íntimos, será o último lançamento da série 4.4 que dará espaço para a próxima release, [KDE 4.5](http://www.kde.org/announcements/announce-4.5-beta1.php), que tem previsão de lançamento para Agosto.
+**C**heers, ou KDE 4.4.4 para os menos íntimos, será o último lançamento da série 4.4 que dará espaço para a próxima release, [KDE 4.5](https://www.kde.org/announcements/announce-4.5-beta1.php), que tem previsão de lançamento para Agosto.
 
 **P**or se tratar apenas de correções de bugs e traduções, todos podem efetuar a atualização sem medo algum de perder configurações ou seja o que for.
 
@@ -43,6 +43,6 @@ Dentre outros...
 
 {% img left /imgs/kde444-desktop.jpg 'Kde Destop' %}
 
-**P**ara os curiosos de plantão que desejem já ir conhecendo o que ainda está por vir, a equipe de desenvolvimento do KDE já disponibilizou o primeiro beta da próxima release, KDE 4.5, que deverá estar disponível em Agosto.  Maiores informações podem ser obtidas [neste link](http://www.kde.org/announcements/announce-4.5-beta1.php).
+**P**ara os curiosos de plantão que desejem já ir conhecendo o que ainda está por vir, a equipe de desenvolvimento do KDE já disponibilizou o primeiro beta da próxima release, KDE 4.5, que deverá estar disponível em Agosto.  Maiores informações podem ser obtidas [neste link](https://www.kde.org/announcements/announce-4.5-beta1.php).
 
 **A**braços!

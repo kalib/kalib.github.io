@@ -18,7 +18,7 @@ categories:
 
 **A** recomendação deste mês tem o título de A Bruxa de Portobello.
 
-**E**ste é o novo título do renomado [Paulo Coelho](http://pt.wikipedia.org/wiki/Paulo_Coelho). Para quem não o conhece, se é que isso é possível, ele é o autor brasileiro que mais vendeu livros fora do Brasil. Foi consagrado por ser o autor do primeiro livro que vendeu mais do que a própria bíblia. Um de seus livros, O Alquimista, foi consagrado por um influente jornal de Portugal como o livro em língua portuguesa mais vendido no mundo. O autor também ocupa desde 2002 a cadeira de número 21 na [Academia Brasileira de Letras](http://pt.wikipedia.org/wiki/Academia_Brasileira_de_Letras).
+**E**ste é o novo título do renomado [Paulo Coelho](https://pt.wikipedia.org/wiki/Paulo_Coelho). Para quem não o conhece, se é que isso é possível, ele é o autor brasileiro que mais vendeu livros fora do Brasil. Foi consagrado por ser o autor do primeiro livro que vendeu mais do que a própria bíblia. Um de seus livros, O Alquimista, foi consagrado por um influente jornal de Portugal como o livro em língua portuguesa mais vendido no mundo. O autor também ocupa desde 2002 a cadeira de número 21 na [Academia Brasileira de Letras](https://pt.wikipedia.org/wiki/Academia_Brasileira_de_Letras).
 
 **A** história é sobre a vida de uma filha de ciganos chamada Sherine Khalil que foi adotada por um casal de libaneses. A mesma mudou-se com seus pais adotivos para Londres por conta de uma guerra civil que estava iniciando no Líbano por volta de 1974-1975. Em Londres seu pai consegue se restabelecer muito bem com a família ao mesmo tempo em que a menina cresce e é educada da melhor forma possível. Ao menos estes eram os planos de seus pais.
 

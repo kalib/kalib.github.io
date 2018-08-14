@@ -33,7 +33,7 @@ categories:
 
 **E**m meio a uma série de conflitos religiosos, Artur passa a ser o responsável por unificar e assegurar a harmonia da Bretanha comandando vários Reis que lhe devem jurar fidelidade.
 
-**S**egue breve sinopse deste que é o primeiro livro de uma série que conta com 4 volumes retirada do site da [Livraria Saraiva](http://www.livrariasaraiva.com.br/produto/2615172/as-brumas-de-avalon-1-a-senhora-da-magia/?ID=BB726B7B7DA0C140A12050458):
+**S**egue breve sinopse deste que é o primeiro livro de uma série que conta com 4 volumes retirada do site da [Livraria Saraiva](https://www.livrariasaraiva.com.br/produto/2615172/as-brumas-de-avalon-1-a-senhora-da-magia/?ID=BB726B7B7DA0C140A12050458):
 
 _Neste enorme e emocionante romance, a lenda do rei Artur é contada pela primeira vez através das vidas, das visões e da percepção das mulheres que nela tiveram um papel central.
 Igraine, Viviane, Guinevere, Morgana. Elas revelam, com as suas vidas e sentimentos, a lenda de Artur, como se fosse nova de, ao mesmo tempo, levam o leitor a integrar-se na história, de maneira natural e profunda.

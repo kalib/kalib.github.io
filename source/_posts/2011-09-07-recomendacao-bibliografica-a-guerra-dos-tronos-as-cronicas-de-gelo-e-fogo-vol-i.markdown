@@ -23,7 +23,7 @@ categories:
 
 **C**omo bom amante de livros(e filmes) **épicos**, fiquei curioso em relação a esta história desde que bati os olhos pela primeira vez na capa de seus livros.
 
-**O** livro é de autoria do escritor e roteirista estadunidense **[George Raymond Richard Martin](http://pt.wikipedia.org/wiki/George_R._R._Martin)**, declarado em 2011 pela revista TIMES como uma das **100 pessoas mais influentes do mundo**.
+**O** livro é de autoria do escritor e roteirista estadunidense **[George Raymond Richard Martin](https://pt.wikipedia.org/wiki/George_R._R._Martin)**, declarado em 2011 pela revista TIMES como uma das **100 pessoas mais influentes do mundo**.
 
 **A**pesar de suas 592 páginas, a leitura é leve e desperta a curiosidade.
 

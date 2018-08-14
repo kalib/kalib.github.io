@@ -37,8 +37,8 @@ categories:
 
 Para aqueles que ainda não conhecem ou não tem o chromium instalado, sugiro a leitura dos seguintes posts anteriores:
 
-**[Aqui](http://blog.marcelocavalcante.net/blog/2009/05/28/chromium-pronto-para-o-arch/)
-[Aqui](http://blog.marcelocavalcante.net/blog/2009/07/09/chromium-ganha-suporte-ao-flash-por-completo/)
-[e Aqui ](http://blog.marcelocavalcante.net/blog/2009/08/12/habilitando-plugins-no-chromium/)**
+**[Aqui](https://blog.marcelocavalcante.net/blog/2009/05/28/chromium-pronto-para-o-arch/)
+[Aqui](https://blog.marcelocavalcante.net/blog/2009/07/09/chromium-ganha-suporte-ao-flash-por-completo/)
+[e Aqui ](https://blog.marcelocavalcante.net/blog/2009/08/12/habilitando-plugins-no-chromium/)**
 
 **A**braços

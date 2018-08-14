@@ -13,7 +13,7 @@ categories:
 - Software Livre
 ---
 
-Conforme apresentei no post passado, o [BR-Linux](http://br-linux.org/2008/ajude-a-escolher-que-distribuicoes-o-br-linux-deve-recomendar/) estava fazendo uma pesquisa para saber quais distribuições deveria indicar. Antes mesmo de ver as respostas, tinha plena certeza de que o Ubuntu estaria com uma grande quantidade de votos, afinal de contas foi e é uma das distribuições que mais divulgou o nome do Linux nos últimos anos por ser mais "amigável" para desktops de usuários que terão o primeiro contato com linux.
+Conforme apresentei no post passado, o [BR-Linux](https://br-linux.org/2008/ajude-a-escolher-que-distribuicoes-o-br-linux-deve-recomendar/) estava fazendo uma pesquisa para saber quais distribuições deveria indicar. Antes mesmo de ver as respostas, tinha plena certeza de que o Ubuntu estaria com uma grande quantidade de votos, afinal de contas foi e é uma das distribuições que mais divulgou o nome do Linux nos últimos anos por ser mais "amigável" para desktops de usuários que terão o primeiro contato com linux.
 
 
 
@@ -23,7 +23,7 @@ Bom, isto de fato se mostrou verdade na pesquisa, porém o que mais me chamou a 
 
 
 
-Este resultado apenas demonstra o que muitos de nós já estávamos percebendo: O Arch vem ganhando maior força em nosso país. Este resultado não é apenas fruto de publicidade, mas também da qualidade da distribuição em si bem como o trabalho que a comunidade [Archlinux-br](http://archlinux-br.org/) vem desenvolvendo no quesito de suporte, documentações, traduções dentre outras formas de auxiliar os novos usuários.
+Este resultado apenas demonstra o que muitos de nós já estávamos percebendo: O Arch vem ganhando maior força em nosso país. Este resultado não é apenas fruto de publicidade, mas também da qualidade da distribuição em si bem como o trabalho que a comunidade [Archlinux-br](https://archlinux-br.org/) vem desenvolvendo no quesito de suporte, documentações, traduções dentre outras formas de auxiliar os novos usuários.
 
 
 

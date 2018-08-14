@@ -16,11 +16,11 @@ categories:
 {% img left /imgs/logo_dia_livre.png 'Dia Livre' %}
 **S**audações amigos!
 
-**P**ara quem não sabe ainda, a **[Tux-CE](http://www.tux-ce.org)** está organizando um encontro regular para os usuários e profissinais de Software Livre, bem como interessados e curiosos sobre o tema. O nome dado ao projeto é **[Dia Livre](http://dialivre.tux-ce.org)**.
+**P**ara quem não sabe ainda, a **[Tux-CE](https://www.tux-ce.org)** está organizando um encontro regular para os usuários e profissinais de Software Livre, bem como interessados e curiosos sobre o tema. O nome dado ao projeto é **[Dia Livre](https://dialivre.tux-ce.org)**.
 
 **U**m encontro simples e rápido que costuma acontecer a cada 2 meses em diferentes locais para facilitar a presença de todos.
 
-**A** próxima edição será no dia 11 de Setembro, Domingo. Estes são os últimos dias para **[inscrições através de nossa página](http://tux-ce.org/dialivre/inscricoes/)**.
+**A** próxima edição será no dia 11 de Setembro, Domingo. Estes são os últimos dias para **[inscrições através de nossa página](https://tux-ce.org/dialivre/inscricoes/)**.
 
 11 de Setembro, Domingo – A partir das 08:00
 

@@ -13,7 +13,7 @@ categories:
 {% img left /imgs/livros/aescolhatre.jpg 'A Escolha dos Três' %}
 **O**lá pessoal, que tal mais um pouco de leitura para desopilar?
 
-**O** livro que estou lendo agora se chama A Escolha dos Três. É a continuação da série A Torre Negra, que eu já havia citado em um post anteriormente. Pode conferir [aqui](http://blog.marcelocavalcante.net/blog/2009/06/21/recomendacao-bibliografica-do-vooc2bf-o-pistoleiro/).
+**O** livro que estou lendo agora se chama A Escolha dos Três. É a continuação da série A Torre Negra, que eu já havia citado em um post anteriormente. Pode conferir [aqui](https://blog.marcelocavalcante.net/blog/2009/06/21/recomendacao-bibliografica-do-vooc2bf-o-pistoleiro/).
 
 **N**este segundo volume, a história do pistoleiro continua, precisando desta vez conhecer e resolver alguns enigmas com a participação e interação de 3 personagens distintos que poderão, ou não, dar um novo rumo à aventura.
 

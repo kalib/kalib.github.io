@@ -16,7 +16,7 @@ categories:
 ---
 
 
-**N**este fim de semana foi publicada a programação oficial do **[3º Dia Livre](http://www.dialivre.net/portal)**, encontro para usuários, profissionais ou entusiastas do movimento de Software Livre no Ceará.
+**N**este fim de semana foi publicada a programação oficial do **[3º Dia Livre](https://www.dialivre.net/portal)**, encontro para usuários, profissionais ou entusiastas do movimento de Software Livre no Ceará.
 
 **E**sta 3ª edição contará com 4 palestras de temas bem diversificados como podem ver na grade abaixo:
 
@@ -119,13 +119,13 @@ Marcelo Melo
 
 
 
-**A**inda não sabe o que é o Dia Livre? **[Clique aqui para conhecer!](http://www.dialivre.net/portal/?page_id=7)**
+**A**inda não sabe o que é o Dia Livre? **[Clique aqui para conhecer!](https://www.dialivre.net/portal/?page_id=7)**
 
 **A**s **inscrições** continuam abertas para esta 3ª edição que acontecerá no dia **12 de Novembro**, Sábado, na Faculdade Estácio FIC.
 
-**C**lique **[aqui](http://www.dialivre.net/portal/?page_id=8)** e faça sua inscrição gratuita.
+**C**lique **[aqui](https://www.dialivre.net/portal/?page_id=8)** e faça sua inscrição gratuita.
 
 **A**braços,
 
 
-![](http://www.marcelocavalcante.net/portal/imgs/userbar.gif)
+![](https://www.marcelocavalcante.net/portal/imgs/userbar.gif)

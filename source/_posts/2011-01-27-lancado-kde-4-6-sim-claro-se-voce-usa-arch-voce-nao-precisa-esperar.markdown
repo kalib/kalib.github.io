@@ -22,7 +22,7 @@ categories:
 
 **- Eu empacoto coisas que assustam o Satanás!**
 
-**É** isso aí pessoal, ontem o projeto [KDE](http://kde.org) liberou o KDE 4.6 com muitas melhorias e o pessoal do [Arch](http://archlinux.org) já saiu na frente, claro. Sim, se você usa Arch, não precisa esperar, pode atualizar seu KDE com o seu rotineiro _# __pacman -Syu._
+**É** isso aí pessoal, ontem o projeto [KDE](https://kde.org) liberou o KDE 4.6 com muitas melhorias e o pessoal do [Arch](https://archlinux.org) já saiu na frente, claro. Sim, se você usa Arch, não precisa esperar, pode atualizar seu KDE com o seu rotineiro _# __pacman -Syu._
 
 
 {% img center /imgs/kde46.png 'KDE 46' %}
@@ -41,6 +41,6 @@ categories:
 {% img center /imgs/kde46_1.png 'KDE 46' %}
 
 
-**V**árias modificações no dolphin, correções de bugs e aparência também foram implementadas, mas... se eu for realmente listar todas as modificações, posso acabar perdendo meu emprego, portanto vou apenas lhes deixar o link do site oficial onde podem ser encontradas todas as mudanças desta release: [http://kde.org/announcements/4.6/](http://kde.org/announcements/4.6/)
+**V**árias modificações no dolphin, correções de bugs e aparência também foram implementadas, mas... se eu for realmente listar todas as modificações, posso acabar perdendo meu emprego, portanto vou apenas lhes deixar o link do site oficial onde podem ser encontradas todas as mudanças desta release: [https://kde.org/announcements/4.6/](https://kde.org/announcements/4.6/)
 
 **A**braços!

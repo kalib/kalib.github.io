@@ -14,9 +14,9 @@ categories:
 - Tux-ce
 ---
 
-**J**á estão abertas as inscrições para o **[3º Dia Livre](http://www.dialivre.net/portal)** em Fortaleza.
+**J**á estão abertas as inscrições para o **[3º Dia Livre](https://www.dialivre.net/portal)** em Fortaleza.
 
-**P**ara quem ainda não teve a oportunidade de participar de nenhuma edição, o **[Dia Livre](http://www.dialivre.net/portal/?page_id=7)** é um encontro bimestral organizado pela **[Tux-CE](http://www.tux-ce.org)** que busca aproximar os profissionais e entusiastas do **Software Livre**.
+**P**ara quem ainda não teve a oportunidade de participar de nenhuma edição, o **[Dia Livre](https://www.dialivre.net/portal/?page_id=7)** é um encontro bimestral organizado pela **[Tux-CE](https://www.tux-ce.org)** que busca aproximar os profissionais e entusiastas do **Software Livre**.
 
 **A**lém de proporcionar um momento de entretenimento e conhecimento, através de palestras e apresentações sobre os mais diversos assuntos ligados à tecnologias e Software Livre como um todo, o **Dia Livre** é uma excelente oportunidade para aumentar o seu networking ou círculo profissional.
 
@@ -24,6 +24,6 @@ categories:
 
 **A**s inscrições são gratuitas!
 
-[**Não perca tempo e garanta a sua vaga através do site do Dia Livre: www.dialivre.net**](http://www.dialivre.net/portal/?page_id=8)
+[**Não perca tempo e garanta a sua vaga através do site do Dia Livre: www.dialivre.net**](https://www.dialivre.net/portal/?page_id=8)
 
 **A**braços,

@@ -32,7 +32,7 @@ categories:
 
 **R**ealmente é uma leitura bastante envolvente e interessante. Ainda não terminei a leitura mas estou ancioso para ver no que vai dar.
 
-**S**egue breve sinopse disponibilizada no site da [Livraria Saraiva](http://www.livrariasaraiva.com.br/produto/3047055/a-batalha-do-apocalipse-da-queda-dos-anjos-ao-crepusculo-do-mundo/?ID=C94920877DA091E09270F0917):
+**S**egue breve sinopse disponibilizada no site da [Livraria Saraiva](https://www.livrariasaraiva.com.br/produto/3047055/a-batalha-do-apocalipse-da-queda-dos-anjos-ao-crepusculo-do-mundo/?ID=C94920877DA091E09270F0917):
 
 
 > _Há muitos e muitos anos, tantos quanto o número de estrelas no céu, o  paraíso celeste foi palco de um terrível levante. Um grupo de anjos  guerreiros,  amantes da justiça e da liberdade, desafiou a tirania dos poderosos  arcanjos, levantando armas contra seus opressores. Expulsos, os  renegados foram  forçados ao exílio e condenados a vagar pelo mundo dos homens até o Dia  do Juízo Final. Mas eis que chega o momento do Apocalipse, o tempo do  ajuste  de contas. Único sobrevivente do expurgo, Ablon, o líder dos renegados, é  convidado por Lúcifer, o Arcanjo Negro, a se juntar às suas legiões na  Batalha do Armagedon, o embate final entre o céu e o inferno, a guerra  que decidirá não só o destino do mundo, mas o futuro da humanidade. Das  ruínas  da Babilônia ao esplendor do Império Romano, das vastas planícies da  China aos gelados castelos da Inglaterra medieval, A Batalha do  Apocalipse não é  apenas uma viagem pela história humana - é também uma jornada de  conhecimento, um épico empolgante, repleto de lutas heroicas, magia,  romance e  suspense._

@@ -70,8 +70,8 @@ Em resumo, esta foi a primeira impressão que tive do Arch Linux. Uma distribui�
 
 Links:  
 
-[1- Maiores detalhes sobre o Arch Linux e sua história](http://www.archlinux-br.org/about/)  
+[1- Maiores detalhes sobre o Arch Linux e sua história](https://www.archlinux-br.org/about/)  
 
-[2- Download do Arch](http://www.archlinux-br.org/download/)  
+[2- Download do Arch](https://www.archlinux-br.org/download/)  
 
-[3- Tutorial de Instalação](http://www.vivaolinux.com.br/artigos/verArtigo.php?codigo=8256)
+[3- Tutorial de Instalação](https://www.vivaolinux.com.br/artigos/verArtigo.php?codigo=8256)

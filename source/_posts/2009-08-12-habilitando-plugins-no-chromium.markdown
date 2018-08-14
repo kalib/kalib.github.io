@@ -43,12 +43,12 @@ about:plugins
 **1-** Adicione o repositório brasileiro em sua lista de mirrors. Adicione as seguintes linhas em seu arquivo /etc/pacman.conf :
 
 [archlinuxbr]
-Server = http://repo.archlinux-br.org/i686
+Server = https://repo.archlinux-br.org/i686
 
 ou
 
 [archlinuxbr]
-Server = http://repo.archlinux-br.org/x86_64
+Server = https://repo.archlinux-br.org/x86_64
 
 **2- **Atualize seus mirrors e instale o chromium:
 

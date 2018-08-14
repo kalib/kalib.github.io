@@ -39,7 +39,7 @@ categories:
 
 **O** BleachBit possui uma interface gráfica simples, na qual você poderá selecionar o que você deseja destruir. Lembre-se que algumas funções são experimentais e podem causar problemas em seu sistema. Mas não há necessidade de se preocupar: O BleachBit lhe informa sobre isto e lhe dá a chance de cancelar a operação selecionada. ;]
 
-**O** BleachBit possui uma vasta lista de *cleaners*, como ele chama as ferramentas internas de limpeza. Dentre a longa lista, podemos citar alguns como: *Adanaxis, Adobe Reader, aMSN, aMule, APT, Audacious, Bash, Beagle, Chromium, Downloader for X, Deep scan, Easytag, ELinks, emesene, Epiphany, Evolution, Exaile, Filezilla, Firefox, Flash, gedit, gFTP, GIMP, etc.* A lista é realmente longa. [Lista completa de cleaners e demais recursos.](http://bleachbit.sourceforge.net/features)
+**O** BleachBit possui uma vasta lista de *cleaners*, como ele chama as ferramentas internas de limpeza. Dentre a longa lista, podemos citar alguns como: *Adanaxis, Adobe Reader, aMSN, aMule, APT, Audacious, Bash, Beagle, Chromium, Downloader for X, Deep scan, Easytag, ELinks, emesene, Epiphany, Evolution, Exaile, Filezilla, Firefox, Flash, gedit, gFTP, GIMP, etc.* A lista é realmente longa. [Lista completa de cleaners e demais recursos.](https://bleachbit.sourceforge.net/features)
 
 **P**ara executar o programa, basta procurar o mesmo através do menu de aplicativos de seu sistema, ou através do comando:
 

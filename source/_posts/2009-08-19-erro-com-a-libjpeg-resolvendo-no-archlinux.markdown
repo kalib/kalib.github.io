@@ -12,16 +12,16 @@ categories:
 - Software Livre
 ---
 {% img left /imgs/archlibjpeg.png 'Arch Libjpeg' %}
-**Q**uem está utilizando o [Archlinux](http://archlinux.org) devidamente atualizado, pode ter percebido alguns erros relacionados à libjpeg.so ao tentar executar alguma aplicação, como foi o meu caso com o [floola](http://www.floola.com), um gerenciador para meu ipod com o qual transfiro e manipulo minhas músicas pelo linux.
+**Q**uem está utilizando o [Archlinux](https://archlinux.org) devidamente atualizado, pode ter percebido alguns erros relacionados à libjpeg.so ao tentar executar alguma aplicação, como foi o meu caso com o [floola](https://www.floola.com), um gerenciador para meu ipod com o qual transfiro e manipulo minhas músicas pelo linux.
 
 **O** problema se deu pelo fato de o Archlinux já ter adotado a nova libjpeg. Esta versão 7 possui algumas vantagens em relação a versão anterior, porém muitos aplicativos ainda não foram atualizados para esta nova versão. Este foi o caso do floola por exemplo, que só funciona com a libjpeg6.
 
 **S**egue uma dica simples e rápida para resolver este pequeno problema.
 
-**1-** Baixe o pacote da libjpeg6 diretamente do [AUR](http://aur.archlinux.org) através do seguinte link:
+**1-** Baixe o pacote da libjpeg6 diretamente do [AUR](https://aur.archlinux.org) através do seguinte link:
 
 
-> http://aur.archlinux.org/packages/libjpeg6/libjpeg6.tar.gz
+> https://aur.archlinux.org/packages/libjpeg6/libjpeg6.tar.gz
 
 
 **2-** Descompacte o arquivo:

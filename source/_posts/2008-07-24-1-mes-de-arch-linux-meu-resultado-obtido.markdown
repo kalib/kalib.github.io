@@ -36,7 +36,7 @@ Pacotes Atualizados: Uma das coisas que mais me surpreendeu no Arch, é a veloci
 
 
 
-AUR: Como se já não bastasse o magnífico pacman pra gerenciar meus pacotes, também contamos com o [AUR](http://aur.archlinux.org/), onde podemos achar aquele pacote em específico que por alguma razão ainda não se encontra nos repositórios oficiais. A organização do AUR é excelente onde podemos criar pacotes e submetê-los para que depois de uma votação adequada, possam finalmente assumir postos mais reconhecidos, até quem sabe um dia entrar para os repositórios. A quantidade de pacotes disponíveis no AUR é surpreendente, o que apenas demonstra a força da comunidade atuante no Arch.  
+AUR: Como se já não bastasse o magnífico pacman pra gerenciar meus pacotes, também contamos com o [AUR](https://aur.archlinux.org/), onde podemos achar aquele pacote em específico que por alguma razão ainda não se encontra nos repositórios oficiais. A organização do AUR é excelente onde podemos criar pacotes e submetê-los para que depois de uma votação adequada, possam finalmente assumir postos mais reconhecidos, até quem sabe um dia entrar para os repositórios. A quantidade de pacotes disponíveis no AUR é surpreendente, o que apenas demonstra a força da comunidade atuante no Arch.  
 
   
 
@@ -49,7 +49,7 @@ Segurança: O Linux trás uma característica em comum, independente de distribu
 
 
 
-Comunidade: A comunidade do Arch Linux, em especial a comunidade [archlinux-br](http://archlinux-br.org/), tem me recebido de braços abertos desde que passei a frequentar e tentar ajudar a mesma, seja na divulgação, resposta de dúvidas ou mesmo na tradução de documentações do Arch. Essa oportunidade de ajudar e ser bem recebido ajudou muito em minha decisão por adotar esta distribuição. Outro ponto a favor, é o fato de termos dois brasileiros atualmente engajados no time de desenvolvedores do Arch Linux, o que significa que nossa voz é mais facilmente ouvida. Deixo aqui os parabéns a ambos que tem feito um ótimo trabalho: [Hugo Doria](http://hdoria.archlinux-br.org/blog) e Douglas Soares. (Perdão, não achei o link para o mesmo)
+Comunidade: A comunidade do Arch Linux, em especial a comunidade [archlinux-br](https://archlinux-br.org/), tem me recebido de braços abertos desde que passei a frequentar e tentar ajudar a mesma, seja na divulgação, resposta de dúvidas ou mesmo na tradução de documentações do Arch. Essa oportunidade de ajudar e ser bem recebido ajudou muito em minha decisão por adotar esta distribuição. Outro ponto a favor, é o fato de termos dois brasileiros atualmente engajados no time de desenvolvedores do Arch Linux, o que significa que nossa voz é mais facilmente ouvida. Deixo aqui os parabéns a ambos que tem feito um ótimo trabalho: [Hugo Doria](https://hdoria.archlinux-br.org/blog) e Douglas Soares. (Perdão, não achei o link para o mesmo)
 
 
 

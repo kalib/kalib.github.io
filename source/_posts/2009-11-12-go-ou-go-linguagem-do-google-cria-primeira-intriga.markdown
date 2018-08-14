@@ -31,13 +31,13 @@ categories:
 
 **A** pergunta é: Seria a escolha do nome da linguagem um bug a ser reportado? hehe
 
-[http://code.google.com/p/go/issues/detail?id=9](http://code.google.com/p/go/issues/detail?id=9)
+[https://code.google.com/p/go/issues/detail?id=9](https://code.google.com/p/go/issues/detail?id=9)
 
 **O** mesmo contesta a falta de "criatividade" (?¿) do Google por utilizar o nome Go.
 
 **S**e aquele link não bastou, segue um link de venda do livro do Maccabe escrito em 2007 a cerca da linguagem Go!.
 
-http://www.lulu.com/content/paperback-book/lets-go/641689
+https://www.lulu.com/content/paperback-book/lets-go/641689
 
 **C**omo será que o google irá lidar com isso? Terá a decência de agir corretamente e mudar o nome de sua linguagem enfrentando toda a dor de cabeça disto após seu lançamento e divulgação? Ou simplesmente "comprará" a outra ideia, quem sabe oferecendo um emprego ou coisa parecida ao Mccabe?!
 

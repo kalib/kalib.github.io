@@ -30,17 +30,17 @@ Dentre as novidades que parecem se destacar estão a melhoria de performance do 
 
 
 
-Até hoje pela manhã não havia nenhuma confirmação com relação a este lançamento, apenas boatos que acabaram por se confirmar nesta noite quando achei o aviso oficial no [blog](http://googleblog.blogspot.com/2008/09/fresh-take-on-browser.html) do próprio Google.
+Até hoje pela manhã não havia nenhuma confirmação com relação a este lançamento, apenas boatos que acabaram por se confirmar nesta noite quando achei o aviso oficial no [blog](https://googleblog.blogspot.com/2008/09/fresh-take-on-browser.html) do próprio Google.
 
 
 
-A gigante também preparou uma [história em quadrinhos](http://books.google.com/books?id=8UsqHohwwVYC&printsec=frontcover#PPA16,M1) bem bacana para ilustrar a chegada de sua nova ferramenta.
+A gigante também preparou uma [história em quadrinhos](https://books.google.com/books?id=8UsqHohwwVYC&printsec=frontcover#PPA16,M1) bem bacana para ilustrar a chegada de sua nova ferramenta.
 
 
 
 
-Segue link oficial da fonte: [http://googleblog.blogspot.com/2008/09/fresh-take-on-browser.html](http://googleblog.blogspot.com/2008/09/fresh-take-on-browser.html)  
+Segue link oficial da fonte: [https://googleblog.blogspot.com/2008/09/fresh-take-on-browser.html](https://googleblog.blogspot.com/2008/09/fresh-take-on-browser.html)  
 
   
 
-Link para a história em quadrinhos: [h](http://books.google.com/books?id=8UsqHohwwVYC&printsec=frontcover#PPA16,M1)[ttp://books.google.com/books?id=8UsqHohwwVYC&printsec=frontcover#PPA16,M1](http://books.google.com/books?id=8UsqHohwwVYC&printsec=frontcover#PPA16,M1)
+Link para a história em quadrinhos: [h](https://books.google.com/books?id=8UsqHohwwVYC&printsec=frontcover#PPA16,M1)[ttp://books.google.com/books?id=8UsqHohwwVYC&printsec=frontcover#PPA16,M1](https://books.google.com/books?id=8UsqHohwwVYC&printsec=frontcover#PPA16,M1)

@@ -10,7 +10,7 @@ categories:
 - Impressoes
 ---
 
-Depois de ter sido [intimado pelo Hugo Dória](http://hdoria.archlinux-br.org/blog/2009/01/29/meme-infancia/) resolvi participar da brincadeira. O jogo é interessante e nos trás boas lembranças. ;]
+Depois de ter sido [intimado pelo Hugo Dória](https://hdoria.archlinux-br.org/blog/2009/01/29/meme-infancia/) resolvi participar da brincadeira. O jogo é interessante e nos trás boas lembranças. ;]
 
 
 
@@ -66,4 +66,4 @@ Minhas explicações:
 
 
 
-Depois de listar algumas coisas que tiveram destaque em minha infância, gostaria de conhecer um pouco mais sobre o passado das seguintes pessoas: [Gilfran Ribeiro](http://blog.gilfran.net/), [Kessia (even)](http://even.archlinux-br.org/blog), [Anderson Pereira](http://vivendotecnologia.blogspot.com/), [Diane](http://elidianemf.blogspot.com/) e [Felipe Morales](http://felipeblog.freehostia.com/wordpress/).
+Depois de listar algumas coisas que tiveram destaque em minha infância, gostaria de conhecer um pouco mais sobre o passado das seguintes pessoas: [Gilfran Ribeiro](https://blog.gilfran.net/), [Kessia (even)](https://even.archlinux-br.org/blog), [Anderson Pereira](https://vivendotecnologia.blogspot.com/), [Diane](https://elidianemf.blogspot.com/) e [Felipe Morales](https://felipeblog.freehostia.com/wordpress/).

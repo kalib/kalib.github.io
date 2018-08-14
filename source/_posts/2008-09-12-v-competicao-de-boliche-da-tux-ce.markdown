@@ -11,7 +11,7 @@ categories:
 - Tux-ce
 ---
 
-Para quem é membro antigo da casa([Tux-CE](http://www.tux-ce.org/)), teve a chance de presenciar a última competição que contou com a presença de lendas vivas na Tux-CE como o moonnight e o Mestre NGD. Figuras estas que ainda são desconhecidas para muitos dos novos membros da Tux-CE.
+Para quem é membro antigo da casa([Tux-CE](https://www.tux-ce.org/)), teve a chance de presenciar a última competição que contou com a presença de lendas vivas na Tux-CE como o moonnight e o Mestre NGD. Figuras estas que ainda são desconhecidas para muitos dos novos membros da Tux-CE.
 
 
 
@@ -35,7 +35,7 @@ Espero sua presença lá. Não tenha medo...apesar das nossas caras, ninguém aq
 
 
 
-Se você desejar, pode conferir as fotos da última competição de boliche da Tux-CE no seguinte link: [http://www.tux-ce.org/portal/image/tid/9](http://www.tux-ce.org/portal/image/tid/9)
+Se você desejar, pode conferir as fotos da última competição de boliche da Tux-CE no seguinte link: [https://www.tux-ce.org/portal/image/tid/9](https://www.tux-ce.org/portal/image/tid/9)
 
 
 

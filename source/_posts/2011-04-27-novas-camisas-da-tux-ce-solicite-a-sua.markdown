@@ -11,7 +11,7 @@ categories:
 - Tux-ce
 ---
 {% img left /imgs/tuxce.png 'Tux-CE' %}
-**P**ara quem ainda não sabe, a [Tux-CE](http://www.tux-ce.org) está lançando os novos modelos de suas camisas e está coletando a listagem de pessoas interessadas em comprar a(s) sua(s).
+**P**ara quem ainda não sabe, a [Tux-CE](https://www.tux-ce.org) está lançando os novos modelos de suas camisas e está coletando a listagem de pessoas interessadas em comprar a(s) sua(s).
 
 
 {% img center /imgs/camisatux1.jpg 'Camisa Tux-CE' %}<br>
@@ -21,8 +21,8 @@ categories:
 
 **I**nteressado?
 
-**C**onfira todos os modelos disponíveis em **[Aqui](http://camisas.tux-ce.org)**.
+**C**onfira todos os modelos disponíveis em **[Aqui](https://camisas.tux-ce.org)**.
 
-**P**reencha o formulário para solicitar a(s) sua(s) **[Aqui](http://formcamisas.tux-ce.org)**.
+**P**reencha o formulário para solicitar a(s) sua(s) **[Aqui](https://formcamisas.tux-ce.org)**.
 
 **A**braços!

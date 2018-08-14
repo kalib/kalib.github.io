@@ -1,7 +1,7 @@
 # WP-Cumulus for Octopress, originally developed by weefselkweekje and LukeMorton for WordPress.
 # Ported to Octopress by Joseph Z. Chang.
 #
-# Link to WP-Cumulus: http://wordpress.org/extend/plugins/wp-cumulus/
+# Link to WP-Cumulus: https://wordpress.org/extend/plugins/wp-cumulus/
 #
 # =======================
 #
@@ -34,8 +34,8 @@
 # WP-Cumulus is under GPLv3. However, original javascript and php code are not used, only tagcloud.swf
 # is adapted. This ruby code is under MIT License.
 #
-# GPLv3: http://gplv3.fsf.org
-# MIT License: http://opensource.org/licenses/MIT
+# GPLv3: https://gplv3.fsf.org
+# MIT License: https://opensource.org/licenses/MIT
 #
 
 

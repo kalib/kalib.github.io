@@ -12,7 +12,7 @@ categories:
 - Linux
 - Software Livre
 ---
-{% img left /imgs/flash-linux.jpg 'Flash on Linux' %}Hoje, 19/10, [foi lançado no repositório Extra do Archlinux o flashplugin 10](http://archlinux-br.org/). Este flash veio com a promessa de resolver o problema de transparência que nós, usuários Linux, tínhamos com muitos sites que utilizavam-se de flash. Quem aqui nunca teve dor de cabeça ao tentar navegar em sites como o da OI por exemplo? o.O Era impossível.
+{% img left /imgs/flash-linux.jpg 'Flash on Linux' %}Hoje, 19/10, [foi lançado no repositório Extra do Archlinux o flashplugin 10](https://archlinux-br.org/). Este flash veio com a promessa de resolver o problema de transparência que nós, usuários Linux, tínhamos com muitos sites que utilizavam-se de flash. Quem aqui nunca teve dor de cabeça ao tentar navegar em sites como o da OI por exemplo? o.O Era impossível.
 
 
 

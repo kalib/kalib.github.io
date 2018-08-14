@@ -16,17 +16,17 @@ categories:
 
 **Q**ue tal um pouco mais de leitura?
 
-**A** recomendação bibliográfica deste mês se chama O Símbolo Perdido, o último lançamento de [Dan Brown](http://pt.wikipedia.org/wiki/Dan_Brown). Para quem não conhece, se é que alguém ainda não ouviu falar, Dan Brown é o escritor norte-americano que tornou-se mundialmente famoso depois das polêmicas geradas com o lançamento de seu best-seller _[O Código da Vinci](http://pt.wikipedia.org/wiki/O_C%C3%B3digo_da_Vinci)_.
+**A** recomendação bibliográfica deste mês se chama O Símbolo Perdido, o último lançamento de [Dan Brown](https://pt.wikipedia.org/wiki/Dan_Brown). Para quem não conhece, se é que alguém ainda não ouviu falar, Dan Brown é o escritor norte-americano que tornou-se mundialmente famoso depois das polêmicas geradas com o lançamento de seu best-seller _[O Código da Vinci](https://pt.wikipedia.org/wiki/O_C%C3%B3digo_da_Vinci)_.
 
-**A**ntes de _O Código da Vinci_ o autor já havia escrito outros três excelentes livros que, por algum motivo, passaram um tanto quanto escondidos até as polêmicas do quarto livro que despertou interesse mundial em suas obras anteriores. Com isto, Dan Brown conseguiu um feito memorável ao ter seus 4 primeiros livros simultaneamente na lista de mais vendidos do [The New York Times](http://pt.wikipedia.org/wiki/The_New_York_Times).
+**A**ntes de _O Código da Vinci_ o autor já havia escrito outros três excelentes livros que, por algum motivo, passaram um tanto quanto escondidos até as polêmicas do quarto livro que despertou interesse mundial em suas obras anteriores. Com isto, Dan Brown conseguiu um feito memorável ao ter seus 4 primeiros livros simultaneamente na lista de mais vendidos do [The New York Times](https://pt.wikipedia.org/wiki/The_New_York_Times).
 
 **E**m ordem cronológica, seus lançamentos foram:
 
-* [Fortaleza Digital](http://pt.wikipedia.org/wiki/Fortaleza_Digital) - 1998
-* [Anjos e Demônios](http://pt.wikipedia.org/wiki/Angels_%26_Demons) - 2000
-* [Ponto de Impacto](http://pt.wikipedia.org/wiki/Ponto_de_Impacto) - 2001
-* [O Código Da Vinci](http://pt.wikipedia.org/wiki/O_C%C3%B3digo_da_Vinci) - 2003
-* [O Símbolo Perdido](http://pt.wikipedia.org/wiki/O_S%C3%ADmbolo_Perdido) - 2009 
+* [Fortaleza Digital](https://pt.wikipedia.org/wiki/Fortaleza_Digital) - 1998
+* [Anjos e Demônios](https://pt.wikipedia.org/wiki/Angels_%26_Demons) - 2000
+* [Ponto de Impacto](https://pt.wikipedia.org/wiki/Ponto_de_Impacto) - 2001
+* [O Código Da Vinci](https://pt.wikipedia.org/wiki/O_C%C3%B3digo_da_Vinci) - 2003
+* [O Símbolo Perdido](https://pt.wikipedia.org/wiki/O_S%C3%ADmbolo_Perdido) - 2009 
 
 **P**articularmente, acho as 3 obras anteriores melhores do que o próprio _O __Código da Vinci_, o que não torna este último um livro ruim.
 

@@ -147,6 +147,6 @@ Horário: 09:00 - 17:00
 
 
 
-Inscrições: http://flisol-ce.890m.com  
+Inscrições: https://flisol-ce.890m.com  
 
 

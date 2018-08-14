@@ -13,7 +13,7 @@ categories:
 {% img left /imgs/cripto.jpg 'Criptografia' %}
 Há algumas semanas atrás vimos a confusão causada por instalações de escutas telefônicas feitas pela ABIN. Houve uma grande onda de críticas em cima disto, até que resultou na proibição de comercialização de qualquer equipamento de espionagem em nosso "lindo" país como forma de penalizar qualquer um que efetue este tipo de atividade que agora é terminantemente proibida. Sim, nossa Agência de inteligência nacional não pode mais ficar sabendo das roubalheiras que nossos "representantes" andam fazendo. Sim, agora é crime descobrir que nossos políticos estão fazendo roubalheiras.  
 
-Hoje, li uma matéria publicada no site da [Folha Online](http://www1.folha.uol.com.br/folha/brasil/ult96u447378.shtml) que abordava algo incrível: PF não consegue decifrar criptografia dos arquivos de Daniel Dantas!
+Hoje, li uma matéria publicada no site da [Folha Online](https://www1.folha.uol.com.br/folha/brasil/ult96u447378.shtml) que abordava algo incrível: PF não consegue decifrar criptografia dos arquivos de Daniel Dantas!
 
 
 

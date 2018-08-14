@@ -18,7 +18,7 @@ categories:
 
 
 
-**C**omo eu já havia informado em um [outro post](http://marcelocavalcante.net/portal/2010/03/12/flisol-fortaleza-2010/), estamos nos aproximando do FLISOL - Festival Latino Americano de Instalação de Software Livre. Para maiores informações sobre o evento, [visite este link](http://flisolceara.net/FLISOL2010)!
+**C**omo eu já havia informado em um [outro post](https://marcelocavalcante.net/portal/2010/03/12/flisol-fortaleza-2010/), estamos nos aproximando do FLISOL - Festival Latino Americano de Instalação de Software Livre. Para maiores informações sobre o evento, [visite este link](https://flisolceara.net/FLISOL2010)!
 
 
 
@@ -28,7 +28,7 @@ categories:
 
 
 
-**G**aranta sua vaga e escolha juntamente qual distribuição Linux você gostaria de ganhar durante o evento através [deste link](http://flisolceara.net/FLISOL2010/?page_id=82).
+**G**aranta sua vaga e escolha juntamente qual distribuição Linux você gostaria de ganhar durante o evento através [deste link](https://flisolceara.net/FLISOL2010/?page_id=82).
 
 
 

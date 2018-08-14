@@ -28,13 +28,13 @@ categories:
 
 **S**e você realmente preza pelos seus dados, é hora de planejar um backup sério.
 
-**L**hes apresento o [SimpleBackup](http://sourceforge.net/projects/sbackup/develop), ou simplesmente [SBackup](http://sourceforge.net/projects/sbackup/develop).
+**L**hes apresento o [SimpleBackup](https://sourceforge.net/projects/sbackup/develop), ou simplesmente [SBackup](https://sourceforge.net/projects/sbackup/develop).
 
 **U**ma apresentação informal rápida...
 
 **O** Simple Backup é uma solução de backup simples para atender as necessidades de usuários desktop. O projeto foi patrocinado pelo Google durante o Google Summer of Code 2005.
 
-**I**nstalação? Se você utiliza [Arch Linux](http://www.archlinux.org), basta pedir ao nosso amigo pacman:
+**I**nstalação? Se você utiliza [Arch Linux](https://www.archlinux.org), basta pedir ao nosso amigo pacman:
 
 _# pacman -S sbackup_
 

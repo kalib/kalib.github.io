@@ -21,7 +21,7 @@ categories:
 
 **O** objetivo do Flisol, além de promover o uso de Software Livre em geral, é também o de criar interações entre usuários e desenvolvedores, promovendo um momento para troca de experiências, conhecimentos ou mesmo um bate papo agradável que pode resultar em futuros projetos ou apenas amizades.
 
-**D**iferente dos anos anteriores, este ano não estarei presente em Fortaleza durante o Flisol, mas a [Tux-CE](http://www.tux-ce.org/) marcará presença como de costume no Install Fest para atender e ajudar aos interessados.
+**D**iferente dos anos anteriores, este ano não estarei presente em Fortaleza durante o Flisol, mas a [Tux-CE](https://www.tux-ce.org/) marcará presença como de costume no Install Fest para atender e ajudar aos interessados.
 
 **E**starei no Flisol de Quixadá ministrando as palestras:
 
@@ -48,7 +48,7 @@ Telefone: 88 3411-8550
 
 **L****embrando** que, apesar de ser um evento gratuito, sempre estamos recebendo doações de alimentos não perecíveis no evento que irão beneficiar entidades e órgãos diversos, portanto não esqueça o seu 1kg de alimento não perecível.
 
-**Maiores informações** sobre o Flisol Ceará, através [deste link](http://www.flisolce.com.br).
+**Maiores informações** sobre o Flisol Ceará, através [deste link](https://www.flisolce.com.br).
 
 **N**os vemos no Flisol.
 

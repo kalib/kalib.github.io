@@ -17,13 +17,13 @@ categories:
 
 **P**ara quem não conhece a saga, sugiro a leitura dos 3 links a seguir:
 
-[**A Torre Negra vol I - O Pistoleiro**](http://blog.marcelocavalcante.net/blog/2009/06/21/recomendacao-bibliografica-do-vooc2bf-o-pistoleiro/)
+[**A Torre Negra vol I - O Pistoleiro**](https://blog.marcelocavalcante.net/blog/2009/06/21/recomendacao-bibliografica-do-vooc2bf-o-pistoleiro/)
 
-[**A Torre Negra vol II - A Escolha dos Três**](http://blog.marcelocavalcante.net/blog/2009/09/08/recomendacao-bibliografica-a-escolha-dos-tres-a-torre-negra-vol-ii/)
+[**A Torre Negra vol II - A Escolha dos Três**](https://blog.marcelocavalcante.net/blog/2009/09/08/recomendacao-bibliografica-a-escolha-dos-tres-a-torre-negra-vol-ii/)
 
-[**A Torre Negra vol III - As Torres Devastadas**](http://blog.marcelocavalcante.net/blog/2010/02/22/recomendacao-bibliografica-a-torre-negra-vol-iii-as-terras-devastadas/)
+[**A Torre Negra vol III - As Torres Devastadas**](https://blog.marcelocavalcante.net/blog/2010/02/22/recomendacao-bibliografica-a-torre-negra-vol-iii-as-terras-devastadas/)
 
-**N**este 4º livro, o consagrado autor [**Stephen King**](http://pt.wikipedia.org/wiki/Stephen_King) deixa um pouco de lado a trama inicial na qual os personagens estavam buscando a Torre Negra e foca as mais de 800 páginas do livro no passado do Pistoleiro Roland, mais especificamente em sua adolescência e suas primeiras aventuras.
+**N**este 4º livro, o consagrado autor [**Stephen King**](https://pt.wikipedia.org/wiki/Stephen_King) deixa um pouco de lado a trama inicial na qual os personagens estavam buscando a Torre Negra e foca as mais de 800 páginas do livro no passado do Pistoleiro Roland, mais especificamente em sua adolescência e suas primeiras aventuras.
 
 **J**untamente com seus companheiros Cuthbert e Alain, Roland se apaixona e faz amigos e inimigos durante o que parecia uma simples missão passada por seu pai.
 

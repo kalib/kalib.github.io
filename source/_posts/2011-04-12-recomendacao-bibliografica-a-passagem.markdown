@@ -11,9 +11,9 @@ categories:
 - Literatura
 ---
 {% img left /imgs/livros/apassagem.jpg 'A Passagem' %}
-**C**omo citou o grande [Stephen King](http://pt.wikipedia.org/wiki/Stephen_King), "Esta é a história de vampiros que você não pode perder: 15 páginas são suficientes para cativá-lo; depois de 30, você se descobrirá prisioneiro, lendo noite adentro. Um livro com a força dos épicos."
+**C**omo citou o grande [Stephen King](https://pt.wikipedia.org/wiki/Stephen_King), "Esta é a história de vampiros que você não pode perder: 15 páginas são suficientes para cativá-lo; depois de 30, você se descobrirá prisioneiro, lendo noite adentro. Um livro com a força dos épicos."
 
-**P**ara quem, assim como eu, adora ficção, vampiros e contos que exploram o sobrenatural, mas que ao mesmo tempo está cansado de tanta babaquice e melação como Crepúsculo, Vampire Diaries, etc... Esta orba de [Justin Cronin](http://en.wikipedia.org/wiki/Justin_Cronin) promete ser uma excelente pedida.
+**P**ara quem, assim como eu, adora ficção, vampiros e contos que exploram o sobrenatural, mas que ao mesmo tempo está cansado de tanta babaquice e melação como Crepúsculo, Vampire Diaries, etc... Esta orba de [Justin Cronin](https://en.wikipedia.org/wiki/Justin_Cronin) promete ser uma excelente pedida.
 
 **E** se os vampiros não são algo tão sobrenatural assim? E se eles pudessem ser criados em laboratórios?
 

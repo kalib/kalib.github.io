@@ -54,7 +54,7 @@ categories:
 
 **A** primeira ferramenta que vou apresentar se chama rkhunter, que é a minha favorita.
 
-**S**e, assim como eu, você for usuário do [Arch Linux](http://archlinux.org), poderá encontrar o rkhunter no [AUR](http://aur.archlinux.org) através [deste link](http://aur.archlinux.org/packages.php?ID=25940).
+**S**e, assim como eu, você for usuário do [Arch Linux](https://archlinux.org), poderá encontrar o rkhunter no [AUR](https://aur.archlinux.org) através [deste link](https://aur.archlinux.org/packages.php?ID=25940).
 
 **A** instalação é simples e segue o padrão de qualquer instalação a partir do AUR, conforme passos abaixo:
 
@@ -106,7 +106,7 @@ categories:
 
 **O** Tiger é uma ferramenta de segurança que não pensa tanto na aparência, portanto não espere uma tela tão amigável e colorida quanto a do rkhunter. ;]
 
-**A** instalação da mesma no Arch Linux também se dá através do pacote do AUR que pode ser encontra [neste link](http://aur.archlinux.org/packages.php?ID=1573).
+**A** instalação da mesma no Arch Linux também se dá através do pacote do AUR que pode ser encontra [neste link](https://aur.archlinux.org/packages.php?ID=1573).
 
 **A** instalação segue o mesmo procedimento que utilizamos no rkhunter, conforme abaixo:
 

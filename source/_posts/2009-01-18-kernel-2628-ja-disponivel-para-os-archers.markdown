@@ -65,7 +65,7 @@ Você já usa Arch Linux? Com ext3 como seu sistema de arquivos? Quer usar o ext
 
 
 
-Seus problemas acabaram. Nosso amigo Hugo Doria escreveu um mini HOW TO para você. Acesse o seguinte link para conferir. [AQUI](http://hdoria.archlinux-br.org/blog/2009/01/16/migrando-do-ext3-para-o-ext4/pt/)
+Seus problemas acabaram. Nosso amigo Hugo Doria escreveu um mini HOW TO para você. Acesse o seguinte link para conferir. [AQUI](https://hdoria.archlinux-br.org/blog/2009/01/16/migrando-do-ext3-para-o-ext4/pt/)
 
 
 

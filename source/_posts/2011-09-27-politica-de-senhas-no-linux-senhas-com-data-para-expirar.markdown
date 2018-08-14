@@ -34,7 +34,7 @@ categories:
 
 
 
-[_**A**rch Linux:_](http://www.archlinux.org/)
+[_**A**rch Linux:_](https://www.archlinux.org/)
 
 **E**dite o arquivo _passwd_ que se encontra em _/etc/pam.d/passwd_, da seguinte forma:
 
@@ -42,7 +42,7 @@ categories:
 _# vim /etc/pam.d/passwd_
 
 
-_[**D**ebian](http://www.debian.org), [Ubuntu](http://www.ubuntu.com), [RedHat](http://www.redhat.com), [CentOS](http://www.centos.org)_ e outras:
+_[**D**ebian](https://www.debian.org), [Ubuntu](https://www.ubuntu.com), [RedHat](https://www.redhat.com), [CentOS](https://www.centos.org)_ e outras:
 
 
 _# vim /etc/pam.d/system-auth_
@@ -58,7 +58,7 @@ _password       required        pam_cracklib.so difok=3 minlen=10 ucredit
 
 _difok=3_ -> Informa a quantidade de caracteres que podem se repetir em relação à última senha. Por exemplo: Se minha antiga senha era "kalib" e eu tento usar "kalamba" como nova senha, receberei uma informação de erro, pois eu repeti 3 letras que já existem na senha anterior "kal".
 
-_minlen=10_ -> Informa qual a quantidade mínima de caracteres aceitos para a senha do usuário. No![](http://securepasswordgeneratortips.com/wp-content/uploads/2011/05/securepasswordgeneratortips08.jpg) exemplo, o mínimo de caracteres aceitos serão 10, caso contrário será apresentada uma mensagem de erro solicitando que o usuário tente uma nova senha.
+_minlen=10_ -> Informa qual a quantidade mínima de caracteres aceitos para a senha do usuário. No![](https://securepasswordgeneratortips.com/wp-content/uploads/2011/05/securepasswordgeneratortips08.jpg) exemplo, o mínimo de caracteres aceitos serão 10, caso contrário será apresentada uma mensagem de erro solicitando que o usuário tente uma nova senha.
 
 _ucredit=3_ ->Informa a quantidade de letras maiúsculas que deverão compor minha senha. No exemplo, eu precisarei utilizar no mínimo 3 letras em maiúsculo, ou "Uper Characters" em minha nova senha.
 

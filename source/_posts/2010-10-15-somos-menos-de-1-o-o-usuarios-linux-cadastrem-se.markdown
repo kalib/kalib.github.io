@@ -22,7 +22,7 @@ categories:
 
 **O** Linux está ficando mais forte a cada dia entre os usuários domésticos.
 
-**C**omeçaram um projeto web para tentar quebrar este mito: [http://www.dudalibre.com/gnulinuxcounter?lang=en](http://www.dudalibre.com/gnulinuxcounter?lang=en)
+**C**omeçaram um projeto web para tentar quebrar este mito: [https://www.dudalibre.com/gnulinuxcounter?lang=en](https://www.dudalibre.com/gnulinuxcounter?lang=en)
 
 **S**e você possui um desktop, ou mais, com linux, talvez você queira contabilizar o seu voto.
 

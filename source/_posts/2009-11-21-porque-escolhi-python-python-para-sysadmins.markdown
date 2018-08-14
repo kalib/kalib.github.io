@@ -141,10 +141,10 @@ print a,b
 
 **C**aso deseje mais informações sobre Python bem como suas vantagens, confira outros posts que fiz listados abaixo:
 
-[1- Porque Python?](http://blog.marcelocavalcante.net/blog/2008/11/20/porque-python/)
+[1- Porque Python?](https://blog.marcelocavalcante.net/blog/2008/11/20/porque-python/)
 
-[2- Pydev: Preparando o Eclipse para o Python](http://blog.marcelocavalcante.net/blog/2009/03/23/pydev-preparando-o-eclipse-para-o-python/)
+[2- Pydev: Preparando o Eclipse para o Python](https://blog.marcelocavalcante.net/blog/2009/03/23/pydev-preparando-o-eclipse-para-o-python/)
 
-[3- The Zen of Python](http://blog.marcelocavalcante.net/blog/2008/11/24/the-zen-of-python/)
+[3- The Zen of Python](https://blog.marcelocavalcante.net/blog/2008/11/24/the-zen-of-python/)
 
 **A**braços

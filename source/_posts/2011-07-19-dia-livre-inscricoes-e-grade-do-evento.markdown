@@ -18,11 +18,11 @@ categories:
 ---
 
 {% img left /imgs/logo_dia_livre.png 'Dia Livre' %}
-**É** hora de se [inscrever](http://tux-ce.org/dialivre/inscricoes/) no [Dia Livre](http://www.tux-ce.org/dialivre)!
+**É** hora de se [inscrever](https://tux-ce.org/dialivre/inscricoes/) no [Dia Livre](https://www.tux-ce.org/dialivre)!
 
 **G**ostaria de comunicar que a grade para o 1º Dia Livre já foi fechada e liberada.
 
-**N**este sábado estarei ministrando a palestra "Software Livre e Cultura Hacker: Tenha ética e ganharás respeito" na [Faculdade Farias Brito](http://www.ffb.edu.br/) durante o 1º Dia Livre.
+**N**este sábado estarei ministrando a palestra "Software Livre e Cultura Hacker: Tenha ética e ganharás respeito" na [Faculdade Farias Brito](https://www.ffb.edu.br/) durante o 1º Dia Livre.
 
 **S**egue grade do encontro:
 
@@ -141,7 +141,7 @@ de brindes e encerramento
 
 Faculdade Farias Brito
 Rua Castro Monte, 1364 Varjota – Fortaleza, CE
-[![](http://www.tux-ce.org/dialivre/imgs/mapaffb.png)](http://www.tux-ce.org/dialivre/imgs/mapaffb.png)
+[![](https://www.tux-ce.org/dialivre/imgs/mapaffb.png)](https://www.tux-ce.org/dialivre/imgs/mapaffb.png)
 
 **S**erão realizados dois sorteios ao final do encontro:
 

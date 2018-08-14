@@ -13,7 +13,7 @@ categories:
 {% img left /imgs/livros/opistoleiro.jpg 'O Pistoleiro' %}
 **S**audações pessoal..
 
-**C**omo já estão acostumados a ver, mensalmente estou inserindo recomendação de algum livro que eu esteja lendo. Bom, porque da mudança desta vez? Como muitos devem saber, estou em Gramado no momento. Sim, estarei no FISL deste ano em Porto Alegre juntamente com o pessoal do [Archlinux Brasil](http://www.archlinux-br.org). E como tivemos um loongoo voo, acabei pegando um livro para ler no trajeto.
+**C**omo já estão acostumados a ver, mensalmente estou inserindo recomendação de algum livro que eu esteja lendo. Bom, porque da mudança desta vez? Como muitos devem saber, estou em Gramado no momento. Sim, estarei no FISL deste ano em Porto Alegre juntamente com o pessoal do [Archlinux Brasil](https://www.archlinux-br.org). E como tivemos um loongoo voo, acabei pegando um livro para ler no trajeto.
 
 **J**á comecei a leitura e a escolha desta vez se chama O Pistoleiro, da coleção "A Torre Negra" do renomado Stephen King.
 

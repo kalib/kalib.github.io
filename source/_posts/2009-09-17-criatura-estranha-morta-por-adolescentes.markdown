@@ -46,7 +46,7 @@ categories:
 
 
 
-**S**egue link com a fonte de onde tirei a imagem bem como o assunto: [aqui](http://g1.globo.com/Noticias/PlanetaBizarro/0,,MUL1307808-6091,00.html)
+**S**egue link com a fonte de onde tirei a imagem bem como o assunto: [aqui](https://g1.globo.com/Noticias/PlanetaBizarro/0,,MUL1307808-6091,00.html)
 
 
 

@@ -20,7 +20,7 @@ categories:
 
 > **A** Hora do Planeta é um ato simbólico no qual governos, empresas e a população de todo o mundo são convidados a demonstrar sua preocupação com o aquecimento global e as mudanças climáticas. O gesto simples de apagar as luzes por sessenta minutos, possível em todos os lugares do planeta, tem o significado de chamar para uma reflexão sobre o tema ambiental.
 
-**C**onhecido mundialmente como Earth Hour, a Hora do Planeta será promovida no País pela primeira vez pelo [WWF-Brasil](http://www.wwf.org.br/informacoes/horadoplaneta/) e conta com a adesão e apoio do Rio de Janeiro , a primeira cidade brasileira a aderir à iniciativa.
+**C**onhecido mundialmente como Earth Hour, a Hora do Planeta será promovida no País pela primeira vez pelo [WWF-Brasil](https://www.wwf.org.br/informacoes/horadoplaneta/) e conta com a adesão e apoio do Rio de Janeiro , a primeira cidade brasileira a aderir à iniciativa.
 
 **E**m 2009, a Hora do Planeta será realizada no dia **2****8 de março**, das **20h30 às 21h30**, e pretende contar com a adesão de mais de mil cidades e 1 bilhão de pessoas em todo o mundo. Mais de 170 cidades de 62 países já confirmaram sua adesão à Hora do Planeta.
 
@@ -29,4 +29,4 @@ categories:
 
 
 
-### [Cadastre-se! Ajude! Clique aqui!](http://www.earthhour.org/signup/br:pt-BR?subscribed=1)
+### [Cadastre-se! Ajude! Clique aqui!](https://www.earthhour.org/signup/br:pt-BR?subscribed=1)

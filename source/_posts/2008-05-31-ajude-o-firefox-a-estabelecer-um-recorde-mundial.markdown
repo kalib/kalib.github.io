@@ -43,7 +43,7 @@ Para participar é muito simples, bastando apenas clicar no link a seguir, na ra
 
 
 
-Link do projeto: [http://www.spreadfirefo](http://www.spreadfirefox.com/pt-BR/worldrecord)[x.com/pt-BR/worldrecord](http://www.spreadfirefox.com/pt-BR/worldrecord)
+Link do projeto: [https://www.spreadfirefo](https://www.spreadfirefox.com/pt-BR/worldrecord)[x.com/pt-BR/worldrecord](https://www.spreadfirefox.com/pt-BR/worldrecord)
 
 
 

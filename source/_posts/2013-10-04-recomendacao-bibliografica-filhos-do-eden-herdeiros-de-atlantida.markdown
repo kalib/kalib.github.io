@@ -12,7 +12,7 @@ categories:
 {% img left /imgs/livros/filhosdoeden1.jpg 'Filhos do Éden' %}
 **A**njos, Arcanjos e Demônios... Entidades que sempre despertaram a curiosidade e o interesse de milhares de pessoas. Não diferente, sempre tive um grande apreço por histórias, sejam em filmes ou literatura escrita, que abordem tais entidades.
 
-**S**eguindo a trilha de seu outro livro, [A Batalha do Apocalipse](http://blog.marcelocavalcante.net/blog/2010/09/30/recomendacao-bibliografica-a-batalha-do-apocalipse/), o autor Eduardo Spohr narra com maestria o enredo no qual uma guerra civil acontece entre o Arcanjo Miguel e as tropas revolucionárias de seu irmão, o Arcanjo Gabriel.
+**S**eguindo a trilha de seu outro livro, [A Batalha do Apocalipse](https://blog.marcelocavalcante.net/blog/2010/09/30/recomendacao-bibliografica-a-batalha-do-apocalipse/), o autor Eduardo Spohr narra com maestria o enredo no qual uma guerra civil acontece entre o Arcanjo Miguel e as tropas revolucionárias de seu irmão, o Arcanjo Gabriel.
 
 **U**ma obra tão recomendada quanto qualquer outra do autor, trás um enredo mais terreno, se comparado ao livro A Batalha do Apocalipse, porém não menos interessante e empolgante.
 

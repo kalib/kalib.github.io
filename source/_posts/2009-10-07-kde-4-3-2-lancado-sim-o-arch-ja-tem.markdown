@@ -23,7 +23,7 @@ categories:
 * Os efeitos do Kwin's Window foram melhorados com algumas correções e acréscimos em renderização.
 * A maioria dos bugs do Kmail foram resolvidos tornando-o mais robusto e eficiente.
 * Opções de salvar os arquivos do Okular também foi melhorada.
-* Muitas outras novidades que podem ser conferidas no [changelog](http://www.kde.org/announcements/changelogs/changelog4_3_1to4_3_2.php) completo.
+* Muitas outras novidades que podem ser conferidas no [changelog](https://www.kde.org/announcements/changelogs/changelog4_3_1to4_3_2.php) completo.
 
 **S**im.. claro.. o novo KDE já se encontra disponível nos repositórios do Arch Linux.
 

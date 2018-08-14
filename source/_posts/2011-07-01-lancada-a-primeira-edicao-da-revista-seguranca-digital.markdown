@@ -19,9 +19,9 @@ categories:
 {% img left /imgs/seguranca_digital_1.jpg 'Segurança Digital' %}
 **S**audações pessoal.
 
-**P**ara quem não sabe, hoje é o lançamento da primeira edição da [Revista Segurança Digital](http://www.segurancadigital.info/revista/185-revistas).
+**P**ara quem não sabe, hoje é o lançamento da primeira edição da [Revista Segurança Digital](https://www.segurancadigital.info/revista/185-revistas).
 
-[**S**egurança Digital](http://www.segurancadigital.info) é o mais novo projeto no qual estou engajado e espero poder ajudar no que for possível para a constante melhoria do projeto.
+[**S**egurança Digital](https://www.segurancadigital.info) é o mais novo projeto no qual estou engajado e espero poder ajudar no que for possível para a constante melhoria do projeto.
 
 **É** com grande satisfação que estamos fazendo o lançamento oficial de nosso projeto com a primeira edição da Revista Segurança Digital. Neste mês de Julho a revista aborda aspectos mais genéricos em relação à Segurança da Informação como um todo. Desde as técnicas de FootPrinting e Varredura para identificação de vulnerabilidades e possíveis brechas até estratégias e mecanismos de Enumeração para reconhecimento de ambientes.
 
@@ -33,6 +33,6 @@ categories:
 
 **A**proveitamos para informar sobre a mais nova parceria realizada entre o Projeto Segurança Digital e a empresa de consultoria e soluções livres 4Linux que é líder no mercado no que diz respeito à soluções de tecnologia com ferramentas livres bem como treinamentos especializados nos mais diversos segmentos da computação como redes, bancos de dados, segurança, programação, dentre outros.
 
-**N**ão deixe de fazer o [download](http://www.segurancadigital.info/revista/185-revistas) desta edição e conferir o resultado desta força tarefa inicial.
+**N**ão deixe de fazer o [download](https://www.segurancadigital.info/revista/185-revistas) desta edição e conferir o resultado desta força tarefa inicial.
 
 **E**speramos que gostem.

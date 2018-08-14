@@ -13,14 +13,14 @@ categories:
 - Software Livre
 ---
 
-![](http://images4.wikia.nocookie.net/__cb20061120200014/uncyclopedia/images/9/98/Konqi-official-logo-aboutkde-150x250.png)
+![](https://images4.wikia.nocookie.net/__cb20061120200014/uncyclopedia/images/9/98/Konqi-official-logo-aboutkde-150x250.png)
 
 
 **N**ão acredita?
 
 **B**om, aparentemente um **banco alemão** acredita que alguns projetos/instituições merecem ser ajudados financeiramente pelo seu impacto/importância.
 
-**S**im, o projeto **[KDE](http://kde.org)** está fazendo parte desta lista, mas para conseguir a doação de 1000 euros por parte deste banco, o projeto KDE precisa do seu voto. Sim, apenas seu voto que não leva mais que 1 minuto.
+**S**im, o projeto **[KDE](https://kde.org)** está fazendo parte desta lista, mas para conseguir a doação de 1000 euros por parte deste banco, o projeto KDE precisa do seu voto. Sim, apenas seu voto que não leva mais que 1 minuto.
 
 **S**e você utiliza o KDE no seu dia a dia, acredito que este seu **1 minuto** já é um ótimo "pagamento" ao projeto que lhe ajuda diariamente a resolver suas tarefas.
 

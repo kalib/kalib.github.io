@@ -208,10 +208,10 @@ categories:
 ```
  root@08abb8611700:/# apt-get update && apt-get install -y nginx
 
- Ign http://archive.ubuntu.com vivid InRelease
- Ign http://archive.ubuntu.com vivid-updates InRelease
- Get:1 http://archive.ubuntu.com vivid/main Sources [1358 kB]
- Get:2 http://archive.ubuntu.com vivid/restricted Sources [7100 B]
+ Ign https://archive.ubuntu.com vivid InRelease
+ Ign https://archive.ubuntu.com vivid-updates InRelease
+ Get:1 https://archive.ubuntu.com vivid/main Sources [1358 kB]
+ Get:2 https://archive.ubuntu.com vivid/restricted Sources [7100 B]
  ...
  Building dependency tree       
  Reading state information... Done
@@ -229,7 +229,7 @@ categories:
  Need to get 14.0 MB of archives.
  After this operation, 53.3 MB of additional disk space will be used.
  ...
- Get:1 http://archive.ubuntu.com/ubuntu/ vivid/main libexpat1 amd64 2.1.0-6ubuntu1 [70.6 kB]
+ Get:1 https://archive.ubuntu.com/ubuntu/ vivid/main libexpat1 amd64 2.1.0-6ubuntu1 [70.6 kB]
  Processing triggers for systemd (219-7ubuntu6) ...
 
  root@08abb8611700:/#

@@ -30,9 +30,9 @@ categories:
 
 {% img center /imgs/img02.png 'Python Eclipse' %}
 
-**2-** Nesta janela de Available Software, clique na opção Add Site. Lhe será apresentada uma janela na qual você deve inserir o endereço <del>http://pydev.sourceforge.net/updates</del> e clica em Ok, como na figura abaixo:
+**2-** Nesta janela de Available Software, clique na opção Add Site. Lhe será apresentada uma janela na qual você deve inserir o endereço <del>https://pydev.sourceforge.net/updates</del> e clica em Ok, como na figura abaixo:
 
-ERRATA: Correção em 2011 -> Novo endereço para atualizações é: [http://pydev.org/updates](http://pydev.org/updates)
+ERRATA: Correção em 2011 -> Novo endereço para atualizações é: [https://pydev.org/updates](https://pydev.org/updates)
 
 {% img center /imgs/img031.png 'Python Eclipse' %}
 

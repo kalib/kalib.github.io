@@ -13,7 +13,7 @@ categories:
 {% img left /imgs/livros/ovampirorei2.jpg 'O Vampiro Rei vol II' %}
 **É** chegada a hora de mais uma recomendação bibliográfica pessoal. Desta vez trago mais uma com o tema "Vampiros".
 
-**N**a verdade a recomendação deste mês se trata da continuação de uma outra recomendação que eu já havia feito e que pode ser conferida [neste link](http://blog.marcelocavalcante.net/blog/2009/07/16/recomendacao-bibliografica-do-mes-o-vampiro-rei-vol-i/).
+**N**a verdade a recomendação deste mês se trata da continuação de uma outra recomendação que eu já havia feito e que pode ser conferida [neste link](https://blog.marcelocavalcante.net/blog/2009/07/16/recomendacao-bibliografica-do-mes-o-vampiro-rei-vol-i/).
 
 **E**ste livro continua a história da saga que se iniciou com o livro O Bento e continuada em O Vapiro Rei - Vol I. O da vez, O VAmpiro Rei - Vol II, é o responsável por dar continuidade e encerramento à saga.
 

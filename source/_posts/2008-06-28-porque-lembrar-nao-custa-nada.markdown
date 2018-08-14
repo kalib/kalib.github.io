@@ -18,7 +18,7 @@ Saudações pessoas...
 
 
 
-Estava eu hoje começando a escrever um artigo para a segunda edição do [Almanarch](http://www.archlinux-br.org/almanarch/), quando bateu uma sede e levantei para beber água. Ao voltar para minha cadeira, lembrei de algo assim que bati os olhos em minha tela com o OpenOffice.org aberto. Porquê não lembrar deles?
+Estava eu hoje começando a escrever um artigo para a segunda edição do [Almanarch](https://www.archlinux-br.org/almanarch/), quando bateu uma sede e levantei para beber água. Ao voltar para minha cadeira, lembrei de algo assim que bati os olhos em minha tela com o OpenOffice.org aberto. Porquê não lembrar deles?
 
 
 
@@ -69,7 +69,7 @@ Nós mantemos esta definição do Software Livre para mostrar claramente o que d
 
 
 
-Um programa é software livre se os usuários tem todas essas liberdades. Portanto, você deve ser livre para redistribuir cópias, seja com ou sem modificações, seja de graça ou cobrando uma taxa pela distribuição, para [qualquer um em qualquer lugar](http://www.gnu.org/philosophy/free-sw.pt-br.html#exportcontrol).  Ser livre  para fazer essas coisas significa (entre outras coisas) que você não tem  que pedir ou pagar pela permissão.
+Um programa é software livre se os usuários tem todas essas liberdades. Portanto, você deve ser livre para redistribuir cópias, seja com ou sem modificações, seja de graça ou cobrando uma taxa pela distribuição, para [qualquer um em qualquer lugar](https://www.gnu.org/philosophy/free-sw.pt-br.html#exportcontrol).  Ser livre  para fazer essas coisas significa (entre outras coisas) que você não tem  que pedir ou pagar pela permissão.
 
 
 
@@ -104,7 +104,7 @@ Entretanto, certos tipos de regras sobre a maneira de distribuir software livre 
 
 
 
-Portanto, você pode ter pago para receber cópias do software GNU, ou você pode ter obtido cópias sem nenhum custo. Mas independente de como você obteve a sua cópia, você sempre tem a liberdade de copiar e modificar o software, ou mesmo de [vender cópias](http://www.gnu.org/philosophy/selling.html).
+Portanto, você pode ter pago para receber cópias do software GNU, ou você pode ter obtido cópias sem nenhum custo. Mas independente de como você obteve a sua cópia, você sempre tem a liberdade de copiar e modificar o software, ou mesmo de [vender cópias](https://www.gnu.org/philosophy/selling.html).
 
 
 
@@ -119,12 +119,12 @@ Regras sobre como empacotar uma versão modificada são aceitáveis, se elas nã
 
 
 
-No projeto GNU, nós usamos [ "copyleft"](http://www.gnu.org/copyleft/copyleft.pt-br.html) para proteger estas liberdades legalmente para todos.  Mas também existe  [ software livre que não é copyleft](http://www.gnu.org/philosophy/categories.html#Non-CopyleftedFreeSoftware).  Nós acreditamos que hajam razões  importantes pelas quais [é melhor  usar o copyleft](http://www.gnu.org/philosophy/pragmatic.html), mas se o seu programa é free-software mas não é  copyleft, nós ainda podemos utilizá-lo.
+No projeto GNU, nós usamos [ "copyleft"](https://www.gnu.org/copyleft/copyleft.pt-br.html) para proteger estas liberdades legalmente para todos.  Mas também existe  [ software livre que não é copyleft](https://www.gnu.org/philosophy/categories.html#Non-CopyleftedFreeSoftware).  Nós acreditamos que hajam razões  importantes pelas quais [é melhor  usar o copyleft](https://www.gnu.org/philosophy/pragmatic.html), mas se o seu programa é free-software mas não é  copyleft, nós ainda podemos utilizá-lo.
 
 
 
 
-Veja [Categorias de Software Livre   (18k characters)](http://www.gnu.org/philosophy/categories.html) para uma descrição de como "software livre", "software copyleft"  e outras categoria se relacionam umas com as outras.
+Veja [Categorias de Software Livre   (18k characters)](https://www.gnu.org/philosophy/categories.html) para uma descrição de como "software livre", "software copyleft"  e outras categoria se relacionam umas com as outras.
 
 
 
@@ -134,4 +134,4 @@ Veja [Categorias de Software Livre   (18k characters)](http://www.gnu.org/philos
 
 
 
-O texto foi retirado do link: http://www.gnu.org/philosophy/free-sw.pt-br.html
+O texto foi retirado do link: https://www.gnu.org/philosophy/free-sw.pt-br.html

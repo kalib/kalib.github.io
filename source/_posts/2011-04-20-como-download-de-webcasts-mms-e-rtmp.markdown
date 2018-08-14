@@ -28,11 +28,11 @@ categories:
 
 **E**sta é a forma mais simples e prática com arquivos do tipo mms.
 
-**P**ara usuários do [Arch Linux](http://archlinux.org), já existe um pacote pronto no [AUR](http://aur.archlinux.org/packages.php?ID=16412).
+**P**ara usuários do [Arch Linux](https://archlinux.org), já existe um pacote pronto no [AUR](https://aur.archlinux.org/packages.php?ID=16412).
 
 **A** instalação, segue o padrão de arquivos baixados do AUR:
 
-**1-** Download do [Tarball](http://aur.archlinux.org/packages/mimms/mimms.tar.gz);
+**1-** Download do [Tarball](https://aur.archlinux.org/packages/mimms/mimms.tar.gz);
 
 **2-** Descompatar: _$ tar -xvzf mimms.tar.gz_
 

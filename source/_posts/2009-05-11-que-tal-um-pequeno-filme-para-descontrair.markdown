@@ -14,7 +14,7 @@ categories:
 - Software Livre
 ---
 {% img centro /imgs/poster_inproprietario.jpg 'Inproprietario' %}
-**O**lá pessoal, depois de um tempo afastado volto trazendo a dica de um pequeno filme que assisti neste fim de semana e recomendo que todos façam [download](http://www.mininova.org/tor/2571016).
+**O**lá pessoal, depois de um tempo afastado volto trazendo a dica de um pequeno filme que assisti neste fim de semana e recomendo que todos façam [download](https://www.mininova.org/tor/2571016).
 
 
 
@@ -26,4 +26,4 @@ categories:
 
 **C**omo os próprios autores pedem: "Assistam, copiem, divulguem e distribuam este pequeno filme."
 
-**S**egue link para o arquivo torrent: [http://www.mininova.org/tor/2571016](http://www.mininova.org/tor/2571016)
+**S**egue link para o arquivo torrent: [https://www.mininova.org/tor/2571016](https://www.mininova.org/tor/2571016)

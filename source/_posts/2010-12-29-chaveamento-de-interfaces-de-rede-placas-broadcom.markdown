@@ -35,7 +35,7 @@ categories:
 
 **R**esolvi encarar e não me arrependo. A performance está excelente. O driver realmente funcionou como deveria funcionar porém tive um pequeno problema.
 
-**U**tilizo [KDE](http://www.kde.org) como gerenciador de janelas em meu [ArchLinux](http://www.archlinux.org) e [Wicd](http://wicd.sourceforge.net/) como gerenciador de redes. Estava tudo funcionando bem mas ao reiniciar a máquina um certo dia percebo que o Wicd não havia encontrado nenhuma rede wireless. o.O
+**U**tilizo [KDE](https://www.kde.org) como gerenciador de janelas em meu [ArchLinux](https://www.archlinux.org) e [Wicd](https://wicd.sourceforge.net/) como gerenciador de redes. Estava tudo funcionando bem mas ao reiniciar a máquina um certo dia percebo que o Wicd não havia encontrado nenhuma rede wireless. o.O
 
 **R**einicio novamente e ele volta a encontrar. Feitiçaria? Fiquei curioso e resolvi reiniciar novamente e... funcionou. Pensei: "Foi apenas um susto..ela devia querer descansar.."
 

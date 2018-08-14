@@ -17,13 +17,13 @@ categories:
 {% img left /imgs/asterisknow.jpg 'Asterisk Now' %}
 Q**ue o mundo da telefonia está sofrendo grandes mudanças com a onda de conectividade web, todo mundo já sabe. A telefonia IP, VOIP, ou simplesmente voz sobre ip, vem expandindo cada vez mais as possibilidades para comunicação instantânea à longa distância à medida que os custos se tornam cada vez menores para o usuário final.
 
-**O** número de empresas e orgãos que se utilizam de voip como uma estratégia para redução de custos, bem como aumento da segurança e confiabilidade dos dados, é cada vez maior no mundo todo. Além do setor comercial, cada vez mais usuários domésticos se beneficiam do voip, muitas vezes sem se dar conta disto. Um exemplo clássico são usuários que utilizam softwares como o [skype](http://www.skype.com/) ou [gizmo](http://www.gizmoproject.com/) para realizarem ligações pessoais.
+**O** número de empresas e orgãos que se utilizam de voip como uma estratégia para redução de custos, bem como aumento da segurança e confiabilidade dos dados, é cada vez maior no mundo todo. Além do setor comercial, cada vez mais usuários domésticos se beneficiam do voip, muitas vezes sem se dar conta disto. Um exemplo clássico são usuários que utilizam softwares como o [skype](https://www.skype.com/) ou [gizmo](https://www.gizmoproject.com/) para realizarem ligações pessoais.
 
-**E**ntão, o que seria o tal [AsteriskNow](http://www.asterisknow.org)? Em resumo, seria uma distribuição Linux trazendo por padrão todos os pacotes e configurações necessárias para se ter um servidor Asterisk em plena funcionalidade, o que levanta, para muitos, uma segunda pergunta:
+**E**ntão, o que seria o tal [AsteriskNow](https://www.asterisknow.org)? Em resumo, seria uma distribuição Linux trazendo por padrão todos os pacotes e configurações necessárias para se ter um servidor Asterisk em plena funcionalidade, o que levanta, para muitos, uma segunda pergunta:
 
-**O** que é esse [Asterisk](http://www.asterisk.org/)? Ele morde?
+**O** que é esse [Asterisk](https://www.asterisk.org/)? Ele morde?
 
-**C**riado em 1999 por Mark Spencer, da [Digium Inc](http://www.digium.com/),  Asterisk é a solução líder no mundo quando o assunto é telefonia ip Open Source. O Asterisk é um conjunto de ferramentas capazes de lhe fornecer um PBX completo, eficiente e robusto em toda a sua funcionalidade que pode ser de uso pessoal ou comercial. O Asterisk é distribuído sob a licença GNU General Public License, ou simplesmente GNU GPL, estando assim disponível para download de forma totalmente gratuita. Sem sombra de dúvidas, o Asterisk é uma das soluções mais conhecidas no mundo quando o assunto é Open Source, principalmente quando o assunto é VOIP.
+**C**riado em 1999 por Mark Spencer, da [Digium Inc](https://www.digium.com/),  Asterisk é a solução líder no mundo quando o assunto é telefonia ip Open Source. O Asterisk é um conjunto de ferramentas capazes de lhe fornecer um PBX completo, eficiente e robusto em toda a sua funcionalidade que pode ser de uso pessoal ou comercial. O Asterisk é distribuído sob a licença GNU General Public License, ou simplesmente GNU GPL, estando assim disponível para download de forma totalmente gratuita. Sem sombra de dúvidas, o Asterisk é uma das soluções mais conhecidas no mundo quando o assunto é Open Source, principalmente quando o assunto é VOIP.
 
 **Ó**timo, então o AsteriskNow é apenas uma distribuição Linux trazendo o Asterisk pré-instalado?
 

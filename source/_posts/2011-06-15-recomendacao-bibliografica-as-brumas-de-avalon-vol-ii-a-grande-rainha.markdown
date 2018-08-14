@@ -15,7 +15,7 @@ categories:
 
 **D**esta vez estou concluindo a leitura do segundo volume da série As Brumas de Avalon, que aborda a história do Rei Artur através de uma visão das mulheres da época.
 
-**P**ara quem não conhece e/ou não acompanhou o post sobre o primeiro volume, <a href="http://blog.marcelocavalcante.net/blog/2010/12/20/recomendacao-bibliografica-as-brumas-de-avalon-vol-i-a-senhora-da-magia/" target="_blank">As Brumas de Avalon - A Senhora da Magia, fica o link</a>.
+**P**ara quem não conhece e/ou não acompanhou o post sobre o primeiro volume, <a href="https://blog.marcelocavalcante.net/blog/2010/12/20/recomendacao-bibliografica-as-brumas-de-avalon-vol-i-a-senhora-da-magia/" target="_blank">As Brumas de Avalon - A Senhora da Magia, fica o link</a>.
 
 **N**este segundo volume, As Brumas de Avalon - A Grande Rainha, o embate religioso entre o catolicismo e o paganismo se torna ainda mais intenso quando é chegado o momento da grande batalha prometida onde o Rei Artur quebra o juramento feito aos pagãos e seguidores da Antiga Religião.
 

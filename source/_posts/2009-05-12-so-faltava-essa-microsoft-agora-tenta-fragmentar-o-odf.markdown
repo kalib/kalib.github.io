@@ -14,7 +14,7 @@ categories:
 {% img center /imgs/linux_vs_windows.jpg 'Linux Windows' %}
 **S**ó nos faltava essa eim!?
 
-**D**epois de várias atitudes "questionáveis" em toda a sua história, me deparo com o seguinte texto publicado pelo [Vitorio Furusho](http://www.softwarelivre.org/news/13422).
+**D**epois de várias atitudes "questionáveis" em toda a sua história, me deparo com o seguinte texto publicado pelo [Vitorio Furusho](https://www.softwarelivre.org/news/13422).
 
 
 > 
@@ -87,7 +87,7 @@ Aliás, mais uma vez, ótimo e sólido artigo. 3. DalTux May 6th, 2009 - 10:22 a
 
 Eu realmente estava encafifado com o fato dos documentos que faço com o OOo 3 Writer não ficarem formatados corretamente no Abiword, por exemplo. Achei interessante a dica contida no artigo e fui atrás de mudar o padrão para salvar como ODF 1.0/1.1 ao invés de 1.2.
 
-Para quem desejar proceder, aí vai a captura de tela de onde está a opção no menu Ferramentas/Opções do OpenOffice.org 3.0.1 (Ubuntu 9.04): http://yfrog.com/ejcapturadetelaopescarregp
+Para quem desejar proceder, aí vai a captura de tela de onde está a opção no menu Ferramentas/Opções do OpenOffice.org 3.0.1 (Ubuntu 9.04): https://yfrog.com/ejcapturadetelaopescarregp
 
 Só que ainda não consegui fazer um extenso documento que tinha sido criado pelo OOo 3, contendo índices, tabelas, estilos, numeração de páginas, notas de rodapé, etc. ser formatado decentemente pelo Abiword 2.6.6. O problema é o Abiword, creio. Segundo a ODF Fellowship, a implementação do ODF no Abiword ainda é pobre. Os mais recomendados com quatro estrelas parecem ser apenas o OOo e o KOffice e outros derivados do primeiro. Fiquei com vontade de experimentar o KWord no Ubuntu/Gnome, só que depende de uns 48 pacotes, o que desanima. Há algum outro que você recomenda? 4. Luís Guilherme May 6th, 2009 - 8:42 pm
 
@@ -211,7 +211,7 @@ Ja dei a voce espaço suficiente neste blog e está claro para qualquer um o seu
 
 Cresça, trabalhe e apareça :D
 
-* Acompanhe as discussões no blog de Jomar Silva - ODF Alliance: http://homembit.com
+* Acompanhe as discussões no blog de Jomar Silva - ODF Alliance: https://homembit.com
 
 
 **Q**uanta barbaridade eim!? Faço questão de publicar aqui o texto para que possamos atingir o máximo de leitores!

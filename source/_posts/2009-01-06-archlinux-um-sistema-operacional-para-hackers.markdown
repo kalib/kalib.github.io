@@ -17,7 +17,7 @@ A resposta desta pergunta é muito relativa. Antes de mais nada devemos nos perg
 
   
 
-Nos últimos 20 anos a palavra Hacker recebeu diversos tipos de atribuições bastante variadas e por isso mesmo, ainda nos dias de hoje, é difícil definir o que seria um Hacker. Apesar de existirem definições, sempre haverão divergências entre os mais diferentes pontos de vista PESSOAIS. Muitos se orgulham em se dizer um Hacker, enquanto que outros preferem negar de pés juntos por ainda ter receio do sentido errado empregado à esta palavra. De qualquer forma, por trás desta palavra existem fatos incontestáveis. Seguindo este ponto de vista, recomendo, fortemente, que se leia um outro artigo antes de dar continuidade a este. O artigo que chamei de “[Cultura Hacker, tenha ética e ganharás respeito](http://marcelokalib.blogspot.com/2008/04/cultura-hacker-tenha-tica-e-ganhars.html)” é pré-requisito básico para o entender do pequeno post que se segue.  
+Nos últimos 20 anos a palavra Hacker recebeu diversos tipos de atribuições bastante variadas e por isso mesmo, ainda nos dias de hoje, é difícil definir o que seria um Hacker. Apesar de existirem definições, sempre haverão divergências entre os mais diferentes pontos de vista PESSOAIS. Muitos se orgulham em se dizer um Hacker, enquanto que outros preferem negar de pés juntos por ainda ter receio do sentido errado empregado à esta palavra. De qualquer forma, por trás desta palavra existem fatos incontestáveis. Seguindo este ponto de vista, recomendo, fortemente, que se leia um outro artigo antes de dar continuidade a este. O artigo que chamei de “[Cultura Hacker, tenha ética e ganharás respeito](https://marcelokalib.blogspot.com/2008/04/cultura-hacker-tenha-tica-e-ganhars.html)” é pré-requisito básico para o entender do pequeno post que se segue.  
 
   
 
@@ -30,7 +30,7 @@ Sendo assim, seria o Archlinux um Sistema Operacional para Hackers? Coinscidênc
 
   
 
-Para os amantes da tecnologia e seus segredos os sistemas operacionais de código aberto sempre se mostraram um prato cheio, justamente pelo fato de você ter a liberdade de explorar seu código podendo assim entender seu funcionamento bem como adaptar de acordo com suas necessidades. Nos últimos 10 anos o Linux tem se destacado muito neste sentido ganhando cada vez mais adeptos. Sendo assim, acabaram por surgir diversos sabores, digamos assim, do Linux. Dentre elas vou destacar aqui o [Archlinux](http://www.archlinux-br.org/).
+Para os amantes da tecnologia e seus segredos os sistemas operacionais de código aberto sempre se mostraram um prato cheio, justamente pelo fato de você ter a liberdade de explorar seu código podendo assim entender seu funcionamento bem como adaptar de acordo com suas necessidades. Nos últimos 10 anos o Linux tem se destacado muito neste sentido ganhando cada vez mais adeptos. Sendo assim, acabaram por surgir diversos sabores, digamos assim, do Linux. Dentre elas vou destacar aqui o [Archlinux](https://www.archlinux-br.org/).
 
 
 

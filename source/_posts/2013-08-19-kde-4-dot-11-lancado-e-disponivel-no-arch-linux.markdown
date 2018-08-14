@@ -35,6 +35,6 @@ categories:
  # yaourt -Syu --aur
 ```
 
-**M**aiores informações sobre esta release podem ser encontradas em http://community.kde.org/KDE_SC/4.11_Release_Notes
+**M**aiores informações sobre esta release podem ser encontradas em https://community.kde.org/KDE_SC/4.11_Release_Notes
 
 **D**ivirtam-se com o novo KDE! ;]

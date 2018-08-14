@@ -24,7 +24,7 @@ categories:
 
 {% img center /imgs/note2.jpeg 'Notebook' %}
 
-**A** mudança na estética de meu notebook foi através de um [lapjack](http://www.lapjacks.com/) da toshiba. Para quem não sabe, lapjacks são uma espécie de adesivo para notebook. A qualidade é excelente e fica realmente muito bem feito. Além disso, ele ainda lhe permite tirar e colar novamente em um novo notebook, caso você deseje. No site, você pode escolher a foto que desejar e fazer upload para eles na hora da compra ou, caso prefira, pode escolher uma das várias imagens que eles já disponibilizam. Além disso, você especifica qual o modelo de seu toshiba para garantir que o adesivo terá as medidas exatas para o mesmo.
+**A** mudança na estética de meu notebook foi através de um [lapjack](https://www.lapjacks.com/) da toshiba. Para quem não sabe, lapjacks são uma espécie de adesivo para notebook. A qualidade é excelente e fica realmente muito bem feito. Além disso, ele ainda lhe permite tirar e colar novamente em um novo notebook, caso você deseje. No site, você pode escolher a foto que desejar e fazer upload para eles na hora da compra ou, caso prefira, pode escolher uma das várias imagens que eles já disponibilizam. Além disso, você especifica qual o modelo de seu toshiba para garantir que o adesivo terá as medidas exatas para o mesmo.
 
 **A**mbas as imagens postadas aqui são do meu toshiba com o seu novo "estilo". Sim, são os pinguins do filme Madagascar! :p
 

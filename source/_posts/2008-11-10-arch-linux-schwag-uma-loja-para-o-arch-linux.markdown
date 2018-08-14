@@ -17,7 +17,7 @@ categories:
 
 
 
-Neste post eu deixo a dica de uma [loja online](http://www.zazzle.com/archlinux) na qual você pode encontrar diversos produtos bacanas do [Arch Linux](http://www.archlinux-br.org/). Produtos estes que vão desde camisetas até mesmo shapes de skates ou aventais (é mole?).
+Neste post eu deixo a dica de uma [loja online](https://www.zazzle.com/archlinux) na qual você pode encontrar diversos produtos bacanas do [Arch Linux](https://www.archlinux-br.org/). Produtos estes que vão desde camisetas até mesmo shapes de skates ou aventais (é mole?).
 
 
 
@@ -37,7 +37,7 @@ Aproveito para deixar aqui o link para esta incrível loja com produtos do Arch 
 
 
 
-Segue Link: [http://www.zazzle.com/archlinux](http://www.zazzle.com/archlinux)
+Segue Link: [https://www.zazzle.com/archlinux](https://www.zazzle.com/archlinux)
 
 
 

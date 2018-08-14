@@ -15,7 +15,7 @@ categories:
 ---
 
 {% img center /imgs/tux-ce.jpg 'Tux-CE Flisol 2009' %}
-C**omo todos sabem, no último sábado tivemos o Flisol 2009. Em Fortaleza, como de costume a [Comunidade Tux-CE](http://www.tux-ce.org) esteve presente e organizou o Install Fest.
+C**omo todos sabem, no último sábado tivemos o Flisol 2009. Em Fortaleza, como de costume a [Comunidade Tux-CE](https://www.tux-ce.org) esteve presente e organizou o Install Fest.
 
 **G**ostaria de aproveitar o post para agradecer à TODOS os integrantes da Tux-CE por fazerem com que a nossa comunidade seja vista como o é. Sempre tive orgulho de ser membro da Tux-CE, mas nos últimos dias o orgulho só cresceu diante da chuva de elogios que recebemos dos mais diversos meios/orgãos/grupos, etc. Elogios de comunidades de Software Livre, locais e nacionais, Serpro, Professores de escolas que estiveram no evento, Casa Brasil, etc..etc..etc...bem como visitantes que conheceram nosso trabalho durante o evento.
 
@@ -25,12 +25,12 @@ C**omo todos sabem, no último sábado tivemos o Flisol 2009. Em Fortaleza, como
 
 {% img center /imgs/tux-cekd.jpg 'Tux-CE Flisol 2009' %}
 
-**O** evento ocorreu da melhor forma possível com a colaboração de todos. Gostaria de agradecer também o apoio que nos foi dado pelo pessoal do [Casa Brasil](http://www.casabrasil.gov.br) que nos conseguiu todo o material e atenção de que precisávamos. ;]
+**O** evento ocorreu da melhor forma possível com a colaboração de todos. Gostaria de agradecer também o apoio que nos foi dado pelo pessoal do [Casa Brasil](https://www.casabrasil.gov.br) que nos conseguiu todo o material e atenção de que precisávamos. ;]
 
 {% img center /imgs/img_0068.jpg 'Tux-CE Flisol 2009' %}
 
 **T**irem suas próprias conclusões acessando a página da Tux-CE e observando as fotos que tiramos por lá, bem como as fotos de nosso "pós-flisol". Sim, o "pós-flisol" já é uma espécie de "evento" comum para a Tux-CE. hauhuha
 
-Fotos do Flisol - [http://www.tux-ce.org/portal/image/tid/13](http://www.tux-ce.org/portal/image/tid/13)
-Fotos do Pós Flisol - [http://www.tux-ce.org/portal/image/tid/14](http://www.tux-ce.org/portal/image/tid/14)
-Fotos e Geral - [http://www.tux-ce.org/portal/image](http://www.tux-ce.org/portal/image)
+Fotos do Flisol - [https://www.tux-ce.org/portal/image/tid/13](https://www.tux-ce.org/portal/image/tid/13)
+Fotos do Pós Flisol - [https://www.tux-ce.org/portal/image/tid/14](https://www.tux-ce.org/portal/image/tid/14)
+Fotos e Geral - [https://www.tux-ce.org/portal/image](https://www.tux-ce.org/portal/image)

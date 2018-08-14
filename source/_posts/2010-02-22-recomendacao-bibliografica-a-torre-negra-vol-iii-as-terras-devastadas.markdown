@@ -15,15 +15,15 @@ categories:
 
 **N**ão pensem que foi descaso. Não estive pulando o carnaval. (Nem gosto disso. o.O) Não viajei e fiquei em casa estudando e trabalhando.. :/ Passou, passou...
 
-**A** recomendação bibliográfica deste mês é na verdade a continuação da saga A Torre Negra de [Stephen King](http://pt.wikipedia.org/wiki/Stephen_King).
+**A** recomendação bibliográfica deste mês é na verdade a continuação da saga A Torre Negra de [Stephen King](https://pt.wikipedia.org/wiki/Stephen_King).
 
 **P**ara quem curte histórias de ficção, os livros do Stephen King são sem sombra de dúvidas um prato cheio. A história de A Torre Negra, composta por 7 volumes, não foje à regra.
 
 **P**ara quem não conhece a Saga e/ou não acompanhou meus posts sobre os dois primeiros volumes, sugiro que leia primeiro estes dois links:
 
-[A Torre Negra vol I - O Pistoleiro](http://blog.marcelocavalcante.net/blog/2009/06/21/recomendacao-bibliografica-do-vooc2bf-o-pistoleiro/)
+[A Torre Negra vol I - O Pistoleiro](https://blog.marcelocavalcante.net/blog/2009/06/21/recomendacao-bibliografica-do-vooc2bf-o-pistoleiro/)
 
-[A Torre Negra vol II - A escolha dos três](http://blog.marcelocavalcante.net/blog/2009/09/08/recomendacao-bibliografica-a-escolha-dos-tres-a-torre-negra-vol-ii/)
+[A Torre Negra vol II - A escolha dos três](https://blog.marcelocavalcante.net/blog/2009/09/08/recomendacao-bibliografica-a-escolha-dos-tres-a-torre-negra-vol-ii/)
 
 **N**este terceiro volume de título As Terras Devastadas, o pistoleiro continua sua busca pela Torre Negra juntamente com seus discípulos pelas estranhas Terras Devastadas enfrentando um mundo completamente diferente da realidade vivida até então pelos personagens, mesmo cada um sendo de um espaço diferente no tempo.
 

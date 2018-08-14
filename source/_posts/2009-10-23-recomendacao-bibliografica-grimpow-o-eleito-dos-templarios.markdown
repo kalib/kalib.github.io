@@ -15,7 +15,7 @@ categories:
 
 **N**ovamente estou trazendo uma recomendação bibliográfica. A escolha deste mês se chama Grimpow - O Eleito dos Templários.
 
-**A**inda não cheguei à metade do livro mas já posso afirmar que sua leitura é bastante interessante. A forma como _[Rafael Ábalo](http://pt.wikipedia.org/wiki/Rafael_Ábalos)_, seu autor, descreve seus personagens, cenários e cenas nos faz vivenciar a ideia que o mesmo tenta nos passar.
+**A**inda não cheguei à metade do livro mas já posso afirmar que sua leitura é bastante interessante. A forma como _[Rafael Ábalo](https://pt.wikipedia.org/wiki/Rafael_Ábalos)_, seu autor, descreve seus personagens, cenários e cenas nos faz vivenciar a ideia que o mesmo tenta nos passar.
 
 **P**ara quem curte contos históricos, Grimpow é uma excelente escolha por nos passar uma perspectiva sobre como se portavam os conhecidos Cavaleiros Templários bem como sua interação com a sociedade medieval, onde eram perseguidos por Papas e invejados por Reis pela autoridade, influência e riqueza adquirida que muitos alegam ser por conta de um antigo segredo desta seleta sociedade na qual os conhecimentos de alquimia lhes permitia transformar pobres metais em ouro através da misteriosa pedra filosofal.
 

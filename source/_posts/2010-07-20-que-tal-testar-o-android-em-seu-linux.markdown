@@ -15,9 +15,9 @@ categories:
 - Software Livre
 ---
 
-**S**e você é da área de tecnologia, com certeza já ouviu falar deste tal [Android](http://www.android.com/) que vem ganhando cada vez mais notoriedade e mercado no mundo dos smartphones. Não ouviu falar? Sugiro que repense suas escolhas acadêmicas e/ou profissionais. Talvez não tenha feito a escolha certa. Atualize-se.
+**S**e você é da área de tecnologia, com certeza já ouviu falar deste tal [Android](https://www.android.com/) que vem ganhando cada vez mais notoriedade e mercado no mundo dos smartphones. Não ouviu falar? Sugiro que repense suas escolhas acadêmicas e/ou profissionais. Talvez não tenha feito a escolha certa. Atualize-se.
 
-**O** fato é que o Android, como todos já sabemos, é um dos mais "populares" sistemas operacionais atuais para smartphones. Usei a palavra populares entre aspas pelo fato de ele ainda não ser muito utilizado, porém com certeza é muito citado. Desenvolvido inicialmente pela gigante [Google](http://www.google.com), passando a ser mantido posteriormente pela [Open Handset Alliance](http://www.openhandsetalliance.com/), o Android é um sistema operacional baseado no kernel Linux, permite que qualquer programador desenvolva uma aplicação em java, por exemplo, e controle o dispositivo através de bibliotecas desenvolvidas pela Google.
+**O** fato é que o Android, como todos já sabemos, é um dos mais "populares" sistemas operacionais atuais para smartphones. Usei a palavra populares entre aspas pelo fato de ele ainda não ser muito utilizado, porém com certeza é muito citado. Desenvolvido inicialmente pela gigante [Google](https://www.google.com), passando a ser mantido posteriormente pela [Open Handset Alliance](https://www.openhandsetalliance.com/), o Android é um sistema operacional baseado no kernel Linux, permite que qualquer programador desenvolva uma aplicação em java, por exemplo, e controle o dispositivo através de bibliotecas desenvolvidas pela Google.
 
 **A**penas recentemente o Android vem ganhando realmente mercado em smartphones e aparelhos genéricos, os famosos xing-lings ou MPx da vida.
 
@@ -25,9 +25,9 @@ categories:
 
 **A**qui estarei descrevendo o procedimento para instalação no Linux, porém não possui muita diferença e o processo pode ser facilmente adaptado no caso de usuários do OS X ou Windows.
 
-**A**ntes de mais nada preciso informar que ele possui como requisito básico o [Java](http://www.java.com/pt_BR/). Se você não possui java instalado em sua máquina, esta é a hora de o instalar.
+**A**ntes de mais nada preciso informar que ele possui como requisito básico o [Java](https://www.java.com/pt_BR/). Se você não possui java instalado em sua máquina, esta é a hora de o instalar.
 
-**P**ara começar, precisamos baixar o emulador SDK disponibilizado pelo google no link: [http://developer.android.com/sdk/index.html](http://developer.android.com/sdk/index.html)
+**P**ara começar, precisamos baixar o emulador SDK disponibilizado pelo google no link: [https://developer.android.com/sdk/index.html](https://developer.android.com/sdk/index.html)
 
 **N**o meu caso, estarei trabalhando em cima da versão para Linux.
 

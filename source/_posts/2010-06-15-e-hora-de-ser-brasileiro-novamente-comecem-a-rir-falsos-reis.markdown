@@ -16,7 +16,7 @@ categories:
 
 **O** bom de não estar envolto nesta "magia" que contagia e envolve a grande maioria dos brasileiros a cada 4 anos é termos a chance "rara" de observarmos o cenário por um outro ângulo.
 
-**D**e repente, é copa do mundo. É hora de todo mundo comprar roupas e acessórios com as cores de nossa bandeira. Como diria [MV Bill](http://pt.wikipedia.org/wiki/MV_Bill), "sociedade hipócrita só lembra de ser brasileira na copa!".
+**D**e repente, é copa do mundo. É hora de todo mundo comprar roupas e acessórios com as cores de nossa bandeira. Como diria [MV Bill](https://pt.wikipedia.org/wiki/MV_Bill), "sociedade hipócrita só lembra de ser brasileira na copa!".
 
 **É** engraçado ver pessoas que não ligam para sua nação e ao menos respeitam a própria cultura que lhes foi concebida no ato de seu nascimento. Pessoas que sentem vergonha de se dizerem "brasileiros" e de repente vestem verde e amarelo para gritar ao mundo todo "Sou Brasileiro!" com uma coragem de orgulho que apenas o esporte pode propiciar.
 
@@ -34,7 +34,7 @@ categories:
 
 **I**nfelizmente nossa patria está sendo "governada" por aproveitadores e corruptos. "Ordem, Progresso e Perdão.. Na terra onde quem rouba muito não tem punição!"
 
-**[Nossos Falsos Reis!](http://marcelocavalcante.net/portal/2008/09/17/hora-de-votar-em-nossos-falsos-reis/)**
+**[Nossos Falsos Reis!](https://marcelocavalcante.net/portal/2008/09/17/hora-de-votar-em-nossos-falsos-reis/)**
 
 **N**ão me entendam mal. Não estou no papel de quem critica os fans do esporte, muito pelo contrário. Sou um amante do esporte. Amo futebol e procuro não perder um jogo sequer do meu time. Amo a nossa seleção e incentivo fortemente que todos o façam. Porém, antes de mais nada creio que devemos amar o que está por trás das cores da camisa de nossos jogadores. Não façamos da Copa do Mundo uma oportunidade para "nossos" "representantes" fazerem a festa.
 

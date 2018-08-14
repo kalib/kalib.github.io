@@ -30,14 +30,14 @@ categories:
 
 _# pacman -Syu_
 
-**P**erceberá que o pacman informará que o chromium-snapshot precisará ser removido para a instalação do chromium. Podem confirmar sem medo algum. Ontem mesmo eu e [thotypous](http://matias.archlinux-br.org/) realizamos os últimos testes neste sentido e tudo correrá bem.
+**P**erceberá que o pacman informará que o chromium-snapshot precisará ser removido para a instalação do chromium. Podem confirmar sem medo algum. Ontem mesmo eu e [thotypous](https://matias.archlinux-br.org/) realizamos os últimos testes neste sentido e tudo correrá bem.
 
 **P**ara aqueles que ainda não utilizam o repositório [archlinux-br] e ainda não possuem o chromium instalado, a dica é a seguinte:
 
 **1-** Habilite o repositório inserindo as seguintes linhas no arquivo /etc/pacman.conf:
 
 _[archlinux-br]
-Server = http://repo.archlinux-br.org/i686_
+Server = https://repo.archlinux-br.org/i686_
 
 **2-** Atualize seus mirros e instale o chromium:
 

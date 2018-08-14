@@ -53,7 +53,7 @@ Mudanças que foram feitas:
 
 
 
-- Não force nada, o melhor é reportar os problemas no link a seguir: [http://www.kdemod.ath.cx/bbs/viewtopic.php?pid=5303#p5303](http://www.kdemod.ath.cx/bbs/viewtopic.php?pid=5303#p5303)
+- Não force nada, o melhor é reportar os problemas no link a seguir: [https://www.kdemod.ath.cx/bbs/viewtopic.php?pid=5303#p5303](https://www.kdemod.ath.cx/bbs/viewtopic.php?pid=5303#p5303)
 
 
 
@@ -90,7 +90,7 @@ Para i686
 
 >     
 >     [kdemod-legacy]
->     Server = http://kdemod.ath.cx/repo/legacy/i686
+>     Server = https://kdemod.ath.cx/repo/legacy/i686
 > 
 > 
 
@@ -107,7 +107,7 @@ Para x86_64
 
 >     
 >     [kdemod-legacy]
->     Server = http://kdemod.ath.cx/repo/legacy/x86_64
+>     Server = https://kdemod.ath.cx/repo/legacy/x86_64
 > 
 > 
 

@@ -14,7 +14,7 @@ categories:
 
 ## Pare e volte uma casa
 {% img center /imgs/volte1casa.jpeg 'Volte1Casa' %}
-**S**e você nunca utilizou ou sabe pouco sobre o *Chef* é importante que você pare aqui mesmo e volte uma casa. Sugiro que leia o post [Chef: Automação e Gerenciamento de Configuração](http://blog.marcelocavalcante.net/blog/2018/04/01/chef-aautomacao-e-gerenciamento-de-configuracao/) antes de seguir este, uma vez que através dele você entenderá o que é, e como funciona o Chef, bem como sua instalação básica.
+**S**e você nunca utilizou ou sabe pouco sobre o *Chef* é importante que você pare aqui mesmo e volte uma casa. Sugiro que leia o post [Chef: Automação e Gerenciamento de Configuração](https://blog.marcelocavalcante.net/blog/2018/04/01/chef-aautomacao-e-gerenciamento-de-configuracao/) antes de seguir este, uma vez que através dele você entenderá o que é, e como funciona o Chef, bem como sua instalação básica.
 
 ## Resources
 
@@ -49,7 +49,7 @@ categories:
 
 ## Mãos à obra
 
-**P**ara simplificar seguirei utilizando a recipe utilizada no post anterior. Não sabe o que é uma recipe? `->` Novamente, caso não entenda o que estou dizendo, volte uma casa e leia o [post anterior](http://blog.marcelocavalcante.net/blog/2018/04/01/chef-aautomacao-e-gerenciamento-de-configuracao/), no qual explico o que é uma recipe, bem como cada elemento da mesma, visto que a utilizaremos aqui.
+**P**ara simplificar seguirei utilizando a recipe utilizada no post anterior. Não sabe o que é uma recipe? `->` Novamente, caso não entenda o que estou dizendo, volte uma casa e leia o [post anterior](https://blog.marcelocavalcante.net/blog/2018/04/01/chef-aautomacao-e-gerenciamento-de-configuracao/), no qual explico o que é uma recipe, bem como cada elemento da mesma, visto que a utilizaremos aqui.
 
 **N**ossa recipe era a seguinte:
 

@@ -52,16 +52,16 @@ categories:
 
 E a parte que interessa? Instalar, instalar, instalar!
 
-**I**nfelizmente, nem todas as distribuições empacotaram o wicd-kde até então, mas se você é usuário **[Arch Linux](http://archlinux.org)**, a sua vida será mais fácil.
+**I**nfelizmente, nem todas as distribuições empacotaram o wicd-kde até então, mas se você é usuário **[Arch Linux](https://archlinux.org)**, a sua vida será mais fácil.
 
-**O** pacote wicd-kde encontra-se pronto no [AUR](http://aur.archlinux.org/packages.php?ID=40735).
+**O** pacote wicd-kde encontra-se pronto no [AUR](https://aur.archlinux.org/packages.php?ID=40735).
 
 **O** processo é o já manjado:
 
 **1-** Baixar o arquivo compactado:
 
 
-$ wget http://aur.archlinux.org/packages/wicd-client-kde-git/wicd-client-kde-git.tar.gz
+$ wget https://aur.archlinux.org/packages/wicd-client-kde-git/wicd-client-kde-git.tar.gz
 
 
 **2-** descompactar:

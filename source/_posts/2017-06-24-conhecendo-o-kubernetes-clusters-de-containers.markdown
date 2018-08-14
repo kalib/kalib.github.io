@@ -25,7 +25,7 @@ categories:
 
 **O** Kubernetes é formado por uma série de componentes ou blocos que, quando utilizados coletivamente, fornecem um método de deployment, manutenção e escalonamento de clusters de aplicações baseadas em containers. Estes componentes, ou primitives como o Kubernetes os chama, foram desenvolvidos com o intuito de serem independentes, de forma que quase não se faz necessário ter conhecimento entre si para que possam funcionar e trabalhar juntos, visto que todos se comunicam e interligam através de uma API, sejam componentes internos do Kubernetes ou mesmo extensões e containers.
 
-**E**mbora tenha sido inicialmente desenvolvido para o deployment e utilização de **bilhões de containers** internamente no Google, desde que seu código passou a ser distribuído abertamente com a licença [Apache Commons](http://commons.apache.org/proper/commons-daemon/license.html) o Kubernetes tem sido adotado formalmente por praticamente todos os grandes provedores de serviços em nuvem.
+**E**mbora tenha sido inicialmente desenvolvido para o deployment e utilização de **bilhões de containers** internamente no Google, desde que seu código passou a ser distribuído abertamente com a licença [Apache Commons](https://commons.apache.org/proper/commons-daemon/license.html) o Kubernetes tem sido adotado formalmente por praticamente todos os grandes provedores de serviços em nuvem.
 
 ## Arquitetura do Kubernetes
 
@@ -133,7 +133,7 @@ PING centos-minion3 (172.31.123.22) 56(84) bytes of data.
 
 **P**rimeiramente, vamos configurar o repositório do Docker para o CentOS 7:
 
-- Configurações de repositório retiradas dos repositórios CBS do Centos: http://cbs.centos.org/repos/virt7-docker-common-release/
+- Configurações de repositório retiradas dos repositórios CBS do Centos: https://cbs.centos.org/repos/virt7-docker-common-release/
 
 **V**amos criar o seguinte arquivo de repositório:
 
@@ -146,7 +146,7 @@ PING centos-minion3 (172.31.123.22) 56(84) bytes of data.
 ```
 [virt7-docker-common-release]
 name=virt7-docker-common-release
-baseurl=http://cbs.centos.org/repos/virt7-docker-common-release/x86_64/os/
+baseurl=https://cbs.centos.org/repos/virt7-docker-common-release/x86_64/os/
 gpgcheck=0
 ```
 
@@ -176,16 +176,16 @@ gpgcheck=0
 
 **N**o arquivo config altere as seguintes linhas:
 
-*Edite o valor do parâmetro KUBE_MASTER, de forma que nosso master possa ser encontrado pelo nome que definimos no hosts file. O valor original é "--master=http://127.0.0.1:8080", portanto mudaremos para o seguinte:*
+*Edite o valor do parâmetro KUBE_MASTER, de forma que nosso master possa ser encontrado pelo nome que definimos no hosts file. O valor original é "--master=https://127.0.0.1:8080", portanto mudaremos para o seguinte:*
 
 ```
-KUBE_MASTER="--master=http://centos-master:8080"
+KUBE_MASTER="--master=https://centos-master:8080"
 ```
 
 **A**inda neste arquivo de configuração, vamos inserir a configuração do serviço ETCD, portanto inclua a seguinte linha ao final do arquivo:
 
 ```
-KUBE_ETCD_SERVERS="--etcd-servers=http://centos-master:2379"
+KUBE_ETCD_SERVERS="--etcd-servers=https://centos-master:2379"
 ```
 
 **S**eu arquivo de configuração deverá estar similar a este:
@@ -212,9 +212,9 @@ KUBE_LOG_LEVEL="--v=0"
 KUBE_ALLOW_PRIV="--allow-privileged=false"
 
 # How the controller-manager, scheduler, and proxy find the apiserver
-KUBE_MASTER="--master=http://centos-master:8080"
+KUBE_MASTER="--master=https://centos-master:8080"
 
-KUBE_ETCD_SERVERS="--etcd-servers=http://centos-master:2379"
+KUBE_ETCD_SERVERS="--etcd-servers=https://centos-master:2379"
 ```
 
 **R**epita esta mesma configuração nos 4 hosts. Todos eles devem utilizar exatamente os mesmos valores utilizados aqui, apontando KUBE_MASTER e KUBE_ETCD_SERVERS para centos-master, visto que este será o responsável por gerenciar todos os nossos minions.
@@ -267,7 +267,7 @@ KUBE_API_PORT="--port=8080"
 KUBELET_PORT="--kubelet-port=10250"
 
 # Comma separated list of nodes in the etcd cluster
-KUBE_ETCD_SERVERS="--etcd-servers=http://127.0.0.1:2379"
+KUBE_ETCD_SERVERS="--etcd-servers=https://127.0.0.1:2379"
 
 # Address range to use for services
 KUBE_SERVICE_ADDRESSES="--service-cluster-ip-range=10.254.0.0/16"
@@ -290,10 +290,10 @@ KUBE_API_ARGS=""
 *Edite os valores dos parâmetros ETCD_LISTEN_CLIENT_URLS e ETCD_ADVERTISE_CLIENT_URLS, que originalmente apontam para localhost. Como desejamos que nosso etcd escute requisições dos demais hosts, altere para o seguinte:*
 
 ```
-ETCD_LISTEN_CLIENT_URLS="http://0.0.0.0:2379"
+ETCD_LISTEN_CLIENT_URLS="https://0.0.0.0:2379"
 ...
 ...
-ETCD_ADVERTISE_CLIENT_URLS="http://0.0.0.0:2379"
+ETCD_ADVERTISE_CLIENT_URLS="https://0.0.0.0:2379"
 ```
 
 **N**ovamente, não é necessário alterar a configuração do etcd nos demais hosts, apenas no Master.
@@ -353,7 +353,7 @@ KUBELET_HOSTNAME="--hostname-override=centos-minion1"
 *Vamos também alterar o valor para KUBELET_API_SERVER, apontando para o nosso Master:*
 
 ```
-KUBELET_API_SERVER="--api-servers=http://centos-master:8080"
+KUBELET_API_SERVER="--api-servers=https://centos-master:8080"
 ```
 
 *Vamos comentar a linha KUBELET_POD_INFRA_CONTAINER, visto que não utilizaremos uma infraestrutura de containers externa, pois estaremos utilizando nossos próprios PODs e containers:*
@@ -379,7 +379,7 @@ KUBELET_PORT="--port=10250"
 KUBELET_HOSTNAME="--hostname-override=centos-minion1"
 
 # location of the api-server
-KUBELET_API_SERVER="--api-servers=http://centos-master:8080"
+KUBELET_API_SERVER="--api-servers=https://centos-master:8080"
 
 # pod infrastructure container
 #KUBELET_POD_INFRA_CONTAINER="--pod-infra-container-image=registry.access.redhat.com/rhel7/pod-infrastructure:latest"

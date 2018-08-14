@@ -33,6 +33,6 @@ categories:
 
 **PS:** Este não será o layout padrão da página. Pretendo melhorar o aspecto físico da mesma com uma melhor organização e divisão por páginas de galerias distintas por categoria.
 
-**É** isso..conheçam um pouco sobre minha pessoa visitando a página Fotos ou clicando [**aqui**](http://marcelocavalcante.net/portal/fotos/).
+**É** isso..conheçam um pouco sobre minha pessoa visitando a página Fotos ou clicando [**aqui**](https://marcelocavalcante.net/portal/fotos/).
 
 **A**braços

@@ -34,7 +34,7 @@ Eu não sou usuário Fedora, mas para quem  é...fica o Alarme piscando!!
 
 
 
-Segue link com informações mais detalhadas: [http://www.redhat.com/archives/fedora-announce-list/2008-August/msg00012.html](http://www.redhat.com/archives/fedora-announce-list/2008-August/msg00012.html)
+Segue link com informações mais detalhadas: [https://www.redhat.com/archives/fedora-announce-list/2008-August/msg00012.html](https://www.redhat.com/archives/fedora-announce-list/2008-August/msg00012.html)
 
 
 

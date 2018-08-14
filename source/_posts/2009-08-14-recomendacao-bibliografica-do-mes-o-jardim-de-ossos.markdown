@@ -17,11 +17,11 @@ categories:
 
 **O** livro além de suspense, possui alguns aspectos de romance, ficção, medicina e histórias de época.
 
-**O** livro é da autora [Tess Gerritsen](http://en.wikipedia.org/wiki/Tess_Gerritsen).
+**O** livro é da autora [Tess Gerritsen](https://en.wikipedia.org/wiki/Tess_Gerritsen).
 
 **A** mistura de culturas chinesa e americana da autora chamou a atenção em suas obras que costumam misturar suspense e medicina.
 
-**A**lgo que muito me chamou a atenção neste livro foi justamente um comentário do grande [Stephen King](http://en.wikipedia.org/wiki/Stephen_King) que se encontra na capa do livro:  "Tess Gerritsen é leitura obrigatória em minha casa."
+**A**lgo que muito me chamou a atenção neste livro foi justamente um comentário do grande [Stephen King](https://en.wikipedia.org/wiki/Stephen_King) que se encontra na capa do livro:  "Tess Gerritsen é leitura obrigatória em minha casa."
 
 **P**recisa de algo mais?
 

@@ -15,7 +15,7 @@ categories:
 
 **M**ais uma vez trago uma sugestão bibliográfica para aqueles momentos em que você não aguenta mais tecnologia, se você for dessa área, ou simplesmente busca algum equilíbrio extra entre corpo e mente.
 
-**A** minha escolha deste mês é, novamente, um livro de terror/horror. (Sim, adoro esse estilo.) Se trata do livro Mr. X do já consagrado [Peter Straub](http://pt.wikipedia.org/wiki/Peter_Straub). Para quem é fan do gênero, o nome de Straub não deverá ser nenhuma novidade, já que até mesmo o tão renomado [Stephen King](http://pt.wikipedia.org/wiki/Stephen_king) admite ser fan incondicional do trabalho de Straub. Segue uma pequena sinopse do livro retirada do site da Livraria Saraiva:
+**A** minha escolha deste mês é, novamente, um livro de terror/horror. (Sim, adoro esse estilo.) Se trata do livro Mr. X do já consagrado [Peter Straub](https://pt.wikipedia.org/wiki/Peter_Straub). Para quem é fan do gênero, o nome de Straub não deverá ser nenhuma novidade, já que até mesmo o tão renomado [Stephen King](https://pt.wikipedia.org/wiki/Stephen_king) admite ser fan incondicional do trabalho de Straub. Segue uma pequena sinopse do livro retirada do site da Livraria Saraiva:
 
 
 > **U**ma imaginação de arrepiar. E que inspira novas histórias. Provavelmente foi uma das impressões de Stephen King sobre os livros de Peter Straub. O gosto pela literatura de Straub foi tão impactante e influente que King acabou escrevendo vários livros em parceria com o ídolo.

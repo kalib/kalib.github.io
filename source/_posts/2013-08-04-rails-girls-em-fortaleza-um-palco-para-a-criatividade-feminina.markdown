@@ -20,7 +20,7 @@ categories:
 
 ### Rails Girls ###
 
-<iframe src="http://player.vimeo.com/video/17752439" width="400" height="300" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+<iframe src="https://player.vimeo.com/video/17752439" width="400" height="300" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 
 **O** vídeo acima é da primeira edição, ocorrida na Finlândia, em 2010.
 
@@ -44,6 +44,6 @@ categories:
 
 **V**ocê precisa de um laptop, curiosidade e imaginação.
 
-**M**aiores informações, programação e inscrições podem ser feitas [através deste link](http://railsgirls.com/fortaleza).
+**M**aiores informações, programação e inscrições podem ser feitas [através deste link](https://railsgirls.com/fortaleza).
 
 **A**braços!

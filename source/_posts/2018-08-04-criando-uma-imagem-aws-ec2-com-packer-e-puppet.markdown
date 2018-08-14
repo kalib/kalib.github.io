@@ -23,13 +23,13 @@ categories:
 
 **U**ma vez que eu identifico uma necessidade para minha aplicação e sei que preciso de uma máquina virtual com configurações e aplicações específicas para poder rodar minha aplicação, eu posso criar uma imagem com todos estes pré-requisitos de forma que ao resolver criar uma nova VM, eu não precise realizar todos estes passos manualmente. Além de evitar trabalho repetitivo, nos garante uma maior flexibilidade ao ter nossa infraestrutura como código, de forma que podemos literalmente ter as instruções que compõem nossa infraestrutura em um repositório Git, por exemplo, além de nos permitir realizar alterações nesta imagem também de forma simples e rápida para a geração de novas imagens de instâncias com as nossas alterações em poucos segundos ou minutos, dependendo da quantidade de alterações envolvdidas.
 
-**S**e você ainda não faz ideia de o que seja o Packer ou o que ele é capaz de fazer, sugiro que volte uma casa e leia meu [post anterior](http://blog.marcelocavalcante.net/blog/2018/07/30/automatizando-a-criacao-de-imagens-com-packer/), onde explico o que é o Packer e apresento um simples exemplo de seu uso para a criação de imagens para o Docker.
+**S**e você ainda não faz ideia de o que seja o Packer ou o que ele é capaz de fazer, sugiro que volte uma casa e leia meu [post anterior](https://blog.marcelocavalcante.net/blog/2018/07/30/automatizando-a-criacao-de-imagens-com-packer/), onde explico o que é o Packer e apresento um simples exemplo de seu uso para a criação de imagens para o Docker.
 
 **O** intuito deste post é mostrar como podemos estruturar um simples código para que possamos criar uma imagem no AWS que poderá ser utilizada posteriormente para a criação de instâncias. Esta imagem será criada através do Packer e, para incrementar ainda mais nossa imagem, utilizaremos o recurso de provisioners (ou provisionadores/provedores) disponível no Packer. Utilizaremos dois provisioners como recursos externos para o provisionamento e configuração de nossa imagem, sendo eles bash script e [Puppet](https://puppet.com/).
 
 ## AWS
 
-**U**ma vez que estou assumindo que você já possui o Packer instalado, bem como que você já possui uma ideia de como ele funciona, vamos iniciar pelo AWS. (Ainda não possui o Packer e não sabe o que ele faz? Novamente, [volte uma casa](http://blog.marcelocavalcante.net/blog/2018/07/30/automatizando-a-criacao-de-imagens-com-packer/).)
+**U**ma vez que estou assumindo que você já possui o Packer instalado, bem como que você já possui uma ideia de como ele funciona, vamos iniciar pelo AWS. (Ainda não possui o Packer e não sabe o que ele faz? Novamente, [volte uma casa](https://blog.marcelocavalcante.net/blog/2018/07/30/automatizando-a-criacao-de-imagens-com-packer/).)
 
 **O** primeiro pré-requisito para este post/tutorial é uma conta no AWS. Caso você não possua uma e queira repetir os passos aqui descritos, siga e crie uma. Lembrando que o AWS lhe dá uma série de recursos que podem ser utilizados gratuitamente no que eles chamam de "Free Tier". Uma vez que utilizaremos apenas recursos simples aqui, você não deverá ser cobrado por nada ao seguir os exemplos deste post. O ideal é que você exclua os recursos ou encerre sua conta após o término deste exercício para evitar ser cobrado por algo. Caso não o faça e resolva continuar testando algumas coisas no AWS, você pode ser cobrado em alguns centavos ou reais, dependendo de o que resolva testar e por quanto. (Sua responsabilidade, claro.)
 
@@ -80,7 +80,7 @@ Por hora isso é tudo de que precisaremos para o AWS.
 
 **H**ora de começarmos a escrever nosso código que será utilizado pelo Packer para a criação de nossa imagem.
 
-**D**esta vez estaremos criando uma imagem EC2 para o AWS, portanto alguns provisioners e parâmetros serão diferentes dos utilizados no [post anterior](http://blog.marcelocavalcante.net/blog/2018/07/30/automatizando-a-criacao-de-imagens-com-packer/), onde criamos uma imagem para o Docker.
+**D**esta vez estaremos criando uma imagem EC2 para o AWS, portanto alguns provisioners e parâmetros serão diferentes dos utilizados no [post anterior](https://blog.marcelocavalcante.net/blog/2018/07/30/automatizando-a-criacao-de-imagens-com-packer/), onde criamos uma imagem para o Docker.
 
 **C**omecemos criando um arquivo json vazio. Chamarei meu arquivo de *ubuntuaws.json*.
 
@@ -323,8 +323,8 @@ amazon-ebs output will be in this color.
 ######
 
 ==> amazon-ebs: Provisioning with shell script: ./setup.sh
-    amazon-ebs: Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial InRelease
-    amazon-ebs: Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-updates InRelease [109 kB]
+    amazon-ebs: Hit:1 https://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial InRelease
+    amazon-ebs: Get:2 https://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-updates InRelease [109 kB]
 
 ######
 --->>> NESTE MOMENTO O COMANDO "SUDO APT-GET UPDATE" ESTÁ SENDO EXECUTADO <<<---
@@ -342,8 +342,8 @@ amazon-ebs:   cloud-init gnupg gpgv grub-legacy-ec2
 amazon-ebs: 4 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 amazon-ebs: Need to get 1,188 kB of archives.
 amazon-ebs: After this operation, 76.8 kB of additional disk space will be used.
-amazon-ebs: Get:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 gpgv amd64 1.4.20-1ubuntu3.3 [165 kB]
-amazon-ebs: Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 gnupg amd64 1.4.20-1ubuntu3.3 [626 kB]
+amazon-ebs: Get:1 https://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 gpgv amd64 1.4.20-1ubuntu3.3 [165 kB]
+amazon-ebs: Get:2 https://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 gnupg amd64 1.4.20-1ubuntu3.3 [626 kB]
 
 ...
 ...
@@ -371,7 +371,7 @@ amazon-ebs: The following additional packages will be installed:
  amazon-ebs: 0 upgraded, 31 newly installed, 0 to remove and 0 not upgraded.
  amazon-ebs: Need to get 8,267 kB of archives.
  amazon-ebs: After this operation, 38.2 MB of additional disk space will be used.
- amazon-ebs: Get:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 fonts-lato all 2.0-1 [2,693 kB]
+ amazon-ebs: Get:1 https://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 fonts-lato all 2.0-1 [2,693 kB]
 ...
 ...
 

@@ -24,7 +24,7 @@ categories:
 **O**ntem saiu uma nova build do chromium que trás suporte total ao flash, precisando-se apenas criar um link simbólico para o seu já existente plugin flash que se encontra no diretório de seu firefox.
 {% img center /imgs/chromium-flash.png 'Chromium' %}
 
-**E**sta nova build, já se encontra atualizada em nosso repositório nacional, graças ao nosso amigo [Paulo (aka thotypous)](http://matias.archlinux-br.org/), e você pode instalar, caso ainda não tenha, ou apenas atualizar o seu com os seguintes comandos:
+**E**sta nova build, já se encontra atualizada em nosso repositório nacional, graças ao nosso amigo [Paulo (aka thotypous)](https://matias.archlinux-br.org/), e você pode instalar, caso ainda não tenha, ou apenas atualizar o seu com os seguintes comandos:
 
 
 > # pacman -Sy

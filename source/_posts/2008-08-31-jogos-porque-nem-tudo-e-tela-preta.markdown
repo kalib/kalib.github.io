@@ -14,7 +14,7 @@ categories:
 - Software Livre
 ---
 
-Em minha primeira participação no [Almanarch](http://www.archlinux-br.org/almanarch/) publiquei este artigo no qual gostaria de abordar um tema que acaba por assustar muitas pessoas que cogitam a idéia de utilizar Linux em suas máquinas. Muitos conseguem facilmente entender as vantagens do software livre em termos de segurança, qualidade, estabilidade, preço dentre outras, porém acabam por temer uma ou outra coisa. Neste artigo focarei aqueles que temem usar o Linux como sistema operacional padrão por achar que não vai mais poder se divertir com jogos.
+Em minha primeira participação no [Almanarch](https://www.archlinux-br.org/almanarch/) publiquei este artigo no qual gostaria de abordar um tema que acaba por assustar muitas pessoas que cogitam a idéia de utilizar Linux em suas máquinas. Muitos conseguem facilmente entender as vantagens do software livre em termos de segurança, qualidade, estabilidade, preço dentre outras, porém acabam por temer uma ou outra coisa. Neste artigo focarei aqueles que temem usar o Linux como sistema operacional padrão por achar que não vai mais poder se divertir com jogos.
 
 
 
@@ -153,7 +153,7 @@ Ps: Um guia de utilização do pacman foi amplamente abordado na primeira ediç�
 
 
 
-Com relação aos dois acima citados, você poderá encontrá-los no [AUR](http://aur.archlinux.org/index.php).
+Com relação aos dois acima citados, você poderá encontrá-los no [AUR](https://aur.archlinux.org/index.php).
 
 
 

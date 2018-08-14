@@ -268,8 +268,8 @@ docker output will be in this color.
     docker: Run command: docker run -v /Users/kalib/.packer.d/tmp/packer-docker737353515:/packer-files -d -i -t ubuntu /bin/bash
     docker: Container ID: 097a85a796e0e928fbc82cd6618bd60e286b46dfadad20e823027fc2f93d25db
 ==> docker: Provisioning with shell script: /var/folders/nn/njz4sd054fv_tvq30vh0zygh0000gp/T/packer-shell161880041
-    docker: Get:1 http://archive.ubuntu.com/ubuntu bionic InRelease [242 kB]
-    docker: Get:2 http://security.ubuntu.com/ubuntu bionic-security InRelease [83.2 kB]
+    docker: Get:1 https://archive.ubuntu.com/ubuntu bionic InRelease [242 kB]
+    docker: Get:2 https://security.ubuntu.com/ubuntu bionic-security InRelease [83.2 kB]
     ...
     ...
     docker: Reading state information...
@@ -294,9 +294,9 @@ docker:   libxslt1.1 multiarch-support nginx nginx-common nginx-core ucf
 docker: 0 upgraded, 35 newly installed, 0 to remove and 0 not upgraded.
 docker: Need to get 16.1 MB of archives.
 docker: After this operation, 58.8 MB of additional disk space will be used.
-docker: Get:1 http://archive.ubuntu.com/ubuntu bionic/main amd64 multiarch-support amd64 2.27-3ubuntu1 [6916 B]
-docker: Get:2 http://archive.ubuntu.com/ubuntu bionic/main amd64 libxau6 amd64 1:1.0.8-1 [8376 B]
-docker: Get:3 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libjpeg-turbo8 amd64 1.5.2
+docker: Get:1 https://archive.ubuntu.com/ubuntu bionic/main amd64 multiarch-support amd64 2.27-3ubuntu1 [6916 B]
+docker: Get:2 https://archive.ubuntu.com/ubuntu bionic/main amd64 libxau6 amd64 1:1.0.8-1 [8376 B]
+docker: Get:3 https://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libjpeg-turbo8 amd64 1.5.2
 ...
 ...
 docker: Setting up nginx (1.14.0-0ubuntu1) ...

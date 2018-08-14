@@ -40,12 +40,12 @@ categories:
 
 
 
-**A**ssim como fazemos no [Arch Linux Brasil](http://www.archlinux-br.org), dentre outras comunidades Arch Linux em outros países, a comunidade Arch Linux Portugal será o ponto de apoio entre o Arch Linux e os usuários dessa distribuição em seu país. Além de fornecer suporte e ajudar na divulgação da distribuição em Portugal, a comunidade também servirá como uma ponte de colaboração mais direta no projeto Arch Linux internacional, seja com tradução de documentação, empacotamento no AUR, etc.
+**A**ssim como fazemos no [Arch Linux Brasil](https://www.archlinux-br.org), dentre outras comunidades Arch Linux em outros países, a comunidade Arch Linux Portugal será o ponto de apoio entre o Arch Linux e os usuários dessa distribuição em seu país. Além de fornecer suporte e ajudar na divulgação da distribuição em Portugal, a comunidade também servirá como uma ponte de colaboração mais direta no projeto Arch Linux internacional, seja com tradução de documentação, empacotamento no AUR, etc.
 
 
 
 
-**O** Arch Linux Portugal já conta com um grupo no [GoogleGroups](http://groups.google.com/group/archlinux_pt) onde podemos trocar ideias e tirar dúvidas. Para se cadastrar, acesse o seguinte endereço: http://groups.google.com/group/archlinux_pt
+**O** Arch Linux Portugal já conta com um grupo no [GoogleGroups](https://groups.google.com/group/archlinux_pt) onde podemos trocar ideias e tirar dúvidas. Para se cadastrar, acesse o seguinte endereço: https://groups.google.com/group/archlinux_pt
 
 
 

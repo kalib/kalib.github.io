@@ -29,7 +29,7 @@ categories:
 * Jogos
 * Gestão de TI e Software Livre
 
-**L**ocal: FIC - Unidade Moreira Campos ([http://www.fic.br/v4/conheca/mapamc.html](http://www.fic.br/v4/conheca/mapamc.html))
+**L**ocal: FIC - Unidade Moreira Campos ([https://www.fic.br/v4/conheca/mapamc.html](https://www.fic.br/v4/conheca/mapamc.html))
 **H**orário: 08:00 - 11:00
 
 **N**os vemos lá!?

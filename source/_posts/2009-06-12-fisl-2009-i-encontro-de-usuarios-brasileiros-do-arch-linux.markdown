@@ -14,13 +14,13 @@ categories:
 - Software Livre
 ---
 {% img center /imgs/archlibjpeg.png 'Arch Linux' %}
-**P**ara quem não sabe, anualmente acontece o Fórum Internacional de Software Livre, ou simplesmente [FISL](http://fisl.softwarelivre.org/10/www/), no qual encontram-se pessoas de diferentes partes do país e do mundo para um evento que conta com várias palestras, oficinas, mini-cursos, gincanas, etc..etc..etc..
+**P**ara quem não sabe, anualmente acontece o Fórum Internacional de Software Livre, ou simplesmente [FISL](https://fisl.softwarelivre.org/10/www/), no qual encontram-se pessoas de diferentes partes do país e do mundo para um evento que conta com várias palestras, oficinas, mini-cursos, gincanas, etc..etc..etc..
 
 **A**lém da oportunidade de assistir palestras de presenças nacionais e internacionais como Eduardo Maçan (linux-br), Anahuac de Paula Gil (LESP), Sérgio Amadeu, Marcelo Tosatti (RedHat), Richard Stallman (Free Software Foundation), Peter Sunde Kolmisoppi (The Pirate Bay), Scott Balneaves (LTSP), John "Maddog" Hall (Linux Foundation), Alexandre Oliva (Free Software Foundation), dentre outros vários, o FISL também é uma excelente oportunidade para conhecer pessoas com quem, por razões geográficas, não podemos trabalhar presencialmente porém, muitas vezes, já até conhecemos ou trabalhamos juntos virtualmente. (Bem vindo ao mundo do Software Livre).
 
 **O** FISL deste ano acontecerá, como de costume, na PUCRS em Porto Alegre no período entre 24 e 27 de Junho.
 
-**A**lém dos corredores lotados de pessoas para se bater um bom papo, trocar cartões de visita, códigos e curriculums, o FISL também conta com os encontros e eventos comunitários. O [Arch Linux Brasil](http://www.archlinux-br.org) não poderia ficar de fora, certo?!
+**A**lém dos corredores lotados de pessoas para se bater um bom papo, trocar cartões de visita, códigos e curriculums, o FISL também conta com os encontros e eventos comunitários. O [Arch Linux Brasil](https://www.archlinux-br.org) não poderia ficar de fora, certo?!
 
 **S**im, estaremos lá.
 

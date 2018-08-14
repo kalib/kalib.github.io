@@ -2,16 +2,16 @@
 #      Main Configs       #
 # ----------------------- #
 
-url: http://kalib.github.io
+url: https://kalib.github.io
 title: Marcelo Cavalcante Rocha ~
 subtitle: Hacking the damn life...
 author: Marcelo Cavalcante Rocha - Kalib
-simple_search: http://google.com/search
+simple_search: https://google.com/search
 description: Blog sobre tecnologia e novidades em geral
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
-# http://www.ruby-doc.org/core-1.9.2/Time.html#method-i-strftime
+# https://www.ruby-doc.org/core-1.9.2/Time.html#method-i-strftime
 # Additionally, %o will give you the ordinal representation of the day
 date_format: "ordinal"
 
@@ -25,7 +25,7 @@ email:
 #    Jekyll & Plugins     #
 # ----------------------- #
 
-# If publishing to a subdirectory as in http://site.com/project set 'root: /project'
+# If publishing to a subdirectory as in https://site.com/project set 'root: /project'
 root: /
 permalink: /blog/:year/:month/:day/:title/
 source: source

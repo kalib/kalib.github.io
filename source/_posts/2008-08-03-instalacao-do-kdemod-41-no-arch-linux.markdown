@@ -13,7 +13,7 @@ categories:
 - Software Livre
 ---
 
-Creio que todos os usuários de Arch Linux conhecem ou já ouviram falar do [Hugo Doria](http://hugodoria.org/). O Hugo é um dos maiores representantes do Arch Linux no Brasil e um dos atuais desenvolvedores do mesmo.
+Creio que todos os usuários de Arch Linux conhecem ou já ouviram falar do [Hugo Doria](https://hugodoria.org/). O Hugo é um dos maiores representantes do Arch Linux no Brasil e um dos atuais desenvolvedores do mesmo.
 
 
 
@@ -37,7 +37,7 @@ Ao instalar o pacote _kdegraphics_, por exemplo, você acaba instalando diversas
 
 
 
-A solução para isto é usar o [KDEMod](http://www.kdemod.ath.cx/), um projeto que visa fornecer uma instalação modular do KDE e otimizada para o Arch Linux.
+A solução para isto é usar o [KDEMod](https://www.kdemod.ath.cx/), um projeto que visa fornecer uma instalação modular do KDE e otimizada para o Arch Linux.
 
 
 
@@ -132,7 +132,7 @@ Pronto, seu sistema está limpo e agora podemos instalar a nova versão sem prob
 
 > [kdemod-core]  
 
-Server = [http://kdemod.ath.cx/repo/core/i686](http://kdemod.ath.cx/repo/core/i686)
+Server = [https://kdemod.ath.cx/repo/core/i686](https://kdemod.ath.cx/repo/core/i686)
 > 
 > 
 
@@ -234,7 +234,7 @@ Agora existe um repositório com alguns pacotes adicionais para o KDE (aplicativ
 
 > [kdemod-extragear]  
 
-Server = http://kdemod.ath.cx/repo/extragear/i686 
+Server = https://kdemod.ath.cx/repo/extragear/i686 
 > 
 > 
 
@@ -289,7 +289,7 @@ Maiores informações:
 
 
 
-  * [http://www.kdemod.ath.cx/](http://www.kdemod.ath.cx/)
+  * [https://www.kdemod.ath.cx/](https://www.kdemod.ath.cx/)
 
 
 

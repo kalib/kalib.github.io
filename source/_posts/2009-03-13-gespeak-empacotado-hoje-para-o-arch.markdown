@@ -25,8 +25,8 @@ O Gespeak é desenvolvido em PyGTK e ainda está no começo de seu desenvolvimen
 
 Hoje pela manhã o pacote para o Arch foi criado e já homologado pelo pessoal do projeto no final da tarde.
 
-Link do projeto: [http://code.google.com/p/gespeak/](http://code.google.com/p/gespeak/)
+Link do projeto: [https://code.google.com/p/gespeak/](https://code.google.com/p/gespeak/)
 
-Link do pacote no AUR: [http://aur.archlinux.org/packages.php?ID=24659](http://aur.archlinux.org/packages.php?ID=24659)
+Link do pacote no AUR: [https://aur.archlinux.org/packages.php?ID=24659](https://aur.archlinux.org/packages.php?ID=24659)
 
 Abraços

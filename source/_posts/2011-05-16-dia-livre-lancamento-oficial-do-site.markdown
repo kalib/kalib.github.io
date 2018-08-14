@@ -13,7 +13,7 @@ categories:
 - Software Livre
 ---
 {% img left /imgs/logo_dia_livre.jpg 'Dia Livre' %}
-**G**ostaria de comunicar sobre o lançamento oficial do [site do Dia Livre](http://dialivre.tux-ce.org) que se deu ontem, Domingo.
+**G**ostaria de comunicar sobre o lançamento oficial do [site do Dia Livre](https://dialivre.tux-ce.org) que se deu ontem, Domingo.
 
 **R**ecentemente escrevi sobre um encontro regular que pretendemos organizar para usuários e profissionais de Software Livre em nossa região.
 
@@ -23,13 +23,13 @@ categories:
 
 **A**inda não sabe o que é o Dia Livre?
 
-**Q**ue tal visitar [a página de apresentação do evento](http://tux-ce.org/dialivre/dia-livre/)?
+**Q**ue tal visitar [a página de apresentação do evento](https://tux-ce.org/dialivre/dia-livre/)?
 
-**D**eseja se manter informado? Você também pode seguir o [@dia_livre](http://twitter.com/#!/@dia_livre) no twitter e ficar por dentro do que rola.
+**D**eseja se manter informado? Você também pode seguir o [@dia_livre](https://twitter.com/#!/@dia_livre) no twitter e ficar por dentro do que rola.
 
 **E**m breve teremos maiores notícias sobre a primeira edição.
 
 **A**braços!
 
 
-![](http://www.marcelocavalcante.net/portal/imgs/userbar.gif)
+![](https://www.marcelocavalcante.net/portal/imgs/userbar.gif)

@@ -16,9 +16,9 @@ categories:
 {% img left /imgs/arch_fireworks.png 'Arch Linux' %}
 **S**audações pessoal...
 
-**C**omo muitos já devem saber sou usuário da distribuição [Archlinux](http://www.archlinux.org) desde o ano passado à qual tenho me dedicado por ter finalmente achado uma distribuição na qual eu me sinto realmente em casa. Os resultados desta parceria, kalib/arch, passaram a surgir rapidamente, uma vez que comecei a tentar colaborar com a distribuição em minhas primeiras semanas com documentações, traduções, divulgação, suporte, etc.
+**C**omo muitos já devem saber sou usuário da distribuição [Archlinux](https://www.archlinux.org) desde o ano passado à qual tenho me dedicado por ter finalmente achado uma distribuição na qual eu me sinto realmente em casa. Os resultados desta parceria, kalib/arch, passaram a surgir rapidamente, uma vez que comecei a tentar colaborar com a distribuição em minhas primeiras semanas com documentações, traduções, divulgação, suporte, etc.
 
-**N**ão demorou muito e o [Hugo Dória](http://blog.hugodoria.org), até então um dos líderes do projeto Archlinux Brasil, me convidou para ingressar o time de desenvolvedores do [Archlinux Brasil](http://www.archlinux-br.org). Após votação interna consegui assumir o posto. Obrigado pessoal. ;] Fui muito bem recebido por todos que já eram "da casa".
+**N**ão demorou muito e o [Hugo Dória](https://blog.hugodoria.org), até então um dos líderes do projeto Archlinux Brasil, me convidou para ingressar o time de desenvolvedores do [Archlinux Brasil](https://www.archlinux-br.org). Após votação interna consegui assumir o posto. Obrigado pessoal. ;] Fui muito bem recebido por todos que já eram "da casa".
 
 **F**oi uma ótima experiência, bem como oportunidade, na qual conheci muitas pessoas e fiz amigos. (Leandro, não vou esquecer da cachaça que você me prometeu..hauhuha)
 
@@ -42,8 +42,8 @@ O projeto Arch-br gostaria de agradecer a todos os que fizeram da comunidade o q
 A nova comissão espera dar continuidade ao andamento do projeto bem como procurar cada vez mais inovar e melhorar a comunidade como um todo, seja em conteúdo, receptividade ou mesmo suporte aos atuais serviços e necessidades de nossa comunidade Arch.
 
 
-**E**spero poder dar continuidade ao excelente trabalho que foi feito até então juntamente com todo o [time de desenvolvedores](http://archlinux-br.org/desenvolvedores/) que temos hoje no Archlinux Brasil.
+**E**spero poder dar continuidade ao excelente trabalho que foi feito até então juntamente com todo o [time de desenvolvedores](https://archlinux-br.org/desenvolvedores/) que temos hoje no Archlinux Brasil.
 
-**R**ecomendo também a leitura do [post](http://blog.hugodoria.org/2009/05/18/saida-do-projeto-arch-linux-brasil/) do Hugo no qual se despede do projeto em grande estilo.
+**R**ecomendo também a leitura do [post](https://blog.hugodoria.org/2009/05/18/saida-do-projeto-arch-linux-brasil/) do Hugo no qual se despede do projeto em grande estilo.
 
 **A**braços

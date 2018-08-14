@@ -15,7 +15,7 @@ categories:
 {% img left /imgs/reciclagem.jpg 'Reiclagem' %}
 **S**audações pessoal, todos dispostos a ajudar?
 
-**A**lgumas semanas atrás uma amiga me perguntou algumas coisas sobre reciclagem ou reaproveitamento de e-lixo ou lixo eletrônico para os menos íntimos. A mesma não informou estes termos mas a intenção foi parecida. Me perguntou sobre como se descartar corretamente mídias (cds, dvds) ou velhas peças de computador. E como estamos nos aproximando do FLISOL, aproveitei para divulgar uma iniciativa que teremos aqui em Fortaleza no dia 24 de Abril durante o [FLISOL](http://flisolceara.net) - Festival Latino Americano de Instalação de Software Livre.
+**A**lgumas semanas atrás uma amiga me perguntou algumas coisas sobre reciclagem ou reaproveitamento de e-lixo ou lixo eletrônico para os menos íntimos. A mesma não informou estes termos mas a intenção foi parecida. Me perguntou sobre como se descartar corretamente mídias (cds, dvds) ou velhas peças de computador. E como estamos nos aproximando do FLISOL, aproveitei para divulgar uma iniciativa que teremos aqui em Fortaleza no dia 24 de Abril durante o [FLISOL](https://flisolceara.net) - Festival Latino Americano de Instalação de Software Livre.
 
 **M**as, o que é esse tal e-lixo? Vivo recebendo esses SPAMs em minha caixa de email. Posso reciclar isso? o.O
 

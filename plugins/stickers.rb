@@ -24,7 +24,7 @@ module Jekyll
         # if there are 2 or more elements in the list, than add to html img tag wraped by anchor tag
         # otherwise just build a img tag
         if url_part_name.size >= 2
-          url_to = "http://#{url_part_name.join('.')}"
+          url_to = "https://#{url_part_name.join('.')}"
           html << "<a href='#{url_to}'><img style='padding: .5em; margin: .5em;' src='/images/stickers/#{sticker}'></a>"
         else
           html << "<img style='padding: .5em; margin: .5em;' src='/images/stickers/#{sticker}' >"

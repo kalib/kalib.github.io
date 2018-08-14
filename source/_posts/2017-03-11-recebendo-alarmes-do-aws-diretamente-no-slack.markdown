@@ -15,7 +15,7 @@ categories:
 ---
 {% img center /imgs/aws_slack.png 'AWS_Slack' %}
 
-**A**ntes de entrar na configuração dos serviços, talvez seja necessário apresentar o [Slack](http://www.slack.com), visto que muitos ainda não conhecem ou utilizam esta poderosa e versátil ferramenta de comunicação instantânea para times.
+**A**ntes de entrar na configuração dos serviços, talvez seja necessário apresentar o [Slack](https://www.slack.com), visto que muitos ainda não conhecem ou utilizam esta poderosa e versátil ferramenta de comunicação instantânea para times.
 
 **S**lack é uma plataforma para comunicação entre times que desejam um ambiente mais dinâmico e ágil. Diferentemente de muitas plataformas de chat disponíveis, como o Google Hangouts, o Slack nos permite criar canais distintos com membros distintos de um mesmo time fazendo parte daquele canal específico. Não, não estou falando de chat em grupo, mas sim canais específicos que permitem integrações com serviços distintos, como receber notificações sobre commits feitos em um repositório ou branch específico no github, notificações de tickets abertos em ferramentas como o Jira, por exemplo, etc. O Slack é completamente programável e escalável, o que nos permite ter inúmeras funcionalidas.
 

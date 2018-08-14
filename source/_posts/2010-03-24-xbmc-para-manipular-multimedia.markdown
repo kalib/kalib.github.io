@@ -31,7 +31,7 @@ categories:
 [kalib@tuxcaverna ~]$ uname -a
 Linux tuxcaverna 2.6.32-ARCH #1 SMP PREEMPT Mon Mar 15 20:44:03 CET 2010 x86_64 Intel(R) Core(TM)2 Duo CPU P7550 @ 2.26GHz GenuineIntel GNU/Linux
 
-**M**as não é sobre isso que eu pretendo falar hoje, mas sim sobre o [XBMC](http://xbmc.org/) para aqueles que ainda não o conhecem.
+**M**as não é sobre isso que eu pretendo falar hoje, mas sim sobre o [XBMC](https://xbmc.org/) para aqueles que ainda não o conhecem.
 
 **O** XBMC é um magnífico software para manipulação de multimedia. Com ele você pode facilmente organizar, rotular e manipular seus vídeos, músicas, fotos, etc.
 

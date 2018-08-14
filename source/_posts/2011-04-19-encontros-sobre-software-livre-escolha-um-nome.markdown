@@ -18,7 +18,7 @@ categories:
 {% img left /imgs/tux_teacher.png 'Tux Teacher' %}
 **S**audações pessoal,
 
-**A**credito que boa parte, se não praticamente todos, os usuários de Software Livre em nossa região já ouviram falar, ou participaram, do [Flisol - Festival Latino Americano de Instalação de Software Livre](http://marcelocavalcante.net/portal/2011/04/13/flisol-quixada-relato-e-parabens/).
+**A**credito que boa parte, se não praticamente todos, os usuários de Software Livre em nossa região já ouviram falar, ou participaram, do [Flisol - Festival Latino Americano de Instalação de Software Livre](https://marcelocavalcante.net/portal/2011/04/13/flisol-quixada-relato-e-parabens/).
 
 **É** um encontro legal, rolam palestras interessantes e podemos bater um papo com pessoas do ramo, fazendo novos amigos e/ou contatos profissionais. Lado ruim? Acontece apenas uma vez por ano. :/
 
@@ -28,7 +28,7 @@ categories:
 
 **G**ostou da ideia?
 
-**A** [Tux-CE](http://www.tux-ce.org) está com uma proposta neste sentido.
+**A** [Tux-CE](https://www.tux-ce.org) está com uma proposta neste sentido.
 
 **A** ideia é termos um mini-evento com maior frequência em nossa região como forma de fortalecer a ideia do Software Livre e ao mesmo tempo aumentar a integração entre nós, usuários e profissionais do ramo. Uma forma de beneficiar a todos. Se você não pode ir hoje, em breve você terá outra chance. Não fica perto da sua casa? Na próxima edição poderá ser mais próximo de você.
 
@@ -42,7 +42,7 @@ categories:
 
 **A**gora chegou a hora de definir o nome.
 
-**G**ostaria de ajudar? Sinta-se convidado a votar em nossa enquete que encontra-se na página da [Tux-CE através deste link](http://www.tux-ce.org/portal/node/717).
+**G**ostaria de ajudar? Sinta-se convidado a votar em nossa enquete que encontra-se na página da [Tux-CE através deste link](https://www.tux-ce.org/portal/node/717).
 
 **C**ontamos com o seu voto para nos ajudar a iniciar este movimento.
 

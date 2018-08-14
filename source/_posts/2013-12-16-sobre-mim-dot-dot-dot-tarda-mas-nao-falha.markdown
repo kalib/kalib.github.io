@@ -19,6 +19,6 @@ categories:
 
 **H**oje fui surpreendido por uma pessoa que acabou caindo no blog e em seguida me questionou sobre o porque de o blog já existir a tanto tempo e até hoje a página "Sobre mim" continuar contendo apenas as palavras "Em construção".
 
-**I**sto me fez tomar vergonha na cara.. e hoje inseri conteúdo <a href="http://blog.marcelocavalcante.net/about/"> nesta página</a>.
+**I**sto me fez tomar vergonha na cara.. e hoje inseri conteúdo <a href="https://blog.marcelocavalcante.net/about/"> nesta página</a>.
 
 **A**gora sim... ;]

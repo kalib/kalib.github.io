@@ -57,7 +57,7 @@ Segue um trexo de um post que achei de uma catarinese, sobre a visão dela em re
 >> 
 
 >> 
->> Tanta chuva já tinha deixado o solo enxarcado. Aqui entra a questão geográfica que as televisões e grandes sites da internet não são capazes de compreender. Como o nome diz: Vale do Itajaí é um vale (ohhhh), ou seja, como um vale é cercado de morros por todos os lados (ohhhh) vide uma vista de Blumenau [**AQUI**](http://lahy.livejournal.com/www.belasantacatarina.com.br/blumenau/blumenau1.jpg). Como se pode ver pela foto: há morros. Muitos morros. A cidade inteira é repleta de morros. Você necessariamente tem que passar de um morro a outro, e a outro, e a outro para chegar em algum lugar.
+>> Tanta chuva já tinha deixado o solo enxarcado. Aqui entra a questão geográfica que as televisões e grandes sites da internet não são capazes de compreender. Como o nome diz: Vale do Itajaí é um vale (ohhhh), ou seja, como um vale é cercado de morros por todos os lados (ohhhh) vide uma vista de Blumenau [**AQUI**](https://lahy.livejournal.com/www.belasantacatarina.com.br/blumenau/blumenau1.jpg). Como se pode ver pela foto: há morros. Muitos morros. A cidade inteira é repleta de morros. Você necessariamente tem que passar de um morro a outro, e a outro, e a outro para chegar em algum lugar.
 >> 
 >> 
 
@@ -138,7 +138,7 @@ Você pode sim colaborar!
 > 
 
 > 
-> Segue link: [http://www.clicrbs.com.br/diariocatarinense/jsp/default.jsp?uf=2&local=18&section=Geral&newsID=a2306293.xml](http://www.clicrbs.com.br/diariocatarinense/jsp/default.jsp?uf=2&local=18&section=Geral&newsID=a2306293.xml)
+> Segue link: [https://www.clicrbs.com.br/diariocatarinense/jsp/default.jsp?uf=2&local=18&section=Geral&newsID=a2306293.xml](https://www.clicrbs.com.br/diariocatarinense/jsp/default.jsp?uf=2&local=18&section=Geral&newsID=a2306293.xml)
 > 
 > 
 

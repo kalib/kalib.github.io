@@ -89,7 +89,7 @@ _* mulher/namorada tentando descobrir senha do orkut/email/etc do marido/namorad
 
 **A**credito que já falei demais sobre isso. Resumi as <del>3</del> 2 técnicas utlizadas para ataques de brute-force. Mas este não é o objetivo principal do post, mas sim como inspecionar seu site ou sistema web para saber se o mesmo está livre de tentativas deste tipo de ataque.
 
-**P**ara isso utilizaremos a ferramenta [Dirb](http://sourceforge.net/projects/dirb/).
+**P**ara isso utilizaremos a ferramenta [Dirb](https://sourceforge.net/projects/dirb/).
 
 **D**irb é um URL Bruteforcer. Um WCS (Web Content Scanner) que tem a função de buscar por objetos Web Ocultos. Basicamente funciona com o lançamento um ataque baseado em dicionários contra o servidor Web analizando as respostas do mesmo. O principal propósito do Dirb é auditoria em aplicações web.
 
@@ -102,9 +102,9 @@ _* setar diferentes cookies;
 
 **M**as, chega de falatório.. vamos ao teclado...
 
-**A** ferramenta pode ser baixada através do site do projeto: [http://sourceforge.net/projects/dirb/](http://sourceforge.net/projects/dirb/)
+**A** ferramenta pode ser baixada através do site do projeto: [https://sourceforge.net/projects/dirb/](https://sourceforge.net/projects/dirb/)
 
-[](http://sourceforge.net/projects/dirb/)**A** compilação é simples e sem grandes mistérios.
+[](https://sourceforge.net/projects/dirb/)**A** compilação é simples e sem grandes mistérios.
 
 **D**escompacte o arquivo e compile seguindo os seguintes comandos:
 
@@ -172,10 +172,10 @@ _[kalib@tuxcaverna dirb]$ ./dirb
 
 **M**as vamos ao uso mais básico.
 
-**A** forma mais simples é utilizando apenas a URL que deseja testar, por exemplo _http://www.meulaboratorio.com.br_
+**A** forma mais simples é utilizando apenas a URL que deseja testar, por exemplo _https://www.meulaboratorio.com.br_
 
 
-_[kalib@tuxcaverna dirb]$ ./dirb http://www.meulaboratorio.com.br_
+_[kalib@tuxcaverna dirb]$ ./dirb https://www.meulaboratorio.com.br_
 
 
 
@@ -205,7 +205,7 @@ _START_TIME: Mon Jan 31 10:05:16 2011_
 
 
 
-_URL_BASE: http://www.meulaboratorio.com.br_
+_URL_BASE: https://www.meulaboratorio.com.br_
 
 
 
@@ -225,12 +225,12 @@ _GENERATED WORDS: 1942_
 
 
 
-_---- Scanning URL: http://www.meulaboratorio.com.br/ ----_
+_---- Scanning URL: https://www.meulaboratorio.com.br/ ----_
 
 
 
 
-_+ http://www.meulaboratorio.com.br/A_
+_+ https://www.meulaboratorio.com.br/A_
 
 
 
@@ -240,7 +240,7 @@ _(FOUND: 301 [Moved Permanently] - Size: 241)_
 
 
 
-_+ http://www.meulaboratorio.com.br/a_
+_+ https://www.meulaboratorio.com.br/a_
 
 
 
@@ -250,7 +250,7 @@ _(FOUND: 200 [Ok] - Size: 419)_
 
 
 
-_+ http://www.meulaboratorio.com.br/about_
+_+ https://www.meulaboratorio.com.br/about_
 
 
 
@@ -260,7 +260,7 @@ _(FOUND: 301 [Moved Permanently] - Size: 237)_
 
 
 
-_+ http://www.meulaboratorio.com.br/accessibility/_
+_+ https://www.meulaboratorio.com.br/accessibility/_
 
 
 
@@ -270,7 +270,7 @@ _==> DIRECTORY_
 
 
 
-_+ http://www.meulaboratorio.com.br/account_
+_+ https://www.meulaboratorio.com.br/account_
 
 
 
@@ -280,7 +280,7 @@ _(FOUND: 302 [Moved Temporarily] - Size: 227)_
 
 
 
-_+ http://www.meulaboratorio.com.br/accounts_
+_+ https://www.meulaboratorio.com.br/accounts_
 
 
 
@@ -290,7 +290,7 @@ _(FOUND: 302 [Moved Temporarily] - Size: 192)_
 
 
 
-_+ http://www.meulaboratorio.com.br/ad_
+_+ https://www.meulaboratorio.com.br/ad_
 
 
 
@@ -300,7 +300,7 @@ _(FOUND: 301 [Moved Permanently] - Size: 223)_
 
 
 
-_+ http://www.meulaboratorio.com.br/ads/_
+_+ https://www.meulaboratorio.com.br/ads/_
 
 
 
@@ -345,7 +345,7 @@ _big.txt  catala.txt  common.txt  euskera.txt  extensions_common.txt  index
 **P**ara utilização de um dicionário em específico, basta adicionar o nome do dicionário desejado ao final do comando:
 
 
-_[kalib@tuxcaverna wordlists]$ ./dirb http://www.meulaboratorio.com.br euskera.txt_
+_[kalib@tuxcaverna wordlists]$ ./dirb https://www.meulaboratorio.com.br euskera.txt_
 
 
 **P**ara utilização de SSL, apenas inclua o HTTPS na url desejada:
@@ -357,13 +357,13 @@ _[kalib@tuxcaverna wordlists]$ ./dirb https://www.meulaboratorio.com.br euskera
 **V**ocê também pode utilizar múltiplos dicionários separando-os com vírgulas:
 
 
-_[kalib@tuxcaverna wordlists]$ ./dirb http://www.meulaboratorio.com.br euskera.txt,common.txt,spanish.txt,big.txt_
+_[kalib@tuxcaverna wordlists]$ ./dirb https://www.meulaboratorio.com.br euskera.txt,common.txt,spanish.txt,big.txt_
 
 
 **A**lém disto você pode filtrar sua busca por uma extensão em específico através do parâmetro -X:
 
 
-_[kalib@tuxcaverna wordlists]$ ./dirb http://www.meulaboratorio.com.br euskera.txt -X .asp,.php,.jsp_
+_[kalib@tuxcaverna wordlists]$ ./dirb https://www.meulaboratorio.com.br euskera.txt -X .asp,.php,.jsp_
 
 
 **A**gora é sair experimentando combinações e testando os resultados. Seja criativo em seus testes. ;]

@@ -18,13 +18,13 @@ categories:
 
 **CearáOnRails** – Grupo de Usuários Ruby e Rails do Ceará
 
-**Website** – [http://www.cearaonrails.org](http://www.cearaonrails.org/)
+**Website** – [https://www.cearaonrails.org](https://www.cearaonrails.org/)
 
-**Lista de Discussão** - [http://groups.google.com.br/group/cearaonrails](http://groups.google.com.br/group/cearaonrails)
+**Lista de Discussão** - [https://groups.google.com.br/group/cearaonrails](https://groups.google.com.br/group/cearaonrails)
 
-**Local**: [Faculdade Christus.](http://www.fchristus.com.br/)
+**Local**: [Faculdade Christus.](https://www.fchristus.com.br/)
 
-**Endereço**: Campus Dom Luís, está situado na Avenida Dom Luís, 911, Bairro Aldeota, próximo ao Shopping Aldeota. Localização com o [Google Maps](http://maps.google.com.br/maps?f=q&source=s_q&hl=pt-BR&q=-3.734378,+-38.493294&vps=3&jsv=151e&sll=-3.734336,-38.492918&sspn=0.005717,0.011373&ie=UTF8&geocode=FZYEx_8dkqO0_Q&split=0).
+**Endereço**: Campus Dom Luís, está situado na Avenida Dom Luís, 911, Bairro Aldeota, próximo ao Shopping Aldeota. Localização com o [Google Maps](https://maps.google.com.br/maps?f=q&source=s_q&hl=pt-BR&q=-3.734378,+-38.493294&vps=3&jsv=151e&sll=-3.734336,-38.492918&sspn=0.005717,0.011373&ie=UTF8&geocode=FZYEx_8dkqO0_Q&split=0).
 
 **Contato:** (85) 8884.8466
 

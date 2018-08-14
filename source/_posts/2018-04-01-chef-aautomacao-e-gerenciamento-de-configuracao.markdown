@@ -13,7 +13,7 @@ categories:
 {% img center /imgs/cheflogo.png 'Chef' %}
 
 ## Uma coisa de cada vez
-**C**hef é uma popular ferramenta de Gerenciamento de Configurações criado pela empresa de mesmo nome, Chef. O [Chef](https://www.chef.io) é desenvolvido em [Ruby](http://www.ruby-lang.org) e [Erlang](https://www.erlang.org), e utiliza uma linguagem DSL (domain-specific language) em Ruby puro para escrever arquivos de configuração de sistemas chamados "recipes" (receitas).
+**C**hef é uma popular ferramenta de Gerenciamento de Configurações criado pela empresa de mesmo nome, Chef. O [Chef](https://www.chef.io) é desenvolvido em [Ruby](https://www.ruby-lang.org) e [Erlang](https://www.erlang.org), e utiliza uma linguagem DSL (domain-specific language) em Ruby puro para escrever arquivos de configuração de sistemas chamados "recipes" (receitas).
 
 **A**ntes de falarmos sobre o Chef é importante entender primeiramente o conceito e a utilidade de ferramentas de Gerenciamento de Configuração.
 

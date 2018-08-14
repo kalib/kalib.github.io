@@ -23,12 +23,12 @@ As perguntas sobre como rodar o ragnarok no Linux já estão bastante expostas n
 
 
 
-Graças ao server [Off Topic Ragnarok Online](http://www.offtopicro.com/) e ao nosso amigo wine podemos agora desfrutar sem problemas deste game multiplayer.
+Graças ao server [Off Topic Ragnarok Online](https://www.offtopicro.com/) e ao nosso amigo wine podemos agora desfrutar sem problemas deste game multiplayer.
 
 
 
 
-Inspirado no pessoal do [ubuntugames](http://ubuntugames.org/), estou preparando o pacote para o Arch Linux e nos próximos dias devo estar disponibilizando o mesmo para utilização geral.
+Inspirado no pessoal do [ubuntugames](https://ubuntugames.org/), estou preparando o pacote para o Arch Linux e nos próximos dias devo estar disponibilizando o mesmo para utilização geral.
 
 
 
