@@ -969,8 +969,14 @@
         <lastmod>2018-08-13T20:10:24-04:00</lastmod>
     </url>
     <url>
+        <loc>
+            https://kalib.github.io/blog/2018/10/22/infraestrutura-como-codigo-com-terraform/
+        </loc>
+        <lastmod>2018-10-27T18:53:51-04:00</lastmod>
+    </url>
+    <url>
         <loc>https://kalib.github.io/</loc>
-        <lastmod>2018-08-13T20:10:26-04:00</lastmod>
+        <lastmod>2018-10-27T18:53:51-04:00</lastmod>
     </url>
     <url>
         <loc>https://kalib.github.io/about/</loc>
@@ -978,7 +984,7 @@
     </url>
     <url>
         <loc>https://kalib.github.io/blog/archives/</loc>
-        <lastmod>2018-08-13T20:10:26-04:00</lastmod>
+        <lastmod>2018-10-27T18:53:51-04:00</lastmod>
     </url>
     <url>
         <loc>https://kalib.github.io/robots.txt</loc>

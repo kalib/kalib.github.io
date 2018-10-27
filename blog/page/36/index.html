@@ -9,7 +9,7 @@
   <meta name="author" content="Marcelo Cavalcante Rocha - Kalib">
 
   
-  <meta name="description" content="Sim, adoro livros com histórias macabras. Suspense e ficção sempre me chamaram bastante atenção. A escolha deste mês se chama O Jardim de Ossos. Um &hellip;">
+  <meta name="description" content="Quem está utilizando o Archlinux devidamente atualizado, pode ter percebido alguns erros relacionados à libjpeg.so ao tentar executar alguma &hellip;">
   
 
   <!-- https://t.co/dKP3o1e -->
@@ -80,6 +80,69 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/08/19/erro-com-a-libjpeg-resolvendo-no-archlinux/">Erro Com a Libjpeg.. Resolvendo No Archlinux</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-08-19T09:12:02-04:00" pubdate data-updated="true">Aug 19<span>th</span>, 2009</time>
+        
+         | <a href="/blog/2009/08/19/erro-com-a-libjpeg-resolvendo-no-archlinux/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img class="left" src="/imgs/archlibjpeg.png" title="'Arch Libjpeg'" >
+<strong>Q</strong>uem está utilizando o <a href="https://archlinux.org">Archlinux</a> devidamente atualizado, pode ter percebido alguns erros relacionados à libjpeg.so ao tentar executar alguma aplicação, como foi o meu caso com o <a href="https://www.floola.com">floola</a>, um gerenciador para meu ipod com o qual transfiro e manipulo minhas músicas pelo linux.</p>
+
+<p><strong>O</strong> problema se deu pelo fato de o Archlinux já ter adotado a nova libjpeg. Esta versão 7 possui algumas vantagens em relação a versão anterior, porém muitos aplicativos ainda não foram atualizados para esta nova versão. Este foi o caso do floola por exemplo, que só funciona com a libjpeg6.</p>
+
+<p><strong>S</strong>egue uma dica simples e rápida para resolver este pequeno problema.</p>
+
+<p><strong>1-</strong> Baixe o pacote da libjpeg6 diretamente do <a href="https://aur.archlinux.org">AUR</a> através do seguinte link:</p>
+
+<blockquote><p><a href="https://aur.archlinux.org/packages/libjpeg6/libjpeg6.tar.gz">https://aur.archlinux.org/packages/libjpeg6/libjpeg6.tar.gz</a></p></blockquote>
+
+<p><strong>2-</strong> Descompacte o arquivo:</p>
+
+<blockquote><p>[kalib@tuxcaverna downloads]$ tar -xvzf libjpeg6.tar.gz</p></blockquote>
+
+<p><strong>3-</strong> Entre no diretório libjpeg6, crie e instale o pacote a partir do PKGBUILD extraído:</p>
+
+<blockquote><p>[kalib@tuxcaverna downloads]$ cd libjpeg6/</p></blockquote>
+
+<p>[kalib@tuxcaverna libjpeg6]$ makepkg</p>
+
+<p>[kalib@tuxcaverna libjpeg6]$ pacman -U libjpeg6-6b-6-i686.pkg.tar.gz</p>
+
+<p><strong>F</strong>eito isto, pode executar novamente o software que estava apontando o erro. No meu caso foi o floola. Isto resolverá o seu problema. ;]</p>
+
+<p><strong>A</strong>braços</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -221,81 +284,6 @@ Server = <a href="https://repo.archlinux-br.org/x86_64">https://repo.archlinux-
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/08/05/de-volta-e-com-kde-43/">De Volta.. E Com KDE 4.3 ;]</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-08-05T13:53:05-04:00" pubdate data-updated="true">Aug 5<span>th</span>, 2009</time>
-        
-         | <a href="/blog/2009/08/05/de-volta-e-com-kde-43/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><img class="left" src="/imgs/162_kde.jpg" title="'KDE'" >
-<strong>S</strong>audações pessoal&hellip;</p>
-
-<p><strong>E</strong>stive meio ausente nos últimos dias por problemas com minha máquina. Recentemente meu hd queimou e acabei ficando meio &ldquo;inativo&rdquo;. Ontem consegui reinstalar todo o meu sistema operacional (Archlinux) e restaurar todos os meus backups.</p>
-
-<p><strong>A</strong>gora sim.. Atividade novamente. ;]</p>
-
-<p><strong>D</strong>e quebra, volto com uma boa notícia.</p>
-
-<p><strong>F</strong>ans de KDE e usuários do Archlinux podem, desde ontem, comemorar o lançamento do KDE 4.3 que se deu ontem e já se encontra inclusive nos repositórios oficiais do Archlinux.</p>
-
-<p><strong>E</strong>sta nova versão do KDE conta com várias mudanças no que diz respeito a correção de bugs, mas também em aparência e funcionalidades.</p>
-
-<p><strong>O</strong> design e os efeitos estão bem mais atraentes como por exemplo a vizualização de pastas de imagens com previews como na imagem a seguir.</p>
-
-<p><img class="center" src="/imgs/kde43-1.png" title="'KDE'" ></p>
-
-<p><strong>O</strong>utro efeito que muito me chamou a atenção, é a possibilidade de vizualizar e navegar entre arquivos e diretórios que se encontrem em minha área de trabalho apenas por passar o mouse em cima e segurar por um segundo, me possibilitando ver o conteúdo daquela determinada pasta bem como interagir com ela. Ao tirar o mouse de cima, ela some novamente. ;] Confira a imagem a seguir:</p>
-
-<p><img class="center" src="/imgs/kde43-2.png" title="'KDE'" ></p>
-
-<p><strong>P</strong>ara quem, assim como eu, gosta de notas rápidas em seu desktop, o knotes continua surpreendendo, trazendo agora as funções de negrito, sublinhado, centralizado, etc..</p>
-
-<p><img class="center" src="/imgs/kde43-3.png" title="'KDE'" ></p>
-
-<p><strong>M</strong>uitas outras coisas novas surgiram, bem como efeitos de área, etc, etc, etc..</p>
-
-<p><strong>S</strong>em mais comentários, experimente e confira as novidades.</p>
-
-<p><strong>S</strong>e você já possui o kde 4.2 em seu archlinux, pode simplesmente atualizar com o seguinte comando:</p>
-
-<h1>pacman -Syu</h1>
-
-<p><strong>C</strong>aso ainda não tenha, instale com:</p>
-
-<h1>pacman -S kde</h1>
-
-<p><strong>A</strong>braços!</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/37/">&larr; Anteriores</a>
@@ -310,10 +298,15 @@ Server = <a href="https://repo.archlinux-br.org/x86_64">https://repo.archlinux-
   
     <section>
   <h1 align="left">Marcelo Cavalcante</h1>
-  <p><img class="right" src="https://www.marcelocavalcante.net/imgs/kalib_picture_pq_circle_pq.png" title="'kalib'" ><p align=rght>Sysadmin dinâmico, escrupulosamente curioso, reservadamente convencional, multitarefa, command line heavy-user, estudante e pesquisador, surfista por prazer, leitor inquieto e apaixonado por vinhos.<br>Me conheça melhor <a href="https://blog.marcelocavalcante.net/about">clicando aqui</a>.</p></p>
-</section><section>
+  <p><img class="right" src="https://www.marcelocavalcante.net/imgs/kalib_picture_pq_circle_pq.png" title="'kalib'" ><p align=rght>Engenheiro DevOps dinâmico, escrupulosamente curioso, reservadamente convencional, multitarefa, command line heavy-user, estudante e pesquisador, surfista por prazer, leitor inquieto e apaixonado por vinhos.<br>Me conheça melhor <a href="https://blog.marcelocavalcante.net/about">clicando aqui</a>.</p></p>
+</section>
+<section>
   <h1>Posts Recentes</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2018/10/22/infraestrutura-como-codigo-com-terraform/">Infraestrutura como Código com Terraform</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2018/08/11/criando-uma-imagem-aws-ec2-com-packer-e-puppet/">Criando uma Imagem AWS EC2 com Packer e Puppet</a>
@@ -331,15 +324,11 @@ Server = <a href="https://repo.archlinux-br.org/x86_64">https://repo.archlinux-
         <a href="/blog/2018/04/14/chef-uso-de-condicionais-not-if-e-only-if/">Chef: Uso de Condicionais not_if e only_if</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2018/04/01/chef-aautomacao-e-gerenciamento-de-configuracao/">Chef: Automação e Gerenciamento de Configuração</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Estou lendo</h1>
-  <img align="center" src="/imgs/livros/spiritprophecy.jpg">
+  <img align="center" src="/imgs/livros/outsider.jpg">
 </section>
 <section>
   <h1> Eu apoio
