@@ -19,11 +19,11 @@ categories:
 
 **I**nfraestrutura como código - IaC (ou infrastructure as code em inglês) - é o processo de gerenciamento e provisionamento de recursos de infraestrutura através de códigos ou arquivos de configuração que descrevem o estado desejado para tal infraestrutura ou recursos de infraestrutura. A principal característica de IaC é o uso de scripts ou definições declarativas ao invés de processos manuais, mas o termo é utilizado com mais frequência para promover abordagens declarativas. Como se tratam de arquivos de código, as definições podem ser armazenadas em um sistema de controle de versões, tal como o Git.
 
-**A**bordagens IaC são comumente promovidas para computação em nuvem e às vezes são comercializadas como infraestrutura como serviço (infrastructure as a service, IaaS). IaC suporta IaaS, mas os dois conceitos não devem ser confundidos.
+**A**bordagens IaC são comumente promovidas para computação em nuvem e, às vezes, são comercializadas como infraestrutura como serviço (infrastructure as a service, IaaS). IaC suporta IaaS, mas os dois conceitos não devem ser confundidos.
 
 ## IaC e DevOps ##
 
-**I**aC, ou Infraestrutura como Código é um conceito bastante ligado à filosofia DevOps, visto que com práticas de implementação de uma infraestrutura baseada em códigos declarativos podemos aproximar as equipes de Operações e Desenvolvimento, fazendo com que os desenvolvedores tornem-se mais envolvidos nas configurações de máquinas ou recursos de infraestrutura como um todo, enquanto que os profissionais de Operações se envolvem mais cedo no processo de desenvolvimento. Além disso, agora ambas as equipes podem armazenar seu código em um mesmo ambiente, como por exemplo repositórios Git.
+**I**aC, ou Infraestrutura como Código, é um conceito bastante ligado à filosofia DevOps, visto que com práticas de implementação de uma infraestrutura baseada em códigos declarativos podemos aproximar as equipes de Operações e Desenvolvimento, fazendo com que os desenvolvedores tornem-se mais envolvidos nas configurações de máquinas ou recursos de infraestrutura como um todo, enquanto que os profissionais de Operações se envolvem mais cedo no processo de desenvolvimento. Além disso, agora ambas as equipes podem armazenar seu código em um mesmo ambiente, como por exemplo repositórios Git.
 
 **I**nfraestrutura como código mostrou-se uma excelente solução para livrar equipes de tarefas enfadonhas do cotidiano realizadas manualmente. Além de tomarem muito tempo e serem tarefas extremamente repetitivas, os corriqueiros processos manuais estão sujeitos a erros e podem colocar as operações em risco.
 
