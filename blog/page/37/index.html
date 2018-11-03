@@ -9,7 +9,7 @@
   <meta name="author" content="Marcelo Cavalcante Rocha - Kalib">
 
   
-  <meta name="description" content="Saudações pessoal&hellip; Estive meio ausente nos últimos dias por problemas com minha máquina. Recentemente meu hd queimou e acabei ficando meio & &hellip;">
+  <meta name="description" content="Todos que visitam meu blog já devem estar cansados de saber que estou bastante atento ao projeto chromium e ajudando com o possível para o &hellip;">
   
 
   <!-- https://t.co/dKP3o1e -->
@@ -80,6 +80,87 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/08/12/habilitando-plugins-no-chromium/">Habilitando Plugins No Chromium</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-08-12T08:55:34-04:00" pubdate data-updated="true">Aug 12<span>th</span>, 2009</time>
+        
+         | <a href="/blog/2009/08/12/habilitando-plugins-no-chromium/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img class="left" src="/imgs/chromium-browser.png" title="'Chromium'" >
+<strong>T</strong>odos que visitam meu blog já devem estar cansados de saber que estou bastante atento ao projeto chromium e ajudando com o possível para o desenvolvimento e divulgação do mesmo.</p>
+
+<p><strong>B</strong>om, eu já havia notificado aqui o fato de que o chromium passou a ter suporte à plugins como o flash por exemplo. De fato ele já suporta os plugins, mas muitos estão me procurando para perguntar porque o chromium cortou o suporte aos plugins, visto que nas builds mais recentes do chromium o suporte parece ter sido cortado, visto que os plugins não estão funcionando a princípio.</p>
+
+<p><img class="center" src="/imgs/shot_chromium.png" title="'Shot Chromium'" ></p>
+
+<p><strong>M</strong>as, porque o meu funciona e o seu não?</p>
+
+<p><strong>N</strong>ão é mágica..nem feitiçaria.. Vamos à realidade.</p>
+
+<p><strong>O</strong> suporte do chromium aos plugins ainda não está 100% homologado, o que resulta em alguns bugs e falhas, podendo acarretar em uso excessivo de processamento ou outros recursos de sua máquina em alguns casos. Sabendo disso, o projeto chromium adotou a posição de não tornar o suporte à plugins uma opção &ldquo;default&rdquo;.</p>
+
+<p><strong>P</strong>ara utilizar os plugins em seu chromium você precisa iniciar o seu chromium com o seguinte parâmetro:</p>
+
+<p>$ chromium-browser &mdash;enable-plugins</p>
+
+<p><strong>L</strong>embrando que nestas novas builds do chromium não existe mais a necessidade de criar os links simbólicos para os plugins. Ele já detecta automaticamente os plugins que você tem instalados.</p>
+
+<p><strong>P</strong>ara testar, pode abrir o seguinte endereço ou mesmo acessar algo como o youtube:</p>
+
+<p>about:plugins</p>
+
+<p><strong>C</strong>aso você ainda não tenha o chromium instalado em sua máquina pode buscar informações na internet sobre como o fazer em sua distro. Caso use Archlinux, pode seguir os passos abaixo:</p>
+
+<p><strong>1-</strong> Adicione o repositório brasileiro em sua lista de mirrors. Adicione as seguintes linhas em seu arquivo /etc/pacman.conf :</p>
+
+<p>[archlinuxbr]
+Server = <a href="https://repo.archlinux-br.org/i686">https://repo.archlinux-br.org/i686</a></p>
+
+<p>ou</p>
+
+<p>[archlinuxbr]
+Server = <a href="https://repo.archlinux-br.org/x86_64">https://repo.archlinux-br.org/x86_64</a></p>
+
+<p><strong>2- </strong>Atualize seus mirrors e instale o chromium:</p>
+
+<h1>pacman -Sy</h1>
+
+<h1>pacman -S chromium-snapshot</h1>
+
+<p><strong>F</strong>eito!</p>
+
+<p><strong>B</strong>om proveito&hellip;</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -210,74 +291,6 @@ Do lado dos humanos, bento Lucas faz crescer em seus semelhantes a chama da espe
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/07/09/chromium-ganha-suporte-ao-flash-por-completo/">Chromium Ganha Suporte Ao Flash Por Completo</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-07-09T08:51:06-04:00" pubdate data-updated="true">Jul 9<span>th</span>, 2009</time>
-        
-         | <a href="/blog/2009/07/09/chromium-ganha-suporte-ao-flash-por-completo/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><strong>S</strong>audações pessoal..</p>
-
-<p><strong>E</strong>u já havia postado aqui a notícia sobre o lançamento do navegador Chromium para o Linux, bem como o fato de o mesmo se encontrar disponível em nosso repositório nacional do Arch Linux. Na ocasião o projeto chromium ainda era bem imaturo e não possuía nenhum suporte à plugins. Bom, as coisas estão mudando.</p>
-
-<p><strong>P</strong>ara quem ainda não sabe, Chromium é o projeto open source que serve de base para o já conhecido Chrome do Google.</p>
-
-<p><strong>O</strong>ntem saiu uma nova build do chromium que trás suporte total ao flash, precisando-se apenas criar um link simbólico para o seu já existente plugin flash que se encontra no diretório de seu firefox.
-<img class="center" src="/imgs/chromium-flash.png" title="'Chromium'" ></p>
-
-<p><strong>E</strong>sta nova build, já se encontra atualizada em nosso repositório nacional, graças ao nosso amigo <a href="https://matias.archlinux-br.org/">Paulo (aka thotypous)</a>, e você pode instalar, caso ainda não tenha, ou apenas atualizar o seu com os seguintes comandos:</p>
-
-<blockquote><h1>pacman -Sy</h1></blockquote>
-
-<h1>pacman -S chromium-snapshot</h1>
-
-<p><strong>E</strong>stes comandos irão atualizar sua lista de repositórios e em seguida atualizar/instalar seu chromium.</p>
-
-<p><strong>F</strong>eito isto, basta criar o link simbólico para o plugin do flash, seguindo a seguinte sequência de comandos:</p>
-
-<blockquote><p>cd /opt/chromium-browser
-mkdir plugins
-cd plugins
-ln -s /usr/lib/mozilla/plugins/libflashplayer.so .</p></blockquote>
-
-<p><strong>F</strong>eito isto, execute seu chromium e digite no campo de url:</p>
-
-<p>about:</p>
-
-<p><strong>V</strong>ocê verá claramente que o plugin flash está instalado. Agora é só correr pro abraço e testar em sites como o youtube por exemplo.</p>
-
-<p><strong>A</strong>braços</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/38/">&larr; Anteriores</a>
@@ -299,6 +312,10 @@ ln -s /usr/lib/mozilla/plugins/libflashplayer.so .</p></blockquote>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2018/10/29/introducao-ao-terraform/">Introdução ao Terraform</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2018/10/22/infraestrutura-como-codigo-com-terraform/">Infraestrutura como Código com Terraform</a>
       </li>
     
@@ -312,10 +329,6 @@ ln -s /usr/lib/mozilla/plugins/libflashplayer.so .</p></blockquote>
     
       <li class="post">
         <a href="/blog/2018/04/16/10-anos-d/">10 anos! :D</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2018/04/14/chef-uso-de-condicionais-not-if-e-only-if/">Chef: Uso de Condicionais not_if e only_if</a>
       </li>
     
   </ul>

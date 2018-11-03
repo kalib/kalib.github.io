@@ -9,7 +9,7 @@
   <meta name="author" content="Marcelo Cavalcante Rocha - Kalib">
 
   
-  <meta name="description" content="Aqueles que são administradores de redes e servidores já devem ter passado por problemas parecidos com este. Nesta dica irei apresentar um comando &hellip;">
+  <meta name="description" content="Muitos me pediram por aqui ou mesmo por email para explicar como seria a implementação desta técnica de forma automatizada. Bom, utilizo isto para o &hellip;">
   
 
   <!-- https://t.co/dKP3o1e -->
@@ -80,6 +80,116 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/07/14/parte-ii-limpando-memoria-cache-de-forma-automatizada/">Parte II - Limpando Memória Cache De Forma Automatizada</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-07-14T14:09:00-04:00" pubdate data-updated="true">Jul 14<span>th</span>, 2008</time>
+        
+         | <a href="/blog/2008/07/14/parte-ii-limpando-memoria-cache-de-forma-automatizada/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Muitos me pediram por aqui ou mesmo por email para explicar como seria a implementação desta técnica de forma automatizada.</p>
+
+<p>Bom, utilizo isto para o servidor que citei no artigo anterior, utilizado pelos nossos amigos desenvolvedores Java. ;] Nada pessoal eim?!</p>
+
+<p>Aqui precisaremos apenas de um mínimo de intimidade com shell script e um pouco de conhecimento sobre o agendamento de tarefas no linux através do cron.</p>
+
+<p>Mãos a obra&hellip;</p>
+
+<p>A missão: Uma vez que nossos amigos não conseguem trabalhar de forma harmônica com a alocação e desalocação de memória em nossos servidores, iremos agendar a limpeza de cache para todos os dias no começo do expediente (8:00) e após o almoço. Lembrando que este é apenas um exemplo, mas você pode adaptar os horários de acordo com sua real necessidade.</p>
+
+<p>Soldados Disponíveis: Shell Script e Cron</p>
+
+<p>Plano: Um pequeno e simples script em shell será executado nos dias e horários informados anteriormente de forma a fazer uma limpeza no cache.</p>
+
+<p>Execução:</p>
+
+<p>Primeiro criaremos o script que fará a ação de limpeza do cache. Para isso abra o editor de textos de sua preferência. Particularmente prefiro o vim, mas este pode ser substituido por qualquer outro.</p>
+
+<p>No seu corpo insira o seguinte conteúdo:</p>
+
+<blockquote><h1>!/bin/bash</h1></blockquote>
+
+<h1>limpando cache</h1>
+
+<blockquote><h1>o seguinte comando é o responsável pela limpeza</h1></blockquote>
+
+<p>echo 3 > /proc/sys/vm/drop_caches</p>
+
+<blockquote></blockquote>
+
+<p>Feito isto, salve o arquivo com o nome de limpacache.sh</p>
+
+<p>Sim, isto é tudo o que o seu script precisa. Com o script criado, você deverá agora lhe dar condições de execução. Utilize o seguinte comando:</p>
+
+<blockquote><h1>chmod a+x limpacache.sh</h1></blockquote>
+
+<p>Agora que ele está pronto e com permissão de execução, iremos agendar a execução do mesmo. No terminal digite:</p>
+
+<blockquote><h1>crontab -e</h1></blockquote>
+
+<p>Isto irá abrir um arquivo no qual você deverá fazer o agendamento de sua tarefa. No mesmo insira o seguinte conteúdo:</p>
+
+<blockquote><h1>mm HH DD MM DS tarefa</h1></blockquote>
+
+<p>00 08 * * * /usr/bin/scripts/limpacache.sh</p>
+
+<p>00 14 * * * /usr/bin/scripts/limpacache.sh</p>
+
+<blockquote></blockquote>
+
+<p>Ps: O caminho /etc/scripts/ precisa ser configurado de acordo com o caminho utilizado por você. ;]</p>
+
+<p>Pronto. Pode salvar e encerrar este aquivo.</p>
+
+<p>Traduzindo o comando as linhas do cron que utilizamos:</p>
+
+<p>mm: minutos</p>
+
+<p>HH: horas</p>
+
+<p>DD: dia</p>
+
+<p>MM: mês</p>
+
+<p>DS: dia da semana</p>
+
+<p>/usr/bin/scripts/limpacache.sh: tarefa a ser realizada</p>
+
+<p>Feito isto, o plano está concretizado. Seu script será executado todos os dias nestes dois horários.</p>
+
+<p>Sinta-se livre agora para customizar os dias e horários da maneira que for mais conveniente para você.</p>
+
+<p>Abraços</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -251,52 +361,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2008/06/24/ajude-a-sustentar-a-wikipedia-e-concorra-a-um-eee-pc/">Ajude a Sustentar a Wikipedia E Concorra a Um Eee PC!</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2008-06-24T16:27:00-04:00" pubdate data-updated="true">Jun 24<span>th</span>, 2008</time>
-        
-         | <a href="/blog/2008/06/24/ajude-a-sustentar-a-wikipedia-e-concorra-a-um-eee-pc/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h3></h3>
-
-<p>A<strong>jude a sustentar a Wikipédia e outros projetos, sem colocar a mão no bolso, e concorra a um Eee PC!</strong></p>
-
-<p>…e também a pen drives, card drives, camisetas geeks, livros e mais! O <a href="https://br-linux.org/">BR-Linux</a> e o <a href="https://efetividade.net/">Efetividade</a> lançaram uma <a href="https://br-linux.org/2008/campanha-wikipedia/">campanha</a> para ajudar a Wikimedia Foundation e outros mantenedores de projetos que usamos no dia-a-dia on-line. Se você puder doar diretamente, ou contribuir de outra forma, são sempre melhores opções. Mas se não puder, veja as regras da promoção e <a href="https://br-linux.org/2008/campanha-wikipedia/">participe</a> &ndash; quanto mais divulgação, maior será a doação do BR-Linux e do Efetividade, e você ainda concorre a diversos brindes!</p>
-
-<p>Toda ajuda é bem vinda quando se trata de projetos livres que na maioria das vezes não possui uma renda fixa para investimento e gastos necessários para manter o mesmo, ficando na maioria das vezes este peso no bolso dos próprios mantenedores do mesmo.</p>
-
-<p>Esta Promoção do BR-Linux vem justamente incentivando esta ajuda e apoio, portanto não fique aí parado e divulgue você também. ;]</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/60/">&larr; Anteriores</a>
@@ -318,6 +382,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2018/10/29/introducao-ao-terraform/">Introdução ao Terraform</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2018/10/22/infraestrutura-como-codigo-com-terraform/">Infraestrutura como Código com Terraform</a>
       </li>
     
@@ -331,10 +399,6 @@
     
       <li class="post">
         <a href="/blog/2018/04/16/10-anos-d/">10 anos! :D</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2018/04/14/chef-uso-de-condicionais-not-if-e-only-if/">Chef: Uso de Condicionais not_if e only_if</a>
       </li>
     
   </ul>

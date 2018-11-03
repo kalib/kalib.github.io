@@ -9,8 +9,7 @@
   <meta name="author" content="Marcelo Cavalcante Rocha - Kalib">
 
   
-  <meta name="description" content=" 10 Anos de Blog! Tempo voa!
-">
+  <meta name="description" content="O que é Packer e qual sua importância Packer é uma ferramenta Open Source, criada e mantida pela HashiCorp, para a criação de imagens de máquinas &hellip;">
   
 
   <!-- https://t.co/dKP3o1e -->
@@ -81,6 +80,536 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2018/07/30/automatizando-a-criacao-de-imagens-com-packer/">Automatizando a Criação De Imagens Com Packer</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2018-07-30T07:15:00-04:00" pubdate data-updated="true">Jul 30<span>th</span>, 2018</time>
+        
+         | <a href="/blog/2018/07/30/automatizando-a-criacao-de-imagens-com-packer/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img class="center" src="/imgs/packer.png" title="'Packer'" ></p>
+
+<h2>O que é Packer e qual sua importância</h2>
+
+<p><strong>P</strong>acker é uma ferramenta Open Source, criada e mantida pela <a href="https://www.hashicorp.com">HashiCorp</a>, para a criação de imagens de máquinas idênticas para múltiplas plataformas a partir de uma única fonte ou código de configuração. O <a href="https://www.packer.io/">Packer</a> é leve, roda em praticamente todos os principais Sistemas Operacionais e possui alta performance, permitindo a criação de imagens para múltiplas plataformas em paralelo.</p>
+
+<p><strong>U</strong>ma imagem de máquina, nada mais é que um arquivo estático que contém um sistema operacional pré-configurado, com determinados softwares instalados e que pode ser utilizada para criar novas máquinas ou servidores de forma mais rápida, evitando o trabalho repetitivo de instalar o sistema operacional e configurar aplicações padrões.</p>
+
+<p><strong>E</strong>xistem diversos formatos diferentes de imagens que podem ser criadas através do Packer, como por exemplo Amazon EC2, VirtualBox, VMware, Google Cloud Platform, Microsoft Azure, Docker, QEMU, CloudStack, DigitalOcean, etc.</p>
+
+<p><strong>O</strong> Packer suporta e é compatível com diversas ferramentas de provisionamento e automação, como shell script, Ansible, Puppet, Chef, etc., fazendo com que a criação de imagens seja ainda mais simples, dinâmica e robusta.</p>
+
+<p><strong>A</strong> ideia de criar imagens não é nova, visto que Sysadmins já o fazem há muitos anos, porém esta sempre foi uma tarefa tediosa, demorada e muito pouco produtiva. Basicamente a ideia de se construir uma imagem partia de, antes de mais nada, realizar de fato uma instalação completa de um Sistema Operacional e em seguida utilizar algum aplicativo para &ldquo;salvar&rdquo; aquele estado em uma imagem, que poderia ser posteriormente aplicada em outras máquinas. Isto por si só já facilitava muito a vida de Sysadmins em geral, visto que eles apenas realizavam a instalação completa do SO uma vez. Caso, além do SO, fossem necessárias outras aplicações, o processo seria basicamente o mesmo, instalando-se uma vez o SO completo e em seguida instalando todas as aplicações desejadas para a imagem.</p>
+
+<p><strong>A</strong>té então a criação da imagem parecia ser um sucesso, no entanto isto era algo improdutivo por ser absolutamente estático e imutável. Sempre que fosse necessário fazer uma mudança na imagem, atualizar versão de sistema operacional, aplicar patches, atualizar demais aplicações ou mudar configurações, novamente o processo deveria se repetir do início. Não é necessário sequer mencionar que não era nada simples gerenciar e versionar isto.</p>
+
+<p><strong>E</strong>is que surge o Packer para deixar a criação de imagens menos entediante, flexível e mais gerenciável.</p>
+
+<h2>Instalação</h2>
+
+<p><strong>A</strong> instalação não é complexa e pode ser feita através do binário disponível na página de downloads do Packer: <a href="https://www.packer.io/downloads.html">https://www.packer.io/downloads.html</a></p>
+
+<p><strong>Ubuntu</strong> &ndash; Caso não queira instalar através do binário fornecido no link acima, pode instalar via:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo apt-get install packer -y</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>Arch linux</strong> &ndash; Caso não queira instalar através do binário fornecido no link acima, pode instalar através do pacote disponível no <a href="https://aur.archlinux.org/packages/packer/">AUR</a>.</p>
+
+<p><strong>OS X</strong> &ndash; Caso não queira instalar através do binário fornecido no link acima, pode instalar através do homebrew:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ brew install packer</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>I</strong>ndependente de sua forma de instalação, confirme que a instalação foi concluída com sucesso:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ packer
+</span><span class='line'>Usage: packer [--version] [--help] &lt;command&gt; [&lt;args&gt;]
+</span><span class='line'>
+</span><span class='line'>Available commands are:
+</span><span class='line'>    build       build image(s) from template
+</span><span class='line'>    fix         fixes templates from old versions of packer
+</span><span class='line'>    inspect     see components of a template
+</span><span class='line'>    push        push a template and supporting files to a Packer build service
+</span><span class='line'>    validate    check that a template is valid
+</span><span class='line'>    version     Prints the Packer version</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>S</strong>e você recebeu algo similar, significa que você já pode começar a criar suas imagens. Caso tenha recebido um erro informando que o Packer não foi encontrado, significa que o mesmo não foi inserido corretamente na variável de ambiente de seu PATH. Certifique-se de inserir o diretório no qual o Packer foi instalado em seu PATH.</p>
+
+<h2>Criando Imagens com o Packer</h2>
+
+<p><strong>C</strong>onforme dito anteriormente, o Packer pode criar imagens para diversas extensões e plataformas, portanto o primeiro passo é saber para qual plataforma você deseja criar sua imagem.</p>
+
+<p><strong>P</strong>ara este tutorial introdutório, utilizaremos o Docker como destino para nossa imagem, ou seja, criaremos uma imagem de container que poderá rodar com o Docker.</p>
+
+<p><strong>OBS:</strong> A partir deste ponto estou assumindo que você já possui o Docker instalado em seu sistema. Para confirmar, digite:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ docker --version
+</span><span class='line'>Docker version 18.06.0-ce, build 0ffa825</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>Vamos ao Packer.</strong></p>
+
+<p><strong>P</strong>rimeiramente mostrarei como não tenho nenhuma imagem Docker neste momento em meu sistema:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ docker ps
+</span><span class='line'>CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>1-</strong> Escolha um editor de textos de sua preferência e inicie um arquivo chamado <em>template.json</em>;</p>
+
+<p><strong>2-</strong> Digite o seguinte em seu arquivo <em>template.json</em>.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>{
+</span><span class='line'>  "builders": [{
+</span><span class='line'>    "type": "docker",
+</span><span class='line'>    "image": "ubuntu",
+</span><span class='line'>    "commit": true
+</span><span class='line'>  }]
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>O</strong> que temos&hellip;</p>
+
+<p><em>builders:</em> Abre o bloco builders (construtores), onde iniciamos as instruções que definirão como a nossa imagem será criada;</p>
+
+<p><em>type:</em> Especifica o tipo de construtor que será utilizado. Neste exemplo escolhemos Docker. Aqui poderíamos utilizar AWS EC2, Google Cloud Instance, etc.</p>
+
+<p><em>image:</em> Parâmetro no qual indicaremos qual imagem será utilizada como origem para a nossa imagem final.</p>
+
+<p><em>commit:</em> Indica que queremos realizar o commit da imagem gerada no final.</p>
+
+<p><em>*OBS:</em> É importante lembrar que o Packer possui uma infinidade de parâmetros ou propriedades diferentes que podem ser específicos para cada tipo de builder. Lista de parâmetros e opções para o builder <a href="https://www.packer.io/docs/builders/docker.html">Docker</a>.</p>
+
+<p><strong>P</strong>rimeiramente, o indicado é validarmos a sintaxe de nosso código json: <em>($ packer validate template.json)</em></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ packer validate template.json
+</span><span class='line'>Template validated successfully.</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>O</strong> código parece estar correto do ponto de vista do Packer. Caso houvesse algo errado com o código, a mensagem daria alguma pista de onde está o erro. Removerei o último <strong>}</strong> do arquivo template.json para forçar um erro: <em>($ packer validate template.json)</em></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ packer validate template.json
+</span><span class='line'>Failed to parse template: Error parsing JSON: unexpected end of JSON input
+</span><span class='line'>At line 7, column 1 (offset 88):
+</span><span class='line'>    6:   }]
+</span><span class='line'>    7:</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>C</strong>om o arquivo de volta à sua versão correta, o próximo passo seria de fato o build, onde criaremos a imgem desejado de acordo com as intruções que demos: <em>($ packer build template.json)</em></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ packer build template.json
+</span><span class='line'>docker output will be in this color.
+</span><span class='line'>
+</span><span class='line'>==&gt; docker: Creating a temporary directory for sharing data...
+</span><span class='line'>==&gt; docker: Pulling Docker image: ubuntu
+</span><span class='line'>    docker: Using default tag: latest
+</span><span class='line'>    docker: latest: Pulling from library/ubuntu
+</span><span class='line'>    docker: c64513b74145: Pulling fs layer
+</span><span class='line'>    docker: 01b8b12bad90: Pulling fs layer
+</span><span class='line'>    docker: c5d85cf7a05f: Pulling fs layer
+</span><span class='line'>    docker: b6b268720157: Pulling fs layer
+</span><span class='line'>    docker: e12192999ff1: Pulling fs layer
+</span><span class='line'>    docker: b6b268720157: Waiting
+</span><span class='line'>    docker: e12192999ff1: Waiting
+</span><span class='line'>    docker: c5d85cf7a05f: Verifying Checksum
+</span><span class='line'>    docker: c5d85cf7a05f: Download complete
+</span><span class='line'>    docker: 01b8b12bad90: Verifying Checksum
+</span><span class='line'>    docker: 01b8b12bad90: Download complete
+</span><span class='line'>    docker: e12192999ff1: Verifying Checksum
+</span><span class='line'>    docker: e12192999ff1: Download complete
+</span><span class='line'>    docker: b6b268720157: Verifying Checksum
+</span><span class='line'>    docker: b6b268720157: Download complete
+</span><span class='line'>    docker: c64513b74145: Verifying Checksum
+</span><span class='line'>    docker: c64513b74145: Download complete
+</span><span class='line'>    docker: c64513b74145: Pull complete
+</span><span class='line'>    docker: 01b8b12bad90: Pull complete
+</span><span class='line'>    docker: c5d85cf7a05f: Pull complete
+</span><span class='line'>    docker: b6b268720157: Pull complete
+</span><span class='line'>    docker: e12192999ff1: Pull complete
+</span><span class='line'>    docker: Digest: sha256:3f119dc0737f57f704ebecac8a6d8477b0f6ca1ca0332c7ee1395ed2c6a82be7
+</span><span class='line'>    docker: Status: Downloaded newer image for ubuntu:latest
+</span><span class='line'>==&gt; docker: Starting docker container...
+</span><span class='line'>    docker: Run command: docker run -v /Users/kalib/.packer.d/tmp/packer-docker835877235:/packer-files -d -i -t ubuntu /bin/bash
+</span><span class='line'>    docker: Container ID: 50211726119aa045b0bc5eb9da8c9af243bc179fef0aad3cd94156d0f2a7a45a
+</span><span class='line'>==&gt; docker: Committing the container
+</span><span class='line'>    docker: Image ID: sha256:3a6a21aab4706e2b512f0c1fcbe8265e2527d4794f7c6fbdc5e4faf907d10622
+</span><span class='line'>==&gt; docker: Killing the container: 50211726119aa045b0bc5eb9da8c9af243bc179fef0aad3cd94156d0f2a7a45a
+</span><span class='line'>Build 'docker' finished.
+</span><span class='line'>
+</span><span class='line'>==&gt; Builds finished. The artifacts of successful builds are:
+</span><span class='line'>--&gt; docker: Imported Docker image: sha256:3a6a21aab4706e2b512f0c1fcbe8265e2527d4794f7c6fbdc5e4faf907d10622</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>N</strong>a saída do comando, ou output, podemos ver todos os passos e instruções que foram realizadas na criação de nossa imagem. Neste exemplo, o Docker baixou a última imagem ubuntu dos repositórios do Docker e em seguida gerou nossa imagem.</p>
+
+<p><strong>P</strong>ara confirmar, podemos utilizar novamente o <em>docker images</em>:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>docker images
+</span><span class='line'>REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+</span><span class='line'>&lt;none&gt;              &lt;none&gt;              3a6a21aab470        5 minutes ago       83.5MB
+</span><span class='line'>ubuntu              latest              735f80812f90        6 days ago          83.5MB</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>C</strong>omo esperado, agora temos duas imagens: a do ubuntu padrão, que foi baixada para servir de base para a nossa, bem como a nossa, até então sem nome.</p>
+
+<p><strong>D</strong>e certa forma nada foi feito até então. Nós apenas geramos uma imagem idêntica à que já existia do ubuntu, sem qualquer mudança. Vamos então dar algum sentido à nossa imagem em seguida. Além disso, podemos perceber que nossa imagem não tinha sequer nome, ficando listada como <em><none></em>. Corrigiremos isso também.</p>
+
+<p><strong>O</strong> Packer considera o Docker apenas como uma plataforma para gerar/rodar containers e, como tal, para gerar uma imagem o Packer descarta a necessidade da utilização de um Dockerfile, como de costume para quem já criou containers com Docker. Através de blocos de código <em>changes</em> e <em>provisioners</em>, o Packer nos permite passar praticamente todas as informações de metadata que fariam parte de um Dockerfile.</p>
+
+<p><strong>P</strong>ara demonstrar, criaremos uma imagem de um ubuntu rodando <em>nginx</em>, porém utilizaremos a imagem padrão do ubuntu que já baixamos anteriormente.</p>
+
+<p><strong>O</strong> código do template.json agora deverá ser o seguinte:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>{
+</span><span class='line'>  "builders": [{
+</span><span class='line'>    "type": "docker",
+</span><span class='line'>    "image": "ubuntu",
+</span><span class='line'>    "commit": true,
+</span><span class='line'>    "changes": [
+</span><span class='line'>      "CMD [\"nginx\", \"-g\", \"daemon off;\"]",
+</span><span class='line'>      "EXPOSE 80"
+</span><span class='line'>   ]
+</span><span class='line'>  }],
+</span><span class='line'>  "provisioners": [
+</span><span class='line'>    {
+</span><span class='line'>      "type" : "shell",
+</span><span class='line'>      "inline" : ["apt-get update && apt-get install -y nginx"]
+</span><span class='line'>    }
+</span><span class='line'>  ],
+</span><span class='line'>  "post-processors": [
+</span><span class='line'>      {
+</span><span class='line'>        "type": "docker-tag",
+</span><span class='line'>        "repository": "kalib/ubuntunginx",
+</span><span class='line'>        "tag": "0.1"
+</span><span class='line'>      }
+</span><span class='line'>  ]
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>V</strong>ejamos o que foi incluído:</p>
+
+<p><em>changes:</em> Parâmetro que nos permite alterar a meta-data de nossa imagem docker.</p>
+
+<p>  <em>CMD [\&ldquo;nginx\&rdquo;, \&ldquo;-g\&rdquo;, \&ldquo;daemon off;\&rdquo;]:</em> Comando para iniciar o nginx no container, assim como faríamos utilizando Dockerfile.</p>
+
+<p>  <em>EXPOSE 80:</em> Da mesma forma, apenas informando que a porta 80 no container deverá estar disponível, assim como faríamos em um Dockerfile.</p>
+
+<p><em>provisioners:</em> É onde indicamos que ferramentas utilizaremos para provisionar as alterações/configurações em nossa imagem. Podemos ter um ou mais provisioners ao mesmo tempo. Neste exemplo estaremos utilizando um simples comando bash, portanto nosso provisioner será <em>bash</em>, mas poderia ser chef, ansible, puppet, ou mesmo um script bash mais complexo, mas como o objetivo para este post é uma abordagem simples e introdutória, manteremos o provisioner mais simples possível.</p>
+
+<p>  <em>type:</em> especificamos que o tipo de provisioner será <em>bash</em>.</p>
+
+<p>  <em>inline:</em> Inserimos o comando bash que desejamos que seja executado para personalizar nossa imagem. Neste caso, <em>apt-get update &amp;&amp; apt-get install -y nginx</em> irá atualizar a base de dados dos repositórios e em seguida instalar o nginx.</p>
+
+<p><em>post-processors:</em> Como o nome já diz, são instruções ou processors que acontecem ao final do build.</p>
+
+<p>  <em>type:</em> Indica o tipo de post-processor que utilizaremos. No exemplo, utilizaremos <em>docker-tag</em>, para que possamos dar uma tag/nome para nossa imagem. (Lembrando que como uma boa prática, ao criar uma imagem Docker, sempre inserimos o padrão <em>repositório/imagem</em>)</p>
+
+<p>  <em>repository:</em> É onde indicamos o repositório e o nome da imagem que criaremos.</p>
+
+<p>  <em>tag:</em> Onde podemos definir a tag que ajudar a manter o controle de versão de nossa imagem.</p>
+
+<p><strong>N</strong>ovamente, vamos validar nosso código:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ packer validate template.json
+</span><span class='line'>Template validated successfully.</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>D</strong>esta vez o output será muito extenso, portanto colarei apenas alguns trechos aqui para demonstrar o resultado:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ packer build template.json
+</span><span class='line'>docker output will be in this color.
+</span><span class='line'>
+</span><span class='line'>==&gt; docker: Creating a temporary directory for sharing data...
+</span><span class='line'>==&gt; docker: Pulling Docker image: ubuntu
+</span><span class='line'>    docker: Using default tag: latest
+</span><span class='line'>    docker: latest: Pulling from library/ubuntu
+</span><span class='line'>    docker: Digest: sha256:3f119dc0737f57f704ebecac8a6d8477b0f6ca1ca0332c7ee1395ed2c6a82be7
+</span><span class='line'>    docker: Status: Image is up to date for ubuntu:latest
+</span><span class='line'>==&gt; docker: Starting docker container...
+</span><span class='line'>    docker: Run command: docker run -v /Users/kalib/.packer.d/tmp/packer-docker737353515:/packer-files -d -i -t ubuntu /bin/bash
+</span><span class='line'>    docker: Container ID: 097a85a796e0e928fbc82cd6618bd60e286b46dfadad20e823027fc2f93d25db
+</span><span class='line'>==&gt; docker: Provisioning with shell script: /var/folders/nn/njz4sd054fv_tvq30vh0zygh0000gp/T/packer-shell161880041
+</span><span class='line'>    docker: Get:1 https://archive.ubuntu.com/ubuntu bionic InRelease [242 kB]
+</span><span class='line'>    docker: Get:2 https://security.ubuntu.com/ubuntu bionic-security InRelease [83.2 kB]
+</span><span class='line'>    ...
+</span><span class='line'>    ...
+</span><span class='line'>    docker: Reading state information...
+</span><span class='line'>docker: The following additional packages will be installed:
+</span><span class='line'>docker:   fontconfig-config fonts-dejavu-core geoip-database libbsd0 libexpat1
+</span><span class='line'>docker:   libfontconfig1 libfreetype6 libgd3 libgeoip1 libicu60 libjbig0
+</span><span class='line'>docker:   libjpeg-turbo8 libjpeg8 libnginx-mod-http-geoip
+</span><span class='line'>docker:   libnginx-mod-http-image-filter libnginx-mod-http-xslt-filter
+</span><span class='line'>docker:   libnginx-mod-mail libnginx-mod-stream libpng16-16 libssl1.1 libtiff5
+</span><span class='line'>docker:   libwebp6 libx11-6 libx11-data libxau6 libxcb1 libxdmcp6 libxml2 libxpm4
+</span><span class='line'>docker:   libxslt1.1 multiarch-support nginx-common nginx-core ucf
+</span><span class='line'>docker: Suggested packages:
+</span><span class='line'>docker:   libgd-tools geoip-bin fcgiwrap nginx-doc ssl-cert
+</span><span class='line'>docker: The following NEW packages will be installed:
+</span><span class='line'>docker:   fontconfig-config fonts-dejavu-core geoip-database libbsd0 libexpat1
+</span><span class='line'>docker:   libfontconfig1 libfreetype6 libgd3 libgeoip1 libicu60 libjbig0
+</span><span class='line'>docker:   libjpeg-turbo8 libjpeg8 libnginx-mod-http-geoip
+</span><span class='line'>docker:   libnginx-mod-http-image-filter libnginx-mod-http-xslt-filter
+</span><span class='line'>docker:   libnginx-mod-mail libnginx-mod-stream libpng16-16 libssl1.1 libtiff5
+</span><span class='line'>docker:   libwebp6 libx11-6 libx11-data libxau6 libxcb1 libxdmcp6 libxml2 libxpm4
+</span><span class='line'>docker:   libxslt1.1 multiarch-support nginx nginx-common nginx-core ucf
+</span><span class='line'>docker: 0 upgraded, 35 newly installed, 0 to remove and 0 not upgraded.
+</span><span class='line'>docker: Need to get 16.1 MB of archives.
+</span><span class='line'>docker: After this operation, 58.8 MB of additional disk space will be used.
+</span><span class='line'>docker: Get:1 https://archive.ubuntu.com/ubuntu bionic/main amd64 multiarch-support amd64 2.27-3ubuntu1 [6916 B]
+</span><span class='line'>docker: Get:2 https://archive.ubuntu.com/ubuntu bionic/main amd64 libxau6 amd64 1:1.0.8-1 [8376 B]
+</span><span class='line'>docker: Get:3 https://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libjpeg-turbo8 amd64 1.5.2
+</span><span class='line'>...
+</span><span class='line'>...
+</span><span class='line'>docker: Setting up nginx (1.14.0-0ubuntu1) ...
+</span><span class='line'>    docker: Processing triggers for libc-bin (2.27-3ubuntu1) ...
+</span><span class='line'>==&gt; docker: Committing the container
+</span><span class='line'>    docker: Image ID: sha256:0cbafebeaf17d8b8e8eccad87e706845993b78265a99e3e0f1ef8bd0bd724aa7
+</span><span class='line'>==&gt; docker: Killing the container: 097a85a796e0e928fbc82cd6618bd60e286b46dfadad20e823027fc2f93d25db
+</span><span class='line'>==&gt; docker: Running post-processor: docker-tag
+</span><span class='line'>    docker (docker-tag): Tagging image: sha256:0cbafebeaf17d8b8e8eccad87e706845993b78265a99e3e0f1ef8bd0bd724aa7
+</span><span class='line'>    docker (docker-tag): Repository: kalib/ubuntunginx:0.1
+</span><span class='line'>Build 'docker' finished.
+</span><span class='line'>
+</span><span class='line'>==&gt; Builds finished. The artifacts of successful builds are:
+</span><span class='line'>--&gt; docker: Imported Docker image: sha256:0cbafebeaf17d8b8e8eccad87e706845993b78265a99e3e0f1ef8bd0bd724aa7
+</span><span class='line'>--&gt; docker: Imported Docker image: kalib/ubuntunginx:0.1</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>C</strong>omo podemos ver, todos os passos foram executados, incluindo a atualização da lista de pacotes dos repositórios, a instalação do nginx e a criação da imagem com o repositório, nome e tag de versão que indicamos.</p>
+
+<p><strong>V</strong>ejamos nossa imagem na lista de imagens disponíveis no Docker:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ docker images
+</span><span class='line'>REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+</span><span class='line'>kalib/ubuntunginx   0.1                 0cbafebeaf17        5 minutes ago       182MB
+</span><span class='line'>&lt;none&gt;              &lt;none&gt;              4d86b1edf015        43 minutes ago      83.5MB
+</span><span class='line'>ubuntu              latest              735f80812f90        6 days ago          83.5MB</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>S</strong>ucesso, aparentemente nossa imagem foi criada conforme o esperado. Hora de testar e ver se tudo realmente funcionou.</p>
+
+<p><strong>OBS:</strong> Como dito no início do post, o objetivo deste post não é ensinar Docker, portanto estou assumindo que você já possui alguma familiaridade com esta ferramenta.</p>
+
+<p><strong>V</strong>amos iniciar um container a partir desta nossa imagem em background, mapeando a porta 80 do container na porta 80 de nosso host, para facilitar o teste:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ docker run -d -p 80:80 kalib/ubuntunginx:0.1
+</span><span class='line'>53de48d3e7708a7ac16dbb5ba6ed71b8672201729264e51945ee3412a02e0deb</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>N</strong>enhuma mensagem de erro, portanto ao que tudo indica nosso container está rodando corretamente. Vamos confirmar isto com <em>docker ps</em>:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ docker ps
+</span><span class='line'>CONTAINER ID        IMAGE                   COMMAND                  CREATED             STATUS              PORTS                NAMES
+</span><span class='line'>53de48d3e770        kalib/ubuntunginx:0.1   "nginx -g 'daemon of…"   5 seconds ago       Up 4 seconds        0.0.0.0:80-&gt;80/tcp   clever_keldysh</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>T</strong>udo certo aqui também. Podemos ver nosso container rodando, o processo do nginx aparentemente rodando, bem como a porta 80 mapeada como esperado. Vamos abrir o browser em nosso host e acessar <em>localhost:80</em>&hellip;</p>
+
+<p><img class="center" src="/imgs/packer_nginx.png" title="'Packer'" ></p>
+
+<p><strong>P</strong>ronto, validamos a nossa imagem criando um container e confirmando que o nginx está de fato rodando como deveria.</p>
+
+<p><strong>E</strong>m futuros posts, pretendo dar exemplos mais aprofundados, utilizando combinações com outros provisioners, como Puppet, Ansible e Shell Scripts, bem como outros builders, como por exemplo o AWS.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -818,711 +1347,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2018/04/01/chef-aautomacao-e-gerenciamento-de-configuracao/">Chef: Automação E Gerenciamento De Configuração</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2018-04-01T11:22:00-04:00" pubdate data-updated="true">Apr 1<span>st</span>, 2018</time>
-        
-         | <a href="/blog/2018/04/01/chef-aautomacao-e-gerenciamento-de-configuracao/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><img class="center" src="/imgs/cheflogo.png" title="'Chef'" ></p>
-
-<h2>Uma coisa de cada vez</h2>
-
-<p><strong>C</strong>hef é uma popular ferramenta de Gerenciamento de Configurações criado pela empresa de mesmo nome, Chef. O <a href="https://www.chef.io">Chef</a> é desenvolvido em <a href="https://www.ruby-lang.org">Ruby</a> e <a href="https://www.erlang.org">Erlang</a>, e utiliza uma linguagem DSL (domain-specific language) em Ruby puro para escrever arquivos de configuração de sistemas chamados &ldquo;recipes&rdquo; (receitas).</p>
-
-<p><strong>A</strong>ntes de falarmos sobre o Chef é importante entender primeiramente o conceito e a utilidade de ferramentas de Gerenciamento de Configuração.</p>
-
-<h2>Gerenciamento de Configuração</h2>
-
-<p><strong>G</strong>erenciamento de Configuração, ou CM (Configuration Management), é um processo de engenharia de sistemas que visa garantir a consistência entre ativos físicos e lógicos em um ambiente operacional. O processo de gerenciamento de configuração busca identificar e rastrear itens individuais de configuração, documentando capacidades funcionais e interdependências. Administradores, técnicos e desenvolvedores de sistemas podem utilizar ferramentas de Gerenciamento de Configuração para verificar o efeito que uma mudança em um item de configuração terá em outros sistemas.</p>
-
-<p><strong>E</strong>m palavras simples, o objetivo de uma ferramenta de gerenciamento de configuração é simplificar a vida de quem administra serviços e sistemas garantindo uma uniformidade no quesito configuração.</p>
-
-<p><strong>C</strong>omo exemplo prático e simplista, imagine um servidor web que será responsável por hospedar um pequeno site em php. Este servidor possuirá alguns atributos/aplicativos/configurações, tais como:</p>
-
-<ul>
-<li>Apache instalado;</li>
-<li>Alterações específicas nos arquivos de configuração do Apache;</li>
-<li>Serviço do Apache ativo e iniciado;</li>
-<li>Arquivos referentes ao site em si em um diretório específico;</li>
-<li>Permissões específicas atribuídas ao diretório específico do site;</li>
-<li>etc&hellip;</li>
-</ul>
-
-
-<p><strong>C</strong>onfigurar tudo isso manualmente em um único servidor é simples. Você poderia conectar-se via SSH no servidor, instalar o apache com o gerenciador de pacotes da distribuição utilizada, configurar o que for necessário no apache, iniciar o serviço, etc, etc, etc. Mas o que fazer quando sua infraestrutura cresce? Quando se quer maior disponibilidade do site, quando agora você roda este site em um cluster com 5 servidores?</p>
-
-<p><strong>B</strong>asicamente a mesma coisa, certo? Você pode se conectar em cada um dos servidores e repetir os mesmos passos. O problema se dá justamente nessa repetição de passos, onde você pode cometer erros, perder tempo, etc. Além disso, o que acontece se um colega seu modificar algo em um dos servidores e não lhe avisar? E se ele esquecer de replicar esta mudança nos demais?</p>
-
-<p><strong>É</strong> fácil achar diversas razões pelas quais torna-se difícil administrar e gerenciar configurações em ambientes mais complexos. A ideia por trás de uma ferramenta de Gerenciamento de Configuração é justamente reduzir esta complexidade, eliminando a necessidade de conectar-se manualmente à diversos servidores para aplicar as mesmas rotinas, passos e configurações.</p>
-
-<p><strong>A</strong>través de arquivos de texto podemos literalmente descrever o estado e as ações desejadas para nossos serviços e sistemas. Por exemplo: Posso dizer que possuo um grupo de servidores chamado WebServer, o qual contém 10 servidores com o Sistema Operacional CentOS 7. Posso incluir a informação de que preciso que todos eles estejam com a versão X do Apache instalada e que o serviço esteja ativo e rodando. Além disso, posso dizer que desejo que exista no diretório /var/www/meusite/ todo o conteúdo que está em um mapeamento de rede específico, ou mesmo em um repositório que possuo no github.</p>
-
-<p><strong>A</strong>o invés de me conectar em cada um dos 10 servidores para fazer tudo isso, um simples comando será o suficiente. O comando em específico dependerá da solução adotada, visto que existem diversas ferramentas de CM (Gerenciamento de Configuração). Mas, basicamente, ele irá ler o(s) arquivo(s) de &ldquo;instruções&rdquo; que nós definimos e saberá em quais servidores ele deverá instalar o Apache e configurar de acordo com o especificado, nos dando apenas o resultado final em forma de relatório simples.</p>
-
-<p><strong>E</strong> se alguém da equipe alterar um arquivo de configuração diretamente em um dos servidores? A ferramenta, em sua próxima execucação, irá identificar que o estado desejado para aquele meu grupo de servidores está diferente em um dos servidores. Ela então modificará aquele arquivo específico naquele servidor para que ele volte ao seu estado desejado.</p>
-
-<p><strong>A</strong>lém desta segurança, nós agora passamos a ter um ponto único de modificação. Ao desejarmos mudar algo, o faremos apenas no nosso &ldquo;código&rdquo;, ao invés de o fazer nos 10 servidores manualmente.</p>
-
-<p><strong>O</strong> mesmo benefício se dá em caso de erros e falhas: um ponto único de correção.</p>
-
-<p><strong>C</strong>om este mecanismo de descrever o estado de nossa infraestrutura em arquivos de texto/código, entramos em um novo conceito: Infrastructure as Code, ou Infraestrutura como Código. Uma vez que temos nossa infraestrutura em formato de código, podemos literalmente versionar e gerenciar nossa infraestrutura com repositórios Git, por exemplo.</p>
-
-<h2>O que é Chef?</h2>
-
-<p><strong>C</strong>onforme dito mais acima, Chef é uma das mais populares ferramentas de Gerenciamento de Configuração disponíveis atualmente. É compatível e facilmente integrado à plataformas de computação em nuvem, tais como Internap, Amazon EC2, Google Cloud Platform, OpenStack, SoftLayer, Microsoft Azure e Rackspace, provendo e configurando servidores automaticamente.</p>
-
-<p><strong>O</strong> usuário escreve &ldquo;recipes&rdquo; (receitas) que descrevem como o Chef deve gerenciar aplicações, servidores e utilitários. Estas &ldquo;recipes&rdquo;, as quais podem ser agrupadas em &ldquo;cookbooks&rdquo; (livros de receitas) descrevem uma série de recursos que devem estar em um determinado estado. Este recursos podem ser pacotes, serviços ou mesmo arquivos.</p>
-
-<p><strong>C</strong>hef pode rodar em um modo cliente/servidor ou standalone, com o chamado &ldquo;chef-solo&rdquo;. No modo cliente/servidor, o cliente Chef envia uma série de atributos sobre o node ou cliente/host para o Chef server. O Chef server utiliza-se da ferramenta <a href="https://lucene.apache.org/solr">Solr</a> para indexar estes atributos e provê uma API na qual os clientes podem fazer consultas. As recipes podem fazer requisições à esta base de atributos e utilizar os dados resultantes para configurar o cliente ou node.</p>
-
-<p><strong>E</strong>mbora inicialmente o Chef fosse utilizado para gerenciar exclusivamente máquinas Linux, as versões mais atuais também suportam máquinas Windows.</p>
-
-<p><strong>A</strong> ideia para este post é dar uma breve introdução ao Chef, portanto não vou entrar em maiores detalhes do funcionamento por hora.</p>
-
-<h3>Resources</h3>
-
-<p><strong>C</strong>omo dito antes, um Resource é uma descrição de estado desejado para um determinado item. Estes resources são gerenciados através de recipes.</p>
-
-<p><strong>U</strong>m resource possui basicamente 4 componentes fundamentais que são definidos em um bloco de código Ruby:</p>
-
-<ul>
-<li>Resource Type &ndash; Tipo de resource (Pode ser um pacote, serviço, arquivo&hellip;)</li>
-<li>Resource Name &ndash; Nome do resource</li>
-<li>Resource Properties &ndash; Propriedades do resource</li>
-<li>Actions &ndash; Ações a serem aplicadas ao resource</li>
-</ul>
-
-
-<p><strong>U</strong>m exemplo de recipe para instalar o Apache em um servidor Ubuntu, por exemplo, seria o seguinte:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>package 'httpd' do
-</span><span class='line'>    action :install
-</span><span class='line'>end</span></code></pre></td></tr></table></div></figure>
-
-
-<p>No exemplo acima temos o tipo de resource como sendo &ldquo;package&rdquo;, o nome do resource como sendo &ldquo;httpd&rdquo; e a ação &ldquo;install&rdquo;.</p>
-
-<p><strong>O</strong> que vai acontecer aqui? Simples de entender, certo? O pacote httpd (Apache) será instalado. Mas o que acontece caso o pacote httpd já esteja instalado?</p>
-
-<p><strong>N</strong>ada. Uma das características do Chef é a <strong>idempotência</strong>. Na matemática e ciência da computação, a idempotência é a propriedade que algumas operações têm de poderem ser aplicadas várias vezes sem que o valor do resultado se altere após a aplicação inicial. Ou seja, O Chef primeiramente confere se o estado desejado já está aplicado e, caso sim, ignora aquela instrução.</p>
-
-<p><strong>N</strong>ovamente&hellip; A ideia para este post é dar uma breve introdução ao Chef, portanto não vou entrar em maiores detalhes sobre os tipos de resources e suas possíveis ações. Vamos ao que interessa&hellip;</p>
-
-<h2>Instalando o Chef</h2>
-
-<p><strong>C</strong>onforme explicado acima, o Chef pode ser utilizado em modo cliente/servidor ou standalone. Para esta introdução utilizaremos o modo standalone ou local para simplificar as coisas.</p>
-
-<p><strong>P</strong>ara instalar podemos utilizar o gerenciador de pacotes da distribuição Linux que utilizamos ou baixando o chefdk (Development Kit) através da página de <a href="https://downloads.chef.io/chefdk">downloads do chef</a>.</p>
-
-<h3>Arch Linux</h3>
-
-<p><strong>N</strong>o meu caso, utilizarei o pacote <a href="https://aur.archlinux.org/packages/chef-dk/">chef-dk</a> existente para o Arch Linux, mas sinta-se livre para baixar diretamente no site e executar o pacote de acordo com sua distribuição.</p>
-
-<p><strong>1- Baixar o pacote do AUR:</strong></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ wget https://aur.archlinux.org/cgit/aur.git/snapshot/chef-dk.tar.gz</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>2- Descompactar e Compilar:</strong></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ tar -xvzf chef-dk.tar.gz
-</span><span class='line'>
-</span><span class='line'>$ cd chef-dk
-</span><span class='line'>
-</span><span class='line'>$ makepkg</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>3- Instalar o pacote:</strong></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo pacman -U chef-dk-2.5.3-1-x86_64.pkg.tar.xz</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>4- Confirmar que deu tudo certo:</strong>*</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ chef --version
-</span><span class='line'>
-</span><span class='line'>Chef Development Kit Version: 2.5.3
-</span><span class='line'>chef-client version: 13.8.5
-</span><span class='line'>delivery version: master (73ebb72a6c42b3d2ff5370c476be800fee7e5427)
-</span><span class='line'>berks version: 6.3.1
-</span><span class='line'>kitchen version: 1.20.0
-</span><span class='line'>inspec version: 1.51.21</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Centos, Debian, Ubuntu&hellip;</h3>
-
-<p><strong>N</strong>o CentOS, Ubuntu, Debian ou outras distribuições, o procedimento será relativamente parecido, portanto vejamos como seria no caso do CentOS baixando o arquivo diretamente do site de downloads:</p>
-
-<p><strong>1- Baixar o arquivo .rpm para Red Hat:</strong> <a href="https://downloads.chef.io/chefdk">Aqui</a></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ wget https://packages.chef.io/files/stable/chefdk/2.5.3/el/7/chefdk-2.5.3-1.el7.x86_64.rpm</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>2- Instalar via RPM:</strong></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo rpm -ivh chefdk-2.5.3-1.el7.x86_64.rpm</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>3- Confirmar que deu tudo certo:</strong></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ chef --version
-</span><span class='line'>
-</span><span class='line'>Chef Development Kit Version: 2.5.3
-</span><span class='line'>chef-client version: 13.8.5
-</span><span class='line'>delivery version: master (73ebb72a6c42b3d2ff5370c476be800fee7e5427)
-</span><span class='line'>berks version: 6.3.1
-</span><span class='line'>kitchen version: 1.20.0
-</span><span class='line'>inspec version: 1.51.21</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>Testando o Chef Localmente</h2>
-
-<p><strong>P</strong>ara facilitar o entendimento, vamos criar uma recipe simples para aplicarmos localmente.</p>
-
-<p><strong>V</strong>amos começar criando um arquivo chamado <strong>exemplo.rb</strong> com o seguinte conteúdo:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>package 'apache' do
-</span><span class='line'>        package_name 'httpd'
-</span><span class='line'>        action :install
-</span><span class='line'>end</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>O</strong> que temos aqui?</p>
-
-<ul>
-<li>Resource Type: package (Pois queremos instalar o pacote httpd)</li>
-<li>Resource Name: apache (Embora o nome do pacote no CentOS seja httpd, o nome do nosso resource aqui é apache, mas poderia ser qualquer coisa que desejarmos)</li>
-<li>Resource Properties: Aqui temos apenas <em>package_name</em> como propriedade, no qual damos o nome do pacote desejado. OBS: Caso não utilizemos a propriedade <em>package_name</em>, ele buscará por um pacote com mesmo nome do resource. No nosso caso, demos o nome <em>apache</em> para nosso resource, portanto ele buscaria por um pacote chamado <em>apache</em> e falharia, pois no CentOS este pacote não existe.</li>
-<li>Actions: install (Temos apenas uma ação para esta recipe, que é justamente a de instalar o pacote, caso já não esteja instalado (idempotência))</li>
-</ul>
-
-
-<p><strong>S</strong>alve o arquivo e verifique o mesmo com os dois passos a seguir:</p>
-
-<p><strong>1-</strong> Verifique se a sintaxe ruby está correta:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'># ruby -c exemplo.rb
-</span><span class='line'>
-</span><span class='line'>Syntax OK</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>2-</strong> Utilize uma ferramenta do chef para verificar se a recipe está de acordo com o esperado pelo Chef:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'># foodcritic exemplo.rb
-</span><span class='line'>Checking 1 files
-</span><span class='line'>x
-</span><span class='line'>FC011: Missing README in markdown format: ../README.md:1
-</span><span class='line'>FC031: Cookbook without metadata.rb file: ../metadata.rb:1
-</span><span class='line'>FC071: Missing LICENSE file: ../LICENSE:1</span></code></pre></td></tr></table></div></figure>
-
-
-<p>PS: Não se espante por enquanto com estes Warnings. Ele apenas está indicando que não possuímos um metadata, um readme e uma licença, pois não os criamos para este exemplo.</p>
-
-<p><strong>V</strong>erificado o código e aprovado, vamos executar esta recipe localmente.
-<em>(Repare no retorno que será apresentado, onde ele verifica o tipo de resource e identifica que estamos rodando em uma máquina CentoOS, portanto utiliza por padrão o yum para instalar o pacote desejado.)</em></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'># chef-client --local-mode exemplo.rb
-</span><span class='line'>
-</span><span class='line'>[2018-04-01T19:18:00+00:00] WARN: No config file found or specified on command line, using command line options.
-</span><span class='line'>[2018-04-01T19:18:00+00:00] WARN: No cookbooks directory found at or above current directory.  Assuming /root.
-</span><span class='line'>Starting Chef Client, version 13.8.5
-</span><span class='line'>resolving cookbooks for run list: []
-</span><span class='line'>Synchronizing Cookbooks:
-</span><span class='line'>Installing Cookbook Gems:
-</span><span class='line'>Compiling Cookbooks...
-</span><span class='line'>[2018-04-01T19:18:03+00:00] WARN: Node kalib6.test.com has an empty run list.
-</span><span class='line'>Converging 1 resources
-</span><span class='line'>Recipe: @recipe_files::/root/exemplo.rb
-</span><span class='line'>  * yum_package[apache] action install
-</span><span class='line'>    - install version 2.4.6-67.el7.centos.6 of package httpd
-</span><span class='line'>
-</span><span class='line'>Running handlers:
-</span><span class='line'>Running handlers complete
-</span><span class='line'>Chef Client finished, 1/1 resources updated in 16 seconds
-</span><span class='line'>[2018-04-01T19:18:17+00:00] WARN: No config file found or specified on command line, using command line options.</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>S</strong>imples, certo? O pacote httpd (Apache) foi instalado em nosso CentOS. Verificando o status do serviço httpd, veremos que o serviço não está rodando e também não está ativo.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'># systemctl status httpd
-</span><span class='line'>● httpd.service - The Apache HTTP Server
-</span><span class='line'>   Loaded: loaded (/usr/lib/systemd/system/httpd.service; disabled; vendor preset: disabled)
-</span><span class='line'>   Active: inactive (dead)
-</span><span class='line'>     Docs: man:httpd(8)
-</span><span class='line'>           man:apachectl(8)</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>I</strong>sto está correto, afinal o Chef vai deixar a máquina no estado que determinamos. O determinado foi apenas instalar o pacote httpd. Mas de nada ele serve sem estar rodando como serviço, portanto vamos editar nossa recipe <em>exemplo.rb</em> e incluir nela um novo resource, desta vez um resource do tipo <em>service</em>, ou serviço. Sim, podemos ter diversos resources em uma mesma recipe. ;]</p>
-
-<p><strong>E</strong>dite sua recipe para que ela possua o seguinte conteúdo:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>package 'apache' do
-</span><span class='line'>        package_name 'httpd'
-</span><span class='line'>        action :installchef_httpd_default.png
-</span><span class='line'>end
-</span><span class='line'>
-</span><span class='line'>service 'httpd' do
-</span><span class='line'>        action [:enable, :start]
-</span><span class='line'>end</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>O</strong> que adicionamos aqui?</p>
-
-<ul>
-<li>Resource Type: service (Pois queremos gerenciar o serviço httpd)</li>
-<li>Resource Name: httpd (Poderíamos ter utilizado qualquer nome, mas para simplificar e não precisarmos utilizar uma propriedade de nome, deixaremos o resource com o nome do serviço, <em>httpd</em>)</li>
-<li>Actions: enable e start (Como nosso objetivo é não apenas iniciar o serviço, mas também deixá-lo habilitado para ser iniciado automaticamente após reinicialização, utilizaremos o <em>enable</em> e o <em>start</em>) &ndash;> equivalente aos comandos <em>systemctl enable httpd</em> e <em>systemctl start httpd</em></li>
-</ul>
-
-
-<p><strong>N</strong>ovamente vamos verificar nosso código via ruby e foodcritic:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'># ruby -c exemplo.rb && foodcritic exemplo.rb</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>E</strong> executando nossa recipe. (Novamente, o pacote httpd já está instalado, esta parte da recipe será ignorada automaticamente pelo Chef.)</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'># chef-client --local-mode exemplo.rb
-</span><span class='line'>[2018-04-01T19:32:26+00:00] WARN: No config file found or specified on command line, using command line options.
-</span><span class='line'>[2018-04-01T19:32:26+00:00] WARN: No cookbooks directory found at or above current directory.  Assuming /root.
-</span><span class='line'>Starting Chef Client, version 13.8.5
-</span><span class='line'>resolving cookbooks for run list: []
-</span><span class='line'>Synchronizing Cookbooks:
-</span><span class='line'>Installing Cookbook Gems:
-</span><span class='line'>Compiling Cookbooks...
-</span><span class='line'>[2018-04-01T19:32:28+00:00] WARN: Node kalib6.test.com has an empty run list.
-</span><span class='line'>Converging 2 resources
-</span><span class='line'>Recipe: @recipe_files::/root/exemplo.rb
-</span><span class='line'>  * yum_package[apache] action install (up to date)
-</span><span class='line'>  * service[httpd] action enable
-</span><span class='line'>    - enable service service[httpd]
-</span><span class='line'>  * service[httpd] action start
-</span><span class='line'>    - start service service[httpd]
-</span><span class='line'>
-</span><span class='line'>Running handlers:
-</span><span class='line'>Running handlers complete
-</span><span class='line'>Chef Client finished, 2/3 resources updated in 06 seconds
-</span><span class='line'>[2018-04-01T19:32:33+00:00] WARN: No config file found or specified on command line, using command line options.</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>A</strong>gora podemos verificar que nosso serviço httpd está de fato rodando.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'># systemctl status httpd && ps aux | grep httpd
-</span><span class='line'>● httpd.service - The Apache HTTP Server
-</span><span class='line'>   Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; vendor preset: disabled)
-</span><span class='line'>   Active: active (running) since Sun 2018-04-01 19:32:33 UTC; 1min 17s ago
-</span><span class='line'>     Docs: man:httpd(8)
-</span><span class='line'>           man:apachectl(8)
-</span><span class='line'> Main PID: 2409 (httpd)
-</span><span class='line'>   Status: "Total requests: 0; Current requests/sec: 0; Current traffic:   0 B/sec"
-</span><span class='line'>   CGroup: /system.slice/httpd.service
-</span><span class='line'>           ├─2409 /usr/sbin/httpd -DFOREGROUND
-</span><span class='line'>           ├─2410 /usr/sbin/httpd -DFOREGROUND
-</span><span class='line'>           ├─2411 /usr/sbin/httpd -DFOREGROUND
-</span><span class='line'>           ├─2412 /usr/sbin/httpd -DFOREGROUND
-</span><span class='line'>           ├─2413 /usr/sbin/httpd -DFOREGROUND
-</span><span class='line'>           └─2414 /usr/sbin/httpd -DFOREGROUND
-</span><span class='line'>
-</span><span class='line'>Apr 01 19:32:33 kalib6.test.com systemd[1]: Starting The Apache HTTP Server...
-</span><span class='line'>Apr 01 19:32:33 kalib6.test.com systemd[1]: Started The Apache HTTP Server.
-</span><span class='line'>root      2409  0.0  0.2 226040  4948 ?        Ss   19:32   0:00 /usr/sbin/httpd -DFOREGROUND
-</span><span class='line'>apache    2410  0.0  0.1 226040  2872 ?        S    19:32   0:00 /usr/sbin/httpd -DFOREGROUND
-</span><span class='line'>apache    2411  0.0  0.1 226040  2872 ?        S    19:32   0:00 /usr/sbin/httpd -DFOREGROUND
-</span><span class='line'>apache    2412  0.0  0.1 226040  2872 ?        S    19:32   0:00 /usr/sbin/httpd -DFOREGROUND
-</span><span class='line'>apache    2413  0.0  0.1 226040  2872 ?        S    19:32   0:00 /usr/sbin/httpd -DFOREGROUND
-</span><span class='line'>apache    2414  0.0  0.1 226040  2872 ?        S    19:32   0:00 /usr/sbin/httpd -DFOREGROUND
-</span><span class='line'>root      2425  0.0  0.0 112660   976 pts/0    R+   19:33   0:00 grep --color=auto httpd</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>A</strong>lém disso, você pode testar seu novo servidor web diretamente em seu navegador. Caso esteja executando tudo em localhost, pode utilizar <em>localhost</em> como endereço. Caso contrário, pode utilizar o endereço ip da máquina em questão.</p>
-
-<p><img class="center" src="/imgs/chef_httpd_default.png" title="'Chef'" ></p>
-
-<p><strong>A</strong> página padrão do Apache não é algo que queremos, portanto vamos criar nosso próprio site (Hello World) para exemplificar melhor. Para isto editaremos novamente nossa recipe e incluiremos mais um resource, do tipo <em>file</em>, ou arquivo. O conteúdo de sua recipe deverá ficar assim:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>package 'apache' do
-</span><span class='line'>        package_name 'httpd'
-</span><span class='line'>        action :install
-</span><span class='line'>end
-</span><span class='line'>
-</span><span class='line'>service 'httpd' do
-</span><span class='line'>        action [:enable, :start]
-</span><span class='line'>end
-</span><span class='line'>
-</span><span class='line'>file '/var/www/html/index.html' do
-</span><span class='line'>        content 'Hello World!'
-</span><span class='line'>        mode '0755'
-</span><span class='line'>        owner 'root'
-</span><span class='line'>        group 'apache'
-</span><span class='line'>end</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>O</strong> que adicionamos aqui?</p>
-
-<ul>
-<li>Resource Type: file (Pois queremos gerenciar o nosso arquivo index.html, o qual, caso não exista, será criado)</li>
-<li>Resource Name: /var/www/html/index.html (Poderíamos ter utilizado qualquer nome, mas para simplificar e não precisarmos utilizar uma propriedade de nome, deixaremos o resource com o nome do arquivo que vamos utilizar, <em>/var/www/html/index.html</em>)</li>
-<li>Content: Hello World! (Para simplificar teremos uma simples string <em>Hello World!</em> como conteúdo de nosso site)</li>
-<li>Mode: Permissão que desejamos atribuir ao arquivo index.html</li>
-<li>Owner: Dono que deve ser atribuído ao arquivo index.html</li>
-<li>Group: Grupo que deve ser atribuído ao arquivo index.html</li>
-</ul>
-
-
-<p><strong>N</strong>ovamente vamos verificar nosso código via ruby e foodcritic:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'># ruby -c exemplo.rb && foodcritic exemplo.rb</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>E</strong> executaremos novamente nossa recipe. (Assim como anteriormente, o Chef ignorará as instruções referentes aos resources que já se encontram no estado desejado)</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'># chef-client --local-mode exemplo.rb          
-</span><span class='line'>[2018-04-01T19:48:00+00:00] WARN: No config file found or specified on command line, using command line options.
-</span><span class='line'>[2018-04-01T19:48:00+00:00] WARN: No cookbooks directory found at or above current directory.  Assuming /root.
-</span><span class='line'>Starting Chef Client, version 13.8.5
-</span><span class='line'>resolving cookbooks for run list: []
-</span><span class='line'>Synchronizing Cookbooks:
-</span><span class='line'>Installing Cookbook Gems:
-</span><span class='line'>Compiling Cookbooks...
-</span><span class='line'>[2018-04-01T19:48:02+00:00] WARN: Node kalib6.test.com has an empty run list.
-</span><span class='line'>Converging 3 resources
-</span><span class='line'>Recipe: @recipe_files::/root/exemplo.rb
-</span><span class='line'>  * yum_package[apache] action install (up to date)
-</span><span class='line'>  * service[httpd] action enable (up to date)
-</span><span class='line'>  * service[httpd] action start (up to date)
-</span><span class='line'>  * file[/var/www/html/index.html] action create
-</span><span class='line'>    - create new file /var/www/html/index.html
-</span><span class='line'>    - update content in file /var/www/html/index.html from none to 7f83b1
-</span><span class='line'>    --- /var/www/html/index.html        2018-04-01 19:48:06.829566745 +0000
-</span><span class='line'>    +++ /var/www/html/.chef-index20180401-2631-164958p.html     2018-04-01 19:48:06.829566745 +0000
-</span><span class='line'>    @@ -1 +1,2 @@
-</span><span class='line'>    +Hello World!
-</span><span class='line'>    - change mode from '' to '0755'
-</span><span class='line'>    - change owner from '' to 'root'
-</span><span class='line'>    - change group from '' to 'apache'
-</span><span class='line'>    - restore selinux security context
-</span><span class='line'>
-</span><span class='line'>Running handlers:
-</span><span class='line'>Running handlers complete
-</span><span class='line'>Chef Client finished, 1/4 resources updated in 06 seconds
-</span><span class='line'>[2018-04-01T19:48:07+00:00] WARN: No config file found or specified on command line, using command line options.</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>P</strong>odemos verificar que o Chef criou o nosso arquivo index.html, atribuindo o dono, grupo e permissão que indicamos:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'># ls -lh /var/www/html/
-</span><span class='line'>total 4.0K
-</span><span class='line'>-rwxr-xr-x. 1 root apache 12 Apr  1 19:48 index.html</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>T</strong>ambém podemos voltar em nosso navegador e atualizar a página para que vejamos o nosso Hello World ao invés da página padrão do Apache.</p>
-
-<p><img class="center" src="/imgs/chef_httpd_hw.png" title="'Chef'" ></p>
-
-<h2>Vale a pena?</h2>
-
-<p><strong>R</strong>ealizar este processo manualmente na mesma máquina CentoOS seria mais rápido do que utilizando o Chef. Vamos rever:</p>
-
-<p><strong>O</strong> que precisamos?</p>
-
-<ul>
-<li>Instalar o pacote httpd</li>
-<li>Habilitar e Iniciar o serviço httpd</li>
-<li>Criar o arquivo index.html com o conteúdo &ldquo;Hello World!&rdquo;</li>
-</ul>
-
-
-<p><strong>F</strong>azendo manualmente seria apenas uma questão de executarmos 4 comandos:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'># yum install httpd
-</span><span class='line'>
-</span><span class='line'># systemctl enable httpd && systemctl start httpd
-</span><span class='line'>
-</span><span class='line'># echo "Hello World!" &gt; /var/www/html/index.html
-</span><span class='line'>
-</span><span class='line'># chmod 0755 /var/www/html/index.html && chown root:apache /var/www/html/index.html</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>S</strong>im, é verdade que fazendo manualmente neste caso seria MUITO mais rápido. O importante é lembrar do que falamos anteriormente: E se não for apenas 1 servidor? E se for um grupo? E se ao invés de apenas 3 resources, tiver 15? ou 40? E se alguém modificar algo em algum dos resources? Como você saberá qual foi? Vai verificar todos um a um para identificar o que precisa ser corrigido?</p>
-
-<h1>Vantagens:</h1>
-
-<p><strong>I</strong>magine que algum membro de sua equipe alterou a permissão do arquivo index.html sem lhe avisar, por exemplo ele foi lá e&hellip;</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'># chmod 0666 /var/www/html/index.html</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>L</strong>embrando que em nossa recipe exemplo.rb, definimos a permissão 0755. Neste caso, sempre que executarmos a recipe, o Chef irá verificar todos os resources e corrigir o que quer que tenha sido alterado.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'># chef-client --local-mode exemplo.rb
-</span><span class='line'>[2018-04-01T20:04:08+00:00] WARN: No config file found or specified on command line, using command line options.
-</span><span class='line'>[2018-04-01T20:04:08+00:00] WARN: No cookbooks directory found at or above current directory.  Assuming /root.
-</span><span class='line'>Starting Chef Client, version 13.8.5
-</span><span class='line'>resolving cookbooks for run list: []
-</span><span class='line'>Synchronizing Cookbooks:
-</span><span class='line'>Installing Cookbook Gems:
-</span><span class='line'>Compiling Cookbooks...
-</span><span class='line'>[2018-04-01T20:04:10+00:00] WARN: Node kalib6.test.com has an empty run list.
-</span><span class='line'>Converging 3 resources
-</span><span class='line'>Recipe: @recipe_files::/root/exemplo.rb
-</span><span class='line'>  * yum_package[apache] action install (up to date)
-</span><span class='line'>  * service[httpd] action enable (up to date)
-</span><span class='line'>  * service[httpd] action start (up to date)
-</span><span class='line'>  * file[/var/www/html/index.html] action create
-</span><span class='line'>    - change mode from '0666' to '0755'
-</span><span class='line'>    - restore selinux security context
-</span><span class='line'>
-</span><span class='line'>Running handlers:
-</span><span class='line'>Running handlers complete
-</span><span class='line'>Chef Client finished, 1/4 resources updated in 06 seconds
-</span><span class='line'>[2018-04-01T20:04:14+00:00] WARN: No config file found or specified on command line, using command line options.</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>R</strong>epare na linha <em>&ndash; change mode from &lsquo;0666&rsquo; to &lsquo;0755&rsquo;</em>. O Chef acabou de corrigir automaticamente sem que nós tenhamos de vasculhar cada componente e arquivo em nosso servidor para saber o que foi alterado ou o que está diferente do estado desejado. Novamente, aqui tratamos de um servidor único, com apenas um arquivo. Imagine ter que varrer manualmente diversos servidores e diversos arquivos e diretórios?</p>
-
-<p><strong>N</strong>este exemplo, provavelmente o site poderia continuar funcionando, pois foi alterada apenas a permissão de um único arquivo, certo? Mas imagine que sem querer ele acabou parando o serviço httpd, ou até desinstalou o mesmo? Em uma instalação padrão com Chef Server, existem agendamentos que fazem com que o Chef execute as recipes a cada X minutos, portanto o serviço seria inicializado novamente automaticamente, ou mesmo instalado caso necessário.</p>
-
-<p><strong>É</strong> fácil imaginar diversos cenários nos quais seria útil ter a sua infraestrutura em formato de código.</p>
-
-<p><strong>I</strong>magine uma catástrofe em que seu servidor simplesmente parou de funcionar e você precisará criar outro. Novamente você teria que executar aqueles comandos. Se desde o início tivesse utilizado Chef, ou outra ferramenta de Gerenciamento de Configuração, você poderia ter a sua recipe armazenada em um repositório Git, por exemplo, conforme mencionado no início deste post, e bastaria apenas executar o seu chef-client para instalar os pacotes necessários, habilitar e inicializar serviços, criar arquivos, etc.</p>
-
-<p><strong>A</strong> imaginação é o seu limite. ;]</p>
-
-<p><strong>E</strong>m posts futuros pretendo explorar mais a fundo o Chef, bem como outras ferramentas.</p>
-
-<p><strong>H</strong>appy Hacking!</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/3/">&larr; Anteriores</a>
@@ -1544,6 +1368,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2018/10/29/introducao-ao-terraform/">Introdução ao Terraform</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2018/10/22/infraestrutura-como-codigo-com-terraform/">Infraestrutura como Código com Terraform</a>
       </li>
     
@@ -1557,10 +1385,6 @@
     
       <li class="post">
         <a href="/blog/2018/04/16/10-anos-d/">10 anos! :D</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2018/04/14/chef-uso-de-condicionais-not-if-e-only-if/">Chef: Uso de Condicionais not_if e only_if</a>
       </li>
     
   </ul>

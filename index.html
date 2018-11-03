@@ -9,7 +9,7 @@
   <meta name="author" content="Marcelo Cavalcante Rocha - Kalib">
 
   
-  <meta name="description" content="Infraestrutura como Código (IAC &ndash; Infrastructure as Code) Infraestrutura como código &ndash; IaC (ou infrastructure as code em inglês) &ndash &hellip;">
+  <meta name="description" content="Terraform &ndash; Uma robusta opção para Infraestrutura como Código A Hashicorp é uma empresa de bastante destaque no meio DevOps por ter criado &hellip;">
   
 
   <!-- https://t.co/dKP3o1e -->
@@ -80,6 +80,1230 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2018/10/29/introducao-ao-terraform/">Introdução Ao Terraform</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2018-10-29T21:35:00-04:00" pubdate data-updated="true">Oct 29<span>th</span>, 2018</time>
+        
+         | <a href="/blog/2018/10/29/introducao-ao-terraform/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img class="center" src="/imgs/terraform-integrations.png" title="'Terraform'" ></p>
+
+<h2>Terraform &ndash; Uma robusta opção para Infraestrutura como Código</h2>
+
+<p><strong>A</strong> Hashicorp é uma empresa de bastante destaque no meio DevOps por ter criado várias soluções de automação, que englobam uma série de funcionalidades, como o <a href="https://packer.io">Packer</a> para criação de imagens de forma automatizada, conforme apresentado nestes dois posts  do blog (<a href="https://blog.marcelocavalcante.net/blog/2018/07/30/automatizando-a-criacao-de-imagens-com-packer/">1</a>, <a href="https://blog.marcelocavalcante.net/blog/2018/08/11/criando-uma-imagem-aws-ec2-com-packer-e-puppet/">2</a>), <a href="https://vagrant.io">Vagrant</a>, para provisionamento simples e rápido de máquinas, <a href="https://vaultproject.io">Vault</a>, para gerenciamento de senhas/segredos (<em>secrets</em>), <a href="https://consul.io">Consul</a>, para descoberta de serviços, <a href="nomadproject.io">Nomad</a>, para agendamento e automação de deployments, e o <a href="https://terraform.io">Terraform</a>, foco principal deste post, uma robusta ferramenta para criação de infraestrutura como código, ou <em>infrastructure as cdode</em>.</p>
+
+<p><strong>C</strong>aso você não possua uma ideia muito clara de qual a idea por trás do conceito de infraestrutura como código, ou mesmo quais as vantagens de se utilizar esta metodologia de gerenciamento/criação de infraestrutura, sugiro que leia meu <a href="https://blog.marcelocavalcante.net/blog/2018/10/22/infraestrutura-como-codigo-com-terraform/">post anterior</a>, no qual explico alguns dos principais benefícios desta prática, bem como uma breve apresentação do Terraform.</p>
+
+<p><strong>D</strong>e forma resumida, o Terraform é uma ferramenta disponível em formatos Open Source ou Enterprise, cujo intuito é permitir a criação de infraestrutura como código, possibilitando o controle de versões. Suporta diversos provedores tais como AWS, OpenStack, Azure, GCP, etc.</p>
+
+<p><strong>U</strong>ma de suas principais características é a idempotência, termo muito utilizado na matemática ou em ciência da computação para indicar a propriedade que algumas operações têm de poderem ser aplicadas várias vezes sem que o valor do resultado se altere após a aplicação inicial. Ou seja, uma vez aplicado o seu código terraform, você poderá aplicá-lo quantas vezes desejar e nenhuma alteração será feita em sua infraestrutura, a menos que você tenha de fato alterado algo em seu código.</p>
+
+<p><strong>O</strong> Terraform utiliza uma linguagem de alto nível e fácil de se reutilizar, uma vez que podemos criar módulos e utilizar estes módulos em diversos projetos distintos, mesmo que tenhamos módulos em repositórios também distintos.</p>
+
+<p><strong>A</strong> ideia de possuir um &ldquo;plano&rdquo; de execução nos ajuda a identificar falhas em nosso código mais rapidamente, bem como prevenir problemas em nossa infraestrutura, visto que podemos ter uma visão geral de tudo o que será aplicado em nossa infra antes mesmo da execução real de nosso código, nos permitindo ter a certeza de que todas as alterações serão de fato intencionais.</p>
+
+<p><strong>S</strong>empre digo que a melhor forma de se aprender uma nova tecnologia é colocando a mão na massa, portanto vamos escrever algumas linhas de código para entendermos as funcionalidades básicas bem como a sintaxe de código utilizada pelo Terraform.</p>
+
+<p><strong>A</strong>ntes de pensarmos em cenários mais complexos devemos entender o básico, no entanto eu sempre gostei de ver algum resultado como forma de ter uma motivação real para meus estudos. Nunca gostei de apenas ler e escrever códigos que não resultam em nada, e acredito que todos devam sentir a mesma insatisfação ao não ter um uso real e prático para o que quer que esteja estudando.</p>
+
+<p><strong>S</strong>eguindo esta ideia, antes de pensarmos em cenários mais complexos, vamos iniciar pelo básico, porém com algum resultado prático. A ideia para este post é termos um jogo clássico do Mario rodando em um container Docker que seja acessível através de nosso browser.</p>
+
+<h2>Instalação</h2>
+
+<p><strong>P</strong>ara este post precisaremos ter três aplicativos instalados:</p>
+
+<ol>
+<li>Um navegador ou browser qualquer; (Imagino que você já tenha algum&hellip;)</li>
+<li>Docker;</li>
+<li>Terraform</li>
+</ol>
+
+
+<h3>Docker</h3>
+
+<p><strong>O</strong> processo de instalação do Docker varia de acordo com o seu sistema operacional. Caso queira maiores detalhes sobre sua instalação, bem como uma explicação introdutória de como ele funciona, você pode visitar <a href="https://blog.marcelocavalcante.net/blog/2015/08/20/docker-uma-alternativa-elegante-para-containers-no-linux/">este outro post</a>, embora você não precise ter nenhum conhecimento sobre Docker para seguir as instruções deste tutorial, visto que utilizaremos o Terraform para criar nosso container.</p>
+
+<p><strong>N</strong>o <em>Archlinux</em> a instalação pode ser feita através do pacman:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># pacman install docker</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>N</strong>o <em>Windows</em> a instalação pode ser feita através do binário disponível no site oficial: (<a href="https://store.docker.com/editions/community/docker-ce-desktop-windows">https://store.docker.com/editions/community/docker-ce-desktop-windows</a>)</p>
+
+<p><strong>N</strong>o <em>OS X</em>, você também pode baixar o binário diretamente no site oficial, (<a href="https://store.docker.com/editions/community/docker-ce-desktop-mac">https://store.docker.com/editions/community/docker-ce-desktop-mac</a>) ou através do brew:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>brew install docker</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Terraform</h3>
+
+<p><strong>A</strong> instalação do Terraform é tão simples quanto a do Docker.</p>
+
+<p><strong>N</strong>o <em>Archlinux</em> a instalação pode ser feita através do pacman:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># pacman -S terraform</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>N</strong>o <em>Windows</em> e no <em>OS X</em> a instalação pode ser feita através do binário disponível no site oficial do Terraform: (<a href="https://www.terraform.io/downloads.html">https://www.terraform.io/downloads.html</a>)</p>
+
+<p><strong>O</strong>utra opção para OS X é através do brew:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>brew install terraform</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Verificando a instalação</h2>
+
+<p><strong>U</strong>ma vez que você tenha instalado ambos, certifique-se de que a instalação foi bem sucedida e de que o serviço Docker esteja rodando em seu sistema. Para isto, abra algum terminal, console ou prompt do CMD (para usuários Windows) e digite o seguinte:</p>
+
+<p>1- Para termos certeza de que o Terraform está instalado e funcionando:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>terraform -version</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Você deverá receber algum resultado com a versão do seu Terraform, similar a este:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Terraform v0.11.10</span></code></pre></td></tr></table></div></figure>
+
+
+<p>2- Para termos certeza de que o Docker está devidamente instalado e rodando, digite:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>docker ps</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Você deverá receber algum resultado parecido com o seguinte:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>N</strong>ão se assuste ou dê importância para este resultado do comando Docker, ele apenas indica o status atual de seu Docker, informando se você possui algum container rodando ou não. Caso você tenha acabado de instalar o mesmo ou iniciado o serviço do Docker, você provavelmente não terá nenhum container rodando.</p>
+
+<p><strong>C</strong>aso o retorno de seu Docker ou Terraform não seja similar aos que apresentei acima, verifique se a instalação foi realmente bem sucedida ou, no caso do Docker, verifique se o mesmo está rodando, afinal ele não apenas precisa ser instalado, mas precisa estar rodando, diferentemente do Terraform que apenas precisa ser instalado.</p>
+
+<h2>Iniciando nosso projeto</h2>
+
+<p><img class="center" src="/imgs/mariodocker.png" title="'Super Mario'" ></p>
+
+<h3>Escopo</h3>
+
+<p><strong>O</strong> primeiro passo de qualquer projeto é identificar alguma espécie de esboço ou escopo para o mesmo.</p>
+
+<p><strong>O</strong> que queremos para o nosso projeto é:</p>
+
+<ol>
+<li>Ter um jogo web do Mario;</li>
+<li>Queremos que ele rode em um container, pois queremos uma aplicação em uma infraestrutura moderna e que possa ser capaz de rodar em qualquer local, seja em um servidor físico local, uma VM ou mesmo um provedor na nuvem, como AWS, GCP, Azure, etc.;</li>
+<li>Como não sabemos onde ou como iremos fazer o deployment deste container, queremos fazer com que seja algo automatizado e portável para facilitar futuros planos, portanto queremos criar este container com o Terraform, para que possamos gerenciar nosso código, versionar, etc.</li>
+<li>Não escreveremos a aplicação em si. O jogo do Mario já existe e uma imagem para Docker já está disponível para o mesmo através do seguinte link: (<a href="https://hub.docker.com/r/pengbai/docker-supermario/">https://hub.docker.com/r/pengbai/docker-supermario/</a>) (Mas nós não precisamos nos precoupar com isto agora, pois o Terraform vai cuidar de baixar a imagem para nós. ;])</li>
+<li>A aplicação deverá estar acessível via browser local para que possamos ao menos garantir que o jogo está de fato funcionando.</li>
+</ol>
+
+
+<p><strong>E</strong>ste será o nosso escopo básico, portanto vamos começar nosso código.</p>
+
+<h3>Projeto</h3>
+
+<p><strong>O</strong> recurso mais básico em um código ou módulo Terraform é o <em>resource</em>, ou recurso. O Terraform suporta centenas de recursos diferentes, dentre eles o <em>docker_image</em>, que será o recurso de que precisaremos inicialmente.</p>
+
+<p><strong>A</strong> partir deste momento não mais utilizarei a palavra recurso. Uma vez que o Terraform chama os recursos de <em>resources</em>, devemos nos acostumar com sua nomenclatura.</p>
+
+<p><strong>A</strong>ntes de mais nada, vamos criar um diretório para nosso projeto. Chamaremos nosso projeto de Marioweb, visto que se trata de uma versao open source do jogo Mario.</p>
+
+<p><strong>A</strong>qui estarei criando o diretório via linha de comando, mas sinta-se livre para criar um diretório da forma que você preferir. Após criar o diretório, com algum terminal ou console aberto (ou prompt do CMD para usuários do Windows), navegue até este diretório recém criado:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ mkdir marioweb
+</span><span class='line'>
+</span><span class='line'>$ cd marioweb</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>D</strong>entro do diretório <em>marioweb</em> crie um novo arquivo chamado <em>main.tf</em>.</p>
+
+<p><strong>P</strong>ara manter um padrão, os arquivos de código do Terraform costumam utilizar o sufixo/extensão .tf e o principal arquivo em módulos ou projetos Terraform costuma se chamar <em>main.tf</em>, por se tratar do arquivo principal do módulo ou projeto.</p>
+
+<p><strong>P</strong>ara criar este arquivo você poderá utilizar qualquer editor de textos de sua escolha: vim, emacs, vi, notepad, notepad++, sublime, atom, etc.</p>
+
+<p><strong>E</strong>m nosso arquivo <em>main.tf</em> insira o seguinte conteúdo por enquanto:</p>
+
+<p><strong>main.tf</strong></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># Baixar a imagem do Projeto Docker-SuperMario
+</span><span class='line'>resource "docker_image" "image_id" {
+</span><span class='line'>  name = "pengbai/docker-supermario:latest"
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>O</strong> que temos no bloco de código acima:</p>
+
+<ol>
+<li>A primeira linha é apenas um comentário. Como boa prática, é importante termos comentários ao longo de nosso código para descrever o que pretendemos com aquele determinado trecho de código. E por hora, o que pretendemos é exatamente apenas isso: <em>Baixar a imagem do Projeto Docker-SuperMario</em> para nosso ambiente.</li>
+<li>Na linha 2 estamos especificando que queremos utilizar um <em>resource</em>. Cada <em>resource</em> no Terraform leva dois parâmetros, sendo um deles o <em>tipo de resource</em> e o outro um <em>nome qualquer</em> para este resource. Como dito antes, este trecho de código pretende baixar a imagem do projeto SuperMario, portanto precisamos do tipo de <em>resource</em> chamado <em>docker_image</em>. Este é apenas um dos milhares de <em>resources</em> existentes para o Terraform. Em seguida estamos dando o nome <em>image_id</em> para nosso <em>resource</em> de tipo <em>docker_image</em>. O nome poderia ser qualquer um, até mesmo <em>minha_imagem_do_coracao</em>, mas para ficar mais descritiva e mantendo boas práticas, utilizarei <em>image_id</em>. Uma vez que identificamos o tipo de <em>resource</em> e o nome que queremos dar para ele, devemos encerrar a linha abrindo o bloco de código no qual listaremos os atributos deste <em>resource</em>. Para isto, utilizaremos um <em>{</em> para abrir este bloco.</li>
+<li>Na linha 3 começamos a definir os atributos do nosso <em>resource</em>. A documentação do Terraform é excelente e lista todos os <em>resources</em> suportados, bem como todos os <em>atributos</em> suportados por cada <em>resource</em>. Neste caso, o único atributo que precisamos no momento é o <em>name</em>, ou nome da imagem que desejamos baixar. Em seguida, indicamos qual o nome da imagem desejada. Por padrão, o Docker adota a nomenclatura <em>&lt;REPOSITÓRIO/IMAGEM:TAG></em> para indicar a imagem desejada. Em nosso caso, o repositório onde a imagem se encontra se chama <em>pengbai</em> e a imagem em si é chamada de <em>docker-supermario</em>, portanto teremos: <em>name = &ldquo;pengbai/super-mario&rdquo;</em>. A <em>tag</em> não é obrigatória. Mas como desejo garantir que utilizaremos sempre a imagem mais recente, utilizarei a tag <em>latest</em> (última).</li>
+<li>Uma vez que concluímos a definição de nosso <em>resource</em>, podemos fechar o nosso bloco de código para o mesmo utilizando um <em>}</em> na linha 4.</li>
+</ol>
+
+
+<p><strong>A</strong>gora que temos o início de nosso código, já podemos começar a testá-lo.</p>
+
+<p><strong>D</strong>e volta ao nosso terminal/console, vamos iniciar o nosso ambiente Terraform para este projeto utilizando o comando <em>terraform init</em>. Este comando inicia nosso ambiente e baixa os plugins necessários para nosso projeto. No nosso caso, o Terraform baixará os plugins necessários para que nosso código possa lidar com o Docker.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ terraform init
+</span><span class='line'>
+</span><span class='line'>Initializing provider plugins...
+</span><span class='line'>- Checking for available provider plugins on https://releases.hashicorp.com...
+</span><span class='line'>- Downloading plugin for provider "docker" (1.1.0)...
+</span><span class='line'>
+</span><span class='line'>The following providers do not have any version constraints in configuration,
+</span><span class='line'>so the latest version was installed.
+</span><span class='line'>
+</span><span class='line'>To prevent automatic upgrades to new major versions that may contain breaking
+</span><span class='line'>changes, it is recommended to add version = "..." constraints to the
+</span><span class='line'>corresponding provider blocks in configuration, with the constraint strings
+</span><span class='line'>suggested below.
+</span><span class='line'>
+</span><span class='line'>* provider.docker: version = "~&gt; 1.1"
+</span><span class='line'>
+</span><span class='line'>Terraform has been successfully initialized!
+</span><span class='line'>
+</span><span class='line'>You may now begin working with Terraform. Try running "terraform plan" to see
+</span><span class='line'>any changes that are required for your infrastructure. All Terraform commands
+</span><span class='line'>should now work.
+</span><span class='line'>
+</span><span class='line'>If you ever set or change modules or backend configuration for Terraform,
+</span><span class='line'>rerun this command to reinitialize your working directory. If you forget, other
+</span><span class='line'>commands will detect it and remind you to do so if necessary.</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>S</strong>e você recebeu um retorno parecido com o meu, significa que tudo está como deveria e que seu projeto foi iniciado com sucesso. Caso você liste os arquivos e diretórios ocultos de seu diretório, perceberá que ao rodar o comando <em>terraform init</em>, um diretório oculto chamado <em>terraform</em> foi criado. É nele que ficarão as informações que o Terraform precisa para executar corretamente o seu código, incluindo os plugins que ele necessita. No nosso caso, o plugin para o Docker estará lá.</p>
+
+<p><strong>N</strong>osso próximo passo será executar o <em>planejamento</em> de nosso código. Ao rodar o <em>planejamento</em> o terraform listará exatamente tudo o que ele fará caso nosso código seja de fato executado. Novamente em nosso console/terminal, execute <em>terraform plan</em>:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ terraform plan
+</span><span class='line'>
+</span><span class='line'>Refreshing Terraform state in-memory prior to plan...
+</span><span class='line'>The refreshed state will be used to calculate this plan, but will not be
+</span><span class='line'>persisted to local or remote state storage.
+</span><span class='line'>
+</span><span class='line'>ATENÇÃO AQUI:
+</span><span class='line'>------------------------------------------------------------------------
+</span><span class='line'>
+</span><span class='line'>An execution plan has been generated and is shown below.
+</span><span class='line'>Resource actions are indicated with the following symbols:
+</span><span class='line'>  + create
+</span><span class='line'>
+</span><span class='line'>Terraform will perform the following actions:
+</span><span class='line'>
+</span><span class='line'>  + docker_image.image_id
+</span><span class='line'>      id:     &lt;computed&gt;
+</span><span class='line'>      latest: &lt;computed&gt;
+</span><span class='line'>      name:   "pengbai/docker-supermario:latest"
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>Plan: 1 to add, 0 to change, 0 to destroy.
+</span><span class='line'>
+</span><span class='line'>------------------------------------------------------------------------
+</span><span class='line'>
+</span><span class='line'>Note: You didn't specify an "-out" parameter to save this plan, so Terraform
+</span><span class='line'>can't guarantee that exactly these actions will be performed if
+</span><span class='line'>"terraform apply" is subsequently run.</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>C</strong>aso você tenha recebido um retorno similar a este, significa que tudo parece correto em seu código e que apenas uma ação será executada, conforme descrito no resumo do plano ao final:</p>
+
+<p><em>Plan: 1 to add, 0 to change, 0 to destroy.</em></p>
+
+<p><strong>O</strong>u seja: Plano: 1 a adicionar, 0 a alterar, 0 a destruir.</p>
+
+<p><strong>E</strong>xatamente o que queremos.</p>
+
+<p><strong>C</strong>aso você tenha recebido uma mensagem de erro, significa que algo em seu código está errado. Por exemplo, se ao invés de utilizarmos <em>docker_image</em> como tipo de resource, utilizarmos <em>docker_images</em>, o resultado de meu <em>terraform plan</em> seria o seguinte:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ terraform plan
+</span><span class='line'>
+</span><span class='line'>Error: docker_images.image_id: Provider doesn't support resource: docker_images</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>O</strong> erro geralmente é claro e nos indica onde está o erro. No erro acima, o Terraform nos diz que o resource <em>docker_images</em> não é suportado. Se checarmos na documentação, veremos que o nome correto do <em>resource</em> é <em>docker_image</em> (no singular).</p>
+
+<p><strong>U</strong>ma vez que nosso plano foi executado sem erros, chegou a hora de aplicarmos nosso projeto.</p>
+
+<p><strong>E</strong>xecute o seu código através do comando <em>terraform apply</em>:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ terraform apply
+</span><span class='line'>
+</span><span class='line'>An execution plan has been generated and is shown below.
+</span><span class='line'>Resource actions are indicated with the following symbols:
+</span><span class='line'>  + create
+</span><span class='line'>
+</span><span class='line'>Terraform will perform the following actions:
+</span><span class='line'>
+</span><span class='line'>  + docker_image.image_id
+</span><span class='line'>      id:     &lt;computed&gt;
+</span><span class='line'>      latest: &lt;computed&gt;
+</span><span class='line'>      name:   "pengbai/docker-supermario:latest"
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>Plan: 1 to add, 0 to change, 0 to destroy.
+</span><span class='line'>
+</span><span class='line'>Do you want to perform these actions?
+</span><span class='line'>  Terraform will perform the actions described above.
+</span><span class='line'>  Only 'yes' will be accepted to approve.
+</span><span class='line'>
+</span><span class='line'>  Enter a value:</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>R</strong>epare que mesmo ao utilizar <em>apply</em> ao invés de <em>plan</em>, uma espécie de planejamento também foi realizado antes da aplicação propriamente dita. O Terraform avaliou o código e nos indicou o que será realizado, perguntando-nos ao final se queremos ou não seguir com a execução. Caso tudo nos pareça correto, basta digitarmos <em>yes</em> e pressionar Enter novamente para que ele siga com a execução de fato.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>  Enter a value: yes
+</span><span class='line'>
+</span><span class='line'>docker_image.image_id: Creating...
+</span><span class='line'>  latest: "" =&gt; "&lt;computed&gt;"
+</span><span class='line'>  name:   "" =&gt; "pengbai/docker-supermario:latest"
+</span><span class='line'>docker_image.image_id: Still creating... (10s elapsed)
+</span><span class='line'>docker_image.image_id: Still creating... (20s elapsed)
+</span><span class='line'>docker_image.image_id: Still creating... (30s elapsed)
+</span><span class='line'>docker_image.image_id: Still creating... (40s elapsed)
+</span><span class='line'>docker_image.image_id: Creation complete after 47s (ID: sha256:49beaba1c5cc49d2fa424ac03a15b0e7...9c3d62pengbai/docker-supermario:latest)
+</span><span class='line'>
+</span><span class='line'>Apply complete! Resources: 1 added, 0 changed, 0 destroyed.</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>A</strong>ssim como no <em>plan</em>, o Terraform ao final nos deu um breve relatório do que foi feito:</p>
+
+<p><em>Apply complete! Resources: 1 added, 0 changed, 0 destroyed.</em></p>
+
+<p><strong>O</strong>u seja: Aplicação completa! Recursos: 1 adicionado, 0 alterados, 0 destruídos.</p>
+
+<p><strong>S</strong>e quisermos ter certeza de que de fato o Terraform baixou a imagem Docker de que precisamos, basta digitarmos o comando do Docker que lista as imagens que possúimos em nosso ambiente. A nossa nova imagem do supermario deverá estar lá. Digite <em>docker images</em>:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ docker images
+</span><span class='line'>REPOSITORY                  TAG                 IMAGE ID            CREATED             SIZE
+</span><span class='line'>pengbai/docker-supermario   latest              49beaba1c5cc        4 months ago        686MB</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>Ó</strong>timo, nossa imagem está presente em nosso ambiente.</p>
+
+<p><strong>O</strong> Terraform também nos permite saber o que estamos utilizando em termos de <em>resources</em> através do comando <em>terraform show</em>:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ terraform show
+</span><span class='line'>
+</span><span class='line'>docker_image.image_id:
+</span><span class='line'>  id = sha256:49beaba1c5cc49d2fa424ac03a15b0e761f637e835c1ed4d8108cc247a9c3d62pengbai/docker-supermario:latest
+</span><span class='line'>  latest = sha256:49beaba1c5cc49d2fa424ac03a15b0e761f637e835c1ed4d8108cc247a9c3d62
+</span><span class='line'>  name = pengbai/docker-supermario:latest</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>V</strong>oltemos ao nosso código. Agora que já conseguimos fazer com que nosso código baixe a imagem que utilizaremos via Docker, chegou a hora de fazer algo com ela. Precisamos realizar o <em>deployment</em> da mesma em um container, certo?!</p>
+
+<p><strong>V</strong>amos adicionar mais um <em>resource</em> em nosso código, desta vez um <em>resource</em> de tipo <em>docker_container</em>. Como o nome já diz, este <em>resource</em> lida com o container em si, e não mais apenas com a imagem.</p>
+
+<p><strong>S</strong>eu código agora deverá estar da seguinte forma:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># Baixar a imagem do Projeto Docker-SuperMario
+</span><span class='line'>resource "docker_image" "image_id" {
+</span><span class='line'>  name = "pengbai/docker-supermario:latest"
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'># Inicia o Container
+</span><span class='line'>resource "docker_container" "container_id" {
+</span><span class='line'>  name  = "supermario"
+</span><span class='line'>  image = "${docker_image.image_id.latest}"
+</span><span class='line'>  ports {
+</span><span class='line'>    internal = "8080"
+</span><span class='line'>    external = "80"
+</span><span class='line'>  }
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>I</strong>gnorando as linhas já descritas anteriormente, vamos descrever as novas linhas de nosso código:</p>
+
+<ol>
+<li>Na linha 6 inserimos apenas mais um comentário, indicando que ali começaremos a descrever o código que criará nosso Container.</li>
+<li>Na linha 7 indicamos que queremos mais um <em>resource</em>. Desta vez o tipo de <em>resource</em> que queremos é o <em>docker_container</em>, indicando também que queremos dar o nome <em>container_id</em> a este <em>resource</em>. Novamente, ao fim da linha, abriremos o bloco de código para este <em>resource</em> com uma <em>{</em>.</li>
+<li>Dentro de nosso bloco, na linha 8, começaremos a listar os atributos deste <em>resource</em>. O primeiro atributo que listaremos é o <em>name</em>, e para ele daremos o nome <em>supermario</em>.</li>
+<li>Na linha 9 indicaremos o atributo <em>image</em> e utilizaremos nossa primeira interpolação, onde utilizaremos valores de outra parte de nosso código como se fossem variáveis. No nosso <em>resource</em> anterior, <em>docker_image</em>, nós demos um nome <em>image_id</em>que será utilizado agora. Incluiremos também a tag <em>latest</em>, pois, conforme pudemos ver na saída de nosso comando <em>terraform show</em>, esta foi a tag utilizada pelo terraform para identificar o último status daquele <em>resource</em>. Portanto, aqui utilizaremos a interpolação inserindo o que queremos entre <em>{}</em> seguidas do símbolo <em>$</em>, conforme prega a sintaxe do Terraform para interpolação de valores, portanto teremos: <em>${docker_image.image_id.latest}</em>, onde <em>docker_image</em> é o tipo de resource de onde queremos o valor, <em>image_id</em> é o nome do resource de onde queremos o valor e <em>latest</em> é a tag para dizer que queremos o último valor daquele <em>resource</em>. O único motivo pelo qual temos um tipo de <em>resource</em> e um nome de <em>resource</em> é para facilitar a identificação quando possuímos diversos <em>resources</em> do mesmo tipo. Imagine um projeto em que utilizaremos 5 imagens diferentes do Docker. Teríamos 5 <em>resources</em> do tipo <em>docker_image</em>, porém cada um deles teria um nome diferente, certo?!</li>
+<li>Na linha 10 de nosso código iniciamos o bloco de portas, afinal, toda aplicação roda em uma porta específica e com containers não seria diferente.</li>
+<li>Nas linhas 11 e 12 indicamos os valores para portas <em>interna</em> e <em>externa</em>, onde a porta <em>intern</em> será a porta utilizada para rodar a aplicação internamente no container, e <em>extern</em> será a porta que o Docker irá mapear em nosso sistema local para que possamos acessar a nossa aplicação. Portanto, em nosso exemplo, a aplicação supermario irá rodar na porta <em>8080</em> internamente no container, e a porta 80 será mapeada para que possamos acessá-la de nosso navegador local.</li>
+<li>Nas linhas 13 e 14 apenas fecharemos os dois blocos de código que criamos, sendo estes o bloco <em>ports</em> e o bloco <em>resource</em> do <em>docker_container</em>.</li>
+</ol>
+
+
+<p><strong>N</strong>ovamente, vamos planejar nosso projeto com <em>terraform plan</em>:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ terraform plan
+</span><span class='line'>Refreshing Terraform state in-memory prior to plan...
+</span><span class='line'>The refreshed state will be used to calculate this plan, but will not be
+</span><span class='line'>persisted to local or remote state storage.
+</span><span class='line'>
+</span><span class='line'>docker_image.image_id: Refreshing state... (ID: sha256:49beaba1c5cc49d2fa424ac03a15b0e7...9c3d62pengbai/docker-supermario:latest)
+</span><span class='line'>
+</span><span class='line'>------------------------------------------------------------------------
+</span><span class='line'>
+</span><span class='line'>An execution plan has been generated and is shown below.
+</span><span class='line'>Resource actions are indicated with the following symbols:
+</span><span class='line'>  + create
+</span><span class='line'>
+</span><span class='line'>Terraform will perform the following actions:
+</span><span class='line'>
+</span><span class='line'>  + docker_container.container_id
+</span><span class='line'>      id:               &lt;computed&gt;
+</span><span class='line'>      attach:           "false"
+</span><span class='line'>      bridge:           &lt;computed&gt;
+</span><span class='line'>      container_logs:   &lt;computed&gt;
+</span><span class='line'>      exit_code:        &lt;computed&gt;
+</span><span class='line'>      gateway:          &lt;computed&gt;
+</span><span class='line'>      image:            "sha256:49beaba1c5cc49d2fa424ac03a15b0e761f637e835c1ed4d8108cc247a9c3d62"
+</span><span class='line'>      ip_address:       &lt;computed&gt;
+</span><span class='line'>      ip_prefix_length: &lt;computed&gt;
+</span><span class='line'>      log_driver:       "json-file"
+</span><span class='line'>      logs:             "false"
+</span><span class='line'>      must_run:         "true"
+</span><span class='line'>      name:             "supermario"
+</span><span class='line'>      network_data.#:   &lt;computed&gt;
+</span><span class='line'>      ports.#:          "1"
+</span><span class='line'>      ports.0.external: "80"
+</span><span class='line'>      ports.0.internal: "8080"
+</span><span class='line'>      ports.0.ip:       "0.0.0.0"
+</span><span class='line'>      ports.0.protocol: "tcp"
+</span><span class='line'>      restart:          "no"
+</span><span class='line'>      rm:               "false"
+</span><span class='line'>      start:            "true"
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>Plan: 1 to add, 0 to change, 0 to destroy.
+</span><span class='line'>
+</span><span class='line'>------------------------------------------------------------------------
+</span><span class='line'>
+</span><span class='line'>Note: You didn't specify an "-out" parameter to save this plan, so Terraform
+</span><span class='line'>can't guarantee that exactly these actions will be performed if
+</span><span class='line'>"terraform apply" is subsequently run.</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>R</strong>epare que desta vez apenas 1 ação será executada: a criação do container. Não estamos mais recebendo as informações referentes à ação de baixar a imagem. O motivo para isto é a propriedade de idempotência que citei anteriormente. O Terraform sabe que a imagem já foi baixada, portanto a mesma não precisa ser baixada novamente, a menos que tivéssemos mudado a versão da mesma, nome, repositório, etc.</p>
+
+<p><strong>U</strong>ma vez que o plano esteja de acordo com o que queremos, podemos aplicar nosso código com <em>terraform apply</em>:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ terraform apply
+</span><span class='line'>docker_image.image_id: Refreshing state... (ID: sha256:49beaba1c5cc49d2fa424ac03a15b0e7...9c3d62pengbai/docker-supermario:latest)
+</span><span class='line'>
+</span><span class='line'>An execution plan has been generated and is shown below.
+</span><span class='line'>Resource actions are indicated with the following symbols:
+</span><span class='line'>  + create
+</span><span class='line'>
+</span><span class='line'>Terraform will perform the following actions:
+</span><span class='line'>
+</span><span class='line'>  + docker_container.container_id
+</span><span class='line'>      id:               &lt;computed&gt;
+</span><span class='line'>      attach:           "false"
+</span><span class='line'>      bridge:           &lt;computed&gt;
+</span><span class='line'>      container_logs:   &lt;computed&gt;
+</span><span class='line'>      exit_code:        &lt;computed&gt;
+</span><span class='line'>      gateway:          &lt;computed&gt;
+</span><span class='line'>      image:            "sha256:49beaba1c5cc49d2fa424ac03a15b0e761f637e835c1ed4d8108cc247a9c3d62"
+</span><span class='line'>      ip_address:       &lt;computed&gt;
+</span><span class='line'>      ip_prefix_length: &lt;computed&gt;
+</span><span class='line'>      log_driver:       "json-file"
+</span><span class='line'>      logs:             "false"
+</span><span class='line'>      must_run:         "true"
+</span><span class='line'>      name:             "supermario"
+</span><span class='line'>      network_data.#:   &lt;computed&gt;
+</span><span class='line'>      ports.#:          "1"
+</span><span class='line'>      ports.0.external: "80"
+</span><span class='line'>      ports.0.internal: "8080"
+</span><span class='line'>      ports.0.ip:       "0.0.0.0"
+</span><span class='line'>      ports.0.protocol: "tcp"
+</span><span class='line'>      restart:          "no"
+</span><span class='line'>      rm:               "false"
+</span><span class='line'>      start:            "true"
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>Plan: 1 to add, 0 to change, 0 to destroy.
+</span><span class='line'>
+</span><span class='line'>Do you want to perform these actions?
+</span><span class='line'>  Terraform will perform the actions described above.
+</span><span class='line'>  Only 'yes' will be accepted to approve.
+</span><span class='line'>
+</span><span class='line'>  Enter a value:</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>M</strong>ais uma vez ele nos dá uma visão geral do que será feito e nos perguntará se queremos prosseguir. Digite <em>yes</em> e pressione Enter novamente.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Enter a value: yes
+</span><span class='line'>
+</span><span class='line'>docker_container.container_id: Creating...
+</span><span class='line'>attach:           "" =&gt; "false"
+</span><span class='line'>bridge:           "" =&gt; "&lt;computed&gt;"
+</span><span class='line'>container_logs:   "" =&gt; "&lt;computed&gt;"
+</span><span class='line'>exit_code:        "" =&gt; "&lt;computed&gt;"
+</span><span class='line'>gateway:          "" =&gt; "&lt;computed&gt;"
+</span><span class='line'>image:            "" =&gt; "sha256:49beaba1c5cc49d2fa424ac03a15b0e761f637e835c1ed4d8108cc247a9c3d62"
+</span><span class='line'>ip_address:       "" =&gt; "&lt;computed&gt;"
+</span><span class='line'>ip_prefix_length: "" =&gt; "&lt;computed&gt;"
+</span><span class='line'>log_driver:       "" =&gt; "json-file"
+</span><span class='line'>logs:             "" =&gt; "false"
+</span><span class='line'>must_run:         "" =&gt; "true"
+</span><span class='line'>name:             "" =&gt; "supermario"
+</span><span class='line'>network_data.#:   "" =&gt; "&lt;computed&gt;"
+</span><span class='line'>ports.#:          "" =&gt; "1"
+</span><span class='line'>ports.0.external: "" =&gt; "80"
+</span><span class='line'>ports.0.internal: "" =&gt; "8080"
+</span><span class='line'>ports.0.ip:       "" =&gt; "0.0.0.0"
+</span><span class='line'>ports.0.protocol: "" =&gt; "tcp"
+</span><span class='line'>restart:          "" =&gt; "no"
+</span><span class='line'>rm:               "" =&gt; "false"
+</span><span class='line'>start:            "" =&gt; "true"
+</span><span class='line'>docker_container.container_id: Creation complete after 1s (ID: 8c9d35eac2fcdc0c7e530567323167b82e72f33d4645abf20685b99d802e2359)
+</span><span class='line'>
+</span><span class='line'>Apply complete! Resources: 1 added, 0 changed, 0 destroyed.</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>C</strong>onforme o esperado: Aplicaçao completa! <em>Resources</em>: 1 adicionado, 0 alterados, 0 destruídos.</p>
+
+<p><strong>M</strong>ais uma vez podemos verificar se de fato tudo funcionou como o esperado através do Docker. Desta vez, não queremos apenas baixar uma imagem Docker, mas sim criar um container com a mesma abrindo portas específicas que serão mapeadas entre nosso sistema local e nosso container. Execute agora <em>docker ps</em> para ver os containers que estão rodando neste momento:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>docker ps
+</span><span class='line'>CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS                  NAMES
+</span><span class='line'>8c9d35eac2fc        49beaba1c5cc        "catalina.sh run"   2 minutes ago       Up 2 minutes        0.0.0.0:80-&gt;8080/tcp   supermario</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>C</strong>omo podemos ver, temos um container rodando. Podemos até ver que existe um mapeamento de portas: *80->8080</p>
+
+<p><strong>N</strong>ão está convencido ainda?</p>
+
+<p><strong>A</strong>bra seu navegador e acesse o seguinte endereço: <em>localhost:80</em></p>
+
+<p><strong>C</strong>aso o seu resultado seja algo parecido com a imagem, significa que seu código funcionou conforme o esperado.</p>
+
+<p><img class="center" src="/imgs/mariodocker.png" title="'Super Mario'" ></p>
+
+<p><strong>O</strong> terraform também nos permite destruir a nossa infraestrutura com o comando <em>terraform destroy</em>. Da mesma forma que o <em>apply</em>, o comando <em>destroy</em> também lhe dará uma prévia de o que será destruído e lhe pedirá par aconfirmar com um <em>yes</em> ou <em>no</em>:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ terraform destroy
+</span><span class='line'>docker_image.image_id: Refreshing state... (ID: sha256:49beaba1c5cc49d2fa424ac03a15b0e7...9c3d62pengbai/docker-supermario:latest)
+</span><span class='line'>docker_container.container_id: Refreshing state... (ID: 8c9d35eac2fcdc0c7e530567323167b82e72f33d4645abf20685b99d802e2359)
+</span><span class='line'>
+</span><span class='line'>An execution plan has been generated and is shown below.
+</span><span class='line'>Resource actions are indicated with the following symbols:
+</span><span class='line'>  - destroy
+</span><span class='line'>
+</span><span class='line'>Terraform will perform the following actions:
+</span><span class='line'>
+</span><span class='line'>  - docker_container.container_id
+</span><span class='line'>
+</span><span class='line'>  - docker_image.image_id
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>Plan: 0 to add, 0 to change, 2 to destroy.
+</span><span class='line'>
+</span><span class='line'>Do you really want to destroy all resources?
+</span><span class='line'>  Terraform will destroy all your managed infrastructure, as shown above.
+</span><span class='line'>  There is no undo. Only 'yes' will be accepted to confirm.
+</span><span class='line'>
+</span><span class='line'>  Enter a value: yes
+</span><span class='line'>
+</span><span class='line'>docker_container.container_id: Destroying... (ID: 8c9d35eac2fcdc0c7e530567323167b82e72f33d4645abf20685b99d802e2359)
+</span><span class='line'>docker_container.container_id: Destruction complete after 0s
+</span><span class='line'>docker_image.image_id: Destroying... (ID: sha256:49beaba1c5cc49d2fa424ac03a15b0e7...9c3d62pengbai/docker-supermario:latest)
+</span><span class='line'>docker_image.image_id: Destruction complete after 2s
+</span><span class='line'>
+</span><span class='line'>Destroy complete! Resources: 2 destroyed.</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>C</strong>omo podemos ver, o terraform destruiu dois <em>resources</em>. Destruiu tanto nosso container como nossa imagem. Você poderá confirmar isso tentando acessar novamente o jogo pelo seu navegador ou mesmo através dos comandos <em>docker images</em> e <em>docker ls</em> para ver que tanto o container como a imagem foram removidos de nosso sistema:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ docker ps
+</span><span class='line'>CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+</span><span class='line'>
+</span><span class='line'>$ docker images
+</span><span class='line'>REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>D</strong>e volta ao nosso código, vamos incrementá-lo apenas um pouco mais.</p>
+
+<p><strong>O</strong> terraform nos permite especificar também <em>outputs</em>, ou saídas que nos serão apresentadas ao executarmos nosso código. Apenas informações que podem nos ser úteis.</p>
+
+<p><strong>P</strong>or exemplo, supomos que ao executar nosso código, desejamos que o terraform nos informe o IP do container que foi criado e o nome do mesmo, nosso código agora ficaria assim:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># Baixar a imagem do Projeto Docker-SuperMario
+</span><span class='line'>resource "docker_image" "image_id" {
+</span><span class='line'>  name = "pengbai/docker-supermario:latest"
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'># Inicia o Container
+</span><span class='line'>resource "docker_container" "container_id" {
+</span><span class='line'>  name  = "supermario"
+</span><span class='line'>  image = "${docker_image.image_id.latest}"
+</span><span class='line'>  ports {
+</span><span class='line'>    internal = "8080"
+</span><span class='line'>    external = "80"
+</span><span class='line'>  }
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'># Nos informa o ip e nome do container criado
+</span><span class='line'>output "Endereco IP" {
+</span><span class='line'>  value = "${docker_container.container_id.ip_address}"
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>output "Nome do Container" {
+</span><span class='line'>  value = "${docker_container.container_id.name}"
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>N</strong>ovamente, ignorando o código que já descrevemos anteriormente, teremos:</p>
+
+<ol>
+<li>Na linha 16 inserimos mais um comentário.</li>
+<li>Na linha 17 especificamos que desta vez queremos um <em>output</em>, e não mais um <em>resource</em>. Da mesma forma que fizemos com <em>resources</em>, vamos dar um nome a este <em>output</em>, de forma que possamos facilmente identificá-lo posteriormente. No caso, vamos chamar nosso <em>output</em> de <em>Endereco IP</em>. Em seguida abriremos o bloco de código para este <em>output</em> novamente com <em>{</em>.</li>
+<li>Na linha 18 daremos o <em>value</em> ou valor deste output. Novamente utilizaremos interpolação de valores para pegar este valor de nossos <em>resources</em>. Para conseguirmos o endereço ip do container, utilizaremos o atributo <em>ip_address</em>, que é um atributo descrito na documentação do Terraform como parte integrante do resource de tipo <em>docker_container</em>. Portanto, nosso <em>value</em> será: ${docker_container.container_id.ip_address}.</li>
+<li>Na linha 19, apenas fechamos o bloco deste <em>output</em>.</li>
+<li>Na linha 21 iniciamos nosso segundo <em>output</em>, com o nome <em>Nome do Container</em>. Em seguida, abriremos o bloco de código para este <em>output</em> com um <em>{</em>.</li>
+<li>Na linha 22, faremos algo similar ao que fizemos com o <em>value</em> do output anterior. Utilizaremos interpolação para buscar o valor do atributo <em>name</em>, que faz parte do <em>resource</em> <em>docker_container</em>. Nosso <em>value</em> será: ${docker_container.container_id.name}</li>
+<li>Na linha 23, apenas fechamos nosso <em>output</em>.</li>
+</ol>
+
+
+<p><strong>V</strong>amos então rodar nosso <em>plan</em> para ver o que aconteceria desta vez:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ terraform plan
+</span><span class='line'>Refreshing Terraform state in-memory prior to plan...
+</span><span class='line'>The refreshed state will be used to calculate this plan, but will not be
+</span><span class='line'>persisted to local or remote state storage.
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>------------------------------------------------------------------------
+</span><span class='line'>
+</span><span class='line'>An execution plan has been generated and is shown below.
+</span><span class='line'>Resource actions are indicated with the following symbols:
+</span><span class='line'>  + create
+</span><span class='line'>
+</span><span class='line'>Terraform will perform the following actions:
+</span><span class='line'>
+</span><span class='line'>  + docker_container.container_id
+</span><span class='line'>      id:               &lt;computed&gt;
+</span><span class='line'>      attach:           "false"
+</span><span class='line'>      bridge:           &lt;computed&gt;
+</span><span class='line'>      container_logs:   &lt;computed&gt;
+</span><span class='line'>      exit_code:        &lt;computed&gt;
+</span><span class='line'>      gateway:          &lt;computed&gt;
+</span><span class='line'>      image:            "${docker_image.image_id.latest}"
+</span><span class='line'>      ip_address:       &lt;computed&gt;
+</span><span class='line'>      ip_prefix_length: &lt;computed&gt;
+</span><span class='line'>      log_driver:       "json-file"
+</span><span class='line'>      logs:             "false"
+</span><span class='line'>      must_run:         "true"
+</span><span class='line'>      name:             "supermario"
+</span><span class='line'>      network_data.#:   &lt;computed&gt;
+</span><span class='line'>      ports.#:          "1"
+</span><span class='line'>      ports.0.external: "80"
+</span><span class='line'>      ports.0.internal: "8080"
+</span><span class='line'>      ports.0.ip:       "0.0.0.0"
+</span><span class='line'>      ports.0.protocol: "tcp"
+</span><span class='line'>      restart:          "no"
+</span><span class='line'>      rm:               "false"
+</span><span class='line'>      start:            "true"
+</span><span class='line'>
+</span><span class='line'>  + docker_image.image_id
+</span><span class='line'>      id:               &lt;computed&gt;
+</span><span class='line'>      latest:           &lt;computed&gt;
+</span><span class='line'>      name:             "pengbai/docker-supermario:latest"
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>Plan: 2 to add, 0 to change, 0 to destroy.
+</span><span class='line'>
+</span><span class='line'>------------------------------------------------------------------------
+</span><span class='line'>
+</span><span class='line'>Note: You didn't specify an "-out" parameter to save this plan, so Terraform
+</span><span class='line'>can't guarantee that exactly these actions will be performed if
+</span><span class='line'>"terraform apply" is subsequently run.</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>D</strong>esta vez podemos ver que ambas as ações serão executadas: A imagem será baixada e o container será criado, afinal nós tínhamos removido tudo com <em>terraform destroy</em> anteriormente.</p>
+
+<p><strong>V</strong>amos aplicar nosso código e confirmar com <em>yes</em>:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+<span class='line-number'>72</span>
+<span class='line-number'>73</span>
+<span class='line-number'>74</span>
+<span class='line-number'>75</span>
+<span class='line-number'>76</span>
+<span class='line-number'>77</span>
+<span class='line-number'>78</span>
+<span class='line-number'>79</span>
+<span class='line-number'>80</span>
+<span class='line-number'>81</span>
+<span class='line-number'>82</span>
+<span class='line-number'>83</span>
+<span class='line-number'>84</span>
+<span class='line-number'>85</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ terraform apply
+</span><span class='line'>
+</span><span class='line'>An execution plan has been generated and is shown below.
+</span><span class='line'>Resource actions are indicated with the following symbols:
+</span><span class='line'>  + create
+</span><span class='line'>
+</span><span class='line'>Terraform will perform the following actions:
+</span><span class='line'>
+</span><span class='line'>  + docker_container.container_id
+</span><span class='line'>      id:               &lt;computed&gt;
+</span><span class='line'>      attach:           "false"
+</span><span class='line'>      bridge:           &lt;computed&gt;
+</span><span class='line'>      container_logs:   &lt;computed&gt;
+</span><span class='line'>      exit_code:        &lt;computed&gt;
+</span><span class='line'>      gateway:          &lt;computed&gt;
+</span><span class='line'>      image:            "${docker_image.image_id.latest}"
+</span><span class='line'>      ip_address:       &lt;computed&gt;
+</span><span class='line'>      ip_prefix_length: &lt;computed&gt;
+</span><span class='line'>      log_driver:       "json-file"
+</span><span class='line'>      logs:             "false"
+</span><span class='line'>      must_run:         "true"
+</span><span class='line'>      name:             "supermario"
+</span><span class='line'>      network_data.#:   &lt;computed&gt;
+</span><span class='line'>      ports.#:          "1"
+</span><span class='line'>      ports.0.external: "80"
+</span><span class='line'>      ports.0.internal: "8080"
+</span><span class='line'>      ports.0.ip:       "0.0.0.0"
+</span><span class='line'>      ports.0.protocol: "tcp"
+</span><span class='line'>      restart:          "no"
+</span><span class='line'>      rm:               "false"
+</span><span class='line'>      start:            "true"
+</span><span class='line'>
+</span><span class='line'>  + docker_image.image_id
+</span><span class='line'>      id:               &lt;computed&gt;
+</span><span class='line'>      latest:           &lt;computed&gt;
+</span><span class='line'>      name:             "pengbai/docker-supermario:latest"
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>Plan: 2 to add, 0 to change, 0 to destroy.
+</span><span class='line'>
+</span><span class='line'>Do you want to perform these actions?
+</span><span class='line'>  Terraform will perform the actions described above.
+</span><span class='line'>  Only 'yes' will be accepted to approve.
+</span><span class='line'>
+</span><span class='line'>  Enter a value: yes
+</span><span class='line'>
+</span><span class='line'>docker_image.image_id: Creating...
+</span><span class='line'>  latest: "" =&gt; "&lt;computed&gt;"
+</span><span class='line'>  name:   "" =&gt; "pengbai/docker-supermario:latest"
+</span><span class='line'>docker_image.image_id: Still creating... (10s elapsed)
+</span><span class='line'>docker_image.image_id: Still creating... (20s elapsed)
+</span><span class='line'>docker_image.image_id: Still creating... (30s elapsed)
+</span><span class='line'>docker_image.image_id: Still creating... (40s elapsed)
+</span><span class='line'>docker_image.image_id: Still creating... (50s elapsed)
+</span><span class='line'>docker_image.image_id: Creation complete after 59s (ID: sha256:49beaba1c5cc49d2fa424ac03a15b0e7...9c3d62pengbai/docker-supermario:latest)
+</span><span class='line'>docker_container.container_id: Creating...
+</span><span class='line'>  attach:           "" =&gt; "false"
+</span><span class='line'>  bridge:           "" =&gt; "&lt;computed&gt;"
+</span><span class='line'>  container_logs:   "" =&gt; "&lt;computed&gt;"
+</span><span class='line'>  exit_code:        "" =&gt; "&lt;computed&gt;"
+</span><span class='line'>  gateway:          "" =&gt; "&lt;computed&gt;"
+</span><span class='line'>  image:            "" =&gt; "sha256:49beaba1c5cc49d2fa424ac03a15b0e761f637e835c1ed4d8108cc247a9c3d62"
+</span><span class='line'>  ip_address:       "" =&gt; "&lt;computed&gt;"
+</span><span class='line'>  ip_prefix_length: "" =&gt; "&lt;computed&gt;"
+</span><span class='line'>  log_driver:       "" =&gt; "json-file"
+</span><span class='line'>  logs:             "" =&gt; "false"
+</span><span class='line'>  must_run:         "" =&gt; "true"
+</span><span class='line'>  name:             "" =&gt; "supermario"
+</span><span class='line'>  network_data.#:   "" =&gt; "&lt;computed&gt;"
+</span><span class='line'>  ports.#:          "" =&gt; "1"
+</span><span class='line'>  ports.0.external: "" =&gt; "80"
+</span><span class='line'>  ports.0.internal: "" =&gt; "8080"
+</span><span class='line'>  ports.0.ip:       "" =&gt; "0.0.0.0"
+</span><span class='line'>  ports.0.protocol: "" =&gt; "tcp"
+</span><span class='line'>  restart:          "" =&gt; "no"
+</span><span class='line'>  rm:               "" =&gt; "false"
+</span><span class='line'>  start:            "" =&gt; "true"
+</span><span class='line'>docker_container.container_id: Creation complete after 0s (ID: 655604d672af8ff76c10aca4cd169a6aa284dcca17f0e0215374fb18c86660fd)
+</span><span class='line'>
+</span><span class='line'>Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
+</span><span class='line'>
+</span><span class='line'>Outputs:
+</span><span class='line'>
+</span><span class='line'>Endereco IP = 172.17.0.2
+</span><span class='line'>Nome do Container = supermario</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>R</strong>epare que tudo o que queríamos foi executado e que, ao final, recebemos duas saídas ou <em>outputs</em>:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
+</span><span class='line'>
+</span><span class='line'>Outputs:
+</span><span class='line'>
+</span><span class='line'>Endereco IP = 172.17.0.2
+</span><span class='line'>Nome do Container = supermario</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>N</strong>ovamente, se você acessar em seu navegador o endereço <em>localhost:80</em>, ou utilizar os comandos <em>docker ps</em>, perceberá que sua aplicação está novamente rodando.</p>
+
+<p><strong>N</strong>ão é complicado, certo?!</p>
+
+<p><strong>O</strong>bviamente, isto é apenas um exemplo extremamente simplista de uso do Terraform para criar uma pequena infraestrutura como código, que em nosso caso é apenas um container.</p>
+
+<p><strong>N</strong>o próximo post pretendo alterar um pouco este nosso código para utilizar algumas melhores práticas propostas pelo Terraform, como a utilização de variáveis e outputs em arquivos distintos, já que não utilizamos variáveis neste post.</p>
+
+<p><strong>U</strong>m passo de cada vez, certo?!</p>
+
+<p><strong>H</strong>appy Hacking!</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1232,536 +2456,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2018/07/30/automatizando-a-criacao-de-imagens-com-packer/">Automatizando a Criação De Imagens Com Packer</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2018-07-30T07:15:00-04:00" pubdate data-updated="true">Jul 30<span>th</span>, 2018</time>
-        
-         | <a href="/blog/2018/07/30/automatizando-a-criacao-de-imagens-com-packer/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><img class="center" src="/imgs/packer.png" title="'Packer'" ></p>
-
-<h2>O que é Packer e qual sua importância</h2>
-
-<p><strong>P</strong>acker é uma ferramenta Open Source, criada e mantida pela <a href="https://www.hashicorp.com">HashiCorp</a>, para a criação de imagens de máquinas idênticas para múltiplas plataformas a partir de uma única fonte ou código de configuração. O <a href="https://www.packer.io/">Packer</a> é leve, roda em praticamente todos os principais Sistemas Operacionais e possui alta performance, permitindo a criação de imagens para múltiplas plataformas em paralelo.</p>
-
-<p><strong>U</strong>ma imagem de máquina, nada mais é que um arquivo estático que contém um sistema operacional pré-configurado, com determinados softwares instalados e que pode ser utilizada para criar novas máquinas ou servidores de forma mais rápida, evitando o trabalho repetitivo de instalar o sistema operacional e configurar aplicações padrões.</p>
-
-<p><strong>E</strong>xistem diversos formatos diferentes de imagens que podem ser criadas através do Packer, como por exemplo Amazon EC2, VirtualBox, VMware, Google Cloud Platform, Microsoft Azure, Docker, QEMU, CloudStack, DigitalOcean, etc.</p>
-
-<p><strong>O</strong> Packer suporta e é compatível com diversas ferramentas de provisionamento e automação, como shell script, Ansible, Puppet, Chef, etc., fazendo com que a criação de imagens seja ainda mais simples, dinâmica e robusta.</p>
-
-<p><strong>A</strong> ideia de criar imagens não é nova, visto que Sysadmins já o fazem há muitos anos, porém esta sempre foi uma tarefa tediosa, demorada e muito pouco produtiva. Basicamente a ideia de se construir uma imagem partia de, antes de mais nada, realizar de fato uma instalação completa de um Sistema Operacional e em seguida utilizar algum aplicativo para &ldquo;salvar&rdquo; aquele estado em uma imagem, que poderia ser posteriormente aplicada em outras máquinas. Isto por si só já facilitava muito a vida de Sysadmins em geral, visto que eles apenas realizavam a instalação completa do SO uma vez. Caso, além do SO, fossem necessárias outras aplicações, o processo seria basicamente o mesmo, instalando-se uma vez o SO completo e em seguida instalando todas as aplicações desejadas para a imagem.</p>
-
-<p><strong>A</strong>té então a criação da imagem parecia ser um sucesso, no entanto isto era algo improdutivo por ser absolutamente estático e imutável. Sempre que fosse necessário fazer uma mudança na imagem, atualizar versão de sistema operacional, aplicar patches, atualizar demais aplicações ou mudar configurações, novamente o processo deveria se repetir do início. Não é necessário sequer mencionar que não era nada simples gerenciar e versionar isto.</p>
-
-<p><strong>E</strong>is que surge o Packer para deixar a criação de imagens menos entediante, flexível e mais gerenciável.</p>
-
-<h2>Instalação</h2>
-
-<p><strong>A</strong> instalação não é complexa e pode ser feita através do binário disponível na página de downloads do Packer: <a href="https://www.packer.io/downloads.html">https://www.packer.io/downloads.html</a></p>
-
-<p><strong>Ubuntu</strong> &ndash; Caso não queira instalar através do binário fornecido no link acima, pode instalar via:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo apt-get install packer -y</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>Arch linux</strong> &ndash; Caso não queira instalar através do binário fornecido no link acima, pode instalar através do pacote disponível no <a href="https://aur.archlinux.org/packages/packer/">AUR</a>.</p>
-
-<p><strong>OS X</strong> &ndash; Caso não queira instalar através do binário fornecido no link acima, pode instalar através do homebrew:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ brew install packer</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>I</strong>ndependente de sua forma de instalação, confirme que a instalação foi concluída com sucesso:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ packer
-</span><span class='line'>Usage: packer [--version] [--help] &lt;command&gt; [&lt;args&gt;]
-</span><span class='line'>
-</span><span class='line'>Available commands are:
-</span><span class='line'>    build       build image(s) from template
-</span><span class='line'>    fix         fixes templates from old versions of packer
-</span><span class='line'>    inspect     see components of a template
-</span><span class='line'>    push        push a template and supporting files to a Packer build service
-</span><span class='line'>    validate    check that a template is valid
-</span><span class='line'>    version     Prints the Packer version</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>S</strong>e você recebeu algo similar, significa que você já pode começar a criar suas imagens. Caso tenha recebido um erro informando que o Packer não foi encontrado, significa que o mesmo não foi inserido corretamente na variável de ambiente de seu PATH. Certifique-se de inserir o diretório no qual o Packer foi instalado em seu PATH.</p>
-
-<h2>Criando Imagens com o Packer</h2>
-
-<p><strong>C</strong>onforme dito anteriormente, o Packer pode criar imagens para diversas extensões e plataformas, portanto o primeiro passo é saber para qual plataforma você deseja criar sua imagem.</p>
-
-<p><strong>P</strong>ara este tutorial introdutório, utilizaremos o Docker como destino para nossa imagem, ou seja, criaremos uma imagem de container que poderá rodar com o Docker.</p>
-
-<p><strong>OBS:</strong> A partir deste ponto estou assumindo que você já possui o Docker instalado em seu sistema. Para confirmar, digite:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ docker --version
-</span><span class='line'>Docker version 18.06.0-ce, build 0ffa825</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>Vamos ao Packer.</strong></p>
-
-<p><strong>P</strong>rimeiramente mostrarei como não tenho nenhuma imagem Docker neste momento em meu sistema:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ docker ps
-</span><span class='line'>CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>1-</strong> Escolha um editor de textos de sua preferência e inicie um arquivo chamado <em>template.json</em>;</p>
-
-<p><strong>2-</strong> Digite o seguinte em seu arquivo <em>template.json</em>.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>{
-</span><span class='line'>  "builders": [{
-</span><span class='line'>    "type": "docker",
-</span><span class='line'>    "image": "ubuntu",
-</span><span class='line'>    "commit": true
-</span><span class='line'>  }]
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>O</strong> que temos&hellip;</p>
-
-<p><em>builders:</em> Abre o bloco builders (construtores), onde iniciamos as instruções que definirão como a nossa imagem será criada;</p>
-
-<p><em>type:</em> Especifica o tipo de construtor que será utilizado. Neste exemplo escolhemos Docker. Aqui poderíamos utilizar AWS EC2, Google Cloud Instance, etc.</p>
-
-<p><em>image:</em> Parâmetro no qual indicaremos qual imagem será utilizada como origem para a nossa imagem final.</p>
-
-<p><em>commit:</em> Indica que queremos realizar o commit da imagem gerada no final.</p>
-
-<p><em>*OBS:</em> É importante lembrar que o Packer possui uma infinidade de parâmetros ou propriedades diferentes que podem ser específicos para cada tipo de builder. Lista de parâmetros e opções para o builder <a href="https://www.packer.io/docs/builders/docker.html">Docker</a>.</p>
-
-<p><strong>P</strong>rimeiramente, o indicado é validarmos a sintaxe de nosso código json: <em>($ packer validate template.json)</em></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ packer validate template.json
-</span><span class='line'>Template validated successfully.</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>O</strong> código parece estar correto do ponto de vista do Packer. Caso houvesse algo errado com o código, a mensagem daria alguma pista de onde está o erro. Removerei o último <strong>}</strong> do arquivo template.json para forçar um erro: <em>($ packer validate template.json)</em></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ packer validate template.json
-</span><span class='line'>Failed to parse template: Error parsing JSON: unexpected end of JSON input
-</span><span class='line'>At line 7, column 1 (offset 88):
-</span><span class='line'>    6:   }]
-</span><span class='line'>    7:</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>C</strong>om o arquivo de volta à sua versão correta, o próximo passo seria de fato o build, onde criaremos a imgem desejado de acordo com as intruções que demos: <em>($ packer build template.json)</em></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ packer build template.json
-</span><span class='line'>docker output will be in this color.
-</span><span class='line'>
-</span><span class='line'>==&gt; docker: Creating a temporary directory for sharing data...
-</span><span class='line'>==&gt; docker: Pulling Docker image: ubuntu
-</span><span class='line'>    docker: Using default tag: latest
-</span><span class='line'>    docker: latest: Pulling from library/ubuntu
-</span><span class='line'>    docker: c64513b74145: Pulling fs layer
-</span><span class='line'>    docker: 01b8b12bad90: Pulling fs layer
-</span><span class='line'>    docker: c5d85cf7a05f: Pulling fs layer
-</span><span class='line'>    docker: b6b268720157: Pulling fs layer
-</span><span class='line'>    docker: e12192999ff1: Pulling fs layer
-</span><span class='line'>    docker: b6b268720157: Waiting
-</span><span class='line'>    docker: e12192999ff1: Waiting
-</span><span class='line'>    docker: c5d85cf7a05f: Verifying Checksum
-</span><span class='line'>    docker: c5d85cf7a05f: Download complete
-</span><span class='line'>    docker: 01b8b12bad90: Verifying Checksum
-</span><span class='line'>    docker: 01b8b12bad90: Download complete
-</span><span class='line'>    docker: e12192999ff1: Verifying Checksum
-</span><span class='line'>    docker: e12192999ff1: Download complete
-</span><span class='line'>    docker: b6b268720157: Verifying Checksum
-</span><span class='line'>    docker: b6b268720157: Download complete
-</span><span class='line'>    docker: c64513b74145: Verifying Checksum
-</span><span class='line'>    docker: c64513b74145: Download complete
-</span><span class='line'>    docker: c64513b74145: Pull complete
-</span><span class='line'>    docker: 01b8b12bad90: Pull complete
-</span><span class='line'>    docker: c5d85cf7a05f: Pull complete
-</span><span class='line'>    docker: b6b268720157: Pull complete
-</span><span class='line'>    docker: e12192999ff1: Pull complete
-</span><span class='line'>    docker: Digest: sha256:3f119dc0737f57f704ebecac8a6d8477b0f6ca1ca0332c7ee1395ed2c6a82be7
-</span><span class='line'>    docker: Status: Downloaded newer image for ubuntu:latest
-</span><span class='line'>==&gt; docker: Starting docker container...
-</span><span class='line'>    docker: Run command: docker run -v /Users/kalib/.packer.d/tmp/packer-docker835877235:/packer-files -d -i -t ubuntu /bin/bash
-</span><span class='line'>    docker: Container ID: 50211726119aa045b0bc5eb9da8c9af243bc179fef0aad3cd94156d0f2a7a45a
-</span><span class='line'>==&gt; docker: Committing the container
-</span><span class='line'>    docker: Image ID: sha256:3a6a21aab4706e2b512f0c1fcbe8265e2527d4794f7c6fbdc5e4faf907d10622
-</span><span class='line'>==&gt; docker: Killing the container: 50211726119aa045b0bc5eb9da8c9af243bc179fef0aad3cd94156d0f2a7a45a
-</span><span class='line'>Build 'docker' finished.
-</span><span class='line'>
-</span><span class='line'>==&gt; Builds finished. The artifacts of successful builds are:
-</span><span class='line'>--&gt; docker: Imported Docker image: sha256:3a6a21aab4706e2b512f0c1fcbe8265e2527d4794f7c6fbdc5e4faf907d10622</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>N</strong>a saída do comando, ou output, podemos ver todos os passos e instruções que foram realizadas na criação de nossa imagem. Neste exemplo, o Docker baixou a última imagem ubuntu dos repositórios do Docker e em seguida gerou nossa imagem.</p>
-
-<p><strong>P</strong>ara confirmar, podemos utilizar novamente o <em>docker images</em>:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>docker images
-</span><span class='line'>REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-</span><span class='line'>&lt;none&gt;              &lt;none&gt;              3a6a21aab470        5 minutes ago       83.5MB
-</span><span class='line'>ubuntu              latest              735f80812f90        6 days ago          83.5MB</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>C</strong>omo esperado, agora temos duas imagens: a do ubuntu padrão, que foi baixada para servir de base para a nossa, bem como a nossa, até então sem nome.</p>
-
-<p><strong>D</strong>e certa forma nada foi feito até então. Nós apenas geramos uma imagem idêntica à que já existia do ubuntu, sem qualquer mudança. Vamos então dar algum sentido à nossa imagem em seguida. Além disso, podemos perceber que nossa imagem não tinha sequer nome, ficando listada como <em><none></em>. Corrigiremos isso também.</p>
-
-<p><strong>O</strong> Packer considera o Docker apenas como uma plataforma para gerar/rodar containers e, como tal, para gerar uma imagem o Packer descarta a necessidade da utilização de um Dockerfile, como de costume para quem já criou containers com Docker. Através de blocos de código <em>changes</em> e <em>provisioners</em>, o Packer nos permite passar praticamente todas as informações de metadata que fariam parte de um Dockerfile.</p>
-
-<p><strong>P</strong>ara demonstrar, criaremos uma imagem de um ubuntu rodando <em>nginx</em>, porém utilizaremos a imagem padrão do ubuntu que já baixamos anteriormente.</p>
-
-<p><strong>O</strong> código do template.json agora deverá ser o seguinte:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>{
-</span><span class='line'>  "builders": [{
-</span><span class='line'>    "type": "docker",
-</span><span class='line'>    "image": "ubuntu",
-</span><span class='line'>    "commit": true,
-</span><span class='line'>    "changes": [
-</span><span class='line'>      "CMD [\"nginx\", \"-g\", \"daemon off;\"]",
-</span><span class='line'>      "EXPOSE 80"
-</span><span class='line'>   ]
-</span><span class='line'>  }],
-</span><span class='line'>  "provisioners": [
-</span><span class='line'>    {
-</span><span class='line'>      "type" : "shell",
-</span><span class='line'>      "inline" : ["apt-get update && apt-get install -y nginx"]
-</span><span class='line'>    }
-</span><span class='line'>  ],
-</span><span class='line'>  "post-processors": [
-</span><span class='line'>      {
-</span><span class='line'>        "type": "docker-tag",
-</span><span class='line'>        "repository": "kalib/ubuntunginx",
-</span><span class='line'>        "tag": "0.1"
-</span><span class='line'>      }
-</span><span class='line'>  ]
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>V</strong>ejamos o que foi incluído:</p>
-
-<p><em>changes:</em> Parâmetro que nos permite alterar a meta-data de nossa imagem docker.</p>
-
-<p>  <em>CMD [\&ldquo;nginx\&rdquo;, \&ldquo;-g\&rdquo;, \&ldquo;daemon off;\&rdquo;]:</em> Comando para iniciar o nginx no container, assim como faríamos utilizando Dockerfile.</p>
-
-<p>  <em>EXPOSE 80:</em> Da mesma forma, apenas informando que a porta 80 no container deverá estar disponível, assim como faríamos em um Dockerfile.</p>
-
-<p><em>provisioners:</em> É onde indicamos que ferramentas utilizaremos para provisionar as alterações/configurações em nossa imagem. Podemos ter um ou mais provisioners ao mesmo tempo. Neste exemplo estaremos utilizando um simples comando bash, portanto nosso provisioner será <em>bash</em>, mas poderia ser chef, ansible, puppet, ou mesmo um script bash mais complexo, mas como o objetivo para este post é uma abordagem simples e introdutória, manteremos o provisioner mais simples possível.</p>
-
-<p>  <em>type:</em> especificamos que o tipo de provisioner será <em>bash</em>.</p>
-
-<p>  <em>inline:</em> Inserimos o comando bash que desejamos que seja executado para personalizar nossa imagem. Neste caso, <em>apt-get update &amp;&amp; apt-get install -y nginx</em> irá atualizar a base de dados dos repositórios e em seguida instalar o nginx.</p>
-
-<p><em>post-processors:</em> Como o nome já diz, são instruções ou processors que acontecem ao final do build.</p>
-
-<p>  <em>type:</em> Indica o tipo de post-processor que utilizaremos. No exemplo, utilizaremos <em>docker-tag</em>, para que possamos dar uma tag/nome para nossa imagem. (Lembrando que como uma boa prática, ao criar uma imagem Docker, sempre inserimos o padrão <em>repositório/imagem</em>)</p>
-
-<p>  <em>repository:</em> É onde indicamos o repositório e o nome da imagem que criaremos.</p>
-
-<p>  <em>tag:</em> Onde podemos definir a tag que ajudar a manter o controle de versão de nossa imagem.</p>
-
-<p><strong>N</strong>ovamente, vamos validar nosso código:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ packer validate template.json
-</span><span class='line'>Template validated successfully.</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>D</strong>esta vez o output será muito extenso, portanto colarei apenas alguns trechos aqui para demonstrar o resultado:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-<span class='line-number'>50</span>
-<span class='line-number'>51</span>
-<span class='line-number'>52</span>
-<span class='line-number'>53</span>
-<span class='line-number'>54</span>
-<span class='line-number'>55</span>
-<span class='line-number'>56</span>
-<span class='line-number'>57</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ packer build template.json
-</span><span class='line'>docker output will be in this color.
-</span><span class='line'>
-</span><span class='line'>==&gt; docker: Creating a temporary directory for sharing data...
-</span><span class='line'>==&gt; docker: Pulling Docker image: ubuntu
-</span><span class='line'>    docker: Using default tag: latest
-</span><span class='line'>    docker: latest: Pulling from library/ubuntu
-</span><span class='line'>    docker: Digest: sha256:3f119dc0737f57f704ebecac8a6d8477b0f6ca1ca0332c7ee1395ed2c6a82be7
-</span><span class='line'>    docker: Status: Image is up to date for ubuntu:latest
-</span><span class='line'>==&gt; docker: Starting docker container...
-</span><span class='line'>    docker: Run command: docker run -v /Users/kalib/.packer.d/tmp/packer-docker737353515:/packer-files -d -i -t ubuntu /bin/bash
-</span><span class='line'>    docker: Container ID: 097a85a796e0e928fbc82cd6618bd60e286b46dfadad20e823027fc2f93d25db
-</span><span class='line'>==&gt; docker: Provisioning with shell script: /var/folders/nn/njz4sd054fv_tvq30vh0zygh0000gp/T/packer-shell161880041
-</span><span class='line'>    docker: Get:1 https://archive.ubuntu.com/ubuntu bionic InRelease [242 kB]
-</span><span class='line'>    docker: Get:2 https://security.ubuntu.com/ubuntu bionic-security InRelease [83.2 kB]
-</span><span class='line'>    ...
-</span><span class='line'>    ...
-</span><span class='line'>    docker: Reading state information...
-</span><span class='line'>docker: The following additional packages will be installed:
-</span><span class='line'>docker:   fontconfig-config fonts-dejavu-core geoip-database libbsd0 libexpat1
-</span><span class='line'>docker:   libfontconfig1 libfreetype6 libgd3 libgeoip1 libicu60 libjbig0
-</span><span class='line'>docker:   libjpeg-turbo8 libjpeg8 libnginx-mod-http-geoip
-</span><span class='line'>docker:   libnginx-mod-http-image-filter libnginx-mod-http-xslt-filter
-</span><span class='line'>docker:   libnginx-mod-mail libnginx-mod-stream libpng16-16 libssl1.1 libtiff5
-</span><span class='line'>docker:   libwebp6 libx11-6 libx11-data libxau6 libxcb1 libxdmcp6 libxml2 libxpm4
-</span><span class='line'>docker:   libxslt1.1 multiarch-support nginx-common nginx-core ucf
-</span><span class='line'>docker: Suggested packages:
-</span><span class='line'>docker:   libgd-tools geoip-bin fcgiwrap nginx-doc ssl-cert
-</span><span class='line'>docker: The following NEW packages will be installed:
-</span><span class='line'>docker:   fontconfig-config fonts-dejavu-core geoip-database libbsd0 libexpat1
-</span><span class='line'>docker:   libfontconfig1 libfreetype6 libgd3 libgeoip1 libicu60 libjbig0
-</span><span class='line'>docker:   libjpeg-turbo8 libjpeg8 libnginx-mod-http-geoip
-</span><span class='line'>docker:   libnginx-mod-http-image-filter libnginx-mod-http-xslt-filter
-</span><span class='line'>docker:   libnginx-mod-mail libnginx-mod-stream libpng16-16 libssl1.1 libtiff5
-</span><span class='line'>docker:   libwebp6 libx11-6 libx11-data libxau6 libxcb1 libxdmcp6 libxml2 libxpm4
-</span><span class='line'>docker:   libxslt1.1 multiarch-support nginx nginx-common nginx-core ucf
-</span><span class='line'>docker: 0 upgraded, 35 newly installed, 0 to remove and 0 not upgraded.
-</span><span class='line'>docker: Need to get 16.1 MB of archives.
-</span><span class='line'>docker: After this operation, 58.8 MB of additional disk space will be used.
-</span><span class='line'>docker: Get:1 https://archive.ubuntu.com/ubuntu bionic/main amd64 multiarch-support amd64 2.27-3ubuntu1 [6916 B]
-</span><span class='line'>docker: Get:2 https://archive.ubuntu.com/ubuntu bionic/main amd64 libxau6 amd64 1:1.0.8-1 [8376 B]
-</span><span class='line'>docker: Get:3 https://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libjpeg-turbo8 amd64 1.5.2
-</span><span class='line'>...
-</span><span class='line'>...
-</span><span class='line'>docker: Setting up nginx (1.14.0-0ubuntu1) ...
-</span><span class='line'>    docker: Processing triggers for libc-bin (2.27-3ubuntu1) ...
-</span><span class='line'>==&gt; docker: Committing the container
-</span><span class='line'>    docker: Image ID: sha256:0cbafebeaf17d8b8e8eccad87e706845993b78265a99e3e0f1ef8bd0bd724aa7
-</span><span class='line'>==&gt; docker: Killing the container: 097a85a796e0e928fbc82cd6618bd60e286b46dfadad20e823027fc2f93d25db
-</span><span class='line'>==&gt; docker: Running post-processor: docker-tag
-</span><span class='line'>    docker (docker-tag): Tagging image: sha256:0cbafebeaf17d8b8e8eccad87e706845993b78265a99e3e0f1ef8bd0bd724aa7
-</span><span class='line'>    docker (docker-tag): Repository: kalib/ubuntunginx:0.1
-</span><span class='line'>Build 'docker' finished.
-</span><span class='line'>
-</span><span class='line'>==&gt; Builds finished. The artifacts of successful builds are:
-</span><span class='line'>--&gt; docker: Imported Docker image: sha256:0cbafebeaf17d8b8e8eccad87e706845993b78265a99e3e0f1ef8bd0bd724aa7
-</span><span class='line'>--&gt; docker: Imported Docker image: kalib/ubuntunginx:0.1</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>C</strong>omo podemos ver, todos os passos foram executados, incluindo a atualização da lista de pacotes dos repositórios, a instalação do nginx e a criação da imagem com o repositório, nome e tag de versão que indicamos.</p>
-
-<p><strong>V</strong>ejamos nossa imagem na lista de imagens disponíveis no Docker:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ docker images
-</span><span class='line'>REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-</span><span class='line'>kalib/ubuntunginx   0.1                 0cbafebeaf17        5 minutes ago       182MB
-</span><span class='line'>&lt;none&gt;              &lt;none&gt;              4d86b1edf015        43 minutes ago      83.5MB
-</span><span class='line'>ubuntu              latest              735f80812f90        6 days ago          83.5MB</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>S</strong>ucesso, aparentemente nossa imagem foi criada conforme o esperado. Hora de testar e ver se tudo realmente funcionou.</p>
-
-<p><strong>OBS:</strong> Como dito no início do post, o objetivo deste post não é ensinar Docker, portanto estou assumindo que você já possui alguma familiaridade com esta ferramenta.</p>
-
-<p><strong>V</strong>amos iniciar um container a partir desta nossa imagem em background, mapeando a porta 80 do container na porta 80 de nosso host, para facilitar o teste:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ docker run -d -p 80:80 kalib/ubuntunginx:0.1
-</span><span class='line'>53de48d3e7708a7ac16dbb5ba6ed71b8672201729264e51945ee3412a02e0deb</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>N</strong>enhuma mensagem de erro, portanto ao que tudo indica nosso container está rodando corretamente. Vamos confirmar isto com <em>docker ps</em>:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ docker ps
-</span><span class='line'>CONTAINER ID        IMAGE                   COMMAND                  CREATED             STATUS              PORTS                NAMES
-</span><span class='line'>53de48d3e770        kalib/ubuntunginx:0.1   "nginx -g 'daemon of…"   5 seconds ago       Up 4 seconds        0.0.0.0:80-&gt;80/tcp   clever_keldysh</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>T</strong>udo certo aqui também. Podemos ver nosso container rodando, o processo do nginx aparentemente rodando, bem como a porta 80 mapeada como esperado. Vamos abrir o browser em nosso host e acessar <em>localhost:80</em>&hellip;</p>
-
-<p><img class="center" src="/imgs/packer_nginx.png" title="'Packer'" ></p>
-
-<p><strong>P</strong>ronto, validamos a nossa imagem criando um container e confirmando que o nginx está de fato rodando como deveria.</p>
-
-<p><strong>E</strong>m futuros posts, pretendo dar exemplos mais aprofundados, utilizando combinações com outros provisioners, como Puppet, Ansible e Shell Scripts, bem como outros builders, como por exemplo o AWS.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Anteriores</a>
@@ -1781,6 +2475,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2018/10/29/introducao-ao-terraform/">Introdução ao Terraform</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2018/10/22/infraestrutura-como-codigo-com-terraform/">Infraestrutura como Código com Terraform</a>
       </li>
     
@@ -1794,10 +2492,6 @@
     
       <li class="post">
         <a href="/blog/2018/04/16/10-anos-d/">10 anos! :D</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2018/04/14/chef-uso-de-condicionais-not-if-e-only-if/">Chef: Uso de Condicionais not_if e only_if</a>
       </li>
     
   </ul>

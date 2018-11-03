@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Terraform | Marcelo Cavalcante Rocha ~]]></title>
   <link href="https://kalib.github.io/blog/categories/terraform/atom.xml" rel="self"/>
   <link href="https://kalib.github.io/"/>
-  <updated>2018-10-27T19:03:57-04:00</updated>
+  <updated>2018-11-03T19:22:05-04:00</updated>
   <id>https://kalib.github.io/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -12,6 +12,813 @@
   </author>
   <generator uri="https://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Introdução ao Terraform]]></title>
+    <link href="https://kalib.github.io/blog/2018/10/29/introducao-ao-terraform/"/>
+    <updated>2018-10-29T21:35:00-04:00</updated>
+    <id>https://kalib.github.io/blog/2018/10/29/introducao-ao-terraform</id>
+    <content type="html"><![CDATA[<p><img class="center" src="/imgs/terraform-integrations.png" title="&lsquo;Terraform&rsquo;" ></p>
+
+<h2>Terraform &ndash; Uma robusta opção para Infraestrutura como Código</h2>
+
+<p><strong>A</strong> Hashicorp é uma empresa de bastante destaque no meio DevOps por ter criado várias soluções de automação, que englobam uma série de funcionalidades, como o <a href="https://packer.io">Packer</a> para criação de imagens de forma automatizada, conforme apresentado nestes dois posts  do blog (<a href="https://blog.marcelocavalcante.net/blog/2018/07/30/automatizando-a-criacao-de-imagens-com-packer/">1</a>, <a href="https://blog.marcelocavalcante.net/blog/2018/08/11/criando-uma-imagem-aws-ec2-com-packer-e-puppet/">2</a>), <a href="https://vagrant.io">Vagrant</a>, para provisionamento simples e rápido de máquinas, <a href="https://vaultproject.io">Vault</a>, para gerenciamento de senhas/segredos (<em>secrets</em>), <a href="https://consul.io">Consul</a>, para descoberta de serviços, <a href="nomadproject.io">Nomad</a>, para agendamento e automação de deployments, e o <a href="https://terraform.io">Terraform</a>, foco principal deste post, uma robusta ferramenta para criação de infraestrutura como código, ou <em>infrastructure as cdode</em>.</p>
+
+<p><strong>C</strong>aso você não possua uma ideia muito clara de qual a idea por trás do conceito de infraestrutura como código, ou mesmo quais as vantagens de se utilizar esta metodologia de gerenciamento/criação de infraestrutura, sugiro que leia meu <a href="https://blog.marcelocavalcante.net/blog/2018/10/22/infraestrutura-como-codigo-com-terraform/">post anterior</a>, no qual explico alguns dos principais benefícios desta prática, bem como uma breve apresentação do Terraform.</p>
+
+<p><strong>D</strong>e forma resumida, o Terraform é uma ferramenta disponível em formatos Open Source ou Enterprise, cujo intuito é permitir a criação de infraestrutura como código, possibilitando o controle de versões. Suporta diversos provedores tais como AWS, OpenStack, Azure, GCP, etc.</p>
+
+<p><strong>U</strong>ma de suas principais características é a idempotência, termo muito utilizado na matemática ou em ciência da computação para indicar a propriedade que algumas operações têm de poderem ser aplicadas várias vezes sem que o valor do resultado se altere após a aplicação inicial. Ou seja, uma vez aplicado o seu código terraform, você poderá aplicá-lo quantas vezes desejar e nenhuma alteração será feita em sua infraestrutura, a menos que você tenha de fato alterado algo em seu código.</p>
+
+<p><strong>O</strong> Terraform utiliza uma linguagem de alto nível e fácil de se reutilizar, uma vez que podemos criar módulos e utilizar estes módulos em diversos projetos distintos, mesmo que tenhamos módulos em repositórios também distintos.</p>
+
+<p><strong>A</strong> ideia de possuir um &ldquo;plano&rdquo; de execução nos ajuda a identificar falhas em nosso código mais rapidamente, bem como prevenir problemas em nossa infraestrutura, visto que podemos ter uma visão geral de tudo o que será aplicado em nossa infra antes mesmo da execução real de nosso código, nos permitindo ter a certeza de que todas as alterações serão de fato intencionais.</p>
+
+<p><strong>S</strong>empre digo que a melhor forma de se aprender uma nova tecnologia é colocando a mão na massa, portanto vamos escrever algumas linhas de código para entendermos as funcionalidades básicas bem como a sintaxe de código utilizada pelo Terraform.</p>
+
+<p><strong>A</strong>ntes de pensarmos em cenários mais complexos devemos entender o básico, no entanto eu sempre gostei de ver algum resultado como forma de ter uma motivação real para meus estudos. Nunca gostei de apenas ler e escrever códigos que não resultam em nada, e acredito que todos devam sentir a mesma insatisfação ao não ter um uso real e prático para o que quer que esteja estudando.</p>
+
+<p><strong>S</strong>eguindo esta ideia, antes de pensarmos em cenários mais complexos, vamos iniciar pelo básico, porém com algum resultado prático. A ideia para este post é termos um jogo clássico do Mario rodando em um container Docker que seja acessível através de nosso browser.</p>
+
+<h2>Instalação</h2>
+
+<p><strong>P</strong>ara este post precisaremos ter três aplicativos instalados:</p>
+
+<ol>
+<li>Um navegador ou browser qualquer; (Imagino que você já tenha algum&hellip;)</li>
+<li>Docker;</li>
+<li>Terraform</li>
+</ol>
+
+
+<h3>Docker</h3>
+
+<p><strong>O</strong> processo de instalação do Docker varia de acordo com o seu sistema operacional. Caso queira maiores detalhes sobre sua instalação, bem como uma explicação introdutória de como ele funciona, você pode visitar <a href="https://blog.marcelocavalcante.net/blog/2015/08/20/docker-uma-alternativa-elegante-para-containers-no-linux/">este outro post</a>, embora você não precise ter nenhum conhecimento sobre Docker para seguir as instruções deste tutorial, visto que utilizaremos o Terraform para criar nosso container.</p>
+
+<p><strong>N</strong>o <em>Archlinux</em> a instalação pode ser feita através do pacman:</p>
+
+<p>```</p>
+
+<h1>pacman install docker</h1>
+
+<p>```</p>
+
+<p><strong>N</strong>o <em>Windows</em> a instalação pode ser feita através do binário disponível no site oficial: (<a href="https://store.docker.com/editions/community/docker-ce-desktop-windows">https://store.docker.com/editions/community/docker-ce-desktop-windows</a>)</p>
+
+<p><strong>N</strong>o <em>OS X</em>, você também pode baixar o binário diretamente no site oficial, (<a href="https://store.docker.com/editions/community/docker-ce-desktop-mac">https://store.docker.com/editions/community/docker-ce-desktop-mac</a>) ou através do brew:</p>
+
+<p><code>
+brew install docker
+</code></p>
+
+<h3>Terraform</h3>
+
+<p><strong>A</strong> instalação do Terraform é tão simples quanto a do Docker.</p>
+
+<p><strong>N</strong>o <em>Archlinux</em> a instalação pode ser feita através do pacman:</p>
+
+<p>```</p>
+
+<h1>pacman -S terraform</h1>
+
+<p>```</p>
+
+<p><strong>N</strong>o <em>Windows</em> e no <em>OS X</em> a instalação pode ser feita através do binário disponível no site oficial do Terraform: (<a href="https://www.terraform.io/downloads.html">https://www.terraform.io/downloads.html</a>)</p>
+
+<p><strong>O</strong>utra opção para OS X é através do brew:</p>
+
+<p><code>
+brew install terraform
+</code></p>
+
+<h2>Verificando a instalação</h2>
+
+<p><strong>U</strong>ma vez que você tenha instalado ambos, certifique-se de que a instalação foi bem sucedida e de que o serviço Docker esteja rodando em seu sistema. Para isto, abra algum terminal, console ou prompt do CMD (para usuários Windows) e digite o seguinte:</p>
+
+<p>1- Para termos certeza de que o Terraform está instalado e funcionando:
+<code>
+terraform -version
+</code></p>
+
+<p>Você deverá receber algum resultado com a versão do seu Terraform, similar a este:</p>
+
+<p><code>
+Terraform v0.11.10
+</code></p>
+
+<p>2- Para termos certeza de que o Docker está devidamente instalado e rodando, digite:
+<code>
+docker ps
+</code></p>
+
+<p>Você deverá receber algum resultado parecido com o seguinte:</p>
+
+<p><code>
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+</code></p>
+
+<p><strong>N</strong>ão se assuste ou dê importância para este resultado do comando Docker, ele apenas indica o status atual de seu Docker, informando se você possui algum container rodando ou não. Caso você tenha acabado de instalar o mesmo ou iniciado o serviço do Docker, você provavelmente não terá nenhum container rodando.</p>
+
+<p><strong>C</strong>aso o retorno de seu Docker ou Terraform não seja similar aos que apresentei acima, verifique se a instalação foi realmente bem sucedida ou, no caso do Docker, verifique se o mesmo está rodando, afinal ele não apenas precisa ser instalado, mas precisa estar rodando, diferentemente do Terraform que apenas precisa ser instalado.</p>
+
+<h2>Iniciando nosso projeto</h2>
+
+<p><img class="center" src="/imgs/mariodocker.png" title="&lsquo;Super Mario&rsquo;" ></p>
+
+<h3>Escopo</h3>
+
+<p><strong>O</strong> primeiro passo de qualquer projeto é identificar alguma espécie de esboço ou escopo para o mesmo.</p>
+
+<p><strong>O</strong> que queremos para o nosso projeto é:</p>
+
+<ol>
+<li>Ter um jogo web do Mario;</li>
+<li>Queremos que ele rode em um container, pois queremos uma aplicação em uma infraestrutura moderna e que possa ser capaz de rodar em qualquer local, seja em um servidor físico local, uma VM ou mesmo um provedor na nuvem, como AWS, GCP, Azure, etc.;</li>
+<li>Como não sabemos onde ou como iremos fazer o deployment deste container, queremos fazer com que seja algo automatizado e portável para facilitar futuros planos, portanto queremos criar este container com o Terraform, para que possamos gerenciar nosso código, versionar, etc.</li>
+<li>Não escreveremos a aplicação em si. O jogo do Mario já existe e uma imagem para Docker já está disponível para o mesmo através do seguinte link: (<a href="https://hub.docker.com/r/pengbai/docker-supermario/">https://hub.docker.com/r/pengbai/docker-supermario/</a>) (Mas nós não precisamos nos precoupar com isto agora, pois o Terraform vai cuidar de baixar a imagem para nós. ;])</li>
+<li>A aplicação deverá estar acessível via browser local para que possamos ao menos garantir que o jogo está de fato funcionando.</li>
+</ol>
+
+
+<p><strong>E</strong>ste será o nosso escopo básico, portanto vamos começar nosso código.</p>
+
+<h3>Projeto</h3>
+
+<p><strong>O</strong> recurso mais básico em um código ou módulo Terraform é o <em>resource</em>, ou recurso. O Terraform suporta centenas de recursos diferentes, dentre eles o <em>docker_image</em>, que será o recurso de que precisaremos inicialmente.</p>
+
+<p><strong>A</strong> partir deste momento não mais utilizarei a palavra recurso. Uma vez que o Terraform chama os recursos de <em>resources</em>, devemos nos acostumar com sua nomenclatura.</p>
+
+<p><strong>A</strong>ntes de mais nada, vamos criar um diretório para nosso projeto. Chamaremos nosso projeto de Marioweb, visto que se trata de uma versao open source do jogo Mario.</p>
+
+<p><strong>A</strong>qui estarei criando o diretório via linha de comando, mas sinta-se livre para criar um diretório da forma que você preferir. Após criar o diretório, com algum terminal ou console aberto (ou prompt do CMD para usuários do Windows), navegue até este diretório recém criado:</p>
+
+<p>```
+$ mkdir marioweb</p>
+
+<p>$ cd marioweb
+```</p>
+
+<p><strong>D</strong>entro do diretório <em>marioweb</em> crie um novo arquivo chamado <em>main.tf</em>.</p>
+
+<p><strong>P</strong>ara manter um padrão, os arquivos de código do Terraform costumam utilizar o sufixo/extensão .tf e o principal arquivo em módulos ou projetos Terraform costuma se chamar <em>main.tf</em>, por se tratar do arquivo principal do módulo ou projeto.</p>
+
+<p><strong>P</strong>ara criar este arquivo você poderá utilizar qualquer editor de textos de sua escolha: vim, emacs, vi, notepad, notepad++, sublime, atom, etc.</p>
+
+<p><strong>E</strong>m nosso arquivo <em>main.tf</em> insira o seguinte conteúdo por enquanto:</p>
+
+<p><strong>main.tf</strong></p>
+
+<p>```</p>
+
+<h1>Baixar a imagem do Projeto Docker-SuperMario</h1>
+
+<p>resource &ldquo;docker_image&rdquo; &ldquo;image_id&rdquo; {
+  name = &ldquo;pengbai/docker-supermario:latest&rdquo;
+}
+```</p>
+
+<p><strong>O</strong> que temos no bloco de código acima:</p>
+
+<ol>
+<li>A primeira linha é apenas um comentário. Como boa prática, é importante termos comentários ao longo de nosso código para descrever o que pretendemos com aquele determinado trecho de código. E por hora, o que pretendemos é exatamente apenas isso: <em>Baixar a imagem do Projeto Docker-SuperMario</em> para nosso ambiente.</li>
+<li>Na linha 2 estamos especificando que queremos utilizar um <em>resource</em>. Cada <em>resource</em> no Terraform leva dois parâmetros, sendo um deles o <em>tipo de resource</em> e o outro um <em>nome qualquer</em> para este resource. Como dito antes, este trecho de código pretende baixar a imagem do projeto SuperMario, portanto precisamos do tipo de <em>resource</em> chamado <em>docker_image</em>. Este é apenas um dos milhares de <em>resources</em> existentes para o Terraform. Em seguida estamos dando o nome <em>image_id</em> para nosso <em>resource</em> de tipo <em>docker_image</em>. O nome poderia ser qualquer um, até mesmo <em>minha_imagem_do_coracao</em>, mas para ficar mais descritiva e mantendo boas práticas, utilizarei <em>image_id</em>. Uma vez que identificamos o tipo de <em>resource</em> e o nome que queremos dar para ele, devemos encerrar a linha abrindo o bloco de código no qual listaremos os atributos deste <em>resource</em>. Para isto, utilizaremos um <em>{</em> para abrir este bloco.</li>
+<li>Na linha 3 começamos a definir os atributos do nosso <em>resource</em>. A documentação do Terraform é excelente e lista todos os <em>resources</em> suportados, bem como todos os <em>atributos</em> suportados por cada <em>resource</em>. Neste caso, o único atributo que precisamos no momento é o <em>name</em>, ou nome da imagem que desejamos baixar. Em seguida, indicamos qual o nome da imagem desejada. Por padrão, o Docker adota a nomenclatura <em>&lt;REPOSITÓRIO/IMAGEM:TAG></em> para indicar a imagem desejada. Em nosso caso, o repositório onde a imagem se encontra se chama <em>pengbai</em> e a imagem em si é chamada de <em>docker-supermario</em>, portanto teremos: <em>name = &ldquo;pengbai/super-mario&rdquo;</em>. A <em>tag</em> não é obrigatória. Mas como desejo garantir que utilizaremos sempre a imagem mais recente, utilizarei a tag <em>latest</em> (última).</li>
+<li>Uma vez que concluímos a definição de nosso <em>resource</em>, podemos fechar o nosso bloco de código para o mesmo utilizando um <em>}</em> na linha 4.</li>
+</ol>
+
+
+<p><strong>A</strong>gora que temos o início de nosso código, já podemos começar a testá-lo.</p>
+
+<p><strong>D</strong>e volta ao nosso terminal/console, vamos iniciar o nosso ambiente Terraform para este projeto utilizando o comando <em>terraform init</em>. Este comando inicia nosso ambiente e baixa os plugins necessários para nosso projeto. No nosso caso, o Terraform baixará os plugins necessários para que nosso código possa lidar com o Docker.</p>
+
+<p>```
+$ terraform init</p>
+
+<p>Initializing provider plugins&hellip;
+&ndash; Checking for available provider plugins on <a href="https://releases.hashicorp.com...">https://releases.hashicorp.com...</a>
+&ndash; Downloading plugin for provider &ldquo;docker&rdquo; (1.1.0)&hellip;</p>
+
+<p>The following providers do not have any version constraints in configuration,
+so the latest version was installed.</p>
+
+<p>To prevent automatic upgrades to new major versions that may contain breaking
+changes, it is recommended to add version = &ldquo;&hellip;&rdquo; constraints to the
+corresponding provider blocks in configuration, with the constraint strings
+suggested below.</p>
+
+<ul>
+<li>provider.docker: version = &ldquo;~> 1.1&rdquo;</li>
+</ul>
+
+
+<p>Terraform has been successfully initialized!</p>
+
+<p>You may now begin working with Terraform. Try running &ldquo;terraform plan&rdquo; to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.</p>
+
+<p>If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+```</p>
+
+<p><strong>S</strong>e você recebeu um retorno parecido com o meu, significa que tudo está como deveria e que seu projeto foi iniciado com sucesso. Caso você liste os arquivos e diretórios ocultos de seu diretório, perceberá que ao rodar o comando <em>terraform init</em>, um diretório oculto chamado <em>terraform</em> foi criado. É nele que ficarão as informações que o Terraform precisa para executar corretamente o seu código, incluindo os plugins que ele necessita. No nosso caso, o plugin para o Docker estará lá.</p>
+
+<p><strong>N</strong>osso próximo passo será executar o <em>planejamento</em> de nosso código. Ao rodar o <em>planejamento</em> o terraform listará exatamente tudo o que ele fará caso nosso código seja de fato executado. Novamente em nosso console/terminal, execute <em>terraform plan</em>:</p>
+
+<p>```
+$ terraform plan</p>
+
+<p>Refreshing Terraform state in-memory prior to plan&hellip;
+The refreshed state will be used to calculate this plan, but will not be
+persisted to local or remote state storage.</p>
+
+<h2>ATENÇÃO AQUI:</h2>
+
+<p>An execution plan has been generated and is shown below.
+Resource actions are indicated with the following symbols:
+  + create</p>
+
+<p>Terraform will perform the following actions:</p>
+
+<ul>
+<li>docker_image.image_id
+  id:     <computed>
+  latest: <computed>
+  name:   &ldquo;pengbai/docker-supermario:latest&rdquo;</li>
+</ul>
+
+
+<p>Plan: 1 to add, 0 to change, 0 to destroy.</p>
+
+<hr />
+
+<p>Note: You didn&rsquo;t specify an &ldquo;-out&rdquo; parameter to save this plan, so Terraform
+can&rsquo;t guarantee that exactly these actions will be performed if
+&ldquo;terraform apply&rdquo; is subsequently run.
+```</p>
+
+<p><strong>C</strong>aso você tenha recebido um retorno similar a este, significa que tudo parece correto em seu código e que apenas uma ação será executada, conforme descrito no resumo do plano ao final:</p>
+
+<p><em>Plan: 1 to add, 0 to change, 0 to destroy.</em></p>
+
+<p><strong>O</strong>u seja: Plano: 1 a adicionar, 0 a alterar, 0 a destruir.</p>
+
+<p><strong>E</strong>xatamente o que queremos.</p>
+
+<p><strong>C</strong>aso você tenha recebido uma mensagem de erro, significa que algo em seu código está errado. Por exemplo, se ao invés de utilizarmos <em>docker_image</em> como tipo de resource, utilizarmos <em>docker_images</em>, o resultado de meu <em>terraform plan</em> seria o seguinte:</p>
+
+<p>```
+$ terraform plan</p>
+
+<p>Error: docker_images.image_id: Provider doesn&rsquo;t support resource: docker_images
+```</p>
+
+<p><strong>O</strong> erro geralmente é claro e nos indica onde está o erro. No erro acima, o Terraform nos diz que o resource <em>docker_images</em> não é suportado. Se checarmos na documentação, veremos que o nome correto do <em>resource</em> é <em>docker_image</em> (no singular).</p>
+
+<p><strong>U</strong>ma vez que nosso plano foi executado sem erros, chegou a hora de aplicarmos nosso projeto.</p>
+
+<p><strong>E</strong>xecute o seu código através do comando <em>terraform apply</em>:</p>
+
+<p>```
+$ terraform apply</p>
+
+<p>An execution plan has been generated and is shown below.
+Resource actions are indicated with the following symbols:
+  + create</p>
+
+<p>Terraform will perform the following actions:</p>
+
+<ul>
+<li>docker_image.image_id
+  id:     <computed>
+  latest: <computed>
+  name:   &ldquo;pengbai/docker-supermario:latest&rdquo;</li>
+</ul>
+
+
+<p>Plan: 1 to add, 0 to change, 0 to destroy.</p>
+
+<p>Do you want to perform these actions?
+  Terraform will perform the actions described above.
+  Only &lsquo;yes&rsquo; will be accepted to approve.</p>
+
+<p>  Enter a value:
+```</p>
+
+<p><strong>R</strong>epare que mesmo ao utilizar <em>apply</em> ao invés de <em>plan</em>, uma espécie de planejamento também foi realizado antes da aplicação propriamente dita. O Terraform avaliou o código e nos indicou o que será realizado, perguntando-nos ao final se queremos ou não seguir com a execução. Caso tudo nos pareça correto, basta digitarmos <em>yes</em> e pressionar Enter novamente para que ele siga com a execução de fato.</p>
+
+<p>```</p>
+
+<p>  Enter a value: yes</p>
+
+<p>docker_image.image_id: Creating&hellip;
+  latest: &ldquo;&rdquo; => &ldquo;<computed>&rdquo;
+  name:   &ldquo;&rdquo; => &ldquo;pengbai/docker-supermario:latest&rdquo;
+docker_image.image_id: Still creating&hellip; (10s elapsed)
+docker_image.image_id: Still creating&hellip; (20s elapsed)
+docker_image.image_id: Still creating&hellip; (30s elapsed)
+docker_image.image_id: Still creating&hellip; (40s elapsed)
+docker_image.image_id: Creation complete after 47s (ID: sha256:49beaba1c5cc49d2fa424ac03a15b0e7&hellip;9c3d62pengbai/docker-supermario:latest)</p>
+
+<p>Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
+```</p>
+
+<p><strong>A</strong>ssim como no <em>plan</em>, o Terraform ao final nos deu um breve relatório do que foi feito:</p>
+
+<p><em>Apply complete! Resources: 1 added, 0 changed, 0 destroyed.</em></p>
+
+<p><strong>O</strong>u seja: Aplicação completa! Recursos: 1 adicionado, 0 alterados, 0 destruídos.</p>
+
+<p><strong>S</strong>e quisermos ter certeza de que de fato o Terraform baixou a imagem Docker de que precisamos, basta digitarmos o comando do Docker que lista as imagens que possúimos em nosso ambiente. A nossa nova imagem do supermario deverá estar lá. Digite <em>docker images</em>:</p>
+
+<p><code>
+$ docker images
+REPOSITORY                  TAG                 IMAGE ID            CREATED             SIZE
+pengbai/docker-supermario   latest              49beaba1c5cc        4 months ago        686MB
+</code></p>
+
+<p><strong>Ó</strong>timo, nossa imagem está presente em nosso ambiente.</p>
+
+<p><strong>O</strong> Terraform também nos permite saber o que estamos utilizando em termos de <em>resources</em> através do comando <em>terraform show</em>:</p>
+
+<p>```
+$ terraform show</p>
+
+<p>docker_image.image_id:
+  id = sha256:49beaba1c5cc49d2fa424ac03a15b0e761f637e835c1ed4d8108cc247a9c3d62pengbai/docker-supermario:latest
+  latest = sha256:49beaba1c5cc49d2fa424ac03a15b0e761f637e835c1ed4d8108cc247a9c3d62
+  name = pengbai/docker-supermario:latest
+```</p>
+
+<p><strong>V</strong>oltemos ao nosso código. Agora que já conseguimos fazer com que nosso código baixe a imagem que utilizaremos via Docker, chegou a hora de fazer algo com ela. Precisamos realizar o <em>deployment</em> da mesma em um container, certo?!</p>
+
+<p><strong>V</strong>amos adicionar mais um <em>resource</em> em nosso código, desta vez um <em>resource</em> de tipo <em>docker_container</em>. Como o nome já diz, este <em>resource</em> lida com o container em si, e não mais apenas com a imagem.</p>
+
+<p><strong>S</strong>eu código agora deverá estar da seguinte forma:</p>
+
+<p>```</p>
+
+<h1>Baixar a imagem do Projeto Docker-SuperMario</h1>
+
+<p>resource &ldquo;docker_image&rdquo; &ldquo;image_id&rdquo; {
+  name = &ldquo;pengbai/docker-supermario:latest&rdquo;
+}</p>
+
+<h1>Inicia o Container</h1>
+
+<p>resource &ldquo;docker_container&rdquo; &ldquo;container_id&rdquo; {
+  name  = &ldquo;supermario&rdquo;
+  image = &ldquo;${docker_image.image_id.latest}&rdquo;
+  ports {</p>
+
+<pre><code>internal = "8080"
+external = "80"
+</code></pre>
+
+<p>  }
+}
+```</p>
+
+<p><strong>I</strong>gnorando as linhas já descritas anteriormente, vamos descrever as novas linhas de nosso código:</p>
+
+<ol>
+<li>Na linha 6 inserimos apenas mais um comentário, indicando que ali começaremos a descrever o código que criará nosso Container.</li>
+<li>Na linha 7 indicamos que queremos mais um <em>resource</em>. Desta vez o tipo de <em>resource</em> que queremos é o <em>docker_container</em>, indicando também que queremos dar o nome <em>container_id</em> a este <em>resource</em>. Novamente, ao fim da linha, abriremos o bloco de código para este <em>resource</em> com uma <em>{</em>.</li>
+<li>Dentro de nosso bloco, na linha 8, começaremos a listar os atributos deste <em>resource</em>. O primeiro atributo que listaremos é o <em>name</em>, e para ele daremos o nome <em>supermario</em>.</li>
+<li>Na linha 9 indicaremos o atributo <em>image</em> e utilizaremos nossa primeira interpolação, onde utilizaremos valores de outra parte de nosso código como se fossem variáveis. No nosso <em>resource</em> anterior, <em>docker_image</em>, nós demos um nome <em>image_id</em>que será utilizado agora. Incluiremos também a tag <em>latest</em>, pois, conforme pudemos ver na saída de nosso comando <em>terraform show</em>, esta foi a tag utilizada pelo terraform para identificar o último status daquele <em>resource</em>. Portanto, aqui utilizaremos a interpolação inserindo o que queremos entre <em>{}</em> seguidas do símbolo <em>$</em>, conforme prega a sintaxe do Terraform para interpolação de valores, portanto teremos: <em>${docker_image.image_id.latest}</em>, onde <em>docker_image</em> é o tipo de resource de onde queremos o valor, <em>image_id</em> é o nome do resource de onde queremos o valor e <em>latest</em> é a tag para dizer que queremos o último valor daquele <em>resource</em>. O único motivo pelo qual temos um tipo de <em>resource</em> e um nome de <em>resource</em> é para facilitar a identificação quando possuímos diversos <em>resources</em> do mesmo tipo. Imagine um projeto em que utilizaremos 5 imagens diferentes do Docker. Teríamos 5 <em>resources</em> do tipo <em>docker_image</em>, porém cada um deles teria um nome diferente, certo?!</li>
+<li>Na linha 10 de nosso código iniciamos o bloco de portas, afinal, toda aplicação roda em uma porta específica e com containers não seria diferente.</li>
+<li>Nas linhas 11 e 12 indicamos os valores para portas <em>interna</em> e <em>externa</em>, onde a porta <em>intern</em> será a porta utilizada para rodar a aplicação internamente no container, e <em>extern</em> será a porta que o Docker irá mapear em nosso sistema local para que possamos acessar a nossa aplicação. Portanto, em nosso exemplo, a aplicação supermario irá rodar na porta <em>8080</em> internamente no container, e a porta 80 será mapeada para que possamos acessá-la de nosso navegador local.</li>
+<li>Nas linhas 13 e 14 apenas fecharemos os dois blocos de código que criamos, sendo estes o bloco <em>ports</em> e o bloco <em>resource</em> do <em>docker_container</em>.</li>
+</ol>
+
+
+<p><strong>N</strong>ovamente, vamos planejar nosso projeto com <em>terraform plan</em>:</p>
+
+<p>```
+$ terraform plan
+Refreshing Terraform state in-memory prior to plan&hellip;
+The refreshed state will be used to calculate this plan, but will not be
+persisted to local or remote state storage.</p>
+
+<p>docker_image.image_id: Refreshing state&hellip; (ID: sha256:49beaba1c5cc49d2fa424ac03a15b0e7&hellip;9c3d62pengbai/docker-supermario:latest)</p>
+
+<hr />
+
+<p>An execution plan has been generated and is shown below.
+Resource actions are indicated with the following symbols:
+  + create</p>
+
+<p>Terraform will perform the following actions:</p>
+
+<ul>
+<li>docker_container.container_id
+  id:               <computed>
+  attach:           &ldquo;false&rdquo;
+  bridge:           <computed>
+  container_logs:   <computed>
+  exit_code:        <computed>
+  gateway:          <computed>
+  image:            &ldquo;sha256:49beaba1c5cc49d2fa424ac03a15b0e761f637e835c1ed4d8108cc247a9c3d62&rdquo;
+  ip_address:       <computed>
+  ip_prefix_length: <computed>
+  log_driver:       &ldquo;json-file&rdquo;
+  logs:             &ldquo;false&rdquo;
+  must_run:         &ldquo;true&rdquo;
+  name:             &ldquo;supermario&rdquo;
+  network_data.#:   <computed>
+  ports.#:          &ldquo;1&rdquo;
+  ports.0.external: &ldquo;80&rdquo;
+  ports.0.internal: &ldquo;8080&rdquo;
+  ports.0.ip:       &ldquo;0.0.0.0&rdquo;
+  ports.0.protocol: &ldquo;tcp&rdquo;
+  restart:          &ldquo;no&rdquo;
+  rm:               &ldquo;false&rdquo;
+  start:            &ldquo;true&rdquo;</li>
+</ul>
+
+
+<p>Plan: 1 to add, 0 to change, 0 to destroy.</p>
+
+<hr />
+
+<p>Note: You didn&rsquo;t specify an &ldquo;-out&rdquo; parameter to save this plan, so Terraform
+can&rsquo;t guarantee that exactly these actions will be performed if
+&ldquo;terraform apply&rdquo; is subsequently run.
+```</p>
+
+<p><strong>R</strong>epare que desta vez apenas 1 ação será executada: a criação do container. Não estamos mais recebendo as informações referentes à ação de baixar a imagem. O motivo para isto é a propriedade de idempotência que citei anteriormente. O Terraform sabe que a imagem já foi baixada, portanto a mesma não precisa ser baixada novamente, a menos que tivéssemos mudado a versão da mesma, nome, repositório, etc.</p>
+
+<p><strong>U</strong>ma vez que o plano esteja de acordo com o que queremos, podemos aplicar nosso código com <em>terraform apply</em>:</p>
+
+<p>```
+$ terraform apply
+docker_image.image_id: Refreshing state&hellip; (ID: sha256:49beaba1c5cc49d2fa424ac03a15b0e7&hellip;9c3d62pengbai/docker-supermario:latest)</p>
+
+<p>An execution plan has been generated and is shown below.
+Resource actions are indicated with the following symbols:
+  + create</p>
+
+<p>Terraform will perform the following actions:</p>
+
+<ul>
+<li>docker_container.container_id
+  id:               <computed>
+  attach:           &ldquo;false&rdquo;
+  bridge:           <computed>
+  container_logs:   <computed>
+  exit_code:        <computed>
+  gateway:          <computed>
+  image:            &ldquo;sha256:49beaba1c5cc49d2fa424ac03a15b0e761f637e835c1ed4d8108cc247a9c3d62&rdquo;
+  ip_address:       <computed>
+  ip_prefix_length: <computed>
+  log_driver:       &ldquo;json-file&rdquo;
+  logs:             &ldquo;false&rdquo;
+  must_run:         &ldquo;true&rdquo;
+  name:             &ldquo;supermario&rdquo;
+  network_data.#:   <computed>
+  ports.#:          &ldquo;1&rdquo;
+  ports.0.external: &ldquo;80&rdquo;
+  ports.0.internal: &ldquo;8080&rdquo;
+  ports.0.ip:       &ldquo;0.0.0.0&rdquo;
+  ports.0.protocol: &ldquo;tcp&rdquo;
+  restart:          &ldquo;no&rdquo;
+  rm:               &ldquo;false&rdquo;
+  start:            &ldquo;true&rdquo;</li>
+</ul>
+
+
+<p>Plan: 1 to add, 0 to change, 0 to destroy.</p>
+
+<p>Do you want to perform these actions?
+  Terraform will perform the actions described above.
+  Only &lsquo;yes&rsquo; will be accepted to approve.</p>
+
+<p>  Enter a value:
+```</p>
+
+<p><strong>M</strong>ais uma vez ele nos dá uma visão geral do que será feito e nos perguntará se queremos prosseguir. Digite <em>yes</em> e pressione Enter novamente.</p>
+
+<p>```
+Enter a value: yes</p>
+
+<p>docker_container.container_id: Creating&hellip;
+attach:           &ldquo;&rdquo; => &ldquo;false&rdquo;
+bridge:           &ldquo;&rdquo; => &ldquo;<computed>&rdquo;
+container_logs:   &ldquo;&rdquo; => &ldquo;<computed>&rdquo;
+exit_code:        &ldquo;&rdquo; => &ldquo;<computed>&rdquo;
+gateway:          &ldquo;&rdquo; => &ldquo;<computed>&rdquo;
+image:            &ldquo;&rdquo; => &ldquo;sha256:49beaba1c5cc49d2fa424ac03a15b0e761f637e835c1ed4d8108cc247a9c3d62&rdquo;
+ip_address:       &ldquo;&rdquo; => &ldquo;<computed>&rdquo;
+ip_prefix_length: &ldquo;&rdquo; => &ldquo;<computed>&rdquo;
+log_driver:       &ldquo;&rdquo; => &ldquo;json-file&rdquo;
+logs:             &ldquo;&rdquo; => &ldquo;false&rdquo;
+must_run:         &ldquo;&rdquo; => &ldquo;true&rdquo;
+name:             &ldquo;&rdquo; => &ldquo;supermario&rdquo;
+network_data.#:   &ldquo;&rdquo; => &ldquo;<computed>&rdquo;
+ports.#:          &ldquo;&rdquo; => &ldquo;1&rdquo;
+ports.0.external: &ldquo;&rdquo; => &ldquo;80&rdquo;
+ports.0.internal: &ldquo;&rdquo; => &ldquo;8080&rdquo;
+ports.0.ip:       &ldquo;&rdquo; => &ldquo;0.0.0.0&rdquo;
+ports.0.protocol: &ldquo;&rdquo; => &ldquo;tcp&rdquo;
+restart:          &ldquo;&rdquo; => &ldquo;no&rdquo;
+rm:               &ldquo;&rdquo; => &ldquo;false&rdquo;
+start:            &ldquo;&rdquo; => &ldquo;true&rdquo;
+docker_container.container_id: Creation complete after 1s (ID: 8c9d35eac2fcdc0c7e530567323167b82e72f33d4645abf20685b99d802e2359)</p>
+
+<p>Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
+```</p>
+
+<p><strong>C</strong>onforme o esperado: Aplicaçao completa! <em>Resources</em>: 1 adicionado, 0 alterados, 0 destruídos.</p>
+
+<p><strong>M</strong>ais uma vez podemos verificar se de fato tudo funcionou como o esperado através do Docker. Desta vez, não queremos apenas baixar uma imagem Docker, mas sim criar um container com a mesma abrindo portas específicas que serão mapeadas entre nosso sistema local e nosso container. Execute agora <em>docker ps</em> para ver os containers que estão rodando neste momento:</p>
+
+<p><code>
+docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS                  NAMES
+8c9d35eac2fc        49beaba1c5cc        "catalina.sh run"   2 minutes ago       Up 2 minutes        0.0.0.0:80-&gt;8080/tcp   supermario
+</code></p>
+
+<p><strong>C</strong>omo podemos ver, temos um container rodando. Podemos até ver que existe um mapeamento de portas: *80->8080</p>
+
+<p><strong>N</strong>ão está convencido ainda?</p>
+
+<p><strong>A</strong>bra seu navegador e acesse o seguinte endereço: <em>localhost:80</em></p>
+
+<p><strong>C</strong>aso o seu resultado seja algo parecido com a imagem, significa que seu código funcionou conforme o esperado.</p>
+
+<p><img class="center" src="/imgs/mariodocker.png" title="&lsquo;Super Mario&rsquo;" ></p>
+
+<p><strong>O</strong> terraform também nos permite destruir a nossa infraestrutura com o comando <em>terraform destroy</em>. Da mesma forma que o <em>apply</em>, o comando <em>destroy</em> também lhe dará uma prévia de o que será destruído e lhe pedirá par aconfirmar com um <em>yes</em> ou <em>no</em>:</p>
+
+<p>```
+$ terraform destroy
+docker_image.image_id: Refreshing state&hellip; (ID: sha256:49beaba1c5cc49d2fa424ac03a15b0e7&hellip;9c3d62pengbai/docker-supermario:latest)
+docker_container.container_id: Refreshing state&hellip; (ID: 8c9d35eac2fcdc0c7e530567323167b82e72f33d4645abf20685b99d802e2359)</p>
+
+<p>An execution plan has been generated and is shown below.
+Resource actions are indicated with the following symbols:
+  &ndash; destroy</p>
+
+<p>Terraform will perform the following actions:</p>
+
+<ul>
+<li><p>docker_container.container_id</p></li>
+<li><p>docker_image.image_id</p></li>
+</ul>
+
+
+<p>Plan: 0 to add, 0 to change, 2 to destroy.</p>
+
+<p>Do you really want to destroy all resources?
+  Terraform will destroy all your managed infrastructure, as shown above.
+  There is no undo. Only &lsquo;yes&rsquo; will be accepted to confirm.</p>
+
+<p>  Enter a value: yes</p>
+
+<p>docker_container.container_id: Destroying&hellip; (ID: 8c9d35eac2fcdc0c7e530567323167b82e72f33d4645abf20685b99d802e2359)
+docker_container.container_id: Destruction complete after 0s
+docker_image.image_id: Destroying&hellip; (ID: sha256:49beaba1c5cc49d2fa424ac03a15b0e7&hellip;9c3d62pengbai/docker-supermario:latest)
+docker_image.image_id: Destruction complete after 2s</p>
+
+<p>Destroy complete! Resources: 2 destroyed.
+```</p>
+
+<p><strong>C</strong>omo podemos ver, o terraform destruiu dois <em>resources</em>. Destruiu tanto nosso container como nossa imagem. Você poderá confirmar isso tentando acessar novamente o jogo pelo seu navegador ou mesmo através dos comandos <em>docker images</em> e <em>docker ls</em> para ver que tanto o container como a imagem foram removidos de nosso sistema:</p>
+
+<p>```
+$ docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES</p>
+
+<p>$ docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+```</p>
+
+<p><strong>D</strong>e volta ao nosso código, vamos incrementá-lo apenas um pouco mais.</p>
+
+<p><strong>O</strong> terraform nos permite especificar também <em>outputs</em>, ou saídas que nos serão apresentadas ao executarmos nosso código. Apenas informações que podem nos ser úteis.</p>
+
+<p><strong>P</strong>or exemplo, supomos que ao executar nosso código, desejamos que o terraform nos informe o IP do container que foi criado e o nome do mesmo, nosso código agora ficaria assim:</p>
+
+<p>```</p>
+
+<h1>Baixar a imagem do Projeto Docker-SuperMario</h1>
+
+<p>resource &ldquo;docker_image&rdquo; &ldquo;image_id&rdquo; {
+  name = &ldquo;pengbai/docker-supermario:latest&rdquo;
+}</p>
+
+<h1>Inicia o Container</h1>
+
+<p>resource &ldquo;docker_container&rdquo; &ldquo;container_id&rdquo; {
+  name  = &ldquo;supermario&rdquo;
+  image = &ldquo;${docker_image.image_id.latest}&rdquo;
+  ports {</p>
+
+<pre><code>internal = "8080"
+external = "80"
+</code></pre>
+
+<p>  }
+}</p>
+
+<h1>Nos informa o ip e nome do container criado</h1>
+
+<p>output &ldquo;Endereco IP&rdquo; {
+  value = &ldquo;${docker_container.container_id.ip_address}&rdquo;
+}</p>
+
+<p>output &ldquo;Nome do Container&rdquo; {
+  value = &ldquo;${docker_container.container_id.name}&rdquo;
+}
+```</p>
+
+<p><strong>N</strong>ovamente, ignorando o código que já descrevemos anteriormente, teremos:</p>
+
+<ol>
+<li>Na linha 16 inserimos mais um comentário.</li>
+<li>Na linha 17 especificamos que desta vez queremos um <em>output</em>, e não mais um <em>resource</em>. Da mesma forma que fizemos com <em>resources</em>, vamos dar um nome a este <em>output</em>, de forma que possamos facilmente identificá-lo posteriormente. No caso, vamos chamar nosso <em>output</em> de <em>Endereco IP</em>. Em seguida abriremos o bloco de código para este <em>output</em> novamente com <em>{</em>.</li>
+<li>Na linha 18 daremos o <em>value</em> ou valor deste output. Novamente utilizaremos interpolação de valores para pegar este valor de nossos <em>resources</em>. Para conseguirmos o endereço ip do container, utilizaremos o atributo <em>ip_address</em>, que é um atributo descrito na documentação do Terraform como parte integrante do resource de tipo <em>docker_container</em>. Portanto, nosso <em>value</em> será: ${docker_container.container_id.ip_address}.</li>
+<li>Na linha 19, apenas fechamos o bloco deste <em>output</em>.</li>
+<li>Na linha 21 iniciamos nosso segundo <em>output</em>, com o nome <em>Nome do Container</em>. Em seguida, abriremos o bloco de código para este <em>output</em> com um <em>{</em>.</li>
+<li>Na linha 22, faremos algo similar ao que fizemos com o <em>value</em> do output anterior. Utilizaremos interpolação para buscar o valor do atributo <em>name</em>, que faz parte do <em>resource</em> <em>docker_container</em>. Nosso <em>value</em> será: ${docker_container.container_id.name}</li>
+<li>Na linha 23, apenas fechamos nosso <em>output</em>.</li>
+</ol>
+
+
+<p><strong>V</strong>amos então rodar nosso <em>plan</em> para ver o que aconteceria desta vez:</p>
+
+<p>```
+$ terraform plan
+Refreshing Terraform state in-memory prior to plan&hellip;
+The refreshed state will be used to calculate this plan, but will not be
+persisted to local or remote state storage.</p>
+
+<hr />
+
+<p>An execution plan has been generated and is shown below.
+Resource actions are indicated with the following symbols:
+  + create</p>
+
+<p>Terraform will perform the following actions:</p>
+
+<ul>
+<li><p>docker_container.container_id
+  id:               <computed>
+  attach:           &ldquo;false&rdquo;
+  bridge:           <computed>
+  container_logs:   <computed>
+  exit_code:        <computed>
+  gateway:          <computed>
+  image:            &ldquo;${docker_image.image_id.latest}&rdquo;
+  ip_address:       <computed>
+  ip_prefix_length: <computed>
+  log_driver:       &ldquo;json-file&rdquo;
+  logs:             &ldquo;false&rdquo;
+  must_run:         &ldquo;true&rdquo;
+  name:             &ldquo;supermario&rdquo;
+  network_data.#:   <computed>
+  ports.#:          &ldquo;1&rdquo;
+  ports.0.external: &ldquo;80&rdquo;
+  ports.0.internal: &ldquo;8080&rdquo;
+  ports.0.ip:       &ldquo;0.0.0.0&rdquo;
+  ports.0.protocol: &ldquo;tcp&rdquo;
+  restart:          &ldquo;no&rdquo;
+  rm:               &ldquo;false&rdquo;
+  start:            &ldquo;true&rdquo;</p></li>
+<li><p>docker_image.image_id
+  id:               <computed>
+  latest:           <computed>
+  name:             &ldquo;pengbai/docker-supermario:latest&rdquo;</p></li>
+</ul>
+
+
+<p>Plan: 2 to add, 0 to change, 0 to destroy.</p>
+
+<hr />
+
+<p>Note: You didn&rsquo;t specify an &ldquo;-out&rdquo; parameter to save this plan, so Terraform
+can&rsquo;t guarantee that exactly these actions will be performed if
+&ldquo;terraform apply&rdquo; is subsequently run.
+```</p>
+
+<p><strong>D</strong>esta vez podemos ver que ambas as ações serão executadas: A imagem será baixada e o container será criado, afinal nós tínhamos removido tudo com <em>terraform destroy</em> anteriormente.</p>
+
+<p><strong>V</strong>amos aplicar nosso código e confirmar com <em>yes</em>:</p>
+
+<p>```
+$ terraform apply</p>
+
+<p>An execution plan has been generated and is shown below.
+Resource actions are indicated with the following symbols:
+  + create</p>
+
+<p>Terraform will perform the following actions:</p>
+
+<ul>
+<li><p>docker_container.container_id
+  id:               <computed>
+  attach:           &ldquo;false&rdquo;
+  bridge:           <computed>
+  container_logs:   <computed>
+  exit_code:        <computed>
+  gateway:          <computed>
+  image:            &ldquo;${docker_image.image_id.latest}&rdquo;
+  ip_address:       <computed>
+  ip_prefix_length: <computed>
+  log_driver:       &ldquo;json-file&rdquo;
+  logs:             &ldquo;false&rdquo;
+  must_run:         &ldquo;true&rdquo;
+  name:             &ldquo;supermario&rdquo;
+  network_data.#:   <computed>
+  ports.#:          &ldquo;1&rdquo;
+  ports.0.external: &ldquo;80&rdquo;
+  ports.0.internal: &ldquo;8080&rdquo;
+  ports.0.ip:       &ldquo;0.0.0.0&rdquo;
+  ports.0.protocol: &ldquo;tcp&rdquo;
+  restart:          &ldquo;no&rdquo;
+  rm:               &ldquo;false&rdquo;
+  start:            &ldquo;true&rdquo;</p></li>
+<li><p>docker_image.image_id
+  id:               <computed>
+  latest:           <computed>
+  name:             &ldquo;pengbai/docker-supermario:latest&rdquo;</p></li>
+</ul>
+
+
+<p>Plan: 2 to add, 0 to change, 0 to destroy.</p>
+
+<p>Do you want to perform these actions?
+  Terraform will perform the actions described above.
+  Only &lsquo;yes&rsquo; will be accepted to approve.</p>
+
+<p>  Enter a value: yes</p>
+
+<p>docker_image.image_id: Creating&hellip;
+  latest: &ldquo;&rdquo; => &ldquo;<computed>&rdquo;
+  name:   &ldquo;&rdquo; => &ldquo;pengbai/docker-supermario:latest&rdquo;
+docker_image.image_id: Still creating&hellip; (10s elapsed)
+docker_image.image_id: Still creating&hellip; (20s elapsed)
+docker_image.image_id: Still creating&hellip; (30s elapsed)
+docker_image.image_id: Still creating&hellip; (40s elapsed)
+docker_image.image_id: Still creating&hellip; (50s elapsed)
+docker_image.image_id: Creation complete after 59s (ID: sha256:49beaba1c5cc49d2fa424ac03a15b0e7&hellip;9c3d62pengbai/docker-supermario:latest)
+docker_container.container_id: Creating&hellip;
+  attach:           &ldquo;&rdquo; => &ldquo;false&rdquo;
+  bridge:           &ldquo;&rdquo; => &ldquo;<computed>&rdquo;
+  container_logs:   &ldquo;&rdquo; => &ldquo;<computed>&rdquo;
+  exit_code:        &ldquo;&rdquo; => &ldquo;<computed>&rdquo;
+  gateway:          &ldquo;&rdquo; => &ldquo;<computed>&rdquo;
+  image:            &ldquo;&rdquo; => &ldquo;sha256:49beaba1c5cc49d2fa424ac03a15b0e761f637e835c1ed4d8108cc247a9c3d62&rdquo;
+  ip_address:       &ldquo;&rdquo; => &ldquo;<computed>&rdquo;
+  ip_prefix_length: &ldquo;&rdquo; => &ldquo;<computed>&rdquo;
+  log_driver:       &ldquo;&rdquo; => &ldquo;json-file&rdquo;
+  logs:             &ldquo;&rdquo; => &ldquo;false&rdquo;
+  must_run:         &ldquo;&rdquo; => &ldquo;true&rdquo;
+  name:             &ldquo;&rdquo; => &ldquo;supermario&rdquo;
+  network_data.#:   &ldquo;&rdquo; => &ldquo;<computed>&rdquo;
+  ports.#:          &ldquo;&rdquo; => &ldquo;1&rdquo;
+  ports.0.external: &ldquo;&rdquo; => &ldquo;80&rdquo;
+  ports.0.internal: &ldquo;&rdquo; => &ldquo;8080&rdquo;
+  ports.0.ip:       &ldquo;&rdquo; => &ldquo;0.0.0.0&rdquo;
+  ports.0.protocol: &ldquo;&rdquo; => &ldquo;tcp&rdquo;
+  restart:          &ldquo;&rdquo; => &ldquo;no&rdquo;
+  rm:               &ldquo;&rdquo; => &ldquo;false&rdquo;
+  start:            &ldquo;&rdquo; => &ldquo;true&rdquo;
+docker_container.container_id: Creation complete after 0s (ID: 655604d672af8ff76c10aca4cd169a6aa284dcca17f0e0215374fb18c86660fd)</p>
+
+<p>Apply complete! Resources: 2 added, 0 changed, 0 destroyed.</p>
+
+<p>Outputs:</p>
+
+<p>Endereco IP = 172.17.0.2
+Nome do Container = supermario
+```</p>
+
+<p><strong>R</strong>epare que tudo o que queríamos foi executado e que, ao final, recebemos duas saídas ou <em>outputs</em>:</p>
+
+<p>```
+Apply complete! Resources: 2 added, 0 changed, 0 destroyed.</p>
+
+<p>Outputs:</p>
+
+<p>Endereco IP = 172.17.0.2
+Nome do Container = supermario
+```</p>
+
+<p><strong>N</strong>ovamente, se você acessar em seu navegador o endereço <em>localhost:80</em>, ou utilizar os comandos <em>docker ps</em>, perceberá que sua aplicação está novamente rodando.</p>
+
+<p><strong>N</strong>ão é complicado, certo?!</p>
+
+<p><strong>O</strong>bviamente, isto é apenas um exemplo extremamente simplista de uso do Terraform para criar uma pequena infraestrutura como código, que em nosso caso é apenas um container.</p>
+
+<p><strong>N</strong>o próximo post pretendo alterar um pouco este nosso código para utilizar algumas melhores práticas propostas pelo Terraform, como a utilização de variáveis e outputs em arquivos distintos, já que não utilizamos variáveis neste post.</p>
+
+<p><strong>U</strong>m passo de cada vez, certo?!</p>
+
+<p><strong>H</strong>appy Hacking!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Infraestrutura como Código com Terraform]]></title>
