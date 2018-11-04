@@ -201,7 +201,7 @@ commands will detect it and remind you to do so if necessary.
 
 **S**e você recebeu um retorno parecido com o meu, significa que tudo está como deveria e que seu projeto foi iniciado com sucesso. Caso você liste os arquivos e diretórios ocultos de seu diretório, perceberá que ao rodar o comando *terraform init*, um diretório oculto chamado *terraform* foi criado. É nele que ficarão as informações que o Terraform precisa para executar corretamente o seu código, incluindo os plugins que ele necessita. No nosso caso, o plugin para o Docker estará lá.
 
-**N**osso próximo passo será executar o *planejamento* de nosso código. Ao rodar o *planejamento* o terraform listará exatamente tudo o que ele fará caso nosso código seja de fato executado. Novamente em nosso console/terminal, execute *terraform plan*:
+**N**osso próximo passo será executar o *planejamento* de nosso código. Ao rodar o *planejamento* o terraform listará exatamente tudo o que fará caso nosso código seja de fato executado. Novamente em nosso console/terminal, execute *terraform plan*:
 
 ```
 $ terraform plan
@@ -250,7 +250,7 @@ $ terraform plan
 Error: docker_images.image_id: Provider doesn't support resource: docker_images
 ```
 
-**O** erro geralmente é claro e nos indica onde está o erro. No erro acima, o Terraform nos diz que o resource *docker_images* não é suportado. Se checarmos na documentação, veremos que o nome correto do *resource* é *docker_image* (no singular).
+**A** mensagem geralmente é clara e nos indica onde está o erro. No caso acima, o Terraform nos diz que o resource *docker_images* não é suportado. Se checarmos a documentação do Terraform, veremos que o nome correto do *resource* é *docker_image* (no singular).
 
 **U**ma vez que nosso plano foi executado sem erros, chegou a hora de aplicarmos nosso projeto.
 
@@ -304,7 +304,7 @@ Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
 
 **O**u seja: Aplicação completa! Recursos: 1 adicionado, 0 alterados, 0 destruídos.
 
-**S**e quisermos ter certeza de que de fato o Terraform baixou a imagem Docker de que precisamos, basta digitarmos o comando do Docker que lista as imagens que possúimos em nosso ambiente. A nossa nova imagem do supermario deverá estar lá. Digite *docker images*:
+**S**e quisermos ter certeza de que de fato o Terraform baixou a imagem Docker de que precisamos, basta digitarmos o comando do Docker que lista as imagens que possuímos em nosso ambiente. A nossa nova imagem do supermario deverá estar lá. Digite *docker images*:
 
 ```
 $ docker images
@@ -353,9 +353,9 @@ resource "docker_container" "container_id" {
 1.  Na linha 6 inserimos apenas mais um comentário, indicando que ali começaremos a descrever o código que criará nosso Container.
 2.  Na linha 7 indicamos que queremos mais um *resource*. Desta vez o tipo de *resource* que queremos é o *docker_container*, indicando também que queremos dar o nome *container_id* a este *resource*. Novamente, ao fim da linha, abriremos o bloco de código para este *resource* com uma *{*.
 3.  Dentro de nosso bloco, na linha 8, começaremos a listar os atributos deste *resource*. O primeiro atributo que listaremos é o *name*, e para ele daremos o nome *supermario*.
-4.  Na linha 9 indicaremos o atributo *image* e utilizaremos nossa primeira interpolação, onde utilizaremos valores de outra parte de nosso código como se fossem variáveis. No nosso *resource* anterior, *docker_image*, nós demos um nome *image_id*que será utilizado agora. Incluiremos também a tag *latest*, pois, conforme pudemos ver na saída de nosso comando *terraform show*, esta foi a tag utilizada pelo terraform para identificar o último status daquele *resource*. Portanto, aqui utilizaremos a interpolação inserindo o que queremos entre *{}* seguidas do símbolo *$*, conforme prega a sintaxe do Terraform para interpolação de valores, portanto teremos: *${docker_image.image_id.latest}*, onde *docker_image* é o tipo de resource de onde queremos o valor, *image_id* é o nome do resource de onde queremos o valor e *latest* é a tag para dizer que queremos o último valor daquele *resource*. O único motivo pelo qual temos um tipo de *resource* e um nome de *resource* é para facilitar a identificação quando possuímos diversos *resources* do mesmo tipo. Imagine um projeto em que utilizaremos 5 imagens diferentes do Docker. Teríamos 5 *resources* do tipo *docker_image*, porém cada um deles teria um nome diferente, certo?!
+4.  Na linha 9 indicaremos o atributo *image* e utilizaremos nossa primeira interpolação, onde reutilizaremos valores de outra parte de nosso código como se fossem variáveis. Em nosso *resource* anterior, *docker_image*, demos um nome *image_id* que será utilizado agora. Incluiremos também a tag *latest*, pois, conforme pudemos ver na saída de nosso comando *terraform show*, esta foi a tag utilizada pelo terraform para identificar o último status daquele *resource*. Portanto, aqui utilizaremos a interpolação inserindo o que queremos entre *{}* seguidas do símbolo *$*, conforme prega a sintaxe do Terraform para interpolação de valores, ficando o seguinte: *${docker_image.image_id.latest}*, onde *docker_image* é o tipo de resource de onde queremos o valor, *image_id* é o nome deste resource e *latest* é a tag para indicar que queremos o último valor daquele *resource*. O único motivo pelo qual temos um tipo de *resource* e um nome de *resource* é facilitar a identificação quando possuímos diversos *resources* do mesmo tipo. Imagine um projeto em que utilizaremos 5 imagens diferentes do Docker. Teríamos 5 *resources* do tipo *docker_image*, porém cada um deles teria um nome diferente, certo?!
 5.  Na linha 10 de nosso código iniciamos o bloco de portas, afinal, toda aplicação roda em uma porta específica e com containers não seria diferente.
-6.  Nas linhas 11 e 12 indicamos os valores para portas *interna* e *externa*, onde a porta *intern* será a porta utilizada para rodar a aplicação internamente no container, e *extern* será a porta que o Docker irá mapear em nosso sistema local para que possamos acessar a nossa aplicação. Portanto, em nosso exemplo, a aplicação supermario irá rodar na porta *8080* internamente no container, e a porta 80 será mapeada para que possamos acessá-la de nosso navegador local.
+6.  Nas linhas 11 e 12 indicamos os valores para portas *intern* e *externß*, onde a porta *intern* será a porta utilizada pela aplicação internamente no container, e *extern* será a porta que o Docker irá mapear em nosso sistema local para que possamos acessar a nossa aplicação. Portanto, em nosso exemplo, a aplicação supermario irá rodar na porta *8080* internamente no container, e a porta 80 será mapeada para que possamos acessá-la de nosso navegador local.
 7.  Nas linhas 13 e 14 apenas fecharemos os dois blocos de código que criamos, sendo estes o bloco *ports* e o bloco *resource* do *docker_container*.
 
 **N**ovamente, vamos planejar nosso projeto com *terraform plan*:
@@ -500,7 +500,7 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
 8c9d35eac2fc        49beaba1c5cc        "catalina.sh run"   2 minutes ago       Up 2 minutes        0.0.0.0:80->8080/tcp   supermario
 ```
 
-**C**omo podemos ver, temos um container rodando. Podemos até ver que existe um mapeamento de portas: *80->8080
+**C**omo podemos ver, temos um container rodando. Podemos até ver que existe um mapeamento de portas: *80->8080*
 
 **N**ão está convencido ainda?
 
@@ -544,7 +544,7 @@ docker_image.image_id: Destruction complete after 2s
 Destroy complete! Resources: 2 destroyed.
 ```
 
-**C**omo podemos ver, o terraform destruiu dois *resources*. Destruiu tanto nosso container como nossa imagem. Você poderá confirmar isso tentando acessar novamente o jogo pelo seu navegador ou mesmo através dos comandos *docker images* e *docker ls* para ver que tanto o container como a imagem foram removidos de nosso sistema:
+**C**omo podemos ver, o terraform destruiu dois *resources*, nosso container e nossa imagem. Você poderá confirmar isto tentando acessar novamente o jogo pelo seu navegador ou mesmo através dos comandos *docker images* e *docker ls* para ver que tanto o container quanto a imagem foram removidos de nosso sistema:
 
 ```
 $ docker ps
@@ -556,7 +556,7 @@ REPOSITORY          TAG                 IMAGE ID            CREATED             
 
 **D**e volta ao nosso código, vamos incrementá-lo apenas um pouco mais.
 
-**O** terraform nos permite especificar também *outputs*, ou saídas que nos serão apresentadas ao executarmos nosso código. Apenas informações que podem nos ser úteis.
+**O** terraform nos permite especificar também *outputs*, ou saídas que nos serão apresentadas ao executarmos nosso código. Tratam-se de informações que podem nos ser úteis.
 
 **P**or exemplo, supomos que ao executar nosso código, desejamos que o terraform nos informe o IP do container que foi criado e o nome do mesmo, nosso código agora ficaria assim:
 
@@ -652,7 +652,7 @@ can't guarantee that exactly these actions will be performed if
 "terraform apply" is subsequently run.
 ```
 
-**D**esta vez podemos ver que ambas as ações serão executadas: A imagem será baixada e o container será criado, afinal nós tínhamos removido tudo com *terraform destroy* anteriormente.
+**D**esta vez podemos ver que ambas as ações serão executadas: A imagem será baixada e o container será criado, afinal tínhamos removido tudo com *terraform destroy* anteriormente.
 
 **V**amos aplicar nosso código e confirmar com *yes*:
 
@@ -759,7 +759,7 @@ Nome do Container = supermario
 
 **N**ão é complicado, certo?!
 
-**O**bviamente, isto é apenas um exemplo extremamente simplista de uso do Terraform para criar uma pequena infraestrutura como código, que em nosso caso é apenas um container.
+**O**bviamente, isto é apenas um exemplo extremamente simplista de uso do Terraform para criar uma pequena infraestrutura como código, o que em nosso caso é apenas um container.
 
 **N**o próximo post pretendo alterar um pouco este nosso código para utilizar algumas melhores práticas propostas pelo Terraform, como a utilização de variáveis e outputs em arquivos distintos, já que não utilizamos variáveis neste post.
 
