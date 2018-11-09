@@ -153,7 +153,7 @@ $ cd marioweb
 
 **main.tf**
 
-```
+``` py main.tf
 # Baixar a imagem do Projeto Docker-SuperMario
 resource "docker_image" "image_id" {
   name = "pengbai/docker-supermario:latest"
@@ -171,7 +171,7 @@ resource "docker_image" "image_id" {
 
 **D**e volta ao nosso terminal/console, vamos iniciar o nosso ambiente Terraform para este projeto utilizando o comando *terraform init*. Este comando inicia nosso ambiente e baixa os plugins necessários para nosso projeto. No nosso caso, o Terraform baixará os plugins necessários para que nosso código possa lidar com o Docker.
 
-```
+``` yaml
 $ terraform init
 
 Initializing provider plugins...
@@ -203,7 +203,7 @@ commands will detect it and remind you to do so if necessary.
 
 **N**osso próximo passo será executar o *planejamento* de nosso código. Ao rodar o *planejamento* o terraform listará exatamente tudo o que fará caso nosso código seja de fato executado. Novamente em nosso console/terminal, execute *terraform plan*:
 
-```
+``` yaml
 $ terraform plan
 
 Refreshing Terraform state in-memory prior to plan...
@@ -244,7 +244,7 @@ can't guarantee that exactly these actions will be performed if
 
 **C**aso você tenha recebido uma mensagem de erro, significa que algo em seu código está errado. Por exemplo, se ao invés de utilizarmos *docker_image* como tipo de resource, utilizarmos *docker_images*, o resultado de meu *terraform plan* seria o seguinte:
 
-```
+``` yaml
 $ terraform plan
 
 Error: docker_images.image_id: Provider doesn't support resource: docker_images
@@ -256,7 +256,7 @@ Error: docker_images.image_id: Provider doesn't support resource: docker_images
 
 **E**xecute o seu código através do comando *terraform apply*:
 
-```
+``` yaml
 $ terraform apply
 
 An execution plan has been generated and is shown below.
@@ -282,7 +282,7 @@ Do you want to perform these actions?
 
 **R**epare que mesmo ao utilizar *apply* ao invés de *plan*, uma espécie de planejamento também foi realizado antes da aplicação propriamente dita. O Terraform avaliou o código e nos indicou o que será realizado, perguntando-nos ao final se queremos ou não seguir com a execução. Caso tudo nos pareça correto, basta digitarmos *yes* e pressionar Enter novamente para que ele siga com a execução de fato.
 
-```
+``` yaml
 
   Enter a value: yes
 
@@ -316,7 +316,7 @@ pengbai/docker-supermario   latest              49beaba1c5cc        4 months ago
 
 **O** Terraform também nos permite saber o que estamos utilizando em termos de *resources* através do comando *terraform show*:
 
-```
+``` yaml
 $ terraform show
 
 docker_image.image_id:
@@ -331,7 +331,7 @@ docker_image.image_id:
 
 **S**eu código agora deverá estar da seguinte forma:
 
-```
+``` py main.tf
 # Baixar a imagem do Projeto Docker-SuperMario
 resource "docker_image" "image_id" {
   name = "pengbai/docker-supermario:latest"
@@ -360,7 +360,7 @@ resource "docker_container" "container_id" {
 
 **N**ovamente, vamos planejar nosso projeto com *terraform plan*:
 
-```
+``` yaml
 $ terraform plan
 Refreshing Terraform state in-memory prior to plan...
 The refreshed state will be used to calculate this plan, but will not be
@@ -414,7 +414,7 @@ can't guarantee that exactly these actions will be performed if
 
 **U**ma vez que o plano esteja de acordo com o que queremos, podemos aplicar nosso código com *terraform apply*:
 
-```
+``` yaml
 $ terraform apply
 docker_image.image_id: Refreshing state... (ID: sha256:49beaba1c5cc49d2fa424ac03a15b0e7...9c3d62pengbai/docker-supermario:latest)
 
@@ -460,7 +460,7 @@ Do you want to perform these actions?
 
 **M**ais uma vez ele nos dá uma visão geral do que será feito e nos perguntará se queremos prosseguir. Digite *yes* e pressione Enter novamente.
 
-```
+``` yaml
 Enter a value: yes
 
 docker_container.container_id: Creating...
@@ -512,7 +512,7 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
 
 **O** terraform também nos permite destruir a nossa infraestrutura com o comando *terraform destroy*. Da mesma forma que o *apply*, o comando *destroy* também lhe dará uma prévia de o que será destruído e lhe pedirá par aconfirmar com um *yes* ou *no*:
 
-```
+``` yaml
 $ terraform destroy
 docker_image.image_id: Refreshing state... (ID: sha256:49beaba1c5cc49d2fa424ac03a15b0e7...9c3d62pengbai/docker-supermario:latest)
 docker_container.container_id: Refreshing state... (ID: 8c9d35eac2fcdc0c7e530567323167b82e72f33d4645abf20685b99d802e2359)
@@ -560,7 +560,7 @@ REPOSITORY          TAG                 IMAGE ID            CREATED             
 
 **P**or exemplo, supomos que ao executar nosso código, desejamos que o terraform nos informe o IP do container que foi criado e o nome do mesmo, nosso código agora ficaria assim:
 
-```
+``` py main.tf
 # Baixar a imagem do Projeto Docker-SuperMario
 resource "docker_image" "image_id" {
   name = "pengbai/docker-supermario:latest"
@@ -598,7 +598,7 @@ output "Nome do Container" {
 
 **V**amos então rodar nosso *plan* para ver o que aconteceria desta vez:
 
-```
+``` yaml
 $ terraform plan
 Refreshing Terraform state in-memory prior to plan...
 The refreshed state will be used to calculate this plan, but will not be
@@ -656,7 +656,7 @@ can't guarantee that exactly these actions will be performed if
 
 **V**amos aplicar nosso código e confirmar com *yes*:
 
-```
+``` yaml
 $ terraform apply
 
 An execution plan has been generated and is shown below.
@@ -746,7 +746,7 @@ Nome do Container = supermario
 
 **R**epare que tudo o que queríamos foi executado e que, ao final, recebemos duas saídas ou *outputs*:
 
-```
+``` yaml
 Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
 
 Outputs:
