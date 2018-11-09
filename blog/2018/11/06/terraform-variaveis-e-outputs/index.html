@@ -1,0 +1,1303 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Terraform: Variáveis e Outputs - Marcelo Cavalcante Rocha ~</title>
+  <meta name="author" content="Marcelo Cavalcante Rocha - Kalib">
+
+  
+  <meta name="description" content="Uma introdução ao Terraform, da Hashicorp, como robusta e eficiente ferramenta para infraestrutura como código. Separando variáveis e Outputs.">
+  <meta name="keywords" content="HashiCorp,Linux,OS X, Windows,Devops,Cloud,Docker,Nuvem,Automação,Infraestrutura como código,IAC,Infrastructure as code,Mario">
+
+  <!-- https://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="https://kalib.github.io/blog/2018/11/06/terraform-variaveis-e-outputs/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Marcelo Cavalcante Rocha ~" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at https://google.com/webfonts -->
+<link href="https://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-42903485-1']);
+    _gaq.push(['_setDomainName','marcelocavalcante.net']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:kalib.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+    <li><a href="/">
+        <span class="blue_light">
+            Marcelo Cavalcante Rocha ~
+        </span>
+       
+           <span class="blue_dark">
+             Hacking the damn life...
+           </span>
+       
+    </a></li>
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Arquivos</a></li>
+  <li><a href="/about">Sobre mim</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Terraform: Variáveis E Outputs</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2018-11-06T19:26:00-05:00" pubdate data-updated="true">Nov 6<span>th</span>, 2018</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><img class="center" src="/imgs/devops_code.png" title="'Devops - Infrastructure as Code'" ></p>
+
+<h2>Onde paramos</h2>
+
+<p><strong>A</strong>ntes de seguir em frente com esta leitura gostaria de dizer que este post é continuação do anterior, onde dei uma breve introdução ao Terraform, com um exemplo prático em que fizemos o deployment de um jogo web do Mario em um container Docker.</p>
+
+<p><strong>E</strong>ste post na verdade utilizará o mesmo código que escrevemos no post anterior, portanto se você não o leu, recomendo fortemente que o faça <a href="/blog/2018/10/29/introducao-ao-terraform">clicando aqui</a>.</p>
+
+<h2>Variáveis</h2>
+
+<p><strong>E</strong>mbora nosso código tenha funcionado corretamente, ele não estava limpo. Existem algumas boas práticas que devemos sempre tentar seguir, Não apenas para deixar o código limpo, mas também para facilitar a manutenção do mesmo.</p>
+
+<p><strong>I</strong>magine o seguinte código em Ruby:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="nb">puts</span> <span class="s2">&quot;Meu nome é Marcelo.&quot;</span>
+</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;O Marcelo gosta de escrever códigos.&quot;</span>
+</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;Mas o Marcelo também gosta de surfar.&quot;</span>
+</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;Não sendo bom o suficiente a ponto de se tornar um profissional do surf, Marcelo decidiu seguir com a carreira de TI.&quot;</span>
+</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;Este é o Marcelo.&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>U</strong>m código extremamente simples que apenas imprime diversas strings na tela. Imagine que você precisa fazer manutenção deste código pois sua empresa agora decidiu que o personagem da história seria Pedro e não mais Marcelo. Claro, você pode ir lendo linha a linha e alterando em cada linha, mas isso leva muito mais tempo do que deveria. Imagine agora que este sistema possua algumas centenas de linhas de código. Ou múltiplos arquivos. Começa a ficar mais complexo e demorado alterar tudo, sem falar que fica fácil cometer o erro de esquecer algum. Por outro lado, se o nosso código utilizasse variáveis, apenas trocaríamos o valor em um local, tendo assim certeza absoluta de que o mesmo estaria correto em todo o código. Por exemplo:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="n">nome</span> <span class="o">=</span> <span class="s2">&quot;Marcelo&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nb">puts</span> <span class="p">(</span><span class="s2">&quot;Meu nome é &quot;</span> <span class="o">+</span> <span class="n">nome</span> <span class="o">+</span> <span class="s2">&quot;.&quot;</span><span class="p">)</span>
+</span><span class='line'><span class="nb">puts</span> <span class="p">(</span><span class="s2">&quot;O &quot;</span> <span class="o">+</span> <span class="n">nome</span> <span class="o">+</span> <span class="s2">&quot; gosta de escrever códigos.&quot;</span><span class="p">)</span>
+</span><span class='line'><span class="nb">puts</span> <span class="p">(</span><span class="s2">&quot;Mas o &quot;</span> <span class="o">+</span> <span class="n">nome</span> <span class="o">+</span> <span class="s2">&quot; também gosta de surfar.&quot;</span><span class="p">)</span>
+</span><span class='line'><span class="nb">puts</span> <span class="p">(</span><span class="s2">&quot;Não sendo bom o suficiente a ponto de se tornar um profissional do surf, &quot;</span> <span class="o">+</span> <span class="n">nome</span> <span class="o">+</span> <span class="s2">&quot; decidiu seguir com a carreira de TI.&quot;</span><span class="p">)</span>
+</span><span class='line'><span class="nb">puts</span> <span class="p">(</span><span class="s2">&quot;Este é o &quot;</span> <span class="o">+</span> <span class="n">nome</span> <span class="o">+</span> <span class="s2">&quot;.&quot;</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>N</strong>este código, quando precisarmos trocar o nome da pessoa e utilizar Pedro ao invés de Marcelo, precisaríamos alterar apenas o valor da variável na linha 1. muito mais simples, certo?!</p>
+
+<p><strong>D</strong>a mesma forma que em programação básica utilizamos variáveis, quando pensamos em infraestrutura como código deveríamos pensar da mesma forma, afinal estamos programando, certo?! Nao é um sistema, mas ainda assim estamos programando nossa infraestrutura.</p>
+
+<p><strong>E</strong>ste é o nosso arquivo main.tf completo do post anterior:</p>
+
+<figure class='code'><figcaption><span>main.tf</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+</pre></td><td class='code'><pre><code class='py'><span class='line'><span class="c"># Baixar a imagem do Projeto Docker-SuperMario</span>
+</span><span class='line'><span class="n">resource</span> <span class="s">&quot;docker_image&quot;</span> <span class="s">&quot;image_id&quot;</span> <span class="p">{</span>
+</span><span class='line'>  <span class="n">name</span> <span class="o">=</span> <span class="s">&quot;pengbai/docker-supermario:latest&quot;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># Inicia o Container</span>
+</span><span class='line'><span class="n">resource</span> <span class="s">&quot;docker_container&quot;</span> <span class="s">&quot;container_id&quot;</span> <span class="p">{</span>
+</span><span class='line'>  <span class="n">name</span>  <span class="o">=</span> <span class="s">&quot;supermario&quot;</span>
+</span><span class='line'>  <span class="n">image</span> <span class="o">=</span> <span class="s">&quot;${docker_image.image_id.latest}&quot;</span>
+</span><span class='line'>  <span class="n">ports</span> <span class="p">{</span>
+</span><span class='line'>    <span class="n">internal</span> <span class="o">=</span> <span class="s">&quot;8080&quot;</span>
+</span><span class='line'>    <span class="n">external</span> <span class="o">=</span> <span class="s">&quot;80&quot;</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># Nos informa o ip e nome do container criado</span>
+</span><span class='line'><span class="n">output</span> <span class="s">&quot;Endereco IP&quot;</span> <span class="p">{</span>
+</span><span class='line'>  <span class="n">value</span> <span class="o">=</span> <span class="s">&quot;${docker_container.container_id.ip_address}&quot;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">output</span> <span class="s">&quot;Nome do Container&quot;</span> <span class="p">{</span>
+</span><span class='line'>  <span class="n">value</span> <span class="o">=</span> <span class="s">&quot;${docker_container.container_id.name}&quot;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>N</strong>este código não estamos utilizando variáveis, embora tenhamos um pouco de interpolação de valores. Vamos então começar a criar algumas variáveis, mas, seguindo as boas práticas do Terraform, criaremos um arquivo separado para nossas variáveis.</p>
+
+<p><strong>C</strong>rie um arquivo chamado <em>variables.tf</em>. O motivo pelo qual utilizaremos o nome em inglês aqui é por ser este o padrão adotado pelo Terraform. Ao chamarmos uma variável em nosso código, o Terraform saberá onde buscar o valor daquela variável.</p>
+
+<p><strong>P</strong>ara cada variável daremos um nome, uma descrição e um valor <em>default</em>. Nosso arquivo <em>variables.tf</em> ficará assim:</p>
+
+<figure class='code'><figcaption><span>variables.tf</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+</pre></td><td class='code'><pre><code class='py'><span class='line'><span class="n">variable</span> <span class="s">&quot;nome_container&quot;</span> <span class="p">{</span>
+</span><span class='line'>  <span class="n">description</span> <span class="o">=</span> <span class="s">&quot;Nome do container&quot;</span>
+</span><span class='line'>  <span class="n">default</span> <span class="o">=</span> <span class="s">&quot;supermario&quot;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">variable</span> <span class="s">&quot;imagem&quot;</span> <span class="p">{</span>
+</span><span class='line'>  <span class="n">description</span> <span class="o">=</span> <span class="s">&quot;Imagem do container&quot;</span>
+</span><span class='line'>  <span class="n">default</span> <span class="o">=</span> <span class="s">&quot;pengbai/docker-supermario:latest&quot;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">variable</span> <span class="s">&quot;porta_interna&quot;</span> <span class="p">{</span>
+</span><span class='line'>  <span class="n">description</span> <span class="o">=</span> <span class="s">&quot;Porta interna do container&quot;</span>
+</span><span class='line'>  <span class="n">default</span> <span class="o">=</span> <span class="s">&quot;8080&quot;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">variable</span> <span class="s">&quot;porta_externa&quot;</span> <span class="p">{</span>
+</span><span class='line'>  <span class="n">description</span> <span class="o">=</span> <span class="s">&quot;Porta externa do container&quot;</span>
+</span><span class='line'>  <span class="n">default</span> <span class="o">=</span> <span class="s">&quot;80&quot;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>O</strong> que definimos:</p>
+
+<ol>
+<li>Criamos 4 variáveis aqui: <em>nome_container</em>, <em>imagem</em>, <em>porta_interna</em> e <em>porta_externa</em>;</li>
+<li>Para cada variável nós demos 2 atributos: <em>description</em> (descrição) e <em>default</em> (Valor padrão);</li>
+<li>Variáveis não precisam ser sempre declaradas. Existem ocasiões em que podemos criar uma variável sem qualquer valor atribuído à mesma, de forma que o valor será passado durante a execução do código, por exemplo. Por padrão, quando queremos que a variável possua um valor inicial padrão, o terraform utiliza o atributo <em>default</em>;</li>
+<li>A <em>description</em>, ou descrição, é um atributo também opcional, mas ajuda a identificar melhor o que se pretende com aquela variável e costuma ser uma boa prática, dando maior legibilidade ao seu código.</li>
+</ol>
+
+
+<p><strong>A</strong>gora que temos um arquivo com estas 4 variáveis, devemos voltar ao nosso arquivo <em>main.tf</em> e alterar um pouco nosso código para que possamos fazer uso destas variáveis. Iremso alterar nosso código bloco a bloco para ficar mais fácil identificarmos as diferenças.</p>
+
+<p><strong>C</strong>omecemos com o resource <em>docker_image</em>, que agora ficará da seguinte forma em nosso arquivo <em>main.tf</em>:</p>
+
+<figure class='code'><figcaption><span>main.tf</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='py'><span class='line'><span class="c"># Baixar a imagem do Projeto Docker-SuperMario</span>
+</span><span class='line'><span class="n">resource</span> <span class="s">&quot;docker_image&quot;</span> <span class="s">&quot;image_id&quot;</span> <span class="p">{</span>
+</span><span class='line'>  <span class="n">name</span> <span class="o">=</span> <span class="s">&quot;${var.imagem}&quot;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>O</strong> que alteramos:</p>
+
+<ol>
+<li>Nas linhas 1 e 2 não alteramos nada, pois são apenas comentários e a abertura de nosso <em>resource</em>;</li>
+<li>Na linha 3 tínhamos <em>name = &ldquo;pengbai/docker-supermario:latest&rdquo;</em> e agora temos <em>name = &ldquo;${var.imagem}&rdquo;</em>. Basicamente indicamos que o valor para <em>name</em> agora deverá ser pego a partir de nossa variável <em>imagem</em> em nosso arquivo <em>variables.tf</em>. Sim, para pegarmos o valor de uma variável, no Terraform, utilizamos sempre esta sintaxe: <em>&ldquo;${}&rdquo;</em>. Dentro das chaves iremos indicar onde se encontra a nossa variável. quando utilizamos o prefixo <em>var</em>, o Terraform busca automaticamente o valor em um arquivo <em>variables.tf</em>. Existem outras formas de declarar variáveis, mas não nos preocuparemos com isso por enquanto. Se checarmos novamente nosso arquivo <em>variables.tf</em> veremos a variável <em>imagem</em> que criamos, cujo valor é exatamente <em>pengbai/docker-supermario:latest</em>;</li>
+<li>Novamente, na linha 4, nenhuma alteração foi feita. Estamos apenas fechando nosso bloco de <em>resource</em>.</li>
+</ol>
+
+
+<p><strong>V</strong>amos ao nosso próximo bloco de código, nosso <em>resource</em> <em>docker_container</em>. Alteremos o código para que fique da seguinte forma:</p>
+
+<figure class='code'><figcaption><span>main.tf</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='py'><span class='line'><span class="c"># Baixar a imagem do Projeto Docker-SuperMario</span>
+</span><span class='line'><span class="n">resource</span> <span class="s">&quot;docker_image&quot;</span> <span class="s">&quot;image_id&quot;</span> <span class="p">{</span>
+</span><span class='line'>  <span class="n">name</span> <span class="o">=</span> <span class="s">&quot;${var.imagem}&quot;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># Inicia o Container</span>
+</span><span class='line'><span class="n">resource</span> <span class="s">&quot;docker_container&quot;</span> <span class="s">&quot;container_id&quot;</span> <span class="p">{</span>
+</span><span class='line'>  <span class="n">name</span>  <span class="o">=</span> <span class="s">&quot;${var.nome_container}&quot;</span>
+</span><span class='line'>  <span class="n">image</span> <span class="o">=</span> <span class="s">&quot;${docker_image.image_id.latest}&quot;</span>
+</span><span class='line'>  <span class="n">ports</span> <span class="p">{</span>
+</span><span class='line'>    <span class="n">internal</span> <span class="o">=</span> <span class="s">&quot;${var.porta_interna}&quot;</span>
+</span><span class='line'>    <span class="n">external</span> <span class="o">=</span> <span class="s">&quot;${var.porta_externa}&quot;</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>D</strong>a mesma forma que fizemos antes, apenas trouxemos nossas variáveis:</p>
+
+<ol>
+<li>Na linha 8 passamos a utilizar a variável <em>nome_container</em> que criamos para dar o nome ao nosso container. Novamente, em nosso arquivo <em>variables.tf</em> você será capaz de encontrar a variável <em>nome_container</em>, cujo valor default é <em>supermario</em>;</li>
+<li>Na linha 11 apenas trocamos o valor <em>8080</em> pela variável <em>porta_interna</em>, assim como específicamos em nosso arquivo <em>variables.tf</em>;</li>
+<li>Na linha 12, assim como na linha 11, apenas trocamos o valor <em>80</em> pela variável <em>porta_externa</em>.</li>
+</ol>
+
+
+<p><strong>N</strong>osso arquivo <em>main.tf</em> agora deverá estar assim:</p>
+
+<figure class='code'><figcaption><span>main.tf</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class='py'><span class='line'><span class="c"># Baixar a imagem do Projeto Docker-SuperMario</span>
+</span><span class='line'><span class="n">resource</span> <span class="s">&quot;docker_image&quot;</span> <span class="s">&quot;image_id&quot;</span> <span class="p">{</span>
+</span><span class='line'>  <span class="n">name</span> <span class="o">=</span> <span class="s">&quot;${var.imagem}&quot;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># Inicia o Container</span>
+</span><span class='line'><span class="n">resource</span> <span class="s">&quot;docker_container&quot;</span> <span class="s">&quot;container_id&quot;</span> <span class="p">{</span>
+</span><span class='line'>  <span class="n">name</span>  <span class="o">=</span> <span class="s">&quot;${var.nome_container}&quot;</span>
+</span><span class='line'>  <span class="n">image</span> <span class="o">=</span> <span class="s">&quot;${docker_image.image_id.latest}&quot;</span>
+</span><span class='line'>  <span class="n">ports</span> <span class="p">{</span>
+</span><span class='line'>    <span class="n">internal</span> <span class="o">=</span> <span class="s">&quot;${var.porta_interna}&quot;</span>
+</span><span class='line'>    <span class="n">external</span> <span class="o">=</span> <span class="s">&quot;${var.porta_externa}&quot;</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># Nos informa o ip e nome do container criado</span>
+</span><span class='line'><span class="n">output</span> <span class="s">&quot;Endereco IP&quot;</span> <span class="p">{</span>
+</span><span class='line'>  <span class="n">value</span> <span class="o">=</span> <span class="s">&quot;${docker_container.container_id.ip_address}&quot;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">output</span> <span class="s">&quot;Nome do Container&quot;</span> <span class="p">{</span>
+</span><span class='line'>  <span class="n">value</span> <span class="o">=</span> <span class="s">&quot;${docker_container.container_id.name}&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>A</strong>cho sempre interessante fazer testes constantes em nosso código para ter certeza de que tudo está funcionando conforme o esperado. Como alteramos um pouco nosso código, criando variáveis em um arquivo <em>variables.tf</em> e removemos de nosso <em>main.tf</em> valores absolutos para fazermos uso de variáveis, é bom termos certeza de que não cometemos nenhum erro. Assumindo que temos o serviço do Docker rodando, vamos ao nosso terminal e, dentro de nosso diretório <em>marioweb</em> criado no posto anterior, vamos nos certificar de que destruímos a aplicação do post anterior para que não tenhamos nenhum container rodando:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='yaml'><span class='line'><span class="l-Scalar-Plain">$ terraform destroy</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>A</strong>gora vamos executar nosso <em>plan</em>:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+</pre></td><td class='code'><pre><code class='yaml'><span class='line'><span class="l-Scalar-Plain">$ terraform plan</span>
+</span><span class='line'>
+</span><span class='line'><span class="l-Scalar-Plain">Refreshing Terraform state in-memory prior to plan...</span>
+</span><span class='line'><span class="l-Scalar-Plain">The refreshed state will be used to calculate this plan, but will not be</span>
+</span><span class='line'><span class="l-Scalar-Plain">persisted to local or remote state storage.</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="l-Scalar-Plain">------------------------------------------------------------------------</span>
+</span><span class='line'>
+</span><span class='line'><span class="l-Scalar-Plain">An execution plan has been generated and is shown below.</span>
+</span><span class='line'><span class="l-Scalar-Plain">Resource actions are indicated with the following symbols</span><span class="p-Indicator">:</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">+ create</span>
+</span><span class='line'>
+</span><span class='line'><span class="l-Scalar-Plain">Terraform will perform the following actions</span><span class="p-Indicator">:</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="l-Scalar-Plain">+ docker_container.container_id</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">id</span><span class="p-Indicator">:</span>               <span class="l-Scalar-Plain">&lt;computed&gt;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">attach</span><span class="p-Indicator">:</span>           <span class="s">&quot;false&quot;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">bridge</span><span class="p-Indicator">:</span>           <span class="l-Scalar-Plain">&lt;computed&gt;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">container_logs</span><span class="p-Indicator">:</span>   <span class="l-Scalar-Plain">&lt;computed&gt;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">exit_code</span><span class="p-Indicator">:</span>        <span class="l-Scalar-Plain">&lt;computed&gt;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">gateway</span><span class="p-Indicator">:</span>          <span class="l-Scalar-Plain">&lt;computed&gt;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">image</span><span class="p-Indicator">:</span>            <span class="s">&quot;${docker_image.image_id.latest}&quot;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">ip_address</span><span class="p-Indicator">:</span>       <span class="l-Scalar-Plain">&lt;computed&gt;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">ip_prefix_length</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">&lt;computed&gt;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">log_driver</span><span class="p-Indicator">:</span>       <span class="s">&quot;json-file&quot;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">logs</span><span class="p-Indicator">:</span>             <span class="s">&quot;false&quot;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">must_run</span><span class="p-Indicator">:</span>         <span class="s">&quot;true&quot;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">name</span><span class="p-Indicator">:</span>             <span class="s">&quot;supermario&quot;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">network_data.#</span><span class="p-Indicator">:</span>   <span class="l-Scalar-Plain">&lt;computed&gt;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">ports.#</span><span class="p-Indicator">:</span>          <span class="s">&quot;1&quot;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">ports.0.external</span><span class="p-Indicator">:</span> <span class="s">&quot;80&quot;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">ports.0.internal</span><span class="p-Indicator">:</span> <span class="s">&quot;8080&quot;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">ports.0.ip</span><span class="p-Indicator">:</span>       <span class="s">&quot;0.0.0.0&quot;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">ports.0.protocol</span><span class="p-Indicator">:</span> <span class="s">&quot;tcp&quot;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">restart</span><span class="p-Indicator">:</span>          <span class="s">&quot;no&quot;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">rm</span><span class="p-Indicator">:</span>               <span class="s">&quot;false&quot;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">start</span><span class="p-Indicator">:</span>            <span class="s">&quot;true&quot;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="l-Scalar-Plain">+ docker_image.image_id</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">id</span><span class="p-Indicator">:</span>               <span class="l-Scalar-Plain">&lt;computed&gt;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">latest</span><span class="p-Indicator">:</span>           <span class="l-Scalar-Plain">&lt;computed&gt;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">name</span><span class="p-Indicator">:</span>             <span class="s">&quot;pengbai/docker-supermario:latest&quot;</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="l-Scalar-Plain">Plan</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">2 to add, 0 to change, 0 to destroy.</span>
+</span><span class='line'>
+</span><span class='line'><span class="l-Scalar-Plain">------------------------------------------------------------------------</span>
+</span><span class='line'>
+</span><span class='line'><span class="l-Scalar-Plain">Note</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">You didn&#39;t specify an &quot;-out&quot; parameter to save this plan, so Terraform</span>
+</span><span class='line'><span class="l-Scalar-Plain">can&#39;t guarantee that exactly these actions will be performed if</span>
+</span><span class='line'><span class="s">&quot;terraform</span><span class="nv"> </span><span class="s">apply&quot;</span> <span class="l-Scalar-Plain">is subsequently run.</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>A</strong>parentemente está tudo correto. Na saída de nosso <em>plan</em> podemos ver que os valores estão de acordo com o esperado. Apliquemos então nosso código com <em>terraform apply</em>:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+</pre></td><td class='code'><pre><code class='yaml'><span class='line'><span class="l-Scalar-Plain">$ terraform apply</span>
+</span><span class='line'>
+</span><span class='line'><span class="l-Scalar-Plain">An execution plan has been generated and is shown below.</span>
+</span><span class='line'><span class="l-Scalar-Plain">Resource actions are indicated with the following symbols</span><span class="p-Indicator">:</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">+ create</span>
+</span><span class='line'>
+</span><span class='line'><span class="l-Scalar-Plain">Terraform will perform the following actions</span><span class="p-Indicator">:</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="l-Scalar-Plain">+ docker_container.container_id</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">id</span><span class="p-Indicator">:</span>               <span class="l-Scalar-Plain">&lt;computed&gt;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">attach</span><span class="p-Indicator">:</span>           <span class="s">&quot;false&quot;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">bridge</span><span class="p-Indicator">:</span>           <span class="l-Scalar-Plain">&lt;computed&gt;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">container_logs</span><span class="p-Indicator">:</span>   <span class="l-Scalar-Plain">&lt;computed&gt;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">exit_code</span><span class="p-Indicator">:</span>        <span class="l-Scalar-Plain">&lt;computed&gt;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">gateway</span><span class="p-Indicator">:</span>          <span class="l-Scalar-Plain">&lt;computed&gt;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">image</span><span class="p-Indicator">:</span>            <span class="s">&quot;${docker_image.image_id.latest}&quot;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">ip_address</span><span class="p-Indicator">:</span>       <span class="l-Scalar-Plain">&lt;computed&gt;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">ip_prefix_length</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">&lt;computed&gt;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">log_driver</span><span class="p-Indicator">:</span>       <span class="s">&quot;json-file&quot;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">logs</span><span class="p-Indicator">:</span>             <span class="s">&quot;false&quot;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">must_run</span><span class="p-Indicator">:</span>         <span class="s">&quot;true&quot;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">name</span><span class="p-Indicator">:</span>             <span class="s">&quot;supermario&quot;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">network_data.#</span><span class="p-Indicator">:</span>   <span class="l-Scalar-Plain">&lt;computed&gt;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">ports.#</span><span class="p-Indicator">:</span>          <span class="s">&quot;1&quot;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">ports.0.external</span><span class="p-Indicator">:</span> <span class="s">&quot;80&quot;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">ports.0.internal</span><span class="p-Indicator">:</span> <span class="s">&quot;8080&quot;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">ports.0.ip</span><span class="p-Indicator">:</span>       <span class="s">&quot;0.0.0.0&quot;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">ports.0.protocol</span><span class="p-Indicator">:</span> <span class="s">&quot;tcp&quot;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">restart</span><span class="p-Indicator">:</span>          <span class="s">&quot;no&quot;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">rm</span><span class="p-Indicator">:</span>               <span class="s">&quot;false&quot;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">start</span><span class="p-Indicator">:</span>            <span class="s">&quot;true&quot;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="l-Scalar-Plain">+ docker_image.image_id</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">id</span><span class="p-Indicator">:</span>               <span class="l-Scalar-Plain">&lt;computed&gt;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">latest</span><span class="p-Indicator">:</span>           <span class="l-Scalar-Plain">&lt;computed&gt;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">name</span><span class="p-Indicator">:</span>             <span class="s">&quot;pengbai/docker-supermario:latest&quot;</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="l-Scalar-Plain">Plan</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">2 to add, 0 to change, 0 to destroy.</span>
+</span><span class='line'>
+</span><span class='line'><span class="l-Scalar-Plain">Do you want to perform these actions?</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">Terraform will perform the actions described above.</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">Only &#39;yes&#39; will be accepted to approve.</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="l-Scalar-Plain">Enter a value</span><span class="p-Indicator">:</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>A</strong>ssim como vimos no post anterior, o <em>terraform apply</em> sempre nos apresenta uma prévia das tarefas que serão executadas e em seguida nos pede uma confirmação de execução. Como tudo parece correto, vamos confirmar com um <em>yes</em>:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+</pre></td><td class='code'><pre><code class='yaml'><span class='line'>  <span class="l-Scalar-Plain">Enter a value</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">yes</span>
+</span><span class='line'>
+</span><span class='line'><span class="l-Scalar-Plain">docker_image.image_id</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">Creating...</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">latest</span><span class="p-Indicator">:</span> <span class="s">&quot;&quot;</span> <span class="l-Scalar-Plain">=&gt; &quot;&lt;computed&gt;&quot;</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">name</span><span class="p-Indicator">:</span>   <span class="s">&quot;&quot;</span> <span class="l-Scalar-Plain">=&gt; &quot;pengbai/docker-supermario:latest&quot;</span>
+</span><span class='line'><span class="l-Scalar-Plain">docker_image.image_id</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">Still creating... (10s elapsed)</span>
+</span><span class='line'><span class="l-Scalar-Plain">docker_image.image_id</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">Still creating... (20s elapsed)</span>
+</span><span class='line'><span class="l-Scalar-Plain">docker_image.image_id</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">Still creating... (30s elapsed)</span>
+</span><span class='line'><span class="l-Scalar-Plain">docker_image.image_id</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">Creation complete after 37s (ID</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">sha256:49beaba1c5cc49d2fa424ac03a15b0e7...9c3d62pengbai/docker-supermario:latest)</span>
+</span><span class='line'><span class="l-Scalar-Plain">docker_container.container_id</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">Creating...</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">attach</span><span class="p-Indicator">:</span>           <span class="s">&quot;&quot;</span> <span class="l-Scalar-Plain">=&gt; &quot;false&quot;</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">bridge</span><span class="p-Indicator">:</span>           <span class="s">&quot;&quot;</span> <span class="l-Scalar-Plain">=&gt; &quot;&lt;computed&gt;&quot;</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">container_logs</span><span class="p-Indicator">:</span>   <span class="s">&quot;&quot;</span> <span class="l-Scalar-Plain">=&gt; &quot;&lt;computed&gt;&quot;</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">exit_code</span><span class="p-Indicator">:</span>        <span class="s">&quot;&quot;</span> <span class="l-Scalar-Plain">=&gt; &quot;&lt;computed&gt;&quot;</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">gateway</span><span class="p-Indicator">:</span>          <span class="s">&quot;&quot;</span> <span class="l-Scalar-Plain">=&gt; &quot;&lt;computed&gt;&quot;</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">image</span><span class="p-Indicator">:</span>            <span class="s">&quot;&quot;</span> <span class="l-Scalar-Plain">=&gt; &quot;sha256:49beaba1c5cc49d2fa424ac03a15b0e761f637e835c1ed4d8108cc247a9c3d62&quot;</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">ip_address</span><span class="p-Indicator">:</span>       <span class="s">&quot;&quot;</span> <span class="l-Scalar-Plain">=&gt; &quot;&lt;computed&gt;&quot;</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">ip_prefix_length</span><span class="p-Indicator">:</span> <span class="s">&quot;&quot;</span> <span class="l-Scalar-Plain">=&gt; &quot;&lt;computed&gt;&quot;</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">log_driver</span><span class="p-Indicator">:</span>       <span class="s">&quot;&quot;</span> <span class="l-Scalar-Plain">=&gt; &quot;json-file&quot;</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">logs</span><span class="p-Indicator">:</span>             <span class="s">&quot;&quot;</span> <span class="l-Scalar-Plain">=&gt; &quot;false&quot;</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">must_run</span><span class="p-Indicator">:</span>         <span class="s">&quot;&quot;</span> <span class="l-Scalar-Plain">=&gt; &quot;true&quot;</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">name</span><span class="p-Indicator">:</span>             <span class="s">&quot;&quot;</span> <span class="l-Scalar-Plain">=&gt; &quot;supermario&quot;</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">network_data.#</span><span class="p-Indicator">:</span>   <span class="s">&quot;&quot;</span> <span class="l-Scalar-Plain">=&gt; &quot;&lt;computed&gt;&quot;</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">ports.#</span><span class="p-Indicator">:</span>          <span class="s">&quot;&quot;</span> <span class="l-Scalar-Plain">=&gt; &quot;1&quot;</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">ports.0.external</span><span class="p-Indicator">:</span> <span class="s">&quot;&quot;</span> <span class="l-Scalar-Plain">=&gt; &quot;80&quot;</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">ports.0.internal</span><span class="p-Indicator">:</span> <span class="s">&quot;&quot;</span> <span class="l-Scalar-Plain">=&gt; &quot;8080&quot;</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">ports.0.ip</span><span class="p-Indicator">:</span>       <span class="s">&quot;&quot;</span> <span class="l-Scalar-Plain">=&gt; &quot;0.0.0.0&quot;</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">ports.0.protocol</span><span class="p-Indicator">:</span> <span class="s">&quot;&quot;</span> <span class="l-Scalar-Plain">=&gt; &quot;tcp&quot;</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">restart</span><span class="p-Indicator">:</span>          <span class="s">&quot;&quot;</span> <span class="l-Scalar-Plain">=&gt; &quot;no&quot;</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">rm</span><span class="p-Indicator">:</span>               <span class="s">&quot;&quot;</span> <span class="l-Scalar-Plain">=&gt; &quot;false&quot;</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">start</span><span class="p-Indicator">:</span>            <span class="s">&quot;&quot;</span> <span class="l-Scalar-Plain">=&gt; &quot;true&quot;</span>
+</span><span class='line'><span class="l-Scalar-Plain">docker_container.container_id</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">Creation complete after 1s (ID</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">bbe9e8e7b5428532b882e7fbd304fc2b3d71e0bcb29fa099e15162397731e15e)</span>
+</span><span class='line'>
+</span><span class='line'><span class="l-Scalar-Plain">Apply complete! Resources</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">2 added, 0 changed, 0 destroyed.</span>
+</span><span class='line'>
+</span><span class='line'><span class="l-Scalar-Plain">Outputs</span><span class="p-Indicator">:</span>
+</span><span class='line'>
+</span><span class='line'><span class="l-Scalar-Plain">Endereco IP = 172.17.0.2</span>
+</span><span class='line'><span class="l-Scalar-Plain">Nome do Container = supermario</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>A</strong>parentemente tudo saiu conforme o esperado, com 2 <em>resources</em> adicionados, sendo eles nossa imagem e nosso container.</p>
+
+<p><strong>N</strong>ovamente, podemos verificar que tudo está correto através do comando <em>docker ps</em>, onde deveremos ver que nosso container está rodando:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='yaml'><span class='line'><span class="l-Scalar-Plain">$ docker ps</span>
+</span><span class='line'>
+</span><span class='line'><span class="l-Scalar-Plain">CONTAINER ID        IMAGE               COMMAND             CREATED              STATUS              PORTS                  NAMES</span>
+</span><span class='line'><span class="l-Scalar-Plain">bbe9e8e7b542        49beaba1c5cc        &quot;catalina.sh run&quot;   About a minute ago   Up About a minute   0.0.0.0:80-&gt;8080/tcp   supermario</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>T</strong>ambém podemos tentar acessar em nosso browser ou navegador o seguinte endereço: <em>localhost:80</em>. Nosso jogo do mario deverá estar funcionando.</p>
+
+<p><strong>A</strong>gora que entendemos o básico sobre o uso de variáveis e vimos que nosso código, embora um pouco diferente, continua funcionando, chegou a hora de corrigirmos nossos <em>outputs</em>. Eles continuam funcionando, porém para seguirmos os padrões e melhores práticas, vamos também retirá-los de nosso <em>main.tf</em> e criar um arquivo dedicado para isto.</p>
+
+<h2>Outputs</h2>
+
+<p><strong>C</strong>omecemos criando um arquivo chamado <em>outputs.tf</em> com o seguinte conteúdo:</p>
+
+<figure class='code'><figcaption><span>outputs.tf</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='py'><span class='line'><span class="c"># Nos informa o ip e nome do container criado</span>
+</span><span class='line'><span class="n">output</span> <span class="s">&quot;Endereco IP&quot;</span> <span class="p">{</span>
+</span><span class='line'>  <span class="n">value</span> <span class="o">=</span> <span class="s">&quot;${docker_container.container_id.ip_address}&quot;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">output</span> <span class="s">&quot;Nome do Container&quot;</span> <span class="p">{</span>
+</span><span class='line'>  <span class="n">value</span> <span class="o">=</span> <span class="s">&quot;${docker_container.container_id.name}&quot;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>E</strong>ste foi fácil, certo?! Se prestarmos atenção, não alteramos praticamente nada. Apenas copiamos os dois blocos <em>outputs</em> do arquivo <em>main.tf</em> sem qualquer alteração.</p>
+
+<p><strong>A</strong>pós salvar nosso arquivo <em>outputs.tf</em>, removeremos estes dois <em>outputs</em> do arquivo <em>main.tf</em>. Nosso <em>main.tf</em> ficará assim:</p>
+
+<figure class='code'><figcaption><span>main.tf</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='py'><span class='line'><span class="c"># Baixar a imagem do Projeto Docker-SuperMario</span>
+</span><span class='line'><span class="n">resource</span> <span class="s">&quot;docker_image&quot;</span> <span class="s">&quot;image_id&quot;</span> <span class="p">{</span>
+</span><span class='line'>  <span class="n">name</span> <span class="o">=</span> <span class="s">&quot;${var.imagem}&quot;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># Inicia o Container</span>
+</span><span class='line'><span class="n">resource</span> <span class="s">&quot;docker_container&quot;</span> <span class="s">&quot;container_id&quot;</span> <span class="p">{</span>
+</span><span class='line'>  <span class="n">name</span>  <span class="o">=</span> <span class="s">&quot;${var.nome_container}&quot;</span>
+</span><span class='line'>  <span class="n">image</span> <span class="o">=</span> <span class="s">&quot;${docker_image.image_id.latest}&quot;</span>
+</span><span class='line'>  <span class="n">ports</span> <span class="p">{</span>
+</span><span class='line'>    <span class="n">internal</span> <span class="o">=</span> <span class="s">&quot;${var.porta_interna}&quot;</span>
+</span><span class='line'>    <span class="n">external</span> <span class="o">=</span> <span class="s">&quot;${var.porta_externa}&quot;</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>S</strong>imples, não? Nosso código está mais limpo e organizado. Vamos destuir novamente nosso projeto com <em>terraform destroy</em> para que possamos testar estas últimas alterações:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+</pre></td><td class='code'><pre><code class='yaml'><span class='line'><span class="l-Scalar-Plain">$ terraform destroy</span>
+</span><span class='line'>
+</span><span class='line'><span class="l-Scalar-Plain">docker_image.image_id</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">Refreshing state... (ID</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">sha256:49beaba1c5cc49d2fa424ac03a15b0e7...9c3d62pengbai/docker-supermario:latest)</span>
+</span><span class='line'><span class="l-Scalar-Plain">docker_container.container_id</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">Refreshing state... (ID</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">bbe9e8e7b5428532b882e7fbd304fc2b3d71e0bcb29fa099e15162397731e15e)</span>
+</span><span class='line'>
+</span><span class='line'><span class="l-Scalar-Plain">An execution plan has been generated and is shown below.</span>
+</span><span class='line'><span class="l-Scalar-Plain">Resource actions are indicated with the following symbols</span><span class="p-Indicator">:</span>
+</span><span class='line'>  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">destroy</span>
+</span><span class='line'>
+</span><span class='line'><span class="l-Scalar-Plain">Terraform will perform the following actions</span><span class="p-Indicator">:</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">docker_container.container_id</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">docker_image.image_id</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="l-Scalar-Plain">Plan</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">0 to add, 0 to change, 2 to destroy.</span>
+</span><span class='line'>
+</span><span class='line'><span class="l-Scalar-Plain">Do you really want to destroy all resources?</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">Terraform will destroy all your managed infrastructure, as shown above.</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">There is no undo. Only &#39;yes&#39; will be accepted to confirm.</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="l-Scalar-Plain">Enter a value</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">yes</span>
+</span><span class='line'>
+</span><span class='line'><span class="l-Scalar-Plain">docker_container.container_id</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">Destroying... (ID</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">bbe9e8e7b5428532b882e7fbd304fc2b3d71e0bcb29fa099e15162397731e15e)</span>
+</span><span class='line'><span class="l-Scalar-Plain">docker_container.container_id</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">Destruction complete after 1s</span>
+</span><span class='line'><span class="l-Scalar-Plain">docker_image.image_id</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">Destroying... (ID</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">sha256:49beaba1c5cc49d2fa424ac03a15b0e7...9c3d62pengbai/docker-supermario:latest)</span>
+</span><span class='line'><span class="l-Scalar-Plain">docker_image.image_id</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">Destruction complete after 1s</span>
+</span><span class='line'>
+</span><span class='line'><span class="l-Scalar-Plain">Destroy complete! Resources</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">2 destroyed.</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>A</strong>gora vamos aplicar nosso <em>plan</em> e em seguida, caso tudo esteja correto, vamos executar <em>terraform plan</em>:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+</pre></td><td class='code'><pre><code class='yaml'><span class='line'><span class="l-Scalar-Plain">$ terraform plan</span>
+</span><span class='line'>
+</span><span class='line'><span class="l-Scalar-Plain">Refreshing Terraform state in-memory prior to plan...</span>
+</span><span class='line'><span class="l-Scalar-Plain">The refreshed state will be used to calculate this plan, but will not be</span>
+</span><span class='line'><span class="l-Scalar-Plain">persisted to local or remote state storage.</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="l-Scalar-Plain">------------------------------------------------------------------------</span>
+</span><span class='line'>
+</span><span class='line'><span class="l-Scalar-Plain">An execution plan has been generated and is shown below.</span>
+</span><span class='line'><span class="l-Scalar-Plain">Resource actions are indicated with the following symbols</span><span class="p-Indicator">:</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">+ create</span>
+</span><span class='line'>
+</span><span class='line'><span class="l-Scalar-Plain">Terraform will perform the following actions</span><span class="p-Indicator">:</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="l-Scalar-Plain">+ docker_container.container_id</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">id</span><span class="p-Indicator">:</span>               <span class="l-Scalar-Plain">&lt;computed&gt;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">attach</span><span class="p-Indicator">:</span>           <span class="s">&quot;false&quot;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">bridge</span><span class="p-Indicator">:</span>           <span class="l-Scalar-Plain">&lt;computed&gt;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">container_logs</span><span class="p-Indicator">:</span>   <span class="l-Scalar-Plain">&lt;computed&gt;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">exit_code</span><span class="p-Indicator">:</span>        <span class="l-Scalar-Plain">&lt;computed&gt;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">gateway</span><span class="p-Indicator">:</span>          <span class="l-Scalar-Plain">&lt;computed&gt;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">image</span><span class="p-Indicator">:</span>            <span class="s">&quot;${docker_image.image_id.latest}&quot;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">ip_address</span><span class="p-Indicator">:</span>       <span class="l-Scalar-Plain">&lt;computed&gt;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">ip_prefix_length</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">&lt;computed&gt;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">log_driver</span><span class="p-Indicator">:</span>       <span class="s">&quot;json-file&quot;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">logs</span><span class="p-Indicator">:</span>             <span class="s">&quot;false&quot;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">must_run</span><span class="p-Indicator">:</span>         <span class="s">&quot;true&quot;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">name</span><span class="p-Indicator">:</span>             <span class="s">&quot;supermario&quot;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">network_data.#</span><span class="p-Indicator">:</span>   <span class="l-Scalar-Plain">&lt;computed&gt;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">ports.#</span><span class="p-Indicator">:</span>          <span class="s">&quot;1&quot;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">ports.0.external</span><span class="p-Indicator">:</span> <span class="s">&quot;80&quot;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">ports.0.internal</span><span class="p-Indicator">:</span> <span class="s">&quot;8080&quot;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">ports.0.ip</span><span class="p-Indicator">:</span>       <span class="s">&quot;0.0.0.0&quot;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">ports.0.protocol</span><span class="p-Indicator">:</span> <span class="s">&quot;tcp&quot;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">restart</span><span class="p-Indicator">:</span>          <span class="s">&quot;no&quot;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">rm</span><span class="p-Indicator">:</span>               <span class="s">&quot;false&quot;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">start</span><span class="p-Indicator">:</span>            <span class="s">&quot;true&quot;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="l-Scalar-Plain">+ docker_image.image_id</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">id</span><span class="p-Indicator">:</span>               <span class="l-Scalar-Plain">&lt;computed&gt;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">latest</span><span class="p-Indicator">:</span>           <span class="l-Scalar-Plain">&lt;computed&gt;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">name</span><span class="p-Indicator">:</span>             <span class="s">&quot;pengbai/docker-supermario:latest&quot;</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="l-Scalar-Plain">Plan</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">2 to add, 0 to change, 0 to destroy.</span>
+</span><span class='line'>
+</span><span class='line'><span class="l-Scalar-Plain">------------------------------------------------------------------------</span>
+</span><span class='line'>
+</span><span class='line'><span class="l-Scalar-Plain">Note</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">You didn&#39;t specify an &quot;-out&quot; parameter to save this plan, so Terraform</span>
+</span><span class='line'><span class="l-Scalar-Plain">can&#39;t guarantee that exactly these actions will be performed if</span>
+</span><span class='line'><span class="s">&quot;terraform</span><span class="nv"> </span><span class="s">apply&quot;</span> <span class="l-Scalar-Plain">is subsequently run.</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+<span class='line-number'>72</span>
+<span class='line-number'>73</span>
+<span class='line-number'>74</span>
+<span class='line-number'>75</span>
+<span class='line-number'>76</span>
+<span class='line-number'>77</span>
+<span class='line-number'>78</span>
+<span class='line-number'>79</span>
+<span class='line-number'>80</span>
+<span class='line-number'>81</span>
+<span class='line-number'>82</span>
+<span class='line-number'>83</span>
+<span class='line-number'>84</span>
+</pre></td><td class='code'><pre><code class='yaml'><span class='line'><span class="l-Scalar-Plain">$ terraform apply</span>
+</span><span class='line'>
+</span><span class='line'><span class="l-Scalar-Plain">An execution plan has been generated and is shown below.</span>
+</span><span class='line'><span class="l-Scalar-Plain">Resource actions are indicated with the following symbols</span><span class="p-Indicator">:</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">+ create</span>
+</span><span class='line'>
+</span><span class='line'><span class="l-Scalar-Plain">Terraform will perform the following actions</span><span class="p-Indicator">:</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="l-Scalar-Plain">+ docker_container.container_id</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">id</span><span class="p-Indicator">:</span>               <span class="l-Scalar-Plain">&lt;computed&gt;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">attach</span><span class="p-Indicator">:</span>           <span class="s">&quot;false&quot;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">bridge</span><span class="p-Indicator">:</span>           <span class="l-Scalar-Plain">&lt;computed&gt;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">container_logs</span><span class="p-Indicator">:</span>   <span class="l-Scalar-Plain">&lt;computed&gt;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">exit_code</span><span class="p-Indicator">:</span>        <span class="l-Scalar-Plain">&lt;computed&gt;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">gateway</span><span class="p-Indicator">:</span>          <span class="l-Scalar-Plain">&lt;computed&gt;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">image</span><span class="p-Indicator">:</span>            <span class="s">&quot;${docker_image.image_id.latest}&quot;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">ip_address</span><span class="p-Indicator">:</span>       <span class="l-Scalar-Plain">&lt;computed&gt;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">ip_prefix_length</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">&lt;computed&gt;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">log_driver</span><span class="p-Indicator">:</span>       <span class="s">&quot;json-file&quot;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">logs</span><span class="p-Indicator">:</span>             <span class="s">&quot;false&quot;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">must_run</span><span class="p-Indicator">:</span>         <span class="s">&quot;true&quot;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">name</span><span class="p-Indicator">:</span>             <span class="s">&quot;supermario&quot;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">network_data.#</span><span class="p-Indicator">:</span>   <span class="l-Scalar-Plain">&lt;computed&gt;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">ports.#</span><span class="p-Indicator">:</span>          <span class="s">&quot;1&quot;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">ports.0.external</span><span class="p-Indicator">:</span> <span class="s">&quot;80&quot;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">ports.0.internal</span><span class="p-Indicator">:</span> <span class="s">&quot;8080&quot;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">ports.0.ip</span><span class="p-Indicator">:</span>       <span class="s">&quot;0.0.0.0&quot;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">ports.0.protocol</span><span class="p-Indicator">:</span> <span class="s">&quot;tcp&quot;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">restart</span><span class="p-Indicator">:</span>          <span class="s">&quot;no&quot;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">rm</span><span class="p-Indicator">:</span>               <span class="s">&quot;false&quot;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">start</span><span class="p-Indicator">:</span>            <span class="s">&quot;true&quot;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="l-Scalar-Plain">+ docker_image.image_id</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">id</span><span class="p-Indicator">:</span>               <span class="l-Scalar-Plain">&lt;computed&gt;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">latest</span><span class="p-Indicator">:</span>           <span class="l-Scalar-Plain">&lt;computed&gt;</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">name</span><span class="p-Indicator">:</span>             <span class="s">&quot;pengbai/docker-supermario:latest&quot;</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="l-Scalar-Plain">Plan</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">2 to add, 0 to change, 0 to destroy.</span>
+</span><span class='line'>
+</span><span class='line'><span class="l-Scalar-Plain">Do you want to perform these actions?</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">Terraform will perform the actions described above.</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">Only &#39;yes&#39; will be accepted to approve.</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="l-Scalar-Plain">Enter a value</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">yes</span>
+</span><span class='line'>
+</span><span class='line'><span class="l-Scalar-Plain">docker_image.image_id</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">Creating...</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">latest</span><span class="p-Indicator">:</span> <span class="s">&quot;&quot;</span> <span class="l-Scalar-Plain">=&gt; &quot;&lt;computed&gt;&quot;</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">name</span><span class="p-Indicator">:</span>   <span class="s">&quot;&quot;</span> <span class="l-Scalar-Plain">=&gt; &quot;pengbai/docker-supermario:latest&quot;</span>
+</span><span class='line'><span class="l-Scalar-Plain">docker_image.image_id</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">Still creating... (10s elapsed)</span>
+</span><span class='line'><span class="l-Scalar-Plain">docker_image.image_id</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">Still creating... (20s elapsed)</span>
+</span><span class='line'><span class="l-Scalar-Plain">docker_image.image_id</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">Still creating... (30s elapsed)</span>
+</span><span class='line'><span class="l-Scalar-Plain">docker_image.image_id</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">Still creating... (40s elapsed)</span>
+</span><span class='line'><span class="l-Scalar-Plain">docker_image.image_id</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">Creation complete after 42s (ID</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">sha256:49beaba1c5cc49d2fa424ac03a15b0e7...9c3d62pengbai/docker-supermario:latest)</span>
+</span><span class='line'><span class="l-Scalar-Plain">docker_container.container_id</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">Creating...</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">attach</span><span class="p-Indicator">:</span>           <span class="s">&quot;&quot;</span> <span class="l-Scalar-Plain">=&gt; &quot;false&quot;</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">bridge</span><span class="p-Indicator">:</span>           <span class="s">&quot;&quot;</span> <span class="l-Scalar-Plain">=&gt; &quot;&lt;computed&gt;&quot;</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">container_logs</span><span class="p-Indicator">:</span>   <span class="s">&quot;&quot;</span> <span class="l-Scalar-Plain">=&gt; &quot;&lt;computed&gt;&quot;</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">exit_code</span><span class="p-Indicator">:</span>        <span class="s">&quot;&quot;</span> <span class="l-Scalar-Plain">=&gt; &quot;&lt;computed&gt;&quot;</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">gateway</span><span class="p-Indicator">:</span>          <span class="s">&quot;&quot;</span> <span class="l-Scalar-Plain">=&gt; &quot;&lt;computed&gt;&quot;</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">image</span><span class="p-Indicator">:</span>            <span class="s">&quot;&quot;</span> <span class="l-Scalar-Plain">=&gt; &quot;sha256:49beaba1c5cc49d2fa424ac03a15b0e761f637e835c1ed4d8108cc247a9c3d62&quot;</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">ip_address</span><span class="p-Indicator">:</span>       <span class="s">&quot;&quot;</span> <span class="l-Scalar-Plain">=&gt; &quot;&lt;computed&gt;&quot;</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">ip_prefix_length</span><span class="p-Indicator">:</span> <span class="s">&quot;&quot;</span> <span class="l-Scalar-Plain">=&gt; &quot;&lt;computed&gt;&quot;</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">log_driver</span><span class="p-Indicator">:</span>       <span class="s">&quot;&quot;</span> <span class="l-Scalar-Plain">=&gt; &quot;json-file&quot;</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">logs</span><span class="p-Indicator">:</span>             <span class="s">&quot;&quot;</span> <span class="l-Scalar-Plain">=&gt; &quot;false&quot;</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">must_run</span><span class="p-Indicator">:</span>         <span class="s">&quot;&quot;</span> <span class="l-Scalar-Plain">=&gt; &quot;true&quot;</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">name</span><span class="p-Indicator">:</span>             <span class="s">&quot;&quot;</span> <span class="l-Scalar-Plain">=&gt; &quot;supermario&quot;</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">network_data.#</span><span class="p-Indicator">:</span>   <span class="s">&quot;&quot;</span> <span class="l-Scalar-Plain">=&gt; &quot;&lt;computed&gt;&quot;</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">ports.#</span><span class="p-Indicator">:</span>          <span class="s">&quot;&quot;</span> <span class="l-Scalar-Plain">=&gt; &quot;1&quot;</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">ports.0.external</span><span class="p-Indicator">:</span> <span class="s">&quot;&quot;</span> <span class="l-Scalar-Plain">=&gt; &quot;80&quot;</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">ports.0.internal</span><span class="p-Indicator">:</span> <span class="s">&quot;&quot;</span> <span class="l-Scalar-Plain">=&gt; &quot;8080&quot;</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">ports.0.ip</span><span class="p-Indicator">:</span>       <span class="s">&quot;&quot;</span> <span class="l-Scalar-Plain">=&gt; &quot;0.0.0.0&quot;</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">ports.0.protocol</span><span class="p-Indicator">:</span> <span class="s">&quot;&quot;</span> <span class="l-Scalar-Plain">=&gt; &quot;tcp&quot;</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">restart</span><span class="p-Indicator">:</span>          <span class="s">&quot;&quot;</span> <span class="l-Scalar-Plain">=&gt; &quot;no&quot;</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">rm</span><span class="p-Indicator">:</span>               <span class="s">&quot;&quot;</span> <span class="l-Scalar-Plain">=&gt; &quot;false&quot;</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">start</span><span class="p-Indicator">:</span>            <span class="s">&quot;&quot;</span> <span class="l-Scalar-Plain">=&gt; &quot;true&quot;</span>
+</span><span class='line'><span class="l-Scalar-Plain">docker_container.container_id</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">Creation complete after 1s (ID</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">5619b9c45b2509ca1a67cb1d43ea8e91f156f44245539604ad3dd060793900a4)</span>
+</span><span class='line'>
+</span><span class='line'><span class="l-Scalar-Plain">Apply complete! Resources</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">2 added, 0 changed, 0 destroyed.</span>
+</span><span class='line'>
+</span><span class='line'><span class="l-Scalar-Plain">Outputs</span><span class="p-Indicator">:</span>
+</span><span class='line'>
+</span><span class='line'><span class="l-Scalar-Plain">Endereco IP = 172.17.0.2</span>
+</span><span class='line'><span class="l-Scalar-Plain">Nome do Container = supermario</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>S</strong>ucesso. Tudo saiu como o esperado e nossa aplicação está novamente no ar. Sinta-se livre para executar <em>docker ps</em> ou mesmo acessar <em>localhost:80</em> em seu navegador para ter certeza de que tudo está funcionando e de que seu jogo Mario está no ar.</p>
+
+<h3>Atenção: Outputs como variáveis de saída</h3>
+
+<p><strong>D</strong>a mesma forma que eu citei que existem outras formas de se declarar e utilizar variáveis, existem outras funções também para os <em>outputs</em>. Não, o Terraform não utiliza <em>outputs</em> apenas para apresentar informações na tela. A principal função dos <em>outputs</em> é na verdade a de variáveis de saída. Ou seja, pegar valores que poderão ser utilizados posteriormente. Este recurso é muito utilizado em projetos maiores com infraestruturas mais complexas mas, novamente, não é o foco deste post abordar isto.</p>
+
+<p><strong>S</strong>e você é um pouco atencioso e curioso, deve ter notado que não definimos os valores dos <em>outputs</em> em nenhum momento, certo? Por exemplo: <em>value = &ldquo;${docker_container.container_id.ip_address}&rdquo;</em></p>
+
+<p><strong>O</strong>u seja, estamos criando um <em>output</em> cujo valor será na verdade uma saída após o processamento de nosso código Terraform. Desta forma, nossos <em>outputs</em> são na verdade variáveis de saída.. mas isso já é uma outra história.</p>
+
+<p><strong>A</strong> propósito, se você além de curioso é também meticuloso, deve ter ficado confuso e questionado: <em>Se outputs são na verdade uma espécie de variáveis, como podemos ter espaços em seus nomes? Como por exemplo &ldquo;Nome do Container&rdquo;?</em></p>
+
+<p><strong>A</strong> resposta é: Você me pegou. As melhores práticas pregam que não devemos criar <em>outputs</em> com espaços. Porque? Porque variáveis não podem conter espaços. Mas, como desde o início nosso objetivo era utilizar os <em>outputs</em> aqui apenas para nos retornar algum valor na tela, resolvi utilizar palavras em portugês e com espaços para facilitar a compreensão.</p>
+
+<p><strong>O</strong> ideal seria termos utilizado <em>nome_do_container</em> ao invés de <em>Nome do Container</em>, ou <em>endereco_ip</em> ao invés de <em>Endereco IP</em> mas, novamente.. isto é uma outra história.</p>
+
+<p><strong>L</strong>embre-se de destuir o seu projeto para não deixar um container rodando desnecessariamente: <em>$ terraform destroy</em></p>
+
+<p><strong>E</strong>m meu próximo post pretendo elevar um pouco o nível e utilizar o Terraform para criarmos uma infraestrutura básica na nuvem.</p>
+
+<p><strong>H</strong>appy Hacking!</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Marcelo Cavalcante Rocha - Kalib</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2018-11-06T19:26:00-05:00" pubdate data-updated="true">Nov 6<span>th</span>, 2018</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/cloud/'>Cloud</a>, <a class='category' href='/blog/categories/devops/'>Devops</a>, <a class='category' href='/blog/categories/docker/'>Docker</a>, <a class='category' href='/blog/categories/gcp/'>GCP</a>, <a class='category' href='/blog/categories/sysadmin/'>Sysadmin</a>, <a class='category' href='/blog/categories/terraform/'>Terraform</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://kalib.github.io/blog/2018/11/06/terraform-variaveis-e-outputs/" data-via="" data-counturl="https://kalib.github.io/blog/2018/11/06/terraform-variaveis-e-outputs/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2018/10/29/introducao-ao-terraform/" title="Previous Post: Introdução ao Terraform">&laquo; Introdução ao Terraform</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1 align="left">Marcelo Cavalcante</h1>
+  <p><img class="right" src="https://www.marcelocavalcante.net/imgs/kalib_picture_pq_circle_pq.png" title="'kalib'" ><p align=rght>Engenheiro DevOps dinâmico, escrupulosamente curioso, reservadamente convencional, multitarefa, command line heavy-user, estudante e pesquisador, surfista por prazer, leitor inquieto e apaixonado por vinhos.<br>Me conheça melhor <a href="https://blog.marcelocavalcante.net/about">clicando aqui</a>.</p></p>
+</section>
+<section>
+  <h1>Posts Recentes</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2018/11/06/terraform-variaveis-e-outputs/">Terraform: Variáveis e Outputs</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2018/10/29/introducao-ao-terraform/">Introdução ao Terraform</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2018/10/22/infraestrutura-como-codigo-com-terraform/">Infraestrutura como Código com Terraform</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2018/08/11/criando-uma-imagem-aws-ec2-com-packer-e-puppet/">Criando uma Imagem AWS EC2 com Packer e Puppet</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2018/07/30/automatizando-a-criacao-de-imagens-com-packer/">Automatizando a Criação de Imagens com Packer</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+  <h1>Estou lendo</h1>
+  <img align="center" src="/imgs/livros/outsider.jpg">
+</section>
+<section>
+  <h1> Eu apoio
+</h1>
+  <span>
+    <a href='https://ansible.com'><img style='padding: .5em; margin: .5em;' src='/images/stickers/ansible.com.png'></a><a href='https://archlinux.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/archlinux.org.png'></a><a href='https://asterisk.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/asterisk.org.png'></a><a href='https://atom.io'><img style='padding: .5em; margin: .5em;' src='/images/stickers/atom.io.png'></a><a href='https://chef.io'><img style='padding: .5em; margin: .5em;' src='/images/stickers/chef.io.png'></a><a href='https://djangoproject.com'><img style='padding: .5em; margin: .5em;' src='/images/stickers/djangoproject.com.png'></a><a href='https://docker.com'><img style='padding: .5em; margin: .5em;' src='/images/stickers/docker.com.png'></a><a href='https://github.com'><img style='padding: .5em; margin: .5em;' src='/images/stickers/github.com.png'></a><img style='padding: .5em; margin: .5em;' src='/images/stickers/glider.png' ><a href='https://jenkins.io'><img style='padding: .5em; margin: .5em;' src='/images/stickers/jenkins.io.png'></a><a href='https://kde.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/kde.org.png'></a><a href='https://kubernetes.io'><img style='padding: .5em; margin: .5em;' src='/images/stickers/kubernetes.io.png'></a><a href='https://linux.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/linux.org.png'></a><a href='https://octopress.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/octopress.org.png'></a><a href='https://opensource.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/opensource.org.png'></a><a href='https://packer.io'><img style='padding: .5em; margin: .5em;' src='/images/stickers/packer.io.png'></a><a href='https://puppet.com'><img style='padding: .5em; margin: .5em;' src='/images/stickers/puppet.com.png'></a><a href='https://python.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/python.org.png'></a><a href='https://raspberrypi.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/raspberrypi.org.png'></a><a href='https://ruby-lang.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/ruby-lang.org.png'></a><a href='https://terraform.io'><img style='padding: .5em; margin: .5em;' src='/images/stickers/terraform.io.png'></a><a href='https://vagrantup.com'><img style='padding: .5em; margin: .5em;' src='/images/stickers/vagrantup.com.png'></a>
+  </span>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2018 - Marcelo Cavalcante Rocha - Kalib -
+  <span class="credit">Powered by <a href="https://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'marcelocavalcante';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'https://kalib.github.io/blog/2018/11/06/terraform-variaveis-e-outputs/';
+        var disqus_url = 'https://kalib.github.io/blog/2018/11/06/terraform-variaveis-e-outputs/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'https://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'https://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

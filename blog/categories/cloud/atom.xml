@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Cloud | Marcelo Cavalcante Rocha ~]]></title>
   <link href="https://kalib.github.io/blog/categories/cloud/atom.xml" rel="self"/>
   <link href="https://kalib.github.io/"/>
-  <updated>2018-11-04T15:26:36-05:00</updated>
+  <updated>2018-11-08T19:41:42-05:00</updated>
   <id>https://kalib.github.io/</id>
   <author>
     <name><![CDATA[Marcelo Cavalcante Rocha - Kalib]]></name>
@@ -12,6 +12,635 @@
   </author>
   <generator uri="https://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Terraform: Variáveis e Outputs]]></title>
+    <link href="https://kalib.github.io/blog/2018/11/06/terraform-variaveis-e-outputs/"/>
+    <updated>2018-11-06T19:26:00-05:00</updated>
+    <id>https://kalib.github.io/blog/2018/11/06/terraform-variaveis-e-outputs</id>
+    <content type="html"><![CDATA[<p><img class="center" src="/imgs/devops_code.png" title="&lsquo;Devops &ndash; Infrastructure as Code&rsquo;" ></p>
+
+<h2>Onde paramos</h2>
+
+<p><strong>A</strong>ntes de seguir em frente com esta leitura gostaria de dizer que este post é continuação do anterior, onde dei uma breve introdução ao Terraform, com um exemplo prático em que fizemos o deployment de um jogo web do Mario em um container Docker.</p>
+
+<p><strong>E</strong>ste post na verdade utilizará o mesmo código que escrevemos no post anterior, portanto se você não o leu, recomendo fortemente que o faça <a href="/blog/2018/10/29/introducao-ao-terraform">clicando aqui</a>.</p>
+
+<h2>Variáveis</h2>
+
+<p><strong>E</strong>mbora nosso código tenha funcionado corretamente, ele não estava limpo. Existem algumas boas práticas que devemos sempre tentar seguir, Não apenas para deixar o código limpo, mas também para facilitar a manutenção do mesmo.</p>
+
+<p><strong>I</strong>magine o seguinte código em Ruby:</p>
+
+<p><code>rb
+puts "Meu nome é Marcelo."
+puts "O Marcelo gosta de escrever códigos."
+puts "Mas o Marcelo também gosta de surfar."
+puts "Não sendo bom o suficiente a ponto de se tornar um profissional do surf, Marcelo decidiu seguir com a carreira de TI."
+puts "Este é o Marcelo."
+</code></p>
+
+<p><strong>U</strong>m código extremamente simples que apenas imprime diversas strings na tela. Imagine que você precisa fazer manutenção deste código pois sua empresa agora decidiu que o personagem da história seria Pedro e não mais Marcelo. Claro, você pode ir lendo linha a linha e alterando em cada linha, mas isso leva muito mais tempo do que deveria. Imagine agora que este sistema possua algumas centenas de linhas de código. Ou múltiplos arquivos. Começa a ficar mais complexo e demorado alterar tudo, sem falar que fica fácil cometer o erro de esquecer algum. Por outro lado, se o nosso código utilizasse variáveis, apenas trocaríamos o valor em um local, tendo assim certeza absoluta de que o mesmo estaria correto em todo o código. Por exemplo:</p>
+
+<p>``` rb
+nome = &ldquo;Marcelo&rdquo;</p>
+
+<p>puts (&ldquo;Meu nome é &rdquo; + nome + &ldquo;.&rdquo;)
+puts (&ldquo;O &rdquo; + nome + &ldquo; gosta de escrever códigos.&rdquo;)
+puts (&ldquo;Mas o &rdquo; + nome + &ldquo; também gosta de surfar.&rdquo;)
+puts (&ldquo;Não sendo bom o suficiente a ponto de se tornar um profissional do surf, &rdquo; + nome + &ldquo; decidiu seguir com a carreira de TI.&rdquo;)
+puts (&ldquo;Este é o &rdquo; + nome + &ldquo;.&rdquo;)
+```</p>
+
+<p><strong>N</strong>este código, quando precisarmos trocar o nome da pessoa e utilizar Pedro ao invés de Marcelo, precisaríamos alterar apenas o valor da variável na linha 1. muito mais simples, certo?!</p>
+
+<p><strong>D</strong>a mesma forma que em programação básica utilizamos variáveis, quando pensamos em infraestrutura como código deveríamos pensar da mesma forma, afinal estamos programando, certo?! Nao é um sistema, mas ainda assim estamos programando nossa infraestrutura.</p>
+
+<p><strong>E</strong>ste é o nosso arquivo main.tf completo do post anterior:</p>
+
+<p>``` py main.tf</p>
+
+<h1>Baixar a imagem do Projeto Docker-SuperMario</h1>
+
+<p>resource &ldquo;docker_image&rdquo; &ldquo;image_id&rdquo; {
+  name = &ldquo;pengbai/docker-supermario:latest&rdquo;
+}</p>
+
+<h1>Inicia o Container</h1>
+
+<p>resource &ldquo;docker_container&rdquo; &ldquo;container_id&rdquo; {
+  name  = &ldquo;supermario&rdquo;
+  image = &ldquo;${docker_image.image_id.latest}&rdquo;
+  ports {</p>
+
+<pre><code>internal = "8080"
+external = "80"
+</code></pre>
+
+<p>  }
+}</p>
+
+<h1>Nos informa o ip e nome do container criado</h1>
+
+<p>output &ldquo;Endereco IP&rdquo; {
+  value = &ldquo;${docker_container.container_id.ip_address}&rdquo;
+}</p>
+
+<p>output &ldquo;Nome do Container&rdquo; {
+  value = &ldquo;${docker_container.container_id.name}&rdquo;
+}
+```</p>
+
+<p><strong>N</strong>este código não estamos utilizando variáveis, embora tenhamos um pouco de interpolação de valores. Vamos então começar a criar algumas variáveis, mas, seguindo as boas práticas do Terraform, criaremos um arquivo separado para nossas variáveis.</p>
+
+<p><strong>C</strong>rie um arquivo chamado <em>variables.tf</em>. O motivo pelo qual utilizaremos o nome em inglês aqui é por ser este o padrão adotado pelo Terraform. Ao chamarmos uma variável em nosso código, o Terraform saberá onde buscar o valor daquela variável.</p>
+
+<p><strong>P</strong>ara cada variável daremos um nome, uma descrição e um valor <em>default</em>. Nosso arquivo <em>variables.tf</em> ficará assim:</p>
+
+<p>``` py variables.tf
+variable &ldquo;nome_container&rdquo; {
+  description = &ldquo;Nome do container&rdquo;
+  default = &ldquo;supermario&rdquo;
+}</p>
+
+<p>variable &ldquo;imagem&rdquo; {
+  description = &ldquo;Imagem do container&rdquo;
+  default = &ldquo;pengbai/docker-supermario:latest&rdquo;
+}</p>
+
+<p>variable &ldquo;porta_interna&rdquo; {
+  description = &ldquo;Porta interna do container&rdquo;
+  default = &ldquo;8080&rdquo;
+}</p>
+
+<p>variable &ldquo;porta_externa&rdquo; {
+  description = &ldquo;Porta externa do container&rdquo;
+  default = &ldquo;80&rdquo;
+}
+```</p>
+
+<p><strong>O</strong> que definimos:</p>
+
+<ol>
+<li>Criamos 4 variáveis aqui: <em>nome_container</em>, <em>imagem</em>, <em>porta_interna</em> e <em>porta_externa</em>;</li>
+<li>Para cada variável nós demos 2 atributos: <em>description</em> (descrição) e <em>default</em> (Valor padrão);</li>
+<li>Variáveis não precisam ser sempre declaradas. Existem ocasiões em que podemos criar uma variável sem qualquer valor atribuído à mesma, de forma que o valor será passado durante a execução do código, por exemplo. Por padrão, quando queremos que a variável possua um valor inicial padrão, o terraform utiliza o atributo <em>default</em>;</li>
+<li>A <em>description</em>, ou descrição, é um atributo também opcional, mas ajuda a identificar melhor o que se pretende com aquela variável e costuma ser uma boa prática, dando maior legibilidade ao seu código.</li>
+</ol>
+
+
+<p><strong>A</strong>gora que temos um arquivo com estas 4 variáveis, devemos voltar ao nosso arquivo <em>main.tf</em> e alterar um pouco nosso código para que possamos fazer uso destas variáveis. Iremso alterar nosso código bloco a bloco para ficar mais fácil identificarmos as diferenças.</p>
+
+<p><strong>C</strong>omecemos com o resource <em>docker_image</em>, que agora ficará da seguinte forma em nosso arquivo <em>main.tf</em>:</p>
+
+<p>``` py main.tf</p>
+
+<h1>Baixar a imagem do Projeto Docker-SuperMario</h1>
+
+<p>resource &ldquo;docker_image&rdquo; &ldquo;image_id&rdquo; {
+  name = &ldquo;${var.imagem}&rdquo;
+}
+```</p>
+
+<p><strong>O</strong> que alteramos:</p>
+
+<ol>
+<li>Nas linhas 1 e 2 não alteramos nada, pois são apenas comentários e a abertura de nosso <em>resource</em>;</li>
+<li>Na linha 3 tínhamos <em>name = &ldquo;pengbai/docker-supermario:latest&rdquo;</em> e agora temos <em>name = &ldquo;${var.imagem}&rdquo;</em>. Basicamente indicamos que o valor para <em>name</em> agora deverá ser pego a partir de nossa variável <em>imagem</em> em nosso arquivo <em>variables.tf</em>. Sim, para pegarmos o valor de uma variável, no Terraform, utilizamos sempre esta sintaxe: <em>&ldquo;${}&rdquo;</em>. Dentro das chaves iremos indicar onde se encontra a nossa variável. quando utilizamos o prefixo <em>var</em>, o Terraform busca automaticamente o valor em um arquivo <em>variables.tf</em>. Existem outras formas de declarar variáveis, mas não nos preocuparemos com isso por enquanto. Se checarmos novamente nosso arquivo <em>variables.tf</em> veremos a variável <em>imagem</em> que criamos, cujo valor é exatamente <em>pengbai/docker-supermario:latest</em>;</li>
+<li>Novamente, na linha 4, nenhuma alteração foi feita. Estamos apenas fechando nosso bloco de <em>resource</em>.</li>
+</ol>
+
+
+<p><strong>V</strong>amos ao nosso próximo bloco de código, nosso <em>resource</em> <em>docker_container</em>. Alteremos o código para que fique da seguinte forma:</p>
+
+<p>``` py main.tf</p>
+
+<h1>Baixar a imagem do Projeto Docker-SuperMario</h1>
+
+<p>resource &ldquo;docker_image&rdquo; &ldquo;image_id&rdquo; {
+  name = &ldquo;${var.imagem}&rdquo;
+}</p>
+
+<h1>Inicia o Container</h1>
+
+<p>resource &ldquo;docker_container&rdquo; &ldquo;container_id&rdquo; {
+  name  = &ldquo;${var.nome_container}&rdquo;
+  image = &ldquo;${docker_image.image_id.latest}&rdquo;
+  ports {</p>
+
+<pre><code>internal = "${var.porta_interna}"
+external = "${var.porta_externa}"
+</code></pre>
+
+<p>  }
+}
+```</p>
+
+<p><strong>D</strong>a mesma forma que fizemos antes, apenas trouxemos nossas variáveis:</p>
+
+<ol>
+<li>Na linha 8 passamos a utilizar a variável <em>nome_container</em> que criamos para dar o nome ao nosso container. Novamente, em nosso arquivo <em>variables.tf</em> você será capaz de encontrar a variável <em>nome_container</em>, cujo valor default é <em>supermario</em>;</li>
+<li>Na linha 11 apenas trocamos o valor <em>8080</em> pela variável <em>porta_interna</em>, assim como específicamos em nosso arquivo <em>variables.tf</em>;</li>
+<li>Na linha 12, assim como na linha 11, apenas trocamos o valor <em>80</em> pela variável <em>porta_externa</em>.</li>
+</ol>
+
+
+<p><strong>N</strong>osso arquivo <em>main.tf</em> agora deverá estar assim:</p>
+
+<p>``` py main.tf</p>
+
+<h1>Baixar a imagem do Projeto Docker-SuperMario</h1>
+
+<p>resource &ldquo;docker_image&rdquo; &ldquo;image_id&rdquo; {
+  name = &ldquo;${var.imagem}&rdquo;
+}</p>
+
+<h1>Inicia o Container</h1>
+
+<p>resource &ldquo;docker_container&rdquo; &ldquo;container_id&rdquo; {
+  name  = &ldquo;${var.nome_container}&rdquo;
+  image = &ldquo;${docker_image.image_id.latest}&rdquo;
+  ports {</p>
+
+<pre><code>internal = "${var.porta_interna}"
+external = "${var.porta_externa}"
+</code></pre>
+
+<p>  }
+}</p>
+
+<h1>Nos informa o ip e nome do container criado</h1>
+
+<p>output &ldquo;Endereco IP&rdquo; {
+  value = &ldquo;${docker_container.container_id.ip_address}&rdquo;
+}</p>
+
+<p>output &ldquo;Nome do Container&rdquo; {
+  value = &ldquo;${docker_container.container_id.name}&rdquo;
+```</p>
+
+<p><strong>A</strong>cho sempre interessante fazer testes constantes em nosso código para ter certeza de que tudo está funcionando conforme o esperado. Como alteramos um pouco nosso código, criando variáveis em um arquivo <em>variables.tf</em> e removemos de nosso <em>main.tf</em> valores absolutos para fazermos uso de variáveis, é bom termos certeza de que não cometemos nenhum erro. Assumindo que temos o serviço do Docker rodando, vamos ao nosso terminal e, dentro de nosso diretório <em>marioweb</em> criado no posto anterior, vamos nos certificar de que destruímos a aplicação do post anterior para que não tenhamos nenhum container rodando:</p>
+
+<p><code>yaml
+$ terraform destroy
+</code></p>
+
+<p><strong>A</strong>gora vamos executar nosso <em>plan</em>:</p>
+
+<p>``` yaml
+$ terraform plan</p>
+
+<p>Refreshing Terraform state in-memory prior to plan&hellip;
+The refreshed state will be used to calculate this plan, but will not be
+persisted to local or remote state storage.</p>
+
+<hr />
+
+<p>An execution plan has been generated and is shown below.
+Resource actions are indicated with the following symbols:
+  + create</p>
+
+<p>Terraform will perform the following actions:</p>
+
+<ul>
+<li><p>docker_container.container_id
+  id:               <computed>
+  attach:           &ldquo;false&rdquo;
+  bridge:           <computed>
+  container_logs:   <computed>
+  exit_code:        <computed>
+  gateway:          <computed>
+  image:            &ldquo;${docker_image.image_id.latest}&rdquo;
+  ip_address:       <computed>
+  ip_prefix_length: <computed>
+  log_driver:       &ldquo;json-file&rdquo;
+  logs:             &ldquo;false&rdquo;
+  must_run:         &ldquo;true&rdquo;
+  name:             &ldquo;supermario&rdquo;
+  network_data.#:   <computed>
+  ports.#:          &ldquo;1&rdquo;
+  ports.0.external: &ldquo;80&rdquo;
+  ports.0.internal: &ldquo;8080&rdquo;
+  ports.0.ip:       &ldquo;0.0.0.0&rdquo;
+  ports.0.protocol: &ldquo;tcp&rdquo;
+  restart:          &ldquo;no&rdquo;
+  rm:               &ldquo;false&rdquo;
+  start:            &ldquo;true&rdquo;</p></li>
+<li><p>docker_image.image_id
+  id:               <computed>
+  latest:           <computed>
+  name:             &ldquo;pengbai/docker-supermario:latest&rdquo;</p></li>
+</ul>
+
+
+<p>Plan: 2 to add, 0 to change, 0 to destroy.</p>
+
+<hr />
+
+<p>Note: You didn&rsquo;t specify an &ldquo;-out&rdquo; parameter to save this plan, so Terraform
+can&rsquo;t guarantee that exactly these actions will be performed if
+&ldquo;terraform apply&rdquo; is subsequently run.
+```</p>
+
+<p><strong>A</strong>parentemente está tudo correto. Na saída de nosso <em>plan</em> podemos ver que os valores estão de acordo com o esperado. Apliquemos então nosso código com <em>terraform apply</em>:</p>
+
+<p>``` yaml
+$ terraform apply</p>
+
+<p>An execution plan has been generated and is shown below.
+Resource actions are indicated with the following symbols:
+  + create</p>
+
+<p>Terraform will perform the following actions:</p>
+
+<ul>
+<li><p>docker_container.container_id
+  id:               <computed>
+  attach:           &ldquo;false&rdquo;
+  bridge:           <computed>
+  container_logs:   <computed>
+  exit_code:        <computed>
+  gateway:          <computed>
+  image:            &ldquo;${docker_image.image_id.latest}&rdquo;
+  ip_address:       <computed>
+  ip_prefix_length: <computed>
+  log_driver:       &ldquo;json-file&rdquo;
+  logs:             &ldquo;false&rdquo;
+  must_run:         &ldquo;true&rdquo;
+  name:             &ldquo;supermario&rdquo;
+  network_data.#:   <computed>
+  ports.#:          &ldquo;1&rdquo;
+  ports.0.external: &ldquo;80&rdquo;
+  ports.0.internal: &ldquo;8080&rdquo;
+  ports.0.ip:       &ldquo;0.0.0.0&rdquo;
+  ports.0.protocol: &ldquo;tcp&rdquo;
+  restart:          &ldquo;no&rdquo;
+  rm:               &ldquo;false&rdquo;
+  start:            &ldquo;true&rdquo;</p></li>
+<li><p>docker_image.image_id
+  id:               <computed>
+  latest:           <computed>
+  name:             &ldquo;pengbai/docker-supermario:latest&rdquo;</p></li>
+</ul>
+
+
+<p>Plan: 2 to add, 0 to change, 0 to destroy.</p>
+
+<p>Do you want to perform these actions?
+  Terraform will perform the actions described above.
+  Only &lsquo;yes&rsquo; will be accepted to approve.</p>
+
+<p>  Enter a value:
+```</p>
+
+<p><strong>A</strong>ssim como vimos no post anterior, o <em>terraform apply</em> sempre nos apresenta uma prévia das tarefas que serão executadas e em seguida nos pede uma confirmação de execução. Como tudo parece correto, vamos confirmar com um <em>yes</em>:</p>
+
+<p>``` yaml</p>
+
+<p>  Enter a value: yes</p>
+
+<p>docker_image.image_id: Creating&hellip;
+  latest: &ldquo;&rdquo; => &ldquo;<computed>&rdquo;
+  name:   &ldquo;&rdquo; => &ldquo;pengbai/docker-supermario:latest&rdquo;
+docker_image.image_id: Still creating&hellip; (10s elapsed)
+docker_image.image_id: Still creating&hellip; (20s elapsed)
+docker_image.image_id: Still creating&hellip; (30s elapsed)
+docker_image.image_id: Creation complete after 37s (ID: sha256:49beaba1c5cc49d2fa424ac03a15b0e7&hellip;9c3d62pengbai/docker-supermario:latest)
+docker_container.container_id: Creating&hellip;
+  attach:           &ldquo;&rdquo; => &ldquo;false&rdquo;
+  bridge:           &ldquo;&rdquo; => &ldquo;<computed>&rdquo;
+  container_logs:   &ldquo;&rdquo; => &ldquo;<computed>&rdquo;
+  exit_code:        &ldquo;&rdquo; => &ldquo;<computed>&rdquo;
+  gateway:          &ldquo;&rdquo; => &ldquo;<computed>&rdquo;
+  image:            &ldquo;&rdquo; => &ldquo;sha256:49beaba1c5cc49d2fa424ac03a15b0e761f637e835c1ed4d8108cc247a9c3d62&rdquo;
+  ip_address:       &ldquo;&rdquo; => &ldquo;<computed>&rdquo;
+  ip_prefix_length: &ldquo;&rdquo; => &ldquo;<computed>&rdquo;
+  log_driver:       &ldquo;&rdquo; => &ldquo;json-file&rdquo;
+  logs:             &ldquo;&rdquo; => &ldquo;false&rdquo;
+  must_run:         &ldquo;&rdquo; => &ldquo;true&rdquo;
+  name:             &ldquo;&rdquo; => &ldquo;supermario&rdquo;
+  network_data.#:   &ldquo;&rdquo; => &ldquo;<computed>&rdquo;
+  ports.#:          &ldquo;&rdquo; => &ldquo;1&rdquo;
+  ports.0.external: &ldquo;&rdquo; => &ldquo;80&rdquo;
+  ports.0.internal: &ldquo;&rdquo; => &ldquo;8080&rdquo;
+  ports.0.ip:       &ldquo;&rdquo; => &ldquo;0.0.0.0&rdquo;
+  ports.0.protocol: &ldquo;&rdquo; => &ldquo;tcp&rdquo;
+  restart:          &ldquo;&rdquo; => &ldquo;no&rdquo;
+  rm:               &ldquo;&rdquo; => &ldquo;false&rdquo;
+  start:            &ldquo;&rdquo; => &ldquo;true&rdquo;
+docker_container.container_id: Creation complete after 1s (ID: bbe9e8e7b5428532b882e7fbd304fc2b3d71e0bcb29fa099e15162397731e15e)</p>
+
+<p>Apply complete! Resources: 2 added, 0 changed, 0 destroyed.</p>
+
+<p>Outputs:</p>
+
+<p>Endereco IP = 172.17.0.2
+Nome do Container = supermario
+```</p>
+
+<p><strong>A</strong>parentemente tudo saiu conforme o esperado, com 2 <em>resources</em> adicionados, sendo eles nossa imagem e nosso container.</p>
+
+<p><strong>N</strong>ovamente, podemos verificar que tudo está correto através do comando <em>docker ps</em>, onde deveremos ver que nosso container está rodando:</p>
+
+<p>``` yaml
+$ docker ps</p>
+
+<p>CONTAINER ID        IMAGE               COMMAND             CREATED              STATUS              PORTS                  NAMES
+bbe9e8e7b542        49beaba1c5cc        &ldquo;catalina.sh run&rdquo;   About a minute ago   Up About a minute   0.0.0.0:80->8080/tcp   supermario
+```</p>
+
+<p><strong>T</strong>ambém podemos tentar acessar em nosso browser ou navegador o seguinte endereço: <em>localhost:80</em>. Nosso jogo do mario deverá estar funcionando.</p>
+
+<p><strong>A</strong>gora que entendemos o básico sobre o uso de variáveis e vimos que nosso código, embora um pouco diferente, continua funcionando, chegou a hora de corrigirmos nossos <em>outputs</em>. Eles continuam funcionando, porém para seguirmos os padrões e melhores práticas, vamos também retirá-los de nosso <em>main.tf</em> e criar um arquivo dedicado para isto.</p>
+
+<h2>Outputs</h2>
+
+<p><strong>C</strong>omecemos criando um arquivo chamado <em>outputs.tf</em> com o seguinte conteúdo:</p>
+
+<p>``` py outputs.tf</p>
+
+<h1>Nos informa o ip e nome do container criado</h1>
+
+<p>output &ldquo;Endereco IP&rdquo; {
+  value = &ldquo;${docker_container.container_id.ip_address}&rdquo;
+}</p>
+
+<p>output &ldquo;Nome do Container&rdquo; {
+  value = &ldquo;${docker_container.container_id.name}&rdquo;
+}
+```</p>
+
+<p><strong>E</strong>ste foi fácil, certo?! Se prestarmos atenção, não alteramos praticamente nada. Apenas copiamos os dois blocos <em>outputs</em> do arquivo <em>main.tf</em> sem qualquer alteração.</p>
+
+<p><strong>A</strong>pós salvar nosso arquivo <em>outputs.tf</em>, removeremos estes dois <em>outputs</em> do arquivo <em>main.tf</em>. Nosso <em>main.tf</em> ficará assim:</p>
+
+<p>``` py main.tf</p>
+
+<h1>Baixar a imagem do Projeto Docker-SuperMario</h1>
+
+<p>resource &ldquo;docker_image&rdquo; &ldquo;image_id&rdquo; {
+  name = &ldquo;${var.imagem}&rdquo;
+}</p>
+
+<h1>Inicia o Container</h1>
+
+<p>resource &ldquo;docker_container&rdquo; &ldquo;container_id&rdquo; {
+  name  = &ldquo;${var.nome_container}&rdquo;
+  image = &ldquo;${docker_image.image_id.latest}&rdquo;
+  ports {</p>
+
+<pre><code>internal = "${var.porta_interna}"
+external = "${var.porta_externa}"
+</code></pre>
+
+<p>  }
+}
+```</p>
+
+<p><strong>S</strong>imples, não? Nosso código está mais limpo e organizado. Vamos destuir novamente nosso projeto com <em>terraform destroy</em> para que possamos testar estas últimas alterações:</p>
+
+<p>``` yaml
+$ terraform destroy</p>
+
+<p>docker_image.image_id: Refreshing state&hellip; (ID: sha256:49beaba1c5cc49d2fa424ac03a15b0e7&hellip;9c3d62pengbai/docker-supermario:latest)
+docker_container.container_id: Refreshing state&hellip; (ID: bbe9e8e7b5428532b882e7fbd304fc2b3d71e0bcb29fa099e15162397731e15e)</p>
+
+<p>An execution plan has been generated and is shown below.
+Resource actions are indicated with the following symbols:
+  &ndash; destroy</p>
+
+<p>Terraform will perform the following actions:</p>
+
+<ul>
+<li><p>docker_container.container_id</p></li>
+<li><p>docker_image.image_id</p></li>
+</ul>
+
+
+<p>Plan: 0 to add, 0 to change, 2 to destroy.</p>
+
+<p>Do you really want to destroy all resources?
+  Terraform will destroy all your managed infrastructure, as shown above.
+  There is no undo. Only &lsquo;yes&rsquo; will be accepted to confirm.</p>
+
+<p>  Enter a value: yes</p>
+
+<p>docker_container.container_id: Destroying&hellip; (ID: bbe9e8e7b5428532b882e7fbd304fc2b3d71e0bcb29fa099e15162397731e15e)
+docker_container.container_id: Destruction complete after 1s
+docker_image.image_id: Destroying&hellip; (ID: sha256:49beaba1c5cc49d2fa424ac03a15b0e7&hellip;9c3d62pengbai/docker-supermario:latest)
+docker_image.image_id: Destruction complete after 1s</p>
+
+<p>Destroy complete! Resources: 2 destroyed.
+```</p>
+
+<p><strong>A</strong>gora vamos aplicar nosso <em>plan</em> e em seguida, caso tudo esteja correto, vamos executar <em>terraform plan</em>:</p>
+
+<p>``` yaml
+$ terraform plan</p>
+
+<p>Refreshing Terraform state in-memory prior to plan&hellip;
+The refreshed state will be used to calculate this plan, but will not be
+persisted to local or remote state storage.</p>
+
+<hr />
+
+<p>An execution plan has been generated and is shown below.
+Resource actions are indicated with the following symbols:
+  + create</p>
+
+<p>Terraform will perform the following actions:</p>
+
+<ul>
+<li><p>docker_container.container_id
+  id:               <computed>
+  attach:           &ldquo;false&rdquo;
+  bridge:           <computed>
+  container_logs:   <computed>
+  exit_code:        <computed>
+  gateway:          <computed>
+  image:            &ldquo;${docker_image.image_id.latest}&rdquo;
+  ip_address:       <computed>
+  ip_prefix_length: <computed>
+  log_driver:       &ldquo;json-file&rdquo;
+  logs:             &ldquo;false&rdquo;
+  must_run:         &ldquo;true&rdquo;
+  name:             &ldquo;supermario&rdquo;
+  network_data.#:   <computed>
+  ports.#:          &ldquo;1&rdquo;
+  ports.0.external: &ldquo;80&rdquo;
+  ports.0.internal: &ldquo;8080&rdquo;
+  ports.0.ip:       &ldquo;0.0.0.0&rdquo;
+  ports.0.protocol: &ldquo;tcp&rdquo;
+  restart:          &ldquo;no&rdquo;
+  rm:               &ldquo;false&rdquo;
+  start:            &ldquo;true&rdquo;</p></li>
+<li><p>docker_image.image_id
+  id:               <computed>
+  latest:           <computed>
+  name:             &ldquo;pengbai/docker-supermario:latest&rdquo;</p></li>
+</ul>
+
+
+<p>Plan: 2 to add, 0 to change, 0 to destroy.</p>
+
+<hr />
+
+<p>Note: You didn&rsquo;t specify an &ldquo;-out&rdquo; parameter to save this plan, so Terraform
+can&rsquo;t guarantee that exactly these actions will be performed if
+&ldquo;terraform apply&rdquo; is subsequently run.
+```</p>
+
+<p>``` yaml
+$ terraform apply</p>
+
+<p>An execution plan has been generated and is shown below.
+Resource actions are indicated with the following symbols:
+  + create</p>
+
+<p>Terraform will perform the following actions:</p>
+
+<ul>
+<li><p>docker_container.container_id
+  id:               <computed>
+  attach:           &ldquo;false&rdquo;
+  bridge:           <computed>
+  container_logs:   <computed>
+  exit_code:        <computed>
+  gateway:          <computed>
+  image:            &ldquo;${docker_image.image_id.latest}&rdquo;
+  ip_address:       <computed>
+  ip_prefix_length: <computed>
+  log_driver:       &ldquo;json-file&rdquo;
+  logs:             &ldquo;false&rdquo;
+  must_run:         &ldquo;true&rdquo;
+  name:             &ldquo;supermario&rdquo;
+  network_data.#:   <computed>
+  ports.#:          &ldquo;1&rdquo;
+  ports.0.external: &ldquo;80&rdquo;
+  ports.0.internal: &ldquo;8080&rdquo;
+  ports.0.ip:       &ldquo;0.0.0.0&rdquo;
+  ports.0.protocol: &ldquo;tcp&rdquo;
+  restart:          &ldquo;no&rdquo;
+  rm:               &ldquo;false&rdquo;
+  start:            &ldquo;true&rdquo;</p></li>
+<li><p>docker_image.image_id
+  id:               <computed>
+  latest:           <computed>
+  name:             &ldquo;pengbai/docker-supermario:latest&rdquo;</p></li>
+</ul>
+
+
+<p>Plan: 2 to add, 0 to change, 0 to destroy.</p>
+
+<p>Do you want to perform these actions?
+  Terraform will perform the actions described above.
+  Only &lsquo;yes&rsquo; will be accepted to approve.</p>
+
+<p>  Enter a value: yes</p>
+
+<p>docker_image.image_id: Creating&hellip;
+  latest: &ldquo;&rdquo; => &ldquo;<computed>&rdquo;
+  name:   &ldquo;&rdquo; => &ldquo;pengbai/docker-supermario:latest&rdquo;
+docker_image.image_id: Still creating&hellip; (10s elapsed)
+docker_image.image_id: Still creating&hellip; (20s elapsed)
+docker_image.image_id: Still creating&hellip; (30s elapsed)
+docker_image.image_id: Still creating&hellip; (40s elapsed)
+docker_image.image_id: Creation complete after 42s (ID: sha256:49beaba1c5cc49d2fa424ac03a15b0e7&hellip;9c3d62pengbai/docker-supermario:latest)
+docker_container.container_id: Creating&hellip;
+  attach:           &ldquo;&rdquo; => &ldquo;false&rdquo;
+  bridge:           &ldquo;&rdquo; => &ldquo;<computed>&rdquo;
+  container_logs:   &ldquo;&rdquo; => &ldquo;<computed>&rdquo;
+  exit_code:        &ldquo;&rdquo; => &ldquo;<computed>&rdquo;
+  gateway:          &ldquo;&rdquo; => &ldquo;<computed>&rdquo;
+  image:            &ldquo;&rdquo; => &ldquo;sha256:49beaba1c5cc49d2fa424ac03a15b0e761f637e835c1ed4d8108cc247a9c3d62&rdquo;
+  ip_address:       &ldquo;&rdquo; => &ldquo;<computed>&rdquo;
+  ip_prefix_length: &ldquo;&rdquo; => &ldquo;<computed>&rdquo;
+  log_driver:       &ldquo;&rdquo; => &ldquo;json-file&rdquo;
+  logs:             &ldquo;&rdquo; => &ldquo;false&rdquo;
+  must_run:         &ldquo;&rdquo; => &ldquo;true&rdquo;
+  name:             &ldquo;&rdquo; => &ldquo;supermario&rdquo;
+  network_data.#:   &ldquo;&rdquo; => &ldquo;<computed>&rdquo;
+  ports.#:          &ldquo;&rdquo; => &ldquo;1&rdquo;
+  ports.0.external: &ldquo;&rdquo; => &ldquo;80&rdquo;
+  ports.0.internal: &ldquo;&rdquo; => &ldquo;8080&rdquo;
+  ports.0.ip:       &ldquo;&rdquo; => &ldquo;0.0.0.0&rdquo;
+  ports.0.protocol: &ldquo;&rdquo; => &ldquo;tcp&rdquo;
+  restart:          &ldquo;&rdquo; => &ldquo;no&rdquo;
+  rm:               &ldquo;&rdquo; => &ldquo;false&rdquo;
+  start:            &ldquo;&rdquo; => &ldquo;true&rdquo;
+docker_container.container_id: Creation complete after 1s (ID: 5619b9c45b2509ca1a67cb1d43ea8e91f156f44245539604ad3dd060793900a4)</p>
+
+<p>Apply complete! Resources: 2 added, 0 changed, 0 destroyed.</p>
+
+<p>Outputs:</p>
+
+<p>Endereco IP = 172.17.0.2
+Nome do Container = supermario
+```</p>
+
+<p><strong>S</strong>ucesso. Tudo saiu como o esperado e nossa aplicação está novamente no ar. Sinta-se livre para executar <em>docker ps</em> ou mesmo acessar <em>localhost:80</em> em seu navegador para ter certeza de que tudo está funcionando e de que seu jogo Mario está no ar.</p>
+
+<h3>Atenção: Outputs como variáveis de saída</h3>
+
+<p><strong>D</strong>a mesma forma que eu citei que existem outras formas de se declarar e utilizar variáveis, existem outras funções também para os <em>outputs</em>. Não, o Terraform não utiliza <em>outputs</em> apenas para apresentar informações na tela. A principal função dos <em>outputs</em> é na verdade a de variáveis de saída. Ou seja, pegar valores que poderão ser utilizados posteriormente. Este recurso é muito utilizado em projetos maiores com infraestruturas mais complexas mas, novamente, não é o foco deste post abordar isto.</p>
+
+<p><strong>S</strong>e você é um pouco atencioso e curioso, deve ter notado que não definimos os valores dos <em>outputs</em> em nenhum momento, certo? Por exemplo: <em>value = &ldquo;${docker_container.container_id.ip_address}&rdquo;</em></p>
+
+<p><strong>O</strong>u seja, estamos criando um <em>output</em> cujo valor será na verdade uma saída após o processamento de nosso código Terraform. Desta forma, nossos <em>outputs</em> são na verdade variáveis de saída.. mas isso já é uma outra história.</p>
+
+<p><strong>A</strong> propósito, se você além de curioso é também meticuloso, deve ter ficado confuso e questionado: <em>Se outputs são na verdade uma espécie de variáveis, como podemos ter espaços em seus nomes? Como por exemplo &ldquo;Nome do Container&rdquo;?</em></p>
+
+<p><strong>A</strong> resposta é: Você me pegou. As melhores práticas pregam que não devemos criar <em>outputs</em> com espaços. Porque? Porque variáveis não podem conter espaços. Mas, como desde o início nosso objetivo era utilizar os <em>outputs</em> aqui apenas para nos retornar algum valor na tela, resolvi utilizar palavras em portugês e com espaços para facilitar a compreensão.</p>
+
+<p><strong>O</strong> ideal seria termos utilizado <em>nome_do_container</em> ao invés de <em>Nome do Container</em>, ou <em>endereco_ip</em> ao invés de <em>Endereco IP</em> mas, novamente.. isto é uma outra história.</p>
+
+<p><strong>L</strong>embre-se de destuir o seu projeto para não deixar um container rodando desnecessariamente: <em>$ terraform destroy</em></p>
+
+<p><strong>E</strong>m meu próximo post pretendo elevar um pouco o nível e utilizar o Terraform para criarmos uma infraestrutura básica na nuvem.</p>
+
+<p><strong>H</strong>appy Hacking!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Introdução ao Terraform]]></title>
@@ -168,7 +797,7 @@ $ mkdir marioweb</p>
 
 <p><strong>main.tf</strong></p>
 
-<p>```</p>
+<p>``` py main.tf</p>
 
 <h1>Baixar a imagem do Projeto Docker-SuperMario</h1>
 
@@ -191,7 +820,7 @@ $ mkdir marioweb</p>
 
 <p><strong>D</strong>e volta ao nosso terminal/console, vamos iniciar o nosso ambiente Terraform para este projeto utilizando o comando <em>terraform init</em>. Este comando inicia nosso ambiente e baixa os plugins necessários para nosso projeto. No nosso caso, o Terraform baixará os plugins necessários para que nosso código possa lidar com o Docker.</p>
 
-<p>```
+<p>``` yaml
 $ terraform init</p>
 
 <p>Initializing provider plugins&hellip;
@@ -226,7 +855,7 @@ commands will detect it and remind you to do so if necessary.
 
 <p><strong>N</strong>osso próximo passo será executar o <em>planejamento</em> de nosso código. Ao rodar o <em>planejamento</em> o terraform listará exatamente tudo o que fará caso nosso código seja de fato executado. Novamente em nosso console/terminal, execute <em>terraform plan</em>:</p>
 
-<p>```
+<p>``` yaml
 $ terraform plan</p>
 
 <p>Refreshing Terraform state in-memory prior to plan&hellip;
@@ -268,7 +897,7 @@ can&rsquo;t guarantee that exactly these actions will be performed if
 
 <p><strong>C</strong>aso você tenha recebido uma mensagem de erro, significa que algo em seu código está errado. Por exemplo, se ao invés de utilizarmos <em>docker_image</em> como tipo de resource, utilizarmos <em>docker_images</em>, o resultado de meu <em>terraform plan</em> seria o seguinte:</p>
 
-<p>```
+<p>``` yaml
 $ terraform plan</p>
 
 <p>Error: docker_images.image_id: Provider doesn&rsquo;t support resource: docker_images
@@ -280,7 +909,7 @@ $ terraform plan</p>
 
 <p><strong>E</strong>xecute o seu código através do comando <em>terraform apply</em>:</p>
 
-<p>```
+<p>``` yaml
 $ terraform apply</p>
 
 <p>An execution plan has been generated and is shown below.
@@ -308,7 +937,7 @@ Resource actions are indicated with the following symbols:
 
 <p><strong>R</strong>epare que mesmo ao utilizar <em>apply</em> ao invés de <em>plan</em>, uma espécie de planejamento também foi realizado antes da aplicação propriamente dita. O Terraform avaliou o código e nos indicou o que será realizado, perguntando-nos ao final se queremos ou não seguir com a execução. Caso tudo nos pareça correto, basta digitarmos <em>yes</em> e pressionar Enter novamente para que ele siga com a execução de fato.</p>
 
-<p>```</p>
+<p>``` yaml</p>
 
 <p>  Enter a value: yes</p>
 
@@ -342,7 +971,7 @@ pengbai/docker-supermario   latest              49beaba1c5cc        4 months ago
 
 <p><strong>O</strong> Terraform também nos permite saber o que estamos utilizando em termos de <em>resources</em> através do comando <em>terraform show</em>:</p>
 
-<p>```
+<p>``` yaml
 $ terraform show</p>
 
 <p>docker_image.image_id:
@@ -357,7 +986,7 @@ $ terraform show</p>
 
 <p><strong>S</strong>eu código agora deverá estar da seguinte forma:</p>
 
-<p>```</p>
+<p>``` py main.tf</p>
 
 <h1>Baixar a imagem do Projeto Docker-SuperMario</h1>
 
@@ -395,7 +1024,7 @@ external = "80"
 
 <p><strong>N</strong>ovamente, vamos planejar nosso projeto com <em>terraform plan</em>:</p>
 
-<p>```
+<p>``` yaml
 $ terraform plan
 Refreshing Terraform state in-memory prior to plan&hellip;
 The refreshed state will be used to calculate this plan, but will not be
@@ -451,7 +1080,7 @@ can&rsquo;t guarantee that exactly these actions will be performed if
 
 <p><strong>U</strong>ma vez que o plano esteja de acordo com o que queremos, podemos aplicar nosso código com <em>terraform apply</em>:</p>
 
-<p>```
+<p>``` yaml
 $ terraform apply
 docker_image.image_id: Refreshing state&hellip; (ID: sha256:49beaba1c5cc49d2fa424ac03a15b0e7&hellip;9c3d62pengbai/docker-supermario:latest)</p>
 
@@ -499,7 +1128,7 @@ Resource actions are indicated with the following symbols:
 
 <p><strong>M</strong>ais uma vez ele nos dá uma visão geral do que será feito e nos perguntará se queremos prosseguir. Digite <em>yes</em> e pressione Enter novamente.</p>
 
-<p>```
+<p>``` yaml
 Enter a value: yes</p>
 
 <p>docker_container.container_id: Creating&hellip;
@@ -551,7 +1180,7 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
 
 <p><strong>O</strong> terraform também nos permite destruir a nossa infraestrutura com o comando <em>terraform destroy</em>. Da mesma forma que o <em>apply</em>, o comando <em>destroy</em> também lhe dará uma prévia de o que será destruído e lhe pedirá par aconfirmar com um <em>yes</em> ou <em>no</em>:</p>
 
-<p>```
+<p>``` yaml
 $ terraform destroy
 docker_image.image_id: Refreshing state&hellip; (ID: sha256:49beaba1c5cc49d2fa424ac03a15b0e7&hellip;9c3d62pengbai/docker-supermario:latest)
 docker_container.container_id: Refreshing state&hellip; (ID: 8c9d35eac2fcdc0c7e530567323167b82e72f33d4645abf20685b99d802e2359)</p>
@@ -600,7 +1229,7 @@ REPOSITORY          TAG                 IMAGE ID            CREATED             
 
 <p><strong>P</strong>or exemplo, supomos que ao executar nosso código, desejamos que o terraform nos informe o IP do container que foi criado e o nome do mesmo, nosso código agora ficaria assim:</p>
 
-<p>```</p>
+<p>``` py main.tf</p>
 
 <h1>Baixar a imagem do Projeto Docker-SuperMario</h1>
 
@@ -648,7 +1277,7 @@ external = "80"
 
 <p><strong>V</strong>amos então rodar nosso <em>plan</em> para ver o que aconteceria desta vez:</p>
 
-<p>```
+<p>``` yaml
 $ terraform plan
 Refreshing Terraform state in-memory prior to plan&hellip;
 The refreshed state will be used to calculate this plan, but will not be
@@ -706,7 +1335,7 @@ can&rsquo;t guarantee that exactly these actions will be performed if
 
 <p><strong>V</strong>amos aplicar nosso código e confirmar com <em>yes</em>:</p>
 
-<p>```
+<p>``` yaml
 $ terraform apply</p>
 
 <p>An execution plan has been generated and is shown below.
@@ -797,7 +1426,7 @@ Nome do Container = supermario
 
 <p><strong>R</strong>epare que tudo o que queríamos foi executado e que, ao final, recebemos duas saídas ou <em>outputs</em>:</p>
 
-<p>```
+<p>``` yaml
 Apply complete! Resources: 2 added, 0 changed, 0 destroyed.</p>
 
 <p>Outputs:</p>
