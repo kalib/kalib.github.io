@@ -9,7 +9,7 @@
   <meta name="author" content="Marcelo Cavalcante Rocha - Kalib">
 
   
-  <meta name="description" content="Saudações pessoal, Os usuários de Arch Linux, pelo menos alguns deles, talvez já saibam que o Sun Java Runtime Environment (JRE) e o Java Development &hellip;">
+  <meta name="description" content="Saudações galera.. Neste post eu deixo a dica de uma loja online na qual você pode encontrar diversos produtos bacanas do Arch Linux. Produtos estes &hellip;">
   
 
   <!-- https://t.co/dKP3o1e -->
@@ -80,6 +80,58 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/11/10/arch-linux-schwag-uma-loja-para-o-arch-linux/">Arch Linux Schwag - Uma Loja Para O Arch Linux</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-11-10T09:31:00-05:00" pubdate data-updated="true">Nov 10<span>th</span>, 2008</time>
+        
+         | <a href="/blog/2008/11/10/arch-linux-schwag-uma-loja-para-o-arch-linux/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img class="center" src="/imgs/arch_camisa.jpg" title="'Camisa Arch'" >Saudações galera..</p>
+
+<p>Neste post eu deixo a dica de uma <a href="https://www.zazzle.com/archlinux">loja online</a> na qual você pode encontrar diversos produtos bacanas do <a href="https://www.archlinux-br.org/">Arch Linux</a>. Produtos estes que vão desde camisetas até mesmo shapes de skates ou aventais (é mole?).</p>
+
+<p>O comércio eletrônico vem crescendo a cada dia e ganhando cada vez mais adeptos por sua confiabilidade, agilidade e eficiência, isto tudo sem mencionar o conforto de navegar em shoppings e lojas sem sair de sua cadeira ou poltrona favorita. A comodidade em não perder horas de caminhada ou esperando em filas para atendimento tem atraído cada vez mais clientes para este tipo de comércio.</p>
+
+<p>Eu sou um grande adepto de comércio eletrônico e pelo menos uma vez por mês faço algum tipo de compra online sendo os livros os responsáveis pela minha maior parcela destas compras via web.</p>
+
+<p><img class="center" src="/imgs/arch_caneca.jpg" title="'Caneca Arch'" ></p>
+
+<p>Aproveito para deixar aqui o link para esta incrível loja com produtos do Arch Linux e de outras várias coisas que desejar. Apesar de ser uma loja gringa, vale a pena conferir.</p>
+
+<p>Segue Link: <a href="https://www.zazzle.com/archlinux">https://www.zazzle.com/archlinux</a></p>
+
+<p>Abraços</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -189,76 +241,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2008/10/24/escondendo-informacoes-em-arquivos-binarios/">Escondendo Informações Em Arquivos Binários</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2008-10-24T07:09:00-04:00" pubdate data-updated="true">Oct 24<span>th</span>, 2008</time>
-        
-         | <a href="/blog/2008/10/24/escondendo-informacoes-em-arquivos-binarios/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Saudações galera&hellip;</p>
-
-<p>Recentemente um amigo, Michel, me perguntou algo sobre a possibilidade de ocultar informações em arquivos binários, como uma música ou mesmo uma foto. Eu lhe respondi que era possível, e bem simples em termos de conceito, bem como lhe prometi postar esta dica.</p>
-
-<p>No Linux sabemos que tudo é um arquivo. Nada depende exclusivamente de extensão ou tipo. Até mesmo os famosos &ldquo;diretórios&rdquo; na verdade não passam de arquivos. O que mostrarei aqui é uma dica rápida e simples de como se aproveitar disto para ocultar de forma simples e rápida alguma informação de texto em um arquivo binário qualquer que o seja. Por mais incrível que possa parecer, não precisaremos de nenhuma mágica ou ferramenta especial para isto. Quem utiliza Linux sabe que o cat ou mesmo o echo são ferramentas padrão em qualquer distribuição. SIM. Precisaremos apenas delas para fazer o &ldquo;truque&rdquo;. Não acredita? o.O</p>
-
-<p>Vamos lá&hellip;</p>
-
-<p>Antes de mais nada selecione o arquivo que será utilizado para &ldquo;camuflar&rdquo; nossa informação. Escolha uma imagem qualquer por exemplo ou outro tipo como áudio, vídeo, compactado, etc&hellip; Supondo que você escolheu o arquivo foto.jpg, passaremos ao segundo passo.</p>
-
-<p>Supondo que eu queira ocultar a frase &ldquo;Bem vindo ao Linux&rdquo; na foto.jpg, o comando seria o seguinte:</p>
-
-<p>$ echo &ldquo;Bem vindo ao Linux&rdquo; >> foto.jpg</p>
-
-<p>Simples não é?! Nada de truques ou mágicas. Pode tentar abrir a foto com algum editor de imagens como o Gimp, ou mesmo com um vizualizador de sua preferência. A foto parecerá intacta e normal. Agora tente executá-la com um editor de textes como o cat por exemplo.</p>
-
-<p>$ cat foto.jpg</p>
-
-<p>Você verá um conjunto de caracteres estranhos, dados sobre a foto em si, porém role até o final do arquivo. Depois de todos os caracteres estranhos, você encontrará a informação que ocultou anteriormente, no nosso caso é a frase &ldquo;Bem Vindo ao Linux&rdquo;.</p>
-
-<p>Simples não é? Lembrando que o mesmo conceito se aplica caso você deseje utilizar ao invés de uma única frase, todo um texto. Crie o texto com um editor de textos qualquer como o vim por exemplo e salve com o nome texto.</p>
-
-<p>Em seguida aplique o comando utilizando desta vez o cat, ao invés do echo:</p>
-
-<p>$ cat texto >> foto.jpg</p>
-
-<p>Volte a repetir os testes já citados anteriormente para ter certeza do sucesso no processo.</p>
-
-<p>Como eu disse..tudo muito simples e sem mistérios.</p>
-
-<p>Respondido Michel? ;]</p>
-
-<p>Abraço pessoal</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/54/">&larr; Anteriores</a>
@@ -280,6 +262,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2018/11/24/terraform-criando-uma-infraestrutura-no-google-cloud/">Terraform: Criando uma infraestrutura no Google Cloud</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2018/11/06/terraform-variaveis-e-outputs/">Terraform: Variáveis e Outputs</a>
       </li>
     
@@ -293,10 +279,6 @@
     
       <li class="post">
         <a href="/blog/2018/08/11/criando-uma-imagem-aws-ec2-com-packer-e-puppet/">Criando uma Imagem AWS EC2 com Packer e Puppet</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2018/07/30/automatizando-a-criacao-de-imagens-com-packer/">Automatizando a Criação de Imagens com Packer</a>
       </li>
     
   </ul>
